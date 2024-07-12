@@ -40,6 +40,7 @@
     <div class="w-full min-h-screen md:w-1/2 bg-gradient-to-b from-gray-900/90 to-gray-900/95 p-10 flex">
       <div class="w-full text-center my-auto">
         <h1 class="font-bold text-5xl font-Comforter-Brush text-amber-500 mb-10 mt-10 md:text-right">Sistem Informasi Jasa Konstruksi</h1>
+        
         <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-3xl mb-14 md:-mr-20 text-white md:text-left">Pemerintah <br> Kabupaten Bandung Barat<span class="text-white/70 md:-mr-20"></span></h6>
 
         
@@ -72,7 +73,9 @@
         <!-- Content -->
         <p class="text-base mb-10 text-gray-200 md:text-justify">
                                     Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat adalah platform digital yang mengelola proyek konstruksi pemerintah, mencakup pengelolaan data, pelaporan kemajuan, manajemen kontrak, dan pemantauan kualitas. Sistem ini meningkatkan transparansi dan efisiensi, memungkinkan pemantauan efektif oleh pemerintah dan pemangku kepentingan, serta memastikan proyek berjalan sesuai jadwal, anggaran, dan spesifikasi. Selain itu, sistem ini memudahkan penyimpanan dan akses dokumen penting, mendukung proses audit dan evaluasi kinerja kontraktor.
-            <!-- Social media -->
+                                    <h1 class="font-bold text-5xl font-Comforter-Brush text-amber-500 mb-10 mt-10 md:text-right">Under Constructions</h1>
+        
+                                    <!-- Social media -->
         <div class="w-full text-left flex">
           <ul class="w-full flex place-content-center md:place-content-end gap-10 mx-auto text-gray-500">        
             <li>
