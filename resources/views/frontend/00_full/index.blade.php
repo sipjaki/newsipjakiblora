@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="bahan1/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="bahan1/css/animate.compat.css" rel="stylesheet" type="text/css">
-    <link href="bahan1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="bahan1/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="template/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="template/css/animate.compat.css" rel="stylesheet" type="text/css">
+    <link href="template/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="template/css/styles.css" rel="stylesheet" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	   
-    <script defer src="bahan1/js/scripts.js"></script>
+    <script defer src="template/js/scripts.js"></script>
     {{-- <title>Construction Company</title> --}}
     <title>SIPJAKI Pemerintah Kab Bandung Barat</title>
 
@@ -387,7 +387,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate deserunt magni sint mollitia similique corporis quis voluptatibus, eos tempora ealias illo nemo excepturi blanditiis vitae impedit minus tempore praesentium harum. <br><br>Quis, temporibus dolorum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime minima quod eius aspernatur. Accusantium sed sunt corrupti sapiente deleniti?</p>
                 <a href="#">Show More</a>
             </article>
-            <aside><img src="bahan1/Images/img1.png" alt="man"></aside>
+            <aside><img src="template/Images/img1.png" alt="man"></aside>
         </div>
     </section>
     <section id="sec-2">
@@ -396,28 +396,28 @@
             <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ducimus, voluptatibus perferendis voluptates quidem magni illo odit velit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, expedita tenetur? Pariatur itaque eveniet nam possimus omnis veniam cupiditate provident.</P>
             <article>
                 <figure>
-                    <div><img src="bahan1/Images/ico1.png" alt=""></div>
+                    <div><img src="template/Images/ico1.png" alt=""></div>
                     <div class="cont">
                         <h2>we deliver quality</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus reprehenderit?</p>
                     </div>
                 </figure>
                 <figure>
-                    <div><img src="bahan1/Images/ico2.png" alt=""></div>
+                    <div><img src="template/Images/ico2.png" alt=""></div>
                     <div class="cont">
                         <h2>Always on time</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus reprehenderit?</p>
                     </div>
                 </figure>
                 <figure>
-                    <div><img src="bahan1/Images/ico3.png" alt=""></div>
+                    <div><img src="template/Images/ico3.png" alt=""></div>
                     <div class="cont">
                         <h2>we are passionate</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus reprehenderit?</p>
                     </div>
                 </figure>
                 <figure>
-                    <div><img src="bahan1/Images/ico4.png" alt=""></div>
+                    <div><img src="template/Images/ico4.png" alt=""></div>
                     <div class="cont">
                         <h2>proffesional services</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus reprehenderit?</p>
@@ -432,7 +432,7 @@
             <div class="cont">
                 <div class="card border-0">
                     <div>
-                        <img src="bahan1/Images/card1.jpg" class="card-img-top" alt="...">
+                        <img src="template/Images/card1.jpg" class="card-img-top" alt="...">
                         <h5 class="caption">Construction Management</h5>
                     </div>
                     <div class="card-body px-0 pt-4">
@@ -442,7 +442,7 @@
                 </div>
                 <div class="card border-0">
                     <div>
-                        <img src="bahan1/Images/card2.jpg" class="card-img-top" alt="...">
+                        <img src="template/Images/card2.jpg" class="card-img-top" alt="...">
                         <h5 class="caption">Renovation</h5>
                     </div>
                     <div class="card-body px-0 pt-4">
@@ -452,7 +452,7 @@
                 </div>
                 <div class="card border-0">
                     <div>
-                        <img src="bahan1/Images/card3.jpg" class="card-img-top" alt="...">
+                        <img src="template/Images/card3.jpg" class="card-img-top" alt="...">
                         <h5 class="caption">Architectuure</h5>
                     </div>
                     <div class="card-body px-0 pt-4">
@@ -475,12 +475,12 @@
                 <a href="#">plumping</a>
             </div>
             <div class="cont">
-                <img class="wow animated fadeIn slow" src="bahan1/Images/gallery1.jpg" alt="pic">
+                <img class="wow animated fadeIn slow" src="template/Images/gallery1.jpg" alt="pic">
                 <aside>
-                    <img src="bahan1/Images/gallery3.jpg" alt="pic" class="wow animated flipInX delay-1s">
-                    <img src="bahan1/Images/gallery2.jpg" alt="pic" class="wow animated flipInX delay-1s slower">
-                    <img src="bahan1/Images/gallery4.jpg" alt="pic" class="wow animated flipInX delay-2s">
-                    <img src="bahan1/Images/gallery5.jpg" alt="pic" class="wow animated flipInX delay-2s slower">
+                    <img src="template/Images/gallery3.jpg" alt="pic" class="wow animated flipInX delay-1s">
+                    <img src="template/Images/gallery2.jpg" alt="pic" class="wow animated flipInX delay-1s slower">
+                    <img src="template/Images/gallery4.jpg" alt="pic" class="wow animated flipInX delay-2s">
+                    <img src="template/Images/gallery5.jpg" alt="pic" class="wow animated flipInX delay-2s slower">
                 </aside>    
             </div>
         </div>
@@ -590,8 +590,8 @@
         </div>
     </section>
 
-    <script src="bahan1/js/wow.min.js"></script>
+    <script src="template/js/wow.min.js"></script>
     <script> new WOW().init();</script>
-    <script src="bahan1/js/bootstrap.bundle.min.js"></script>
+    <script src="template/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
