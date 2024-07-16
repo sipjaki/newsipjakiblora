@@ -19,6 +19,11 @@ Route::get('/', function () {
     return view('frontend.00_full.index');
 });
 
+Route::get('/404', function () {
+    // return view('welcome');
+    return view('404');
+});
+
 Route::get('/bahan2', function () {
     // return view('welcome');
     return view('frontend.00_full.bahan2');

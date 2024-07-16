@@ -8,13 +8,13 @@
     <link href="bahan1/css/animate.compat.css" rel="stylesheet" type="text/css">
     <link href="bahan1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="bahan1/css/styles.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="bahan2/css/bootstrap.min.css">
-	    <!----css3---->
-        <link rel="stylesheet" href="bahan2/css/custom.css">
-		
-        <link rel="stylesheet" href="bahan2/font/flaticon.css">
-		<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-	   <link rel="stylesheet" type="text/css" href="bahan2/css/settings.css" media="screen" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 	   
     <script defer src="bahan1/js/scripts.js"></script>
     {{-- <title>Construction Company</title> --}}
@@ -25,13 +25,20 @@
 </head>
 
 <body>
+
+    
+  {{-- ---------- --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+
     <section id="sec-0">
         <header class="top">
             <div class="container">
                 {{-- <p>081321455855</p> --}}
                 <p><a href="https://wa.me/6281321455855">+6281 321 455 855</a></p>
                 {{-- <p>support@Construct.com</p> --}}
-                <p>Senin-Jumat 9:00-17:00</p>
+                <p>Senin-Jumat 9:00-16:00</p>
                 <div class="social">
                     <a href="" title="Email"><i class="fas fa-envelope"></i></a>
                     <a href="" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -49,160 +56,329 @@
                 <input type="search" name="searchBox" id="searchBox" placeholder="Type your search here..    Press [Esc] to exist">
             </div>
             <div class="container">  
-                <div style="display: flex; align-items: center;">
-                    <img src="assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; padding: 0;">
+                <div style="display: flex; align-items: center; margin-bottom:10px">
+                    <img src="assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; padding: 0;">
                     <h1 style="margin: 0;">
                         <span>SIPJAKI</span>KBB
-                        <p style="margin: 0; font-size: 16px; color: white">Pemerintah Kab Bandung Barat</p>
+                        <p style="margin: 0; font-size: 16px; color: white" >Dinas Pekerjaan Umum & Penataan Ruang</p>
                     </h1>
                 </div>
+
                 <label for="menu"><i class="fas fa-bars"></i></label>
                 <input type="checkbox" id="menu">
                 <nav>
-                    <a href="#">berada</a>
-                    <a href="#">Page</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Portofolio</a>
-                    <a href="#">Components</a>
-                    <a href="#">Contact</a>
-                    <i class="fa-solid fa-magnifying-glass" id="search"></i>
+                    <style>
+                        .dropdown {
+                            position: relative;
+                            display: inline-block;
+                        }
+                        .dropdown a {
+                            display: flex;
+                            align-items: center;
+                            text-decoration: none;
+                            color: black; /* Warna teks untuk tautan PROFIL */
+                        }
+                        .dropdown .arrow {
+                            margin-left: 5px;
+                            color: black; /* Warna teks untuk panah */
+                            font-size: 0.8em; /* Ukuran ikon panah */
+                        }
+                        .dropdown-content {
+                            display: none;
+                            position: absolute;
+                            background-color: #f9f9f9;
+                            min-width: 325px;
+                            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                            z-index: 1;
+                        }
+                        .dropdown-content a {
+                            color: black; /* Warna teks untuk menu dropdown */
+                            padding: 12px 16px;
+                            text-decoration: none;
+                            display: block;
+                        }
+                        .dropdown-content a:hover {
+                            background-color: #f1f1f1;
+                        }
+                        .dropdown:hover .dropdown-content {
+                            display: block;
+                        }
+                    </style>
+
+                    <a href="/">DASHBOARD</a>
+                    
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle">PROFIL</a>
+                        {{-- <i class="fas fa-chevron-down arrow"></i> --}}
+                        <div class="dropdown-content">
+
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-users" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">STRUKTUR DINAS PEKERJAAN UMUM DAN PENATAAN RUANG PEMERINTAH KABUPATEN BANDUNG BARAT</a>
+                            </div>
+                                                        {{-- <a href="#" style="color: black; text-align: left"><i class="fab fa-home"></i>STRUKTUR DINAS PEKERJAAN UMUM DAN PENATAAN RUANG PEMERINTAH KABUPATEN BANDUNG BARAT</a> --}}
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-users" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">RENSTRA SEKSI PROGRAM DAN JASA KONSTRUKSI </a>
+                            </div>
+                                                        {{-- <a href="#" style="color: black; text-align: left"><i class="fab fa-home"></i>STRUKTUR DINAS PEKERJAAN UMUM DAN PENATAAN RUANG PEMERINTAH KABUPATEN BANDUNG BARAT</a> --}}
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-users" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">TUPOKSI SEKSI PROGRAM DAN JASA KONSTRUKSI </a>
+                            </div>
+                             
+                        
+                            </div>
+                    </div>                    {{-- <a href="#">PROFIL</a> --}}
+                    
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle">BERITA</a>
+                        {{-- <i class="fas fa-chevron-down arrow"></i> --}}
+                        <div class="dropdown-content" style="min-width: 100px;">
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-newspaper" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">BERITA</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-newspaper" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">AGENDA</a>
+                            </div>
+                             
+                        </div>
+                    </div>                    {{-- <a href="#">PROFIL</a> --}}
+
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" style="text-align: left">DATA <br> JAKON </a>
+                        {{-- <i class="fas fa-chevron-down arrow"></i> --}}
+                        <div class="dropdown-content" style="min-width: 210px;">
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 10px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">ASOSIASI</a>
+                            </div>
+
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 10px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">STANDAR BIAYA UMUM</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PROGRESS PAKET PEKERJAAN</a>
+                            </div>
+
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">POTENSI JASA KONSTRUKSI</a>
+                            </div>
+                             
+                        </div>
+                    </div>                    {{-- <a href="#">PROFIL</a> --}}
+
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" style="text-align: left">TENAGA <br> KERJA </a>
+                        {{-- <i class="fas fa-chevron-down arrow"></i> --}}
+                        <div class="dropdown-content" style="min-width: 210px;">
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-user" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">SKA/ SKT</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-user" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PENANGGUNG JAWAB TEKNIS (PJT)</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-user" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PEMBINA JASA KONSTRUKSI</a>
+                            </div>
+                             
+                        </div>
+                    </div>                    {{-- <a href="#">PROFIL</a> --}}
+                    
+
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" style="text-align: left">SPM</a>
+                        {{-- <i class="fas fa-chevron-down arrow"></i> --}}
+                        <div class="dropdown-content" style="min-width: 210px;">
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">INFORMASI SPM</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">LAPORAN SPM</a>
+                            </div>
+                             
+                        </div>
+                    </div>                    {{-- <a href="#">PROFIL</a> --}}
+                    
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" style="text-align: left">DUKUNGAN <br> USAHA </a>
+                        {{-- <i class="fas fa-chevron-down arrow"></i> --}}
+                        <div class="dropdown-content" style="min-width: 210px;">
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PERMODALAN</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">JAMINAN USAHA</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">MITRA USAHA</a>
+                            </div>
+                             
+                        </div>
+                    </div>                    {{-- <a href="#">PROFIL</a> --}}
+
+                    <a href="/404" style="text-align: center">BADAN <br> USAHA </a>
+                    <a href="/404">UIJK</a>
+                    <a href="/404">TDUP</a>
+                    
+                    
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" style="text-align: left">PELATIHAN</a>
+                        {{-- <i class="fas fa-chevron-down arrow"></i> --}}
+                        <div class="dropdown-content" style="min-width: 210px;">
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-book" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PELATIHAN</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-book" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PENGAWASAN</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-book" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">KECELAKAAN</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-book" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">TEKNOLOGI KONSTRUKSI</a>
+                            </div>
+
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-book" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PRODUK DALAM NEGERI</a>
+                            </div>
+                             
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" style="text-align: left">PERATURAN</a>
+                        {{-- <i class="fas fa-chevron-down arrow"></i> --}}
+                        <div class="dropdown-content" style="min-width: 250px;">
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">UNDANG UNDANG</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PERATURAN PEMERINTAH</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PERATURAN PRESIDEN</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PERATURAN MENTERI</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">KEPUTUSAN MENTERI</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">SURAT EDARAN MENTERI</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">REFERENSI</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PERATURAN DAERAH</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PERATURAN GUBERNUR</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">PERATURAN WALIKOTA</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">SURAT KEPUTUSAN</a>
+                            </div>
+                             
+                            <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                                <a href="/404" style="color: black; text-decoration: none; text-align:left">UNDANG UNDANG</a>
+                            </div>
+                             
+                        </div>
+                    </div>                    {{-- <a href="#">PROFIL</a> --}}
+                    
+                    
+                    <a href="#">FORUM</a>
+                   
+
+
+                    {{-- <i class="fa-solid fa-magnifying-glass" id="search"></i> --}}
+                    <i class="fa-solid fa-sign-in-alt" id="search"></i>
+
                 </nav>
             </div>
         </header>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-	    <li class="nav-item dropdown">
-        <a class="nav-link" href="#" data-toggle="dropdown">Aboutus <i class="fas fa-chevron-down"></i></a>
-		  <ul class="dropdown-menu small-menu">
-		     <a href="#">Who we Are</a>
-			  <a href="#">Profile</a>
-		  </ul>
-      </li>
+        
 
-	  <li class="nav-item dropdown">
-        <a class="nav-link" href="#" data-toggle="dropdown">Services <i class="fas fa-chevron-down"></i></a>
-		  <ul class="dropdown-menu small-menu">
-		     <a href="#">Urban Infrastructure</a>
-		     <a href="#">Road Infrastructure</a>
-		     <a href="#">Industrial Infrastructure</a>
-		     <a href="#">Construction engineering</a>
-		     <a href="#">Structure Engineering</a>
-		     <a href="#">Water and sewage engineering</a>
-
-		  </ul>
-      </li>
-
-	   <li class="nav-item dropdown">
-        <a class="nav-link" href="#" data-toggle="dropdown">projects <i class="fas fa-chevron-down"></i></a>
-		  <ul class="dropdown-menu small-menu">
-		     <a href="#">Complete Projects</a>
-			  <a href="#">Uncomplete Projects</a>
-		  </ul>
-      </li>
-	
-	 
-	     <li class="nav-item">
-        <a class="nav-link" href="#">clients</a>
-      </li>
-	
-
-	    <li class="nav-item dropdown">
-        <a class="nav-link" href="#" data-toggle="dropdown">Global Partner</a>
-		  <ul class="dropdown-menu small-menu">
-		     <a href="#">USA</a>
-		     <a href="#">India</a>
-		     <a href="#">Spain</a>
-		     <a href="#">Cyprus</a>
-		     <a href="#">Russia</a>
-		     <a href="#">S. Korea</a>
-		  </ul>
-      </li>
-	  
-	   <li class="nav-item">
-        <a class="nav-link" href="#">Contactus</a>
-      </li>
-    </ul>
-	
-	
-  </div>
-
-  {{-- ---------- --}}
-
-  <div class="collapse navbar-collapse " id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-	    <li class="nav-item dropdown">
-        <a class="nav-link" href="#" data-toggle="dropdown">Aboutus <i class="fas fa-chevron-down"></i></a>
-		  <ul class="dropdown-menu small-menu">
-		     <a href="#">Who we Are</a>
-			  <a href="#">Profile</a>
-		  </ul>
-      </li>
-
-	  <li class="nav-item dropdown">
-        <a class="nav-link" href="#" data-toggle="dropdown">Services <i class="fas fa-chevron-down"></i></a>
-		  <ul class="dropdown-menu small-menu">
-		     <a href="#">Urban Infrastructure</a>
-		     <a href="#">Road Infrastructure</a>
-		     <a href="#">Industrial Infrastructure</a>
-		     <a href="#">Construction engineering</a>
-		     <a href="#">Structure Engineering</a>
-		     <a href="#">Water and sewage engineering</a>
-
-		  </ul>
-      </li>
-
-	   <li class="nav-item dropdown">
-        <a class="nav-link" href="#" data-toggle="dropdown">projects <i class="fas fa-chevron-down"></i></a>
-		  <ul class="dropdown-menu small-menu">
-		     <a href="#">Complete Projects</a>
-			  <a href="#">Uncomplete Projects</a>
-		  </ul>
-      </li>
-	
-	 
-	     <li class="nav-item">
-        <a class="nav-link" href="#">clients</a>
-      </li>
-	
-
-	    <li class="nav-item dropdown">
-        <a class="nav-link" href="#" data-toggle="dropdown">Global Partner</a>
-		  <ul class="dropdown-menu small-menu">
-		     <a href="#">USA</a>
-		     <a href="#">India</a>
-		     <a href="#">Spain</a>
-		     <a href="#">Cyprus</a>
-		     <a href="#">Russia</a>
-		     <a href="#">S. Korea</a>
-		  </ul>
-      </li>
-	  
-	   <li class="nav-item">
-        <a class="nav-link" href="#">Contactus</a>
-      </li>
-    </ul>
-	
-	
-  </div>
         <article>
         <div class="container">
             {{-- <h1> We are Certified Engineers</h1> --}}
-            <h2>Sistem Informasi Jasa Konstruksi <br>
+            <h2>Sistem Informasi <br> Pembina Jasa Konstruksi <br>
             <span>Pemerintah Kab bandung Barat </span></h2>
             <p style="text-align: justify">Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat adalah platform digital yang mengelola proyek konstruksi pemerintah, mencakup pengelolaan data, pelaporan kemajuan, manajemen kontrak, dan pemantauan kualitas. Sistem ini meningkatkan transparansi dan efisiensi, memungkinkan pemantauan efektif oleh pemerintah dan pemangku kepentingan, serta memastikan proyek berjalan sesuai jadwal, anggaran, dan spesifikasi. Selain itu, sistem ini memudahkan penyimpanan dan akses dokumen penting, mendukung proses audit dan evaluasi kinerja kontraktor. 
             </p>
             
-            <a href="#">Show More</a>
-            <a href="#">view project</a>
+            <a href="/404">sertifikasi</a>
+            <a href="/404"> project kbb</a>
         </div>
         </article>
     </section>
+
+
+  {{-- ---------- --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+
+
+
+
+
+
     <section id="sec-1">
         <div class="container">
             <article>
