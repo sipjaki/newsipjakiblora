@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	   
-    <script defer src="/bahan1/js/scripts.js"></script>
+    <script defer src="./bahan1/js/scripts.js"></script>
     {{-- <title>Construction Company</title> --}}
     <title>SIPJAKI Pemerintah Kab Bandung Barat</title>
 
@@ -590,8 +590,8 @@
         </div>
     </section>
 
-    <script src="/bahan1/js/wow.min.js"></script>
+    <script src="./bahan1/js/wow.min.js"></script>
     <script> new WOW().init();</script>
-    <script src="/bahan1/js/bootstrap.bundle.min.js"></script>
+    <script src="./bahan1/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
