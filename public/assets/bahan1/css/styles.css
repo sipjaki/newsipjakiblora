@@ -640,6 +640,8 @@ text-shadow:1px 1px #73757E;
 .invalid{
     box-shadow: inset 0px 0px 10px #e67a7a;
 }
+
+
 /* SECTION SIX */
 #sec-6{
     background: linear-gradient(rgba(0, 0, 0,0.9),rgba(0, 0, 0,0.9)), url(../Images/rascacielos-nueva-york.jpg) no-repeat center center/cover;
@@ -774,6 +776,25 @@ text-shadow:1px 1px #73757E;
     text-align: center;
     font-size: 0.7rem;
 }
+#sec-7 .container>h1{
+    color: var(--haccent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    border: 2px solid;
+    
+}
+
+#sec-7 .container>h2{
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    border: 2px solid;
+    
+}
 #sec-7 p{
     color: var(--txtaccent5);
 }
@@ -837,6 +858,69 @@ margin-bottom: 10px;
 color: var(--haccent2);
 }
 #sec-7 article figure p{
+color: var(--txtaccent);
+font-size: 0.88rem;
+text-shadow:1px 1px #73757E;
+}
+
+
+
+#baru{
+    background: linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.8)), url(../Images/bg4.jpg) no-repeat center center/cover;
+    text-align: center;
+    padding: 3rem 0px 1.8rem;
+}
+#baru .container>h1{
+    color: var(--haccent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+#baru .container>p {
+    color: var(--txtaccent);
+    margin-bottom: 30px;
+}
+#baru article{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#baru article figure{
+    text-align: center;
+    max-width: 63%;
+    margin-top: 40px;
+}
+#baru article .cont{
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+    border-radius: 10px;
+    padding: 95px 10px 20px;
+    text-align: center;
+    margin-top: -75px;
+}
+#baru article figure div:first-of-type{
+    width: 10em;
+    height: 10em;
+    background-color: var(--haccent2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    position: relative;
+    z-index: 1;
+}
+#baru article figure img{
+    max-width: 55%;
+}
+#baru article figure h2{
+font-size: 1.2rem;
+text-transform: uppercase;
+font-weight: 700;
+margin-bottom: 10px;
+color: var(--haccent2);
+}
+#baru article figure p{
 color: var(--txtaccent);
 font-size: 0.88rem;
 text-shadow:1px 1px #73757E;
