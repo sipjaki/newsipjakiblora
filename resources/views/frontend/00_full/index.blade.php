@@ -9,6 +9,16 @@
     <link href="/assets/bahan1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/assets/bahan1/css/styles.css" rel="stylesheet" type="text/css">
 
+    {{-- TEMPLATE 2 --}}
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/assets/bahan2/css/bootstrap.min.css">
+      <!----css3---->
+      <link rel="stylesheet" href="/assets/bahan2/css/custom.css">
+      
+      <link rel="stylesheet" href="/assets/bahan2/font/flaticon.css">
+      <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+     <link rel="stylesheet" type="text/css" href="/assets/bahan2/css/settings.css" media="screen" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -16,7 +26,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	   
-    <script defer src="./bahan1/js/scripts.js"></script>
+    <script defer src="/assets/bahan1/js/scripts.js"></script>
     {{-- <title>Construction Company</title> --}}
     <title>SIPJAKI Pemerintah Kab Bandung Barat</title>
 
@@ -376,7 +386,140 @@
 
 
 
-
+  <section class="service-style-three pb-70" id="sec-7">
+    <div class="container">
+    <div class="section-title text-center">
+    <span>Jasa Konstruksi</span>
+    <h2>Trenty Provides All Building Services</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+    </div>
+    <div class="row">
+    <div class="col-lg-4 col-sm-6">
+    <div class="service-card text-center">
+    <div class="service-img urban">
+    </div>
+    <div class="service-content">
+      <img src="img/s1.svg"/>
+    <h3>Urban Infrastructure</h3>
+    <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <a href="service-details.html" class="service-btn">
+    Read More
+    </a>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+    <div class="service-card text-center">
+    <div class="service-img road">
+    </div>
+    <div class="service-content">
+      <img src="img/s2.svg"/>
+    <h3>Road Infrastructure</h3>
+    <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <a href="service-details.html" class="service-btn">
+    Read More
+    </a>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+    <div class="service-card text-center">
+    <div class="service-img industrial">
+    </div>
+    <div class="service-content">
+      <img src="img/s3.svg"/>
+    <h3>Industrial Infrastructure</h3>
+    <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <a href="service-details.html" class="service-btn">
+    Read More
+    </a>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+    <div class="service-card text-center">
+    <div class="service-img construction">
+    </div>
+    <div class="service-content">
+      <img src="img/s4.svg"/>
+    <h3>Construction Engineering</h3>
+    <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <a href="service-details.html" class="service-btn">
+    Read More
+    </a>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+    <div class="service-card text-center">
+    <div class="service-img structure">
+    </div>
+    <div class="service-content">
+      <img src="img/s5.svg"/>
+    <h3>Structure Engineering</h3>
+    <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <a href="service-details.html" class="service-btn">
+    Read More
+    </a>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-4 col-sm-6">
+    <div class="service-card text-center">
+    <div class="service-img water">
+    </div>
+    <div class="service-content">
+      <img src="img/s6.svg"/>
+    <h3>Water & Sewage Engineering</h3>
+    <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+    <a href="service-details.html" class="service-btn">
+    Read More
+    </a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+        
+        
+        <section class="facilities-section">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-lg-5 offset-lg-1 p-0">
+    <div class="facililties-text pt-100 pb-70">
+    <div class="section-title">
+    <span>More Facilities</span>
+    <h2>Xpat Services You More</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+    </div>
+    <ul>
+    <li>Best Quality Work</li>
+    <li>Top Quality Equipment</li>
+    <li>Experienced Workers</li>
+    <li>Best Civil Engineers</li>
+    <li>Budget-Friendly</li>
+    <li>Great Understanding</li>
+    <li>Emergency Support</li>
+    <li>Responsible Reasonable</li>
+    </ul>
+    <div class="theme-btn">
+    <a href="about.html" class="default-btn">
+    Contact US
+    </a>
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-6 p-0">
+    <div class="facilities-img">
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+ 
+    
+    {{-- ================================= --}}
 
 
     <section id="sec-1">
@@ -387,7 +530,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate deserunt magni sint mollitia similique corporis quis voluptatibus, eos tempora ealias illo nemo excepturi blanditiis vitae impedit minus tempore praesentium harum. <br><br>Quis, temporibus dolorum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime minima quod eius aspernatur. Accusantium sed sunt corrupti sapiente deleniti?</p>
                 <a href="#">Show More</a>
             </article>
-            <aside><img src="/bahan1/Images/img1.png" alt="man"></aside>
+            <aside><img src="/assets/bahan1/Images/img1.png" alt="man"></aside>
         </div>
     </section>
     <section id="sec-2">
@@ -396,28 +539,28 @@
             <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ducimus, voluptatibus perferendis voluptates quidem magni illo odit velit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, expedita tenetur? Pariatur itaque eveniet nam possimus omnis veniam cupiditate provident.</P>
             <article>
                 <figure>
-                    <div><img src="/bahan1/Images/ico1.png" alt=""></div>
+                    <div><img src="/assets/bahan1/Images/ico1.png" alt=""></div>
                     <div class="cont">
                         <h2>we deliver quality</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus reprehenderit?</p>
                     </div>
                 </figure>
                 <figure>
-                    <div><img src="/bahan1/Images/ico2.png" alt=""></div>
+                    <div><img src="/assets/bahan1/Images/ico2.png" alt=""></div>
                     <div class="cont">
                         <h2>Always on time</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus reprehenderit?</p>
                     </div>
                 </figure>
                 <figure>
-                    <div><img src="/bahan1/Images/ico3.png" alt=""></div>
+                    <div><img src="./assets/bahan1/Images/ico3.png" alt=""></div>
                     <div class="cont">
                         <h2>we are passionate</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus reprehenderit?</p>
                     </div>
                 </figure>
                 <figure>
-                    <div><img src="/bahan1/Images/ico4.png" alt=""></div>
+                    <div><img src="/assets/bahan1/Images/ico4.png" alt=""></div>
                     <div class="cont">
                         <h2>proffesional services</h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iste ad illum, ducimus asperiores necessitatibus reprehenderit?</p>
@@ -432,7 +575,7 @@
             <div class="cont">
                 <div class="card border-0">
                     <div>
-                        <img src="/bahan1/Images/card1.jpg" class="card-img-top" alt="...">
+                        <img src="/assets/bahan1/Images/card1.jpg" class="card-img-top" alt="...">
                         <h5 class="caption">Construction Management</h5>
                     </div>
                     <div class="card-body px-0 pt-4">
@@ -442,7 +585,7 @@
                 </div>
                 <div class="card border-0">
                     <div>
-                        <img src="/bahan1/Images/card2.jpg" class="card-img-top" alt="...">
+                        <img src="/assets/bahan1/Images/card2.jpg" class="card-img-top" alt="...">
                         <h5 class="caption">Renovation</h5>
                     </div>
                     <div class="card-body px-0 pt-4">
@@ -452,7 +595,7 @@
                 </div>
                 <div class="card border-0">
                     <div>
-                        <img src="/bahan1/Images/card3.jpg" class="card-img-top" alt="...">
+                        <img src="/assets/bahan1/Images/card3.jpg" class="card-img-top" alt="...">
                         <h5 class="caption">Architectuure</h5>
                     </div>
                     <div class="card-body px-0 pt-4">
@@ -475,12 +618,12 @@
                 <a href="#">plumping</a>
             </div>
             <div class="cont">
-                <img class="wow animated fadeIn slow" src="/bahan1/Images/gallery1.jpg" alt="pic">
+                <img class="wow animated fadeIn slow" src="/assets/bahan1/Images/gallery1.jpg" alt="pic">
                 <aside>
-                    <img src="/bahan1/Images/gallery3.jpg" alt="pic" class="wow animated flipInX delay-1s">
-                    <img src="/bahan1/Images/gallery2.jpg" alt="pic" class="wow animated flipInX delay-1s slower">
-                    <img src="/bahan1/Images/gallery4.jpg" alt="pic" class="wow animated flipInX delay-2s">
-                    <img src="/bahan1/Images/gallery5.jpg" alt="pic" class="wow animated flipInX delay-2s slower">
+                    <img src="/assets/bahan1/Images/gallery3.jpg" alt="pic" class="wow animated flipInX delay-1s">
+                    <img src="/assets/bahan1/Images/gallery2.jpg" alt="pic" class="wow animated flipInX delay-1s slower">
+                    <img src="/assets/bahan1/Images/gallery4.jpg" alt="pic" class="wow animated flipInX delay-2s">
+                    <img src="/assets/bahan1/Images/gallery5.jpg" alt="pic" class="wow animated flipInX delay-2s slower">
                 </aside>    
             </div>
         </div>
@@ -590,8 +733,8 @@
         </div>
     </section>
 
-    <script src="./bahan1/js/wow.min.js"></script>
+    <script src="/assets/bahan1/js/wow.min.js"></script>
     <script> new WOW().init();</script>
-    <script src="./bahan1/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/bahan1/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
