@@ -128,17 +128,17 @@
             <div class="dropdown-content" style="min-width: 210px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-user" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
-                    <a href="/404" style="color: black; text-decoration: none; text-align:left">SKA/ SKT</a>
+                    <a href="/tenagakerja/skaskt" style="color: black; text-decoration: none; text-align:left">SKA/ SKT</a>
                 </div>
                  
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-user" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
-                    <a href="/404" style="color: black; text-decoration: none; text-align:left">PENANGGUNG JAWAB TEKNIS (PJT)</a>
+                    <a href="/tenagakerja/pjt" style="color: black; text-decoration: none; text-align:left">PENANGGUNG JAWAB TEKNIS (PJT)</a>
                 </div>
                  
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-user" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
-                    <a href="/404" style="color: black; text-decoration: none; text-align:left">PEMBINA JASA KONSTRUKSI</a>
+                    <a href="/tenagakerja/timpembina" style="color: black; text-decoration: none; text-align:left">PEMBINA JASA KONSTRUKSI</a>
                 </div>
                  
             </div>
@@ -151,7 +151,7 @@
             <div class="dropdown-content" style="min-width: 210px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
-                    <a href="/404" style="color: black; text-decoration: none; text-align:left">INFORMASI SPM</a>
+                    <a href="/spm/informasispm" style="color: black; text-decoration: none; text-align:left">INFORMASI SPM</a>
                 </div>
                  
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">

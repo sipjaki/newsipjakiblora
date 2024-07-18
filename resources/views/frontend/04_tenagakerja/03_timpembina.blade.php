@@ -35,7 +35,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Progress Paket Pekerjaan Konstruksi Bandung Barat
+Tim Pembina Jasa Konstruksi 
 </h2>
 </div>
 <div class="container" style="
@@ -95,7 +95,7 @@ Progress Paket Pekerjaan Konstruksi Bandung Barat
                 color: black;
             }
         </style>
-        <div class="badge"><i class="fas fa-cogs me-2"></i>Progres Paket Pekerjaan </div>Show Data :</label>
+        <div class="badge"><i class="fas fa-users me-2"></i>Tim Pembina Jasa Konstruksi </div>Show Data :</label>
     <select id="entries" onchange="showEntries()">
         <option value="5">5</option>
         <option value="10">10</option>
@@ -170,12 +170,12 @@ Progress Paket Pekerjaan Konstruksi Bandung Barat
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama  <br> Proyek</th>
-                        <th>Nilai <br> Kontrak</th>
-                        <th>Progres <br> Fisik</th>
-                        <th>Progres <br> Keuangan</th>
-                        <th>Tanggal <br> Mulai</th>
-                        <th>Tanggal <br> Selesai</th>
+                        <th>Jabatan Dalam Kedinasan</th>
+                        <th>Nama Lengkap</th>
+                        <th>Jabatan</th>
+                        <th>Email</th>
+                        <th>Alamat Kantor</th>
+                        <th>Telepon</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -193,7 +193,7 @@ Progress Paket Pekerjaan Konstruksi Bandung Barat
                         <td>No Data</td>
                         <td>No Data</td>
                         <td>No Data</td>
-                    <td>
+                        <td>
                             <button class="download-btn" onclick="downloadCSV()" style="
                                 padding: 5px 15px;
                                 background: linear-gradient(to right, #000000, #FFFF00);
@@ -217,6 +217,7 @@ Progress Paket Pekerjaan Konstruksi Bandung Barat
                         </td>
                     </tr>
                     {{-- ============================================ --}}
+                    
                     
                 </tbody>
             </table>

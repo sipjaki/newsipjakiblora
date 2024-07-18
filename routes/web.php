@@ -29,7 +29,7 @@ Route::get('/bahan2', function () {
     return view('frontend.00_full.bahan2');
 });
 
-// ---------------------- PROFIL-----------------------//
+// ---------------------- 01 PROFIL-----------------------//
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/profil/struktur', function () {
     // return view('welcome');
@@ -46,7 +46,7 @@ Route::get('/profil/tupoksi', function () {
     return view('frontend.01_profil.03_tupoksi');
 });
 
-// ---------------------- DATA JAKON -----------------------//
+// ---------------------- 03 DATA JAKON -----------------------//
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/datajakon/standarbiayaumum', function () {
     // return view('welcome');
@@ -56,6 +56,32 @@ Route::get('/datajakon/standarbiayaumum', function () {
 Route::get('/datajakon/paketpekerjaan', function () {
     // return view('welcome');
     return view('frontend.03_datajakon.03_paketpekerjaan');
+});
+
+
+// ---------------------- 04 TENAGA KERJA -----------------------//
+// -------- BAGIAN 1 ---------------------------------
+Route::get('/tenagakerja/skaskt', function () {
+    // return view('welcome');
+    return view('frontend.04_tenagakerja.01_skaskt');
+});
+
+Route::get('/tenagakerja/pjt', function () {
+    // return view('welcome');
+    return view('frontend.04_tenagakerja.02_pjt');
+});
+
+Route::get('/tenagakerja/timpembina', function () {
+    // return view('welcome');
+    return view('frontend.04_tenagakerja.03_timpembina');
+});
+
+
+// ---------------------- 05 INFORMASI SPM -----------------------//
+// -------- BAGIAN 1 ---------------------------------
+Route::get('/spm/informasispm', function () {
+    // return view('welcome');
+    return view('frontend.05_spm.01_informasispm');
 });
 
 

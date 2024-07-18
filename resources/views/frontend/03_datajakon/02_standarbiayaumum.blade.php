@@ -65,6 +65,81 @@ Standar Biaya Umum
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 100%;
             margin: 20px auto;">
+
+            {{-- ------------------------------------ FITUR TAMBAHAN ------------- --}}
+                
+                <div class="controls" style="  
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-bottom: 20px;
+                                border-radius:5px;
+                                ">
+                    <div class="show-entries" style="border-radius: 10px;">
+                        <label for="entries" style="margin-right: 5px;"> 
+                            <style>
+                                .badge {
+                                    background: linear-gradient(to right, yellow, black);
+                                    color: white;
+                                    padding: 10px 20px;
+                                    border-radius: 10px;
+                                    display: inline-block;
+                                    font-size: 1rem;
+                                    text-align: center;
+                                    transition: background-color 0.3s, color 0.3s;
+                                }
+                        
+                                .badge:hover {
+                                    background-color: white;
+                                    color: black;
+                                }
+                            </style>
+                             <div class="badge"><i class="fas fa-file"></i> Standar Biaya Umum</div> Show Data :</label>
+                        <select id="entries" onchange="showEntries()">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            </select>
+                    </div>
+                    <div class="search-entries">
+                        <style>
+                            .search-container {
+                                position: relative;
+                                display: inline-block;
+                            }
+                            .search-container input {
+                                border-radius: 15px;
+                                padding: 2px 5px 2px 25px; /* Extra padding for the icon */
+                            }
+                            .search-container .fa-search {
+                                position: absolute;
+                                left: 10px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        </style>
+                        <div class="search-container">
+                            <input
+                                type="text"
+                                id="searchInput"
+                                onkeyup="searchEntries()"
+                                placeholder="  Search..">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    
+                        <script>
+                            function searchEntries() {
+                                // Your JavaScript function for searching entries
+                            }
+                        </script>
+                    </div>
+                </div>
+
+            {{-- ------------------------------------ END FITUR ------------- --}}
+            
+            
             <style>
                 table {
                     width: 100%;
@@ -94,7 +169,7 @@ Standar Biaya Umum
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Tahun <br> Anggaran</th>
+                        <th>Tahun Anggaran</th>
                         <th>Besaran Anggaran</th>
                         <th>No SK Standar Biaya Umum</th>
                         <th>Aksi</th>
@@ -107,134 +182,9 @@ Standar Biaya Umum
                     {{-- ============================================ --}}
                     <tr>
                         <td>1</td>
-                        <td>2020</td>
-                        <td>Rp. -</td>
-                        <td>SK -</td>
-                        <td>
-                            <button class="download-btn" onclick="downloadCSV()" style="
-                                padding: 5px 15px;
-                                background: linear-gradient(to right, #000000, #FFFF00);
-                                color: white;
-                                border: none;
-                                font-size: 12px;
-                                border-radius: 15px;
-                                width: 70%;
-                                cursor: pointer;
-                                transition: background 0.3s, color 0.3s;"
-                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
-                                <i class="fas fa-download me-2"></i> Download
-                            </button>
-                            
-                            <script>
-                                function downloadCSV() {
-                                    // Function to handle CSV download
-                                }
-                                </script>
-                        </td>
-                    </tr>
-                    {{-- ============================================ --}}
-                    
-                    {{-- ============================================ --}}
-                    <tr>
-                        <td>2</td>
-                        <td>2021</td>
-                        <td>Rp. -</td>
-                        <td>SK -</td>
-                        <td>
-                            <button class="download-btn" onclick="downloadCSV()" style="
-                                padding: 5px 15px;
-                                background: linear-gradient(to right, #000000, #FFFF00);
-                                color: white;
-                                border: none;
-                                font-size: 12px;
-                                border-radius: 15px;
-                                width: 70%;
-                                cursor: pointer;
-                                transition: background 0.3s, color 0.3s;"
-                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
-                                <i class="fas fa-download me-2"></i> Download
-                            </button>
-                            
-                            <script>
-                                function downloadCSV() {
-                                    // Function to handle CSV download
-                                }
-                                </script>
-                        </td>
-                    </tr>
-                    {{-- ============================================ --}}
-                    
-                    {{-- ============================================ --}}
-                    <tr>
-                        <td>3</td>
-                        <td>2022</td>
-                        <td>Rp. -</td>
-                        <td>SK -</td>
-                        <td>
-                            <button class="download-btn" onclick="downloadCSV()" style="
-                                padding: 5px 15px;
-                                background: linear-gradient(to right, #000000, #FFFF00);
-                                color: white;
-                                border: none;
-                                font-size: 12px;
-                                border-radius: 15px;
-                                width: 70%;
-                                cursor: pointer;
-                                transition: background 0.3s, color 0.3s;"
-                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
-                                <i class="fas fa-download me-2"></i> Download
-                            </button>
-                            
-                            <script>
-                                function downloadCSV() {
-                                    // Function to handle CSV download
-                                }
-                                </script>
-                        </td>
-                    </tr>
-                    {{-- ============================================ --}}
-                    
-                    {{-- ============================================ --}}
-                    <tr>
-                        <td>4</td>
-                        <td>2024</td>
-                        <td>Rp. -</td>
-                        <td>SK -</td>
-                        <td>
-                            <button class="download-btn" onclick="downloadCSV()" style="
-                                padding: 5px 15px;
-                                background: linear-gradient(to right, #000000, #FFFF00);
-                                color: white;
-                                border: none;
-                                font-size: 12px;
-                                border-radius: 15px;
-                                width: 70%;
-                                cursor: pointer;
-                                transition: background 0.3s, color 0.3s;"
-                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
-                                <i class="fas fa-download me-2"></i> Download
-                            </button>
-                            
-                            <script>
-                                function downloadCSV() {
-                                    // Function to handle CSV download
-                                }
-                                </script>
-                        </td>
-                    </tr>
-                    {{-- ============================================ --}}
-                    
-                    
-                    {{-- ============================================ --}}
-                    <tr>
-                        <td>5</td>
-                        <td>2025</td>
-                        <td>Rp. -</td>
-                        <td>SK -</td>
+                        <td>No Data</td>
+                        <td>No Data</td>
+                        <td>No Data</td> 
                         <td>
                             <button class="download-btn" onclick="downloadCSV()" style="
                                 padding: 5px 15px;
