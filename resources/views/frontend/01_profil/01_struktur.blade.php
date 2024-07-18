@@ -14,25 +14,55 @@
         @include('frontend.00_atas.header2_navbar')
             
         </header>
-        
+        <div class="div" style="
+            justify-content: center;
+            text-align:center;
+        ">
 
-        <article>
-        <div class="container">
-            {{-- <h1> We are Certified Engineers</h1> --}}
-            <h2>Sistem Informasi <br> Pembina Jasa Konstruksi <br>
-            <span>Pemerintah Kab bandung Barat </span></h2>
-            <p style="text-align: justify">Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat adalah platform digital yang mengelola proyek konstruksi pemerintah, mencakup pengelolaan data, pelaporan kemajuan, manajemen kontrak, dan pemantauan kualitas. Sistem ini meningkatkan transparansi dan efisiensi, memungkinkan pemantauan efektif oleh pemerintah dan pemangku kepentingan, serta memastikan proyek berjalan sesuai jadwal, anggaran, dan spesifikasi. Selain itu, sistem ini memudahkan penyimpanan dan akses dokumen penting, mendukung proses audit dan evaluasi kinerja kontraktor. 
-            </p>
-            
-            <a href="/404"> <i class="fas fa-cogs me-2 "></i>pelatihan</a>
-            <a href="/404"> <i class="fas fa-file me-2 "></i>sertifikasi</a>
-            <a href="/404"> <i class="fas fa-building me-2 "></i>project kbb</a>
-            <a href="/404"> <i class="fas fa-file me-2 "></i>slf</a>
-            <a href="/404"> <i class="fas fa-road me-2 "></i>pbg</a>
+            <h2 style="
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 425px;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 25px;
+    width: 500px;
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+    transition: background 0.5s ease, color 0.5s ease;
+    " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
+
+Struktur Dinas Pekerjaan Umum Dan Penataan Ruang <br> Pemerintah Kabupaten Bandung Barat
+</h2>
+</div>
+
+        <div class="container" style="
+            display: flex;
+            flex-direction: column; /* Mengatur arah flex menjadi kolom */
+            background-color: #FFCB0F;
+            padding: 10px;
+            border: 1px solid black;
+            margin-bottom: 0px;
+            border-radius: 25px;
+            text-align: center;
+            width: 100%;
+            height: 85vh;
+            margin-left: 100px;
+            background: linear-gradient(to bottom, yellow, white, black); /* Gradasi warna pada container */
+            align-items: center; /* Mengatur gambar berada di tengah secara horizontal */
+            justify-content: center; /* Mengatur gambar berada di tengah secara vertikal */
+        ">
+            <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="margin-bottom: 20px; width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: -10px;">
+            <br>
+            <img src="/assets/library/01_profil/struktur.png" alt="Logo SIPJAKIKBB" style="width: 55%; object-fit: cover; margin-top: 5px; padding: 0; border-radius: 20px;">
         </div>
-        </article>
 
-        
+
+<br><br>
     </section>
 
 

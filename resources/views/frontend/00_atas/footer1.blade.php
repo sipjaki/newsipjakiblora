@@ -6,8 +6,8 @@
         <div class="container">
             <div class="about">
                 {{-- <h1>About Company</h1> --}}
-                <img src="assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="margin-bottom: 10px; width: 50px; height: 50px; object-fit: cover; margin-right: 10px; padding: 0;">
-                <img src="assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="margin-bottom: 10px; width: 58px; height: 58px; object-fit: cover; margin-right: 10px; padding: 0;">
+                <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="margin-bottom: 10px; width: 50px; height: 50px; object-fit: cover; margin-right: 10px; padding: 0;">
+                <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="margin-bottom: 10px; width: 58px; height: 58px; object-fit: cover; margin-right: 10px; padding: 0;">
                     
                 <h2 style="margin: 0;">
                     <span style="color: white">SIPJAKI</span>KBB
