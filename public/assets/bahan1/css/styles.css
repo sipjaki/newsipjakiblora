@@ -517,6 +517,7 @@ text-shadow:1px 1px #73757E;
     text-align: center;
     padding-top: 2rem;
     font-size: 0.9rem;
+    margin-bottom: 0px;
 }
 #sec-5 h1{
     text-transform: uppercase;
@@ -528,7 +529,7 @@ text-shadow:1px 1px #73757E;
 #sec-5 h1+p{
     color: var(--txtaccent4);
     padding: 0px 2rem;
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
 }
 #sec-5 .cont{
     display: flex;
@@ -608,7 +609,7 @@ text-shadow:1px 1px #73757E;
 }
 #sec-5 .contactUs form input{
     padding: 6px 15px;
-    margin: 0px 5px 10px 0px;
+    /* margin: 0px 5px 10px 0px; */
     border-radius: 6px;
     border-style: none;
     color: var(--textaccent3);
