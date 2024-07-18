@@ -3,7 +3,7 @@
 </div>
 <div class="container">  
     <div style="display: flex; align-items: center; margin-bottom:10px">
-        <img src="assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; padding: 0;">
+        <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; padding: 0;">
         
         <h1 style="margin: 0;">
             <span>SIPJAKI</span>KBB
