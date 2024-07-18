@@ -53,6 +53,11 @@ Route::get('/datajakon/standarbiayaumum', function () {
     return view('frontend.03_datajakon.02_standarbiayaumum');
 });
 
+Route::get('/datajakon/paketpekerjaan', function () {
+    // return view('welcome');
+    return view('frontend.03_datajakon.03_paketpekerjaan');
+});
+
 
 
 Route::get('/dashboard', function () {
