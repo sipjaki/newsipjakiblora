@@ -14,11 +14,13 @@
                 </h2>
                 <p style="margin: 0; font-size: 16px; color: white" >Dinas Pekerjaan Umum & Penataan Ruang</p>
                 <p style="margin: 0; font-size: 16px; color: white" >Pemerintah Kabupaten Bandung Barat</p>
-                        <br>
+                        <br><br>
+                        <br><br>
                 {{-- <br><br><br><br><br> --}}
                 <p style="text-align: left">
                     Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat adalah platform digital untuk meningkatkan efisiensi dan transparansi dalam pengelolaan proyek konstruksi. Sistem ini memantau pelaksanaan proyek, memastikan kepatuhan terhadap standar, dan memfasilitasi komunikasi antara pemerintah, kontraktor, pengawas, tenaga ahli, dan masyarakat. Hal ini diharapkan dapat meningkatkan kualitas infrastruktur dan mempercepat proses administrasi.
                 </p>
+                <br><br>
                 <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.facebook.com/your-facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/your-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -29,20 +31,20 @@
             </div>
             <div class="links">
                 <h1 style="color: yellow">Jelajah Menu</h1>
-                <a href="#">SLF</a>
-                <a href="#">PBG</a>
-                <a href="#">TDUP</a>
-                <a href="#">UIJK</a>
-                <a href="#">Berita </a>
-                <a href="#">Agenda</a>
-                <a href="#">Asosiasi</a>
-                <a href="#">SKA/ SKT</a>
-                <a href="#">Pelatihan</a>
-                <a href="#">Peraturan</a>
-                <a href="#">Permodalan</a>
-                <a href="#">Mitra Usaha</a>
-                <a href="#">Laporan SPM</a>
-                <a href="#">Badan Usaha</a>
+                <a href="#">Sertifikat Laik Fungsi</a>
+                <a href="#">Persetujuan Bangunan Gedung</a>
+                <a href="#">Tanda Daftar Usaha Pariwisata</a>
+                <a href="#">Izin Usaha Jasa Konstruksi</a>
+                <a href="#">Berita Sipjaki KBB </a>
+                <a href="#">Agenda KBB</a>
+                <a href="#">Asosiasi Pekerja Konstruksi</a>
+                <a href="#">SKA/ SKT Tenaga Kerja</a>
+                <a href="#">Pelatihan Pekerja Konstruksi</a>
+                <a href="#">Peraturan Jasa Konstruksi</a>
+                <a href="#">Permodalan Tata Usaha</a>
+                <a href="#">Mitra Usaha KBB</a>
+                <a href="#">Laporan SPM Konstruksi</a>
+                <a href="#">Badan Usaha Kosntruksi</a>
                 <a href="#">Jaminan Usaha</a>
                 <a href="#">Informasi SPM</a>
                 <a href="#">Biaya Standar Umum</a>
