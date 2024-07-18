@@ -29,6 +29,13 @@ Route::get('/bahan2', function () {
     return view('frontend.00_full.bahan2');
 });
 
+// ---------------------- PROFIL-----------------------//
+// -------- BAGIAN 1 ---------------------------------
+Route::get('/profil/struktur', function () {
+    // return view('welcome');
+    return view('frontend.01_profil.01_struktur');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
