@@ -14,13 +14,13 @@
                 </h2>
                 <p style="margin: 0; font-size: 16px; color: white" >Dinas Pekerjaan Umum & Penataan Ruang</p>
                 <p style="margin: 0; font-size: 16px; color: white" >Pemerintah Kabupaten Bandung Barat</p>
-                        <br><br>
-                        <br><br>
+                        <br>
+                    
                 {{-- <br><br><br><br><br> --}}
                 <p style="text-align: left">
                     Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat adalah platform digital untuk meningkatkan efisiensi dan transparansi dalam pengelolaan proyek konstruksi. Sistem ini memantau pelaksanaan proyek, memastikan kepatuhan terhadap standar, dan memfasilitasi komunikasi antara pemerintah, kontraktor, pengawas, tenaga ahli, dan masyarakat. Hal ini diharapkan dapat meningkatkan kualitas infrastruktur dan mempercepat proses administrasi.
                 </p>
-                <br><br>
+                <br><br><br><br><br>
                 <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
                 <a href="https://www.facebook.com/your-facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/your-instagram" target="_blank"><i class="fab fa-instagram"></i></a>
