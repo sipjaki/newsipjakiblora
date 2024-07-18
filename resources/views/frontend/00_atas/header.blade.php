@@ -31,7 +31,7 @@
     {{-- <title>Construction Company</title> --}}
     <title>SIPJAKI Pemerintah Kab Bandung Barat</title>
 
-    <link rel="icon" href="assets/icon/sipjakikbb.png" type="image/x-icon">
+    <link rel="icon" href="/assets/icon/sipjakikbb.png" type="image/x-icon">
   
 </head>
 

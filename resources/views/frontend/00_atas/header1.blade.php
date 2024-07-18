@@ -37,6 +37,39 @@
      <p><a href="https://wa.me/6281321455855">+6281 321 455 855</a></p>
      {{-- <p>support@Construct.com</p> --}}
      <p>Senin-Jumat 9:00-16:00</p>
+     <style>
+        .marquee-container {
+            width: 250px;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            width: 375px;
+            padding: 5px 10px;
+            margin-top: 2.5px;
+            margin-bottom: 2px;
+            border-radius: 20px;
+            background: #00008b;
+            
+        }
+        .marquee {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+     <div class="marquee-container">
+        <div class="marquee" style="color: white">Selamat Datang ! di Web Resmi Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat</div>
+    </div>
     
         {{-- <p>Jam </p> --}}
         <div class="social">

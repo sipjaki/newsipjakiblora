@@ -41,6 +41,11 @@ Route::get('/profil/rencanastrategis', function () {
     return view('frontend.01_profil.02_rencanastrategis');
 });
 
+Route::get('/profil/tupoksi', function () {
+    // return view('welcome');
+    return view('frontend.01_profil.03_tupoksi');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
