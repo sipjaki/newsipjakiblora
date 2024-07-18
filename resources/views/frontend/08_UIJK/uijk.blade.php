@@ -95,14 +95,14 @@ Usaha Ijin Jasa Konstruksi
                 color: black;
             }
         </style>
-        <div class="badge"><i class="fas fa-building me-2"></i>Usaha Ijin Jasa Konstruksi </div>Show Data :</label>
-    <select id="entries" onchange="showEntries()">
+        <div class="badge"><i class="fas fa-building me-2"></i>Usaha Ijin Jasa Konstruksi </div></label>
+    {{-- <select id="entries" onchange="showEntries()">
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
         <option value="20">20</option>
         <option value="25">25</option>
-        </select>
+        </select> --}}
 </div>
 <div class="search-entries">
     <style>

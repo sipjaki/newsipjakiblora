@@ -95,14 +95,14 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 color: black;
             }
         </style>
-        <div class="badge"><i class="fas fa-edit me-2"></i>Sertifikat Keahlian </div>Show Data :</label>
-    <select id="entries" onchange="showEntries()">
+        <div class="badge"><i class="fas fa-edit me-2"></i>Sertifikat Keahlian </div></label>
+    {{-- <select id="entries" onchange="showEntries()">
         <option value="5">5</option>
         <option value="10">10</option>
         <option value="15">15</option>
         <option value="20">20</option>
         <option value="25">25</option>
-        </select>
+        </select> --}}
 </div>
 <div class="search-entries">
     <style>
