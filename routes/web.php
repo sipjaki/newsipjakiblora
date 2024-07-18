@@ -46,6 +46,14 @@ Route::get('/profil/tupoksi', function () {
     return view('frontend.01_profil.03_tupoksi');
 });
 
+// ---------------------- DATA JAKON -----------------------//
+// -------- BAGIAN 1 ---------------------------------
+Route::get('/datajakon/standarbiayaumum', function () {
+    // return view('welcome');
+    return view('frontend.03_datajakon.02_standarbiayaumum');
+});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

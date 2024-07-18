@@ -106,7 +106,7 @@
 
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 10px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
-                    <a href="/404" style="color: black; text-decoration: none; text-align:left">STANDAR BIAYA UMUM</a>
+                    <a href="/datajakon/standarbiayaumum" style="color: black; text-decoration: none; text-align:left">STANDAR BIAYA UMUM</a>
                 </div>
                  
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
