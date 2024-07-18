@@ -39,28 +39,26 @@
 Struktur Dinas Pekerjaan Umum Dan Penataan Ruang <br> Pemerintah Kabupaten Bandung Barat
 </h2>
 </div>
-
-        <div class="container" style="
-            display: flex;
-            flex-direction: column; /* Mengatur arah flex menjadi kolom */
-            background-color: #FFCB0F;
-            padding: 10px;
-            border: 1px solid black;
-            margin-bottom: 0px;
-            border-radius: 25px;
-            text-align: center;
-            width: 100%;
-            height: 85vh;
-            margin-left: 100px;
-            background: linear-gradient(to bottom, yellow, white, black); /* Gradasi warna pada container */
-            align-items: center; /* Mengatur gambar berada di tengah secara horizontal */
-            justify-content: center; /* Mengatur gambar berada di tengah secara vertikal */
-        ">
-            <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="margin-bottom: 20px; width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: -10px;">
-            <br>
-            <img src="/assets/library/01_profil/struktur.png" alt="Logo SIPJAKIKBB" style="width: 55%; object-fit: cover; margin-top: 5px; padding: 0; border-radius: 20px;">
-        </div>
-
+<div class="container" style="
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    height: 85vh;
+    margin-left: 100px;
+    background: linear-gradient(to bottom, yellow, white, black);
+    align-items: center;
+    position: relative;
+">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: 10px;">
+    <img src="/assets/library/01_profil/struktur.png" alt="Logo SIPJAKIKBB" style="width: 55%; object-fit: cover; margin-top: 5px; padding: 0; border-radius: 20px;">
+</div>
+        
 
 <br><br>
     </section>
