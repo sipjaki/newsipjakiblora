@@ -49,7 +49,7 @@ Standar Biaya Umum
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     margin-left: 100px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -72,6 +72,9 @@ Standar Biaya Umum
                 }
         
                 th, td {
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 700;
+                    color: black;
                     border: 1px solid #ddd;
                     padding: 8px;
                 }
@@ -81,34 +84,182 @@ Standar Biaya Umum
                 }
         
                 th {
-                    background-color: #4CAF50;
-                    color: white;
+                    /* background-color: #4CAF50; */
+                    /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
+                    background-color:  #FFCB0F;
+                    color: black;
                 }
             </style>
              <table>
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Header 2</th>
-                        <th>Header 3</th>
+                        <th>Tahun <br> Anggaran</th>
+                        <th>Besaran Anggaran</th>
+                        <th>No SK Standar Biaya Umum</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
+                {{-- @foreach ($collection as $item) --}}
+                    
+                {{-- @endforeach --}}
                 <tbody>
+                    {{-- ============================================ --}}
                     <tr>
-                        <td>Data 1</td>
-                        <td>Data 2</td>
-                        <td>Data 3</td>
+                        <td>1</td>
+                        <td>2020</td>
+                        <td>Rp. -</td>
+                        <td>SK -</td>
+                        <td>
+                            <button class="download-btn" onclick="downloadCSV()" style="
+                                padding: 5px 15px;
+                                background: linear-gradient(to right, #000000, #FFFF00);
+                                color: white;
+                                border: none;
+                                font-size: 12px;
+                                border-radius: 15px;
+                                width: 70%;
+                                cursor: pointer;
+                                transition: background 0.3s, color 0.3s;"
+                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
+                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
+                                <i class="fas fa-download me-2"></i> Download
+                            </button>
+                            
+                            <script>
+                                function downloadCSV() {
+                                    // Function to handle CSV download
+                                }
+                                </script>
+                        </td>
                     </tr>
+                    {{-- ============================================ --}}
+                    
+                    {{-- ============================================ --}}
                     <tr>
-                        <td>Data 4</td>
-                        <td>Data 5</td>
-                        <td>Data 6</td>
+                        <td>2</td>
+                        <td>2021</td>
+                        <td>Rp. -</td>
+                        <td>SK -</td>
+                        <td>
+                            <button class="download-btn" onclick="downloadCSV()" style="
+                                padding: 5px 15px;
+                                background: linear-gradient(to right, #000000, #FFFF00);
+                                color: white;
+                                border: none;
+                                font-size: 12px;
+                                border-radius: 15px;
+                                width: 70%;
+                                cursor: pointer;
+                                transition: background 0.3s, color 0.3s;"
+                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
+                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
+                                <i class="fas fa-download me-2"></i> Download
+                            </button>
+                            
+                            <script>
+                                function downloadCSV() {
+                                    // Function to handle CSV download
+                                }
+                                </script>
+                        </td>
                     </tr>
+                    {{-- ============================================ --}}
+                    
+                    {{-- ============================================ --}}
                     <tr>
-                        <td>Data 7</td>
-                        <td>Data 8</td>
-                        <td>Data 9</td>
+                        <td>3</td>
+                        <td>2022</td>
+                        <td>Rp. -</td>
+                        <td>SK -</td>
+                        <td>
+                            <button class="download-btn" onclick="downloadCSV()" style="
+                                padding: 5px 15px;
+                                background: linear-gradient(to right, #000000, #FFFF00);
+                                color: white;
+                                border: none;
+                                font-size: 12px;
+                                border-radius: 15px;
+                                width: 70%;
+                                cursor: pointer;
+                                transition: background 0.3s, color 0.3s;"
+                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
+                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
+                                <i class="fas fa-download me-2"></i> Download
+                            </button>
+                            
+                            <script>
+                                function downloadCSV() {
+                                    // Function to handle CSV download
+                                }
+                                </script>
+                        </td>
                     </tr>
+                    {{-- ============================================ --}}
+                    
+                    {{-- ============================================ --}}
+                    <tr>
+                        <td>4</td>
+                        <td>2024</td>
+                        <td>Rp. -</td>
+                        <td>SK -</td>
+                        <td>
+                            <button class="download-btn" onclick="downloadCSV()" style="
+                                padding: 5px 15px;
+                                background: linear-gradient(to right, #000000, #FFFF00);
+                                color: white;
+                                border: none;
+                                font-size: 12px;
+                                border-radius: 15px;
+                                width: 70%;
+                                cursor: pointer;
+                                transition: background 0.3s, color 0.3s;"
+                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
+                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
+                                <i class="fas fa-download me-2"></i> Download
+                            </button>
+                            
+                            <script>
+                                function downloadCSV() {
+                                    // Function to handle CSV download
+                                }
+                                </script>
+                        </td>
+                    </tr>
+                    {{-- ============================================ --}}
+                    
+                    
+                    {{-- ============================================ --}}
+                    <tr>
+                        <td>5</td>
+                        <td>2025</td>
+                        <td>Rp. -</td>
+                        <td>SK -</td>
+                        <td>
+                            <button class="download-btn" onclick="downloadCSV()" style="
+                                padding: 5px 15px;
+                                background: linear-gradient(to right, #000000, #FFFF00);
+                                color: white;
+                                border: none;
+                                font-size: 12px;
+                                border-radius: 15px;
+                                width: 70%;
+                                cursor: pointer;
+                                transition: background 0.3s, color 0.3s;"
+                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
+                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
+                                <i class="fas fa-download me-2"></i> Download
+                            </button>
+                            
+                            <script>
+                                function downloadCSV() {
+                                    // Function to handle CSV download
+                                }
+                                </script>
+                        </td>
+                    </tr>
+                    {{-- ============================================ --}}
+                    
                 </tbody>
             </table>
         </div>
