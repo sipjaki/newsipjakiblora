@@ -128,7 +128,7 @@
             <div class="dropdown-content" style="min-width: 210px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-user" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
-                    <a href="/tenagakerja/skaskt" style="color: black; text-decoration: none; text-align:left">SKA/ SKT</a>
+                    <a href="/tenagakerja/skaskt" style="color: black; text-decoration: none; text-align:left">SKK</a>
                 </div>
                  
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
@@ -185,7 +185,7 @@
         </div>                    {{-- <a href="#">PROFIL</a> --}}
 
         <a href="/404" style="text-align: center">BADAN <br> USAHA </a>
-        <a href="/uijk">UIJK</a>
+        <a href="/uijk">SBU</a>
         <a href="/tdup">TDUP</a>
         
         

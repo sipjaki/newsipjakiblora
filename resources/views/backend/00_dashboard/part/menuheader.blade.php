@@ -12,13 +12,13 @@
 <div class="container-fluid">
 
     <!--Header-->
-    <div class="row header shadow-sm" style="background: yellow ">
+    <div class="row header shadow-sm" style="background: #FFCB0F ">
         
                     <style>
                 /* CSS untuk gaya elemen h3 */
                 h3 {
                     font-family: Arial, sans-serif; /* jenis huruf */
-                    font-size: 24px; /* ukuran huruf */
+                    font-size: 18px; /* ukuran huruf */
                     font-weight: 700; /* ketebalan huruf */
                     color: darkblue; /* warna teks */
                     text-align: center; /* penataan teks */
@@ -31,9 +31,12 @@
                 }
                 </style>
         <!--Logo-->
-        <div class="col-sm-3 pl-0 text-center" style="background: yellow;"> 
-           <div class=" mr-3 pt-3 pb-3 mb-0">
+        <div class="col-sm-3 pl-0 text-center" style="background: #FFCB0F; height:60px;"> 
+           <div class=" mr-3 mb-0 mt-10 mb-10 " style="display: flex; align-items: center; margin-bottom:10px">
+           <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="margin-left:25px; margin-top:5px; width: 50px; height: 50px; object-fit: cover; margin-right: 10px; padding: 0;">
+        
            <h3>SIPJAKIKBB</h3>
+           
            </div>
         </div>
         <!--Logo-->
@@ -50,14 +53,14 @@
                     </span>
                     <!--Toggle sidebar-->
                     <!--Notification icon-->
-                    <div class="menu-icon">
+                    <!-- <div class="menu-icon">
                         <a class="" href="#" onclick="toggle_dropdown(this); return false" role="button" class="dropdown-toggle">
                             <i class="fa fa-bell"></i>
                             <span class="badge badge-danger">5</span>
                         </a>
-                        <div class="dropdown dropdown-left bg-white shadow border">
-                            <a class="dropdown-item" href="#"><strong>Notifications</strong></a>
-                            <div class="dropdown-divider"></div>
+                        <div class="dropdown dropdown-left bg-white shadow border " style="background: white;">
+                            <a class="dropdown-item" href="#" ;"><strong>Notifications</strong></a> -->
+                            <!-- <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item">
                                 <div class="media">
                                     <div class="align-self-center mr-3 rounded-circle notify-icon bg-primary">
@@ -69,8 +72,8 @@
                                         <small class="text-success">09:23am</small>
                                     </div>
                                 </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
+                            </a> -->
+                            <!-- <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item">
                                 <div class="media">
                                     <div class="align-self-center mr-3 rounded-circle notify-icon bg-secondary">
@@ -97,17 +100,17 @@
                                 </div>
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-center link-all" href="#">See all notifications ></a>
-                        </div>
-                    </div>
+                            <a class="dropdown-item text-center link-all" href="#">See all notifications ></a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
                     <!--Notication icon-->
 
 
 
                     <!--Inbox icon-->
-                    <span class="menu-icon">
+                    <!-- <span class="menu-icon">
                         <i class="fa fa-th-large"></i>
-                    </span>
+                    </span> -->
                     </div>
 
 
@@ -122,6 +125,8 @@
             padding: 5px 10px;
             margin-top: 2.5px;
             margin-bottom: 2px;
+            margin-left: 160px;
+            margin-right: 15px;
             border-radius: 20px;
             background: #00008b;
             
@@ -148,23 +153,52 @@
                 
                 <!--Menu Icons-->
 
-                <!--Search box and avatar-->
-                <div class="col-sm-8 col-4 text-right flex-header-menu justify-content-end">
-                 
-                    
-                    <div class="div">
-                        @auth
-                            <form action="/logout" method="post">
-                                @csrf
-                                <button class="btn btn-outline-danger" style="padding: 10px; font-size: 16px;">
-                                    <i class="fas fa-sign-out-alt"></i>
-                                </button>
-                            </form>
-                            @endauth
+                <div class="menu-icon" style="margin-left: 10px;">
+                        <a class="" href="#" onclick="toggle_dropdown(this); return false" role="button" class="dropdown-toggle">
+                            <i class="fas fa-sign-out-alt" style="color: white;"></i>
+                            <!-- <span class="badge badge-danger">5</span> -->
+                        </a>
+                        <style>
+                            
+                        </style>
+                        <div class="menuheader dropdown dropdown-left bg-white shadow border">
+                            <a class="dropdown-item" href="#" style="color: white;"><strong><i class="fas fa-cogs me-2"></i> Pengaturan</strong></a>
+                            
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item" >
+                                <div class="media" style="margin-top: 5px; margin-bottom:5px;">
+                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-warning">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-0" style="color:white"><strong>Profil</strong></h6>
+                                        <!-- <p>New employee arrival</p> -->
+                                        <!-- <small class="text-success">09:23am</small> -->
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <div class="dropdown-divider"></div>
+                            <a href="/logout" class="dropdown-item" >
+                                <div class="media" style="margin-top: 5px; margin-bottom:5px;">
+                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-danger">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h6 class="mt-0" style="color:white"><strong>Logout</strong></h6>
+                                        <!-- <p>New employee arrival</p> -->
+                                        <!-- <small class="text-success">09:23am</small> -->
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-center link-all" href="#">See all notifications ></a> -->
+                        </div>
                     </div>
                     
-                </div>
-                <!--Search box and avatar-->
+
+                    
+             
             </div>    
 
                 
