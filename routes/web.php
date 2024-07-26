@@ -169,7 +169,7 @@ Route::get('/dashboard', function () {
     ]);
 })->middleware('auth');
 
-// -------- BAGIAN 11 ---------------------------------
+// -------- BAGIAN 04 BACKEND ---------------------------------
 Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
 
 
