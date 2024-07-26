@@ -178,8 +178,45 @@
                         <td>No Data</td>
                         <td>No Data</td>
                         <td>
-                        <div class="button-container" style="border-radius: 10px;">
-                                <a href="view.html" class="icon-button" title="View" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+
+                        <style>
+                                                /* Container for the buttons */
+                    .button-container {
+                        display: flex;
+                        gap: 10px; /* Space between icons */
+                        justify-content: center; /* Center the icons horizontally */
+                    }
+
+                    /* Style for the individual buttons */
+                    .icon-button {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 40px; /* Adjust width as needed */
+                        height: 40px; /* Adjust height as needed */
+                        background: #FFCB0F; /* Yellow background */
+                        color: black; /* Text color */
+                        border: none;
+                        border-radius: 50%;
+                        text-decoration: none;
+                        font-size: 20px; /* Adjust font size as needed */
+                        transition: background 0.3s, color 0.3s;
+                        cursor: pointer;
+                    }
+
+                    .icon-button:hover {
+                        background: white; /* White background on hover */
+                        color: black; /* Black text color on hover */
+                    }
+
+                    .icon-button i {
+                        margin: 0;
+                    }
+
+                        </style>
+
+                    <div class="button-container" style="border-radius: 10px;">
+                                <a href="view.html" class="icon-button" title="View" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F hover:white">
                                     <i class="fas fa-eye"></i>
                                 </a>
                                 <a href="update.html" class="icon-button" title="Update" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
