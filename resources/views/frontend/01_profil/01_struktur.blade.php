@@ -79,9 +79,9 @@ Struktur Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Bandung Barat
             border: none;
         }
     </style>
-    <!-- <div class="pdf-container">
-        <iframe class="pdf-frame" src="/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf"></iframe>
-    </div> -->
+    <div class="pdf-container">
+        <iframe class="pdf-frame" src="/assets/library/01_profil/BAGAN_DPUTR_SOTK.pdf"></iframe>
+    </div>
 </div>
 </div>
 
