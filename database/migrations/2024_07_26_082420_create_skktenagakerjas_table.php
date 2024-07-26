@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->string('nik')->unique();
             $table->string('keterampilan');
-            $table->year('tahun_bimtek');
+            $table->string('tahun_bimtek');
             $table->string('kualifikasi');
             $table->string('registrasi')->unique();
             $table->integer('usia');
