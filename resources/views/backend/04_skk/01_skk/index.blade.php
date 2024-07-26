@@ -178,21 +178,18 @@
                         <td>No Data</td>
                         <td>No Data</td>
                         <td>
-                            <button class="download-btn" onclick="downloadCSV()" style="
-                                padding: 5px 15px;
-                                background: linear-gradient(to right, #000000, #FFFF00);
-                                color: white;
-                                border: none;
-                                font-size: 12px;
-                                border-radius: 15px;
-                                width: 70%;
-                                cursor: pointer;
-                                transition: background 0.3s, color 0.3s;"
-                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
-                                <i class="fas fa-download me-2"></i> Download
-                            </button>
-                            
+                        <div class="button-container">
+                                <a href="view.html" class="icon-button" title="View">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="update.html" class="icon-button" title="Update">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="delete.html" class="icon-button" title="Delete">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+
                             <script>
                                 function downloadCSV() {
                                     // Function to handle CSV download
