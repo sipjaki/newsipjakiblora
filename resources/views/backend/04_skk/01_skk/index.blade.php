@@ -31,7 +31,7 @@
     text-align: center;
     width: 100%;
     height: 90vh;
-    margin-left: 150px;
+    margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
