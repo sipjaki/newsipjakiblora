@@ -80,7 +80,7 @@ Rencana Strategis Seksi Program & Jasa Konstruksi
         }
     </style>
     <div class="pdf-container">
-        <iframe class="pdf-frame" src="/assets/library/01_profil/rencanastrategis.pdf"></iframe>
+        <iframe class="pdf-frame" src="/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf"></iframe>
     </div>
 </div>
 </div>
