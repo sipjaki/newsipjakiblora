@@ -13,12 +13,10 @@ class SkktenagakerjaController extends Controller
     {
         //
         return view('backend.04_skk.01_skk.index',[
-            'title' => 'SKK Tenaga Kerja !',
+            'title' => 'SKK Tenaga Kerja',
 
-            'data' => Skktenagakerja::paginate(15),
-            
-            // 'title_halaman' => 'Halaman Fundraising',
-            // 'data_daftarjadimitra'  => Jadimitra::all(),
+            'data'    => Skktenagakerja::paginate(15),
+
         ]); 
     }
 
