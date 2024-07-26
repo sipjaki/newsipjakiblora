@@ -188,7 +188,7 @@
                     }
 
                     /* Style for the individual buttons */
-                    .icon-button {
+                    .iconhover {
                         display: inline-flex;
                         align-items: center;
                         justify-content: center;
@@ -204,25 +204,25 @@
                         cursor: pointer;
                     }
 
-                    .icon-button:hover {
+                    .iconhover:hover {
                         background: white; /* White background on hover */
                         color: black; /* Black text color on hover */
                     }
 
-                    .icon-button i {
+                    .iconhover i {
                         margin: 0;
                     }
 
                         </style>
 
                     <div class="button-container">
-                                <a href="/404" class="icon-button" title="View" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+                                <a href="/404" class="iconhover" title="View" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="/404" class="icon-button" title="Update" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+                                <a href="/404" class="iconhover" title="Update" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="/404" class="icon-button" title="Delete" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+                                <a href="/404" class="iconhover" title="Delete" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
