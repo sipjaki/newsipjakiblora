@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+
 use App\Models\Skktenagakerja; // Pastikan namespace model sesuai dengan struktur direktori
 
 class SkktenagakerjaController extends Controller
