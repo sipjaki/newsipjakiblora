@@ -83,7 +83,7 @@
                 color: black;
             }
         </style>
-        <div class="badge"><i class="fas fa-edit me-2"></i>Sertifikat Keahlian </div></label>
+        <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label>
     {{-- <select id="entries" onchange="showEntries()">
         <option value="5">5</option>
         <option value="10">10</option>
