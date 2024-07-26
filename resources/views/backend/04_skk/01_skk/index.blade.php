@@ -126,6 +126,87 @@
 </div>
 
 
+<style>
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+        
+                th, td {
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 700;
+                    color: black;
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                }
+        
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+        
+                th {
+                    /* background-color: #4CAF50; */
+                    /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
+                    background-color:  #FFCB0F;
+                    color: black;
+                }
+            </style>
+             <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Pemilik</th>
+                        <th>Klasifikasi & Kualifikasi <br> Tenaga Ahli Terampil</th>
+                        <th>No Registrasi</th>
+                        <th>Masa Berlaku</th>
+                        <th>Asosiasi</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                {{-- @foreach ($collection as $item) --}}
+                    
+                {{-- @endforeach --}}
+                <tbody>
+
+                    {{-- ============================================ --}}
+                    <tr>
+                        <td>1</td>
+                        <td>No Data</td>
+                        <td>No Data</td>
+                        <td>No Data</td>
+                        <td>No Data</td>
+                        <td>No Data</td>
+                        <td>
+                            <button class="download-btn" onclick="downloadCSV()" style="
+                                padding: 5px 15px;
+                                background: linear-gradient(to right, #000000, #FFFF00);
+                                color: white;
+                                border: none;
+                                font-size: 12px;
+                                border-radius: 15px;
+                                width: 70%;
+                                cursor: pointer;
+                                transition: background 0.3s, color 0.3s;"
+                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
+                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
+                                <i class="fas fa-download me-2"></i> Download
+                            </button>
+                            
+                            <script>
+                                function downloadCSV() {
+                                    // Function to handle CSV download
+                                }
+                                </script>
+                        </td>
+                    </tr>
+                    {{-- ============================================ --}}
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+
+
 
 
                 
