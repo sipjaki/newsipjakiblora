@@ -137,14 +137,14 @@
                     font-family: 'Lato', sans-serif;
                     font-weight: 700;
                     color: black;
-                    font-size: 14px;
+                    font-size: 12px;
                     border: 1px solid #ddd;
                     padding: 8px;
                 }
         
                 tr:nth-child(even) {
                     background-color: #f2f2f2;
-                    font-size: 14px;
+                    font-size: 12px;
                 }
         
                 th {
@@ -158,7 +158,7 @@
              <table>
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th style="width:45px;">No</th>
                         <th>Kecamatan</th>
                         <th>Desa</th>
                         <th>Nama Lengkap</th>
@@ -176,11 +176,11 @@
                     @foreach($data as $item )
                     
                     <tr>
-                        <td>{{  $loop->iteration + $start - 1 }}</td>
-                        <td>{{ $item->kecamatan}}</td>
-                        <td>{{ $item->desa}}</td>
-                        <td>{{ $item->nama}}</td>
-                        <td>{{ $item->keterampilan}}</td>
+                        <td style="font-size: 12px;">{{  $loop->iteration + $start - 1 }}</td>
+                        <td style="font-size: 12px;">{{ $item->kecamatan}}</td>
+                        <td style="font-size: 12px;">{{ $item->desa}}</td>
+                        <td style="font-size: 12px;">{{ $item->nama}}</td>
+                        <td style="font-size: 12px;">{{ $item->keterampilan}}</td>
                         
                         <td>
                             
