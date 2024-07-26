@@ -24,7 +24,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 425px;
+    margin-left: 475px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -36,7 +36,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Struktur Dinas Pekerjaan Umum Dan Penataan Ruang <br> Pemerintah Kabupaten Bandung Barat
+Struktur Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Bandung Barat
 </h2>
 </div>
 <div class="container" style="
@@ -49,16 +49,43 @@ Struktur Dinas Pekerjaan Umum Dan Penataan Ruang <br> Pemerintah Kabupaten Bandu
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 85vh;
-    margin-left: 100px;
+    height: 110vh;
+    margin-left: 150px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
 ">
     <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: 10px;">
-    <img src="/assets/library/01_profil/struktur.png" alt="Logo SIPJAKIKBB" style="width: 55%; object-fit: cover; margin-top: 5px; padding: 0; border-radius: 20px;">
+<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+    <div class="container" style="margin-top: 20px;">
+    <style>
+        .pdf-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            height: 85vh;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: #FFCB0F;
+            background: linear-gradient(to bottom, yellow, white, black);
+        }
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <!-- <div class="pdf-container">
+        <iframe class="pdf-frame" src="/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf"></iframe>
+    </div> -->
 </div>
-        
+</div>
+
+
 
 <br><br>
     </section>
