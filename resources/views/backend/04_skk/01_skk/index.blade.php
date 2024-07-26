@@ -171,15 +171,17 @@
                     {{-- ============================================ --}}
 
 
-                    @foreach()
+                    @foreach($data as $item )
+                    
                     <tr>
-                        <td>1</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
+                        <td>{{  $loop->iteration + $start - 1 }}</td>
+                        <td>{{ $item->kecamatan}}</td>
+                        <td>{{ $item->desa}}</td>
+                        <td>{{ $item->nama}}</td>
+                        <td>{{ $item->keterampilan}}</td>
+                        
                         <td>
-
+                            
                         <style>
                                                 /* Container for the buttons */
                     .button-container {
@@ -214,10 +216,10 @@
                     .iconhover i {
                         margin: 0;
                     }
-
+                    
                         </style>
 
-                    <div class="button-container">
+<div class="button-container">
                                 <a href="/404" class="iconhover" title="View">
                                     <i class="fas fa-eye"></i>
                                 </a>
@@ -236,6 +238,7 @@
                                 </script>
                         </td>
                     </tr>
+                    @endforeach
                     {{-- ============================================ --}}
                     
                     
@@ -243,10 +246,10 @@
             </table>
         </div>
 
-
-
-
-                
+        
+        
+        
+        
                 </div>
 
 
