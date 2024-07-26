@@ -286,59 +286,6 @@
                 </div>
 
 
-                <!--Dashboard widget-->
-                <div class="mt-1 mb-3 button-container">
-                    <div class="row pl-0">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <div class="bg-theme border shadow rounded">
-                                <div class="p-2 text-center">
-                                    <h5 class="mb-0 mt-2 text-light"><small><strong>DATA KONSTRUKSI</strong></small></h5>
-                                    <!-- <h1>$36,500</h1> -->
-                                </div>
-                                <!--<div class="align-bottom">
-                                    <span id="incomeBarCol"></span>
-                                </div>-->
-                                <div class="text-center text-light">
-                                    SEGERA HADIR
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <div class="bg-success border shadow rounded">
-                                <div class="p-2 mb-1 text-center">
-                                    <h5 class="mb-0 mt-2 text-light"><small><strong>DATA TENAGA KERJA</strong></small></h5>
-                                    <!-- <h1 class="text-white">$25,650</h1> -->
-                                </div>
-                                <!--<div class="align-bottom">
-                                    <span id="profitBarCol"></span>
-                                </div>-->
-                                <div class="text-center text-light">
-                                    SEGERA HADIR
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
-                            <div class="bg-danger border shadow rounded">
-                                <div class="p-2 text-center">
-                                    <h5 class="mb-0 mt-2 text-light"><small><strong>DATA PEMBINA KONSTRUKSI</strong></small></h5>
-                                    <!-- <h1 class="text-white">$10,850</h1> -->
-                                </div>
-                                <!--<div class="align-bottom">
-                                    <span id="expensesBarCol"></span>
-                                </div>-->
-                                <div class="text-center text-light">
-                                    SEGERA HADIR
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--/Dashboard widget-->
-
-
-                
                 
             </div>
         </div>
