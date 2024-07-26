@@ -171,7 +171,9 @@ Route::get('/dashboard', function () {
 // -------- BAGIAN 11 ---------------------------------
 Route::get('/beskktenagakerja', function () {
     // return view('welcome');
-    return view('backend.04_skk.01_skk.index');
+    return view('backend.04_skk.01_skk.index', [
+        'title' => 'SKK Tenaga Kerja'
+    ]);
 })->middleware('auth');
 
 
