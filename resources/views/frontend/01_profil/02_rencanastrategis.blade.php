@@ -57,7 +57,7 @@ Rencana Strategis Seksi Program & Jasa Konstruksi
 ">
     <div>
     <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; float: left; margin: 0 10px;">
-    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 62px; height: 62px; object-fit: cover; float: left; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="margin-bottom:10px; width: 62px; height: 62px; object-fit: cover; float: left; margin: 0 10px;">
 </div>
 
     <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
