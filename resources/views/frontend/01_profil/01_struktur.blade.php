@@ -57,7 +57,7 @@ Struktur Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Bandung Barat
 ">
   <div style="display: flex; align-items: center;">
     <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
-    <!-- <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;"> -->
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
 </div>
 
 
