@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SkktenagakerjaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -169,12 +170,8 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 // -------- BAGIAN 11 ---------------------------------
-Route::get('/beskktenagakerja', function () {
-    // return view('welcome');
-    return view('backend.04_skk.01_skk.index', [
-        'title' => 'SKK Tenaga Kerja'
-    ]);
-})->middleware('auth');
+Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
+
 
 
 
