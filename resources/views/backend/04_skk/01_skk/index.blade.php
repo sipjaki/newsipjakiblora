@@ -192,14 +192,14 @@
                         display: inline-flex;
                         align-items: center;
                         justify-content: center;
-                        width: 40px; /* Adjust width as needed */
-                        height: 40px; /* Adjust height as needed */
+                        width: 25px; /* Adjust width as needed */
+                        height: 25px; /* Adjust height as needed */
                         background: navy, white; /* Yellow background */
                         color: white; /* Text color */
                         border: none;
                         border-radius: 50%;
                         text-decoration: none;
-                        font-size: 20px; /* Adjust font size as needed */
+                        font-size: 15px; /* Adjust font size as needed */
                         transition: background 0.3s, color 0.3s;
                         cursor: pointer;
                     }
