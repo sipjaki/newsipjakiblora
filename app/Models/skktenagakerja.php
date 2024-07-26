@@ -2,18 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class skktenagakerja extends Model
+class Skktenagakerja extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes, HasApiTokens;
 
-    use SoftDeletes;
-
-    protected $fillable = [
-        'kecamatan', 'desa', 'nama', 'alamat', 'tanggal_lahir', 'nik', 
-        'keterampilan', 'tahun_bimtek', 'kualifikasi', 'registrasi', 'usia'
-    ];
+    protected $guarded = ['id'];
 }
