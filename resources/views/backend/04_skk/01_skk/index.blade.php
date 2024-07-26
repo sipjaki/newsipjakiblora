@@ -256,12 +256,12 @@
                 <!--/Dashboard widget-->
 
 
-                @include('backend.00_dashboard.part.menufooter')
                 
                 
             </div>
         </div>
         
+        @include('backend.00_dashboard.part.menufooter')
         <!--Main Content-->
         
     </div>
