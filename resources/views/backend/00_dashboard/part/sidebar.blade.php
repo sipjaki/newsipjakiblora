@@ -136,7 +136,7 @@
                                 <ul class="children" id="tenagakerja">
                                     <li class="child">
                                     
-                                        <a href="/404">
+                                        <a href="/beskktenagakerja">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SERTIFIKAT KETERAMPILAN KERJA
                                         </a>
                                             

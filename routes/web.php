@@ -168,6 +168,14 @@ Route::get('/dashboard', function () {
     ]);
 })->middleware('auth');
 
+// -------- BAGIAN 11 ---------------------------------
+Route::get('/beskktenagakerja', function () {
+    // return view('welcome');
+    return view('frontend.11_peraturan.11_suratkeputusan');
+})->middleware('auth');
+
+
+
 // Route::get('/$login', function () {
 //     // return view('welcome');
 //     return view('login.index',[
