@@ -194,7 +194,7 @@
                         justify-content: center;
                         width: 40px; /* Adjust width as needed */
                         height: 40px; /* Adjust height as needed */
-                        background: #FFCB0F; /* Yellow background */
+                        background: navy; /* Yellow background */
                         color: black; /* Text color */
                         border: none;
                         border-radius: 50%;
