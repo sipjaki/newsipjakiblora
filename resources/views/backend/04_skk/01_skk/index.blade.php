@@ -137,12 +137,14 @@
                     font-family: 'Lato', sans-serif;
                     font-weight: 700;
                     color: black;
+                    font-size: 14px;
                     border: 1px solid #ddd;
                     padding: 8px;
                 }
         
                 tr:nth-child(even) {
                     background-color: #f2f2f2;
+                    font-size: 14px;
                 }
         
                 th {
@@ -150,6 +152,7 @@
                     /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
                     background-color:  #FFCB0F;
                     color: black;
+                    font-size: 14px;
                 }
             </style>
              <table>
