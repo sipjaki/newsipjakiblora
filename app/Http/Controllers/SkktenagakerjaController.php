@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\skktenagakerja;
+use app\Models\Skktenagakerja;
 
 class SkktenagakerjaController extends Controller
 {
@@ -15,7 +15,7 @@ class SkktenagakerjaController extends Controller
         return view('backend.04_skk.01_skk.index',[
             'title' => 'SKK Tenaga Kerja !',
 
-            'data' => skktenagakerja::paginate(15),
+            'data' => Skktenagakerja::paginate(15),
             
             // 'title_halaman' => 'Halaman Fundraising',
             // 'data_daftarjadimitra'  => Jadimitra::all(),
