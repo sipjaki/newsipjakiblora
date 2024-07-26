@@ -289,7 +289,7 @@
 
 
         {{-- <i class="fa-solid fa-magnifying-glass" id="search"></i> --}}
-        <a href="/dashboard">
+        <a href="/login">
             <i class="fa-solid fa-sign-in-alt" ></i>
         </a>
 

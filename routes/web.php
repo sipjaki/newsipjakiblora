@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -165,7 +166,18 @@ Route::get('/dashboard', function () {
     return view('backend.00_dashboard.index',[
         'title' => 'Admin Dashboard Sipjaki KBB'
     ]);
-});
+})->middleware('auth');
+
+// Route::get('/$login', function () {
+//     // return view('welcome');
+//     return view('login.index',[
+//         'title' => 'Halaman Login'
+//     ]);
+// });
+
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');  
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 
 

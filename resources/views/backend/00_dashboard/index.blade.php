@@ -7,11 +7,11 @@
         <!--Main Content-->
 
             <!--Content right-->
-            <div class="col-sm-9 col-xs-12 content pt-3 pl-0">
+            <div class="col-sm-9 col-xs-12 content  pl-0">
 
                     
-                <div class="row mb-0 pt-3">
-                    <div class="font-bold col-sm-8 pt-2"><h6 class="mb-4 bc-header">.</h6></div>
+                <div class="row mb-0 ">
+                    <div class="font-bold col-sm-8"><h6 class="mb-4 bc-header">.</h6></div>
                     <div class="col-sm-4 text-right pb-3">
                         <div class="pull-right mr-3 btn-order-bulk">
                         
@@ -24,8 +24,8 @@
 
                 
                 <!--Custom cards section-->
-                <div class="row mt-3">
-                    <div class="col-sm-3">
+                <div class="row ">
+                    <!-- <div class="col-sm-3">
                         <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
                             <h6 class="mb-3">Emails</h6>
                             
@@ -45,9 +45,9 @@
                             </div>
                             
                         </div>
-                    </div>
+                    </div> -->
 
-                    <div class="col-sm-3">
+                    <!-- <div class="col-sm-3">
                         <div class="mt-1 mb-3 p-3 button-container bg-white shadow-sm border">
                             <h6 class="mb-3">Top Products</h6>
                             
@@ -69,7 +69,7 @@
                             </div>
                             
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-sm-6">
                         <div class="mt-1 mb-3 p-3 button-container bg-theme shadow border">
@@ -104,14 +104,14 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
                             <div class="bg-theme border shadow rounded">
                                 <div class="p-2 text-center">
-                                    <h5 class="mb-0 mt-2 text-light"><small><strong>INCOME</strong></small></h5>
-                                    <h1>$36,500</h1>
+                                    <h5 class="mb-0 mt-2 text-light"><small><strong>DATA KONSTRUKSI</strong></small></h5>
+                                    <!-- <h1>$36,500</h1> -->
                                 </div>
                                 <!--<div class="align-bottom">
                                     <span id="incomeBarCol"></span>
                                 </div>-->
                                 <div class="text-center text-light">
-                                    75% in 2 years
+                                    SEGERA HADIR
                                 </div>
                             </div>
                         </div>
@@ -119,14 +119,14 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
                             <div class="bg-success border shadow rounded">
                                 <div class="p-2 mb-1 text-center">
-                                    <h5 class="mb-0 mt-2 text-light"><small><strong>GROSS PROFIT</strong></small></h5>
-                                    <h1 class="text-white">$25,650</h1>
+                                    <h5 class="mb-0 mt-2 text-light"><small><strong>DATA TENAGA KERJA</strong></small></h5>
+                                    <!-- <h1 class="text-white">$25,650</h1> -->
                                 </div>
                                 <!--<div class="align-bottom">
                                     <span id="profitBarCol"></span>
                                 </div>-->
                                 <div class="text-center text-light">
-                                    65% in 2 years
+                                    SEGERA HADIR
                                 </div>
                             </div>
                         </div>
@@ -134,14 +134,14 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
                             <div class="bg-danger border shadow rounded">
                                 <div class="p-2 text-center">
-                                    <h5 class="mb-0 mt-2 text-light"><small><strong>EXPENSES</strong></small></h5>
-                                    <h1 class="text-white">$10,850</h1>
+                                    <h5 class="mb-0 mt-2 text-light"><small><strong>DATA PEMBINA KONSTRUKSI</strong></small></h5>
+                                    <!-- <h1 class="text-white">$10,850</h1> -->
                                 </div>
                                 <!--<div class="align-bottom">
                                     <span id="expensesBarCol"></span>
                                 </div>-->
                                 <div class="text-center text-light">
-                                    15% in 2 years
+                                    SEGERA HADIR
                                 </div>
                             </div>
                         </div>
@@ -150,14 +150,16 @@
                 <!--/Dashboard widget-->
 
 
+                @include('backend.00_dashboard.part.menufooter')
                 
-           
+                
             </div>
         </div>
-
+        
         <!--Main Content-->
-
+        
     </div>
+    @include('backend.00_dashboard.part.footer')
     
 
     
