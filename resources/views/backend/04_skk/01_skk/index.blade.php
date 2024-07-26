@@ -178,7 +178,7 @@
                         <td>No Data</td>
                         <td>No Data</td>
                         <td>
-                        <div class="button-container">
+                        <div class="button-container" style="border-radius: 10px;">
                                 <a href="view.html" class="icon-button" title="View">
                                     <i class="fas fa-eye"></i>
                                 </a>
