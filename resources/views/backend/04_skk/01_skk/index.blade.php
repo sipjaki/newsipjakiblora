@@ -169,7 +169,9 @@
                 <tbody>
 
                     {{-- ============================================ --}}
-
+                    @php
+                $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+                    @endphp
 
                     @foreach($data as $item )
                     

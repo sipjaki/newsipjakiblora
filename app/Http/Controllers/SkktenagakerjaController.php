@@ -9,11 +9,11 @@ class SkktenagakerjaController extends Controller
 {
     public function index()
     {
-        $skktenagakerja = Skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+        $data= Skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
 
         return view('backend.04_skk.01_skk.index', [
             'title' => 'SKK Tenaga Kerja',
-            'data' => $skktenagakerja, // Mengirimkan data paginasi ke view
+            'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }
 }
