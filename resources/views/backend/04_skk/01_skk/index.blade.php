@@ -156,20 +156,17 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Pemilik</th>
-                        <th>Klasifikasi & Kualifikasi <br> Tenaga Ahli Terampil</th>
-                        <th>No Registrasi</th>
-                        <th>Masa Berlaku</th>
-                        <th>Asosiasi</th>
+                        <th>Kecamatan</th>
+                        <th>Desa</th>
+                        <th>Nama Lengkap</th>
+                        <th>Keterampilan</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
-                {{-- @foreach ($collection as $item) --}}
-                    
-                {{-- @endforeach --}}
                 <tbody>
 
                     {{-- ============================================ --}}
+
                     <tr>
                         <td>1</td>
                         <td>No Data</td>
