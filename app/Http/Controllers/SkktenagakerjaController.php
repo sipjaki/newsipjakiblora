@@ -18,4 +18,14 @@ class SkktenagakerjaController extends Controller
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }
+
+    public function show($nama)
+    {
+        $item = Skktenagakerja::findOrFail($nama);
+
+        return view('backend.04_skk.01_skk.view', [
+            'data' => $item,
+            'title' => 'View Tenaga Kerja',
+        ]);
+    }
 }

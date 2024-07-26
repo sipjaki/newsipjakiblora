@@ -171,6 +171,7 @@ Route::get('/dashboard', function () {
 
 // -------- BAGIAN 04 BACKEND ---------------------------------
 Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
+Route::get('/skktenagakerja/{id}', [SkktenagakerjaController::class, 'show'])->name('skktenagakerja.show');
 
 
 

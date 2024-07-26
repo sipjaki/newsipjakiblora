@@ -221,10 +221,10 @@
                     
                         </style>
 
-<div class="button-container">
-                                <a href="/404" class="iconhover" title="View">
-                                    <i class="fas fa-eye"></i>
-                                </a>
+                        <div class="button-container">
+                        <a href="{{ route('skktenagakerja.show', $item->nama) }}" class="iconhover" title="View">
+                            <i class="fas fa-eye"></i>
+                        </a>
                                 <a href="/404" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
                                 </a>
