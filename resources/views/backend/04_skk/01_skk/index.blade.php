@@ -199,6 +199,7 @@
                         border: none;
                         border-radius: 50%;
                         text-decoration: none;
+                        padding: 3px 3px;
                         font-size: 15px; /* Adjust font size as needed */
                         transition: background 0.3s, color 0.3s;
                         cursor: pointer;
