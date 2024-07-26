@@ -205,7 +205,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
                 }
             </style>
             <div class="pdf-container">
-                <iframe class="pdf-frame" src="/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf"></iframe>
+                <iframe class="pdf-frame" src="/assets/library/01_profil/SOTK_DPUTR.pdf"></iframe>
             </div>
         </div>
 </div>
