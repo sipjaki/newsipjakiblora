@@ -179,13 +179,13 @@
                         <td>No Data</td>
                         <td>
                         <div class="button-container" style="border-radius: 10px;">
-                                <a href="view.html" class="icon-button" title="View">
+                                <a href="view.html" class="icon-button" title="View" style="border-radius: 10px;">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="update.html" class="icon-button" title="Update">
+                                <a href="update.html" class="icon-button" title="Update" style="border-radius: 10px;">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="delete.html" class="icon-button" title="Delete">
+                                <a href="delete.html" class="icon-button" title="Delete" style="border-radius: 10px;">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
