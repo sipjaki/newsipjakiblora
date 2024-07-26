@@ -344,8 +344,8 @@
         
         <!--Main Content-->
         
+        @include('backend.00_dashboard.part.menufooter')
     </div>
-    @include('backend.00_dashboard.part.menufooter')
     @include('backend.00_dashboard.part.footer')
     
 
