@@ -5,6 +5,9 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\skktenagakerja;
+use Database\Factories\SkktenagakerjaFactory;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -69,15 +72,34 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('sipjakiuser$$444')
         ]);
         
-        // User::create([
-        //     'name'  => '',
-        //     'username' => 'iqlima Nuri',
-        //     'is_admin' => 'super_admin',
-        //     'email' => 'sigitseptiadi1@gmail.com',
-        //     'password' => bcrypt('adminadmin')
-        // ]);
+
+        // ===================================================================================
+        // DATA TENAGA KERJA SKK KABUPATEN BANDUNG BARAT
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'DEDE ROYANI',
+            'alamat' => 'KP.CIGARUNG RT 004/007 ',
+            'tanggal_lahir' => '09-03-1994',
+            'nik' => '3217122003940000',
+            'keterampilan' => 'LAS LISTRIK',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1994-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
         
-        
-       
+
+
+
+    }
+
+    protected function calculateAge($birthDate)
+    {
+        return Carbon::parse($birthDate)->age;
     }
 }
