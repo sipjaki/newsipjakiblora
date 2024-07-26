@@ -56,7 +56,9 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
     position: relative;
 ">
     <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: 10px;">
-<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="margin-bottom: 10px; width: 58px; height: 58px; object-fit: cover; margin-right: 10px; padding: 0;">
+
+    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
     <div class="container">
         <div class="card" style="
             background-color: white;
