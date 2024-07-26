@@ -43,7 +43,7 @@
 </div>
 
 
-    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700; color:black; ">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
     <div class="container">
         <div class="card" style="
             background-color: white;
