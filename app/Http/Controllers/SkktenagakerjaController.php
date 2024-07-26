@@ -15,7 +15,7 @@ class SkktenagakerjaController extends Controller
         return view('backend.04_skk.01_skk.index',[
             'title' => 'SKK Tenaga Kerja',
 
-            'data'    => Skktenagakerja::paginate(15),
+            'data'    => Skktenagakerja::all(),
 
         ]); 
     }
