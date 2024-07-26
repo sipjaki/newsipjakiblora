@@ -1,4 +1,4 @@
-ini halaman skk@include('backend.00_dashboard.part.header')
+@include('backend.00_dashboard.part.header')
 @include('backend.00_dashboard.part.menuheader')
 @include('backend.00_dashboard.part.sidebar')
     
