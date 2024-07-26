@@ -93,6 +93,55 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'DEDE ROYANI',
+            'alamat' => 'KP.CIGARUNG RT 004/007 ',
+            'tanggal_lahir' => '1994-03-09',
+            'nik' => '3217122003940',
+            'keterampilan' => 'LAS LISTRIK',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1994-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'DEDE ROYANI',
+            'alamat' => 'KP.CIGARUNG RT 004/007 ',
+            'tanggal_lahir' => '1994-03-09',
+            'nik' => '34534634634',
+            'keterampilan' => 'LAS LISTRIK',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1994-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'DEDE ROYANI',
+            'alamat' => 'KP.CIGARUNG RT 004/007 ',
+            'tanggal_lahir' => '1994-03-09',
+            'nik' => '3536346',
+            'keterampilan' => 'LAS LISTRIK',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1994-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
         
 
 
