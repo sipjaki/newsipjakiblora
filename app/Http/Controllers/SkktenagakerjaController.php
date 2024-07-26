@@ -19,13 +19,13 @@ class SkktenagakerjaController extends Controller
         ]);
     }
 
-    public function show($nama)
+    public function showByName($nama)
     {
-        $item = Skktenagakerja::findOrFail($nama);
+        $item = Skktenagakerja::where('nama', $nama)->firstOrFail();
 
-        return view('backend.04_skk.01_skk.view', [
+        return view('backend.04_skk.01_skk.show', [
             'data' => $item,
-            'title' => 'View Tenaga Kerja',
+            'title' => 'Detail SKK Tenaga Kerja',
         ]);
     }
 }
