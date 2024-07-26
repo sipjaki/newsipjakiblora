@@ -261,10 +261,10 @@
             </div>
         </div>
         
-        @include('backend.00_dashboard.part.menufooter')
         <!--Main Content-->
         
     </div>
+    @include('backend.00_dashboard.part.menufooter')
     @include('backend.00_dashboard.part.footer')
     
 
