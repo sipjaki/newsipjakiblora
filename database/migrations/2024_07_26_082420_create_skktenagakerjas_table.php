@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('keterampilan');
             $table->string('tahun_bimtek');
             $table->string('kualifikasi');
-            $table->string('registrasi')->unique();
+            $table->string('registrasi');
             $table->integer('usia');
             $table->softDeletes();
             $table->timestamps();
