@@ -49,7 +49,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 200vh;
+    height: 180vh;
     margin-left: 150px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
