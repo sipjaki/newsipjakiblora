@@ -216,13 +216,13 @@
                         </style>
 
                     <div class="button-container">
-                                <a href="/404" class="iconhover" title="View" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+                                <a href="/404" class="iconhover" title="View">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="/404" class="iconhover" title="Update" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+                                <a href="/404" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="/404" class="iconhover" title="Delete" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+                                <a href="/404" class="iconhover" title="Delete">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
