@@ -215,14 +215,14 @@
 
                         </style>
 
-                    <div class="button-container" style="border-radius: 10px;">
-                                <a href="view.html" class="icon-button" title="View" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F hover:white">
+                    <div class="button-container">
+                                <a href="/404" class="icon-button" title="View" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="update.html" class="icon-button" title="Update" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+                                <a href="/404" class="icon-button" title="Update" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="delete.html" class="icon-button" title="Delete" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
+                                <a href="/404" class="icon-button" title="Delete" style="border-radius: 10px; margin-left:2px; margin-right:2px; background:#FFCB0F">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
