@@ -92,19 +92,191 @@ class DatabaseSeeder extends Seeder
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
-
+    
         Skktenagakerja::create([
             'kecamatan' => 'CIPONGKOR',
             'desa' => 'MEKARSARI',
-            'nama' => 'DEDE ROYANI',
-            'alamat' => 'KP.CIGARUNG RT 004/007 ',
-            'tanggal_lahir' => '1994-03-09',
-            'nik' => '3217122003940',
+            'nama' => 'RONI RUSTANDI',
+            'alamat' => 'KP.SARONGGE RT 001/003',
+            'tanggal_lahir' => '1993-03-26',
+            'nik' => '3217122603930000',
             'keterampilan' => 'LAS LISTRIK',
             'tahun_bimtek' => 'BELUM',
             'kualifikasi' => 'BELUM',
             'registrasi' => 'BELUM',
-            'usia' => $this->calculateAge('1994-03-09'), 
+            'usia' => $this->calculateAge('1993-03-26'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+    
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'AHMAD SANDI FAUIZI',
+            'alamat' => 'KP.CISALADAK RT 001/003',
+            'tanggal_lahir' => '1998-10-24',
+            'nik' => '3217122410980010',
+            'keterampilan' => 'LAS LISTRIK',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1998-10-24'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+    
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'IMAN',
+            'alamat' => 'KP.SADANG RT 003/003 ',
+            'tanggal_lahir' => '1985-07-06',
+            'nik' => '3217120607850040',
+            'keterampilan' => 'PEMASANGAN BATU BATA',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1985-07-06'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+    
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'DEDI MULYADI',
+            'alamat' => 'KP.SADANG RT 003/003  ',
+            'tanggal_lahir' => '1976-06-12',
+            'nik' => '3217121206760020',
+            'keterampilan' => 'PEMASANGAN BATU BATA',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1976-06-12'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+   
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'AYI HERMAN',
+            'alamat' => 'KP.CILAME RT 003/005',
+            'tanggal_lahir' => '1980-04-20',
+            'nik' => '3217122004800010',
+            'keterampilan' => 'PEMASANGAN BATU BATA',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1980-04-20'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+   
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'ANTO.S',
+            'alamat' => 'KP.SADANG RT 003/003',
+            'tanggal_lahir' => '1986-03-08',
+            'nik' => '3217120803860010',
+            'keterampilan' => 'PEMASANGAN BATU BATA',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1986-03-08'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+   
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'ASEP SUTISNA',
+            'alamat' => 'KP.CIBANAS RT 005/003',
+            'tanggal_lahir' => '1973-07-04',
+            'nik' => '3217120407730010',
+            'keterampilan' => 'PEMASANGAN BATU BATA',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1973-07-04'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+   
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'IWAN SETIAWAN',
+            'alamat' => 'KP.CISALADAK RT 001/003 ',
+            'tanggal_lahir' => '1977-06-02',
+            'nik' => '3217120206770000',
+            'keterampilan' => 'PEMASANGAN BATU BATA',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1977-06-02'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+   
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'NANDANG',
+            'alamat' => 'KP.CISALADAK RT 002/003',
+            'tanggal_lahir' => '1964-07-01',
+            'nik' => '3217120107640160',
+            'keterampilan' => 'KAYU',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1964-07-01'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+    
+   
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'DASEP',
+            'alamat' => 'KP.BABAKAN RT 004/005 ',
+            'tanggal_lahir' => '1968-09-08',
+            'nik' => '3217120809680000',
+            'keterampilan' => 'KAYU',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1968-09-08'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+   
+        Skktenagakerja::create([
+            'kecamatan' => 'CIPONGKOR',
+            'desa' => 'MEKARSARI',
+            'nama' => 'ABUDIN',
+            'alamat' => 'KP.SUKASENANG RT 001/002',
+            'tanggal_lahir' => '1971-02-10',
+            'nik' => '3275101002710010',
+            'keterampilan' => 'KONSTRUKSI',
+            'tahun_bimtek' => 'BELUM',
+            'kualifikasi' => 'BELUM',
+            'registrasi' => 'BELUM',
+            'usia' => $this->calculateAge('1971-02-10'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -113,37 +285,22 @@ class DatabaseSeeder extends Seeder
         Skktenagakerja::create([
             'kecamatan' => 'CIPONGKOR',
             'desa' => 'MEKARSARI',
-            'nama' => 'DEDE ROYANI',
-            'alamat' => 'KP.CIGARUNG RT 004/007 ',
-            'tanggal_lahir' => '1994-03-09',
-            'nik' => '34534634634',
-            'keterampilan' => 'LAS LISTRIK',
+            'nama' => 'MUHAMMAD NANDA I',
+            'alamat' => 'KP.SUKASENANG  RT 001/002',
+            'tanggal_lahir' => '1994-10-29',
+            'nik' => '3217122910940000',
+            'keterampilan' => 'KONSTRUKSI',
             'tahun_bimtek' => 'BELUM',
             'kualifikasi' => 'BELUM',
             'registrasi' => 'BELUM',
-            'usia' => $this->calculateAge('1994-03-09'), 
+            'usia' => $this->calculateAge('1994-10-29'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
-        Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
-            'desa' => 'MEKARSARI',
-            'nama' => 'DEDE ROYANI',
-            'alamat' => 'KP.CIGARUNG RT 004/007 ',
-            'tanggal_lahir' => '1994-03-09',
-            'nik' => '3536346',
-            'keterampilan' => 'LAS LISTRIK',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'usia' => $this->calculateAge('1994-03-09'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-        
 
+
+    
 
 
     }

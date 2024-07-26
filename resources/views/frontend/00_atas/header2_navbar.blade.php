@@ -7,7 +7,7 @@
         
         <h1 style="margin: 0;">
             <span>SIPJAKI</span>KBB
-            <p style="margin: 0; font-size: 16px; color: white" >Dinas Pekerjaan Umum & Penataan Ruang</p>
+            <p style="margin: 0; font-size: 16px; color: white" >Dinas Pekerjaan Umum & Tata Ruang</p>
         </h1>
     </div>
 
