@@ -24,7 +24,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 425px;
+    margin-left: 475px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -50,7 +50,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
     text-align: center;
     width: 100%;
     height: 100vh;
-    margin-left: 100px;
+    margin-left: 150px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
@@ -183,6 +183,32 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
             </p>
         </div>
 </div>
+</div>
+<div class="container" style="margin-top: 20px;">
+    <style>
+        .pdf-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            height: 85vh;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: #FFCB0F;
+            background: linear-gradient(to bottom, yellow, white, black);
+        }
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <div class="pdf-container">
+        <iframe class="pdf-frame" src="/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf"></iframe>
+    </div>
 </div>
 
 
