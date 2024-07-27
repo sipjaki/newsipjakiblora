@@ -83,7 +83,10 @@
                 color: black;
             }
         </style>
-        <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label>
+        <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
+                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Sertifikat Keterampilan Kerja</button>
+                        <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
+
     {{-- <select id="entries" onchange="showEntries()">
         <option value="5">5</option>
         <option value="10">10</option>
