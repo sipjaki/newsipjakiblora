@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SkktenagakerjaController;
+use App\Http\Controllers\StrukturController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -168,6 +169,24 @@ Route::get('/dashboard', function () {
         'title' => 'Admin Dashboard Sipjaki KBB'
     ]);
 })->middleware('auth');
+
+// -------- BAGIAN 01 BACKEND PROFIL ---------------------------------
+Route::get('/struktur', [StrukturController::class, 'index'])->middleware('auth');  
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
+Route::get('/renstra', [StrukturController::class, 'renstra'])->middleware('auth');  
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
+Route::get('/tupoksi', [StrukturController::class, 'tupoksi'])->middleware('auth');  
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
+
 
 // -------- BAGIAN 04 BACKEND ---------------------------------
 Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  

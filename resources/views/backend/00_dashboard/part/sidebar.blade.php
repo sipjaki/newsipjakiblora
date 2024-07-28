@@ -58,7 +58,13 @@
                          
                             <li class="parent">
                                 <a href="/" class="sbar"><i class="fas fa-cogs mr-2"> </i>
-                                    <span class="none">DASHBOARD</span>
+                                    <span class="none">DASHBOARD WEB</span>
+                                </a>
+                            </li>
+     
+                            <li class="parent">
+                                <a href="/dashboard" class="sbar"><i class="fas fa-cogs mr-2"> </i>
+                                    <span class="none">DASHBOARD ADMIN</span>
                                 </a>
                             </li>
      
@@ -69,16 +75,16 @@
                                 <ul class="children" id="profil">
                                     <li class="child">
                                     
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/struktur" style="font-size: 12px;">
                                             <i class="fas fa-users mr-2" style="margin-left: 20px;"></i>STRUKTUR DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BANDUNG BARAT
                                         </a>
                     
-                                        <a href="/404" style="font-size: 12px;">
-                                            <i class="fas fa-users mr-2" style="margin-left: 20px;"></i>RENSTRA SEKSI PROGRAM DAN JASA KONSTRUKSI  
+                                        <a href="/renstra" style="font-size: 12px;">
+                                            <i class="fas fa-users mr-2" style="margin-left: 20px;"></i>RENCANA STRATEGIS PROGRAM DAN JASA KONSTRUKSI  
                                         </a>
                     
-                                        <a href="/404" style="font-size: 12px;">
-                                            <i class="fas fa-users mr-2" style="margin-left: 20px;"></i>TUPOKSI SEKSI PROGRAM DAN JASA KONSTRUKSI  
+                                        <a href="/tupoksi" style="font-size: 12px;">
+                                            <i class="fas fa-users mr-2" style="margin-left: 20px;"></i>TUPOKSI PROGRAM DAN JASA KONSTRUKSI  
                                         </a>
                                                                
                                     </li> 
