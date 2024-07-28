@@ -24,7 +24,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 475px;
+    margin-left: 500px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -49,8 +49,8 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 180vh;
-    margin-left: 150px;
+    height: 200vh;
+    margin-left: 180px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
@@ -208,13 +208,62 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
                     height: 100%;
                     border: none;
                 }
+                .badgedownload {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                margin-top: 20px;
+                margin-left: 500px;
+                transition: background-color 0.3s, color 0.3s;
+                margin-left: 225px;
+                cursor: pointer;
+             
+            }
+    
+            .badgedownload:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }
+
             </style>
             <div class="pdf-container">
                 <iframe class="pdf-frame" src="/assets/library/01_profil/SOTK_DPUTR.pdf"></iframe>
             </div>
+            <div style="margin-left: 450px;">
+        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
+    </div>
         </div>
 </div>
 </div>
+
+
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+        // URL file PDF
+        const pdfUrl = '/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf';
+        
+        // Membuat elemen anchor
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
+        
+        // Menyimulasikan klik pada elemen anchor
+        document.body.appendChild(link);
+        link.click();
+        
+        // Menghapus elemen anchor dari dokumen
+        document.body.removeChild(link);
+    });
+</script>
+
+
+
 
 
 
