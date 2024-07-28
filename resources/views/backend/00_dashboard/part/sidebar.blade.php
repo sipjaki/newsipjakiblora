@@ -216,19 +216,19 @@
                                 <ul class="children" id="pelatihan">
                                     <li class="child">
                                                                              
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PELATIHAN
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PENGAWASAN 
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>KECELAKAAN 
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>TEKNOLOGI 
                                         </a>
                                             
@@ -246,47 +246,47 @@
                                 <ul class="children" id="peraturan">
                                     <li class="child">
                                                                              
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>UNDANG UNDANG
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN PEMERINTAH
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN PRESIDEN
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN MENTERI
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>KEPUTUSAN MENTERI
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SURAT EDARAN MENTERI
                                         </a>
 
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>REFERENSI
                                         </a>
                                         
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN DAERAH 
                                         </a>
 
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN GUBERNUR 
                                         </a>
 
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN WALIKOTA
                                         </a>
                                         
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SURAT KEPUTUSAN
                                         </a>
                                         
