@@ -162,16 +162,16 @@
                             
                         </style>
                         <div class="menuheader dropdown dropdown-left bg-white shadow border">
-                            <a class="dropdown-item" href="#" style="color: white;"><strong><i class="fas fa-cogs me-2"></i> Pengaturan</strong></a>
+                            <a class="dropdown-item" href="#" style="color: white;"><strong><i class="fas fa-cogs me-2" style="margin-right: 0px;"></i> Pengaturan</strong></a>
                             
                             <div class="dropdown-divider"></div>
                             <a href="#" class="dropdown-item" >
-                                <div class="media" style="margin-top: 5px; margin-bottom:5px;">
-                                    <div class="align-self-center mr-3 rounded-circle notify-icon bg-warning">
-                                        <i class="fa fa-user"></i>
+                                <div class="media">
+                                    <div>
+                                        <i class="fa fa-user" style="color: white; margin-right:10px;"></i>
                                     </div>
                                     <div class="media-body">
-                                        <h6 class="mt-0" style="color:white"><strong>Profil</strong></h6>
+                                        <h6 style="color:white"><strong>Profil</strong></h6>
                                         <!-- <p>New employee arrival</p> -->
                                         <!-- <small class="text-success">09:23am</small> -->
                                     </div>
@@ -181,16 +181,18 @@
                             <div class="dropdown-divider"></div>
                             <form action="/logout" method="POST" class="dropdown-item" style="border: none; background: transparent; padding: 0; margin: 0;">
                                     @csrf
-                                    <button type="submit" style="border: none; background: transparent; width: 100%; padding: 0;">
-                                        <div class="media" style="margin-top: 5px; margin-bottom: 5px;">
-                                            <div class="align-self-center mr-3 rounded-circle notify-icon bg-danger">
-                                                <i class="fas fa-sign-out-alt"></i>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0" style="color: white;"><strong>Logout</strong></h6>
-                                            </div>
+                                        <a class="dropdown-item" >
+                                    <div class="media">
+                                        <div>
+                                            <i class="fas fa-sign-out-alt" style="margin-right:10px; color:white;"></i>
                                         </div>
-                                    </button>
+                                        <div class="media-body">
+                                            <h6 style="color:white"><strong>Logout</strong></h6>
+                                            <!-- <p>New employee arrival</p> -->
+                                            <!-- <small class="text-success">09:23am</small> -->
+                                        </div>
+                                    </div>
+                                </a>
                                 </form>
 
                             <!-- <div class="dropdown-divider"></div>

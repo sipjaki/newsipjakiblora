@@ -179,7 +179,7 @@
                     @foreach($data as $item )
                     
                     <tr>
-                        <td style="font-size: 12px;">{{  $loop->iteration + $start - 1 }}</td>
+                        <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
                         <td style="font-size: 12px;">{{ $item->kecamatan}}</td>
                         <td style="font-size: 12px;">{{ $item->desa}}</td>
                         <td style="font-size: 12px;">{{ $item->nama}}</td>
@@ -254,7 +254,7 @@
         </div>
 
         <div class="pagination-container" style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
-                <div class="pagination-info mb-2" style="margin-bottom: 10px; color:white;">
+                <div class="pagination-info mb-2" style="margin-bottom: 10px; color:orange;">
                     Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah Data
                 </div>
                     <ul class="pagination" style="display: flex; padding-left: 0; list-style: none;">
