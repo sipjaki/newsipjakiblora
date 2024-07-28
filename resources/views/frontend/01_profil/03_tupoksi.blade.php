@@ -49,7 +49,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 190vh;
+    height: 180vh;
     margin-left: 180px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -246,7 +246,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
 <script>
     document.getElementById('downloadBtn').addEventListener('click', function() {
         // URL file PDF
-        const pdfUrl = '/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf';
+        const pdfUrl = '/assets/library/01_profil/SOTK_DPUTR.pdf';
         
         // Membuat elemen anchor
         const link = document.createElement('a');
