@@ -24,7 +24,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 475px;
+    margin-left: 500px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -50,7 +50,7 @@ Rencana Strategis Seksi Program & Jasa Konstruksi
     text-align: center;
     width: 100%;
     height: 120vh;
-    margin-left: 165px;
+    margin-left: 180px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
