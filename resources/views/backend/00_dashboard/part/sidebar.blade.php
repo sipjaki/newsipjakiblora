@@ -29,6 +29,7 @@
                         }
 
                         a {
+                        /* font-size: 12px; */
                         color: navy; /* warna biru tua */
                         text-decoration: none; /* menghapus garis bawah default */
                         background-image: linear-gradient(to bottom, navy, black); /* gradasi dari biru tua ke hitam */
@@ -46,8 +47,15 @@
                             transition: background-position 0.3s, color 0.3s; /* animasi perubahan posisi latar belakang dan warna teks */
                             padding: 5px 10px; /
                          } 
-                                    </style>
-                            
+                         
+                        span {
+                            font-size: 12px;
+                         } 
+                         
+                         
+                         </style>
+                         
+                         
                             <li class="parent">
                                 <a href="/" class="sbar"><i class="fas fa-cogs mr-2"> </i>
                                     <span class="none">DASHBOARD</span>
@@ -61,15 +69,15 @@
                                 <ul class="children" id="profil">
                                     <li class="child">
                                     
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-users mr-2" style="margin-left: 20px;"></i>STRUKTUR DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BANDUNG BARAT
                                         </a>
                     
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-users mr-2" style="margin-left: 20px;"></i>RENSTRA SEKSI PROGRAM DAN JASA KONSTRUKSI  
                                         </a>
                     
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-users mr-2" style="margin-left: 20px;"></i>TUPOKSI SEKSI PROGRAM DAN JASA KONSTRUKSI  
                                         </a>
                                                                
@@ -86,11 +94,11 @@
                                 <ul class="children" id="berita">
                                     <li class="child">
                                     
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>BERITA
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>AGENDA
                                         </a>
                                             
@@ -108,15 +116,15 @@
                                 <ul class="children" id="datajakon">
                                     <li class="child">
                                     
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>ASOSIASI
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>STANDAR BIAYA UMUM
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PROGRESS PAKET PEKERJAAN
                                         </a>
                                             
@@ -136,15 +144,15 @@
                                 <ul class="children" id="tenagakerja">
                                     <li class="child">
                                     
-                                        <a href="/beskktenagakerja">
+                                        <a href="/beskktenagakerja" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SERTIFIKAT KETERAMPILAN KERJA
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PENANGGUNG JAWAB TEKNIS
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PEMBINA JASA KONSTRUKSI
                                         </a>
                                             
@@ -161,11 +169,11 @@
                                 <ul class="children" id="spm">
                                     <li class="child">
                                                                              
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>INFORMASI SPM
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>LAPORAN SPM 
                                         </a>
                                             
@@ -183,15 +191,15 @@
                                 <ul class="children" id="dukunganusaha">
                                     <li class="child">
                                                                              
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERMODALAN
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>JAMINAN USAHA 
                                         </a>
                                             
-                                        <a href="/404">
+                                        <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>MITRA USAHA 
                                         </a>
                                             
@@ -306,7 +314,7 @@
                          
                             <li class="parent">
                                 <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
-                                    <span class="none">TANDA DAFTAR USAHA PARIWISATA</span>
+                                    <span class="none">TANDA DAFTAR USAHA PERUSAHAAN</span>
                                 </a>
                             </li>
 

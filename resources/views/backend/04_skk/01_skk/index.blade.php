@@ -249,7 +249,11 @@
                     
                 </tbody>
             </table>
+
+
         </div>
+
+        {{ $data->links() }}
 
         
         
