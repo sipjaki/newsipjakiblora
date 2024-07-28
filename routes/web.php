@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SkktenagakerjaController;
 use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\UndangundangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -182,6 +183,25 @@ Route::get('/renstra', [StrukturController::class, 'renstra'])->middleware('auth
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 
 Route::get('/tupoksi', [StrukturController::class, 'tupoksi'])->middleware('auth');  
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
+
+
+
+// -------- BAGIAN 14 BACKEND PERATURAN UNDANGUNDANG ---------------------------------
+Route::get('/perundangundang', [UndangundangController::class, 'index'])->middleware('auth');  
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
+// Route::get('/renstra', [StrukturController::class, 'renstra'])->middleware('auth');  
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
+// Route::get('/tupoksi', [StrukturController::class, 'tupoksi'])->middleware('auth');  
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');

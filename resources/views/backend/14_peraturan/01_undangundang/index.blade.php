@@ -111,7 +111,7 @@
                 text-align: center;
                 font-size: 12px;
                 transition: background-color 0.3s, color 0.3s;
-                margin-left: 360px;
+                margin-left: 225px;
                 cursor: pointer;
              
             }
@@ -123,7 +123,7 @@
             }
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Rencana Strategis Program & Jasa Konstruksi </div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Struktur Dinas Pekerjaan Umum Dan Tata Ruang Kabupaten Bandung Barat </div></label>
         </a>
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
                         <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
@@ -151,14 +151,14 @@
         }
     </style>
     <div class="pdf-container mt-4">
-        <iframe class="pdf-frame" src="/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf"></iframe>
+        <iframe class="pdf-frame" src="/assets/library/01_profil/BAGAN_DPUTR_SOTK.pdf"></iframe>
     </div>
 
 
 <script>
     document.getElementById('downloadBtn').addEventListener('click', function() {
         // URL file PDF
-        const pdfUrl = '/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf';
+        const pdfUrl = '/assets/library/01_profil/BAGAN_DPUTR_SOTK.pdf';
         
         // Membuat elemen anchor
         const link = document.createElement('a');

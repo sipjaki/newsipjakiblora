@@ -252,7 +252,7 @@
                                 <ul class="children" id="peraturan">
                                     <li class="child">
                                                                              
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/perundangundang" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>UNDANG UNDANG
                                         </a>
                                             

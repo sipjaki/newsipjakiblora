@@ -111,7 +111,7 @@
                 text-align: center;
                 font-size: 12px;
                 transition: background-color 0.3s, color 0.3s;
-                margin-left: 225px;
+                margin-left: 190px;
                 cursor: pointer;
              
             }
