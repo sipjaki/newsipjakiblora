@@ -97,7 +97,7 @@ Silahkan Login !
                 color: black;
             }
         </style>
-        <div class="badge"><i class="fas fa-edit me-2"></i>Halaman Login !</div></label>
+        <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Halaman Login !</div></label> -->
   
 </div>
 </div>
