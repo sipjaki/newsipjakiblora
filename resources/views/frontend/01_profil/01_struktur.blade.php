@@ -24,7 +24,7 @@
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 475px;
+    margin-left: 500px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
