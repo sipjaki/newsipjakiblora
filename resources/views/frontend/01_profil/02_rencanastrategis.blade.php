@@ -39,7 +39,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Rencana Strategis Program Dan Jasa Konstruksi Kabupaten Bandung Barat 
+Rencana Strategis Program Dan Jasa Konstruksi <br> Kabupaten Bandung Barat 
 </h2>
 </div>
 <div class="container" style="
