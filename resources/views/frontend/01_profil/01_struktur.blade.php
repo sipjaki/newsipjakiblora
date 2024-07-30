@@ -22,12 +22,12 @@
             <h2 style="
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    align-items: center;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -53,7 +53,6 @@ Struktur Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Bandung Barat
     text-align: center;
     width: 100%;
     height: 120vh;
-    align-items: center;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
