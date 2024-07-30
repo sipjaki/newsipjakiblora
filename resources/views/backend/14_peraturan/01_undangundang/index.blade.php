@@ -112,7 +112,7 @@
     .badgedownload {
                 background: linear-gradient(to right, navy, black);
                 color: white;
-                padding: 10px 20px;
+                padding: 8px 20px;
                 border-radius: 10px;
                 display: inline-block;
                 font-size: 1rem;
@@ -122,6 +122,24 @@
                 transition: background-color 0.3s, color 0.3s;
             }
             .badgedownload:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }
+    
+    .badgekembali {
+                background: linear-gradient(to right, green, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgekembali:hover {
                 background-color: white;
                 color: black;
                 background: white;
@@ -144,14 +162,20 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Tupoksi Program Dan Jasa Konstruksi </div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Undang - Undang Jasa Konstruksi </div></label>
         </a>
         <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>Sipjaki pemerintah Kab Bandung Barat </div></label>
+            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........</div></label>
         </a>
-        <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+        <a href="/peruud" style="background: white;">
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+        </a>
+        
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
-                        <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+        
+        <a href="/404" style="background: white;">
+            <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+        </a>
                         {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
                         
