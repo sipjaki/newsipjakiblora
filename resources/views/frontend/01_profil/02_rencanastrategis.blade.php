@@ -24,7 +24,7 @@
         ">
 
             <h2 style="
-   margin-top: 10px;
+    margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -39,7 +39,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Rencana Strategis Seksi Program & Jasa Konstruksi
+Struktur Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Bandung Barat
 </h2>
 </div>
 <div class="container" style="
@@ -53,18 +53,14 @@ Rencana Strategis Seksi Program & Jasa Konstruksi
     text-align: center;
     width: 100%;
     height: 120vh;
-    margin-left: 180px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
 ">
- <div style="display: flex; align-items: center;">
+  <div style="display: flex; align-items: center;">
     <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
     <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
 </div>
-<div style="margin-left: 450px;">
-        <!-- <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button> -->
-    </div>
 
 
     <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
@@ -88,8 +84,6 @@ Rencana Strategis Seksi Program & Jasa Konstruksi
             width: 100%;
             height: 100%;
             border: none;
-
-
         }
         .badgedownload {
                 background: linear-gradient(to right, navy, black);
@@ -124,6 +118,7 @@ Rencana Strategis Seksi Program & Jasa Konstruksi
 </div>
 </div>
 
+
 <script>
     document.getElementById('downloadBtn').addEventListener('click', function() {
         // URL file PDF
@@ -142,10 +137,6 @@ Rencana Strategis Seksi Program & Jasa Konstruksi
         document.body.removeChild(link);
     });
 </script>
-
-
-
-
 
 
 <br><br>
