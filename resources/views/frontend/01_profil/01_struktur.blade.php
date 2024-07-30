@@ -20,6 +20,9 @@
         ">
 
             <h2 style="
+    display: flex;
+    flex-direction: column;
+    position: relative;
     margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
