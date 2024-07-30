@@ -43,7 +43,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
 </h2>
 </div>
 <div class="container" style="
-    display: flex;
+   display: flex;
     flex-direction: column;
     background-color: #FFCB0F;
     padding: 10px;
@@ -52,8 +52,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 180vh;
-    margin-left: 180px;
+    height: 120vh;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
