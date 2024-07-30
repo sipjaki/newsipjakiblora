@@ -45,16 +45,19 @@ Struktur Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Bandung Barat
     background-color: #FFCB0F;
     padding: 10px;
     border: 1px solid black;
-    margin-bottom: 0px;
     border-radius: 25px;
     text-align: center;
-    width: 100%;
-    height: 120vh;
-    margin-left: 180px;
+    width: 80%; /* Atur lebar sesuai kebutuhan */
+    max-width: 800px; /* Atur lebar maksimal sesuai kebutuhan */
+    height: auto; /* Sesuaikan tinggi konten */
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
-    position: relative;
+    position: absolute; /* Menggunakan absolute untuk positioning */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Menyusun elemen di tengah-tengah */
 ">
+    <!-- Konten di sini -->
   <div style="display: flex; align-items: center;">
     <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
     <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
