@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\SkktenagakerjaController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\UndangundangController;
@@ -191,7 +192,7 @@ Route::get('/tupoksi', [StrukturController::class, 'tupoksi'])->middleware('auth
 
 
 // -------- BAGIAN 14 BACKEND PERATURAN UNDANGUNDANG ---------------------------------
-Route::get('/perundangundang', [UndangundangController::class, 'index'])->middleware('auth');  
+Route::get('/peruud', [PeraturanController::class, 'undangundang'])->middleware('auth');  
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');

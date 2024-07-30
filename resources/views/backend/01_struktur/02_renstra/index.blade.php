@@ -118,7 +118,13 @@
                 font-size: 1rem;
                 text-align: center;
                 font-size: 12px;
+                cursor: pointer;
                 transition: background-color 0.3s, color 0.3s;
+            }
+            .badgedownload:hover {
+                background-color: white;
+                color: black;
+                background: white;
             }
     
     .badgehidden {
@@ -130,6 +136,7 @@
                 font-size: 1rem;
                 text-align: center;
                 font-size: 12px;
+                cursor: pointer;
                 transition: background-color 0.3s, color 0.3s;
             }
     

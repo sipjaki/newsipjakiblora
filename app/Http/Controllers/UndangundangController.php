@@ -19,26 +19,7 @@ class UndangundangController extends Controller
         ]);
     }
 
-    public function renstra()
-    {
-        // $data= struktur::all(); // Menggunakan paginate() untuk pagination
-
-        return view('backend.01_struktur.02_renstra.index', [
-            'title' => 'Rencana Strategis',
-            // 'data' => $data, // Mengirimkan data paginasi ke view
-        ]);
-    }
-    
-    public function tupoksi()
-    {
-        // $data= struktur::all(); // Menggunakan paginate() untuk pagination
-
-        return view('backend.01_struktur.03_tupoksi.index', [
-            'title' => 'Tupoksi Program & Jasa Konstruksi',
-            // 'data' => $data, // Mengirimkan data paginasi ke view
-        ]);
-    }
-
+   
     // public function showByName($nama)
     // {
     //     $item = Skktenagakerja::where('nama', $nama)->firstOrFail();

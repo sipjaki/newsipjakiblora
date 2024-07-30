@@ -118,6 +118,7 @@
                 font-size: 1rem;
                 text-align: center;
                 font-size: 12px;
+                cursor: pointer;
                 transition: background-color 0.3s, color 0.3s;
             }
     

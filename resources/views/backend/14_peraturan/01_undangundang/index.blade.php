@@ -51,7 +51,10 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 100%;
-            margin: 20px auto;">
+            margin: 20px auto;
+            align-items: center;
+            "
+            >
 
 
             {{-- ------------------------------------ FITUR TAMBAHAN ------------- --}}
@@ -66,7 +69,11 @@
 <div class="show-entries" style="border-radius: 10px;">
     <label for="entries" style="margin-right: 5px;">
         <style>
-            .badge {
+          
+         
+          /* Untuk memastikan tata letak responsif, Anda bisa menggunakan media queries */
+@media (min-width: 768px) {
+    .badge {
                 background: linear-gradient(to right, yellow, black);
                 color: white;
                 padding: 10px 20px;
@@ -84,7 +91,8 @@
                 color: black;
                 background: white;
             }
-            .badgeupdate {
+
+    .badgeupdate {
                 background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
@@ -101,7 +109,7 @@
                 color: black;
                 background: white;
             }
-            .badgedownload {
+    .badgedownload {
                 background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
@@ -110,55 +118,82 @@
                 font-size: 1rem;
                 text-align: center;
                 font-size: 12px;
-                transition: background-color 0.3s, color 0.3s;
-                margin-left: 225px;
                 cursor: pointer;
-             
+                transition: background-color 0.3s, color 0.3s;
             }
-    
             .badgedownload:hover {
                 background-color: white;
                 color: black;
                 background: white;
             }
+    
+    .badgehidden {
+                background: linear-gradient(to right, white, white);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+}
+
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Struktur Dinas Pekerjaan Umum Dan Tata Ruang Kabupaten Bandung Barat </div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Tupoksi Program Dan Jasa Konstruksi </div></label>
+        </a>
+        <a style="background: white;">
+            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>Sipjaki pemerintah Kab Bandung Barat </div></label>
         </a>
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
                         <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+                        {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
                         
                         <style>
-        .pdf-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 80%;
-            height: 85vh;
-            margin: auto;
-            border: 1px solid black;
-            border-radius: 25px;
-            overflow: hidden;
-            background-color: #FFCB0F;
-            background: linear-gradient(to bottom, yellow, white, black);
-        }
-        .pdf-frame {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+      
+.pdf-container {
+    text-align:center !important ;
+    position: relative;
+    padding: 5px; /* Jarak di dalam container */
+    width: calc(100% - 20px); /* Lebar 100% dikurangi 20px total dari padding kiri dan kanan */
+    max-width: 1000px; /* Lebar maksimal container */
+    display: flex;
+    flex-direction: column;
+    align-items: center !important; /* Menempatkan elemen di tengah horizontal */
+    justify-content: center; /* Menempatkan elemen di tengah vertikal */
+    height: 85vh; /* Tinggi 85% dari viewport */
+    margin: auto; /* Mengatur margin auto untuk sentralisasi */
+    border: 1px solid black;
+    border-radius: 25px;
+    overflow: hidden; /* Menyembunyikan konten yang meluber */
+    background-color: #FFCB0F;
+    background: linear-gradient(to bottom, yellow, white, black);
+    position: relative; /* Mengatur posisi relatif untuk container */
+}
+.pdf-frame {
+    width: calc(100% - 20px); /* Lebar PDF frame dengan jarak 10px di kiri dan kanan */
+    height: 100%; /* Tinggi PDF frame sama dengan tinggi container */
+    border: none;
+    overflow: auto; 
+    border-radius: 25px; 
+    padding: 5px 5px;/* Mengaktifkan scroll jika konten lebih besar dari ukuran frame */
+}
+
     </style>
     <div class="pdf-container mt-4">
-        <iframe class="pdf-frame" src="/assets/library/01_profil/BAGAN_DPUTR_SOTK.pdf"></iframe>
+        <iframe class="pdf-frame" src="/assets/library/01_profil/SOTK_DPUTR.pdf"></iframe>
     </div>
 
 
 <script>
     document.getElementById('downloadBtn').addEventListener('click', function() {
         // URL file PDF
-        const pdfUrl = '/assets/library/01_profil/BAGAN_DPUTR_SOTK.pdf';
+        const pdfUrl = '/assets/library/01_profil/SOTK_DPUTR.pdf';
         
         // Membuat elemen anchor
         const link = document.createElement('a');

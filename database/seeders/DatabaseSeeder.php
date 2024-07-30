@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\skktenagakerja;
+use App\Models\peraturan;
 use Database\Factories\SkktenagakerjaFactory;
 use Carbon\Carbon;
 
@@ -362,6 +363,18 @@ class DatabaseSeeder extends Seeder
             'kualifikasi' => 'BELUM',
             'registrasi' => 'BELUM',
             'usia' => $this->calculateAge('1984-07-02'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+//======================== ===================================================================================
+//======================== ===================================================================================
+//======================== ===================================================================================
+//======================== ===================================================================================
+        peraturan::create([
+            'judul' => 'CIPONGKOR',
+            'peraturan' => '/assets/library/peraturan/01_uud/UU_NO_02_TAHUN_2017',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes

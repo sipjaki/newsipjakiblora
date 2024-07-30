@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('peraturans', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
+            $table->string('peraturan');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
