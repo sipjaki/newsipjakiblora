@@ -149,6 +149,7 @@
         <a style="background: white;">
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>Sipjaki pemerintah Kab Bandung Barat </div></label>
         </a>
+        <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
                         <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
                         {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
@@ -185,18 +186,20 @@
 }
 
     </style>
+
+    @foreach($data as $items )
     <div class="pdf-container mt-4">
-        <iframe class="pdf-frame" src="/assets/library/01_profil/SOTK_DPUTR.pdf"></iframe>
+        <iframe class="pdf-frame" src="{{ $items->peraturan }}"></iframe>
     </div>
-
-
-<script>
-    document.getElementById('downloadBtn').addEventListener('click', function() {
-        // URL file PDF
-        const pdfUrl = '/assets/library/01_profil/SOTK_DPUTR.pdf';
-        
-        // Membuat elemen anchor
-        const link = document.createElement('a');
+    
+    
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // URL file PDF
+            const pdfUrl = '{{ $items->peraturan }}';
+            
+            // Membuat elemen anchor
+            const link = document.createElement('a');
         link.href = pdfUrl;
         link.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
         
@@ -208,6 +211,7 @@
         document.body.removeChild(link);
     });
 </script>
+@endforeach
 
 
 </div>
