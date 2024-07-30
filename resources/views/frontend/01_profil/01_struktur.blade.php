@@ -17,6 +17,7 @@
         <div class="div" style="
             justify-content: center;
             text-align:center;
+            align-items: center;
         ">
 
             <h2 style="
