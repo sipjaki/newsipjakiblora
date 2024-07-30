@@ -34,7 +34,7 @@ class UndangundangController extends Controller
         // $data= struktur::all(); // Menggunakan paginate() untuk pagination
 
         return view('backend.01_struktur.03_tupoksi.index', [
-            'title' => 'Tupoksi',
+            'title' => 'Tupoksi Program & Jasa Konstruksi',
             // 'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }

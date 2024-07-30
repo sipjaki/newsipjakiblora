@@ -24,7 +24,6 @@
         ">
 
             <h2 style="
-    
     margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
