@@ -17,14 +17,17 @@
         <div class="div" style="
             justify-content: center;
             text-align:center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
         ">
 
             <h2 style="
-    margin-top: 10px;
+   margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 500px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
