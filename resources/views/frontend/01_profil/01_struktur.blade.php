@@ -52,10 +52,7 @@ Struktur Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Bandung Barat
     height: auto; /* Sesuaikan tinggi konten */
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
-    position: absolute; /* Menggunakan absolute untuk positioning */
     width: 1200px;
-    margin-top: 500px;
-    margin-bottom : 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Menyusun elemen di tengah-tengah */
