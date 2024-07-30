@@ -180,21 +180,15 @@
                             
                             <div class="dropdown-divider"></div>
                             <form action="/logout" method="POST" class="dropdown-item" style="border: none; background: transparent; padding: 0; margin: 0;">
-                                    @csrf
-                                        <a class="dropdown-item" >
-                                    <div class="media">
-                                        <div>
-                                            <i class="fas fa-sign-out-alt" style="margin-right:10px; color:white;"></i>
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 style="color:white"><strong>Logout</strong></h6>
-                                            <!-- <p>New employee arrival</p> -->
-                                            <!-- <small class="text-success">09:23am</small> -->
-                                        </div>
+                                @csrf
+                                <button type="submit" style="border: none; background: transparent; padding: 0; margin: 0; width: 100%; text-align: left;">
+                                    <div class="media" style="display: flex; align-items: center;">
+                                        <i class="fas fa-sign-out-alt" style="margin-right: 10px; color: white;"></i>
+                                        <h6 style="color: white; margin: 0;"><strong>Logout</strong></h6>
                                     </div>
-                                </a>
-                                </form>
-
+                                </button>
+                            </form>
+                            
                             <!-- <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-center link-all" href="#">See all notifications ></a> -->
                         </div>

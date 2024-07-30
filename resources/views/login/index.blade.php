@@ -17,13 +17,17 @@
         <div class="div" style="
             justify-content: center;
             text-align:center;
+            display: flex;
+            margin-left: 0;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
         ">
                     <h2 style="
     margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 485px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -39,7 +43,7 @@ Silahkan Login !
 </h2>
 </div>
 <div class="container" style="
-    display: flex;
+     display: flex;
     flex-direction: column;
     background-color: #FFCB0F;
     padding: 10px;
@@ -48,8 +52,7 @@ Silahkan Login !
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 75vh;
-    margin-left: 165px;
+    height: 85vh;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
