@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 130vh;
+    height: 145vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -162,12 +162,12 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Peraturan Presiden Tentang Jasa Konstruksi</div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Peraturan Menteri Tentang Jasa Konstruksi</div></label>
         </a>
         <a style="background: white;">
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i></div></label>
         </a>
-        <a href="/perpemerintah" style="background: white;">
+        <a href="/skmenteri" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
         
@@ -210,17 +210,23 @@
 }
 
     </style>
+<div style="margin-top: 15px;">
 
-    @foreach($data as $items )
+    <a style="background: white; margin-top:10px; background: linear-gradient(to right, white, white);">
+        <div class="badge"><i class="fas fa-file mr-2"></i>{{$data->judul}}</div></label>
+    </a>
+</div>
+
+    
     <div class="pdf-container mt-4">
-        <iframe class="pdf-frame" src="{{ $items->peraturan }}"></iframe>
+        <iframe class="pdf-frame" src="{{ $data->peraturan }}"></iframe>
     </div>
     
     
     <script>
         document.getElementById('downloadBtn').addEventListener('click', function() {
             // URL file PDF
-            const pdfUrl = '{{ $items->peraturan }}';
+            const pdfUrl = '{{ $data->peraturan }}';
             
             // Membuat elemen anchor
             const link = document.createElement('a');
@@ -235,7 +241,7 @@
         document.body.removeChild(link);
     });
 </script>
-@endforeach
+
 
 
 </div>

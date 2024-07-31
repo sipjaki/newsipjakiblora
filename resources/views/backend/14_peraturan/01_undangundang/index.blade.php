@@ -251,6 +251,7 @@
         
                 
         </div>
+        <hr style="border:0; height:5px; background-color:navy; margin: 20px 0px;">
         @include('backend.00_dashboard.part.menufooter')
     </div>
 </div>

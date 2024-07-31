@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 150vh;
+    height: 190vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -271,9 +271,8 @@
             </div>
 
 
-                
-            @include('backend.00_dashboard.part.menufooter')
-        </div>
+            <hr style="border:0; height:5px; background-color:navy; margin: 20px 0px;">
+            @include('backend.00_dashboard.part.menufooter')    </div>
     </div>
 </div>
         </div>

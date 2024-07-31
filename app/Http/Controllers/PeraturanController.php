@@ -75,6 +75,17 @@ class PeraturanController extends Controller
                     'data' => $data, // Mengirimkan data paginasi ke view
                 ]);
             }
+
+            
+            public function skmenterishowByJudul($judul)
+            {
+                $data = keputusanmenteri::where('judul', $judul)->firstOrFail();
+
+                return view('backend.14_peraturan.05_skmenteri.show', [
+                    'data' => $data,
+                    'title' => 'Details Data SK Peraturan Menteri',
+                ]);
+            }
         
     // public function showByName($nama)
     // {
