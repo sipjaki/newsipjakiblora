@@ -250,7 +250,7 @@
 
         <div class="pagination-container" style="margin-top: 75px; margin-bottom:75px; display: flex; flex-direction: column; align-items: center;">
                 <div class="pagination-info mb-2" style="margin-bottom: 10px; color:navy; font-weight: 800;">
-                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah Data
+                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
                 </div>
                     <ul class="pagination" style="display: flex; padding-left: 0; list-style: none;">
                         <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
