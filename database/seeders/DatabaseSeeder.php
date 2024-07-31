@@ -384,7 +384,7 @@ class DatabaseSeeder extends Seeder
         // ======================================================
         perpemerintah::create([
             'judul' => 'PERATURAN PEMERINTAH NOMOR 29 TAHUN 2000',
-            'peraturan' => '/assets/library/peraturan/02_perpemerintah/UU_NO_02_TAHUN_2017.pdf',
+            'peraturan' => '/assets/library/peraturan/02_pemerintah/PERATURAN_PEMERINTAH_NO_29_TAHUN_2000.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
