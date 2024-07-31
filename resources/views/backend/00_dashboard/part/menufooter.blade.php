@@ -1,7 +1,7 @@
 
             <!--Footer-->
             <hr>
-            <div class="row mt-5 mb-4 footer">
+            <div class="row mt-0 mb-2 footer">
                 <div class="col-sm-8" >
                     <span style="font-size: 12px;">&copy;2024 Designed by <a href="https://wa.me/6281321455855" target="_blank" style="background: #FFCB0F; border-radius:25px; padding: 0px 10px;"><span style="color: black; font-size:12px;">Sigimatika.com</span> </a></span>
                 </div>

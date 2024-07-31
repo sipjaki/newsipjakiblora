@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class perpemerintah extends Model
+class perpresiden extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
