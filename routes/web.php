@@ -212,6 +212,11 @@ Route::get('/permenteri/{judul}', [PeraturanController::class, 'menterishowByJud
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 
+Route::get('/skmenteri', [PeraturanController::class, 'skmenteri'])->middleware('auth');  
+Route::get('/skmenteri/{judul}', [PeraturanController::class, 'skmenterishowByJudul'])->middleware('auth');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
 
 
 // -------- BAGIAN 04 BACKEND ---------------------------------

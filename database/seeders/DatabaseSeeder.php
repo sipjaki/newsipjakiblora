@@ -11,6 +11,7 @@ use App\Models\peraturan;
 use App\Models\permenteri;
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
+use App\Models\keputusanmenteri;
 use Database\Factories\SkktenagakerjaFactory;
 use Carbon\Carbon;
 
@@ -677,6 +678,39 @@ class DatabaseSeeder extends Seeder
         permenteri::create([
             'judul' => 'LAMPIRAN_3_Q_SDP_PK_PRA_SISTEM_NILAI_HS',
             'peraturan' => '/assets/library/peraturan/04_menteri/LAMPIRAN_3_Q_SDP_PK_PRA_SISTEM_NILAI_HS.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+// ============================================================================================================
+        keputusanmenteri::create([
+            'judul' => 'KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK',
+            'peraturan' => '/assets/library/peraturan/05_keputusanmenteri/KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        keputusanmenteri::create([
+            'judul' => 'KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022',
+            'peraturan' => '/assets/library/peraturan/05_keputusanmenteri/KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        keputusanmenteri::create([
+            'judul' => 'KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022',
+            'peraturan' => '/assets/library/peraturan/05_keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        keputusanmenteri::create([
+            'judul' => 'KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020',
+            'peraturan' => '/assets/library/peraturan/05_keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes

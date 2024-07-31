@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\keputusanmenteri;
 use Illuminate\Http\Request;
 
 
@@ -64,7 +65,17 @@ class PeraturanController extends Controller
                 ]);
             }
 
-   
+ 
+    public function skmenteri()
+            {
+                $data= keputusanmenteri::paginate(15); // Menggunakan paginate() untuk pagination
+        
+                return view('backend.14_peraturan.05_skmenteri.index', [
+                    'title' => 'Surat Keputusan Menteri',
+                    'data' => $data, // Mengirimkan data paginasi ke view
+                ]);
+            }
+        
     // public function showByName($nama)
     // {
     //     $item = Skktenagakerja::where('nama', $nama)->firstOrFail();
