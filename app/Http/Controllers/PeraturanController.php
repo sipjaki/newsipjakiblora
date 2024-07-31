@@ -56,10 +56,10 @@ class PeraturanController extends Controller
             
             public function menterishowByJudul($judul)
             {
-                $item = permenteri::where('judul', $judul)->firstOrFail();
+                $data = permenteri::where('judul', $judul)->firstOrFail();
 
                 return view('backend.14_peraturan.04_menteri.show', [
-                    'data' => $item,
+                    'data' => $data,
                     'title' => 'Details Data Peraturan Menteri',
                 ]);
             }
