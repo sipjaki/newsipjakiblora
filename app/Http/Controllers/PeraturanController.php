@@ -14,6 +14,7 @@ use App\Models\permenteri;
 
 class PeraturanController extends Controller
 {
+    // BACKEND DATABASE UNDANG UNDANG 
     public function undangundang()
     {
         $data= peraturan::all(); // Menggunakan paginate() untuk pagination
@@ -24,6 +25,23 @@ class PeraturanController extends Controller
         ]);
     }
 
+    // FRONTEND  DATABASE UNDANG UNDANG 
+
+    public function feundangundang()
+    {
+        $data= peraturan::all(); // Menggunakan paginate() untuk pagination
+
+        return view('frontend.11_peraturan.01_undangundang', [
+            'title' => 'Undang - Undang Jasa Konstruksi',
+            'data' => $data, // Mengirimkan data paginasi ke view
+        ]);
+    }
+
+
+    // -------------------------------------------------------------------------------------------------------
+    // BACKEND DATABASE PEMERINTAH 
+
+
     public function pemerintah()
     {
         $data= perpemerintah::all(); // Menggunakan paginate() untuk pagination
@@ -33,16 +51,49 @@ class PeraturanController extends Controller
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }
+    
+    // FRONTEND  DATABASE PEMERINTAH 
+    
+        public function fepemerintah()
+        {
+            $data= perpemerintah::all(); // Menggunakan paginate() untuk pagination
+    
+            return view('frontend.11_peraturan.02_peraturanpemerintah', [
+                'title' => 'Peraturan Pemerintah',
+                'data' => $data, // Mengirimkan data paginasi ke view
+            ]);
+        }
+
+
+    // -------------------------------------------------------------------------------------------------------
+    // BACKEND DATABASE PRESIDEN 
 
     public function presiden()
     {
         $data= perpresiden::all(); // Menggunakan paginate() untuk pagination
 
         return view('backend.14_peraturan.03_presiden.index', [
-            'title' => 'Peraturan Pemerintah',
+            'title' => 'Peraturan Presiden',
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }
+    
+    
+    // FRONTEND DATABASE PRESIDEN 
+    
+    public function fepresiden()
+    {
+        $data= perpresiden::all(); // Menggunakan paginate() untuk pagination
+
+        return view('frontend.11_peraturan.03_peraturanpresiden', [
+            'title' => 'Peraturan Presiden',
+            'data' => $data, // Mengirimkan data paginasi ke view
+        ]);
+    }
+    
+
+    // -------------------------------------------------------------------------------------------------------
+    // BACKEND DATABASE PRESIDEN 
 
     public function menteri()
     {
@@ -53,13 +104,34 @@ class PeraturanController extends Controller
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }
+    
+    // FRONTEND DATABASE PRESIDEN 
+    public function fementeri()
+    {
+        $data= permenteri::paginate(15); // Menggunakan paginate() untuk pagination
 
+        return view('frontend.11_peraturan.04_peraturanmenteri', [
+            'title' => 'Peraturan Menteri PUPR',
+            'data' => $data, // Mengirimkan data paginasi ke view
+        ]);
+    }
+    
             
             public function menterishowByJudul($judul)
             {
                 $data = permenteri::where('judul', $judul)->firstOrFail();
 
                 return view('backend.14_peraturan.04_menteri.show', [
+                    'data' => $data,
+                    'title' => 'Details Data Peraturan Menteri',
+                ]);
+            }
+            
+            public function fementerishowByJudul($judul)
+            {
+                $data = permenteri::where('judul', $judul)->firstOrFail();
+
+                return view('frontend.11_peraturan.04_peraturanmenterishow', [
                     'data' => $data,
                     'title' => 'Details Data Peraturan Menteri',
                 ]);

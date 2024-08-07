@@ -17,13 +17,17 @@
         <div class="div" style="
             justify-content: center;
             text-align:center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
         ">
-                    <h2 style="
+
+            <h2 style="
     margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 425px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -35,7 +39,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Peraturan Pemerintah 
+Peraturan Pemerintah Tentang Jasa Konstruksi
 </h2>
 </div>
 <div class="container" style="
@@ -48,170 +52,96 @@ Peraturan Pemerintah
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 90vh;
-    margin-left: 100px;
+    height: 120vh;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
 ">
-    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: 10px;">
-<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
-    <div class="container">
-        <div class="card" style="
-            background-color: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
-            margin: 20px auto;">
+  <div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div>
 
 
-            {{-- ------------------------------------ FITUR TAMBAHAN ------------- --}}
-
-            <div class="controls" style="  
+    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+    <div class="container" style="margin-top: 20px;">
+    <style>
+        .pdf-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
-            border-radius:5px;
-            ">
-<div class="show-entries" style="border-radius: 10px;">
-    <label for="entries" style="margin-right: 5px;">
-        <style>
-            .badge {
-                background: linear-gradient(to right, yellow, black);
+            justify-content: center;
+            width: 80%;
+            height: 85vh;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: #FFCB0F;
+            background: linear-gradient(to bottom, yellow, white, black);
+        }
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .badgedownload {
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
                 display: inline-block;
                 font-size: 1rem;
-                margin-right: 10px;
                 text-align: center;
+                font-size: 12px;
+                margin-top: 20px;
+                margin-left: 500px;
                 transition: background-color 0.3s, color 0.3s;
+                margin-left: 225px;
+                cursor: pointer;
+             
             }
     
-            .badge:hover {
+            .badgedownload:hover {
                 background-color: white;
                 color: black;
+                background: white;
             }
-        </style>
-        <div class="badge"><i class="fas fa-file me-2"></i>Peraturan Pemerintah </div></label>
-    
-</div>
-<div class="search-entries">
-    <style>
-        .search-container {
-            position: relative;
-            display: inline-block;
-        }
-        .search-container input {
-            border-radius: 15px;
-            padding: 2px 5px 2px 25px; /* Extra padding for the icon */
-        }
-        .search-container .fa-search {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+
     </style>
-    <div class="search-container">
-        <input
-            type="text"
-            id="searchInput"
-            onkeyup="searchEntries()"
-            placeholder="  Search..">
-        <i class="fas fa-search"></i>
+
+    @foreach ($data as $item)
+        
+    
+    <div class="pdf-container">
+        <iframe class="pdf-frame" src="{{$item->peraturan}}"></iframe>
     </div>
-
-    <script>
-        function searchEntries() {
-            // Your JavaScript function for searching entries
-        }
-    </script>
+    <div style="margin-left: 450px;">
+        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
+    </div>
 </div>
 </div>
 
-{{-- ------------------------------------ END FITUR ------------- --}}
 
-
-            <style>
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                }
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+        // URL file PDF
+        const pdfUrl = '{{$item->peraturan}}';
         
-                th, td {
-                    font-family: 'Lato', sans-serif;
-                    font-weight: 700;
-                    color: black;
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                }
+        // Membuat elemen anchor
+        const link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
         
-                tr:nth-child(even) {
-                    background-color: #f2f2f2;
-                }
+        // Menyimulasikan klik pada elemen anchor
+        document.body.appendChild(link);
+        link.click();
         
-                th {
-                    /* background-color: #4CAF50; */
-                    /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
-                    background-color:  #FFCB0F;
-                    color: black;
-                }
-            </style>
-             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 50px;">No</th>
-                        <th>Keterangan</th>
-                        <th style="width: 225px;">Kategori</th>
-                        <th style="width: 170px;">Aksi</th>
-                    </tr>
-                </thead>
-                {{-- @foreach ($collection as $item) --}}
-                    
-                {{-- @endforeach --}}
-                <tbody>
-
-                    {{-- ============================================ --}}
-                    <tr>
-                        <td>1</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        
-                        <td>
-                            <button class="download-btn" onclick="downloadCSV()" style="
-                                padding: 5px 15px;
-                                background: linear-gradient(to right, #000000, #FFFF00);
-                                color: white;
-                                border: none;
-                                font-size: 12px;
-                                border-radius: 15px;
-                                width: 70%;
-                                cursor: pointer;
-                                transition: background 0.3s, color 0.3s;"
-                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
-                                <i class="fas fa-download me-2"></i> Download
-                            </button>
-                            
-                            <script>
-                                function downloadCSV() {
-                                    // Function to handle CSV download
-                                }
-                                </script>
-                        </td>
-                    </tr>
-                    {{-- ============================================ --}}
-                    
-                    
-                </tbody>
-            </table>
-        </div>
-</div>
-</div>
-
+        // Menghapus elemen anchor dari dokumen
+        document.body.removeChild(link);
+    });
+</script>
+@endforeach
 
 
 <br><br>

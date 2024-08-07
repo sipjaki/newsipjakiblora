@@ -105,25 +105,15 @@ Route::get('/tdup', function () {
 
 // ---------------------- 11 PERATURAN PERATURAN -----------------------//
 // -------- BAGIAN 1 ---------------------------------
-Route::get('/peraturan/undangundang', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.01_undangundang');
-});
+Route::get('/peraturan/undangundang', [PeraturanController::class, 'feundangundang']);  
 // -------- BAGIAN 2 ---------------------------------
-Route::get('/peraturan/pemerintah', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.02_peraturanpemerintah');
-});
+Route::get('/peraturan/pemerintah', [PeraturanController::class, 'fepemerintah']);  
 // -------- BAGIAN 3 ---------------------------------
-Route::get('/peraturan/presiden', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.03_peraturanpresiden');
-});
+Route::get('/peraturan/presiden', [PeraturanController::class, 'fepresiden']);  
 // -------- BAGIAN 4 ---------------------------------
-Route::get('/peraturan/menteri', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.04_peraturanmenteri');
-});
+Route::get('/peraturan/menteri', [PeraturanController::class, 'fementeri']);  
+Route::get('/peraturan/menteri/{judul}', [PeraturanController::class, 'fementerishowByJudul']);
+
 // -------- BAGIAN 5 ---------------------------------
 Route::get('/peraturan/keputusanmenteri', function () {
     // return view('welcome');
