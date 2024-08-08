@@ -16,6 +16,7 @@ use App\Models\permenteri;
 use App\Models\suratedaran;
 use App\Models\referensi;
 use App\Models\pergubernur;
+use App\Models\suratkeputusan;
 
 class PeraturanController extends Controller
 {
@@ -267,6 +268,27 @@ public function fereferensi()
                             return view('frontend.11_peraturan.10_peraturanwalikotashow', [
                                 'data' => $data,
                                 'title' => 'Details Peraturan Bupati/Walikota Jasa Konstruksi',
+                            ]);
+                        }
+                    
+    public function fesuratkeputusan()
+                        {
+                            $data= suratkeputusan::paginate(15); // Menggunakan paginate() untuk pagination
+                    
+                            return view('frontend.11_peraturan.11_suratkeputusan', [
+                                'title' => 'Surat Keputusan Jasa Konstruksi',
+                                'data' => $data, // Mengirimkan data paginasi ke view
+                            ]);
+                        }
+                        
+                
+                        public function fesuratkeputusanshowByJudul($judul)
+                        {
+                            $data = suratkeputusan::where('judul', $judul)->firstOrFail();
+                            
+                            return view('frontend.11_peraturan.11_suratkeputusanshow', [
+                                'data' => $data,
+                                'title' => 'Details Surat Keputusan Jasa Konstruksi',
                             ]);
                         }
                     

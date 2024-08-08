@@ -140,10 +140,8 @@ Route::get('/peraturan/walikotadanbupati', [PeraturanController::class, 'feperbu
 Route::get('/peraturan/walikotadanbupati/{judul}', [PeraturanController::class, 'feperbupatiwalikotashowByJudul']);
 
 // -------- BAGIAN 11 ---------------------------------
-Route::get('/peraturan/suratkeputusan', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.11_suratkeputusan');
-});
+Route::get('/peraturan/suratkeputusan', [PeraturanController::class, 'fesuratkeputusan']);  
+Route::get('/peraturan/suratkeputusan/{judul}', [PeraturanController::class, 'fesuratkeputusanshowByJudul']);
 
 
 // ================================================================================================================================================

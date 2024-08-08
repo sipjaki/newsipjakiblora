@@ -151,7 +151,7 @@ border-radius:5px;
 
 </style>
 <a>
-<div class="badge"><i class="fas fa-file mr-2"></i>KEPUTUSAN MENTERI TENTANG JASA KONSTRUKSI</div></label>
+<div class="badge"><i class="fas fa-file mr-2"></i>PERATURAN DAERAH TENTANG JASA KONSTRUKSI</div></label>
 </a>
 <a>
 <div class="badgehidden" style="color: white"></div></label>
