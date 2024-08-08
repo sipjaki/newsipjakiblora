@@ -12,8 +12,11 @@ use App\Models\permenteri;
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
 use App\Models\keputusanmenteri;
+use App\Models\perbupatiwalikota;
+use App\Models\perdaerah;
 use App\Models\referensi;
 use App\Models\suratedaran;
+use App\Models\pergubernur;
 use Database\Factories\SkktenagakerjaFactory;
 use Carbon\Carbon;
 
@@ -768,6 +771,60 @@ class DatabaseSeeder extends Seeder
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
+
+        // ===========================================================================================================================================================
+
+        perdaerah::create([
+            'judul' => 'PERATURAN_DAERAH_NO_11-TAHUN_2019',
+            'peraturan' => '/assets/library/peraturan/08_daerah/PERATURAN_DAERAH_NO_11-TAHUN_2019.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        perdaerah::create([
+            'judul' => 'PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR',
+            'peraturan' => '/assets/library/peraturan/08_daerah/PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+
+// ===========================================================================================================================================================
+
+pergubernur::create([
+    'judul' => 'PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009',
+    'peraturan' => '/assets/library/peraturan/09_gubernur/PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009.pdf',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+
+// ===========================================================================================================================================================
+
+perbupatiwalikota::create([
+    'judul' => 'PERATURAN_BUPATI_NOMOR_71_TAHUN_2023',
+    'peraturan' => '/assets/library/peraturan/10_bupatiwalikota/PERATURAN_BUPATI_NOMOR_71_TAHUN_2023.pdf',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+perbupatiwalikota::create([
+    'judul' => 'PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN',
+    'peraturan' => '/assets/library/peraturan/10_bupatiwalikota/PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN.pdf',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+
+
+
+
+
     }
  /**
      * Menghitung usia berdasarkan tanggal lahir.

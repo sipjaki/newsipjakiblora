@@ -129,20 +129,16 @@ Route::get('/peraturan/suratedaranmenteri/{judul}', [PeraturanController::class,
 Route::get('/peraturan/referensi', [PeraturanController::class, 'fereferensi']);  
 
 // -------- BAGIAN 8 ---------------------------------
-Route::get('/peraturan/daerah', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.08_peraturandaerah');
-});
+Route::get('/peraturan/daerah', [PeraturanController::class, 'feperdaerah']);  
+Route::get('/peraturan/daerah/{judul}', [PeraturanController::class, 'feperdaerahshowByJudul']);
+
 // -------- BAGIAN 9 ---------------------------------
-Route::get('/peraturan/gubernur', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.09_peraturangubernur');
-});
+Route::get('/peraturan/gubernur', [PeraturanController::class, 'fegubernur']);  
+
 // -------- BAGIAN 10 ---------------------------------
-Route::get('/peraturan/walikota', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.10_peraturanwalikota');
-});
+Route::get('/peraturan/walikotadanbupati', [PeraturanController::class, 'feperbupatiwalikota']);  
+Route::get('/peraturan/walikotadanbupati/{judul}', [PeraturanController::class, 'feperbupatiwalikotashowByJudul']);
+
 // -------- BAGIAN 11 ---------------------------------
 Route::get('/peraturan/suratkeputusan', function () {
     // return view('welcome');

@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 
 
 use App\Models\peraturan; // Pastikan namespace model sesuai dengan struktur direktori
- // Pastikan namespace model sesuai dengan struktur direktori
+use App\Models\perbupatiwalikota;
+use App\Models\perdaerah;
+// Pastikan namespace model sesuai dengan struktur direktori
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
 use App\Models\permenteri;
 use App\Models\suratedaran;
 use App\Models\referensi;
+use App\Models\pergubernur;
 
 class PeraturanController extends Controller
 {
@@ -167,7 +170,7 @@ public function feskmenteri()
                 $data= keputusanmenteri::paginate(15); // Menggunakan paginate() untuk pagination
         
                 return view('frontend.11_peraturan.05_keputusanmenteri', [
-                    'title' => 'Surat Keputusan Menteri Tentang Jasa Konstruksi',
+                    'title' => 'Surat Keputusan Menteri Jasa Konstruksi',
                     'data' => $data, // Mengirimkan data paginasi ke view
                 ]);
             }
@@ -210,14 +213,62 @@ public function fereferensi()
                 $data= referensi::all(); // Menggunakan paginate() untuk pagination
         
                 return view('frontend.11_peraturan.07_suratreferensi', [
-                    'title' => 'Surat Referensi Tentang Jasa Konstruksi',
+                    'title' => 'Surat Referensi Jasa Konstruksi',
                     'data' => $data, // Mengirimkan data paginasi ke view
                 ]);
             }
             
-
-
-          
+    public function feperdaerah()
+            {
+                $data= perdaerah::paginate(15); // Menggunakan paginate() untuk pagination
         
+                return view('frontend.11_peraturan.08_peraturandaerah', [
+                    'title' => 'Peraturan Daerah Jasa Konstruksi',
+                    'data' => $data, // Mengirimkan data paginasi ke view
+                ]);
+            }
+            
+    
+            public function feperdaerahshowByJudul($judul)
+            {
+                $data = perdaerah::where('judul', $judul)->firstOrFail();
+                
+                return view('frontend.11_peraturan.08_peraturandaerahshow', [
+                    'data' => $data,
+                    'title' => 'Details Peraturan Daerah Jasa Konstruksi',
+                ]);
+            }
 
+    public function fegubernur()
+                        {
+                            $data= pergubernur::all(); // Menggunakan paginate() untuk pagination
+                    
+                            return view('frontend.11_peraturan.09_peraturangubernur', [
+                                'title' => 'Peraturan Gubernur Jasa Konstruksi',
+                                'data' => $data, // Mengirimkan data paginasi ke view
+                            ]);
+                        }
+          
+    public function feperbupatiwalikota()
+                        {
+                            $data= perbupatiwalikota::paginate(15); // Menggunakan paginate() untuk pagination
+                    
+                            return view('frontend.11_peraturan.10_peraturanwalikota', [
+                                'title' => 'Peraturan Bupati/Walikota Jasa Konstruksi',
+                                'data' => $data, // Mengirimkan data paginasi ke view
+                            ]);
+                        }
+                        
+                
+                        public function feperbupatiwalikotashowByJudul($judul)
+                        {
+                            $data = perbupatiwalikota::where('judul', $judul)->firstOrFail();
+                            
+                            return view('frontend.11_peraturan.10_peraturanwalikotashow', [
+                                'data' => $data,
+                                'title' => 'Details Peraturan Bupati/Walikota Jasa Konstruksi',
+                            ]);
+                        }
+                    
+            
 }
