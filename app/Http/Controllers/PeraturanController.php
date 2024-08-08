@@ -11,6 +11,8 @@ use App\Models\peraturan; // Pastikan namespace model sesuai dengan struktur dir
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
 use App\Models\permenteri;
+use App\Models\suratedaran;
+use App\Models\referensi;
 
 class PeraturanController extends Controller
 {
@@ -93,7 +95,7 @@ class PeraturanController extends Controller
     
 
     // -------------------------------------------------------------------------------------------------------
-    // BACKEND DATABASE PRESIDEN 
+    // BACKEND DATABASE MENTERI  
 
     public function menteri()
     {
@@ -105,19 +107,19 @@ class PeraturanController extends Controller
         ]);
     }
     
-    // FRONTEND DATABASE PRESIDEN 
+    // FRONTEND DATABASE MENTERI  
     public function fementeri()
     {
         $data= permenteri::paginate(15); // Menggunakan paginate() untuk pagination
 
         return view('frontend.11_peraturan.04_peraturanmenteri', [
-            'title' => 'Peraturan Menteri PUPR',
+            'title' => 'Peraturan Menteri PUPR Tentang Jasa Konstruksi',
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }
     
             
-            public function menterishowByJudul($judul)
+    public function menterishowByJudul($judul)
             {
                 $data = permenteri::where('judul', $judul)->firstOrFail();
 
@@ -126,7 +128,7 @@ class PeraturanController extends Controller
                     'title' => 'Details Data Peraturan Menteri',
                 ]);
             }
-            
+    
             public function fementerishowByJudul($judul)
             {
                 $data = permenteri::where('judul', $judul)->firstOrFail();
@@ -136,7 +138,7 @@ class PeraturanController extends Controller
                     'title' => 'Details Data Peraturan Menteri',
                 ]);
             }
-
+            
  
     public function skmenteri()
             {
@@ -148,7 +150,7 @@ class PeraturanController extends Controller
                 ]);
             }
 
-            
+              
             public function skmenterishowByJudul($judul)
             {
                 $data = keputusanmenteri::where('judul', $judul)->firstOrFail();
@@ -158,14 +160,64 @@ class PeraturanController extends Controller
                     'title' => 'Details Data SK Peraturan Menteri',
                 ]);
             }
-        
-    // public function showByName($nama)
-    // {
-    //     $item = Skktenagakerja::where('nama', $nama)->firstOrFail();
 
-    //     return view('backend.04_skk.01_skk.show', [
-    //         'data' => $item,
-    //         'title' => 'Detail SKK Tenaga Kerja',
-    //     ]);
-    // }
+            
+public function feskmenteri()
+            {
+                $data= keputusanmenteri::paginate(15); // Menggunakan paginate() untuk pagination
+        
+                return view('frontend.11_peraturan.05_keputusanmenteri', [
+                    'title' => 'Surat Keputusan Menteri Tentang Jasa Konstruksi',
+                    'data' => $data, // Mengirimkan data paginasi ke view
+                ]);
+            }
+
+    
+            public function feskmenterishowByJudul($judul)
+            {
+                $data = keputusanmenteri::where('judul', $judul)->firstOrFail();
+
+                return view('frontend.11_peraturan.05_keputusanmenterishow', [
+                    'data' => $data,
+                    'title' => 'Details Data Keputusan Menteri',
+                ]);
+            }
+            
+            
+public function suratedaranmenteri()
+            {
+                $data= suratedaran::paginate(15); // Menggunakan paginate() untuk pagination
+        
+                return view('frontend.11_peraturan.06_suratedaranmenteri', [
+                    'title' => 'Surat Edatan Menteri Jasa Konstruksi',
+                    'data' => $data, // Mengirimkan data paginasi ke view
+                ]);
+            }
+
+    
+            public function suratedaranmenterishowByJudul($judul)
+            {
+                $data = suratedaran::where('judul', $judul)->firstOrFail();
+
+                return view('frontend.11_peraturan.06_suratedaranmenterishow', [
+                    'data' => $data,
+                    'title' => 'Details Data Surat Edaran Menteri',
+                ]);
+            }
+
+public function fereferensi()
+            {
+                $data= referensi::all(); // Menggunakan paginate() untuk pagination
+        
+                return view('frontend.11_peraturan.07_suratreferensi', [
+                    'title' => 'Surat Referensi Tentang Jasa Konstruksi',
+                    'data' => $data, // Mengirimkan data paginasi ke view
+                ]);
+            }
+            
+
+
+          
+        
+
 }

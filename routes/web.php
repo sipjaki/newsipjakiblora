@@ -106,29 +106,28 @@ Route::get('/tdup', function () {
 // ---------------------- 11 PERATURAN PERATURAN -----------------------//
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/peraturan/undangundang', [PeraturanController::class, 'feundangundang']);  
+
 // -------- BAGIAN 2 ---------------------------------
 Route::get('/peraturan/pemerintah', [PeraturanController::class, 'fepemerintah']);  
+
 // -------- BAGIAN 3 ---------------------------------
 Route::get('/peraturan/presiden', [PeraturanController::class, 'fepresiden']);  
+
 // -------- BAGIAN 4 ---------------------------------
 Route::get('/peraturan/menteri', [PeraturanController::class, 'fementeri']);  
 Route::get('/peraturan/menteri/{judul}', [PeraturanController::class, 'fementerishowByJudul']);
 
 // -------- BAGIAN 5 ---------------------------------
-Route::get('/peraturan/keputusanmenteri', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.05_keputusanmenteri');
-});
+Route::get('/peraturan/keputusanmenteri', [PeraturanController::class, 'feskmenteri']);  
+Route::get('/peraturan/keputusanmenteri/{judul}', [PeraturanController::class, 'feskmenterishowByJudul']);
+
 // -------- BAGIAN 6 ---------------------------------
-Route::get('/peraturan/suratedaranmenteri', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.06_suratedaranmenteri');
-});
+Route::get('/peraturan/suratedaranmenteri', [PeraturanController::class, 'suratedaranmenteri']);  
+Route::get('/peraturan/suratedaranmenteri/{judul}', [PeraturanController::class, 'suratedaranmenterishowByJudul']);
+
 // -------- BAGIAN 7 ---------------------------------
-Route::get('/peraturan/referensi', function () {
-    // return view('welcome');
-    return view('frontend.11_peraturan.07_referensi');
-});
+Route::get('/peraturan/referensi', [PeraturanController::class, 'fereferensi']);  
+
 // -------- BAGIAN 8 ---------------------------------
 Route::get('/peraturan/daerah', function () {
     // return view('welcome');

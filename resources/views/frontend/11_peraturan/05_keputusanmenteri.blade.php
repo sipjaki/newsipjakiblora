@@ -17,13 +17,17 @@
         <div class="div" style="
             justify-content: center;
             text-align:center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
         ">
-                    <h2 style="
+
+            <h2 style="
     margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 425px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -35,7 +39,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Keputusan Menteri  
+Keputusan Menteri Tentang Jasa Konstruksi
 </h2>
 </div>
 <div class="container" style="
@@ -48,170 +52,199 @@ Keputusan Menteri
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 90vh;
-    margin-left: 100px;
+    height: 135vh;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
 ">
-    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: 10px;">
-<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
-    <div class="container">
-        <div class="card" style="
-            background-color: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
-            margin: 20px auto;">
+  <div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div>
 
 
-            {{-- ------------------------------------ FITUR TAMBAHAN ------------- --}}
-
-            <div class="controls" style="  
+    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+    <div class="container" style="margin-top: 20px;">
+    <style>
+        .pdf-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 20px;
-            border-radius:5px;
-            ">
-<div class="show-entries" style="border-radius: 10px;">
-    <label for="entries" style="margin-right: 5px;">
-        <style>
-            .badge {
-                background: linear-gradient(to right, yellow, black);
+            justify-content: center;
+            width: 80%;
+            height: 85vh;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 25px;
+            overflow: hidden;
+            background-color: #FFCB0F;
+            background: linear-gradient(to bottom, yellow, white, black);
+        }
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .badgedownload {
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
                 display: inline-block;
                 font-size: 1rem;
-                margin-right: 10px;
                 text-align: center;
+                font-size: 12px;
+                margin-top: 20px;
+                margin-left: 500px;
                 transition: background-color 0.3s, color 0.3s;
+                margin-left: 225px;
+                cursor: pointer;
+             
             }
     
-            .badge:hover {
+            .badgedownload:hover {
                 background-color: white;
                 color: black;
+                background: white;
             }
-        </style>
-        <div class="badge"><i class="fas fa-file me-2"></i>Keputusan Menteri </div></label>
-    
-</div>
-<div class="search-entries">
-    <style>
-        .search-container {
-            position: relative;
-            display: inline-block;
-        }
-        .search-container input {
-            border-radius: 15px;
-            padding: 2px 5px 2px 25px; /* Extra padding for the icon */
-        }
-        .search-container .fa-search {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+
     </style>
-    <div class="search-container">
-        <input
-            type="text"
-            id="searchInput"
-            onkeyup="searchEntries()"
-            placeholder="  Search..">
-        <i class="fas fa-search"></i>
-    </div>
 
-    <script>
-        function searchEntries() {
-            // Your JavaScript function for searching entries
-        }
-    </script>
-</div>
-</div>
+    
 
-{{-- ------------------------------------ END FITUR ------------- --}}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
 
+    th, td {
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        color: black;
+        font-size: 12px;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
 
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+        font-size: 12px;
+    }
+
+    th {
+        /* background-color: #4CAF50; */
+        /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
+        background-color:  #FFCB0F;
+        color: black;
+        font-size: 14px;
+    }
+</style>
+ <table>
+    <thead>
+        <tr>
+            <th style="width:45px;">No</th>
+            <th>Judul</th>
+            
+            <th style="width: 100px;">View Dokumen</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {{-- ============================================ --}}
+        @php
+    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+        @endphp
+
+        @foreach($data as $item )
+        
+        <tr>
+            <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
+            <td style="font-size: 12px; text-align:left;">{{ $item->judul}}</td>
+            
+            <td>
+                
             <style>
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                }
+                                    /* Container for the buttons */
+        .button-container {
+            display: flex;
+            gap: 10px; /* Space between icons */
+            justify-content: center; /* Center the icons horizontally */
+        }
+
+        /* Style for the individual buttons */
+        .iconhover {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px; /* Adjust width as needed */
+            height: 25px; /* Adjust height as needed */
+            background: black; /* Yellow background */
+            color: white; /* Text color */
+            border: none;
+            border-radius: 50%;
+            text-decoration: none;
+            padding: 3px 3px;
+            font-size: 15px; /* Adjust font size as needed */
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .iconhover:hover {
+            background: white; /* White background on hover */
+            color: black; /* Black text color on hover */
+        }
+
+        .iconhover i {
+            margin: 0;
+        }
         
-                th, td {
-                    font-family: 'Lato', sans-serif;
-                    font-weight: 700;
-                    color: black;
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                }
-        
-                tr:nth-child(even) {
-                    background-color: #f2f2f2;
-                }
-        
-                th {
-                    /* background-color: #4CAF50; */
-                    /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
-                    background-color:  #FFCB0F;
-                    color: black;
-                }
             </style>
-             <table>
-                <thead>
-                    <tr>
-                        <th style="width: 50px;">No</th>
-                        <th>Keterangan</th>
-                        <th style="width: 225px;">Kategori</th>
-                        <th style="width: 170px;">Aksi</th>
-                    </tr>
-                </thead>
-                {{-- @foreach ($collection as $item) --}}
-                    
-                {{-- @endforeach --}}
-                <tbody>
 
-                    {{-- ============================================ --}}
-                    <tr>
-                        <td>1</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        
-                        <td>
-                            <button class="download-btn" onclick="downloadCSV()" style="
-                                padding: 5px 15px;
-                                background: linear-gradient(to right, #000000, #FFFF00);
-                                color: white;
-                                border: none;
-                                font-size: 12px;
-                                border-radius: 15px;
-                                width: 70%;
-                                cursor: pointer;
-                                transition: background 0.3s, color 0.3s;"
-                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
-                                <i class="fas fa-download me-2"></i> Download
-                            </button>
-                            
-                            <script>
-                                function downloadCSV() {
-                                    // Function to handle CSV download
-                                }
-                                </script>
-                        </td>
-                    </tr>
-                    {{-- ============================================ --}}
-                    
-                    
-                </tbody>
-            </table>
-        </div>
-</div>
+            <div class="button-container">
+            <a href="/peraturan/keputusanmenteri/{{$item->judul}}" class="iconhover" title="View">
+                <i class="fas fa-eye"></i>
+            </a>
+                  
+                </div>
+
+                <script>
+                    function downloadCSV() {
+                        // Function to handle CSV download
+                    }
+                    </script>
+            </td>
+        </tr>
+        @endforeach
+        {{-- ============================================ --}}
+        
+        
+    </tbody>
+</table>
+
+
 </div>
 
+<div class="pagination-container" style=" margin-top: 25px; margin-bottom:200px; display: flex; flex-direction: column; align-items: center;">
+    <div class="pagination-info mb-2" style="margin-bottom: 100px; color:#333333; font-weight: 500;">
+        Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
+    </div>
+        <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top:10px; ">
+            <li class="page-item {{ $data->onFirstPage() ? : '' }}" style="margin-right: 5px; ">
+                <a class="page-link" href="{{ $data->previousPageUrl() }}" style="color:black; position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: black; border: 1px solid #dee2e6; font-size:12px; border-radius: 20px 0px 0px 20px;"><i class="fas fa-arrow-left" style="margin-right:10px;"></i>Previous</a>
+            </li>
+            <li class="page-item {{ $data->hasMorePages() ? '' : '' }}" style="margin-right: 5px;">
+                <a class="page-link" href="{{ $data->nextPageUrl() }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: black; border: 1px solid #dee2e6; font-size:12px; border-radius: 0px 20px 20px 0px;">Next <i class="fas fa-arrow-right" style="margin-left:10px;"></i></a>
+            </li>
+        </ul>
+
+</div>
+
+
+
+</div>
+</div>
+</div>
 
 
 <br><br>

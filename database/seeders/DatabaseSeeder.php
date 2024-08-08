@@ -12,6 +12,8 @@ use App\Models\permenteri;
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
 use App\Models\keputusanmenteri;
+use App\Models\referensi;
+use App\Models\suratedaran;
 use Database\Factories\SkktenagakerjaFactory;
 use Carbon\Carbon;
 
@@ -716,7 +718,56 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
+        // ====================================================================================================================================================================================
+        suratedaran::create([
+            'judul' => 'SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024',
+            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+        
+        suratedaran::create([
+            'judul' => 'SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023',
+            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+        
+        suratedaran::create([
+            'judul' => 'SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL',
+            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+        
+        suratedaran::create([
+            'judul' => 'SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022',
+            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
 
+        suratedaran::create([
+            'judul' => 'SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023',
+            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        // ===========================================================================================================================================================
+
+        referensi::create([
+            'judul' => 'PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020',
+            'peraturan' => '/assets/library/peraturan/07_suratreferensi/PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020.pdf',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
     }
  /**
      * Menghitung usia berdasarkan tanggal lahir.
