@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FedashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeraturanController;
@@ -19,14 +20,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // return view('welcome');
-    return view('frontend.00_full.index');
-});
+Route::get('/', [FedashboardController::class, 'index']);  
+
 
 Route::get('/404', function () {
     // return view('welcome');
-    return view('404');
+    return view('404', [
+        'title' => 'Under Constructions',
+    ]);
 });
 
 Route::get('/bahan2', function () {
@@ -38,29 +39,39 @@ Route::get('/bahan2', function () {
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/profil/struktur', function () {
     // return view('welcome');
-    return view('frontend.01_profil.01_struktur');
+    return view('frontend.01_profil.01_struktur', [
+        'title' => 'Struktur Kedinasan'
+    ]);
 });
 
 Route::get('/profil/rencanastrategis', function () {
     // return view('welcome');
-    return view('frontend.01_profil.02_rencanastrategis');
+    return view('frontend.01_profil.02_rencanastrategis', [
+        'title' => 'Rencana Strategis'
+        ]);
 });
 
 Route::get('/profil/tupoksi', function () {
     // return view('welcome');
-    return view('frontend.01_profil.03_tupoksi');
+    return view('frontend.01_profil.03_tupoksi', [
+        'title' => 'Tupoksi Program & Jasa Konstruksi'
+    ]);
 });
 
 // ---------------------- 03 DATA JAKON -----------------------//
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/datajakon/standarbiayaumum', function () {
     // return view('welcome');
-    return view('frontend.03_datajakon.02_standarbiayaumum');
+    return view('frontend.03_datajakon.02_standarbiayaumum', [
+        'title' => 'Standar Biaya Umum'
+    ]);
 });
 
 Route::get('/datajakon/paketpekerjaan', function () {
     // return view('welcome');
-    return view('frontend.03_datajakon.03_paketpekerjaan');
+    return view('frontend.03_datajakon.03_paketpekerjaan', [
+        'title' => 'Paket Pekerjaan KBB'
+    ]);
 });
 
 
@@ -68,17 +79,23 @@ Route::get('/datajakon/paketpekerjaan', function () {
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/tenagakerja/skaskt', function () {
     // return view('welcome');
-    return view('frontend.04_tenagakerja.01_skaskt');
+    return view('frontend.04_tenagakerja.01_skaskt', [
+        'title' => 'SKK Tenaga Kerja'
+    ]);
 });
 
 Route::get('/tenagakerja/pjt', function () {
     // return view('welcome');
-    return view('frontend.04_tenagakerja.02_pjt');
+    return view('frontend.04_tenagakerja.02_pjt', [
+        'title' => 'Penanggung Jawab Teknis'
+    ]);
 });
 
 Route::get('/tenagakerja/timpembina', function () {
     // return view('welcome');
-    return view('frontend.04_tenagakerja.03_timpembina');
+    return view('frontend.04_tenagakerja.03_timpembina', [
+        'title' => 'Tim Pembina Jasa Konstruksi'
+    ]);
 });
 
 
@@ -86,21 +103,27 @@ Route::get('/tenagakerja/timpembina', function () {
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/spm/informasispm', function () {
     // return view('welcome');
-    return view('frontend.05_spm.01_informasispm');
+    return view('frontend.05_spm.01_informasispm', [
+        'title' => 'Standar Penetapan Kemampuan'
+    ]);
 });
 
 // ---------------------- 08 UIJK -----------------------//
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/uijk', function () {
     // return view('welcome');
-    return view('frontend.08_uijk.uijk');
+    return view('frontend.08_uijk.uijk',[
+        'title' => 'Sertifikat Badan Usaha'
+    ] );
 });
 
 // ---------------------- 09 TDUP -----------------------//
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/tdup', function () {
     // return view('welcome');
-    return view('frontend.09_tdup.01_tdup');
+    return view('frontend.09_tdup.01_tdup', [
+        'title' => 'Tanda Daftar Usaha Perseroan'
+    ]);
 });
 
 // ---------------------- 11 PERATURAN PERATURAN -----------------------//
