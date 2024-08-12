@@ -32,14 +32,16 @@
                         
                     
                     <div class="position-relative overflow-hidden" style="height: 500px;">
-                        <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                        <a href="/portalberita/{{ $item->judul}}">
+                            <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                        </a>
                         <div class="overlay">
                             <div class="mb-2">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                                href="">News</a>
+                                href="/portalberita/{{ $item->judul}}">News</a>
                                 {{-- <a class="text-white" href="">Jan 01, 2045</a> --}}
                             </div>
-                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="">{{ $item->judul }}</a>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/{{ $item->judul}}">{{ $item->judul }}</a>
                         </div>
                     </div>
                     
@@ -53,16 +55,21 @@
             <div class="col-lg-5 px-0">
                 <div class="row mx-0">
                     @foreach ($data->slice(-4) as $item)
+        
                         <div class="col-md-6 px-0">
-                            <div class="position-relative overflow-hidden" style="height: 250px;">
-                                <img class="img-fluid w-100 h-100" src="{{$item->gambar}}" style="object-fit: cover;">
-                                <div class="overlay">
+                            <a href="/portalberita/{{$item->judul}}">
+
+                                <div class="position-relative overflow-hidden" style="height: 250px;">
+                                    <img class="img-fluid w-100 h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                                    <div class="overlay">
                                     <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">News</a>
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="/portalberita/{{$item->judul}}">News</a>
                                         {{-- <a class="text-white" href=""><small>Jan 01, 2045</small></a> --}}
                                     </div>
-                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{ $item->judul }}</a>
+                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="/portalberita/{{$item->judul}}">{{ $item->judul }}</a>
                                 </div>
+                            </a>
+
                             </div>
                         </div>
                     @endforeach
@@ -79,14 +86,16 @@
         <div class="container">
             <div class="row align-items-center bg-dark">
                 <div class="col-12">
-                    <div class="d-flex justify-content-between">
-                        <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">News</div>
-                        <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
+                    <a href="">
+                        <div class="d-flex justify-content-between">
+                            <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">News</div>
+                            <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
                             style="width: calc(100% - 170px); padding-right: 90px;">
                             @foreach ($data as $item)
                             <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">{{$item->judul}}</a></div>
                             @endforeach
                         </div>
+                    </a>
                     </div>
                 </div>
             </div>

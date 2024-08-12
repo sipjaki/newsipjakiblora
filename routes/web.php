@@ -21,14 +21,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FedashboardController::class, 'index']);  
+Route::get('/portalberita/{judul}', [FedashboardController::class, 'portalberitashowByJudul']);
 
 
-Route::get('/portalberita', function () {
-    // return view('welcome');
-    return view('portalberita', [
-        'title' => 'Portal Berita',
-    ]);
-});
+Route::get('/berita', [FedashboardController::class, 'navbarberita']);  
+// Route::get('/portalberita', function () {
+//     // return view('welcome');
+//     return view('portalberita', [
+//         'title' => 'Portal Berita',
+//     ]);
+// });
 
 
 Route::get('/404', function () {

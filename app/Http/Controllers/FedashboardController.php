@@ -22,4 +22,33 @@ class FedashboardController extends Controller
         ]);
     }
 
+    
+    public function portalberitashowByJudul($judul)
+    {
+        $data_berita = berita::all(); //
+        $data = berita::where('judul', $judul)->firstOrFail();
+        
+        return view('frontend.02_berita.portalberita.index', [
+            'data' => $data,
+            'data_berita' => $data_berita,
+            'title' => 'Portal Berita Sipjaki KBB',
+            
+            
+        ]);
+    }
+
+    public function navbarberita()
+    {
+        $data= berita::all(); //
+        
+        return view('frontend.02_berita.portalberita.navbarberita', [
+            'title' => 'Berita KBB',
+            'data' => $data, // Mengirimkan data paginasi ke view
+        ]);
+    }
+
+
+
+    
+
 }

@@ -84,7 +84,7 @@
             <div class="dropdown-content" style="min-width: 100px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-newspaper" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
-                    <a href="/404" style="color: black; text-decoration: none; text-align:left">BERITA</a>
+                    <a href="/berita" style="color: black; text-decoration: none; text-align:left">BERITA</a>
                 </div>
                  
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
