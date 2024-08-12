@@ -23,6 +23,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FedashboardController::class, 'index']);  
 
 
+Route::get('/portalberita', function () {
+    // return view('welcome');
+    return view('portalberita', [
+        'title' => 'Portal Berita',
+    ]);
+});
+
+
 Route::get('/404', function () {
     // return view('welcome');
     return view('404', [
@@ -233,7 +241,7 @@ Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByNa
 
 // Route::get('/$login', function () {
 //     // return view('welcome');
-//     return view('login.index',[
+//     return view('login.index',
 //         'title' => 'Halaman Login'
 //     ]);
 // });

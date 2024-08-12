@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\berita;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -12,6 +14,7 @@ use App\Models\permenteri;
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
 use App\Models\keputusanmenteri;
+use App\Models\layanankami;
 use App\Models\perbupatiwalikota;
 use App\Models\perdaerah;
 use App\Models\referensi;
@@ -895,6 +898,128 @@ suratkeputusan::create([
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+// ============================== ============================== ============================== ==============================
+berita::create([
+    'judul' => 'Selamat Datang di Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat',
+    'author' => rand(1,1000),
+    'gambar' => '/assets/library/berita/selamatdatang.jpg',
+    'keterangan' => 'Bandung Barat, 11 Agustus 2024 – Pemerintah Kabupaten Bandung Barat dengan bangga memperkenalkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK), sebuah inovasi digital terbaru yang dirancang untuk memperbaiki dan memodernisasi pengelolaan proyek konstruksi di daerah ini. Dengan peluncuran sistem ini, pemerintah bertujuan untuk meningkatkan transparansi, efisiensi, dan akuntabilitas dalam administrasi konstruksi, serta memberikan kemudahan akses informasi kepada masyarakat.
+
+SIPJK menawarkan berbagai fitur unggulan seperti pendaftaran online, pelaporan kemajuan proyek secara real-time, dan akses mudah ke data proyek. Sistem ini diharapkan dapat mengurangi birokrasi, mempercepat proses administrasi, dan meminimalkan potensi terjadinya praktik korupsi. Selain itu, SIPJK juga bertujuan untuk meningkatkan keterlibatan publik dengan menyediakan informasi yang transparan dan mudah diakses tentang status dan perkembangan proyek konstruksi.
+
+Bupati Bandung Barat, menyampaikan antusiasmenya atas peluncuran SIPJK dan mengungkapkan harapannya bahwa sistem ini akan membawa perubahan positif dalam pengelolaan konstruksi di wilayahnya. Ia percaya bahwa SIPJK akan menjadi alat yang efektif dalam mendukung pembangunan berkelanjutan dan menjadi contoh bagi daerah lain dalam penerapan teknologi informasi untuk sektor publik.',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+berita::create([
+    'judul' => 'Pemerintah Kabupaten Bandung Barat Luncurkan Sistem Informasi Pembina Jasa Konstruksi untuk Meningkatkan Transparansi dan Efisiensi',
+    'author' => rand(1,1000),
+    'gambar' => '/assets/library/berita/berita1.jpg',
+    'keterangan' => 'Bandung Barat, 11 Agustus 2024 – Pemerintah Kabupaten Bandung Barat baru-baru ini meluncurkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK) sebagai upaya untuk meningkatkan transparansi dan efisiensi dalam pengelolaan proyek konstruksi di wilayahnya. Sistem ini dirancang untuk mempermudah proses pendaftaran, pengawasan, dan evaluasi terhadap penyedia jasa konstruksi, sekaligus mempercepat akses informasi bagi masyarakat dan pemangku kepentingan.
+
+Dengan adanya SIPJK, diharapkan proses administrasi terkait jasa konstruksi menjadi lebih terintegrasi dan mudah diakses. Sistem ini menawarkan fitur-fitur seperti pendaftaran online, pelaporan secara real-time, dan akses langsung ke data proyek yang sedang berlangsung. Hal ini diharapkan dapat mengurangi birokrasi, meminimalisir praktik korupsi, dan memastikan bahwa setiap proyek konstruksi sesuai dengan standar dan regulasi yang berlaku.
+
+Peluncuran SIPJK ini merupakan bagian dari komitmen pemerintah daerah dalam mendukung pembangunan yang transparan dan berkelanjutan. Bupati Bandung Barat, [Nama Bupati], mengungkapkan harapannya agar sistem ini dapat memperbaiki kinerja sektor konstruksi dan memberikan manfaat jangka panjang bagi masyarakat. Inovasi ini juga diharapkan menjadi contoh bagi daerah lain dalam menerapkan teknologi informasi untuk pengelolaan sektor publik.',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+berita::create([
+    'judul' => 'Inovasi Terbaru: Sistem Informasi Pembina Jasa Konstruksi Resmi Diterapkan di Kabupaten Bandung Barat',
+    'author' => rand(1,1000),
+    'gambar' => '/assets/library/berita/berita2.jpg',
+    'keterangan' => 'Bandung Barat, 11 Agustus 2024 – Pemerintah Kabupaten Bandung Barat resmi menerapkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK) sebagai langkah inovatif dalam pengelolaan sektor konstruksi. Sistem ini bertujuan untuk meningkatkan transparansi, akuntabilitas, dan efisiensi dalam pengelolaan proyek konstruksi di wilayah tersebut. Dengan fitur-fitur canggih yang memudahkan pendaftaran dan pemantauan proyek, SIPJK diharapkan dapat menjawab tantangan dalam administrasi dan pengawasan konstruksi.
+
+SIPJK menawarkan berbagai fitur penting, termasuk pendaftaran online untuk penyedia jasa konstruksi, pelaporan kemajuan proyek secara real-time, serta akses mudah bagi masyarakat untuk memantau perkembangan proyek. Inovasi ini diharapkan dapat mengurangi birokrasi yang seringkali memperlambat proses dan menghilangkan potensi celah korupsi. Selain itu, sistem ini juga bertujuan untuk meningkatkan kualitas dan kepatuhan terhadap standar konstruksi yang berlaku.
+
+Bupati Bandung Barat, menyambut positif peluncuran SIPJK ini dan berharap sistem ini akan menjadi model bagi daerah lain dalam penerapan teknologi informasi untuk sektor publik. Inisiatif ini merupakan bagian dari komitmen pemerintah daerah untuk mendukung pembangunan yang lebih transparan, efektif, dan berkelanjutan di Kabupaten Bandung Barat.',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+berita::create([
+    'judul' => 'Inovasi Terbaru: Sistem Informasi Pembina Jasa Konstruksi Resmi Diterapkan di Kabupaten Bandung Barat',
+    'author' => rand(1,1000),
+    'gambar' => '/assets/library/berita/berita3.jpg',
+    'keterangan' => 'Bandung Barat, 11 Agustus 2024 – Pemerintah Kabupaten Bandung Barat resmi menerapkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK) sebagai langkah inovatif dalam pengelolaan sektor konstruksi. Sistem ini bertujuan untuk meningkatkan transparansi, akuntabilitas, dan efisiensi dalam pengelolaan proyek konstruksi di wilayah tersebut. Dengan fitur-fitur canggih yang memudahkan pendaftaran dan pemantauan proyek, SIPJK diharapkan dapat menjawab tantangan dalam administrasi dan pengawasan konstruksi.
+
+SIPJK menawarkan berbagai fitur penting, termasuk pendaftaran online untuk penyedia jasa konstruksi, pelaporan kemajuan proyek secara real-time, serta akses mudah bagi masyarakat untuk memantau perkembangan proyek. Inovasi ini diharapkan dapat mengurangi birokrasi yang seringkali memperlambat proses dan menghilangkan potensi celah korupsi. Selain itu, sistem ini juga bertujuan untuk meningkatkan kualitas dan kepatuhan terhadap standar konstruksi yang berlaku.
+
+Bupati Bandung Barat, menyambut positif peluncuran SIPJK ini dan berharap sistem ini akan menjadi model bagi daerah lain dalam penerapan teknologi informasi untuk sektor publik. Inisiatif ini merupakan bagian dari komitmen pemerintah daerah untuk mendukung pembangunan yang lebih transparan, efektif, dan berkelanjutan di Kabupaten Bandung Barat.',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+berita::create([
+    'judul' => 'Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi',
+    'author' => rand(1,1000),
+    'gambar' => '/assets/library/berita/berita4.jpg',
+    'keterangan' => 'Bandung Barat, 11 Agustus 2024 – Dalam upaya untuk mendigitalkan dan menyempurnakan pengelolaan konstruksi, Pemerintah Kabupaten Bandung Barat baru-baru ini meluncurkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK). Inisiatif ini bertujuan untuk memperbaiki efisiensi, transparansi, dan akuntabilitas dalam administrasi proyek konstruksi di wilayahnya. SIPJK diharapkan akan membawa perubahan signifikan dalam cara proyek konstruksi dikelola dan diawasi.
+
+Sistem ini dilengkapi dengan berbagai fitur canggih yang memungkinkan pendaftaran dan pemantauan proyek secara online, serta pelaporan kemajuan yang dapat diakses secara real-time. Dengan penerapan SIPJK, diharapkan proses administrasi yang selama ini rumit dan memakan waktu dapat dipercepat, serta mengurangi potensi terjadinya penyimpangan atau praktik korupsi. Selain itu, sistem ini memberikan kemudahan bagi masyarakat untuk mendapatkan informasi yang transparan mengenai status proyek-proyek konstruksi.
+
+Bupati Bandung Barat, menyatakan bahwa peluncuran SIPJK adalah langkah penting dalam transformasi digital pemerintah daerah. Ia berharap sistem ini tidak hanya akan meningkatkan kualitas pengelolaan konstruksi tetapi juga dapat menjadi acuan bagi daerah lain dalam menerapkan teknologi untuk sektor publik. Peluncuran ini merupakan bagian dari komitmen pemerintah daerah untuk mendukung pembangunan yang lebih terintegrasi dan berkelanjutan.',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+berita::create([
+    'judul' => 'Pemerintah Kabupaten Bandung Barat Perkenalkan Sistem Informasi Pembina Jasa Konstruksi untuk Mendukung Pembangunan Berkelanjutan',
+    'author' => rand(1,1000),
+    'gambar' => '/assets/library/berita/berita5.jpg',
+    'keterangan' => 'Bandung Barat, 11 Agustus 2024 – Pemerintah Kabupaten Bandung Barat dengan bangga memperkenalkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK), sebuah terobosan digital yang bertujuan untuk mendukung pembangunan berkelanjutan di wilayah tersebut. Sistem ini dirancang untuk meningkatkan transparansi, efisiensi, dan akuntabilitas dalam pengelolaan proyek konstruksi, serta memastikan bahwa semua kegiatan pembangunan mengikuti standar yang telah ditetapkan.
+
+SIPJK menawarkan berbagai fitur inovatif, termasuk pendaftaran online untuk penyedia jasa konstruksi, pemantauan proyek secara real-time, dan pelaporan kemajuan yang mudah diakses. Dengan adanya sistem ini, diharapkan akan terjadi penurunan birokrasi dan praktik korupsi yang seringkali menghambat proses konstruksi. Sistem ini juga bertujuan untuk memberikan kemudahan akses informasi kepada masyarakat, sehingga meningkatkan keterlibatan publik dalam proses pembangunan.
+
+Bupati Bandung Barat, menegaskan bahwa peluncuran SIPJK adalah langkah strategis dalam upaya mendukung pembangunan yang lebih berkelanjutan dan terencana. Ia berharap sistem ini dapat menjadi contoh bagi daerah lain dalam penerapan teknologi untuk pengelolaan sektor publik dan memajukan kualitas serta transparansi dalam proyek-proyek konstruksi.',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+// =================================== ===================================== ===========================
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/slf.jpg',
+    'program' => 'Sertifikat Laik Fungsi',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/pbg.jpg',
+    'program' => 'PBG',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/inspeksilapangan.jpg',
+    'program' => 'Inspeksi Lapangan',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/pemeliharaanperbaikan.jpg',
+    'program' => 'Pemeliharaan Perbaikan',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/penyediamaterial.jpg',
+    'program' => 'Penyediaan Material',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
 ]);
 
 

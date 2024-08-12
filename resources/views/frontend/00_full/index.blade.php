@@ -10,117 +10,514 @@
     @include('frontend.00_atas.header1')
     
         <header>
-        
-        @include('frontend.00_atas.header2_navbar')
+<div class="container" style="z-index: 9999">
+    @include('frontend.00_atas.header2_navbar')
+    </div>        
             
         </header>
-        
+    
+{{-- ======================================================================================================================= --}}
+{{-- ======================================================================================================================= --}}
+   
 
-        <article>
-        <div class="container">
-            {{-- <h1> We are Certified Engineers</h1> --}}
-            <h2>Sistem Informasi <br> Pembina Jasa Konstruksi <br>
-            <span>Pemerintah Kab bandung Barat </span></h2>
-            {{-- <p style="text-align: justify">Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat adalah platform digital yang mengelola proyek konstruksi pemerintah, mencakup pengelolaan data, pelaporan kemajuan, manajemen kontrak, dan pemantauan kualitas. Sistem ini meningkatkan transparansi dan efisiensi, memungkinkan pemantauan efektif oleh pemerintah dan pemangku kepentingan, serta memastikan proyek berjalan sesuai jadwal, anggaran, dan spesifikasi. Selain itu, sistem ini memudahkan penyimpanan dan akses dokumen penting, mendukung proses audit dan evaluasi kinerja kontraktor.  --}}
-            
-                <style>
+
+
+    <!-- Main News Slider Start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-7 px-0">
+                <div class="owl-carousel main-carousel position-relative">
                   
-                    .containerdashboard {
-                        background: white;
-                        border-radius: 15px;
-                        width: 100%;
-                        margin-top: 35px;
-                        height: 120vh;
-                        display: flex;
-                        padding: 20px;
-                        box-sizing: border-box;
-                    }
-                    .left-column {
-                        flex: 3;
-                        padding: 20px;
-                        border-radius: 15px;
-                        background-color: #ffffff;
-                        border-right: 2px solid #e0e0e0; /* Batas antara kolom kiri dan kanan */
-                    }
-                    .right-column {
-                        flex: 1;
-                        padding: 20px;
-                        border-radius: 15px;
-                        background-color: #f9f9f9;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px; /* Jarak antar iklan */
-                    }
-                    .right-column .ad {
-                        background-color: #ffffff;
-                        border: 1px solid #ddd;
-                        border-radius: 10px;
-                        padding: 15px;
-                        height: 250px;
-                        width: 350px;
-                        box-sizing: border-box;
-                        text-align: center;
-                    }
-                    .header {
-                        font-size: 24px;
-                        font-weight: bold;
-                        margin-bottom: 20px;
-                    }
-                    .content {
-                        font-size: 16px;
-                        color: #000000
-                    }
-                    .ad-title {
-                        font-size: 18px;
-                        margin-bottom: 10px;
-                    }
-                    .ad-content {
-                        font-size: 14px;
-                        text-align: left;
-                    }
-                </style>
-
-                {{-- <div class="containerdashboard">
-                    <div class="left-column">
-                        <div class="header">Berita Terkini</div>
-                        <div class="content">
-                        <p style="color: #000000">halo ini adalah kami</p>
+                    @foreach ($data as $item )
+                        
+                    
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="">News</a>
+                                {{-- <a class="text-white" href="">Jan 01, 2045</a> --}}
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="">{{ $item->judul }}</a>
                         </div>
                     </div>
-                    <div class="right-column">
-                        <div class="ad">
-                            <div class="ad-title">Iklan 1</div>
-                            <div class="ad-content">
-                                <p style="color: black">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, voluptates?</p>
-                            </div>
-                        </div>
-                        <div class="ad">
-                            <div class="ad-title">Iklan 2</div>
-                            <div class="ad-content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, fugit?</p>
-                            </div>
-                        </div>
-                        <div class="ad">
-                            <div class="ad-title">Iklan 3</div>
-                            <div class="ad-content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, labore?</p>
-                            </div>
-                        </div>
-                        <!-- Tambahkan lebih banyak elemen iklan jika diperlukan -->
-                    </div>
-                </div> --}}
+                    
+                    
+                    @endforeach
+                    
 
-            
-            </p>
-            
-            <a href="/404"> <i class="fas fa-cogs me-2 "></i>pelatihan</a>
-            <a href="/404"> <i class="fas fa-file me-2 "></i>sertifikasi</a>
-            <a href="/404"> <i class="fas fa-building me-2 "></i>project kbb</a>
-            <a href="/404"> <i class="fas fa-file me-2 "></i>slf</a>
-            <a href="/404"> <i class="fas fa-road me-2 "></i>pbg</a>
+
+                </div>
+            </div>
+            <div class="col-lg-5 px-0">
+                <div class="row mx-0">
+                    @foreach ($data->slice(-4) as $item)
+                        <div class="col-md-6 px-0">
+                            <div class="position-relative overflow-hidden" style="height: 250px;">
+                                <img class="img-fluid w-100 h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                                <div class="overlay">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="">News</a>
+                                        {{-- <a class="text-white" href=""><small>Jan 01, 2045</small></a> --}}
+                                    </div>
+                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{ $item->judul }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+            </div>
         </div>
-        </article>
+    </div>
+    <!-- Main News Slider End -->
 
+
+    <!-- Breaking News Start -->
+    <div class="container-fluid bg-dark py-3 mb-3">
+        <div class="container">
+            <div class="row align-items-center bg-dark">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                        <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">News</div>
+                        <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
+                            style="width: calc(100% - 170px); padding-right: 90px;">
+                            @foreach ($data as $item)
+                            <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold" href="">{{$item->judul}}</a></div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breaking News End -->
+
+
+    <!-- Featured News Slider Start -->
+    <div class="container-fluid pt-5 mb-3">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="m-0 text-uppercase font-weight-bold">Layanan Kami</h4>
+            </div>
+            <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+
+
+                @foreach ( $data_layanankami as $item )
+                    
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                    <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                            href="">{{ $item->program}}</a>
+                            {{-- <a class="text-white" href=""><small>Jan 01, 2045</small></a> --}}
+                        </div>
+                        {{-- <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a> --}}
+                    </div>
+                </div>
+                
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+    <!-- Featured News Slider End -->
+
+
+    <!-- News With Sidebar Start -->
+    {{-- <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title">
+                                <h4 class="m-0 text-uppercase font-weight-bold">Latest News</h4>
+                                <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="/assets/portalberita/img/news-700x435-1.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p>
+                                </div>
+                                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="/assets/portalberita/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="/assets/portalberita/img/news-700x435-2.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p>
+                                </div>
+                                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="/assets/portalberita/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <a href=""><img class="img-fluid w-100" src="/assets/portalberita/img/ads-728x90.png" alt=""></a>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="/assets/portalberita/img/news-700x435-3.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="/assets/portalberita/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative mb-3">
+                                <img class="img-fluid w-100" src="/assets/portalberita/img/news-700x435-4.jpg" style="object-fit: cover;">
+                                <div class="bg-white border border-top-0 p-4">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                                <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="/assets/portalberita/img/user.jpg" width="25" height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-1.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-2.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-3.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-4.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <a href=""><img class="img-fluid w-100" src="/assets/portalberita/img/ads-728x90.png" alt=""></a>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row news-lg mx-0 mb-3">
+                                <div class="col-md-6 h-100 px-0">
+                                    <img class="img-fluid h-100" src="/assets/portalberita/img/news-700x435-5.jpg" style="object-fit: cover;">
+                                </div>
+                                <div class="col-md-6 d-flex flex-column border bg-white h-100 px-0">
+                                    <div class="mt-auto p-4">
+                                        <div class="mb-2">
+                                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                                href="">Business</a>
+                                            <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                        </div>
+                                        <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                        <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                            rebum clita rebum dolor stet amet justo</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between bg-white border-top mt-auto p-4">
+                                        <div class="d-flex align-items-center">
+                                            <img class="rounded-circle mr-2" src="/assets/portalberita/img/user.jpg" width="25" height="25" alt="">
+                                            <small>John Doe</small>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                            <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-1.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-2.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-3.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-4.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <!-- Social Follow Start -->
+                    <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Follow Us</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-3">
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
+                                <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Fans</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #52AAF4;">
+                                <i class="fab fa-twitter text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Followers</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #0185AE;">
+                                <i class="fab fa-linkedin-in text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Connects</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #C8359D;">
+                                <i class="fab fa-instagram text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Followers</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
+                                <i class="fab fa-youtube text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Subscribers</span>
+                            </a>
+                            <a href="" class="d-block w-100 text-white text-decoration-none" style="background: #055570;">
+                                <i class="fab fa-vimeo-v text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                                <span class="font-weight-medium">12,345 Followers</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Social Follow End -->
+
+                    <!-- Ads Start -->
+                    <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Advertisement</h4>
+                        </div>
+                        <div class="bg-white text-center border border-top-0 p-3">
+                            <a href=""><img class="img-fluid" src="/assets/portalberita/img/news-800x500-2.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <!-- Ads End -->
+
+                    <!-- Popular News Start -->
+                    <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-3">
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-1.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-2.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-3.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-4.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-5.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit amet elit...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Popular News End --> --}}
+
+                    <!-- Newsletter Start -->
+                    {{-- <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                        </div>
+                        <div class="bg-white text-center border border-top-0 p-3">
+                            <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
+                            <div class="input-group mb-2" style="width: 100%;">
+                                <input type="text" class="form-control form-control-lg" placeholder="Your Email">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
+                                </div>
+                            </div>
+                            <small>Lorem ipsum dolor sit amet elit</small>
+                        </div>
+                    </div> --}}
+                    <!-- Newsletter End -->
+
+                    <!-- Tags Start -->
+                    {{-- <div class="mb-3">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-3">
+                            <div class="d-flex flex-wrap m-n1">
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <!-- Tags End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- News With Sidebar End -->
+    <!-- News With Sidebar End -->
+{{-- ================================================================================================================================= --}}
+{{-- ================================================================================================================================= --}}
+{{-- ================================================================================================================================= --}}
+        
+        
         
     </section>
 
@@ -366,7 +763,7 @@ Layanan Jasa Konstruksi
     {{-- ------------------------------------------------------------------------------------------ --}}
   {{-- ------------------------------------------------------------------------------------------ --}}
   {{-- ------------------------------------------------------------------------------------------ --}}
-
+{{-- 
     <section class="facilities-section">
     <div class="container-fluid">
     <div class="row">
@@ -374,7 +771,7 @@ Layanan Jasa Konstruksi
     <div class="facililties-text pt-100 pb-70">
     <div class="section-title">
     {{-- <span>Fasilitas Layanan</span> --}}
-    <h2>Faslilitas Layanan Konstruksi</h2>
+    {{-- <h2>Faslilitas Layanan Konstruksi</h2>
     <p>
         Fasilitas layanan konstruksi mencakup perencanaan, desain, pembangunan, dan pemeliharaan bangunan serta infrastruktur, memastikan proyek selesai tepat waktu, sesuai anggaran, dan memenuhi standar kualitas serta keselamatan.
         </div>
@@ -418,8 +815,8 @@ Layanan Jasa Konstruksi
     </div>
     </div>
     </div>
-    </section>
- 
+    </section> --}}
+  --}}
     
 {{-- --------------------------------------------------------------------------- --}}
 {{-- --------------------------------------------------------------------------- --}}
@@ -596,7 +993,7 @@ Layanan Jasa Konstruksi
                     </div>
                     <figure>
                         {{-- <img class="customer" src="/assets/bahan1/Images/cust1.png" alt="customer1"> --}}
-                        <figcaption></figcaption>
+                        <figcaption>PUTR Bandung Barat</figcaption>
                     </figure>
                 </article>
             </div>

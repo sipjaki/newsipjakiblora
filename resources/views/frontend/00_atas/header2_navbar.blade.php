@@ -51,14 +51,14 @@
                 display: block;
             }
         </style>
-
+    
         <a href="/">DASHBOARD</a>
         
         <div class="dropdown">
             <a href="#" class="dropdown-toggle">PROFIL</a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
             <div class="dropdown-content">
-
+    
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-users" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/profil/struktur" style="color: black; text-decoration: none; text-align:left">STRUKTUR DINAS PEKERJAAN UMUM DAN PENATAAN RUANG PEMERINTAH KABUPATEN BANDUNG BARAT</a>
@@ -94,7 +94,7 @@
                  
             </div>
         </div>                    {{-- <a href="#">PROFIL</a> --}}
-
+    
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" style="text-align: left">DATA <br> JAKON </a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
@@ -103,7 +103,7 @@
                     <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 10px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/404" style="color: black; text-decoration: none; text-align:left">ASOSIASI</a>
                 </div>
-
+    
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 10px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/datajakon/standarbiayaumum" style="color: black; text-decoration: none; text-align:left">STANDAR BIAYA UMUM</a>
@@ -113,7 +113,7 @@
                     <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/datajakon/paketpekerjaan" style="color: black; text-decoration: none; text-align:left">PROGRESS PAKET PEKERJAAN</a>
                 </div>
-
+    
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-cogs" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/404" style="color: black; text-decoration: none; text-align:left">POTENSI JASA KONSTRUKSI</a>
@@ -121,7 +121,7 @@
                  
             </div>
         </div>                    {{-- <a href="#">PROFIL</a> --}}
-
+    
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" style="text-align: left">TENAGA <br> KERJA </a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
@@ -144,7 +144,7 @@
             </div>
         </div>                    {{-- <a href="#">PROFIL</a> --}}
         
-
+    
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" style="text-align: left">SPM</a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
@@ -183,7 +183,7 @@
                  
             </div>
         </div>                    {{-- <a href="#">PROFIL</a> --}}
-
+    
         <a href="/404" style="text-align: center">BADAN <br> USAHA </a>
         <a href="/uijk">SBU</a>
         <a href="/tdup">TDUP</a>
@@ -212,7 +212,7 @@
                     <i class="fas fa-book" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/404" style="color: black; text-decoration: none; text-align:left">TEKNOLOGI KONSTRUKSI</a>
                 </div>
-
+    
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-book" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/404" style="color: black; text-decoration: none; text-align:left">PRODUK DALAM NEGERI</a>
@@ -286,12 +286,12 @@
         
         <a href="#">FORUM</a>
        
-
-
+    
+    
         {{-- <i class="fa-solid fa-magnifying-glass" id="search"></i> --}}
         <a href="/login">
             <i class="fa-solid fa-sign-in-alt" ></i>
         </a>
-
+    
     </nav>
 </div>

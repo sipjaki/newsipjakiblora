@@ -6,6 +6,8 @@
     </div>
 </section>
 
+@include('tambahan.portalberitafooter')
+
 <script src="/assets/bahan1/js/wow.min.js"></script>
 <script> new WOW().init();</script>
 <script src="/assets/bahan1/js/bootstrap.bundle.min.js"></script>

@@ -13,10 +13,7 @@ class LoginController extends Controller
     {
         //
         return view('login.index',[
-            'title' => 'Silahkan Login !',
-            
-            // 'title_halaman' => 'Halaman Fundraising',
-            // 'data_daftarjadimitra'  => Jadimitra::all(),
+            'title' => 'Under Constructions',
         ]); 
     }
 

@@ -34,9 +34,9 @@
         setInterval(updateClock, 1000); // Update every second
         updateClock(); // Initial call to set the time immediately
     </script>
-     <p><a href="https://wa.me/6281321455855">+6281 321 455 855</a></p>
+     <p style="color: black"><a href="https://wa.me/6281321455855" style="color: black">+6281 321 455 855</a></p>
      {{-- <p>support@Construct.com</p> --}}
-     <p>Senin-Jumat 9:00-16:00</p>
+     {{-- <p>Senin-Jumat 9:00-16:00</p> --}}
      <style>
         .marquee-container {
             width: 250px;
@@ -67,18 +67,21 @@
             }
         }
     </style>
-     <div class="marquee-container">
+     <div class="marquee-container" style="margin-left: 150px;">
         <div class="marquee" style="color: white">Selamat Datang ! di Web Resmi Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat</div>
     </div>
     
         {{-- <p>Jam </p> --}}
         <div class="social">
-            <a href="" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="" title="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="/" title=""><i class="fas fa-envelope"></i></a>
+            <a href="/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="/" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="/" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="/" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="/" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="/login">
+                <i class="fa-solid fa-sign-in-alt" ></i>
+            </a>
 
         </div>
     </div>
