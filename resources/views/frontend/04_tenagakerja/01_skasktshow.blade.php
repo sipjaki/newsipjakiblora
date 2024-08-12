@@ -1,13 +1,69 @@
-@include('backend.00_dashboard.part.header')
-@include('backend.00_dashboard.part.menuheader')
-@include('backend.00_dashboard.part.sidebar')
-    
-    <!--Page Wrapper-->
+@include('frontend.00_atas.header')
 
-        <!--Main Content-->
+
+{{-- ------------------------------------------------------------------------------------------ --}}
+{{-- ------------------------------------------------------------------------------------------ --}}
+{{-- ------------------------------------------------------------------------------------------ --}}
+
+<section id="sec-0">
+    
+    @include('frontend.00_atas.header1')
+    
+        <header>
+        
+        @include('frontend.00_atas.header2_navbar')
+            
+        </header>
+        <div class="div" style="
+            justify-content: center;
+            text-align:center;
+        ">
+                    <h2 style="
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 475px;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 25px;
+    width: 500px;
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+    transition: background 0.5s ease, color 0.5s ease;
+    " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
+
+Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
+</h2>
+</div>
+<div class="container" style="
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    height: 127vh;
+    margin-left: 150px;
+    background: linear-gradient(to bottom, yellow, white, black);
+    align-items: center;
+    position: relative;
+">
+<div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div>
+
+
+    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
 
             <!--Content right-->
-            <div class="col-sm-9 col-xs-12 content  pl-0">
+            <div class="col-sm-12 col-xs-12 content  pl-0">
 
                     
                 <div class="row mb-0 ">
@@ -31,7 +87,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 120vh;
+    height: 100vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -84,7 +140,7 @@
                 color: black;
             }
         </style>
-        <a href="/skk" style="background: white;">
+        <a href="/tenagakerja/skaskt" style="background: white;">
             <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
         </a>
                         <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
@@ -387,15 +443,40 @@ function updateDateTime() {
 
                 
             </div>
-            @include('backend.00_dashboard.part.menufooter')
-        </div>
-        </div>
-        </div>
-        
-        <!--Main Content-->
-        
-    </div>
-    @include('backend.00_dashboard.part.footer')
     
+        
+</div>
+{{-- ------------------------------------ END FITUR ------------- --}}
 
-    
+
+           
+        </div>
+</div>
+</div>
+
+
+
+<br><br>
+    </section>
+
+
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+
+
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+
+
+
+
+
+
+@include('frontend.00_atas.footer1')
+
+    {{-- ------------------------------------------------------------------------------- --}}
+    {{-- ------------------------------------------------------------------------------- --}}
+    {{-- ------------------------------------------------------------------------------- --}}
+@include('frontend.00_atas.footer2')

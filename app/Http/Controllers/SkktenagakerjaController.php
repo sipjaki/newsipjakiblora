@@ -28,4 +28,24 @@ class SkktenagakerjaController extends Controller
             'title' => 'Detail SKK Tenaga Kerja',
         ]);
     }
+
+public function feskktenagakerja()
+    {
+        $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+
+        return view('frontend.04_tenagakerja.01_skaskt', [
+            'title' => 'Daftar SKK Tenaga Kerja',
+            'data' => $data, // Mengirimkan data paginasi ke view
+        ]);
+    }
+
+    public function feskktenagakerjashowByName($nama)
+    {
+        $item = Skktenagakerja::where('nama', $nama)->firstOrFail();
+
+        return view('frontend.04_tenagakerja.01_skasktshow', [
+            'data' => $item,
+            'title' => 'Detail SKK Tenaga Kerja',
+        ]);
+    }
 }

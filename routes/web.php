@@ -6,7 +6,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\SkktenagakerjaController;
 use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\UijkController;
 use App\Http\Controllers\UndangundangController;
+use Database\Factories\SkktenagakerjaFactory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -87,12 +89,9 @@ Route::get('/datajakon/paketpekerjaan', function () {
 
 // ---------------------- 04 TENAGA KERJA -----------------------//
 // -------- BAGIAN 1 ---------------------------------
-Route::get('/tenagakerja/skaskt', function () {
-    // return view('welcome');
-    return view('frontend.04_tenagakerja.01_skaskt', [
-        'title' => 'SKK Tenaga Kerja'
-    ]);
-});
+Route::get('/tenagakerja/skaskt', [SkktenagakerjaController::class, 'feskktenagakerja']);  
+Route::get('/tenagakerja/skaskt/{judul}', [SkktenagakerjaController::class, 'feskktenagakerjashowByName']);
+
 
 Route::get('/tenagakerja/pjt', function () {
     // return view('welcome');
@@ -120,12 +119,12 @@ Route::get('/spm/informasispm', function () {
 
 // ---------------------- 08 UIJK -----------------------//
 // -------- BAGIAN 1 ---------------------------------
-Route::get('/uijk', function () {
-    // return view('welcome');
-    return view('frontend.08_uijk.uijk',[
-        'title' => 'Sertifikat Badan Usaha'
-    ] );
-});
+Route::get('/uijk', [UijkController::class, 'index']);  
+Route::get('/uijk/{nama_perusahaan}', [UijkController::class, 'feuijkshowByName']);
+Route::get('/uijkpt', [UijkController::class, 'uijkpt']);
+Route::get('/uijkcv', [UijkController::class, 'uijkcv']);
+
+
 
 // ---------------------- 09 TDUP -----------------------//
 // -------- BAGIAN 1 ---------------------------------

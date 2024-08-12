@@ -1,13 +1,69 @@
-@include('backend.00_dashboard.part.header')
-@include('backend.00_dashboard.part.menuheader')
-@include('backend.00_dashboard.part.sidebar')
-    
-    <!--Page Wrapper-->
+@include('frontend.00_atas.header')
 
-        <!--Main Content-->
+
+{{-- ------------------------------------------------------------------------------------------ --}}
+{{-- ------------------------------------------------------------------------------------------ --}}
+{{-- ------------------------------------------------------------------------------------------ --}}
+
+<section id="sec-0">
+    
+    @include('frontend.00_atas.header1')
+    
+        <header>
+        
+        @include('frontend.00_atas.header2_navbar')
+            
+        </header>
+        <div class="div" style="
+            justify-content: center;
+            text-align:center;
+        ">
+                    <h2 style="
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 475px;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 25px;
+    width: 500px;
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+    transition: background 0.5s ease, color 0.5s ease;
+    " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
+
+Sertifikat Badan Usaha / Surat Ijin Usaha Jasa Konstruksi 
+</h2>
+</div>
+<div class="container" style="
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    height: 127vh;
+    margin-left: 150px;
+    background: linear-gradient(to bottom, yellow, white, black);
+    align-items: center;
+    position: relative;
+">
+<div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div>
+
+
+    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
 
             <!--Content right-->
-            <div class="col-sm-9 col-xs-12 content  pl-0">
+            <div class="col-sm-12 col-xs-12 content  pl-0">
 
                     
                 <div class="row mb-0 ">
@@ -31,7 +87,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 120vh;
+    height: 100vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -84,7 +140,7 @@
                 color: black;
             }
         </style>
-        <a href="/skk" style="background: white;">
+        <a href="/uijk" style="background: white;">
             <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
         </a>
                         <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
@@ -171,48 +227,48 @@
                     {{-- ============================================ --}}
                     
                     <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-user" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Nama Lengkap</th>
+                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-building" style="color: white; font-size:12px;"></i></th>
+                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Nama Perusahaan</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3);font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ; ">{{ ucwords(strtolower($data->nama)) }}</td>
+                        <td style="background-color: rgba(192, 192, 192, 0.3);font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ; ">{{ $data->nama_perusahaan }}</td>
                     </tr>
                     
                     <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-home" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Alamat</th>
+                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
+                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Klasifikasi Bidang Usaha</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->alamat)) }}</td>
+                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ $data->klasifikasi_bidang_usaha }}</td>
                     </tr>
                     
                     <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-road" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Kecamatan</th>
+                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
+                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Sub Bidang <br> Klasifikasi Bidang Usaha</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->kecamatan)) }}</td>
+                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ $data->sub_klasifikasi_bidang_usaha }}</td>
                     </tr>
                     
                     <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-road" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Desa</th>
+                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-calendar" style="color: white; font-size:12px;"></i></th>
+                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Register</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->desa)) }}</td>
+                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->keterangan)) }}</td>
                     </tr>
-                    
+{{--                     
                     <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-calendar" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Tanggal Lahir</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->tanggal_lahir)) }}</td>
                     </tr>
-                    
-                    <tr>  
+                     --}}
+                    {{-- <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-calendar" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Usia</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->usia)) . ' Tahun' }}</td>
                     </tr>
-                    
-                    <tr>  
+                     --}}
+                    {{-- <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-list" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">NIK KTP</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -243,35 +299,35 @@
                         }
                         </script>
                     </tr>
-                    
-                    <tr>  
+                     --}}
+                    {{-- <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-cogs" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Keterampilan</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->keterampilan)) }}</td>
                     </tr>
-                    
-                    <tr>  
+                     --}}
+                    {{-- <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Tahun Bimtek</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->tahun_bimtek)) }}</td>
                     </tr>
-                    
-                    <tr>  
+                     --}}
+                    {{-- <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Kualifikasi</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->kualifikasi)) }}</td>
                     </tr>
-                    
-                    <tr>  
+                     --}}
+                    {{-- <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Registrasi</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->registrasi)) }}</td>
                     </tr>
-                
+                 --}}
                     <tr>  
                         <th style="background-color: white; width: 20px; border:none; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: white; width: 225px; border:none; text-align:left; font-size:14px;"></th>
@@ -387,15 +443,40 @@ function updateDateTime() {
 
                 
             </div>
-            @include('backend.00_dashboard.part.menufooter')
-        </div>
-        </div>
-        </div>
-        
-        <!--Main Content-->
-        
-    </div>
-    @include('backend.00_dashboard.part.footer')
     
+        
+</div>
+{{-- ------------------------------------ END FITUR ------------- --}}
 
-    
+
+           
+        </div>
+</div>
+</div>
+
+
+
+<br><br>
+    </section>
+
+
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+
+
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- ------------------------------------------------------------------------------------------ --}}
+
+
+
+
+
+
+@include('frontend.00_atas.footer1')
+
+    {{-- ------------------------------------------------------------------------------- --}}
+    {{-- ------------------------------------------------------------------------------- --}}
+    {{-- ------------------------------------------------------------------------------- --}}
+@include('frontend.00_atas.footer2')

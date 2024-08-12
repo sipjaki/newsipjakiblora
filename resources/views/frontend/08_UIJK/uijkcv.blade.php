@@ -35,7 +35,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
+Sertifikat Badan Usaha Commanditaire Vennootschap
 </h2>
 </div>
 <div class="container" style="
@@ -48,7 +48,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 115vh;
+    height: 150vh;
     margin-left: 150px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -96,14 +96,71 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
      <table>
         <thead>
             <tr>
-                <th style="width:45px;">No</th>
-                <th>Kecamatan</th>
-                <th>Desa</th>
-                <th>Nama Lengkap</th>
-                <th>Keterampilan</th>
-                <th>View SKK</th>
+                <th style="width:45px; font-size:12px;">NO</th>
+                <th style="width:220px; font-size: 12px;">NAMA PERUSAHAAN</th>
+                <th style="width:220px; font-size: 12px;">KLASIFIKASI BIDANG USAHA</th>
+                <th style="width:500px; font-size: 12px;">SUB KLASIFIKASI BIDANG USAHA</th>
+                <th style="width:100px; font-size: 12px;">TAHUN REGISTER</th>
+                <th style="width:75px;font-size: 12px;">VIEW SBU/UIJK</th>
             </tr>
         </thead>
+
+        <style>
+            .search-container {
+                width: 200px;
+                position: absolute; /* Use absolute positioning */
+                top: 10px; /* Distance from the top of the page */
+                right: 10px; /* Distance from the right edge of the page */
+                display: inline-block;
+                text-align: right;
+            }
+            .search-container input {
+                border-radius: 15px;
+                padding: 2px 5px 2px 25px; /* Extra padding for the icon */
+                border: 1px solid #ccc; /* Optional: Add border for visibility */
+            }
+            .search-container .fa-search {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .pilihan {
+                    width: 150px; /* Lebar dropdown yang lebih besar untuk kenyamanan pengguna */
+                    height: 40px; /* Tinggi yang lebih sesuai untuk dropdown */
+                    border-radius: 8px; /* Sudut yang membulatkan tampilan dropdown */
+                    border: 1px solid #ddd; /* Border yang lebih ringan */
+                    padding: 0 15px; /* Padding horizontal untuk ruang lebih */
+                    background-color: #fff; /* Latar belakang putih */
+                    font-size: 14px; /* Ukuran font yang nyaman dibaca */
+                    color: #333; /* Warna teks */
+                    appearance: none; /* Menghapus tampilan default dropdown di beberapa browser */
+                    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="none" stroke="%23333" stroke-width="1.5" d="M2 3l3 3 3-3"/%3E%3C/svg%3E'); /* Menambahkan ikon panah kustom */
+                    background-repeat: no-repeat;
+                    background-position: right 10px center; /* Posisi ikon panah di dalam dropdown */
+                    background-size: 12px; /* Ukuran ikon panah */
+    }
+        </style>
+        
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <select class="pilihan" onchange="selectOption()">
+                <option value="" disabled selected>Pilih PT/CV</option>
+                <option value="/uijkpt">PT</option>
+                <option value="/uijkcv">CV</option>
+            </select>
+        </div>
+    
+        <script>
+            function selectOption() {
+                var selectElement = document.querySelector('.pilihan');
+                var selectedValue = selectElement.value;
+                if (selectedValue) {
+                    window.location.href = selectedValue;
+                }
+            }
+        </script>
+    
         <tbody>
 
             {{-- ============================================ --}}
@@ -114,11 +171,11 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             @foreach($data as $item )
             
             <tr>
-                <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px;">{{ $item->kecamatan}}</td>
-                <td style="font-size: 12px;">{{ $item->desa}}</td>
-                <td style="font-size: 12px;">{{ $item->nama}}</td>
-                <td style="font-size: 12px;">{{ $item->keterampilan}}</td>
+                <td style="width:45px; font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
+                <td style="width:220px; font-size: 12px; text-align:left" class="text-uppercase">{{ $item->nama_perusahaan}}</td>
+                <td style="width:220x; font-size: 12px; text-align:left" class="text-uppercase">{{ $item->klasifikasi_bidang_usaha}}</td>
+                <td style="width:500px; font-size: 12px; text-align:left" class="text-uppercase">{{ $item->sub_klasifikasi_bidang_usaha}}</td>
+                <td style="width:45px; font-size: 12px; text-align:center" class="text-uppercase">{{ $item->keterangan}}</td>
                 
                 <td>
                     
@@ -160,7 +217,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 </style>
 
                 <div class="button-container">
-                <a href="/tenagakerja/skaskt/{{ $item->nama}}" class="iconhover" title="View">
+                <a href="/uijk/{{ $item->nama_perusahaan}}" class="iconhover" title="View">
                     <i class="fas fa-eye" style="color: black"></i>
                 </a>
                         

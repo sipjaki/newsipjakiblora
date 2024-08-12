@@ -1,9 +1,6 @@
-<div class="hide" id="searchBar">
-    <input type="search" name="searchBox" id="searchBox" placeholder="Type your search here..    Press [Esc] to exist">
-</div>
 <div class="container">  
     <div style="display: flex; align-items: center; margin-bottom:10px">
-        <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; padding: 0;">
+        <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0;">
         
         <h1 style="margin: 0;">
             <span>SIPJAKI</span>KBB
@@ -210,7 +207,7 @@
         </div>                    {{-- <a href="#">PROFIL</a> --}}
     
         <a href="/404" style="text-align: center">BADAN <br> USAHA </a>
-        <a href="/uijk">SBU</a>
+        <a href="/uijk">SBU/UIJK</a>
         <a href="/tdup">TDUP</a>
         
         
@@ -311,12 +308,6 @@
         
         <a href="#">FORUM</a>
        
-    
-    
-        {{-- <i class="fa-solid fa-magnifying-glass" id="search"></i> --}}
-        <a href="/login">
-            <i class="fa-solid fa-sign-in-alt" ></i>
-        </a>
     
     </nav>
 </div>

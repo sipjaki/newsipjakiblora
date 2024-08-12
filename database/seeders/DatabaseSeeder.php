@@ -21,6 +21,7 @@ use App\Models\referensi;
 use App\Models\suratedaran;
 use App\Models\pergubernur;
 use App\Models\suratkeputusan;
+use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
 use Carbon\Carbon;
 
@@ -1026,6 +1027,267 @@ layanankami::create([
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
 ]);
+
+// =============================== =============================== =============================== ===============================
+uijk::create([
+    'nama_perusahaan' => 'PT. Mega Sukma',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG003(M1),   BG009(M1),   SI001(M1),   SI003(M2),   SI004(M2)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Bina Kreasi Nusantara',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Perencanaan Arsitektur, Perencanaan Rekayasa',
+    'sub_klasifikasi_bidang_usaha' => 'AR102(K1), AR104(K1), RE102(K1), RE103(K1), RE104(K2)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Rifana Jaya Perdana',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG001(M1), BG009(M1), SI001(M1), SI002(M1), SI003(M1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Multicipta Rancana Selaras',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Perencanaan Rekayasa,Perencanaan Penataan Ruang, Konsultasi Spesialis',
+    'sub_klasifikasi_bidang_usaha' => 'RE103 (B), RE104 (B), PR101 (B), PR102 (B), SP303 (B), SP304 (B)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Mutiara Jaya',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG001(K1), BG007(K1), SI001(K3), SI002(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Berkah Karunia Abadi',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), SI001(K1), SI003(K1), SI008(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Yasuba Dwi Perkasa',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung, Bangunan Sipil, Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => 'BG004(M1),BG007(M1),BG008(M2),BG009(M1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Setia Mandiri CO',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG009(K1), SI001(K1), SI002(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Beton Elemen Persada',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung',
+    'sub_klasifikasi_bidang_usaha' => 'BG001(M1), BG002(M1), BG003(M1), BG006(M1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Putri Kembar Sejahtera',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), SI001(K1), SI002(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Rapi Indah',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG001(M2),BG002(M2),BG003(M2),BG004(M1),BG006(M1),BG007(M1),BG008(M1),BG009(M2),',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Bandung Rainer Syailendra',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG001(K1),BG002(K1), BG004(K1), BG006(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Rumah Mulia Indonesia',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung',
+    'sub_klasifikasi_bidang_usaha' => 'BG001(M1), BG002(M1), BG007(M1), SI012(M1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Wijaya Kusumah',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1),BG008(K1),BG009(K1), SI001(K1),SI002(K2),SI003(K2)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Aditya Putra Karya Utama',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(M1),BG008(M1),BG009(M1),SI001(M1),SI003(M2),SI004(M1),SI012(M1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Graha Teknik',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG004(K1),BG007(K2),BG008(K1),BG009(K3),SI001(K1),SI003(K3)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Trisula',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG004(K1),BG007(K1),SI001(K1),SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Bina Arya Sejahtera',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), SI001(K1), SI003(K1), SI004(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Hanjuang',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), BG008(K1), SI002(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Gumas Jaya',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1),BG009(K1),SI001(K1),SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. RH Niaga Buana',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), BG008(K1), EL010(K1), EL011(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Bina Sarana Putra',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Jasa Konstruksi Terintegrasi, Instalasi Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => 'TI503(B1),TI504(B1), EL001(M1),EL009(M1),EL010(M1),MK007(M1),MK009(B1),MK010(B1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Mobar Sarana Energi',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Instalasi Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => 'MK007(M1), MK010(M1), EL001(M1), EL009(M1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Abbas Kusuma',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG009(K1), SI001(K1), SI003(K1), SI008(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Tri Hazna Pertiwi',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007 (K1) ; BG009 (K2) ; SI001 (K1) ; SI002 (K1) ; SI003 (K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+// uijk::create([
+//     'nama_perusahaan' => '',
+//     'kategori_perusahaan' => '',
+//     'klasifikasi_bidang_usaha' => '',
+//     'sub_klasifikasi_bidang_usaha' => '',
+//     'keterangan' => '2020',
+//     'created_at' => Carbon::now(),
+//     'updated_at' => Carbon::now(),
+// ]);
 
 
 
