@@ -107,12 +107,12 @@
                 @foreach ( $data_layanankami as $item )
                     
                 <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                    <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover; padding:10px;">
                     <div class="overlay">
                         <div class="mb-2">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                            href="">{{ $item->program}}</a>
-                            {{-- <a class="text-white" href=""><small>Jan 01, 2045</small></a> --}}
+                            href="">{{ $item->program}}</a> <br>
+                            <a class="text-white" href=""><small>{{ $item->keterangan}}</small></a>
                         </div>
                         {{-- <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a> --}}
                     </div>

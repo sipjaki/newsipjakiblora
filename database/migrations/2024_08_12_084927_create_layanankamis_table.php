@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('gambar');
             $table->string('program');
+            $table->string('keterangan');
             $table->softDeletes();
             $table->timestamps();
         });

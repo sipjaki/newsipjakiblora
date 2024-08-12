@@ -989,6 +989,7 @@ Bupati Bandung Barat, menegaskan bahwa peluncuran SIPJK adalah langkah strategis
 layanankami::create([
     'gambar' => '/assets/library/layanankami/slf.jpg',
     'program' => 'Sertifikat Laik Fungsi',
+    'keterangan' => 'Sertifikat Laik Fungsi Untuk Bangunan Gedung',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
 ]);
@@ -996,6 +997,7 @@ layanankami::create([
 layanankami::create([
     'gambar' => '/assets/library/layanankami/pbg.jpg',
     'program' => 'PBG',
+    'keterangan' => 'Persetujuan Bangunan Gedung',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
 ]);
@@ -1003,6 +1005,7 @@ layanankami::create([
 layanankami::create([
     'gambar' => '/assets/library/layanankami/inspeksilapangan.jpg',
     'program' => 'Inspeksi Lapangan',
+    'keterangan' => 'Inspeksi Lapangan Untuk Konstruksi Di Lapangan',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
 ]);
@@ -1011,6 +1014,7 @@ layanankami::create([
 layanankami::create([
     'gambar' => '/assets/library/layanankami/pemeliharaanperbaikan.jpg',
     'program' => 'Pemeliharaan Perbaikan',
+    'keterangan' => 'Pemeliharaan Perbaikan Bangunan Gedung',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
 ]);
@@ -1018,6 +1022,7 @@ layanankami::create([
 layanankami::create([
     'gambar' => '/assets/library/layanankami/penyediamaterial.jpg',
     'program' => 'Penyediaan Material',
+    'keterangan' => 'Penyediaan Material untuk Bangunan Gedung',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
 ]);
