@@ -1279,15 +1279,406 @@ uijk::create([
     'updated_at' => Carbon::now(),
 ]);
 
-// uijk::create([
-//     'nama_perusahaan' => '',
-//     'kategori_perusahaan' => '',
-//     'klasifikasi_bidang_usaha' => '',
-//     'sub_klasifikasi_bidang_usaha' => '',
-//     'keterangan' => '2020',
-//     'created_at' => Carbon::now(),
-//     'updated_at' => Carbon::now(),
-// ]);
+uijk::create([
+    'nama_perusahaan' => '',
+    'kategori_perusahaan' => '',
+    'klasifikasi_bidang_usaha' => '',
+    'sub_klasifikasi_bidang_usaha' => '',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Martadinar Gemilang Sejahtera',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Instalasi Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => 'BG009(K1), EL008(K1), EL010(K1), EL011(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Mega Braja Waskita',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG009(K1), SI001(K1), SI003(K1), SI004(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Hiber',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG004(K1), BG008(K1), SI001(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Subur Abadi Putra',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG001(M1), BG002(M1), SI002(M1), SI003(M1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Dwi Puteri',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG004(K1), BG007(K1), BG008(K2), SI001(K2), SI003(K2), SI008(K2)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Permata',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), BG008(K1), SI002(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Kayu Manis',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG001(K1), BG007(K1), SI001(K3), SI002(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Citra Indah',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Pelaksana Spesialis',
+    'sub_klasifikasi_bidang_usaha' => 'SP004(K1),SP008(K1),SP011(K1)SP015(K3),SP016(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Cendrawasih Milik Kita',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), BG008(K1), SI001(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Merdeka Sakti',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG004(K1), BG007(K1), SI001(K1), SI003(K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. YDP Usaha Perdana',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => ' Perencanaan Arsitektur, Pengawasan Rekayasa',
+    'sub_klasifikasi_bidang_usaha' => '(AR101) (M1), (AR102) (M1), (RE201) (K1), (RE202) (K1), (RE203) (K1)',
+    'keterangan' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Sinergi Karsa Utama',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG004(M1), SI001(M1), SI003(M1),SI004(M1).',
+    'keterangan' => '2019',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Tiga Arga Kencana',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Sipil dan Bangunan Gedung',
+    'sub_klasifikasi_bidang_usaha' => 'SI003(M1), SI004(M1), BG002(M1), BG003(M1)',
+    'keterangan' => '2019',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Gatra Kencana',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Sipil dan Bangunan Gedung',
+    'sub_klasifikasi_bidang_usaha' => 'SI001(K1), SI003(K1), BG007(K1), BG009(K1)',
+    'keterangan' => '2019',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Agung Bandung',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Sipil dan Bangunan Gedung',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), BG008(K1), BG009(K3), SI001(K1), SI003(K1)',
+    'keterangan' => '2019',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Wahana Wahid Perkasa',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG007(K1), SI001(K1), SI003(K1), SI004(K1)',
+    'keterangan' => '2019',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. Aria Putra Perkasa',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => 'BG008(K1), BG009(K1), SI001(K1), SI003(K1)',
+    'keterangan' => '2019',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. Ruang Hijau',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Perencanaan Penataan Ruang',
+    'sub_klasifikasi_bidang_usaha' => 'PR103(M1)',
+    'keterangan' => '2019',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT.BINA SARANA PUTRA',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Instalasi Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => '(MK007)(M1),(MK009)(B1),MK010)(B1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. RAHAJENG',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Instalasi Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => '(EL006)(K1),(EL007)(K1),(EL010)(K1),(EL011)(K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. GENERAL MULTI UTAMA',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan gedung dan Instalasi Mekanikal dan elektrikal',
+    'sub_klasifikasi_bidang_usaha' => '(BG002)(M1),(BG006)(M1),(EL010)(M1),(MK002)(M1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. SYAM KARYA',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG007)(K1),(SI001)(K1),(SI003)(K1),',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. DHERA GITA INDONESIA',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Instalasi Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => '(EL006)(M1),(EL007)(M1),(EL010)(M1), (EL010)(M1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. PUTRA BUNGSU',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil ',
+    'sub_klasifikasi_bidang_usaha' => '(BG007)(K1),(SI001)(K1),(SI003)(K1),(SI008)(K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. DAYA UNGGUL PERKASA',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Instalasi Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => '(EL002)(K1),(EL006)(K1),(EL007)(K1),(EL010)(K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. GUNA BANGUN UTAMA',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung',
+    'sub_klasifikasi_bidang_usaha' => '(BG004)(M1),(BG007)(M1),(BG007)(M1),(BG009)(M1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. NAGA MAS JAYA',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG004)(K1),(BG007)(K1),(BG009)(K2),(SI001)(K1),(SI002)(K1),(SI003)(K2)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. REKA BAHANATAMA',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG008)(K1),(BG009)(K1),(SI001)(K1),(SI003)(K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. MITRA JAYATAMA',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG007)(K1),(BG008)(K1),(BG009)(K1),(SI001)(K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. ECOPLAN REKABUMI INTERCONSULT',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Perencanaan Rekayasa,Perencanaan Penataan Ruang,Konsultasi Lainnya, Pengawasan Penataan Ruang',
+    'sub_klasifikasi_bidang_usaha' => '(RE103)(B),(RE104)(B),(PR101)(B),(PR102)(B),(PR103)(B),(PR104)(B),(KL401)(B),(PR201)(B)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. BOJONG SARI',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => ' Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG007)(K1),(SI001)(K1),(SI003) (K2),(SI004) (K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV.Kartika Jaya',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG004)(K1),(SI001)(K1),(SI003) (K1),(SI004) (K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. RIKATNA',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG006)(K1),(BG009)(K1),(SI003) (K1),(SI004) (K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. FATIH BERKAH ELECTRIK',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Instalasi Mekanikal dan Elektrikal',
+    'sub_klasifikasi_bidang_usaha' => '(EL003)(K1),(EL006)(K1),(EL007)(K1),(EL010)(K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'CV. SEKAR WANGI',
+    'kategori_perusahaan' => 'CV',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan Sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG001) (K1),(BG004) (K1),(BG007) (K1),(SI001) (K1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. GUNA BANGUN UTAMA',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung',
+    'sub_klasifikasi_bidang_usaha' => '(BG004)(M1),(BG007)(M1),(BG007)(M1),(BG009)(M1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. REKA JAYA KARYA',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Bangunan Gedung dan Bangunan sipil',
+    'sub_klasifikasi_bidang_usaha' => '(BG008) (M1),(BG009) (M1),(SI001) (M1),(SI003) (M1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => 'PT. PELITA PERSADA REKAYASA',
+    'kategori_perusahaan' => 'PT',
+    'klasifikasi_bidang_usaha' => 'Perencanaan Arsitektur,Perencaan Rekayasa, Pengawasan Rekayasa',
+    'sub_klasifikasi_bidang_usaha' => '(AR101)(M1), (AR102)(M1),(RE102)(M1),(RE105)(M1),(RE201)(M1), (RE204)(M1)',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+uijk::create([
+    'nama_perusahaan' => '',
+    'kategori_perusahaan' => '',
+    'klasifikasi_bidang_usaha' => '',
+    'sub_klasifikasi_bidang_usaha' => '',
+    'keterangan' => '2018',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
 
 
 
