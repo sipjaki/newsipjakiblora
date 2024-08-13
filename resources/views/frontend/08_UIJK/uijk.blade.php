@@ -48,7 +48,7 @@ SBU - UIJK
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 150vh;
+    height: 165vh;
     margin-left: 150px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -107,8 +107,10 @@ SBU - UIJK
 
         <style>
             .search-container {
-                width: 200px;
-                position: absolute; /* Use absolute positioning */
+                width: 100%;
+                margin-bottom: 10px;
+                gap: 10px;
+                /* position: absolute; Use absolute positioning */
                 top: 10px; /* Distance from the top of the page */
                 right: 10px; /* Distance from the right edge of the page */
                 display: inline-block;
@@ -140,16 +142,69 @@ SBU - UIJK
                     background-position: right 10px center; /* Posisi ikon panah di dalam dropdown */
                     background-size: 12px; /* Ukuran ikon panah */
     }
+            .register-tahun {
+                    width: 150px; /* Lebar dropdown yang lebih besar untuk kenyamanan pengguna */
+                    height: 40px; /* Tinggi yang lebih sesuai untuk dropdown */
+                    border-radius: 8px; /* Sudut yang membulatkan tampilan dropdown */
+                    border: 1px solid #ddd; /* Border yang lebih ringan */
+                    padding: 0 15px; /* Padding horizontal untuk ruang lebih */
+                    background-color: #fff; /* Latar belakang putih */
+                    font-size: 14px; /* Ukuran font yang nyaman dibaca */
+                    color: #333; /* Warna teks */
+                    appearance: none; /* Menghapus tampilan default dropdown di beberapa browser */
+                    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="none" stroke="%23333" stroke-width="1.5" d="M2 3l3 3 3-3"/%3E%3C/svg%3E'); /* Menambahkan ikon panah kustom */
+                    background-repeat: no-repeat;
+                    background-position: right 10px center; /* Posisi ikon panah di dalam dropdown */
+                    background-size: 12px; /* Ukuran ikon panah */
+    }
         </style>
         
-        <div class="search-container">
+        <div class="search-container" style="display:flex">
             <i class="fas fa-search"></i>
-            <select class="pilihan" onchange="selectOption()">
+            <select class="pilihan" onchange="selectOption()" style="250px;">
                 <option value="" disabled selected>Pilih PT/CV</option>
                 <option value="/uijkpt">PT</option>
                 <option value="/uijkcv">CV</option>
             </select>
+        
+            <i class="fas fa-search"></i>
+            <select class="register-tahun" onchange="selectOption()">
+                <option value="" disabled selected>Register Tahun</option>
+                <option value="/2020">2020</option>
+                <option value="/2019">2019</option>
+                <option value="/2018">2018</option>
+                <option value="/2017">2017</option>
+                <option value="/2016">2016</option>
+                <option value="/2015">2015</option>
+                <option value="/2014">2014</option>
+            </select>
+
+            
         </div>
+
+        <script>
+            function selectOption() {
+                // Mendapatkan elemen select
+                var selectElement = document.querySelector('.register-tahun');
+                // Mendapatkan nilai yang dipilih
+                var selectedValue = selectElement.value;
+                // Mengecek apakah nilai yang dipilih ada
+                if (selectedValue) {
+                    // Mengarahkan ke URL yang dipilih
+                    window.location.href = selectedValue;
+                }
+            }
+    
+            // Menyambungkan event listener pada DOMContentLoaded
+            document.addEventListener('DOMContentLoaded', function() {
+                // Memastikan elemen ada sebelum menghubungkan fungsi
+                var selectElement = document.querySelector('.register-tahun');
+                if (selectElement) {
+                    selectElement.addEventListener('change', selectOption);
+                }
+            });
+        </script>
+    
     
         <script>
             function selectOption() {

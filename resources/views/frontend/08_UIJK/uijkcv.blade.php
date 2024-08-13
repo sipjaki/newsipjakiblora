@@ -48,7 +48,7 @@ Sertifikat Badan Usaha Commanditaire Vennootschap
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 150vh;
+    height: 165vh;
     margin-left: 150px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -107,8 +107,10 @@ Sertifikat Badan Usaha Commanditaire Vennootschap
 
         <style>
             .search-container {
-                width: 200px;
-                position: absolute; /* Use absolute positioning */
+                width: 100%;
+                margin-bottom: 10px;
+                gap: 10px;
+                /* position: absolute; Use absolute positioning */
                 top: 10px; /* Distance from the top of the page */
                 right: 10px; /* Distance from the right edge of the page */
                 display: inline-block;
@@ -142,12 +144,24 @@ Sertifikat Badan Usaha Commanditaire Vennootschap
     }
         </style>
         
-        <div class="search-container">
+        <div class="search-container" style="display:flex">
             <i class="fas fa-search"></i>
-            <select class="pilihan" onchange="selectOption()">
+            <select class="pilihan" onchange="selectOption()" style="250px;">
                 <option value="" disabled selected>Pilih PT/CV</option>
                 <option value="/uijkpt">PT</option>
                 <option value="/uijkcv">CV</option>
+            </select>
+
+            <i class="fas fa-search"></i>
+            <select class="pilihan" onchange="selectOption()" style="width:175px;">
+                <option value="" disabled selected>Register Tahun</option>
+                <option value="/2020">2020</option>
+                <option value="/2019">2019</option>
+                <option value="/2018">2018</option>
+                <option value="/2017">2017</option>
+                <option value="/2016">2016</option>
+                <option value="/2015">2015</option>
+                <option value="/2014">2014</option>
             </select>
         </div>
     

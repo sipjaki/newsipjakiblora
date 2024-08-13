@@ -123,6 +123,7 @@ Route::get('/uijk', [UijkController::class, 'index']);
 Route::get('/uijk/{nama_perusahaan}', [UijkController::class, 'feuijkshowByName']);
 Route::get('/uijkpt', [UijkController::class, 'uijkpt']);
 Route::get('/uijkcv', [UijkController::class, 'uijkcv']);
+Route::get('/2020', [UijkController::class, '2020']);
 
 
 

@@ -253,81 +253,6 @@ Sertifikat Badan Usaha / Surat Ijin Usaha Jasa Konstruksi
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->keterangan)) }}</td>
                     </tr>
-{{--                     
-                    <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-calendar" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Tanggal Lahir</th>
-                        <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->tanggal_lahir)) }}</td>
-                    </tr>
-                     --}}
-                    {{-- <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-calendar" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Usia</th>
-                        <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->usia)) . ' Tahun' }}</td>
-                    </tr>
-                     --}}
-                    {{-- <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-list" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">NIK KTP</th>
-                        <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black; position: relative;">
-                                {{ $data->nik }}
-                                <!-- Tombol salin -->
-                                <button onclick="copyToClipboard('{{ $data->nik }}')" title="Salin" style="background: none; border: none; cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);">
-                                    <i class="fas fa-copy"></i>
-                                </button>
-                            </td>                  
-                            
-                                  <script>
-                        function copyToClipboard(text) {
-                            // Buat elemen textarea sementara
-                            var textarea = document.createElement('textarea');
-                            textarea.value = text;
-                            document.body.appendChild(textarea);
-                            
-                            // Pilih dan salin teks
-                            textarea.select();
-                            document.execCommand('copy');
-                            
-                            // Hapus elemen textarea setelah salin
-                            document.body.removeChild(textarea);
-
-                            // Notifikasi opsional: memberitahu pengguna bahwa teks telah disalin
-                            alert('Teks telah disalin ke clipboard!');
-                        }
-                        </script>
-                    </tr>
-                     --}}
-                    {{-- <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-cogs" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Keterampilan</th>
-                        <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->keterampilan)) }}</td>
-                    </tr>
-                     --}}
-                    {{-- <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Tahun Bimtek</th>
-                        <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->tahun_bimtek)) }}</td>
-                    </tr>
-                     --}}
-                    {{-- <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Kualifikasi</th>
-                        <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->kualifikasi)) }}</td>
-                    </tr>
-                     --}}
-                    {{-- <tr>  
-                        <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
-                        <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Registrasi</th>
-                        <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->registrasi)) }}</td>
-                    </tr>
-                 --}}
                     <tr>  
                         <th style="background-color: white; width: 20px; border:none; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-file" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: white; width: 225px; border:none; text-align:left; font-size:14px;"></th>
@@ -422,6 +347,12 @@ function updateDateTime() {
             });
 
             </script>
+            <!-- Menyertakan html2canvas -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+                <!-- Menyertakan jsPDF -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.6.0/jspdf.umd.min.js"></script>
+
             
                     
                 </tbody>

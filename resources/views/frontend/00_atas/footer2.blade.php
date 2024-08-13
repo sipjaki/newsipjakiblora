@@ -8,6 +8,13 @@
 
 @include('tambahan.portalberitafooter')
 
+
+<!-- Menyertakan html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- Menyertakan jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.6.0/jspdf.umd.min.js"></script>
+
 <script src="/assets/bahan1/js/wow.min.js"></script>
 <script> new WOW().init();</script>
 <script src="/assets/bahan1/js/bootstrap.bundle.min.js"></script>
