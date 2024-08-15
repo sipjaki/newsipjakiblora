@@ -25,6 +25,7 @@ use App\Models\pergubernur;
 use App\Models\suratkeputusan;
 use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
+// use Carbon\Carbon;
 use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
