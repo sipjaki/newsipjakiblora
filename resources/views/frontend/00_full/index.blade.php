@@ -129,9 +129,50 @@
                 
                 @endforeach
 
+                
             </div>
+                    <!-- Popular News Start -->
+                    <div class="mb-3 mt-4">
+                        <div class="section-title mb-0">
+                            <h4 class="m-0 text-uppercase font-weight-bold">KEGIATAN SERTIFIKASI JASA KONSTRUKSI </h4>
+                        </div>
+                        <div class="bg-white border border-top-0 p-3">
+                            
+                            @foreach ($data_kegiatanjaskon as $item )
+                                
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Pemerintah Kabupaten Bandung Barat</a>
+                                        <a class="text-body" href=""><small><span style="color: #000000">{{$item->tanggal}}</span></small></a>
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{{ $item->judul_kegiatan}}</a>
+                                </div>
+                            </div>
+                            
+                            @endforeach
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                                <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
+                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Comming Soon</a>
+                                        {{-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> --}}
+                                    </div>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">PELATIHAN BIMBINGAN TEKNIS .... </a>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <!-- Popular News End -->
+
+
         </div>
+        
     </div>
+
 
     <br><br><br>
     <!-- Featured News Slider End -->
@@ -516,9 +557,13 @@
                         </div>
                     </div> --}}
                     <!-- Tags End -->
+
+                    
                 </div>
             </div>
+        
         </div>
+
     </div>
     <!-- News With Sidebar End -->
     <!-- News With Sidebar End -->
@@ -562,7 +607,7 @@
     transition: background 0.5s ease, color 0.5s ease;
 " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Layanan Jasa Konstruksi
+Layanan Jasa Konstruksi <i class="fas fa-arrow down"></i>
 </h2>
 
 
