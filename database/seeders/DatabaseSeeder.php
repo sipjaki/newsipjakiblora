@@ -1023,6 +1023,54 @@ layanankami::create([
     'updated_at' => Carbon::now(),
 ]);
 
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/KOTA.png',
+    'program' => 'Insfrastruktur Perkotaan',
+    'keterangan' => 'Insfrastruktur Perkotaan untuk Bangunan Gedung',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/JALAN.png',
+    'program' => 'Insfrastruktur Jalan',
+    'keterangan' => 'Insfrastruktur Jalan untuk Bangunan Gedung',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/INDUSTRI.png',
+    'program' => 'Insfrastruktur Industri',
+    'keterangan' => 'Insfrastruktur Industri',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/TEKNIK_KONSTRUKSI.png',
+    'program' => 'Teknik Konstruksi ',
+    'keterangan' => 'Teknik Konstruksi untuk Bangunan Gedung',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/TEKNIK_STRUKTUR.png',
+    'program' => 'Teknik Struktur ',
+    'keterangan' => 'Teknik Struktur untuk Bangunan Gedung',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+layanankami::create([
+    'gambar' => '/assets/library/layanankami/WATER.png',
+    'program' => 'Teknik Rekayasa & Air Limbah ',
+    'keterangan' => 'Teknik Rekayasa & Air Limbah untuk Bangunan Gedung',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
 // =============================== =============================== =============================== ===============================
 uijk::create([
     'nama_perusahaan' => 'PT. Mega Sukma',

@@ -107,7 +107,7 @@
 
     <!-- Featured News Slider Start -->
     <div class="container-fluid pt-5 mb-3">
-        <div class="container">
+        <div class="container col-11">
             <div class="section-title">
                 <h4 class="m-0 text-uppercase font-weight-bold">Layanan Kami</h4>
             </div>
@@ -117,15 +117,17 @@
                 @foreach ( $data_layanankami as $item )
                     
                 <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover; padding:10px;">
-                    <div class="overlay">
-                        <div class="mb-2">
-                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
-                            href="">{{ $item->program}}</a> <br>
-                            <a class="text-white" href=""><small>{{ $item->keterangan}}</small></a>
+                    <a href="/">
+                        <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover; padding:10px; cursor:pointer">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <button class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/">{{ $item->program}}</button> <br>
+                                <p class="text-white" href=""><small>{{ $item->keterangan}}</small></p>
+                            </div>
+                            {{-- <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a> --}}
                         </div>
-                        {{-- <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a> --}}
-                    </div>
+                    </a>
                 </div>
                 
                 @endforeach
@@ -142,7 +144,7 @@
                             @foreach ($data_kegiatanjaskon as $item )
                                 
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
+                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-1.jpg" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Pemerintah Kabupaten Bandung Barat</a>
