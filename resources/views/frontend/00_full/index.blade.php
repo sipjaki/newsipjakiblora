@@ -123,7 +123,7 @@
                             <div class="mb-2">
                                 <button class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                 href="/">{{ $item->program}}</button> <br>
-                                <p class="text-white" href=""><small>{{ $item->keterangan}}</small></p>
+                                <p class="text-white" href=""><small>{{$item->keterangan}}</small></p>
                             </div>
                             {{-- <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a> --}}
                         </div>
