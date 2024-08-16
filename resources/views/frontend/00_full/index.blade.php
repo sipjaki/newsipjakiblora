@@ -34,6 +34,7 @@
                     <div class="position-relative overflow-hidden" style="height: 500px;">
                         <a href="/portalberita/{{ $item->judul}}">
                             <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                        
                         </a>
                         <div class="overlay">
                             <div class="mb-2">
