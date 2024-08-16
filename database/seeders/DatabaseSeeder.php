@@ -910,17 +910,11 @@ berita::create([
     'author' => rand(1,1000),
     'gambar' => '/assets/library/berita/berita1.jpg',
     'keterangan' => '
-<p>
 Bandung Barat, 11 Agustus 2024 – Pemerintah Kabupaten Bandung Barat dengan bangga memperkenalkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK), sebuah inovasi digital terbaru yang dirancang untuk memperbaiki dan memodernisasi pengelolaan proyek konstruksi di daerah ini. Dengan peluncuran sistem ini, pemerintah bertujuan untuk meningkatkan transparansi, efisiensi, dan akuntabilitas dalam administrasi konstruksi, serta memberikan kemudahan akses informasi kepada masyarakat.
-</p>
 
-<p>
 SIPJK menawarkan berbagai fitur unggulan seperti pendaftaran online, pelaporan kemajuan proyek secara real-time, dan akses mudah ke data proyek. Sistem ini diharapkan dapat mengurangi birokrasi, mempercepat proses administrasi, dan meminimalkan potensi terjadinya praktik korupsi. Selain itu, SIPJK juga bertujuan untuk meningkatkan keterlibatan publik dengan menyediakan informasi yang transparan dan mudah diakses tentang status dan perkembangan proyek konstruksi.
-</p>
 
-<p>
 Bupati Bandung Barat, menyampaikan antusiasmenya atas peluncuran SIPJK dan mengungkapkan harapannya bahwa sistem ini akan membawa perubahan positif dalam pengelolaan konstruksi di wilayahnya. Ia percaya bahwa SIPJK akan menjadi alat yang efektif dalam mendukung pembangunan berkelanjutan dan menjadi contoh bagi daerah lain dalam penerapan teknologi informasi untuk sektor publik.
-</p>
 
 ',
     'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
@@ -992,7 +986,7 @@ Bupati Bandung Barat menegaskan bahwa peluncuran SIPJK adalah langkah strategis 
 
 // =================================== ===================================== ===========================
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/SERTIFIKAT_LAIK_FUNGSI.png',
+    'gambar' => '/assets/library/layanankami/1.png',
     'program' => 'Sertifikat Laik Fungsi',
     'keterangan' => 'Sertifikat Laik Fungsi Untuk Bangunan Gedung',
     'created_at' => Carbon::now(),
@@ -1000,7 +994,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/PERSETUJUAN_BANGUNAN_GEDUNG.png',
+    'gambar' => '/assets/library/layanankami/2.png',
     'program' => 'PBG',
     'keterangan' => 'Persetujuan Bangunan Gedung',
     'created_at' => Carbon::now(),
@@ -1008,7 +1002,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/INSPEKSI_LAPANGAN.png',
+    'gambar' => '/assets/library/layanankami/3.png',
     'program' => 'Inspeksi Lapangan',
     'keterangan' => 'Inspeksi Lapangan Untuk Konstruksi Di Lapangan',
     'created_at' => Carbon::now(),
@@ -1017,7 +1011,7 @@ layanankami::create([
 
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/PEMELIHARAAN.png',
+    'gambar' => '/assets/library/layanankami/4.png',
     'program' => 'Pemeliharaan Perbaikan',
     'keterangan' => 'Pemeliharaan Perbaikan Bangunan Gedung',
     'created_at' => Carbon::now(),
@@ -1025,7 +1019,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/PENYEDIAAN_MATERIAL.png',
+    'gambar' => '/assets/library/layanankami/5.png',
     'program' => 'Penyediaan Material',
     'keterangan' => 'Penyediaan Material untuk Bangunan Gedung',
     'created_at' => Carbon::now(),
@@ -1033,7 +1027,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/KOTA.png',
+    'gambar' => '/assets/library/layanankami/6.png',
     'program' => 'Insfrastruktur Perkotaan',
     'keterangan' => 'Insfrastruktur Perkotaan untuk Bangunan Gedung',
     'created_at' => Carbon::now(),
@@ -1041,7 +1035,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/JALAN.png',
+    'gambar' => '/assets/library/layanankami/7.png',
     'program' => 'Insfrastruktur Jalan',
     'keterangan' => 'Insfrastruktur Jalan untuk Bangunan Gedung',
     'created_at' => Carbon::now(),
@@ -1049,7 +1043,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/INDUSTRI.png',
+    'gambar' => '/assets/library/layanankami/8.png',
     'program' => 'Insfrastruktur Industri',
     'keterangan' => 'Insfrastruktur Industri',
     'created_at' => Carbon::now(),
@@ -1057,7 +1051,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/TEKNIK_KONSTRUKSI.png',
+    'gambar' => '/assets/library/layanankami/9.png',
     'program' => 'Teknik Konstruksi ',
     'keterangan' => 'Teknik Konstruksi untuk Bangunan Gedung',
     'created_at' => Carbon::now(),
@@ -1065,7 +1059,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/TEKNIK_STRUKTUR.png',
+    'gambar' => '/assets/library/layanankami/10.png',
     'program' => 'Teknik Struktur ',
     'keterangan' => 'Teknik Struktur untuk Bangunan Gedung',
     'created_at' => Carbon::now(),
@@ -1073,7 +1067,7 @@ layanankami::create([
 ]);
 
 layanankami::create([
-    'gambar' => '/assets/library/layanankami/WATER.png',
+    'gambar' => '/assets/library/layanankami/11.png',
     'program' => 'Teknik Rekayasa & Air Limbah ',
     'keterangan' => 'Teknik Rekayasa & Air Limbah untuk Bangunan Gedung',
     'created_at' => Carbon::now(),

@@ -15,13 +15,13 @@ class FedashboardController extends Controller
     {
         $data= berita::all(); //
         $data_layanankami= layanankami::all(); //
-        $data_kegiatanjaskon= kegiatanjaskon::all(); //
+        // $data_kegiatanjasakonstruksi= kegiatanjaskon::all(); //
 
         return view('frontend.00_full.index', [
             'title' => 'Sipjaki Pemerintah Kabupaten Bandung Barat',
             'data' => $data, // Mengirimkan data paginasi ke view
             'data_layanankami' => $data_layanankami, // Mengirimkan data paginasi ke view
-            'data_kegiatanjaskon' => $data_kegiatanjaskon, // Mengirimkan data paginasi ke view
+            // 'data_jaskon' => $data_kegiatanjasakonstruksi, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -35,8 +35,6 @@ class FedashboardController extends Controller
             'data' => $data,
             'data_berita' => $data_berita,
             'title' => 'Portal Berita Sipjaki KBB',
-            
-            
         ]);
     }
 
