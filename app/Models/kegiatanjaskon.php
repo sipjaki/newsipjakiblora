@@ -12,4 +12,9 @@ class kegiatanjaskon extends Model
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
+
+    public function laporankegiatan()
+    {
+        return $this->belongsTo(laporankegiatan::class);
+    }
 }

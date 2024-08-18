@@ -20,21 +20,58 @@
 </div>
 </header>
 
+<div class="col-lg-12" style="margin-top:188px;" >
+
+    <div class="container-fluid">
+        <br>
+        <div class="container">
+            <div class="section-title">
+                <h4 class="m-0 text-uppercase font-weight-bold" style="font-size: 16px;">
+                    <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" width="35px;">
+                    KEGIATAN SERTIFIKASI PARA PEKERJA TUKANG TERAMPIL</h4>
+            </div>
+            <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+                @foreach ($data_laporankegiatanall as $item )
+
+                <div class="position-relative overflow-hidden" style="height: 300px;">
+                        <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover; padding:10px;">
+                <div class="overlay">
+                    <a href="/detailskegiatan/{{$item->jabatan}}" class="h6 m-0 text-white text-uppercase font-weight-semi-bold">{{$item->judul_kegiatan}}</a>
+                </div>
+            </div>
+                
+            
+            @endforeach
+                
+            </div>
+
+            
+        </div>
+        
+    </div>
+
+    
+
+</div>
+
+
+
+
 
     <!-- Breaking News Start -->
     <div class="container-fluid mt-6 mb-3">
-        <div class="container" style="margin-top: 188px;">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 mt-2" >
                     <div class="d-flex justify-content-between">
                         <div class="section-title border-right-0 mb-0" style="width: 180px;">
                             {{-- <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width: 20%;"> --}}
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding</h4>
+                            <h5 class="m-0 text-uppercase font-weight-bold">Tranding</h5>
                         </div>
                         <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center bg-white border border-left-0"
                             style="width: calc(100% - 180px); padding-right: 100px;">
-                        @foreach ($data_berita as $item ) 
-                        <div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="/portalberita/{{$item->judul}}">{{ $item->judul}}</a></div>
+                        @foreach ($data_laporankegiatanall as $item ) 
+                        <div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="/portalberita/{{$item->judul_kegiatan}}">{{ $item->judul_kegiatan}}</a></div>
                         @endforeach
                         
                         </div>
@@ -56,53 +93,22 @@
 
                 <div class="col-lg-8">
                     <!-- News Detail Start -->
-
+                      
                     <div class="position-relative mb-3">
-                        <!-- Gambar yang membuka modal -->
-                        <img class="img-fluid w-100" src="{{$data->gambar}}" style="object-fit: cover; cursor: pointer;" data-toggle="modal" data-target="#imageModal">
-
-                        <!-- Modal -->
-                        <!-- Modal -->
-                       <!-- Modal -->
-                    <div style="margin-top: 115px;" class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered custom-modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <!-- Jika Anda ingin judul atau tombol close, aktifkan bagian ini -->
-                             <h5 class="modal-title" id="imageModalLabel">{{substr($data->judul, 0, 30)}} ...</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span class="btn btn-sn btn-warning" style="border-radius:5px;" aria-hidden="true">&times;</span>
-                            </button> 
-                            </div>
-                            <div class="modal-body">
-                            <img id="modalImage" src="" class="img-fluid" alt="Preview Image">
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-  
-  
-                        <!-- Script untuk mengatur gambar di modal -->
-                        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-                        <script>
-                        $(document).ready(function() {
-                            $('img[data-toggle="modal"]').on('click', function() {
-                            var imgSrc = $(this).attr('src');
-                            $('#modalImage').attr('src', imgSrc);
-                            $('#imageModal').modal('show');
-                            });
-                        });
-                        </script>
-
+                        {{-- @foreach ($data_berita slice 0 as $item ) --}}
+                            {{-- @foreach ($data_berita as $item ) --}}
+                                
+                            <!-- Gambar yang membuka modal -->
+                            <img class="img-fluid w-100" src="{{$data_laporankegiatan->gambar}}" style="object-fit: cover; cursor: pointer;" data-toggle="modal" data-target="#imageModal">
+                        
                         <div class="bg-white border border-top-0 p-4">
                             <div class="mb-3">
                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                     href="">News</a>
                                 {{-- <a class="text-body" href="">Jan 01, 2045</a> --}}
                             </div>
-                            <h1 class="mb-3 text-uppercase font-weight-bold" style="color: black; font-size: 24px; text-align:left;">{{ $data->judul}}</h1>
-                            <h6 style="text-align: justify">{!! $item->keterangan !!}</h6>
+                            <h1 class="mb-3 text-uppercase font-weight-bold" style="color: black; font-size: 20px; text-align:left;">{{ $data_laporankegiatan->judul_kegiatan}}</h1>
+                            <h6 style="text-align: justify">{!! $data_laporankegiatan->keterangan_berita !!}</h6>
                         </div>
 
 
@@ -116,6 +122,9 @@
                                 {{-- <span class="ml-3"><i class="far fa-comment mr-2"></i>123</span> --}}
                             </div>
                         </div>
+                        
+                        {{-- @endforeach --}}
+                        {{-- @endforeach --}}
                         
                         
                     </div>
@@ -132,36 +141,6 @@
 
                 
                 <div class="col-lg-4">
-
-                    <!-- Popular News Start -->
-                    <div class="mb-3">
-                        <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding News</h4>
-                            <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" width="40px;">
-                        </div>
-                        <div class="bg-white border border-top-0 p-3">
-                          
-                            @foreach ($data_berita as $item)
-                                
-                            <div class="owl-carousel main-carousel d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <a href="/portalberita/{{$item->judul}}">
-                                    <img src="{{$item->gambar}}" style="width:50%; cursor:pointer" alt="">
-                                </a>
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="/portalberita/{{$item->judul}}">News</a>
-                                        <a class="text-body" href="/portalberita/{{$item->judul}}"><small>{{$item->tanggal}}</small></a>
-                                    </div>
-                                    <br><br>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="/portalberita/{{$item->judul}}">{{ substr($item->judul, 0, 40)}} ....</a>
-                                
-                                </div>
-                            </div>
-                            
-                            @endforeach
-                        </div>
-                    </div>
-                    <!-- Popular News End -->
 
                     <!-- Newsletter Start -->
                     {{-- <div class="mb-3">
@@ -206,49 +185,6 @@
                     </div>
                     
                 
-
-                <div class="col-lg-12">
-
-                    <div class="container-fluid pt-0 mb-3">
-                        <div class="container">
-                            <div class="section-title">
-                                <h4 class="m-0 text-uppercase font-weight-bold">
-                                    <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" width="35px;">
-                                    News</h4>
-                            </div>
-                            <div class="owl-carousel news-carousel carousel-item-4 position-relative">
-                
-                
-                                @foreach ( $data_berita as $item )
-                                    
-                                <div class="position-relative overflow-hidden" style="height: 300px;">
-                                    <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover; padding:10px;">
-                                    <div class="overlay">
-                                        <div class="mb-2">
-                                            {{-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" --}}
-                                            {{-- href="">{{ $item->judul}}</a> <br> --}}
-                                            {{-- <a class="text-white" href=""><small>{{ $item->keterangan}}</small></a> --}}
-                                        </div>
-                                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="/portalberita/{{$item->judul}}">{{$item->judul}}</a>
-                                    </div>
-                                </div>
-                                
-                                
-                                @endforeach
-                
-                            </div>
-
-                            
-                        </div>
-                        
-                    </div>
-
-                    
-
-                </div>
-
-
-
 
 
     </section>

@@ -24,9 +24,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FedashboardController::class, 'index']);  
 Route::get('/portalberita/{judul}', [FedashboardController::class, 'portalberitashowByJudul']);
-
-
 Route::get('/berita', [FedashboardController::class, 'navbarberita']);  
+
+Route::get('/kegiatansertifikasi', [FedashboardController::class, 'kegiatansertifikasi']);  
+Route::get('/kegiatansertifikasi/{judul_kegiatan}', [FedashboardController::class, 'kegiatansertifikasishowByJudul']);
+Route::get('/detailskegiatan/{jabatan}', [FedashboardController::class, 'detailskegiatanshowByJudul']);
+
+
 // Route::get('/portalberita', function () {
 //     // return view('welcome');
 //     return view('portalberita', [

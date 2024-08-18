@@ -176,7 +176,7 @@
                             .scrolling-content {
                                 display: inline-block;
                                 white-space: nowrap;
-                                animation: scroll 20s linear infinite;
+                                animation: scroll 10s linear infinite;
                             }
                             
                             .scrolling-content img {
@@ -222,17 +222,17 @@
                             @endforeach
                            
                            
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            {{-- <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Comming Soon</a>
-                                        {{-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> --}}
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
                                     </div>
                                     <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">PELATIHAN BIMBINGAN TEKNIS GELOMBANG KE 2 TAHUN 2024 .....</a>
                                 </div>
                             </div>
-                            
+                             --}}
                             
                         </div>
                     </div>
