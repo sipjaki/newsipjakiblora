@@ -431,7 +431,8 @@
                         border-radius: 15px; 
                         width: 40%; 
                         height: 20%; 
-                        color: black;"
+                        color: black;
+                        margin-bottom: 10px;"
                     >
                     <input type="text" name="telepon" id="" placeholder="Telepon" required 
                     style="font-family: 'Lato', sans-serif;
@@ -440,6 +441,7 @@
                         border: 1px solid #1a237e; 
                         border-radius: 15px;
                         margin-top: 0px; 
+                        margin-bottom: 10px; 
                         width: 40%; 
                         height: 20%; 
                         color: black;"
@@ -468,17 +470,20 @@
                                     <option value="kontraktor">Kontraktor</option>
                                     <option value="pengawas">Pengawas</option>
                                     <option value="tenaga-ahli">Tenaga Ahli</option>
+                                    <option value="tenaga-ahli">Tenaga Tukang</option>
                                     <option value="dinas-terkait">Dinas Terkait</option>
                                     <option value="masyarakat-umum">Masyarakat Umum</option>
                                 </select>
         
-                            <select name="sebagai" class="custom-select" required style="width: 100%;">
+                                
+                                <select name="sebagai" class="custom-select" required style="width: 100%;">
                                     <option value="" disabled selected>Jenis Q&A Pertanyaan Anda</option>
-                                    <option value="kontraktor">Sertifikat Laik Fungsi</option>
-                                    <option value="pengawas">Persetujuan Bangunan Gedung</option>
-                                    <option value="tenaga-ahli">Pelatihan</option>
-                                    </select>
-        
+                                    
+                                    @foreach ($data_layanankami as $item )
+                                    <option value="{{$item->program}}">{{$item->program}}</option>
+                                    @endforeach
+                                </select>
+                                
                 
                     <button type="submit" style="
                         font-family: 'Lato', sans-serif;
