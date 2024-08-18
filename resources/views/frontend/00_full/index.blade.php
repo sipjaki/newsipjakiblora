@@ -350,11 +350,18 @@
                 <article class="quoteblock">
                     <div class="quotetxt arrow">
                         <p><img src="/assets/bahan1/Images/blockquote2.png" alt="quote mark"></p>
-                        {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p> --}}
+                        <p style="color: black; font-size:12px;">
+                            Kami mendorong semua pihak untuk memanfaatkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK) secara maksimal. Sistem ini dirancang untuk memudahkan akses informasi penting terkait peraturan dan sertifikasi dalam industri konstruksi. Dengan menggunakan SIPJK, saudara akan memperoleh informasi terkini dan membantu memastikan proyek konstruksi berjalan sesuai standar. Mari kita tingkatkan kualitas dan profesionalisme industri konstruksi bersama.
+                    
+                        </p>
+                   
                     </div>
                     <figure>
-                        {{-- <img class="customer" src="/assets/bahan1/Images/cust1.png" alt="customer1"> --}}
-                        <figcaption>PUTR Bandung Barat</figcaption>
+                        <img class="customer mb-2" src="/assets/bahan1/Images/payuyuyuhana.png" style="width: 20%;">
+                        <figcaption>Yuyu Yuhana ,ST., MM</figcaption>
+                        <figcaption>fungsional pembina  </figcaption>
+                        <figcaption>jasa konstruksi ahli muda </figcaption>
+                        <figcaption>pemerintah kabupaten bandung barat</figcaption>
                     </figure>
                 </article>
             </div>
