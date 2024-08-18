@@ -7,16 +7,24 @@
 
 <section id="sec-0">
     
-    @include('frontend.00_atas.header1')
-    
+    <div class="div" style="z-index: 9999; position: fixed;
+            top: 0; left: 0; width: 100%; z-index: 9999;
+            background-color: white; border-bottom: 1px solid black; 
+            ">
+
+        @include('frontend.00_atas.header1')
         <header>
-        
-        @include('frontend.00_atas.header2_navbar')
             
+                @include('frontend.00_atas.header2_navbar')
+            
+        </div>
         </header>
-        <div class="div" style="
+<p style="margin-top: 5px;">.</p>
+
+<div class="div" style="
             justify-content: center;
             text-align:center;
+            margin-top:188px;
         ">
                     <h2 style="
     margin-top: 10px;

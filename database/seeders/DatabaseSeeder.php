@@ -4,8 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\berita;
-use App\Models\kegiatanjaskon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -23,6 +21,8 @@ use App\Models\referensi;
 use App\Models\suratedaran;
 use App\Models\pergubernur;
 use App\Models\suratkeputusan;
+use App\Models\berita;
+use App\Models\kegiatanjaskon;
 use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -995,7 +995,7 @@ layanankami::create([
 
 layanankami::create([
     'gambar' => '/assets/library/layanankami/2.png',
-    'program' => 'PBG',
+    'program' => 'Persetujuan Bangunan Gedung',
     'keterangan' => 'Persetujuan Bangunan Gedung',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
@@ -1730,8 +1730,28 @@ uijk::create([
 kegiatanjaskon::create([
                 'laporankegiatan_id' => 1, // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-                'judul_kegiatan' => 'BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI KABUPATEN BANDUNG BARAT, DI KECAMATAN CILILIN DESA BATULAYANG 40562 JAWABARAT INDONESIA',
-                'gambar' => '/assets/library/kegiatanjaskon/01_cililin/laporankegiatan.jpg',
+                'judul_kegiatan' => 'BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI KABUPATEN BANDUNG BARAT',
+                'alamat_kegiatan' => '14 AGUSTUS 2024 KECAMATAN CILILIN DESA BATULAYANG 40562 JAWABARAT INDONESIA',
+                'berita1' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA1.jpg',
+                'berita2' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA2.jpg',
+                'berita3' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA3.jpg',
+                'berita4' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA4.jpg',
+                'berita5' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA5.jpg',
+                'berita6' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA6.jpg',
+                'berita7' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA7.jpg',
+                'berita8' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA8.jpg',
+                'berita9' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA9.jpg',
+                'berita10' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA10.jpg',
+                'berita11' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA11.jpg',
+                'berita12' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA12.jpg',
+                'berita13' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA13.jpg',
+                'berita14' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA14.jpg',
+                'berita15' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA15.jpg',
+                'berita16' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA16.jpg',
+                'berita17' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA17.jpg',
+                'berita18' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA18.jpg',
+                'berita19' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA19.jpg',
+                'berita20' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA20.jpg',
                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
                 'created_at' => now(),
                 'updated_at' => now(),

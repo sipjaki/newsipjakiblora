@@ -1,7 +1,6 @@
-<div class="container">  
-    <div style="display: flex; align-items: center; margin-bottom:10px">
+<div class="container mt-0 mb-0">  
+    <div style="display: flex; align-items: center; ">
         <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0;">
-        
         <h1 style="margin: 0;">
             <span>SIPJAKI</span>KBB
             <p style="margin: 0; font-size: 16px; color: white" >Dinas Pekerjaan Umum & Tata Ruang</p>
@@ -54,7 +53,7 @@
         <div class="dropdown">
             <a href="#" class="dropdown-toggle">PROFIL</a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
-            <div class="dropdown-content">
+            <div class="dropdown-content" style="min-width: 400px;">
     
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-users" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
@@ -78,7 +77,7 @@
         <div class="dropdown">
             <a href="#" class="dropdown-toggle">BERITA</a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
-            <div class="dropdown-content" style="min-width: 100px;">
+            <div class="dropdown-content" style="min-width: 150px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-newspaper" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/berita" style="color: black; text-decoration: none; text-align:left">BERITA</a>
@@ -87,6 +86,11 @@
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-newspaper" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/404" style="color: black; text-decoration: none; text-align:left">AGENDA</a>
+                </div>
+                 
+                <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
+                    <i class="fas fa-newspaper" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
+                    <a href="/kegiatansertifikasi" style="color: black; text-decoration: none; text-align:left">SERTIFIKASI</a>
                 </div>
                  
             </div>
@@ -147,7 +151,7 @@
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" style="text-align: left">TENAGA <br> KERJA </a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
-            <div class="dropdown-content" style="min-width: 300px;">
+            <div class="dropdown-content" style="min-width: 350px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-user" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/tenagakerja/skaskt" style="color: black; text-decoration: none; text-align:left">SKK</a>

@@ -7,20 +7,27 @@
 
 <section id="sec-0">
     
-    @include('frontend.00_atas.header1')
+    <div class="div" style="z-index: 9999; position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    background-color: white; border-bottom: 1px solid black; 
+    ">
+
+@include('frontend.00_atas.header1')
+<header>
     
-        <header>
-        
         @include('frontend.00_atas.header2_navbar')
-            
-        </header>
-        <div class="div" style="
+    
+</div>
+</header>
+
+<div class="div" style="
             justify-content: center;
             text-align:center;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
+            margin-top:188px;
         ">
 
             <h2 style="
@@ -157,10 +164,10 @@ border-radius:5px;
 <div class="badgehidden" style="color: white"></div></label>
 </a>
 <a href="/peraturan/menteri" style="background: white;">
-<button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+<button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>KEMBALI</button>
 </a>
 
-<button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
+<button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> DOWNLOAD PDF</button>
 
             {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
             <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->

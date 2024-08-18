@@ -13,15 +13,15 @@ class FedashboardController extends Controller
 {
     public function index()
     {
-        $data= berita::all(); //
-        $data_layanankami= layanankami::all(); //
-        // $data_kegiatanjasakonstruksi= kegiatanjaskon::all(); //
+        $data = berita::all(); //
+        $data_layanankami = layanankami::all(); //
+        $data_kegiatanjaskon = kegiatanjaskon::all(); //
 
         return view('frontend.00_full.index', [
             'title' => 'Sipjaki Pemerintah Kabupaten Bandung Barat',
             'data' => $data, // Mengirimkan data paginasi ke view
             'data_layanankami' => $data_layanankami, // Mengirimkan data paginasi ke view
-            // 'data_jaskon' => $data_kegiatanjasakonstruksi, // Mengirimkan data paginasi ke view
+            'data_jaskon' => $data_kegiatanjaskon, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -29,18 +29,20 @@ class FedashboardController extends Controller
     public function portalberitashowByJudul($judul)
     {
         $data_berita = berita::all(); //
+        $data_layanankami = layanankami::all(); //
         $data = berita::where('judul', $judul)->firstOrFail();
         
-        return view('frontend.02_berita.portalberita.index', [
+        return view('frontend.02_berita.portalberita.showindex', [
             'data' => $data,
             'data_berita' => $data_berita,
+            'data_layanankami' => $data_layanankami,
             'title' => 'Portal Berita Sipjaki KBB',
         ]);
     }
 
     public function navbarberita()
     {
-        $data= berita::all(); //
+        $data= berita::all(); //    
         
         return view('frontend.02_berita.portalberita.navbarberita', [
             'title' => 'Berita KBB',

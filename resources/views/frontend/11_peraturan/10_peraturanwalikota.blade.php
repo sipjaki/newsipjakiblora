@@ -7,20 +7,28 @@
 
 <section id="sec-0">
     
-    @include('frontend.00_atas.header1')
+    <div class="div" style="z-index: 9999; position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    background-color: white; border-bottom: 1px solid black; 
+    ">
+
+@include('frontend.00_atas.header1')
+<header>
     
-        <header>
-        
         @include('frontend.00_atas.header2_navbar')
-            
-        </header>
-        <div class="div" style="
+    
+</div>
+</header>
+
+
+<div class="div" style="
             justify-content: center;
             text-align:center;
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
+            margin-top:188px;
         ">
 
             <h2 style="
@@ -53,7 +61,7 @@ Peraturan Bupati / Walikota Tentang Jasa Konstruksi
     text-align: center;
     width: 100%;
     height: 135vh;
-    background: linear-gradient(to bottom, yellow, white, black);
+    background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
 ">
@@ -226,7 +234,7 @@ Peraturan Bupati / Walikota Tentang Jasa Konstruksi
 </div>
 
 <div class="pagination-container" style=" margin-top: 25px; margin-bottom:200px; display: flex; flex-direction: column; align-items: center;">
-    <div class="pagination-info mb-2" style="margin-bottom: 100px; color:#333333; font-weight: 500;">
+    <div class="pagination-info mb-2" style="margin-bottom: 100px; color:black; font-weight: 500;">
         Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
     </div>
         <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top:10px; ">

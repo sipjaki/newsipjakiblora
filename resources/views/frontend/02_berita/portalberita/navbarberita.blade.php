@@ -6,16 +6,19 @@
 {{-- ------------------------------------------------------------------------------------------ --}}
 
 <section id="sec-0">
+    <div class="div" style="z-index: 9999; position: fixed;
+    top: 0; left: 0; width: 100%; z-index: 9999;
+    background-color: white; border-bottom: 1px solid black; 
+    ">
+
+@include('frontend.00_atas.header1')
+<header>
     
-    @include('frontend.00_atas.header1')
+        @include('frontend.00_atas.header2_navbar')
     
-        <header>
-<div class="container" style="z-index: 9999">
-    @include('frontend.00_atas.header2_navbar')
-    </div>        
-            
-        </header>
-    
+</div>
+</header>
+
 {{-- ======================================================================================================================= --}}
 {{-- ======================================================================================================================= --}}
    
@@ -23,7 +26,7 @@
 
 
     <!-- Main News Slider Start -->
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top:188px;">
         <div class="row">
             <div class="col-lg-7 px-0">
                 <div class="owl-carousel main-carousel position-relative">

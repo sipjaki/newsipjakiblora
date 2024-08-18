@@ -7,23 +7,34 @@
 
 <section id="sec-0">
     
-    @include('frontend.00_atas.header1')
-    
+    <div class="div" style="z-index: 9999; position: fixed;
+            top: 0; left: 0; width: 100%; z-index: 9999;
+            background-color: white; border-bottom: 1px solid black; 
+            ">
+
+        @include('frontend.00_atas.header1')
         <header>
-        
-        @include('frontend.00_atas.header2_navbar')
             
+                @include('frontend.00_atas.header2_navbar')
+            
+        </div>
         </header>
-        <div class="div" style="
-            justify-content: center;
+
+    <div class="div" style="
+                    justify-content: center;
             text-align:center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-top:188px;
+        
         ">
                     <h2 style="
     margin-top: 10px;
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 475px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -49,7 +60,6 @@ Sertifikat Badan Usaha / Surat Ijin Usaha Jasa Konstruksi
     text-align: center;
     width: 100%;
     height: 127vh;
-    margin-left: 150px;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;

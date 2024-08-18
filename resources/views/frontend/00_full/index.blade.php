@@ -15,9 +15,7 @@
         @include('frontend.00_atas.header1')
         <header>
             
-            <div class="container">
                 @include('frontend.00_atas.header2_navbar')
-            </div>        
             
         </div>
         </header>
@@ -29,7 +27,7 @@
 
 
     <!-- Main News Slider Start -->
-    <div class="container-fluid" style="margin-top: 228px;">
+    <div class="container-fluid" style="margin-top: 188px;">
         <div class="row">
             <div class="col-lg-7 px-0">
                 <div class="owl-carousel main-carousel position-relative">
@@ -115,7 +113,9 @@
     <div class="container-fluid pt-5 mb-3">
         <div class="container col-11">
             <div class="section-title">
-                <h4 class="m-0 text-uppercase font-weight-bold">Layanan Kami</h4>
+                <h4 class="m-0 text-uppercase font-weight-bold">
+                    <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width:40px;">
+                    Layanan Kami</h4>
             </div>
             <div class="owl-carousel news-carousel carousel-item-4 position-relative">
 
@@ -143,24 +143,85 @@
                     <!-- Popular News Start -->
                     <div class="mb-3 mt-4">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">KEGIATAN SERTIFIKASI JASA KONSTRUKSI </h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">
+                               <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width: 40px;"> KEGIATAN SERTIFIKASI JASA KONSTRUKSI </h4>
                         </div>
                         <div class="bg-white border border-top-0 p-3">
+                               
+                            @foreach ($data_jaskon as $item )
+                            <div class="w-100 h-100 d-flex flex-column justify-content-center border border-left-0" style="margin-bottom:10px;">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2 mr-2 ml-2" href=""" ><span style="color: #000000; font-size:16px;">{{$item->judul_kegiatan}}</span></a>
+                                </div>
+                                <div class="mb-2">
+                                    <a href="">
+                                        <p class="px-3" style="color: #000000">{{$item->alamat_kegiatan}}</p>    
+                                    </a>
+                                    {{-- <a href=""><small><span style="color: #000000">{{$item->tanggal}}</span></small></a> --}}
+                                </div>
+                                {{-- <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{{ $item->judul_kegiatan}}</a> --}}
+                            </div>
+
+                            {{-- ------------------------ --}}
+
+                            <style>
+                            .scroll-container {
+                                overflow: hidden;
+                                white-space: nowrap;
+                                width: 100%;
+                                background-color: white;
+                                position: relative;
+                            }
                             
-                            {{-- @foreach ($data_jaskon as $item )
+                            .scrolling-content {
+                                display: inline-block;
+                                white-space: nowrap;
+                                animation: scroll 20s linear infinite;
+                            }
+                            
+                            .scrolling-content img {
+                                width: 15%;
+                                height: auto;
+                                display: inline-block;
+                                margin-right: 10px;
+                            }
+                            
+                            @keyframes scroll {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                            }
+                            </style>
+                         
                                 
-                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                <img class="img-fluid" src="/assets/portalberita/img/news-110x110-1.jpg" alt="">
-                                <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Pemerintah Kabupaten Bandung Barat</a>
-                                        <a class="text-body" href=""><small><span style="color: #000000">{{$item->tanggal}}</span></small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{{ $item->judul_kegiatan}}</a>
+                            <div class="scroll-container">
+                                <div class="scrolling-content">
+                                    <img src="{{$item->berita1}}" alt="{{$item->berita1}}">
+                                    <img src="{{$item->berita3}}" alt="{{$item->berita3}}">
+                                    <img src="{{$item->berita4}}" alt="{{$item->berita4}}">
+                                    <img src="{{$item->berita6}}" alt="{{$item->berita6}}">
+                                    <img src="{{$item->berita7}}" alt="{{$item->berita7}}">
+                                    <img src="{{$item->berita9}}" alt="{{$item->berita9}}">
+                                    <img src="{{$item->berita18}}" alt="{{$item->berita18}}">
+                                    <img src="{{$item->berita19}}" alt="{{$item->berita19}}">
+                                    <img src="{{$item->berita20}}" alt="{{$item->berita20}}">       
+                                    <img src="{{$item->berita2}}" alt="{{$item->berita2}}">
+                                    <img src="{{$item->berita5}}" alt="{{$item->berita5}}">
+                                    <img src="{{$item->berita8}}" alt="{{$item->berita8}}">
+                                    <img src="{{$item->berita10}}" alt="{{$item->berita10}}">
+                                    <img src="{{$item->berita11}}" alt="{{$item->berita11}}">
+                                    <img src="{{$item->berita12}}" alt="{{$item->berita12}}">
+                                    <img src="{{$item->berita13}}" alt="{{$item->berita13}}">
+                                    <img src="{{$item->berita14}}" alt="{{$item->berita14}}">
+                                    <img src="{{$item->berita15}}" alt="{{$item->berita15}}">
+                                    <img src="{{$item->berita16}}" alt="{{$item->berita16}}">
+                                    <img src="{{$item->berita17}}" alt="{{$item->berita17}}">
                                 </div>
                             </div>
+                          
                             
-                            @endforeach --}}
+                            @endforeach
+                           
+                           
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
@@ -168,7 +229,7 @@
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Comming Soon</a>
                                         {{-- <a class="text-body" href=""><small>Jan 01, 2045</small></a> --}}
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">PELATIHAN BIMBINGAN TEKNIS .... </a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">PELATIHAN BIMBINGAN TEKNIS GELOMBANG KE 2 TAHUN 2024 .....</a>
                                 </div>
                             </div>
                             

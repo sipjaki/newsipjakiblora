@@ -23,7 +23,6 @@
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 425px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
