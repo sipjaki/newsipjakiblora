@@ -227,10 +227,10 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 </style>
 
 <div>
-    <a href="/skk/kecamatan" style="background: white;">
+    <a href="" style="background: white;">
         <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>KECAMATAN</button>
     </a>
-    <a href="/skk/desa" style="background: white;">
+    <a href="" style="background: white;">
         <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>DESA</button>
     </a>
    
@@ -298,7 +298,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 font-size: 14px;
                 margin-right: 10px;
                 text-align: center;
-                /* margin-right: 425px; */
+                margin-right: 425px;
                 /* justify-content: between; */
                 transition: background-color 0.3s, color 0.3s;
             }
@@ -363,7 +363,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 {{-- ========================================================== --}}
-{{-- <form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/kecamatan') }}">
+<form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/kecamatan') }}">
     <div class="custom-select-wrapper">
         <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
             <option value="">PILIH KECAMATAN</option>
@@ -373,7 +373,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         </select>
         <i class="fas fa-search search-icon"></i>
     </div>
-</form> --}}
+</form>
 
 <script>
     function submitForm() {

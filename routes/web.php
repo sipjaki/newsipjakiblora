@@ -102,7 +102,12 @@ Route::get('/datajakon/paketpekerjaan', function () {
 // -------- BAGIAN 1 ---------------------------------
 Route::get('/tenagakerja/skaskt', [SkktenagakerjaController::class, 'feskktenagakerja']);  
 Route::get('/tenagakerja/skaskt/{judul}', [SkktenagakerjaController::class, 'feskktenagakerjashowByName']);
+// Rute untuk menangani parameter kecamatan
+Route::get('/skk/kecamatan', [SkktenagakerjaController::class, 'listkecamatan']);  
+Route::get('/tenagakerja/kecamatan', [SkktenagakerjaController::class, 'feskktenagakerjakecamatanshowBykecamatan']);
 
+Route::get('/skk/desa', [SkktenagakerjaController::class, 'listdesa']); 
+ 
 
 Route::get('/tenagakerja/pjt', function () {
     // return view('welcome');

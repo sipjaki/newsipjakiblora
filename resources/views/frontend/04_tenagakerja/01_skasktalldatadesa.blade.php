@@ -119,7 +119,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 <div>
     <a href="/tenagakerja/skaskt" style="background: white;">
-        <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>DAFTAR PEKERJA SKK</button>
+        <button class="badgekembali" style="border: none; font-size:10px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>DAFTAR PEKERJA SKK</button>
     </a>
     <a href="" style="background: white;">
         <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-cogs" style="margin-right: 5px;"></i>STATISTIK</button>
@@ -296,7 +296,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 display: inline-block;
                 text-align: left;
                 font-size: 14px;
-                margin-right: 10px;
+                margin-right: 450px;
                 text-align: center;
                 /* margin-right: 425px; */
                 /* justify-content: between; */
@@ -363,17 +363,17 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 {{-- ========================================================== --}}
-{{-- <form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/kecamatan') }}">
+<form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/desa') }}">
     <div class="custom-select-wrapper">
         <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
-            <option value="">PILIH KECAMATAN</option>
-            @foreach ($data_kecamatan as $kecamatan)
-                <option value="{{ $kecamatan }}">{{ $kecamatan }}</option>
+            <option value="">PILIH DESA</option>
+            @foreach ($data_desa as $desa)
+                <option value="{{ $desa }}">{{ $desa }}</option>
             @endforeach
         </select>
         <i class="fas fa-search search-icon"></i>
     </div>
-</form> --}}
+</form>
 
 <script>
     function submitForm() {
