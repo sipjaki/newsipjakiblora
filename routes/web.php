@@ -115,6 +115,13 @@ Route::get('/tenagakerja/keterampilan', [SkktenagakerjaController::class, 'feskk
 Route::get('/skk/register', [SkktenagakerjaController::class, 'listregister']); 
 Route::get('/tenagakerja/bimtek', [SkktenagakerjaController::class, 'feskktenagakerjabimtekshowBybimtek']);
 
+// ==============================
+Route::get('/skk/statistika', [SkktenagakerjaController::class, 'liststatistika']); 
+
+
+
+
+
 Route::get('/tenagakerja/pjt', function () {
     // return view('welcome');
     return view('frontend.04_tenagakerja.02_pjt', [

@@ -243,7 +243,46 @@ public function listregister()
                 'data_tahun_bimtek' => $data_tahunbimtek, // Mengirimkan data kecamatan unik ke view
             ]);
         }
+
+                
+        public function liststatistika()
+        {
+            $data_keterampilan = skktenagakerja::select('keterampilan')
+            ->selectRaw('count(*) as total')
+            ->groupBy('keterampilan')
+            ->get();
+
+                // Format data untuk grafik
+                $data_for_chart = $data_keterampilan->map(function ($item) {
+                    return [
+                        'y' => $item->total,
+                        'name' => $item->keterampilan,
+                    ];
+                });
+
+            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
+            $totalData = skktenagakerja::count();
+
+            // Mengambil semua data untuk mendapatkan kecamatan unik
+            //   $allKecamatan = skktenagakerja::all();
+            
+            // Menggunakan koleksi untuk mendapatkan nilai unik
+            //   $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
+
+            return view('frontend.04_tenagakerja.statistika.index', [
+                'title' => 'Statistika | Data Tenaga Kerja',
+                'data' => $data,
+                'data_keterampilan' => $data_keterampilan,
+                'data_for_chart' => $data_for_chart->toJson(), // Kirim data dalam format JSON
+                'judulstatistika' => 'Distribusi Keterampilan', // Judul grafik
+                'total_data' => $totalData, 
+
+                // 'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
+            ]);
+        }
     
+
+        
 }
 
 
