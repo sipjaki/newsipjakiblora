@@ -108,7 +108,12 @@ Route::get('/tenagakerja/kecamatan', [SkktenagakerjaController::class, 'feskkten
 
 Route::get('/skk/desa', [SkktenagakerjaController::class, 'listdesa']); 
 Route::get('/tenagakerja/desa', [SkktenagakerjaController::class, 'feskktenagakerjadesashowBydesa']);
- 
+
+Route::get('/skk/keterampilan', [SkktenagakerjaController::class, 'listketerampilan']); 
+Route::get('/tenagakerja/keterampilan', [SkktenagakerjaController::class, 'feskktenagakerjaketerampilanshowByketerampilan']);
+
+Route::get('/skk/register', [SkktenagakerjaController::class, 'listregister']); 
+Route::get('/tenagakerja/bimtek', [SkktenagakerjaController::class, 'feskktenagakerjabimtekshowBybimtek']);
 
 Route::get('/tenagakerja/pjt', function () {
     // return view('welcome');

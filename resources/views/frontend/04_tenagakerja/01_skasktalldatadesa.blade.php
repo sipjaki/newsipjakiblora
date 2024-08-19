@@ -419,8 +419,8 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         <thead>
             <tr>
                 <th style="width:45px;">No</th>
-                <th>KECAMATAN</th>
                 <th>DESA</th>
+                <th>KECAMATAN</th>
                 <th>NAMA LENGKAP</th>
                 <th>KETERAMPILAN</th>
                 <th>VIEW SKK</th>
@@ -437,8 +437,8 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             
             <tr>
                 <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px;">{{ $item->kecamatan}}</td>
                 <td style="font-size: 12px;">{{ $item->desa}}</td>
+                <td style="font-size: 12px;">{{ $item->kecamatan}}</td>
                 <td style="font-size: 12px;">{{ $item->nama}}</td>
                 <td style="font-size: 12px;">{{ $item->keterampilan}}</td>
                 

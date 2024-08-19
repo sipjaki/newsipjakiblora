@@ -120,6 +120,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 @include('tambahan.pencarianskk.menunavigasi')
 
 
+
     {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
 
 <br>
@@ -218,6 +219,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 @include('tambahan.pencarianskk.menunavigasiperdaerah')
 
+
     {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
     
 </div>
@@ -268,9 +270,9 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 display: inline-block;
                 text-align: left;
                 font-size: 14px;
-                margin-right: 10px;
+                margin-right: 450px;
                 text-align: center;
-                margin-right: 425px;
+                /* margin-right: 425px; */
                 /* justify-content: between; */
                 transition: background-color 0.3s, color 0.3s;
             }
@@ -335,12 +337,12 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 {{-- ========================================================== --}}
-<form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/desa') }}">
+<form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/keterampilan') }}">
     <div class="custom-select-wrapper">
         <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
-            <option value="">PILIH DESA</option>
-            @foreach ($data_desa as $desa)
-                <option value="{{ $desa }}">{{ $desa }}</option>
+            <option value="">PILIH KETERAMPILAN</option>
+            @foreach ($data_keterampilan as $keterampilan)
+                <option value="{{ $keterampilan }}">{{ $keterampilan }}</option>
             @endforeach
         </select>
         <i class="fas fa-search search-icon"></i>
@@ -417,10 +419,10 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         <thead>
             <tr>
                 <th style="width:45px;">No</th>
+                <th>KETERAMPILAN</th>
                 <th>DESA</th>
                 <th>KECAMATAN</th>
                 <th>NAMA LENGKAP</th>
-                <th>KETERAMPILAN</th>
                 <th>VIEW SKK</th>
             </tr>
         </thead>
@@ -435,10 +437,10 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             
             <tr>
                 <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
+                <td style="font-size: 12px;">{{ $item->keterampilan}}</td>
                 <td style="font-size: 12px;">{{ $item->desa}}</td>
                 <td style="font-size: 12px;">{{ $item->kecamatan}}</td>
                 <td style="font-size: 12px;">{{ $item->nama}}</td>
-                <td style="font-size: 12px;">{{ $item->keterampilan}}</td>
                 
                 <td>
                     

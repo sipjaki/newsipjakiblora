@@ -68,9 +68,10 @@ public function listkecamatan()
           $datakecamatan = $allKecamatan->pluck('kecamatan')->unique();
 
         return view('frontend.04_tenagakerja.01_skasktshowkecamatan', [
-            'title' => 'Data Tenaga Kerja',
+            'title' => 'Kecamatan | Data Tenaga Kerja',
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data paginasi ke view
+            
         ]);
     }
 
@@ -121,7 +122,7 @@ public function listdesa()
           $datadesa = $allKecamatan->pluck('desa')->unique();
 
         return view('frontend.04_tenagakerja.01_skasktalldatadesa', [
-            'title' => 'Data Tenaga Kerja',
+            'title' => 'Desa | Data Tenaga Kerja',
             'data' => $data,
             'data_desa' => $datadesa, // Mengirimkan data paginasi ke view
         ]);
@@ -154,6 +155,94 @@ public function listdesa()
     }
 
 
+public function listketerampilan()
+    {
+        $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+
+          // Mengambil semua data untuk mendapatkan kecamatan unik
+          $allKecamatan = skktenagakerja::all();
+        
+          // Menggunakan koleksi untuk mendapatkan nilai unik
+          $dataketerampilan = $allKecamatan->pluck('keterampilan')->unique();
+
+        return view('frontend.04_tenagakerja.01_skasktalldataketerampilan', [
+            'title' => 'Keterampilan | Data Tenaga Kerja',
+            'data' => $data,
+            'data_keterampilan' => $dataketerampilan, // Mengirimkan data paginasi ke view
+        ]);
+    }
+ 
+    
+    public function feskktenagakerjaketerampilanshowByketerampilan(Request $request)
+    {
+        // Mengambil parameter 'judul' dari query string
+        $judul = $request->query('judul');
+        
+        // Memfilter data berdasarkan kecamatan jika 'judul' ada
+        if ($judul) {
+            $data = skktenagakerja::where('keterampilan', $judul)->paginate(15);
+        } else {
+            // Ambil semua data jika tidak ada parameter
+            $data = skktenagakerja::paginate(15);
+        }
+
+        // Mengambil nilai unik dari atribut 'kecamatan'
+        $data_keterampilan= skktenagakerja::select('keterampilan')
+            ->distinct()
+            ->pluck('keterampilan');
+
+        // Mengirim data ke view
+        return view('frontend.04_tenagakerja.01_skasktalldataketerampilanshow', [
+            'title' => 'Keterampilan| SKK Tenaga Kerja',
+            'data' => $data, // Mengirimkan data yang difilter atau semua data
+            'data_keterampilan' => $data_keterampilan, // Mengirimkan data kecamatan unik ke view
+        ]);
+    }
+
+    
+public function listregister()
+{
+    $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+
+      // Mengambil semua data untuk mendapatkan kecamatan unik
+      $allKecamatan = skktenagakerja::all();
+    
+      // Menggunakan koleksi untuk mendapatkan nilai unik
+      $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
+
+    return view('frontend.04_tenagakerja.01_skasktalldataregister', [
+        'title' => 'Bimtek | Data Tenaga Kerja',
+        'data' => $data,
+        'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
+    ]);
+}
+
+
+        public function feskktenagakerjabimtekshowBybimtek(Request $request)
+        {
+            // Mengambil parameter 'judul' dari query string
+            $judul = $request->query('judul');
+            
+            // Memfilter data berdasarkan kecamatan jika 'judul' ada
+            if ($judul) {
+                $data = skktenagakerja::where('tahun_bimtek', $judul)->paginate(15);
+            } else {
+                // Ambil semua data jika tidak ada parameter
+                $data = skktenagakerja::paginate(15);
+            }
+
+            // Mengambil nilai unik dari atribut 'kecamatan'
+            $data_tahunbimtek= skktenagakerja::select('tahun_bimtek')
+                ->distinct()
+                ->pluck('tahun_bimtek');
+
+            // Mengirim data ke view
+            return view('frontend.04_tenagakerja.01_skasktalldatatahunbimtekshow', [
+                'title' => 'Tahun Bimtek | SKK Tenaga Kerja',
+                'data' => $data, // Mengirimkan data yang difilter atau semua data
+                'data_tahun_bimtek' => $data_tahunbimtek, // Mengirimkan data kecamatan unik ke view
+            ]);
+        }
     
 }
 
