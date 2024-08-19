@@ -56,22 +56,297 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     background-color: #FFCB0F;
     padding: 10px;
     border: 1px solid black;
-    margin-bottom: 0px;
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 125vh;
+    height: 30vh;
     background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
 ">
+
 <div style="display: flex; align-items: center;">
     <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
     <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
 </div>
 
 
-    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Kementrian Pekerjaan Umum Dan Penataan Ruang</button> </h1>
+
+
+<style>
+
+.badgekembali {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+                text-transform: uppercase;
+            }
+            .badgekembali:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+
+.badgekementrian {
+                background: linear-gradient(to right, #FFD700, #FFD700);
+                color: black;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgekementrian:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+</style>
+
+<br>
+
+<div>
+    <a href="/tenagakerja/skaskt" style="background: white;">
+        <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>DAFTAR PEKERJA SKK</button>
+    </a>
+    <a href="" style="background: white;">
+        <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-cogs" style="margin-right: 5px;"></i>STATISTIK</button>
+    </a>
+    <a href="" style="background: white;">
+        <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>GEOGRAFIS KAWASAN KBB</button>
+    </a>
+</div>
+
+
+
+    {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
+
+<br>
+    
+</div>
+
+
+
+
+
+{{-- ------------------------------------ END FITUR ------------- --}}
+
+           
+        </div>
+</div>
+</div>
+
+{{-- ====================== ====================== --}}
+<div class="container" style="
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    height: 9vh;
+    margin-top:5px;
+    background: linear-gradient(to bottom, yellow, white, white);
+    align-items: center;
+    position: relative;
+">
+
+<style>
+
+.badgekembali {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+                text-transform: uppercase;
+            }
+            .badgekembali:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+
+.badgekementrian {
+                background: linear-gradient(to right, #FFD700, #FFD700);
+                color: black;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgekementrian:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+
+.badgepencarian {
+                background: linear-gradient(to right, #FFD700, #FFD700);
+                color: black;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgepencarian:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+</style>
+
+<div>
+    <a href="" style="background: white;">
+        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>KECAMATAN</button>
+    </a>
+    <a href="" style="background: white;">
+        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>DESA</button>
+    </a>
+   
+    <a href="" style="background: white;">
+        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>KETERAMPILAN</button>
+    </a>
+   
+    <a href="" style="background: white;">
+        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>REGISTER</button>
+    </a>
+   
+</div>
+
+
+
+    {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
+    
+</div>
+
+
+
+
+
+{{-- ------------------------------------ END FITUR ------------- --}}
+
+
+           
+        </div>
+</div>
+</div>
+
+
+
+{{-- ------------------------------------------- PERBATASAN FITUR ----------------------------------- --}}
+<div class="container" style="
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    margin-top:5px;
+    height: 125vh;
+    background: linear-gradient(to bottom, yellow, white, white);
+    align-items: center;
+    position: relative;
+">
+{{-- 
+<div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div> --}}
+
+<style>
+    .badge {
+                background: linear-gradient(to right, black, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                text-align: left;
+                font-size: 14px;
+                margin-right: 10px;
+                text-align: center;
+                margin-right: 425px;
+                /* justify-content: between; */
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .badge:hover {
+                background-color: white;
+                color: black;
+            }
+</style>
+
+<div class="div">
+
+
+    <div class="container" style="display:flex; justify-content: flex-end;">
+        <div class="badge"><i class="fas fa-users me-2"></i>Daftar Pekerja Tukang Terampil (SKK)</div>
+        <select class="kecamatan" onchange="selectOption()" style="width:250px;">
+            {{-- <i class="fas fa-search"></i> --}}
+            <option value="" disabled selected>Pilih Kecamatan</option>
+            @foreach ($data as $item )
+            <option value="/skk/kecamatan/{{$item->kecamatan}}">{{ $item->kecamatan }}</option>
+            @endforeach
+        </select>
+    </div>
+    
+
+    <script>
+        function selectOption() {
+            // Mendapatkan elemen select
+            var selectElement = document.querySelector('.kecamatan');
+            // Mendapatkan nilai yang dipilih
+            var selectedValue = selectElement.value;
+            // Mengecek apakah nilai yang dipilih ada
+            if (selectedValue) {
+                // Mengarahkan ke URL yang dipilih
+                window.location.href = selectedValue;
+            }
+        }
+
+        // Menyambungkan event listener pada DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Memastikan elemen ada sebelum menghubungkan fungsi
+            var selectElement = document.querySelector('.kecamatan');
+            if (selectElement) {
+                selectElement.addEventListener('change', selectOption);
+            }
+        });
+    </script>
+</div>
 
 <br>
     <style>
