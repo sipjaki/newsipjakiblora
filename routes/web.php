@@ -107,6 +107,7 @@ Route::get('/skk/kecamatan', [SkktenagakerjaController::class, 'listkecamatan'])
 Route::get('/tenagakerja/kecamatan', [SkktenagakerjaController::class, 'feskktenagakerjakecamatanshowBykecamatan']);
 
 Route::get('/skk/desa', [SkktenagakerjaController::class, 'listdesa']); 
+Route::get('/tenagakerja/desa', [SkktenagakerjaController::class, 'feskktenagakerjadesashowBydesa']);
  
 
 Route::get('/tenagakerja/pjt', function () {

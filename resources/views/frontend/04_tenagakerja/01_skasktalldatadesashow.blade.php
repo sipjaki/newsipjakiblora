@@ -119,6 +119,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 @include('tambahan.pencarianskk.menunavigasi')
 
+
     {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
 
 <br>
@@ -214,8 +215,8 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             }    
 </style>
 
-@include('tambahan.pencarianskk.menunavigasiperdaerah')
 
+@include('tambahan.pencarianskk.menunavigasiperdaerah')
 
     {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
     
@@ -269,7 +270,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 font-size: 14px;
                 margin-right: 10px;
                 text-align: center;
-                /* margin-right: 425px; */
+                margin-right: 425px;
                 /* justify-content: between; */
                 transition: background-color 0.3s, color 0.3s;
             }
@@ -334,17 +335,17 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 {{-- ========================================================== --}}
-{{-- <form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/kecamatan') }}">
+<form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/desa') }}">
     <div class="custom-select-wrapper">
         <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
-            <option value="">PILIH KECAMATAN</option>
-            @foreach ($data_kecamatan as $kecamatan)
-                <option value="{{ $kecamatan }}">{{ $kecamatan }}</option>
+            <option value="">PILIH DESA</option>
+            @foreach ($data_desa as $desa)
+                <option value="{{ $desa }}">{{ $desa }}</option>
             @endforeach
         </select>
         <i class="fas fa-search search-icon"></i>
     </div>
-</form> --}}
+</form>
 
 <script>
     function submitForm() {

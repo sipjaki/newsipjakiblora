@@ -67,7 +67,7 @@ public function listkecamatan()
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $datakecamatan = $allKecamatan->pluck('kecamatan')->unique();
 
-        return view('frontend.04_tenagakerja.01_skssktshowkecamatan', [
+        return view('frontend.04_tenagakerja.01_skasktshowkecamatan', [
             'title' => 'Data Tenaga Kerja',
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data paginasi ke view
@@ -141,18 +141,20 @@ public function listdesa()
         }
 
         // Mengambil nilai unik dari atribut 'kecamatan'
-        $data_kecamatan = skktenagakerja::select('desa')
+        $data_desa= skktenagakerja::select('desa')
             ->distinct()
             ->pluck('desa');
 
         // Mengirim data ke view
-        return view('frontend.04_tenagakerja.01_skssktshowdesa', [
+        return view('frontend.04_tenagakerja.01_skasktalldatadesashow', [
             'title' => 'Desa | SKK Tenaga Kerja',
             'data' => $data, // Mengirimkan data yang difilter atau semua data
-            'data_kecamatan' => $data_kecamatan, // Mengirimkan data kecamatan unik ke view
+            'data_desa' => $data_desa, // Mengirimkan data kecamatan unik ke view
         ]);
     }
 
 
     
 }
+
+

@@ -117,17 +117,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 <br>
 
-<div>
-    <a href="/tenagakerja/skaskt" style="background: white;">
-        <button class="badgekembali" style="border: none; font-size:10px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>DAFTAR PEKERJA SKK</button>
-    </a>
-    <a href="" style="background: white;">
-        <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-cogs" style="margin-right: 5px;"></i>STATISTIK</button>
-    </a>
-    <a href="" style="background: white;">
-        <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>GEOGRAFIS KAWASAN KBB</button>
-    </a>
-</div>
+@include('tambahan.pencarianskk.menunavigasi')
 
 
 
@@ -226,24 +216,8 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             }    
 </style>
 
-<div>
-    <a href="/skk/kecamatan" style="background: white;">
-        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>KECAMATAN</button>
-    </a>
-    <a href="/skk/desa" style="background: white;">
-        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>DESA</button>
-    </a>
-   
-    <a href="" style="background: white;">
-        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>KETERAMPILAN</button>
-    </a>
-   
-    <a href="" style="background: white;">
-        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>REGISTER</button>
-    </a>
-   
-</div>
 
+@include('tambahan.pencarianskk.menunavigasiperdaerah')
 
 
     {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
