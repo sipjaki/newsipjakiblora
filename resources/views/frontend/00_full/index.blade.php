@@ -6,7 +6,41 @@
 {{-- ------------------------------------------------------------------------------------------ --}}
 
 <section id="sec-0">
+ {{-- <style>
+    .navbar {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .navbar {
+        /* Adjustments for smaller screens */
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 2px;
+        font-size: 12px;
+    }
+} --}}
+{{--  --}}
+ {{-- </style> --}}
     
+
     <div class="div" style="z-index: 9999; position: fixed;
             top: 0; left: 0; width: 100%; z-index: 9999;
             background-color: white; border-bottom: 1px solid black; 

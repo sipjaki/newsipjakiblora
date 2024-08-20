@@ -247,8 +247,8 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 125vh;
-    background: linear-gradient(to bottom, yellow, white, white);
+    height: 150vh;
+    background: linear-gradient(to bottom, yellow, white, navy);
     align-items: center;
     position: relative;
 ">
@@ -281,21 +281,38 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 </style>
 
 {{-- STATISTIKA ========================================================== --}}
+
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 <style>
-    #chartContainer {
-        margin-top:5px;
-        border-radius: 20px;
-        overflow: hidden; 
+    /* Optional: Add some basic styling */
+    #chartContainer, #kecamatanchartContainer, #desachartContainer {
+        margin: 25px auto;
+        height: 400px;
+        width: 90%;
+        border-radius: 10px;
     }
 </style>
 
+
+
+{{--  STATISTIKA ------------------------------------- --}}
+<!-- Container for the 1 chart -->
+<div id="chartContainer"></div>
+
+<!-- Container for the 2 chart -->
+<div id="kecamatanchartContainer"></div>
+
+<!-- Container for the 3 chart -->
+<div id="desachartContainer"></div>
+
 <script>
     window.onload = function () {
-        var chart = new CanvasJS.Chart("chartContainer", {
+        // First chart
+        var chart1 = new CanvasJS.Chart("chartContainer", {
             exportEnabled: true,
             animationEnabled: true,
             title: {
-                text: "{{ $judulstatistika }}"
+                text: "{{$judulstatistika}}"
             },
             legend: {
                 cursor: "pointer",
@@ -309,8 +326,58 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 dataPoints: {!! $data_for_chart !!}
             }]
         });
-        chart.render();
-    }
+        chart1.render();
+        
+        // ==============================================
+        var dataForChartKecamatan = {!! $data_for_chart_kecamatan !!};
+        
+        var chart2 = new CanvasJS.Chart("kecamatanchartContainer", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "{{ $judulkecamatan }}"
+            },
+            axisY: {
+                title: "Daftar Pekerja Tukang Terampil Distribusi Berdasarkan Kecamatan"
+            },
+            data: [{
+                type: "bar",
+                showInLegend: false,
+                toolTipContent: "{name}: <strong>{y}</strong>",
+                indexLabel: "{name} - {y} PEKERJA",
+                dataPoints: dataForChartKecamatan
+            }]
+        });
+        
+        chart2.render();
+        
+        
+        // ======================================
+        var dataForChartDesa = {!! $data_for_chart_desa !!};
+        // var dataPoints = @json($data_for_chart_desa);
+
+        var chart3 = new CanvasJS.Chart("desachartContainer", {
+            animationEnabled: true,
+            theme: "light2",
+            title: {
+                text: "{{ $juduldesa }}"
+            },
+            axisY: {
+                title: "Jumlah Pekerja"
+            },
+            data: [{        
+                type: "column",  
+                showInLegend: true, 
+                legendMarkerColor: "grey",
+                legendText: "Daftar Pekerja Tukang Terampil Distribusi Berdasarkan Kecamatan",
+                dataPoints: dataForChartDesa
+            }]
+        });
+        chart3.render();
+
+}
+    
+
 
     function explodePie(e) {
         if (typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
@@ -320,39 +387,16 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         }
         e.chart.render();
     }
-
 </script>
+ {{-- STATISTIKA ========================================================== --}}
 
-<style>
-    .badgetotaldata {
-        display: inline-block;
-        padding: 0.5em 1em;
-        font-size: 14px;
-        font-weight: bold;
-        color: white;
-        background-color: #003366; /* Navy color */
-        border-radius: 20px;
-        text-align: center;
-        text-decoration: none;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .badgetotaldata:hover {
-        background-color: white;
-        color: black;
-    }
-</style>
-<div class="div">
-    <p>
-        <span class="badgetotaldata">Jumlah Pekerja: {{ $total_data }}</span>
-        {{-- <span class="badgetotaldata">Jumlah Pekerja: {{ $total_data }}</span> --}}
-        {{-- <span class="badgetotaldata">Jumlah Pekerja: {{ $total_data }}</span> --}}
-    </p>
-</div>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 
-{{-- STATISTIKA ========================================================== --}}
 
+
+
+
+
+{{-- STATITIKA BERDASARKAN KECAMATAN --}}
 
 <div class="div">
 

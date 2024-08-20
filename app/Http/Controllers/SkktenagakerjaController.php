@@ -247,6 +247,8 @@ public function listregister()
                 
         public function liststatistika()
         {
+
+            // DATA CHART BERDASARKAN KETERAMPILAN 
             $data_keterampilan = skktenagakerja::select('keterampilan')
             ->selectRaw('count(*) as total')
             ->groupBy('keterampilan')
@@ -258,6 +260,35 @@ public function listregister()
                         'y' => $item->total,
                         'name' => $item->keterampilan,
                     ];
+                });
+    
+            // DATA CHART BERDASARKAN KECAMATAN 
+            $data_kecamatan = skktenagakerja::select('kecamatan')
+            ->selectRaw('count(*) as total')
+            ->groupBy('kecamatan')
+            ->get();
+
+                // Format data untuk grafik
+                $data_for_chart_kecamatan = $data_kecamatan->map(function ($item) {
+                    return [
+                        'y' => $item->total,
+                        'name' => $item->kecamatan,
+                    ];
+                });
+    
+            // DATA CHART BERDASARKAN DESA
+          // Controller code
+            $data_desa = skktenagakerja::select('desa')
+            ->selectRaw('count(*) as total')
+            ->groupBy('desa')
+            ->get();
+
+                // Format data untuk grafik
+                $data_for_chart_desa = $data_desa->map(function ($item) {
+                return [
+                    'y' => $item->total,
+                    'label' => $item->desa,
+                ];
                 });
 
             $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
@@ -274,7 +305,11 @@ public function listregister()
                 'data' => $data,
                 'data_keterampilan' => $data_keterampilan,
                 'data_for_chart' => $data_for_chart->toJson(), // Kirim data dalam format JSON
+                'data_for_chart_kecamatan' => $data_for_chart_kecamatan->toJson(), // Kirim data dalam format JSON
+                'data_for_chart_desa' => $data_for_chart_desa->toJson(), // Kirim data dalam format JSON
                 'judulstatistika' => 'Distribusi Keterampilan', // Judul grafik
+                'judulkecamatan' => 'Distribusi Kecamatan', // Judul grafik
+                'juduldesa' => 'Distribusi Desa', // Judul grafik
                 'total_data' => $totalData, 
 
                 // 'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
