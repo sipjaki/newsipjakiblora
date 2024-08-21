@@ -247,7 +247,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 150vh;
+    height: 265vh;
     background: linear-gradient(to bottom, yellow, white, navy);
     align-items: center;
     position: relative;
@@ -285,25 +285,73 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 <style>
     /* Optional: Add some basic styling */
-    #chartContainer, #kecamatanchartContainer, #desachartContainer {
+    #chartContainer, #kecamatanchartContainer, #desachartContainer, #bimtekchartContainer, #usiachartContainer {
         margin: 25px auto;
         height: 400px;
         width: 90%;
+        /* position: relative; */
         border-radius: 10px;
     }
+    .canvasjs-chart-title {
+            font-family: 'Roboto', sans-serif;
+            /* margin-bottom: 100px; */
+        }
+    
 </style>
 
 
 
 {{--  STATISTIKA ------------------------------------- --}}
 <!-- Container for the 1 chart -->
-<div id="chartContainer"></div>
+<style>
+    /* CSS yang telah dijelaskan di atas */
+
+    .jumlahpekerja button {
+        background-color: navy; /* Warna latar belakang button */
+        color: white; /* Warna teks button */
+        border: none; /* Menghilangkan border default button */
+        padding: 10px 10px; /* Padding di dalam button */
+        border-radius: 10px; /* Radius sudut button */
+        cursor: pointer; /* Menunjukkan pointer saat hover */
+        font-size: 16px; /* Ukuran font */
+        transition: background-color 0.3s, color 0.3s; /* Transisi halus untuk hover */
+    }
+
+    .jumlahpekerja button:hover {
+        background-color: white; /* Warna latar belakang button saat hover */
+        color: black; /* Warna teks button saat hover */
+    }
+</style>
+
+<div class="jumlahpekerja">
+    <button style="font-size:13px;">Jumlah Pekerja Bimtek : {{$total_data}} Orang</button>
+</div>
+
+<div class="container">
+    <div id="chartContainer" style="width: 1000px; height:300px;"></div>
+</div>
 
 <!-- Container for the 2 chart -->
-<div id="kecamatanchartContainer"></div>
+<div class="container">
+<div id="kecamatanchartContainer" style="width: 1000px; height:300px;"></div>
+</div>
 
 <!-- Container for the 3 chart -->
-<div id="desachartContainer"></div>
+<div class="container">
+<div id="desachartContainer" style="width: 1000px; height:300px;"></div>
+</div>
+
+<!-- Container for the 4 chart -->
+<div class="container">
+<div id="bimtekchartContainer" style="width: 1000px; height:300px;"></div>
+</div>
+
+<!-- Container for the 4 chart -->
+<div class="container">
+<div id="usiachartContainer" style="width: 1000px; height:300px;"></div>
+</div>
+
+ 
 
 <script>
     window.onload = function () {
@@ -312,7 +360,9 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             exportEnabled: true,
             animationEnabled: true,
             title: {
-                text: "{{$judulstatistika}}"
+                text: "{{$judulstatistika}}",
+                fontFamily: "Roboto", // Atur fontFamily di CanvasJS
+                fontSize: 15    // 
             },
             legend: {
                 cursor: "pointer",
@@ -323,7 +373,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 showInLegend: true,
                 toolTipContent: "{name}: <strong>{y}%</strong>",
                 indexLabel: "{name} - {y}%",
-                dataPoints: {!! $data_for_chart !!}
+                dataPoints: {!! $data_for_chart_keterampilan !!}
             }]
         });
         chart1.render();
@@ -335,7 +385,9 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             exportEnabled: true,
             animationEnabled: true,
             title: {
-                text: "{{ $judulkecamatan }}"
+                text: "{{ $judulkecamatan }}",
+                fontFamily: "Roboto", // Atur fontFamily di CanvasJS
+                fontSize: 15   //
             },
             axisY: {
                 title: "Daftar Pekerja Tukang Terampil Distribusi Berdasarkan Kecamatan"
@@ -360,7 +412,9 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             animationEnabled: true,
             theme: "light2",
             title: {
-                text: "{{ $juduldesa }}"
+                text: "{{ $juduldesa }}",
+                fontFamily: "Roboto", // Atur fontFamily di CanvasJS
+                fontSize: 15
             },
             axisY: {
                 title: "Jumlah Pekerja"
@@ -375,6 +429,57 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         });
         chart3.render();
 
+
+        // ============= ============= ============= ============= =============
+        var dataForCharttahunbimtek = {!! $data_for_chart_tahun_bimtek !!};
+        // var dataPoints = @json($data_for_chart_desa);
+        
+        var chart4 = new CanvasJS.Chart("bimtekchartContainer", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "{{$judultahunbimtek}}",
+                fontFamily: "Roboto", // Atur fontFamily di CanvasJS
+                fontSize: 15
+            },
+            legend: {
+                cursor: "pointer",
+                itemclick: explodePie
+            },
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{name}: <strong>{y}%</strong>",
+                indexLabel: "{name} - {y}%",
+                dataPoints: dataForCharttahunbimtek
+            }]
+        });
+        chart4.render();
+
+        // ----------------------------------------------------------------
+        var chart5 = new CanvasJS.Chart("usiachartContainer", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title: {
+                text: "{{$judulusia}}",
+                fontFamily: "Roboto", // Atur fontFamily di CanvasJS
+                fontSize: 15    // 
+            },
+            legend: {
+                cursor: "pointer",
+                itemclick: explodePie
+            },
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{name}: <strong>{y}%</strong>",
+                indexLabel: "{name} - {y}%",
+                dataPoints: {!! $data_for_chart_usia !!}
+            }]
+        });
+        chart5.render();
+        
+    
 }
     
 
@@ -391,7 +496,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
  {{-- STATISTIKA ========================================================== --}}
 
 
-
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 
 
 
@@ -497,6 +602,8 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             }
         });
     </script>
+
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </div>
         
 </div>

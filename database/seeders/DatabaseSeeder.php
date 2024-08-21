@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        skktenagakerja::factory(1000)->create(); 
         \App\Models\User::factory(2)->create();
 
         // \App\Models\User::factory()->create([
@@ -1899,11 +1900,8 @@ laporankegiatan::create([
                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
                 'created_at' => now(),
                 'updated_at' => now(),
-]);
-
-
-
-
+            ]);
+            
     }
  /**
      * Menghitung usia berdasarkan tanggal lahir.

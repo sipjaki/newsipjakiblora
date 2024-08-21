@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+// use Carbon\Carbon;
+use Carbon\Carbon; 
 
 use App\Models\skktenagakerja; // Pastikan namespace model sesuai dengan struktur direktori
 
@@ -247,21 +248,25 @@ public function listregister()
                 
         public function liststatistika()
         {
-
-            // DATA CHART BERDASARKAN KETERAMPILAN 
-            $data_keterampilan = skktenagakerja::select('keterampilan')
-            ->selectRaw('count(*) as total')
-            ->groupBy('keterampilan')
-            ->get();
-
-                // Format data untuk grafik
-                $data_for_chart = $data_keterampilan->map(function ($item) {
-                    return [
-                        'y' => $item->total,
-                        'name' => $item->keterampilan,
-                    ];
-                });
     
+    // ----------------------------------------------------------------------------------------
+          // DATA TAHUN BIMTEK PERSENTASE 
+          $data_keterampilan = skktenagakerja::select('keterampilan')
+          ->selectRaw('count(*) as total')
+          ->groupBy('keterampilan')
+          ->get();
+
+      // Hitung total keseluruhan dari semua kategori
+      $total_count = $data_keterampilan->sum('total');
+
+      // Format data untuk grafik dengan persentase
+      $data_for_chart_keterampilan = $data_keterampilan->map(function ($item) use ($total_count) {
+          return [
+              'y' => ($item->total / $total_count) * 100, // Hitung persentase
+              'name' => $item->keterampilan,
+          ];
+      });
+      // ----------------------------------------------------------------------------------------
             // DATA CHART BERDASARKAN KECAMATAN 
             $data_kecamatan = skktenagakerja::select('kecamatan')
             ->selectRaw('count(*) as total')
@@ -276,8 +281,8 @@ public function listregister()
                     ];
                 });
     
+        // ----------------------------------------------------------------------------------------
             // DATA CHART BERDASARKAN DESA
-          // Controller code
             $data_desa = skktenagakerja::select('desa')
             ->selectRaw('count(*) as total')
             ->groupBy('desa')
@@ -290,6 +295,75 @@ public function listregister()
                     'label' => $item->desa,
                 ];
                 });
+
+        // ----------------------------------------------------------------------------------------
+                // DATA TAHUN BIMTEK PERSENTASE 
+                $data_tahun_bimtek = skktenagakerja::select('tahun_bimtek')
+                ->selectRaw('count(*) as total')
+                ->groupBy('tahun_bimtek')
+                ->get();
+
+            // Hitung total keseluruhan dari semua kategori
+            $total_count = $data_tahun_bimtek->sum('total');
+
+            // Format data untuk grafik dengan persentase
+            $data_for_chart_tahun_bimtek = $data_tahun_bimtek->map(function ($item) use ($total_count) {
+                return [
+                    'y' => ($item->total / $total_count) * 100, // Hitung persentase
+                    'name' => $item->tahun_bimtek,
+                ];
+            });
+
+            // ----------------------------------------------------------------------------------------
+            
+            // DATA BERDASARKAN USIA 
+                // $data_usia = skktenagakerja::select('usia')
+                // ->selectRaw('count(*) as total')
+                // ->groupBy('usia')
+                // ->get();
+
+            // Hitung total keseluruhan dari semua kategori
+            // $total_count = $data_usia->sum('total');
+
+            // Format data untuk grafik dengan persentase
+            // $data_for_chart_usia = $data_usia->map(function ($item) use ($total_count) {
+            //     return [
+            //         'y' => ($item->total / $total_count) * 100, // Hitung persentase
+            //         'name' => $item->usia,
+            //     ];
+            // });
+
+            // ----------------------------------------------------------------------------------------
+             // Ambil data usia dari database
+                $data_usia = skktenagakerja::select('usia')->get();
+
+                // Hitung usia berdasarkan tanggal lahir
+                $usiaArray = $data_usia->map(function ($item) {
+                    try {
+                        // Asumsi 'usia' adalah tanggal lahir dalam format yang dapat diparse oleh Carbon
+                        $tanggalLahir = Carbon::parse($item->usia);
+                        return $tanggalLahir->diffInYears(Carbon::now());
+                    } catch (\Exception $e) {
+                        // Jika ada error parsing, anggap usia sebagai 0
+                        return 0;
+                    }
+                });
+
+                // Kelompokkan usia dan hitung jumlah setiap kelompok
+                $usiaCounts = $usiaArray->countBy();
+
+                // Hitung total keseluruhan dari semua kategori usia
+                $total_count = $usiaCounts->sum();
+
+                // Format data untuk grafik dengan persentase
+                $data_for_chart_usia = $usiaCounts->map(function ($total, $usia) use ($total_count) {
+                    return [
+                        'y' => ($total / $total_count) * 100, // Hitung persentase
+                        'name' => (string) $usia, // Nama usia sebagai label
+                    ];
+                })->values(); 
+
+            // ----------------------------------------------------------------------------------------
 
             $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
             $totalData = skktenagakerja::count();
@@ -304,11 +378,15 @@ public function listregister()
                 'title' => 'Statistika | Data Tenaga Kerja',
                 'data' => $data,
                 'data_keterampilan' => $data_keterampilan,
-                'data_for_chart' => $data_for_chart->toJson(), // Kirim data dalam format JSON
+                'data_for_chart_keterampilan' => $data_for_chart_keterampilan->toJson(), // Kirim data dalam format JSON
                 'data_for_chart_kecamatan' => $data_for_chart_kecamatan->toJson(), // Kirim data dalam format JSON
-                'data_for_chart_desa' => $data_for_chart_desa->toJson(), // Kirim data dalam format JSON
+                'data_for_chart_desa' => $data_for_chart_desa->toJson(),
+                'data_for_chart_tahun_bimtek' => $data_for_chart_tahun_bimtek->toJson(), // Kirim data dalam format JSON
+                'data_for_chart_usia' => $data_for_chart_usia, // Kirim data dalam format JSON
                 'judulstatistika' => 'Distribusi Keterampilan', // Judul grafik
                 'judulkecamatan' => 'Distribusi Kecamatan', // Judul grafik
+                'judultahunbimtek' => 'Distribusi Bimbingan Teknis Para Pekerja', // Judul grafik
+                'judulusia' => 'Distribusi Pekerja Berdasarkan Usia', // Judul grafik
                 'juduldesa' => 'Distribusi Desa', // Judul grafik
                 'total_data' => $totalData, 
 

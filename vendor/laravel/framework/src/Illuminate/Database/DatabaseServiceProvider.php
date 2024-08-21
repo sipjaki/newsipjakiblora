@@ -43,6 +43,10 @@ class DatabaseServiceProvider extends ServiceProvider
         $this->registerConnectionServices();
         $this->registerEloquentFactory();
         $this->registerQueueableEntityResolver();
+
+        $this->app->singleton('faker', function () {
+            return FakerFactory::create('id_ID');
+        });
     }
 
     /**
