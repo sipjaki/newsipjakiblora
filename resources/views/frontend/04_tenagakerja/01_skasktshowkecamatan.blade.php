@@ -287,7 +287,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
     <div class="container" style="display:flex; justify-content: flex-end;">
-        <div class="badge"><i class="fas fa-users me-2"></i>Daftar Pekerja Tukang Terampil (SKK)</div>
+        <div class="badge"><i class="fas fa-users me-2"></i><span>{{ $totaldata}}</span> Daftar Pekerja Tukang Terampil (SKK)</div>
         {{-- Menampilkan data kecamatan --}}
             {{-- Debugging untuk memastikan data dikirim ke view --}}
 {{-- {{ dd($data_kecamatan) }} --}}
@@ -438,11 +438,11 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
             
             <tr>
-                <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px;">{{ $item->kecamatan}}</td>
-                <td style="font-size: 12px;">{{ $item->desa}}</td>
-                <td style="font-size: 12px;">{{ $item->nama}}</td>
-                <td style="font-size: 12px;">{{ $item->keterampilan}}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $loop->iteration + $start - 1 }}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->kecamatan}}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->desa}}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->nama}}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->keterampilan}}</td>
                 
                 <td>
                     

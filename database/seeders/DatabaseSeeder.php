@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        skktenagakerja::factory(1000)->create(); 
+        
         \App\Models\User::factory(2)->create();
 
         // \App\Models\User::factory()->create([
@@ -95,8 +95,10 @@ class DatabaseSeeder extends Seeder
 
         // ===================================================================================
         // DATA TENAGA KERJA SKK KABUPATEN BANDUNG BARAT
+        skktenagakerja::factory(1235)->create(); 
+
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'DEDE ROYANI',
             'alamat' => 'KP.CIGARUNG RT 004/007 ',
@@ -113,7 +115,7 @@ class DatabaseSeeder extends Seeder
         ]);
     
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'RONI RUSTANDI',
             'alamat' => 'KP.SARONGGE RT 001/003',
@@ -130,7 +132,7 @@ class DatabaseSeeder extends Seeder
         ]);
     
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'AHMAD SANDI FAUIZI',
             'alamat' => 'KP.CISALADAK RT 001/003',
@@ -147,7 +149,7 @@ class DatabaseSeeder extends Seeder
         ]);
     
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'IMAN',
             'alamat' => 'KP.SADANG RT 003/003 ',
@@ -164,7 +166,7 @@ class DatabaseSeeder extends Seeder
         ]);
     
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'DEDI MULYADI',
             'alamat' => 'KP.SADANG RT 003/003  ',
@@ -181,7 +183,7 @@ class DatabaseSeeder extends Seeder
         ]);
    
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'AYI HERMAN',
             'alamat' => 'KP.CILAME RT 003/005',
@@ -198,7 +200,7 @@ class DatabaseSeeder extends Seeder
         ]);
    
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'ANTO.S',
             'alamat' => 'KP.SADANG RT 003/003',
@@ -215,7 +217,7 @@ class DatabaseSeeder extends Seeder
         ]);
    
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'ASEP SUTISNA',
             'alamat' => 'KP.CIBANAS RT 005/003',
@@ -232,7 +234,7 @@ class DatabaseSeeder extends Seeder
         ]);
    
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'IWAN SETIAWAN',
             'alamat' => 'KP.CISALADAK RT 001/003 ',
@@ -249,7 +251,7 @@ class DatabaseSeeder extends Seeder
         ]);
    
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'NANDANG',
             'alamat' => 'KP.CISALADAK RT 002/003',
@@ -268,7 +270,7 @@ class DatabaseSeeder extends Seeder
     
    
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'DASEP',
             'alamat' => 'KP.BABAKAN RT 004/005 ',
@@ -285,7 +287,7 @@ class DatabaseSeeder extends Seeder
         ]);
    
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'ABUDIN',
             'alamat' => 'KP.SUKASENANG RT 001/002',
@@ -302,7 +304,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'MUHAMMAD NANDA I',
             'alamat' => 'KP.SUKASENANG  RT 001/002',
@@ -319,7 +321,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'HILMAN',
             'alamat' => 'KP.SUKASENANG  RT 001/002',
@@ -336,7 +338,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'AANG ANWAR',
             'alamat' => 'KP.BABAKAN RT 004/005 ',
@@ -353,7 +355,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'NANANG RIANA',
             'alamat' => 'KP.SUKASENANG  RT 001/002',
@@ -370,7 +372,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Skktenagakerja::create([
-            'kecamatan' => 'CIPONGKOR',
+            'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'IWAN SETIAWAN',
             'alamat' => 'KP.CINAGEN RT 004/001 ',
@@ -385,6 +387,9 @@ class DatabaseSeeder extends Seeder
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
+
+      
+        
 
 //======================== ===================================================================================
 //======================== ===================================================================================

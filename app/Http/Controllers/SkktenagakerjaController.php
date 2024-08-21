@@ -15,7 +15,8 @@ class SkktenagakerjaController extends Controller
     {
         // Mengambil data dengan pagination
         $data = skktenagakerja::paginate(15);
-    
+        $totalData = skktenagakerja::count();
+
         // Mengambil semua data untuk mendapatkan kecamatan unik
         $allKecamatan = skktenagakerja::all();
         
@@ -27,6 +28,7 @@ class SkktenagakerjaController extends Controller
             'title' => 'SKK Tenaga Kerja',
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data kecamatan unik ke view
+            'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
         ]);
     }
     
@@ -43,7 +45,9 @@ class SkktenagakerjaController extends Controller
 
 public function feskktenagakerja()
     {
+        
         $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+        $totalData = skktenagakerja::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
           $allKecamatan = skktenagakerja::all();
@@ -55,12 +59,14 @@ public function feskktenagakerja()
             'title' => 'Data Tenaga Kerja',
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data paginasi ke view
+            'totaldata' => $totalData, // Mengirimkan data paginasi ke view
         ]);
     }
 
 public function listkecamatan()
     {
         $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+        $totalData = skktenagakerja::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
           $allKecamatan = skktenagakerja::all();
@@ -72,6 +78,7 @@ public function listkecamatan()
             'title' => 'Kecamatan | Data Tenaga Kerja',
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data paginasi ke view
+            'totaldata' => $totalData, // Mengirimkan data paginasi ke view
             
         ]);
     }
@@ -88,6 +95,7 @@ public function listkecamatan()
 
     public function feskktenagakerjakecamatanshowBykecamatan(Request $request)
     {
+        $totalData = skktenagakerja::count();
         // Mengambil parameter 'judul' dari query string
         $judul = $request->query('judul');
         
@@ -109,12 +117,14 @@ public function listkecamatan()
             'title' => 'Kecamatan | SKK Tenaga Kerja',
             'data' => $data, // Mengirimkan data yang difilter atau semua data
             'data_kecamatan' => $data_kecamatan, // Mengirimkan data kecamatan unik ke view
+            'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
         ]);
     }
 
 public function listdesa()
     {
         $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+        $totalData = skktenagakerja::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
           $allKecamatan = skktenagakerja::all();
@@ -126,11 +136,14 @@ public function listdesa()
             'title' => 'Desa | Data Tenaga Kerja',
             'data' => $data,
             'data_desa' => $datadesa, // Mengirimkan data paginasi ke view
+            'totaldata' => $totalData, // Mengirimkan data paginasi ke view
         ]);
     }
 
     public function feskktenagakerjadesashowBydesa(Request $request)
     {
+        $totalData = skktenagakerja::count();
+
         // Mengambil parameter 'judul' dari query string
         $judul = $request->query('judul');
         
@@ -152,6 +165,7 @@ public function listdesa()
             'title' => 'Desa | SKK Tenaga Kerja',
             'data' => $data, // Mengirimkan data yang difilter atau semua data
             'data_desa' => $data_desa, // Mengirimkan data kecamatan unik ke view
+            'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
         ]);
     }
 
@@ -159,6 +173,7 @@ public function listdesa()
 public function listketerampilan()
     {
         $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+        $totalData = skktenagakerja::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
           $allKecamatan = skktenagakerja::all();
@@ -170,12 +185,15 @@ public function listketerampilan()
             'title' => 'Keterampilan | Data Tenaga Kerja',
             'data' => $data,
             'data_keterampilan' => $dataketerampilan, // Mengirimkan data paginasi ke view
+            'totaldata' => $totalData, // Mengirimkan data paginasi ke view
         ]);
     }
  
     
     public function feskktenagakerjaketerampilanshowByketerampilan(Request $request)
     {
+
+        $totalData = skktenagakerja::count();
         // Mengambil parameter 'judul' dari query string
         $judul = $request->query('judul');
         
@@ -197,6 +215,7 @@ public function listketerampilan()
             'title' => 'Keterampilan| SKK Tenaga Kerja',
             'data' => $data, // Mengirimkan data yang difilter atau semua data
             'data_keterampilan' => $data_keterampilan, // Mengirimkan data kecamatan unik ke view
+            'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
         ]);
     }
 
@@ -204,6 +223,7 @@ public function listketerampilan()
 public function listregister()
 {
     $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
+    $totalData = skktenagakerja::count();
 
       // Mengambil semua data untuk mendapatkan kecamatan unik
       $allKecamatan = skktenagakerja::all();
@@ -215,12 +235,16 @@ public function listregister()
         'title' => 'Bimtek | Data Tenaga Kerja',
         'data' => $data,
         'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
+        'totaldata' => $totalData, // Mengirimkan data paginasi ke view
     ]);
 }
 
 
         public function feskktenagakerjabimtekshowBybimtek(Request $request)
         {
+
+            $totalData = skktenagakerja::count();
+
             // Mengambil parameter 'judul' dari query string
             $judul = $request->query('judul');
             
@@ -242,6 +266,7 @@ public function listregister()
                 'title' => 'Tahun Bimtek | SKK Tenaga Kerja',
                 'data' => $data, // Mengirimkan data yang difilter atau semua data
                 'data_tahun_bimtek' => $data_tahunbimtek, // Mengirimkan data kecamatan unik ke view
+                'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
             ]);
         }
 

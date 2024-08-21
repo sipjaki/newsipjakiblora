@@ -396,7 +396,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 type: "bar",
                 showInLegend: false,
                 toolTipContent: "{name}: <strong>{y}</strong>",
-                indexLabel: "{name} - {y} PEKERJA",
+                indexLabel: "{name} - {y} Pekerja",
                 dataPoints: dataForChartKecamatan
             }]
         });
@@ -423,7 +423,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 type: "column",  
                 showInLegend: true, 
                 legendMarkerColor: "grey",
-                legendText: "Daftar Pekerja Tukang Terampil Distribusi Berdasarkan Kecamatan",
+                legendText: "Daftar Pekerja Tukang Terampil Distribusi Berdasarkan Desa",
                 dataPoints: dataForChartDesa
             }]
         });

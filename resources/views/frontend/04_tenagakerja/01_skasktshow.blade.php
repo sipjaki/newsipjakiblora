@@ -241,13 +241,13 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3);font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ; ">{{ ucwords(strtolower($data->nama)) }}</td>
                     </tr>
-                    
+{{--                     
                     <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-home" style="color: white; font-size:12px;"></i></th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align:left; font-size:14px;">Alamat</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align:left; font-weight:700; color:black ">{{ ucwords(strtolower($data->alamat)) }}</td>
-                    </tr>
+                    </tr> --}}
                     
                     <tr>  
                         <th style="background-color: navy; width: 20px; border-radius: 10px 10px 10px 10px;" ><i class="fas fa-road" style="color: white; font-size:12px;"></i></th>
