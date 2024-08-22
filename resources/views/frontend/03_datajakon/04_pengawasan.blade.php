@@ -47,7 +47,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
+Laporan Informasi Pengawasan & Ketertiban 
 </h2>
 </div>
 <div class="container" style="
@@ -222,11 +222,16 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
         <thead>
             <tr>
                 <th style="width:45px;">NO</th>
-                <th>NAMA PROYEK</th>
-                <th>NILAI KONTRAK</th>
-                <th>PROGRESS FISIK</th>
-                <th>TANGGAL MULAI</th>
-                <th>TANGGAL SELESAI</th>
+                <th>JUDUL</th>
+                <th>TANGGAL LAPORAN</th>
+                <th>JENIS</th>
+                <th>LOKASI</th>
+                <th>KETERANGAN</th>
+                <th>TEMUAN</th>
+                <th>TINDAKAN</th>
+                <th>PJT</th>
+                <th>PENGAWAS</th>
+                <th>STATUS PENGADUAN</th>
                 <th>VIEW</th>
             </tr>
         </thead>
@@ -236,6 +241,11 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
             
             <tr>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">1</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>

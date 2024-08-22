@@ -25,16 +25,17 @@
 <div class="div" style="
             justify-content: center;
             text-align:center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
             margin-top:188px;
         ">
-<p style="margin-top: 10px;">........</p>
-            <h2 style="
-
-    margin-top: 10px;
+        <br>
+         <h2 style="
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    margin-left: 425px;
     color: #333;
     text-transform: uppercase;
     text-align: center;
@@ -46,9 +47,99 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Standar Biaya Umum
+Standar Biaya Umum Tentang Jasa Konstruksi
 </h2>
 </div>
+<div class="container" style="
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    height: 20vh;
+    background: linear-gradient(to bottom, yellow, white, white);
+    align-items: center;
+    position: relative;
+">
+
+<div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div>
+
+
+<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Kementrian Pekerjaan Umum Dan Penataan Ruang</button> </h1>
+
+
+<style>
+
+.badgekembali {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+                text-transform: uppercase;
+            }
+            .badgekembali:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+
+.badgekementrian {
+                background: linear-gradient(to right, #FFD700, #FFD700);
+                color: black;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgekementrian:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+</style>
+
+<br>
+
+{{-- @include('tambahan.pencarianskk.menunavigasi') --}}
+
+    {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
+
+<br>
+    
+</div>
+
+
+
+
+{{-- ------------------------------------ END FITUR ------------- --}}
+
+
+           
+        </div>
+        </div>
+</div>
+</div>
+
+
+
+{{-- ------------------------------------------- PERBATASAN FITUR ----------------------------------- --}}
 <div class="container" style="
     display: flex;
     flex-direction: column;
@@ -59,169 +150,163 @@ Standar Biaya Umum
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 90vh;
-    margin-left: 100px;
-    background: linear-gradient(to bottom, yellow, white, black);
+    margin-top:5px;
+    height: 25vh;
+    background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
 ">
-    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: 10px;">
-<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
-    <div class="container">
-        <div class="card" style="
-            background-color: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
-            margin: 20px auto;">
+{{-- 
+<div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div> --}}
 
-            {{-- ------------------------------------ FITUR TAMBAHAN ------------- --}}
-                
-                <div class="controls" style="  
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                margin-bottom: 20px;
-                                border-radius:5px;
-                                ">
-                    <div class="show-entries" style="border-radius: 10px;">
-                        <label for="entries" style="margin-right: 5px;"> 
-                            <style>
-                                .badge {
-                                    background: linear-gradient(to right, yellow, black);
-                                    color: white;
-                                    padding: 10px 20px;
-                                    border-radius: 10px;
-                                    display: inline-block;
-                                    font-size: 1rem;
-                                    text-align: center;
-                                    transition: background-color 0.3s, color 0.3s;
-                                }
+<style>
+    .badge {
+                background: linear-gradient(to right, black, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                text-align: left;
+                font-size: 14px;
+                margin-right: 10px;
+                text-align: center;
+                /* margin-right: 425px; */
+                /* justify-content: between; */
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .badge:hover {
+                background-color: white;
+                color: black;
+            }
+</style>
+
+<div class="div">
+
+
+<br>
+    <style>
+        table {
+            width: 1025px;
+            border-collapse: collapse;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        th, td {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: black;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+            font-size: 12px;
+        }
+
+        th {
+            /* background-color: #4CAF50; */
+            /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
+            background-color:  #FFCB0F;
+            color: black;
+            font-size: 14px;
+        }
+    </style>
+     <table>
+        <thead>
+            <tr>
+                <th style="width:45px;">NO</th>
+                <th>TAHUN ANGGARAN</th>
+                <th>BESARAN ANGGARAN</th>
+                <th>NO SK STANDAR BIAYA UMUM</th>
+                <th>VIEW</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {{-- ============================================ --}}
+            
+            <tr>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">1</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
+               
+                <td>
+                    
+                <style>
+                                        /* Container for the buttons */
+            .button-container {
+                display: flex;
+                gap: 10px; /* Space between icons */
+                justify-content: center; /* Center the icons horizontally */
+            }
+
+            /* Style for the individual buttons */
+            .iconhover {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 25px; /* Adjust width as needed */
+                height: 25px; /* Adjust height as needed */
+                background: navy, white; /* Yellow background */
+                color: white; /* Text color */
+                border: none;
+                border-radius: 50%;
+                text-decoration: none;
+                padding: 3px 3px;
+                font-size: 15px; /* Adjust font size as needed */
+                transition: background 0.3s, color 0.3s;
+                cursor: pointer;
+            }
+
+            .iconhover:hover {
+                background: white; /* White background on hover */
+                color: black; /* Black text color on hover */
+            }
+
+            .iconhover i {
+                margin: 0;
+            }
+            
+                </style>
+
+                <div class="button-container">
+                <a href="" class="iconhover" title="View">
+                    <i class="fas fa-eye" style="color: black"></i>
+                </a>
                         
-                                .badge:hover {
-                                    background-color: white;
-                                    color: black;
-                                }
-                            </style>
-                             <div class="badge"><i class="fas fa-file"></i> Standar Biaya Umum</div></label>
-                        {{-- <select id="entries" onchange="showEntries()">
-                            <option value="5">5</option>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="20">20</option>
-                            <option value="25">25</option>
-                            </select> --}}
                     </div>
-                    <div class="search-entries">
-                        <style>
-                            .search-container {
-                                position: relative;
-                                display: inline-block;
-                            }
-                            .search-container input {
-                                border-radius: 15px;
-                                padding: 2px 5px 2px 25px; /* Extra padding for the icon */
-                            }
-                            .search-container .fa-search {
-                                position: absolute;
-                                left: 10px;
-                                top: 50%;
-                                transform: translateY(-50%);
-                            }
-                        </style>
-                        <div class="search-container">
-                            <input
-                                type="text"
-                                id="searchInput"
-                                onkeyup="searchEntries()"
-                                placeholder="  Search..">
-                            <i class="fas fa-search"></i>
-                        </div>
-                    
-                        <script>
-                            function searchEntries() {
-                                // Your JavaScript function for searching entries
-                            }
-                        </script>
-                    </div>
-                </div>
 
-            {{-- ------------------------------------ END FITUR ------------- --}}
+                </td>
+            </tr>
+            {{-- ============================================ --}}
             
             
-            <style>
-                table {
-                    width: 100%;
-                    border-collapse: collapse;
-                }
+        </tbody>
+    </table>
+
+
+</div>
+
+<style>
+    .pagination-container{
+        color: black;
+    }
+</style>
+
         
-                th, td {
-                    font-family: 'Lato', sans-serif;
-                    font-weight: 700;
-                    color: black;
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                }
-        
-                tr:nth-child(even) {
-                    background-color: #f2f2f2;
-                }
-        
-                th {
-                    /* background-color: #4CAF50; */
-                    /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
-                    background-color:  #FFCB0F;
-                    color: black;
-                }
-            </style>
-             <table>
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Tahun Anggaran</th>
-                        <th>Besaran Anggaran</th>
-                        <th>No SK Standar Biaya Umum</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                {{-- @foreach ($collection as $item) --}}
-                    
-                {{-- @endforeach --}}
-                <tbody>
-                    {{-- ============================================ --}}
-                    <tr>
-                        <td>1</td>
-                        <td>No Data</td>
-                        <td>No Data</td>
-                        <td>No Data</td> 
-                        <td>
-                            <button class="download-btn" onclick="downloadCSV()" style="
-                                padding: 5px 15px;
-                                background: linear-gradient(to right, #000000, #FFFF00);
-                                color: white;
-                                border: none;
-                                font-size: 12px;
-                                border-radius: 15px;
-                                width: 70%;
-                                cursor: pointer;
-                                transition: background 0.3s, color 0.3s;"
-                                onmouseover="this.style.background='linear-gradient(to right, #ffffff, #ffffff)'; this.style.color='black';"
-                                onmouseout="this.style.background='linear-gradient(to right, #000000, #FFFF00)'; this.style.color='white';">
-                                <i class="fas fa-download me-2"></i> Download
-                            </button>
-                            
-                            <script>
-                                function downloadCSV() {
-                                    // Function to handle CSV download
-                                }
-                                </script>
-                        </td>
-                    </tr>
-                    {{-- ============================================ --}}
-                    
-                </tbody>
-            </table>
+</div>
+{{-- ------------------------------------ END FITUR ------------- --}}
+
+
+           
         </div>
 </div>
 </div>

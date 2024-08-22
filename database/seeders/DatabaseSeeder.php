@@ -2381,6 +2381,13 @@ kegiatanjaskon::create([
                 'berita18' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA18.jpg',
                 'berita19' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA19.jpg',
                 'berita20' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA20.jpg',
+                'berita21' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA21.jpg',
+                'berita22' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA22.jpg',
+                'berita23' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA23.jpg',
+                'berita24' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA24.jpg',
+                'berita25' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA25.jpg',
+                'berita26' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA26.jpg',
+                // 'berita20' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA20.jpg',
                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
                 'created_at' => now(),
                 'updated_at' => now(),

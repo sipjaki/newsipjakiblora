@@ -37,6 +37,12 @@ return new class extends Migration
             $table->string('berita18');
             $table->string('berita19');
             $table->string('berita20');
+            $table->string('berita21');
+            $table->string('berita22');
+            $table->string('berita23');
+            $table->string('berita24');
+            $table->string('berita25');
+            $table->string('berita26');
             $table->date('tanggal'); 
             $table->softDeletes();
             $table->timestamps();

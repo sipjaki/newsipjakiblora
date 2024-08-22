@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DatajakonController;
 use App\Http\Controllers\FedashboardController;
 use App\Http\Controllers\GiskbbController;
 use App\Http\Controllers\ProfileController;
@@ -78,26 +79,11 @@ Route::get('/profil/tupoksi', function () {
 
 // ---------------------- 03 DATA JAKON -----------------------//
 // -------- BAGIAN 1 ---------------------------------
-Route::get('/datajakon/asosiasi', function () {
-    // return view('welcome');
-    return view('frontend.03_datajakon.01_asosiasi', [
-        'title' => 'Asosiasi Pengusaha'
-    ]);
-});
-
-Route::get('/datajakon/standarbiayaumum', function () {
-    // return view('welcome');
-    return view('frontend.03_datajakon.02_standarbiayaumum', [
-        'title' => 'Standar Biaya Umum'
-    ]);
-});
-
-Route::get('/datajakon/paketpekerjaan', function () {
-    // return view('welcome');
-    return view('frontend.03_datajakon.03_paketpekerjaan', [
-        'title' => 'Paket Pekerjaan KBB'
-    ]);
-});
+// =======================================
+Route::get('/datajakon/asosiasi', [DatajakonController::class, 'asosiasi']); 
+Route::get('/datajakon/standarbiayaumum', [DatajakonController::class, 'standarbiayaumum']); 
+Route::get('/datajakon/paketpekerjaan', [DatajakonController::class, 'paketpekerjaan']); 
+Route::get('/datajakon/pengawasan', [DatajakonController::class, 'pengawasan']); 
 
 
 // ---------------------- 04 TENAGA KERJA -----------------------//
