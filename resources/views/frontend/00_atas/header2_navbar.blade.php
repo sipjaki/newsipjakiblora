@@ -188,10 +188,10 @@
             </div>
         </div>                    {{-- <a href="#">PROFIL</a> --}}
         
-        <div class="dropdown">
-            <a href="#" class="dropdown-toggle" style="text-align: left">DUKUNGAN <br> USAHA </a>
+        {{-- <div class="dropdown">
+            <a href="#" class="dropdown-toggle" style="text-align: left">DUKUNGAN <br> USAHA </a> --}}
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
-            <div class="dropdown-content" style="min-width: 210px;">
+            {{-- <div class="dropdown-content" style="min-width: 210px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
                     <a href="/404" style="color: black; text-decoration: none; text-align:left">PERMODALAN</a>
@@ -208,7 +208,8 @@
                 </div>
                  
             </div>
-        </div>                    {{-- <a href="#">PROFIL</a> --}}
+        </div> --}}
+                            {{-- <a href="#">PROFIL</a> --}}
     
         <a href="/404" style="text-align: center">BADAN <br> USAHA </a>
         <a href="/uijk">SBU/UIJK</a>

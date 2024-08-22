@@ -118,6 +118,11 @@ Route::get('/tenagakerja/bimtek', [SkktenagakerjaController::class, 'feskktenaga
 
 // ==============================
 Route::get('/skk/statistika', [SkktenagakerjaController::class, 'liststatistika']); 
+Route::get('/skkchart/keterampilan', [SkktenagakerjaController::class, 'chartketerampilan']); 
+Route::get('/skkskkchart/kecamatan', [SkktenagakerjaController::class, 'chartkecamatan']); 
+Route::get('/skkchart/desa', [SkktenagakerjaController::class, 'chartdesa']); 
+Route::get('/skkchart/register', [SkktenagakerjaController::class, 'chartregister']); 
+
 
 
 // ==============================

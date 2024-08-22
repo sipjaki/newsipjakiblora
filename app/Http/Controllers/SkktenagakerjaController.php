@@ -418,7 +418,184 @@ public function listregister()
                 // 'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
             ]);
         }
+
+
+
+        // ========================================================================================================
+        // ========================================================================================================
+        // ========================================================================================================
+                
+        public function chartketerampilan()
+        {
     
+    // ----------------------------------------------------------------------------------------
+          // DATA TAHUN BIMTEK PERSENTASE 
+          $data_keterampilan = skktenagakerja::select('keterampilan')
+          ->selectRaw('count(*) as total')
+          ->groupBy('keterampilan')
+          ->get();
+
+      // Hitung total keseluruhan dari semua kategori
+      $total_count = $data_keterampilan->sum('total');
+
+      // Format data untuk grafik dengan persentase
+      $data_for_chart_keterampilan = $data_keterampilan->map(function ($item) use ($total_count) {
+          return [
+              'y' => ($item->total / $total_count) * 100, // Hitung persentase
+              'name' => $item->keterampilan,
+          ];
+      });
+      
+             
+            // ----------------------------------------------------------------------------------------
+
+            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
+            $totalData = skktenagakerja::count();
+
+            // Mengambil semua data untuk mendapatkan kecamatan unik
+            //   $allKecamatan = skktenagakerja::all();
+            
+            // Menggunakan koleksi untuk mendapatkan nilai unik
+            //   $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
+
+            return view('frontend.04_tenagakerja.statistika.chartketerampilan', [
+                'title' => 'Keterampilan | Data Tenaga Kerja',
+                'data' => $data,
+                'data_keterampilan' => $data_keterampilan,
+                'data_for_chart_keterampilan' => $data_for_chart_keterampilan->toJson(), // Kirim data dalam format JSON
+                'judulketerampilan' => 'Distribusi Data Berdasarkan Keterampilan', 
+                'total_data' => $totalData, 
+
+                // 'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
+            ]);
+        }
+    
+        
+        public function chartkecamatan()
+        {
+    
+      // ----------------------------------------------------------------------------------------
+            // DATA CHART BERDASARKAN KECAMATAN 
+            $data_kecamatan = skktenagakerja::select('kecamatan')
+            ->selectRaw('count(*) as total')
+            ->groupBy('kecamatan')
+            ->get();
+
+                // Format data untuk grafik
+                $data_for_chart_kecamatan = $data_kecamatan->map(function ($item) {
+                    return [
+                        'y' => $item->total,
+                        'name' => $item->kecamatan,
+                    ];
+                });
+    
+    
+            // ----------------------------------------------------------------------------------------
+
+            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
+            $totalData = skktenagakerja::count();
+
+            // Mengambil semua data untuk mendapatkan kecamatan unik
+            //   $allKecamatan = skktenagakerja::all();
+            
+            // Menggunakan koleksi untuk mendapatkan nilai unik
+            //   $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
+
+            return view('frontend.04_tenagakerja.statistika.chartkecamatan', [
+                'title' => 'Kecamatan | Data Tenaga Kerja',
+                'data' => $data,
+                'data_for_chart_kecamatan' => $data_for_chart_kecamatan->toJson(), // Kirim data dalam format JSON
+                'judulkecamatan' => 'Distribusi Kecamatan', // Judul grafik
+                'total_data' => $totalData, 
+
+                // 'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
+            ]);
+        }
+
+
+          
+        public function chartdesa()
+        {
+        // ----------------------------------------------------------------------------------------
+            // DATA CHART BERDASARKAN DESA
+            $data_desa = skktenagakerja::select('desa')
+            ->selectRaw('count(*) as total')
+            ->groupBy('desa')
+            ->get();
+
+                // Format data untuk grafik
+                $data_for_chart_desa = $data_desa->map(function ($item) {
+                return [
+                    'y' => $item->total,
+                    'label' => $item->desa,
+                ];
+                });
+
+        // ----------------------------------------------------------------------------------------
+    
+            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
+            $totalData = skktenagakerja::count();
+
+            // Mengambil semua data untuk mendapatkan kecamatan unik
+            //   $allKecamatan = skktenagakerja::all();
+            
+            // Menggunakan koleksi untuk mendapatkan nilai unik
+            //   $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
+
+            return view('frontend.04_tenagakerja.statistika.chartdesa', [
+                'title' => 'Desa | Data Tenaga Kerja',
+                'data' => $data,
+                'data_for_chart_desa' => $data_for_chart_desa->toJson(),
+                'juduldesa' => 'Distribusi Desa', // Judul grafik
+                'total_data' => $totalData, 
+
+                // 'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
+            ]);
+        }
+
+        
+        public function chartregister()
+        {
+    
+        // ----------------------------------------------------------------------------------------
+                // DATA TAHUN BIMTEK PERSENTASE 
+                $data_tahun_bimtek = skktenagakerja::select('tahun_bimtek')
+                ->selectRaw('count(*) as total')
+                ->groupBy('tahun_bimtek')
+                ->get();
+
+            // Hitung total keseluruhan dari semua kategori
+            $total_count = $data_tahun_bimtek->sum('total');
+
+            // Format data untuk grafik dengan persentase
+            $data_for_chart_tahun_bimtek = $data_tahun_bimtek->map(function ($item) use ($total_count) {
+                return [
+                    'y' => ($item->total / $total_count) * 100, // Hitung persentase
+                    'name' => $item->tahun_bimtek,
+                ];
+            });
+
+            // ----------------------------------------------------------------------------------------
+
+            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
+            $totalData = skktenagakerja::count();
+
+            // Mengambil semua data untuk mendapatkan kecamatan unik
+            //   $allKecamatan = skktenagakerja::all();
+            
+            // Menggunakan koleksi untuk mendapatkan nilai unik
+            //   $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
+
+            return view('frontend.04_tenagakerja.statistika.chartregister', [
+                'title' => 'Statistika | Data Tenaga Kerja',
+                'data' => $data,
+                'data_for_chart_tahun_bimtek' => $data_for_chart_tahun_bimtek->toJson(), // Kirim data dalam format JSON
+                'judultahunbimtek' => 'Distribusi Registrasi Para Pekerja Tukang Terampil', // Judul grafik
+                'total_data' => $totalData, 
+
+                // 'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
+            ]);
+        }
 
         
 }
