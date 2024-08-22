@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('tahun_bimtek');
             $table->string('kualifikasi');
             $table->string('registrasi');
+            $table->string('foto');
             $table->integer('usia');
             $table->softDeletes();
             $table->timestamps();
