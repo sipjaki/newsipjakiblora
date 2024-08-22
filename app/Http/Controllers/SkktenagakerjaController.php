@@ -410,7 +410,7 @@ public function listregister()
                 'data_for_chart_usia' => $data_for_chart_usia, // Kirim data dalam format JSON
                 'judulstatistika' => 'Distribusi Keterampilan', // Judul grafik
                 'judulkecamatan' => 'Distribusi Kecamatan', // Judul grafik
-                'judultahunbimtek' => 'Distribusi Bimbingan Teknis Para Pekerja', // Judul grafik
+                'judultahunbimtek' => 'Distribusi Registrasi Para Pekerja Tukang Terampil', // Judul grafik
                 'judulusia' => 'Distribusi Pekerja Berdasarkan Usia', // Judul grafik
                 'juduldesa' => 'Distribusi Desa', // Judul grafik
                 'total_data' => $totalData, 
