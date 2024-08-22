@@ -11,7 +11,7 @@ use Carbon\Carbon;
  */
 class SkktenagakerjaFactory extends Factory
 {
-    protected $model = skktenagakerja::class;
+    protected $model = Skktenagakerja::class;
 
 
     // Daftar desa per kecamatan di Kabupaten Bandung Barat
