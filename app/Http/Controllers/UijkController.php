@@ -10,11 +10,11 @@ class UijkController extends Controller
     //
     public function index()
     {
-        $data= uijk::paginate(15); // Menggunakan paginate() untuk pagination
+        $data_uijk = uijk::paginate(15); // Menggunakan paginate() untuk pagination
 
         return view('frontend.08_uijk.uijk', [
             'title' => 'SBU / UIJK',
-            'data' => $data, // Mengirimkan data paginasi ke view
+            'data' => $data_uijk, // Mengirimkan data paginasi ke view
         ]);
     }
     
