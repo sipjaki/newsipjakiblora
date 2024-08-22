@@ -150,7 +150,7 @@ Sertifikat Badan Usaha / Surat Ijin Usaha Jasa Konstruksi
                 color: black;
             }
         </style>
-        <a href="/uijk" style="background: white;">
+        <a href="/ijinusahajasakonstruksi" style="background: white;">
             <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
         </a>
                         <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>

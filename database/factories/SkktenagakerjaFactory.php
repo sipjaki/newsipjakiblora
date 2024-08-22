@@ -161,6 +161,7 @@ class SkktenagakerjaFactory extends Factory
             'tahun_bimtek' => 'BELUM', 
             'kualifikasi' => 'BELUM',
             'registrasi' => 'BELUM',
+            'foto' => 'profesional',
             'usia' => $usia,
         ];
     }
