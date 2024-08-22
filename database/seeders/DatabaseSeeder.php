@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
         // ===================================================================================
         // DATA TENAGA KERJA SKK KABUPATEN BANDUNG BARAT
         // skktenagakerja::factory(1235)->create(); 
-          Tukangterampil::factory(1234)->create();
+        
 
         Tukangterampil::create([
             'kecamatan' => 'Cililin',
@@ -970,6 +970,8 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
+
+        Tukangterampil::factory(1234)->create();
       
         
 
