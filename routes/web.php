@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FedashboardController;
+use App\Http\Controllers\GiskbbController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PeraturanController;
@@ -117,6 +118,10 @@ Route::get('/tenagakerja/bimtek', [SkktenagakerjaController::class, 'feskktenaga
 
 // ==============================
 Route::get('/skk/statistika', [SkktenagakerjaController::class, 'liststatistika']); 
+
+
+// ==============================
+Route::get('/giskbb', [GiskbbController::class, 'index']); 
 
 
 

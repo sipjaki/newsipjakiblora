@@ -22,6 +22,7 @@ use App\Models\suratedaran;
 use App\Models\pergubernur;
 use App\Models\suratkeputusan;
 use App\Models\berita;
+use App\Models\giskbb;
 use App\Models\kegiatanjaskon;
 use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
@@ -95,7 +96,7 @@ class DatabaseSeeder extends Seeder
 
         // ===================================================================================
         // DATA TENAGA KERJA SKK KABUPATEN BANDUNG BARAT
-        // skktenagakerja::factory(1235)->create(); 
+        skktenagakerja::factory(1235)->create(); 
 
         skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
@@ -920,6 +921,24 @@ berita::create([
 
 <p>Bupati Bandung Barat, menyampaikan antusiasmenya atas peluncuran SIPJK dan mengungkapkan harapannya bahwa sistem ini akan membawa perubahan positif dalam pengelolaan konstruksi di wilayahnya. Ia percaya bahwa SIPJK akan menjadi alat yang efektif dalam mendukung pembangunan berkelanjutan dan menjadi contoh bagi daerah lain dalam penerapan teknologi informasi untuk sektor publik.</p>
 
+',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+berita::create([
+    'judul' => 'Tansformasi Digital Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat',
+    'author' => rand(1,1000),
+    'gambar' => '/assets/library/giskbb/petakbb.jpg',
+    'keterangan' => '
+    <p>Pemerintah Kabupaten Bandung Barat telah meluncurkan inisiatif transformasi digital dalam sistem informasi pembina jasa konstruksi sebagai langkah penting untuk meningkatkan efisiensi dan transparansi dalam sektor konstruksi. Program ini bertujuan untuk memodernisasi cara pemerintah mengelola dan mengawasi proyek-proyek konstruksi di daerahnya, dengan memanfaatkan teknologi informasi terkini untuk mempermudah akses, pelaporan, dan monitoring. Transformasi ini diharapkan dapat membawa perubahan positif dalam cara proyek konstruksi dikelola dan dievaluasi, serta meningkatkan kualitas layanan kepada masyarakat.</p>
+
+<p>Sistem informasi baru ini dirancang untuk menyediakan platform terintegrasi yang memungkinkan pemantauan real-time atas proyek konstruksi, pengelolaan data secara efisien, dan komunikasi yang lebih baik antara pihak terkait. Melalui sistem ini, setiap tahap proyek konstruksi, mulai dari perencanaan hingga pelaksanaan, dapat dipantau secara langsung oleh pihak berwenang. Hal ini bertujuan untuk memastikan bahwa semua proyek memenuhi standar kualitas dan regulasi yang ditetapkan, serta meminimalkan potensi penyelewengan atau kesalahan yang mungkin terjadi.</p>
+
+<p>Transformasi digital ini juga mencakup peningkatan aksesibilitas bagi para kontraktor dan penyedia jasa konstruksi. Dengan sistem informasi yang terintegrasi, para pemangku kepentingan dapat mengakses informasi penting, seperti persyaratan perizinan dan prosedur pengajuan, secara online. Ini akan mempercepat proses administrasi dan mengurangi birokrasi, sehingga memberikan kemudahan bagi para pelaku industri untuk berpartisipasi dalam proyek-proyek pemerintah. Selain itu, transparansi yang lebih tinggi diharapkan dapat meningkatkan kepercayaan masyarakat terhadap proses pengadaan dan pelaksanaan proyek konstruksi.</p>
+
+<p>Peluncuran sistem informasi pembina jasa konstruksi ini merupakan bagian dari komitmen Pemerintah Kabupaten Bandung Barat untuk mendorong inovasi dan efisiensi dalam pelayanan publik. Dengan adanya transformasi digital ini, diharapkan sektor konstruksi di daerah ini dapat berkembang lebih pesat dan berkelanjutan. Ke depan, pemerintah akan terus memantau dan mengevaluasi efektivitas sistem ini, serta melakukan perbaikan yang diperlukan untuk memastikan bahwa manfaat dari transformasi digital dapat dirasakan secara optimal oleh semua pihak terkait.</p>
 ',
     'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
     'created_at' => Carbon::now(),
@@ -1904,7 +1923,233 @@ laporankegiatan::create([
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
+
+            // ================= =====================================================================================
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'LEMBANG',
+                'gambar' => '/assets/library/giskbb/LEMBANG.jpeg',
+                'laki_laki' => '38671',
+                'perempuan' => '36666',
+                'keterangan_gis' => '
+                
+                <p>Kecamatan Lembang terletak di Kabupaten Bandung Barat, Provinsi Jawa Barat, Indonesia. Terkenal dengan pemandangan alam yang indah dan udara yang sejuk, Lembang menjadi salah satu destinasi populer bagi wisatawan yang mencari suasana pegunungan. Dengan lokasi strategisnya di wilayah Kabupaten Bandung Barat, kecamatan ini menawarkan berbagai fasilitas dan layanan yang mendukung kehidupan sehari-hari masyarakatnya, serta akses yang mudah ke pusat-pusat ekonomi dan pendidikan.</p>
+
+<p>Fasilitas di Kecamatan Lembang cukup lengkap untuk memenuhi kebutuhan warganya. Terdapat berbagai sekolah, pusat kesehatan, dan pasar yang memudahkan penduduk dalam menjalani aktivitas sehari-hari. Infrastruktur yang memadai juga mendukung mobilitas masyarakat, sementara akses transportasi yang baik memperkuat konektivitas antara Lembang dan wilayah sekitarnya.</p>
+
+<p>Berdasarkan data terbaru, jumlah penduduk di Kecamatan Lembang mencapai total 75.337 jiwa. Dari jumlah tersebut, terdapat 38.671 laki-laki dan 36.666 perempuan. Angka ini menunjukkan bahwa kecamatan ini memiliki struktur demografis yang seimbang, dengan proporsi laki-laki dan perempuan yang hampir merata.</p>
+
+<p>Keseimbangan jumlah laki-laki dan perempuan di Kecamatan Lembang mencerminkan dinamika sosial yang stabil. Dengan total penduduk yang cukup besar dan komposisi gender yang seimbang, ada peluang besar untuk pengembangan berbagai inisiatif komunitas. Program-program yang fokus pada pendidikan, kesehatan, dan ekonomi dapat memperkuat kualitas hidup masyarakat di Lembang, serta mendukung pertumbuhan dan kemajuan wilayah ini secara keseluruhan.</p>',
+              
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'PARONGPONG',
+                'gambar' => '/assets/library/giskbb/PARONGPONG.jpeg',
+                'laki_laki' => '56101',
+                'perempuan' => '54436',
+                'keterangan_gis' => '
+              <p>Kecamatan Parongpong adalah sebuah kecamatan di Kabupaten Bandung Barat, Provinsi Jawa Barat, Indonesia. Wilayah ini terkenal dengan kekayaan wisata bunga yang menjadi daya tarik utama bagi pengunjung. Parongpong dikenal sebagai pusat budidaya bunga dan tanaman hias, dengan mayoritas petani di wilayah ini berfokus pada produksi bunga dan tanaman hias lainnya. Keindahan alam dan potensi wisata yang dimilikinya menjadikan Parongpong salah satu destinasi favorit bagi wisatawan yang ingin menikmati keindahan alam dan keunikan tanaman hias.</p>
+
+<p>Di Kecamatan Parongpong, petani bunga tersebar terutama di daerah Cihideung. Daerah ini dikenal dengan berbagai jenis tanaman hias, bunga, dan bibit pohon yang berjajar di sepanjang jalan utama desa Cihideung. Pemandangan ini tidak hanya memperindah kawasan tersebut tetapi juga menarik banyak pengunjung yang tertarik untuk membeli atau sekadar menikmati keindahan tanaman hias. Aktivitas ini telah menjadi bagian integral dari kehidupan masyarakat di Parongpong, yang secara aktif terlibat dalam sektor pertanian dan wisata.</p>
+
+<p>Data terbaru menunjukkan bahwa jumlah penduduk di Kecamatan Parongpong mencapai total 110.537 jiwa. Dari jumlah tersebut, terdapat 56.101 laki-laki dan 54.436 perempuan. Keseimbangan jumlah laki-laki dan perempuan ini mencerminkan struktur demografis yang relatif seimbang dan memberikan gambaran tentang dinamika sosial di kecamatan ini. Struktur populasi yang seimbang ini penting untuk pengembangan berbagai inisiatif sosial dan ekonomi di kawasan ini.</p>
+
+<p>Sebagai bentuk pengakuan terhadap potensi wisata yang dimiliki, pemerintah Kabupaten Bandung Barat telah mendeklarasikan Kecamatan Parongpong sebagai kota wisata bunga. Keputusan ini diambil untuk mendorong pengembangan sektor pariwisata serta meningkatkan kesejahteraan masyarakat melalui promosi dan pengembangan industri bunga dan tanaman hias. Dengan total penduduk yang signifikan dan potensi wisata yang kuat, Kecamatan Parongpong berada dalam posisi strategis untuk berkembang menjadi pusat wisata yang lebih dikenal dan diminati.</p>',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
             
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'CISARUA',
+                'gambar' => '/assets/library/giskbb/CISARUA.png',
+                'laki_laki' => '39293',
+                'perempuan' => '38080',
+                'keterangan_gis' => '
+     <p>Kecamatan Cisarua adalah sebuah kecamatan yang terletak di Kabupaten Bandung Barat, Provinsi Jawa Barat, Indonesia. Terletak sekitar 9 kilometer dari ibu kota kabupaten ke arah timur laut, Kecamatan Cisarua memiliki posisi strategis yang mendukung perkembangan ekonominya. Pusat pemerintahan kecamatan ini berada di Desa Jambudipa, yang menjadi pusat administrasi dan kegiatan pemerintah daerah.</p>
+
+<p>Cisarua dikenal sebagai kecamatan yang memiliki potensi besar di bidang pertanian dan peternakan. Produk utama dari kawasan ini meliputi jamur, susu, tanaman palawija, dan sayur-sayuran. Keberagaman produk pertanian ini menunjukkan kekayaan sumber daya alam yang dimiliki Cisarua, serta kontribusinya terhadap perekonomian lokal. Iklim yang cukup dingin di wilayah ini juga mendukung pertumbuhan berbagai jenis tanaman dan produk peternakan.</p>
+
+<p>Menurut data terbaru, jumlah penduduk di Kecamatan Cisarua mencapai total 77.373 jiwa. Dari jumlah tersebut, terdapat 39.293 laki-laki dan 38.080 perempuan. Angka ini menunjukkan struktur demografis yang seimbang, dengan jumlah laki-laki dan perempuan yang hampir merata. Keseimbangan ini penting untuk pengembangan berbagai program sosial dan ekonomi di kecamatan ini.</p>
+
+<p>Dengan potensi pertanian dan peternakan yang dimilikinya, serta iklim yang mendukung, Kecamatan Cisarua berada dalam posisi yang baik untuk berkembang lebih lanjut. Potensi sumber daya alam yang ada di Cisarua memberikan peluang besar untuk meningkatkan kesejahteraan masyarakat melalui pengembangan sektor pertanian dan peternakan yang berkelanjutan.</p>
+
+                    ',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'CIKALONG WETAN',
+                'gambar' => '/assets/library/giskbb/CIKALONGWETAN.png',
+                'laki_laki' => '39293',
+                'perempuan' => '38080',
+                'keterangan_gis' => ' DATA BELUM DIISI
+     
+                    ',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'CIPEUNDEY',
+                'gambar' => '/assets/library/giskbb/CIPEUNDEY.png',
+                'laki_laki' => '43453',
+                'perempuan' => '41920',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'NGAMPRAH',
+                'gambar' => '/assets/library/giskbb/NGAMPRAH.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'CIPATAT',
+                'gambar' => '/assets/library/giskbb/CIPATAT.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'PADALARANG',
+                'gambar' => '/assets/library/giskbb/PADALARANG.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'BATUJAJAR',
+                'gambar' => '/assets/library/giskbb/BATUJAJAR.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'CIHAMPELAS',
+                'gambar' => '/assets/library/giskbb/CIHAMPELAS.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'CILILIN',
+                'gambar' => '/assets/library/giskbb/CILILIN.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'CIPONGKOR',
+                'gambar' => '/assets/library/giskbb/CIPONGKOR.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'RONGGA',
+                'gambar' => '/assets/library/giskbb/RONGGA.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'SINDANGKERTA',
+                'gambar' => '/assets/library/giskbb/SINDANGKERTA.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'GUNUNG HALU',
+                'gambar' => '/assets/library/giskbb/GUNUNGHALU.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+
+giskbb::create([
+                    // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'nama_kecamatan' => 'SAGULING',
+                'gambar' => '/assets/library/giskbb/saguling.png',
+                'laki_laki' => '1',
+                'perempuan' => '2',
+                'keterangan_gis' => ' DATA BELUM DIISI',
+         
+'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+
+
+
     }
  /**
      * Menghitung usia berdasarkan tanggal lahir.
