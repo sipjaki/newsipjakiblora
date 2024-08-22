@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->date('tanggal_lahir');
-            $table->string('nik')->unique();
+            $table->string('nik');
             $table->string('keterampilan');
             $table->string('tahun_bimtek');
             $table->string('kualifikasi');
