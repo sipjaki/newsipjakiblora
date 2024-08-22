@@ -158,8 +158,8 @@ Route::get('/spm/informasispm', function () {
 });
 
 // ---------------------- 08 UIJK -----------------------//
-// -------- BAGIAN 1 ---------------------------------
-Route::get('/uijk', [UijkController::class, 'index']);  
+// -------- BAGIAN 08 ---------------------------------
+Route::get('/ijinusahajasakonstruksi', [UijkController::class, 'index']);  
 Route::get('/uijk/{nama_perusahaan}', [UijkController::class, 'feuijkshowByName']);
 Route::get('/uijkpt', [UijkController::class, 'uijkpt']);
 Route::get('/uijkcv', [UijkController::class, 'uijkcv']);

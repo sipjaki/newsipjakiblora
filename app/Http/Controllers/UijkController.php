@@ -12,7 +12,7 @@ class UijkController extends Controller
     {
         $data_uijk = uijk::paginate(15); // Menggunakan paginate() untuk pagination
 
-        return view('frontend.08_uijk.uijk', [
+        return view('frontend.08_UIJK.uijk', [
             'title' => 'SBU / UIJK',
             'data' => $data_uijk, // Mengirimkan data paginasi ke view
         ]);
