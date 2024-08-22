@@ -212,85 +212,106 @@
                         </div>
                     
                         <div class="row gallery">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita1}}" alt="Berita 1" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita1}}">
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita2}}" alt="Berita 2" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita2}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita3}}" alt="Berita 3" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita3}}">
                             </div>
                             <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita4}}" alt="Berita 4" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita4}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita5}}" alt="Berita 5" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita5}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita6}}" alt="Berita 6" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita6}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita7}}" alt="Berita 7" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita7}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita8}}" alt="Berita 8" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita8}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita9}}" alt="Berita 9" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita9}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita10}}" alt="Berita 10" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita10}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita11}}" alt="Berita 11" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita11}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita12}}" alt="Berita 12" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita12}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita13}}" alt="Berita 13" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita13}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita14}}" alt="Berita 14" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita14}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita15}}" alt="Berita 15" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita15}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita16}}" alt="Berita 16" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita6}}">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
+                                <img src="{{$data_kegiatanjaskon->berita16}}" alt="Berita 16" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita16}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita17}}" alt="Berita 17" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita17}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita18}}" alt="Berita 18" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita18}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita19}}" alt="Berita 19" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita19}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
-                            <div class="col-md-6 mb-3">
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
                                 <img src="{{$data_kegiatanjaskon->berita20}}" alt="Berita 20" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita20}}">
                             </div>
-                            <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
+                                <img src="{{$data_kegiatanjaskon->berita21}}" alt="Berita 21" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita21}}">
+                            </div>
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
+                                <img src="{{$data_kegiatanjaskon->berita22}}" alt="Berita 22" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita22}}">
+                            </div>
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
+                                <img src="{{$data_kegiatanjaskon->berita23}}" alt="Berita 23" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita23}}">
+                            </div>
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
+                                <img src="{{$data_kegiatanjaskon->berita24}}" alt="Berita 24" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita24}}">
+                            </div>
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
+                                <img src="{{$data_kegiatanjaskon->berita25}}" alt="Berita 25" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita25}}">
+                            </div>
+                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
+                            <div class="col-md-4 mb-3">
+                                <img src="{{$data_kegiatanjaskon->berita26}}" alt="Berita 26" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita26}}">
+                            </div>
+                                    <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                         </div>
                     </div>
                     
