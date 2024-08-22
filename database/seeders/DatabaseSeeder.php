@@ -103,19 +103,561 @@ class DatabaseSeeder extends Seeder
             'desa' => 'Budiharja',
             'nama' => 'ANTON HILMAN',
             'alamat' => '-',
-            'tanggal_lahir' => '-',
+            'tanggal_lahir' => '1993-03-09',
             'nik' => '-',
             'keterampilan' => 'FURNITUR',
             'tahun_bimtek' => '2024',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
             'foto' => '/assets/library/skktenagakerja/01.jpeg',
-            'usia' => $this->calculateAge('-'), 
+            'usia' => $this->calculateAge('1993-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Batu Layang',
+            'nama' => 'ENDANG',
+            'alamat' => '-',
+            'tanggal_lahir' => '1985-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/02.jpeg',
+            'usia' => $this->calculateAge('1985-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Batu Layang',
+            'nama' => 'LUBIS',
+            'alamat' => '-',
+            'tanggal_lahir' => '1988-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/03.jpeg',
+            'usia' => $this->calculateAge('1988-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Batu Layang',
+            'nama' => 'JAJANG S',
+            'alamat' => '-',
+            'tanggal_lahir' => '1980-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/04.jpeg',
+            'usia' => $this->calculateAge('1980-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Bongas',
+            'nama' => 'ANGSID',
+            'alamat' => '-',
+            'tanggal_lahir' => '1992-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/05.jpeg',
+            'usia' => $this->calculateAge('1992-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Karanganyar',
+            'nama' => 'HUSNI',
+            'alamat' => '-',
+            'tanggal_lahir' => '1993-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/06.jpeg',
+            'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Karang Tanjung ',
+            'nama' => 'UJANG',
+            'alamat' => '-',
+            'tanggal_lahir' => '1995-03-09',
+            'nik' => '-',
+            'keterampilan' => 'FURNITUR',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/07.jpeg',
+            'usia' => $this->calculateAge('1995-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Karyamukti ',
+            'nama' => 'HENDRI',
+            'alamat' => '-',
+            'tanggal_lahir' => '1980-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PENGECATAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/08.jpeg',
+            'usia' => $this->calculateAge('1980-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+        
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Kidang Panunjang ',
+            'nama' => 'HENDRAWAN',
+            'alamat' => '-',
+            'tanggal_lahir' => '1982-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PENGECATAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/09.jpeg',
+            'usia' => $this->calculateAge('1982-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Muka Payung ',
+            'nama' => 'Karsini Widianto',
+            'alamat' => '-',
+            'tanggal_lahir' => '1975-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMBESIAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/10.jpeg',
+            'usia' => $this->calculateAge('1975-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Kidang Panunjang ',
+            'nama' => 'Mamat Hidayat',
+            'alamat' => '-',
+            'tanggal_lahir' => '1988-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMBESIAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/11.jpeg',
+            'usia' => $this->calculateAge('1988-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Nangerang ',
+            'nama' => 'ROHMAT',
+            'alamat' => '-',
+            'tanggal_lahir' => '1975-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMBESIAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/12.jpeg',
+            'usia' => $this->calculateAge('1975-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Ranca Panggung ',
+            'nama' => 'PANDI S',
+            'alamat' => '-',
+            'tanggal_lahir' => '1980-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMBESIAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/13.jpeg',
+            'usia' => $this->calculateAge('1980-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Cililin ',
+            'nama' => 'NURJAMAN AMINUDIN',
+            'alamat' => '-',
+            'tanggal_lahir' => '1985-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMBESIAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/14.jpeg',
+            'usia' => $this->calculateAge('1985-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Batulayang ',
+            'nama' => 'BOBON',
+            'alamat' => '-',
+            'tanggal_lahir' => '1980-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMBESIAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/15.jpeg',
+            'usia' => $this->calculateAge('1980-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Budiharja ',
+            'nama' => 'SULAEMAN',
+            'alamat' => '-',
+            'tanggal_lahir' => '1990-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMBESIAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/16.jpeg',
+            'usia' => $this->calculateAge('1990-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Bongas ',
+            'nama' => 'AHMAD EFENDI',
+            'alamat' => '-',
+            'tanggal_lahir' => '1988-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMBESIAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/17.jpeg',
+            'usia' => $this->calculateAge('1988-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Karanganyar ',
+            'nama' => 'Ian Sopian',
+            'alamat' => '-',
+            'tanggal_lahir' => '1982-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/18.jpeg',
+            'usia' => $this->calculateAge('1982-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Mukapayung ',
+            'nama' => 'Buldani',
+            'alamat' => '-',
+            'tanggal_lahir' => '1993-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/19.jpeg',
+            'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Nangerang ',
+            'nama' => 'Saehudin',
+            'alamat' => '-',
+            'tanggal_lahir' => '1978-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/20.jpeg',
+            'usia' => $this->calculateAge('1978-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Batulayang ',
+            'nama' => 'Cecep',
+            'alamat' => '-',
+            'tanggal_lahir' => '1992-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/21.jpeg',
+            'usia' => $this->calculateAge('1992-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Karangmukti ',
+            'nama' => 'Yopi Sopian',
+            'alamat' => '-',
+            'tanggal_lahir' => '1995-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/22.jpeg',
+            'usia' => $this->calculateAge('1995-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Karangmukti ',
+            'nama' => 'Rukmana',
+            'alamat' => '-',
+            'tanggal_lahir' => '1980-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PENGECATAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/23.jpeg',
+            'usia' => $this->calculateAge('1980-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Batulayang ',
+            'nama' => 'Idrus',
+            'alamat' => '-',
+            'tanggal_lahir' => '1988-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PENGECATAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/24.jpeg',
+            'usia' => $this->calculateAge('1980-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Bongas ',
+            'nama' => 'Agus',
+            'alamat' => '-',
+            'tanggal_lahir' => '1984-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PENGECATAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/25.jpeg',
+            'usia' => $this->calculateAge('1984-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Kidang Panunjang',
+            'nama' => 'Agus',
+            'alamat' => '-',
+            'tanggal_lahir' => '1984-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PENGECATAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/25.jpeg',
+            'usia' => $this->calculateAge('1984-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Nangerang',
+            'nama' => 'Dede Mulyana',
+            'alamat' => '-',
+            'tanggal_lahir' => '1986-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/26.jpeg',
+            'usia' => $this->calculateAge('1986-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Karanganyar',
+            'nama' => 'Dadang Ekky',
+            'alamat' => '-',
+            'tanggal_lahir' => '1991-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/27.jpeg',
+            'usia' => $this->calculateAge('1991-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Mukapayung',
+            'nama' => 'Ade',
+            'alamat' => '-',
+            'tanggal_lahir' => '1987-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/28.jpeg',
+            'usia' => $this->calculateAge('1987-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Bongas',
+            'nama' => 'Ajang',
+            'alamat' => '-',
+            'tanggal_lahir' => '1987-03-09',
+            'nik' => '-',
+            'keterampilan' => 'LISTRIK',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/29.jpeg',
+            'usia' => $this->calculateAge('1987-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+  
+        skktenagakerja::create([
+            'kecamatan' => 'Cililin',
+            'desa' => 'Bongas',
+            'nama' => 'Yusuf',
+            'alamat' => '-',
+            'tanggal_lahir' => '1987-03-09',
+            'nik' => '-',
+            'keterampilan' => 'PENGECATAN',
+            'tahun_bimtek' => '2024',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => '/assets/library/skktenagakerja/30.jpeg',
+            'usia' => $this->calculateAge('1987-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+  
 
 
 
