@@ -22,7 +22,7 @@ class UijkController extends Controller
     {
         $data = uijk::where('nama_perusahaan', $nama_perusahaan)->firstOrFail();
         
-        return view('frontend.08_uijk.uijkshow', [
+        return view('frontend.08_UIJK.uijkshow', [
             'data' => $data,
             'title' => 'Details Data UIJK',
         ]);
@@ -33,7 +33,7 @@ class UijkController extends Controller
         // Mengambil data dengan kategori_perusahaan 'PT' dan menggunakan paginate()
         $data = uijk::where('kategori_perusahaan', 'PT')->paginate(15);
     
-        return view('frontend.08_uijk.uijkpt', [
+        return view('frontend.08_UIJK.uijkpt', [
             'title' => 'Perseroan Terbatas', // Mengoreksi nama judul
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
@@ -44,7 +44,7 @@ class UijkController extends Controller
         // Mengambil data dengan kategori_perusahaan 'PT' dan menggunakan paginate()
         $data = uijk::where('kategori_perusahaan', 'CV')->paginate(15);
     
-        return view('frontend.08_uijk.uijkcv', [
+        return view('frontend.08_UIJK.uijkcv', [
             'title' => 'Commanditaire Vennootschap', // Mengoreksi nama judul
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
