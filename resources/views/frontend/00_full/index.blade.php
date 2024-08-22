@@ -93,7 +93,7 @@
             </div>
             <div class="col-lg-5 px-0">
                 <div class="row mx-0">
-                    @foreach ($data->take(-4) as $item)
+                    @foreach ($data as $item)
         
                         <div class="col-md-6 px-0">
                             <a href="/portalberita/{{$item->judul}}">
