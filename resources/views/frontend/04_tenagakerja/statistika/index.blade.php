@@ -152,7 +152,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 265vh;
+    height: 212vh;
     background: linear-gradient(to bottom, yellow, white, navy);
     align-items: center;
     position: relative;
@@ -361,28 +361,28 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         });
         chart4.render();
 
-        // ----------------------------------------------------------------
-        var chart5 = new CanvasJS.Chart("usiachartContainer", {
-            exportEnabled: true,
-            animationEnabled: true,
-            title: {
-                text: "{{$judulusia}}",
-                fontFamily: "Roboto", // Atur fontFamily di CanvasJS
-                fontSize: 15    // 
-            },
-            legend: {
-                cursor: "pointer",
-                itemclick: explodePie
-            },
-            data: [{
-                type: "pie",
-                showInLegend: true,
-                toolTipContent: "{name}: <strong>{y}%</strong>",
-                indexLabel: "{name} - {y}%",
-                dataPoints: {!! $data_for_chart_usia !!}
-            }]
-        });
-        chart5.render();
+        // // ----------------------------------------------------------------
+        // var chart5 = new CanvasJS.Chart("usiachartContainer", {
+        //     exportEnabled: true,
+        //     animationEnabled: true,
+        //     title: {
+        //         text: "{{$judulusia}}",
+        //         fontFamily: "Roboto", // Atur fontFamily di CanvasJS
+        //         fontSize: 15    // 
+        //     },
+        //     legend: {
+        //         cursor: "pointer",
+        //         itemclick: explodePie
+        //     },
+        //     data: [{
+        //         type: "pie",
+        //         showInLegend: true,
+        //         toolTipContent: "{name}: <strong>{y}%</strong>",
+        //         indexLabel: "{name} - {y}%",
+        //         dataPoints: {!! $data_for_chart_usia !!}
+        //     }]
+        // });
+        // chart5.render();
         
     
 }
