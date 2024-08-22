@@ -60,7 +60,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 130vh;
+    height: 135vh;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
@@ -97,7 +97,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 105vh;
+    height: 110vh;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
@@ -241,11 +241,11 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                     <tr>
                         <td style="width: 150px; padding: 10px; vertical-align: top;">
                             <!-- Debug URL Gambar -->
-                            <p>Foto Pekerja</p>
-                        <img src="/assets/library/giskbb/petakbb.jpg" 
+                           
+                        <img src="{{$data->foto}}" 
                                 alt="Gambar Profil" 
-                                style="width: 100%; max-width: 150px; height: auto; border-radius: 8px;">
-
+                                style="width: 100%; min-width: 280px; height: auto; border-radius: 8px;">
+                                <p style="margin-top:10px;">Foto Pekerja</p>
                         </td>
                         
                         
