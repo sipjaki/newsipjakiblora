@@ -7,7 +7,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
-use App\Models\skktenagakerja;
+use App\Models\Skktenagakerja;
 use App\Models\peraturan;
 use App\Models\permenteri;
 use App\Models\perpemerintah;
@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
         // ===================================================================================
         // DATA TENAGA KERJA SKK KABUPATEN BANDUNG BARAT
         // skktenagakerja::factory(1235)->create(); 
-          \App\Models\skktenagakerja::factory(1000)->create();
+          \App\Models\Skktenagakerja::factory(1000)->create();
 
         skktenagakerja::create([
             'kecamatan' => 'Cililin',
