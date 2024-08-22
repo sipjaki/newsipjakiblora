@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('gambar');
             $table->string('laki_laki');
             $table->string('perempuan');
+            $table->string('total_penduduk');
             // $table->string('gambar');
             $table->text('keterangan_gis');
             // $table->date('tanggal');

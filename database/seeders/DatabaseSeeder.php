@@ -1951,6 +1951,7 @@ giskbb::create([
                 'gambar' => '/assets/library/giskbb/LEMBANG.jpeg',
                 'laki_laki' => '38671',
                 'perempuan' => '36666',
+                'total_penduduk' => '194937',
                 'keterangan_gis' => '
                 
                 <p>Kecamatan Lembang terletak di Kabupaten Bandung Barat, Provinsi Jawa Barat, Indonesia. Terkenal dengan pemandangan alam yang indah dan udara yang sejuk, Lembang menjadi salah satu destinasi populer bagi wisatawan yang mencari suasana pegunungan. Dengan lokasi strategisnya di wilayah Kabupaten Bandung Barat, kecamatan ini menawarkan berbagai fasilitas dan layanan yang mendukung kehidupan sehari-hari masyarakatnya, serta akses yang mudah ke pusat-pusat ekonomi dan pendidikan.</p>
@@ -1971,6 +1972,7 @@ giskbb::create([
                 'gambar' => '/assets/library/giskbb/PARONGPONG.jpeg',
                 'laki_laki' => '56101',
                 'perempuan' => '54436',
+                'total_penduduk' => '110537',
                 'keterangan_gis' => '
               <p>Kecamatan Parongpong adalah sebuah kecamatan di Kabupaten Bandung Barat, Provinsi Jawa Barat, Indonesia. Wilayah ini terkenal dengan kekayaan wisata bunga yang menjadi daya tarik utama bagi pengunjung. Parongpong dikenal sebagai pusat budidaya bunga dan tanaman hias, dengan mayoritas petani di wilayah ini berfokus pada produksi bunga dan tanaman hias lainnya. Keindahan alam dan potensi wisata yang dimilikinya menjadikan Parongpong salah satu destinasi favorit bagi wisatawan yang ingin menikmati keindahan alam dan keunikan tanaman hias.</p>
 
@@ -1990,6 +1992,7 @@ giskbb::create([
                 'gambar' => '/assets/library/giskbb/CISARUA.png',
                 'laki_laki' => '39293',
                 'perempuan' => '38080',
+                'total_penduduk' => '79118',
                 'keterangan_gis' => '
      <p>Kecamatan Cisarua adalah sebuah kecamatan yang terletak di Kabupaten Bandung Barat, Provinsi Jawa Barat, Indonesia. Terletak sekitar 9 kilometer dari ibu kota kabupaten ke arah timur laut, Kecamatan Cisarua memiliki posisi strategis yang mendukung perkembangan ekonominya. Pusat pemerintahan kecamatan ini berada di Desa Jambudipa, yang menjadi pusat administrasi dan kegiatan pemerintah daerah.</p>
 
@@ -2011,6 +2014,7 @@ giskbb::create([
                 'gambar' => '/assets/library/giskbb/CIKALONGWETAN.png',
                 'laki_laki' => '39293',
                 'perempuan' => '38080',
+                'total_penduduk' => '125630',
                 'keterangan_gis' => ' DATA BELUM DIISI
      
                     ',
@@ -2026,6 +2030,7 @@ giskbb::create([
                 'gambar' => '/assets/library/giskbb/CIPEUNDEY.png',
                 'laki_laki' => '43453',
                 'perempuan' => '41920',
+                'total_penduduk' => '87376',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2036,8 +2041,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'NGAMPRAH',
                 'gambar' => '/assets/library/giskbb/NGAMPRAH.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '89279',
+                'perempuan' => '86595',
+                'total_penduduk' => '175874',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2049,8 +2055,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'CIPATAT',
                 'gambar' => '/assets/library/giskbb/CIPATAT.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '72219',
+                'perempuan' => '69570',
+                'total_penduduk' => '141789',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2061,8 +2068,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'PADALARANG',
                 'gambar' => '/assets/library/giskbb/PADALARANG.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '93110',
+                'perempuan' => '89871',
+                'total_penduduk' => '182981',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2073,8 +2081,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'BATUJAJAR',
                 'gambar' => '/assets/library/giskbb/BATUJAJAR.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '55063',
+                'perempuan' => '53516',
+                'total_penduduk' => '108579',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2085,8 +2094,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'CIHAMPELAS',
                 'gambar' => '/assets/library/giskbb/CIHAMPELAS.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '68421',
+                'perempuan' => '65263',
+                'total_penduduk' => '133684',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2097,8 +2107,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'CILILIN',
                 'gambar' => '/assets/library/giskbb/CILILIN.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '49169',
+                'perempuan' => '46959',
+                'total_penduduk' => '96128',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2109,8 +2120,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'CIPONGKOR',
                 'gambar' => '/assets/library/giskbb/CIPONGKOR.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '51118',
+                'perempuan' => '48679',
+                'total_penduduk' => '99797',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2121,8 +2133,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'RONGGA',
                 'gambar' => '/assets/library/giskbb/RONGGA.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '30394',
+                'perempuan' => '28604',
+                'total_penduduk' => '58998',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2133,8 +2146,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'SINDANGKERTA',
                 'gambar' => '/assets/library/giskbb/SINDANGKERTA.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '37059',
+                'perempuan' => '36063',
+                'total_penduduk' => '73122',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2147,8 +2161,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'GUNUNG HALU',
                 'gambar' => '/assets/library/giskbb/GUNUNGHALU.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '40001',
+                'perempuan' => '37911',
+                'total_penduduk' => '77912',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
@@ -2159,8 +2174,9 @@ giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'nama_kecamatan' => 'SAGULING',
                 'gambar' => '/assets/library/giskbb/saguling.png',
-                'laki_laki' => '1',
-                'perempuan' => '2',
+                'laki_laki' => '17442',
+                'perempuan' => '16863',
+                'total_penduduk' => '34305',
                 'keterangan_gis' => ' DATA BELUM DIISI',
          
 'created_at' => now(),
