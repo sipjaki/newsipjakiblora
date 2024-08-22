@@ -232,7 +232,7 @@
                  
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-book" style="margin-left: 3px; margin-right: 0px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);" ></i>
-                    <a href="/404" style="color: black; text-decoration: none; text-align:left">KECELAKAAN</a>
+                    <a href="/pelatihan/kecelakaan" style="color: black; text-decoration: none; text-align:left">KECELAKAAN</a>
                 </div>
                  
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">

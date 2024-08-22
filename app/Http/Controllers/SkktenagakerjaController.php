@@ -598,6 +598,26 @@ public function listregister()
         }
 
         
+        public function penanggungjawabteknis()
+        {
+           
+            // Mengirimkan data ke view
+            return view('frontend.04_tenagakerja.penanggungjawabteknis.index', [
+                'title' => 'Penanggung Jawab Teknis',
+            ]);
+        }
+        
+        public function timpembinajasakonstruksi()
+        {
+           
+            // Mengirimkan data ke view
+            return view('frontend.04_tenagakerja.timpembina.index', [
+                'title' => 'Tim Pembina Jasa Konstruksi',
+            ]);
+        }
+        
+    
+        
 }
 
 

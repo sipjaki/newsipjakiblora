@@ -24,6 +24,7 @@ use App\Models\suratkeputusan;
 use App\Models\berita;
 use App\Models\giskbb;
 use App\Models\kegiatanjaskon;
+use App\Models\pelatihan;
 use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -2768,8 +2769,69 @@ giskbb::create([
                 'updated_at' => now(),
             ]);
             
-
-
+// ===================== ===================== ===================== =====================
+            pelatihan::create([
+                'tahun'  => '2015',
+                'kasus' => '110285',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+            pelatihan::create([
+                'tahun'  => '2016',
+                'kasus' => '101367',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+            pelatihan::create([
+                'tahun'  => '2017',
+                'kasus' => '123040',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+            pelatihan::create([
+                'tahun'  => '2018',
+                'kasus' => '173415',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+            pelatihan::create([
+                'tahun'  => '2019',
+                'kasus' => '182835',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+            pelatihan::create([
+                'tahun'  => '2020',
+                'kasus' => '221740',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+            pelatihan::create([
+                'tahun'  => '2021',
+                'kasus' => '234270',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+            pelatihan::create([
+                'tahun'  => '2022',
+                'kasus' => '265334',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+            
+            pelatihan::create([
+                'tahun'  => '2023',
+                'kasus' => '329897',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
 
     }
  /**

@@ -4,6 +4,7 @@ use App\Http\Controllers\FedashboardController;
 use App\Http\Controllers\GiskbbController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PelatihanController;
 use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\SkktenagakerjaController;
 use App\Http\Controllers\StrukturController;
@@ -132,20 +133,10 @@ Route::get('/giskbb/{nama_kecamatan}', [GiskbbController::class, 'namakecamatans
 
 
 
+// =======================================
+Route::get('/tenagakerja/pjt', [SkktenagakerjaController::class, 'penanggungjawabteknis']); 
+Route::get('/tenagakerja/timpembina', [SkktenagakerjaController::class, 'timpembinajasakonstruksi']); 
 
-Route::get('/tenagakerja/pjt', function () {
-    // return view('welcome');
-    return view('frontend.04_tenagakerja.02_pjt', [
-        'title' => 'Penanggung Jawab Teknis'
-    ]);
-});
-
-Route::get('/tenagakerja/timpembina', function () {
-    // return view('welcome');
-    return view('frontend.04_tenagakerja.03_timpembina', [
-        'title' => 'Tim Pembina Jasa Konstruksi'
-    ]);
-});
 
 
 // ---------------------- 05 INFORMASI SPM -----------------------//
@@ -175,6 +166,11 @@ Route::get('/tdup', function () {
         'title' => 'Tanda Daftar Usaha Perseroan'
     ]);
 });
+
+
+// ---------------------- 10 PELATIHAN -----------------------//
+// -------- BAGIAN 1 ---------------------------------
+Route::get('/pelatihan/kecelakaan', [PelatihanController::class, 'index']);  
 
 // ---------------------- 11 PERATURAN PERATURAN -----------------------//
 // -------- BAGIAN 1 ---------------------------------
