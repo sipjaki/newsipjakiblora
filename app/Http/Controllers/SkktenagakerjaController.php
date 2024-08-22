@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 // use Carbon\Carbon;
 use Carbon\Carbon; 
 
-use App\Models\skktenagakerja; // Pastikan namespace model sesuai dengan struktur direktori
+use App\Models\Tukangterampil; // Pastikan namespace model sesuai dengan struktur direktori
 
 class SkktenagakerjaController extends Controller
 {
@@ -14,11 +14,11 @@ class SkktenagakerjaController extends Controller
     public function index()
     {
         // Mengambil data dengan pagination
-        $data = skktenagakerja::paginate(15);
-        $totalData = skktenagakerja::count();
+        $data = Tukangterampil::paginate(15);
+        $totalData = Tukangterampil::count();
 
         // Mengambil semua data untuk mendapatkan kecamatan unik
-        $allKecamatan = skktenagakerja::all();
+        $allKecamatan = Tukangterampil::all();
         
         // Menggunakan koleksi untuk mendapatkan nilai unik
         $datakecamatan = $allKecamatan->pluck('kecamatan')->unique();
@@ -35,7 +35,7 @@ class SkktenagakerjaController extends Controller
     
     public function showByName($nama)
     {
-        $item = Skktenagakerja::where('nama', $nama)->firstOrFail();
+        $item = Tukangterampil::where('nama', $nama)->firstOrFail();
 
         return view('backend.04_skk.01_skk.show', [
             'data' => $item,
@@ -46,11 +46,11 @@ class SkktenagakerjaController extends Controller
 public function feskktenagakerja()
     {
         
-        $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
-        $totalData = skktenagakerja::count();
+        $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
+        $totalData = Tukangterampil::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
-          $allKecamatan = skktenagakerja::all();
+          $allKecamatan = Tukangterampil::all();
         
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $datakecamatan = $allKecamatan->pluck('kecamatan')->unique();
@@ -65,11 +65,11 @@ public function feskktenagakerja()
 
 public function listkecamatan()
     {
-        $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
-        $totalData = skktenagakerja::count();
+        $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
+        $totalData = Tukangterampil::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
-          $allKecamatan = skktenagakerja::all();
+          $allKecamatan = Tukangterampil::all();
         
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $datakecamatan = $allKecamatan->pluck('kecamatan')->unique();
@@ -85,7 +85,7 @@ public function listkecamatan()
 
     public function feskktenagakerjashowByName($nama)
     {
-        $item = Skktenagakerja::where('nama', $nama)->firstOrFail();
+        $item = Tukangterampil::where('nama', $nama)->firstOrFail();
 
         return view('frontend.04_tenagakerja.01_skasktshow', [
             'data' => $item,
@@ -95,20 +95,20 @@ public function listkecamatan()
 
     public function feskktenagakerjakecamatanshowBykecamatan(Request $request)
     {
-        $totalData = skktenagakerja::count();
+        $totalData = Tukangterampil::count();
         // Mengambil parameter 'judul' dari query string
         $judul = $request->query('judul');
         
         // Memfilter data berdasarkan kecamatan jika 'judul' ada
         if ($judul) {
-            $data = skktenagakerja::where('kecamatan', $judul)->paginate(15);
+            $data = Tukangterampil::where('kecamatan', $judul)->paginate(15);
         } else {
             // Ambil semua data jika tidak ada parameter
-            $data = skktenagakerja::paginate(15);
+            $data = Tukangterampil::paginate(15);
         }
 
         // Mengambil nilai unik dari atribut 'kecamatan'
-        $data_kecamatan = skktenagakerja::select('kecamatan')
+        $data_kecamatan = Tukangterampil::select('kecamatan')
             ->distinct()
             ->pluck('kecamatan');
 
@@ -123,11 +123,11 @@ public function listkecamatan()
 
 public function listdesa()
     {
-        $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
-        $totalData = skktenagakerja::count();
+        $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
+        $totalData = Tukangterampil::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
-          $allKecamatan = skktenagakerja::all();
+          $allKecamatan = Tukangterampil::all();
         
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $datadesa = $allKecamatan->pluck('desa')->unique();
@@ -142,21 +142,21 @@ public function listdesa()
 
     public function feskktenagakerjadesashowBydesa(Request $request)
     {
-        $totalData = skktenagakerja::count();
+        $totalData = Tukangterampil::count();
 
         // Mengambil parameter 'judul' dari query string
         $judul = $request->query('judul');
         
         // Memfilter data berdasarkan kecamatan jika 'judul' ada
         if ($judul) {
-            $data = skktenagakerja::where('desa', $judul)->paginate(15);
+            $data = Tukangterampil::where('desa', $judul)->paginate(15);
         } else {
             // Ambil semua data jika tidak ada parameter
-            $data = skktenagakerja::paginate(15);
+            $data = Tukangterampil::paginate(15);
         }
 
         // Mengambil nilai unik dari atribut 'kecamatan'
-        $data_desa= skktenagakerja::select('desa')
+        $data_desa= Tukangterampil::select('desa')
             ->distinct()
             ->pluck('desa');
 
@@ -172,11 +172,11 @@ public function listdesa()
 
 public function listketerampilan()
     {
-        $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
-        $totalData = skktenagakerja::count();
+        $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
+        $totalData = Tukangterampil::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
-          $allKecamatan = skktenagakerja::all();
+          $allKecamatan = Tukangterampil::all();
         
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $dataketerampilan = $allKecamatan->pluck('keterampilan')->unique();
@@ -193,20 +193,20 @@ public function listketerampilan()
     public function feskktenagakerjaketerampilanshowByketerampilan(Request $request)
     {
 
-        $totalData = skktenagakerja::count();
+        $totalData = Tukangterampil::count();
         // Mengambil parameter 'judul' dari query string
         $judul = $request->query('judul');
         
         // Memfilter data berdasarkan kecamatan jika 'judul' ada
         if ($judul) {
-            $data = skktenagakerja::where('keterampilan', $judul)->paginate(15);
+            $data = Tukangterampil::where('keterampilan', $judul)->paginate(15);
         } else {
             // Ambil semua data jika tidak ada parameter
-            $data = skktenagakerja::paginate(15);
+            $data = Tukangterampil::paginate(15);
         }
 
         // Mengambil nilai unik dari atribut 'kecamatan'
-        $data_keterampilan= skktenagakerja::select('keterampilan')
+        $data_keterampilan= Tukangterampil::select('keterampilan')
             ->distinct()
             ->pluck('keterampilan');
 
@@ -222,11 +222,11 @@ public function listketerampilan()
     
 public function listregister()
 {
-    $data= skktenagakerja::paginate(15); // Menggunakan paginate() untuk pagination
-    $totalData = skktenagakerja::count();
+    $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
+    $totalData = Tukangterampil::count();
 
       // Mengambil semua data untuk mendapatkan kecamatan unik
-      $allKecamatan = skktenagakerja::all();
+      $allKecamatan = Tukangterampil::all();
     
       // Menggunakan koleksi untuk mendapatkan nilai unik
       $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
@@ -243,21 +243,21 @@ public function listregister()
         public function feskktenagakerjabimtekshowBybimtek(Request $request)
         {
 
-            $totalData = skktenagakerja::count();
+            $totalData = Tukangterampil::count();
 
             // Mengambil parameter 'judul' dari query string
             $judul = $request->query('judul');
             
             // Memfilter data berdasarkan kecamatan jika 'judul' ada
             if ($judul) {
-                $data = skktenagakerja::where('tahun_bimtek', $judul)->paginate(15);
+                $data = Tukangterampil::where('tahun_bimtek', $judul)->paginate(15);
             } else {
                 // Ambil semua data jika tidak ada parameter
-                $data = skktenagakerja::paginate(15);
+                $data = Tukangterampil::paginate(15);
             }
 
             // Mengambil nilai unik dari atribut 'kecamatan'
-            $data_tahunbimtek= skktenagakerja::select('tahun_bimtek')
+            $data_tahunbimtek= Tukangterampil::select('tahun_bimtek')
                 ->distinct()
                 ->pluck('tahun_bimtek');
 
@@ -276,7 +276,7 @@ public function listregister()
     
     // ----------------------------------------------------------------------------------------
           // DATA TAHUN BIMTEK PERSENTASE 
-          $data_keterampilan = skktenagakerja::select('keterampilan')
+          $data_keterampilan = Tukangterampil::select('keterampilan')
           ->selectRaw('count(*) as total')
           ->groupBy('keterampilan')
           ->get();
@@ -293,7 +293,7 @@ public function listregister()
       });
       // ----------------------------------------------------------------------------------------
             // DATA CHART BERDASARKAN KECAMATAN 
-            $data_kecamatan = skktenagakerja::select('kecamatan')
+            $data_kecamatan = Tukangterampil::select('kecamatan')
             ->selectRaw('count(*) as total')
             ->groupBy('kecamatan')
             ->get();
@@ -308,7 +308,7 @@ public function listregister()
     
         // ----------------------------------------------------------------------------------------
             // DATA CHART BERDASARKAN DESA
-            $data_desa = skktenagakerja::select('desa')
+            $data_desa = Tukangterampil::select('desa')
             ->selectRaw('count(*) as total')
             ->groupBy('desa')
             ->get();
@@ -323,7 +323,7 @@ public function listregister()
 
         // ----------------------------------------------------------------------------------------
                 // DATA TAHUN BIMTEK PERSENTASE 
-                $data_tahun_bimtek = skktenagakerja::select('tahun_bimtek')
+                $data_tahun_bimtek = Tukangterampil::select('tahun_bimtek')
                 ->selectRaw('count(*) as total')
                 ->groupBy('tahun_bimtek')
                 ->get();
@@ -360,7 +360,7 @@ public function listregister()
 
             // ----------------------------------------------------------------------------------------
              // Ambil data usia dari database
-                $data_usia = skktenagakerja::select('usia')->get();
+                $data_usia = Tukangterampil::select('usia')->get();
 
                 // Hitung usia berdasarkan tanggal lahir
                 $usiaArray = $data_usia->map(function ($item) {
@@ -390,8 +390,8 @@ public function listregister()
 
             // ----------------------------------------------------------------------------------------
 
-            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
-            $totalData = skktenagakerja::count();
+            $data= Tukangterampil::all(); // Menggunakan paginate() untuk pagination
+            $totalData = Tukangterampil::count();
 
             // Mengambil semua data untuk mendapatkan kecamatan unik
             //   $allKecamatan = skktenagakerja::all();
@@ -430,7 +430,7 @@ public function listregister()
     
     // ----------------------------------------------------------------------------------------
           // DATA TAHUN BIMTEK PERSENTASE 
-          $data_keterampilan = skktenagakerja::select('keterampilan')
+          $data_keterampilan = Tukangterampil::select('keterampilan')
           ->selectRaw('count(*) as total')
           ->groupBy('keterampilan')
           ->get();
@@ -449,8 +449,8 @@ public function listregister()
              
             // ----------------------------------------------------------------------------------------
 
-            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
-            $totalData = skktenagakerja::count();
+            $data= Tukangterampil::all(); // Menggunakan paginate() untuk pagination
+            $totalData = Tukangterampil::count();
 
             // Mengambil semua data untuk mendapatkan kecamatan unik
             //   $allKecamatan = skktenagakerja::all();
@@ -476,7 +476,7 @@ public function listregister()
     
       // ----------------------------------------------------------------------------------------
             // DATA CHART BERDASARKAN KECAMATAN 
-            $data_kecamatan = skktenagakerja::select('kecamatan')
+            $data_kecamatan = Tukangterampil::select('kecamatan')
             ->selectRaw('count(*) as total')
             ->groupBy('kecamatan')
             ->get();
@@ -492,8 +492,8 @@ public function listregister()
     
             // ----------------------------------------------------------------------------------------
 
-            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
-            $totalData = skktenagakerja::count();
+            $data= Tukangterampil::all(); // Menggunakan paginate() untuk pagination
+            $totalData = Tukangterampil::count();
 
             // Mengambil semua data untuk mendapatkan kecamatan unik
             //   $allKecamatan = skktenagakerja::all();
@@ -518,7 +518,7 @@ public function listregister()
         {
         // ----------------------------------------------------------------------------------------
             // DATA CHART BERDASARKAN DESA
-            $data_desa = skktenagakerja::select('desa')
+            $data_desa = Tukangterampil::select('desa')
             ->selectRaw('count(*) as total')
             ->groupBy('desa')
             ->get();
@@ -533,8 +533,8 @@ public function listregister()
 
         // ----------------------------------------------------------------------------------------
     
-            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
-            $totalData = skktenagakerja::count();
+            $data= Tukangterampil::all(); // Menggunakan paginate() untuk pagination
+            $totalData = Tukangterampil::count();
 
             // Mengambil semua data untuk mendapatkan kecamatan unik
             //   $allKecamatan = skktenagakerja::all();
@@ -559,7 +559,7 @@ public function listregister()
     
         // ----------------------------------------------------------------------------------------
                 // DATA TAHUN BIMTEK PERSENTASE 
-                $data_tahun_bimtek = skktenagakerja::select('tahun_bimtek')
+                $data_tahun_bimtek = Tukangterampil::select('tahun_bimtek')
                 ->selectRaw('count(*) as total')
                 ->groupBy('tahun_bimtek')
                 ->get();
@@ -577,8 +577,8 @@ public function listregister()
 
             // ----------------------------------------------------------------------------------------
 
-            $data= skktenagakerja::all(); // Menggunakan paginate() untuk pagination
-            $totalData = skktenagakerja::count();
+            $data= Tukangterampil::all(); // Menggunakan paginate() untuk pagination
+            $totalData = Tukangterampil::count();
 
             // Mengambil semua data untuk mendapatkan kecamatan unik
             //   $allKecamatan = skktenagakerja::all();
