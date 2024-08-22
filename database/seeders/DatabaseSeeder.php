@@ -95,9 +95,9 @@ class DatabaseSeeder extends Seeder
 
         // ===================================================================================
         // DATA TENAGA KERJA SKK KABUPATEN BANDUNG BARAT
-        Skktenagakerja::factory(1235)->create(); 
+        skktenagakerja::factory(1235)->create(); 
 
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'DEDE ROYANI',
@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
     
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'RONI RUSTANDI',
@@ -131,7 +131,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
     
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'AHMAD SANDI FAUIZI',
@@ -148,7 +148,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
     
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'IMAN',
@@ -165,7 +165,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
     
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'DEDI MULYADI',
@@ -182,7 +182,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
    
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'AYI HERMAN',
@@ -199,7 +199,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
    
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'ANTO.S',
@@ -216,7 +216,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
    
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'ASEP SUTISNA',
@@ -233,7 +233,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
    
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'IWAN SETIAWAN',
@@ -250,7 +250,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
    
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'NANDANG',
@@ -269,7 +269,7 @@ class DatabaseSeeder extends Seeder
 
     
    
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'DASEP',
@@ -286,7 +286,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
    
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'ABUDIN',
@@ -303,7 +303,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'MUHAMMAD NANDA I',
@@ -320,7 +320,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
         
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'HILMAN',
@@ -337,7 +337,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
         
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'AANG ANWAR',
@@ -354,7 +354,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
         
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'NANANG RIANA',
@@ -371,7 +371,7 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
         
-        Skktenagakerja::create([
+        skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
             'nama' => 'IWAN SETIAWAN',
