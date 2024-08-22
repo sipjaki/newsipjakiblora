@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
 
         // ===================================================================================
         // DATA TENAGA KERJA SKK KABUPATEN BANDUNG BARAT
-        // skktenagakerja::factory(1235)->create(); 
+        skktenagakerja::factory(1235)->create(); 
 
         skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
