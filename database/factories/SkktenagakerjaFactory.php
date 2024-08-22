@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Skktenagakerja;
+use App\Models\skktenagakerja;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Factory as FakerFactory;
 use Carbon\Carbon;
@@ -11,7 +11,7 @@ use Carbon\Carbon;
  */
 class SkktenagakerjaFactory extends Factory
 {
-    protected $model = Skktenagakerja::class;
+    protected $model = skktenagakerja::class;
 
     // Daftar desa per kecamatan di Kabupaten Bandung Barat
     protected $desaByKecamatan = [
