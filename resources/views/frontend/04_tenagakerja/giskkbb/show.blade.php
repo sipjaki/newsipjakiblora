@@ -167,7 +167,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 220vh;
+    height: 205vh;
     background: linear-gradient(to bottom, yellow, white, navy);
     align-items: center;
     position: relative;
@@ -204,7 +204,6 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
         overflow: hidden;
     }
     .container-kbb img {
@@ -224,165 +223,128 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         }
     }
 </style>
-<div class="container-kbb">
-    <img src="/assets/library/giskbb/petakbb.jpg" alt="" style="width: 95%; border-radius:15px;">
-</div>
-
-
 <style>
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-left: 10px;
-        margin-right: 10px;
+    .badgepencarian {
+                background: linear-gradient(to right, #FFD700, #FFD700);
+                color: black;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                margin-bottom: 20px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgepencarian:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+    .badgegiskbb {
+                background: linear-gradient(to right, green, green);
+                color: white;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                margin-bottom: 20px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgegiskbb:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+
+    </style>  
+
+<div class="div">    
+    <a href="/skkchart/register" style="background: white;">
+        <button class="badgepencarian" style="border: none; font-size:12px; cursor:pointer; "><i class="fa fa-map-marker" style="margin-right: 5px;"></i>
+            KECAMATAN {{$data_namakecamatan->nama_kecamatan}}</button>
+    </a>
+    <a href="/giskbb">
+        <button class="badgegiskbb" style="border: none; font-size:12px; cursor:pointer; "><i class="fa fa-arrow-left" style="margin-right: 5px;"></i>
+        KEMBALI</button>
+    </a>
+</div>
+
+<div class="container-kbb" style="margin-bottom:50px;">
+    <img src="{{$data_namakecamatan->gambar}}" alt="" style="width: 400px; height:400px; border-radius:15px;">
+</div>
+
+<script>
+    window.onload = function () {
+    
+        var chart = new CanvasJS.Chart("chartContainer", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title:{
+                text: "Distribusi Jumlah Berdasarkan Gender"
+            },
+            legend:{
+                cursor: "pointer",
+                itemclick: explodePie
+            },
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{name}: <strong>{y}%</strong>",
+                indexLabel: "{name} - {y}%",
+                dataPoints: [
+                    { y: {{ $persentase_laki_laki }}, name: "Laki-Laki", exploded: true },
+                    { y: {{ $persentase_perempuan }}, name: "Perempuan" }
+                ]
+            }]
+        });
+        chart.render();
     }
-
-    th, td {
-        font-family: 'Lato', sans-serif;
-        font-weight: 700;
-        color: black;
-        font-size: 12px;
-        border: 1px solid #ddd;
-        padding: 8px;
+    
+    function explodePie (e) {
+        if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+        } else {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+        }
+        e.chart.render();
     }
+    </script>
 
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-        font-size: 12px;
-    }
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 
-    th {
-        /* background-color: #4CAF50; */
-        /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
-        background-color:  #FFCB0F;
-        color: black;
-        font-size: 14px;
-    }
 
-    .image-cell {
-            width: 200px; /* Set width of the cell */
-            height: 200px; /* Set height of the cell */
-            text-align: center;
-            vertical-align: middle;
-        }
-        .image-cell img {
-            max-width: 100%;
-            max-height: 100%;
-            width: auto;
-            height: auto;
-            display: block;
-            margin: auto;
-        }
-</style>
- <table style="margin-top:50px;">
-    <thead>
-        <tr>
-            <th style="width:45px;">No</th>
-            <th style="width:200px;">KECAMATAN</th>
-            {{-- <th style="width:300px;">PETA KAWASAN</th> --}}
-            <th>LAKI-LAKI</th>
-            <th>PEREMPUAN</th>
-            <th>TOTAL PENDUDUK</th>
-            <th>VIEW</th>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="container" style="
+       max-width: 100%;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top:25px;
 
-        {{-- ============================================ --}}
-        {{-- @php
-    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
-        @endphp --}}
-        
-
-        @foreach($data as $item )
-        
-        <tr>
-            <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $loop->iteration }}</td>
-            <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->nama_kecamatan }}</td>
-            {{-- <td class="image-cell" style="font-size: 12px; text-transform: uppercase; text-align:center;"><img src="{{$item->gambar}}" alt=""></td> --}}
-            <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ number_format($item->laki_laki)  }} JIWA</td>
-            <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ number_format($item->perempuan) }} JIWA</td>
-            <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ number_format($item->total_penduduk) }} JIWA</td>
-            
-            
-            <td>
-                
-            <style>
-                                    /* Container for the buttons */
-        .button-container {
-            display: flex;
-            gap: 10px; /* Space between icons */
-            justify-content: center; /* Center the icons horizontally */
-        }
-
-        /* Style for the individual buttons */
-        .iconhover {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 25px; /* Adjust width as needed */
-            height: 25px; /* Adjust height as needed */
-            background: navy, white; /* Yellow background */
-            color: white; /* Text color */
-            border: none;
-            border-radius: 50%;
-            text-decoration: none;
-            padding: 3px 3px;
-            font-size: 15px; /* Adjust font size as needed */
-            transition: background 0.3s, color 0.3s;
-            cursor: pointer;
-        }
-
-        .iconhover:hover {
-            background: white; /* White background on hover */
-            color: black; /* Black text color on hover */
-        }
-
-        .iconhover i {
-            margin: 0;
-        }
-        
-            </style>
-
-            <div class="button-container">
-            <a href="/giskbb/{{ $item->nama_kecamatan}}" class="iconhover" title="View">
-                <button style="
-                background: green; 
-                border: none; 
-                cursor: pointer; 
-                padding: 5px 5px; /* Padding diperbesar untuk ukuran tombol */
-                display: inline-flex; 
-                align-items: center; 
-                border-radius: 5px; /* Opsional: menambahkan sudut membulat */
             ">
-                <i class="fas fa-arrow-right" style="color: white; font-size: 20px;"></i> <!-- Ukuran ikon diperbesar -->
-            </button>
-            
-            </a>
-                    
-                </div>
 
-                <script>
-                    function downloadCSV() {
-                        // Function to handle CSV download
-                    }
-                    </script>
-            </td>
-        </tr>
-        @endforeach
-        {{-- ============================================ --}}
-        
-        
-    </tbody>
-</table>
+<h6 style="color: black; font-size:20px;">
+    <span style="font-size: 16px; margin-bottom:20px;">Keterangan Wilayah Kecamatan {{ ucwords(strtolower($data_namakecamatan->nama_kecamatan)) }}</span>
+</h6>
+<br>
+<h6 style="text-align: justify">
 
+    {!! $data_namakecamatan->keterangan_gis !!}
+</h6>
+    </div>
 
-</div>
-
-
+    {{-- ------------------------------------ END FITUR ------------- --}}
         
 </div>
-{{-- ------------------------------------ END FITUR ------------- --}}
 
 
            

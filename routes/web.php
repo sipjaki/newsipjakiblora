@@ -122,6 +122,7 @@ Route::get('/skk/statistika', [SkktenagakerjaController::class, 'liststatistika'
 
 // ==============================
 Route::get('/giskbb', [GiskbbController::class, 'index']); 
+Route::get('/giskbb/{nama_kecamatan}', [GiskbbController::class, 'namakecamatanshowBykecamatan']);
 
 
 
