@@ -37,8 +37,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         
-        \App\Models\User::factory(2)->create();
-        \App\Models\skktenagakerja::factory(1000)->create();
+        User::factory(2)->create();
+       
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -98,6 +98,7 @@ class DatabaseSeeder extends Seeder
         // ===================================================================================
         // DATA TENAGA KERJA SKK KABUPATEN BANDUNG BARAT
         // skktenagakerja::factory(1235)->create(); 
+        skktenagakerja::factory(1000)->create();
 
         skktenagakerja::create([
             'kecamatan' => 'Cililin',
