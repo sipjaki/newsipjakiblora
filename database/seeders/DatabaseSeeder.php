@@ -267,8 +267,6 @@ class DatabaseSeeder extends Seeder
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
-    
-   
         Skktenagakerja::create([
             'kecamatan' => 'Cipongkor',
             'desa' => 'MEKARSARI',
