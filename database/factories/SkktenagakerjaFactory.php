@@ -9,7 +9,7 @@ use Carbon\Carbon;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\skktenagakerja>
  */
-class skktenagakerjaFactory extends Factory
+class SkktenagakerjaFactory extends Factory
 {
     protected $model = skktenagakerja::class;
 
