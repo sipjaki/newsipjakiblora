@@ -50,16 +50,30 @@
 Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 </h2>
 </div>
-
 <style>
     @media (min-width: 769px) and (max-width: 1024px) {
         .container-bagan {
-        }
+                display: flex;
+                flex-direction: column;
+                background-color: #FFCB0F;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 25px;
+                text-align: center;
+                width: 100%;
+                height: 50vh;
+                background: linear-gradient(to bottom, yellow, white, white);
+                align-items: center;
+                position: relative;
+            }
     }
     </style>
 
 
-<div class="container-bagan" style="
+<div class="container" 
+@media (min-width: 769px) and (max-width: 1024px) {    
+
+    style="
     display: flex;
     flex-direction: column;
     background-color: #FFCB0F;
@@ -68,7 +82,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 40vh;
+    height: 26vh;
     background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
@@ -80,7 +94,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 </div>
 
 
-<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Kementrian Pekerjaan Umum Dan Penataan Ruang</button> </h1>
+<h1 style="font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Kementrian Pekerjaan Umum Dan Penataan Ruang</button> </h1>
 
 
 <style>
@@ -124,25 +138,11 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             }    
 </style>
 
-<br>
-
 @include('tambahan.pencarianskk.menunavigasi')
 
+
     {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
-
-<br>
     
-</div>
-
-
-
-
-
-{{-- ------------------------------------ END FITUR ------------- --}}
-
-           
-        </div>
-</div>
 </div>
 
 {{-- ====================== ====================== --}}
