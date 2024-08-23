@@ -68,7 +68,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 30vh;
+    height: 40vh;
     background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
