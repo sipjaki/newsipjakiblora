@@ -54,12 +54,27 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 <style>
     @media (min-width: 769px) and (max-width: 1024px) {
         .container-bagan {
-        }
+                display: flex;
+                flex-direction: column;
+                background-color: #FFCB0F;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 25px;
+                text-align: center;
+                width: 100%;
+                height: 30vh;
+                background: linear-gradient(to bottom, yellow, white, white);
+                align-items: center;
+                position: relative;
+            }
     }
     </style>
 
 
-<div class="container-bagan" style="
+<div class="container-bagan" 
+@media (min-width: 769px) and (max-width: 1024px) {    
+
+    style="
     display: flex;
     flex-direction: column;
     background-color: #FFCB0F;
