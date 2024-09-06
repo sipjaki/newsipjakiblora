@@ -982,7 +982,8 @@ class DatabaseSeeder extends Seeder
 //======================== ===================================================================================
         peraturan::create([
             'judul' => 'UNDANG- UNDANG JASA KONSTRUKSI',
-            'peraturan' => '/assets/library/peraturan/01_uud/UU_NO_02_TAHUN_2017.pdf',
+            'peraturan' => '/storage/undangundang/01_uud/UU_NO_02_TAHUN_2017.pdf',
+            
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
