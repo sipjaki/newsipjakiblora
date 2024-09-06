@@ -231,6 +231,8 @@ Route::get('/tupoksi', [StrukturController::class, 'tupoksi'])->middleware('auth
 
 // -------- BAGIAN 14 BACKEND PERATURAN UNDANGUNDANG ---------------------------------
 Route::get('/peruud', [PeraturanController::class, 'undangundang'])->middleware('auth');  
+Route::get('/peruud/{peraturan}', [PeraturanController::class, 'updateundangundang'])->middleware('auth');  
+
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');

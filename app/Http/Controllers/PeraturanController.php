@@ -44,6 +44,19 @@ class PeraturanController extends Controller
     }
 
 
+    // -------------------- UPDATE DATA UNDANG UNDANG JASA KONSTRUKSI ----------------------
+    public function updateundangundang()
+    {
+        // $data= peraturan::all(); // Menggunakan paginate() untuk pagination
+
+        // return view('frontend.11_peraturan.01_undangundang', [
+        //     'title' => 'Undang - Undang Jasa Konstruksi',
+        //     'data' => $data, // Mengirimkan data paginasi ke view
+        // ]);
+    }
+
+
+
     // -------------------------------------------------------------------------------------------------------
     // BACKEND DATABASE PEMERINTAH 
 
