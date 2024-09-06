@@ -42,19 +42,51 @@ class PeraturanController extends Controller
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }
-
-
+    
+    
     // -------------------- UPDATE DATA UNDANG UNDANG JASA KONSTRUKSI ----------------------
-    public function updateundangundang()
+    public function updateundangundang($judul)
     {
-        // $data= peraturan::all(); // Menggunakan paginate() untuk pagination
-
-        // return view('frontend.11_peraturan.01_undangundang', [
-        //     'title' => 'Undang - Undang Jasa Konstruksi',
-        //     'data' => $data, // Mengirimkan data paginasi ke view
-        // ]);
+        // Cari data undang-undang berdasarkan nilai 'judul'
+        $undangUndang = peraturan::where('judul', $judul)->firstOrFail();
+        
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.14_peraturan.01_undangundang.update', [
+            'undangUndang' => $undangUndang,
+            'title' => 'Update UUD Jasa Konstruksi'
+        ]);
     }
+    
+    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+            public function createupdateundangundang(Request $request, $judul)
+        {
+            // Validasi input
+            $request->validate([
+                'judul' => 'required|string|max:255',
+                // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+            ]);
 
+            // Cari data undang-undang berdasarkan nilai 'judul'
+            $undangUndang = peraturan::where('judul', $judul)->firstOrFail();
+            
+            // Simpan file dan ambil path-nya
+            $filePath = null;
+            if ($request->hasFile('peraturan')) {
+                $file = $request->file('peraturan');
+                $filePath = $file->store('undangundang', 'public'); // Menyimpan di storage/app/public/undangundang
+            }
+
+            // Update data undang-undang dengan data dari form
+            $undangUndang->update([
+                'judul' => $request->input('judul'),
+                'peraturan' => $filePath ? $filePath : $undangUndang->peraturan, // Gunakan path baru jika ada file
+            ]);
+
+            // Redirect ke URL '/peruud' dengan pesan sukses
+            return redirect('/peruud')
+                                ->with('success', 'Data Undang-Undang Berhasil Di Update !');
+        }
+    
 
 
     // -------------------------------------------------------------------------------------------------------
@@ -84,6 +116,55 @@ class PeraturanController extends Controller
         }
 
 
+    
+    // -------------------- UPDATE DATA PERATURAN PEMERINTAH JASA KONSTRUKSI ----------------------
+    public function updateperpemerintah($judul)
+    {
+        // Cari data undang-undang berdasarkan nilai 'judul'
+        $perpemerintah = perpemerintah::where('judul', $judul)->firstOrFail();
+        
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.14_peraturan.02_pemerintah.update', [
+            'perpemerintah' => $perpemerintah,
+            'title' => 'Update Peraturan Pemerintah'
+        ]);
+    }
+    
+    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+            public function createupdateperpemerintah(Request $request, $judul)
+        {
+            // Validasi input
+            $request->validate([
+                'judul' => 'required|string|max:255',
+                // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+            ]);
+
+            // Cari data undang-undang berdasarkan nilai 'judul'
+            $perpemerintah = perpemerintah::where('judul', $judul)->firstOrFail();
+            
+            // Simpan file dan ambil path-nya
+            $filePath = null;
+            if ($request->hasFile('peraturan')) {
+                $file = $request->file('peraturan');
+                $filePath = $file->store('perpemerintah', 'public'); // Menyimpan di storage/app/public/undangundang
+            }
+
+            // Update data undang-undang dengan data dari form
+            $perpemerintah->update([
+                'judul' => $request->input('judul'),
+                'peraturan' => $filePath ? $filePath : $perpemerintah->peraturan, // Gunakan path baru jika ada file
+            ]);
+
+            // Redirect ke URL '/peruud' dengan pesan sukses
+            return redirect('/perpemerintah')
+                                ->with('success', 'Data Peraturan Pemerintah Berhasil Di Update !');
+        }
+
+    
+
+
+
+
     // -------------------------------------------------------------------------------------------------------
     // BACKEND DATABASE PRESIDEN 
 
@@ -109,6 +190,55 @@ class PeraturanController extends Controller
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
     }
+
+
+    
+    // -------------------- UPDATE DATA PERATURAN PEMERINTAH JASA KONSTRUKSI ----------------------
+    public function updateperpresiden($judul)
+    {
+        // Cari data undang-undang berdasarkan nilai 'judul'
+        $perpresiden = perpresiden::where('judul', $judul)->firstOrFail();
+        
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.14_peraturan.03_presiden.update', [
+            'perpresiden' => $perpresiden,
+            'title' => 'Update Peraturan Presiden'
+        ]);
+    }
+    
+    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+            public function createupdateperpresiden(Request $request, $judul)
+        {
+            // Validasi input
+            $request->validate([
+                'judul' => 'required|string|max:255',
+                // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+            ]);
+
+            // Cari data undang-undang berdasarkan nilai 'judul'
+            $perpresiden = perpresiden::where('judul', $judul)->firstOrFail();
+            
+            // Simpan file dan ambil path-nya
+            $filePath = null;
+            if ($request->hasFile('peraturan')) {
+                $file = $request->file('peraturan');
+                $filePath = $file->store('prepresiden', 'public'); // Menyimpan di storage/app/public/undangundang
+            }
+
+            // Update data undang-undang dengan data dari form
+            $perpresiden->update([
+                'judul' => $request->input('judul'),
+                'peraturan' => $filePath ? $filePath : $perpresiden->peraturan, // Gunakan path baru jika ada file
+            ]);
+
+            // Redirect ke URL '/peruud' dengan pesan sukses
+            return redirect('/perpresiden')
+                                ->with('success', 'Data Peraturan Presiden Berhasil Di Update !');
+        }
+
+    
+
+
     
 
     // -------------------------------------------------------------------------------------------------------

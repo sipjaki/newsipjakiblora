@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 130vh;
+    height: 80vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -109,6 +109,25 @@
                 color: black;
                 background: white;
             }
+    .badgenewupdate {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .badgenewupdate:hover {
+                background: white;
+                color: black;
+                background: white;
+            }
+
+    
     .badgedownload {
                 background: linear-gradient(to right, navy, black);
                 color: white;
@@ -162,131 +181,111 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Peraturan Pemerintah Tentang Jasa Konstruksi</div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Peraturan Pemerintah Tentang Jasa Konstruksi </div></label>
         </a>
         <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i></div></label>
+            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
+        </a>
+        <a style="background: white;">
+            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
         </a>
         <a href="/perpemerintah" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
-        
-        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
-        
-        
-        @foreach ($data as $items )
+
+        <br>
+                {{-- ========================================= --}}
+
+        <style>
+            .container-update {
+                /* margin-top: 500px; */
+                width: 950px;
+                height: 250px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f0f0f0; /* Warna silver */
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .form-group {
+                /* margin-top: 150px; */
+                /* margin-bottom: 15px; */
+            }
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+            }
+            .form-group input[type="text"],
+            .form-group input[type="file"] {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+            .form-group textarea {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+                resize: vertical;
+            }
+            .form-group button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            .form-group button:hover {
+                background-color: #45a049;
+            }
+            .success-message {
+                color: green;
+                margin-bottom: 20px;
+            }
+        </style>
+    
+<br>
+        <div class="container-update" style="col-lg-12">
+            <!-- Menampilkan pesan sukses jika ada -->
+            @if (session('success'))
+                <p class="success-message">{{ session('success') }}</p>
+            @endif
+    
+            <!-- Formulir update data -->
+            <form action="{{ route('peruud.updateperpemerintah', $perpemerintah->judul) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('POST') <!-- Gunakan metode PUT untuk update data -->
+    
+                <div class="form-group">
+                    <label for="judul" style="text-align:left;"><i class="fas fa-file me-2" ></i> Judul Peraturan Pemerintah </label>
+                    <input type="text" id="judul" name="judul" value="{{ old('judul', $perpemerintah->judul) }}" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="peraturan" style="text-align:left;"><i class="fas fa-file me-2" ></i> File Peraturan Undang-Undang</label>
+                    <input type="file" id="peraturan" name="peraturan" value="{{ old('peraturan', $perpemerintah->peraturan) }}">
+                </div>
+    
+                <div class="form-group">
+                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
+                </div>
+
+            </form>
+        </div>
+
+
+        {{-- ========================================= --}}
+
+        {{-- @foreach ($data as $items )
                     
-        <a href="/perpemerintah/{{$items->judul}}" style="background: white;">
-            <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
-        </a>
-        @endforeach
-                        {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
+                <a href="/peruud/{{$items->peraturan}}" style="background: white;">
+                    <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+                </a>
+                @endforeach
+                        <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
                         
-                        <style>
       
-.pdf-container {
-    text-align:center !important ;
-    position: relative;
-    padding: 5px; /* Jarak di dalam container */
-    width: calc(100% - 20px); /* Lebar 100% dikurangi 20px total dari padding kiri dan kanan */
-    max-width: 1000px; /* Lebar maksimal container */
-    display: flex;
-    flex-direction: column;
-    align-items: center !important; /* Menempatkan elemen di tengah horizontal */
-    justify-content: center; /* Menempatkan elemen di tengah vertikal */
-    height: 85vh; /* Tinggi 85% dari viewport */
-    margin: auto; /* Mengatur margin auto untuk sentralisasi */
-    border: 1px solid black;
-    border-radius: 25px;
-    overflow: hidden; /* Menyembunyikan konten yang meluber */
-    background-color: #FFCB0F;
-    background: linear-gradient(to bottom, yellow, white, black);
-    position: relative; /* Mengatur posisi relatif untuk container */
-}
-.pdf-frame {
-    width: calc(100% - 20px); /* Lebar PDF frame dengan jarak 10px di kiri dan kanan */
-    height: 100%; /* Tinggi PDF frame sama dengan tinggi container */
-    border: none;
-    overflow: auto; 
-    border-radius: 25px; 
-    padding: 5px 5px;/* Mengaktifkan scroll jika konten lebih besar dari ukuran frame */
-}
-
-    </style>
-
-
-
-{{-- ----------------------------------------------------------------------------- --}}
-
-@if (session('success'))
-<div id="successAlert" class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    {{ session('success') }}
-</div>
-@endif
-
-<style>
-.alert {
-    padding: 10px;
-    background-color: navy; /* Warna biru */
-    color: white;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    position: relative;
-    font-size: 16px;
-    border-radius: 25px 0px 25px 25px;
-}
-
-.alert .closebtn {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.alert .closebtn:hover {
-    color: #000;
-}
-</style>
-
-{{-- ----------------------------------------------------------------------------- --}}
-
-    @foreach($data as $items )
-    <div class="pdf-container mt-4">
-        <iframe class="pdf-frame" src="{{ asset('storage/' . $items->peraturan) }}"></iframe>
-    </div>
-    
-    
-    <script>
-        document.getElementById('downloadBtn').addEventListener('click', function() {
-            // URL file PDF
-            const pdfUrl = '{{ asset('storage/' . $items->peraturan) }}';
-            
-            // Nama file yang diunduh berdasarkan atribut judul
-            const fileName = '{{ $items->judul }}' + '.pdf'; // Pastikan menambahkan ekstensi file yang sesuai
-            
-            // Membuat elemen anchor
-            const link = document.createElement('a');
-            link.href = pdfUrl;
-            link.download = fileName;
-            
-            // Menyimulasikan klik pada elemen anchor
-            document.body.appendChild(link);
-            link.click();
-            
-            // Menghapus elemen anchor dari dokumen
-            document.body.removeChild(link);
-        });
-    </script>
-    
-@endforeach
-
 
 </div>
 
