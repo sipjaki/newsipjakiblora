@@ -55,7 +55,6 @@
                          
                          </style>
                          
-                         
                             <li class="parent">
                                 <a href="/" class="sbar"><i class="fas fa-cogs mr-2"> </i>
                                     <span class="none">DASHBOARD WEB</span>
@@ -67,7 +66,22 @@
                                     <span class="none">DASHBOARD ADMIN</span>
                                 </a>
                             </li>
-     
+    
+                           <p style="margin-bottom: 5px;"></p>
+                           
+                           <li class="parent">
+                               <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
+                                <span class="none">BERITA HIMBAUAN DINAS</span>
+                            </a>
+                            </li>
+                           
+                            <li class="parent">
+                               <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
+                                <span class="none">Q&A PUBLIK </span>
+                            </a>
+                            </li>
+
+                        <p style="margin-bottom: 5px;"></p>
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('profil'); return false" class="sbar"><i class="fab fa-ravelry mr-2"></i>
                                     <span>PROFIL<i class="fa fa-angle-down pull-right align-bottom " style="color: black;"></i></span>
@@ -105,7 +119,7 @@
                                         </a>
                                             
                                         <a href="/404" style="font-size: 12px;">
-                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>AGENDA
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SERTIFIKASI
                                         </a>
                                             
                                     </li> 
@@ -123,17 +137,41 @@
                                     <li class="child">
                                     
                                         <a href="/404" style="font-size: 12px;">
-                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>ASOSIASI
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PENGAWASAN DAN KETERTIBAN
                                         </a>
-                                            
+                                    
+                                        <a href="/404" style="font-size: 12px;">
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>ASOSIASI PENGUSAHA
+                                        </a>        
+                                    
                                         <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>STANDAR BIAYA UMUM
                                         </a>
-                                            
+                                    
                                         <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PROGRESS PAKET PEKERJAAN
                                         </a>
+                                    
+                                        <a href="/404" style="font-size: 12px;">
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SERTIFIKAT LAIK FUNGSI
+                                        </a>
+                                    
+                                        <a href="/404" style="font-size: 12px;">
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERSETUJUAN BANGUNAN GEDUNG
+                                        </a>
+                                    
+                                        <a href="/404" style="font-size: 12px;">
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>INSPEKSI LAPANGAN
+                                        </a>
                                             
+                                        <a href="/404" style="font-size: 12px;">
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PEMELIHARAAN PERBAIKAN 
+                                        </a>
+                                            
+                                        <a href="/404" style="font-size: 12px;">
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PENYEDIAAN MATERIAL 
+                                        </a>
+                                         
                                     </li> 
 
 
@@ -305,7 +343,7 @@
                                 </ul>
                             </li>
                          
-                         
+{{--                          
                             <li class="parent">
                                 <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
                                     <span class="none">BADAN USAHA</span>
@@ -316,15 +354,8 @@
                                 <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
                                     <span class="none">SERTIFIKAT BADAN USAHA</span>
                                 </a>
-                            </li>
-                         
-                            <li class="parent">
-                                <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
-                                    <span class="none">TANDA DAFTAR USAHA PERUSAHAAN</span>
-                                </a>
-                            </li>
-
-
+                            </li> --}}
+                         <p style="margin-bottom: 5px;"></p>
 
                             <li class="parent">
                                 <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>

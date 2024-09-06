@@ -361,32 +361,32 @@
             <p>
                 Kami informasikan bahwa Sistem Informasi Pembina Jasa Konstruksi kini tersedia untuk memudahkan akses informasi terkait jasa konstruksi. Sistem ini menyediakan data terpercaya, regulasi terbaru, dan informasi penting lainnya mengenai layanan konstruksi. Silakan kunjungi platform ini untuk mendapatkan informasi yang Anda butuhkan dan memastikan kepatuhan terhadap peraturan yang berlaku.
                 <div class="cont">
-                <article class="quoteblock">
+                {{-- <article class="quoteblock">
                     <div class="quotetxt arrow">
                         <p><img src="/assets/bahan1/Images/blockquote2.png" alt="Bupati Bandung Barat"></p>
-                        {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p> --}}
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p>
+                
                     </div>
                     <figure>
-                        {{-- <img class="customer" src="/assets/bahan1/Images/cust1.png" alt="customer1"> --}}
+                        <img class="customer" src="/assets/bahan1/Images/cust1.png" alt="customer1">
                         <figcaption>Bupati Bandung Barat</figcaption>
                     </figure>
-                </article>
-                <article class="quoteblock">
+                </article> --}}
+                {{-- <article class="quoteblock">
                     <div class="quotetxt arrow">
                         <p><img src="/assets/bahan1/Images/blockquote1.png" alt="PUPR Bandung Barat"></p>
-                        {{-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p> --}}
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p>
                     </div>
                     <figure>
-                        {{-- <img class="customer" src="/assets/bahan1/Images/cust1.png" alt="customer1"> --}}
+                        <img class="customer" src="/assets/bahan1/Images/cust1.png" alt="customer1">
                         <figcaption>PUPR Bandung Barat</figcaption>
                     </figure>
-                </article>
-                <article class="quoteblock">
+                </article> --}}
+                <article class="quoteblock" style="width: 800px; height:400px; margin-bottom:50px; justify-content:center;">
                     <div class="quotetxt arrow">
                         <p><img src="/assets/bahan1/Images/blockquote2.png" alt="quote mark"></p>
                         <p style="color: black; font-size:12px;">
-                            Kami mendorong semua pihak untuk memanfaatkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK) secara maksimal. Sistem ini dirancang untuk memudahkan akses informasi penting terkait peraturan dan sertifikasi dalam industri konstruksi. Dengan menggunakan SIPJK, saudara akan memperoleh informasi terkini dan membantu memastikan proyek konstruksi berjalan sesuai standar. Mari kita tingkatkan kualitas dan profesionalisme industri konstruksi bersama.
-                    
+                            Kami mendorong semua pihak memanfaatkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK) secara maksimal. Sistem ini dirancang untuk memudahkan akses informasi penting terkait peraturan dan sertifikasi dalam industri konstruksi. Dengan menggunakan SIPJK, saudara akan memperoleh informasi terkini dan membantu memastikan proyek konstruksi berjalan sesuai standar. Mari kita tingkatkan kualitas dan profesionalisme industri konstruksi bersama                    
                         </p>
                    
                     </div>
