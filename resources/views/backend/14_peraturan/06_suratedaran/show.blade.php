@@ -162,18 +162,18 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Peraturan Menteri Tentang Jasa Konstruksi</div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Surat Edaran Menteri Tentang Jasa Konstruksi</div></label>
         </a>
         <a style="background: white;">
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i></div></label>
         </a>
-        <a href="/skmenteri" style="background: white;">
+        <a href="/suratedaran" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
         
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
         
-        <a href="/skmenteri/update/{{$data->judul}}" style="background: white;">
+        <a href="/suratedaran/update/{{$data->judul}}" style="background: white;">
             <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
         </a>
                         {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}

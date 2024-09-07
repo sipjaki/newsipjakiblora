@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 145vh;
+    height: 130vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -162,20 +162,23 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Peraturan Menteri Tentang Jasa Konstruksi</div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Surat Referensi Tentang Jasa Konstruksi </div></label>
         </a>
         <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i></div></label>
+            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........</div></label>
         </a>
-        <a href="/skmenteri" style="background: white;">
+        <a href="/referensi" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
         
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
-        
-        <a href="/skmenteri/update/{{$data->judul}}" style="background: white;">
-            <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
-        </a>
+                        
+                @foreach ($data as $items )
+                    
+                <a href="/referensi/{{$items->judul}}" style="background: white;">
+                    <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+                </a>
+                @endforeach
                         {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
                         
@@ -210,38 +213,82 @@
 }
 
     </style>
-<div style="margin-top: 15px;">
 
-    <a style="background: white; margin-top:10px; background: linear-gradient(to right, white, white);">
-        <div class="badge"><i class="fas fa-file mr-2"></i>{{$data->judul}}</div></label>
-    </a>
+
+
+
+{{-- ----------------------------------------------------------------------------- --}}
+
+@if (session('success'))
+<div id="successAlert" class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    {{ session('success') }}
 </div>
+@endif
 
-    
+<style>
+.alert {
+    padding: 10px;
+    background-color: navy; /* Warna biru */
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    position: relative;
+    font-size: 16px;
+    border-radius: 25px 0px 25px 25px;
+}
+
+.alert .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.alert .closebtn:hover {
+    color: #000;
+}
+</style>
+
+{{-- ----------------------------------------------------------------------------- --}}
+
+
+    @foreach($data as $items )
     <div class="pdf-container mt-4">
-        <iframe class="pdf-frame" src="{{ asset('storage/' . $data->peraturan) }}"></iframe>
+        <iframe class="pdf-frame" src="{{ asset('storage/' . $items->peraturan) }}" width="100%" height="600px"></iframe>
     </div>
     
+    {{-- <iframe src="{{ asset(public_path('storage/undangundang/01_uud/UU_NO_02_TAHUN_2017.pdf')) }}" width="100%" height="600px"></iframe> --}}
+
     
     <script>
         document.getElementById('downloadBtn').addEventListener('click', function() {
             // URL file PDF
-            const pdfUrl = '{{ asset('storage/' . $data->peraturan) }}';
+            const pdfUrl = '{{ asset('storage/' . $items->peraturan) }}';
+            
+            // Nama file yang diunduh berdasarkan atribut judul
+            const fileName = '{{ $items->judul }}' + '.pdf'; // Pastikan menambahkan ekstensi file yang sesuai
             
             // Membuat elemen anchor
             const link = document.createElement('a');
-        link.href = pdfUrl;
-        link.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
-        
-        // Menyimulasikan klik pada elemen anchor
-        document.body.appendChild(link);
-        link.click();
-        
-        // Menghapus elemen anchor dari dokumen
-        document.body.removeChild(link);
-    });
-</script>
-
+            link.href = pdfUrl;
+            link.download = fileName;
+            
+            // Menyimulasikan klik pada elemen anchor
+            document.body.appendChild(link);
+            link.click();
+            
+            // Menghapus elemen anchor dari dokumen
+            document.body.removeChild(link);
+        });
+    </script>
+    
+@endforeach
 
 
 </div>

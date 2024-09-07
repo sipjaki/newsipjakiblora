@@ -357,7 +357,7 @@ class PeraturanController extends Controller
                 ]);
             
                 // Simpan file dan ambil path
-                $filePath = $request->file('peraturan')->store('peraturan', 'public');
+                $filePath = $request->file('peraturan')->store('permenteri', 'public');
             
                 // Buat entri baru di database
                 permenteri::create([
@@ -444,6 +444,118 @@ public function feskmenteri()
                     'title' => 'Details Data Keputusan Menteri',
                 ]);
             }
+
+                
+    // -------------------- UPDATE DATA PERATURAN PEMERINTAH JASA KONSTRUKSI ----------------------
+    public function updateshowskmenteri($judul)
+    {
+        // Cari data undang-undang berdasarkan nilai 'judul'
+        $skmenteri = keputusanmenteri::where('judul', $judul)->firstOrFail();
+        
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.14_peraturan.05_skmenteri.update', [
+            'skmenteri' => $skmenteri,
+            'title' => 'Update Surat Keputusan Menteri'
+        ]);
+    }
+    
+    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+            public function createupdateskmenteri(Request $request, $judul)
+        {
+            // Validasi input
+            $request->validate([
+                'judul' => 'required|string|max:255',
+                // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+            ]);
+
+            // Cari data undang-undang berdasarkan nilai 'judul'
+            $skmenteri = keputusanmenteri::where('judul', $judul)->firstOrFail();
+            
+            // Simpan file dan ambil path-nya
+            $filePath = null;
+            if ($request->hasFile('peraturan')) {
+                $file = $request->file('peraturan');
+                $filePath = $file->store('keputusanmenteri', 'public'); // Menyimpan di storage/app/public/undangundang
+            }
+
+            // Update data undang-undang dengan data dari form
+            $skmenteri->update([
+                'judul' => $request->input('judul'),
+                'peraturan' => $filePath ? $filePath : $skmenteri->peraturan, // Gunakan path baru jika ada file
+            ]);
+
+
+            
+            session()->flash('update', 'Data Surat Keputusan Menteri Berhasil Diupdate !');
+            // Redirect ke halaman yang sesuai
+            return redirect('/skmenteri');
+                   }
+    
+                   
+// ------------ CREATE DATA SURAT KEPUTUSAN MENTERI ----------------
+
+            public function createskmenteri()
+            {
+                
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.14_peraturan.05_skmenteri.create', [
+                    'title' => 'Create Surat Keputusan Menteri'
+                ]);
+            }
+
+            public function createstoreskmenteri(Request $request)
+            {
+                // Validasi input
+                $request->validate([
+                    'judul' => 'required|string|max:255',
+                    'peraturan' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+                ]);
+            
+                // Simpan file dan ambil path
+                $filePath = $request->file('peraturan')->store('keputusanmenteri', 'public');
+            
+                // Buat entri baru di database
+                keputusanmenteri::create([
+                    'judul' => $request->input('judul'),
+                    'peraturan' => $filePath,
+                ]);
+            
+                session()->flash('create', 'Data Berhasil Di Tambahkan !');
+                // Redirect ke halaman yang sesuai
+                return redirect('/skmenteri');
+            }
+            
+
+    // ==================== DELETE SURAT KEPUTUSAN MENTERI 
+
+    public function deleteskmenteri(Request $request, $judul)
+{
+    // Cari entri berdasarkan judul
+    $entry = keputusanmenteri::where('judul', $judul)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if (Storage::disk('public')->exists($entry->peraturan)) {
+            Storage::disk('public')->delete($entry->peraturan);
+        }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+    }
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/skmenteri');
+}
+
+
+
+            // =====================================================================================
             
             
 public function suratedaranmenteri()
@@ -467,6 +579,142 @@ public function suratedaranmenteri()
                 ]);
             }
 
+
+            // BACKEND
+            public function suratedaran()
+            {
+                $data= suratedaran::paginate(15); // Menggunakan paginate() untuk pagination
+        
+                return view('backend.14_peraturan.06_suratedaran.index', [
+                    'title' => 'Surat Edaran Menteri',
+                    'data' => $data, // Mengirimkan data paginasi ke view
+                ]);
+            }
+
+              
+            public function suratedaranshowByJudul($judul)
+            {
+                $data = suratedaran::where('judul', $judul)->firstOrFail();
+
+                return view('backend.14_peraturan.06_suratedaran.show', [
+                    'data' => $data,
+                    'title' => 'Details Data Surat Edaran Menteri',
+                ]);
+            }
+
+
+            // UPDATE SURAT EDARAN MENTERI PUPR =====================
+
+                // -------------------- UPDATE DATA PERATURAN PEMERINTAH JASA KONSTRUKSI ----------------------
+    public function updateshowsuratedaran($judul)
+    {
+        // Cari data undang-undang berdasarkan nilai 'judul'
+        $suratedaran = suratedaran::where('judul', $judul)->firstOrFail();
+        
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.14_peraturan.06_suratedaran.update', [
+            'suratedaran' => $suratedaran,
+            'title' => 'Update Surat Edaran Menteri'
+        ]);
+    }
+    
+    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+            public function createupdatesuratedaran(Request $request, $judul)
+        {
+            // Validasi input
+            $request->validate([
+                'judul' => 'required|string|max:255',
+                // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+            ]);
+
+            // Cari data undang-undang berdasarkan nilai 'judul'
+            $suratedaran = suratedaran::where('judul', $judul)->firstOrFail();
+            
+            // Simpan file dan ambil path-nya
+            $filePath = null;
+            if ($request->hasFile('peraturan')) {
+                $file = $request->file('peraturan');
+                $filePath = $file->store('suratedaran', 'public'); // Menyimpan di storage/app/public/undangundang
+            }
+
+            // Update data undang-undang dengan data dari form
+            $suratedaran->update([
+                'judul' => $request->input('judul'),
+                'peraturan' => $filePath ? $filePath : $suratedaran->peraturan, // Gunakan path baru jika ada file
+            ]);
+
+            
+            session()->flash('update', 'Data Surat Keputusan Menteri Berhasil Diupdate !');
+            // Redirect ke halaman yang sesuai
+            return redirect('/suratedaran');
+                   }
+
+
+                          
+// ------------ CREATE DATA SURAT EDARAN MENTERI ----------------
+
+            public function createsuratedaran()
+            {
+                
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.14_peraturan.06_suratedaran.create', [
+                    'title' => 'Create Surat Edaran Menteri'
+                ]);
+            }
+
+            public function createstoresuratedaran(Request $request)
+            {
+                // Validasi input
+                $request->validate([
+                    'judul' => 'required|string|max:255',
+                    'peraturan' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+                ]);
+            
+                // Simpan file dan ambil path
+                $filePath = $request->file('peraturan')->store('suratedaran', 'public');
+            
+                // Buat entri baru di database
+                suratedaran::create([
+                    'judul' => $request->input('judul'),
+                    'peraturan' => $filePath,
+                ]);
+            
+                session()->flash('create', 'Data Berhasil Di Tambahkan !');
+                // Redirect ke halaman yang sesuai
+                return redirect('/suratedaran');
+            }
+            
+
+    // ==================== DELETE SURAT KEPUTUSAN MENTERI 
+
+    public function deletesuratedaran(Request $request, $judul)
+{
+    // Cari entri berdasarkan judul
+    $entry = suratedaran::where('judul', $judul)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if (Storage::disk('public')->exists($entry->peraturan)) {
+            Storage::disk('public')->delete($entry->peraturan);
+        }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+    }
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/suratedaran');
+}
+
+
+// --------------------------------- DATA PERATURAN REFERENSI
+
 public function fereferensi()
             {
                 $data= referensi::all(); // Menggunakan paginate() untuk pagination
@@ -477,6 +725,66 @@ public function fereferensi()
                 ]);
             }
             
+
+            // BACKEND SURAT REFERENSI --------------------------------------------------
+            public function referensi()
+                {
+                    $data= referensi::all(); // Menggunakan paginate() untuk pagination
+
+                    return view('backend.14_peraturan.07_referensi.index', [
+                        'title' => 'Surat Referensi Jasa Konstruksi',
+                        'data' => $data, // Mengirimkan data paginasi ke view
+                    ]);
+                }
+
+
+                    // -------------------- UPDATE DATA UNDANG UNDANG JASA KONSTRUKSI ----------------------
+    public function updatereferensi($judul)
+    {
+        // Cari data undang-undang berdasarkan nilai 'judul'
+        $referensi = referensi::where('judul', $judul)->firstOrFail();
+        
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.14_peraturan.07_referensi.update', [
+            'referensi' => $referensi,
+            'title' => 'Update Surat Referensi Jasa Konstruksi'
+        ]);
+    }
+    
+    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+            public function createupdatereferensi(Request $request, $judul)
+        {
+            // Validasi input
+            $request->validate([
+                'judul' => 'required|string|max:255',
+                // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+            ]);
+
+            // Cari data undang-undang berdasarkan nilai 'judul'
+            $referensi = referensi::where('judul', $judul)->firstOrFail();
+            
+            // Simpan file dan ambil path-nya
+            $filePath = null;
+            if ($request->hasFile('peraturan')) {
+                $file = $request->file('peraturan');
+                $filePath = $file->store('referensi', 'public'); // Menyimpan di storage/app/public/undangundang
+            }
+
+            // Update data undang-undang dengan data dari form
+            $referensi->update([
+                'judul' => $request->input('judul'),
+                'peraturan' => $filePath ? $filePath : $referensi->peraturan, // Gunakan path baru jika ada file
+            ]);
+
+            // Redirect ke URL '/peruud' dengan pesan sukses
+            return redirect('/referensi')
+                                ->with('success', 'Data Referensi Berhasil Di Update !');
+        }
+    
+
+
+    // -------------------------------------------------------------------------------------------------------
+
     public function feperdaerah()
             {
                 $data= perdaerah::paginate(15); // Menggunakan paginate() untuk pagination
@@ -485,8 +793,9 @@ public function fereferensi()
                     'title' => 'Peraturan Daerah Jasa Konstruksi',
                     'data' => $data, // Mengirimkan data paginasi ke view
                 ]);
-            }
             
+            }
+                        
     
             public function feperdaerahshowByJudul($judul)
             {
@@ -498,7 +807,140 @@ public function fereferensi()
                 ]);
             }
 
-    public function fegubernur()
+            // =====================================================================================
+            
+public function suratperdaerah()
+{
+    $data= perdaerah::paginate(15); // Menggunakan paginate() untuk pagination
+
+    return view('backend.14_peraturan.08_perdaerah.index', [
+        'title' => 'Surat Peraturan Daerah Tentang Jasa Konstruksi',
+        'data' => $data, // Mengirimkan data paginasi ke view
+    ]);
+}
+
+
+public function suratperdaerahshowByJudul($judul)
+{
+    $data = perdaerah::where('judul', $judul)->firstOrFail();
+
+    return view('backend.14_peraturan.08_perdaerah.show', [
+        'data' => $data,
+        'title' => 'Details Data Surat Peraturan Daerah',
+    ]);
+}
+
+
+                // -------------------- UPDATE DATA PERATURAN DAERAH JASA KONSTRUKSI ----------------------
+                public function updateshowperdaerah($judul)
+                {
+                    // Cari data undang-undang berdasarkan nilai 'judul'
+                    $perdaerah = perdaerah::where('judul', $judul)->firstOrFail();
+                    
+                    // Tampilkan form update dengan data yang ditemukan
+                    return view('backend.14_peraturan.08_perdaerah.update', [
+                        'perdaerah' => $perdaerah,
+                        'title' => 'Update Peraturan Daerah'
+                    ]);
+                }
+                
+                // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+                        public function createupdateperdaerah(Request $request, $judul)
+                    {
+                        // Validasi input
+                        $request->validate([
+                            'judul' => 'required|string|max:255',
+                            // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+                        ]);
+            
+                        // Cari data undang-undang berdasarkan nilai 'judul'
+                        $perdaerah = perdaerah::where('judul', $judul)->firstOrFail();
+                        
+                        // Simpan file dan ambil path-nya
+                        $filePath = null;
+                        if ($request->hasFile('peraturan')) {
+                            $file = $request->file('peraturan');
+                            $filePath = $file->store('perdaerah', 'public'); // Menyimpan di storage/app/public/undangundang
+                        }
+            
+                        // Update data undang-undang dengan data dari form
+                        $perdaerah->update([
+                            'judul' => $request->input('judul'),
+                            'peraturan' => $filePath ? $filePath : $perdaerah->peraturan, // Gunakan path baru jika ada file
+                        ]);
+            
+                        
+                        session()->flash('update', 'Data Peraturan Daerah Berhasil Diupdate !');
+                        // Redirect ke halaman yang sesuai
+                        return redirect('/perdaerah');
+                               }
+            
+             
+// ------------ CREATE DATA SURAT EDARAN MENTERI ----------------
+
+public function createperdaerah()
+{
+    
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.14_peraturan.08_perdaerah.create', [
+        'title' => 'Create Peraturan Daerah'
+    ]);
+}
+
+public function createstoreperdaerah(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'judul' => 'required|string|max:255',
+        'peraturan' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+    ]);
+
+    // Simpan file dan ambil path
+    $filePath = $request->file('peraturan')->store('perdaerah', 'public');
+
+    // Buat entri baru di database
+    perdaerah::create([
+        'judul' => $request->input('judul'),
+        'peraturan' => $filePath,
+    ]);
+
+    session()->flash('create', 'Data Berhasil Di Tambahkan !');
+    // Redirect ke halaman yang sesuai
+    return redirect('/perdaerah');
+}
+
+
+    // ==================== DELETE SURAT KEPUTUSAN MENTERI 
+
+    public function deleteperdaerah(Request $request, $judul)
+{
+    // Cari entri berdasarkan judul
+    $entry = perdaerah::where('judul', $judul)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if (Storage::disk('public')->exists($entry->peraturan)) {
+            Storage::disk('public')->delete($entry->peraturan);
+        }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+    }
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/perdaerah');
+}
+
+
+// --------------------------------------- DATABASE SURAT PERATURAN GUBERNUR
+
+                public function fegubernur()
                         {
                             $data= pergubernur::all(); // Menggunakan paginate() untuk pagination
                     
@@ -507,6 +949,142 @@ public function fereferensi()
                                 'data' => $data, // Mengirimkan data paginasi ke view
                             ]);
                         }
+
+
+
+// =====================================================================================
+            
+public function suratpergubernur()
+{
+    $data= pergubernur::paginate(15); // Menggunakan paginate() untuk pagination
+
+    return view('backend.14_peraturan.09_pergubernur.index', [
+        'title' => 'Peraturan Gubernur Tentang Jasa Konstruksi',
+        'data' => $data, // Mengirimkan data paginasi ke view
+    ]);
+}
+
+
+public function pergubernurshowByJudul($judul)
+{
+    $data = pergubernur::where('judul', $judul)->firstOrFail();
+
+    return view('backend.14_peraturan.09_pergubernur.show', [
+        'data' => $data,
+        'title' => 'Details Data Peraturan Gubernur',
+    ]);
+}
+
+                // -------------------- UPDATE DATA PERATURAN GUBERNUR JASA KONSTRUKSI ----------------------
+                public function updateshowpergubernur($judul)
+                {
+                    // Cari data undang-undang berdasarkan nilai 'judul'
+                    $pergubernur = pergubernur::where('judul', $judul)->firstOrFail();
+                    
+                    // Tampilkan form update dengan data yang ditemukan
+                    return view('backend.14_peraturan.09_pergubernur.update', [
+                        'pergubernur' => $pergubernur,
+                        'title' => 'Update Peraturan Gubernur'
+                    ]);
+                }
+                
+                // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+                        public function createupdatepergubernur(Request $request, $judul)
+                    {
+                        // Validasi input
+                        $request->validate([
+                            'judul' => 'required|string|max:255',
+                            // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+                        ]);
+            
+                        // Cari data undang-undang berdasarkan nilai 'judul'
+                        $pergubernur = pergubernur::where('judul', $judul)->firstOrFail();
+                        
+                        // Simpan file dan ambil path-nya
+                        $filePath = null;
+                        if ($request->hasFile('peraturan')) {
+                            $file = $request->file('peraturan');
+                            $filePath = $file->store('pergubernur', 'public'); // Menyimpan di storage/app/public/undangundang
+                        }
+            
+                        // Update data undang-undang dengan data dari form
+                        $pergubernur->update([
+                            'judul' => $request->input('judul'),
+                            'peraturan' => $filePath ? $filePath : $pergubernur->peraturan, // Gunakan path baru jika ada file
+                        ]);
+            
+                        
+                        session()->flash('update', 'Data Peraturan Gubernur Berhasil Diupdate !');
+                        // Redirect ke halaman yang sesuai
+                        return redirect('/pergubernur');
+                               }
+
+                               
+                               
+// ------------ CREATE DATA SURAT PERATURAN GUBERNUR ----------------
+
+public function createpergubernur()
+{
+    
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.14_peraturan.09_pergubernur.create', [
+        'title' => 'Create Peraturan Gubernur'
+    ]);
+}
+
+public function createstorepergubernur(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'judul' => 'required|string|max:255',
+        'peraturan' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+    ]);
+
+    // Simpan file dan ambil path
+    $filePath = $request->file('peraturan')->store('pergubernur', 'public');
+
+    // Buat entri baru di database
+    pergubernur::create([
+        'judul' => $request->input('judul'),
+        'peraturan' => $filePath,
+    ]);
+
+    session()->flash('create', 'Data Berhasil Di Tambahkan !');
+    // Redirect ke halaman yang sesuai
+    return redirect('/pergubernur');
+}
+
+
+    // ==================== DELETE SURAT KEPUTUSAN MENTERI 
+
+    public function deletepergubernur(Request $request, $judul)
+{
+    // Cari entri berdasarkan judul
+    $entry = pergubernur::where('judul', $judul)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if (Storage::disk('public')->exists($entry->peraturan)) {
+            Storage::disk('public')->delete($entry->peraturan);
+        }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+    }
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/pergubernur');
+}
+
+
+
+// ------------------- DATABASE SURAT PERATURAN BUPATI WALIKOTA -------------
           
     public function feperbupatiwalikota()
                         {
@@ -528,6 +1106,142 @@ public function fereferensi()
                                 'title' => 'Details Peraturan Bupati/Walikota Jasa Konstruksi',
                             ]);
                         }
+
+
+                        // =====================================================================================
+            
+public function suratperwalikotabupati()
+{
+    $data= perbupatiwalikota::paginate(15); // Menggunakan paginate() untuk pagination
+
+    return view('backend.14_peraturan.10_perwalikotabupati.index', [
+        'title' => 'Peraturan Walikota/Bupati Tentang Jasa Konstruksi',
+        'data' => $data, // Mengirimkan data paginasi ke view
+    ]);
+}
+
+
+public function perwalikotabupatishowByJudul($judul)
+{
+    $data = perbupatiwalikota::where('judul', $judul)->firstOrFail();
+
+    return view('backend.14_peraturan.10_perwalikotabupati.show', [
+        'data' => $data,
+        'title' => 'Details Data Peraturan Walikota/Bupati',
+    ]);
+}
+
+                // -------------------- UPDATE DATA PERATURAN GUBERNUR JASA KONSTRUKSI ----------------------
+                public function updateshowperwalikotabupati($judul)
+                {
+                    // Cari data undang-undang berdasarkan nilai 'judul'
+                    $perwalikotabupati = perbupatiwalikota::where('judul', $judul)->firstOrFail();
+                    
+                    // Tampilkan form update dengan data yang ditemukan
+                    return view('backend.14_peraturan.10_perwalikotabupati.update', [
+                        'perwalikotabupati' => $perwalikotabupati,
+                        'title' => 'Update Peraturan Walikota/Bupati'
+                    ]);
+                }
+                
+                // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+                        public function createupdateperwalikotabupati(Request $request, $judul)
+                    {
+                        // Validasi input
+                        $request->validate([
+                            'judul' => 'required|string|max:255',
+                            // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+                        ]);
+            
+                        // Cari data undang-undang berdasarkan nilai 'judul'
+                        $perwalikotabupati = perbupatiwalikota::where('judul', $judul)->firstOrFail();
+                        
+                        // Simpan file dan ambil path-nya
+                        $filePath = null;
+                        if ($request->hasFile('peraturan')) {
+                            $file = $request->file('peraturan');
+                            $filePath = $file->store('perwalikotabupati', 'public'); // Menyimpan di storage/app/public/undangundang
+                        }
+            
+                        // Update data undang-undang dengan data dari form
+                        $perwalikotabupati->update([
+                            'judul' => $request->input('judul'),
+                            'peraturan' => $filePath ? $filePath : $perwalikotabupati->peraturan, // Gunakan path baru jika ada file
+                        ]);
+            
+                        
+                        session()->flash('update', 'Data Peraturan Walikota/Bupati Berhasil Diupdate !');
+                        // Redirect ke halaman yang sesuai
+                        return redirect('/perwalikotabupati');
+                               }
+
+                                  
+// ------------ CREATE DATA SURAT PERATURAN WALIKOTA GUBERNUR ----------------
+
+public function createperwalikotabupati()
+{
+    
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.14_peraturan.10_perwalikotabupati.create', [
+        'title' => 'Create Peraturan Walikota/Bupati'
+    ]);
+}
+
+public function createstoreperwalikotabupati(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'judul' => 'required|string|max:255',
+        'peraturan' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+    ]);
+
+    // Simpan file dan ambil path
+    $filePath = $request->file('peraturan')->store('perwalikotabupati', 'public');
+
+    // Buat entri baru di database
+    perbupatiwalikota::create([
+        'judul' => $request->input('judul'),
+        'peraturan' => $filePath,
+    ]);
+
+    session()->flash('create', 'Data Berhasil Di Tambahkan !');
+    // Redirect ke halaman yang sesuai
+    return redirect('/perwalikotabupati');
+}
+
+
+    // ==================== DELETE SURAT KEPUTUSAN MENTERI 
+
+    public function deleteperwalikotabupati(Request $request, $judul)
+{
+    // Cari entri berdasarkan judul
+    $entry = perbupatiwalikota::where('judul', $judul)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if (Storage::disk('public')->exists($entry->peraturan)) {
+            Storage::disk('public')->delete($entry->peraturan);
+        }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+    }
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/perwalikotabupati');
+}
+
+
+
+                               
+                               
+
                     
     public function fesuratkeputusan()
                         {

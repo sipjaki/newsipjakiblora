@@ -244,7 +244,7 @@ Route::get('/perpresiden', [PeraturanController::class, 'presiden'])->middleware
 Route::get('/perpresiden/{judul}', [PeraturanController::class, 'updateperpresiden'])->middleware('auth')->name('peruud.showperpresiden');
 Route::post('/perpresiden/{judul}', [PeraturanController::class, 'createupdateperpresiden'])->middleware('auth')->name('peruud.updateperpresiden');
 
-
+// PERATURAN MENTERI
 Route::get('/permenteri', [PeraturanController::class, 'menteri'])->middleware('auth');  
 Route::get('/permenteri/{judul}', [PeraturanController::class, 'menterishowByJudul'])->middleware('auth');
 Route::get('/permenteri/update/{judul}', [PeraturanController::class, 'updateshowpermenteri'])->middleware('auth')->name('peruud.showpermenteri');
@@ -253,16 +253,74 @@ Route::post('/permenteri/{judul}', [PeraturanController::class, 'createupdateper
 Route::get('/permentericreate', [PeraturanController::class, 'createpermenteri'])->middleware('auth');
 Route::post('/permenteristore', [PeraturanController::class, 'createstorepermenteri'])->middleware('auth')->name('peruud.createpermenteri');
 Route::post('/permenteridelete/{judul}', [PeraturanController::class, 'deleterpermenteri'])
-    ->middleware('auth')
-    ->name('peruud.deletepermenteri');
+->middleware('auth')
+->name('peruud.deletepermenteri');
 
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 
+// SURAT KEPUTUSAN MENTERI
 Route::get('/skmenteri', [PeraturanController::class, 'skmenteri'])->middleware('auth');  
 Route::get('/skmenteri/{judul}', [PeraturanController::class, 'skmenterishowByJudul'])->middleware('auth');
+Route::get('/skmenteri/update/{judul}', [PeraturanController::class, 'updateshowskmenteri'])->middleware('auth')->name('peruud.showskmenteri');
+Route::post('/skmenteri/{judul}', [PeraturanController::class, 'createupdateskmenteri'])->middleware('auth')->name('peruud.updateskmenteri');
+Route::get('/skmentericreate', [PeraturanController::class, 'createskmenteri'])->middleware('auth');
+Route::post('/skmenteristore', [PeraturanController::class, 'createstoreskmenteri'])->middleware('auth')->name('peruud.createskmenteri');
+Route::post('/skmenteridelete/{judul}', [PeraturanController::class, 'deleteskmenteri'])
+->middleware('auth')
+->name('peruud.deleteskmenteri');
+
+// SURAT EDARAN MENTERI 
+Route::get('/suratedaran', [PeraturanController::class, 'suratedaran'])->middleware('auth');  
+Route::get('/suratedaran/{judul}', [PeraturanController::class, 'suratedaranshowByJudul'])->middleware('auth');
+Route::get('/suratedaran/update/{judul}', [PeraturanController::class, 'updateshowsuratedaran'])->middleware('auth')->name('peruud.showsuratedaran');
+Route::post('/suratedaran/{judul}', [PeraturanController::class, 'createupdatesuratedaran'])->middleware('auth')->name('peruud.updatesuratedaran');
+Route::get('/suratedarancreate', [PeraturanController::class, 'createsuratedaran'])->middleware('auth');
+Route::post('/suratedaranstore', [PeraturanController::class, 'createstoresuratedaran'])->middleware('auth')->name('peruud.createsuratedaran');
+Route::post('/suratedarandelete/{judul}', [PeraturanController::class, 'deletesuratedaran'])
+->middleware('auth')
+->name('peruud.deletesuratedaran');
+
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
+Route::get('/referensi', [PeraturanController::class, 'referensi'])->middleware('auth')->name('peruud.referensi');  
+Route::get('/referensi/{judul}', [PeraturanController::class, 'updatereferensi'])->middleware('auth')->name('peruud.showreferensi');
+Route::post('/referensi/{judul}', [PeraturanController::class, 'createupdatereferensi'])->middleware('auth')->name('peruud.updatereferensi');
+
+// SURAT PERATURAN DAERAH 
+Route::get('/perdaerah', [PeraturanController::class, 'suratperdaerah'])->middleware('auth');  
+Route::get('/perdaerah/{judul}', [PeraturanController::class, 'suratperdaerahshowByJudul'])->middleware('auth');
+Route::get('/perdaerah/update/{judul}', [PeraturanController::class, 'updateshowperdaerah'])->middleware('auth')->name('peruud.showperdaerah');
+Route::post('/perdaerah/{judul}', [PeraturanController::class, 'createupdateperdaerah'])->middleware('auth')->name('peruud.updateperdaerah');
+Route::get('/perdaerahcreate', [PeraturanController::class, 'createperdaerah'])->middleware('auth');
+Route::post('/perdaerahstore', [PeraturanController::class, 'createstoreperdaerah'])->middleware('auth')->name('peruud.createperdaerah');
+Route::post('/perdaerahdelete/{judul}', [PeraturanController::class, 'deleteperdaerah'])
+->middleware('auth')
+->name('peruud.deleteperdaerah');
+
+// SURAT PERATURAN GUBERNUR 
+Route::get('/pergubernur', [PeraturanController::class, 'suratpergubernur'])->middleware('auth');  
+Route::get('/pergubernur/{judul}', [PeraturanController::class, 'pergubernurshowByJudul'])->middleware('auth');
+Route::get('/pergubernur/update/{judul}', [PeraturanController::class, 'updateshowpergubernur'])->middleware('auth')->name('peruud.showpergubernur');
+Route::post('/pergubernur/{judul}', [PeraturanController::class, 'createupdatepergubernur'])->middleware('auth')->name('peruud.updatepergubernur');
+Route::get('/pergubernurcreate', [PeraturanController::class, 'createpergubernur'])->middleware('auth');
+Route::post('/pergubernurstore', [PeraturanController::class, 'createstorepergubernur'])->middleware('auth')->name('peruud.createpergubernur');
+Route::post('/pergubernurdelete/{judul}', [PeraturanController::class, 'deletepergubernur'])
+->middleware('auth')
+->name('peruud.deletepergubernur');
+
+
+// SURAT PERATURAN GUBERNUR 
+Route::get('/perwalikotabupati', [PeraturanController::class, 'suratperwalikotabupati'])->middleware('auth');  
+Route::get('/perwalikotabupati/{judul}', [PeraturanController::class, 'perwalikotabupatishowByJudul'])->middleware('auth');
+Route::get('/perwalikotabupati/update/{judul}', [PeraturanController::class, 'updateshowperwalikotabupati'])->middleware('auth')->name('peruud.showperwalikotabupati');
+Route::post('/perwalikotabupati/{judul}', [PeraturanController::class, 'createupdateperwalikotabupati'])->middleware('auth')->name('peruud.updateperwalikotabupati');
+Route::get('/perwalikotabupaticreate', [PeraturanController::class, 'createperwalikotabupati'])->middleware('auth');
+Route::post('/perwalikotabupatistore', [PeraturanController::class, 'createstoreperwalikotabupati'])->middleware('auth')->name('peruud.createperwalikotabupati');
+Route::post('/perwalikotabupatidelete/{judul}', [PeraturanController::class, 'deleteperwalikotabupati'])
+->middleware('auth')
+->name('peruud.deleteperwalikotabupati');
 
 
 

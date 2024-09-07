@@ -1290,7 +1290,7 @@ class DatabaseSeeder extends Seeder
 // ============================================================================================================
         keputusanmenteri::create([
             'judul' => 'KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK',
-            'peraturan' => '/assets/library/peraturan/05_keputusanmenteri/KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK.pdf',
+            'peraturan' => 'keputusanmenteri/KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1298,7 +1298,7 @@ class DatabaseSeeder extends Seeder
 
         keputusanmenteri::create([
             'judul' => 'KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022',
-            'peraturan' => '/assets/library/peraturan/05_keputusanmenteri/KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022.pdf',
+            'peraturan' => 'keputusanmenteri/KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1306,7 +1306,7 @@ class DatabaseSeeder extends Seeder
 
         keputusanmenteri::create([
             'judul' => 'KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022',
-            'peraturan' => '/assets/library/peraturan/05_keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022.pdf',
+            'peraturan' => 'keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1314,7 +1314,7 @@ class DatabaseSeeder extends Seeder
 
         keputusanmenteri::create([
             'judul' => 'KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020',
-            'peraturan' => '/assets/library/peraturan/05_keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020.pdf',
+            'peraturan' => 'keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1323,7 +1323,7 @@ class DatabaseSeeder extends Seeder
         // ====================================================================================================================================================================================
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024',
-            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024.pdf',
+            'peraturan' => 'suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1331,7 +1331,7 @@ class DatabaseSeeder extends Seeder
         
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023',
-            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023.pdf',
+            'peraturan' => 'suratedaran/SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1339,7 +1339,7 @@ class DatabaseSeeder extends Seeder
         
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL',
-            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL.pdf',
+            'peraturan' => 'suratedaran/SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1347,7 +1347,7 @@ class DatabaseSeeder extends Seeder
         
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022',
-            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022.pdf',
+            'peraturan' => 'suratedaran/SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1355,7 +1355,7 @@ class DatabaseSeeder extends Seeder
 
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023',
-            'peraturan' => '/assets/library/peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023.pdf',
+            'peraturan' => 'suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1365,7 +1365,7 @@ class DatabaseSeeder extends Seeder
 
         referensi::create([
             'judul' => 'PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020',
-            'peraturan' => '/assets/library/peraturan/07_suratreferensi/PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020.pdf',
+            'peraturan' => 'referensi/PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1375,7 +1375,7 @@ class DatabaseSeeder extends Seeder
 
         perdaerah::create([
             'judul' => 'PERATURAN_DAERAH_NO_11-TAHUN_2019',
-            'peraturan' => '/assets/library/peraturan/08_daerah/PERATURAN_DAERAH_NO_11-TAHUN_2019.pdf',
+            'peraturan' => 'perdaerah/PERATURAN_DAERAH_NO_11-TAHUN_2019.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1383,7 +1383,7 @@ class DatabaseSeeder extends Seeder
 
         perdaerah::create([
             'judul' => 'PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR',
-            'peraturan' => '/assets/library/peraturan/08_daerah/PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR.pdf',
+            'peraturan' => 'perdaerah/PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1394,7 +1394,7 @@ class DatabaseSeeder extends Seeder
 
 pergubernur::create([
     'judul' => 'PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009',
-    'peraturan' => '/assets/library/peraturan/09_gubernur/PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009.pdf',
+    'peraturan' => 'pergubernur/PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1405,7 +1405,7 @@ pergubernur::create([
 
 perbupatiwalikota::create([
     'judul' => 'PERATURAN_BUPATI_NOMOR_71_TAHUN_2023',
-    'peraturan' => '/assets/library/peraturan/10_bupatiwalikota/PERATURAN_BUPATI_NOMOR_71_TAHUN_2023.pdf',
+    'peraturan' => 'perwalikotabupati/PERATURAN_BUPATI_NOMOR_71_TAHUN_2023.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1413,7 +1413,7 @@ perbupatiwalikota::create([
 
 perbupatiwalikota::create([
     'judul' => 'PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN',
-    'peraturan' => '/assets/library/peraturan/10_bupatiwalikota/PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN.pdf',
+    'peraturan' => 'perwalikotabupati/PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes

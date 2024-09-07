@@ -167,7 +167,7 @@
         <a style="background: white;">
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i></div></label>
         </a>
-        <a href="/perpemerintah" style="background: white;">
+        <a href="/perpresiden" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
         

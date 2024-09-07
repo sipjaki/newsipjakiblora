@@ -310,23 +310,23 @@
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>KEPUTUSAN MENTERI
                                         </a>
                                             
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/suratedaran" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SURAT EDARAN MENTERI
                                         </a>
 
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/referensi" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>REFERENSI
                                         </a>
                                         
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/perdaerah" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN DAERAH 
                                         </a>
 
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/pergubernur" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN GUBERNUR 
                                         </a>
 
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/perwalikotabupati" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PERATURAN WALIKOTA/ BUPATI
                                         </a>
                                         
