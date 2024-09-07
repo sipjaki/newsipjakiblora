@@ -247,6 +247,15 @@ Route::post('/perpresiden/{judul}', [PeraturanController::class, 'createupdatepe
 
 Route::get('/permenteri', [PeraturanController::class, 'menteri'])->middleware('auth');  
 Route::get('/permenteri/{judul}', [PeraturanController::class, 'menterishowByJudul'])->middleware('auth');
+Route::get('/permenteri/update/{judul}', [PeraturanController::class, 'updateshowpermenteri'])->middleware('auth')->name('peruud.showpermenteri');
+Route::post('/permenteri/{judul}', [PeraturanController::class, 'createupdatepermenteri'])->middleware('auth')->name('peruud.updatepermenteri');
+// CREATE DATA PER MENTERI
+Route::get('/permentericreate', [PeraturanController::class, 'createpermenteri'])->middleware('auth');
+Route::post('/permenteristore', [PeraturanController::class, 'createstorepermenteri'])->middleware('auth')->name('peruud.createpermenteri');
+Route::post('/permenteridelete/{judul}', [PeraturanController::class, 'deleterpermenteri'])
+    ->middleware('auth')
+    ->name('peruud.deletepermenteri');
+
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\keputusanmenteri;
+// use Illuminate\Http\Request;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 use App\Models\peraturan; // Pastikan namespace model sesuai dengan struktur direktori
@@ -222,7 +224,7 @@ class PeraturanController extends Controller
             $filePath = null;
             if ($request->hasFile('peraturan')) {
                 $file = $request->file('peraturan');
-                $filePath = $file->store('prepresiden', 'public'); // Menyimpan di storage/app/public/undangundang
+                $filePath = $file->store('perpresiden', 'public'); // Menyimpan di storage/app/public/undangundang
             }
 
             // Update data undang-undang dengan data dari form
@@ -285,7 +287,120 @@ class PeraturanController extends Controller
                     'title' => 'Details Data Peraturan Menteri',
                 ]);
             }
+            // ------------------------------
+
             
+    
+    // -------------------- UPDATE DATA PERATURAN PEMERINTAH JASA KONSTRUKSI ----------------------
+    public function updateshowpermenteri($judul)
+    {
+        // Cari data undang-undang berdasarkan nilai 'judul'
+        $permenteri = permenteri::where('judul', $judul)->firstOrFail();
+        
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.14_peraturan.04_menteri.update', [
+            'permenteri' => $permenteri,
+            'title' => 'Update Peraturan Menteri'
+        ]);
+    }
+    
+    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+            public function createupdatepermenteri(Request $request, $judul)
+        {
+            // Validasi input
+            $request->validate([
+                'judul' => 'required|string|max:255',
+                // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+            ]);
+
+            // Cari data undang-undang berdasarkan nilai 'judul'
+            $permenteri = permenteri::where('judul', $judul)->firstOrFail();
+            
+            // Simpan file dan ambil path-nya
+            $filePath = null;
+            if ($request->hasFile('peraturan')) {
+                $file = $request->file('peraturan');
+                $filePath = $file->store('permenteri', 'public'); // Menyimpan di storage/app/public/undangundang
+            }
+
+            // Update data undang-undang dengan data dari form
+            $permenteri->update([
+                'judul' => $request->input('judul'),
+                'peraturan' => $filePath ? $filePath : $permenteri->peraturan, // Gunakan path baru jika ada file
+            ]);
+
+
+            
+            session()->flash('update', 'Data Peraturan Menteri Berhasil Diupdate !');
+            // Redirect ke halaman yang sesuai
+            return redirect('/permenteri');
+                   }
+
+    
+// ------------ CREATE DATA PER MENTERI ----------------
+
+            public function createpermenteri()
+            {
+                
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.14_peraturan.04_menteri.create', [
+                    'title' => 'Create Peraturan Menteri'
+                ]);
+            }
+
+            public function createstorepermenteri(Request $request)
+            {
+                // Validasi input
+                $request->validate([
+                    'judul' => 'required|string|max:255',
+                    'peraturan' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+                ]);
+            
+                // Simpan file dan ambil path
+                $filePath = $request->file('peraturan')->store('peraturan', 'public');
+            
+                // Buat entri baru di database
+                permenteri::create([
+                    'judul' => $request->input('judul'),
+                    'peraturan' => $filePath,
+                ]);
+            
+                session()->flash('create', 'Data Berhasil Di Tambahkan !');
+                // Redirect ke halaman yang sesuai
+                return redirect('/permenteri');
+            }
+            
+
+
+    // ==================== DELETE PERMENTERI 
+
+    public function deleterpermenteri(Request $request, $judul)
+{
+    // Cari entri berdasarkan judul
+    $entry = permenteri::where('judul', $judul)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if (Storage::disk('public')->exists($entry->peraturan)) {
+            Storage::disk('public')->delete($entry->peraturan);
+        }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+    }
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/permenteri');
+}
+
+
+            // ========================================================================================================
  
     public function skmenteri()
             {

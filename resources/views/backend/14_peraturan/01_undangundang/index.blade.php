@@ -216,6 +216,7 @@
 
 
 
+
 {{-- ----------------------------------------------------------------------------- --}}
 
 @if (session('success'))
@@ -256,12 +257,14 @@
 
 {{-- ----------------------------------------------------------------------------- --}}
 
+
     @foreach($data as $items )
     <div class="pdf-container mt-4">
         <iframe class="pdf-frame" src="{{ asset('storage/' . $items->peraturan) }}" width="100%" height="600px"></iframe>
     </div>
     
-    
+    {{-- <iframe src="{{ asset(public_path('storage/undangundang/01_uud/UU_NO_02_TAHUN_2017.pdf')) }}" width="100%" height="600px"></iframe> --}}
+
     
     <script>
         document.getElementById('downloadBtn').addEventListener('click', function() {
