@@ -193,9 +193,12 @@
                 {{-- ========================================= --}}
 
         <style>
+            
+@media (min-width: 768px) {
+
             .container-update {
                 /* margin-top: 500px; */
-                width: 950px;
+                width: 900px;
                 height: 250px;
                 margin: 0 auto;
                 padding: 20px;
@@ -238,6 +241,8 @@
                 color: green;
                 margin-bottom: 20px;
             }
+
+        }
         </style>
     
 <br>

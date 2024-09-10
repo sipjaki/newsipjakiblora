@@ -982,7 +982,7 @@ class DatabaseSeeder extends Seeder
 //======================== ===================================================================================
         peraturan::create([
             'judul' => 'UNDANG- UNDANG JASA KONSTRUKSI',
-            'peraturan' => 'undangundang/UU_NO_02_TAHUN_2017.pdf',
+            'peraturan' => 'peraturan/01_uud/UU_NO_02_TAHUN_2017.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -991,7 +991,7 @@ class DatabaseSeeder extends Seeder
         // ======================================================
         perpemerintah::create([
             'judul' => 'PERATURAN PEMERINTAH NOMOR 29 TAHUN 2000',
-            'peraturan' => 'perpemerintah/PERATURAN_PEMERINTAH_NO_29_TAHUN_2000.pdf',
+            'peraturan' => 'peraturan/02_pemerintah/PERATURAN_PEMERINTAH_NO_29_TAHUN_2000.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -999,7 +999,7 @@ class DatabaseSeeder extends Seeder
         // ======================================================
         perpresiden::create([
             'judul' => 'PERATURAN PRESIDEN NOMOR 12 TAHUN 2021',
-            'peraturan' => 'perpresiden/PERATURAN_PRESIDEN_NOMOR_12_TAHUN_2021.pdf',
+            'peraturan' => 'peraturan/03_presiden/PERATURAN_PRESIDEN_NOMOR_12_TAHUN_2021.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1009,7 +1009,7 @@ class DatabaseSeeder extends Seeder
 // ==========================================================================================
         permenteri::create([
             'judul' => 'PERATURAN_MENTERI_PUPR_NOMOR_14_TAHUN_2020',
-            'peraturan' => 'permenteri/PERATURAN_MENTERI_PUPR_NOMOR_14_TAHUN_2020.pdf',
+            'peraturan' => 'peraturan/04_menteri/PERATURAN_MENTERI_PUPR_NOMOR_14_TAHUN_2020.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1017,7 +1017,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_1_A_COVER_LAMPIRAN_I_PL',
-            'peraturan' => 'permenteri/LAMPIRAN_1_A_COVER_LAMPIRAN_I_PL.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_A_COVER_LAMPIRAN_I_PL.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1025,7 +1025,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_1_A_SDP_PENGADAAN_LANGSUNG_JKK_PERORANGAN',
-            'peraturan' => 'permenteri/LAMPIRAN_1_A_SDP_PENGADAAN_LANGSUNG_JKK_PERORANGAN.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_A_SDP_PENGADAAN_LANGSUNG_JKK_PERORANGAN.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1033,7 +1033,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_1_B_SDP_PENGADAAN_LANGSUNG_JKK_BUJK',
-            'peraturan' => 'permenteri/LAMPIRAN_1_B_SDP_PENGADAAN_LANGSUNG_JKK_BUJK.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_B_SDP_PENGADAAN_LANGSUNG_JKK_BUJK.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1041,7 +1041,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_1_C_SDP_PENGADAAN_LANGSUNG_PK_PERORANGAN',
-            'peraturan' => 'permenteri/LAMPIRAN_1_C_SDP_PENGADAAN_LANGSUNG_PK_PERORANGAN.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_C_SDP_PENGADAAN_LANGSUNG_PK_PERORANGAN.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1049,7 +1049,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_1_D_SDP_PENGADAAN_LANGSUNG_PK_BUJK',
-            'peraturan' => 'permenteri/LAMPIRAN_1_D_SDP_PENGADAAN_LANGSUNG_PK_BUJK.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_1_D_SDP_PENGADAAN_LANGSUNG_PK_BUJK.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1057,7 +1057,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_A_COVER_LAMPIRAN_II_JK',
-            'peraturan' => 'permenteri/LAMPIRAN_2_A_COVER_LAMPIRAN_II_JK.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_A_COVER_LAMPIRAN_II_JK.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1065,7 +1065,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_B_DOK_KUALIFIKASI',
-            'peraturan' => 'permenteri/LAMPIRAN_2_B_DOK_KUALIFIKASI.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_B_DOK_KUALIFIKASI.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1073,7 +1073,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_C_SELEKSI_KUALITAS_BIAYA_WP',
-            'peraturan' => 'permenteri/LAMPIRAN_2_C_SELEKSI_KUALITAS_BIAYA_WP.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_C_SELEKSI_KUALITAS_BIAYA_WP.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1081,7 +1081,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_D_SELEKSI_BU_KUALITAS_BIAYA_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_2_D_SELEKSI_BU_KUALITAS_BIAYA_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_D_SELEKSI_BU_KUALITAS_BIAYA_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1089,7 +1089,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_E_SELEKSI_BU_KUALITAS_WP',
-            'peraturan' => 'permenteri/LAMPIRAN_2_E_SELEKSI_BU_KUALITAS_WP.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_E_SELEKSI_BU_KUALITAS_WP.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1097,7 +1097,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_F_SELEKSI_BU_KUALITAS_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_2_F_SELEKSI_BU_KUALITAS_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_F_SELEKSI_BU_KUALITAS_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1105,7 +1105,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_G_SELEKSI_BU_PAGU_ANGGARAN_WP',
-            'peraturan' => 'permenteri/LAMPIRAN_2_G_SELEKSI_BU_PAGU_ANGGARAN_WP.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_G_SELEKSI_BU_PAGU_ANGGARAN_WP.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1113,7 +1113,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_H_SELEKSI_BU_PAGU_ANGGARAN_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_2_H_SELEKSI_BU_PAGU_ANGGARAN_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_H_SELEKSI_BU_PAGU_ANGGARAN_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1121,7 +1121,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_I_SELEKSI_BU_BIAYA_TERENDAH_WP',
-            'peraturan' => 'permenteri/LAMPIRAN_2_I_SELEKSI_BU_BIAYA_TERENDAH_WP.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_I_SELEKSI_BU_BIAYA_TERENDAH_WP.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1129,7 +1129,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_J_SELEKSI_BU_BIAYA_TERENDAH_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_2_J_SELEKSI_BU_BIAYA_TERENDAH_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_J_SELEKSI_BU_BIAYA_TERENDAH_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1137,7 +1137,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_K_SELEKSI_TA_KUALITAS_WP',
-            'peraturan' => 'permenteri/LAMPIRAN_2_K_SELEKSI_TA_KUALITAS_WP.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_K_SELEKSI_TA_KUALITAS_WP.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1145,7 +1145,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_2_L_SELEKSI_TA_KUALITAS_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_2_L_SELEKSI_TA_KUALITAS_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_2_L_SELEKSI_TA_KUALITAS_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1153,7 +1153,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_A_COVER_LAMPIRAN_III_PK',
-            'peraturan' => 'permenteri/LAMPIRAN_3_A_COVER_LAMPIRAN_III_PK.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_A_COVER_LAMPIRAN_III_PK.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1161,7 +1161,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_B_SDP_PK_PASCA_HARGA_TERENDAH_GAB',
-            'peraturan' => 'permenteri/LAMPIRAN_3_B_SDP_PK_PASCA_HARGA_TERENDAH_GAB.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_B_SDP_PK_PASCA_HARGA_TERENDAH_GAB.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1169,7 +1169,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_C_SDP_PK_PASCA_HARGA_TERENDAH_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_C_SDP_PK_PASCA_HARGA_TERENDAH_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_C_SDP_PK_PASCA_HARGA_TERENDAH_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1177,7 +1177,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_D_SDP_PK_PASCA_HARGA_TERENDAH_HS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_D_SDP_PK_PASCA_HARGA_TERENDAH_HS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_D_SDP_PK_PASCA_HARGA_TERENDAH_HS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1185,7 +1185,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_E_SDP_PK_PASCA_HARGA_TERENDA_AMBANG_BATAS_GAB',
-            'peraturan' => 'permenteri/LAMPIRAN_3_E_SDP_PK_PASCA_HARGA_TERENDA_AMBANG_BATAS_GAB.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_E_SDP_PK_PASCA_HARGA_TERENDA_AMBANG_BATAS_GAB.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1193,7 +1193,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_F_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_F_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_F_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1201,7 +1201,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_G_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_HS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_G_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_HS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_G_SDP_PK_PASCA_HARGA_TERENDAH_AMBANG_BATAS_HS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1209,7 +1209,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_H_SDP_PK_PASCA_SISTEM_NILAI_GAB',
-            'peraturan' => 'permenteri/LAMPIRAN_3_H_SDP_PK_PASCA_SISTEM_NILAI_GAB.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_H_SDP_PK_PASCA_SISTEM_NILAI_GAB.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1217,7 +1217,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_I_SDP_PK_PASCA_SISTEM_NILAI_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_I_SDP_PK_PASCA_SISTEM_NILAI_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_I_SDP_PK_PASCA_SISTEM_NILAI_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1225,7 +1225,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_J_SDP_PK_PASCA_SISTEM_NILAI_HS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_J_SDP_PK_PASCA_SISTEM_NILAI_HS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_J_SDP_PK_PASCA_SISTEM_NILAI_HS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1233,7 +1233,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_K_SDP_PK_PRAKUALIFIKASI',
-            'peraturan' => 'permenteri/LAMPIRAN_3_K_SDP_PK_PRAKUALIFIKASI.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_K_SDP_PK_PRAKUALIFIKASI.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1241,7 +1241,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_L_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_GAB',
-            'peraturan' => 'permenteri/LAMPIRAN_3_L_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_GAB.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_L_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_GAB.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1249,7 +1249,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_M_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_M_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_M_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1257,7 +1257,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_N_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_HS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_N_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_HS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_N_SDP_PK_PRA_SISTEM_HARGA_TERENDAH_AMBANG_BATAS_HS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1265,7 +1265,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_O_SDP_PK_PRA_SISTEM_NILAI_GAB',
-            'peraturan' => 'permenteri/LAMPIRAN_3_O_SDP_PK_PRA_SISTEM_NILAI_GAB.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_O_SDP_PK_PRA_SISTEM_NILAI_GAB.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1273,7 +1273,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_P_SDP_PK_PRA_SISTEM_NILAI_LS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_P_SDP_PK_PRA_SISTEM_NILAI_LS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_P_SDP_PK_PRA_SISTEM_NILAI_LS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1281,7 +1281,7 @@ class DatabaseSeeder extends Seeder
 
         permenteri::create([
             'judul' => 'LAMPIRAN_3_Q_SDP_PK_PRA_SISTEM_NILAI_HS',
-            'peraturan' => 'permenteri/LAMPIRAN_3_Q_SDP_PK_PRA_SISTEM_NILAI_HS.pdf',
+            'peraturan' => 'peraturan/04_menteri/LAMPIRAN_3_Q_SDP_PK_PRA_SISTEM_NILAI_HS.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1290,7 +1290,7 @@ class DatabaseSeeder extends Seeder
 // ============================================================================================================
         keputusanmenteri::create([
             'judul' => 'KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK',
-            'peraturan' => 'keputusanmenteri/KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK.pdf',
+            'peraturan' => 'peraturan/05_keputusanmenteri/KEPUTUSAN_DIRJEN_BINAKOS_NO_89_PENETAPAN_STANDAR_SKEMA_SERTIFIKAT_BUJK.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1298,7 +1298,7 @@ class DatabaseSeeder extends Seeder
 
         keputusanmenteri::create([
             'judul' => 'KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022',
-            'peraturan' => 'keputusanmenteri/KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022.pdf',
+            'peraturan' => 'peraturan/05_keputusanmenteri/KEPUTUSAN_DIRJEN_PENETAPAN_SKEMA_BUJK_NOMOR_144_TAHUN_2022.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1306,7 +1306,7 @@ class DatabaseSeeder extends Seeder
 
         keputusanmenteri::create([
             'judul' => 'KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022',
-            'peraturan' => 'keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022.pdf',
+            'peraturan' => 'peraturan/05_keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_713_TAHUN_2022.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1314,7 +1314,7 @@ class DatabaseSeeder extends Seeder
 
         keputusanmenteri::create([
             'judul' => 'KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020',
-            'peraturan' => 'keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020.pdf',
+            'peraturan' => 'peraturan/05_keputusanmenteri/KEPUTUSAN_MENTERI_PUPR_NO_1410_KPTS_M_2020.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1323,7 +1323,7 @@ class DatabaseSeeder extends Seeder
         // ====================================================================================================================================================================================
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024',
-            'peraturan' => 'suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024.pdf',
+            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_54_TAHUN_2024.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1331,7 +1331,7 @@ class DatabaseSeeder extends Seeder
         
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023',
-            'peraturan' => 'suratedaran/SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023.pdf',
+            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BK_NOMOR_33_TAHUN_2023.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1339,7 +1339,7 @@ class DatabaseSeeder extends Seeder
         
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL',
-            'peraturan' => 'suratedaran/SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL.pdf',
+            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_KEMENTERIAN_2022_SE_DJB_TATA_CARA_PELAKSANAAN_SERTIFIKASI_KOMPETENSI_FINAL.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1347,7 +1347,7 @@ class DatabaseSeeder extends Seeder
         
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022',
-            'peraturan' => 'suratedaran/SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022.pdf',
+            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_PENCABUTAN_DIRJEN_BK_NO_59_2022.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1355,7 +1355,7 @@ class DatabaseSeeder extends Seeder
 
         suratedaran::create([
             'judul' => 'SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023',
-            'peraturan' => 'suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023.pdf',
+            'peraturan' => 'peraturan/06_suratedaran/SURAT_EDARAN_DIRJEN_BINKON_NO_73_TAHUN_2023.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1365,7 +1365,7 @@ class DatabaseSeeder extends Seeder
 
         referensi::create([
             'judul' => 'PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020',
-            'peraturan' => 'referensi/PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020.pdf',
+            'peraturan' => 'peraturan/07_suratreferensi/PERATURAN_PEMERINTAH_NOMOR_22_TAHUN_2020.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1375,7 +1375,7 @@ class DatabaseSeeder extends Seeder
 
         perdaerah::create([
             'judul' => 'PERATURAN_DAERAH_NO_11-TAHUN_2019',
-            'peraturan' => 'perdaerah/PERATURAN_DAERAH_NO_11-TAHUN_2019.pdf',
+            'peraturan' => 'peraturan/08_daerah/PERATURAN_DAERAH_NO_11-TAHUN_2019.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1383,7 +1383,7 @@ class DatabaseSeeder extends Seeder
 
         perdaerah::create([
             'judul' => 'PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR',
-            'peraturan' => 'perdaerah/PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR.pdf',
+            'peraturan' => 'peraturan/08_daerah/PERATURAN_DAERAH_NOMOR_01_TAHUN_2021_OCR.pdf',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1394,7 +1394,7 @@ class DatabaseSeeder extends Seeder
 
 pergubernur::create([
     'judul' => 'PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009',
-    'peraturan' => 'pergubernur/PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009.pdf',
+    'peraturan' => 'peraturan/08_daerah/PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1405,7 +1405,7 @@ pergubernur::create([
 
 perbupatiwalikota::create([
     'judul' => 'PERATURAN_BUPATI_NOMOR_71_TAHUN_2023',
-    'peraturan' => 'perwalikotabupati/PERATURAN_BUPATI_NOMOR_71_TAHUN_2023.pdf',
+    'peraturan' => 'peraturan/10_bupatiwalikota/PERATURAN_BUPATI_NOMOR_71_TAHUN_2023.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1413,7 +1413,7 @@ perbupatiwalikota::create([
 
 perbupatiwalikota::create([
     'judul' => 'PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN',
-    'peraturan' => 'perwalikotabupati/PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN.pdf',
+    'peraturan' => 'peraturan/10_bupatiwalikota/PERATURAN_BUPATI_NOMOR_72_TAHUN_2023_LANJUTAN.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1424,7 +1424,7 @@ perbupatiwalikota::create([
 
 suratkeputusan::create([
     'judul' => 'PERATURAN MENTERI PEKERJAAN UMUM DAN PERUMAHAN RAKYAT REPUBLIK INDONESIA NOMOR 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/01.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/01.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1432,7 +1432,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'PERATURAN MENTERI PEKERJAAN UMUM DAN PERUMAHAN RAKYAT REPUBLIK INDONESIA NOMOR 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI DALAM RANGKA MENDUKUNG KEMUDAHAN PERIZINAN BERUSAHA BAGI PELAKU USAHA JASA KONSTRUKSI - RELAKSASI',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/02.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/02.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1440,7 +1440,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'PERMEN PUPR NO. 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI DALAM RANGKA MENDUKUNG KEMUDAHAN PERIZINAN BERUSAHA BAGI PELAKU USAHA JASA KONSTRUKSI',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/03.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/03.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1449,7 +1449,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'SURAT EDARAN LPJK NOMOR : 07/SE/LPJK/2022 TENTANG PEDOMAN PEMBERIAN REKOMENDASI LISENSI LSP, PENCATATAN LSP TERLISENSI, SERTA DAFTAR PENYESUAIAN STANDAR KOMPETENSI DAN JABKER KONSTRUKSI',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/04.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/04.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1457,7 +1457,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'KEPUTUSAN DIRJEN BIKON NO. 12.1/KPTS/Dk/2022 - TENTANG PENETAPAN JABATAN KERJA DAN KONVERSI JABATAN KERJA EKSISTING SERTA JENJANG KUALIFIKASI BIDANG JASA KONSTRUKSI - TAHUN 2022',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/05.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/05.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1465,7 +1465,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'KEPUTUSAN DIREKTUR JENDERAL BINA KONSTRUKSI, KEMENTERIAN PEKERJAAN UMUM DAN PERUMAHAN RAKYAT NOMOR 144/KPTS/DK/2022 TENTANG PENETAPAN STANDAR SKEMA SERTIFIKASI BADAN USAHA JASA KONSTRUKSI',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/06.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/06.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1473,7 +1473,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'SE MENTERI PUPR NO. 05 TAHUN 2022 PERUBAHAN ATAS SE NO. 03/SE/M/2022 TENTANG PEDOMAN PERPANJANGAN MASA BERLAKU SKK JASA KONSTRUKSI',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/07.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/07.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1481,7 +1481,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'SE MENTERI PUPR NO. 02 TAHUN 2021 TENTANG PERUBAHAN SE MENTERI PUPR NO. 30 TAHUN 2020',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/08.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/08.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1489,7 +1489,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'KEPUTUSAN NO. 89 DIREKTUR JENDERAL DJBK PUPR TAHUN 2021',
-    'peraturan' => '/assets/library/peraturan/11_suratkeputusan/09.pdf',
+    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/09.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes

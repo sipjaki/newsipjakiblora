@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 67vh;
+    height: 70vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -216,9 +216,12 @@
                 {{-- ========================================= --}}
 
         <style>
+            
+@media (min-width: 768px) {
+
             .container-update {
                 /* margin-top: 500px; */
-                width: 950px;
+                width: 900px;
                 height: 190px;
                 margin: 0 auto;
                 padding: 20px;
@@ -261,6 +264,8 @@
                 color: green;
                 margin-bottom: 20px;
             }
+
+        }
         </style>
     
 <br>
