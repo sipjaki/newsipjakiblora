@@ -75,7 +75,7 @@ class PeraturanController extends Controller
             $filePath = null;
             if ($request->hasFile('peraturan')) {
                 $file = $request->file('peraturan');
-                $filePath = $file->store('undangundang', 'public'); // Menyimpan di storage/app/public/undangundang
+                $filePath = $file->store('peraturan/01_uud', 'public'); // Menyimpan di storage/app/public/undangundang
             }
 
             // Update data undang-undang dengan data dari form
@@ -148,7 +148,7 @@ class PeraturanController extends Controller
             $filePath = null;
             if ($request->hasFile('peraturan')) {
                 $file = $request->file('peraturan');
-                $filePath = $file->store('perpemerintah', 'public'); // Menyimpan di storage/app/public/undangundang
+                $filePath = $file->store('peraturan/02_pemerintah', 'public'); // Menyimpan di storage/app/public/undangundang
             }
 
             // Update data undang-undang dengan data dari form
@@ -224,7 +224,7 @@ class PeraturanController extends Controller
             $filePath = null;
             if ($request->hasFile('peraturan')) {
                 $file = $request->file('peraturan');
-                $filePath = $file->store('perpresiden', 'public'); // Menyimpan di storage/app/public/undangundang
+                $filePath = $file->store('peraturan/03_presiden', 'public'); // Menyimpan di storage/app/public/undangundang
             }
 
             // Update data undang-undang dengan data dari form
@@ -320,7 +320,7 @@ class PeraturanController extends Controller
             $filePath = null;
             if ($request->hasFile('peraturan')) {
                 $file = $request->file('peraturan');
-                $filePath = $file->store('permenteri', 'public'); // Menyimpan di storage/app/public/undangundang
+                $filePath = $file->store('peraturan/04_menteri', 'public'); // Menyimpan di storage/app/public/undangundang
             }
 
             // Update data undang-undang dengan data dari form
@@ -357,7 +357,7 @@ class PeraturanController extends Controller
                 ]);
             
                 // Simpan file dan ambil path
-                $filePath = $request->file('peraturan')->store('permenteri', 'public');
+                $filePath = $request->file('peraturan')->store('peraturan/04_menteri', 'public');
             
                 // Buat entri baru di database
                 permenteri::create([
@@ -475,7 +475,7 @@ public function feskmenteri()
             $filePath = null;
             if ($request->hasFile('peraturan')) {
                 $file = $request->file('peraturan');
-                $filePath = $file->store('keputusanmenteri', 'public'); // Menyimpan di storage/app/public/undangundang
+                $filePath = $file->store('peraturan/05_keputusanmenteri', 'public'); // Menyimpan di storage/app/public/undangundang
             }
 
             // Update data undang-undang dengan data dari form
@@ -512,7 +512,7 @@ public function feskmenteri()
                 ]);
             
                 // Simpan file dan ambil path
-                $filePath = $request->file('peraturan')->store('keputusanmenteri', 'public');
+                $filePath = $request->file('peraturan')->store('peraturan/05_keputusanmenteri', 'public');
             
                 // Buat entri baru di database
                 keputusanmenteri::create([
@@ -634,7 +634,7 @@ public function suratedaranmenteri()
             $filePath = null;
             if ($request->hasFile('peraturan')) {
                 $file = $request->file('peraturan');
-                $filePath = $file->store('suratedaran', 'public'); // Menyimpan di storage/app/public/undangundang
+                $filePath = $file->store('peraturan/06_suratedaran', 'public'); // Menyimpan di storage/app/public/undangundang
             }
 
             // Update data undang-undang dengan data dari form
@@ -671,7 +671,7 @@ public function suratedaranmenteri()
                 ]);
             
                 // Simpan file dan ambil path
-                $filePath = $request->file('peraturan')->store('suratedaran', 'public');
+                $filePath = $request->file('peraturan')->store('peraturan/06_suratedaran', 'public');
             
                 // Buat entri baru di database
                 suratedaran::create([
@@ -767,7 +767,7 @@ public function fereferensi()
             $filePath = null;
             if ($request->hasFile('peraturan')) {
                 $file = $request->file('peraturan');
-                $filePath = $file->store('referensi', 'public'); // Menyimpan di storage/app/public/undangundang
+                $filePath = $file->store('peraturan/07_suratreferensi', 'public'); // Menyimpan di storage/app/public/undangundang
             }
 
             // Update data undang-undang dengan data dari form
@@ -860,7 +860,7 @@ public function suratperdaerahshowByJudul($judul)
                         $filePath = null;
                         if ($request->hasFile('peraturan')) {
                             $file = $request->file('peraturan');
-                            $filePath = $file->store('perdaerah', 'public'); // Menyimpan di storage/app/public/undangundang
+                            $filePath = $file->store('peraturan/08_daerah', 'public'); // Menyimpan di storage/app/public/undangundang
                         }
             
                         // Update data undang-undang dengan data dari form
@@ -896,7 +896,7 @@ public function createstoreperdaerah(Request $request)
     ]);
 
     // Simpan file dan ambil path
-    $filePath = $request->file('peraturan')->store('perdaerah', 'public');
+    $filePath = $request->file('peraturan')->store('peraturan/08_daerah', 'public');
 
     // Buat entri baru di database
     perdaerah::create([
@@ -1004,7 +1004,7 @@ public function pergubernurshowByJudul($judul)
                         $filePath = null;
                         if ($request->hasFile('peraturan')) {
                             $file = $request->file('peraturan');
-                            $filePath = $file->store('pergubernur', 'public'); // Menyimpan di storage/app/public/undangundang
+                            $filePath = $file->store('peraturan/09_gubernur', 'public'); // Menyimpan di storage/app/public/undangundang
                         }
             
                         // Update data undang-undang dengan data dari form
@@ -1041,7 +1041,7 @@ public function createstorepergubernur(Request $request)
     ]);
 
     // Simpan file dan ambil path
-    $filePath = $request->file('peraturan')->store('pergubernur', 'public');
+    $filePath = $request->file('peraturan')->store('peraturan/09_gubernur', 'public');
 
     // Buat entri baru di database
     pergubernur::create([
@@ -1160,7 +1160,7 @@ public function perwalikotabupatishowByJudul($judul)
                         $filePath = null;
                         if ($request->hasFile('peraturan')) {
                             $file = $request->file('peraturan');
-                            $filePath = $file->store('perwalikotabupati', 'public'); // Menyimpan di storage/app/public/undangundang
+                            $filePath = $file->store('peraturan/10_bupatiwalikota', 'public'); // Menyimpan di storage/app/public/undangundang
                         }
             
                         // Update data undang-undang dengan data dari form
@@ -1196,7 +1196,7 @@ public function createstoreperwalikotabupati(Request $request)
     ]);
 
     // Simpan file dan ambil path
-    $filePath = $request->file('peraturan')->store('perwalikotabupati', 'public');
+    $filePath = $request->file('peraturan')->store('peraturan/10_bupatiwalikota', 'public');
 
     // Buat entri baru di database
     perbupatiwalikota::create([
