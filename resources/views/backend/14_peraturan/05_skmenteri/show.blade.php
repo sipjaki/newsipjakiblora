@@ -228,20 +228,22 @@
             // URL file PDF
             const pdfUrl = '{{ asset('storage/' . $data->peraturan) }}';
             
+            // Nama file yang diunduh berdasarkan atribut judul
+            const fileName = '{{ $data->judul }}' + '.pdf'; // Pastikan menambahkan ekstensi file yang sesuai
+            
             // Membuat elemen anchor
             const link = document.createElement('a');
-        link.href = pdfUrl;
-        link.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
-        
-        // Menyimulasikan klik pada elemen anchor
-        document.body.appendChild(link);
-        link.click();
-        
-        // Menghapus elemen anchor dari dokumen
-        document.body.removeChild(link);
-    });
-</script>
-
+            link.href = pdfUrl;
+            link.download = fileName;
+            
+            // Menyimulasikan klik pada elemen anchor
+            document.body.appendChild(link);
+            link.click();
+            
+            // Menghapus elemen anchor dari dokumen
+            document.body.removeChild(link);
+        });
+    </script>
 
 
 </div>

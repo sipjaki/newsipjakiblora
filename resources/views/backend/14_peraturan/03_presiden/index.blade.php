@@ -73,6 +73,7 @@
          
           /* Untuk memastikan tata letak responsif, Anda bisa menggunakan media queries */
 @media (min-width: 768px) {
+
     .badge {
                 background: linear-gradient(to right, yellow, black);
                 color: white;

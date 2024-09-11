@@ -322,6 +322,17 @@ Route::post('/perwalikotabupatidelete/{judul}', [PeraturanController::class, 'de
 ->middleware('auth')
 ->name('peruud.deleteperwalikotabupati');
 
+// SURAT KEPUTUSAN TENTANG JASA KONSTRUKSI  
+Route::get('/keputusan', [PeraturanController::class, 'keputusan'])->middleware('auth');  
+Route::get('/keputusanbaru/{judul}', [PeraturanController::class, 'keputusanshowbyjudul'])->middleware('auth');
+Route::get('/keputusan/update/{judul}', [PeraturanController::class, 'updateshowkeputusan'])->middleware('auth')->name('peruud.showkeputusan');
+Route::post('/keputusan/{judul}', [PeraturanController::class, 'createupdatekeputusan'])->middleware('auth')->name('peruud.updatekeputusan');
+Route::get('/keputusancreate', [PeraturanController::class, 'createkeputusan'])->middleware('auth');
+Route::post('/keputusanstore', [PeraturanController::class, 'createstorekeputusan'])->middleware('auth')->name('peruud.createkeputusan');
+Route::post('/keputusandelete/{judul}', [PeraturanController::class, 'deletekeputusan'])
+->middleware('auth')
+->name('peruud.deletekeputusan');
+
 
 
 // -------- BAGIAN 04 BACKEND ---------------------------------

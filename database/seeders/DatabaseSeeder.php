@@ -1424,7 +1424,7 @@ perbupatiwalikota::create([
 
 suratkeputusan::create([
     'judul' => 'PERATURAN MENTERI PEKERJAAN UMUM DAN PERUMAHAN RAKYAT REPUBLIK INDONESIA NOMOR 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/01.pdf',
+    'peraturan' => 'peraturan/11_keputusan/01.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1432,7 +1432,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'PERATURAN MENTERI PEKERJAAN UMUM DAN PERUMAHAN RAKYAT REPUBLIK INDONESIA NOMOR 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI DALAM RANGKA MENDUKUNG KEMUDAHAN PERIZINAN BERUSAHA BAGI PELAKU USAHA JASA KONSTRUKSI - RELAKSASI',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/02.pdf',
+    'peraturan' => 'peraturan/11_keputusan/02.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1440,7 +1440,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'PERMEN PUPR NO. 8 TAHUN 2022 TENTANG TATA CARA PELAKSANAAN PEMENUHAN SERTIFIKAT STANDAR JASA KONSTRUKSI DALAM RANGKA MENDUKUNG KEMUDAHAN PERIZINAN BERUSAHA BAGI PELAKU USAHA JASA KONSTRUKSI',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/03.pdf',
+    'peraturan' => 'peraturan/11_keputusan/03.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1449,7 +1449,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'SURAT EDARAN LPJK NOMOR : 07/SE/LPJK/2022 TENTANG PEDOMAN PEMBERIAN REKOMENDASI LISENSI LSP, PENCATATAN LSP TERLISENSI, SERTA DAFTAR PENYESUAIAN STANDAR KOMPETENSI DAN JABKER KONSTRUKSI',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/04.pdf',
+    'peraturan' => 'peraturan/11_keputusan/04.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1457,7 +1457,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'KEPUTUSAN DIRJEN BIKON NO. 12.1/KPTS/Dk/2022 - TENTANG PENETAPAN JABATAN KERJA DAN KONVERSI JABATAN KERJA EKSISTING SERTA JENJANG KUALIFIKASI BIDANG JASA KONSTRUKSI - TAHUN 2022',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/05.pdf',
+    'peraturan' => 'peraturan/11_keputusan/05.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1465,7 +1465,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'KEPUTUSAN DIREKTUR JENDERAL BINA KONSTRUKSI, KEMENTERIAN PEKERJAAN UMUM DAN PERUMAHAN RAKYAT NOMOR 144/KPTS/DK/2022 TENTANG PENETAPAN STANDAR SKEMA SERTIFIKASI BADAN USAHA JASA KONSTRUKSI',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/06.pdf',
+    'peraturan' => 'peraturan/11_keputusan/06.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1473,7 +1473,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'SE MENTERI PUPR NO. 05 TAHUN 2022 PERUBAHAN ATAS SE NO. 03/SE/M/2022 TENTANG PEDOMAN PERPANJANGAN MASA BERLAKU SKK JASA KONSTRUKSI',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/07.pdf',
+    'peraturan' => 'peraturan/11_keputusan/07.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1481,7 +1481,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'SE MENTERI PUPR NO. 02 TAHUN 2021 TENTANG PERUBAHAN SE MENTERI PUPR NO. 30 TAHUN 2020',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/08.pdf',
+    'peraturan' => 'peraturan/11_keputusan/08.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -1489,7 +1489,7 @@ suratkeputusan::create([
 
 suratkeputusan::create([
     'judul' => 'KEPUTUSAN NO. 89 DIREKTUR JENDERAL DJBK PUPR TAHUN 2021',
-    'peraturan' => 'peraturan/11_suratkeputusan/11_suratkeputusan/09.pdf',
+    'peraturan' => 'peraturan/11_keputusan/09.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes

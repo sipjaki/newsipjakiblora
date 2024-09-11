@@ -162,18 +162,18 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Peraturan Gubernur Tentang Jasa Konstruksi</div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Surat Keputusan Tentang Jasa Konstruksi</div></label>
         </a>
         <a style="background: white;">
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i></div></label>
         </a>
-        <a href="/pergubernur" style="background: white;">
+        <a href="/keputusan" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
         
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
         
-        <a href="/pergubernur/update/{{$data->judul}}" style="background: white;">
+        <a href="/keputusan/update/{{$data->judul}}" style="background: white;">
             <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
         </a>
                         {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
@@ -210,12 +210,12 @@
 }
 
     </style>
-<div style="margin-top: 15px;">
+{{-- <div style="margin-top: 15px;">
 
     <a style="background: white; margin-top:10px; background: linear-gradient(to right, white, white);">
         <div class="badge"><i class="fas fa-file mr-2"></i>{{$data->judul}}</div></label>
     </a>
-</div>
+</div> --}}
 
     
     <div class="pdf-container mt-4">
@@ -244,7 +244,6 @@
             document.body.removeChild(link);
         });
     </script>
-
 
 
 </div>

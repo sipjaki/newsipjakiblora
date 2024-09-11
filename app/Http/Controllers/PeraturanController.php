@@ -1238,7 +1238,7 @@ public function createstoreperwalikotabupati(Request $request)
 }
 
 
-
+// ==============================================================================================================================
                                
                                
 
@@ -1263,6 +1263,147 @@ public function createstoreperwalikotabupati(Request $request)
                                 'title' => 'Details Surat Keputusan Jasa Konstruksi',
                             ]);
                         }
+                        // =====================================================================================
+
+                        // =====================================================================================
+            
+public function keputusan()
+{
+    $data= suratkeputusan::paginate(15); // Menggunakan paginate() untuk pagination
+
+    return view('backend.14_peraturan.11_keputusan.index', [
+        'title' => 'Surat Keputusan Tentang Jasa Konstruksi',
+        'data' => $data, // Mengirimkan data paginasi ke view
+    ]);
+}
+
+
+public function keputusanshowbyjudul($judul)
+{
+    $data = suratkeputusan::where('judul', $judul)->firstOrFail();
+
+    return view('backend.14_peraturan.11_keputusan.show', [
+        'data' => $data,
+        'title' => 'Details Data Surat Keputusan',
+    ]);
+}
+
+
+                        // =====================================================================================
+            
+                // -------------------- UPDATE DATA PERATURAN GUBERNUR JASA KONSTRUKSI ----------------------
+                public function updateshowkeputusan($judul)
+                {
+                    // Cari data undang-undang berdasarkan nilai 'judul'
+                    $keputusan = suratkeputusan::where('judul', $judul)->firstOrFail();
                     
+                    // Tampilkan form update dengan data yang ditemukan
+                    return view('backend.14_peraturan.11_keputusan.update', [
+                        'keputusan' => $keputusan,
+                        'title' => 'Update Surat Keputusan'
+                    ]);
+                }
+                
+                // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+                        public function createupdatekeputusan(Request $request, $judul)
+                    {
+                        // Validasi input
+                        $request->validate([
+                            'judul' => 'required|string|max:255',
+                            // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+                        ]);
+            
+                        // Cari data undang-undang berdasarkan nilai 'judul'
+                        $keputusan = suratkeputusan::where('judul', $judul)->firstOrFail();
+                        
+                        // Simpan file dan ambil path-nya
+                        $filePath = null;
+                        if ($request->hasFile('peraturan')) {
+                            $file = $request->file('peraturan');
+                            $filePath = $file->store('peraturan/11_keputusan', 'public'); // Menyimpan di storage/app/public/undangundang
+                        }
+            
+                        // Update data undang-undang dengan data dari form
+                        $keputusan->update([
+                            'judul' => $request->input('judul'),
+                            'peraturan' => $filePath ? $filePath : $keputusan->peraturan, // Gunakan path baru jika ada file
+                        ]);
+            
+                        
+                        session()->flash('update', 'Data Surat Keputusan Berhasil Diupdate !');
+                        // Redirect ke halaman yang sesuai
+                        return redirect('/keputusan');
+                               }
+
+       
+                               
+// ------------ CREATE DATA SURAT KEPUTUSAN  ----------------
+
+public function createkeputusan()
+{
+    
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.14_peraturan.11_keputusan.create', [
+        'title' => 'Create Surat Keputusan'
+    ]);
+}
+
+public function createstorekeputusan(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'judul' => 'required|string|max:255',
+        'peraturan' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+    ]);
+
+    // Simpan file dan ambil path
+    $filePath = $request->file('peraturan')->store('peraturan/11_keputusan', 'public');
+
+    // Buat entri baru di database
+    suratkeputusan::create([
+        'judul' => $request->input('judul'),
+        'peraturan' => $filePath,
+    ]);
+
+    session()->flash('create', 'Data Berhasil Di Tambahkan !');
+    // Redirect ke halaman yang sesuai
+    return redirect('/keputusan');
+}
+
+
+
+    // ==================== DELETE SURAT KEPUTUSAN MENTERI 
+
+    public function deletekeputusan(Request $request, $judul)
+{
+    // Cari entri berdasarkan judul
+    $entry = suratkeputusan::where('judul', $judul)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if (Storage::disk('public')->exists($entry->peraturan)) {
+            Storage::disk('public')->delete($entry->peraturan);
+        }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+    }
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/keputusan');
+}
+
+
+
+
+
+                        
+
             
 }
