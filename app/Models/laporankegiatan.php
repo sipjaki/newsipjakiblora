@@ -11,7 +11,7 @@ class laporankegiatan extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
-    // protected $guarded = ['id'];
+    protected $guarded = ['id'];
 
     public function kegiatanjaskon()
     {

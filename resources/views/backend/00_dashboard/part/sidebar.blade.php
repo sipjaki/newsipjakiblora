@@ -358,7 +358,7 @@
                          <p style="margin-bottom: 5px;"></p>
 
                             <li class="parent">
-                                <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
+                                <a href="/administrator" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
                                     <span class="none">ADMINISTRATOR</span>
                                 </a>
                             </li>

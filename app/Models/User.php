@@ -42,5 +42,11 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function statusadmin()
+    {
+        return $this->belongsTo(statusadmin::class);
+    }
+
+
 
 }

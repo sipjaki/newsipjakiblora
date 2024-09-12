@@ -23,8 +23,10 @@ use App\Models\pergubernur;
 use App\Models\suratkeputusan;
 use App\Models\berita;
 use App\Models\giskbb;
+use App\Models\isadmin;
 use App\Models\kegiatanjaskon;
 use App\Models\pelatihan;
+use App\Models\statusadmin;
 use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -38,7 +40,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         
-        User::factory(2)->create();
+        // User::factory(2)->create();
        
 
         // \App\Models\User::factory()->create([
@@ -49,7 +51,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'  => 'Sigit Septiadi',
             'username' => 'Sigit',
-            'is_admin' => 'super_admin',
+            'statusadmin_id' => '1',
             'email' => 'sigitseptiadi1@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -58,7 +60,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'  => 'Admin Sipjaki',
             'username' => 'sipjakikbb',
-            'is_admin' => 'super_admin',
+            'statusadmin_id' => '1',
             'email' => 'sipjakikbb@gmail.com',
             'password' => bcrypt('adminadmin$$123')
         ]);
@@ -66,7 +68,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'  => 'User 1 Sipjaki',
             'username' => 'sipjakikbbuser$1',
-            'is_admin' => 'admin',
+            'statusadmin_id' => '2',
             'email' => 'sipjakikbbuser1@gmail.com',
             'password' => bcrypt('sipjakiuser$$111')
         ]);
@@ -74,7 +76,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'  => 'User 2 Sipjaki',
             'username' => 'sipjakikbbuser$2',
-            'is_admin' => 'super_admin',
+            'statusadmin_id' => '2',
             'email' => 'sipjakikbbuser2@gmail.com',
             'password' => bcrypt('sipjakiuser$$222')
         ]);
@@ -82,7 +84,7 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'  => 'User 3 Sipjaki',
             'username' => 'sipjakikbbuser$3',
-            'is_admin' => 'admin',
+            'statusadmin_id' => '2',
             'email' => 'sipjakikbbuser3@gmail.com',
             'password' => bcrypt('sipjakiuser$$333')
         ]);
@@ -90,9 +92,26 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'  => 'User 4 Sipjaki',
             'username' => 'sipjakikbbuser$4',
-            'is_admin' => 'admin',
+            'statusadmin_id' => '2',
             'email' => 'sipjakikbbuser4@gmail.com',
             'password' => bcrypt('sipjakiuser$$444')
+        ]);
+       
+        
+        // =================================================================
+        statusadmin::create([
+            'id'  => '1',
+            'status'  => 'super_admin',
+        ]);
+
+        statusadmin::create([
+            'id'  => '2',
+            'status'  => 'admin',
+        ]);
+
+        statusadmin::create([
+            'id'  => '3',
+            'status'  => 'user',
         ]);
         
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\PeraturanController;
 use App\Http\Controllers\SkktenagakerjaController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\UijkController;
+use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\UndangundangController;
 use Database\Factories\SkktenagakerjaFactory;
 use Illuminate\Support\Facades\Route;
@@ -332,6 +333,26 @@ Route::post('/keputusanstore', [PeraturanController::class, 'createstorekeputusa
 Route::post('/keputusandelete/{judul}', [PeraturanController::class, 'deletekeputusan'])
 ->middleware('auth')
 ->name('peruud.deletekeputusan');
+
+// ====================================== ====================================== ====================================== ======================================
+// BAGIAN 15 ADMINISTRATOR MENU BACKEND 
+// ====================================== ====================================== ====================================== ======================================
+// SURAT KEPUTUSAN TENTANG JASA KONSTRUKSI  
+Route::get('/administrator', [AdministratorController::class, 'index'])->middleware('auth');  
+Route::get('/administrator/{name}', [AdministratorController::class, 'administratorshowbyname'])->middleware('auth');
+Route::get('/administrator/update/{name}', [AdministratorController::class, 'updateadministrator'])->middleware('auth')->name('updateshow.administrator');
+// Route::post('/administrator/{name}', [AdministratorController::class, 'createupdateadministrator'])->middleware('auth')->name('update.dataadministrator');
+// Route::put('/administrator/{name}', [AdministratorController::class, 'createupdateadministrator'])->middleware('auth')->name('update.dataadministrator');
+Route::put('/administrator/{name}', [AdministratorController::class, 'createupdateadministrator'])
+    ->middleware('auth')
+    ->name('update.dataadministrator');
+
+// Route::get('/keputusancreate', [PeraturanController::class, 'createkeputusan'])->middleware('auth');
+// Route::post('/keputusanstore', [PeraturanController::class, 'createstorekeputusan'])->middleware('auth')->name('peruud.createkeputusan');
+// Route::post('/keputusandelete/{judul}', [PeraturanController::class, 'deletekeputusan'])
+// ->middleware('auth')
+// ->name('peruud.deletekeputusan');
+
 
 
 
