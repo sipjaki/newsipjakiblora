@@ -341,12 +341,12 @@ Route::post('/keputusandelete/{judul}', [PeraturanController::class, 'deletekepu
 Route::get('/administrator', [AdministratorController::class, 'index'])->middleware('auth');  
 Route::get('/administrator/{name}', [AdministratorController::class, 'administratorshowbyname'])->middleware('auth');
 Route::get('/administrator/update/{name}', [AdministratorController::class, 'updateadministrator'])->middleware('auth')->name('updateshow.administrator');
-// Route::post('/administrator/{name}', [AdministratorController::class, 'createupdateadministrator'])->middleware('auth')->name('update.dataadministrator');
-// Route::put('/administrator/{name}', [AdministratorController::class, 'createupdateadministrator'])->middleware('auth')->name('update.dataadministrator');
 Route::put('/administrator/{name}', [AdministratorController::class, 'createupdateadministrator'])
-    ->middleware('auth')
-    ->name('update.dataadministrator');
+->middleware('auth')
+->name('update.dataadministrator');
 
+// Route::put('/administrator/{name}', [AdministratorController::class, 'createupdateadministrator'])->middleware('auth')->name('update.dataadministrator');
+// Route::post('/administrator/{name}', [AdministratorController::class, 'createupdateadministrator'])->middleware('auth')->name('update.dataadministrator');
 // Route::get('/keputusancreate', [PeraturanController::class, 'createkeputusan'])->middleware('auth');
 // Route::post('/keputusanstore', [PeraturanController::class, 'createstorekeputusan'])->middleware('auth')->name('peruud.createkeputusan');
 Route::post('/administrator/{name}', [AdministratorController::class, 'deleteadministrator'])
@@ -354,6 +354,16 @@ Route::post('/administrator/{name}', [AdministratorController::class, 'deleteadm
 ->name('administrator.deleteadministrator');
 
 
+// KATEGORI ADMIN  
+Route::get('/keputusan', [PeraturanController::class, 'keputusan'])->middleware('auth');  
+Route::get('/keputusanbaru/{judul}', [PeraturanController::class, 'keputusanshowbyjudul'])->middleware('auth');
+Route::get('/keputusan/update/{judul}', [PeraturanController::class, 'updateshowkeputusan'])->middleware('auth')->name('peruud.showkeputusan');
+Route::post('/keputusan/{judul}', [PeraturanController::class, 'createupdatekeputusan'])->middleware('auth')->name('peruud.updatekeputusan');
+Route::get('/keputusancreate', [PeraturanController::class, 'createkeputusan'])->middleware('auth');
+Route::post('/keputusanstore', [PeraturanController::class, 'createstorekeputusan'])->middleware('auth')->name('peruud.createkeputusan');
+Route::post('/keputusandelete/{judul}', [PeraturanController::class, 'deletekeputusan'])
+->middleware('auth')
+->name('peruud.deletekeputusan');
 
 
 // -------- BAGIAN 04 BACKEND ---------------------------------
