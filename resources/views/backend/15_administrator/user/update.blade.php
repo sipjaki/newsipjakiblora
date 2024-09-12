@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -147,7 +147,7 @@
             }
     
     .badgekembali {
-                background: linear-gradient(to right, green, black);
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
@@ -298,7 +298,7 @@
                 <div class="form-group">
                     <div class="form-group-inner">
                         <label for="phone_number" style="font-size:14px;"><i class="fas fa-file me-2"></i> No Telepon</label>
-                        <input type="text" id="phone_number" name="phone_number" value="{{ old('phone_number', $datauser->phone_number) }}" required>
+                        <input type="number" id="phone_number" name="phone_number" value="{{ old('phone_number', $datauser->phone_number) }}" required>
                     </div>
                 </div>
             

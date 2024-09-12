@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('statusadmin_id');
             $table->string('name')->nullable();
             $table->string('username')->nullable();
-            $table->bigInteger('phone_number')->nullable();
+            $table->text('phone_number')->nullable();
             // $table->bigInteger('otp')->nullable();
             $table->string('email')->unique();
             $table->string('avatar')->nullable();

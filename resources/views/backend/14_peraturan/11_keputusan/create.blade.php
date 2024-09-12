@@ -147,7 +147,7 @@
             }
     
     .badgekembali {
-                background: linear-gradient(to right, green, black);
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
@@ -165,7 +165,7 @@
             }
     
     .savedata {
-                background: linear-gradient(to right, green, black);
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;

@@ -68,7 +68,7 @@
     <label for="entries" style="margin-right: 5px;">
         <style>
             .badge {
-                background: linear-gradient(to right, green, black);
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
@@ -84,7 +84,7 @@
                 color: black;
             }
             .badge-update {
-                background: linear-gradient(to right, black, orange);
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;

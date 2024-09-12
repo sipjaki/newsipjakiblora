@@ -84,9 +84,9 @@
             }
 
             .badge-plus {
-            background: linear-gradient(to right, black, orange);
+            background: linear-gradient(to right, navy, black);
             color: white;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 10px;
             display: inline-block;
             font-size: 12px;
