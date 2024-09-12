@@ -83,12 +83,32 @@
                 background: white;
                 color: black;
             }
+            .badge-update {
+                background: linear-gradient(to right, black, orange);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 12px;
+                text-align: center;
+                transition: background-color 0.3s, color 0.3s;
+                position: absolute; /* Tambahkan ini */
+                top: 20px; /* Atur jarak dari atas jika diperlukan */
+                right: 20px; /* Atur jarak dari kanan jika diperlukan */
+
+            }
+
+            .badge-update:hover {
+                background: white;
+                color: black;
+            }
+
         </style>
         <a href="/administrator" style="background: white;">
             <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
         </a>
         <a href="/administrator/update/{{$data->name}}" style="background: white; display:right;">
-            <div class="badge"><i class="fas fa-file mr-2"></i> Update </div></label>
+            <div class="badge-update"><i class="fas fa-file mr-2"></i> Update </div></label>
         </a>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>

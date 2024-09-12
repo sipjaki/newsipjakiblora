@@ -104,5 +104,39 @@ class AdministratorController extends Controller
                     // Redirect ke halaman yang sesuai
                     return redirect('/administrator');
                 }
+
+
+
+                    // ==================== DELETE SURAT ADMINISTRATOR 
+
+                    public function deleteadministrator($name)
+                    {
+                        // Cari entri berdasarkan name
+                        $entry = user::where('name', $name)->first();
+                    
+                        if ($entry) {
+                            // Hapus file terkait jika ada
+                            if ($entry->avatar) {
+                                Storage::disk('public')->delete($entry->avatar);
+                            }
+                    
+                            // Hapus entri dari database
+                            user::destroy($entry->id);
+                    
+                            // Set pesan flash untuk sukses
+                            session()->flash('delete', 'Data Berhasil Dihapus!');
+                    
+                            // Redirect ke halaman yang sesuai
+                            return redirect('/administrator');
+                        } else {
+                            // Set pesan flash jika data tidak ditemukan
+                            session()->flash('error', 'Data Tidak Ditemukan!');
+                    
+                            // Redirect ke halaman yang sesuai
+                            return redirect('/administrator');
+                        }
+                    }
+                    
+    
                     
 }

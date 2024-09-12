@@ -349,9 +349,9 @@ Route::put('/administrator/{name}', [AdministratorController::class, 'createupda
 
 // Route::get('/keputusancreate', [PeraturanController::class, 'createkeputusan'])->middleware('auth');
 // Route::post('/keputusanstore', [PeraturanController::class, 'createstorekeputusan'])->middleware('auth')->name('peruud.createkeputusan');
-// Route::post('/keputusandelete/{judul}', [PeraturanController::class, 'deletekeputusan'])
-// ->middleware('auth')
-// ->name('peruud.deletekeputusan');
+Route::post('/administrator/{name}', [AdministratorController::class, 'deleteadministrator'])
+->middleware('auth')
+->name('administrator.deleteadministrator');
 
 
 

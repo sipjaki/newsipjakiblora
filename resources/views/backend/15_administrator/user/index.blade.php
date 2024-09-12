@@ -84,21 +84,23 @@
             }
 
             .badge-plus {
-                background: linear-gradient(to right, navy, black);
-                color: white;
-                padding: 8px 15px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                margin-right: 10px;
-                text-align: center;
-                transition: background-color 0.3s, color 0.3s;
-                margin-left: 350px;
-            }
-            .badge-plus:hover {
-                background: white;
-                color: black;
-            }
+            background: linear-gradient(to right, black, orange);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute; /* Tambahkan ini */
+            top: 20px; /* Atur jarak dari atas jika diperlukan */
+            right: 20px; /* Atur jarak dari kanan jika diperlukan */
+        }
+
+        .badge-plus:hover {
+            background: white;
+            color: black;
+        }
 
             .badge-menu1 {
                 background: linear-gradient(to right, navy, black);
@@ -235,14 +237,14 @@
                         <a href="/administrator/{{$item->name}}" class="iconhover" title="View">
                             <i class="fas fa-eye"></i>
                         </a>
-                                {{-- <a href="/perdaerah/update/{{$item->judul}}" class="iconhover" title="Update"> --}}
+                                <a href="/administrator/update/{{$item->name}}" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
-                                {{-- </a> --}}
+                                </a>
 
 
-                                {{-- <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('peruud.deleteperdaerah', $item->judul) }}')"> --}}
+                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('administrator.deleteadministrator', $item->name) }}')">
                                     <i class="fas fa-trash"></i>
-                                {{-- </a> --}}
+                                </a>
                                 
         
                                 {{-- ================= FORM DELETE =================== --}}
