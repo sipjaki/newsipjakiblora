@@ -361,43 +361,21 @@
             <p>
                 Kami informasikan bahwa Sistem Informasi Pembina Jasa Konstruksi kini tersedia untuk memudahkan akses informasi terkait jasa konstruksi. Sistem ini menyediakan data terpercaya, regulasi terbaru, dan informasi penting lainnya mengenai layanan konstruksi. Silakan kunjungi platform ini untuk mendapatkan informasi yang Anda butuhkan dan memastikan kepatuhan terhadap peraturan yang berlaku.
                 <div class="cont">
-                {{-- <article class="quoteblock">
-                    <div class="quotetxt arrow">
-                        <p><img src="/assets/bahan1/Images/blockquote2.png" alt="Bupati Bandung Barat"></p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p>
-                
-                    </div>
-                    <figure>
-                        <img class="customer" src="/assets/bahan1/Images/cust1.png" alt="customer1">
-                        <figcaption>Bupati Bandung Barat</figcaption>
-                    </figure>
-                </article> --}}
-                {{-- <article class="quoteblock">
-                    <div class="quotetxt arrow">
-                        <p><img src="/assets/bahan1/Images/blockquote1.png" alt="PUPR Bandung Barat"></p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius ipsum id inventore facilis laboriosam est possimus explicabo quis ipsa, perferendis nam ratiendus neque earum iure maxime non soluta voluptates deleniti provident! Commodi, eveniet?</p>
-                    </div>
-                    <figure>
-                        <img class="customer" src="/assets/bahan1/Images/cust1.png" alt="customer1">
-                        <figcaption>PUPR Bandung Barat</figcaption>
-                    </figure>
-                </article> --}}
-                <article class="quoteblock" style="width: 800px; height:400px; margin-bottom:50px; justify-content:center;">
-                    <div class="quotetxt arrow">
-                        <p><img src="/assets/bahan1/Images/blockquote2.png" alt="quote mark"></p>
-                        <p style="color: black; font-size:12px;">
-                            Kami mendorong semua pihak memanfaatkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK) secara maksimal. Sistem ini dirancang untuk memudahkan akses informasi penting terkait peraturan dan sertifikasi dalam industri konstruksi. Dengan menggunakan SIPJK, saudara akan memperoleh informasi terkini dan membantu memastikan proyek konstruksi berjalan sesuai standar. Mari kita tingkatkan kualitas dan profesionalisme industri konstruksi bersama                    
-                        </p>
-                   
-                    </div>
-                    <figure>
-                        <img class="customer mb-2" src="/assets/bahan1/Images/payuyuyuhana.png" style="width: 20%;">
-                        <figcaption>Yuyu Yuhana ,ST., MM</figcaption>
-                        <figcaption>fungsional pembina  </figcaption>
-                        <figcaption>jasa konstruksi ahli muda </figcaption>
-                        <figcaption>pemerintah kabupaten bandung barat</figcaption>
-                    </figure>
-                </article>
+                    @foreach ($datahimbauandinas as $item )
+                        
+                    <article class="quoteblock">
+                        <div class="quotetxt arrow">
+                            <p><img style="width:10%" src="{{ asset('storage/' . $item->foto_icon) }}" alt="{{ asset('storage/' . $item->foto_icon) }}"></p>
+                            <p><span style="color: black">{!! $item->himbauan !!}</span></p>
+                        </div>
+                        <figure>
+                            <img style="width:30%" class="customer" src="{{ asset('storage/' . $item->foto_pejabat)}}" alt="customer1">
+                            <figcaption>{{$item->nama_lengkap}}</figcaption>
+                            <figcaption>{{$item->jabatan}}</figcaption>
+                        </figure>
+                    </article>
+                    
+                    @endforeach
             </div>
         </div>
 
@@ -445,42 +423,50 @@
                             "> Dinas Pekerjaan Umum dan Penataan Ruang <br>
                             Pemerintah Kabupaten Bandung Barat </p>
                 </aside>
-
-                <form id="form" action="/" method="">
-                    <input type="text" name="nama_lengkap" id="" placeholder="Nama Lengkap" required 
-                    style="font-family: 'Lato', sans-serif;
-                        font-size: 14px; 
-                        padding: 10px 10px ;
-                        border: 1px solid #1a237e; 
-                        border-radius: 15px; 
-                        width: 40%; 
-                        height: 20%; 
-                        color: black;"
+                <form id="form" action="/qapertanyaancreate" method="POST">
+                    @csrf
+                    <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required 
+                        style="
+                            font-family: 'Lato', sans-serif;
+                            font-size: 14px; 
+                            padding: 10px;
+                            border: 1px solid #1a237e; 
+                            border-radius: 15px; 
+                            width: 40%; 
+                            height: 20%; 
+                            color: black;
+                        "
                     >
-                    <input type="text" name="email" id="" placeholder="Email" required 
-                    style="font-family: 'Lato', sans-serif;
-                        font-size: 14px; 
-                        padding: 10px 10px ;
-                        border: 1px solid #1a237e; 
-                        border-radius: 15px; 
-                        width: 40%; 
-                        height: 20%; 
-                        color: black;
-                        margin-bottom: 10px;"
+                    
+                    <input type="text" name="email" placeholder="Email" required 
+                        style="
+                            font-family: 'Lato', sans-serif;
+                            font-size: 14px; 
+                            padding: 10px;
+                            border: 1px solid #1a237e; 
+                            border-radius: 15px; 
+                            width: 40%; 
+                            height: 20%; 
+                            color: black;
+                            margin-bottom: 10px;
+                        "
                     >
-                    <input type="text" name="telepon" id="" placeholder="Telepon" required 
-                    style="font-family: 'Lato', sans-serif;
-                        font-size: 14px; 
-                        padding: 10px 10px ;
-                        border: 1px solid #1a237e; 
-                        border-radius: 15px;
-                        margin-top: 0px; 
-                        margin-bottom: 10px; 
-                        width: 40%; 
-                        height: 20%; 
-                        color: black;"
+                    
+                    <input type="number" name="telepon" placeholder="No Whatsapp" required 
+                        style="
+                            font-family: 'Lato', sans-serif;
+                            font-size: 14px; 
+                            padding: 10px;
+                            border: 1px solid #1a237e; 
+                            border-radius: 15px;
+                            width: 40%; 
+                            height: 20%; 
+                            color: black;
+                            margin-bottom: 10px;
+                        "
                     >
-                        <style>
+                    
+                    <style>
                         .custom-select {
                             font-family: 'Lato', sans-serif;
                             font-size: 14px; 
@@ -488,7 +474,7 @@
                             border: 1px solid #1a237e; 
                             border-radius: 15px;
                             margin-bottom: 10px; 
-                            width: 300px;
+                            width: 490px;
                             height: 50px; 
                             color: black;
                             background-color: white;
@@ -497,27 +483,23 @@
                             background-color: white;
                             color: black;
                         }
-                        </style>            
-                            
-                            <select name="sebagai" class="custom-select" required style="width: 100%;">
-                                    <option value="" disabled selected>Anda Sebagai</option>
-                                    <option value="kontraktor">Kontraktor</option>
-                                    <option value="pengawas">Pengawas</option>
-                                    <option value="tenaga-ahli">Tenaga Ahli</option>
-                                    <option value="tenaga-ahli">Tenaga Tukang</option>
-                                    <option value="dinas-terkait">Dinas Terkait</option>
-                                    <option value="masyarakat-umum">Masyarakat Umum</option>
-                                </select>
-        
-                                
-                                <select name="sebagai" class="custom-select" required style="width: 100%;">
-                                    <option value="" disabled selected>Jenis Q&A Pertanyaan Anda</option>
-                                    
-                                    @foreach ($data_layanankami as $item )
-                                    <option value="{{$item->program}}">{{$item->program}}</option>
-                                    @endforeach
-                                </select>
-                                
+                    </style>
+                    
+                    <select name="qasebagai_id" id="qasebagai_id" class="custom-select" required>
+                        <option value="" disabled selected>Anda Sebagai</option>
+                        @foreach ($dataqasebagai as $data)
+                            <option value="{{ $data->sebagai }}">{{ $data->sebagai }}</option>
+                        @endforeach
+                    </select>
+                
+                    <select name="qapertanyaan_id" id="qapertanyaan_id" class="custom-select" required>
+                        <option value="" disabled selected>Jenis Q&A Pertanyaan Anda</option>
+                        @foreach ($dataqapertanyaan as $item)
+                            <option value="{{ $item->pertanyaan }}">{{ $item->pertanyaan }}</option>
+                        @endforeach
+                    </select>
+                
+                    <br>
                 
                     <button type="submit" style="
                         font-family: 'Lato', sans-serif;
@@ -525,18 +507,19 @@
                         padding: 10px;
                         border: 1px solid #1a237e; 
                         border-radius: 15px;
-                        margin-top: 0px; 
                         width: 200px; 
                         height: 20%; 
                         color: white;
                         background-image: linear-gradient(to bottom, #FFCB0F, #000000);
-                        transition: background-color 0.3s, color 0.3s; /* Efek transisi untuk halus */
-                        " 
-                        placeholder="" required
-                        onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, #FFCB0F )'; this.style.color='white';">
-                            <i class="fab fa-telegram me-2"></i> Send QA
-                    
-                                    </form>
+                        transition: background-color 0.3s, color 0.3s;
+                        margin-left: 100px;
+                        "
+                        onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" 
+                        onmouseout="this.style.background='linear-gradient(to right, black, #FFCB0F )'; this.style.color='white';">
+                        <i class="fab fa-telegram me-2"></i> Send QA
+                    </button>
+                </form>
+                
             </div>
         </div>
         

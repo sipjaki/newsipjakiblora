@@ -70,13 +70,13 @@
                            <p style="margin-bottom: 5px;"></p>
                            
                            <li class="parent">
-                               <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
+                               <a href="/himbauandinas" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
                                 <span class="none">BERITA HIMBAUAN DINAS</span>
                             </a>
                             </li>
                            
                             <li class="parent">
-                               <a href="/404" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
+                               <a href="/qapertanyaan" class="sbar"><i class="fab fa-ravelry mr-2"> </i>
                                 <span class="none">Q&A PUBLIK </span>
                             </a>
                             </li>

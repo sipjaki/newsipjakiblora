@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\himbauandinas;
+use App\Models\qa;
+use App\Models\qapertanyaan;
+use App\Models\qasebagai;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\statusadmin;
@@ -137,6 +141,140 @@ class AdministratorController extends Controller
                         }
                     }
                     
+// ======================================================================= MENU KATEGORI ADMINISTRATOR ===============    // 
+
+public function kategoriadmin()
+{
+
+    $datastatusadmin = statusadmin::paginate(15);
     
-                    
+    return view('backend.15_administrator.kategoriadmin.index', [
+        'title' => 'Kategori Admin',
+        'datastatusadmin' => $datastatusadmin,  
+       
+    ]);
 }
+
+
+             // ==================== DELETE AKUN ADMINISTRATOR 
+
+             public function deletekategoriadmin($status)
+             {
+                 // Cari entri berdasarkan status
+                 $entry = statusadmin::where('status', $status)->first();
+             
+                 if ($entry) {
+                     // Hapus entri dari database
+                     $entry->delete();
+             
+                     // Set pesan flash untuk sukses
+                     session()->flash('delete', 'Data Berhasil Dihapus!');
+                 } else {
+                     // Set pesan flash jika data tidak ditemukan
+                     session()->flash('error', 'Data Tidak Ditemukan!');
+                 }
+             
+                 // Redirect ke halaman yang sesuai
+                 return redirect('/kategoriadmin');
+             }
+
+
+// CREATE DATA KATEGORI ADMINSTRATOR
+             public function createkategoriadmin()
+                {
+                    
+                    // Tampilkan form update dengan data yang ditemukan
+                    return view('backend.15_administrator.kategoriadmin.create', [
+                        'title' => 'Create Kategori Admin'
+                    ]);
+                }
+
+                public function createstorekategoriadmin(Request $request)
+                {
+                    // Validasi input
+                    $request->validate([
+                        'status' => 'required|string|max:255',
+
+                    ]);
+                    // Buat entri baru di database
+                    statusadmin::create([
+                        'status' => $request->input('status'),
+                    
+                    ]);
+
+                    session()->flash('create', 'Data Berhasil Di Tambahkan !');
+                    // Redirect ke halaman yang sesuai
+                    return redirect('/kategoriadmin');
+                }
+
+                
+                public function qapertanyaan()
+                {
+                    $dataqa= qa::paginate(15);
+                    $dataqasebagaibaru = qasebagai::all();
+                    $dataqapertanyaan = qapertanyaan::all();
+                    
+                    return view('backend.qa.pertanyaan.index', [
+                        'title' => 'Daftar Pertanyaan Publik ',
+                        'data' => $dataqa,  
+                        'dataqasebagai' => $dataqasebagaibaru,  
+                        'dataqapertanyaan' => $dataqapertanyaan,  
+                       
+                    ]);
+                }
+
+                
+             // ==================== DELETE AKUN ADMINISTRATOR 
+
+             public function deleteqapertanyaan($nama_lengkap)
+             {
+                 // Cari entri berdasarkan status
+                 $entry = qa::where('nama_lengkap', $nama_lengkap)->first();
+             
+                 if ($entry) {
+                     // Hapus entri dari database
+                     $entry->delete();
+             
+                     // Set pesan flash untuk sukses
+                     session()->flash('delete', 'Data Berhasil Dihapus!');
+                 } else {
+                     // Set pesan flash jika data tidak ditemukan
+                     session()->flash('error', 'Data Tidak Ditemukan!');
+                 }
+             
+                 // Redirect ke halaman yang sesuai
+                 return redirect('/qapertanyaan');
+             }
+
+
+             public function createstorepertanyaanpublik(Request $request)
+             {
+                 // Validasi input
+                 $request->validate([
+                     'status' => 'required|string|max:255',
+
+                 ]);
+                 // Buat entri baru di database
+                 statusadmin::create([
+                     'status' => $request->input('status'),
+                 
+                 ]);
+
+                 session()->flash('create', 'Data Berhasil Di Tambahkan !');
+                 // Redirect ke halaman yang sesuai
+                 return redirect('/kategoriadmin');
+                 
+             }
+
+             public function himbauandinas()
+             {
+                 $datahimbauandinas = himbauandinas::paginate(3);
+                 
+                 return view('backend.himbauandinas.index', [
+                     'title' => 'Himbauan Dinas Terkait Pemerintah Kabupaten Bandung Barat ',
+                     'data' => $datahimbauandinas,                      
+                 ]);
+             }
+         
+}
+

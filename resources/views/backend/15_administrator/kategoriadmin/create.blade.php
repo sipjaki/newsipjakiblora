@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 110vh;
+    height: 60vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -74,20 +74,20 @@
           /* Untuk memastikan tata letak responsif, Anda bisa menggunakan media queries */
 @media (min-width: 768px) {
     .badge {
-                background: linear-gradient(to right, yellow, black);
+                background: linear-gradient(to right, blue, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
                 display: inline-block;
                 font-size: 1rem;
-                margin-right: 10px;
+                margin-right: 600px;
                 text-align: center;
                 font-size: 12px;
                 transition: background-color 0.3s, color 0.3s;
             }
     
             .badge:hover {
-                background: white;
+                background-color: white;
                 color: black;
                 background: white;
             }
@@ -105,11 +105,10 @@
             }
     
             .badgeupdate:hover {
-                background: white;
+                background-color: white;
                 color: black;
                 background: white;
             }
-            
     .badgenewupdate {
                 background: linear-gradient(to right, navy, black);
                 color: white;
@@ -142,12 +141,13 @@
                 transition: background-color 0.3s, color 0.3s;
             }
             .badgedownload:hover {
-                background: white;
+                background-color: white;
                 color: black;
                 background: white;
             }
     
-    .badgekembali {
+    
+    .savedata {
                 background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
@@ -158,9 +158,10 @@
                 font-size: 12px;
                 cursor: pointer;
                 transition: background-color 0.3s, color 0.3s;
+                float: right;
             }
-            .badgekembali:hover {
-                background: white;
+            .savedata:hover {
+                background-color: white;
                 color: black;
                 background: white;
             }
@@ -177,20 +178,34 @@
                 cursor: pointer;
                 transition: background-color 0.3s, color 0.3s;
             }
+
+            .badgekembali {
+            background: linear-gradient(to right, navy, black);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute; /* Tambahkan ini */
+            top: 20px; /* Atur jarak dari atas jika diperlukan */
+            right: 80px; /* Atur jarak dari kanan jika diperlukan */
+        }
+
+        .badgekembali:hover {
+            background: white;
+            color: black;
+        }
     
 }
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Administrator </div></label>
+            <div class="badge"><i class="fas fa-plus mr-2"></i>Create Kategori Administrator Sipjaki </div></label>
         </a>
-        <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
-        </a>
-        <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
-        </a>
-        <a href="/administrator" style="background: white;">
+        
+        <a href="/kategoriadmin" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
 
@@ -203,56 +218,49 @@
 
             .container-update {
                 /* margin-top: 500px; */
-                width: 920px;
-                height: 65vh;
+                width: 900px;
+                height: 130px;
                 margin: 0 auto;
                 padding: 20px;
-                background-color: #E0E0E0; /* Warna silver */
+                background-color: #f0f0f0; /* Warna silver */
                 border-radius: 8px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
-            /* Style untuk .form-group */
             .form-group {
-                margin-bottom: 1rem; /* Jarak antar form group */
+                /* margin-top: 150px; */
+                /* margin-bottom: 15px; */
             }
-
-            /* Style untuk .form-group-inner */
-            .form-group-inner {
-                display: flex;
-                align-items: center; /* Vertikal center alignment */
-                margin-bottom: 0.5rem;
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
             }
-
-            .form-group-inner label {
-                flex: 1;
-                margin-right: 1rem; /* Jarak antara label dan input */
-                text-align: left; /* Label teks rata kiri */
+            .form-group input[type="text"],
+            .form-group input[type="file"] {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
             }
-
-            .form-group-inner input {
-                flex: 4;
+            .form-group textarea {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+                resize: vertical;
             }
-
+            .form-group button {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            .form-group button:hover {
+                background-color: #45a049;
+            }
             .success-message {
                 color: green;
                 margin-bottom: 20px;
             }
-
-            .preview-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .img-preview {
-            max-width: 100px;
-            max-height: 100px;
-            margin-right: 10px;
-            object-fit: cover;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-            
 
         }
         </style>
@@ -260,109 +268,33 @@
 <br>
         <div class="container-update" style="col-lg-12">
             <!-- Menampilkan pesan sukses jika ada -->
-            @if (session('success'))
-                <p class="success-message">{{ session('success') }}</p>
-            @endif
-    
-            <form action="{{ route('update.dataadministrator', $datauser->name) }}" method="POST" enctype="multipart/form-data">
+                
+            {{-- <h2>Create New Peraturan</h2> --}}
+            <form action="{{ route('create.kategoriadmin') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT') <!-- Gunakan metode PUT untuk update data -->
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="statusadmin" style="font-size:14px;"><i class="fas fa-file me-2"></i> Status Admin</label>
-                        <select style="width:690px;" id="statusadmin" name="statusadmin" required>
-                            @foreach($datalistadmin as $status)
-                                <option value="{{ $status->id }}" 
-                                    {{ $status->id == $datauser->statusadmin_id ? 'selected' : '' }}>
-                                    {{ $status->status }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
+                @method('POST') <!-- Gunakan metode PUT untuk update data -->
+    
+                <div class="form-group d-flex align-items-center">
+                    <label for="status" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-users me-2"></i> Status Admin</label>
+                    <input type="text" class="form-control" id="status" name="status" required>
                 </div>
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="name" style="font-size:14px;"><i class="fas fa-file me-2"></i> Nama Lengkap</label>
-                        <input type="text" id="name" name="name" value="{{ old('name', $datauser->name) }}" required>
-                    </div>
-                </div>
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="username" style="font-size:14px;"><i class="fas fa-file me-2"></i> Username</label>
-                        <input type="text" id="username" name="username" value="{{ old('username', $datauser->username) }}" required>
-                    </div>
-                </div>
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="phone_number" style="font-size:14px;"><i class="fas fa-file me-2"></i> No Telepon</label>
-                        <input type="number" id="phone_number" name="phone_number" value="{{ old('phone_number', $datauser->phone_number) }}" required>
-                    </div>
-                </div>
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="email" style="font-size:14px;"><i class="fas fa-file me-2"></i> Email</label>
-                        <input type="text" id="email" name="email" value="{{ old('email', $datauser->email) }}" required>
-                    </div>
-                </div>
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="password" style="font-size:14px;"><i class="fas fa-file me-2"></i> Password</label>
-                        <input type="password" id="password" name="password" placeholder="Kosongkan jika tidak diubah">
-                    </div>
-                </div>
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="avatar" style="font-size:14px;"><i class="fas fa-file me-2"></i> Foto Administrator</label>
-                        
-                        <!-- Elemen untuk menampilkan pratayang gambar -->
-                        <div class="preview-container">
-                            <img id="avatar-preview" src="{{ asset('storage/' . $datauser->avatar) }}" alt="Preview" class="img-preview" />
-                            <input type="file" id="avatar" name="avatar" accept="image/*">
-                        </div>
-                    </div>
-                </div>
-            
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const fileInput = document.getElementById('avatar');
-                        const preview = document.getElementById('avatar-preview');
-                    
-                        // Fungsi untuk memperbarui preview gambar
-                        fileInput.addEventListener('change', function(event) {
-                            const file = event.target.files[0];
-                            if (file) {
-                                const reader = new FileReader();
-                    
-                                reader.onload = function(e) {
-                                    preview.src = e.target.result;
-                                };
-                    
-                                reader.readAsDataURL(file);
-                            }
-                        });
-                    });
-                </script>
-                <hr style="border: 2px solid #000000">
-                <div class="form-group">
-                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
-                </div>
+                {{-- <div class="form-group d-flex align-items-center mt-3">
+                    <label for="peraturan" class="mr-3" style="width: 200px; text-align:left"><i class="fas fa-file me-2"></i> Peraturan (PDF)</label>
+                    <input type="file" class="form-control-file" id="peraturan" name="peraturan" accept=".pdf" required>
+                </div> --}}
+                <button class="savedata" type="submit" class="btn btn-primary mt-3"><i class="fas fa-save" style="margin-right:5px;"></i> Save</button>
             </form>
             
-            
+
+
+
         </div>
 
 
         {{-- ========================================= --}}
 
         {{-- @foreach ($data as $items )
-                    
+                
                 <a href="/peruud/{{$items->peraturan}}" style="background: white;">
                     <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
                 </a>

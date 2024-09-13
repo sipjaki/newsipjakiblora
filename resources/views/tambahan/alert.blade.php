@@ -172,6 +172,20 @@
 @endif
 
 
+@if (session('pertanyaan'))
+    <div class="modal-alert-verifikasi">
+        <div class="modal-content">
+            <button type="button" class="btnalert-view" onclick="document.querySelector('.modal-alert-verifikasi').style.display='none';">
+                &times;
+            </button>
+            <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 20px;">
+            <p style="color: black;">Pemerintah Kabupaten Bandung Barat</p>
+            {{-- <div class="success-textupdate">Pertanyaan Sudah Dikirim </div> --}}
+            <br>
+            <button class="button-textupdate" style="color: white;">{{ session('pertanyaan') }}</button> <!-- Wrapped text in a styled button -->
+        </div>
+    </div>
+@endif
 
 
 

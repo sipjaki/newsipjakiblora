@@ -7,9 +7,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class login extends Model
+class qasebagai extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
+    
+    public function qa()
+    {
+        return $this->hasMany(qa::class);
+    }
+
 }
+

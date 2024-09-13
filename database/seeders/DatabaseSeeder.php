@@ -23,9 +23,13 @@ use App\Models\pergubernur;
 use App\Models\suratkeputusan;
 use App\Models\berita;
 use App\Models\giskbb;
+use App\Models\himbauandinas;
 use App\Models\isadmin;
 use App\Models\kegiatanjaskon;
 use App\Models\pelatihan;
+use App\Models\qa;
+use App\Models\qapertanyaan;
+use App\Models\qasebagai;
 use App\Models\statusadmin;
 use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
@@ -2852,13 +2856,136 @@ giskbb::create([
                 'updated_at' => now(),
             ]);
             
-            pelatihan::create([
-                'tahun'  => '2023',
-                'kasus' => '329897',
-                'created_at' => now(),
-                'updated_at' => now(),
+          
+            // =======================================================================================================================
+            // qa::create([
+            //     'qasebagai_id'   => random_int(1, 9),       // Menghasilkan nomor acak antara 1 dan 9
+            //     'qapertanyaan_id' => random_int(1, 11),    // Misalnya, nomor acak antara 1 dan 100 (sesuaikan rentangnya jika perlu)
+            //     'nama_lengkap'    => 'Nama Lengkap',        // Ganti dengan nama lengkap yang sesuai
+            //     'email'           => 'email@example.com',   // Ganti dengan email yang sesuai
+            //     'telepon'         => '08123456789',         // Ganti dengan nomor telepon yang sesuai
+            //     'created_at'      => now(),
+            //     'updated_at'      => now(),
+            // ]);
+            
+        qa::factory(15)->create();
+          
+        // =======================================================================================================================
+            qasebagai::create([
+                'sebagai'           => 'Kontraktor',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
             ]);
 
+            qasebagai::create([
+                'sebagai'           => 'Pengawas',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+            qasebagai::create([
+                'sebagai'           => 'Tenaga Ahli',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+       
+            qasebagai::create([
+                'sebagai'           => 'Tenaga Tukang',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+       
+            qasebagai::create([
+                'sebagai'           => 'Dinas Terkait',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+
+            qasebagai::create([
+                'sebagai'           => 'Masyarakat Umum',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+          
+        // =======================================================================================================================
+            qapertanyaan::create([
+                'pertanyaan'        => 'Sertifikat Laik Fungsi',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+
+            qapertanyaan::create([
+                'pertanyaan'        => 'Persetujuan Bangunan Gedung ',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+            
+            qapertanyaan::create([
+                'pertanyaan'        => 'Inspeksi Lapangan',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+
+            qapertanyaan::create([
+                'pertanyaan'        => 'Pemeliharaan Perbaikan',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+            qapertanyaan::create([
+                'pertanyaan'        => 'Penyediaan Material',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+            qapertanyaan::create([
+                'pertanyaan'        => 'Insfrastruktur Perkotaan',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+            qapertanyaan::create([
+                'pertanyaan'        => 'Insfrastruktur Jalan',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+            qapertanyaan::create([
+                'pertanyaan'        => 'Insfrastruktur Industri',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+            qapertanyaan::create([
+                'pertanyaan'        => 'Teknik Konstruksi',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+            qapertanyaan::create([
+                'pertanyaan'        => 'Teknik Struktur',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+          
+            qapertanyaan::create([
+                'pertanyaan'        => 'Teknik Rekayasa & Air Limbah',       // Menghasilkan nomor acak antara 1 dan 9
+                'created_at'        => now(),
+                'updated_at'        => now(),
+            ]);
+
+// ============================================================================
+
+        himbauandinas::create([
+            'nama_lengkap'          => 'Yuyu Yuhana, ST., MM',       // Menghasilkan nomor acak antara 1 dan 9
+            'jabatan'               => 'Fungsional Pembina Jasa Konstruksi Ahli Muda Pemerintah Kabupaten Bandung Barat',       // Menghasilkan nomor acak antara 1 dan 9
+            'himbauan'              => '<p>Kami mendorong semua pihak memanfaatkan Sistem Informasi Pembina Jasa Konstruksi (SIPJAKI) secara maksimal. Sistem ini dirancang untuk memudahkan akses informasi penting terkait peraturan dan sertifikasi dalam industri konstruksi. Dengan menggunakan SIPJK, saudara akan memperoleh informasi terkini dan membantu memastikan proyek konstruksi berjalan sesuai standar. Mari kita tingkatkan kualitas dan profesionalisme industri konstruksi bersama</p>',       // Menghasilkan nomor acak antara 1 dan 9
+            'foto_icon'                  => 'himbauan/dinas/PEMELIHARAAN.png',
+            'foto_pejabat'                  => 'himbauan/dinas/PERSETUJUAN_BANGUNAN_GEDUNG.png',
+            'created_at'            => now(),
+            'updated_at'            => now(),
+]);
     }
  /**
      * Menghitung usia berdasarkan tanggal lahir.

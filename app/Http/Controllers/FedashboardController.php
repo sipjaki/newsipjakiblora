@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\berita; // Pastikan namespace model sesuai dengan struktur direktori
+use App\Models\himbauandinas;
 use App\Models\kegiatanjaskon;
 use App\Models\laporankegiatan;
 use App\Models\layanankami;
+use App\Models\qapertanyaan;
+use App\Models\qasebagai;
+use App\Models\qa;
 use App\Models\skktenagakerja; // Pastikan namespace model sesuai dengan struktur direktori
 
 class FedashboardController extends Controller
@@ -17,14 +21,52 @@ class FedashboardController extends Controller
         $data = berita::all(); //
         $data_layanankami = layanankami::all(); //
         $data_kegiatanjaskon = kegiatanjaskon::all(); //
+        $dataqapertanyaan = qa::all(); //
+        $dataqasebagai = qasebagai::all(); //
+        $dataqapertanyaan = qapertanyaan::all(); //
+        
+        $himbauandinas = himbauandinas::all(); //
+
 
         return view('frontend.00_full.index', [
             'title' => 'Sipjaki Pemerintah Kabupaten Bandung Barat',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'dataqapertanyaan' => $dataqapertanyaan, // Mengirimkan data paginasi ke view
             'data_layanankami' => $data_layanankami, // Mengirimkan data paginasi ke view
             'data_jaskon' => $data_kegiatanjaskon, // Mengirimkan data paginasi ke view
+            'dataqasebagai' => $dataqasebagai, // Mengirimkan data paginasi ke view
+            'dataqapertanyaan' => $dataqapertanyaan, // Mengirimkan data paginasi ke view
+            'datahimbauandinas' => $himbauandinas, // Mengirimkan data paginasi ke view
         ]);
     }
+
+    // public function createstorepertanyaanpublik(Request $request)
+    //         {
+    //             // Validasi input
+    //             $request->validate([
+    //                 'qasebagai_id' => 'required|integer|exists:qasebagai,id',
+    //                 'qapertanyaan_id' => 'required|integer|exists:qapertanyaan,id',
+    //                 'nama_lengkap' => 'required|string|max:255',
+    //                 'email' => 'required|email|max:255',
+    //                 'telepon' => 'required|string|max:20',
+    //             ]);
+
+    //             // Buat entri baru di database
+    //             qa::create([
+    //                 'qasebagai_id' => $request->input('qasebagai_id'),
+    //                 'qapertanyaan_id' => $request->input('qapertanyaan_id'),
+    //                 'nama_lengkap' => $request->input('nama_lengkap'),
+    //                 'email' => $request->input('email'),
+    //                 'telepon' => $request->input('telepon'),
+    //             ]);
+
+    //             // Menyimpan pesan flash untuk umpan balik
+    //             session()->flash('pertanyaan', 'Pertanyaan Anda Berhasil Dikirim !');
+
+    //             // Redirect ke halaman yang sesuai
+    //             return redirect('/');
+    //         }
+
 
     
     public function portalberitashowByJudul($judul)

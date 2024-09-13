@@ -120,12 +120,12 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-user" style="margin-right: 5px;"></i>Daftar Admin Sipjaki KBB</button>
-        <a href="/kategoriadmin" style="background: inherit">
-            <button class="badge-menu1" style="border: none; font-size:15px; cursor:pointer "><i class="fab fa-ravelry" style="margin-right: 5px;"></i>Kategori Admin</button>
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-user" style="margin-right: 5px;"></i>Daftar Kategori Administrator</button>
+        <a href="/administrator" style="background: inherit">
+            <button class="badge-menu1" style="border: none; font-size:15px; cursor:pointer "><i class="fab fa-ravelry" style="margin-right: 5px;"></i>List Administrator</button>
         </a>
-        <a href="/404" style="background: inherit">
-            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New Admin</button>
+        <a href="/kategoriadmincreate" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New Status Admin</button>
         </a>
 </div>
 </div>
@@ -169,31 +169,22 @@
                 <thead>
                     <tr>
                         <th style="width:45px;">No</th>
-                        <th>Status Admin</th>
-                        <th>Nama</th>
-                        <th>Username</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
-                        <th>Aksi</th>
+                        <th>Status Admin</th>                        
+                        <th style="width:150px;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     {{-- ============================================ --}}
                     @php
-                $start = ($datauser->currentPage() - 1) * $datauser->perPage() + 1;
+                $start = ($datastatusadmin->currentPage() - 1) * $datastatusadmin->perPage() + 1;
                     @endphp
 
-                    @foreach($datauser as $item )
+                    @foreach($datastatusadmin as $item )
                     
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->statusadmin->status}}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->name }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->username }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->phone_number }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->email }}</td>
-                        
+                        <td style="font-size: 12px; text-align:center;">{{ $item->status}}</td>
                         <td>
                             
                         <style>
@@ -234,15 +225,15 @@
                         </style>
 
                         <div class="button-container">
-                        <a href="/administrator/{{$item->name}}" class="iconhover" title="View">
+                        {{-- <a href="" class="iconhover" title="View">
                             <i class="fas fa-eye"></i>
                         </a>
-                                <a href="/administrator/update/{{$item->name}}" class="iconhover" title="Update">
+                                <a href="" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
-                                </a>
+                                </a> --}}
 
 
-                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('administrator.deleteadministrator', $item->name) }}')">
+                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('delete.deletekategoriadmin', $item->status) }}')">
                                     <i class="fas fa-trash"></i>
                                 </a>
                                 
@@ -306,21 +297,21 @@
 
         <div class="pagination-container" style="margin-top: 75px; margin-bottom:75px; display: flex; flex-direction: column; align-items: center;">
                 <div class="pagination-info mb-2" style="margin-bottom: 10px; color:orange; font-weight: 500;">
-                    Data Ke {{ $datauser->firstItem() }} Sampai {{ $datauser->lastItem() }} Dari {{ $datauser->total() }} Jumlah {{$title}}
+                    Data Ke {{ $datastatusadmin->firstItem() }} Sampai {{ $datastatusadmin->lastItem() }} Dari {{ $datastatusadmin->total() }} Jumlah {{$title}}
                 </div>
                     <ul class="pagination" style="display: flex; padding-left: 0; list-style: none;">
-                        <li class="page-item {{ $datauser->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
-                            <a class="page-link" href="{{ $datauser->previousPageUrl() }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: #fff; border: 1px solid #dee2e6; font-size:12px; border-radius: 20px 0px 0px 20px;"><i class="fas fa-arrow-left" style="margin-right:10px;"></i>Previous</a>
+                        <li class="page-item {{ $datastatusadmin->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
+                            <a class="page-link" href="{{ $datastatusadmin->previousPageUrl() }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: #fff; border: 1px solid #dee2e6; font-size:12px; border-radius: 20px 0px 0px 20px;"><i class="fas fa-arrow-left" style="margin-right:10px;"></i>Previous</a>
                         </li>
 
-                        @foreach ($datauser->getUrlRange($datauser->currentPage() - 0, $datauser->currentPage() + 2) as $page => $url)
-                            <li class="page-item {{ $page == $datauser->currentPage() ? 'active' : '' }}" style="margin-right: 5px;">
+                        @foreach ($datastatusadmin->getUrlRange($datastatusadmin->currentPage() - 0, $datastatusadmin->currentPage() + 2) as $page => $url)
+                            <li class="page-item {{ $page == $datastatusadmin->currentPage() ? 'active' : '' }}" style="margin-right: 5px;">
                                 <a class="page-link" href="{{ $url }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: #fff; border: 1px solid #dee2e6; font-size:12px; ">{{ $page }}</a>
                             </li>
                         @endforeach
 
-                        <li class="page-item {{ $datauser->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
-                            <a class="page-link" href="{{ $datauser->nextPageUrl() }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: #fff; border: 1px solid #dee2e6; font-size:12px; border-radius: 0px 20px 20px 0px;">Next <i class="fas fa-arrow-right" style="margin-left:10px;"></i></a>
+                        <li class="page-item {{ $datastatusadmin->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
+                            <a class="page-link" href="{{ $datastatusadmin->nextPageUrl() }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: #fff; border: 1px solid #dee2e6; font-size:12px; border-radius: 0px 20px 20px 0px;">Next <i class="fas fa-arrow-right" style="margin-left:10px;"></i></a>
                         </li>
                     </ul>
 

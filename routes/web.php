@@ -27,6 +27,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [FedashboardController::class, 'index']);  
+// Route::post('/qapertanyaanstore', [FedashboardController::class, 'createbarustorepertanyaan'])->middleware('auth')->name('create.storeqapertanyaanbaru');
+// Route::post('/qapertanyaanstorebaru', [FedashboardController::class, 'createstorepertanyaanpublik'])->middleware('auth')->name('createpertanyaanstorebaru');
+// Route::post('/qapertanyaanstorebaru', [AdministratorController::class, 'createstorepertanyaanpublik'])->name('createpertanyaanstorebaru');
+
+
+
+// ----------------------------------------------------------------------------
 Route::get('/portalberita/{judul}', [FedashboardController::class, 'portalberitashowByJudul']);
 Route::get('/berita', [FedashboardController::class, 'navbarberita']);  
 
@@ -211,6 +218,24 @@ Route::get('/dashboard', function () {
     ]);
 })->middleware('auth');
 
+// ------------------- BAGIAN QA PERTANYAAN --------------------------- 
+
+// KATEGORI ADMIN  
+Route::get('/qapertanyaan', [AdministratorController::class, 'qapertanyaan'])->middleware('auth');  
+Route::get('/qapertanyaancreate', [AdministratorController::class, 'createqapertanyaan'])->middleware('auth');
+Route::post('/qapertanyaanstore', [AdministratorController::class, 'createstoreqapertanyaan'])->middleware('auth')->name('create.qapertanyaan');
+Route::post('/qapertanyaan/{id}', [AdministratorController::class, 'deleteqapertanyaan'])
+->middleware('auth')
+->name('delete.qapertanyaan');
+
+// ------------------- BAGIAN HIMBAUAN DINAS --------------------------- 
+
+// KATEGORI HIMBAUAN DINAS
+Route::get('/himbauandinas', [AdministratorController::class, 'himbauandinas'])->middleware('auth');  
+Route::get('/himbauandinas/{name_lengkap}', [AdministratorController::class, 'himbauandinasshowbyname'])->middleware('auth');
+Route::get('/himbauandinas/update/{name}', [AdministratorController::class, 'updatehimbauandinas'])->middleware('auth')->name('updateshow.himbauandinas');
+
+
 // -------- BAGIAN 01 BACKEND PROFIL ---------------------------------
 Route::get('/struktur', [StrukturController::class, 'index'])->middleware('auth');  
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
@@ -355,20 +380,19 @@ Route::post('/administrator/{name}', [AdministratorController::class, 'deleteadm
 
 
 // KATEGORI ADMIN  
-Route::get('/keputusan', [PeraturanController::class, 'keputusan'])->middleware('auth');  
-Route::get('/keputusanbaru/{judul}', [PeraturanController::class, 'keputusanshowbyjudul'])->middleware('auth');
-Route::get('/keputusan/update/{judul}', [PeraturanController::class, 'updateshowkeputusan'])->middleware('auth')->name('peruud.showkeputusan');
-Route::post('/keputusan/{judul}', [PeraturanController::class, 'createupdatekeputusan'])->middleware('auth')->name('peruud.updatekeputusan');
-Route::get('/keputusancreate', [PeraturanController::class, 'createkeputusan'])->middleware('auth');
-Route::post('/keputusanstore', [PeraturanController::class, 'createstorekeputusan'])->middleware('auth')->name('peruud.createkeputusan');
-Route::post('/keputusandelete/{judul}', [PeraturanController::class, 'deletekeputusan'])
+Route::get('/kategoriadmin', [AdministratorController::class, 'kategoriadmin'])->middleware('auth');  
+Route::get('/kategoriadmincreate', [AdministratorController::class, 'createkategoriadmin'])->middleware('auth');
+Route::post('/kategoriadminstore', [AdministratorController::class, 'createstorekategoriadmin'])->middleware('auth')->name('create.kategoriadmin');
+
+Route::post('/kategoriadmin/{id}', [AdministratorController::class, 'deletekategoriadmin'])
 ->middleware('auth')
-->name('peruud.deletekeputusan');
+->name('delete.deletekategoriadmin');
 
 
 // -------- BAGIAN 04 BACKEND ---------------------------------
 Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
 Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+
 
 
 
