@@ -173,6 +173,9 @@
         
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
                         
+
+
+
                 @foreach ($data as $items )
                     
                 <a href="/peruud/{{$items->judul}}" style="background: white;">
@@ -219,12 +222,11 @@
 
 {{-- ----------------------------------------------------------------------------- --}}
 
-@if (session('success'))
-<div id="successAlert" class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    {{ session('success') }}
-</div>
-@endif
+
+{{-- ================ --}}
+@include('tambahan.alert')
+{{-- ================ --}}
+
 
 <style>
 .alert {

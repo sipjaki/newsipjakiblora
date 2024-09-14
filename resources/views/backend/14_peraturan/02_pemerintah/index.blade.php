@@ -219,12 +219,10 @@
 
 {{-- ----------------------------------------------------------------------------- --}}
 
-@if (session('success'))
-<div id="successAlert" class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    {{ session('success') }}
-</div>
-@endif
+
+{{-- ================ --}}
+@include('tambahan.alert')
+{{-- ================ --}}
 
 <style>
 .alert {

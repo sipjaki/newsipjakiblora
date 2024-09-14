@@ -30,6 +30,7 @@ use App\Models\pelatihan;
 use App\Models\qa;
 use App\Models\qapertanyaan;
 use App\Models\qasebagai;
+use App\Models\renstra;
 use App\Models\statusadmin;
 use App\Models\strukturdinas;
 use App\Models\uijk;
@@ -1004,12 +1005,21 @@ class DatabaseSeeder extends Seeder
 //======================== ===================================================================================
 strukturdinas::create([
     'judul' => 'Struktur Dinas Pekerjaan Umum Dan Tata Ruang Kabupaten Bandung Barat',
-    'peraturan' => 'struktur/01_profil/BAGAN_DPUTR_SOTK.pdf',
+    'peraturan' => 'struktur/01_dinas/BAGAN_DPUTR.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
+
+//======================== ===================================================================================
+renstra::create([
+    'judul' => 'Rencana Strategis Pemerintah Kabupaten Bandung Barat',
+    'peraturan' => 'struktur/02_renstra/RENCANA_STRATEGIS.pdf',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
 
 
 
