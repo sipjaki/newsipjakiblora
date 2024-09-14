@@ -232,15 +232,14 @@ Route::post('/qapertanyaan/{id}', [AdministratorController::class, 'deleteqapert
 
 // KATEGORI HIMBAUAN DINAS
 Route::get('/himbauandinas', [AdministratorController::class, 'himbauandinas'])->middleware('auth');  
-Route::get('/himbauandinas/{name_lengkap}', [AdministratorController::class, 'himbauandinasshowbyname'])->middleware('auth');
-Route::get('/himbauandinas/update/{name}', [AdministratorController::class, 'updatehimbauandinas'])->middleware('auth')->name('updateshow.himbauandinas');
-
+Route::get('/himbauandinas/{nama_lengkap}', [AdministratorController::class, 'himbauandinasshowbyname'])->middleware('auth');
+Route::get('/himbauandinas/update/{nama_lengkap}', [AdministratorController::class, 'updatehimbauandinas'])->middleware('auth')->name('updateshow.himbauandinas');
+Route::post('/himbauandinas/{nama_lengkap}', [AdministratorController::class, 'createupdatehimbauandinas'])->middleware('auth')->name('update.himbauandinas');
 
 // -------- BAGIAN 01 BACKEND PROFIL ---------------------------------
 Route::get('/struktur', [StrukturController::class, 'index'])->middleware('auth');  
-// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
-// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
-// Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+Route::get('/struktur/update/{judul}', [StrukturController::class, 'updatestruktur'])->middleware('auth')->name('update.struktur');
+Route::post('/struktur/{judul}', [StrukturController::class, 'createupdatestruktur'])->middleware('auth')->name('updatestore.struktur');
 
 Route::get('/renstra', [StrukturController::class, 'renstra'])->middleware('auth');  
 // Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');

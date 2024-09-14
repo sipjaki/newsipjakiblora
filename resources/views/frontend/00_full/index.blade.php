@@ -365,11 +365,11 @@
                         
                     <article class="quoteblock">
                         <div class="quotetxt arrow">
-                            <p><img style="width:10%" src="{{ asset('storage/' . $item->foto_icon) }}" alt="{{ asset('storage/' . $item->foto_icon) }}"></p>
+                            <p><img style="width:10%" src="/assets/himbauan/PERSETUJUAN_BANGUNAN_GEDUNG.PNG" alt="/assets/himbauan/PERSETUJUAN_BANGUNAN_GEDUNG.PNG"></p>
                             <p><span style="color: black">{!! $item->himbauan !!}</span></p>
                         </div>
                         <figure>
-                            <img style="width:30%" class="customer" src="{{ asset('storage/' . $item->foto_pejabat)}}" alt="customer1">
+                            <img style="width:30%" class="customer" src="{{ asset('storage/' . $item->foto_pejabat)}}" alt="Dinas Terkait">
                             <figcaption>{{$item->nama_lengkap}}</figcaption>
                             <figcaption>{{$item->jabatan}}</figcaption>
                         </figure>

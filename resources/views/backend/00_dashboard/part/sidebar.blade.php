@@ -55,11 +55,13 @@
                          
                          </style>
                          
-                            <li class="parent">
-                                <a href="/" class="sbar"><i class="fas fa-cogs mr-2"> </i>
-                                    <span class="none">DASHBOARD WEB</span>
-                                </a>
-                            </li>
+                         <li class="parent">
+                            <a href="/" target="_blank" class="sbar">
+                                <i class="fas fa-cogs mr-2"></i>
+                                <span class="none">DASHBOARD WEB</span>
+                            </a>
+                        </li>
+                        
      
                             <li class="parent">
                                 <a href="/dashboard" class="sbar"><i class="fas fa-cogs mr-2"> </i>

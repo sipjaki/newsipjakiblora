@@ -275,6 +275,83 @@ public function kategoriadmin()
                      'data' => $datahimbauandinas,                      
                  ]);
              }
+
+             public function himbauandinasshowbyname($nama_lengkap)
+             {
+                 $datahimbauandinas = himbauandinas::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+     
+                 return view('backend.himbauandinas.show', [
+                     'data' => $datahimbauandinas,
+                     'title' => 'Himbauan Dinas Terkait',
+                 ]);
+             }
+
+
+             
+                // -------------------- UPDATE DATA ADMINISTRATOR ----------------------
+                public function updatehimbauandinas($nama_lengkap)
+                {
+                    // Cari data undang-undang berdasarkan nilai 'judul'
+                    $datahimbauandinas = himbauandinas::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+                    
+                    // Tampilkan form update dengan data yang ditemukan
+                    return view('backend.himbauandinas.update', [
+                        'datahimbauandinas' => $datahimbauandinas,
+                    
+                        'title' => 'Update Himbauan Dinas'
+                    ]);
+                }
+                
+                // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+            
+                public function createupdatehimbauandinas(Request $request, $nama_lengkap)
+                {
+                    // Validasi input
+                   // Validasi input
+                    $request->validate([
+                        'nama_lengkap' => 'required|string|max:255',
+                        'jabatan' => 'required|string|max:255',
+                        'himbauan' => 'required|string|max:2550',
+                        'foto_pejabat' => 'nullable|file|mimes:jpg,jpeg,png|max:20480',
+                    ]);
+
+
+                    // Cari data administrator berdasarkan nama
+                    $datahimbauandinas = himbauandinas::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+
+                    // Path folder penyimpanan
+                    $storagePath = storage_path('app/public/himbauan/dinas');
+
+                    // Cek dan buat folder jika tidak ada
+                    if (!File::exists($storagePath)) {
+                        File::makeDirectory($storagePath, 0755, true);
+                    }
+
+                    // Simpan file avatar dan ambil path-nya
+                    if ($request->hasFile('foto_pejabat')) {
+                        $file = $request->file('foto_pejabat');
+                        $filePath = $file->store('himbauan/dinas', 'public');
+                    } else {
+                        $filePath = $datahimbauandinas->foto_pejabat; // Default ke avatar yang ada jika tidak ada file baru
+                    }
+
+                    // Update data administrator dengan data dari form
+                    $datahimbauandinas->update([
+                        'nama_lengkap' => $request->input('nama_lengkap'),
+                        'jabatan' => $request->input('jabatan'),
+                        'himbauan' => $request->input('himbauan'),
+                        'foto_pejabat' => $filePath, // Menggunakan variabel filePath yang benar
+                    ]);
+
+                    // Flash pesan session
+                    session()->flash('update', 'Data Pejabat Berhasil Diupdate!');
+
+                    // Redirect ke halaman yang sesuai
+                    return redirect('/himbauandinas');
+                }
+
+     
          
 }
+
 

@@ -149,11 +149,14 @@
         <a style="background: white;">
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>... </div></label>
         </a>
+
+@foreach ($data as $item )
+    
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
-                        <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
-                        {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
-                        <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
-                        
+        <a href="/struktur/update/{{$item->judul}}">
+            <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+        </a>            
+                       
                         <style>
       
 .pdf-container {
@@ -186,8 +189,10 @@
 
     </style>
     <div class="pdf-container mt-4">
-        <iframe class="pdf-frame" src="/assets/library/01_profil/BAGAN_DPUTR_SOTK.pdf"></iframe>
+        <iframe class="pdf-frame" src="{{asset('storage/' . $item->peraturan)}}"></iframe>
     </div>
+
+    @endforeach
 
 
 <script>

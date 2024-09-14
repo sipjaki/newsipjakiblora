@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 160vh;
+    height: 80vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -101,7 +101,7 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Peraturan Gubernur Tentang Jasa Konstruksi</button>
+                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Himbauan Dinas Terkait</button>
                         {{-- <a href="/pergubernurcreate" style="background: inherit">
                             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
                         </a> --}}
@@ -157,8 +157,8 @@
                 <thead>
                     <tr>
                         <th style="width:45px;">No</th>
-                        <th>Judul</th>
-                        
+                        <th>Nama Lengkap</th>
+                        <th>Jabatan</th> 
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -173,7 +173,8 @@
                     
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->judul}}</td>
+                        <td style="font-size: 12px; text-align:left;">{{ $item->nama_lengkap}}</td>
+                        <td style="font-size: 12px; text-align:left;">{{ $item->jabatan}}</td>
                         
                         <td>
                             
@@ -215,10 +216,10 @@
                         </style>
 
                         <div class="button-container">
-                        <a href="/pergubernur/{{$item->judul}}" class="iconhover" title="View">
+                        <a href="/himbauandinas/{{$item->nama_lengkap}}" class="iconhover" title="View">
                             <i class="fas fa-eye"></i>
                         </a>
-                                <a href="/pergubernur/update/{{$item->judul}}" class="iconhover" title="Update">
+                                <a href="/himbauandinas/update/{{$item->nama_lengkap}}" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
                                 </a>
 

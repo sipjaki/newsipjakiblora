@@ -31,6 +31,7 @@ use App\Models\qa;
 use App\Models\qapertanyaan;
 use App\Models\qasebagai;
 use App\Models\statusadmin;
+use App\Models\strukturdinas;
 use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -1001,6 +1002,17 @@ class DatabaseSeeder extends Seeder
 
 //======================== ===================================================================================
 //======================== ===================================================================================
+strukturdinas::create([
+    'judul' => 'Struktur Dinas Pekerjaan Umum Dan Tata Ruang Kabupaten Bandung Barat',
+    'peraturan' => 'struktur/01_profil/BAGAN_DPUTR_SOTK.pdf',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+
+
+
 //======================== ===================================================================================
 //======================== ===================================================================================
         peraturan::create([
@@ -2981,11 +2993,27 @@ giskbb::create([
             'nama_lengkap'          => 'Yuyu Yuhana, ST., MM',       // Menghasilkan nomor acak antara 1 dan 9
             'jabatan'               => 'Fungsional Pembina Jasa Konstruksi Ahli Muda Pemerintah Kabupaten Bandung Barat',       // Menghasilkan nomor acak antara 1 dan 9
             'himbauan'              => '<p>Kami mendorong semua pihak memanfaatkan Sistem Informasi Pembina Jasa Konstruksi (SIPJAKI) secara maksimal. Sistem ini dirancang untuk memudahkan akses informasi penting terkait peraturan dan sertifikasi dalam industri konstruksi. Dengan menggunakan SIPJK, saudara akan memperoleh informasi terkini dan membantu memastikan proyek konstruksi berjalan sesuai standar. Mari kita tingkatkan kualitas dan profesionalisme industri konstruksi bersama</p>',       // Menghasilkan nomor acak antara 1 dan 9
-            'foto_icon'                  => 'himbauan/dinas/PEMELIHARAAN.png',
-            'foto_pejabat'                  => 'himbauan/dinas/PERSETUJUAN_BANGUNAN_GEDUNG.png',
+            'foto_pejabat'          => 'himbauan/dinas/PERSETUJUAN_BANGUNAN_GEDUNG.png',
             'created_at'            => now(),
             'updated_at'            => now(),
 ]);
+        himbauandinas::create([
+            'nama_lengkap'          => '',       // Menghasilkan nomor acak antara 1 dan 9
+            'jabatan'               => '',       // Menghasilkan nomor acak antara 1 dan 9
+            'himbauan'              => '',       // Menghasilkan nomor acak antara 1 dan 9
+            'foto_pejabat'          => '',
+            'created_at'            => now(),
+            'updated_at'            => now(),
+]);
+        himbauandinas::create([
+            'nama_lengkap'          => '',       // Menghasilkan nomor acak antara 1 dan 9
+            'jabatan'               => '',       // Menghasilkan nomor acak antara 1 dan 9
+            'himbauan'              => '',       // Menghasilkan nomor acak antara 1 dan 9
+            'foto_pejabat'          => '',
+            'created_at'            => now(),
+            'updated_at'            => now(),
+]);
+
     }
  /**
      * Menghitung usia berdasarkan tanggal lahir.
