@@ -127,6 +127,24 @@
                 background: white;
             }
     
+    .badgekembali {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgekembali:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }
+    
     .badgehidden {
                 background: linear-gradient(to right, white, white);
                 color: white;
@@ -144,13 +162,21 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Tupoksi Program Dan Jasa Konstruksi </div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Tupoksi Program dan Jasa Konstruksi Pemerintah Kabupaten Bandung Barat</div></label>
         </a>
-        <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>Sipjaki pemerintah Kab Bandung Barat </div></label>
+      
+        <a href="/tupoksi" style="background: white;">
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
+        
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
-                        <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+                        
+                @foreach ($data as $items )
+                    
+                <a href="/tupoksi/update/{{$items->judul}}" style="background: white;">
+                    <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+                </a>
+                @endforeach
                         {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
                         
@@ -185,29 +211,81 @@
 }
 
     </style>
+
+
+
+
+{{-- ----------------------------------------------------------------------------- --}}
+
+
+{{-- ================ --}}
+@include('tambahan.alert')
+{{-- ================ --}}
+
+
+<style>
+.alert {
+    padding: 10px;
+    background-color: navy; /* Warna biru */
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    position: relative;
+    font-size: 16px;
+    border-radius: 25px 0px 25px 25px;
+}
+
+.alert .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.alert .closebtn:hover {
+    color: #000;
+}
+</style>
+
+{{-- ----------------------------------------------------------------------------- --}}
+
+
+    @foreach($data as $items )
     <div class="pdf-container mt-4">
-        <iframe class="pdf-frame" src="/assets/library/01_profil/SOTK_DPUTR.pdf"></iframe>
+        <iframe class="pdf-frame" src="{{ asset('storage/' . $items->peraturan) }}" width="100%" height="600px"></iframe>
     </div>
+    
+    {{-- <iframe src="{{ asset(public_path('storage/undangundang/01_uud/UU_NO_02_TAHUN_2017.pdf')) }}" width="100%" height="600px"></iframe> --}}
 
-
-<script>
-    document.getElementById('downloadBtn').addEventListener('click', function() {
-        // URL file PDF
-        const pdfUrl = '/assets/library/01_profil/SOTK_DPUTR.pdf';
-        
-        // Membuat elemen anchor
-        const link = document.createElement('a');
-        link.href = pdfUrl;
-        link.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
-        
-        // Menyimulasikan klik pada elemen anchor
-        document.body.appendChild(link);
-        link.click();
-        
-        // Menghapus elemen anchor dari dokumen
-        document.body.removeChild(link);
-    });
-</script>
+    
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // URL file PDF
+            const pdfUrl = '{{ asset('storage/' . $items->peraturan) }}';
+            
+            // Nama file yang diunduh berdasarkan atribut judul
+            const fileName = '{{ $items->judul }}' + '.pdf'; // Pastikan menambahkan ekstensi file yang sesuai
+            
+            // Membuat elemen anchor
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = fileName;
+            
+            // Menyimulasikan klik pada elemen anchor
+            document.body.appendChild(link);
+            link.click();
+            
+            // Menghapus elemen anchor dari dokumen
+            document.body.removeChild(link);
+        });
+    </script>
+    
+@endforeach
 
 
 </div>
@@ -223,6 +301,7 @@
         
                 
         </div>
+        <hr style="border:0; height:5px; background-color:navy; margin: 20px 0px;">
         @include('backend.00_dashboard.part.menufooter')
     </div>
 </div>
