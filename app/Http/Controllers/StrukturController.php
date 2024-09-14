@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\renstra;
 use Illuminate\Http\Request;
 
 
@@ -69,7 +70,7 @@ class StrukturController extends Controller
 
     public function renstra()
     {
-        $data= struktur::all(); // Menggunakan paginate() untuk pagination
+        $data= renstra::all(); // Menggunakan paginate() untuk pagination
 
         return view('backend.01_struktur.02_renstra.index', [
             'title' => 'Rencana Strategis Program & Jasa Konstruksi',
