@@ -33,6 +33,7 @@ use App\Models\qasebagai;
 use App\Models\renstra;
 use App\Models\statusadmin;
 use App\Models\strukturdinas;
+use App\Models\tupoksi;
 use App\Models\uijk;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
@@ -1016,6 +1017,15 @@ strukturdinas::create([
 renstra::create([
     'judul' => 'Rencana Strategis Pemerintah Kabupaten Bandung Barat',
     'peraturan' => 'struktur/02_renstra/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+//======================== ===================================================================================
+tupoksi::create([
+    'judul' => 'Tupoksi Program Dan Jasa Konstruksi',
+    'peraturan' => 'struktur/03_tupoksi/SOTK_DPUTR.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes

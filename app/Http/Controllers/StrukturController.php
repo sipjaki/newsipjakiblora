@@ -78,8 +78,51 @@ class StrukturController extends Controller
         ]);
     }
 
+                // -------------------- UPDATE DATA PERATURAN GUBERNUR JASA KONSTRUKSI ----------------------
+                public function updaterenstra($judul)
+                {
+                    // Cari data undang-undang berdasarkan nilai 'judul'
+                    $renstra = renstra::where('judul', $judul)->firstOrFail();
+                    
+                    // Tampilkan form update dengan data yang ditemukan
+                    return view('backend.01_struktur.02_renstra.update', [
+                        'renstra' => $renstra,
+                        'title' => 'Update Rencana Strategis'
+                    ]);
+                }
+                
+                // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+                        public function createupdaterenstra(Request $request, $judul)
+                    {
+                        // Validasi input
+                        $request->validate([
+                            'judul' => 'required|string|max:255',
+                            // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
+                        ]);
+            
+                        // Cari data undang-undang berdasarkan nilai 'judul'
+                        $renstra = renstra::where('judul', $judul)->firstOrFail();
+                        
+                        // Simpan file dan ambil path-nya
+                        $filePath = null;
+                        if ($request->hasFile('peraturan')) {
+                            $file = $request->file('peraturan');
+                            $filePath = $file->store('struktur/02_renstra', 'public'); // Menyimpan di storage/app/public/undangundang
+                        }
+            
+                        // Update data undang-undang dengan data dari form
+                        $renstra->update([
+                            'judul' => $request->input('judul'),
+                            'peraturan' => $filePath ? $filePath : $renstra->peraturan, // Gunakan path baru jika ada file
+                        ]);
+            
+                        
+                        session()->flash('update', 'Data Rencana Strategis Berhasil Diupdate !');
+                        // Redirect ke halaman yang sesuai
+                        return redirect('/renstra');
+                               }
   
-
+// ===============================================
     
     public function tupoksi()
     {
