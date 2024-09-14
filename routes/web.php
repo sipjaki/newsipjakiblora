@@ -251,6 +251,19 @@ Route::post('/tupoksi/{judul}', [StrukturController::class, 'createupdatetupoksi
 
 
 // -------- BAGIAN 03 BACKEND DATA JASA KONSTRUKSI BANGUNAN GEDUNG PUPR ---------------------------------
+// --- ASOSIASI PENGUSAHA BACKEND JASA KONSTRUKSI ----------------------------
+Route::get('/asosiasipengusaha', [DatajakonController::class, 'asosiasipengusaha'])->middleware('auth');  
+Route::get('/asosiasipengusaha/{nama_asosiasi}', [DatajakonController::class, 'asosiasipengusahashowbyjudul'])->middleware('auth');
+// Route::get('/asosiasipengusaha/update/{judul}', [DatajakonController::class, 'updateasosiasipengusaha'])->middleware('auth')->name('update.asosiasipengusaha');
+// Route::post('/asosiasipengusaha/{judul}', [DatajakonController::class, 'createupdateasosiasipengusaha'])->middleware('auth')->name('updatestore.asosiasipengusaha');
+// Route::get('/asosiasipengusahacreate', [DatajakonController::class, 'createasosiasipengusaha'])->middleware('auth');
+// Route::post('/asosiasipengusahastore', [DatajakonController::class, 'createstoreasosiasipengusaha'])->middleware('auth')->name('create.asosiasipengusaha');
+
+Route::post('/asosiasipengusahadelete/{judul}', [StrukturController::class, 'deleteasosiasipengusaha'])
+->middleware('auth')
+->name('delete.asosiasipengusaha');
+
+// -----------------------------------
 Route::get('/standarbiayaumum', [StrukturController::class, 'standarbiayaumum'])->middleware('auth');  
 Route::get('/standarbiayaumum/{judul}', [StrukturController::class, 'standarbiayaumumshowbyjudul'])->middleware('auth');
 Route::get('/standarbiayaumum/update/{judul}', [StrukturController::class, 'updatestandarbiayaumum'])->middleware('auth')->name('update.standarbiayaumum');

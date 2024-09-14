@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\asosiasipengusaha;
 use Illuminate\Http\Request;
 
 class DatajakonController extends Controller
@@ -16,6 +17,28 @@ class DatajakonController extends Controller
            
         ]);
     }
+
+    public function asosiasipengusaha()
+    {
+        
+        $dataasosiasipengusaha = asosiasipengusaha::paginate(15);
+        return view('backend.03_datajakon.02_asosiasipengusaha.index', [
+            'title' => 'Asosiasi Pengusaha ',
+            'data' => $dataasosiasipengusaha,
+           
+        ]);
+    }
+
+    public function asosiasipengusahashowbyjudul($nama_asosiasi)
+    {
+        $dataasosiasipengusaha = asosiasipengusaha::where('nama_asosiasi', $nama_asosiasi)->firstOrFail();
+
+        return view('backend.03_datajakon.02_asosiasipengusaha.show', [
+            'data' => $dataasosiasipengusaha,
+            'title' => 'Details Asosiasi Pengusaha',
+        ]);
+    }
+    // -----------------------------------------------------------------------
 
     public function standarbiayaumum()
     {
