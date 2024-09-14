@@ -7,6 +7,7 @@
                 <div class="inner-sidebar mr-3">
                     <!--Image Avatar-->
                     <div class="avatar text-center" style="background:white; ">
+                        <p style="color: black"></p>
                         <img src="assets/img/client-img4.png" alt="" class="rounded-circle" style="margin-bottom:25px; border: 1px solid #000; border-radius: 50%; display: inline-block; overflow: hidden; "/>
                        <br>
                     </span>

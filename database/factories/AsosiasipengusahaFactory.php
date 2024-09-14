@@ -37,7 +37,7 @@ class AsosiasipengusahaFactory extends Factory
             'email' => $faker->safeEmail,
             'website' => $faker->url,
             'kepala_asosiasi' => $faker->name,
-            'tanggal_berdiri' => $faker->year,
+            // 'tanggal_berdiri' => $faker->year,
             'foto_asosiasi' => $faker->imageUrl(400, 300, 'business', true, 'foto_asosiasi'),
             'jumlah_anggota' => $faker->numberBetween(10, 500),
             'status' => $faker->randomElement(['AKTIF', 'TIDAK AKTIF']),

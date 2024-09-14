@@ -22,9 +22,10 @@ return new class extends Migration
             $table->string('website')->nullable(); // Website
             $table->string('kepala_asosiasi'); // Kepala Asosiasi
             $table->string('foto_asosiasi'); // Kepala Asosiasi
-            $table->year('tanggal_berdiri'); // Tanggal Berdiri
+            // $table->year('tanggal_berdiri'); // Tanggal Berdiri
             $table->integer('jumlah_anggota')->nullable(); // Jumlah Anggota
             $table->string('status'); // Status
+            $table->softDeletes(); // Status
             $table->timestamps();
         });
     }
