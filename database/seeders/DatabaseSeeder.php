@@ -1358,13 +1358,6 @@ sbulampiran3::create([
 
 // ==========================================================================================
 // ==========================================================================================
-        permenteri::create([
-            'judul' => 'PERATURAN_MENTERI_PUPR_NOMOR_14_TAHUN_2020',
-            'peraturan' => 'peraturan/04_menteri/PERATURAN_MENTERI_PUPR_NOMOR_14_TAHUN_2020.pdf',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
 
         permenteri::create([
             'judul' => 'LAMPIRAN_1_A_COVER_LAMPIRAN_I_PL',
@@ -1745,7 +1738,7 @@ sbulampiran3::create([
 
 pergubernur::create([
     'judul' => 'PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009',
-    'peraturan' => 'peraturan/08_daerah/PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009.pdf',
+    'peraturan' => 'peraturan/09_gubernur/PERATURAN_GUBERNUR_NOMOR_99_TAHUN_2009.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes

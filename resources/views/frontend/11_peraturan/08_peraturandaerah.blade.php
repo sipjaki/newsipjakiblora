@@ -232,21 +232,67 @@ Peraturan Daerah Tentang Jasa Konstruksi
 
 </div>
 
-<div class="pagination-container" style=" margin-top: 25px; margin-bottom:200px; display: flex; flex-direction: column; align-items: center;">
-    <div class="pagination-info mb-2" style="margin-bottom: 100px; color:black; font-weight: 500;">
-        Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
-    </div>
-        <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top:10px; ">
-            <li class="page-item {{ $data->onFirstPage() ? : '' }}" style="margin-right: 5px; ">
-                <a class="page-link" href="{{ $data->previousPageUrl() }}" style="color:black; position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: black; border: 1px solid #dee2e6; font-size:12px; border-radius: 20px 0px 0px 20px;"><i class="fas fa-arrow-left" style="margin-right:10px;"></i>Previous</a>
+<style>
+
+    .page-item {
+        display: inline-block;
+    }
+    
+    .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: white;
+        background: navy;
+        border: 1px solid #dee2e6;
+        font-size: 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .page-link:hover {
+        background: white;
+        color: black;
+        border-color: black;
+    }
+    
+    .page-link2:hover {
+        background: white;
+        color: black;
+        border-color: black;
+    }
+    
+    .page-item.disabled .page-link {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    
+    </style>
+    
+    
+    
+    <div class="pagination-container" style="margin-top: 25px; margin-bottom: 200px; display: flex; flex-direction: column; align-items: center;">
+        <div class="pagination-info mb-2" style="margin-bottom: 100px; color: black; font-weight: 500;">
+            Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
+        </div>
+        <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
+            <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
+                <a class="page-link" href="{{ $data->previousPageUrl() }}">
+                    <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>Previous
+                </a>
             </li>
-            <li class="page-item {{ $data->hasMorePages() ? '' : '' }}" style="margin-right: 5px;">
-                <a class="page-link" href="{{ $data->nextPageUrl() }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: white; background-color: black; border: 1px solid #dee2e6; font-size:12px; border-radius: 0px 20px 20px 0px;">Next <i class="fas fa-arrow-right" style="margin-left:10px;"></i></a>
+            <li class="page-item {{ $data->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
+                <a class="page-link" href="{{ $data->nextPageUrl() }}">
+                    Next <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
             </li>
         </ul>
-
-</div>
-
+    </div>
+    
+    
 
 
 </div>

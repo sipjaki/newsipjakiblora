@@ -121,7 +121,7 @@ Undang Undang Jasa Konstruksi
         
     
     <div class="pdf-container">
-        <iframe class="pdf-frame" src="{{$item->peraturan}}"></iframe>
+        <iframe class="pdf-frame" src="{{asset('storage/'.  $item->peraturan) }}"></iframe>
     </div>
     <div style="margin-left: 450px;">
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
@@ -129,16 +129,18 @@ Undang Undang Jasa Konstruksi
 </div>
 </div>
 
-
 <script>
     document.getElementById('downloadBtn').addEventListener('click', function() {
         // URL file PDF
-        const pdfUrl = '{{$item->peraturan}}';
+        const pdfUrl = '{{ asset('storage/' . $item->peraturan) }}';
+        
+        // Nama file yang diunduh berdasarkan atribut judul
+        const fileName = '{{ $item->judul }}' + '.pdf'; // Pastikan menambahkan ekstensi file yang sesuai
         
         // Membuat elemen anchor
         const link = document.createElement('a');
         link.href = pdfUrl;
-        link.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
+        link.download = fileName;
         
         // Menyimulasikan klik pada elemen anchor
         document.body.appendChild(link);

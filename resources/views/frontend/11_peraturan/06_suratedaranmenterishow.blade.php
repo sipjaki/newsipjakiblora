@@ -69,6 +69,10 @@ Surat Edaran Menteri Tentang Jasa Konstruksi
     <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
 </div>
 
+
+<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+<br>
+    
     
 <div class="controls" style="  
 display: flex;
@@ -94,6 +98,7 @@ border-radius:5px;
     margin-right: 10px;
     text-align: center;
     font-size: 12px;
+    margin-bottom: 10px;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -211,27 +216,30 @@ padding: 5px 5px;/* Mengaktifkan scroll jika konten lebih besar dari ukuran fram
 </div>
 
 
-<div class="pdf-container mt-4">
-<iframe class="pdf-frame" src="{{ $data->peraturan }}"></iframe>
+<div class="pdf-container">
+    <iframe class="pdf-frame" src="{{ asset('storage/' . $data->peraturan) }}"></iframe>
 </div>
 
 
 <script>
 document.getElementById('downloadBtn').addEventListener('click', function() {
-// URL file PDF
-const pdfUrl = '{{ $data->peraturan }}';
-
-// Membuat elemen anchor
-const link = document.createElement('a');
-link.href = pdfUrl;
-link.download = pdfUrl.substring(pdfUrl.lastIndexOf('/') + 1);
-
-// Menyimulasikan klik pada elemen anchor
-document.body.appendChild(link);
-link.click();
-
-// Menghapus elemen anchor dari dokumen
-document.body.removeChild(link);
+    // URL file PDF
+    const pdfUrl = '{{ asset('storage/' . $data->peraturan) }}';
+    
+    // Nama file yang diunduh berdasarkan atribut judul
+    const fileName = '{{ $data->judul }}' + '.pdf'; // Pastikan menambahkan ekstensi file yang sesuai
+    
+    // Membuat elemen anchor
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = fileName;
+    
+    // Menyimulasikan klik pada elemen anchor
+    document.body.appendChild(link);
+    link.click();
+    
+    // Menghapus elemen anchor dari dokumen
+    document.body.removeChild(link);
 });
 </script>
 
