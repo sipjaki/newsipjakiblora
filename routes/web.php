@@ -252,6 +252,20 @@ Route::post('/tupoksi/{judul}', [StrukturController::class, 'createupdatetupoksi
 
 
 // -------- BAGIAN 03 BACKEND DATA JASA KONSTRUKSI BANGUNAN GEDUNG PUPR ---------------------------------
+
+// KETERTIBAN DAN PENGAWASAN 
+// =-====================================================================================================
+Route::get('/pengawasandanketertiban', [DatajakonController::class, 'pengawasandanketertiban'])->middleware('auth');  
+Route::get('/pengawasandanketertiban/{judul}', [DatajakonController::class, 'pengawasandanketertibanshowbyjudul'])->middleware('auth');
+Route::get('/pengawasandanketertiban/update/{judul}', [DatajakonController::class, 'updatepengawasandanketertiban'])->middleware('auth')->name('update.pengawasandanketertiban');
+Route::post('/pengawasandanketertiban/{judul}', [DatajakonController::class, 'createupdatepengawasandanketertiban'])->middleware('auth')->name('updatestore.pengawasandanketertiban');
+Route::get('/pengawasandanketertibancreate', [DatajakonController::class, 'createpengawasandanketertiban'])->middleware('auth');
+Route::post('/pengawasandanketertibanstore', [DatajakonController::class, 'createstorepengawasandanketertiban'])->middleware('auth')->name('create.pengawasandanketertiban');
+
+Route::post('/pengawasandanketertibandelete/{judul}', [StrukturController::class, 'deletepengawasandanketertiban'])
+->middleware('auth')
+->name('delete.pengawasandanketertiban');
+
 // --- ASOSIASI PENGUSAHA BACKEND JASA KONSTRUKSI ----------------------------
 Route::get('/asosiasipengusaha', [DatajakonController::class, 'asosiasipengusaha'])->middleware('auth');  
 Route::get('/asosiasipengusaha/{nama_asosiasi}', [DatajakonController::class, 'asosiasipengusahashowbyjudul'])->middleware('auth');
@@ -264,7 +278,7 @@ Route::post('/asosiasipengusahadelete/{judul}', [DatajakonController::class, 'de
 ->middleware('auth')
 ->name('delete.asosiasipengusaha');
 
-// -----------------------------------
+// ----------------------------------- STANDAR BIAYA UMUM
 Route::get('/standarbiayaumum', [StrukturController::class, 'standarbiayaumum'])->middleware('auth');  
 Route::get('/standarbiayaumum/{judul}', [StrukturController::class, 'standarbiayaumumshowbyjudul'])->middleware('auth');
 Route::get('/standarbiayaumum/update/{judul}', [StrukturController::class, 'updatestandarbiayaumum'])->middleware('auth')->name('update.standarbiayaumum');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\asosiasipengusaha;
+use App\Models\ketertiban;
 use App\Models\metodepengadaan;
 use App\Models\paketpekerjaan;
 use Illuminate\Http\Request;
@@ -23,6 +24,24 @@ class DatajakonController extends Controller
            
         ]);
     }
+
+    // ===========================================================
+    // PENGAWASAN DAN KETERTIBAN 
+
+    public function pengawasandanketertiban()
+    {
+        
+        $ketertiban = ketertiban::paginate(15);
+        return view('backend.03_datajakon.01_pengawasanketertiban.index', [
+            'data' => $ketertiban,
+            'title' => 'Pengawasan & Ketertiban',
+           
+        ]);
+
+    }
+
+    // ========================================================
+    // ASOSIASI PENGUSAHA
 
     public function asosiasipengusaha()
     {

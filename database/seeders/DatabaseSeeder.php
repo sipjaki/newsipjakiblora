@@ -27,10 +27,17 @@ use App\Models\giskbb;
 use App\Models\himbauandinas;
 use App\Models\isadmin;
 use App\Models\kegiatanjaskon;
+use App\Models\ketertiban;
 use App\Models\metodepengadaan;
 use App\Models\paketpekerjaaan;
 use App\Models\paketpekerjaan;
 use App\Models\pelatihan;
+use App\Models\penanggungjawabteknis;
+use App\Models\pengawasanbangunangedung;
+use App\Models\pengawasanketertiban;
+use App\Models\pengawasanlokasi;
+use App\Models\pengawasanstatus;
+use App\Models\pengawasantindakan;
 use App\Models\qa;
 use App\Models\qapertanyaan;
 use App\Models\qasebagai;
@@ -56,10 +63,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         
-        asosiasipengusaha::factory(11)->create();
-        paketpekerjaan::factory(13)->create();
-       
-
+        asosiasipengusaha::factory(15)->create();
+        paketpekerjaan::factory(15)->create();
+        penanggungjawabteknis::factory(15)->create();
+        ketertiban::factory(15)->create();
+        
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
@@ -1409,7 +1417,272 @@ metodepengadaan::create([
 ]);
 
 
+//======================== PENGAWASAN LOKASI  ===================================================================================
+pengawasanlokasi::create([
+    'id' => '1',
+    'kota' => 'LEMBANG',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '2',
+    'kota' => 'PARONGPONG',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '3',
+    'kota' => 'CISARUA',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '4',
+    'kota' => 'CIKALONG WETAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '5',
+    'kota' => 'CIPEUNDEY',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '6',
+    'kota' => 'NGAMPRAH',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '7',
+    'kota' => 'CIPATAT',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '8',
+    'kota' => 'PADALARANG',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '9',
+    'kota' => 'BATUJAJAR',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '10',
+    'kota' => 'CIHAMPELAS',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '11',
+    'kota' => 'CILILIN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '12',
+    'kota' => 'CIPONGKOR',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '13',
+    'kota' => 'RONGGA',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '14',
+    'kota' => 'SINDANGKERTA',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '15',
+    'kota' => 'GUNUNG HALU',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanlokasi::create([
+    'id' => '16',
+    'kota' => 'SAGULING',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+
 //======================== ===================================================================================
+pengawasanbangunangedung::create([
+    'id' => '1',
+    'bangunan' => 'GEDUNG PERKANTORAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '2',
+    'bangunan' => 'GEDUNG KOMERSIAL',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '3',
+    'bangunan' => 'GEDUNG INDUSTRI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '4',
+    'bangunan' => 'GEDUNG PENDIDIKAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '5',
+    'bangunan' => 'GEDUNG KESEHATAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '6',
+    'bangunan' => 'GEDUNG PERUMAHAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '7',
+    'bangunan' => 'GEDUNG PEMERINTAHAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '8',
+    'bangunan' => 'GEDUNG BUDAYA',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '9',
+    'bangunan' => 'GEDUNG HIBURAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanbangunangedung::create([
+    'id' => '10',
+    'bangunan' => 'GEDUNG TRANSPORTASI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+//======================== ===================================================================================
+
+pengawasanstatus::create([
+    'id' => '1',
+    'status' => 'RESIKO TINGGI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanstatus::create([
+    'id' => '2',
+    'status' => 'RESIKO SEDANG',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasanstatus::create([
+    'id' => '3',
+    'status' => 'RESIKO RENDAH',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+//  ================================================================ 
+pengawasantindakan::create([
+    'id' => '1',
+    'tindakan' => 'BELUM DI TINDAKLANJUTI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasantindakan::create([
+    'id' => '2',
+    'tindakan' => 'SEDANG DI PROSES',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+pengawasantindakan::create([
+    'id' => '3',
+    'tindakan' => 'SELESAI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+
+//  ================================================================ 
+
+
         peraturan::create([
             'judul' => 'UNDANG- UNDANG JASA KONSTRUKSI',
             'peraturan' => 'peraturan/01_uud/UU_NO_02_TAHUN_2017.pdf',
