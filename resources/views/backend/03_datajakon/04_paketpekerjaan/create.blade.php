@@ -220,7 +220,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 900px;
-                height: 190px;
+                height: 70vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #f0f0f0; /* Warna silver */
