@@ -12,6 +12,7 @@ use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\UijkController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\UndangundangController;
+use Database\Factories\DatajakonFactory;
 use Database\Factories\SkktenagakerjaFactory;
 use Illuminate\Support\Facades\Route;
 
@@ -274,6 +275,18 @@ Route::post('/standarbiayaumumstore', [StrukturController::class, 'createstorest
 Route::post('/standarbiayaumumdelete/{judul}', [StrukturController::class, 'deletestandarbiayaumum'])
 ->middleware('auth')
 ->name('delete.standarbiayaumum');
+
+// ----------------------------------- PAKET PEKERJAAN ---------------------------------
+Route::get('/paketpekerjaan', [DatajakonController::class, 'paketpekerjaan'])->middleware('auth');  
+Route::get('/paketpekerjaan/{judul}', [DatajakonController::class, 'paketpekerjaanshowbyjudul'])->middleware('auth');
+Route::get('/paketpekerjaan/update/{judul}', [DatajakonController::class, 'updatepaketpekerjaan'])->middleware('auth')->name('update.paketpekerjaan');
+Route::post('/paketpekerjaan/{judul}', [DatajakonController::class, 'createupdatepaketpekerjaan'])->middleware('auth')->name('updatestore.paketpekerjaan');
+Route::get('/paketpekerjaancreate', [DatajakonController::class, 'createpaketpekerjaan'])->middleware('auth');
+Route::post('/paketpekerjaanstore', [DatajakonController::class, 'createstorepaketpekerjaan'])->middleware('auth')->name('create.paketpekerjaan');
+
+Route::post('/paketpekerjaandelete/{judul}', [DatajakonController::class, 'deletepaketpekerjaan'])
+->middleware('auth')
+->name('delete.paketpekerjaan');
 
 
 // SBU LAMPIRAN 1

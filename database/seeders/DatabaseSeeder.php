@@ -27,6 +27,8 @@ use App\Models\giskbb;
 use App\Models\himbauandinas;
 use App\Models\isadmin;
 use App\Models\kegiatanjaskon;
+use App\Models\paketpekerjaaan;
+use App\Models\paketpekerjaan;
 use App\Models\pelatihan;
 use App\Models\qa;
 use App\Models\qapertanyaan;
@@ -40,6 +42,7 @@ use App\Models\statusadmin;
 use App\Models\strukturdinas;
 use App\Models\tupoksi;
 use App\Models\uijk;
+// use App\Models\paketpekerjaan;
 use Database\Factories\SkktenagakerjaFactory;
 // use Carbon\Carbon;
 use Carbon\Carbon;
@@ -53,6 +56,7 @@ class DatabaseSeeder extends Seeder
     {
         
         asosiasipengusaha::factory(11)->create();
+        paketpekerjaan::factory(13)->create();
        
 
         // \App\Models\User::factory()->create([
