@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 180vh;
+    height: 200vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -93,7 +93,7 @@
                 margin-right: 10px;
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
-                margin-left: 580px;
+                margin-left: 520px;
             }
             .badge-plus:hover {
                 background: white;
@@ -102,8 +102,8 @@
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
                         <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Paket Pekerjaan</button>
-                        <a href="/suratedarancreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
+                        <a href="/paketpekerjaancreate" style="background: inherit">
+                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create Paket Pekerjaan</button>
                         </a>
 
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->

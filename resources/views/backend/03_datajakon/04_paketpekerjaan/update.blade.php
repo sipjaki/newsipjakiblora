@@ -204,7 +204,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 920px;
-                height: 60vh;
+                height: 70vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #E0E0E0; /* Warna silver */
@@ -274,17 +274,10 @@
                         <input type="text" id="instansi" name="instansi" value="{{ old('instansi', $datapaketpekerjaan->instansi) }}" required>
                     </div>
                 </div>
-            
-                {{-- <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="instansi" style="font-size:14px;"><i class="fas fa-file me-2"></i> Jumlah Pagu</label>
-                        <input type="text" id="jumlah_pagu" name="jumlah_pagu" value="{{ old('jumlah_pagu', number_format($datapaketpekerjaan->jumlah_pagu)) }}" required>
-                    </div>
-                </div> --}}
 
                 <div class="form-group">
                     <div class="form-group-inner">
-                        <label for="instansi" style="font-size:14px;"><i class="fas fa-file me-2"></i> Jumlah Pagu</label>
+                        <label for="jumlah_pagu" style="font-size:14px;"><i class="fas fa-file me-2"></i> Jumlah Pagu</label>
                         <input type="text" id="jumlah_pagu" name="jumlah_pagu" value="{{ old('jumlah_pagu', number_format($datapaketpekerjaan->jumlah_pagu)) }}" required>
                     </div>
                 </div>
@@ -324,12 +317,7 @@
                     });
                 </script>
                             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="instansi" style="font-size:14px;"><i class="fas fa-file me-2"></i> Instansi</label>
-                        <input type="text" id="instansi" name="instansi" value="{{ old('instansi', $datapaketpekerjaan->instansi) }}" required>
-                    </div>
-                </div>
+            
 
            <!-- Include the form HTML with proper ID and class attributes -->
 
@@ -356,13 +344,13 @@
                         <input type="text" id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan', $datapaketpekerjaan->pekerjaan) }}" required>
                     </div>
                 </div>
-            
+                
                 <div class="form-group">
                     <div class="form-group-inner">
                         <label for="tahun" style="font-size:14px;"><i class="fas fa-file me-2"></i> Tahun Anggaran </label>
                         <select  id="tahun" name="tahun" required class="form-control" style="width: 600px;">
                             @foreach (range(2021, 2029) as $year)
-                                <option value="{{ $year }}" {{ $year == old('tahun', $datapaketpekerjaan->tahun) ? 'selected' : '' }}>
+                            <option value="{{ $year }}" {{ $year == old('tahun', $datapaketpekerjaan->tahun) ? 'selected' : '' }}>
                                     {{ $year }}
                                 </option>
                             @endforeach
@@ -370,20 +358,14 @@
                     </div>
                 </div>
                 
-                        
-                {{-- <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="tanggal_selesai" style="font-size:14px;"><i class="fas fa-file me-2"></i> Tanggal Selesai</label>
-                        <input type="date" id="tanggal_selesai" name="tanggal_selesai" value="{{ old('tanggal_selesai', $datapaketpekerjaan->tanggal_selesai) }}" required>
-                    </div>
-                </div>
-            {{--  --}}
-                {{-- <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="progress_fisik" style="font-size:14px;"><i class="fas fa-file me-2"></i> Progress Fisik</label>
-                        <input type="number" id="progress_fisik" name="progress_fisik" value="{{ old('progress_fisik', $datapaketpekerjaan->progress_fisik) }}" required>
-                    </div>
-                </div>              --}}
+                
+                        <div class="form-group">
+                            <div class="form-group-inner">
+                                <label for="progress_fisik" style="font-size:14px;"><i class="fas fa-file me-2"></i> progress_fisik</label>
+                                <input type="text" id="progress_fisik" name="progress_fisik" value="{{ old('progress_fisik', $datapaketpekerjaan->progress_fisik) }}" required>
+                            </div>
+                        </div>
+                
                 <div class="form-group">
                     <div class="form-group-inner">
                         <label for="foto_pekerjaan" style="font-size:14px;"><i class="fas fa-file me-2"></i> Foto Pekerjaan</label>
@@ -394,7 +376,7 @@
                     </div>
                 </div>
             
-                <hr style="border: 1px solid #000000">
+                {{-- <hr style="border: 1px solid #000000"> --}}
                 <div class="form-group">
                     <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
                 </div>

@@ -228,16 +228,16 @@ public function createupdatepaketpekerjaan(Request $request, $instansi)
     // Validasi input
     $request->validate([
         'instansi' => 'required|string|max:255',
-        'jumlah_pagu' => 'required|numeric|min:10000|max:10000000000', // Validasi untuk angka
-        'metodepengadaan_id' => 'required|string|max:255',
+        'jumlah_pagu' => 'required|numeric|min:10000|max:10000000000', // Validasi untuk jumlah pagu
         'pekerjaan' => 'required|string|max:255',
-        'foto_pekerjaan' => 'nullable|file|mimes:jpg,jpeg,png|max:20480',
-        'tahun' => 'required|integer|between:2021,2029', // Validasi tahun
-        // 'progress_fisik' => 'required|numeric|min:0|max:100',
+        'foto_pekerjaan' => 'nullable|file|mimes:jpeg,png,jpg|max:20480',
+        'metodepengadaan_id' => 'required|string|max:255',
+        'tahun' => 'required|integer|digits:4',
+        'progress_fisik' => 'nullable|numeric|min:0|max:100', // 'progress_fisik' => 'required|numeric|min:0|max:100',
     ]);
 
     // Cari data paketpekerjaan berdasarkan instansi
-    $datapaketpekerjaan = PaketPekerjaan::where('instansi', $instansi)->firstOrFail();
+    $datapaketpekerjaan = paketpekerjaan::where('instansi', $instansi)->firstOrFail();
 
     // Path folder penyimpanan
     $storagePath = storage_path('app/public/datajakon/paketpekerjaan');
@@ -262,11 +262,12 @@ public function createupdatepaketpekerjaan(Request $request, $instansi)
     // Update data paketpekerjaan dengan data dari form
     $datapaketpekerjaan->update([
         'instansi' => $request->input('instansi'),
-        'jumlah_pagu' => $jumlahPagu, // Pastikan jumlah_pagu disimpan sebagai integer
-        'metodepengadaan_id' => $request->input('metodepengadaan_id'),
+        'jumlah_pagu' => $jumlahPagu,
         'pekerjaan' => $request->input('pekerjaan'),
         'foto_pekerjaan' => $filePath,
-        'tahun' => $request->input('tahun'), // Update tahun
+        'metodepengadaan_id' => $request->input('metodepengadaan_id'),
+        'tahun' => $request->input('tahun'),
+        'progress_fisik' => $request->input('progress_fisik', 0), // Default to 0 if not provided
         // 'progress_fisik' => $request->input('progress_fisik'),
     ]);
 
@@ -275,6 +276,59 @@ public function createupdatepaketpekerjaan(Request $request, $instansi)
 
     // Redirect ke halaman yang sesuai
     return redirect('/paketpekerjaan'); // Pastikan rute ini ada di web.php
+}
+
+// ------------- CREATE DATA PAKET PEKERJAAN --------------
+
+public function createpaketpekerjaan()
+{
+        
+        $datametodepengadaan = metodepengadaan::all();
+        
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.03_datajakon.04_paketpekerjaan.create', [
+        'datametodepengadaan' => $datametodepengadaan,
+        'title' => 'Create Paket Pekerjaan'
+    ]);
+}
+
+public function createstorepaketpekerjaan(Request $request)
+{
+    // Validasi input
+    $request->validate([
+        'instansi' => 'required|string|max:255',
+        'jumlah_pagu' => 'required|numeric|min:10000|max:10000000000', // Validasi untuk jumlah pagu
+        'pekerjaan' => 'required|string|max:255',
+        'foto_pekerjaan' => 'nullable|file|mimes:jpeg,png,jpg|max:20480',
+        'metodepengadaan_id' => 'required|string|max:255',
+        'tahun' => 'required|integer|digits:4',
+        'progress_fisik' => 'nullable|numeric|min:0|max:100',
+    ]);
+
+    // Simpan file foto pekerjaan dan ambil path jika ada
+    $filePathFotoPekerjaan = null;
+    if ($request->hasFile('foto_pekerjaan')) {
+        $filePathFotoPekerjaan = $request->file('foto_pekerjaan')->store('datajakon/paketpekerjaan', 'public');
+    }
+
+    // Ambil dan konversi jumlah_pagu dari request
+    $jumlahPagu = $request->input('jumlah_pagu');
+    $jumlahPagu = preg_replace('/[^\d]/', '', $jumlahPagu);
+    $jumlahPagu = (int) $jumlahPagu;
+
+    // Buat entri baru di database
+    paketpekerjaan::create([
+        'instansi' => $request->input('instansi'),
+        'jumlah_pagu' => $jumlahPagu,
+        'pekerjaan' => $request->input('pekerjaan'),
+        'foto_pekerjaan' => $filePathFotoPekerjaan,
+        'metodepengadaan_id' => $request->input('metodepengadaan_id'),
+        'tahun' => $request->input('tahun'),
+        'progress_fisik' => $request->input('progress_fisik', 0), // Default to 0 if not provided
+    ]);
+
+    session()->flash('create', 'Data Berhasil Di Tambahkan !');
+    return redirect('/paketpekerjaan'); // Ganti 'your.route.name' dengan nama route yang sesuai
 }
 
 
