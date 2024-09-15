@@ -27,6 +27,7 @@ use App\Models\giskbb;
 use App\Models\himbauandinas;
 use App\Models\isadmin;
 use App\Models\kegiatanjaskon;
+use App\Models\metodepengadaan;
 use App\Models\paketpekerjaaan;
 use App\Models\paketpekerjaan;
 use App\Models\pelatihan;
@@ -1333,6 +1334,80 @@ sbulampiran3::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 //======================== ===================================================================================
+// DATA BACKEND
+//======================== ===================================================================================
+metodepengadaan::create([
+    'id' => '1',
+    'metode' => 'LANGSUNG',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+metodepengadaan::create([
+    'id' => '2',
+    'metode' => 'PELELANGAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+metodepengadaan::create([
+    'id' => '3',
+    'metode' => 'UNDANGAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+metodepengadaan::create([
+    'id' => '4',
+    'metode' => 'KONSULTASI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+metodepengadaan::create([
+    'id' => '5',
+    'metode' => 'PENUNJUKAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+metodepengadaan::create([
+    'id' => '6',
+    'metode' => 'E-TENDERING',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+metodepengadaan::create([
+    'id' => '7',
+    'metode' => 'KUALIFIKASI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+metodepengadaan::create([
+    'id' => '8',
+    'metode' => 'TERBUKA TERBATAS',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+metodepengadaan::create([
+    'id' => '9',
+    'metode' => 'LANGSUNG TERBATAS',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
 
 //======================== ===================================================================================
         peraturan::create([

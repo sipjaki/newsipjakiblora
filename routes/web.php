@@ -277,10 +277,10 @@ Route::post('/standarbiayaumumdelete/{judul}', [StrukturController::class, 'dele
 ->name('delete.standarbiayaumum');
 
 // ----------------------------------- PAKET PEKERJAAN ---------------------------------
-Route::get('/paketpekerjaan', [DatajakonController::class, 'paketpekerjaan'])->middleware('auth');  
-Route::get('/paketpekerjaan/{judul}', [DatajakonController::class, 'paketpekerjaanshowbyjudul'])->middleware('auth');
-Route::get('/paketpekerjaan/update/{judul}', [DatajakonController::class, 'updatepaketpekerjaan'])->middleware('auth')->name('update.paketpekerjaan');
-Route::post('/paketpekerjaan/{judul}', [DatajakonController::class, 'createupdatepaketpekerjaan'])->middleware('auth')->name('updatestore.paketpekerjaan');
+Route::get('/paketpekerjaan', [DatajakonController::class, 'bepaketpekerjaan'])->middleware('auth');  
+Route::get('/paketpekerjaan/{instansi}', [DatajakonController::class, 'paketpekerjaanshowbyjudul'])->middleware('auth');
+Route::get('/paketpekerjaan/update/{instansi}', [DatajakonController::class, 'updatepaketpekerjaan'])->middleware('auth')->name('update.paketpekerjaan');
+Route::post('/paketpekerjaan/{instansi}', [DatajakonController::class, 'createupdatepaketpekerjaan'])->middleware('auth')->name('updatestore.paketpekerjaan');
 Route::get('/paketpekerjaancreate', [DatajakonController::class, 'createpaketpekerjaan'])->middleware('auth');
 Route::post('/paketpekerjaanstore', [DatajakonController::class, 'createstorepaketpekerjaan'])->middleware('auth')->name('create.paketpekerjaan');
 

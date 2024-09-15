@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\asosiasipengusaha;
+use App\Models\metodepengadaan;
+use App\Models\paketpekerjaan;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
@@ -130,36 +132,8 @@ class DatajakonController extends Controller
                     // Redirect ke halaman yang sesuai
                     return redirect('/asosiasipengusaha');
                 }
+
                 
-    //  -----------------------------------------------------------------------
-
-    public function standarbiayaumum()
-    {
-        
-        return view('frontend.03_datajakon.02_standarbiayaumum', [
-            'title' => 'Standar Biaya Umum ',
-           
-        ]);
-    }
-
-    public function paketpekerjaan()
-    {
-        
-        return view('frontend.03_datajakon.03_paketpekerjaan', [
-            'title' => 'Paket Pekerjaan Kabupaten Bandung Barat',
-           
-        ]);
-    }
-    
-    public function pengawasan()
-    {
-        
-        return view('frontend.03_datajakon.04_pengawasan', [
-            'title' => 'Pengawasan Konstruksi Kabupaten Bandung Barat',
-           
-        ]);
-    }
-
     //================ DELETE DATA ASOSIASI PENGUSAHA  ========================== 
     public function deleteasosiasipengusaha($nama_asosiasi)
     {
@@ -188,6 +162,168 @@ class DatajakonController extends Controller
             return redirect('/asosiasipengusaha');
         }
     }
+                
+    //  -----------------------------------------------------------------------
+
+    public function standarbiayaumum()
+    {
+        
+        return view('frontend.03_datajakon.02_standarbiayaumum', [
+            'title' => 'Standar Biaya Umum ',
+           
+        ]);
+    }
+
+
+    // ======================================== PAKET PEKERJAAN =====================================
+
+    public function paketpekerjaan()
+    {
+        
+        return view('frontend.03_datajakon.03_paketpekerjaan', [
+            'title' => 'Paket Pekerjaan Kabupaten Bandung Barat',
+           
+        ]);
+    }
+
+    
+    public function bepaketpekerjaan()
+    {
+        
+        $paketpekerjaan = paketpekerjaan::paginate(15);
+        return view('backend.03_datajakon.04_paketpekerjaan.index', [
+            'data' => $paketpekerjaan,
+            'title' => 'Paket Pekerjaan Pemerintah Kabupaten Bandung Barat ',
+           
+        ]);
+    }
+
+    public function paketpekerjaanshowbyjudul($instansi)
+    {
+        $paketpekerjaan = paketpekerjaan::where('instansi', $instansi)->firstOrFail();
+
+        return view('backend.03_datajakon.04_paketpekerjaan.show', [
+            'data' => $paketpekerjaan,
+            'title' => 'Details Paket Pekerjaan',
+        ]);
+    }
+    public function updatepaketpekerjaan($instansi)
+    {
+        // Cari data undang-undang berdasarkan nilai 'judul'
+        $datapaketpekerjaan = paketpekerjaan::where('instansi', $instansi)->firstOrFail();
+        $datametodepengadaan = metodepengadaan::all();
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.03_datajakon.04_paketpekerjaan.update', [
+            'datapaketpekerjaan' => $datapaketpekerjaan,
+            'datametodepengadaan' => $datametodepengadaan,
+        
+            'title' => 'Update Paket Pekerjaan'
+        ]);
+    }
+    
+    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+
+public function createupdatepaketpekerjaan(Request $request, $instansi)
+{
+    // Validasi input
+    $request->validate([
+        'instansi' => 'required|string|max:255',
+        'jumlah_pagu' => 'required|numeric|min:10000|max:10000000000', // Validasi untuk angka
+        'metodepengadaan_id' => 'required|string|max:255',
+        'pekerjaan' => 'required|string|max:255',
+        'foto_pekerjaan' => 'nullable|file|mimes:jpg,jpeg,png|max:20480',
+        'tahun' => 'required|integer|between:2021,2029', // Validasi tahun
+        // 'progress_fisik' => 'required|numeric|min:0|max:100',
+    ]);
+
+    // Cari data paketpekerjaan berdasarkan instansi
+    $datapaketpekerjaan = PaketPekerjaan::where('instansi', $instansi)->firstOrFail();
+
+    // Path folder penyimpanan
+    $storagePath = storage_path('app/public/datajakon/paketpekerjaan');
+
+    // Cek dan buat folder jika tidak ada
+    if (!File::exists($storagePath)) {
+        File::makeDirectory($storagePath, 0755, true);
+    }
+
+    // Simpan file foto_pekerjaan dan ambil path-nya
+    $filePath = $datapaketpekerjaan->foto_pekerjaan; // Default ke foto yang ada jika tidak ada file baru
+    if ($request->hasFile('foto_pekerjaan')) {
+        $file = $request->file('foto_pekerjaan');
+        $filePath = $file->store('datajakon/paketpekerjaan', 'public');
+    }
+
+    // Ambil dan konversi jumlah_pagu dari request
+    $jumlahPagu = $request->input('jumlah_pagu');
+    $jumlahPagu = preg_replace('/[^\d]/', '', $jumlahPagu);
+    $jumlahPagu = (int) $jumlahPagu;
+
+    // Update data paketpekerjaan dengan data dari form
+    $datapaketpekerjaan->update([
+        'instansi' => $request->input('instansi'),
+        'jumlah_pagu' => $jumlahPagu, // Pastikan jumlah_pagu disimpan sebagai integer
+        'metodepengadaan_id' => $request->input('metodepengadaan_id'),
+        'pekerjaan' => $request->input('pekerjaan'),
+        'foto_pekerjaan' => $filePath,
+        'tahun' => $request->input('tahun'), // Update tahun
+        // 'progress_fisik' => $request->input('progress_fisik'),
+    ]);
+
+    // Flash pesan session
+    session()->flash('update', 'Data Paket Pekerjaan Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/paketpekerjaan'); // Pastikan rute ini ada di web.php
+}
+
+
+public function deletepaketpekerjaan($instansi)
+{
+    // Cari entri berdasarkan name
+    $entry = paketpekerjaan::where('instansi', $instansi)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if ($entry->foto_pekerjaan) {
+            Storage::disk('public')->delete($entry->foto_pekerjaan);
+        }
+
+        // Hapus entri dari database
+        paketpekerjaan::destroy($entry->id);
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+
+        // Redirect ke halaman yang sesuai
+        return redirect('/paketpekerjaan');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+
+        // Redirect ke halaman yang sesuai
+        return redirect('/paketpekerjaan');
+    }
+}
+
+    
+
+
+
+    
+
+    // ============================================================================== =========
+
+    
+    public function pengawasan()
+    {
+        
+        return view('frontend.03_datajakon.04_pengawasan', [
+            'title' => 'Pengawasan Konstruksi Kabupaten Bandung Barat',
+           
+        ]);
+    }
+
 
 
     

@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class paketpekerjaan extends Model
+class metodepengadaan extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
 
-     
-    public function metodepengadaan()
+    
+    public function paketpekerjaan()
     {
-        return $this->belongsTo(metodepengadaan::class);
+        return $this->hasMany(paketpekerjaan::class);
     }
 }
