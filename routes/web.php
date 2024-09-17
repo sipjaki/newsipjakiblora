@@ -11,6 +11,7 @@ use App\Http\Controllers\SkktenagakerjaController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\UijkController;
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\UndangundangController;
 use Database\Factories\DatajakonFactory;
 use Database\Factories\SkktenagakerjaFactory;
@@ -219,7 +220,7 @@ Route::get('/dashboard', function () {
     ]);
 })->middleware('auth');
 
-// ------------------- BAGIAN QA PERTANYAAN --------------------------- 
+// ------------------- BACKEND QA PERTANYAAN --------------------------- 
 
 // KATEGORI ADMIN  
 Route::get('/qapertanyaan', [AdministratorController::class, 'qapertanyaan'])->middleware('auth');  
@@ -229,7 +230,7 @@ Route::post('/qapertanyaan/{id}', [AdministratorController::class, 'deleteqapert
 ->middleware('auth')
 ->name('delete.qapertanyaan');
 
-// ------------------- BAGIAN HIMBAUAN DINAS --------------------------- 
+// ------------------- BACKEND BAGIAN HIMBAUAN DINAS --------------------------- 
 
 // KATEGORI HIMBAUAN DINAS
 Route::get('/himbauandinas', [AdministratorController::class, 'himbauandinas'])->middleware('auth');  
@@ -250,6 +251,18 @@ Route::get('/tupoksi', [StrukturController::class, 'tupoksi'])->middleware('auth
 Route::get('/tupoksi/update/{judul}', [StrukturController::class, 'updatetupoksi'])->middleware('auth')->name('update.tupoksi');
 Route::post('/tupoksi/{judul}', [StrukturController::class, 'createupdatetupoksi'])->middleware('auth')->name('updatestore.tupoksi');
 
+
+// -------- BAGIAN 02 BACKEND DATA BERITA JASA KONSTRUKSI  ---------------------------------
+Route::get('/databerita', [BeritaController::class, 'databerita'])->middleware('auth');  
+Route::get('/databerita/{judul}', [BeritaController::class, 'databeritashowbyjudul'])->middleware('auth');
+Route::get('/databerita/update/{judul}', [BeritaController::class, 'updatedataberita'])->middleware('auth')->name('update.databerita');
+Route::post('/databerita/{judul}', [BeritaController::class, 'createupdatedataberita'])->middleware('auth')->name('updatestore.databerita');
+Route::get('/databeritacreate', [BeritaController::class, 'createdataberita'])->middleware('auth');
+Route::post('/databeritastore', [BeritaController::class, 'createstoredataberita'])->middleware('auth')->name('create.databerita');
+
+Route::post('/databerita/{judul}', [BeritaController::class, 'deletedataberita'])
+->middleware('auth')
+->name('delete.databerita');
 
 // -------- BAGIAN 03 BACKEND DATA JASA KONSTRUKSI BANGUNAN GEDUNG PUPR ---------------------------------
 
