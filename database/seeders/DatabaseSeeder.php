@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder
         paketpekerjaan::factory(15)->create();
         penanggungjawabteknis::factory(15)->create();
         ketertiban::factory(15)->create();
-        sertifikasiagenda::factory(15)->create();
+        // sertifikasiagenda::factory(15)->create();
         
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

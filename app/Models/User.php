@@ -52,9 +52,9 @@ class User extends Authenticatable
         return $this->hasMany(berita::class);
     }
 
-    public function sertifikasiagenda()
+    public function beritaagenda()
     {
-        return $this->hasMany(sertifikasiagenda::class);
+        return $this->hasMany(beritaagenda::class);
     }
 
 

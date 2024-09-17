@@ -19,8 +19,8 @@ class pengawasanlokasi extends Model
         return $this->hasMany(ketertiban::class);
     }
 
-    public function sertifikasiagenda()
+    public function beritaagenda()
     {
-        return $this->hasMany(sertifikasiagenda::class);
+        return $this->hasMany(beritaagenda::class);
     }
 }

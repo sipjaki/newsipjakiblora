@@ -14,9 +14,9 @@ class agendastatus extends Model
     protected $guarded = ['id'];
 
 
-    public function sertifikasiagenda()
+    public function beritaagenda()
     {
-        return $this->hasMany(sertifikasiagenda::class);
+        return $this->hasMany(beritaagenda::class);
     }
 
 }
