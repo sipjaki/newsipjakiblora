@@ -6,6 +6,7 @@ use App\Models\berita;
 use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth; // Pastikan Anda mengimpor facade ini
 
 
 
@@ -92,38 +93,52 @@ public function databeritashowbyjudul($judul)
                 
                                
                                
-// ------------ CREATE DATA SURAT PERATURAN GUBERNUR ----------------
+// ------------ CREATE NEW DATA BERITA ----------------
 
 public function createnewdataberita()
 {
+    // Ambil data pengguna yang sedang login
+    $currentUser = Auth::user();
     
-    // Tampilkan form update dengan data yang ditemukan
+    // Tampilkan form create dengan data pengguna yang login
     return view('backend.02_berita.01_berita.create', [
-        'title' => 'Create Berita Jasa Konstruksi '
+        'title' => 'Create Berita Jasa Konstruksi',
+        'currentUser' => $currentUser,
     ]);
 }
-
 public function createnewstoredataberita(Request $request)
 {
     // Validasi input
     $request->validate([
         'judul' => 'required|string|max:255',
-        'gambar' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+        'user_id' => 'required|exists:users,id', // Validasi user_id memastikan ID pengguna ada di tabel users
+        'tanggal' => 'required|date', // Validasi tanggal
+        'keterangan' => 'required|string', // Validasi keterangan
+        'gambar' => 'nullable|file|mimes:jpeg,png,jpg|max:20480', // 20MB max file size dan format yang diizinkan
     ]);
 
-    // Simpan file dan ambil path
-    $filePath = $request->file('gambar')->store('berita/databerita', 'public');
+    // Simpan file dan ambil path jika ada
+    $filePath = null;
+    if ($request->hasFile('gambar')) {
+        $file = $request->file('gambar');
+        $filePath = $file->store('berita/databerita', 'public'); // Menyimpan file di storage/app/public/berita/databerita
+    }
 
     // Buat entri baru di database
     berita::create([
         'judul' => $request->input('judul'),
-        'peraturan' => $filePath,
+        'user_id' => $request->input('user_id'), // Menyimpan user_id dari input
+        'tanggal' => $request->input('tanggal'),
+        'keterangan' => $request->input('keterangan'),
+        'gambar' => $filePath, // Gunakan path file jika ada
     ]);
 
-    session()->flash('create', 'Data Berhasil Di Tambahkan !');
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
     // Redirect ke halaman yang sesuai
     return redirect('/databerita');
 }
+
+
 
 
     // ==================== DELETE SURAT KEPUTUSAN MENTERI 
@@ -155,3 +170,4 @@ public function createnewstoredataberita(Request $request)
 
 
 }
+// required|exists:users,id
