@@ -155,3 +155,13 @@ public function createupdatepaketpekerjaan(Request $request, $instansi)
 @else
 <img src="{{ $data->foto_pekerjaan }}" alt="{{ $data->foto_pekerjaan }}" style="width: 100%; min-width: 280px; height: auto; border-radius: 8px;">
 @endif
+
+
+
+
+FAKER BAHASA INDONESAI 
+$faker = FakerFactory::create('id_ID'); // Menggunakan lokal Indonesia
+
+
+use Faker\Factory as FakerFactory;
+

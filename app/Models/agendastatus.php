@@ -7,20 +7,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class pengawasanlokasi extends Model
+class agendastatus extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
 
-     
-    public function ketertiban()
-    {
-        return $this->hasMany(ketertiban::class);
-    }
 
     public function sertifikasiagenda()
     {
         return $this->hasMany(sertifikasiagenda::class);
     }
+
 }

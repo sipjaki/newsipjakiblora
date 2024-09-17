@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\agendasertifikasi;
+use App\Models\agendastatus;
 use App\Models\asosiasipengusaha;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -45,6 +47,7 @@ use App\Models\renstra;
 use App\Models\sbulampiran1;
 use App\Models\sbulampiran2;
 use App\Models\sbulampiran3;
+use App\Models\sertifikasiagenda;
 use App\Models\standarbiayaumum;
 use App\Models\statusadmin;
 use App\Models\strukturdinas;
@@ -67,6 +70,7 @@ class DatabaseSeeder extends Seeder
         paketpekerjaan::factory(15)->create();
         penanggungjawabteknis::factory(15)->create();
         ketertiban::factory(15)->create();
+        sertifikasiagenda::factory(15)->create();
         
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -1417,6 +1421,38 @@ metodepengadaan::create([
 ]);
 
 
+//======================== PENGAWASAN LOKASI  ===================================================================================
+agendastatus::create([
+    'id' => '1',
+    'status' => 'SEGERA HADIR',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+agendastatus::create([
+    'id' => '2',
+    'status' => 'DI BATALKAN ',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+agendastatus::create([
+    'id' => '3',
+    'status' => 'BERJALAN ',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+agendastatus::create([
+    'id' => '4',
+    'status' => 'SELESAI ',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
 //======================== PENGAWASAN LOKASI  ===================================================================================
 pengawasanlokasi::create([
     'id' => '1',
