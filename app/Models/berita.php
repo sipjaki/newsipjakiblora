@@ -12,4 +12,11 @@ class berita extends Model
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
+
+
+    public function user()
+    {
+        return $this->belongsTo(user::class);
+    }
+
 }

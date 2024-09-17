@@ -47,6 +47,11 @@ class User extends Authenticatable
         return $this->belongsTo(statusadmin::class);
     }
 
+    public function berita()
+    {
+        return $this->hasMany(berita::class);
+    }
+
 
 
 }

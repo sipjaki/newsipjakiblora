@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 205vh;
+    height: 180vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -175,9 +175,9 @@
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->judul}}</td>
-                        <td style="font-size: 12px; text-align:center;">{{ $item->author}}</td>
+                        <td style="font-size: 12px; text-align:center;">{{ $item->user->username}}</td>
                         <td style="font-size: 12px; text-align:center; vertical-align:middle;">
-                            <img style="width: 60%; display: block; margin: 0 auto;" src="{{ asset('storage/'. $item->gambar )}}" alt="{{ asset('storage/'. $item->gambar )}}">
+                            <img style="width: 100%; display: block; margin: 0 auto;" src="{{ asset('storage/'. $item->gambar )}}" alt="{{ asset('storage/'. $item->gambar )}}">
                         </td>
                         
                         <td>

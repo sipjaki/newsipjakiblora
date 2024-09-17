@@ -255,10 +255,10 @@ Route::post('/tupoksi/{judul}', [StrukturController::class, 'createupdatetupoksi
 // -------- BAGIAN 02 BACKEND DATA BERITA JASA KONSTRUKSI  ---------------------------------
 Route::get('/databerita', [BeritaController::class, 'databerita'])->middleware('auth');  
 Route::get('/databerita/{judul}', [BeritaController::class, 'databeritashowbyjudul'])->middleware('auth');
-Route::get('/databerita/update/{judul}', [BeritaController::class, 'updatedataberita'])->middleware('auth')->name('update.databerita');
-Route::post('/databerita/{judul}', [BeritaController::class, 'createupdatedataberita'])->middleware('auth')->name('updatestore.databerita');
-Route::get('/databeritacreate', [BeritaController::class, 'createdataberita'])->middleware('auth');
-Route::post('/databeritastore', [BeritaController::class, 'createstoredataberita'])->middleware('auth')->name('create.databerita');
+Route::get('/databerita/update/{judul}', [BeritaController::class, 'updatedataberita'])->middleware('auth')->name('updateshow.databerita');
+Route::post('/databeritaupdatestore/{judul}', [BeritaController::class, 'createupdatedataberita'])->middleware('auth')->name('update.databeritanews');
+Route::get('/databeritacreate', [BeritaController::class, 'createnewdataberita'])->middleware('auth');
+Route::post('/databeritastore', [BeritaController::class, 'createnewstoredataberita'])->middleware('auth')->name('create.databerita');
 
 Route::post('/databerita/{judul}', [BeritaController::class, 'deletedataberita'])
 ->middleware('auth')

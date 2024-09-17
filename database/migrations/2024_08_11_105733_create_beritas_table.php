@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('beritas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->text('judul');
             $table->string('gambar');
             $table->text('keterangan');
-            $table->string('author');
             $table->date('tanggal'); // Menambahkan kolom tanggal
             $table->softDeletes();
             $table->timestamps();            
