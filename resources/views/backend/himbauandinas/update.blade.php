@@ -204,7 +204,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 920px;
-                height: 65vh;
+                height: 70vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #E0E0E0; /* Warna silver */
@@ -268,47 +268,37 @@
                 @csrf
                 @method('POST') <!-- Gunakan metode PUT untuk update data -->
             
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="nama_lengkap" style="font-size:14px;"><i class="fas fa-file me-2"></i> Nama Lengkap</label>
-                        <input type="text" id="nama_lengkap" name="nama_lengkap" value="{{ old('nama_lengkap', $datahimbauandinas->nama_lengkap) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="nama_lengkap" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Nama Lengkap</label>
+                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="{{ old('nama_lengkap', $datahimbauandinas->nama_lengkap) }}" required>
                 </div>
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="jabatan" style="font-size:14px;"><i class="fas fa-file me-2"></i> Jabatan </label>
-                        <input type="text" id="jabatan" name="jabatan" value="{{ old('jabatan', $datahimbauandinas->jabatan) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="jabatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Jabatan</label>
+                    <input type="text" class="form-control" id="jabatan" name="jabatan" value="{{ old('jabatan', $datahimbauandinas->jabatan) }}" required>
                 </div>
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="himbauan" style="font-size:14px;"><i class="fas fa-file me-2"></i> Himbauan</label>
-                        <textarea id="himbauan" name="himbauan" rows="7" cols="93,5" required>{{ old('himbauan', $datahimbauandinas->himbauan) }}</textarea>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="himbauan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Himbauan</label>
+                    <textarea id="himbauan" name="himbauan" class="form-control" rows="7" required>{{ old('himbauan', $datahimbauandinas->himbauan) }}</textarea>
                 </div>
-                
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="avatar" style="font-size:14px;"><i class="fas fa-file me-2"></i> Foto Dinas Terkait</label>
-                        
-                        <!-- Elemen untuk menampilkan pratayang gambar -->
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="avatar" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Foto Dinas Terkait</label>
+                    
+                    <div class="d-flex align-items-center">
                         <div class="preview-container">
-                            <img id="avatar-preview" src="{{ asset('storage/' . $datahimbauandinas->foto_pejabat) }}" alt="Preview" class="img-preview" />
-                            <input type="file" id="foto" name="avatar" accept="image/*">
+                            <img id="foto_pejabat-preview" src="{{ asset('storage/' . $datahimbauandinas->foto_pejabat) }}" alt="Preview" class="img-preview" style="width: 100px; height: 100px; object-fit: cover;"/>
                         </div>
+                        <input type="file" id="foto_pejabat" name="foto_pejabat" accept="image/*" class="form-control-file ml-3">
                     </div>
                 </div>
             
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
-                        const fileInput = document.getElementById('avatar');
-                        const preview = document.getElementById('avatar-preview');
+                        const fileInput = document.getElementById('foto_pejabat');
+                        const preview = document.getElementById('foto_pejabat-preview');
                     
-                        // Fungsi untuk memperbarui preview gambar
                         fileInput.addEventListener('change', function(event) {
                             const file = event.target.files[0];
                             if (file) {
@@ -323,9 +313,10 @@
                         });
                     });
                 </script>
-                <hr style="border: 1px solid #000000">
+            
+                {{-- <hr style="border: 1px solid #000000"> --}}
                 <div class="form-group">
-                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
+                    <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
                 </div>
             </form>
             

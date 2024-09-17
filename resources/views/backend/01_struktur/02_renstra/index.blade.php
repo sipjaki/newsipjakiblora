@@ -162,10 +162,10 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Struktur Dinas Pekerjaan Umum Pemerintah Kabupaten Bandung Barat</div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Rencana Strategis Pekerjaan Umum dan Penataan Ruang</div></label>
         </a>
       
-        <a href="/struktur" style="background: white;">
+        <a href="/renstra" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
         

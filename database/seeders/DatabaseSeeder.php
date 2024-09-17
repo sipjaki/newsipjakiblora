@@ -3659,17 +3659,17 @@ giskbb::create([
             'updated_at'            => now(),
 ]);
         himbauandinas::create([
-            'nama_lengkap'          => '',       // Menghasilkan nomor acak antara 1 dan 9
-            'jabatan'               => '',       // Menghasilkan nomor acak antara 1 dan 9
-            'himbauan'              => '',       // Menghasilkan nomor acak antara 1 dan 9
+            'nama_lengkap'          => '______',       // Menghasilkan nomor acak antara 1 dan 9
+            'jabatan'               => '______',       // Menghasilkan nomor acak antara 1 dan 9
+            'himbauan'              => '______',       // Menghasilkan nomor acak antara 1 dan 9
             'foto_pejabat'          => '',
             'created_at'            => now(),
             'updated_at'            => now(),
 ]);
         himbauandinas::create([
-            'nama_lengkap'          => '',       // Menghasilkan nomor acak antara 1 dan 9
-            'jabatan'               => '',       // Menghasilkan nomor acak antara 1 dan 9
-            'himbauan'              => '',       // Menghasilkan nomor acak antara 1 dan 9
+            'nama_lengkap'          => '_____',       // Menghasilkan nomor acak antara 1 dan 9
+            'jabatan'               => '_____',       // Menghasilkan nomor acak antara 1 dan 9
+            'himbauan'              => '_____',       // Menghasilkan nomor acak antara 1 dan 9
             'foto_pejabat'          => '',
             'created_at'            => now(),
             'updated_at'            => now(),

@@ -122,7 +122,11 @@
                                         </a>
                                             
                                         <a href="/404" style="font-size: 12px;">
-                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SERTIFIKASI
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>AGENDA SERTIFIKASI
+                                        </a>
+                                            
+                                        <a href="/404" style="font-size: 12px;">
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>DOKUMENTASI PELATIHAN 
                                         </a>
                                             
                                     </li> 
