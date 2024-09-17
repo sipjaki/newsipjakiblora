@@ -159,7 +159,7 @@
                         <th style="width:45px;">No</th>
                         <th>Judul</th>
                         <th>Penulis</th>
-                        <th style="width: 200px;">Foto</th>
+                        <th style="width: 150px;">Foto</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -177,7 +177,7 @@
                         <td style="font-size: 12px; text-align:left;">{{ $item->judul}}</td>
                         <td style="font-size: 12px; text-align:center;">{{ $item->author}}</td>
                         <td style="font-size: 12px; text-align:center; vertical-align:middle;">
-                            <img style="width: 90%; display: block; margin: 0 auto;" src="{{$item->gambar}}" alt="{{$item->gambar}}">
+                            <img style="width: 60%; display: block; margin: 0 auto;" src="{{ asset('storage/'. $item->gambar )}}" alt="{{ asset('storage/'. $item->gambar )}}">
                         </td>
                         
                         <td>
