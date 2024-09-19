@@ -13,18 +13,18 @@ return new class extends Migration
     {
         Schema::create('tukangterampils', function (Blueprint $table) {
             $table->id();
-            $table->string('kecamatan');
-            $table->string('desa');
             $table->string('nama');
+            $table->foreignId('pengawasanlokasi_id');
+            $table->foreignId('keterampilanpekerja_id');
+            $table->foreignId('tahunpilihan_id');
+            $table->string('desa');
             $table->string('alamat');
             $table->date('tanggal_lahir');
             $table->string('nik');
-            $table->string('keterampilan');
-            $table->string('tahun_bimtek');
             $table->string('kualifikasi');
             $table->string('registrasi');
             $table->string('foto');
-            $table->integer('usia');
+            // $table->integer('usia');
             $table->softDeletes();
             $table->timestamps();
         });

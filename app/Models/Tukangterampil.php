@@ -12,4 +12,19 @@ class Tukangterampil extends Model
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
+
+    public function pengawasanlokasi()
+    {
+        return $this->belongsTo(pengawasanlokasi::class);
+    }
+
+    public function keterampilanpekerja()
+    {
+        return $this->belongsTo(keterampilanpekerja::class);
+    }
+
+    public function tahunpilihan()
+    {
+        return $this->belongsTo(tahunpilihan::class);
+    }
 }

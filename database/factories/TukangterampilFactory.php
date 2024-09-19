@@ -125,7 +125,7 @@ class TukangterampilFactory extends Factory
     
         // Hitung tanggal lahir secara acak dan usia berdasarkan tanggal lahir
         $tanggalLahir = $faker->date($format = 'Y-m-d', $max = '2000-01-01'); // Maksimal 24 tahun lalu
-        $usia = Carbon::parse($tanggalLahir)->age;
+        // $usia = Carbon::parse($tanggalLahir)->age;
     
         // Generate NIK yang dimulai dengan 32052 dan diikuti oleh 11 digit acak
         $nik = '32052' . $faker->unique()->numerify('###########'); // Total 11 digit acak
@@ -134,18 +134,18 @@ class TukangterampilFactory extends Factory
         $lastName = $faker->lastName(); // Nama belakang
     
         return [
-            'kecamatan' => $kecamatan, // Kec. acak dari daftar
+            'tahunpilihan_id' => rand(1,6), 
+            'pengawasanlokasi_id' => rand(1,16), // Kec. acak dari daftar
+            'keterampilanpekerja_id' => rand(1,12),
             'desa' => $desa, // Desa acak dari kecamatan yang dipilih
             'nama' => $firstName . ' ' . $lastName, // Nama laki-laki  // Nama lengkap tanpa gelar
             'alamat' => $faker->address,
             'tanggal_lahir' => $tanggalLahir,
             'nik' => $nik,
-            'keterampilan' => $faker->randomElement($keterampilanList),
-            'tahun_bimtek' => 'BELUM', 
             'kualifikasi' => 'BELUM',
             'registrasi' => 'BELUM',
             'foto' => 'profesional',
-            'usia' => $usia,
+            // 'usia' => $usia,
         ];
     }
 }

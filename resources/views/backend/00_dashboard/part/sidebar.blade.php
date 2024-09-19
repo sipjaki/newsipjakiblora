@@ -159,7 +159,7 @@
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PROGRESS PAKET PEKERJAAN
                                         </a>
                                     
-                                        <a href="/404" style="font-size: 12px;">
+                                        {{-- <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SERTIFIKAT LAIK FUNGSI
                                         </a>
                                     
@@ -178,7 +178,7 @@
                                         <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PENYEDIAAN MATERIAL 
                                         </a>
-                                         
+                                          --}}
                                     </li> 
 
 
@@ -213,7 +213,7 @@
                                 </ul>
                             </li>
 
-                            <li class="parent">
+                            {{-- <li class="parent">
                                 <a href="#" onclick="toggle_menu('spm'); return false" class="sbar"><i class="fab fa-ravelry mr-2"></i>
                                     <span>SPM<i class="fa fa-angle-down pull-right align-bottom " style="color: black;"></i></span>
                                 </a>
@@ -233,9 +233,9 @@
 
                                 </ul>
                             </li>
-                         
+                          --}}
 
-                            <li class="parent">
+                            {{-- <li class="parent">
                                 <a href="#" onclick="toggle_menu('dukunganusaha'); return false" class="sbar"><i class="fab fa-ravelry mr-2"></i>
                                     <span>DUKUNGAN USAHA<i class="fa fa-angle-down pull-right align-bottom " style="color: black;"></i></span>
                                 </a>
@@ -259,7 +259,7 @@
 
                                 </ul>
                             </li>
-                            
+                             --}}
                             <li class="parent">
                                 <a href="#" onclick="toggle_menu('pelatihan'); return false" class="sbar"><i class="fab fa-ravelry mr-2"></i>
                                     <span>PELATIHAN<i class="fa fa-angle-down pull-right align-bottom " style="color: black;"></i></span>

@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 150vh;
+    height: 80vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -82,9 +82,30 @@
                 background-color: white;
                 color: black;
             }
+
+            .badge-plus {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 8px 15px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                margin-right: 10px;
+                text-align: center;
+                transition: background-color 0.3s, color 0.3s;
+                margin-left: 425px;
+            }
+            .badge-plus:hover {
+                background: white;
+                color: black;
+            }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Sertifikat Keterampilan Kerja</button>
+                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Himbauan Dinas Terkait</button>
+                        {{-- <a href="/pergubernurcreate" style="background: inherit">
+                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
+                        </a> --}}
+
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     {{-- <select id="entries" onchange="showEntries()">
@@ -95,39 +116,13 @@
         <option value="25">25</option>
         </select> --}}
 </div>
-<div class="search-entries">
-    <style>
-        .search-container {
-            position: relative;
-            display: inline-block;
-        }
-        .search-container input {
-            border-radius: 15px;
-            padding: 2px 5px 2px 25px; /* Extra padding for the icon */
-        }
-        .search-container .fa-search {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-    </style>
-    <div class="search-container">
-        <input
-            type="text"
-            id="searchInput"
-            onkeyup="searchEntries()"
-            placeholder="  Search..">
-        <i class="fas fa-search"></i>
-    </div>
+</div>
 
-    <script>
-        function searchEntries() {
-            // Your JavaScript function for searching entries
-        }
-    </script>
-</div>
-</div>
+
+{{-- ================ --}}
+@include('tambahan.alert')
+{{-- ================ --}}
+
 
 
 <style>
@@ -162,13 +157,13 @@
                 <thead>
                     <tr>
                         <th style="width:45px;">No</th>
-                        <th>Nama</th>
-                        <th>Kecamatan</th>
-                        <th>Keterampilan</th>
-                        <th>Tahun Bimtek</th>
-                        <th>Desa</th>
+                        <th>Nama Lengkap</th>
+                        <th>Kecamatan/Kota</th> 
+                        <th>Desa</th> 
+                        <th>Keterampilan</th> 
+                        <th>Tahun Bimtek</th> 
+                        <th>Desa</th> 
                         <th>Aksi</th>
-                    </tr>
                     </tr>
                 </thead>
                 <tbody>
@@ -182,11 +177,10 @@
                     
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="font-size: 12px; text-transform: uppercase; text-align:left">{{ $item->nama}}</td>
-                        <td style="font-size: 12px; text-transform: uppercase; text-align:left">{{ $item->pengawasanlokasi->kota}}</td>
-                        <td style="font-size: 12px; text-transform: uppercase; text-align:left">{{ $item->keterampilanpekerja->keterampilan}}</td>
-                        <td style="font-size: 12px; text-transform: uppercase;">{{ $item->tahunpilihan->tahun}}</td>
-                        <td style="font-size: 12px; text-transform: uppercase; text-align:left">{{ $item->desa}}</td>
+                        <td style="font-size: 12px; text-align:left;">{{ $item->nama}}</td>
+                        <td style="font-size: 12px; text-align:left;">{{ $item->pengawasanlokasi->kota}}</td>
+                        <td style="font-size: 12px; text-align:left;">{{ $item->keterampilanpekerja->keterampilan}}</td>
+                        <td style="font-size: 12px; text-align:left;">{{ $item->tahunpilihan->tahun}}</td>
                         
                         <td>
                             
@@ -228,15 +222,57 @@
                         </style>
 
                         <div class="button-container">
-                        <a href="{{ route('skktenagakerja.show', $item->nama) }}" class="iconhover" title="View">
+                        <a href="/himbauandinas/{{$item->nama_lengkap}}" class="iconhover" title="View">
                             <i class="fas fa-eye"></i>
                         </a>
-                                <a href="/404" class="iconhover" title="Update">
+                                <a href="/himbauandinas/update/{{$item->nama_lengkap}}" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="/404" class="iconhover" title="Delete">
+
+
+                                {{-- <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('peruud.deletepergubernur', $item->judul) }}')">
                                     <i class="fas fa-trash"></i>
                                 </a>
+                                 --}}
+        
+                                {{-- ================= FORM DELETE =================== --}}
+                    <!-- Modal HTML -->
+                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                                        <img src="/assets/icon/sipjakikbb.png" alt="" style="width:50px; height:50px; margin-bottom: 10px;">
+                                        {{-- <img src="/assets/icon/pupr.png" alt="" style="width:10px; height:10px; margin-bottom: 10px;"> --}}
+                                        <h5 class="modal-title" id="deleteModalLabel" style="margin: 0;">Konfirmasi Delete</h5>
+                                    </div>
+                                
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Anda Yakin Ingin Menghapus Data ini?</p>
+                                    <form id="deleteForm" action="" method="POST">
+                                        @csrf
+                                        @method('POST')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <script>
+                        function setDeleteAction(actionUrl) {
+                          document.getElementById('deleteForm').action = actionUrl;
+                        }
+                      </script>
+                      
+        
+                                {{-- ================= FORM DELETE =================== --}}
+                                    
                             </div>
 
                             <script>
@@ -256,9 +292,9 @@
 
         </div>
 
-        <div class="pagination-container" style="margin-top: 20px; display: flex; flex-direction: column; align-items: center;">
-                <div class="pagination-info mb-2" style="margin-bottom: 10px; color:orange;">
-                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah Data
+        <div class="pagination-container" style="margin-top: 75px; margin-bottom:75px; display: flex; flex-direction: column; align-items: center;">
+                <div class="pagination-info mb-2" style="margin-bottom: 10px; color:orange; font-weight: 500;">
+                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
                 </div>
                     <ul class="pagination" style="display: flex; padding-left: 0; list-style: none;">
                         <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
@@ -277,13 +313,14 @@
                     </ul>
 
             </div>
-
-
-                
+            {{-- @include('backend.00_dashboard.part.menufooter') --}}
         </div>
     </div>
-    @include('backend.00_dashboard.part.menufooter')
-        </div>
+    
+                <hr style="border:0; height:5px; background-color:navy; margin: 20px 0px;">
+                @include('backend.00_dashboard.part.menufooter')
+                    
+</div>
         </div>
         
         <!--Main Content-->

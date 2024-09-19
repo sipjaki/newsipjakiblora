@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\keterampilanpekerja;
+use App\Models\pengawasanlokasi;
+use App\Models\tahunpilihan;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\File; // Pastikan ini ada
+use Illuminate\Support\Facades\Storage; // Jika Anda menggunakan Storage juga
+
 // use Carbon\Carbon;
 use Carbon\Carbon; 
 
@@ -616,7 +623,87 @@ public function listregister()
             ]);
         }
         
+// ============================================================================        // 
     
+                // -------------------- UPDATE DATA TENAGA KERJA JASA KONSTRUKSI  ----------------------
+                public function updatetenagakerja($nama)
+                {
+                    // Cari data undang-undang berdasarkan nilai 'judul'
+                    $datatukangterampil = Tukangterampil::where('nama', $nama)->firstOrFail();
+                    $datapengawasanlokasi = pengawasanlokasi::all();
+                    $datatahunpilihan = tahunpilihan::all();
+                    $dataketerampilan = keterampilanpekerja::all();
+                    
+                    // Tampilkan form update dengan data yang ditemukan
+                    return view('backend.04_skk.01_skk.update', [
+                        'datatukangterampil' => $datatukangterampil,
+                        'datapengawasanlokasi' => $datapengawasanlokasi,
+                        'datatahunpilihan' => $datatahunpilihan,
+                        'dataketerampilan' => $dataketerampilan,
+                    
+                        'title' => 'Update Data Pekerja'
+                    ]);
+                }
+                
+                // -------------------- CREATE UPDATE TENAGA KERJA JASA KONSTRUKSI ----------------------
+                public function createupdatetenagakerja(Request $request, $nama)
+                {
+                    // Validasi input
+                    $request->validate([
+                        'nama' => 'required|string|max:255',
+                        'pengawasanlokasi_id' => 'required|string|max:255',
+                        'keterampilanpekerja_id' => 'required|string|max:255',
+                        'tahunpilihan_id' => 'required|string|max:255',
+                        'desa' => 'required|string|max:255',
+                        'alamat' => 'required|string|max:255',
+                        'tanggal_lahir' => 'required|date',
+                        'nik' => 'required|string|max:255',
+                        'kualifikasi' => 'required|string|max:255',
+                        'registrasi' => 'required|string|max:255',
+                        'foto' => 'nullable|file|mimes:jpg,jpeg,png|max:20480',
+                    ]);
+                
+                    // Cari data tukang terampil berdasarkan nama
+                    $datatukangterampil = Tukangterampil::where('nama', $nama)->firstOrFail();
+                
+                    // Path folder penyimpanan
+                    $storagePath = storage_path('app/public/skktenagakerja/profil');
+                
+                    // Cek dan buat folder jika tidak ada
+                    if (!File::exists($storagePath)) {
+                        File::makeDirectory($storagePath, 0755, true);
+                    }
+                
+                    // Simpan file foto dan ambil path-nya
+                    $filePath = $datatukangterampil->foto; // Default ke foto yang ada jika tidak ada file baru
+                    if ($request->hasFile('foto')) {
+                        $file = $request->file('foto');
+                        $filePath = $file->store('skktenagakerja/profil', 'public');
+                    }
+                
+                    // Update data tukang terampil dengan data dari form
+                    $datatukangterampil->update([
+                        'nama' => $request->input('nama'),
+                        'pengawasanlokasi_id' => $request->input('pengawasanlokasi_id'),
+                        'keterampilanpekerja_id' => $request->input('keterampilanpekerja_id'),
+                        'tahunpilihan_id' => $request->input('tahunpilihan_id'),
+                        'desa' => $request->input('desa'),
+                        'alamat' => $request->input('alamat'),
+                        'tanggal_lahir' => $request->input('tanggal_lahir'),
+                        'nik' => $request->input('nik'),
+                        'kualifikasi' => $request->input('kualifikasi'),
+                        'registrasi' => $request->input('registrasi'),
+                        'foto' => $filePath, // Menggunakan variabel filePath yang benar
+                    ]);
+                
+                    // Flash pesan session
+                    session()->flash('update', 'Data Tenaga Kerja Berhasil Diupdate!');
+                
+                    // Redirect ke halaman yang sesuai
+                    return redirect('/tenagakerja');
+                }
+                
+
         
 }
 

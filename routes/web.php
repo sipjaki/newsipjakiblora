@@ -354,7 +354,26 @@ Route::get('/sbulampiran3', [StrukturController::class, 'sbulampiran3'])->middle
 Route::get('/sbulampiran3/{judul}', [StrukturController::class, 'sbulampiran3showbyjudul'])->middleware('auth');
 
 
+// ------------------------ BAGIAN 03 BACKEND TENAGA KERJA -------------------
+Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
+Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 
+Route::get('/tenagakerja/update/{nama}', [SkktenagakerjaController::class, 'updatetenagakerja'])->middleware('auth')->name('update.tenagakerja');
+Route::post('/tenagakerja/{nama}', [SkktenagakerjaController::class, 'createupdatetenagakerja'])->middleware('auth')->name('updatestore.tenagakerja');
+Route::get('/tenagakerjacreate', [SkktenagakerjaController::class, 'createtenagakerja'])->middleware('auth');
+Route::post('/tenagakerjastore', [SkktenagakerjaController::class, 'createstoretenagakerja'])->middleware('auth')->name('create.tenagakerja');
+
+Route::post('/paketpekerjaandelete/{judul}', [DatajakonController::class, 'deletetenagakerja'])
+->middleware('auth')
+->name('delete.tenagakerja');
+
+
+// -------- BAGIAN 04 BACKEND ---------------------------------
+
+
+Route::post('/paketpekerjaandelete/{judul}', [DatajakonController::class, 'deletepaketpekerjaan'])
+->middleware('auth')
+->name('delete.paketpekerjaan');
 
 // -------- BAGIAN 14 BACKEND PERATURAN UNDANGUNDANG ---------------------------------
 Route::get('/peruud', [PeraturanController::class, 'undangundang'])->middleware('auth')->name('peruud.index');  
@@ -488,11 +507,6 @@ Route::post('/kategoriadminstore', [AdministratorController::class, 'createstore
 Route::post('/kategoriadmin/{id}', [AdministratorController::class, 'deletekategoriadmin'])
 ->middleware('auth')
 ->name('delete.deletekategoriadmin');
-
-
-// -------- BAGIAN 04 BACKEND ---------------------------------
-Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
-Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 
 
 

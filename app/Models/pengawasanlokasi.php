@@ -28,4 +28,14 @@ class pengawasanlokasi extends Model
     {
         return $this->hasMany(kegiatanjaskon::class);
     }
+    
+    public function penanggungjawabteknis()
+    {
+        return $this->hasMany(penanggungjawabteknis::class);
+    }
+    
+    public function tukangterampil()
+    {
+        return $this->hasMany(tukangterampil::class);
+    }
 }

@@ -7,20 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class penanggungjawabteknis extends Model
+class keterampilanpekerja extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
 
-     
-    public function ketertiban()
+    
+    public function tukangterampil()
     {
-        return $this->hasMany(ketertiban::class);
-    }
-
-    public function pengawasanlokasi()
-    {
-        return $this->belongsTo(pengawasanlokasi::class);
+        return $this->hasMany(tukangterampil::class);
     }
 }

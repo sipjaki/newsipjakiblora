@@ -30,6 +30,7 @@ use App\Models\giskbb;
 use App\Models\himbauandinas;
 use App\Models\isadmin;
 use App\Models\kegiatanjaskon;
+use App\Models\keterampilanpekerja;
 use App\Models\ketertiban;
 use App\Models\metodepengadaan;
 use App\Models\paketpekerjaaan;
@@ -52,6 +53,7 @@ use App\Models\sertifikasiagenda;
 use App\Models\standarbiayaumum;
 use App\Models\statusadmin;
 use App\Models\strukturdinas;
+use App\Models\tahunpilihan;
 use App\Models\tupoksi;
 use App\Models\uijk;
 // use App\Models\paketpekerjaan;
@@ -152,90 +154,90 @@ class DatabaseSeeder extends Seeder
         
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Budiharja',
             'nama' => 'ANTON HILMAN',
             'alamat' => '-',
             'tanggal_lahir' => '1993-03-09',
             'nik' => '-',
-            'keterampilan' => 'FURNITUR',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/01.jpeg',
-            'usia' => $this->calculateAge('1993-03-09'), 
+            'foto' => 'skktenagakerja/profil/01.jpeg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Batu Layang',
             'nama' => 'ENDANG',
             'alamat' => '-',
             'tanggal_lahir' => '1985-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/02.jpeg',
-            'usia' => $this->calculateAge('1985-03-09'), 
+            'foto' => 'skktenagakerja/profil/02.jpeg',
+            // 'usia' => $this->calculateAge('1985-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Batu Layang',
             'nama' => 'LUBIS',
             'alamat' => '-',
             'tanggal_lahir' => '1988-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/03.jpeg',
-            'usia' => $this->calculateAge('1988-03-09'), 
+            'foto' => 'skktenagakerja/profil/03.jpeg',
+            // 'usia' => $this->calculateAge('1988-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Batu Layang',
             'nama' => 'JAJANG S',
             'alamat' => '-',
             'tanggal_lahir' => '1980-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/04.jpeg',
-            'usia' => $this->calculateAge('1980-03-09'), 
+            'foto' => 'skktenagakerja/profil/04.jpeg',
+            // 'usia' => $this->calculateAge('1980-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Bongas',
             'nama' => 'ANGSID',
             'alamat' => '-',
             'tanggal_lahir' => '1992-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/05.jpeg',
-            'usia' => $this->calculateAge('1992-03-09'), 
+            'foto' => 'skktenagakerja/profil/05.jpeg',
+            // 'usia' => $this->calculateAge('1992-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -243,468 +245,468 @@ class DatabaseSeeder extends Seeder
 
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Karanganyar',
             'nama' => 'HUSNI',
             'alamat' => '-',
             'tanggal_lahir' => '1993-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/06.jpeg',
-            'usia' => $this->calculateAge('1993-03-09'), 
+            'foto' => 'skktenagakerja/profil/06.jpeg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Karang Tanjung ',
             'nama' => 'UJANG',
             'alamat' => '-',
             'tanggal_lahir' => '1995-03-09',
             'nik' => '-',
-            'keterampilan' => 'FURNITUR',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/07.jpeg',
-            'usia' => $this->calculateAge('1995-03-09'), 
+            'foto' => 'skktenagakerja/profil/07.jpeg',
+            // 'usia' => $this->calculateAge('1995-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Karyamukti ',
             'nama' => 'HENDRI',
             'alamat' => '-',
             'tanggal_lahir' => '1980-03-09',
             'nik' => '-',
-            'keterampilan' => 'PENGECATAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/08.jpeg',
-            'usia' => $this->calculateAge('1980-03-09'), 
+            'foto' => 'skktenagakerja/profil/08.jpeg',
+            // 'usia' => $this->calculateAge('1980-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
         
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Kidang Panunjang ',
             'nama' => 'HENDRAWAN',
             'alamat' => '-',
             'tanggal_lahir' => '1982-03-09',
             'nik' => '-',
-            'keterampilan' => 'PENGECATAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/09.jpeg',
-            'usia' => $this->calculateAge('1982-03-09'), 
+            'foto' => 'skktenagakerja/profil/09.jpeg',
+            // 'usia' => $this->calculateAge('1982-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Muka Payung ',
             'nama' => 'Karsini Widianto',
             'alamat' => '-',
             'tanggal_lahir' => '1975-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMBESIAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/10.jpeg',
-            'usia' => $this->calculateAge('1975-03-09'), 
+            'foto' => 'skktenagakerja/profil/10.jpeg',
+            // 'usia' => $this->calculateAge('1975-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Kidang Panunjang ',
             'nama' => 'Mamat Hidayat',
             'alamat' => '-',
             'tanggal_lahir' => '1988-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMBESIAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/11.jpeg',
-            'usia' => $this->calculateAge('1988-03-09'), 
+            'foto' => 'skktenagakerja/profil/11.jpeg',
+            // 'usia' => $this->calculateAge('1988-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Nangerang ',
             'nama' => 'ROHMAT',
             'alamat' => '-',
             'tanggal_lahir' => '1975-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMBESIAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/12.jpeg',
-            'usia' => $this->calculateAge('1975-03-09'), 
+            'foto' => 'skktenagakerja/profil/12.jpeg',
+            // 'usia' => $this->calculateAge('1975-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Ranca Panggung ',
             'nama' => 'PANDI S',
             'alamat' => '-',
             'tanggal_lahir' => '1980-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMBESIAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/13.jpeg',
-            'usia' => $this->calculateAge('1980-03-09'), 
+            'foto' => 'skktenagakerja/profil/13.jpeg',
+            // 'usia' => $this->calculateAge('1980-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Cililin ',
             'nama' => 'NURJAMAN AMINUDIN',
             'alamat' => '-',
             'tanggal_lahir' => '1985-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMBESIAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/14.jpeg',
-            'usia' => $this->calculateAge('1985-03-09'), 
+            'foto' => 'skktenagakerja/profil/14.jpeg',
+            // 'usia' => $this->calculateAge('1985-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Batulayang ',
             'nama' => 'BOBON',
             'alamat' => '-',
             'tanggal_lahir' => '1980-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMBESIAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/15.jpeg',
-            'usia' => $this->calculateAge('1980-03-09'), 
+            'foto' => 'skktenagakerja/profil/15.jpeg',
+            // 'usia' => $this->calculateAge('1980-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Budiharja ',
             'nama' => 'SULAEMAN',
             'alamat' => '-',
             'tanggal_lahir' => '1990-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMBESIAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/16.jpeg',
-            'usia' => $this->calculateAge('1990-03-09'), 
+            'foto' => 'skktenagakerja/profil/16.jpeg',
+            // 'usia' => $this->calculateAge('1990-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Bongas ',
             'nama' => 'AHMAD EFENDI',
             'alamat' => '-',
             'tanggal_lahir' => '1988-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMBESIAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/17.jpeg',
-            'usia' => $this->calculateAge('1988-03-09'), 
+            'foto' => 'skktenagakerja/profil/17.jpeg',
+            // 'usia' => $this->calculateAge('1988-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Karanganyar ',
             'nama' => 'Ian Sopian',
             'alamat' => '-',
             'tanggal_lahir' => '1982-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/18.jpeg',
-            'usia' => $this->calculateAge('1982-03-09'), 
+            'foto' => 'skktenagakerja/profil/18.jpeg',
+            // 'usia' => $this->calculateAge('1982-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Mukapayung ',
             'nama' => 'Buldani',
             'alamat' => '-',
             'tanggal_lahir' => '1993-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/19.jpeg',
-            'usia' => $this->calculateAge('1993-03-09'), 
+            'foto' => 'skktenagakerja/profil/19.jpeg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Nangerang ',
             'nama' => 'Saehudin',
             'alamat' => '-',
             'tanggal_lahir' => '1978-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/20.jpeg',
-            'usia' => $this->calculateAge('1978-03-09'), 
+            'foto' => 'skktenagakerja/profil/20.jpeg',
+            // 'usia' => $this->calculateAge('1978-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Batulayang ',
             'nama' => 'Cecep',
             'alamat' => '-',
             'tanggal_lahir' => '1992-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/21.jpeg',
-            'usia' => $this->calculateAge('1992-03-09'), 
+            'foto' => 'skktenagakerja/profil/21.jpeg',
+            // 'usia' => $this->calculateAge('1992-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Karangmukti ',
             'nama' => 'Yopi Sopian',
             'alamat' => '-',
             'tanggal_lahir' => '1995-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/22.jpeg',
-            'usia' => $this->calculateAge('1995-03-09'), 
+            'foto' => 'skktenagakerja/profil/22.jpeg',
+            // 'usia' => $this->calculateAge('1995-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Karangmukti ',
             'nama' => 'Rukmana',
             'alamat' => '-',
             'tanggal_lahir' => '1980-03-09',
             'nik' => '-',
-            'keterampilan' => 'PENGECATAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/23.jpeg',
-            'usia' => $this->calculateAge('1980-03-09'), 
+            'foto' => 'skktenagakerja/profil/23.jpeg',
+            // 'usia' => $this->calculateAge('1980-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Batulayang ',
             'nama' => 'Idrus',
             'alamat' => '-',
             'tanggal_lahir' => '1988-03-09',
             'nik' => '-',
-            'keterampilan' => 'PENGECATAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/24.jpeg',
-            'usia' => $this->calculateAge('1980-03-09'), 
+            'foto' => 'skktenagakerja/profil/24.jpeg',
+            // 'usia' => $this->calculateAge('1980-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Bongas ',
             'nama' => 'Agus',
             'alamat' => '-',
             'tanggal_lahir' => '1984-03-09',
             'nik' => '-',
-            'keterampilan' => 'PENGECATAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/25.jpeg',
-            'usia' => $this->calculateAge('1984-03-09'), 
+            'foto' => 'skktenagakerja/profil/25.jpeg',
+            // 'usia' => $this->calculateAge('1984-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Kidang Panunjang',
             'nama' => 'Agus',
             'alamat' => '-',
             'tanggal_lahir' => '1984-03-09',
             'nik' => '-',
-            'keterampilan' => 'PENGECATAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/25.jpeg',
-            'usia' => $this->calculateAge('1984-03-09'), 
+            'foto' => 'skktenagakerja/profil/26.jpeg',
+            // 'usia' => $this->calculateAge('1984-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Nangerang',
             'nama' => 'Dede Mulyana',
             'alamat' => '-',
             'tanggal_lahir' => '1986-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/26.jpeg',
-            'usia' => $this->calculateAge('1986-03-09'), 
+            'foto' => 'skktenagakerja/profil/26.jpeg',
+            // 'usia' => $this->calculateAge('1986-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Karanganyar',
             'nama' => 'Dadang Ekky',
             'alamat' => '-',
             'tanggal_lahir' => '1991-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/27.jpeg',
-            'usia' => $this->calculateAge('1991-03-09'), 
+            'foto' => 'skktenagakerja/profil/27.jpeg',
+            // 'usia' => $this->calculateAge('1991-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Mukapayung',
             'nama' => 'Ade',
             'alamat' => '-',
             'tanggal_lahir' => '1987-03-09',
             'nik' => '-',
-            'keterampilan' => 'PEMASANGAN BATU BATA | BATU',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/28.jpeg',
-            'usia' => $this->calculateAge('1987-03-09'), 
+            'foto' => 'skktenagakerja/profil/28.jpeg',
+            // 'usia' => $this->calculateAge('1987-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Bongas',
             'nama' => 'Ajang',
             'alamat' => '-',
             'tanggal_lahir' => '1987-03-09',
             'nik' => '-',
-            'keterampilan' => 'LISTRIK',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/29.jpeg',
-            'usia' => $this->calculateAge('1987-03-09'), 
+            'foto' => 'skktenagakerja/profil/29.jpeg',
+            // 'usia' => $this->calculateAge('1987-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
         Tukangterampil::create([
-            'kecamatan' => 'Cililin',
+            'pengawasanlokasi_id' => '11',
             'desa' => 'Bongas',
             'nama' => 'Yusuf',
             'alamat' => '-',
             'tanggal_lahir' => '1987-03-09',
             'nik' => '-',
-            'keterampilan' => 'PENGECATAN',
-            'tahun_bimtek' => '2024',
+            'keterampilanpekerja_id' => rand(1,22),
+            'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => '/assets/library/skktenagakerja/30.jpeg',
-            'usia' => $this->calculateAge('1987-03-09'), 
+            'foto' => 'skktenagakerja/profil/30.jpeg',
+            // 'usia' => $this->calculateAge('1987-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -715,311 +717,311 @@ class DatabaseSeeder extends Seeder
 
 
 // ====================================================================================================== 
-            Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'DEDE ROYANI',
-            'alamat' => 'KP.CIGARUNG RT 004/007 ',
-            'tanggal_lahir' => '1994-03-09',
-            'nik' => '3217122003940000',
-            'keterampilan' => 'LAS LISTRIK',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1994-03-09'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        //     Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'DEDE ROYANI',
+        //     'alamat' => 'KP.CIGARUNG RT 004/007 ',
+        //     'tanggal_lahir' => '1994-03-09',
+        //     'nik' => '3217122003940000',
+        //     'keterampilan' => 'LAS LISTRIK',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1994-03-09'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
     
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'RONI RUSTANDI',
-            'alamat' => 'KP.SARONGGE RT 001/003',
-            'tanggal_lahir' => '1993-03-26',
-            'nik' => '3217122603930000',
-            'keterampilan' => 'LAS LISTRIK',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1993-03-26'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'RONI RUSTANDI',
+        //     'alamat' => 'KP.SARONGGE RT 001/003',
+        //     'tanggal_lahir' => '1993-03-26',
+        //     'nik' => '3217122603930000',
+        //     'keterampilan' => 'LAS LISTRIK',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1993-03-26'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
     
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'AHMAD SANDI FAUIZI',
-            'alamat' => 'KP.CISALADAK RT 001/003',
-            'tanggal_lahir' => '1998-10-24',
-            'nik' => '3217122410980010',
-            'keterampilan' => 'LAS LISTRIK',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1998-10-24'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'AHMAD SANDI FAUIZI',
+        //     'alamat' => 'KP.CISALADAK RT 001/003',
+        //     'tanggal_lahir' => '1998-10-24',
+        //     'nik' => '3217122410980010',
+        //     'keterampilan' => 'LAS LISTRIK',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1998-10-24'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
     
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'IMAN',
-            'alamat' => 'KP.SADANG RT 003/003 ',
-            'tanggal_lahir' => '1985-07-06',
-            'nik' => '3217120607850040',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1985-07-06'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'IMAN',
+        //     'alamat' => 'KP.SADANG RT 003/003 ',
+        //     'tanggal_lahir' => '1985-07-06',
+        //     'nik' => '3217120607850040',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1985-07-06'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
     
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'DEDI MULYADI',
-            'alamat' => 'KP.SADANG RT 003/003  ',
-            'tanggal_lahir' => '1976-06-12',
-            'nik' => '3217121206760020',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1976-06-12'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'DEDI MULYADI',
+        //     'alamat' => 'KP.SADANG RT 003/003  ',
+        //     'tanggal_lahir' => '1976-06-12',
+        //     'nik' => '3217121206760020',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1976-06-12'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'AYI HERMAN',
-            'alamat' => 'KP.CILAME RT 003/005',
-            'tanggal_lahir' => '1980-04-20',
-            'nik' => '3217122004800010',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1980-04-20'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'AYI HERMAN',
+        //     'alamat' => 'KP.CILAME RT 003/005',
+        //     'tanggal_lahir' => '1980-04-20',
+        //     'nik' => '3217122004800010',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1980-04-20'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'ANTO.S',
-            'alamat' => 'KP.SADANG RT 003/003',
-            'tanggal_lahir' => '1986-03-08',
-            'nik' => '3217120803860010',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1986-03-08'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'ANTO.S',
+        //     'alamat' => 'KP.SADANG RT 003/003',
+        //     'tanggal_lahir' => '1986-03-08',
+        //     'nik' => '3217120803860010',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1986-03-08'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'ASEP SUTISNA',
-            'alamat' => 'KP.CIBANAS RT 005/003',
-            'tanggal_lahir' => '1973-07-04',
-            'nik' => '3217120407730010',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1973-07-04'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'ASEP SUTISNA',
+        //     'alamat' => 'KP.CIBANAS RT 005/003',
+        //     'tanggal_lahir' => '1973-07-04',
+        //     'nik' => '3217120407730010',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1973-07-04'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'IWAN SETIAWAN',
-            'alamat' => 'KP.CISALADAK RT 001/003 ',
-            'tanggal_lahir' => '1977-06-02',
-            'nik' => '3217120206770000',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1977-06-02'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'IWAN SETIAWAN',
+        //     'alamat' => 'KP.CISALADAK RT 001/003 ',
+        //     'tanggal_lahir' => '1977-06-02',
+        //     'nik' => '3217120206770000',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1977-06-02'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'NANDANG',
-            'alamat' => 'KP.CISALADAK RT 002/003',
-            'tanggal_lahir' => '1964-07-01',
-            'nik' => '3217120107640160',
-            'keterampilan' => 'KAYU',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1964-07-01'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'NANDANG',
+        //     'alamat' => 'KP.CISALADAK RT 002/003',
+        //     'tanggal_lahir' => '1964-07-01',
+        //     'nik' => '3217120107640160',
+        //     'keterampilan' => 'KAYU',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1964-07-01'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
 
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'DASEP',
-            'alamat' => 'KP.BABAKAN RT 004/005 ',
-            'tanggal_lahir' => '1968-09-08',
-            'nik' => '3217120809680000',
-            'keterampilan' => 'KAYU',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1968-09-08'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'DASEP',
+        //     'alamat' => 'KP.BABAKAN RT 004/005 ',
+        //     'tanggal_lahir' => '1968-09-08',
+        //     'nik' => '3217120809680000',
+        //     'keterampilan' => 'KAYU',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1968-09-08'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'ABUDIN',
-            'alamat' => 'KP.SUKASENANG RT 001/002',
-            'tanggal_lahir' => '1971-02-10',
-            'nik' => '3275101002710010',
-            'keterampilan' => 'KONSTRUKSI',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1971-02-10'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'ABUDIN',
+        //     'alamat' => 'KP.SUKASENANG RT 001/002',
+        //     'tanggal_lahir' => '1971-02-10',
+        //     'nik' => '3275101002710010',
+        //     'keterampilan' => 'KONSTRUKSI',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1971-02-10'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
 
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'MUHAMMAD NANDA I',
-            'alamat' => 'KP.SUKASENANG  RT 001/002',
-            'tanggal_lahir' => '1994-10-29',
-            'nik' => '3217122910940000',
-            'keterampilan' => 'KONSTRUKSI',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1994-10-29'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'MUHAMMAD NANDA I',
+        //     'alamat' => 'KP.SUKASENANG  RT 001/002',
+        //     'tanggal_lahir' => '1994-10-29',
+        //     'nik' => '3217122910940000',
+        //     'keterampilan' => 'KONSTRUKSI',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1994-10-29'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
         
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'HILMAN',
-            'alamat' => 'KP.SUKASENANG  RT 001/002',
-            'tanggal_lahir' => '1975-05-03',
-            'nik' => '3217120305750040',
-            'keterampilan' => 'BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1975-05-03'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'HILMAN',
+        //     'alamat' => 'KP.SUKASENANG  RT 001/002',
+        //     'tanggal_lahir' => '1975-05-03',
+        //     'nik' => '3217120305750040',
+        //     'keterampilan' => 'BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1975-05-03'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
         
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'AANG ANWAR',
-            'alamat' => 'KP.BABAKAN RT 004/005 ',
-            'tanggal_lahir' => '1987-07-25',
-            'nik' => '3217121607870005',
-            'keterampilan' => 'KONSTRUKSI BANGUNAN',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1987-07-25'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'AANG ANWAR',
+        //     'alamat' => 'KP.BABAKAN RT 004/005 ',
+        //     'tanggal_lahir' => '1987-07-25',
+        //     'nik' => '3217121607870005',
+        //     'keterampilan' => 'KONSTRUKSI BANGUNAN',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1987-07-25'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
         
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'NANANG RIANA',
-            'alamat' => 'KP.SUKASENANG  RT 001/002',
-            'tanggal_lahir' => '1982-08-18',
-            'nik' => '3217121808820012',
-            'keterampilan' => 'KONSTRUKSI BANGUNAN',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1982-08-18'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'NANANG RIANA',
+        //     'alamat' => 'KP.SUKASENANG  RT 001/002',
+        //     'tanggal_lahir' => '1982-08-18',
+        //     'nik' => '3217121808820012',
+        //     'keterampilan' => 'KONSTRUKSI BANGUNAN',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1982-08-18'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
         
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'IWAN SETIAWAN',
-            'alamat' => 'KP.CINAGEN RT 004/001 ',
-            'tanggal_lahir' => '1984-07-02',
-            'nik' => '3217120207840010',
-            'keterampilan' => 'KONSTRUKSI BANGUNAN',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1984-07-02'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'IWAN SETIAWAN',
+        //     'alamat' => 'KP.CINAGEN RT 004/001 ',
+        //     'tanggal_lahir' => '1984-07-02',
+        //     'nik' => '3217120207840010',
+        //     'keterampilan' => 'KONSTRUKSI BANGUNAN',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1984-07-02'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
 
 
         Tukangterampil::factory(1234)->create();
@@ -1349,6 +1351,235 @@ sbulampiran3::create([
 ]);
 //======================== ===================================================================================
 // DATA BACKEND
+//======================== ===================================================================================
+tahunpilihan::create([
+    'id' => '1',
+    'tahun' => '2019',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+tahunpilihan::create([
+    'id' => '2',
+    'tahun' => '2020',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+tahunpilihan::create([
+    'id' => '3',
+    'tahun' => '2021',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+tahunpilihan::create([
+    'id' => '4',
+    'tahun' => '2022',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+tahunpilihan::create([
+    'id' => '5',
+    'tahun' => '2023',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+tahunpilihan::create([
+    'id' => '6',
+    'tahun' => '2024',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+
+//======================== ===================================================================================
+//======================== ===================================================================================
+keterampilanpekerja::create([
+    'id' => '1',
+    'keterampilan' => 'GALI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '2',
+    'keterampilan' => 'RELIEF',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '3',
+    'keterampilan' => 'BANGUNAN UMUM',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '4',
+    'keterampilan' => 'PEMBESIAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '5',
+    'keterampilan' => 'KITCHENSET',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '6',
+    'keterampilan' => 'KONSTRUKSI',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '7',
+    'keterampilan' => 'PENGECATAN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '8',
+    'keterampilan' => 'AHLI TEMBOK',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '9',
+    'keterampilan' => 'LAS LISTRIK',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '10',
+    'keterampilan' => 'MESIN BROKER',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '11',
+    'keterampilan' => 'KAYU DAN KUSEN',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '12',
+    'keterampilan' => 'HAMMER DRILL',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '13',
+    'keterampilan' => 'OPERATOR BEKO',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '14',
+    'keterampilan' => 'PASANG KERAMIK',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '15',
+    'keterampilan' => 'PEMASANGAN BATU',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '16',
+    'keterampilan' => 'PASANG BATU DAN COR',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '17',
+    'keterampilan' => 'BENGKEL DAN MEKANIK',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '18',
+    'keterampilan' => 'PEMASANGAN BATU BATA',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '19',
+    'keterampilan' => 'KAYU DAN PEMASANGAN BATU',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '20',
+    'keterampilan' => 'PEMASANGAN BATU, BESI DAN KAYU',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '21',
+    'keterampilan' => 'PEMASANGAN KAYU DAN BATU BATA',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+keterampilanpekerja::create([
+    'id' => '22',
+    'keterampilan' => 'PEMASANGAN BATU, COR, BESI, DAN KAYU ',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+
 //======================== ===================================================================================
 metodepengadaan::create([
     'id' => '1',

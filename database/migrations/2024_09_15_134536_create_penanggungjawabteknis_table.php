@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('penanggungjawabteknis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pengawasanlokasi_id'); // Tempat
             $table->string('nama_lengkap'); // Nama lengkap
-            $table->string('tempat'); // Tempat
             $table->string('nopjt'); // Nomor PJT, unique untuk memastikan tidak ada duplikat
             $table->text('sfesifikasi'); // Spesifikasi, perhatikan bahwa nama kolom ini adalah 'sfesifikasi', pastikan sesuai dengan yang diinginkan
             $table->date('tanggal_terbit'); // Tanggal terbit
