@@ -358,12 +358,12 @@ Route::get('/sbulampiran3/{judul}', [StrukturController::class, 'sbulampiran3sho
 Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
 Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 
-Route::get('/tenagakerja/update/{nama}', [SkktenagakerjaController::class, 'updatetenagakerja'])->middleware('auth')->name('update.tenagakerja');
-Route::post('/tenagakerja/{nama}', [SkktenagakerjaController::class, 'createupdatetenagakerja'])->middleware('auth')->name('updatestore.tenagakerja');
-Route::get('/tenagakerjacreate', [SkktenagakerjaController::class, 'createtenagakerja'])->middleware('auth');
-Route::post('/tenagakerjastore', [SkktenagakerjaController::class, 'createstoretenagakerja'])->middleware('auth')->name('create.tenagakerja');
+Route::get('/newtenagakerja/update/{nama}', [SkktenagakerjaController::class, 'updatetenagakerja'])->middleware('auth')->name('update.tenagakerja');
+Route::post('/newtenagakerja/{nama}', [SkktenagakerjaController::class, 'createupdatetenagakerja'])->middleware('auth')->name('updatestore.tenagakerja');
+Route::get('/newtenagakerjacreate', [SkktenagakerjaController::class, 'createtenagakerja'])->middleware('auth');
+Route::post('/newtenagakerjastore', [SkktenagakerjaController::class, 'createstoretenagakerja'])->middleware('auth')->name('create.tenagakerja');
 
-Route::post('/paketpekerjaandelete/{judul}', [DatajakonController::class, 'deletetenagakerja'])
+Route::post('/newtenagakerjadelete/{nama}', [SkktenagakerjaController::class, 'deletetenagakerja'])
 ->middleware('auth')
 ->name('delete.tenagakerja');
 

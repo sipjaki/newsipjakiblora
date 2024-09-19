@@ -107,7 +107,7 @@
         <a href="/beskktenagakerja" style="background: white;">
             <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
         </a>
-        <a href="/tenagakerja/update/{{$data->nama}}" style="background: white; display:right;">
+        <a href="/newtenagakerja/update/{{$data->nama}}" style="background: white; display:right;">
             <div class="badge-update"><i class="fas fa-file mr-2"></i> Update </div></label>
         </a>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>

@@ -257,7 +257,7 @@
         <div class="container-update" style="col-lg-12">
             <!-- Menampilkan pesan sukses jika ada -->
             {{-- <form action="/beritaagendaupdatestore/{{$beritaagenda->nama_agenda}}" method="POST"> --}}
-                <form action="/tenagakerja/{{$datatukangterampil->nama}}" method="POST" enctype="multipart/form-data">
+                <form action="/newtenagakerja/{{$datatukangterampil->nama}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('POST') <!-- Use PUT for update -->
                     

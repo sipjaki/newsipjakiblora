@@ -700,7 +700,36 @@ public function listregister()
                     session()->flash('update', 'Data Tenaga Kerja Berhasil Diupdate!');
                 
                     // Redirect ke halaman yang sesuai
-                    return redirect('/tenagakerja');
+                    return redirect('/beskktenagakerja');
+                }
+
+                
+                public function deletetenagakerja($nama)
+                {
+                    // Cari entri berdasarkan name
+                    $entry = Tukangterampil::where('nama', $nama)->first();
+                
+                    if ($entry) {
+                        // Hapus file terkait jika ada
+                        if ($entry->foto) {
+                            Storage::disk('public')->delete($entry->foto);
+                        }
+                
+                        // Hapus entri dari database
+                        Tukangterampil::destroy($entry->id);
+                
+                        // Set pesan flash untuk sukses
+                        session()->flash('delete', 'Data Berhasil Dihapus!');
+                
+                        // Redirect ke halaman yang sesuai
+                        return redirect('/beskktenagakerja');
+                    } else {
+                        // Set pesan flash jika data tidak ditemukan
+                        session()->flash('error', 'Data Tidak Ditemukan!');
+                
+                        // Redirect ke halaman yang sesuai
+                        return redirect('/beskktenagakerja');
+                    }
                 }
                 
 
