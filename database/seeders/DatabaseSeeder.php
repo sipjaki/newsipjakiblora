@@ -81,6 +81,15 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        
+        Asosiasipengusaha::factory(15)->create();
+        Paketpekerjaan::factory(15)->create();
+        Penanggungjawabteknis::factory(15)->create();
+        Ketertiban::factory(15)->create();
+        Beritaagenda::factory(15)->create();  
+        Qa::factory(15)->create();
+                 
+
         User::create([
             'name'  => 'Sigit Septiadi',
             'username' => 'Sigit',
@@ -3968,13 +3977,6 @@ giskbb::create([
             'updated_at'            => now(),
 ]);
 
-        Asosiasipengusaha::factory(15)->create();
-        Paketpekerjaan::factory(15)->create();
-        Penanggungjawabteknis::factory(15)->create();
-        Ketertiban::factory(15)->create();
-        Beritaagenda::factory(15)->create();  
-        // Qa::factory(15)->create();
-                 
 
     }
  /**

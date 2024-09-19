@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('asosiasipengusahas', function (Blueprint $table) {
+        Schema::create('Asosiasipengusahas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_asosiasi'); // Nama Asosiasi
             $table->string('alamat_kantor'); // Alamat Kantor
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('asosiasipengusahas');
+        Schema::dropIfExists('Asosiasipengusahas');
     }
 };
