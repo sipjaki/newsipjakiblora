@@ -33,7 +33,6 @@ use App\Models\kegiatanjaskon;
 use App\Models\keterampilanpekerja;
 use App\Models\Ketertiban;
 use App\Models\metodepengadaan;
-use App\Models\paketpekerjaaan;
 use App\Models\Paketpekerjaan;
 use App\Models\pelatihan;
 use App\Models\Penanggungjawabteknis;
@@ -49,7 +48,7 @@ use App\Models\renstra;
 use App\Models\sbulampiran1;
 use App\Models\sbulampiran2;
 use App\Models\sbulampiran3;
-use App\Models\sertifikasiagenda;
+// use App\Models\sertifikasiagenda;
 use App\Models\standarbiayaumum;
 use App\Models\statusadmin;
 use App\Models\strukturdinas;
@@ -69,12 +68,12 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         
-        \App\Models\Asosiasipengusaha::factory(15)->create();
-        \App\Models\Paketpekerjaan::factory(15)->create();
-        \App\Models\Penanggungjawabteknis::factory(15)->create();
-        \App\Models\Ketertiban::factory(15)->create();
-        \App\Models\Beritaagenda::factory(15)->create();
-        // sertifikasiagenda::factory(15)->create();
+        Asosiasipengusaha::factory(15)->create();
+        Paketpekerjaan::factory(15)->create();
+        Penanggungjawabteknis::factory(15)->create();
+        Ketertiban::factory(15)->create();
+        Beritaagenda::factory(15)->create();
+        // \App\Models\sertifikasiagenda::factory(15)->create();
         
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
