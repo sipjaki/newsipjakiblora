@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// namespace App\Models;
 
 use App\Models\agendasertifikasi;
 use App\Models\agendastatus;
@@ -69,11 +70,11 @@ class DatabaseSeeder extends Seeder
     {
         
         // Asosiasipengusaha::factory(15)->create();
-        Paketpekerjaan::factory(15)->create();
-        Penanggungjawabteknis::factory(15)->create();
-        Ketertiban::factory(15)->create();
-        Beritaagenda::factory(15)->create();
-        // \App\Models\sertifikasiagenda::factory(15)->create();
+        // Paketpekerjaan::factory(15)->create();
+        // Penanggungjawabteknis::factory(15)->create();
+        // Ketertiban::factory(15)->create();
+        // Beritaagenda::factory(15)->create();
+        // // \App\Models\sertifikasiagenda::factory(15)->create();
         
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -3968,6 +3969,13 @@ giskbb::create([
             'created_at'            => now(),
             'updated_at'            => now(),
 ]);
+
+        Asosiasipengusaha::factory(15)->create();
+        Paketpekerjaan::factory(15)->create();
+        Penanggungjawabteknis::factory(15)->create();
+        Ketertiban::factory(15)->create();
+        Beritaagenda::factory(15)->create();
+        
 
     }
  /**
