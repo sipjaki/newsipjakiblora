@@ -7,7 +7,7 @@ namespace Database\Seeders;
 
 use App\Models\agendasertifikasi;
 use App\Models\agendastatus;
-use App\Models\Asosiasipengusaha;
+use App\Models\AsosiasiPengusaha;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         
-        Asosiasipengusaha::factory(15)->create();
+        AsosiasiPengusaha::factory(15)->create();
         Paketpekerjaan::factory(15)->create();
         Penanggungjawabteknis::factory(15)->create();
         Ketertiban::factory(15)->create();
