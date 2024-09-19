@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class paketpekerjaan extends Model
+class Paketpekerjaan extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
