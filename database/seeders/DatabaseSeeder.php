@@ -74,6 +74,7 @@ class DatabaseSeeder extends Seeder
         // Penanggungjawabteknis::factory(15)->create();
         // Ketertiban::factory(15)->create();
         // Beritaagenda::factory(15)->create();
+        User::factory(15)->create();
         // // \App\Models\sertifikasiagenda::factory(15)->create();
         
         // \App\Models\User::factory()->create([
