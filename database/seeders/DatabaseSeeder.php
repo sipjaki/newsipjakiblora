@@ -3973,7 +3973,7 @@ giskbb::create([
         Penanggungjawabteknis::factory(15)->create();
         Ketertiban::factory(15)->create();
         Beritaagenda::factory(15)->create();  
-        Qa::factory(15)->create();
+        // Qa::factory(15)->create();
                  
 
     }
