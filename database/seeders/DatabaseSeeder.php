@@ -69,7 +69,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         
-        \App\Models\Asosiasipengusaha::factory(15)->create();
+        // \App\Models\Asosiasipengusaha::factory(15)->create();
         \App\Models\Paketpekerjaan::factory(15)->create();
         \App\Models\Penanggungjawabteknis::factory(15)->create();
         \App\Models\Ketertiban::factory(15)->create();
