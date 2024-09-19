@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class agendastatus extends Model
+class Agendastatus extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
