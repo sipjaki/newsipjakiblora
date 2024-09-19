@@ -42,7 +42,7 @@ use App\Models\pengawasanketertiban;
 use App\Models\pengawasanlokasi;
 use App\Models\pengawasanstatus;
 use App\Models\pengawasantindakan;
-use App\Models\qa;
+use App\Models\Qa;
 use App\Models\qapertanyaan;
 use App\Models\qasebagai;
 use App\Models\renstra;
@@ -3835,8 +3835,6 @@ giskbb::create([
             //     'created_at'      => now(),
             //     'updated_at'      => now(),
             // ]);
-            
-        qa::factory(15)->create();
           
         // =======================================================================================================================
             qasebagai::create([
@@ -3974,8 +3972,9 @@ giskbb::create([
         Paketpekerjaan::factory(15)->create();
         Penanggungjawabteknis::factory(15)->create();
         Ketertiban::factory(15)->create();
-        Beritaagenda::factory(15)->create();
-        
+        Beritaagenda::factory(15)->create();  
+        Qa::factory(15)->create();
+                 
 
     }
  /**
