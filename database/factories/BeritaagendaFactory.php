@@ -21,15 +21,16 @@ class BeritaagendaFactory extends Factory
 
         return [
             'pengawasanlokasi_id' => $faker->numberBetween(1, 16), // Pastikan ID ini valid di tabel pengawasanlokasi
-            'user_id' => $faker->numberBetween(1, 6), // Pastikan ID ini valid di tabel users
-            'agendastatus_id' => $faker->numberBetween(1, 4), // Menghasilkan ID acak dalam rentang 1 hingga 4
+            // 'user_id' => $faker->numberBetween(1, 6), // Pastikan ID ini valid di tabel users
+            'statusprogram' => $faker->randomElement(['BERJALAN', 'SEGERA HADIR', 'DIBATALKAN', 'SELESAI']), // Menghasilkan status acak
             'nama_agenda' => $faker->sentence(6, true), // Menghasilkan kalimat dengan 6 kata dalam bahasa Indonesia
             'keterangan' => $faker->paragraph(3, true), // Menghasilkan paragraf dengan 3 kalimat dalam bahasa Indonesia
             'kuota' => $faker->numberBetween(10, 100), // Menghasilkan angka acak untuk kuota
-            'tanggal_mulai' => $faker->date, // Menghasilkan tanggal acak
-            'tanggal_selesai' => $faker->date, // Menghasilkan tanggal acak
+            'tanggal_mulai' => $faker->date(), // Menghasilkan tanggal acak
+            'tanggal_selesai' => $faker->date(), // Menghasilkan tanggal acak
             // 'deleted_at' => $faker->optional()->dateTime, // Soft deletes jika diperlukan
         ];
+        
 
     }
 }

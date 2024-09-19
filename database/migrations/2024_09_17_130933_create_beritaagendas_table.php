@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('beritaagendas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('pengawasanlokasi_id');
-            $table->foreignId('user_id');
-            $table->foreignId('agendastatus_id');
+            // $table->foreignId('user_id');
+            $table->string('statusprogram');
             $table->text('nama_agenda');
             $table->text('keterangan');
             $table->integer('kuota');

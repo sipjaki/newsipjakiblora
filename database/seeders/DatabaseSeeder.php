@@ -25,6 +25,7 @@ use App\Models\suratedaran;
 use App\Models\pergubernur;
 use App\Models\suratkeputusan;
 use App\Models\berita;
+use App\Models\beritaagenda;
 use App\Models\giskbb;
 use App\Models\himbauandinas;
 use App\Models\isadmin;
@@ -70,6 +71,7 @@ class DatabaseSeeder extends Seeder
         paketpekerjaan::factory(15)->create();
         penanggungjawabteknis::factory(15)->create();
         ketertiban::factory(15)->create();
+        beritaagenda::factory(15)->create();
         // sertifikasiagenda::factory(15)->create();
         
         // \App\Models\User::factory()->create([
@@ -3089,10 +3091,12 @@ uijk::create([
 
 // ============================== ============================================================
 kegiatanjaskon::create([
-                'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'judul_kegiatan' => 'BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI KABUPATEN BANDUNG BARAT',
-                'alamat_kegiatan' => '14 AGUSTUS 2024 KECAMATAN CILILIN DESA BATULAYANG 40562 JAWABARAT INDONESIA',
+                'alamat_kegiatan' => 'DESA BATULAYANG 40562 JAWA BARAT INDONESIA',
+                'pengawasanlokasi_id' => '11',
+                'tanggal' => '',
                 'berita1' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA1.jpg',
                 'berita2' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA2.jpg',
                 'berita3' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA3.jpg',
@@ -3119,16 +3123,40 @@ kegiatanjaskon::create([
                 'berita24' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA24.jpeg',
                 'berita25' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA25.jpeg',
                 'berita26' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA26.jpeg',
+                'berita27' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA27.jpg',
+                'berita28' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA28.jpg',
+                'berita29' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA29.jpg',
+                'berita30' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA30.jpg',
+                'berita31' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA31.jpg',
+                'berita32' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA32.jpg',
+                'berita33' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA33.jpg',
+                'berita34' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA34.jpg',
+                'berita35' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA35.jpg',
+                'berita36' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA36.jpg',
+                'berita37' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA37.jpg',
+                'berita38' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA38.jpg',
+                'berita39' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA39.jpg',
+                'berita40' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA40.jpg',
+                'berita41' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA41.jpg',
+                'berita42' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA42.jpg',
+                'berita43' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA43.jpg',
+                'berita44' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA44.jpg',
+                'berita45' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA45.jpg',
+                'berita46' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA46.jpg',
+                'berita47' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA47.jpg',
+                'berita48' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA48.jpg',
                 // 'berita20' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA20.jpg',
                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
                 'created_at' => now(),
                 'updated_at' => now(),
 ]);
 
+
+
+// ==========================================================================================================
 laporankegiatan::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-                    
-
+                'kegiatanjaskon_id' => '1',
                 'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
                 'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
                 'gambar' => '/assets/library/kegiatanjaskon/01_cililin/kegiatan/PA_SEKDIS.jpeg',
@@ -3150,7 +3178,7 @@ laporankegiatan::create([
 
 laporankegiatan::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-
+                    'kegiatanjaskon_id' => '1',
                     'judul_kegiatan' => 'sambutan oleh camat cililin kabupaten bandung barat  ',
                 'jabatan' => 'camat kecamatan cililin kabupaten bandung barat',
                 'gambar' => '/assets/library/kegiatanjaskon/01_cililin/kegiatan/PA_CAMAT.jpeg',
@@ -3176,7 +3204,7 @@ laporankegiatan::create([
 
 laporankegiatan::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-
+                    'kegiatanjaskon_id' => '1',
                     'judul_kegiatan' => 'sambutan oleh bpk yuyu yuhana, ST., MM pembina jasa konstruksi ahli muda pemerintah kabupaten bandung barat',
                 'jabatan' => 'kepala putr kabupaten bandung barat',
                 'gambar' => '/assets/library/kegiatanjaskon/01_cililin/kegiatan/PA_YUYU.jpeg',
@@ -3200,7 +3228,7 @@ laporankegiatan::create([
 
 laporankegiatan::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-
+                    'kegiatanjaskon_id' => '1',
                     'judul_kegiatan' => 'Sambutan oleh bpk Laswono, ST PEMBEKALAN PEKERJA/TUKANG KONSTRUKSI REGULASI SERTIFIKASI KOMPETENSI KERJA (SKK) ',
                 'jabatan' => 'Pembina Jasa Konstruksi Ahli Muda Dinas Bina Marga dan Tata Ruang Provinsi Jawa Barat',
                 'gambar' => '/assets/library/kegiatanjaskon/01_cililin/kegiatan/PA_LASWONO.jpeg',
@@ -3223,7 +3251,7 @@ laporankegiatan::create([
 
 laporankegiatan::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-
+                    'kegiatanjaskon_id' => '1',
                     'judul_kegiatan' => 'sambutan oleh ibu Dra. Fauzia Mulyawati, ST., MT tentang Pembekalan Pekerja/Tukang Konstruksi Terkait Keselamatan Kerja dan Kesehatan (K3)',
                 'jabatan' => 'Dosen Universitas Langlangbuana Bandung',
                 'gambar' => '/assets/library/kegiatanjaskon/01_cililin/kegiatan/BU_FAUZIA.jpeg',
@@ -3247,7 +3275,7 @@ laporankegiatan::create([
 
 laporankegiatan::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
-
+                    'kegiatanjaskon_id' => '1',
                     'judul_kegiatan' => 'sambutan oleh ibu Rosita, SE., MM tentang Pembekalan Pekerja/Tukang Konstruksi Terkait Regulasi Badan Penjaminan Jaminan Sosial (BPJS) Ketenagakerjaan',
                 'jabatan' => 'Badan Penyelenggara Jaminan Sosial',
                 'gambar' => '/assets/library/kegiatanjaskon/01_cililin/kegiatan/BU_ROSITA.jpg',

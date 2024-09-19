@@ -253,6 +253,7 @@ Route::post('/tupoksi/{judul}', [StrukturController::class, 'createupdatetupoksi
 
 
 // -------- BAGIAN 02 BACKEND DATA BERITA JASA KONSTRUKSI  ---------------------------------
+//  -------------- DATA BERITA UNTUK BACKEND JASA KONSTRUKSI =-------------------------------------
 Route::get('/databerita', [BeritaController::class, 'databerita'])->middleware('auth');  
 Route::get('/databerita/{judul}', [BeritaController::class, 'databeritashowbyjudul'])->middleware('auth');
 Route::get('/databerita/update/{judul}', [BeritaController::class, 'updatedataberita'])->middleware('auth')->name('updateshow.databerita');
@@ -263,6 +264,30 @@ Route::post('/databeritastore', [BeritaController::class, 'createnewstoredataber
 Route::post('/databerita/{judul}', [BeritaController::class, 'deletedataberita'])
 ->middleware('auth')
 ->name('delete.databerita');
+
+//  -------------- DATA BERITA AGENDA BACKEND JASA KONSTRUKSI =-------------------------------------
+Route::get('/beritaagenda', [BeritaController::class, 'beritaagenda'])->middleware('auth');  
+Route::get('/beritaagenda/{nama_agenda}', [BeritaController::class, 'beritaagendashowbyjudul'])->middleware('auth');
+Route::get('/beritaagenda/update/{nama_agenda}', [BeritaController::class, 'updateberitaagenda'])->middleware('auth')->name('updateshow.beritaagenda');
+Route::post('/beritaagendaupdatestore/{nama_agenda}', [BeritaController::class, 'createupdateberitaagenda'])->middleware('auth')->name('update.beritaagenda');
+Route::get('/beritaagendacreate', [BeritaController::class, 'createnewberitaagenda'])->middleware('auth');
+Route::post('/beritaagendastore', [BeritaController::class, 'createnewstoreberitaagenda'])->middleware('auth')->name('create.beritaagenda');
+
+Route::post('/beritaagenda/{id}', [BeritaController::class, 'deleteberitaagenda'])
+->middleware('auth')
+->name('delete.newsberitaagenda');
+
+//  -------------- DOKUMENTASI PELATIHAN TENTANG JASA KONSTRUKSI =-------------------------------------
+Route::get('/dokumentasipelatihan', [BeritaController::class, 'dokumentasipelatihan'])->middleware('auth');  
+Route::get('/dokumentasipelatihan/{judul_kegiatan}', [BeritaController::class, 'dokumentasipelatihanshowbyjudul'])->middleware('auth');
+Route::get('/dokumentasipelatihan/update/{judul_kegiatan}', [BeritaController::class, 'updatedokumentasipelatihan'])->middleware('auth')->name('updateshow.dokumentasipelatihan');
+Route::post('/dokumentasipelatihanstore/{judul_kegiatan}', [BeritaController::class, 'createupdatedokumentasipelatihan'])->middleware('auth')->name('update.dokumentasipelatihan');
+Route::get('/dokumentasipelatihancreate', [BeritaController::class, 'createdokumentasipelatihan'])->middleware('auth');
+Route::post('/dokumentasipelatihanstore', [BeritaController::class, 'createstoredokumentasipelatihan'])->middleware('auth')->name('create.dokumentasipelatihan');
+
+Route::post('/dokumentasipelatihan/{id}', [BeritaController::class, 'deletedokumentasipelatihan'])
+->middleware('auth')
+->name('delete.dokumentasipelatihan');
 
 // -------- BAGIAN 03 BACKEND DATA JASA KONSTRUKSI BANGUNAN GEDUNG PUPR ---------------------------------
 

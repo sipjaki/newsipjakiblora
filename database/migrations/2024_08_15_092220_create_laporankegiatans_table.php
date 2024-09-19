@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('laporankegiatans', function (Blueprint $table) {
             $table->id();
             // $table->foreignId('kegiatanjaskon_id');
+            $table->foreignId('kegiatanjaskon_id');
             $table->string('judul_kegiatan');
             $table->string('jabatan');
             $table->string('gambar')->nullable();
