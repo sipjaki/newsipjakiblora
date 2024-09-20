@@ -8,7 +8,7 @@ use Faker\Factory as FakerFactory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\paketpekerjaan>
  */
-class PaketpekerjaanFactory extends Factory
+class paketpekerjaanFactory extends Factory
 {
     /**
      * Define the model's default state.
