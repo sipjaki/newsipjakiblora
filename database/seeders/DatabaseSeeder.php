@@ -35,7 +35,7 @@ use App\Models\kegiatanjaskon;
 use App\Models\keterampilanpekerja;
 use App\Models\Ketertiban;
 use App\Models\metodepengadaan;
-use App\Models\Paketpekerjaan;
+use App\Models\paketpekerjaan;
 use App\Models\pelatihan;
 use App\Models\Penanggungjawabteknis;
 use App\Models\pengawasanbangunangedung;
@@ -85,7 +85,7 @@ class DatabaseSeeder extends Seeder
 
         
         asosiasipengusaha::factory(15)->create();
-        Paketpekerjaan::factory(15)->create();
+        paketpekerjaan::factory(15)->create();
         Penanggungjawabteknis::factory(15)->create();
         Ketertiban::factory(15)->create();
         Beritaagenda::factory(15)->create();  
