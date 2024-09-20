@@ -57,6 +57,18 @@ class SkktenagakerjaController extends Controller
         ]);
     }
     
+    public function showkegiatanshowByName($nama)
+    {
+        $item = Tukangterampil::where('nama', $nama)->firstOrFail();
+        $user = Auth::user();
+
+        return view('backend.04_skk.01_skk.showkegiatan', [
+            'data' => $item,
+            'user' => $user,
+            'title' => 'View Sertifikasi Pelatihan',
+        ]);
+    }
+    
 // ==================================== UPDATE DATA TENAGA KERJA JASA KONSTRUKSI ========================================        // 
     
                 // -------------------- UPDATE DATA TENAGA KERJA JASA KONSTRUKSI  ----------------------

@@ -365,6 +365,7 @@ Route::get('/sbulampiran3/{judul}', [StrukturController::class, 'sbulampiran3sho
 // ================================ TENAGA KERJA ============================================================================
 Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
 Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
+Route::get('/showtenagakerja/{nama}', [SkktenagakerjaController::class, 'showkegiatanshowByName'])->name('skktenagakerjakegiatan.show');
 
 Route::get('/newtenagakerja/update/{nama}', [SkktenagakerjaController::class, 'updatetenagakerja'])->middleware('auth')->name('update.tenagakerja');
 Route::post('/newtenagakerja/{nama}', [SkktenagakerjaController::class, 'createupdatetenagakerja'])->middleware('auth')->name('updatestore.tenagakerja');
