@@ -95,6 +95,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'Sigit Septiadi',
             'username' => 'Sigit',
             'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto1.png',
             'email' => 'sigitseptiadi1@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -104,6 +105,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'Admin Sipjaki',
             'username' => 'sipjakikbb',
             'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto2.png',
             'email' => 'sipjakikbb@gmail.com',
             'password' => bcrypt('adminadmin$$123')
         ]);
@@ -112,6 +114,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'User 1 Sipjaki',
             'username' => 'sipjakikbbuser$1',
             'statusadmin_id' => '2',
+            'avatar' => 'user/avatar/foto3.png',
             'email' => 'sipjakikbbuser1@gmail.com',
             'password' => bcrypt('sipjakiuser$$111')
         ]);
@@ -120,6 +123,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'User 2 Sipjaki',
             'username' => 'sipjakikbbuser$2',
             'statusadmin_id' => '2',
+            'avatar' => 'user/avatar/foto4.png',
             'email' => 'sipjakikbbuser2@gmail.com',
             'password' => bcrypt('sipjakiuser$$222')
         ]);
@@ -128,6 +132,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'User 3 Sipjaki',
             'username' => 'sipjakikbbuser$3',
             'statusadmin_id' => '2',
+            'avatar' => 'user/avatar/foto5.png',
             'email' => 'sipjakikbbuser3@gmail.com',
             'password' => bcrypt('sipjakiuser$$333')
         ]);
@@ -136,6 +141,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'User 4 Sipjaki',
             'username' => 'sipjakikbbuser$4',
             'statusadmin_id' => '2',
+            'avatar' => 'user/avatar/foto1.png',
             'email' => 'sipjakikbbuser4@gmail.com',
             'password' => bcrypt('sipjakiuser$$444')
         ]);

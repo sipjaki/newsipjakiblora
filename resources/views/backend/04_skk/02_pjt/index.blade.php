@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 80vh;
+    height: 160vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -101,7 +101,7 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Himbauan Dinas Terkait</button>
+                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Penangggung Jawab Teknis</button>
                         {{-- <a href="/pergubernurcreate" style="background: inherit">
                             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
                         </a> --}}
@@ -159,10 +159,10 @@
                         <th style="width:45px;">No</th>
                         <th>Nama Lengkap</th>
                         <th>Kecamatan/Kota</th> 
-                        <th>Desa</th> 
-                        <th>Keterampilan</th> 
-                        <th>Tahun Bimtek</th> 
-                        <th>Desa</th> 
+                        <th>No PJT</th> 
+                        <th>Sfesifikasi</th> 
+                        <th>Tanggal Terbit</th> 
+                        <th>Masa Berlaku</th> 
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -177,11 +177,12 @@
                     
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->nama}}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->pengawasanlokasi->kota}}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->keterampilanpekerja->keterampilan}}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->tahunpilihan->tahun}}</td>
-                        
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase">{{ $item->nama_lengkap}}</td>
+                        <td style="font-size: 12px; text-align:center; text-transform:uppercase">{{ $item->pengawasanlokasi->kota}}</td>
+                        <td style="font-size: 12px; text-align:center; text-transform:uppercase">{{ $item->nopjt}}</td>
+                        <td style="font-size: 12px; text-align:center; text-transform:uppercase">{{ $item->sfesifikasi}}</td>
+                        <td style="font-size: 12px; text-align:center; text-transform:uppercase">{{ $item->tanggal_terbit}}</td>
+                        <td style="font-size: 12px; text-align:center; text-transform:uppercase" >{{ $item->masa_berlaku}}</td>
                         <td>
                             
                         <style>

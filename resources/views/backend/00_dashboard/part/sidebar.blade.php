@@ -7,10 +7,22 @@
                 <div class="inner-sidebar mr-3">
                     <!--Image Avatar-->
                     <div class="avatar text-center" style="background:white; ">
-                        <p style="color: black"></p>
-                        <img src="assets/img/client-img4.png" alt="" class="rounded-circle" style="margin-bottom:25px; border: 1px solid #000; border-radius: 50%; display: inline-block; overflow: hidden; "/>
+                        
+                        <div class="div">
+                        {{-- @foreach ($user as $item ) --}}
+                            
+                        <span style="background-color: navy; color: white; padding: 5px; border-radius: 3px;">
+                            {{$user->name}}
+                        </span>
+                        
+                    </div>
+                    {{-- <img src="{{asset('storage.'/ $user->avatar)}}" alt="" class="rounded-circle" style="margin-bottom:25px; border: 1px solid #000; border-radius: 50%; display: inline-block; overflow: hidden; "/> --}}
+                    
+                    {{-- @endforeach                             --}}
+                        
                        <br>
                     </span>
+                    
                     </div>
                     <!--Image Avatar-->
 
@@ -199,7 +211,7 @@
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>SERTIFIKAT KETERAMPILAN KERJA
                                         </a>
                                             
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/datapjt" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PENANGGUNG JAWAB TEKNIS
                                         </a>
                                             
@@ -278,10 +290,10 @@
                                         <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>KECELAKAAN 
                                         </a>
-                                            
+{{--                                             
                                         <a href="/404" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>TEKNOLOGI 
-                                        </a>
+                                        </a> --}}
                                             
                                     </li> 
 

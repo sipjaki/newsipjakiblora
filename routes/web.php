@@ -17,6 +17,9 @@ use Database\Factories\DatajakonFactory;
 use Database\Factories\SkktenagakerjaFactory;
 use Illuminate\Support\Facades\Route;
 
+
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -215,8 +218,12 @@ Route::get('/peraturan/suratkeputusan/{judul}', [PeraturanController::class, 'fe
 
 Route::get('/dashboard', function () {
     // return view('welcome');
+    
+    $user = Auth::user();
+
     return view('backend.00_dashboard.index',[
-        'title' => 'Admin Dashboard Sipjaki KBB'
+        'title' => 'Admin Dashboard Sipjaki KBB',
+        'user' => $user,
     ]);
 })->middleware('auth');
 
@@ -355,6 +362,7 @@ Route::get('/sbulampiran3/{judul}', [StrukturController::class, 'sbulampiran3sho
 
 
 // ------------------------ BAGIAN 03 BACKEND TENAGA KERJA -------------------
+// ================================ TENAGA KERJA ============================================================================
 Route::get('/beskktenagakerja', [SkktenagakerjaController::class, 'index'])->middleware('auth');  
 Route::get('/skktenagakerja/{nama}', [SkktenagakerjaController::class, 'showByName'])->name('skktenagakerja.show');
 
@@ -366,6 +374,18 @@ Route::post('/newtenagakerjastore', [SkktenagakerjaController::class, 'createsto
 Route::post('/newtenagakerjadelete/{nama}', [SkktenagakerjaController::class, 'deletetenagakerja'])
 ->middleware('auth')
 ->name('delete.tenagakerja');
+
+// ======================================== PENANGGUNG JAWAB TEKNIS ====================================================================
+Route::get('/datapjt', [SkktenagakerjaController::class, 'datapjt'])->middleware('auth');  
+Route::get('/datapjt/{nama_lengkap}', [SkktenagakerjaController::class, 'datapjtshowByName'])->name('datapjt.show');
+Route::get('/datapjt/update/{nama_lengkap}', [SkktenagakerjaController::class, 'updatedatapjt'])->middleware('auth')->name('update.datapjt');
+Route::post('/datapjt/{nama_lengkap}', [SkktenagakerjaController::class, 'createupdatedatapjt'])->middleware('auth')->name('updatestore.datapjt');
+Route::get('/datapjtcreate', [SkktenagakerjaController::class, 'createdatapjt'])->middleware('auth');
+Route::post('/datapjtstore', [SkktenagakerjaController::class, 'createstoredatapjt'])->middleware('auth')->name('create.datapjt');
+
+Route::post('/datapjt/{nama_lengkap}', [SkktenagakerjaController::class, 'deletedatapjt'])
+->middleware('auth')
+->name('delete.datapjt');
 
 
 // -------- BAGIAN 04 BACKEND ---------------------------------

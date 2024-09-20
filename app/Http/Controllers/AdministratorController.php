@@ -13,6 +13,7 @@ use App\Models\statusadmin;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
+use Illuminate\Support\Facades\Auth;
 class AdministratorController extends Controller
 {
     //
@@ -21,11 +22,15 @@ class AdministratorController extends Controller
     {
         $datauser = user::paginate(15);
         $datastatusadmin = statusadmin::all();
+                
+        $user = Auth::user();
+
         
         return view('backend.15_administrator.user.index', [
             'title' => 'Daftar User Admin Sipjaki ',
             'datauser' => $datauser,  
-            'datastatusadmin' => $datastatusadmin,  
+            'datastatusadmin' => $datastatusadmin,
+            'user' => $user,  
            
         ]);
     }
@@ -35,10 +40,15 @@ class AdministratorController extends Controller
         {
             $datauser = user::where('name', $name)->firstOrFail();
 
+            
+            $user = Auth::user();
+
             return view('backend.15_administrator.user.show', [
                 'data' => $datauser,
+                'user' => $user,
                 'title' => 'Details Admin Sipjaki',
             ]);
+            
         }
 
         
@@ -49,10 +59,13 @@ class AdministratorController extends Controller
                     $user = user::where('name', $name)->firstOrFail();
                     $statusadminList = statusadmin::all(); 
                     
+                    $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.15_administrator.user.update', [
                         'datauser' => $user,
                         'datalistadmin' => $statusadminList,
+                        'user' => $user,
                         'title' => 'Update Data Administrator'
                     ]);
                 }
@@ -148,9 +161,12 @@ public function kategoriadmin()
 
     $datastatusadmin = statusadmin::paginate(15);
     
+    $user = Auth::user();
+
     return view('backend.15_administrator.kategoriadmin.index', [
         'title' => 'Kategori Admin',
         'datastatusadmin' => $datastatusadmin,  
+        'user' => $user,  
        
     ]);
 }

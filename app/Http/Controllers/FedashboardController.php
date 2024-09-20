@@ -14,6 +14,8 @@ use App\Models\qasebagai;
 use App\Models\qa;
 use App\Models\skktenagakerja; // Pastikan namespace model sesuai dengan struktur direktori
 
+use Illuminate\Support\Facades\Auth;
+
 class FedashboardController extends Controller
 {
     public function index()
@@ -27,6 +29,8 @@ class FedashboardController extends Controller
         
         $himbauandinas = himbauandinas::all(); //
 
+        $user = Auth::user();
+
 
         return view('frontend.00_full.index', [
             'title' => 'Sipjaki Pemerintah Kabupaten Bandung Barat',
@@ -37,6 +41,7 @@ class FedashboardController extends Controller
             'dataqasebagai' => $dataqasebagai, // Mengirimkan data paginasi ke view
             'dataqapertanyaan' => $dataqapertanyaan, // Mengirimkan data paginasi ke view
             'datahimbauandinas' => $himbauandinas, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -75,10 +80,14 @@ class FedashboardController extends Controller
         $data_layanankami = layanankami::all(); //
         $data = berita::where('judul', $judul)->firstOrFail();
         
+        
+        $user = Auth::user();
+
         return view('frontend.02_berita.portalberita.showindex', [
             'data' => $data,
             'data_berita' => $data_berita,
             'data_layanankami' => $data_layanankami,
+            'user' => $user,
                 'title' => 'Portal Berita Sipjaki KBB',
         ]);
     }
@@ -87,9 +96,13 @@ class FedashboardController extends Controller
     {
         $data= berita::all(); //    
         
+        $user = Auth::user();
+
+
         return view('frontend.02_berita.portalberita.navbarberita', [
             'title' => 'Berita KBB',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -100,11 +113,15 @@ class FedashboardController extends Controller
         $data_layanankami = layanankami::all(); //
         $data_kegiatanjaskon = kegiatanjaskon::all(); //
 
+        
+        $user = Auth::user();
+
         return view('frontend.02_berita.03_sertifikasi.index', [
             'title' => 'Kegiatan Sertifikasi oleh Pemerintah Kabupaten Bandung Barat',
             'data' => $data, // Mengirimkan data paginasi ke view
             'data_layanankami' => $data_layanankami, // Mengirimkan data paginasi ke view
             'data_jaskon' => $data_kegiatanjaskon, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -115,12 +132,15 @@ class FedashboardController extends Controller
         $data_layanankami = layanankami::all(); //
         $data_laporankegiatan = laporankegiatan::all(); //
         $data_kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
-        
+                
+        $user = Auth::user();
+
         return view('frontend.02_berita.03_sertifikasi.show', [
             'data_kegiatanjaskon' => $data_kegiatanjaskon,
             'data_berita' => $data_berita,
             'data_layanankami' => $data_layanankami,
             'data_laporankegiatan' => $data_laporankegiatan,
+            'user' => $user,
                 'title' => 'Kegiatan Sertifikasi',
         ]);
     }
@@ -133,12 +153,15 @@ class FedashboardController extends Controller
         $data_laporankegiatan =laporankegiatan::where('jabatan', $jabatan)->firstOrFail(); //
         // $data_kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
         
+        $user = Auth::user();
+
         return view('frontend.02_berita.03_sertifikasi.showdetails', [
             // 'data_kegiatanjaskon' => $data_kegiatanjaskon,
             'data_berita' => $data_berita,
             'data_layanankami' => $data_layanankami,
             'data_laporankegiatan' => $data_laporankegiatan,
             'data_laporankegiatanall' => $data_laporankegiatanall,
+            'user' => $user,
                 'title' => 'Kegiatan Sertifikasi Para Pekerja',
         ]);
     }
