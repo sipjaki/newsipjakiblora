@@ -10,13 +10,13 @@
                         
                         <div class="div">
                         {{-- @foreach ($user as $item ) --}}
-                            
-                        <span style="background-color: navy; color: white; padding: 5px; border-radius: 3px;">
+                            <p style="margin-top:10px;"></p>
+                        <span style="background-color: navy; color: white; padding: 5px; border-radius: 3px; font-size:16px;">
                             {{$user->name}}
                         </span>
                         
                     </div>
-                    {{-- <img src="{{asset('storage.'/ $user->avatar)}}" alt="" class="rounded-circle" style="margin-bottom:25px; border: 1px solid #000; border-radius: 50%; display: inline-block; overflow: hidden; "/> --}}
+                    <img src="{{asset('storage/' . $user->avatar)}}" alt="" class="rounded-circle" style="margin-bottom:25px; border: 1px solid #000; border-radius: 50%; display: inline-block; overflow: hidden; "/>
                     
                     {{-- @endforeach                             --}}
                         

@@ -26,10 +26,13 @@ class BeritaController extends Controller
 public function databerita()
 {
     $data= berita::paginate(8); // Menggunakan paginate() untuk pagination
+    
+    $user = Auth::user();
 
     return view('backend.02_berita.01_berita.index', [
         'title' => 'Berita Jasa Konstruksi Pemerintah Kabupaten Bandung Barat',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -37,9 +40,12 @@ public function databerita()
 public function databeritashowbyjudul($judul)
 {
     $data = berita::where('judul', $judul)->firstOrFail();
+    
+    $user = Auth::user();
 
     return view('backend.02_berita.01_berita.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Berita Jasa Konstruksi',
     ]);
 }
@@ -51,10 +57,13 @@ public function databeritashowbyjudul($judul)
                     $berita = berita::where('judul', $judul)->firstOrFail();
                     $datauser = user::all();
                     
+                    $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.02_berita.01_berita.update', [
                         'berita' => $berita,
                         'datauser' => $datauser,
+                        'user' => $user,
                         'title' => 'Update Data Berita Jasa Konstruksi'
                     ]);
                 }
@@ -105,10 +114,13 @@ public function createnewdataberita()
     // Ambil data pengguna yang sedang login
     $currentUser = Auth::user();
     
+    $user = Auth::user();
+
     // Tampilkan form create dengan data pengguna yang login
     return view('backend.02_berita.01_berita.create', [
         'title' => 'Create Berita Jasa Konstruksi',
         'currentUser' => $currentUser,
+        'user' => $user,
     ]);
 }
 public function createnewstoredataberita(Request $request)
@@ -186,12 +198,16 @@ public function beritaagenda()
     $datapengawasalokasi = pengawasanlokasi::all(); // Menggunakan paginate() untuk pagination
     $dataagendastatus = agendastatus::all(); // Menggunakan paginate() untuk pagination
 
+    
+    $user = Auth::user();
+
     return view('backend.02_berita.02_agendasertifikasi.index', [
         'title' => 'Agenda Sertifikasi Pemerintah Kabupaten Bandung Barat',
         'data' => $data, // Mengirimkan data paginasi ke view
         'datauser' => $datauser, // Mengirimkan data paginasi ke view
         'datapengawasanlokasi' => $datapengawasalokasi, // Mengirimkan data paginasi ke view
         'dataagendastatus' => $dataagendastatus, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -200,8 +216,11 @@ public function beritaagendashowbyjudul($nama_agenda)
 {
     $data = beritaagenda::where('nama_agenda', $nama_agenda)->firstOrFail();
 
+    $user = Auth::user();
+
     return view('backend.02_berita.02_agendasertifikasi.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Agenda Sertifikasi',
     ]);
 }
@@ -237,12 +256,15 @@ public function beritaagendashowbyjudul($nama_agenda)
                     $datapengawasalokasi = pengawasanlokasi::all();
                     $dataagendastatus = agendastatus::all();
                     // $datauser = user::all();
-                    
+                
+                    $user = Auth::user();
+       
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.02_berita.02_agendasertifikasi.update', [
                         'beritaagenda' => $berita,
                         'datapengawasanlokasi' => $datapengawasalokasi,
                         'dataagendastatus' => $dataagendastatus,
+                        'user' => $user,
                         // 'datauser' => $datauser,
                         'title' => 'Update Agenda Sertifikasi '
                     ]);
@@ -295,10 +317,14 @@ public function createnewberitaagenda()
 {
 
     $datapengawasanlokasi = pengawasanlokasi::all();
+    
+    $user = Auth::user();
+
     // Tampilkan form create dengan data pengguna yang login
     return view('backend.02_berita.02_agendasertifikasi.create', [
         'title' => 'Create Berita Agenda Sertifikasi',
         'datapengawasanlokasi' => $datapengawasanlokasi,
+        'user' => $user,
  
     ]);
 }
@@ -341,9 +367,12 @@ public function dokumentasipelatihan()
     $data = kegiatanjaskon::paginate(5); // Menggunakan paginate() untuk pagination
     $datalaporankegiatan = laporankegiatan::all(); // Menggunakan paginate() untuk pagination
     
+    $user = Auth::user();
+
     return view('backend.02_berita.03_dokumentasipelatihan.index', [
         'title' => 'Dokumentasi Kegiatan Sertifikasi Para Pekerja',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
         'datalaporankegiatan' => $datalaporankegiatan, // Mengirimkan data paginasi ke view
     ]);
 }
@@ -354,9 +383,12 @@ public function dokumentasipelatihanshowbyjudul($judul_kegiatan)
     $data = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
     $datalaporankegiatan = laporankegiatan::all(); // Menggunakan paginate() untuk pagination
     
+    $user = Auth::user();
+
     return view('backend.02_berita.03_dokumentasipelatihan.show', [
         'data' => $data,
         'datalaporankegiatan' => $datalaporankegiatan,
+        'user' => $user,
         'title' => 'Details Agenda Sertifikasi',
     ]);
 }
@@ -370,11 +402,14 @@ public function dokumentasipelatihanshowbyjudul($judul_kegiatan)
                     $datauser = user::all();
                     // $datauser = user::all();
                     
+                        $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.02_berita.03_dokumentasipelatihan.update', [
                         'kegiatanjaskon' => $kegiatanjaskon,
                         'datapengawasanlokasi' => $datapengawasanlokasi,
                         'datauser' => $datauser,
+                        'user' => $user,
                         'title' => 'Update Dokumentasi Sertifikasi '
                     ]);
                 }
@@ -417,11 +452,15 @@ public function createdokumentasipelatihan()
 
     $kegiatanjaskon = kegiatanjaskon::all();
     $datapengawasanlokasi = pengawasanlokasi::all();
+    
+    $user = Auth::user();
+
     // Tampilkan form create dengan data pengguna yang login
     return view('backend.02_berita.03_dokumentasipelatihan.create', [
         'title' => 'Create Dokumentasi Pelatihan',
         'datakegiatanjaskon' => $kegiatanjaskon,
         'datapengawasanlokasi' => $datapengawasanlokasi,
+        'user' => $user,
     ]);
 }
 public function createstoredokumentasipelatihan(Request $request)

@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File; // Pastikan ini ada
 use Illuminate\Support\Facades\Storage; // Jika Anda menggunakan Storage juga
 
+use Illuminate\Support\Facades\Auth; 
+
+
+
+
+
 // use Carbon\Carbon;
 use Carbon\Carbon; 
 
@@ -24,6 +30,7 @@ class SkktenagakerjaController extends Controller
         // Mengambil data dengan pagination
         $data = Tukangterampil::paginate(15);
         $totalData = Tukangterampil::count();
+        $user = Auth::user();
 
         // Mengambil semua data untuk mendapatkan kecamatan unik
         $allKecamatan = Tukangterampil::all();
@@ -37,6 +44,7 @@ class SkktenagakerjaController extends Controller
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data kecamatan unik ke view
             'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
+            'user' => $user, // Mengirimkan data kecamatan unik ke view
         ]);
     }
     
@@ -44,9 +52,11 @@ class SkktenagakerjaController extends Controller
     public function showByName($nama)
     {
         $item = Tukangterampil::where('nama', $nama)->firstOrFail();
+        $user = Auth::user();
 
         return view('backend.04_skk.01_skk.show', [
             'data' => $item,
+            'user' => $user,
             'title' => 'Detail SKK Tenaga Kerja',
         ]);
     }
@@ -61,13 +71,15 @@ class SkktenagakerjaController extends Controller
                     $datapengawasanlokasi = pengawasanlokasi::all();
                     $datatahunpilihan = tahunpilihan::all();
                     $dataketerampilan = keterampilanpekerja::all();
-                    
+                    $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.04_skk.01_skk.update', [
                         'datatukangterampil' => $datatukangterampil,
                         'datapengawasanlokasi' => $datapengawasanlokasi,
                         'datatahunpilihan' => $datatahunpilihan,
                         'dataketerampilan' => $dataketerampilan,
+                        'user' => $user,
                     
                         'title' => 'Update Data Pekerja'
                     ]);
@@ -173,12 +185,14 @@ public function feskktenagakerja()
         
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $datakecamatan = $allKecamatan->pluck('kecamatan')->unique();
+          $user = Auth::user();
 
         return view('frontend.04_tenagakerja.01_skaskt', [
             'title' => 'Data Tenaga Kerja',
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data paginasi ke view
             'totaldata' => $totalData, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -192,12 +206,14 @@ public function listkecamatan()
         
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $datakecamatan = $allKecamatan->pluck('kecamatan')->unique();
+          $user = Auth::user();
 
         return view('frontend.04_tenagakerja.01_skasktshowkecamatan', [
             'title' => 'Kecamatan | Data Tenaga Kerja',
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data paginasi ke view
             'totaldata' => $totalData, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
             
         ]);
     }
@@ -205,9 +221,11 @@ public function listkecamatan()
     public function feskktenagakerjashowByName($nama)
     {
         $item = Tukangterampil::where('nama', $nama)->firstOrFail();
+        $user = Auth::user();
 
         return view('frontend.04_tenagakerja.01_skasktshow', [
             'data' => $item,
+            'user' => $user,
             'title' => 'Detail SKK Tenaga Kerja',
         ]);
     }
@@ -250,6 +268,7 @@ public function listdesa()
         
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $datadesa = $allKecamatan->pluck('desa')->unique();
+
 
         return view('frontend.04_tenagakerja.01_skasktalldatadesa', [
             'title' => 'Desa | Data Tenaga Kerja',
@@ -296,6 +315,7 @@ public function listketerampilan()
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
           $allKecamatan = Tukangterampil::all();
+          $user = Auth::user();
         
           // Menggunakan koleksi untuk mendapatkan nilai unik
           $dataketerampilan = $allKecamatan->pluck('keterampilan')->unique();
@@ -305,6 +325,7 @@ public function listketerampilan()
             'data' => $data,
             'data_keterampilan' => $dataketerampilan, // Mengirimkan data paginasi ke view
             'totaldata' => $totalData, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
  
@@ -349,12 +370,14 @@ public function listregister()
     
       // Menggunakan koleksi untuk mendapatkan nilai unik
       $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
+      $user = Auth::user();
 
     return view('frontend.04_tenagakerja.01_skasktalldataregister', [
         'title' => 'Bimtek | Data Tenaga Kerja',
         'data' => $data,
         'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
         'totaldata' => $totalData, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -744,10 +767,13 @@ public function datapjt()
    $datapjt = Penanggungjawabteknis::paginate(15);
    $datapengawasanlokasi = pengawasanlokasi::all();
     // Mengirimkan data ke view
+
+    $user = Auth::user();
     return view('backend.04_skk.02_pjt.index', [
         'title' => 'Penanggung Jawab Teknis',
         'datapengawasanlokasi' => $datapengawasanlokasi,
         'data' => $datapjt,
+        'user' => $user,
         
     ]);
 }
@@ -756,9 +782,11 @@ public function datapjt()
 public function datapjtshowByName($nama_lengkap)
 {
     $item = Tukangterampil::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.04_skk.01_skk.show', [
         'data' => $item,
+        'user' => $user,
         'title' => 'Detail SKK Tenaga Kerja',
     ]);
 }

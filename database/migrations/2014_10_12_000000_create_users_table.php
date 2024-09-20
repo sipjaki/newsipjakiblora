@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('phone_number')->nullable();
             // $table->bigInteger('otp')->nullable();
             $table->string('email')->unique();
-            $table->string('avatar')->nullable();
+            $table->string('avatar');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->softDeletes();

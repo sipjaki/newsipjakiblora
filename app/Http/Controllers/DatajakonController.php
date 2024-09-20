@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth; // Pastikan Anda mengimpor facade ini
 
 
 class DatajakonController extends Controller
@@ -19,8 +20,13 @@ class DatajakonController extends Controller
     public function asosiasi()
     {
         
+        $user = Auth::user();
+
+        
         return view('frontend.03_datajakon.01_asosiasi', [
             'title' => 'Asosiasi Pengusaha ',
+            'user' => $user,
+
            
         ]);
     }
@@ -32,8 +38,11 @@ class DatajakonController extends Controller
     {
         
         $ketertiban = ketertiban::paginate(15);
+        $user = Auth::user();
+
         return view('backend.03_datajakon.01_pengawasanketertiban.index', [
             'data' => $ketertiban,
+            'user' => $user,
             'title' => 'Pengawasan & Ketertiban',
            
         ]);
@@ -45,10 +54,12 @@ class DatajakonController extends Controller
 
     public function asosiasipengusaha()
     {
-        
+        $user = Auth::user();
+
         $dataasosiasi = asosiasipengusaha::paginate(15);
         return view('backend.03_datajakon.02_asosiasipengusaha.index', [
             'data' => $dataasosiasi,
+            'user' => $user,
             'title' => 'Asosiasi Pengusaha ',
            
         ]);
@@ -67,9 +78,11 @@ class DatajakonController extends Controller
     public function asosiasipengusahashowbyjudul($nama_asosiasi)
     {
         $dataasosiasipengusaha = asosiasipengusaha::where('nama_asosiasi', $nama_asosiasi)->firstOrFail();
+        $user = Auth::user();
 
         return view('backend.03_datajakon.02_asosiasipengusaha.show', [
             'data' => $dataasosiasipengusaha,
+            'user' => $user,
             'title' => 'Details Asosiasi Pengusaha',
         ]);
     }
@@ -79,10 +92,12 @@ class DatajakonController extends Controller
                 {
                     // Cari data undang-undang berdasarkan nilai 'judul'
                     $dataasosiasipengusaha = asosiasipengusaha::where('nama_asosiasi', $nama_asosiasi)->firstOrFail();
-                    
+                    $user = Auth::user();
+   
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.03_datajakon.02_asosiasipengusaha.update', [
                         'dataasosiasipengusaha' => $dataasosiasipengusaha,
+                        'user' => $user,
                     
                         'title' => 'Update Asosiasi Pengusaha'
                     ]);
@@ -186,9 +201,11 @@ class DatajakonController extends Controller
 
     public function standarbiayaumum()
     {
+        $user = Auth::user();
         
         return view('frontend.03_datajakon.02_standarbiayaumum', [
             'title' => 'Standar Biaya Umum ',
+            'user' => $user,
            
         ]);
     }
@@ -210,8 +227,11 @@ class DatajakonController extends Controller
     {
         
         $paketpekerjaan = paketpekerjaan::paginate(15);
+        $user = Auth::user();
+
         return view('backend.03_datajakon.04_paketpekerjaan.index', [
             'data' => $paketpekerjaan,
+            'user' => $user,
             'title' => 'Paket Pekerjaan Pemerintah Kabupaten Bandung Barat ',
            
         ]);
@@ -220,9 +240,11 @@ class DatajakonController extends Controller
     public function paketpekerjaanshowbyjudul($instansi)
     {
         $paketpekerjaan = paketpekerjaan::where('instansi', $instansi)->firstOrFail();
+        $user = Auth::user();
 
         return view('backend.03_datajakon.04_paketpekerjaan.show', [
             'data' => $paketpekerjaan,
+            'user' => $user,
             'title' => 'Details Paket Pekerjaan',
         ]);
     }
@@ -232,9 +254,12 @@ class DatajakonController extends Controller
         $datapaketpekerjaan = paketpekerjaan::where('instansi', $instansi)->firstOrFail();
         $datametodepengadaan = metodepengadaan::all();
         // Tampilkan form update dengan data yang ditemukan
+        $user = Auth::user();
+
         return view('backend.03_datajakon.04_paketpekerjaan.update', [
             'datapaketpekerjaan' => $datapaketpekerjaan,
             'datametodepengadaan' => $datametodepengadaan,
+            'user' => $user,
         
             'title' => 'Update Paket Pekerjaan'
         ]);
@@ -303,10 +328,12 @@ public function createpaketpekerjaan()
 {
         
         $datametodepengadaan = metodepengadaan::all();
-        
+        $user = Auth::user();
+
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.03_datajakon.04_paketpekerjaan.create', [
         'datametodepengadaan' => $datametodepengadaan,
+        'user' => $user,
         'title' => 'Create Paket Pekerjaan'
     ]);
 }

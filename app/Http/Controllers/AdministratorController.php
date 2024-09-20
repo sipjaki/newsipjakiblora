@@ -199,9 +199,12 @@ public function kategoriadmin()
              public function createkategoriadmin()
                 {
                     
+                    $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.15_administrator.kategoriadmin.create', [
-                        'title' => 'Create Kategori Admin'
+                        'title' => 'Create Kategori Admin',
+                        'user' => $user,
                     ]);
                 }
 
@@ -310,11 +313,14 @@ public function kategoriadmin()
                     // Cari data undang-undang berdasarkan nilai 'judul'
                     $datahimbauandinas = himbauandinas::where('nama_lengkap', $nama_lengkap)->firstOrFail();
                     
+                    $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.himbauandinas.update', [
                         'datahimbauandinas' => $datahimbauandinas,
                     
-                        'title' => 'Update Himbauan Dinas'
+                        'title' => 'Update Himbauan Dinas',
+                        'user' => $user,
                     ]);
                 }
                 

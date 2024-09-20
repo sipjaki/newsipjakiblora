@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\giskbb;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth; 
+
+
+
+
+
 class GiskbbController extends Controller
 {
     
@@ -12,11 +18,14 @@ class GiskbbController extends Controller
     {
         // Mengambil data dengan pagination
         $data = giskbb::all();
+        $user = Auth::user();
+
 
         // Mengirimkan data ke view
         return view('frontend.04_tenagakerja.giskkbb.index', [
             'title' => 'GIS Kabupaten Bandung Barat ',
             'data' => $data,
+            'user' => $user,
         ]);
     }
 

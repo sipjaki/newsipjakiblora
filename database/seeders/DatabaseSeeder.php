@@ -6,8 +6,9 @@ namespace Database\Seeders;
 // namespace App\Models;
 
 use App\Models\agendasertifikasi;
-use App\Models\agendastatus;
-use App\Models\AsosiasiPengusaha;
+use App\Models\Agendastatus;
+use App\Models\Agendastatus as ModelsAgendastatus;
+use App\Models\asosiasipengusaha;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
@@ -83,7 +84,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         
-        AsosiasiPengusaha::factory(15)->create();
+        asosiasipengusaha::factory(15)->create();
         Paketpekerjaan::factory(15)->create();
         Penanggungjawabteknis::factory(15)->create();
         Ketertiban::factory(15)->create();
@@ -141,7 +142,7 @@ class DatabaseSeeder extends Seeder
             'name'  => 'User 4 Sipjaki',
             'username' => 'sipjakikbbuser$4',
             'statusadmin_id' => '2',
-            'avatar' => 'user/avatar/foto1.png',
+            'avatar' => 'user/avatar/foto6.png',
             'email' => 'sipjakikbbuser4@gmail.com',
             'password' => bcrypt('sipjakiuser$$444')
         ]);
@@ -1671,7 +1672,7 @@ metodepengadaan::create([
 
 
 //======================== PENGAWASAN LOKASI  ===================================================================================
-agendastatus::create([
+Agendastatus::create([
     'id' => '1',
     'status' => 'SEGERA HADIR',
     'created_at' => Carbon::now(),
@@ -1679,7 +1680,7 @@ agendastatus::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-agendastatus::create([
+Agendastatus::create([
     'id' => '2',
     'status' => 'DI BATALKAN ',
     'created_at' => Carbon::now(),
@@ -1687,7 +1688,7 @@ agendastatus::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-agendastatus::create([
+Agendastatus::create([
     'id' => '3',
     'status' => 'BERJALAN ',
     'created_at' => Carbon::now(),
@@ -1695,7 +1696,7 @@ agendastatus::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-agendastatus::create([
+Agendastatus::create([
     'id' => '4',
     'status' => 'SELESAI ',
     'created_at' => Carbon::now(),

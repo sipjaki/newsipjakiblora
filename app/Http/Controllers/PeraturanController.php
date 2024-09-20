@@ -20,16 +20,22 @@ use App\Models\referensi;
 use App\Models\pergubernur;
 use App\Models\suratkeputusan;
 
+use Illuminate\Support\Facades\Auth; 
+
+
+
 class PeraturanController extends Controller
 {
     // BACKEND DATABASE UNDANG UNDANG 
     public function undangundang()
     {
         $data= peraturan::all(); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('backend.14_peraturan.01_undangundang.index', [
             'title' => 'Undang - Undang Jasa Konstruksi',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -38,10 +44,12 @@ class PeraturanController extends Controller
     public function feundangundang()
     {
         $data= peraturan::all(); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('frontend.11_peraturan.01_undangundang', [
             'title' => 'Undang - Undang Jasa Konstruksi',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
     
@@ -51,10 +59,12 @@ class PeraturanController extends Controller
     {
         // Cari data undang-undang berdasarkan nilai 'judul'
         $undangUndang = peraturan::where('judul', $judul)->firstOrFail();
-        
+        $user = Auth::user();
+
         // Tampilkan form update dengan data yang ditemukan
         return view('backend.14_peraturan.01_undangundang.update', [
             'undangUndang' => $undangUndang,
+            'user' => $user,
             'title' => 'Update UUD Jasa Konstruksi'
         ]);
     }
@@ -99,10 +109,12 @@ class PeraturanController extends Controller
     public function pemerintah()
     {
         $data= perpemerintah::all(); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('backend.14_peraturan.02_pemerintah.index', [
             'title' => 'Peraturan Pemerintah',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
     
@@ -111,10 +123,12 @@ class PeraturanController extends Controller
         public function fepemerintah()
         {
             $data= perpemerintah::all(); // Menggunakan paginate() untuk pagination
-    
+            $user = Auth::user();
+
             return view('frontend.11_peraturan.02_peraturanpemerintah', [
                 'title' => 'Peraturan Pemerintah',
                 'data' => $data, // Mengirimkan data paginasi ke view
+                'user' => $user, // Mengirimkan data paginasi ke view
             ]);
         }
 
@@ -125,10 +139,12 @@ class PeraturanController extends Controller
     {
         // Cari data undang-undang berdasarkan nilai 'judul'
         $perpemerintah = perpemerintah::where('judul', $judul)->firstOrFail();
-        
+        $user = Auth::user();
+
         // Tampilkan form update dengan data yang ditemukan
         return view('backend.14_peraturan.02_pemerintah.update', [
             'perpemerintah' => $perpemerintah,
+            'user' => $user,
             'title' => 'Update Peraturan Pemerintah'
         ]);
     }
@@ -171,10 +187,12 @@ class PeraturanController extends Controller
     public function presiden()
     {
         $data= perpresiden::all(); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('backend.14_peraturan.03_presiden.index', [
             'title' => 'Peraturan Presiden',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
     
@@ -184,10 +202,12 @@ class PeraturanController extends Controller
     public function fepresiden()
     {
         $data= perpresiden::all(); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('frontend.11_peraturan.03_peraturanpresiden', [
             'title' => 'Peraturan Presiden',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -198,10 +218,12 @@ class PeraturanController extends Controller
     {
         // Cari data undang-undang berdasarkan nilai 'judul'
         $perpresiden = perpresiden::where('judul', $judul)->firstOrFail();
-        
+        $user = Auth::user();
+
         // Tampilkan form update dengan data yang ditemukan
         return view('backend.14_peraturan.03_presiden.update', [
             'perpresiden' => $perpresiden,
+            'user' => $user,
             'title' => 'Update Peraturan Presiden'
         ]);
     }
@@ -247,10 +269,12 @@ class PeraturanController extends Controller
     public function menteri()
     {
         $data= permenteri::paginate(15); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('backend.14_peraturan.04_menteri.index', [
             'title' => 'Peraturan Menteri PUPR',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
     
@@ -258,10 +282,12 @@ class PeraturanController extends Controller
     public function fementeri()
     {
         $data= permenteri::paginate(15); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('frontend.11_peraturan.04_peraturanmenteri', [
             'title' => 'Peraturan Menteri PUPR Tentang Jasa Konstruksi',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
     
@@ -269,9 +295,11 @@ class PeraturanController extends Controller
     public function menterishowByJudul($judul)
             {
                 $data = permenteri::where('judul', $judul)->firstOrFail();
+                $user = Auth::user();
 
                 return view('backend.14_peraturan.04_menteri.show', [
                     'data' => $data,
+                    'user' => $user,
                     'title' => 'Details Data Peraturan Menteri',
                 ]);
             }
@@ -279,9 +307,11 @@ class PeraturanController extends Controller
             public function fementerishowByJudul($judul)
             {
                 $data = permenteri::where('judul', $judul)->firstOrFail();
+                $user = Auth::user();
 
                 return view('frontend.11_peraturan.04_peraturanmenterishow', [
                     'data' => $data,
+                    'user' => $user,
                     'title' => 'Details Data Peraturan Menteri',
                 ]);
             }
@@ -294,10 +324,12 @@ class PeraturanController extends Controller
     {
         // Cari data undang-undang berdasarkan nilai 'judul'
         $permenteri = permenteri::where('judul', $judul)->firstOrFail();
-        
+        $user = Auth::user();
+
         // Tampilkan form update dengan data yang ditemukan
         return view('backend.14_peraturan.04_menteri.update', [
             'permenteri' => $permenteri,
+            'user' => $user,
             'title' => 'Update Peraturan Menteri'
         ]);
     }
@@ -339,10 +371,12 @@ class PeraturanController extends Controller
 
             public function createpermenteri()
             {
-                
+                $user = Auth::user();
+
                 // Tampilkan form update dengan data yang ditemukan
                 return view('backend.14_peraturan.04_menteri.create', [
-                    'title' => 'Create Peraturan Menteri'
+                    'title' => 'Create Peraturan Menteri',
+                    'user' => $user,
                 ]);
             }
 
@@ -403,10 +437,12 @@ class PeraturanController extends Controller
     public function skmenteri()
             {
                 $data= keputusanmenteri::paginate(15); // Menggunakan paginate() untuk pagination
-        
+                $user = Auth::user();
+
                 return view('backend.14_peraturan.05_skmenteri.index', [
                     'title' => 'Surat Keputusan Menteri',
                     'data' => $data, // Mengirimkan data paginasi ke view
+                    'user' => $user, // Mengirimkan data paginasi ke view
                 ]);
             }
 
@@ -414,9 +450,11 @@ class PeraturanController extends Controller
             public function skmenterishowByJudul($judul)
             {
                 $data = keputusanmenteri::where('judul', $judul)->firstOrFail();
+                $user = Auth::user();
 
                 return view('backend.14_peraturan.05_skmenteri.show', [
                     'data' => $data,
+                    'user' => $user,
                     'title' => 'Details Data SK Peraturan Menteri',
                 ]);
             }
@@ -425,10 +463,12 @@ class PeraturanController extends Controller
 public function feskmenteri()
             {
                 $data= keputusanmenteri::paginate(15); // Menggunakan paginate() untuk pagination
-        
+                $user = Auth::user();
+
                 return view('frontend.11_peraturan.05_keputusanmenteri', [
                     'title' => 'Surat Keputusan Menteri Jasa Konstruksi',
                     'data' => $data, // Mengirimkan data paginasi ke view
+                    'user' => $user, // Mengirimkan data paginasi ke view
                 ]);
             }
 
@@ -436,9 +476,11 @@ public function feskmenteri()
             public function feskmenterishowByJudul($judul)
             {
                 $data = keputusanmenteri::where('judul', $judul)->firstOrFail();
+                $user = Auth::user();
 
                 return view('frontend.11_peraturan.05_keputusanmenterishow', [
                     'data' => $data,
+                    'user' => $user,
                     'title' => 'Details Data Keputusan Menteri',
                 ]);
             }
@@ -449,10 +491,12 @@ public function feskmenteri()
     {
         // Cari data undang-undang berdasarkan nilai 'judul'
         $skmenteri = keputusanmenteri::where('judul', $judul)->firstOrFail();
-        
+        $user = Auth::user();
+
         // Tampilkan form update dengan data yang ditemukan
         return view('backend.14_peraturan.05_skmenteri.update', [
             'skmenteri' => $skmenteri,
+            'user' => $user,
             'title' => 'Update Surat Keputusan Menteri'
         ]);
     }
@@ -494,10 +538,12 @@ public function feskmenteri()
 
             public function createskmenteri()
             {
+                $user = Auth::user();
                 
                 // Tampilkan form update dengan data yang ditemukan
                 return view('backend.14_peraturan.05_skmenteri.create', [
-                    'title' => 'Create Surat Keputusan Menteri'
+                    'title' => 'Create Surat Keputusan Menteri',
+                    'user' => $user
                 ]);
             }
 
@@ -559,10 +605,12 @@ public function feskmenteri()
 public function suratedaranmenteri()
             {
                 $data= suratedaran::paginate(15); // Menggunakan paginate() untuk pagination
-        
+                $user = Auth::user();
+
                 return view('frontend.11_peraturan.06_suratedaranmenteri', [
                     'title' => 'Surat Edatan Menteri Jasa Konstruksi',
                     'data' => $data, // Mengirimkan data paginasi ke view
+                    'user' => $user, // Mengirimkan data paginasi ke view
                 ]);
             }
 
@@ -570,9 +618,11 @@ public function suratedaranmenteri()
             public function suratedaranmenterishowByJudul($judul)
             {
                 $data = suratedaran::where('judul', $judul)->firstOrFail();
+                $user = Auth::user();
 
                 return view('frontend.11_peraturan.06_suratedaranmenterishow', [
                     'data' => $data,
+                    'user' => $user,
                     'title' => 'Details Data Surat Edaran Menteri',
                 ]);
             }
@@ -582,10 +632,12 @@ public function suratedaranmenteri()
             public function suratedaran()
             {
                 $data= suratedaran::paginate(15); // Menggunakan paginate() untuk pagination
-        
+                $user = Auth::user();
+
                 return view('backend.14_peraturan.06_suratedaran.index', [
                     'title' => 'Surat Edaran Menteri',
                     'data' => $data, // Mengirimkan data paginasi ke view
+                    'user' => $user, // Mengirimkan data paginasi ke view
                 ]);
             }
 
@@ -593,9 +645,11 @@ public function suratedaranmenteri()
             public function suratedaranshowByJudul($judul)
             {
                 $data = suratedaran::where('judul', $judul)->firstOrFail();
+                $user = Auth::user();
 
                 return view('backend.14_peraturan.06_suratedaran.show', [
                     'data' => $data,
+                    'user' => $user,
                     'title' => 'Details Data Surat Edaran Menteri',
                 ]);
             }
@@ -608,10 +662,12 @@ public function suratedaranmenteri()
     {
         // Cari data undang-undang berdasarkan nilai 'judul'
         $suratedaran = suratedaran::where('judul', $judul)->firstOrFail();
-        
+        $user = Auth::user();
+
         // Tampilkan form update dengan data yang ditemukan
         return view('backend.14_peraturan.06_suratedaran.update', [
             'suratedaran' => $suratedaran,
+            'user' => $user,
             'title' => 'Update Surat Edaran Menteri'
         ]);
     }
@@ -653,10 +709,12 @@ public function suratedaranmenteri()
 
             public function createsuratedaran()
             {
-                
+                $user = Auth::user();
+
                 // Tampilkan form update dengan data yang ditemukan
                 return view('backend.14_peraturan.06_suratedaran.create', [
-                    'title' => 'Create Surat Edaran Menteri'
+                    'title' => 'Create Surat Edaran Menteri',
+                    'user' => $user,
                 ]);
             }
 
@@ -716,10 +774,12 @@ public function suratedaranmenteri()
 public function fereferensi()
             {
                 $data= referensi::all(); // Menggunakan paginate() untuk pagination
-        
+                $user = Auth::user();
+
                 return view('frontend.11_peraturan.07_suratreferensi', [
                     'title' => 'Surat Referensi Jasa Konstruksi',
                     'data' => $data, // Mengirimkan data paginasi ke view
+                    'user' => $user, // Mengirimkan data paginasi ke view
                 ]);
             }
             
@@ -728,10 +788,12 @@ public function fereferensi()
             public function referensi()
                 {
                     $data= referensi::all(); // Menggunakan paginate() untuk pagination
+                    $user = Auth::user();
 
                     return view('backend.14_peraturan.07_referensi.index', [
                         'title' => 'Surat Referensi Jasa Konstruksi',
                         'data' => $data, // Mengirimkan data paginasi ke view
+                        'user' => $user, // Mengirimkan data paginasi ke view
                     ]);
                 }
 
@@ -741,10 +803,12 @@ public function fereferensi()
     {
         // Cari data undang-undang berdasarkan nilai 'judul'
         $referensi = referensi::where('judul', $judul)->firstOrFail();
-        
+        $user = Auth::user();
+
         // Tampilkan form update dengan data yang ditemukan
         return view('backend.14_peraturan.07_referensi.update', [
             'referensi' => $referensi,
+            'user' => $user,
             'title' => 'Update Surat Referensi Jasa Konstruksi'
         ]);
     }
@@ -786,10 +850,12 @@ public function fereferensi()
     public function feperdaerah()
             {
                 $data= perdaerah::paginate(15); // Menggunakan paginate() untuk pagination
-        
+                $user = Auth::user();
+
                 return view('frontend.11_peraturan.08_peraturandaerah', [
                     'title' => 'Peraturan Daerah Jasa Konstruksi',
                     'data' => $data, // Mengirimkan data paginasi ke view
+                    'user' => $user, // Mengirimkan data paginasi ke view
                 ]);
             
             }
@@ -798,9 +864,11 @@ public function fereferensi()
             public function feperdaerahshowByJudul($judul)
             {
                 $data = perdaerah::where('judul', $judul)->firstOrFail();
-                
+                $user = Auth::user();
+
                 return view('frontend.11_peraturan.08_peraturandaerahshow', [
                     'data' => $data,
+                    'user' => $user,
                     'title' => 'Details Peraturan Daerah Jasa Konstruksi',
                 ]);
             }
@@ -810,10 +878,12 @@ public function fereferensi()
 public function suratperdaerah()
 {
     $data= perdaerah::paginate(15); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
 
     return view('backend.14_peraturan.08_perdaerah.index', [
         'title' => 'Surat Peraturan Daerah Tentang Jasa Konstruksi',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -821,9 +891,11 @@ public function suratperdaerah()
 public function suratperdaerahshowByJudul($judul)
 {
     $data = perdaerah::where('judul', $judul)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.14_peraturan.08_perdaerah.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Data Surat Peraturan Daerah',
     ]);
 }
@@ -834,10 +906,12 @@ public function suratperdaerahshowByJudul($judul)
                 {
                     // Cari data undang-undang berdasarkan nilai 'judul'
                     $perdaerah = perdaerah::where('judul', $judul)->firstOrFail();
-                    
+                    $user = Auth::user();
+      
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.14_peraturan.08_perdaerah.update', [
                         'perdaerah' => $perdaerah,
+                        'user' => $user,
                         'title' => 'Update Peraturan Daerah'
                     ]);
                 }
@@ -878,10 +952,12 @@ public function suratperdaerahshowByJudul($judul)
 
 public function createperdaerah()
 {
-    
+    $user = Auth::user();
+
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.14_peraturan.08_perdaerah.create', [
-        'title' => 'Create Peraturan Daerah'
+        'title' => 'Create Peraturan Daerah',
+        'user' => $user,
     ]);
 }
 
@@ -941,10 +1017,12 @@ public function createstoreperdaerah(Request $request)
                 public function fegubernur()
                         {
                             $data= pergubernur::all(); // Menggunakan paginate() untuk pagination
-                    
+                            $user = Auth::user();
+
                             return view('frontend.11_peraturan.09_peraturangubernur', [
                                 'title' => 'Peraturan Gubernur Jasa Konstruksi',
                                 'data' => $data, // Mengirimkan data paginasi ke view
+                                'user' => $user, // Mengirimkan data paginasi ke view
                             ]);
                         }
 
@@ -955,10 +1033,12 @@ public function createstoreperdaerah(Request $request)
 public function suratpergubernur()
 {
     $data= pergubernur::paginate(15); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
 
     return view('backend.14_peraturan.09_pergubernur.index', [
         'title' => 'Peraturan Gubernur Tentang Jasa Konstruksi',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -966,9 +1046,11 @@ public function suratpergubernur()
 public function pergubernurshowByJudul($judul)
 {
     $data = pergubernur::where('judul', $judul)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.14_peraturan.09_pergubernur.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Data Peraturan Gubernur',
     ]);
 }
@@ -976,12 +1058,14 @@ public function pergubernurshowByJudul($judul)
                 // -------------------- UPDATE DATA PERATURAN GUBERNUR JASA KONSTRUKSI ----------------------
                 public function updateshowpergubernur($judul)
                 {
+                    $user = Auth::user();
                     // Cari data undang-undang berdasarkan nilai 'judul'
                     $pergubernur = pergubernur::where('judul', $judul)->firstOrFail();
                     
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.14_peraturan.09_pergubernur.update', [
                         'pergubernur' => $pergubernur,
+                        'user' => $user,
                         'title' => 'Update Peraturan Gubernur'
                     ]);
                 }
@@ -1023,10 +1107,12 @@ public function pergubernurshowByJudul($judul)
 
 public function createpergubernur()
 {
-    
+    $user = Auth::user();
+
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.14_peraturan.09_pergubernur.create', [
-        'title' => 'Create Peraturan Gubernur'
+        'title' => 'Create Peraturan Gubernur',
+        'user' => $user
     ]);
 }
 
@@ -1087,10 +1173,12 @@ public function createstorepergubernur(Request $request)
     public function feperbupatiwalikota()
                         {
                             $data= perbupatiwalikota::paginate(15); // Menggunakan paginate() untuk pagination
-                    
+                            $user = Auth::user();
+
                             return view('frontend.11_peraturan.10_peraturanwalikota', [
                                 'title' => 'Peraturan Bupati/Walikota Jasa Konstruksi',
                                 'data' => $data, // Mengirimkan data paginasi ke view
+                                'user' => $user, // Mengirimkan data paginasi ke view
                             ]);
                         }
                         
@@ -1098,9 +1186,11 @@ public function createstorepergubernur(Request $request)
                         public function feperbupatiwalikotashowByJudul($judul)
                         {
                             $data = perbupatiwalikota::where('judul', $judul)->firstOrFail();
-                            
+                            $user = Auth::user();
+
                             return view('frontend.11_peraturan.10_peraturanwalikotashow', [
                                 'data' => $data,
+                                'user' => $user,
                                 'title' => 'Details Peraturan Bupati/Walikota Jasa Konstruksi',
                             ]);
                         }
@@ -1111,10 +1201,12 @@ public function createstorepergubernur(Request $request)
 public function suratperwalikotabupati()
 {
     $data= perbupatiwalikota::paginate(15); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
 
     return view('backend.14_peraturan.10_perwalikotabupati.index', [
         'title' => 'Peraturan Walikota/Bupati Tentang Jasa Konstruksi',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -1122,9 +1214,11 @@ public function suratperwalikotabupati()
 public function perwalikotabupatishowByJudul($judul)
 {
     $data = perbupatiwalikota::where('judul', $judul)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.14_peraturan.10_perwalikotabupati.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Data Peraturan Walikota/Bupati',
     ]);
 }
@@ -1134,11 +1228,13 @@ public function perwalikotabupatishowByJudul($judul)
                 {
                     // Cari data undang-undang berdasarkan nilai 'judul'
                     $perwalikotabupati = perbupatiwalikota::where('judul', $judul)->firstOrFail();
-                    
+                    $user = Auth::user();
+       
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.14_peraturan.10_perwalikotabupati.update', [
                         'perwalikotabupati' => $perwalikotabupati,
-                        'title' => 'Update Peraturan Walikota/Bupati'
+                        'title' => 'Update Peraturan Walikota/Bupati',
+                        'user' => $user,
                     ]);
                 }
                 
@@ -1178,10 +1274,12 @@ public function perwalikotabupatishowByJudul($judul)
 
 public function createperwalikotabupati()
 {
-    
+    $user = Auth::user();
+
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.14_peraturan.10_perwalikotabupati.create', [
-        'title' => 'Create Peraturan Walikota/Bupati'
+        'title' => 'Create Peraturan Walikota/Bupati',
+        'user' => $user,
     ]);
 }
 
@@ -1244,10 +1342,12 @@ public function createstoreperwalikotabupati(Request $request)
     public function fesuratkeputusan()
                         {
                             $data= suratkeputusan::paginate(15); // Menggunakan paginate() untuk pagination
-                    
+                            $user = Auth::user();
+
                             return view('frontend.11_peraturan.11_suratkeputusan', [
                                 'title' => 'Surat Keputusan Jasa Konstruksi',
                                 'data' => $data, // Mengirimkan data paginasi ke view
+                                'user' => $user, // Mengirimkan data paginasi ke view
                             ]);
                         }
                         
@@ -1255,9 +1355,11 @@ public function createstoreperwalikotabupati(Request $request)
                         public function fesuratkeputusanshowByJudul($judul)
                         {
                             $data = suratkeputusan::where('judul', $judul)->firstOrFail();
-                            
+                            $user = Auth::user();
+
                             return view('frontend.11_peraturan.11_suratkeputusanshow', [
                                 'data' => $data,
+                                'user' => $user,
                                 'title' => 'Details Surat Keputusan Jasa Konstruksi',
                             ]);
                         }
@@ -1268,10 +1370,12 @@ public function createstoreperwalikotabupati(Request $request)
 public function keputusan()
 {
     $data= suratkeputusan::paginate(15); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
 
     return view('backend.14_peraturan.11_keputusan.index', [
         'title' => 'Surat Keputusan Tentang Jasa Konstruksi',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -1279,9 +1383,11 @@ public function keputusan()
 public function keputusanshowbyjudul($judul)
 {
     $data = suratkeputusan::where('judul', $judul)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.14_peraturan.11_keputusan.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Data Surat Keputusan',
     ]);
 }
@@ -1294,10 +1400,12 @@ public function keputusanshowbyjudul($judul)
                 {
                     // Cari data undang-undang berdasarkan nilai 'judul'
                     $keputusan = suratkeputusan::where('judul', $judul)->firstOrFail();
-                    
+                    $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.14_peraturan.11_keputusan.update', [
                         'keputusan' => $keputusan,
+                        'user' => $user,
                         'title' => 'Update Surat Keputusan'
                     ]);
                 }
@@ -1339,10 +1447,12 @@ public function keputusanshowbyjudul($judul)
 
 public function createkeputusan()
 {
-    
+    $user = Auth::user();
+
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.14_peraturan.11_keputusan.create', [
-        'title' => 'Create Surat Keputusan'
+        'title' => 'Create Surat Keputusan',
+        'user' => $user,
     ]);
 }
 

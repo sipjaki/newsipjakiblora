@@ -10,6 +10,11 @@ use App\Models\standarbiayaumum;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth; 
+
+
+
+
 
 
 use App\Models\struktur; // Pastikan namespace model sesuai dengan struktur direktori
@@ -21,10 +26,12 @@ class StrukturController extends Controller
     public function index()
     {
         $data= strukturdinas::all(); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('backend.01_struktur.01_kedinasan.index', [
             'title' => 'Struktur Kedinasan PUPR Kabupaten Bandung Barat',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -34,10 +41,12 @@ class StrukturController extends Controller
                 {
                     // Cari data undang-undang berdasarkan nilai 'judul'
                     $strukturdinas = strukturdinas::where('judul', $judul)->firstOrFail();
-                    
+                    $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.01_struktur.01_kedinasan.update', [
                         'strukturdinas' => $strukturdinas,
+                        'user' => $user,
                         'title' => 'Update Surat Kedinasan PUPR KBB'
                     ]);
                 }
@@ -78,10 +87,12 @@ class StrukturController extends Controller
     public function renstra()
     {
         $data= renstra::all(); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('backend.01_struktur.02_renstra.index', [
             'title' => 'Rencana Strategis Program & Jasa Konstruksi',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -90,10 +101,12 @@ class StrukturController extends Controller
                 {
                     // Cari data undang-undang berdasarkan nilai 'judul'
                     $renstra = renstra::where('judul', $judul)->firstOrFail();
-                    
+                    $user = Auth::user();
+
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.01_struktur.02_renstra.update', [
                         'renstra' => $renstra,
+                        'user' => $user,
                         'title' => 'Update Rencana Strategis'
                     ]);
                 }
@@ -134,10 +147,12 @@ class StrukturController extends Controller
     public function tupoksi()
     {
         $data= tupoksi::all(); // Menggunakan paginate() untuk pagination
+        $user = Auth::user();
 
         return view('backend.01_struktur.03_tupoksi.index', [
             'title' => 'Tupoksi Program & Jasa Konstruksi',
             'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -146,10 +161,12 @@ class StrukturController extends Controller
                     {
                         // Cari data undang-undang berdasarkan nilai 'judul'
                         $tupoksi = tupoksi::where('judul', $judul)->firstOrFail();
-                        
+                        $user = Auth::user();
+      
                         // Tampilkan form update dengan data yang ditemukan
                         return view('backend.01_struktur.03_tupoksi.update', [
                             'tupoksi' => $tupoksi,
+                            'user' => $user,
                             'title' => 'Update Tupoksi Program'
                         ]);
                     }
@@ -192,10 +209,12 @@ class StrukturController extends Controller
 public function standarbiayaumum()
 {
     $data= standarbiayaumum::paginate(15); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
 
     return view('backend.03_datajakon.03_standarbiayaumum.index', [
         'title' => 'Standar Biaya Umum',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -203,9 +222,11 @@ public function standarbiayaumum()
 public function standarbiayaumumshowbyjudul($judul)
 {
     $data = standarbiayaumum::where('judul', $judul)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.03_datajakon.03_standarbiayaumum.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Standar Biaya Umum',
     ]);
 }
@@ -215,10 +236,12 @@ public function standarbiayaumumshowbyjudul($judul)
              {
                  // Cari data undang-undang berdasarkan nilai 'judul'
                  $standarbiayaumum = standarbiayaumum::where('judul', $judul)->firstOrFail();
-                 
+                 $user = Auth::user();
+   
                  // Tampilkan form update dengan data yang ditemukan
                  return view('backend.03_datajakon.03_standarbiayaumum.update', [
                      'standarbiayaumum' => $standarbiayaumum,
+                     'user' => $user,
                      'title' => 'Update Standar Biaya Umum'
                  ]);
              }
@@ -259,10 +282,12 @@ public function standarbiayaumumshowbyjudul($judul)
 
 public function createstandarbiayaumum()
 {
-    
+    $user = Auth::user();
+
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.03_datajakon.03_standarbiayaumum.create', [
-        'title' => 'Create Standar Biaya Umum'
+        'title' => 'Create Standar Biaya Umum',
+        'user' => $user,
     ]);
 }
 
@@ -324,10 +349,12 @@ public function createstorestandarbiayaumum(Request $request)
 public function sbulampiran1()
 {
     $data= sbulampiran1::paginate(15); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
 
     return view('backend.03_datajakon.03_standarbiayaumum.lampiran1.index', [
         'title' => 'Lampiran 1',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -335,9 +362,11 @@ public function sbulampiran1()
 public function sbulampiran1showbyjudul($judul)
 {
     $data = sbulampiran1::where('judul', $judul)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.03_datajakon.03_standarbiayaumum.lampiran1.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Lampiran 1',
     ]);
 }
@@ -349,10 +378,12 @@ public function sbulampiran1showbyjudul($judul)
 public function sbulampiran2()
 {
     $data= sbulampiran2::paginate(15); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
 
     return view('backend.03_datajakon.03_standarbiayaumum.lampiran2.index', [
         'title' => 'Lampiran 2',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -360,9 +391,11 @@ public function sbulampiran2()
 public function sbulampiran2showbyjudul($judul)
 {
     $data = sbulampiran2::where('judul', $judul)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.03_datajakon.03_standarbiayaumum.lampiran2.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Lampiran 2',
     ]);
 }
@@ -374,10 +407,12 @@ public function sbulampiran2showbyjudul($judul)
 public function sbulampiran3()
 {
     $data= sbulampiran3::paginate(15); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
 
     return view('backend.03_datajakon.03_standarbiayaumum.lampiran3.index', [
         'title' => 'Lampiran 3',
         'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
@@ -385,9 +420,11 @@ public function sbulampiran3()
 public function sbulampiran3showbyjudul($judul)
 {
     $data = sbulampiran3::where('judul', $judul)->firstOrFail();
+    $user = Auth::user();
 
     return view('backend.03_datajakon.03_standarbiayaumum.lampiran3.show', [
         'data' => $data,
+        'user' => $user,
         'title' => 'Details Lampiran 3',
     ]);
 }
