@@ -145,6 +145,10 @@ class TukangterampilFactory extends Factory
             'kualifikasi' => 'BELUM',
             'registrasi' => 'BELUM',
             'foto' => 'profesional',
+            'kta_gatensi' => 'profesional',
+            'skk_pekerja' => 'profesional',
+            'foto_kegiatanpekerja1' => 'profesional',
+            'foto_kegiatanpekerja2' => 'profesional',
             // 'usia' => $usia,
         ];
     }

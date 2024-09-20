@@ -23,7 +23,12 @@ return new class extends Migration
             $table->string('nik');
             $table->string('kualifikasi');
             $table->string('registrasi');
+            // ------------------------------------------
             $table->string('foto');
+            $table->string('kta_gatensi');
+            $table->string('skk_pekerja');
+            $table->string('foto_kegiatanpekerja1');
+            $table->string('foto_kegiatanpekerja2');
             // $table->integer('usia');
             $table->softDeletes();
             $table->timestamps();

@@ -233,11 +233,13 @@ public function kategoriadmin()
                     $dataqasebagaibaru = qasebagai::all();
                     $dataqapertanyaan = qapertanyaan::all();
                     
+                    $user = Auth::user();
                     return view('backend.qa.pertanyaan.index', [
                         'title' => 'Daftar Pertanyaan Publik ',
                         'data' => $dataqa,  
                         'dataqasebagai' => $dataqasebagaibaru,  
                         'dataqapertanyaan' => $dataqapertanyaan,  
+                        'user' => $user,  
                        
                     ]);
                 }
@@ -289,19 +291,25 @@ public function kategoriadmin()
              {
                  $datahimbauandinas = himbauandinas::paginate(3);
                  
+        $user = Auth::user();
+
                  return view('backend.himbauandinas.index', [
                      'title' => 'Himbauan Dinas Terkait Pemerintah Kabupaten Bandung Barat ',
                      'data' => $datahimbauandinas,                      
+                     'user' => $user,                      
                  ]);
              }
 
              public function himbauandinasshowbyname($nama_lengkap)
              {
                  $datahimbauandinas = himbauandinas::where('nama_lengkap', $nama_lengkap)->firstOrFail();
-     
+            
+                 $user = Auth::user();
+
                  return view('backend.himbauandinas.show', [
                      'data' => $datahimbauandinas,
                      'title' => 'Himbauan Dinas Terkait',
+                     'user' => $user,
                  ]);
              }
 
