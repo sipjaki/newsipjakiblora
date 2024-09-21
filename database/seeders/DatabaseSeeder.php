@@ -790,19 +790,19 @@ class DatabaseSeeder extends Seeder
         Tukangterampil::create([
             'pengawasanlokasi_id' => '11',
             'desa' => 'Mukapayung',
-            'nama' => 'Ade',
+            'nama' => 'AJANG KUSWANA',
             'alamat' => '-',
             'tanggal_lahir' => '1987-03-09',
             'nik' => '-',
-            'keterampilanpekerja_id' => rand(1,22),
+            'keterampilanpekerja_id' => '3',
             'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => 'skktenagakerja/arsip/pas/Paspoto-Asesi-01.jpg',
-            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/ANTON_HILMAN_KTA_GATENSI.pdf',
-            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/ANTON_HILMAN_SKK_TUKANG_BANGUNAN_GEDUNG__J1.pdf',
-            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/antonkegiatan1.jpeg',
-            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan1/antonkegiatan2.jpg',
+            'foto' => 'skktenagakerja/arsip/pas/Paspoto-Asesi-29.jpg',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/AJANG_KUSWANA_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/AJANG_KUSWANA_SKK_TUKANG_BANGUNAN_GEDUNG_ J1.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/ajangkuswanakegiatan1.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/ajangkuswanakegiatan2.jpg',
             // 'usia' => $this->calculateAge('1987-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
@@ -812,48 +812,26 @@ class DatabaseSeeder extends Seeder
         Tukangterampil::create([
             'pengawasanlokasi_id' => '11',
             'desa' => 'Bongas',
-            'nama' => 'Ajang',
+            'nama' => 'YUSUF SOPIAN',
             'alamat' => '-',
             'tanggal_lahir' => '1987-03-09',
             'nik' => '-',
-            'keterampilanpekerja_id' => rand(1,22),
+            'keterampilanpekerja_id' => '3',
             'tahunpilihan_id' => '6',
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
-            'foto' => 'skktenagakerja/arsip/pas/Paspoto-Asesi-01.jpg',
-            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/ANTON_HILMAN_KTA_GATENSI.pdf',
-            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/ANTON_HILMAN_SKK_TUKANG_BANGUNAN_GEDUNG__J1.pdf',
-            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/antonkegiatan1.jpeg',
-            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan1/antonkegiatan2.jpg',
+            'foto' => 'skktenagakerja/arsip/pas/Paspoto-Asesi-30.jpg',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/YUSUP_SOPYAN_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/YUSUP_SOPYAN_SKK_TUKANG_BANGUNAN_GEDUNG_J1.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/yusufsopiankegiatan1.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/yusufsopiankegiatan2.jpg',
             // 'usia' => $this->calculateAge('1987-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
   
-        Tukangterampil::create([
-            'pengawasanlokasi_id' => '11',
-            'desa' => 'Bongas',
-            'nama' => 'Yusuf',
-            'alamat' => '-',
-            'tanggal_lahir' => '1987-03-09',
-            'nik' => '-',
-            'keterampilanpekerja_id' => rand(1,22),
-            'tahunpilihan_id' => '6',
-            'kualifikasi' => 'SUDAH',
-            'registrasi' => 'SUDAH',
-            'foto' => 'skktenagakerja/arsip/pas/Paspoto-Asesi-01.jpg',
-            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/ANTON_HILMAN_KTA_GATENSI.pdf',
-            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/ANTON_HILMAN_SKK_TUKANG_BANGUNAN_GEDUNG__J1.pdf',
-            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/antonkegiatan1.jpeg',
-            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan1/antonkegiatan2.jpg',
-            // 'usia' => $this->calculateAge('1987-03-09'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
-
-  
+     
 
 
 
