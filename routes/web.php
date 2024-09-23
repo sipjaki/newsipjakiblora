@@ -296,6 +296,18 @@ Route::post('/dokumentasipelatihan/{id}', [BeritaController::class, 'deletedokum
 ->middleware('auth')
 ->name('delete.dokumentasipelatihan');
 
+//  -------------- ACARA PELATIHAN TENTANG JASA KONSTRUKSI =-------------------------------------
+Route::get('/acarapelatihan', [BeritaController::class, 'dokumentasipelatihan'])->middleware('auth');  
+Route::get('/acarapelatihan/{judul_kegiatan}', [BeritaController::class, 'dokumentasipelatihanshowbyjudul'])->middleware('auth');
+Route::get('/acarapelatihan/update/{judul_kegiatan}', [BeritaController::class, 'updatedokumentasipelatihan'])->middleware('auth')->name('updateshow.dokumentasipelatihan');
+Route::post('/acarapelatihanstore/{judul_kegiatan}', [BeritaController::class, 'createupdatedokumentasipelatihan'])->middleware('auth')->name('update.dokumentasipelatihan');
+Route::get('/acarapelatihancreate', [BeritaController::class, 'createdokumentasipelatihan'])->middleware('auth');
+Route::post('/acarapelatihancreatestore', [BeritaController::class, 'createstoredokumentasipelatihan'])->middleware('auth')->name('newcreatestore.dokumentasipelatihan');
+
+Route::post('/dokumentasipelatihan/{id}', [BeritaController::class, 'deletedokumentasipelatihan'])
+->middleware('auth')
+->name('delete.dokumentasipelatihan');
+
 // -------- BAGIAN 03 BACKEND DATA JASA KONSTRUKSI BANGUNAN GEDUNG PUPR ---------------------------------
 
 // KETERTIBAN DAN PENGAWASAN 

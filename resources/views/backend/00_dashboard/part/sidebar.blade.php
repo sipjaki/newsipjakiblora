@@ -141,6 +141,10 @@
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>DOKUMENTASI PELATIHAN 
                                         </a>
                                             
+                                        <a href="/acarapelatihan" style="font-size: 12px;">
+                                            <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>DOKUMENTASI ACARA 
+                                        </a>
+                                            
                                     </li> 
 
 

@@ -550,15 +550,15 @@ public function createstoredokumentasipelatihan(Request $request)
                 : null;
         }
         
-        $laporanFotoPaths = [];
+        // $laporanFotoPaths = [];
         
-        // Mengambil file laporan foto
-        for ($i = 1; $i <= 28; $i++) {
-            $key = 'laporanfoto' . $i;
-            $laporanFotoPaths[$key] = $request->hasFile($key) 
-                ? $request->file($key)->store('dokumentasipelatihan/' . $key, 'public') 
-                : null;
-        }
+        // // Mengambil file laporan foto
+        // for ($i = 1; $i <= 28; $i++) {
+        //     $key = 'laporanfoto' . $i;
+        //     $laporanFotoPaths[$key] = $request->hasFile($key) 
+        //         ? $request->file($key)->store('dokumentasipelatihan/' . $key, 'public') 
+        //         : null;
+        // }
     
 
 // Simpan masing-masing berita secara manual
@@ -856,7 +856,7 @@ public function createstoredokumentasipelatihan(Request $request)
 
     
     // Gabungkan kedua array path
-    $dataToCreate = array_merge($beritaPaths, $laporanFotoPaths);
+    $dataToCreate = array_merge($beritaPaths,);
     
     kegiatanjaskon::create(array_merge([
         'pengawasanlokasi_id' => $request->input('pengawasanlokasi_id'),

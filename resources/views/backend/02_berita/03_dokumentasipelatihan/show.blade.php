@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 255vh;
+    height: 185vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -245,7 +245,6 @@
                             {{ ucwords(strtolower($data->alamat_kegiatan)) }}
                         </td>
                     </tr>
-                    <br>
                     
                     {{-- <tr>
                         <td colspan="4" style="background-color: white; text-align: right; padding: 10px;">
@@ -276,7 +275,7 @@
                 }
                 .card-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+                    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
                     gap: 20px;
                 }
                 .card {
@@ -306,7 +305,7 @@
                     color: #666;
                 }
 </style>
-
+<p style="color: black; margin-top:25px;" ></p>
 <div class="container-galeryfoto">
     {{-- <h1 class="title">Image Gallery</h1> --}}
     <div class="card-grid">
@@ -390,7 +389,7 @@
         <div class="card">
                 <img src="{{ asset('storage/'.  $data->berita20) }}" alt="Image" class="card-image">
             </div>
-        
+{{--         
         <div class="card">
                 <img src="{{  asset('storage/'.  $data->laporanfoto1)  }}" alt="Image" class="card-image">
             </div>
@@ -501,7 +500,7 @@
         
         <div class="card">
                 <img src="{{ asset('storage/'.  $data->laporanfoto28) }}" alt="Image" class="card-image">
-            </div>
+            </div> --}}
         
         
     </div>

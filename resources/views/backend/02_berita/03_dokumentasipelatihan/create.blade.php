@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 440vh;
+    height: 240vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -220,7 +220,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 900px;
-                height: 395vh;
+                height: 200vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #f0f0f0; /* Warna silver */
@@ -558,7 +558,7 @@
             @endfor --}}
 
 
-            
+{{--             
             <div class="form-group d-flex align-items-center mt-3">
                 <label for="laporanfoto1" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                     <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
@@ -569,15 +569,6 @@
                 @endif
             </div>
             
-            <div class="form-group d-flex align-items-center mt-3">
-                <label for="laporanfoto2" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
-                </label>
-                <input type="file" class="form-control" id="laporanfoto2" name="laporanfoto2" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto2') }}">
-                @if ($errors->has("laporanfoto2"))
-                    <div class="text-danger">{{ $errors->first("laporanfoto2") }}</div>
-                @endif
-            </div>
 
             <div class="form-group d-flex align-items-center mt-3">
                 <label for="laporanfoto2" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
@@ -849,7 +840,7 @@
                     <div class="text-danger">{{ $errors->first("laporanfoto28") }}</div>
                 @endif
             </div>
-            
+             --}}
             
 
                 
