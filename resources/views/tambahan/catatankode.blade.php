@@ -165,3 +165,83 @@ $faker = FakerFactory::create('id_ID'); // Menggunakan lokal Indonesia
 
 use Faker\Factory as FakerFactory;
 
+
+
+
+public function createstoredokumentasipelatihan(Request $request)
+{
+    // Validasi input manual
+    $errors = [];
+
+    if (!$request->filled('pengawasanlokasi_id') || !is_numeric($request->pengawasanlokasi_id)) {
+        $errors['pengawasanlokasi_id'] = 'Lokasi pengawasan harus diisi dan merupakan angka.';
+    }
+
+    if (!$request->filled('judul_kegiatan')) {
+        $errors['judul_kegiatan'] = 'Judul kegiatan harus diisi.';
+    } elseif (strlen($request->judul_kegiatan) > 255) {
+        $errors['judul_kegiatan'] = 'Judul kegiatan tidak boleh lebih dari 255 karakter.';
+    }
+
+    if (!$request->filled('user_id') || !is_numeric($request->user_id)) {
+        $errors['user_id'] = 'User ID harus diisi dan merupakan angka.';
+    }
+
+    if (!$request->filled('alamat_kegiatan')) {
+        $errors['alamat_kegiatan'] = 'Alamat kegiatan harus diisi.';
+    } elseif (strlen($request->alamat_kegiatan) > 255) {
+        $errors['alamat_kegiatan'] = 'Alamat kegiatan tidak boleh lebih dari 255 karakter.';
+    }
+
+    if (!$request->filled('tanggal') || !strtotime($request->tanggal)) {
+        $errors['tanggal'] = 'Tanggal kegiatan harus diisi dan merupakan tanggal yang valid.';
+    }
+
+    // Validasi file berita
+    for ($i = 1; $i <= 48; $i++) {
+        if ($request->hasFile("berita{$i}")) {
+            $file = $request->file("berita{$i}");
+            if (!$file->isValid()) {
+                $errors["berita{$i}"] = "File untuk berita {$i} tidak valid.";
+            } elseif (!in_array($file->getClientOriginalExtension(), ['jpg', 'jpeg', 'png'])) {
+                $errors["berita{$i}"] = "File untuk berita {$i} harus berupa gambar JPG atau PNG.";
+            }
+        } else {
+            $errors["berita{$i}"] = "File untuk berita {$i} harus diisi.";
+        }
+    }
+
+    // Jika ada error, kembalikan dengan pesan error
+    if (!empty($errors)) {
+        return redirect()->back()->withErrors($errors)->withInput();
+    }
+
+    // Inisialisasi array untuk menyimpan path file
+    $beritaPaths = [];
+
+    // Loop untuk menyimpan file dari berita1 hingga berita48
+    for ($i = 1; $i <= 48; $i++) {
+        if ($request->hasFile("berita{$i}")) {
+            // Jika ada file, simpan dan ambil path-nya
+            $beritaPaths["berita{$i}"] = $request->file("berita{$i}")->store("dokumentasipelatihan/berita{$i}", 'public');
+        } else {
+            // Jika file tidak ada, atur nilainya menjadi null
+            $beritaPaths["berita{$i}"] = null; // Pastikan kolom di database diizinkan untuk null
+        }
+    }
+
+    // Buat entri baru di database
+    kegiatanjaskon::create(array_merge($request->only([
+        'pengawasanlokasi_id',
+        'judul_kegiatan',
+        'alamat_kegiatan',
+        'tanggal',
+        'user_id',
+    ]), $beritaPaths));
+
+    // Flash message untuk sukses
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect()->route('dokumentasipelatihan.index'); // Ganti dengan nama route yang sesuai
+}

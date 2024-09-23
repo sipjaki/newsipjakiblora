@@ -220,7 +220,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 900px;
-                height: 70vh;
+                height: 75vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #f0f0f0; /* Warna silver */
@@ -314,7 +314,7 @@
                     </div>
                 
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-map-marker-alt me-2"></i> Lokasi Pengawasan</label>
+                        <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-map-marker-alt me-2"></i> Lokasi Sertifikasi</label>
                         <select class="form-control" id="pengawasanlokasi_id" name="pengawasanlokasi_id" required>
                             <option value="" disabled {{ old('pengawasanlokasi_id') == '' ? 'selected' : '' }}>PILIH LOKASI</option>
                             @foreach ($datapengawasanlokasi as $lokasi)

@@ -183,7 +183,7 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Agenda Sertifikasi Jasa Konstruksi </div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Update Dokumentasi Sertifikasi Jasa Konstruksi </div></label>
         </a>
         
         <a href="/dokumentasipelatihan" style="background: white;">

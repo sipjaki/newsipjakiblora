@@ -290,7 +290,7 @@ Route::get('/dokumentasipelatihan/{judul_kegiatan}', [BeritaController::class, '
 Route::get('/dokumentasipelatihan/update/{judul_kegiatan}', [BeritaController::class, 'updatedokumentasipelatihan'])->middleware('auth')->name('updateshow.dokumentasipelatihan');
 Route::post('/dokumentasipelatihanstore/{judul_kegiatan}', [BeritaController::class, 'createupdatedokumentasipelatihan'])->middleware('auth')->name('update.dokumentasipelatihan');
 Route::get('/dokumentasipelatihancreate', [BeritaController::class, 'createdokumentasipelatihan'])->middleware('auth');
-Route::post('/dokumentasipelatihanstore', [BeritaController::class, 'createstoredokumentasipelatihan'])->middleware('auth')->name('create.dokumentasipelatihan');
+Route::post('/dokumentasipelatihancreatestore', [BeritaController::class, 'createstoredokumentasipelatihan'])->middleware('auth')->name('newcreatestore.dokumentasipelatihan');
 
 Route::post('/dokumentasipelatihan/{id}', [BeritaController::class, 'deletedokumentasipelatihan'])
 ->middleware('auth')

@@ -271,15 +271,18 @@
             <!-- Menampilkan pesan sukses jika ada -->
                 
             {{-- <h2>Create New Peraturan</h2> --}}
-            <form action="{{ route('create.dokumentasipelatihan') }}" method="POST">
+            <form action="{{ route('newcreatestore.dokumentasipelatihan') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
-
+            
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="judul_kegiatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-calendar-alt me-2"></i> Judul Kegiatan
                     </label>
                     <input type="text" class="form-control" id="judul_kegiatan" name="judul_kegiatan" value="{{ old('judul_kegiatan') }}" required>
+                    @if ($errors->has('judul_kegiatan'))
+                        <div class="text-danger">{{ $errors->first('judul_kegiatan') }}</div>
+                    @endif
                 </div>
             
                 <div class="form-group d-flex align-items-center mt-3">
@@ -294,6 +297,20 @@
                             </option>
                         @endforeach
                     </select>
+                    @if ($errors->has('pengawasanlokasi_id'))
+                        <div class="text-danger">{{ $errors->first('pengawasanlokasi_id') }}</div>
+                    @endif
+                </div>
+            
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="user_id" class="mr-3" style="width: 200px; text-align:left;">
+                        <i class="fas fa-user me-2"></i> Penulis
+                    </label>
+                    <input type="text" class="form-control" id="user_id_display" value="{{ $user->username }}" readonly>
+                    <input type="hidden" id="user_id" name="user_id" value="{{ $user->id }}">
+                    @if ($errors->has('user_id'))
+                        <div class="text-danger">{{ $errors->first('user_id') }}</div>
+                    @endif
                 </div>
             
                 <div class="form-group d-flex align-items-center mt-3">
@@ -301,6 +318,9 @@
                         <i class="fas fa-road me-2"></i> Alamat Kegiatan 
                     </label>
                     <input type="text" class="form-control" id="alamat_kegiatan" name="alamat_kegiatan" value="{{ old('alamat_kegiatan') }}" required>
+                    @if ($errors->has('alamat_kegiatan'))
+                        <div class="text-danger">{{ $errors->first('alamat_kegiatan') }}</div>
+                    @endif
                 </div>
             
                 <div class="form-group d-flex align-items-center mt-3">
@@ -308,30 +328,541 @@
                         <i class="fas fa-calendar me-2"></i> Tanggal Kegiatan 
                     </label>
                     <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ old('tanggal') }}" required>
+                    @if ($errors->has('tanggal'))
+                        <div class="text-danger">{{ $errors->first('tanggal') }}</div>
+                    @endif
                 </div>
-
-                {{-- ==============================================================  --}}
-
-                @for ($i = 1; $i <= 48; $i++)
-                <div class="form-group d-flex align-items-center mt-3">
-                    <label for="berita{{ $i }}" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan {{ $i }}
-                    </label>
-                    <input type="file" class="form-control" id="berita{{ $i }}" name="berita{{ $i }}" accept="image/*" required style="max-width: 300px;">
-                </div>
-            @endfor
             
-                {{-- ==============================================================  --}}
+                {{-- Loop untuk Upload Gambar Kegiatan --}}
+                {{-- @for ($i = 1; $i <= 48; $i++) --}}
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita1" class="mr-3" style="width: 200px; text-align:left; font-size:14px;" >
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita1" name="berita1" accept="image/*" required style="max-width: 300px;" value="{{ old('berita1') }}">
+                    @if ($errors->has("berita1"))
+                        <div class="text-danger">{{ $errors->first("berita1") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita2" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita2" name="berita2" accept="image/*" required style="max-width: 300px;" value="{{ old('berita2') }}">
+                    @if ($errors->has("berita2"))
+                        <div class="text-danger">{{ $errors->first("berita2") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita3" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita3" name="berita3" accept="image/*" required style="max-width: 300px;" value="{{ old('berita3') }}">
+                    @if ($errors->has("berita3"))
+                        <div class="text-danger">{{ $errors->first("berita3") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita4" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita4" name="berita4" accept="image/*" required style="max-width: 300px;" value="{{ old('berita4') }}">
+                    @if ($errors->has("berita4"))
+                        <div class="text-danger">{{ $errors->first("berita4") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita5" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita5" name="berita5" accept="image/*" required style="max-width: 300px;" value="{{ old('berita5') }}">
+                    @if ($errors->has("berita5"))
+                        <div class="text-danger">{{ $errors->first("berita5") }}</div>
+                    @endif
+                </div>
+
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita6" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita6" name="berita6" accept="image/*" required style="max-width: 300px;" value="{{ old('berita6') }}">
+                    @if ($errors->has("berita6"))
+                        <div class="text-danger">{{ $errors->first("berita6") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita7" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita7" name="berita7" accept="image/*" required style="max-width: 300px;" value="{{ old('berita7') }}">
+                    @if ($errors->has("berita7"))
+                        <div class="text-danger">{{ $errors->first("berita7") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita8" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita8" name="berita8" accept="image/*" required style="max-width: 300px;" value="{{ old('berita8') }}">
+                    @if ($errors->has("berita8"))
+                        <div class="text-danger">{{ $errors->first("berita8") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita9" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita9" name="berita9" accept="image/*" required style="max-width: 300px;" value="{{ old('berita9') }}">
+                    @if ($errors->has("berita9"))
+                        <div class="text-danger">{{ $errors->first("berita9") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita10" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita10" name="berita10" accept="image/*" required style="max-width: 300px;" value="{{ old('berita10') }}">
+                    @if ($errors->has("berita10"))
+                        <div class="text-danger">{{ $errors->first("berita10") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita11" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita11" name="berita11" accept="image/*" required style="max-width: 300px;" value="{{ old('berita11') }}">
+                    @if ($errors->has("berita11"))
+                        <div class="text-danger">{{ $errors->first("berita11") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita12" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita12" name="berita12" accept="image/*" required style="max-width: 300px;" value="{{ old('berita12') }}">
+                    @if ($errors->has("berita12"))
+                        <div class="text-danger">{{ $errors->first("berita12") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita13" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita13" name="berita13" accept="image/*" required style="max-width: 300px;" value="{{ old('berita13') }}">
+                    @if ($errors->has("berita13"))
+                        <div class="text-danger">{{ $errors->first("berita13") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita14" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita14" name="berita14" accept="image/*" required style="max-width: 300px;" value="{{ old('berita14') }}">
+                    @if ($errors->has("berita14"))
+                        <div class="text-danger">{{ $errors->first("berita14") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita15" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita15" name="berita15" accept="image/*" required style="max-width: 300px;" value="{{ old('berita15') }}">
+                    @if ($errors->has("berita15"))
+                        <div class="text-danger">{{ $errors->first("berita15") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita16" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita16" name="berita16" accept="image/*" required style="max-width: 300px;" value="{{ old('berita16') }}">
+                    @if ($errors->has("berita16"))
+                        <div class="text-danger">{{ $errors->first("berita16") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita17" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita17" name="berita17" accept="image/*" required style="max-width: 300px;" value="{{ old('berita17') }}">
+                    @if ($errors->has("berita17"))
+                        <div class="text-danger">{{ $errors->first("berita17") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita18" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita18" name="berita18" accept="image/*" required style="max-width: 300px;" value="{{ old('berita18') }}">
+                    @if ($errors->has("berita18"))
+                        <div class="text-danger">{{ $errors->first("berita18") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita19" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita19" name="berita19" accept="image/*" required style="max-width: 300px;" value="{{ old('berita19') }}">
+                    @if ($errors->has("berita19"))
+                        <div class="text-danger">{{ $errors->first("berita19") }}</div>
+                    @endif
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="berita20" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="berita20" name="berita20" accept="image/*" required style="max-width: 300px;" value="{{ old('berita20') }}">
+                    @if ($errors->has("berita20"))
+                        <div class="text-danger">{{ $errors->first("berita20") }}</div>
+                    @endif
+                </div>
+{{--                 
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="laporanfoto1" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar 
+                    </label>
+                    <input type="file" class="form-control" id="laporanfoto1" name="laporanfoto1" accept="image/*" required style="max-width: 300px;" value="{{ old('berita20') }}">
+                    @if ($errors->has("laporanfoto1"))
+                        <div class="text-danger">{{ $errors->first("laporanfoto1") }}</div>
+                    @endif
+                </div> --}}
+
+                {{-- @for ($i = 1; $i <= 28; $i++)
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="laporanfoto{{ $i }}" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                    </label>
+                    <input type="file" class="form-control" id="laporanfoto{{ $i }}" name="laporanfoto{{ $i }}" accept="image/*" required style="max-width: 300px;">
+                    @if ($errors->has("laporanfoto{$i}"))
+                        <div class="text-danger">{{ $errors->first("laporanfoto{$i}") }}</div>
+                    @endif
+                </div>
+            @endfor --}}
+
+
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto1" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                </label>
+                <input type="file" class="form-control" id="laporanfoto1" name="laporanfoto1" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto1') }}">
+                @if ($errors->has("laporanfoto1"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto1") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto2" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan
+                </label>
+                <input type="file" class="form-control" id="laporanfoto2" name="laporanfoto2" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto2') }}">
+                @if ($errors->has("laporanfoto2"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto2") }}</div>
+                @endif
+            </div>
+
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto2" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 2
+                </label>
+                <input type="file" class="form-control" id="laporanfoto2" name="laporanfoto2" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto2') }}">
+                @if ($errors->has("laporanfoto2"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto2") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto3" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 3
+                </label>
+                <input type="file" class="form-control" id="laporanfoto3" name="laporanfoto3" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto3') }}">
+                @if ($errors->has("laporanfoto3"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto3") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto4" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 4
+                </label>
+                <input type="file" class="form-control" id="laporanfoto4" name="laporanfoto4" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto4') }}">
+                @if ($errors->has("laporanfoto4"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto4") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto5" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 5
+                </label>
+                <input type="file" class="form-control" id="laporanfoto5" name="laporanfoto5" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto5') }}">
+                @if ($errors->has("laporanfoto5"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto5") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto6" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 6
+                </label>
+                <input type="file" class="form-control" id="laporanfoto6" name="laporanfoto6" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto6') }}">
+                @if ($errors->has("laporanfoto6"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto6") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto7" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 7
+                </label>
+                <input type="file" class="form-control" id="laporanfoto7" name="laporanfoto7" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto7') }}">
+                @if ($errors->has("laporanfoto7"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto7") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto8" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 8
+                </label>
+                <input type="file" class="form-control" id="laporanfoto8" name="laporanfoto8" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto8') }}">
+                @if ($errors->has("laporanfoto8"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto8") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto9" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 9
+                </label>
+                <input type="file" class="form-control" id="laporanfoto9" name="laporanfoto9" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto9') }}">
+                @if ($errors->has("laporanfoto9"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto9") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto10" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 10
+                </label>
+                <input type="file" class="form-control" id="laporanfoto10" name="laporanfoto10" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto10') }}">
+                @if ($errors->has("laporanfoto10"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto10") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto11" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 11
+                </label>
+                <input type="file" class="form-control" id="laporanfoto11" name="laporanfoto11" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto11') }}">
+                @if ($errors->has("laporanfoto11"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto11") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto12" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 12
+                </label>
+                <input type="file" class="form-control" id="laporanfoto12" name="laporanfoto12" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto12') }}">
+                @if ($errors->has("laporanfoto12"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto12") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto13" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 13
+                </label>
+                <input type="file" class="form-control" id="laporanfoto13" name="laporanfoto13" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto13') }}">
+                @if ($errors->has("laporanfoto13"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto13") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto14" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 14
+                </label>
+                <input type="file" class="form-control" id="laporanfoto14" name="laporanfoto14" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto14') }}">
+                @if ($errors->has("laporanfoto14"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto14") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto15" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 15
+                </label>
+                <input type="file" class="form-control" id="laporanfoto15" name="laporanfoto15" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto15') }}">
+                @if ($errors->has("laporanfoto15"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto15") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto16" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 16
+                </label>
+                <input type="file" class="form-control" id="laporanfoto16" name="laporanfoto16" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto16') }}">
+                @if ($errors->has("laporanfoto16"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto16") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto17" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 17
+                </label>
+                <input type="file" class="form-control" id="laporanfoto17" name="laporanfoto17" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto17') }}">
+                @if ($errors->has("laporanfoto17"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto17") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto18" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 18
+                </label>
+                <input type="file" class="form-control" id="laporanfoto18" name="laporanfoto18" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto18') }}">
+                @if ($errors->has("laporanfoto18"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto18") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto19" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 19
+                </label>
+                <input type="file" class="form-control" id="laporanfoto19" name="laporanfoto19" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto19') }}">
+                @if ($errors->has("laporanfoto19"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto19") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto20" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 20
+                </label>
+                <input type="file" class="form-control" id="laporanfoto20" name="laporanfoto20" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto20') }}">
+                @if ($errors->has("laporanfoto20"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto20") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto21" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 21
+                </label>
+                <input type="file" class="form-control" id="laporanfoto21" name="laporanfoto21" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto21') }}">
+                @if ($errors->has("laporanfoto21"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto21") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto22" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 22
+                </label>
+                <input type="file" class="form-control" id="laporanfoto22" name="laporanfoto22" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto22') }}">
+                @if ($errors->has("laporanfoto22"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto22") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto23" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 23
+                </label>
+                <input type="file" class="form-control" id="laporanfoto23" name="laporanfoto23" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto23') }}">
+                @if ($errors->has("laporanfoto23"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto23") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto24" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 24
+                </label>
+                <input type="file" class="form-control" id="laporanfoto24" name="laporanfoto24" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto24') }}">
+                @if ($errors->has("laporanfoto24"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto24") }}</div>
+                @endif
+            </div>
+            
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto25" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 25
+                </label>
+                <input type="file" class="form-control" id="laporanfoto25" name="laporanfoto25" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto25') }}">
+                @if ($errors->has("laporanfoto25"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto25") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto26" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 26
+                </label>
+                <input type="file" class="form-control" id="laporanfoto26" name="laporanfoto26" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto26') }}">
+                @if ($errors->has("laporanfoto26"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto26") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto27" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 27
+                </label>
+                <input type="file" class="form-control" id="laporanfoto27" name="laporanfoto27" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto27') }}">
+                @if ($errors->has("laporanfoto27"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto27") }}</div>
+                @endif
+            </div>
+            
+            <div class="form-group d-flex align-items-center mt-3">
+                <label for="laporanfoto28" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <i class="fas fa-image me-2"></i> Upload Gambar Kegiatan 28
+                </label>
+                <input type="file" class="form-control" id="laporanfoto28" name="laporanfoto28" accept="image/*" required style="max-width: 300px;" value="{{ old('laporanfoto28') }}">
+                @if ($errors->has("laporanfoto28"))
+                    <div class="text-danger">{{ $errors->first("laporanfoto28") }}</div>
+                @endif
+            </div>
+            
+            
+
+                
+                   
+                {{-- @endfor --}}
             
                 <div class="form-group">
                     <button style="float: right" class="badgenewupdate btn btn-primary" type="submit">
                         <i class="fas fa-paper-plane" style="margin-right:10px;"></i> Create
                     </button>
                 </div>
-
-                
             </form>
-            
+                  
 
         </div>
 

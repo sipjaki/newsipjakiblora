@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 190vh;
+    height: 130vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -210,6 +210,7 @@
                         <th>Penulis</th>
                         <th>Kegiatan</th>
                         <th>Alamat Kegiatan</th>
+                        <th>Tanggal Kegiatan</th>
                         <th>Galery</th>
                         <th>Aksi</th>
                     </tr>
@@ -228,7 +229,11 @@
                         <td style="font-size: 12px; text-align:left;">{{ $item->user->username}}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->judul_kegiatan}}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->alamat_kegiatan}}</td>
-                        <td style="font-size: 12px; text-align:left;">
+                        <td style="font-size: 12px; text-align:center;">
+                            {{ date('d F Y', strtotime($item->tanggal)) }}
+                        </td>
+                        
+                        <td style="font-size: 12px; text-align:center;">
                         <a href="/dokumentasipelatihan/{{$item->judul_kegiatan}}" class="badge-selesai">GALERY</a>
                         </td>
                        

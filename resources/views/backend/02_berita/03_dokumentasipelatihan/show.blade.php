@@ -310,197 +310,199 @@
 <div class="container-galeryfoto">
     {{-- <h1 class="title">Image Gallery</h1> --}}
     <div class="card-grid">
-            <div class="card">
-                <img src="{{ $data->berita1 }}" alt="Image" class="card-image">
+        
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita1) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita2 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita2) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita3 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita3) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita4 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita4) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita5 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita5) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita6 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita6) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita7 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita7) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita8 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita8) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita9 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita9) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita10 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita10) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita11 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita11) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita12 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita12) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita13 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita13) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita14 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita14) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita15 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita15) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita16 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita16) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita17 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita17) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita18 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita18) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita19 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita19) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita20 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->berita20) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita21 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{  asset('storage/'.  $data->laporanfoto1)  }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita22 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto2) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita23 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto3) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita24 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto4) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita25 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto5) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita26 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto6) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita27 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto7) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita28 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto8) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita29 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto9) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita30 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto10) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita31 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto11) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita32 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto12) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita33 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto13) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita34 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto14) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita35 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto15) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita36 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto16) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita37 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto17) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita38 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto18) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita39 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto19) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita40 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto20) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita41 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto21) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita42 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto22) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita43 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto23) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita44 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto24) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita45 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto25) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita46 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto26) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita47 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto27) }}" alt="Image" class="card-image">
             </div>
         
-            <div class="card">
-                <img src="{{ $data->berita48 }}" alt="Image" class="card-image">
+        <div class="card">
+                <img src="{{ asset('storage/'.  $data->laporanfoto28) }}" alt="Image" class="card-image">
             </div>
+        
         
     </div>
 
