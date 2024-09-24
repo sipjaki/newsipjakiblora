@@ -17,4 +17,9 @@ class laporankegiatan extends Model
     {
         return $this->belongsTo(kegiatanjaskon::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(user::class);
+    }
 }

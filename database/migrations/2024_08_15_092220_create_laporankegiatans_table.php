@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             // $table->foreignId('kegiatanjaskon_id');
             $table->foreignId('kegiatanjaskon_id');
+            $table->foreignId('user_id');
             $table->string('judul_kegiatan');
             $table->string('jabatan');
             $table->string('gambar')->nullable();
