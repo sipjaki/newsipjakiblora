@@ -6,11 +6,19 @@ use App\Models\asosiasipengusaha;
 use App\Models\ketertiban;
 use App\Models\metodepengadaan;
 use App\Models\paketpekerjaan;
+use App\Models\Penanggungjawabteknis;
+use App\Models\pengawasanbangunangedung;
+use App\Models\pengawasanketertiban;
+use App\Models\pengawasanlokasi;
+use App\Models\pengawasanstatus;
+use App\Models\pengawasantindakan;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Auth; // Pastikan Anda mengimpor facade ini
+
+use Carbon\Carbon;
 
 
 class DatajakonController extends Controller
@@ -48,6 +56,177 @@ class DatajakonController extends Controller
         ]);
 
     }
+
+    public function pengawasandanketertibanshowbyjudul($judul)
+    {
+        $datapengwasanketertiban = ketertiban::where('judul', $judul)->firstOrFail();
+        $user = Auth::user();
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $datapengawasanbangunan = pengawasanbangunangedung::all();
+        $datapenanggungjawabteknis = Penanggungjawabteknis::all();
+        $datapengawasanstatus = pengawasanstatus::all();
+        $datapengawasantindakan = pengawasantindakan::all();
+
+        return view('backend.03_datajakon.01_pengawasanketertiban.show', [
+            'data' => $datapengwasanketertiban,
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datapengawasanbangunan' => $datapengawasanbangunan,
+            'datapenanggungjawabteknis' => $datapenanggungjawabteknis,
+            'datapengawasanstatus' => $datapengawasanstatus,
+            'datapengawasantindakan' => $datapengawasantindakan,
+            'user' => $user,
+            'title' => 'Details Ketertiban & Pengawasan',
+        ]);
+    }
+
+    // ------------------------------------------------------------
+                    // -------------------- UPDATE PENGAWASAN DAN KETERTIBAN  ----------------------
+                    public function updatepengawasandanketertiban($judul)
+                    {
+                        // Cari data undang-undang berdasarkan nilai 'judul'
+                        $datapengawasanketertiban = ketertiban::where('judul', $judul)->firstOrFail();
+                        $user = Auth::user();
+
+                        $datapengawasanlokasi = pengawasanlokasi::all();
+                        $datapengawasanbangunan = pengawasanbangunangedung::all();
+                        $datapenanggungjawabteknis = Penanggungjawabteknis::all();
+                        $datapengawasanstatus = pengawasanstatus::all();
+                        $datapengawasantindakan = pengawasantindakan::all();
+
+       
+                        // Tampilkan form update dengan data yang ditemukan
+                        return view('backend.03_datajakon.01_pengawasanketertiban.update', [
+                            'data' => $datapengawasanketertiban,
+                            'datapengawasanlokasi' => $datapengawasanlokasi,
+                            'datapengawasanbangunan' => $datapengawasanbangunan,
+                            'datapenanggungjawabteknis' => $datapenanggungjawabteknis,
+                            'datapengawasanstatus' => $datapengawasanstatus,
+                            'datapengawasantindakan' => $datapengawasantindakan,
+                            'user' => $user,
+                            'title' => 'Update Pengawasan & Ketertiban'
+                        ]);
+                    }
+                    
+                    // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+                    public function createupdatepengawasandanketertiban(Request $request, $judul)
+                    {
+                        // Validasi input
+                        $request->validate([
+                            'pengawasanlokasi_id' => 'required|integer|max:255',
+                            'pengawasanbangunangedung_id' => 'required|integer|max:255',
+                            'penanggungjawabteknis_id' => 'required|integer|max:255',
+                            'pengawasanstatus_id' => 'required|integer|max:255',
+                            'pengawasantindakan_id' => 'required|integer|max:255',
+                            'judul' => 'required|string|max:255',
+                            'tanggal_laporan' => 'required|date',
+                            'keterangan' => 'required|string|max:255',
+                        ]);
+                    
+                        // Cari data ketertiban berdasarkan judul
+                        $dataketertiban = ketertiban::where('judul', $judul)->firstOrFail();
+                    
+                        // Update data ketertiban dengan data dari form
+                        $dataketertiban->update([
+                            'pengawasanlokasi_id' => $request->input('pengawasanlokasi_id'),
+                            'pengawasanbangunangedung_id' => $request->input('pengawasanbangunangedung_id'),
+                            'penanggungjawabteknis_id' => $request->input('penanggungjawabteknis_id'),
+                            'pengawasanstatus_id' => $request->input('pengawasanstatus_id'),
+                            'pengawasantindakan_id' => $request->input('pengawasantindakan_id'),
+                            'judul' => $request->input('judul'),
+                            'tanggal_laporan' => $request->input('tanggal_laporan'),
+                            'keterangan' => $request->input('keterangan'),
+                        ]);
+                    
+                        // Flash pesan session
+                        session()->flash('update', 'Data Pengawasan & Ketertiban Berhasil Diupdate!');
+                    
+                        // Redirect ke halaman yang sesuai
+                        return redirect('/pengawasandanketertiban');
+                    }
+
+                    // =====================================================
+                                    
+    //================ DELETE DATA ASOSIASI PENGUSAHA  ========================== 
+    public function deletepengawasandanketertiban($id)
+    {
+        // Cari entri berdasarkan judul
+        $entry = ketertiban::where('id', $id)->first();
+    
+        if ($entry) {
+            // Hapus entri dari database
+            ketertiban::destroy($entry->id);
+    
+            // Set pesan flash untuk sukses
+            session()->flash('delete', 'Data Berhasil Dihapus!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/pengawasandanketertiban');
+        } else {
+            // Set pesan flash jika data tidak ditemukan
+            session()->flash('error', 'Data Tidak Ditemukan!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/pengawasandanketertiban');
+        }
+    }
+
+    
+
+    public function createpengawasandanketertiban()
+    {
+        $user = Auth::user();
+        
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $datapengawasanbangunan = pengawasanbangunangedung::all();
+        $datapenanggungjawabteknis = Penanggungjawabteknis::all();
+        $datapengawasanstatus = pengawasanstatus::all();
+        $datapengawasantindakan = pengawasantindakan::all();
+
+
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.03_datajakon.01_pengawasanketertiban.create', [
+            'title' => 'Create Pengawasan & Ketertiban',
+            'user' => $user,
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datapengawasanbangunan' => $datapengawasanbangunan,
+            'datapenanggungjawabteknis' => $datapenanggungjawabteknis,
+            'datapengawasanstatus' => $datapengawasanstatus,
+            'datapengawasantindakan' => $datapengawasantindakan,
+                            
+        ]);
+    }
+
+    public function createstorepengawasandanketertiban(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'judul' => 'required|string|max:255',
+            'pengawasanlokasi_id' => 'required|integer|max:255',
+            'pengawasanbangunangedung_id' => 'required|integer|max:255',
+            'penanggungjawabteknis_id' => 'required|integer|max:255',
+            'pengawasanstatus_id' => 'required|integer|max:255',
+            'pengawasantindakan_id' => 'required|integer|max:255',
+            'tanggal_laporan' => 'required|date',
+            'keterangan' => 'required|string|max:255',
+        ]);
+    
+        // Buat entri baru di database
+        ketertiban::create([
+            'judul' => $request->input('judul'),
+            'pengawasanlokasi_id' => $request->input('pengawasanlokasi_id'),
+            'pengawasanbangunangedung_id' => $request->input('pengawasanbangunangedung_id'),
+            'penanggungjawabteknis_id' => $request->input('penanggungjawabteknis_id'),
+            'pengawasanstatus_id' => $request->input('pengawasanstatus_id'),
+            'pengawasantindakan_id' => $request->input('pengawasantindakan_id'),
+            'tanggal_laporan' => $request->input('tanggal_laporan'),
+            'keterangan' => $request->input('keterangan'),
+        ]);
+    
+        session()->flash('create', 'Data Berhasil Di Tambahkan !');
+        // Redirect ke halaman yang sesuai
+        return redirect('/pengawasandanketertiban');
+    }
+        
 
     // ========================================================
     // ASOSIASI PENGUSAHA

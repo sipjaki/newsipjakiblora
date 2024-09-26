@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('pengawasantindakan_id')->constrained()->onDelete('cascade'); // Tindakan
             $table->text('judul'); // Judul laporan
             $table->date('tanggal_laporan'); // Tanggal laporan
-            $table->text('keterangan'); // Keterangan
+            $table->text('keterangan'); // Keterangan   
             $table->softDeletes(); // Kolom untuk soft deletes
             $table->timestamps(); // Kolom created_at dan updated_at
         });

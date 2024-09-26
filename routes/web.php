@@ -320,7 +320,7 @@ Route::post('/pengawasandanketertiban/{judul}', [DatajakonController::class, 'cr
 Route::get('/pengawasandanketertibancreate', [DatajakonController::class, 'createpengawasandanketertiban'])->middleware('auth');
 Route::post('/pengawasandanketertibanstore', [DatajakonController::class, 'createstorepengawasandanketertiban'])->middleware('auth')->name('create.pengawasandanketertiban');
 
-Route::post('/pengawasandanketertibandelete/{judul}', [StrukturController::class, 'deletepengawasandanketertiban'])
+Route::post('/pengawasandanketertibandelete/{id}', [DatajakonController::class, 'deletepengawasandanketertiban'])
 ->middleware('auth')
 ->name('delete.pengawasandanketertiban');
 

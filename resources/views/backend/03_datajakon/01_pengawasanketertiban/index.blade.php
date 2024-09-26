@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 185vh;
+    height: 200vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -102,7 +102,7 @@
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
                         <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Pengawasan dan Ketertiban</button>
-                        <a href="/suratedarancreate" style="background: inherit">
+                        <a href="/pengawasandanketertibancreate" style="background: inherit">
                             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
                         </a>
 
@@ -182,7 +182,7 @@
                         {{-- <td style="font-size: 12px; text-align:left;">{{ $item->judul}}</td> --}}
                         <td style="font-size: 12px; text-align:left;">{{ $item->pengawasanlokasi->kota}}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->pengawasanbangunangedung->bangunan}}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->penanggungjawabteknis->nama_lengkap}}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->penanggungjawabteknis->nama_lengkap}}</td>
                         <style>
                             .btn-full-width {
                                     width: 100%;
@@ -307,7 +307,11 @@
                         {{-- <td style="font-size: 12px; text-align:left;">{{ $item->pengawasantindakan->tindakan}}</td> --}}
                         
                         
-                        <td style="font-size: 12px; text-align:left;">{{ $item->tanggal_laporan}}</td>
+                        <td style="font-size: 12px; text-align:center;">
+                            {{ \Carbon\Carbon::parse($item->tanggal_laporan)->locale('id')->translatedFormat('l, d F Y') }}
+                        </td>
+                        
+                        
                         {{-- <td style="font-size: 12px; text-align:left;">{{ $item->keterangan}}</td> --}}
                     
                         
@@ -352,18 +356,17 @@
                         </style>
 
                         <div class="button-container">
-                        <a href="/asosiasipengusaha/{{$item->nama_asosiasi}}" class="iconhover" title="View">
+                        <a href="/pengawasandanketertiban/{{$item->judul}}" class="iconhover" title="View">
                             <i class="fas fa-eye"></i>
                         </a>
-                                <a href="/asosiasipengusaha/update/{{$item->nama_asosiasi}}" class="iconhover" title="Update">
+                                <a href="/pengawasandanketertiban/update/{{$item->judul}}" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
-
-                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('delete.pengawasandanketertiban', $item->judul) }}')">
+                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('delete.pengawasandanketertiban', $item->id) }}')">
                                     <i class="fas fa-trash"></i>
                                 </a>
-                                
+                                                                
         
                                 {{-- ================= FORM DELETE =================== --}}
                     <!-- Modal HTML -->
