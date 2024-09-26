@@ -299,14 +299,15 @@ Route::post('/dokumentasipelatihan/{id}', [BeritaController::class, 'deletedokum
 //  -------------- ACARA PELATIHAN TENTANG JASA KONSTRUKSI =-------------------------------------
 Route::get('/acarapelatihan', [BeritaController::class, 'acarapelatihan'])->middleware('auth');  
 Route::get('/acarapelatihan/{judul_kegiatan}', [BeritaController::class, 'acarapelatihanshowbyjudul'])->middleware('auth');
-Route::get('/acarapelatihan/update/{judul_kegiatan}', [BeritaController::class, 'updateacarapelatihan'])->middleware('auth')->name('updateshow.acarapelatihan');
+Route::get('/acarapelatihandetails/{judul_kegiatan}', [BeritaController::class, 'acarapelatihandetailsshowbyjudul'])->middleware('auth');
+Route::get('/acarapelatihanupdate/{judul_kegiatan}', [BeritaController::class, 'updateacarapelatihandetails'])->middleware('auth')->name('updateshow.acarapelatihan');
 Route::post('/acarapelatihanstore/{judul_kegiatan}', [BeritaController::class, 'createupdateacarapelatihan'])->middleware('auth')->name('update.acarapelatihan');
 Route::get('/acarapelatihancreate', [BeritaController::class, 'createacarapelatihan'])->middleware('auth');
 Route::post('/acarapelatihancreatestore', [BeritaController::class, 'createstoreacarapelatihan'])->middleware('auth')->name('newcreatestore.acarapelatihan');
 
-Route::post('/acarapelatihan/{id}', [BeritaController::class, 'deleteacarapelatihan'])
+Route::post('/acarapelatihandelete/{judul_kegiatan}', [BeritaController::class, 'deletedetailsacarapelatihannew'])
 ->middleware('auth')
-->name('delete.acarapelatihan');
+->name('delete.acaradetailspelatihandetailsnew');
 
 // -------- BAGIAN 03 BACKEND DATA JASA KONSTRUKSI BANGUNAN GEDUNG PUPR ---------------------------------
 

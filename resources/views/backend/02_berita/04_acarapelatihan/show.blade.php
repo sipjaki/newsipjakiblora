@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 160vh;
+    height: 230vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -90,10 +90,8 @@
                 border-radius: 10px;
                 display: inline-block;
                 font-size: 1rem;
-                margin-right: 10px;
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
-                margin-left: 580px;
             }
             .badge-plus:hover {
                 background: white;
@@ -102,8 +100,11 @@
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
                         <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Berita Jasa Konstruksi </button>
-                        <a href="/databeritacreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
+                        <a href="/acarapelatihan" style="background: inherit">
+                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer; float:right; "><i class="fas fa-arrow-left" style="margin-right:5px;" ></i>Kembali</button>
+                        </a>
+                        <a href="/acarapelatihancreate" style="background: inherit">
+                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer; float:right; margin-left:440px; margin-right:5px;"><i class="fas fa-edit" style="margin-right:5px;" ></i>Create New</button>
                         </a>
 
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
@@ -157,8 +158,9 @@
                 <thead>
                     <tr>
                         <th style="width:45px;">No</th>
-                        <th>Judul Kegiatan</th>
-                        <th>Penulis</th>
+                        <th style="width:600px">Acara</th>
+                        <th style="width:400px">Jabatan</th>
+                        <th style="width: 100px;">Penulis</th>
                         <th style="width: 150px;">Foto</th>
                         <th>Aksi</th>
                     </tr>
@@ -174,7 +176,9 @@
                     
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->kegiatanjaskon->judul_kegiatan}}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform: uppercase;">{{ $item->judul_kegiatan }}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform: uppercase;">{{ $item->jabatan}}</td>
+                        {{-- <td style="font-size: 12px; text-align:left;">{{ $item->kegiatanjaskon->judul_kegiatan}}</td> --}}
                         <td style="font-size: 12px; text-align:center;">{{ $item->user->username}}</td>
                         <td style="font-size: 12px; text-align:center; vertical-align:middle;">
                             <img style="width: 100%; display: block; margin: 0 auto;" src="{{ asset('storage/'. $item->gambar )}}" alt="{{ asset('storage/'. $item->gambar )}}">
@@ -220,15 +224,14 @@
                         </style>
 
                         <div class="button-container">
-                        <a href="/databerita/{{$item->judul}}" class="iconhover" title="View">
+                        <a href="/acarapelatihandetails/{{$item->judul_kegiatan}}" class="iconhover" title="View">
                             <i class="fas fa-eye"></i>
                         </a>
-                                <a href="/databerita/update/{{$item->judul}}" class="iconhover" title="Update">
+                                <a href="/acarapelatihanupdate/{{$item->judul_kegiatan}}" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
-
-                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('delete.acarapelatihan', $item->judul_kegiatan) }}')">
+                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('delete.acaradetailspelatihandetailsnew', $item->judul_kegiatan) }}')">
                                     <i class="fas fa-trash"></i>
                                 </a>
                                 

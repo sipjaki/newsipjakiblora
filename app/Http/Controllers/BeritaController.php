@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth; // Pastikan Anda mengimpor facade ini
 
+use Carbon\Carbon;
 
 
 
@@ -999,105 +1000,147 @@ public function deletedokumentasipelatihan(Request $request, $id)
                                     'title' => 'Details Acara Pelatihan Sertifikasi',
                                 ]);
                             }
+                        
+                        public function acarapelatihandetailsshowbyjudul($judul_kegiatan)
+                            {
+                                // Mencari kegiatan berdasarkan judul
+                                $kegiatanjaskon = kegiatanjaskon::all();
+                                $laporankegiatan = laporankegiatan::where('judul_kegiatan', $judul_kegiatan)->first();
 
-                                                // =====================================================================================
-                                    
-                                        // -------------------- UPDATE DATA PERATURAN GUBERNUR JASA KONSTRUKSI ----------------------
-                                        public function updateacarapelatihan($judul_kegiatan)
+                                // Menggunakan paginate()
+                                $user = Auth::user();
+
+                                return view('backend.02_berita.04_acarapelatihan.showberitaacara', [
+                                    'data' => $laporankegiatan,
+                                    'datakegiatanjaskon' => $kegiatanjaskon,
+                                    'user' => $user,
+                                    'title' => 'Show Berita Acara Sertifikasi',
+                                ]);
+                            }
+
+// =====================================================================================
+// -------------------- UPDATE DATA ACARA PELATIHAN JASA  KONSTRUKSI ----------------------
+                                        public function updateacarapelatihandetails($judul_kegiatan)
                                         {
                                             // Cari data undang-undang berdasarkan nilai 'judul'
                                             $laporankegiatan = laporankegiatan::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
                                             $user = Auth::user();
+                                            $datakegiatanjaskon = kegiatanjaskon::all();
                         
                                             // Tampilkan form update dengan data yang ditemukan
-                                            return view('backend.14_peraturan.11_keputusan.update', [
+                                            return view('backend.02_berita.04_acarapelatihan.updateberitaacara', [
                                                 'laporankegiatan' => $laporankegiatan,
+                                                'datakegiatanjaskon' => $datakegiatanjaskon,
                                                 'user' => $user,
-                                                'title' => 'Update Laporan Kegiatan'
+                                                'title' => 'Update Berita Acara'
                                             ]);
                                         }
                                         
                                         // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
-                                                public function createupdateacarapelatihan(Request $request, $judul_kegiatan)
-                                            {
-                                                // Validasi input
-                                                $request->validate([
-                                                    'judul' => 'required|string|max:255',
-                                                    // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
-                                                ]);
-                                    
-                                                // Cari data undang-undang berdasarkan nilai 'judul'
-                                                $laporankegiatan = laporankegiatan::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
-                                                
-                                                // Simpan file dan ambil path-nya
-                                                $filePath = null;
-                                                if ($request->hasFile('peraturan')) {
-                                                    $file = $request->file('peraturan');
-                                                    $filePath = $file->store('peraturan/11_keputusan', 'public'); // Menyimpan di storage/app/public/undangundang
-                                                }
-                                    
-                                                // Update data undang-undang dengan data dari form
-                                                $laporankegiatan->update([
-                                                    'judul' => $request->input('judul'),
-                                                    'peraturan' => $filePath ? $filePath : $laporankegiatan->peraturan, // Gunakan path baru jika ada file
-                                                ]);
-                                    
-                                                
-                                                session()->flash('update', 'Data Surat Keputusan Berhasil Diupdate !');
-                                                // Redirect ke halaman yang sesuai
-                                                return redirect('/acarapelatihan');
-                                                       }
-                        
-                               
-                                                       
+                                        public function createupdateacarapelatihan(Request $request, $judul_kegiatan)
+                                        {
+                                            // Validasi input
+                                            $request->validate([
+                                                'kegiatanjaskon_id' => 'required|string|max:255',
+                                                'judul_kegiatan' => 'required|string|max:255',
+                                                'jabatan' => 'required|string|max:255',
+                                                'tanggal' => 'required|date',
+                                                'keterangan_berita' => 'required|string',
+                                                'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+                                            ]);
+                                        
+                                            // Cari data berdasarkan nilai 'judul_kegiatan'
+                                            $laporankegiatan = laporankegiatan::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
+                                        
+                                            // Simpan gambar dan ambil path-nya
+                                            $gambarPath = null;
+                                            if ($request->hasFile('gambar')) {
+                                                $file = $request->file('gambar');
+                                                $gambarPath = $file->store('acarasertifikasi/beritaacara', 'public'); // Menyimpan di storage/app/public/acarasertifikasi/gambar
+                                            }
+                                        
+                                            // Update data dengan data dari form
+                                            $laporankegiatan->update([
+                                                'kegiatanjaskon_id' => $request->input('kegiatanjaskon_id'),
+                                                'judul_kegiatan' => $request->input('judul_kegiatan'),
+                                                'jabatan' => $request->input('jabatan'),
+                                                'tanggal' => $request->input('tanggal'),
+                                                'keterangan_berita' => $request->input('keterangan_berita'),
+                                                'gambar' => $gambarPath ? $gambarPath : $laporankegiatan->gambar, // Gunakan path baru jika ada file
+                                            ]);
+                                        
+                                            session()->flash('update', 'Data Berita Acara Berhasil Diupdate!');
+                                            // Redirect ke halaman yang sesuai
+                                            return redirect('/acarapelatihan');
+                                        }
+                                                           
                         // ------------ CREATE DATA SURAT KEPUTUSAN  ----------------
                         
                         public function createacarapelatihan()
                         {
+                            $datakegiatanjaskon = kegiatanjaskon::all();
+                            $datalaporankegiatan = laporankegiatan::all();
                             $user = Auth::user();
                         
                             // Tampilkan form update dengan data yang ditemukan
-                            return view('backend.14_peraturan.11_keputusan.create', [
+                            return view('backend.02_berita.04_acarapelatihan.create', [
                                 'title' => 'Create Surat Keputusan',
+                                'datakegiatanjaskon' => $datakegiatanjaskon,
+                                'datalaporankegiaran' => $datalaporankegiatan,
+                                'title' => 'Create Berita Acara',
                                 'user' => $user,
                             ]);
-                        }
                         
+                        
+                        }
+
                         public function createstoreacarapelatihan(Request $request)
                         {
                             // Validasi input
                             $request->validate([
-                                'judul' => 'required|string|max:255',
-                                'peraturan' => 'required|file|mimes:pdf|max:20480', // 20MB max file size
+                                'kegiatanjaskon_id' => 'required|string|max:255',
+                                'judul_kegiatan' => 'required|string|max:255',
+                                'user_id' => 'required|string|max:255', // Assuming you have a users table
+                                'jabatan' => 'required|string|max:255',
+                                'tanggal' => 'required|date',
+                                'keterangan_berita' => 'required|string',
+                                'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // 2MB max file size untuk gambar
                             ]);
                         
-                            // Simpan file dan ambil path
-                            $filePath = $request->file('peraturan')->store('peraturan/11_keputusan', 'public');
+                            // Simpan gambar jika ada
+                            $gambarPath = null;
+                            if ($request->hasFile('gambar')) {
+                                $gambarPath = $request->file('gambar')->store('acarasertifikasi/beritaacara', 'public');
+                            }
                         
                             // Buat entri baru di database
                             laporankegiatan::create([
-                                'judul' => $request->input('judul'),
-                                'peraturan' => $filePath,
+                                'kegiatanjaskon_id' => $request->input('kegiatanjaskon_id'),
+                                'judul_kegiatan' => $request->input('judul_kegiatan'),
+                                'user_id' => $request->input('user_id'), // Pastikan ini adalah ID pengguna
+                                'jabatan' => $request->input('jabatan'),
+                                'tanggal' => $request->input('tanggal'),
+                                'keterangan_berita' => $request->input('keterangan_berita'),
+                                'gambar' => $gambarPath,
                             ]);
                         
-                            session()->flash('create', 'Data Berhasil Di Tambahkan !');
+                            session()->flash('create', 'Data Berhasil Ditambahkan!');
                             // Redirect ke halaman yang sesuai
-                            return redirect('/keputusan');
+                            return redirect('/acarapelatihan');
                         }
                         
-                        
-                        
+
                             // ==================== DELETE SURAT KEPUTUSAN MENTERI 
                         
-                            public function deletekeputusan(Request $request, $judul_kegiatan)
+                            public function deletedetailsacarapelatihannew(Request $request, $judul_kegiatan)
                         {
                             // Cari entri berdasarkan judul
                             $entry = laporankegiatan::where('judul_kegiatan', $judul_kegiatan)->first();
                         
                             if ($entry) {
                                 // Hapus file terkait jika ada
-                                if (Storage::disk('public')->exists($entry->peraturan)) {
-                                    Storage::disk('public')->delete($entry->peraturan);
+                                if (Storage::disk('public')->exists($entry->gambar)) {
+                                    Storage::disk('public')->delete($entry->gambar);
                                 }
                         
                                 // Hapus entri dari database
@@ -1111,7 +1154,7 @@ public function deletedokumentasipelatihan(Request $request, $id)
                             }
                         
                             // Redirect ke halaman yang sesuai
-                            return redirect('/acarapelatihan');
+                            return redirect('/acarapelatihan/{{$item->judul_kegiatan}}');
                         }
                         
                         

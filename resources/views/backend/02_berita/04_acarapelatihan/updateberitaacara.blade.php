@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 160vh;
+    height: 200vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -200,7 +200,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 920px;
-                height: 120vh;
+                height: 135vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #E0E0E0; /* Warna silver */
@@ -256,63 +256,68 @@
 <br>
         <div class="container-update" style="col-lg-12">
             <!-- Menampilkan pesan sukses jika ada -->
-            <form action="/acarapelatihancreatestore" method="POST" enctype="multipart/form-data">
+            <form action="/acarapelatihanstore/{{$laporankegiatan->judul_kegiatan}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('post')
+                @method('POST')
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="kegiatanjaskon_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-calendar-alt me-2"></i> Agenda Sertifikasi 
                     </label>
                     <select class="form-control" id="kegiatanjaskon_id" name="kegiatanjaskon_id" required>
-                        <option value="" disabled selected>PILIH AGENDA ACARA</option>
+                        <option value="" disabled {{ old('kegiatanjaskon_id', $laporankegiatan->kegiatanjaskon_id) == '' ? 'selected' : '' }}>
+                            PILIH AGENDA ACARA
+                        </option>
                         @foreach ($datakegiatanjaskon as $item)
-                            <option value="{{ $item->id }}">{{ $item->judul_kegiatan }}</option>
+                            <option value="{{ $item->id }}" {{ old('kegiatanjaskon_id', $laporankegiatan->kegiatanjaskon_id) == $item->id ? 'selected' : '' }}>
+                                {{ $item->judul_kegiatan }}
+                            </option>
                         @endforeach
                     </select>
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="judul_kegiatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-pencil-alt me-2"></i> Judul Berita Acara
                     </label>
-                    <input type="text" class="form-control" id="judul_kegiatan" name="judul_kegiatan" required>
+                    <input type="text" class="form-control" id="judul_kegiatan" name="judul_kegiatan" value="{{ old('judul_kegiatan', $laporankegiatan->judul_kegiatan) }}" required>
                 </div>
-            
-                {{-- <div class="form-group d-flex align-items-center mt-3"> --}}
-                    {{-- <label for="user_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"> --}}
-                        {{-- <i class="fas fa-pencil-alt me-2"></i> Penulis --}}
-                    {{-- </label> --}}
-                    <input type="hidden" class="form-control" id="user_id" name="user_id" value="{{ Auth::user()->id }}" required readonly>
-                {{-- </div> --}}
-            
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="user_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-pencil-alt me-2"></i> Penulis
+                    </label>
+                    <input type="text" class="form-control" id="user_id" name="user_id" value="{{ old('user_id', $laporankegiatan->user->username) }}" required readonly>
+                </div>
+                
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="jabatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-user-tag me-2"></i> Jabatan
                     </label>
-                    <input type="text" class="form-control" id="jabatan" name="jabatan" required>
+                    <input type="text" class="form-control" id="jabatan" name="jabatan" value="{{ old('jabatan', $laporankegiatan->jabatan) }}" required>
                 </div>
             
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="tanggal" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-calendar me-2"></i> Tanggal
                     </label>
-                    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                    <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ old('tanggal', $laporankegiatan->tanggal) }}" required>
                 </div>
             
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="keterangan_berita" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-comment-dots me-2"></i> Keterangan Berita
                     </label>
-                    <textarea class="form-control" id="keterangan_berita" name="keterangan_berita" rows="20" required></textarea>
+                    <textarea class="form-control" id="keterangan_berita" name="keterangan_berita" rows="20" style="resize: vertical;" required>{{ old('keterangan_berita', $laporankegiatan->keterangan_berita) }}</textarea>
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="gambar" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-image me-2"></i> Foto Berita
                     </label>
+                    
                     <div class="d-flex align-items-center">
                         <div class="preview-container">
-                            <img id="gambar-preview" src="#" alt="Preview" class="img-preview" style="width: 100px; height: 100px; object-fit: cover; display: none;"/>
+                            <img id="gambar-preview" src="{{ asset('storage/' . $laporankegiatan->gambar) }}" alt="Preview" class="img-preview" style="width: 100px; height: 100px; object-fit: cover;"/>
                         </div>
                         <input type="file" id="gambar" name="gambar" accept="image/*" class="form-control-file ml-3">
                     </div>
@@ -322,20 +327,17 @@
                     document.addEventListener('DOMContentLoaded', function() {
                         const fileInput = document.getElementById('gambar');
                         const preview = document.getElementById('gambar-preview');
-            
+                    
                         fileInput.addEventListener('change', function(event) {
                             const file = event.target.files[0];
                             if (file) {
                                 const reader = new FileReader();
-            
+                
                                 reader.onload = function(e) {
                                     preview.src = e.target.result;
-                                    preview.style.display = 'block'; // Menampilkan gambar saat ada yang dipilih
                                 };
-            
+                
                                 reader.readAsDataURL(file);
-                            } else {
-                                preview.style.display = 'none'; // Menyembunyikan jika tidak ada file
                             }
                         });
                     });
@@ -343,7 +345,7 @@
             
                 <div class="form-group">
                     <button style="float: right" class="badgenewupdate btn btn-primary" type="submit">
-                        <i class="fab fa-telegram" style="margin-right:10px;"></i> Simpan
+                        <i class="fab fa-telegram" style="margin-right:10px;"></i> Update
                     </button>
                 </div>
             </form>

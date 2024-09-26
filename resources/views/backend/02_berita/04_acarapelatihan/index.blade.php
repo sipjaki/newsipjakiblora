@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 130vh;
+    height: 140vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -152,9 +152,9 @@
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
                         <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Dokumentai Acara Pelatihan Sertifikasi Pekerja Konstruksi</button>
-                        <a href="/dokumentasipelatihancreate" style="background: inherit">
+                        {{-- <a href="/dokumentasipelatihancreate" style="background: inherit">
                             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create Agenda</button>
-                        </a>
+                        </a> --}}
 
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
@@ -207,10 +207,10 @@
                 <thead>
                     <tr>
                         <th style="width:45px;">No</th>
-                        <th>Dokumentasi Kegiatan</th>
-                        <th>Foto</th>
+                        <th style="width:700px;">Dokumentasi Kegiatan</th>
+                        <th style="width:200px">Foto</th>
                         <th style="width: 100px;">View Acara</th>
-                        <th>Aksi</th>
+                        {{-- <th style="width: 100px;">Aksi</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -259,107 +259,7 @@
                         
                         
                         
-                        <td>
-                            
-                        <style>
-                                                /* Container for the buttons */
-                    .button-container {
-                        display: flex;
-                        gap: 10px; /* Space between icons */
-                        justify-content: center; /* Center the icons horizontally */
-                    }
-                    
-                    /* Style for the individual buttons */
-                    .iconhover {
-                        display: inline-flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 25px; /* Adjust width as needed */
-                        height: 25px; /* Adjust height as needed */
-                        background: navy, white; /* Yellow background */
-                        color: white; /* Text color */
-                        border: none;
-                        border-radius: 50%;
-                        text-decoration: none;
-                        padding: 3px 3px;
-                        font-size: 15px; /* Adjust font size as needed */
-                        transition: background 0.3s, color 0.3s;
-                        cursor: pointer;
-                    }
-
-                    .iconhover:hover {
-                        background: white; /* White background on hover */
-                        color: black; /* Black text color on hover */
-                    }
-
-                    .iconhover i {
-                        margin: 0;
-                    }
-                    
-                        </style>
-
-                        <div class="button-container">
-                        {{-- <a href="/paketpekerjaan/{{$item->instansi}}" class="iconhover" title="View">
-                            <i class="fas fa-eye"></i>
-                        </a> --}}
-                        <a href="/dokumentasipelatihan/update/{{$item->judul_kegiatan}}" class="iconhover" title="Update">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-
-                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('/dokumentasipelatihan/{{$item->id}}')">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                                
-                                
-                                
-                                {{-- ================= FORM DELETE =================== --}}
-                    <!-- Modal HTML -->
-                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div class="container" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                                        <img src="/assets/icon/sipjakikbb.png" alt="" style="width:50px; height:50px; margin-bottom: 10px;">
-                                        {{-- <img src="/assets/icon/pupr.png" alt="" style="width:10px; height:10px; margin-bottom: 10px;"> --}}
-                                        <h5 class="modal-title" id="deleteModalLabel" style="margin: 0;">Konfirmasi Delete</h5>
-                                    </div>
-                                
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Anda Yakin Ingin Menghapus Data ini?</p>
-                                    <form id="deleteForm" action="" method="POST">
-                                        @csrf
-                                        @method('POST')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <script>
-                        function setDeleteAction(actionUrl) {
-                          document.getElementById('deleteForm').action = actionUrl;
-                        }
-                      </script>
-                      
-        
-                                {{-- ================= FORM DELETE =================== --}}
-                                    
-                            </div>
-
-                            <script>
-                                function downloadCSV() {
-                                    // Function to handle CSV download
-                                }
-                                </script>
-                        </td>
-                    </tr>
-                    @endforeach
+                    @endforeach 
                     {{-- ============================================ --}}
                     
                     

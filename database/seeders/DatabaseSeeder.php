@@ -3442,6 +3442,7 @@ uijk::create([
 // ============================== ============================================================
 kegiatanjaskon::create([
                 // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'judul_kegiatan' => 'BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI KABUPATEN BANDUNG BARAT',
                 'alamat_kegiatan' => 'DESA BATULAYANG 40562 JAWA BARAT INDONESIA',
@@ -3504,6 +3505,7 @@ kegiatanjaskon::create([
 
 kegiatanjaskon::create([
                 // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
+                'id' => 2,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'judul_kegiatan' => 'SIGIT SEPTIADI',
                 'alamat_kegiatan' => 'DESA BATULAYANG 40562 JAWA BARAT INDONESIA',
@@ -3720,7 +3722,7 @@ laporankegiatan::create([
                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
             'kegiatanjaskon_id' => '2',
             'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
+            'judul_kegiatan' => 'Sigit  ',
             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
             'keterangan_berita' => '
@@ -3742,7 +3744,7 @@ laporankegiatan::create([
                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
             'kegiatanjaskon_id' => '2',
             'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
+            'judul_kegiatan' => 'Sigit  ',
             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
             'keterangan_berita' => '
@@ -3764,7 +3766,7 @@ laporankegiatan::create([
                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
             'kegiatanjaskon_id' => '2',
             'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
+            'judul_kegiatan' => 'Sigit  ',
             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
             'keterangan_berita' => '
@@ -3786,7 +3788,7 @@ laporankegiatan::create([
                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
             'kegiatanjaskon_id' => '2',
             'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
+            'judul_kegiatan' => 'Sigit  ',
             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
             'keterangan_berita' => '
@@ -3808,7 +3810,7 @@ laporankegiatan::create([
                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
             'kegiatanjaskon_id' => '2',
             'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
+            'judul_kegiatan' => 'Sigit  ',
             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
             'keterangan_berita' => '
@@ -3830,7 +3832,7 @@ laporankegiatan::create([
                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
             'kegiatanjaskon_id' => '2',
             'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
+            'judul_kegiatan' => 'Sigit  ',
             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
             'keterangan_berita' => '
@@ -3852,7 +3854,7 @@ laporankegiatan::create([
                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
             'kegiatanjaskon_id' => '2',
             'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
+            'judul_kegiatan' => 'Sigit  ',
             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
             'keterangan_berita' => '
@@ -3870,95 +3872,7 @@ laporankegiatan::create([
             'created_at' => now(),
             'updated_at' => now(),
 ]);
-            laporankegiatan::create([
-                // Ganti dengan ID yang sesuai jika menggunakan foreign key
-            'kegiatanjaskon_id' => '2',
-            'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
-            'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-            'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-            'keterangan_berita' => '
-
-<p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-<p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-<p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-<p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-<p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-            'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-            'created_at' => now(),
-            'updated_at' => now(),
-]);
-            laporankegiatan::create([
-                // Ganti dengan ID yang sesuai jika menggunakan foreign key
-            'kegiatanjaskon_id' => '2',
-            'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
-            'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-            'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-            'keterangan_berita' => '
-
-<p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-<p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-<p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-<p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-<p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-            'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-            'created_at' => now(),
-            'updated_at' => now(),
-]);
-            laporankegiatan::create([
-                // Ganti dengan ID yang sesuai jika menggunakan foreign key
-            'kegiatanjaskon_id' => '2',
-            'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
-            'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-            'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-            'keterangan_berita' => '
-
-<p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-<p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-<p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-<p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-<p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-            'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-            'created_at' => now(),
-            'updated_at' => now(),
-]);
-            laporankegiatan::create([
-                // Ganti dengan ID yang sesuai jika menggunakan foreign key
-            'kegiatanjaskon_id' => '2',
-            'user_id' => '1',
-            'judul_kegiatan' => 'sambutan oleh bapak sekdis pupr kabupaten bandung barat  ',
-            'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-            'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-            'keterangan_berita' => '
-
-<p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
-
-<p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
-
-<p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
-
-<p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
-
-<p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-            'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-            'created_at' => now(),
-            'updated_at' => now(),
-]);
-
+   
             // ================= =====================================================================================
 giskbb::create([
                     // Ganti dengan ID yang sesuai jika menggunakan foreign key
