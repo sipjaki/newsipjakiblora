@@ -192,13 +192,13 @@
                         <td style="font-size: 12px; text-align:left;">{{ $item->kepala_asosiasi}}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->tanggal_berdiri}}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->jumlah_anggota}}</td> --}}
-                        <td style="font-size: 12px; text-align: center; text-align:uppercase;">
+                        <td style="font-size: 18px; text-align: center; text-align:uppercase;">
                             @if($item->status === 'AKTIF')
-                                <button style="background-color: green; color: white; border: none; padding: 1px 3px; border-radius: 2px; font-size: 8px;">
+                                <button style="background-color: green; color: white; border: none; padding: 1px 3px; border-radius: 2px; font-size: 11px;">
                                     AKTIF
                                 </button>
                             @else
-                                <button style="background-color: red; color: white; border: none; padding: 1px 3px; border-radius: 2px; font-size: 8px;">
+                                <button style="background-color: red; color: white; border: none; padding: 1px 3px; border-radius: 2px; font-size: 11px;">
                                     TIDAK AKTIF
                                 </button>
                             @endif

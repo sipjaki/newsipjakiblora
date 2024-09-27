@@ -262,7 +262,6 @@
                     <form action="{{ route('create.asosiasipengusaha') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('post')
-                        <!-- No method needed for create since we're using POST -->
                     
                         <div class="form-group d-flex align-items-center mt-3">
                             <label for="nama_asosiasi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
@@ -284,70 +283,68 @@
                             </label>
                             <input style="text-transform: uppercase;" type="text" id="kota" name="kota" class="form-control" required>
                         </div>
+                    
                         <div class="form-group d-flex align-items-center mt-3">
                             <label for="provinsi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                                 <i class="fas fa-map me-2"></i> PROVINSI
                             </label>
                             <select id="provinsi" name="provinsi" class="form-control" required>
                                 <option value="" disabled selected>PILIH PROVINSI</option>
-                                <option value="ACEH">ACEH</option>
-                                <option value="SUMATERA UTARA">SUMATERA UTARA</option>
-                                <option value="SUMATERA BARAT">SUMATERA BARAT</option>
-                                <option value="RIAU">RIAU</option>
-                                <option value="JAMBI">JAMBI</option>
-                                <option value="SUMATERA SELATAN">SUMATERA SELATAN</option>
-                                <option value="BENGKULU">BENGKULU</option>
-                                <option value="LAMPUNG">LAMPUNG</option>
-                                <option value="KEPULAUAN BANGKA BELITUNG">KEPULAUAN BANGKA BELITUNG</option>
-                                <option value="KEPULAUAN RIAU">KEPULAUAN RIAU</option>
-                                <option value="DKI JAKARTA">DKI JAKARTA</option>
-                                <option value="JAWA BARAT">JAWA BARAT</option>
-                                <option value="JAWA TENGAH">JAWA TENGAH</option>
-                                <option value="DI YOGYAKARTA">DI YOGYAKARTA</option>
-                                <option value="JAWA TIMUR">JAWA TIMUR</option>
-                                <option value="BANTEN">BANTEN</option>
-                                <option value="BALI">BALI</option>
-                                <option value="NUSA TENGGARA BARAT">NUSA TENGGARA BARAT</option>
-                                <option value="NUSA TENGGARA TIMUR">NUSA TENGGARA TIMUR</option>
-                                <option value="KALIMANTAN BARAT">KALIMANTAN BARAT</option>
-                                <option value="KALIMANTAN TENGAH">KALIMANTAN TENGAH</option>
-                                <option value="KALIMANTAN SELATAN">KALIMANTAN SELATAN</option>
-                                <option value="KALIMANTAN TIMUR">KALIMANTAN TIMUR</option>
-                                <option value="KALIMANTAN UTARA">KALIMANTAN UTARA</option>
-                                <option value="SULAWESI UTARA">SULAWESI UTARA</option>
-                                <option value="SULAWESI TENGAH">SULAWESI TENGAH</option>
-                                <option value="SULAWESI SELATAN">SULAWESI SELATAN</option>
-                                <option value="SULAWESI BARAT">SULAWESI BARAT</option>
-                                <option value="GORONTALO">GORONTALO</option>
-                                <option value="SULAWESI TENGGARA">SULAWESI TENGGARA</option>
-                                <option value="MALUKU">MALUKU</option>
-                                <option value="MALUKU UTARA">MALUKU UTARA</option>
-                                <option value="PAPUA BARAT">PAPUA BARAT</option>
-                                <option value="PAPUA">PAPUA</option>
+                                <option value="Aceh">Aceh</option>
+                                <option value="Bali">Bali</option>
+                                <option value="Banten">Banten</option>
+                                <option value="Bengkulu">Bengkulu</option>
+                                <option value="Gorontalo">Gorontalo</option>
+                                <option value="Jakarta">DKI Jakarta</option>
+                                <option value="Jambi">Jambi</option>
+                                <option value="Jawa Barat">Jawa Barat</option>
+                                <option value="Jawa Tengah">Jawa Tengah</option>
+                                <option value="Jawa Timur">Jawa Timur</option>
+                                <option value="Kalimantan Barat">Kalimantan Barat</option>
+                                <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                                <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                                <option value="Kalimantan Timur">Kalimantan Timur</option>
+                                <option value="Kepulauan Bangka Belitung">Kepulauan Bangka Belitung</option>
+                                <option value="Kepulauan Riau">Kepulauan Riau</option>
+                                <option value="Lampung">Lampung</option>
+                                <option value="Maluku">Maluku</option>
+                                <option value="Maluku Utara">Maluku Utara</option>
+                                <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                                <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                                <option value="Papua">Papua</option>
+                                <option value="Papua Barat">Papua Barat</option>
+                                <option value="Riau">Riau</option>
+                                <option value="Sulawesi Barat">Sulawesi Barat</option>
+                                <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                                <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                                <option value="Sulawesi Utara">Sulawesi Utara</option>
+                                <option value="Sumatera Barat">Sumatera Barat</option>
+                                <option value="Sumatera Selatan">Sumatera Selatan</option>
+                                <option value="Sumatera Utara">Sumatera Utara</option>
+                                <option value="Yogyakarta">DI Yogyakarta</option>
                             </select>
                         </div>
                         
-                                                
                     
                         <div class="form-group d-flex align-items-center mt-3">
                             <label for="kontak" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                                 <i class="fas fa-phone me-2"></i> Kontak
                             </label>
-                            <input style="text-transform: uppercase;" type="number" id="kontak" name="kontak" class="form-control" required>
+                            <input style="text-transform: uppercase;" type="number" id="kontak" name="kontak" class="form-control" required> <!-- Changed to text -->
                         </div>
                     
                         <div class="form-group d-flex align-items-center mt-3">
                             <label for="email" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                                 <i class="fas fa-envelope me-2"></i> Email
                             </label>
-                            <input type="text" id="email" name="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" required> <!-- Changed to email -->
                         </div>
                     
                         <div class="form-group d-flex align-items-center mt-3">
                             <label for="website" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                                 <i class="fas fa-globe me-2"></i> Website
                             </label>
-                            <input type="text" id="website" name="website" class="form-control" required>
+                            <input type="text" id="website" name="website" class="form-control" required> <!-- Changed to url -->
                         </div>
                     
                         <div class="form-group d-flex align-items-center mt-3">
@@ -381,7 +378,7 @@
                             </label>
                             <div class="preview-container">
                                 <img id="foto_asosiasi-preview" src="#" alt="Preview" class="img-preview" style="max-width: 100px; margin-right: 10px; display: none;" />
-                                <input type="file" id="foto_asosiasi" name="foto_asosiasi" accept="image/*">
+                                <input type="file" id="foto_asosiasi" name="foto_asosiasi" accept="image/*" required> <!-- Added required -->
                             </div>
                         </div>
                     

@@ -394,45 +394,46 @@ class DatajakonController extends Controller
         ]);
     }
 
+    // Menyimpan data asosiasi pengusaha
     public function createstoreasosiasipengusaha(Request $request)
-{
-    // Validasi input
-    $request->validate([
-        'nama_asosiasi' => 'required|string|max:255',
-        'alamat_kantor' => 'required|string|max:255',
-        'kota' => 'required|string|max:255',
-        'provinsi' => 'required|string|max:255',
-        'kontak' => 'required|string|max:255',
-        'email' => 'required|string|email|max:255',
-        'website' => 'required|string|max:255',
-        'kepala_asosiasi' => 'required|string|max:255',
-        'foto_asosiasi' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480', // Pastikan hanya menerima gambar
-        'jumlah_anggota' => 'required|integer|max:255',
-        'status' => 'required|string|max:255',
-    ]);
+    {
+        // Validasi input
+        $request->validate([
+            'nama_asosiasi' => 'required|string|max:255',
+            'alamat_kantor' => 'required|string|max:255',
+            'kota' => 'required|string|max:255',
+            'provinsi' => 'required|string|max:255',
+            'kontak' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'website' => 'required|string|max:255',
+            'kepala_asosiasi' => 'required|string|max:255',
+            'foto_asosiasi' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'jumlah_anggota' => 'required|string|max:255',
+            'status' => 'required|string|max:255',
+        ]);
 
-    // Menyimpan foto asosiasi
-    $path = $request->file('foto_asosiasi')->store('asosiasipengusaha');
+        // Menyimpan foto asosiasi
+        $path = $request->file('foto_asosiasi')->store('asosiasipengusaha');
 
-    // Buat entri baru di database
-    ketertiban::create([
-        'nama_asosiasi' => $request->input('nama_asosiasi'),
-        'alamat_kantor' => $request->input('alamat_kantor'),
-        'kota' => $request->input('kota'),
-        'provinsi' => $request->input('provinsi'),
-        'kontak' => $request->input('kontak'),
-        'email' => $request->input('email'),
-        'website' => $request->input('website'),
-        'kepala_asosiasi' => $request->input('kepala_asosiasi'),
-        'foto_asosiasi' => $path, // Simpan path foto
-        'jumlah_anggota' => $request->input('jumlah_anggota'),
-        'status' => $request->input('status'),
-    ]);
+        // Buat entri baru di database
+        asosiasipengusaha::create([
+            'nama_asosiasi' => $request->input('nama_asosiasi'),
+            'alamat_kantor' => $request->input('alamat_kantor'),
+            'kota' => $request->input('kota'),
+            'provinsi' => $request->input('provinsi'),
+            'kontak' => $request->input('kontak'),
+            'email' => $request->input('email'),
+            'website' => $request->input('website'),
+            'kepala_asosiasi' => $request->input('kepala_asosiasi'),
+            'foto_asosiasi' => $path, // Simpan path foto
+            'jumlah_anggota' => $request->input('jumlah_anggota'),
+            'status' => $request->input('status'),
+        ]);
 
-    session()->flash('create', 'Data Berhasil Di Tambahkan !');
-    // Redirect ke halaman yang sesuai
-    return redirect('/asosiasipengusaha');
-}
+        session()->flash('create', 'Data Berhasil Di Tambahkan!');
+        // Redirect ke halaman yang sesuai
+        return redirect('/asosiasipengusaha'); // Sesuaikan dengan rute yang Anda inginkan
+    }
 
     //  -----------------------------------------------------------------------
 

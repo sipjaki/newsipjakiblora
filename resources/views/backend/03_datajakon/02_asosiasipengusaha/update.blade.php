@@ -292,7 +292,7 @@
                     <label for="provinsi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-map me-2"></i> Provinsi
                     </label>
-                    <input style="text-transform: uppercase;" type="text" id="provinsi" name="provinsi" class="form-control" value="{{ old('provinsi', $dataasosiasipengusaha->provinsi) }}" required>
+                    <input style="text-transform: uppercase;" type="text" id="provinsi" name="provinsi" class="form-control" value="{{ old('provinsi', $dataasosiasipengusaha->provinsi) }}" required readonly>
                 </div>
             
                 <div class="form-group d-flex align-items-center mt-3">
