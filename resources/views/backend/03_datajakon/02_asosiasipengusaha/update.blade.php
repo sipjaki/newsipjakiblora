@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 150vh;
+    height: 138vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -204,7 +204,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 920px;
-                height: 100vh;
+                height: 95vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #E0E0E0; /* Warna silver */
@@ -263,108 +263,91 @@
             @if (session('success'))
                 <p class="success-message">{{ session('success') }}</p>
             @endif
-    
             <form action="{{ route('updatestore.newasosiasipengusaha', $dataasosiasipengusaha->nama_asosiasi) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST') <!-- Gunakan metode PUT untuk update data -->
-            
-             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="nama_asosiasi" style="font-size:14px;"><i class="fas fa-file me-2"></i> Nama Asosiasi</label>
-                        <input type="text" id="nama_asosiasi" name="nama_asosiasi" value="{{ old('nama_asosiasi', $dataasosiasipengusaha->nama_asosiasi) }}" required>
-                    </div>
-                </div>
-             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="alamat_kantor" style="font-size:14px;"><i class="fas fa-file me-2"></i> Alamat Kantor</label>
-                        <input type="text" id="alamat_kantor" name="alamat_kantor" value="{{ old('alamat_kantor', $dataasosiasipengusaha->alamat_kantor) }}" required>
-                    </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="nama_asosiasi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-building me-2"></i> Nama Asosiasi
+                    </label>
+                    <input style="text-transform: uppercase;" type="text" id="nama_asosiasi" name="nama_asosiasi" class="form-control" value="{{ old('nama_asosiasi', $dataasosiasipengusaha->nama_asosiasi) }}" required>
                 </div>
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="kota" style="font-size:14px;"><i class="fas fa-file me-2"></i> Kec/Kota</label>
-                        <input type="text" id="kota" name="kota" value="{{ old('kota', $dataasosiasipengusaha->kota) }}" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="provinsi" style="font-size:14px;"><i class="fas fa-file me-2"></i> Provinsi</label>
-                        <input type="text" id="provinsi" name="provinsi" value="{{ old('provinsi', $dataasosiasipengusaha->provinsi) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="alamat_kantor" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-map-marker-alt me-2"></i> Alamat Kantor
+                    </label>
+                    <input style="text-transform: uppercase;" type="text" id="alamat_kantor" name="alamat_kantor" class="form-control" value="{{ old('alamat_kantor', $dataasosiasipengusaha->alamat_kantor) }}" required>
                 </div>
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="kontak" style="font-size:14px;"><i class="fas fa-file me-2"></i> Kontak</label>
-                        <input type="number" id="kontak" name="kontak" value="{{ old('kontak', $dataasosiasipengusaha->kontak) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="kota" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-city me-2"></i> Kec/Kota
+                    </label>
+                    <input style="text-transform: uppercase;" type="text" id="kota" name="kota" class="form-control" value="{{ old('kota', $dataasosiasipengusaha->kota) }}" required>
                 </div>
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="email" style="font-size:14px;"><i class="fas fa-file me-2"></i> Email</label>
-                        <input type="text" id="email" name="email" value="{{ old('email', $dataasosiasipengusaha->email) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="provinsi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-map me-2"></i> Provinsi
+                    </label>
+                    <input style="text-transform: uppercase;" type="text" id="provinsi" name="provinsi" class="form-control" value="{{ old('provinsi', $dataasosiasipengusaha->provinsi) }}" required>
                 </div>
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="website" style="font-size:14px;"><i class="fas fa-file me-2"></i> Website</label>
-                        <input type="text" id="website" name="website" value="{{ old('website', $dataasosiasipengusaha->website) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="kontak" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-phone me-2"></i> Kontak
+                    </label>
+                    <input style="text-transform: uppercase;" type="number" id="kontak" name="kontak" class="form-control" value="{{ old('kontak', $dataasosiasipengusaha->kontak) }}" required>
                 </div>
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="kepala_asosiasi" style="font-size:14px;"><i class="fas fa-file me-2"></i> Kepala Asosiasi </label>
-                        <input type="text" id="kepala_asosiasi" name="kepala_asosiasi" value="{{ old('kepala_asosiasi', $dataasosiasipengusaha->kepala_asosiasi) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="email" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-envelope me-2"></i> Email
+                    </label>
+                    <input  type="text" id="email" name="email" class="form-control" value="{{ old('email', $dataasosiasipengusaha->email) }}" required>
                 </div>
-{{--             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="tanggal_berdiri" style="font-size:14px;"><i class="fas fa-file me-2"></i> Tanggal Berdiri</label>
-                        <input type="date" id="tanggal_berdiri" name="tanggal_berdiri" value="{{ old('tanggal_berdiri', $dataasosiasipengusaha->tanggal_berdiri) }}" required>
-                    </div>
-                </div> --}}
             
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="jumlah_anggota" style="font-size:14px;"><i class="fas fa-file me-2"></i> Jumlah Anggota</label>
-                        <input type="number" id="jumlah_anggota" name="jumlah_anggota" value="{{ old('jumlah_anggota', $dataasosiasipengusaha->jumlah_anggota) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="website" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-globe me-2"></i> Website
+                    </label>
+                    <input type="text" id="website" name="website" class="form-control" value="{{ old('website', $dataasosiasipengusaha->website) }}" required>
                 </div>
-
-                <div class="form-group">
-                    <div class="form-group-inner" style="width:800px;">
-                        <label for="status" style="font-size:14px;">
-                            <i class="fas fa-file me-2"></i> Status
-                        </label>
-                        <select id="status" name="status" required class="form-control" style="width: 500px;">
-                            <!-- Ensure the value matches the expected status from your data source -->
-                            <option value="AKTIF" {{$dataasosiasipengusaha->status}}>{{$dataasosiasipengusaha->status}}</option>
-                            <option value="AKTIF">AKTIF</option>
-                            <option value="TIDAK AKTIF">TIDAK AKTIF</option>
-                        </select>
-                    </div>
+            
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="kepala_asosiasi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-user-tie me-2"></i> Kepala Asosiasi
+                    </label>
+                    <input style="text-transform: uppercase;" type="text" id="kepala_asosiasi" name="kepala_asosiasi" class="form-control" value="{{ old('kepala_asosiasi', $dataasosiasipengusaha->kepala_asosiasi) }}" required>
+                </div>
+            
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="jumlah_anggota" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-users me-2"></i> Jumlah Anggota
+                    </label>
+                    <input style="text-transform: uppercase;" type="number" id="jumlah_anggota" name="jumlah_anggota" class="form-control" value="{{ old('jumlah_anggota', $dataasosiasipengusaha->jumlah_anggota) }}" required>
+                </div>
+            
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="status" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-check-circle me-2"></i> Status
+                    </label>
+                    <select id="status" name="status" required class="form-control">
+                        <option value="" disabled {{ old('status', $dataasosiasipengusaha->status) == '' ? 'selected' : '' }}>PILIH STATUS</option>
+                        <option value="AKTIF" {{ $dataasosiasipengusaha->status == 'AKTIF' ? 'selected' : '' }}>AKTIF</option>
+                        <option value="TIDAK AKTIF" {{ $dataasosiasipengusaha->status == 'TIDAK AKTIF' ? 'selected' : '' }}>TIDAK AKTIF</option>
+                    </select>
                 </div>
                 
-                
-                
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="foto_asosiasi" style="font-size:14px;"><i class="fas fa-file me-2"></i> Logo Asosiasi Pengusaha</label>
-                        
-                        <!-- Elemen untuk menampilkan pratayang gambar -->
-                        <div class="preview-container">
-                            <img id="foto_asosiasi-preview" src="{{ asset('storage/' . $dataasosiasipengusaha->foto_asosiasi) }}" alt="Preview" class="img-preview" />
-                            <input type="file" id="foto_asosiasi" name="foto_asosiasi" accept="image/*">
-                        </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="foto_asosiasi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Logo Asosiasi Pengusaha
+                    </label>
+                    <div class="preview-container">
+                        <img id="foto_asosiasi-preview" src="{{ asset('storage/' . $dataasosiasipengusaha->foto_asosiasi) }}" alt="Preview" class="img-preview" style="max-width: 100px; margin-right: 10px;" />
+                        <input type="file" id="foto_asosiasi" name="foto_asosiasi" accept="image/*">
                     </div>
                 </div>
             
@@ -372,25 +355,24 @@
                     document.addEventListener('DOMContentLoaded', function() {
                         const fileInput = document.getElementById('foto_asosiasi');
                         const preview = document.getElementById('foto_asosiasi-preview');
-                    
-                        // Fungsi untuk memperbarui preview gambar
+            
                         fileInput.addEventListener('change', function(event) {
                             const file = event.target.files[0];
                             if (file) {
                                 const reader = new FileReader();
-                    
                                 reader.onload = function(e) {
                                     preview.src = e.target.result;
                                 };
-                    
                                 reader.readAsDataURL(file);
                             }
                         });
                     });
                 </script>
-                <hr style="border: 1px solid #000000">
+            
                 <div class="form-group">
-                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
+                    <button style="float: right" class="badgenewupdate" type="submit">
+                        <i class="fab fa-telegram" style="margin-right:10px;"></i> Update
+                    </button>
                 </div>
             </form>
             

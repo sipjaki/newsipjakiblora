@@ -187,7 +187,7 @@
         </a>
         
         <a href="/pengawasandanketertiban/update/{{$data->judul}}" style="background: inherit; ">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-file" style="margin-right: 5px;"></i>Update</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
         
         <a href="/pengawasandanketertiban" style="background: white;">

@@ -8,7 +8,6 @@
 
             <!--Content right-->
             <div class="col-sm-9 col-xs-12 content  pl-0">
-
                     
                 <div class="row mb-0 ">
                     <div class="font-bold col-sm-8"><h6 class="mb-4 bc-header">.</h6></div>
@@ -102,7 +101,7 @@
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
                         <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Asosiasi Pengusaha</button>
-                        <a href="/suratedarancreate" style="background: inherit">
+                        <a href="/asosiasipengusahacreate" style="background: inherit">
                             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
                         </a>
 
@@ -183,9 +182,9 @@
                     
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->nama_asosiasi}}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->alamat_kantor}}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->kota}}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;" >{{ $item->nama_asosiasi}}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->alamat_kantor}}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->kota}}</td>
                         {{-- <td style="font-size: 12px; text-align:left;">{{ $item->provinsi}}</td> --}}
                         {{-- <td style="font-size: 12px; text-align:left;">{{ $item->kontak}}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->email}}</td>

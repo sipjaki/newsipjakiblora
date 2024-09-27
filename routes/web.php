@@ -329,8 +329,8 @@ Route::get('/asosiasipengusaha', [DatajakonController::class, 'asosiasipengusaha
 Route::get('/asosiasipengusaha/{nama_asosiasi}', [DatajakonController::class, 'asosiasipengusahashowbyjudul'])->middleware('auth');
 Route::get('/asosiasipengusaha/update/{nama_asosiasi}', [DatajakonController::class, 'updateasosiasipengusaha'])->middleware('auth')->name('update.asosiasipengusaha');
 Route::post('/asosiasipengusaha/{nama_asosiasi}', [DatajakonController::class, 'createupdateasosiasipengusaha'])->middleware('auth')->name('updatestore.newasosiasipengusaha');
-// Route::get('/asosiasipengusahacreate', [DatajakonController::class, 'createasosiasipengusaha'])->middleware('auth');
-// Route::post('/asosiasipengusahastore', [DatajakonController::class, 'createstoreasosiasipengusaha'])->middleware('auth')->name('create.asosiasipengusaha');
+Route::get('/asosiasipengusahacreate', [DatajakonController::class, 'createasosiasipengusaha'])->middleware('auth');
+Route::post('/asosiasipengusahastore', [DatajakonController::class, 'createstoreasosiasipengusaha'])->middleware('auth')->name('create.asosiasipengusaha');
 
 Route::post('/asosiasipengusahadelete/{judul}', [DatajakonController::class, 'deleteasosiasipengusaha'])
 ->middleware('auth')
