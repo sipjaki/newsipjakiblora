@@ -102,9 +102,9 @@
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
                         <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Penangggung Jawab Teknis</button>
-                        {{-- <a href="/pergubernurcreate" style="background: inherit">
+                        <a href="/datapjtcreate" style="background: inherit">
                             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
-                        </a> --}}
+                        </a>
 
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
@@ -223,10 +223,10 @@
                         </style>
 
                         <div class="button-container">
-                        <a href="/himbauandinas/{{$item->nama_lengkap}}" class="iconhover" title="View">
+                        <a href="/datapjt/{{$item->nama_lengkap}}" class="iconhover" title="View">
                             <i class="fas fa-eye"></i>
                         </a>
-                                <a href="/himbauandinas/update/{{$item->nama_lengkap}}" class="iconhover" title="Update">
+                                <a href="/datapjt/update/{{$item->nama_lengkap}}" class="iconhover" title="Update">
                                     <i class="fas fa-edit"></i>
                                 </a>
 

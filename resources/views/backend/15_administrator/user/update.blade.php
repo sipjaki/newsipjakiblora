@@ -264,9 +264,9 @@
                 <p class="success-message">{{ session('success') }}</p>
             @endif
     
-            <form action="{{ route('update.dataadministrator', $datauser->name) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('updatestore.datapjt', $data->nama_lengkap) }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT') <!-- Gunakan metode PUT untuk update data -->
+                @method('post') <!-- Gunakan metode PUT untuk update data -->
             
                 <div class="form-group">
                     <div class="form-group-inner">

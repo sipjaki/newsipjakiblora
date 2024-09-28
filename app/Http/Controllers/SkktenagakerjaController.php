@@ -155,7 +155,7 @@ class SkktenagakerjaController extends Controller
 
 // ===================================================== CREATE TENAGA KERJA JASA KONSTRUKSI  ====================================================
     // ==========================================================
-    // CREATE ASOSIASI PENGUSAHA JASA KONSTRUKSI 
+    // CREATE TENAGA KERJA JASA KONSTRUKSI 
     
     public function createtenagakerja()
     {
@@ -874,13 +874,16 @@ public function datapjt()
 
 public function datapjtshowByName($nama_lengkap)
 {
-    $item = Tukangterampil::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+    $item = penanggungjawabteknis::where('nama_lengkap', $nama_lengkap)->firstOrFail();
     $user = Auth::user();
+    
+    $datapengawasanlokasi = pengawasanlokasi::all();
 
-    return view('backend.04_skk.01_skk.show', [
+    return view('backend.04_skk.02_pjt.show', [
         'data' => $item,
         'user' => $user,
-        'title' => 'Detail SKK Tenaga Kerja',
+        'datapengawasanlokasi' => $datapengawasanlokasi,
+        'title' => 'Detail Penanggung Jawab Teknis',
     ]);
 }
 
@@ -890,79 +893,68 @@ public function datapjtshowByName($nama_lengkap)
             public function updatedatapjt($nama_lengkap)
             {
                 // Cari data undang-undang berdasarkan nilai 'judul'
-                $datatukangterampil = Tukangterampil::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+                $datapenanggungjawabteknis = penanggungjawabteknis::where('nama_lengkap', $nama_lengkap)->firstOrFail();
                 $datapengawasanlokasi = pengawasanlokasi::all();
-                $datatahunpilihan = tahunpilihan::all();
-                $dataketerampilan = keterampilanpekerja::all();
                 
+                $user = Auth::user();
+    
                 // Tampilkan form update dengan data yang ditemukan
-                return view('backend.04_skk.01_skk.update', [
-                    'datatukangterampil' => $datatukangterampil,
+                return view('backend.04_skk.02_pjt.update', [
+                    'data' => $datapenanggungjawabteknis,
                     'datapengawasanlokasi' => $datapengawasanlokasi,
-                    'datatahunpilihan' => $datatahunpilihan,
-                    'dataketerampilan' => $dataketerampilan,
-                
-                    'title' => 'Update Data Pekerja'
+                    'user' => $user,
+                    'title' => 'Update Data Penanggung Jawab Teknis'
                 ]);
             }
             
             // -------------------- CREATE UPDATE TENAGA KERJA JASA KONSTRUKSI ----------------------
-            public function createupdatedatapjt(Request $request, $nama_lengkap)
+            public function createupdatedatapjtnew(Request $request, $id)
             {
-                // Validasi input
+                // Validate the incoming request data
                 $request->validate([
-                    'nama' => 'required|string|max:255',
-                    'pengawasanlokasi_id' => 'required|string|max:255',
-                    'keterampilanpekerja_id' => 'required|string|max:255',
-                    'tahunpilihan_id' => 'required|string|max:255',
-                    'desa' => 'required|string|max:255',
-                    'alamat' => 'required|string|max:255',
-                    'tanggal_lahir' => 'required|date',
-                    'nik' => 'required|string|max:255',
-                    'kualifikasi' => 'required|string|max:255',
-                    'registrasi' => 'required|string|max:255',
-                    'foto' => 'nullable|file|mimes:jpg,jpeg,png|max:20480',
+                    'nama_lengkap' => 'required|string|max:255',
+                    'pengawasanlokasi_id' => 'required|integer', // Ensure it exists in the related table
+                    'nopjt' => 'required|string|max:255',
+                    'sfesifikasi' => 'required|string|max:255',
+                    'tanggal_terbit' => 'required|date',
+                    'masa_berlaku' => 'required|date',
+                    'foto_pjt' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Max file size 2MB
                 ]);
-            
-                // Cari data tukang terampil berdasarkan nama
-                $datatukangterampil = Tukangterampil::where('nama_lengkap', $nama_lengkap)->firstOrFail();
-            
-                // Path folder penyimpanan
-                $storagePath = storage_path('app/public/skktenagakerja/profil');
-            
-                // Cek dan buat folder jika tidak ada
-                if (!File::exists($storagePath)) {
-                    File::makeDirectory($storagePath, 0755, true);
+        
+                // Find the record by nama_lengkap or use another identifier
+                $data = penanggungjawabteknis::where('id', $id)->firstOrFail();
+        
+                // Handle file upload if a new file is provided
+                if ($request->hasFile('foto_pjt')) {
+                    // Delete old file if exists
+                    if ($data->foto_pjt) {
+                        Storage::delete($data->foto_pjt);
+                    }
+        
+                    // Store new file
+                    $filePath = $request->file('foto_pjt')->store('penanggungjawabteknis'); // Adjust path as needed
+                    // $data->foto_pjt = $path;
                 }
-            
-                // Simpan file foto dan ambil path-nya
-                $filePath = $datatukangterampil->foto; // Default ke foto yang ada jika tidak ada file baru
-                if ($request->hasFile('foto')) {
-                    $file = $request->file('foto');
-                    $filePath = $file->store('skktenagakerja/profil', 'public');
-                }
-            
-                // Update data tukang terampil dengan data dari form
-                $datatukangterampil->update([
-                    'nama' => $request->input('nama'),
+        
+                $data->update([
+                    'nama_lengkap' => $request->input('nama_lengkap'),
                     'pengawasanlokasi_id' => $request->input('pengawasanlokasi_id'),
-                    'keterampilanpekerja_id' => $request->input('keterampilanpekerja_id'),
-                    'tahunpilihan_id' => $request->input('tahunpilihan_id'),
-                    'desa' => $request->input('desa'),
-                    'alamat' => $request->input('alamat'),
-                    'tanggal_lahir' => $request->input('tanggal_lahir'),
-                    'nik' => $request->input('nik'),
-                    'kualifikasi' => $request->input('kualifikasi'),
-                    'registrasi' => $request->input('registrasi'),
-                    'foto' => $filePath, // Menggunakan variabel filePath yang benar
+                    'nopjt' => $request->input('nopjt'),
+                    'sfesifikasi' => $request->input('sfesifikasi'),
+                    'tanggal_terbit' => $request->input('tanggal_terbit'),
+                    'masa_berlaku' => $request->input('masa_berlaku'),
+                    'foto_pjt' => $filePath, // Menggunakan variabel filePath yang benar
                 ]);
             
                 // Flash pesan session
                 session()->flash('update', 'Data Tenaga Kerja Berhasil Diupdate!');
             
                 // Redirect ke halaman yang sesuai
-                return redirect('/beskktenagakerja');
+                return redirect('/datapjt');
             }
+
+        
+
 // ===================================================== DELETE TENAGA KERJA ====================================================
 
             public function deletedatapjt($nama_lengkap)

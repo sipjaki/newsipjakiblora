@@ -183,10 +183,10 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Agenda Sertifikasi Jasa Konstruksi </div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Penanggung Jawab Teknis Jasa Konstruksi </div></label>
         </a>
         
-        <a href="/beritaagenda" style="background: white;">
+        <a href="/datapjt" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
 
@@ -200,7 +200,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 920px;
-                height: 76vh;
+                height: 75vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #E0E0E0; /* Warna silver */
@@ -257,69 +257,96 @@
         <div class="container-update" style="col-lg-12">
             <!-- Menampilkan pesan sukses jika ada -->
             {{-- <form action="/beritaagendaupdatestore/{{$beritaagenda->nama_agenda}}" method="POST"> --}}
-                <form action="{{ route('update.beritaagenda', $beritaagenda->nama_agenda) }}" method="POST">
+                <form action="/datapjtupdatestore/{{$data->id}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('POST') <!-- Use PUT for update -->
-                
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="nama_agenda" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-alt me-2"></i> Nama Agenda</label>
-                        <input type="text" class="form-control" id="nama_agenda" name="nama_agenda" value="{{ old('nama_agenda', $beritaagenda->nama_agenda) }}" required>
-                    </div>
-                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="keterangan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-info-circle me-2"></i> Keterangan</label>
-                        <textarea class="form-control" id="keterangan" name="keterangan" rows="4" style="resize: vertical;" required>{{ old('keterangan', $beritaagenda->keterangan) }}</textarea>
-                    </div>
-                
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="kuota" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-users me-2"></i> Kuota</label>
-                        <input type="number" class="form-control" id="kuota" name="kuota" value="{{ old('kuota', $beritaagenda->kuota) }}" required>
-                    </div>
-                
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="tanggal_mulai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-check me-2"></i> Tanggal Mulai</label>
-                        <input type="date" class="form-control" id="tanggal_mulai" name="tanggal_mulai" value="{{ old('tanggal_mulai', $beritaagenda->tanggal_mulai) }}" required>
-                    </div>
-                
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="tanggal_selesai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-times me-2"></i> Tanggal Selesai</label>
-                        <input type="date" class="form-control" id="tanggal_selesai" name="tanggal_selesai" value="{{ old('tanggal_selesai', $beritaagenda->tanggal_selesai) }}" required>
-                    </div>
-                 
-
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="statusprogram" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-calendar-times me-2"></i> Status Program
-                        </label>
-                        <select class="form-control" id="statusprogram" name="statusprogram" required>
-                            <option value="" disabled {{ old('statusprogram', $beritaagenda->statusprogram) == '' ? 'selected' : '' }}>PILIH STATUS</option>
-                            <option value="BERJALAN" {{ old('statusprogram', $beritaagenda->statusprogram) == 'BERJALAN' ? 'selected' : '' }}>BERJALAN</option>
-                            <option value="SEGERA HADIR" {{ old('statusprogram', $beritaagenda->statusprogram) == 'SEGERA HADIR' ? 'selected' : '' }}>SEGERA HADIR</option>
-                            <option value="DIBATALKAN" {{ old('statusprogram', $beritaagenda->statusprogram) == 'DIBATALKAN' ? 'selected' : '' }}>DIBATALKAN</option>
-                            <option value="SELESAI" {{ old('statusprogram', $beritaagenda->statusprogram) == 'SELESAI' ? 'selected' : '' }}>SELESAI</option>
-                        </select>
-                    </div>
+                    @method('post') <!-- Use PUT for update -->
                     
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-map-marker-alt me-2"></i> Lokasi Pengawasan</label>
+                        <label for="nama_lengkap" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-user me-2"></i> Nama Lengkap
+                        </label>
+                        <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="{{ old('nama_lengkap', $data->nama_lengkap) }}" required>
+                    </div>
+                
+                    <div class="form-group d-flex align-items-center mt-3">
+                        <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-map-marker-alt me-2"></i> Kecamatan/Kota
+                        </label>
                         <select class="form-control" id="pengawasanlokasi_id" name="pengawasanlokasi_id" required>
                             @foreach ($datapengawasanlokasi as $lokasi)
-                            <option value="" disabled {{ old('pengawasanlokasi_id', $beritaagenda->pengawasanlokasi_id) == '' ? 'selected' : '' }}>PILIH LOKASI</option>
-                                <option value="{{ $lokasi->id }}" {{ old('pengawasanlokasi_id', $beritaagenda->pengawasanlokasi_id) == $lokasi->id ? 'selected' : '' }}>
+                                <option value="{{ $lokasi->id }}" {{ old('pengawasanlokasi_id', $data->pengawasanlokasi_id) == $lokasi->id ? 'selected' : '' }}>
                                     {{ $lokasi->kota }}
                                 </option>
                             @endforeach
                         </select>
                     </div>
-                 
-
+                
+                    <div class="form-group d-flex align-items-center mt-3">
+                        <label for="nopjt" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-file-alt me-2"></i> No PJT
+                        </label>
+                        <input type="number" class="form-control" id="nopjt" name="nopjt" value="{{ old('nopjt', $data->nopjt) }}" required>
+                    </div>
+                
+                    <div class="form-group d-flex align-items-center mt-3">
+                        <label for="sfesifikasi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-cogs me-2"></i> Spesifikasi
+                        </label>
+                        <input type="text" class="form-control" id="sfesifikasi" name="sfesifikasi" value="{{ old('sfesifikasi', $data->sfesifikasi) }}" required>
+                    </div>
+                
+                    <div class="form-group d-flex align-items-center mt-3">
+                        <label for="tanggal_terbit" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-calendar-alt me-2"></i> Tanggal Terbit
+                        </label>
+                        <input type="date" class="form-control" id="tanggal_terbit" name="tanggal_terbit" value="{{ old('tanggal_terbit', \Carbon\Carbon::parse($data->tanggal_terbit)->locale('id')->translatedFormat('d F Y')) }}" required>
+                    </div>
+                
+                    <div class="form-group d-flex align-items-center mt-3">
+                        <label for="masa_berlaku" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-clock me-2"></i> Masa Berlaku
+                        </label>
+                        <input type="date" class="form-control" id="masa_berlaku" name="masa_berlaku" value="{{ old('masa_berlaku', \Carbon\Carbon::parse($data->masa_berlaku)->locale('id')->translatedFormat('d F Y')) }}" required>
+                    </div>
+                
+                    <div class="form-group d-flex align-items-center mt-3">
+                        <label for="foto_pjt" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-image me-2"></i> Foto <br> Penanggung Jawab Teknis
+                        </label>
+                        
+                        <div class="preview-container">
+                            <img id="foto_pjt-preview" src="{{ asset('storage/' . $data->foto_pjt) }}" alt="Preview" class="img-preview" style="max-width: 100px; margin-right: 10px;" />
+                            <input type="file" id="foto_pjt" name="foto_pjt" accept="image/*" class="form-control-file">
+                        </div>
+                    </div>
+                                    
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const fileInput = document.getElementById('foto_pjt');
+                            const preview = document.getElementById('foto_pjt-preview');
+                
+                            fileInput.addEventListener('change', function(event) {
+                                const file = event.target.files[0];
+                                if (file) {
+                                    const reader = new FileReader();
+                
+                                    reader.onload = function(e) {
+                                        preview.src = e.target.result;
+                                    };
+                
+                                    reader.readAsDataURL(file);
+                                }
+                            });
+                        });
+                    </script>
+                    
                     <div class="form-group">
-                        <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fas fa-paper-plane" style="margin-right:10px;"></i> Update</button>
+                        <button style="float: right" class="badgenewupdate btn btn-primary" type="submit">
+                            <i class="fas fa-paper-plane" style="margin-right:10px;"></i> Update
+                        </button>
                     </div>
                 </form>
                 
-                     
-            
         </div>
 
 

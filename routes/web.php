@@ -393,7 +393,7 @@ Route::post('/newtenagakerjadelete/{nama}', [SkktenagakerjaController::class, 'd
 Route::get('/datapjt', [SkktenagakerjaController::class, 'datapjt'])->middleware('auth');  
 Route::get('/datapjt/{nama_lengkap}', [SkktenagakerjaController::class, 'datapjtshowByName'])->name('datapjt.show');
 Route::get('/datapjt/update/{nama_lengkap}', [SkktenagakerjaController::class, 'updatedatapjt'])->middleware('auth')->name('update.datapjt');
-Route::post('/datapjt/{nama_lengkap}', [SkktenagakerjaController::class, 'createupdatedatapjt'])->middleware('auth')->name('updatestore.datapjt');
+Route::post('/datapjtupdatestore/{id}', [SkktenagakerjaController::class, 'createupdatedatapjtnew'])->middleware('auth')->name('updatestore.datapjt');
 Route::get('/datapjtcreate', [SkktenagakerjaController::class, 'createdatapjt'])->middleware('auth');
 Route::post('/datapjtstore', [SkktenagakerjaController::class, 'createstoredatapjt'])->middleware('auth')->name('create.datapjt');
 
