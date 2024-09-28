@@ -181,8 +181,14 @@
                         <td style="font-size: 12px; text-align:center; text-transform:uppercase">{{ $item->pengawasanlokasi->kota}}</td>
                         <td style="font-size: 12px; text-align:center; text-transform:uppercase">{{ $item->nopjt}}</td>
                         <td style="font-size: 12px; text-align:center; text-transform:uppercase">{{ $item->sfesifikasi}}</td>
-                        <td style="font-size: 12px; text-align:center; text-transform:uppercase">{{ $item->tanggal_terbit}}</td>
-                        <td style="font-size: 12px; text-align:center; text-transform:uppercase" >{{ $item->masa_berlaku}}</td>
+                        <td style="font-size: 12px; text-align:center; text-transform:uppercase">
+                            {{ \Carbon\Carbon::parse($item->tanggal_terbit)->locale('id')->translatedFormat(' d F Y') }}
+                        </td>
+                        
+                        <td style="font-size: 12px; text-align:center; text-transform:uppercase">
+                            {{ \Carbon\Carbon::parse($item->masa_berlaku)->locale('id')->translatedFormat(' d F Y') }}
+                        </td>
+                        
                         <td>
                             
                         <style>

@@ -285,7 +285,7 @@
                             <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
                         </td>
                     </tr>
-                    
+
                 </table>
                 
             </td>
@@ -301,7 +301,7 @@
     <button id="previewBtn" class="badge">
         <i class="fas fa-file me-2"></i> Preview
     </button>
-    <button id="downloadBtn" class="badge">
+    <button id="downloadBtn" data-nama="{{ $data->nama_lengkap }}" class="badge">
         <i class="fas fa-download me-2"></i>Download
     </button>
 </div>
@@ -359,16 +359,20 @@
     });
 
     document.getElementById('downloadBtn').addEventListener('click', function() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF('p', 'mm', 'a4');
-        const nama = document.getElementById('dataContainer').getAttribute('data-nama');
-        const formattedNama = nama ? nama.replace(/[^a-zA-Z0-9]/g, '_') : 'document';
-        html2canvas(document.getElementById('datakeluar')).then(canvas => {
-            const imgData = canvas.toDataURL('image/png');
-            doc.addImage(imgData, 'PNG', 10, 25, 190, 100);
-            doc.save(`${formattedNama}.pdf`);
-        });
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('p', 'mm', 'a4');
+    
+    // Get the nama_lengkap from the data attribute
+    const nama = document.getElementById('dataContainer').getAttribute('data-nama');
+    const formattedNama = nama ? nama.replace(/[^a-zA-Z0-9]/g, '_') : '{{$data->nama_lengkap}}';
+
+    html2canvas(document.getElementById('datakeluar')).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        doc.addImage(imgData, 'PNG', 10, 25, 190, 100);
+        doc.save(`${formattedNama}.pdf`); // Use the formatted name for the file
     });
+});
+
 </script>
 
 

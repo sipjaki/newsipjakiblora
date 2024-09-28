@@ -55,6 +55,7 @@ use App\Models\standarbiayaumum;
 use App\Models\statusadmin;
 use App\Models\strukturdinas;
 use App\Models\tahunpilihan;
+use App\Models\timpembina;
 use App\Models\tupoksi;
 use App\Models\uijk;
 // use App\Models\paketpekerjaan;
@@ -91,6 +92,20 @@ class DatabaseSeeder extends Seeder
         Beritaagenda::factory(15)->create();  
         Qa::factory(15)->create();
                  
+// =============== CREATE TIM PEMBINA 
+        timpembina::create([
+            'jabatandalamkedinasan'  => 'Fungsional Pembina Jasa Konstruksi Ahli Muda',
+            'nama_lengkap'  => 'Yuyu Yuhana, ST., MM',
+            'jabatan'  => 'Yuyu Yuhana, ST., MM',
+            'email'  => 'sipjakikbb@gmail.com',
+            'alamatkantor'  => 'Kantor Bupati Pemerintah Kabupaten Bandung Barat',
+            'telepon'  => '081317051502',
+            'fototimpembina'  => 'Profesional',
+            
+            // 'Jabatan'  => 'Yuyu Yuhana, ST., MM',
+            
+        ]);
+        // =========================================================
 
         User::create([
             'name'  => 'Sigit Septiadi',
