@@ -147,7 +147,7 @@
         }
     </style>
      <div class="marquee-container">
-        <div class="marquee" style="color: white">Selamat Datang ! di Halaman Admin Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat Anda Adalah  </div>
+        <div class="marquee" style="color: white">Selamat Datang ! di Halaman Admin Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat Anda Adalah {{ $user->username}}  </div>
     </div>
     
                 

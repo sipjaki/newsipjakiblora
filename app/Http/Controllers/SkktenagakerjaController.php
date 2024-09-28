@@ -150,6 +150,91 @@ class SkktenagakerjaController extends Controller
                     // Redirect ke halaman yang sesuai
                     return redirect('/beskktenagakerja');
                 }
+
+
+
+// ===================================================== CREATE TENAGA KERJA JASA KONSTRUKSI  ====================================================
+    // ==========================================================
+    // CREATE ASOSIASI PENGUSAHA JASA KONSTRUKSI 
+    
+    public function createtenagakerja()
+    {
+        $user = Auth::user();
+        $data = Tukangterampil::all();
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $datatahunpilihan = tahunpilihan::all();
+        $dataketerampilan = keterampilanpekerja::all();
+
+
+        // Tampilkan form update dengan data yang ditemukan
+        return view('backend.04_skk.01_skk.create', [
+            'title' => 'Create Tenaga Kerja',
+            'user' => $user,
+            'tukangterampil' => $data,
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datatahunpilihan' => $datatahunpilihan,
+            'dataketerampilan' => $dataketerampilan,
+
+                            
+        ]);
+    }
+
+    // Menyimpan data asosiasi pengusaha
+    public function createstoretenagakerja(Request $request)
+    {
+        // Validate input
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'tanggal_lahir' => 'required|date',
+            'pengawasanlokasi_id' => 'required|integer',
+            'keterampilanpekerja_id' => 'required|integer',
+            'tahunpilihan_id' => 'required|integer',
+            'desa' => 'required|string|max:255',
+            'alamat' => 'required|string|max:255',
+            'nik' => 'required|string|max:255',
+            'kualifikasi' => 'required|string|max:255',
+            'registrasi' => 'required|string|max:255',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'kta_gatensi' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'skk_pekerja' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'foto_kegiatanpekerja1' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+            'foto_kegiatanpekerja2' => 'required|image|mimes:jpeg,png,jpg,gif|max:20480',
+        ]);
+
+        // Handle file uploads
+        $foto_path = $request->file('foto')->store('skktenagakerja/arsip/pas');
+        $kta_gatensi_path = $request->file('kta_gatensi')->store('skktenagakerja/arsip/kta_gatensi');
+        $skk_pekerja_path = $request->file('skk_pekerja')->store('skktenagakerja/arsip/skk_pekerja');
+        $foto_kegiatanpekerja1_path = $request->file('foto_kegiatanpekerja1')->store('skktenagakerja/arsip/fotokegiatan1');
+        $foto_kegiatanpekerja2_path = $request->file('foto_kegiatanpekerja2')->store('skktenagakerja/arsip/fotokegiatan2');
+
+        // Create a new entry in the database
+        Tukangterampil::create([
+            'nama' => $request->input('nama'),
+            'tanggal_lahir' => $request->input('tanggal_lahir'),
+            'pengawasanlokasi_id' => $request->input('pengawasanlokasi_id'),
+            'keterampilanpekerja_id' => $request->input('keterampilanpekerja_id'),
+            'tahunpilihan_id' => $request->input('tahunpilihan_id'),
+            'desa' => $request->input('desa'),
+            'alamat' => $request->input('alamat'),
+            'nik' => $request->input('nik'),
+            'kualifikasi' => $request->input('kualifikasi'),
+            'registrasi' => $request->input('registrasi'),
+            'foto' => $foto_path,
+            'kta_gatensi' => $kta_gatensi_path,
+            'skk_pekerja' => $skk_pekerja_path,
+            'foto_kegiatanpekerja1' => $foto_kegiatanpekerja1_path,
+            'foto_kegiatanpekerja2' => $foto_kegiatanpekerja2_path,
+        ]);
+
+        session()->flash('create', 'Data Berhasil Ditambahkan!');
+        
+        // Redirect to the desired route
+        return redirect('/beskktenagakerja'); // Adjust this to your desired route
+    }
+
+
+
 // ===================================================== DELETE TENAGA KERJA ====================================================
 
                 public function deletetenagakerja($nama)
