@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('pengawasanlokasi_id'); // Tempat
             $table->string('nama_lengkap'); // Nama lengkap
             $table->bigInteger('nopjt'); // Nomor PJT, unique untuk memastikan tidak ada duplikat
+            $table->string('foto_pjt'); // Nomor PJT, unique untuk memastikan tidak ada duplikat
             $table->text('sfesifikasi'); // Spesifikasi, perhatikan bahwa nama kolom ini adalah 'sfesifikasi', pastikan sesuai dengan yang diinginkan
             $table->date('tanggal_terbit'); // Tanggal terbit
             $table->date('masa_berlaku'); // Masa berlaku

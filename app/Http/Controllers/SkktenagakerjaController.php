@@ -968,28 +968,28 @@ public function datapjtshowByName($nama_lengkap)
             public function deletedatapjt($nama_lengkap)
             {
                 // Cari entri berdasarkan name
-                $entry = Tukangterampil::where('nama_lengkap', $nama_lengkap)->first();
+                $entry = penanggungjawabteknis::where('nama_lengkap', $nama_lengkap)->first();
             
                 if ($entry) {
                     // Hapus file terkait jika ada
                     if ($entry->foto) {
-                        Storage::disk('public')->delete($entry->foto);
+                        Storage::disk('public')->delete($entry->foto_pjt);
                     }
             
                     // Hapus entri dari database
-                    Tukangterampil::destroy($entry->id);
+                    penanggungjawabteknis::destroy($entry->id);
             
                     // Set pesan flash untuk sukses
                     session()->flash('delete', 'Data Berhasil Dihapus!');
             
                     // Redirect ke halaman yang sesuai
-                    return redirect('/beskktenagakerja');
+                    return redirect('/datapjt');
                 } else {
                     // Set pesan flash jika data tidak ditemukan
                     session()->flash('error', 'Data Tidak Ditemukan!');
             
                     // Redirect ke halaman yang sesuai
-                    return redirect('/beskktenagakerja');
+                    return redirect('/datapjt');
                 }
             }                
             

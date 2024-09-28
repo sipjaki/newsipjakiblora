@@ -231,10 +231,10 @@
                                 </a>
 
 
-                                {{-- <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('peruud.deletepergubernur', $item->judul) }}')">
+                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('delete.datapjt', $item->nama_lengkap) }}')">
                                     <i class="fas fa-trash"></i>
                                 </a>
-                                 --}}
+                                
         
                                 {{-- ================= FORM DELETE =================== --}}
                     <!-- Modal HTML -->
