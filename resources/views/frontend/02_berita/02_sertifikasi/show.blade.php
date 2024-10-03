@@ -32,10 +32,10 @@
             </div>
             <div class="owl-carousel news-carousel carousel-item-4 position-relative">
 
-                @foreach ($data_laporankegiatan as $item )
+                @foreach ($data_kegiatanjaskon as $item )
 
                     <div class="position-relative overflow-hidden" style="height: 300px;">
-                            <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover; padding:10px;">
+                            <img class="img-fluid h-100" src="{{ asset('storage/' . $item->gambar) }}" style="object-fit: cover; padding:10px;">
                     <div class="overlay">
                         <a href="/detailskegiatan/{{$item->jabatan}}" class="h6 m-0 text-white text-uppercase font-weight-semi-bold">{{$item->judul_kegiatan}}</a>
                     </div>
@@ -66,12 +66,12 @@
                 <div class="col-12 mt-2" >
                     <div class="d-flex justify-content-between">
                         <div class="section-title border-right-0 mb-0" style="width: 180px;">
-                            {{-- <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width: 20%;"> --}}
+                            <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width: 20%;">
                             <h5 class="m-0 text-uppercase font-weight-bold">Tranding</h5>
                         </div>
                         <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center bg-white border border-left-0"
                             style="width: calc(100% - 180px); padding-right: 100px;">
-                        @foreach ($data_laporankegiatan as $item ) 
+                        @foreach ($data_kegiatanjaskon as $item ) 
                         <div class="text-truncate"><a class="text-secondary text-uppercase font-weight-semi-bold" href="/portalberita/{{$item->judul_kegiatan}}">{{ $item->judul_kegiatan}}</a></div>
                         @endforeach
                         
@@ -100,7 +100,7 @@
                             {{-- @foreach ($data_berita as $item ) --}}
                                 
                             <!-- Gambar yang membuka modal -->
-                            <img class="img-fluid w-100" src="{{$data_berita->gambar}}" style="object-fit: cover; cursor: pointer;" data-toggle="modal" data-target="#imageModal">
+                            <img class="img-fluid w-100" src="{{asset('storage/' . $data_berita->gambar) }}" style="object-fit: cover; cursor: pointer;" data-toggle="modal" data-target="#imageModal">
                         
                         <div class="bg-white border border-top-0 p-4">
                             <div class="mb-3">
@@ -164,22 +164,15 @@
                     <!-- Tags Start -->
 
                         <div class="mb-3">
+                            {{-- <button class="btn btn-sn b"></button> --}}
                             <div class="section-title mb-0">
-                                {{-- <img src="/assets/icon/sipjakikbb.png" alt="" style="width: 15%;"> --}}
-                                <h5 class=" text-uppercase font-weight-bold">Layanan Kami</h5>
+                                {{-- <img src="/assets/icon/sipjakikbb.png" alt="" style="width: 40px;"> --}}
+                                <a href="/kegiatansertifikasi">
+                                    <h5 class=" text-uppercase font-weight-bold"><i class="fas fa-arrow-left" style="margin-right: 20px; "></i>Daftar Kegiatan</h5>
+                                </a>
                                 <img src="/assets/icon/sipjakikbb.png" alt="" style="width: 40px;">
                             </div>
                             
-                            <div class="bg-white border border-top-0 p-3">
-                                @foreach ($data_layanankami as $item )
-                                    
-                                <a href="" class="d-block w-100 text-white text-decoration-none mb-2 mt-2" style="background: #F7E300; border-radius:10px;" onmouseover="this.style.background='linear-gradient(to right, white, white)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, #F7E300, #F7E300 )'; this.style.color='black';">
-                                    <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width: 12%">
-                                    {{-- <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i> --}}
-                                    <span class="font-weight-medium" style="color:black">{{$item->program}}</span>
-                                </a>
-                                @endforeach
-                            </div>
                         </div>
                         <style>
                             .gallery img {
@@ -202,114 +195,88 @@
                                 height: auto;
                             }
                         </style>
-                    </head>
-                    <body>
                     
                     <div class="container my-4">
                         <div class="section-title mb-4">
+                            <img src="/assets/icon/sipjakikbb.png" alt="Logo" style="width: 40px; margin-right:0px;">
                             <h5 class="text-uppercase font-weight-bold">Galeri Kegiatan</h5>
-                            <img src="/assets/icon/sipjakikbb.png" alt="Logo" style="width: 40px;">
                         </div>
                     
                         <div class="row gallery">
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita1}}" alt="Berita 1" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita1}}">
+                                <img src="{{ asset('storage/' . $data->berita1) }}" alt="Berita 1" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita1) }}">
                             </div>
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita2}}" alt="Berita 2" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita2}}">
+                                <img src="{{ asset('storage/' . $data->berita2) }}" alt="Berita 2" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita2) }}">
                             </div>
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita3}}" alt="Berita 3" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita3}}">
+                                <img src="{{ asset('storage/' . $data->berita3) }}" alt="Berita 3" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita3) }}">
                             </div>
                             <!-- Tambahkan lebih banyak gambar dengan pola yang sama -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita4}}" alt="Berita 4" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita4}}">
+                                <img src="{{ asset('storage/' . $data->berita4) }}" alt="Berita 4" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita4) }}">
                             </div>
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita5}}" alt="Berita 5" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita5}}">
+                                <img src="{{ asset('storage/' . $data->berita5) }}" alt="Berita 5" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita5) }}">
                             </div>
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita6}}" alt="Berita 6" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita6}}">
-                            </div>
-                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
-                            <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita7}}" alt="Berita 7" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita7}}">
+                                <img src="{{ asset('storage/' . $data->berita6) }}" alt="Berita 6" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita6) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita8}}" alt="Berita 8" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita8}}">
+                                <img src="{{ asset('storage/' . $data->berita7) }}" alt="Berita 7" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita7) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita9}}" alt="Berita 9" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita9}}">
+                                <img src="{{ asset('storage/' . $data->berita8) }}" alt="Berita 8" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita8) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita10}}" alt="Berita 10" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita10}}">
+                                <img src="{{ asset('storage/' . $data->berita9) }}" alt="Berita 9" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita9) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita11}}" alt="Berita 11" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita11}}">
+                                <img src="{{ asset('storage/' . $data->berita10) }}" alt="Berita 10" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita10) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita12}}" alt="Berita 12" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita12}}">
+                                <img src="{{ asset('storage/' . $data->berita11) }}" alt="Berita 11" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita11) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita13}}" alt="Berita 13" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita13}}">
+                                <img src="{{ asset('storage/' . $data->berita12) }}" alt="Berita 12" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita12) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita14}}" alt="Berita 14" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita14}}">
+                                <img src="{{ asset('storage/' . $data->berita13) }}" alt="Berita 13" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita13) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita15}}" alt="Berita 15" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita15}}">
+                                <img src="{{ asset('storage/' . $data->berita14) }}" alt="Berita 14" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita14) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita16}}" alt="Berita 16" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita16}}">
+                                <img src="{{ asset('storage/' . $data->berita15) }}" alt="Berita 15" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita15) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita17}}" alt="Berita 17" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita17}}">
+                                <img src="{{ asset('storage/' . $data->berita16) }}" alt="Berita 16" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita16) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita18}}" alt="Berita 18" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita18}}">
+                                <img src="{{ asset('storage/' . $data->berita17) }}" alt="Berita 17" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita17) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita19}}" alt="Berita 19" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita19}}">
+                                <img src="{{ asset('storage/' . $data->berita18) }}" alt="Berita 18" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita18) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita20}}" alt="Berita 20" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita20}}">
+                                <img src="{{ asset('storage/' . $data->berita19) }}" alt="Berita 19" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita19) }}">
                             </div>
                             <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                             <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita21}}" alt="Berita 21" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita21}}">
-                            </div>
-                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
-                            <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita22}}" alt="Berita 22" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita22}}">
-                            </div>
-                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
-                            <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita23}}" alt="Berita 23" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita23}}">
-                            </div>
-                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
-                            <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita24}}" alt="Berita 24" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita24}}">
-                            </div>
-                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
-                            <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita25}}" alt="Berita 25" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita25}}">
-                            </div>
-                            <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
-                            <div class="col-md-4 mb-3">
-                                <img src="{{$data_kegiatanjaskon->berita26}}" alt="Berita 26" data-toggle="modal" data-target="#imageModal" data-image="{{$data_kegiatanjaskon->berita26}}">
+                                <img src="{{ asset('storage/' . $data->berita20) }}" alt="Berita 20" data-toggle="modal" data-target="#imageModal" data-image="{{ asset('storage/' . $data->berita20) }}">
                             </div>
                                     <!-- Lanjutkan menambahkan gambar sesuai kebutuhan -->
                         </div>

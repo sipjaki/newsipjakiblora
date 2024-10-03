@@ -85,7 +85,8 @@ Route::get('/kegiatansertifikasi', [FedashboardController::class, 'kegiatanserti
 Route::get('/kegiatansertifikasi/{judul_kegiatan}', [FedashboardController::class, 'kegiatansertifikasishowByJudul']);
 Route::get('/detailskegiatan/{jabatan}', [FedashboardController::class, 'detailskegiatanshowByJudul']);
 
-
+// -------- BAGIAN 3 AGENDA SERTIFIKASI ---------------------------------
+Route::get('/feagendasertifikasi', [FedashboardController::class, 'feagendasertifikasipekerja']);
 
 // ---------------------- 03 DATA JAKON -----------------------//
 // -------- BAGIAN 1 ---------------------------------

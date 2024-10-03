@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\berita; // Pastikan namespace model sesuai dengan struktur direktori
+use App\Models\beritaagenda;
 use App\Models\himbauandinas;
 use App\Models\kegiatanjaskon;
 use App\Models\laporankegiatan;
 use App\Models\layanankami;
+use App\Models\pengawasanlokasi;
 use App\Models\qapertanyaan;
 use App\Models\qasebagai;
 use App\Models\qa;
+use App\Models\sertifikasiagenda;
 use App\Models\skktenagakerja; // Pastikan namespace model sesuai dengan struktur direktori
 
 use Illuminate\Support\Facades\Auth;
@@ -146,6 +149,7 @@ class FedashboardController extends Controller
         $user = Auth::user();
 
         return view('frontend.02_berita.02_sertifikasi.show', [
+            'data' => $kegiatanjaskon,
             'data_kegiatanjaskon' => $datalaporankegiatan,
             'data_berita' => $data_berita,
             'data_layanankami' => $data_layanankami,
@@ -158,7 +162,7 @@ class FedashboardController extends Controller
     public function detailskegiatanshowByJudul($jabatan)
     {
         $data_berita = berita::first(); //
-        $data_layanankami = layanankami::all(); //
+        // $data_layanankami = layanankami::all(); //
         $data_laporankegiatanall = laporankegiatan::all(); //
         $data_laporankegiatan =laporankegiatan::where('jabatan', $jabatan)->firstOrFail(); //
         // $data_kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
@@ -168,7 +172,7 @@ class FedashboardController extends Controller
         return view('frontend.02_berita.02_sertifikasi.showdetails', [
             // 'data_kegiatanjaskon' => $data_kegiatanjaskon,
             'data_berita' => $data_berita,
-            'data_layanankami' => $data_layanankami,
+            // 'data_layanankami' => $data_layanankami,
             'data_laporankegiatan' => $data_laporankegiatan,
             'data_laporankegiatanall' => $data_laporankegiatanall,
             'user' => $user,
@@ -177,6 +181,22 @@ class FedashboardController extends Controller
     }
 
 
+    // -================================================================================
+
+    public function feagendasertifikasipekerja()
+    {
+        $data = beritaagenda::paginate(8);
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        
+        $user = Auth::user();
+
+        return view('frontend.02_berita.03_agendasertifikasi.index', [
+            'title' => 'Agenda Sertifikasi Pekerja Konstruksi Kabupaten Bandung Barat',
+            'user' => $user, // Mengirimkan data paginasi ke view
+            'data' => $data, // Mengirimkan data paginasi ke view
+            'datapengawasanlokasi' => $datapengawasanlokasi, // Mengirimkan data paginasi ke view
+        ]);
+    }
     
 
 
