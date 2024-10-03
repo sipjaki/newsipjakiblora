@@ -78,10 +78,9 @@ Route::get('/profil/tupoksi', [StrukturController::class, 'tupoksifekbb']);
 // ------------------------- 02 BAGIAN BERITA SIPJAKI KBB --------------------------
 // -------- BAGIAN 1 TAMPILAN BERITA ---------------------------------
 Route::get('/berita', [FedashboardController::class, 'navbarberita']);
-
-// -------- BAGIAN 2 KEGIATAN SERTIFIKASI ---------------------------------
 Route::get('/portalberita/{judul}', [FedashboardController::class, 'portalberitashowByJudul']);
 
+// -------- BAGIAN 2 KEGIATAN SERTIFIKASI SIPJAKI KABUPATEN BANDUNG BARAT ---------------------------------
 Route::get('/kegiatansertifikasi', [FedashboardController::class, 'kegiatansertifikasi']);  
 Route::get('/kegiatansertifikasi/{judul_kegiatan}', [FedashboardController::class, 'kegiatansertifikasishowByJudul']);
 Route::get('/detailskegiatan/{jabatan}', [FedashboardController::class, 'detailskegiatanshowByJudul']);

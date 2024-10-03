@@ -108,7 +108,7 @@
 
 
     <!-- Featured News Slider Start -->
-    <div class="container-fluid pt-5 mb-3">
+    <div class="container-fluid pt-5 mb-5">
         <div class="container">
             <div class="section-title">
                 <h4 class="m-0 text-uppercase font-weight-bold">news</h4>
@@ -136,8 +136,8 @@
         </div>
     </div>
 
-    <br><br><br>
-        
+    <br>
+{{-- <p>fjnfdjbnf</p> --}}
         
     </section>
 

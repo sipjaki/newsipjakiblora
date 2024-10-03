@@ -94,12 +94,12 @@ class FedashboardController extends Controller
 
     public function navbarberita()
     {
-        $data= berita::all(); //    
+        $data= berita::orderBy('created_at', 'desc')->get();; //    
         
         $user = Auth::user();
 
 
-        return view('frontend.02_berita.portalberita.navbarberita', [
+        return view('frontend.02_berita.01_portalberita.navbarberita', [
             'title' => 'Berita KBB',
             'data' => $data, // Mengirimkan data paginasi ke view
             'user' => $user, // Mengirimkan data paginasi ke view
@@ -109,14 +109,14 @@ class FedashboardController extends Controller
  
     public function kegiatansertifikasi()
     {
-        $data = berita::all(); //
+        $data = berita::orderBy('created_at', 'desc')->get(); //
         $data_layanankami = layanankami::all(); //
-        $data_kegiatanjaskon = kegiatanjaskon::all(); //
+        $data_kegiatanjaskon = kegiatanjaskon::orderBy('created_at', 'desc')->get(); //
 
         
         $user = Auth::user();
 
-        return view('frontend.02_berita.03_sertifikasi.index', [
+        return view('frontend.02_berita.02_sertifikasi.index', [
             'title' => 'Kegiatan Sertifikasi oleh Pemerintah Kabupaten Bandung Barat',
             'data' => $data, // Mengirimkan data paginasi ke view
             'data_layanankami' => $data_layanankami, // Mengirimkan data paginasi ke view
@@ -130,16 +130,26 @@ class FedashboardController extends Controller
     {
         $data_berita = berita::first(); //
         $data_layanankami = layanankami::all(); //
-        $data_laporankegiatan = laporankegiatan::all(); //
-        $data_kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
-                
+        // $data_laporankegiatan = laporankegiatan::all(); //
+        // $data_kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
+        
+        $kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->first();
+
+        if (!$kegiatanjaskon) {
+            // Tangani jika kegiatan tidak ditemukan
+            return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+        }
+
+        // Menggunakan paginate() untuk pagination
+        $datalaporankegiatan = laporankegiatan::where('kegiatanjaskon_id', $kegiatanjaskon->id)->paginate(10);
+
         $user = Auth::user();
 
-        return view('frontend.02_berita.03_sertifikasi.show', [
-            'data_kegiatanjaskon' => $data_kegiatanjaskon,
+        return view('frontend.02_berita.02_sertifikasi.show', [
+            'data_kegiatanjaskon' => $datalaporankegiatan,
             'data_berita' => $data_berita,
             'data_layanankami' => $data_layanankami,
-            'data_laporankegiatan' => $data_laporankegiatan,
+            // 'data_laporankegiatan' => $data_laporankegiatan,
             'user' => $user,
                 'title' => 'Kegiatan Sertifikasi',
         ]);
@@ -155,7 +165,7 @@ class FedashboardController extends Controller
         
         $user = Auth::user();
 
-        return view('frontend.02_berita.03_sertifikasi.showdetails', [
+        return view('frontend.02_berita.02_sertifikasi.showdetails', [
             // 'data_kegiatanjaskon' => $data_kegiatanjaskon,
             'data_berita' => $data_berita,
             'data_layanankami' => $data_layanankami,

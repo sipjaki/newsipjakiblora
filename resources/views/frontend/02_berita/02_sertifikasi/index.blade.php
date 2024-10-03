@@ -117,26 +117,27 @@
                                 
                             <div class="scroll-container">
                                 <div class="scrolling-content">
-                                    <img src="{{$item->berita1}}" alt="{{$item->berita1}}">
-                                    <img src="{{$item->berita3}}" alt="{{$item->berita3}}">
-                                    <img src="{{$item->berita4}}" alt="{{$item->berita4}}">
-                                    <img src="{{$item->berita6}}" alt="{{$item->berita6}}">
-                                    <img src="{{$item->berita7}}" alt="{{$item->berita7}}">
-                                    <img src="{{$item->berita9}}" alt="{{$item->berita9}}">
-                                    <img src="{{$item->berita18}}" alt="{{$item->berita18}}">
-                                    <img src="{{$item->berita19}}" alt="{{$item->berita19}}">
-                                    <img src="{{$item->berita20}}" alt="{{$item->berita20}}">       
-                                    <img src="{{$item->berita2}}" alt="{{$item->berita2}}">
-                                    <img src="{{$item->berita5}}" alt="{{$item->berita5}}">
-                                    <img src="{{$item->berita8}}" alt="{{$item->berita8}}">
-                                    <img src="{{$item->berita10}}" alt="{{$item->berita10}}">
-                                    <img src="{{$item->berita11}}" alt="{{$item->berita11}}">
-                                    <img src="{{$item->berita12}}" alt="{{$item->berita12}}">
-                                    <img src="{{$item->berita13}}" alt="{{$item->berita13}}">
-                                    <img src="{{$item->berita14}}" alt="{{$item->berita14}}">
-                                    <img src="{{$item->berita15}}" alt="{{$item->berita15}}">
-                                    <img src="{{$item->berita16}}" alt="{{$item->berita16}}">
-                                    <img src="{{$item->berita17}}" alt="{{$item->berita17}}">
+                                    <img src="{{ asset('storage/' . $item->berita1) }}" alt="{{ asset('storage/' . $item->berita1) }}">
+                                    <img src="{{ asset('storage/' . $item->berita2) }}" alt="{{ asset('storage/' . $item->berita2) }}">
+                                    <img src="{{ asset('storage/' . $item->berita3) }}" alt="{{ asset('storage/' . $item->berita3) }}">
+                                    <img src="{{ asset('storage/' . $item->berita4) }}" alt="{{ asset('storage/' . $item->berita4) }}">
+                                    <img src="{{ asset('storage/' . $item->berita5) }}" alt="{{ asset('storage/' . $item->berita5) }}">
+                                    <img src="{{ asset('storage/' . $item->berita6) }}" alt="{{ asset('storage/' . $item->berita6) }}">
+                                    <img src="{{ asset('storage/' . $item->berita7) }}" alt="{{ asset('storage/' . $item->berita7) }}">
+                                    <img src="{{ asset('storage/' . $item->berita8) }}" alt="{{ asset('storage/' . $item->berita8) }}">
+                                    <img src="{{ asset('storage/' . $item->berita9) }}" alt="{{ asset('storage/' . $item->berita9) }}">
+                                    <img src="{{ asset('storage/' . $item->berita10) }}" alt="{{ asset('storage/' . $item->berita10) }}">
+                                    <img src="{{ asset('storage/' . $item->berita11) }}" alt="{{ asset('storage/' . $item->berita11) }}">
+                                    <img src="{{ asset('storage/' . $item->berita12) }}" alt="{{ asset('storage/' . $item->berita12) }}">
+                                    <img src="{{ asset('storage/' . $item->berita13) }}" alt="{{ asset('storage/' . $item->berita13) }}">
+                                    <img src="{{ asset('storage/' . $item->berita14) }}" alt="{{ asset('storage/' . $item->berita14) }}">
+                                    <img src="{{ asset('storage/' . $item->berita15) }}" alt="{{ asset('storage/' . $item->berita15) }}">
+                                    <img src="{{ asset('storage/' . $item->berita16) }}" alt="{{ asset('storage/' . $item->berita16) }}">
+                                    <img src="{{ asset('storage/' . $item->berita17) }}" alt="{{ asset('storage/' . $item->berita17) }}">
+                                    <img src="{{ asset('storage/' . $item->berita18) }}" alt="{{ asset('storage/' . $item->berita18) }}">
+                                    <img src="{{ asset('storage/' . $item->berita19) }}" alt="{{ asset('storage/' . $item->berita19) }}">
+                                    <img src="{{ asset('storage/' . $item->berita20) }}" alt="{{ asset('storage/' . $item->berita20) }}">
+                                    {{-- <img src="{{ asset('storage/' . $item->berita1) }}" alt="{{ asset('storage/' . $item->berita1) }}"> --}}
                                 </div>
                             </div>
                           
