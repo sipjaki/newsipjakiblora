@@ -6,6 +6,7 @@ use App\Models\keterampilanpekerja;
 use App\Models\Penanggungjawabteknis;
 use App\Models\pengawasanlokasi;
 use App\Models\tahunpilihan;
+use App\Models\timpembina;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\File; // Pastikan ini ada
@@ -986,6 +987,132 @@ public function datapjtshowByName($nama_lengkap)
             }                
             
 // ============================================================================================
+
+
+// ============================================ DATA TIMPEMBINA JASA KONSTRUKSI ===================================================================
+
+public function timpembina()
+{
+    // Mengambil data dengan pagination
+   $data = timpembina::paginate(10);   
+    $user = Auth::user();
+
+    return view('backend.04_skk.03_timpembina.index', [
+        'title' => 'Tim Pembina Jasa Konstruksi',
+        'user' => $user,
+        'data' => $data,
+        
+    ]);
+}
+
+
+// public function timpembinashowByName($nama_lengkap)
+// {
+//     $item = timpembina::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+//     $user = Auth::user();
+    
+//     return view('backend.04_skk.02_pjt.show', [
+//         'data' => $item,
+//         'user' => $user,
+//         'title' => 'Detail Tim Pembina Jasa Konstruksi',
+//     ]);
+// }
+
+// ==================================== UPDATE DATA TIM PEMBINA JASA KONSTRUKSI  ========================================        // 
+
+            // -------------------- UPDATE DATA TIM PEMBINA JASA KONSTRUKSI  ----------------------
+            public function updatedatatimpembina($nama_lengkap)
+            {
+                // Cari data undang-undang berdasarkan nilai 'judul'
+                $datatimpembina = timpembina::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+                // $datapengawasanlokasi = pengawasanlokasi::all();
+                
+                $user = Auth::user();
+    
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.04_skk.03_timpembina.update', [
+                    'data' => $datatimpembina,
+                    // 'datapengawasanlokasi' => $datapengawasanlokasi,
+                    'user' => $user,
+                    'title' => 'Update Data Tim Pembina Jasa Konstruksi'
+                ]);
+            }
+            
+            // -------------------- CREATE UPDATE TENAGA KERJA JASA KONSTRUKSI ----------------------
+            public function createupdatetimpembina(Request $request, $nama_lengkap)
+            {
+                // Validate the incoming request data
+                $request->validate([
+                    'jabatandalamkedinasan' => 'required|string|max:255',
+                    'nama_lengkap' => 'required|string|max:255',
+                    'email' => 'required|string|max:255',
+                    'telepon' => 'required|string|max:255',
+                    'fototimpembina' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Max file size 2MB
+                ]);
+        
+                // Find the record by nama_lengkap or use another identifier
+                $data = timpembina::where('nama_lengkap', $nama_lengkap)->firstOrFail();
+        
+                // Handle file upload if a new file is provided
+                if ($request->hasFile('fototimpembina')) {
+                    // Delete old file if exists
+                    if ($data->fototimpembina) {
+                        Storage::delete($data->fototimpembina);
+                    }
+        
+                    // Store new file
+                    $filePath = $request->file('fototimpembina')->store('timpembina'); // Adjust path as needed
+                    // $data->foto_pjt = $path;
+                }
+        
+                $data->update([
+                    'jabatandalamkedinasan' => $request->input('jabatandalamkedinasan'),
+                    'nama_lengkap' => $request->input('nama_lengkap'),
+                    'email' => $request->input('email'),
+                    'telepon' => $request->input('telepon'),
+                    'fototimpembina' => $filePath, // Menggunakan variabel filePath yang benar
+                ]);
+            
+                // Flash pesan session
+                session()->flash('update', 'Data Tim Pembina Jasa Konstruksi Berhasil Diupdate!');
+            
+                // Redirect ke halaman yang sesuai
+                return redirect('/timpembina');
+            }
+
+
+// ===================================================== DELETE TIM PEMBINA JASA KONSTRUKSI KBB ====================================================
+
+public function deletedatatimpembina($nama_lengkap)
+{
+    // Cari entri berdasarkan name
+    $entry = timpembina::where('nama_lengkap', $nama_lengkap)->first();
+
+    if ($entry) {
+        // Hapus file terkait jika ada
+        if ($entry->fototimpembina) {
+            Storage::disk('public')->delete($entry->fototimpembina);
+        }
+
+        // Hapus entri dari database
+        timpembina::destroy($entry->id);
+
+        // Set pesan flash untuk sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+
+        // Redirect ke halaman yang sesuai
+        return redirect('/timpembina');
+    } else {
+        // Set pesan flash jika data tidak ditemukan
+        session()->flash('error', 'Data Tidak Ditemukan!');
+
+        // Redirect ke halaman yang sesuai
+        return redirect('/timpembina');
+    }
+}                
+
+
+
 }
 
 

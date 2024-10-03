@@ -31,6 +31,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// ------------------------- FRONTEND HALAMAN UTAMA SIPJAKI BANDUNG BARAT --------------------------
+
 Route::get('/', [FedashboardController::class, 'index']);  
 // Route::post('/qapertanyaanstore', [FedashboardController::class, 'createbarustorepertanyaan'])->middleware('auth')->name('create.storeqapertanyaanbaru');
 // Route::post('/qapertanyaanstorebaru', [FedashboardController::class, 'createstorepertanyaanpublik'])->middleware('auth')->name('createpertanyaanstorebaru');
@@ -38,7 +40,7 @@ Route::get('/', [FedashboardController::class, 'index']);
 
 
 
-// ----------------------------------------------------------------------------
+// ------------------------- FRONTEND HALAMAN UTAMA SIPJAKI BANDUNG BARAT --------------------------
 Route::get('/portalberita/{judul}', [FedashboardController::class, 'portalberitashowByJudul']);
 Route::get('/berita', [FedashboardController::class, 'navbarberita']);  
 
@@ -400,6 +402,18 @@ Route::post('/datapjtstore', [SkktenagakerjaController::class, 'createstoredatap
 Route::post('/datapjt/{nama_lengkap}', [SkktenagakerjaController::class, 'deletedatapjt'])
 ->middleware('auth')
 ->name('delete.datapjt');
+
+// ======================================== TIMPEMBINA JASA KONSTRUKSI ====================================================================
+Route::get('/timpembina', [SkktenagakerjaController::class, 'timpembina'])->middleware('auth');  
+// Route::get('/timpembina/{nama_lengkap}', [SkktenagakerjaController::class, 'timpembinashowByName'])->name('timpembina.show');
+Route::get('/timpembina/update/{nama_lengkap}', [SkktenagakerjaController::class, 'updatedatatimpembina'])->middleware('auth')->name('update.timpembina');
+Route::post('/timpembinaupdatestore/{nama_lengkap}', [SkktenagakerjaController::class, 'createupdatetimpembina'])->middleware('auth')->name('updatestore.timpembina');
+Route::get('/timpembinacreate', [SkktenagakerjaController::class, 'createtimpembina'])->middleware('auth');
+Route::post('/timpembinastore', [SkktenagakerjaController::class, 'createstoretimpembina'])->middleware('auth')->name('create.timpembina');
+
+Route::post('/timpembina/{nama_lengkap}', [SkktenagakerjaController::class, 'deletedatatimpembina'])
+->middleware('auth')
+->name('delete.timpembina');
 
 
 // -------- BAGIAN 04 BACKEND ---------------------------------

@@ -158,7 +158,7 @@
                     
                 <div class="position-relative overflow-hidden" style="height: 300px;">
                     <a href="/">
-                        <img class="img-fluid h-300" src="{{$item->gambar}}" style="object-fit: cover; padding:10px; cursor:pointer">
+                        <img class="img-fluid h-300" src="{{ asset('storage/' . $item->gambar) }}" style="object-fit: cover; padding:10px; cursor:pointer">
                         <div class="overlay">
                             <div class="">
                                 <button class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"

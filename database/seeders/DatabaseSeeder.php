@@ -96,11 +96,11 @@ class DatabaseSeeder extends Seeder
         timpembina::create([
             'jabatandalamkedinasan'  => 'Fungsional Pembina Jasa Konstruksi Ahli Muda',
             'nama_lengkap'  => 'Yuyu Yuhana, ST., MM',
-            'jabatan'  => 'Yuyu Yuhana, ST., MM',
+            // 'jabatan'  => 'Yuyu Yuhana, ST., MM',
             'email'  => 'sipjakikbb@gmail.com',
-            'alamatkantor'  => 'Kantor Bupati Pemerintah Kabupaten Bandung Barat',
+            // 'alamatkantor'  => 'Kantor Bupati Pemerintah Kabupaten Bandung Barat',
             'telepon'  => '081317051502',
-            'fototimpembina'  => 'Profesional',
+            'fototimpembina'  => 'timpembina/sipjakikbb.png',
             
             // 'Jabatan'  => 'Yuyu Yuhana, ST., MM',
             

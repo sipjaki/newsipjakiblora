@@ -219,7 +219,7 @@
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PENANGGUNG JAWAB TEKNIS
                                         </a>
                                             
-                                        <a href="/404" style="font-size: 12px;">
+                                        <a href="/timpembina" style="font-size: 12px;">
                                             <i class="fas fa-file mr-2" style="margin-left: 20px;"></i>PEMBINA JASA KONSTRUKSI
                                         </a>
                                             

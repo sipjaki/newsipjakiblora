@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('jabatandalamkedinasan');
             $table->string('nama_lengkap');
-            $table->string('jabatan');
+            // $table->string('jabatan');
             $table->string('email');
-            $table->string('alamatkantor');
+            // $table->string('alamatkantor');
             $table->string('telepon');
             $table->string('fototimpembina');
             $table->softDeletes();
