@@ -71,7 +71,7 @@
                     
                     <div class="position-relative overflow-hidden" style="height: 500px;">
                         <a href="/portalberita/{{ $item->judul}}">
-                            <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                            <img class="img-fluid h-100" src="{{ asset('storage/' . $item->gambar) }}" style="object-fit: cover;">
                         
                         </a>
                         <div class="overlay">
@@ -99,7 +99,7 @@
                             <a href="/portalberita/{{$item->judul}}">
 
                                 <div class="position-relative overflow-hidden" style="height: 250px;">
-                                    <img class="img-fluid w-100 h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                                    <img class="img-fluid w-100 h-100" src="{{ asset('storage/'. $item->gambar )}}" style="object-fit: cover;">
                                     <div class="overlay">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="/portalberita/{{$item->judul}}">News</a>
@@ -146,15 +146,15 @@
     <!-- Featured News Slider Start -->
     <div class="container-fluid pt-5 mb-3">
         <div class="container col-11">
-            <div class="section-title">
+            {{-- <div class="section-title">
                 <h4 class="m-0 text-uppercase font-weight-bold">
                     <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width:40px;">
                     Layanan Kami</h4>
-            </div>
+            </div> --}}
             <div class="owl-carousel news-carousel carousel-item-4 position-relative">
 
 
-                @foreach ( $data_layanankami as $item )
+                {{-- @foreach ( $data_layanankami as $item )
                     
                 <div class="position-relative overflow-hidden" style="height: 300px;">
                     <a href="/">
@@ -165,17 +165,16 @@
                                 href="/">{{ $item->program}}</button> <br>
                                 <p class="text-white" href=""><small>{{$item->keterangan}}</small></p>
                             </div>
-                            {{-- <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit amet elit...</a> --}}
                         </div>
                     </a>
                 </div>
                 
-                @endforeach
+                @endforeach --}}
 
                 
             </div>
                     <!-- Popular News Start -->
-                    <div class="mb-3 mt-4">
+                    <div class="mb-3 mt-0">
                         <div class="section-title mb-0">
                             <h4 class="m-0 text-uppercase font-weight-bold">
                                <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width: 40px;"> KEGIATAN SERTIFIKASI JASA KONSTRUKSI </h4>
@@ -185,7 +184,7 @@
                             @foreach ($data_jaskon as $item )
                             <div class="w-100 h-100 d-flex flex-column justify-content-center border border-left-0" style="margin-bottom:10px;">
                                 <div class="mb-2">
-                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2 mr-2 ml-2" href="/kegiatansertifikasi" ><span style="color: #000000; font-size:16px;">{{$item->judul_kegiatan}}</span></a>
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2 mr-2 ml-2" href="/kegiatansertifikasi" style="margin-top:15px;"><span style="color: #000000; font-size:16px;">{{$item->judul_kegiatan}}</span></a>
                                 </div>
                                 <div class="mb-2">
                                     <a href="/kegiatansertifikasi">
@@ -229,26 +228,26 @@
                                 
                             <div class="scroll-container">
                                 <div class="scrolling-content">
-                                    <img src="{{$item->berita1}}" alt="{{$item->berita1}}">
-                                    <img src="{{$item->berita3}}" alt="{{$item->berita3}}">
-                                    <img src="{{$item->berita4}}" alt="{{$item->berita4}}">
-                                    <img src="{{$item->berita6}}" alt="{{$item->berita6}}">
-                                    <img src="{{$item->berita7}}" alt="{{$item->berita7}}">
-                                    <img src="{{$item->berita9}}" alt="{{$item->berita9}}">
-                                    <img src="{{$item->berita18}}" alt="{{$item->berita18}}">
-                                    <img src="{{$item->berita19}}" alt="{{$item->berita19}}">
-                                    <img src="{{$item->berita20}}" alt="{{$item->berita20}}">       
-                                    <img src="{{$item->berita2}}" alt="{{$item->berita2}}">
-                                    <img src="{{$item->berita5}}" alt="{{$item->berita5}}">
-                                    <img src="{{$item->berita8}}" alt="{{$item->berita8}}">
-                                    <img src="{{$item->berita10}}" alt="{{$item->berita10}}">
-                                    <img src="{{$item->berita11}}" alt="{{$item->berita11}}">
-                                    <img src="{{$item->berita12}}" alt="{{$item->berita12}}">
-                                    <img src="{{$item->berita13}}" alt="{{$item->berita13}}">
-                                    <img src="{{$item->berita14}}" alt="{{$item->berita14}}">
-                                    <img src="{{$item->berita15}}" alt="{{$item->berita15}}">
-                                    <img src="{{$item->berita16}}" alt="{{$item->berita16}}">
-                                    <img src="{{$item->berita17}}" alt="{{$item->berita17}}">
+                                    <img src="{{ asset('storage/' . $item->berita1 )}}" alt="{{ asset('storage/' . $item->berita1 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita2 )}}" alt="{{ asset('storage/' . $item->berita2 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita3 )}}" alt="{{ asset('storage/' . $item->berita3 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita4 )}}" alt="{{ asset('storage/' . $item->berita4 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita5 )}}" alt="{{ asset('storage/' . $item->berita5 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita6 )}}" alt="{{ asset('storage/' . $item->berita6 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita7 )}}" alt="{{ asset('storage/' . $item->berita7 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita8 )}}" alt="{{ asset('storage/' . $item->berita8 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita9 )}}" alt="{{ asset('storage/' . $item->berita9 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita10 )}}" alt="{{ asset('storage/' . $item->berita10 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita11 )}}" alt="{{ asset('storage/' . $item->berita12 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita12 )}}" alt="{{ asset('storage/' . $item->berita13 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita13 )}}" alt="{{ asset('storage/' . $item->berita14 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita15 )}}" alt="{{ asset('storage/' . $item->berita15 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita16 )}}" alt="{{ asset('storage/' . $item->berita16 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita17 )}}" alt="{{ asset('storage/' . $item->berita17 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita18 )}}" alt="{{ asset('storage/' . $item->berita18 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita19 )}}" alt="{{ asset('storage/' . $item->berita19 )}}">
+                                    <img src="{{ asset('storage/' . $item->berita20 )}}" alt="{{ asset('storage/' . $item->berita20 )}}">
+                                    
                                 </div>
                             </div>
                           
@@ -256,17 +255,17 @@
                             @endforeach
                            
                            
-                            {{-- <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">Comming Soon</a>
-                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                        <a class="text-body" href=""><small>Agustus 10, 2024</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">PELATIHAN BIMBINGAN TEKNIS GELOMBANG KE 2 TAHUN 2024 .....</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">PELATIHAN BIMBINGAN TEKNIS TENAGA KONSTRUKSI KABUPATEN BANDUNG BARAT .....</a>
                                 </div>
                             </div>
-                             --}}
+                            
                             
                         </div>
                     </div>
