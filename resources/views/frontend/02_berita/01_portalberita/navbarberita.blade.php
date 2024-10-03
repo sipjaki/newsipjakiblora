@@ -36,7 +36,7 @@
                     
                     <div class="position-relative overflow-hidden" style="height: 500px;">
                         <a href="/portalberita/{{ $item->judul}}">
-                            <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                            <img class="img-fluid h-100" src="{{asset('storage/' . $item->gambar ) }}" style="object-fit: cover;">
                         </a>
                         <div class="overlay">
                             <div class="mb-2">
@@ -63,7 +63,7 @@
                             <a href="/portalberita/{{$item->judul}}">
 
                                 <div class="position-relative overflow-hidden" style="height: 250px;">
-                                    <img class="img-fluid w-100 h-100" src="{{$item->gambar}}" style="object-fit: cover;">
+                                    <img class="img-fluid w-100 h-100" src="{{asset('storage/' . $item->gambar ) }}" style="object-fit: cover;">
                                     <div class="overlay">
                                     <div class="mb-2">
                                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="/portalberita/{{$item->judul}}">News</a>
@@ -119,7 +119,7 @@
                 @foreach ( $data as $item )
                     
                 <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover; padding:10px;">
+                    <img class="img-fluid h-100" src="{{asset('storage/' . $item->gambar ) }}" style="object-fit: cover; padding:10px;">
                     <div class="overlay">
                         <div class="mb-2">
                             {{-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"

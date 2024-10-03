@@ -59,7 +59,7 @@
 
                     <div class="position-relative mb-3">
                         <!-- Gambar yang membuka modal -->
-                        <img class="img-fluid w-100" src="{{$data->gambar}}" style="object-fit: cover; cursor: pointer;" data-toggle="modal" data-target="#imageModal">
+                        <img class="img-fluid w-100" src="{{asset('storage/' .  $data->gambar)}}" style="object-fit: cover; cursor: pointer;" data-toggle="modal" data-target="#imageModal">
 
                         <!-- Modal -->
                         <!-- Modal -->
@@ -145,7 +145,7 @@
                                 
                             <div class="owl-carousel main-carousel d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <a href="/portalberita/{{$item->judul}}">
-                                    <img src="{{$item->gambar}}" style="width:50%; cursor:pointer" alt="">
+                                    <img src="{{asset('storage/' . $item->gambar)}}" style="width:50%; cursor:pointer" alt="">
                                 </a>
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                     <div class="mb-2">
@@ -182,10 +182,10 @@
                     <!-- Newsletter End -->
 
                     <!-- Tags Start -->
-
+{{-- 
                         <div class="mb-3">
                             <div class="section-title mb-0">
-                                {{-- <img src="/assets/icon/sipjakikbb.png" alt="" style="width: 15%;"> --}}
+                                <img src="/assets/icon/sipjakikbb.png" alt="" style="width: 15%;">
                                 <h4 class=" text-uppercase font-weight-bold" margin-left:-10px;>Layanan Kami</h4>
                                 <img src="/assets/icon/sipjakikbb.png" alt="" style="width: 40px;">
                             </div>
@@ -195,12 +195,12 @@
                                     
                                 <a href="" class="d-block w-100 text-white text-decoration-none mb-2 mt-2" style="background: #F7E300; border-radius:10px;" onmouseover="this.style.background='linear-gradient(to right, white, white)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, #F7E300, #F7E300 )'; this.style.color='black';">
                                     <img src="/assets/icon/sipjakikbb.png" alt="/assets/icon/sipjakikbb.png" style="width: 12%">
-                                    {{-- <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i> --}}
+                                    <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
                                     <span class="font-weight-medium" style="color:black">{{$item->program}}</span>
                                 </a>
                                 @endforeach
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     </div>
                     </div>
@@ -222,7 +222,7 @@
                                 @foreach ( $data_berita as $item )
                                     
                                 <div class="position-relative overflow-hidden" style="height: 300px;">
-                                    <img class="img-fluid h-100" src="{{$item->gambar}}" style="object-fit: cover; padding:10px;">
+                                    <img class="img-fluid h-100" src="{{asset('storage/' .  $item->gambar)}}" style="object-fit: cover; padding:10px;">
                                     <div class="overlay">
                                         <div class="mb-2">
                                             {{-- <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" --}}

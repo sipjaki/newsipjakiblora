@@ -116,8 +116,11 @@ Rencana Strategis Program Dan Jasa Konstruksi <br> Kabupaten Bandung Barat
             }
 
     </style>
+
+    @foreach ($data as $item )
+        
     <div class="pdf-container">
-        <iframe class="pdf-frame" src="/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf"></iframe>
+        <iframe class="pdf-frame" src="{{asset('storage/' . $item->peraturan )}}"></iframe>
     </div>
     <div style="margin-left: 450px;">
         <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
@@ -129,7 +132,7 @@ Rencana Strategis Program Dan Jasa Konstruksi <br> Kabupaten Bandung Barat
 <script>
     document.getElementById('downloadBtn').addEventListener('click', function() {
         // URL file PDF
-        const pdfUrl = '/assets/library/01_profil/JASA_KONSTRUKSI_RENCARA_STRATEGIS_KABUPATEN_BANDUNG_BARAT.pdf';
+        const pdfUrl = '{{asset('storage/' . $item->peraturan)}}';
         
         // Membuat elemen anchor
         const link = document.createElement('a');
@@ -145,6 +148,7 @@ Rencana Strategis Program Dan Jasa Konstruksi <br> Kabupaten Bandung Barat
     });
 </script>
 
+@endforeach
 
 <br><br>
     </section>

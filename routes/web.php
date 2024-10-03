@@ -40,14 +40,6 @@ Route::get('/', [FedashboardController::class, 'index']);
 
 
 
-// ------------------------- FRONTEND HALAMAN UTAMA SIPJAKI BANDUNG BARAT --------------------------
-Route::get('/portalberita/{judul}', [FedashboardController::class, 'portalberitashowByJudul']);
-Route::get('/berita', [FedashboardController::class, 'navbarberita']);  
-
-Route::get('/kegiatansertifikasi', [FedashboardController::class, 'kegiatansertifikasi']);  
-Route::get('/kegiatansertifikasi/{judul_kegiatan}', [FedashboardController::class, 'kegiatansertifikasishowByJudul']);
-Route::get('/detailskegiatan/{jabatan}', [FedashboardController::class, 'detailskegiatanshowByJudul']);
-
 
 // Route::get('/portalberita', function () {
 //     // return view('welcome');
@@ -69,28 +61,32 @@ Route::get('/bahan2', function () {
     return view('frontend.00_full.bahan2');
 });
 
-// ---------------------- 01 PROFIL-----------------------//
+// ---------------------- 01 PROFIL FRONTEND SIPJAKI KBB -----------------------//
 // -------- BAGIAN 1 ---------------------------------
-Route::get('/profil/struktur', function () {
-    // return view('welcome');
-    return view('frontend.01_profil.01_struktur', [
-        'title' => 'Struktur Kedinasan'
-    ]);
-});
+Route::get('/profil/struktur', [StrukturController::class, 'strukturpuprbandungbarat']); 
 
-Route::get('/profil/rencanastrategis', function () {
-    // return view('welcome');
-    return view('frontend.01_profil.02_rencanastrategis', [
-        'title' => 'Rencana Strategis'
-        ]);
-});
+// =============================================================================================
+// -------- BAGIAN 2 ---------------------------------
+Route::get('/profil/rencanastrategis', [StrukturController::class, 'rencanastrategispuprbandungbarat']); 
 
-Route::get('/profil/tupoksi', function () {
-    // return view('welcome');
-    return view('frontend.01_profil.03_tupoksi', [
-        'title' => 'Tupoksi Program & Jasa Konstruksi'
-    ]);
-});
+// =============================================================================================
+// -------- BAGIAN 3 ---------------------------------
+Route::get('/profil/tupoksi', [StrukturController::class, 'tupoksifekbb']); 
+
+
+
+// ------------------------- 02 BAGIAN BERITA SIPJAKI KBB --------------------------
+// -------- BAGIAN 1 TAMPILAN BERITA ---------------------------------
+Route::get('/berita', [FedashboardController::class, 'navbarberita']);
+
+// -------- BAGIAN 2 KEGIATAN SERTIFIKASI ---------------------------------
+Route::get('/portalberita/{judul}', [FedashboardController::class, 'portalberitashowByJudul']);
+
+Route::get('/kegiatansertifikasi', [FedashboardController::class, 'kegiatansertifikasi']);  
+Route::get('/kegiatansertifikasi/{judul_kegiatan}', [FedashboardController::class, 'kegiatansertifikasishowByJudul']);
+Route::get('/detailskegiatan/{jabatan}', [FedashboardController::class, 'detailskegiatanshowByJudul']);
+
+
 
 // ---------------------- 03 DATA JAKON -----------------------//
 // -------- BAGIAN 1 ---------------------------------

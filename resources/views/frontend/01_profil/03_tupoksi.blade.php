@@ -241,13 +241,16 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
             }
 
             </style>
+
+            @foreach ($data as $item )
+                
             <div class="pdf-container">
-                <iframe class="pdf-frame" src="/assets/library/01_profil/SOTK_DPUTR.pdf"></iframe>
+                <iframe class="pdf-frame" src="{{asset('storage/' . $item->peraturan)}}"></iframe>
             </div>
             <div style="margin-left: 450px;">
-        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
+                <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
     </div>
-        </div>
+</div>
 </div>
 </div>
 
@@ -255,7 +258,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
 <script>
     document.getElementById('downloadBtn').addEventListener('click', function() {
         // URL file PDF
-        const pdfUrl = '/assets/library/01_profil/SOTK_DPUTR.pdf';
+        const pdfUrl = '{{asset('storage/' . $item->peraturan)}}';
         
         // Membuat elemen anchor
         const link = document.createElement('a');
@@ -271,6 +274,7 @@ Tupoksi Seksi Program Dan Jasa Konstruksi
     });
 </script>
 
+@endforeach
 
 
 

@@ -425,6 +425,49 @@ public function sbulampiran3showbyjudul($judul)
     ]);
 }
 
+// --------------------------------------- DATA FRONTEND FROPIL -------------------
+
+
+public function strukturpuprbandungbarat()
+{
+    $data= strukturdinas::all(); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
+
+    return view('frontend.01_profil.01_struktur', [
+        'title' => 'Struktur Kedinasan PUPR Kabupaten Bandung Barat',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+    ]);
+}
+
+// ==============================================================================================================
+
+public function rencanastrategispuprbandungbarat()
+{
+    $data= renstra::all(); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
+
+    return view('frontend.01_profil.02_rencanastrategis', [
+        'title' => 'Rencana Strategis PUPR Kabupaten Bandung Barat',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+    ]);
+}
+
+
+// ==============================================================================================================
+public function tupoksifekbb()
+{
+    $data= tupoksi::all(); // Menggunakan paginate() untuk pagination
+    $user = Auth::user();
+
+    return view('frontend.01_profil.03_tupoksi', [
+        'title' => 'Tupoksi PUPR Kabupaten Bandung Barat',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+    ]);
+}
+
 
 
 }

@@ -20,14 +20,14 @@ class FedashboardController extends Controller
 {
     public function index()
     {
-        $data = berita::all(); //
-        $data_layanankami = layanankami::all(); //
-        $data_kegiatanjaskon = kegiatanjaskon::all(); //
-        $dataqapertanyaan = qa::all(); //
-        $dataqasebagai = qasebagai::all(); //
-        $dataqapertanyaan = qapertanyaan::all(); //
+        $data = berita::orderBy('created_at', 'desc')->get(); //
+        $data_layanankami = layanankami::orderBy('created_at', 'desc')->get(); //
+        $data_kegiatanjaskon = kegiatanjaskon::orderBy('created_at', 'desc')->get(); //
+        $dataqapertanyaan = qa::orderBy('created_at', 'desc')->get(); //
+        $dataqasebagai = qasebagai::orderBy('created_at', 'desc')->get(); //
+        $dataqapertanyaan = qapertanyaan::orderBy('created_at', 'desc')->get(); //
         
-        $himbauandinas = himbauandinas::all(); //
+        $himbauandinas = himbauandinas::orderBy('created_at', 'desc')->get(); //
 
         $user = Auth::user();
 
@@ -83,7 +83,7 @@ class FedashboardController extends Controller
         
         $user = Auth::user();
 
-        return view('frontend.02_berita.portalberita.showindex', [
+        return view('frontend.02_berita.01_portalberita.showindex', [
             'data' => $data,
             'data_berita' => $data_berita,
             'data_layanankami' => $data_layanankami,
@@ -173,3 +173,4 @@ class FedashboardController extends Controller
     
 
 }
+
