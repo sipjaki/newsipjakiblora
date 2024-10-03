@@ -85,8 +85,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         
-        asosiasipengusaha::factory(15)->create();
-        paketpekerjaan::factory(15)->create();
+        Asosiasipengusaha::factory(15)->create();
+        Paketpekerjaan::factory(15)->create();
         Penanggungjawabteknis::factory(15)->create();
         Ketertiban::factory(15)->create();
         Beritaagenda::factory(15)->create();  
