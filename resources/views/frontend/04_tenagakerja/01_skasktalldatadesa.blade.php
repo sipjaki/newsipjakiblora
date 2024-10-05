@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
         <br>
          <h2 style="
@@ -345,7 +345,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 {{-- ========================================================== --}}
-<form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/desa') }}">
+{{-- <form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/desa') }}">
     <div class="custom-select-wrapper">
         <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
             <option value="">PILIH DESA</option>
@@ -361,7 +361,33 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     function submitForm() {
         document.getElementById('kecamatan-form').submit();
     }
+</script> --}}
+
+{{-- ========================================================== --}}
+<form id="desa-form" method="GET" action="{{ url('/tenagakerja/desa') }}">
+    <div class="custom-select-wrapper">
+        <select name="id" id="kecamatan-dropdown" onchange="submitForm()">
+            <option value="">PILIH DESA</option>
+            @if($dataDesa && count($dataDesa) > 0)
+                @foreach ($dataDesa as $desa)
+                    <option value="{{ $desa }}">{{ $desa }}</option>
+                @endforeach
+            @else
+                <option value="">Tidak ada data desa</option>
+            @endif
+        </select>
+        
+        <i class="fas fa-search search-icon"></i>
+    </div>
+</form>
+
+
+<script>
+    function submitForm() {
+        document.getElementById('desa-form').submit();
+    }
 </script>
+
 {{-- ========================================================== --}}
 
 
@@ -427,11 +453,11 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         <thead>
             <tr>
                 <th style="width:45px;">No</th>
-                <th>DESA</th>
-                <th>KECAMATAN</th>
-                <th>NAMA LENGKAP</th>
-                <th>KETERAMPILAN</th>
-                <th>VIEW SKK</th>
+                <th style="width:100px;">DESA</th>
+                <th style="width:100px;">KECAMATAN</th>
+                <th style="width:150px;">NAMA LENGKAP</th>
+                <th style="width:150px;">KETERAMPILAN</th>
+                <th style="width:100px;">VIEW SKK</th>
             </tr>
         </thead>
         <tbody>
@@ -444,11 +470,11 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             @foreach($data as $item )
             
             <tr>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->desa}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->kecamatan}}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $item->desa}}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $item->pengawasanlokasi->kota}}</td>
                 <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->nama}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->keterampilan}}</td>
+                <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $item->keterampilanpekerja->keterampilan}}</td>
 
                 
                 

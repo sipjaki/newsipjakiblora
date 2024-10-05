@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
         <br>
          <h2 style="
@@ -343,24 +343,32 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 {{-- ========================================================== --}}
-<form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/keterampilan') }}">
+<form id="keterampilan-form" method="GET" action="{{ url('/tenagakerja/keterampilan') }}">
     <div class="custom-select-wrapper">
-        <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
+        <select name="id" id="kecamatan-dropdown" onchange="submitForm()">
             <option value="">PILIH KETERAMPILAN</option>
-            @foreach ($data_keterampilan as $keterampilan)
-                <option value="{{ $keterampilan }}">{{ $keterampilan }}</option>
-            @endforeach
+            @if($data_keterampilan && count($data_keterampilan) > 0)
+                @foreach ($data_keterampilan as $keterampilanpekerja)
+                    <option value="{{ $keterampilanpekerja->id }}" {{ request('id') == $keterampilanpekerja->id ? 'selected' : '' }}>
+                        {{ $keterampilanpekerja->keterampilan }}
+                    </option>
+                @endforeach
+            @else
+                <option value="">Tidak ada data Keterampilan</option>
+            @endif
         </select>
+        
         <i class="fas fa-search search-icon"></i>
     </div>
 </form>
 
 <script>
     function submitForm() {
-        document.getElementById('kecamatan-form').submit();
+        document.getElementById('keterampilan-form').submit();
     }
 </script>
 {{-- ========================================================== --}}
+
 
 
     </div>
@@ -425,83 +433,76 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         <thead>
             <tr>
                 <th style="width:45px;">No</th>
-                <th>KETERAMPILAN</th>
-                <th>DESA</th>
-                <th>KECAMATAN</th>
-                <th>NAMA LENGKAP</th>
-                <th>VIEW SKK</th>
+                <th style="width:150px;">KETERAMPILAN</th>
+                <th style="width:100px;">DESA</th>
+                <th style="width:100px;">KECAMATAN</th>
+                <th style="width:250px;">NAMA LENGKAP</th>
+                <th style="width:75px;">VIEW SKK</th>
             </tr>
         </thead>
         <tbody>
 
             {{-- ============================================ --}}
             @php
-        $start = ($data->currentPage() - 1) * $data->perPage() + 1;
-            @endphp
+    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+@endphp
 
-            @foreach($data as $item )
-            
-            <tr>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->keterampilan}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->desa}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->kecamatan}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->nama}}</td>
-                
-                <td>
-                    
-                <style>
-                                        /* Container for the buttons */
-            .button-container {
-                display: flex;
-                gap: 10px; /* Space between icons */
-                justify-content: center; /* Center the icons horizontally */
-            }
+@php
+    $isDataAvailable = false; // Variabel untuk melacak ketersediaan data
+@endphp
 
-            /* Style for the individual buttons */
-            .iconhover {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 25px; /* Adjust width as needed */
-                height: 25px; /* Adjust height as needed */
-                background: navy, white; /* Yellow background */
-                color: white; /* Text color */
-                border: none;
-                border-radius: 50%;
-                text-decoration: none;
-                padding: 3px 3px;
-                font-size: 15px; /* Adjust font size as needed */
-                transition: background 0.3s, color 0.3s;
-                cursor: pointer;
-            }
+@foreach($data as $item)
+<tr>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
+    
+    <td style="font-size: 12px; text-transform:uppercase; text-align:center;">
+        @if($item->keterampilanpekerja && isset($item->keterampilanpekerja->keterampilan) && $item->keterampilanpekerja->keterampilan !== '')
+            {{ $item->keterampilanpekerja->keterampilan }}
+            @php $isDataAvailable = true; @endphp
+        @endif
+    </td>
 
-            .iconhover:hover {
-                background: white; /* White background on hover */
-                color: black; /* Black text color on hover */
-            }
+    <td style="font-size: 12px; text-transform:uppercase; text-align:left;">
+        @if(isset($item->desa) && $item->desa !== '')
+            {{ $item->desa }}
+            @php $isDataAvailable = true; @endphp
+        @endif
+    </td>
 
-            .iconhover i {
-                margin: 0;
-            }
-            
-                </style>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:center;">
+        @if($item->pengawasanlokasi && isset($item->pengawasanlokasi->kota) && $item->pengawasanlokasi->kota !== '')
+            {{ $item->pengawasanlokasi->kota }}
+            @php $isDataAvailable = true; @endphp
+        @endif
+    </td>
 
-                <div class="button-container">
-                <a href="/tenagakerja/skaskt/{{ $item->nama}}" class="iconhover" title="View">
-                    <i class="fas fa-eye" style="color: black"></i>
-                </a>
-                        
-                    </div>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:left;">
+        @if(isset($item->nama) && $item->nama !== '')
+            {{ $item->nama }}
+            @php $isDataAvailable = true; @endphp
+        @endif
+    </td>
 
-                    <script>
-                        function downloadCSV() {
-                            // Function to handle CSV download
-                        }
-                        </script>
-                </td>
-            </tr>
-            @endforeach
+    <td>
+        <div class="button-container">
+            <a href="/tenagakerja/skaskt/{{ $item->nama }}" class="iconhover" title="View">
+                <i class="fas fa-eye" style="color: black"></i>
+            </a>
+        </div>
+    </td>
+</tr>
+@endforeach
+
+@if(!$isDataAvailable)
+<tr>
+    <td colspan="6" style="font-size: 12px; text-transform:uppercase; text-align:center; margin-top: 100px;">
+        <button class="databelum" style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: default; font-size: 12px; text-transform: uppercase; border-radius: 5px;">
+            DATA BELUM TERSEDIA ! SILAHKAN KEMBALI
+        </button>
+    </td>
+</tr>
+@endif
+
             {{-- ============================================ --}}
             
             

@@ -119,16 +119,20 @@ Route::get('/datajakon/paketpekerjaan', [DatajakonController::class, 'paketpeker
 Route::get('/tenagakerja/skaskt', [SkktenagakerjaController::class, 'feskktenagakerja']);  
 Route::get('/tenagakerja/skaskt/{nama}', [SkktenagakerjaController::class, 'feskktenagakerjashowByName']);
 Route::get('/tenagakerja/showskaskt/{nama}', [SkktenagakerjaController::class, 'feskktenagakerjadokumentasishowByName']);
-// Rute untuk menangani parameter kecamatan
+
+// RUTE UNTUK MENCARI BERDASARKAN KECAMATAN KOTA
 Route::get('/skk/kecamatan', [SkktenagakerjaController::class, 'listkecamatan']);  
 Route::get('/tenagakerja/kecamatan', [SkktenagakerjaController::class, 'feskktenagakerjakecamatanshowBykecamatan']);
 
+// RUTE BERDASARKAN DESA
 Route::get('/skk/desa', [SkktenagakerjaController::class, 'listdesa']); 
 Route::get('/tenagakerja/desa', [SkktenagakerjaController::class, 'feskktenagakerjadesashowBydesa']);
 
+// RUTE BERDASARKAN KETERAMPILAN PARA PEKERJA
 Route::get('/skk/keterampilan', [SkktenagakerjaController::class, 'listketerampilan']); 
 Route::get('/tenagakerja/keterampilan', [SkktenagakerjaController::class, 'feskktenagakerjaketerampilanshowByketerampilan']);
 
+// RUTE BERDASARKAN TAHUN BIMBINGAN TEKNIS PARA PEKERJA KONSTRUKSI 
 Route::get('/skk/register', [SkktenagakerjaController::class, 'listregister']); 
 Route::get('/tenagakerja/bimtek', [SkktenagakerjaController::class, 'feskktenagakerjabimtekshowBybimtek']);
 

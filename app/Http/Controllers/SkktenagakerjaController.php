@@ -300,6 +300,10 @@ public function feskktenagakerja()
 
 public function listkecamatan()
     {
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $dataketerampilan = keterampilanpekerja::all();
+        $datatahunpilihan = tahunpilihan::all();
+       
         $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
         $totalData = Tukangterampil::count();
 
@@ -316,7 +320,12 @@ public function listkecamatan()
             'data_kecamatan' => $datakecamatan, // Mengirimkan data paginasi ke view
             'totaldata' => $totalData, // Mengirimkan data paginasi ke view
             'user' => $user, // Mengirimkan data paginasi ke view
+
             
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datatahunpilihan' => $datatahunpilihan,
+            'dataketerampilan' => $dataketerampilan,
+
         ]);
     }
 
@@ -364,34 +373,54 @@ public function listkecamatan()
 
     public function feskktenagakerjakecamatanshowBykecamatan(Request $request)
     {
+        // Mengambil semua lokasi pengawasan
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $dataketerampilan = keterampilanpekerja::all();
+        $datatahunpilihan = tahunpilihan::all();
+    
+        // Menghitung total data tukang terampil
         $totalData = Tukangterampil::count();
-        // Mengambil parameter 'judul' dari query string
-        $judul = $request->query('judul');
-        
-        // Memfilter data berdasarkan kecamatan jika 'judul' ada
-        if ($judul) {
-            $data = Tukangterampil::where('kecamatan', $judul)->paginate(15);
+    
+        // Mengambil parameter 'id' dari query string
+        $selectedKecamatanId = $request->query('id'); // Mengganti nama variabel agar lebih jelas
+    
+        // Memfilter data berdasarkan 'pengawasanlokasi_id' jika parameter ada
+        if ($selectedKecamatanId) {
+            $data = Tukangterampil::where('pengawasanlokasi_id', $selectedKecamatanId)->paginate(15);
         } else {
             // Ambil semua data jika tidak ada parameter
             $data = Tukangterampil::paginate(15);
         }
-
-        // Mengambil nilai unik dari atribut 'kecamatan'
-        $data_kecamatan = Tukangterampil::select('kecamatan')
-            ->distinct()
-            ->pluck('kecamatan');
-
+    
+        // Mengambil nilai unik dari 'pengawasanlokasi_id' untuk dropdown
+        $data_kecamatan = pengawasanlokasi::select('id', 'kota')->distinct()->pluck('kota', 'id');
+    
+        // Mengambil semua lokasi untuk ditampilkan di view
+        $lokasi = PengawasanLokasi::all(); // Pastikan model PengawasanLokasi sesuai
+    
         // Mengirim data ke view
         return view('frontend.04_tenagakerja.01_skasktshowkecamatan', [
             'title' => 'Kecamatan | SKK Tenaga Kerja',
-            'data' => $data, // Mengirimkan data yang difilter atau semua data
-            'data_kecamatan' => $data_kecamatan, // Mengirimkan data kecamatan unik ke view
-            'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
+            'data' => $data,
+            'data_kecamatan' => $data_kecamatan,
+            'totaldata' => $totalData,
+            'lokasi' => $lokasi,
+            'selectedKecamatanId' => $selectedKecamatanId, // Mengirim ID yang terpilih ke view
+            'datatahunpilihan' => $datatahunpilihan,
+            'dataketerampilan' => $dataketerampilan,
+            'datapengawasanlokasi' => $datapengawasanlokasi,
         ]);
     }
+    
 
+    
 public function listdesa()
     {
+       
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $datatahunpilihan = tahunpilihan::all();
+        $dataketerampilan = keterampilanpekerja::all();
+       
         $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
         $totalData = Tukangterampil::count();
 
@@ -405,143 +434,191 @@ public function listdesa()
         return view('frontend.04_tenagakerja.01_skasktalldatadesa', [
             'title' => 'Desa | Data Tenaga Kerja',
             'data' => $data,
-            'data_desa' => $datadesa, // Mengirimkan data paginasi ke view
+            'dataDesa' => $datadesa, // Mengirimkan data paginasi ke view
             'totaldata' => $totalData, // Mengirimkan data paginasi ke view
+
+                 
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datatahunpilihan' => $datatahunpilihan,
+            'dataketerampilan' => $dataketerampilan,
+
         ]);
     }
-
+  
+  
     public function feskktenagakerjadesashowBydesa(Request $request)
     {
-        $totalData = Tukangterampil::count();
-
-        // Mengambil parameter 'judul' dari query string
-        $judul = $request->query('judul');
-        
-        // Memfilter data berdasarkan kecamatan jika 'judul' ada
-        if ($judul) {
-            $data = Tukangterampil::where('desa', $judul)->paginate(15);
+        // Mengambil semua data desa untuk dropdown
+        $dataDesa = Tukangterampil::select('desa')->distinct()->pluck('desa');
+    
+        // Mengambil parameter 'id' dari query string
+        $selectedDesaId = $request->query('id');
+    
+        // Memfilter data berdasarkan 'desa' jika parameter ada
+        if ($selectedDesaId) {
+            $data = Tukangterampil::where('desa', $selectedDesaId)->paginate(15);
         } else {
             // Ambil semua data jika tidak ada parameter
             $data = Tukangterampil::paginate(15);
         }
-
-        // Mengambil nilai unik dari atribut 'kecamatan'
-        $data_desa= Tukangterampil::select('desa')
-            ->distinct()
-            ->pluck('desa');
-
+    
+        // Menghitung total data tukang terampil
+        $totalData = Tukangterampil::count();
+    
+        // Mengambil semua lokasi untuk ditampilkan di view
+        $lokasi = PengawasanLokasi::all();
+    
         // Mengirim data ke view
-        return view('frontend.04_tenagakerja.01_skasktalldatadesashow', [
+        return view('frontend.04_tenagakerja.01_skasktalldatadesa', [
             'title' => 'Desa | SKK Tenaga Kerja',
-            'data' => $data, // Mengirimkan data yang difilter atau semua data
-            'data_desa' => $data_desa, // Mengirimkan data kecamatan unik ke view
-            'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
+            'data' => $data,
+            'dataDesa' => $dataDesa, // Data desa untuk dropdown
+            'totaldata' => $totalData,
+            'lokasi' => $lokasi,
+            'selectedDesaId' => $selectedDesaId,
         ]);
     }
-
-
-public function listketerampilan()
+      
+    public function listketerampilan(Request $request)
     {
-        $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
-        $totalData = Tukangterampil::count();
-
-          // Mengambil semua data untuk mendapatkan kecamatan unik
-          $allKecamatan = Tukangterampil::all();
-          $user = Auth::user();
+        // Ambil semua data pengawasan lokasi dan tahun pilihan
+        $datapengawasanlokasi = PengawasanLokasi::all();
+        $datatahunpilihan = TahunPilihan::all();
         
-          // Menggunakan koleksi untuk mendapatkan nilai unik
-          $dataketerampilan = $allKecamatan->pluck('keterampilan')->unique();
-
+        // Ambil semua data keterampilan
+        $dataketerampilan = KeterampilanPekerja::all();
+    
+        // Cek apakah ada pilihan keterampilan dari request
+        $selectedKeterampilanId = $request->query('id');
+    
+        // Ambil data Tukang Terampil berdasarkan keterampilan_id jika ada
+        if ($selectedKeterampilanId) {
+            $data = Tukangterampil::where('keterampilanpekerja_id', $selectedKeterampilanId)->paginate(15);
+        } else {
+            // Jika tidak ada pilihan, ambil semua data
+            $data = Tukangterampil::paginate(15);
+        }
+    
+        // Hitung total data Tukang Terampil
+        $totalData = Tukangterampil::count();
+    
+        // Kirim data ke view
         return view('frontend.04_tenagakerja.01_skasktalldataketerampilan', [
             'title' => 'Keterampilan | Data Tenaga Kerja',
             'data' => $data,
-            'data_keterampilan' => $dataketerampilan, // Mengirimkan data paginasi ke view
-            'totaldata' => $totalData, // Mengirimkan data paginasi ke view
-            'user' => $user, // Mengirimkan data paginasi ke view
+            'data_keterampilan' => $dataketerampilan, // Mengirimkan data keterampilan ke view
+            'totaldata' => $totalData,
+            'user' => Auth::user(),
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datatahunpilihan' => $datatahunpilihan,
         ]);
     }
- 
+    
     
     public function feskktenagakerjaketerampilanshowByketerampilan(Request $request)
     {
-
+        // Hitung total data Tukang Terampil
         $totalData = Tukangterampil::count();
-        // Mengambil parameter 'judul' dari query string
-        $judul = $request->query('judul');
+    
+        // Ambil parameter 'id' dari query string untuk keterampilan
+        $selectedKeterampilanId = $request->query('id');
         
-        // Memfilter data berdasarkan kecamatan jika 'judul' ada
-        if ($judul) {
-            $data = Tukangterampil::where('keterampilan', $judul)->paginate(15);
+        // Memfilter data berdasarkan keterampilan_id jika 'id' ada
+        if ($selectedKeterampilanId) {
+            $data = Tukangterampil::where('keterampilanpekerja_id', $selectedKeterampilanId)->paginate(15);
         } else {
             // Ambil semua data jika tidak ada parameter
             $data = Tukangterampil::paginate(15);
         }
-
-        // Mengambil nilai unik dari atribut 'kecamatan'
-        $data_keterampilan= Tukangterampil::select('keterampilan')
-            ->distinct()
-            ->pluck('keterampilan');
-
+    
+        // Mengambil nilai unik dari atribut 'keterampilanpekerja_id'
+        $data_keterampilan = KeterampilanPekerja::select('id', 'keterampilan')->distinct()->get();
+    
         // Mengirim data ke view
-        return view('frontend.04_tenagakerja.01_skasktalldataketerampilanshow', [
-            'title' => 'Keterampilan| SKK Tenaga Kerja',
+        return view('frontend.04_tenagakerja.01_skasktalldataketerampilan', [
+            'title' => 'Keterampilan | SKK Tenaga Kerja',
             'data' => $data, // Mengirimkan data yang difilter atau semua data
-            'data_keterampilan' => $data_keterampilan, // Mengirimkan data kecamatan unik ke view
-            'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
+            'data_keterampilan' => $data_keterampilan, // Mengirimkan data keterampilan ke view
+            'totaldata' => $totalData, // Mengirimkan total data
         ]);
     }
-
     
-public function listregister()
-{
-    $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
-    $totalData = Tukangterampil::count();
-
-      // Mengambil semua data untuk mendapatkan kecamatan unik
-      $allKecamatan = Tukangterampil::all();
     
-      // Menggunakan koleksi untuk mendapatkan nilai unik
-      $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
-      $user = Auth::user();
-
-    return view('frontend.04_tenagakerja.01_skasktalldataregister', [
-        'title' => 'Bimtek | Data Tenaga Kerja',
-        'data' => $data,
-        'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
-        'totaldata' => $totalData, // Mengirimkan data paginasi ke view
-        'user' => $user, // Mengirimkan data paginasi ke view
-    ]);
-}
-
+    public function listregister(Request $request)
+    {
+        // Ambil semua data pengawasan lokasi dan tahun pilihan
+        $datapengawasanlokasi = PengawasanLokasi::all();
+        $datatahunpilihan = TahunPilihan::all();
+        
+        // Ambil semua data keterampilan
+        $dataketerampilan = KeterampilanPekerja::all();
+    
+        // Cek apakah ada pilihan keterampilan dari request
+        $selectedTahunbimtekId = $request->query('id');
+    
+        // Ambil data Tukang Terampil berdasarkan keterampilan_id jika ada
+        if ($selectedTahunbimtekId) {
+            $data = Tukangterampil::where('tahunpilihan_id', $selectedTahunbimtekId)->paginate(15);
+        } else {
+            // Jika tidak ada pilihan, ambil semua data
+            $data = Tukangterampil::paginate(15);
+        }
+    
+        // Hitung total data Tukang Terampil
+        $totalData = Tukangterampil::count();
+    
+        // Kirim data ke view
+        return view('frontend.04_tenagakerja.01_skasktalldataregister', [
+            'title' => 'Tahun Bimtek | Data Tenaga Kerja',
+            'data' => $data,
+            'data_keterampilan' => $dataketerampilan, // Mengirimkan data keterampilan ke view
+            'totaldata' => $totalData,
+            'user' => Auth::user(),
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datatahunpilihan' => $datatahunpilihan,
+        ]);
+    }
 
         public function feskktenagakerjabimtekshowBybimtek(Request $request)
         {
 
-            $totalData = Tukangterampil::count();
-
-            // Mengambil parameter 'judul' dari query string
-            $judul = $request->query('judul');
-            
-            // Memfilter data berdasarkan kecamatan jika 'judul' ada
-            if ($judul) {
-                $data = Tukangterampil::where('tahun_bimtek', $judul)->paginate(15);
-            } else {
-                // Ambil semua data jika tidak ada parameter
-                $data = Tukangterampil::paginate(15);
-            }
-
-            // Mengambil nilai unik dari atribut 'kecamatan'
-            $data_tahunbimtek= Tukangterampil::select('tahun_bimtek')
-                ->distinct()
-                ->pluck('tahun_bimtek');
-
-            // Mengirim data ke view
-            return view('frontend.04_tenagakerja.01_skasktalldatatahunbimtekshow', [
-                'title' => 'Tahun Bimtek | SKK Tenaga Kerja',
-                'data' => $data, // Mengirimkan data yang difilter atau semua data
-                'data_tahun_bimtek' => $data_tahunbimtek, // Mengirimkan data kecamatan unik ke view
-                'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
-            ]);
+        // Mengambil semua lokasi pengawasan
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $dataketerampilan = keterampilanpekerja::all();
+        $datatahunpilihan = tahunpilihan::all();
+    
+        // Menghitung total data tukang terampil
+        $totalData = Tukangterampil::count();
+    
+        // Mengambil parameter 'id' dari query string
+        $selectedTahunbimtekId = $request->query('id'); // Mengganti nama variabel agar lebih jelas
+    
+        // Memfilter data berdasarkan 'pengawasanlokasi_id' jika parameter ada
+        if ($selectedTahunbimtekId) {
+            $data = Tukangterampil::where('tahunpilihan_id', $selectedTahunbimtekId)->paginate(15);
+        } else {
+            // Ambil semua data jika tidak ada parameter
+            $data = Tukangterampil::paginate(15);
+        }
+    
+        // Mengambil nilai unik dari 'pengawasanlokasi_id' untuk dropdown
+        $data_tahunpilihan = tahunpilihan::select('id', 'tahun')->distinct()->pluck('tahun', 'id');
+    
+        // Mengambil semua lokasi untuk ditampilkan di view
+        $lokasi = PengawasanLokasi::all(); // Pastikan model PengawasanLokasi sesuai
+    
+        // Mengirim data ke view
+        return view('frontend.04_tenagakerja.01_skasktalldataregister', [
+            'title' => 'Kecamatan | SKK Tenaga Kerja',
+            'data' => $data,
+            'data_tahunpilihan' => $data_tahunpilihan,
+            'totaldata' => $totalData,
+            'lokasi' => $lokasi,
+            'selectedKecamatanId' => $selectedTahunbimtekId, // Mengirim ID yang terpilih ke view
+            'datatahunpilihan' => $datatahunpilihan,
+            'dataketerampilan' => $dataketerampilan,
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+        ]);
         }
 
                 

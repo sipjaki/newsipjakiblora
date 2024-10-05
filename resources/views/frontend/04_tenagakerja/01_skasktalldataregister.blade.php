@@ -345,21 +345,26 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 {{-- ========================================================== --}}
-<form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/bimtek') }}">
+<form id="bimtek-form" method="GET" action="{{ url('/tenagakerja/bimtek') }}">
     <div class="custom-select-wrapper">
-        <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
+        <select name="id" id="kecamatan-dropdown" onchange="submitForm()">
             <option value="">PILIH TAHUN BIMTEK</option>
-            @foreach ($data_tahun_bimtek as $tahun_bimtek)
-                <option value="{{ $tahun_bimtek }}">{{ $tahun_bimtek }}</option>
-            @endforeach
+            @if($datatahunpilihan && count($datatahunpilihan) > 0)
+                @foreach ($datatahunpilihan as $tahun)
+                    <option value="{{ $tahun->id }}">{{ $tahun->tahun }}</option>
+                @endforeach
+            @else
+                <option value="">Tidak ada data Tahun Bimtek</option>
+            @endif
         </select>
+        
         <i class="fas fa-search search-icon"></i>
     </div>
 </form>
 
 <script>
     function submitForm() {
-        document.getElementById('kecamatan-form').submit();
+        document.getElementById('bimtek-form').submit();
     }
 </script>
 {{-- ========================================================== --}}
@@ -427,91 +432,60 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         <thead>
             <tr>
                 <th style="width:45px;">No</th>
-                <th>TAHUN BIMTEK</th>
-                <th>KUALIFIKASI</th>
-                <th>REGISTRASI</th>
+                <th style="width:100px;">TAHUN BIMTEK</th>
+                <th style="width:75px;">KUALIFIKASI</th>
+                <th style="width:75px;">REGISTRASI</th>
                 {{-- <th>DESA</th> --}}
                 {{-- <th>KECAMATAN</th> --}}
-                <th>NAMA LENGKAP</th>
-                <th>KETERAMPILAN</th>
-                <th>VIEW SKK</th>
+                <th style="width:150px;">NAMA LENGKAP</th>
+                <th style="width:100px;">KETERAMPILAN</th>
+                <th style="width:75px;">VIEW SKK</th>
             </tr>
         </thead>
         <tbody>
 
             {{-- ============================================ --}}
             @php
-        $start = ($data->currentPage() - 1) * $data->perPage() + 1;
-            @endphp
+    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+@endphp
 
-            @foreach($data as $item )
-            
-            <tr>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->tahun_bimtek}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->kualifikasi}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->registrasi}}</td>
-                {{-- <td style="font-size: 12px;">{{ $item->desa}}</td> --}}
-                {{-- <td style="font-size: 12px;">{{ $item->kecamatan}}</td> --}}
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->nama}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->keterampilan}}</td>
-                
-                <td>
-                    
-                <style>
-                                        /* Container for the buttons */
-            .button-container {
-                display: flex;
-                gap: 10px; /* Space between icons */
-                justify-content: center; /* Center the icons horizontally */
-            }
+@php
+    $isDataAvailable = false; // Variabel untuk melacak ketersediaan data
+@endphp
 
-            /* Style for the individual buttons */
-            .iconhover {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 25px; /* Adjust width as needed */
-                height: 25px; /* Adjust height as needed */
-                background: navy, white; /* Yellow background */
-                color: white; /* Text color */
-                border: none;
-                border-radius: 50%;
-                text-decoration: none;
-                padding: 3px 3px;
-                font-size: 15px; /* Adjust font size as needed */
-                transition: background 0.3s, color 0.3s;
-                cursor: pointer;
-            }
+@foreach($data as $item)
+<tr>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $item->tahunpilihan->tahun }}</td>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $item->kualifikasi }}</td>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $item->registrasi }}</td>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->nama }}</td>
+    <td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $item->keterampilanpekerja->keterampilan }}</td>
 
-            .iconhover:hover {
-                background: white; /* White background on hover */
-                color: black; /* Black text color on hover */
-            }
+    <td>
+        <div class="button-container">
+            <a href="/tenagakerja/skaskt/{{ $item->nama }}" class="iconhover" title="View">
+                <i class="fas fa-eye" style="color: black"></i>
+            </a>
+        </div>
+    </td>
+</tr>
 
-            .iconhover i {
-                margin: 0;
-            }
-            
-                </style>
+@php
+    $isDataAvailable = true; // Data tersedia jika baris ini dieksekusi
+@endphp
+@endforeach
 
-                <div class="button-container">
-                <a href="/tenagakerja/skaskt/{{ $item->nama}}" class="iconhover" title="View">
-                    <i class="fas fa-eye" style="color: black"></i>
-                </a>
-                        
-                    </div>
+@if(!$isDataAvailable)
+<tr>
+    <td colspan="7" style="font-size: 12px; text-transform:uppercase; text-align:center; margin-top: 100px;">
+        <button class="databelum" style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: default; font-size: 12px; text-transform: uppercase; border-radius: 5px;">
+            DATA BELUM TERSEDIA ! SILAHKAN KEMBALI
+        </button>
+    </td>
+</tr>
+@endif
 
-                    <script>
-                        function downloadCSV() {
-                            // Function to handle CSV download
-                        }
-                        </script>
-                </td>
-            </tr>
-            @endforeach
-            {{-- ============================================ --}}
-            
             
         </tbody>
     </table>

@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
         <br>
          <h2 style="
@@ -350,12 +350,17 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 {{-- ========================================================== --}}
 <form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/kecamatan') }}">
     <div class="custom-select-wrapper">
-        <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
+        <select name="id" id="kecamatan-dropdown" onchange="submitForm()">
             <option value="">PILIH KECAMATAN</option>
-            @foreach ($data_kecamatan as $kecamatan)
-                <option value="{{ $kecamatan }}">{{ $kecamatan }}</option>
-            @endforeach
+            @if($datapengawasanlokasi && count($datapengawasanlokasi) > 0)
+                @foreach ($datapengawasanlokasi as $lokasipengawasan)
+                    <option value="{{ $lokasipengawasan->id }}">{{ $lokasipengawasan->kota }}</option>
+                @endforeach
+            @else
+                <option value="">Tidak ada data kecamatan</option>
+            @endif
         </select>
+        
         <i class="fas fa-search search-icon"></i>
     </div>
 </form>
@@ -430,11 +435,11 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         <thead>
             <tr>
                 <th style="width:45px;">No</th>
-                <th>KECAMATAN</th>
-                <th>DESA</th>
-                <th>NAMA LENGKAP</th>
-                <th>KETERAMPILAN</th>
-                <th>VIEW SKK</th>
+                <th style="width:100px;">KECAMATAN</th>
+                <th style="width:100px;">DESA</th>
+                <th style="width:225px;">NAMA LENGKAP</th>
+                <th style="width:150px;">KETERAMPILAN</th>
+                <th style="width:75px;">VIEW SKK</th>
             </tr>
         </thead>
         <tbody>
@@ -443,72 +448,114 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             @php
         $start = ($data->currentPage() - 1) * $data->perPage() + 1;
             @endphp
+@php
+$isDataAvailable = false; // Variabel untuk melacak ketersediaan data
+@endphp
 
-            @foreach($data as $item )
-            
+@foreach($data as $item)
+<tr>
+<td style="font-size: 12px; text-transform:uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
 
-            
-            <tr>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->kecamatan}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->desa}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->nama}}</td>
-                <td style="font-size: 12px; text-transform:uppercase; text-align:left;">{{ $item->keterampilan}}</td>
-                
-                <td>
-                    
-                <style>
-                                        /* Container for the buttons */
-            .button-container {
-                display: flex;
-                gap: 10px; /* Space between icons */
-                justify-content: center; /* Center the icons horizontally */
-            }
+<td style="font-size: 12px; text-transform:uppercase; text-align:center;">
+    @if($item->pengawasanlokasi && isset($item->pengawasanlokasi->kota) && $item->pengawasanlokasi->kota !== '')
+        {{ $item->pengawasanlokasi->kota }}
+        @php $isDataAvailable = true; @endphp
+    @endif
+</td>
 
-            /* Style for the individual buttons */
-            .iconhover {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 25px; /* Adjust width as needed */
-                height: 25px; /* Adjust height as needed */
-                background: navy, white; /* Yellow background */
-                color: white; /* Text color */
-                border: none;
-                border-radius: 50%;
-                text-decoration: none;
-                padding: 3px 3px;
-                font-size: 15px; /* Adjust font size as needed */
-                transition: background 0.3s, color 0.3s;
-                cursor: pointer;
-            }
+<td style="font-size: 12px; text-transform:uppercase; text-align:left;">
+    @if(isset($item->desa) && $item->desa !== '')
+        {{ $item->desa }}
+        @php $isDataAvailable = true; @endphp
+    @endif
+</td>
 
-            .iconhover:hover {
-                background: white; /* White background on hover */
-                color: black; /* Black text color on hover */
-            }
+<td style="font-size: 12px; text-transform:uppercase; text-align:left;">
+    @if(isset($item->nama) && $item->nama !== '')
+        {{ $item->nama }}
+        @php $isDataAvailable = true; @endphp
+    @endif
+</td>
 
-            .iconhover i {
-                margin: 0;
-            }
-            
-                </style>
+<td style="font-size: 12px; text-transform:uppercase; text-align:left;">
+    @if($item->keterampilanpekerja && isset($item->keterampilanpekerja->keterampilan) && $item->keterampilanpekerja->keterampilan !== '')
+        {{ $item->keterampilanpekerja->keterampilan }}
+        @php $isDataAvailable = true; @endphp
+    @endif
+</td>
 
-                <div class="button-container">
-                <a href="/tenagakerja/skaskt/{{ $item->nama}}" class="iconhover" title="View">
-                    <i class="fas fa-eye" style="color: black"></i>
-                </a>
-                        
-                    </div>
+<td>
+    <style>
+        .button-container {
+            display: flex;
+            gap: 10px; 
+            justify-content: center; 
+        }
 
-                    <script>
-                        function downloadCSV() {
-                            // Function to handle CSV download
-                        }
-                        </script>
-                </td>
-            </tr>
-            @endforeach
+        .iconhover {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px; 
+            height: 25px; 
+            background: navy, white; 
+            color: white; 
+            border: none;
+            border-radius: 50%;
+            text-decoration: none;
+            padding: 3px 3px;
+            font-size: 15px; 
+            transition: background 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+        .iconhover:hover {
+            background: white; 
+            color: black; 
+        }
+
+        .iconhover i {
+            margin: 0;
+        }
+    </style>
+
+    <div class="button-container">
+        <a href="/tenagakerja/skaskt/{{ $item->nama }}" class="iconhover" title="View">
+            <i class="fas fa-eye" style="color: black"></i>
+        </a>
+    </div>
+
+    <script>
+        function downloadCSV() {
+            // Function to handle CSV download
+        }
+    </script>
+</td>
+</tr>
+@endforeach
+
+@if(!$isDataAvailable)
+<tr>
+    <td colspan="6" style="font-size: 12px; text-transform:uppercase; text-align:center; margin-top: 100px;">
+        <button class="databelum" style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: default; font-size: 12px; text-transform: uppercase; border-radius: 5px;">
+            DATA BELUM TERSEDIA ! SILAHKAN KEMBALI
+        </button>
+    </td>
+    
+    <style>
+        .databelum {
+            transition: background-color 0.3s, color 0.3s;
+        }
+    
+        .databelum:hover {
+            background: white; /* Background warna putih saat hover */
+            color: black; /* Teks warna hitam saat hover */
+        }
+    </style>
+    
+</tr>
+@endif
+
             {{-- ============================================ --}}
             
             
