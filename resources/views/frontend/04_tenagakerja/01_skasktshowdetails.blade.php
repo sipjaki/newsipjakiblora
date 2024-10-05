@@ -60,7 +60,7 @@ Pemerintah Kabupaten Bandung Barat
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 150vh;
+    height: 110vh;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
@@ -97,7 +97,7 @@ Pemerintah Kabupaten Bandung Barat
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 120vh;
+    height: 85vh;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
     position: relative;
@@ -150,7 +150,7 @@ Pemerintah Kabupaten Bandung Barat
                 color: black;
             }
         </style>
-        <a href="/tenagakerja/skaskt" style="background: white;">
+        <a href="/tenagakerja/skaskt/{{$data->nama}}" style="background: white;">
             <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
         </a>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
@@ -235,167 +235,23 @@ Pemerintah Kabupaten Bandung Barat
                     </tr>
                 </thead>
                 <tbody>
+                    <td>
                     <!-- Menyimpan nama data dalam elemen data -->
                     <div id="dataContainer" data-nama="{{ $data->nama }}" style="display: none;"></div>
-            
-                    <tr>
-                        <td style="width: 150px; padding: 10px; vertical-align: top;">
-                            <!-- Debug URL Gambar -->
-                           
-                        <img src="{{asset('storage/' . $data->foto) }}" 
-                                alt="Gambar Profil" 
-                                style="width: 100%; min-width: 280px; height: auto; border-radius: 8px;">
-                                <p style="margin-top:10px;">Foto Pekerja</p>
-                        </td>
+                    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+                        <div style="width: 300px; height: 300px; overflow: hidden; border-radius: 8px;">
+                            <img src="{{ asset('storage/' . $data->foto_kegiatanpekerja1) }}" 
+                                 alt="Gambar Pekerja 1" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         
-                        
-                        <td style="padding: 10px;">
-                            <table style="width: 100%; border-collapse: collapse;">
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-user" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Nama Lengkap</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->nama)) }}
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-map-marker-alt" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Kecamatan/Kota</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->pengawasanlokasi->kota)) }}
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-cogs" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Keterampilan</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->keterampilanpekerja->keterampilan)) }}
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-calendar-alt" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Tahun Bimbingan Teknis</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->tahunpilihan->tahun)) }}
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-home" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Desa</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->desa)) }}
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-address-card" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Alamat</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->alamat)) }}
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-birthday-cake" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Tanggal Lahir</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ \Carbon\Carbon::parse($data->tanggal_lahir)->locale('id')->translatedFormat('d F Y') }}
-                                    </td>
-                                </tr>
-                                
-                                <?php
-                                // Mengambil tanggal lahir dari data
-                                $tanggalLahir = $data->tanggal_lahir;
-                                
-                                // Menghitung usia
-                                $birthDate = new DateTime($tanggalLahir);
-                                $today = new DateTime();
-                                $age = $today->diff($birthDate)->y; // Mengambil selisih tahun
-                                ?>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-calendar" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Usia</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ $age }} tahun
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-id-card" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Nomor Induk Kependudukan</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->nik)) }}
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-graduation-cap" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Kualifikasi</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->kualifikasi)) }}
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                                        <i class="fas fa-clipboard-check" style="color: white; font-size: 12px;"></i>
-                                    </th>
-                                    <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Registrasi</th>
-                                    <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                                    <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                                        {{ ucwords(strtolower($data->registrasi)) }}
-                                    </td>
-                                </tr>
-                                       
-                              
-                                <tr>
-                                    <td colspan="4" style="background-color: white; text-align: right; padding: 10px;">
-                                        Sertifikat Keterampilan Pekerja | Sistem Informasi Pembina Jasa Konstruksi Kabupaten Bandung Barat | sipjakikbb.com
-                                        <br><p id="dateTime" style="margin: 0;"></p>
-                                        <br>
-                                        <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
-                                        <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
+                        <div style="width: 300px; height: 300px; overflow: hidden; border-radius: 8px;">
+                            <img src="{{ asset('storage/' . $data->foto_kegiatanpekerja2) }}" 
+                                 alt="Gambar Pekerja 2" 
+                                 style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </td>
                 </tbody>
             </table>
             

@@ -270,7 +270,10 @@ class SkktenagakerjaController extends Controller
 
 public function feskktenagakerja()
     {
-        
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $dataketerampilan = keterampilanpekerja::all();
+        $datatahunpilihan = tahunpilihan::all();
+
         $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
         $totalData = Tukangterampil::count();
 
@@ -287,6 +290,11 @@ public function feskktenagakerja()
             'data_kecamatan' => $datakecamatan, // Mengirimkan data paginasi ke view
             'totaldata' => $totalData, // Mengirimkan data paginasi ke view
             'user' => $user, // Mengirimkan data paginasi ke view
+
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datatahunpilihan' => $datatahunpilihan,
+            'dataketerampilan' => $dataketerampilan,
+
         ]);
     }
 
@@ -314,6 +322,10 @@ public function listkecamatan()
 
     public function feskktenagakerjashowByName($nama)
     {
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $dataketerampilan = keterampilanpekerja::all();
+        $datatahunpilihan = tahunpilihan::all();
+
         $item = Tukangterampil::where('nama', $nama)->firstOrFail();
         $user = Auth::user();
 
@@ -321,6 +333,32 @@ public function listkecamatan()
             'data' => $item,
             'user' => $user,
             'title' => 'Detail SKK Tenaga Kerja',
+            
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datatahunpilihan' => $datatahunpilihan,
+            'dataketerampilan' => $dataketerampilan,
+
+        ]);
+    }
+
+    public function feskktenagakerjadokumentasishowByName($nama)
+    {
+        $datapengawasanlokasi = pengawasanlokasi::all();
+        $dataketerampilan = keterampilanpekerja::all();
+        $datatahunpilihan = tahunpilihan::all();
+
+        $item = Tukangterampil::where('nama', $nama)->firstOrFail();
+        $user = Auth::user();
+
+        return view('frontend.04_tenagakerja.01_skasktshowdetails', [
+            'data' => $item,
+            'user' => $user,
+            'title' => 'Dokumentasi Pelatihan Sertifikasi',
+            
+            'datapengawasanlokasi' => $datapengawasanlokasi,
+            'datatahunpilihan' => $datatahunpilihan,
+            'dataketerampilan' => $dataketerampilan,
+
         ]);
     }
 

@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
         <br>
          <h2 style="
@@ -47,7 +47,8 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
+Daftar Sertifikat Keterampilan Kerja <br> 
+Pemerintah Kabupaten Bandung
 </h2>
 </div>
 <style>
@@ -425,11 +426,12 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
         <thead>
             <tr>
                 <th style="width:45px;">No</th>
-                <th>KECAMATAN</th>
-                <th>DESA</th>
-                <th>NAMA LENGKAP</th>
-                <th>KETERAMPILAN</th>
-                <th>VIEW SKK</th>
+                <th style="width:200px;">NAMA LENGKAP</th>
+                <th style="width:150px;">KECAMATAN/KOTA</th>
+                <th style="width:200px;">KETERAMPILAN</th>
+                <th style="width:125px;">TAHUN BIMTEK</th>
+                <th style="width:125px;">KUALIFIKASI</th>
+                <th style="width:100px;">VIEW SKK</th>
             </tr>
         </thead>
         <tbody>
@@ -442,12 +444,12 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             @foreach($data as $item )
             
             <tr>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->kecamatan }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->desa }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->nama }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->keterampilan }}</td>
-                
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->pengawasanlokasi->kota }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->keterampilanpekerja->keterampilan }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->tahunpilihan->tahun }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->kualifikasi }}</td>
                 
                 <td>
                     
