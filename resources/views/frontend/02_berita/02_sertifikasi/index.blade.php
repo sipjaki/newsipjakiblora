@@ -25,7 +25,7 @@
 
 
     <!-- Featured News Slider Start -->
-    <div class="container-fluid pt-5 mb-3" style="margin-top: 188px;">
+    <div class="container-fluid pt-5 mb-3" style="margin-top: 165px;">
         <div class="container col-11">
                     <!-- Popular News Start -->
                     <div class="mb-3 mt-0">

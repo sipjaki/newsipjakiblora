@@ -836,19 +836,24 @@ public function listregister()
         
         public function penanggungjawabteknis()
         {
-           
+           $datapenanggungjawabteknis = penanggungjawabteknis::paginate(15);
+           $datapengawasanlokasi = pengawasanlokasi::all();
+
             // Mengirimkan data ke view
             return view('frontend.04_tenagakerja.penanggungjawabteknis.index', [
                 'title' => 'Penanggung Jawab Teknis',
+                'data' => $datapenanggungjawabteknis,
+                'datapengawasanlokasi' => $datapengawasanlokasi,
             ]);
         }
         
         public function timpembinajasakonstruksi()
         {
-           
+           $datatimpembina = timpembina::paginate(5);
             // Mengirimkan data ke view
             return view('frontend.04_tenagakerja.timpembina.index', [
                 'title' => 'Tim Pembina Jasa Konstruksi',
+                'data' => $datatimpembina,
             ]);
         }
         

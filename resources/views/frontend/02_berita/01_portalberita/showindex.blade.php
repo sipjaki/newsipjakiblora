@@ -23,7 +23,7 @@
 
     <!-- Breaking News Start -->
     <div class="container-fluid mt-6 mb-3">
-        <div class="container" style="margin-top: 188px;">
+        <div class="container" style="margin-top: 165px;">
             <div class="row align-items-center">
                 <div class="col-12 mt-2" >
                     <div class="d-flex justify-content-between">

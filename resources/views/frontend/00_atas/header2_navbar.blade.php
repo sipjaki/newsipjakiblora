@@ -97,7 +97,7 @@
         </div>                    {{-- <a href="#">PROFIL</a> --}}
     
         <div class="dropdown">
-            <a href="#" class="dropdown-toggle" style="text-align: left">DATA <br> JAKON </a>
+            <a href="#" class="dropdown-toggle" style="text-align: left">DATA JAKON </a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
             <div class="dropdown-content" style="min-width: 300px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
@@ -153,7 +153,7 @@
         </div>                    {{-- <a href="#">PROFIL</a> --}}
     
         <div class="dropdown">
-            <a href="#" class="dropdown-toggle" style="text-align: left">TENAGA <br> KERJA </a>
+            <a href="#" class="dropdown-toggle" style="text-align: left">TENAGA KERJA </a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
             <div class="dropdown-content" style="min-width: 350px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
@@ -189,8 +189,10 @@
                     <a href="/404" style="color: black; text-decoration: none; text-align:left">LAPORAN SPM</a>
                 </div>
                  
+            
             </div>
-        </div>                    {{-- <a href="#">PROFIL</a> --}}
+        </div>                    
+        {{-- <a href="#">PROFIL</a> --}}
         
         {{-- <div class="dropdown">
             <a href="#" class="dropdown-toggle" style="text-align: left">DUKUNGAN <br> USAHA </a> --}}
@@ -215,9 +217,9 @@
         </div> --}}
                             {{-- <a href="#">PROFIL</a> --}}
     
-        <a href="/404" style="text-align: center">BADAN <br> USAHA </a>
+        {{-- <a href="/404" style="text-align: center">BADAN <br> USAHA </a> --}}
         <a href="/ijinusahajasakonstruksi">SBU/UIJK</a>
-        <a href="/tdup">TDUP</a>
+        {{-- <a href="/tdup">TDUP</a> --}}
         
         
         <div class="dropdown">
@@ -315,7 +317,7 @@
         </div>                    {{-- <a href="#">PROFIL</a> --}}
         
         
-        <a href="#">FORUM</a>
+        <a href="/login">LOGIN</a>
        
     
     </nav>

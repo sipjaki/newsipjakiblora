@@ -61,7 +61,7 @@
 
 
     <!-- Main News Slider Start -->
-    <div class="container-fluid" style="margin-top: 188px;">
+    <div class="container-fluid" style="margin-top: 165px;">
         <div class="row">
             <div class="col-lg-7 px-0">
                 <div class="owl-carousel main-carousel position-relative">
