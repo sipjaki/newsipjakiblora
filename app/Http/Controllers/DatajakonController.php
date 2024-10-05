@@ -27,21 +27,53 @@ class DatajakonController extends Controller
 
     public function asosiasi()
     {
-        
+        $dataasosiasi = asosiasipengusaha::paginate(15);
         $user = Auth::user();
 
         
         return view('frontend.03_datajakon.01_asosiasi', [
             'title' => 'Asosiasi Pengusaha ',
+            'data' => $dataasosiasi,
             'user' => $user,
 
-           
         ]);
     }
 
-    // ===========================================================
-    // PENGAWASAN DAN KETERTIBAN 
+    public function asosiasishowfrontend($nama_asosiasi)
+    {
+        $dataasosiasi = asosiasipengusaha::where('nama_asosiasi', $nama_asosiasi)->firstOrFail();
+        $user = Auth::user();
+        
+        return view('frontend.03_datajakon.01_asosiasishow', [
+            'data' => $dataasosiasi,
+            'user' => $user,
+            'title' => 'Show Details Data Asosiasi Pengusaha',
+        ]);
+    }
 
+    // ========================== DATA BAGAIN 01 PENGAWASAN DAN KETERTIBAN JASA KONSTRUKSI BANGUNAN GEDUNG KAB BANDUNG BARAT =================================
+    // FRONTEND PENGAWASAN DAN KETERTIBAN
+
+    public function fepengawasandanketertiban()
+    {
+        
+        $dataketertiban = ketertiban::paginate(15);
+        $user = Auth::user();
+
+        return view('frontend.03_datajak.04_pengawasan', [
+            'dataketertiban' => $dataketertiban,
+            'user' => $user,
+            'title' => 'Pengawasan & Ketertiban',
+           
+        ]);
+
+    }
+
+// =================================================
+    
+    
+    
+    
     public function pengawasandanketertiban()
     {
         
@@ -453,9 +485,13 @@ class DatajakonController extends Controller
 
     public function paketpekerjaan()
     {
-        
+        $datapaketpekerjaan = paketpekerjaan::paginate(15);
+        $datametodepengadaan = metodepengadaan::all();
+
         return view('frontend.03_datajakon.03_paketpekerjaan', [
             'title' => 'Paket Pekerjaan Kabupaten Bandung Barat',
+            'data' => $datapaketpekerjaan,
+            'datametodepengadaan' => $datametodepengadaan,
            
         ]);
     }
@@ -656,10 +692,16 @@ public function deletepaketpekerjaan($instansi)
     public function pengawasan()
     {
         
+        $dataketertiban = ketertiban::paginate(6);
+        $user = Auth::user();
+
         return view('frontend.03_datajakon.04_pengawasan', [
-            'title' => 'Pengawasan Konstruksi Kabupaten Bandung Barat',
+            'data' => $dataketertiban,
+            'user' => $user,
+            'title' => 'Pengawasan & Ketertiban',
            
         ]);
+
     }
 
 

@@ -59,7 +59,7 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 20vh;
+    height: 22vh;
     background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
@@ -151,7 +151,7 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 25vh;
+    height: 160vh;
     background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
@@ -190,7 +190,7 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
 <br>
     <style>
         table {
-            width: 1025px;
+            width: 100%;
             border-collapse: collapse;
             margin-left: 10px;
             margin-right: 10px;
@@ -218,31 +218,86 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
             font-size: 14px;
         }
     </style>
-     <table>
+     <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        th, td {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: black;
+            font-size: 12px;
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+            font-size: 12px;
+        }
+
+        th {
+            /* background-color: #4CAF50; */
+            /* background: linear-gradient(to bottom, #000000, #FFCB0F); */
+            background-color:  #FFCB0F;
+            color: black;
+            font-size: 14px;
+        }
+    </style>
+
+<table>
         <thead>
             <tr>
                 <th style="width:45px;">NO</th>
-                <th>NAMA PROYEK</th>
-                <th>NILAI KONTRAK</th>
-                <th>PROGRESS FISIK</th>
-                <th>TANGGAL MULAI</th>
-                <th>TANGGAL SELESAI</th>
-                <th>VIEW</th>
+                <th style="width:200px;">METODE PENGADAAN</th>
+                <th style="width:200px;">INSTANSI</th>
+                <th style="width:150px;">JUMLAH PAGU</th>
+                <th style="width:200px;">PEKERJAAN</th>
+                {{-- <th style="width:200px;">FOTO</th> --}}
+                <th style="width:75px;">TAHUN ANGGARAN</th>
+                <th style="width:75px;">PROGRESS FISIK</th>
+                {{-- <th style="width:50px;">VIEW</th> --}}
             </tr>
         </thead>
         <tbody>
 
             {{-- ============================================ --}}
+            @php
+        $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+            @endphp
+
+            @foreach($data as $item )
             
             <tr>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">1</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">Data No Availabe</td>
-               
-                <td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->metodepengadaan->metode }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->instansi }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">
+                    Rp {{ number_format($item->jumlah_pagu, 2, ',', '.') }}
+                </td>
+                                
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->pekerjaan }}</td>
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->f }}</td> --}}
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->tahun }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">
+                    <div style="width: 100%; background-color: #e0e0e0; border-radius: 5px;">
+                        <div style="width: {{ $item->progress_fisik }}%; background-color: #4caf50; height: 20px; border-radius: 5px; text-align: center; color: white;">
+                            {{ $item->progress_fisik }}%
+                        </div>
+                    </div>
+                </td>
+                
+                {{--                 
+                <td style="font-size: 12px; text-align:center; text-transform:uppercase">
+                    {{ \Carbon\Carbon::parse($item->tanggal_selesai)->locale('id')->translatedFormat(' d F Y') }}
+                </td> --}}
+
+                
+                {{-- <td>
                     
                 <style>
                                         /* Container for the buttons */
@@ -282,14 +337,20 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 </style>
 
                 <div class="button-container">
-                <a href="" class="iconhover" title="View">
+                <a href="/datajakon/asosiasi/{{ $item->nama_asosiasi}}" class="iconhover" title="View">
                     <i class="fas fa-eye" style="color: black"></i>
                 </a>
                         
                     </div>
 
-                </td>
+                    <script>
+                        function downloadCSV() {
+                            // Function to handle CSV download
+                        }
+                        </script>
+                </td> --}}
             </tr>
+            @endforeach
             {{-- ============================================ --}}
             
             
@@ -297,13 +358,46 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
     </table>
 
 
+     
+
 </div>
 
 <style>
     .pagination-container{
         color: black;
     }
+    .page-item:hover{
+        background: black;
+        color: white;
+    }
 </style>
+
+{{-- <p style=""></p> --}}
+<div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; color:black; ">
+        <div class="pagination-info mb-2" style="margin-bottom: 10px; color:black;">
+            Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah Data
+        </div>
+            <ul class="pagination" style="display: flex; padding-left: 0; list-style: none; color: black;">
+                <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px; ">
+                    <a class="page-link" href="{{ $data->previousPageUrl() }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: black; background-color: #fff; border: 1px solid #dee2e6; font-size:12px; border-radius: 20px 0px 0px 20px;"><i class="fas fa-arrow-left" style="margin-right:10px;"></i>Previous</a>
+                </li>
+
+                @foreach ($data->getUrlRange($data->currentPage() - 0, $data->currentPage() + 2) as $page => $url)
+                    <li class="page-item {{ $page == $data->currentPage() ? 'active' : '' }}" style="margin-right: 5px;">
+                        <a class="page-link" href="{{ $url }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: black; background-color: #fff; border: 1px solid #dee2e6; font-size:12px; ">{{ $page }}</a>
+                    </li>
+                @endforeach
+
+                <li class="page-item {{ $data->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
+                    <a class="page-link" href="{{ $data->nextPageUrl() }}" style="position: relative; display: block; padding: 0.5rem 0.75rem; margin-left: -1px; line-height: 1.25; color: black; background-color: #fff; border: 1px solid #dee2e6; font-size:12px; border-radius: 0px 20px 20px 0px;">Next <i class="fas fa-arrow-right" style="margin-left:10px;"></i></a>
+                </li>
+            </ul>
+
+    </div>
+
+
+        
+</div>
 
         
 </div>

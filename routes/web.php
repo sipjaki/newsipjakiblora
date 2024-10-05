@@ -74,7 +74,6 @@ Route::get('/profil/rencanastrategis', [StrukturController::class, 'rencanastrat
 Route::get('/profil/tupoksi', [StrukturController::class, 'tupoksifekbb']); 
 
 
-
 // ------------------------- 02 BAGIAN BERITA SIPJAKI KBB --------------------------
 // -------- BAGIAN 1 TAMPILAN BERITA ---------------------------------
 Route::get('/berita', [FedashboardController::class, 'navbarberita']);
@@ -89,12 +88,19 @@ Route::get('/detailskegiatan/{jabatan}', [FedashboardController::class, 'details
 Route::get('/feagendasertifikasi', [FedashboardController::class, 'feagendasertifikasipekerja']);
 
 // ---------------------- 03 DATA JAKON -----------------------//
-// -------- BAGIAN 1 ---------------------------------
-// =======================================
-Route::get('/datajakon/asosiasi', [DatajakonController::class, 'asosiasi']); 
-Route::get('/datajakon/standarbiayaumum', [DatajakonController::class, 'standarbiayaumum']); 
-Route::get('/datajakon/paketpekerjaan', [DatajakonController::class, 'paketpekerjaan']); 
+// -------- BAGIAN 01 PENGAWASAN DAN KETERTIBAN  ---------------------------------
 Route::get('/datajakon/pengawasan', [DatajakonController::class, 'pengawasan']); 
+// Route::get('/jakonpengwasandanketertiban', [DatajakonController::class, 'fepengawasandanketertiban']); 
+
+// -------- BAGIAN 02 DATA ASOSIASI PENGUSAHA  ---------------------------------
+Route::get('/datajakon/asosiasi', [DatajakonController::class, 'asosiasi']); 
+Route::get('/datajakon/asosiasi/{nama_asosiasi}', [DatajakonController::class, 'asosiasishowfrontend']); 
+
+// -------- BAGIAN 03 STANDAR BIAYA UMUM JASA KONSTRUKSI  ---------------------------------
+Route::get('/datajakon/standarbiayaumum', [DatajakonController::class, 'standarbiayaumum']); 
+
+// -------- BAGIAN 04 PROGRESS PAKET PEKERJAAN ---------------------------------
+Route::get('/datajakon/paketpekerjaan', [DatajakonController::class, 'paketpekerjaan']); 
 
 
 // ---------------------- 04 TENAGA KERJA -----------------------//
