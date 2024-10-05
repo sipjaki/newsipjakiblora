@@ -12,6 +12,10 @@ use App\Models\pengawasanketertiban;
 use App\Models\pengawasanlokasi;
 use App\Models\pengawasanstatus;
 use App\Models\pengawasantindakan;
+use App\Models\sbulampiran1;
+use App\Models\sbulampiran2;
+use App\Models\sbulampiran3;
+use App\Models\standarbiayaumum;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
@@ -471,15 +475,115 @@ class DatajakonController extends Controller
 
     public function standarbiayaumum()
     {
+        $data = standarbiayaumum::paginate(15);
+
         $user = Auth::user();
         
         return view('frontend.03_datajakon.02_standarbiayaumum', [
             'title' => 'Standar Biaya Umum ',
             'user' => $user,
+            'data' => $data,
            
         ]);
     }
 
+    public function standarbiayaumumshowbyjudulfe($judul)
+    {
+        $datastandarbiayaumum = standarbiayaumum::where('judul', $judul)->firstOrFail();
+        $user = Auth::user();   
+
+        return view('frontend.03_datajakon.02_standarbiayaumumshow', [
+            'data' => $datastandarbiayaumum,
+            'user' => $user,
+            'title' => 'Show Details Standar Biaya Umum',
+        ]);
+    }
+
+    // ============================ SBU LAMPIRAN 3 ========================================
+
+    public function fesbulampiran3()
+    {
+        $data = sbulampiran3::paginate(10);
+
+        $user = Auth::user();
+        
+        return view('frontend.03_datajakon.02_sbulampiran3', [
+            'title' => 'Lampiran 3 Standar Biaya Umum ',
+            'user' => $user,
+            'data' => $data,
+           
+        ]);
+    }
+
+    public function fesbulampiran3showbyjudulfe($judul)
+    {
+        $datastandarbiayaumum = sbulampiran3::where('judul', $judul)->firstOrFail();
+        $user = Auth::user();   
+
+        return view('frontend.03_datajakon.02_sbulampiran3show', [
+            'data' => $datastandarbiayaumum,
+            'user' => $user,
+            'title' => 'Show Details Lampiran 3 Standar Biaya Umum',
+        ]);
+    }
+
+    // ============================ SBU LAMPIRAN 2 ========================================
+
+    public function fesbulampiran2()
+    {
+        $data = sbulampiran2::paginate(10);
+
+        $user = Auth::user();
+        
+        return view('frontend.03_datajakon.02_sbulampiran2', [
+            'title' => 'Lampiran 2 Standar Biaya Umum ',
+            'user' => $user,
+            'data' => $data,
+           
+        ]);
+    }
+
+    public function fesbulampiran2showbyjudulfe($judul)
+    {
+        $datastandarbiayaumum = sbulampiran2::where('judul', $judul)->firstOrFail();
+        $user = Auth::user();   
+
+        return view('frontend.03_datajakon.02_sbulampiran2show', [
+            'data' => $datastandarbiayaumum,
+            'user' => $user,
+            'title' => 'Show Details Lampiran 2 Standar Biaya Umum',
+        ]);
+    }
+
+    // ============================ SBU LAMPIRAN 1 ========================================
+
+    public function fesbulampiran1()
+    {
+        $data = sbulampiran1::paginate(10);
+
+        $user = Auth::user();
+        
+        return view('frontend.03_datajakon.02_sbulampiran1', [
+            'title' => 'Lampiran 1 Standar Biaya Umum ',
+            'user' => $user,
+            'data' => $data,
+           
+        ]);
+    }
+
+    public function fesbulampiran1showbyjudulfe($judul)
+    {
+        $datastandarbiayaumum = sbulampiran1::where('judul', $judul)->firstOrFail();
+        $user = Auth::user();   
+
+        return view('frontend.03_datajakon.02_sbulampiran1show', [
+            'data' => $datastandarbiayaumum,
+            'user' => $user,
+            'title' => 'Show Details Lampiran 1 Standar Biaya Umum',
+        ]);
+    }
+
+    
 
     // ======================================== PAKET PEKERJAAN =====================================
 

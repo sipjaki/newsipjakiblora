@@ -98,6 +98,17 @@ Route::get('/datajakon/asosiasi/{nama_asosiasi}', [DatajakonController::class, '
 
 // -------- BAGIAN 03 STANDAR BIAYA UMUM JASA KONSTRUKSI  ---------------------------------
 Route::get('/datajakon/standarbiayaumum', [DatajakonController::class, 'standarbiayaumum']); 
+Route::get('/datajakon/standarbiayaumum/{judul}', [DatajakonController::class, 'standarbiayaumumshowbyjudulfe']); 
+
+Route::get('/datajakon/fesbulampiran3', [DatajakonController::class, 'fesbulampiran3']); 
+Route::get('/datajakon/fesbulampiran3/{judul}', [DatajakonController::class, 'fesbulampiran3showbyjudulfe']); 
+
+Route::get('/datajakon/fesbulampiran2', [DatajakonController::class, 'fesbulampiran2']); 
+Route::get('/datajakon/fesbulampiran2/{judul}', [DatajakonController::class, 'fesbulampiran2showbyjudulfe']); 
+
+Route::get('/datajakon/fesbulampiran1', [DatajakonController::class, 'fesbulampiran1']); 
+Route::get('/datajakon/fesbulampiran1/{judul}', [DatajakonController::class, 'fesbulampiran1showbyjudulfe']); 
+
 
 // -------- BAGIAN 04 PROGRESS PAKET PEKERJAAN ---------------------------------
 Route::get('/datajakon/paketpekerjaan', [DatajakonController::class, 'paketpekerjaan']); 

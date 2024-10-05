@@ -47,7 +47,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Standar Biaya Umum Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
+Lampiran 3 Standar Biaya Umum Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
 </h2>
 </div>
 <div class="container" style="
@@ -341,7 +341,7 @@ Standar Biaya Umum Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                         </style>
 
                         <div class="button-container">
-                        <a href="/datajakon/standarbiayaumum/{{$item->judul}}" class="iconhover" title="View">
+                        <a href="/datajakon/fesbulampiran3/{{$item->judul}}" class="iconhover" title="View">
                             <i style="color: black;" class="fas fa-eye"></i>
                         </a>
 
@@ -418,16 +418,16 @@ Standar Biaya Umum Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
     
             <div class="div">
 
-                <a href="/datajakon/fesbulampiran3" style="background: inherit">
-                    <button class="badge-lampiran" style="border: none; cursor:pointer "><i class="fas fa-file" style="margin-right: 5px;"></i>Lampiran 3</button>
+                <a href="/datajakon/standarbiayaumum" style="background: inherit">
+                    <button class="badge-lampiran" style="border: none; cursor:pointer "><i class="fas fa-file" style="margin-right: 5px;"></i>Standar Biaya Umum</button>
                 </a>
                 
                 <a href="/datajakon/fesbulampiran2" style="background: inherit">
-                    <button class="badge-lampiran" style="border: none; cursor:pointer "><i class="fas fa-file" style="margin-right: 5px;"></i> Lampiran 2</button>
+                    <button class="badge-lampiran" style="border: none; cursor:pointer "><i class="fas fa-file" style="margin-right: 5px;"></i>Lampiran 2</button>
                 </a>
                 
                 <a href="/datajakon/fesbulampiran1" style="background: inherit">
-                    <button class="badge-lampiran" style="border: none; cursor:pointer "><i class="fas fa-file" style="margin-right: 5px;"></i> Lampiran 1</button>
+                    <button class="badge-lampiran" style="border: none; cursor:pointer "><i class="fas fa-file" style="margin-right: 5px;"></i>Lampiran 1</button>
                 </a>
             </div>
      
