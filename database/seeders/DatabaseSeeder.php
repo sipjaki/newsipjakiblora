@@ -1158,7 +1158,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 
-        Tukangterampil::factory(1234)->create();
+        Tukangterampil::factory(234)->create();
       
         
 

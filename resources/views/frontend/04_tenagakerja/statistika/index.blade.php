@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
         <br>
          <h2 style="
@@ -47,7 +47,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
+Statistika Daftar Para Pekerja Konstruksi <br> Pemerintah Kabupaten Bandung Barat
 </h2>
 </div>
 
@@ -143,7 +143,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 275vh;
+    height: 290vh;
     background: linear-gradient(to bottom, yellow, white, navy);
     align-items: center;
     position: relative;

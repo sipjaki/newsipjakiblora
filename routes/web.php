@@ -115,7 +115,7 @@ Route::get('/datajakon/paketpekerjaan', [DatajakonController::class, 'paketpeker
 
 
 // ---------------------- 04 TENAGA KERJA -----------------------//
-// -------- BAGIAN 1 ---------------------------------
+// -------- BAGIAN 01 ---------------------------------
 Route::get('/tenagakerja/skaskt', [SkktenagakerjaController::class, 'feskktenagakerja']);  
 Route::get('/tenagakerja/skaskt/{nama}', [SkktenagakerjaController::class, 'feskktenagakerjashowByName']);
 Route::get('/tenagakerja/showskaskt/{nama}', [SkktenagakerjaController::class, 'feskktenagakerjadokumentasishowByName']);
@@ -143,20 +143,16 @@ Route::get('/skkskkchart/kecamatan', [SkktenagakerjaController::class, 'chartkec
 Route::get('/skkchart/desa', [SkktenagakerjaController::class, 'chartdesa']); 
 Route::get('/skkchart/register', [SkktenagakerjaController::class, 'chartregister']); 
 
-
-
-// ==============================
+// -------- BAGIAN 02 ---------------------------------
+// RUTE UNTUK MEMETAKAN LOKASI PETA WILAYAH KABUPATEN BANDUNG BARAT 
 Route::get('/giskbb', [GiskbbController::class, 'index']); 
 Route::get('/giskbb/{nama_kecamatan}', [GiskbbController::class, 'namakecamatanshowBykecamatan']);
 
 
-
-
-// =======================================
+// -------- BAGIAN 03 ---------------------------------
+// RUTE UNTUK MENJALANKAN PENANGGUNG JAWAB TEKNIS
 Route::get('/tenagakerja/pjt', [SkktenagakerjaController::class, 'penanggungjawabteknis']); 
 Route::get('/tenagakerja/timpembina', [SkktenagakerjaController::class, 'timpembinajasakonstruksi']); 
-
-
 
 // ---------------------- 05 INFORMASI SPM -----------------------//
 // -------- BAGIAN 1 ---------------------------------

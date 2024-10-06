@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
         <br>
          <h2 style="
@@ -141,7 +141,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 60vh;
+    height: 85vh;
     background: linear-gradient(to bottom, yellow, white, navy);
     align-items: center;
     position: relative;
@@ -198,6 +198,46 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 {{--  STATISTIKA ------------------------------------- --}}
 <!-- Container for the 1 chart -->
 <style>
+    /* Container untuk setiap chart */
+    .chart-container {
+        margin: 15px auto; /* Margin untuk memberi jarak */
+        width: 90%; /* Lebar responsif */
+        max-width: 900px; /* Maksimal lebar lebih besar */
+        height: 450px; /* Tinggi untuk memperpanjang chart */
+        border-radius: 10px; /* Sudut yang membulat */
+        background-color: #f9f9f9; /* Latar belakang terang */
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+        padding: 20px; /* Ruang di dalam container */
+        position: relative; /* Untuk positioning yang lebih baik */
+    }
+
+    /* Judul chart */
+    .canvasjs-chart-title {
+        font-family: 'Roboto', sans-serif; /* Font yang konsisten */
+        font-size: 18px; /* Ukuran font yang lebih besar */
+        font-weight: bold; /* Membuat judul lebih tegas */
+        text-align: center; /* Memusatkan teks */
+        color: #333; /* Warna teks yang kontras */
+        margin-bottom: 10px; /* Spasi di bawah judul */
+    }
+
+    /* Legend styling (opsional) */
+    .canvasjs-chart-legend {
+        font-family: 'Roboto', sans-serif; /* Font konsisten */
+        font-size: 12px; /* Ukuran font legend */
+    }
+
+    /* Tooltip styling */
+    .canvasjs-tooltip {
+        border-radius: 8px; /* Sudut yang membulat */
+        padding: 8px; /* Padding dalam tooltip */
+        background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap */
+        color: white; /* Teks putih */
+        font-size: 12px; /* Ukuran font tooltip */
+    }
+</style>
+
+<style>
     /* CSS yang telah dijelaskan di atas */
 
     .jumlahpekerja button {
@@ -217,13 +257,14 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     }
 </style>
 
+
 <div class="jumlahpekerja">
     <button style="font-size:13px;">Jumlah Pekerja Bimtek : {{$total_data}} Orang</button>
 </div>
 
 <!-- Container for the 4 chart -->
-<div class="container">
-<div id="bimtekchartContainer" style="width: 1000px; height:300px;"></div>
+<div class="chart-container">
+    <div id="bimtekchartContainer" style="height: 400px;"></div>
 </div>
 
 
@@ -233,7 +274,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     window.onload = function () {
 
         // ============= ============= ============= ============= =============
-        var dataForCharttahunbimtek = {!! $data_for_chart_tahun_bimtek !!};
+        var dataForCharttahunbimtek = {!! $data_for_chart_bimtek !!};
         
         var chart4 = new CanvasJS.Chart("bimtekchartContainer", {
             exportEnabled: true,

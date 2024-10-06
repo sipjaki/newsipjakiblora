@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
         <br>
          <h2 style="
@@ -47,7 +47,7 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
+Distribusi Data Berdasarkan Data Keterampilan 
 </h2>
 </div>
 
@@ -143,7 +143,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 212vh;
+    height: 200vh;
     background: linear-gradient(to bottom, yellow, white, navy);
     align-items: center;
     position: relative;
@@ -180,20 +180,45 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 <style>
-    /* Optional: Add some basic styling */
-    #chartContainer, #kecamatanchartContainer, #desachartContainer, #bimtekchartContainer, #usiachartContainer {
-        margin: 25px auto;
-        height: 400px;
-        width: 90%;
-        /* position: relative; */
-        border-radius: 10px;
+    /* Container untuk setiap chart */
+    .chart-container {
+        margin: 15px auto; /* Margin untuk memberi jarak */
+        width: 90%; /* Lebar responsif */
+        max-width: 900px; /* Maksimal lebar lebih besar */
+        height: 450px; /* Tinggi untuk memperpanjang chart */
+        border-radius: 10px; /* Sudut yang membulat */
+        background-color: #f9f9f9; /* Latar belakang terang */
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+        padding: 20px; /* Ruang di dalam container */
+        position: relative; /* Untuk positioning yang lebih baik */
     }
+
+    /* Judul chart */
     .canvasjs-chart-title {
-            font-family: 'Roboto', sans-serif;
-            /* margin-bottom: 100px; */
-        }
-    
+        font-family: 'Roboto', sans-serif; /* Font yang konsisten */
+        font-size: 18px; /* Ukuran font yang lebih besar */
+        font-weight: bold; /* Membuat judul lebih tegas */
+        text-align: center; /* Memusatkan teks */
+        color: #333; /* Warna teks yang kontras */
+        margin-bottom: 10px; /* Spasi di bawah judul */
+    }
+
+    /* Legend styling (opsional) */
+    .canvasjs-chart-legend {
+        font-family: 'Roboto', sans-serif; /* Font konsisten */
+        font-size: 12px; /* Ukuran font legend */
+    }
+
+    /* Tooltip styling */
+    .canvasjs-tooltip {
+        border-radius: 8px; /* Sudut yang membulat */
+        padding: 8px; /* Padding dalam tooltip */
+        background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap */
+        color: white; /* Teks putih */
+        font-size: 12px; /* Ukuran font tooltip */
+    }
 </style>
+
 
 
 
@@ -222,9 +247,8 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 <div class="jumlahpekerja">
     <button style="font-size:13px;">Jumlah Pekerja Bimtek : {{$total_data}} Orang</button>
 </div>
-
-<div class="container">
-    <div id="chartContainer" style="width: 1000px; height:300px;"></div>
+<div class="chart-container">
+    <div id="chartContainer" style="height: 400px;"></div>
 </div>
 
 <style>
@@ -286,9 +310,6 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 
-
- 
-
 <script>
     window.onload = function () {
         // First chart
@@ -296,9 +317,9 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
             exportEnabled: true,
             animationEnabled: true,
             title: {
-                text: "{{$judulketerampilan}}",
-                fontFamily: "Roboto", // Atur fontFamily di CanvasJS
-                fontSize: 15    // 
+                text: "{{$judulstatistika}}",
+                fontFamily: "Roboto",
+                fontSize: 15
             },
             legend: {
                 cursor: "pointer",
@@ -309,7 +330,7 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
                 showInLegend: true,
                 toolTipContent: "{name}: <strong>{y}%</strong>",
                 indexLabel: "{name} - {y}%",
-                dataPoints: {!! $data_for_chart_keterampilan !!}
+                dataPoints: {!! json_encode($data_keterampilan) !!} // Update dataPoints
             }]
         });
         chart1.render();
@@ -393,7 +414,6 @@ Sertifikat Keahliah Kerja & Sertifikat Keterampilan Kerja
 
 
 
-<br><br>
     </section>
 
 

@@ -13,7 +13,7 @@ class UijkController extends Controller
         $data_uijk = uijk::paginate(15); // Menggunakan paginate() untuk pagination
 
         return view('frontend.08_UIJK.uijk', [
-            'title' => 'SBU / UIJK',
+            'title' => 'SBU / UIJK Pemerintah Kabupaten Bandung',
             'data' => $data_uijk, // Mengirimkan data paginasi ke view
         ]);
     }

@@ -7,6 +7,7 @@
 
 <section id="sec-0">
     
+    
     <div class="div" style="z-index: 9999; position: fixed;
             top: 0; left: 0; width: 100%; z-index: 9999;
             background-color: white; border-bottom: 1px solid black; 
@@ -20,6 +21,7 @@
         </div>
         </header>
 
+
 <div class="div" style="
             justify-content: center;
             text-align:center;
@@ -27,10 +29,10 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
-                    <h2 style="
-    margin-top: 10px;
+        <br>
+         <h2 style="
     font-family: 'Lato', sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -45,9 +47,106 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Sertifikat badan usaha - izin usaha jasa konstruksi
+Daftar Sertifikat Keterampilan Kerja <br> 
+Pemerintah Kabupaten Bandung
 </h2>
 </div>
+<style>
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .container-bagan {
+                display: flex;
+                flex-direction: column;
+                background-color: #FFCB0F;
+                padding: 10px;
+                border: 1px solid black;
+                border-radius: 25px;
+                text-align: center;
+                width: 100%;
+                height: 50vh;
+                background: linear-gradient(to bottom, yellow, white, white);
+                align-items: center;
+                position: relative;
+            }
+    }
+    </style>
+
+
+<div class="container" 
+@media (min-width: 769px) and (max-width: 1024px) {    
+
+    style="
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    height: 26vh;
+    background: linear-gradient(to bottom, yellow, white, white);
+    align-items: center;
+    position: relative;
+">
+
+<div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div>
+
+
+<h1 style="font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Kementrian Pekerjaan Umum Dan Penataan Ruang</button> </h1>
+
+
+<style>
+
+.badgekembali {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+                text-transform: uppercase;
+            }
+            .badgekembali:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+
+.badgekementrian {
+                background: linear-gradient(to right, #FFD700, #FFD700);
+                color: black;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgekementrian:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+</style>
+
+@include('tambahan.iujk.menunavigasi')
+
+
+    {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
+    
+</div>
+
+{{-- ====================== ====================== --}}
 <div class="container" style="
     display: flex;
     flex-direction: column;
@@ -58,18 +157,239 @@ Sertifikat badan usaha - izin usaha jasa konstruksi
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 165vh;
+    height: 9vh;
+    margin-top:5px;
     background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
 ">
-<div style="display: flex; align-items: center;">
-    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
-    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+
+<style>
+
+.badgekembali {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+                text-transform: uppercase;
+            }
+            .badgekembali:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+
+.badgekementrian {
+                background: linear-gradient(to right, #FFD700, #FFD700);
+                color: black;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgekementrian:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+
+.badgepencarian {
+                background: linear-gradient(to right, #FFD700, #FFD700);
+                color: black;
+                padding: 10px 20px;
+                text-transform: uppercase;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                text-align: center;
+                font-size: 12px;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+            .badgepencarian:hover {
+                background-color: white;
+                color: black;
+                background: white;
+            }    
+</style>
+
+@include('tambahan.iujk.menunavigasiperdaerah')
+
+
+    {{-- <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1> --}}
+    
 </div>
 
 
-    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+
+
+
+{{-- ------------------------------------ END FITUR ------------- --}}
+
+
+           
+        </div>
+</div>
+</div>
+
+
+
+{{-- ------------------------------------------- PERBATASAN FITUR ----------------------------------- --}}
+<div class="container" style="
+    display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    margin-top:5px;
+    height: 125vh;
+    background: linear-gradient(to bottom, yellow, white, white);
+    align-items: center;
+    position: relative;
+">
+{{-- 
+<div style="display: flex; align-items: center;">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; margin: 0 10px;">
+    <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 0 10px;">
+</div> --}}
+
+<style>
+    .badge {
+                background: linear-gradient(to right, black, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                text-align: left;
+                font-size: 14px;
+                margin-right: 10px;
+                text-align: center;
+                /* margin-right: 425px; */
+                /* justify-content: between; */
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .badge:hover {
+                background-color: white;
+                color: black;
+            }
+</style>
+
+<div class="div">
+
+
+    <div class="container" style="display:flex; justify-content: flex-end;">
+        {{-- <div class="badge"><i class="fas fa-users me-2"></i><span>{{ $totaldata}}</span> Daftar Pekerja Tukang Terampil (SKK)</div> --}}
+        {{-- Menampilkan data kecamatan --}}
+            {{-- Debugging untuk memastikan data dikirim ke view --}}
+{{-- {{ dd($data_kecamatan) }} --}}
+
+{{-- Menampilkan data kecamatan --}}
+
+<style>
+    /* Container untuk dropdown dan ikon */
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Sesuaikan lebar maksimum sesuai kebutuhan */
+}
+
+/* Styling untuk select dropdown */
+#kecamatan-dropdown {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Tambahkan padding kiri untuk ruang ikon */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1;
+    background-color: #fff;
+    appearance: none; /* Menghapus gaya default */
+}
+
+/* Styling untuk ikon pencarian */
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa; /* Warna ikon */
+    font-size: 16px; /* Ukuran ikon */
+    pointer-events: none; /* Membuat ikon tidak dapat diklik */
+    z-index: 1; /* Memastikan ikon berada di atas dropdown */
+}
+
+/* Styling untuk dropdown saat difokuskan */
+#kecamatan-dropdown:focus {
+    border-color: #007bff; /* Warna border saat difokuskan */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Bayangan fokus */
+}
+
+</style>
+
+
+{{-- ========================================================== --}}
+{{-- <form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/kecamatan') }}">
+    <div class="custom-select-wrapper">
+        <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
+            <option value="">PILIH KECAMATAN</option>
+            @foreach ($data_kecamatan as $kecamatan)
+                <option value="{{ $kecamatan }}">{{ $kecamatan }}</option>
+            @endforeach
+        </select>
+        <i class="fas fa-search search-icon"></i>
+    </div>
+</form> --}}
+
+<script>
+    function submitForm() {
+        document.getElementById('kecamatan-form').submit();
+    }
+</script>
+{{-- ========================================================== --}}
+
+
+    </div>
+    
+
+    <script>
+        function selectOption() {
+            // Mendapatkan elemen select
+            var selectElement = document.querySelector('.kecamatan');
+            // Mendapatkan nilai yang dipilih
+            var selectedValue = selectElement.value;
+            // Mengecek apakah nilai yang dipilih ada
+            if (selectedValue) {
+                // Mengarahkan ke URL yang dipilih
+                window.location.href = selectedValue;
+            }
+        }
+
+        // Menyambungkan event listener pada DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Memastikan elemen ada sebelum menghubungkan fungsi
+            var selectElement = document.querySelector('.kecamatan');
+            if (selectElement) {
+                selectElement.addEventListener('change', selectOption);
+            }
+        });
+    </script>
+</div>
 
 <br>
     <style>
@@ -105,126 +425,15 @@ Sertifikat badan usaha - izin usaha jasa konstruksi
      <table>
         <thead>
             <tr>
-                <th style="width:45px; font-size:12px;">NO</th>
-                <th style="width:220px; font-size: 12px;">NAMA PERUSAHAAN</th>
-                <th style="width:220px; font-size: 12px;">KLASIFIKASI BIDANG USAHA</th>
-                <th style="width:500px; font-size: 12px;">SUB KLASIFIKASI BIDANG USAHA</th>
-                <th style="width:100px; font-size: 12px;">TAHUN REGISTER</th>
-                <th style="width:75px;font-size: 12px;">VIEW SBU/UIJK</th>
+                <th style="width:45px;">No</th>
+                <th style="width:200px;">NAMA LENGKAP</th>
+                <th style="width:150px;">KECAMATAN/KOTA</th>
+                <th style="width:200px;">KETERAMPILAN</th>
+                <th style="width:125px;">TAHUN BIMTEK</th>
+                <th style="width:125px;">KUALIFIKASI</th>
+                <th style="width:100px;">VIEW SKK</th>
             </tr>
         </thead>
-
-        <style>
-            .search-container {
-                width: 100%;
-                margin-bottom: 10px;
-                gap: 10px;
-                /* position: absolute; Use absolute positioning */
-                top: 10px; /* Distance from the top of the page */
-                right: 10px; /* Distance from the right edge of the page */
-                display: inline-block;
-                text-align: right;
-            }
-            .search-container input {
-                border-radius: 15px;
-                padding: 2px 5px 2px 25px; /* Extra padding for the icon */
-                border: 1px solid #ccc; /* Optional: Add border for visibility */
-            }
-            .search-container .fa-search {
-                position: absolute;
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-            .pilihan {
-                    width: 150px; /* Lebar dropdown yang lebih besar untuk kenyamanan pengguna */
-                    height: 40px; /* Tinggi yang lebih sesuai untuk dropdown */
-                    border-radius: 8px; /* Sudut yang membulatkan tampilan dropdown */
-                    border: 1px solid #ddd; /* Border yang lebih ringan */
-                    padding: 0 15px; /* Padding horizontal untuk ruang lebih */
-                    background-color: #fff; /* Latar belakang putih */
-                    font-size: 14px; /* Ukuran font yang nyaman dibaca */
-                    color: #333; /* Warna teks */
-                    appearance: none; /* Menghapus tampilan default dropdown di beberapa browser */
-                    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="none" stroke="%23333" stroke-width="1.5" d="M2 3l3 3 3-3"/%3E%3C/svg%3E'); /* Menambahkan ikon panah kustom */
-                    background-repeat: no-repeat;
-                    background-position: right 10px center; /* Posisi ikon panah di dalam dropdown */
-                    background-size: 12px; /* Ukuran ikon panah */
-    }
-            .register-tahun {
-                    width: 150px; /* Lebar dropdown yang lebih besar untuk kenyamanan pengguna */
-                    height: 40px; /* Tinggi yang lebih sesuai untuk dropdown */
-                    border-radius: 8px; /* Sudut yang membulatkan tampilan dropdown */
-                    border: 1px solid #ddd; /* Border yang lebih ringan */
-                    padding: 0 15px; /* Padding horizontal untuk ruang lebih */
-                    background-color: #fff; /* Latar belakang putih */
-                    font-size: 14px; /* Ukuran font yang nyaman dibaca */
-                    color: #333; /* Warna teks */
-                    appearance: none; /* Menghapus tampilan default dropdown di beberapa browser */
-                    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="none" stroke="%23333" stroke-width="1.5" d="M2 3l3 3 3-3"/%3E%3C/svg%3E'); /* Menambahkan ikon panah kustom */
-                    background-repeat: no-repeat;
-                    background-position: right 10px center; /* Posisi ikon panah di dalam dropdown */
-                    background-size: 12px; /* Ukuran ikon panah */
-    }
-        </style>
-        
-        <div class="search-container" style="display:flex">
-            <i class="fas fa-search"></i>
-            <select class="pilihan" onchange="selectOption()" style="250px;">
-                <option value="" disabled selected>Pilih PT/CV</option>
-                <option value="/uijkpt">PT</option>
-                <option value="/uijkcv">CV</option>
-            </select>
-        
-            <i class="fas fa-search"></i>
-            <select class="register-tahun" onchange="selectOption()">
-                <option value="" disabled selected>Register Tahun</option>
-                <option value="/2020">2020</option>
-                <option value="/2019">2019</option>
-                <option value="/2018">2018</option>
-                <option value="/2017">2017</option>
-                <option value="/2016">2016</option>
-                <option value="/2015">2015</option>
-                <option value="/2014">2014</option>
-            </select>
-
-            
-        </div>
-
-        <script>
-            function selectOption() {
-                // Mendapatkan elemen select
-                var selectElement = document.querySelector('.register-tahun');
-                // Mendapatkan nilai yang dipilih
-                var selectedValue = selectElement.value;
-                // Mengecek apakah nilai yang dipilih ada
-                if (selectedValue) {
-                    // Mengarahkan ke URL yang dipilih
-                    window.location.href = selectedValue;
-                }
-            }
-    
-            // Menyambungkan event listener pada DOMContentLoaded
-            document.addEventListener('DOMContentLoaded', function() {
-                // Memastikan elemen ada sebelum menghubungkan fungsi
-                var selectElement = document.querySelector('.register-tahun');
-                if (selectElement) {
-                    selectElement.addEventListener('change', selectOption);
-                }
-            });
-        </script>
-    
-    
-        <script>
-            function selectOption() {
-                var selectElement = document.querySelector('.pilihan');
-                var selectedValue = selectElement.value;
-                if (selectedValue) {
-                    window.location.href = selectedValue;
-                }
-            }
-        </script>
-    
         <tbody>
 
             {{-- ============================================ --}}
@@ -235,11 +444,8 @@ Sertifikat badan usaha - izin usaha jasa konstruksi
             @foreach($data as $item )
             
             <tr>
-                <td style="width:45px; font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="width:220px; font-size: 12px; text-align:left" class="text-uppercase">{{ $item->nama_perusahaan}}</td>
-                <td style="width:220x; font-size: 12px; text-align:left" class="text-uppercase">{{ $item->klasifikasi_bidang_usaha}}</td>
-                <td style="width:500px; font-size: 12px; text-align:left" class="text-uppercase">{{ $item->sub_klasifikasi_bidang_usaha}}</td>
-                <td style="width:45px; font-size: 12px; text-align:center" class="text-uppercase">{{ $item->keterangan}}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->nama }}</td>
                 
                 <td>
                     
@@ -281,7 +487,7 @@ Sertifikat badan usaha - izin usaha jasa konstruksi
                 </style>
 
                 <div class="button-container">
-                <a href="/uijk/{{ $item->nama_perusahaan}}" class="iconhover" title="View">
+                <a href="/tenagakerja/skaskt/{{ $item->nama}}" class="iconhover" title="View">
                     <i class="fas fa-eye" style="color: black"></i>
                 </a>
                         
