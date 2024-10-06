@@ -621,156 +621,69 @@ public function listdesa()
         ]);
         }
 
-                
+
+        // ---------------------------------------------------------------------------------------------------------
+        // RUTE BERDASRKAN DATA STATISTIKA DALAM BIDANG PEKERJA
+        // ---------------------------------------------------------------------------------------------------------
         public function liststatistika()
         {
-    
-    // ----------------------------------------------------------------------------------------
-          // DATA TAHUN BIMTEK PERSENTASE 
-          $data_keterampilan = Tukangterampil::select('keterampilan')
-          ->selectRaw('count(*) as total')
-          ->groupBy('keterampilan')
-          ->get();
-
-      // Hitung total keseluruhan dari semua kategori
-      $total_count = $data_keterampilan->sum('total');
-
-      // Format data untuk grafik dengan persentase
-      $data_for_chart_keterampilan = $data_keterampilan->map(function ($item) use ($total_count) {
-          return [
-              'y' => ($item->total / $total_count) * 100, // Hitung persentase
-              'name' => $item->keterampilan,
-          ];
-      });
-      // ----------------------------------------------------------------------------------------
-            // DATA CHART BERDASARKAN KECAMATAN 
-            $data_kecamatan = Tukangterampil::select('kecamatan')
-            ->selectRaw('count(*) as total')
-            ->groupBy('kecamatan')
-            ->get();
-
-                // Format data untuk grafik
-                $data_for_chart_kecamatan = $data_kecamatan->map(function ($item) {
-                    return [
-                        'y' => $item->total,
-                        'name' => $item->kecamatan,
-                    ];
-                });
-    
-        // ----------------------------------------------------------------------------------------
-            // DATA CHART BERDASARKAN DESA
-            $data_desa = Tukangterampil::select('desa')
-            ->selectRaw('count(*) as total')
-            ->groupBy('desa')
-            ->get();
-
-                // Format data untuk grafik
-                $data_for_chart_desa = $data_desa->map(function ($item) {
+            // Ambil data Tukangterampil beserta relasinya
+            $data = Tukangterampil::with(['keterampilanpekerja', 'pengawasanlokasi', 'tahunpilihan'])->get();
+        
+            // Pastikan data tidak kosong
+            if ($data->isEmpty()) {
+                return redirect()->back()->with('error', 'Data tidak ditemukan.');
+            }
+        
+            // Hitung total pekerja
+            $totalCount = $data->count();
+        
+            // Data untuk chart keterampilan
+            $data_keterampilan = $data->groupBy('keterampilanpekerja_id')->map(function ($group) use ($totalCount) {
                 return [
-                    'y' => $item->total,
-                    'label' => $item->desa,
+                    'name' => $group->first()->keterampilanpekerja->keterampilan,
+                    'y' => ($group->count() / $totalCount) * 100,
                 ];
-                });
-
-        // ----------------------------------------------------------------------------------------
-                // DATA TAHUN BIMTEK PERSENTASE 
-                $data_tahun_bimtek = Tukangterampil::select('tahun_bimtek')
-                ->selectRaw('count(*) as total')
-                ->groupBy('tahun_bimtek')
-                ->get();
-
-            // Hitung total keseluruhan dari semua kategori
-            $total_count = $data_tahun_bimtek->sum('total');
-
-            // Format data untuk grafik dengan persentase
-            $data_for_chart_tahun_bimtek = $data_tahun_bimtek->map(function ($item) use ($total_count) {
+            })->values()->toArray();
+        
+            // Data untuk chart kecamatan
+            $data_kecamatan = $data->groupBy('pengawasanlokasi_id')->map(function ($group) {
                 return [
-                    'y' => ($item->total / $total_count) * 100, // Hitung persentase
-                    'name' => $item->tahun_bimtek,
+                    'name' => $group->first()->pengawasanlokasi->kota,
+                    'y' => $group->count(),
                 ];
-            });
-
-            // ----------------------------------------------------------------------------------------
-            
-            // DATA BERDASARKAN USIA 
-                // $data_usia = skktenagakerja::select('usia')
-                // ->selectRaw('count(*) as total')
-                // ->groupBy('usia')
-                // ->get();
-
-            // Hitung total keseluruhan dari semua kategori
-            // $total_count = $data_usia->sum('total');
-
-            // Format data untuk grafik dengan persentase
-            // $data_for_chart_usia = $data_usia->map(function ($item) use ($total_count) {
-            //     return [
-            //         'y' => ($item->total / $total_count) * 100, // Hitung persentase
-            //         'name' => $item->usia,
-            //     ];
-            // });
-
-            // ----------------------------------------------------------------------------------------
-             // Ambil data usia dari database
-                $data_usia = Tukangterampil::select('usia')->get();
-
-                // Hitung usia berdasarkan tanggal lahir
-                $usiaArray = $data_usia->map(function ($item) {
-                    try {
-                        // Asumsi 'usia' adalah tanggal lahir dalam format yang dapat diparse oleh Carbon
-                        $tanggalLahir = Carbon::parse($item->usia);
-                        return $tanggalLahir->diffInYears(Carbon::now());
-                    } catch (\Exception $e) {
-                        // Jika ada error parsing, anggap usia sebagai 0
-                        return 0;
-                    }
-                });
-
-                // Kelompokkan usia dan hitung jumlah setiap kelompok
-                $usiaCounts = $usiaArray->countBy();
-
-                // Hitung total keseluruhan dari semua kategori usia
-                $total_count = $usiaCounts->sum();
-
-                // Format data untuk grafik dengan persentase
-                $data_for_chart_usia = $usiaCounts->map(function ($total, $usia) use ($total_count) {
-                    return [
-                        'y' => ($total / $total_count) * 100, // Hitung persentase
-                        'name' => (string) $usia, // Nama usia sebagai label
-                    ];
-                })->values(); 
-
-            // ----------------------------------------------------------------------------------------
-
-            $data= Tukangterampil::all(); // Menggunakan paginate() untuk pagination
-            $totalData = Tukangterampil::count();
-
-            // Mengambil semua data untuk mendapatkan kecamatan unik
-            //   $allKecamatan = skktenagakerja::all();
-            
-            // Menggunakan koleksi untuk mendapatkan nilai unik
-            //   $datatahunbimtek = $allKecamatan->pluck('tahun_bimtek')->unique();
-
+            })->values()->toArray();
+        
+            // Data untuk chart desa
+            $data_desa = $data->groupBy('desa')->map(function ($group) {
+                return [
+                    'label' => $group->first()->desa,
+                    'y' => $group->count(),
+                ];
+            })->values()->toArray();
+        
+            // Data untuk chart tahun bimtek
+            $data_tahun_bimtek = $data->groupBy('tahunpilihan_id')->map(function ($group) use ($totalCount) {
+                return [
+                    'name' => $group->first()->tahunpilihan->tahun,
+                    'y' => ($group->count() / $totalCount) * 100,
+                ];
+            })->values()->toArray();
+        
             return view('frontend.04_tenagakerja.statistika.index', [
                 'title' => 'Statistika | Data Tenaga Kerja',
-                'data' => $data,
                 'data_keterampilan' => $data_keterampilan,
-                'data_for_chart_keterampilan' => $data_for_chart_keterampilan->toJson(), // Kirim data dalam format JSON
-                'data_for_chart_kecamatan' => $data_for_chart_kecamatan->toJson(), // Kirim data dalam format JSON
-                'data_for_chart_desa' => $data_for_chart_desa->toJson(),
-                'data_for_chart_tahun_bimtek' => $data_for_chart_tahun_bimtek->toJson(), // Kirim data dalam format JSON
-                'data_for_chart_usia' => $data_for_chart_usia, // Kirim data dalam format JSON
-                'judulstatistika' => 'Distribusi Keterampilan', // Judul grafik
-                'judulkecamatan' => 'Distribusi Kecamatan', // Judul grafik
-                'judultahunbimtek' => 'Distribusi Registrasi Para Pekerja Tukang Terampil', // Judul grafik
-                'judulusia' => 'Distribusi Pekerja Berdasarkan Usia', // Judul grafik
-                'juduldesa' => 'Distribusi Desa', // Judul grafik
-                'total_data' => $totalData, 
-
-                // 'data_tahun_bimtek' => $datatahunbimtek, // Mengirimkan data paginasi ke view
+                'data_kecamatan' => $data_kecamatan,
+                'data_desa' => $data_desa,
+                'data_tahun_bimtek' => $data_tahun_bimtek,
+                'judulstatistika' => 'Distribusi Berdasarkan Keterampilan',
+                'judulkecamatan' => 'Distribusi Berdasarkan Kecamatan',
+                'juduldesa' => 'Distribusi Berdasarkan Desa',
+                'judultahunbimtek' => 'Distribusi Berdasarkan Registrasi Para Pekerja Tukang Terampil',
+                'total_data' => $totalCount,
             ]);
         }
-
-
+          
 
         // ========================================================================================================
         // ========================================================================================================

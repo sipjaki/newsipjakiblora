@@ -136,7 +136,7 @@ Route::get('/tenagakerja/keterampilan', [SkktenagakerjaController::class, 'feskk
 Route::get('/skk/register', [SkktenagakerjaController::class, 'listregister']); 
 Route::get('/tenagakerja/bimtek', [SkktenagakerjaController::class, 'feskktenagakerjabimtekshowBybimtek']);
 
-// ==============================
+// RUTE UNTUK MENCARI DATA BERDASARKAN STATISTIKA 
 Route::get('/skk/statistika', [SkktenagakerjaController::class, 'liststatistika']); 
 Route::get('/skkchart/keterampilan', [SkktenagakerjaController::class, 'chartketerampilan']); 
 Route::get('/skkskkchart/kecamatan', [SkktenagakerjaController::class, 'chartkecamatan']); 
