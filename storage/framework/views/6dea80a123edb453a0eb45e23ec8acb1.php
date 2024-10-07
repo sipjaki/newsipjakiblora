@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/bahan1/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/bahan1/css/animate.compat.css" rel="stylesheet" type="text/css">
+    <link href="/assets/bahan1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/bahan1/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+
+    
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="/assets/bahan2/css/bootstrap.min.css">
+      <!----css3---->
+      <link rel="stylesheet" href="/assets/bahan2/css/custom.css">
+      
+      <link rel="stylesheet" href="/assets/bahan2/font/flaticon.css">
+      <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+     <link rel="stylesheet" type="text/css" href="/assets/bahan2/css/settings.css" media="screen" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	   
+        <?php echo $__env->make('tambahan.portalberitaheader', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <script defer src="/assets/bahan1/js/scripts.js"></script>
+    
+    <title>Silahkan Login !</title>
+
+    <link rel="icon" href="/assets/icon/sipjakikbb.png" type="image/x-icon">
+  
+</head>
+
+<body>
+
+
+
+
+
+
+
+<section id="sec-0">
+    
+    <?php echo $__env->make('frontend.00_atas.header1', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
+        <header>
+        
+        <?php echo $__env->make('frontend.00_atas.header2_navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            
+        </header>
+        <div class="div" style="
+            justify-content: center;
+            text-align:center;
+            display: flex;
+            margin-left: 0;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        ">
+                    <h2 style="
+    margin-top: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 25px;
+    width: 500px;
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+    transition: background 0.5s ease, color 0.5s ease;
+    " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
+
+Silahkan Login !
+</h2>
+</div>
+<div class="container" style="
+     display: flex;
+    flex-direction: column;
+    background-color: #FFCB0F;
+    padding: 10px;
+    border: 1px solid black;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    text-align: center;
+    width: 100%;
+    height: 85vh;
+    background: linear-gradient(to bottom, yellow, white, black);
+    align-items: center;
+    position: relative;
+">
+    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: 10px;">
+<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+    <div class="container">
+        <div class="card" style="
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: 20px auto;">
+
+
+            
+
+            <div class="controls" style="  
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-radius:5px;
+            ">
+
+<div class="show-entries" style="border-radius: 10px;">
+    <label for="entries" style="margin-right: 5px;">
+        <style>
+            .badge {
+                background: linear-gradient(to right, yellow, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                margin-right: 10px;
+                margin-left: 450px;
+                text-align: center;
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .badge:hover {
+                background-color: white;
+                color: black;
+            }
+        </style>
+        <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Halaman Login !</div></label> -->
+  
+</div>
+</div>
+
+
+
+<style>
+    /* Mengatur form dan input */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 22px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 9999px;
+    background-color: #0814b9;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #000;
+}
+
+.form-control {
+    padding: 10px;
+    border-radius: 9999px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+}
+
+@media (max-width: 576px) {
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+</style>
+
+
+<form action="/login" method="post">
+    <?php echo csrf_field(); ?>
+    <div class="form-group mt-0">
+        <label class="font-semibold text-center d-block" for="email" style="font-family: 'Lato', sans-serif; font-weight: 700;">
+            <i class="fas fa-envelope" style="margin-right: 10px; "></i> Email
+        </label>
+        <input
+        style="margin-left:330px; width: 400px; text-align:left; padding: 0px 15px;"
+        type="text"
+        name="email"
+        class="form-control rounded-full <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+        id="email"
+        placeholder="Email"
+        required
+        value="<?php echo e(old('email')); ?>"
+    />
+
+    <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+        <div class="invalid-feedback mb-2">
+            <?php echo e($message); ?>
+
+        </div>
+    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+    </div>
+
+    <div class="form-group mt-0">
+        <label class="font-semibold text-center d-block mb-2" for="password" style="font-family: 'Lato', sans-serif; font-weight: 700;">
+            <i class="fas fa-key" style="margin-right: 10px;"></i> Password
+        </label>
+        <input
+        style="margin-left:330px; width: 400px; text-align:left; padding: 0px 15px;"
+        type="password"
+        name="password"
+        class="form-control rounded-full <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
+        id="password"
+        placeholder="Password"
+        required
+    />
+
+    <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+        <div class="invalid-feedback mb-2">
+            <?php echo e($message); ?>
+
+        </div>
+    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+
+    <?php if($errors->has('loginError')): ?>
+        <div class="alert alert-danger">
+            <?php echo e($errors->first('loginError')); ?>
+
+        </div>
+    <?php endif; ?>
+    </div>
+
+    <div class="form-group mt-4 text-center" style="background-color: white;">
+    <style>
+            .masuk {
+                background: linear-gradient(to right, yellow, black);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 35px;
+                display: inline-block;
+                border: none;
+                font-size: 1rem;
+                margin-right: 10px;
+                /* margin-left: 450px; */
+                text-align: center;
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .masuk:hover {
+                /* background-color: white; */
+                background: linear-gradient(to right, darkblue, white);
+                color: black;
+            }
+        </style>
+        <button type="submit" class="masuk" style="width: 300px; background-color: #FFCB0F; color: white; font-family: 'Lato', sans-serif; font-weight: 700;"><i class="fab fa-telegram" style="color: white; font-size: 16px; margin-right: 10px;"></i>Login</button>
+        <div style="margin-top: 10px;">
+            <a href="/404" class="text-black" style="font-family: 'Lato', sans-serif; font-weight: 700;">Register Here?</a>
+        </div>
+    </div>
+</form>
+
+                            
+                        
+                  
+   
+
+
+
+
+
+
+
+           
+        </div>
+</div>
+</div>
+
+
+
+<br><br>
+    </section>
+
+
+  
+  
+  
+
+
+  
+  
+  
+
+
+
+
+
+
+<?php echo $__env->make('frontend.00_atas.footer1', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    
+    
+    
+<?php echo $__env->make('frontend.00_atas.footer2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\01. SIPJAKI KABUPATEN BANDUNG BARAT\APLIKASI\sipjakikbbpermen\resources\views/login/index.blade.php ENDPATH**/ ?>

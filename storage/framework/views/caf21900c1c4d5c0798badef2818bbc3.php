@@ -1,0 +1,1 @@
+<?php echo $__env->make('login.index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\01. SIPJAKI KABUPATEN BANDUNG BARAT\APLIKASI\sipjakikbbpermen\resources\views/layouts/guest.blade.php ENDPATH**/ ?>
