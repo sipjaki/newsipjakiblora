@@ -583,12 +583,195 @@ beritaagenda::create([
 
 // =============== CREATE QA PERTANYAAN 
 qa::create([
-    'qasebagai_id' => '1', // ID yang sesuai dengan kategori pertanyaan
-    'qapertanyaan_id' => '3', // ID pertanyaan yang sudah ada di database
-    'nama_lengkap' => 'Suhardi Wiharja', // Nama lengkap pengisi
-    'email' => 'johndoe@example.com', // Email yang valid
-    'telepon' => '081234567890', // Nomor telepon yang valid
-    // 'Jabatan' => 'Yuyu Yuhana, ST., MM', // Jika ada jabatan, tambahkan di sini
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '3',
+    'nama_lengkap' => 'Suhardi Wiharja',
+    'email' => 'suhardi@example.com',
+    'telepon' => '081234567890',
+]);
+
+qa::create([
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '4',
+    'nama_lengkap' => 'Dewi Sari',
+    'email' => 'dewi@example.com',
+    'telepon' => '081234567891',
+]);
+
+qa::create([
+    'qasebagai_id' => '2',
+    'qapertanyaan_id' => '3',
+    'nama_lengkap' => 'Budi Santoso',
+    'email' => 'budi@example.com',
+    'telepon' => '081234567892',
+]);
+
+qa::create([
+    'qasebagai_id' => '2',
+    'qapertanyaan_id' => '2',
+    'nama_lengkap' => 'Rina Agustina',
+    'email' => 'rina@example.com',
+    'telepon' => '081234567893',
+]);
+
+qa::create([
+    'qasebagai_id' => '3',
+    'qapertanyaan_id' => '1',
+    'nama_lengkap' => 'Joko Widodo',
+    'email' => 'joko@example.com',
+    'telepon' => '081234567894',
+]);
+
+qa::create([
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '2',
+    'nama_lengkap' => 'Siti Aminah',
+    'email' => 'siti@example.com',
+    'telepon' => '081234567895',
+]);
+
+qa::create([
+    'qasebagai_id' => '3',
+    'qapertanyaan_id' => '3',
+    'nama_lengkap' => 'Toni Prasetyo',
+    'email' => 'toni@example.com',
+    'telepon' => '081234567896',
+]);
+
+qa::create([
+    'qasebagai_id' => '2',
+    'qapertanyaan_id' => '4',
+    'nama_lengkap' => 'Anisa Putri',
+    'email' => 'anisa@example.com',
+    'telepon' => '081234567897',
+]);
+
+qa::create([
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '4',
+    'nama_lengkap' => 'Farhan Rizky',
+    'email' => 'farhan@example.com',
+    'telepon' => '081234567898',
+]);
+
+qa::create([
+    'qasebagai_id' => '2',
+    'qapertanyaan_id' => '3',
+    'nama_lengkap' => 'Indah Permata',
+    'email' => 'indah@example.com',
+    'telepon' => '081234567899',
+]);
+
+qa::create([
+    'qasebagai_id' => '3',
+    'qapertanyaan_id' => '5',
+    'nama_lengkap' => 'Rizal Mardiansyah',
+    'email' => 'rizal@example.com',
+    'telepon' => '081234567900',
+]);
+
+qa::create([
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '6',
+    'nama_lengkap' => 'Fika Ramadhani',
+    'email' => 'fika@example.com',
+    'telepon' => '081234567901',
+]);
+
+qa::create([
+    'qasebagai_id' => '2',
+    'qapertanyaan_id' => '4',
+    'nama_lengkap' => 'Krisna Utama',
+    'email' => 'krisna@example.com',
+    'telepon' => '081234567902',
+]);
+
+qa::create([
+    'qasebagai_id' => '3',
+    'qapertanyaan_id' => '6',
+    'nama_lengkap' => 'Lina Oktaviana',
+    'email' => 'lina@example.com',
+    'telepon' => '081234567903',
+]);
+
+qa::create([
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '5',
+    'nama_lengkap' => 'Dika Rahman',
+    'email' => 'dika@example.com',
+    'telepon' => '081234567904',
+]);
+
+qa::create([
+    'qasebagai_id' => '2',
+    'qapertanyaan_id' => '4',
+    'nama_lengkap' => 'Putri Lestari',
+    'email' => 'putri@example.com',
+    'telepon' => '081234567905',
+]);
+
+qa::create([
+    'qasebagai_id' => '3',
+    'qapertanyaan_id' => '3',
+    'nama_lengkap' => 'Asep Mulyana',
+    'email' => 'asep@example.com',
+    'telepon' => '081234567906',
+]);
+
+qa::create([
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '2',
+    'nama_lengkap' => 'Sari Rahmawati',
+    'email' => 'sari@example.com',
+    'telepon' => '081234567907',
+]);
+
+qa::create([
+    'qasebagai_id' => '2',
+    'qapertanyaan_id' => '7',
+    'nama_lengkap' => 'Denny Saputra',
+    'email' => 'denny@example.com',
+    'telepon' => '081234567908',
+]);
+
+qa::create([
+    'qasebagai_id' => '3',
+    'qapertanyaan_id' => '5',
+    'nama_lengkap' => 'Fahri Maulana',
+    'email' => 'fahri@example.com',
+    'telepon' => '081234567909',
+]);
+
+qa::create([
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '6',
+    'nama_lengkap' => 'Hani Salsabila',
+    'email' => 'hani@example.com',
+    'telepon' => '081234567910',
+]);
+
+qa::create([
+    'qasebagai_id' => '2',
+    'qapertanyaan_id' => '4',
+    'nama_lengkap' => 'Aulia Nabila',
+    'email' => 'aulia@example.com',
+    'telepon' => '081234567911',
+]);
+
+qa::create([
+    'qasebagai_id' => '3',
+    'qapertanyaan_id' => '3',
+    'nama_lengkap' => 'Wira Nugraha',
+    'email' => 'wira@example.com',
+    'telepon' => '081234567912',
+]);
+
+qa::create([
+    'qasebagai_id' => '1',
+    'qapertanyaan_id' => '4',
+    'nama_lengkap' => 'Eka Saputri',
+    'email' => 'eka@example.com',
+    'telepon' => '081234567913',
 ]);
 
 
