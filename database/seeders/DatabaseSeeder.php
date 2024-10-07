@@ -94,7 +94,6 @@ class DatabaseSeeder extends Seeder
         // Qa::factory(15)->create();
                  
 // =============== CREATE TIM ASOSIASI PENGUSAHA 
-
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Pengusaha Konstruksi Indonesia',
     'alamat_kantor' => 'Jl. Raya Konstruksi No. 123, Bandung, Jawa Barat',
