@@ -125,23 +125,25 @@ Penanggungjawabteknis::create([
     'nama_lengkap' => 'Yuyu Yuhana, ST., MM',
     'nopjt' => '45345356',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jembatan',
+    'foto_pjt' => 'Profesional',
     'tanggal_terbit' => '2024-01-15', // Format YYYY-MM-DD
     'masa_berlaku' => '2024-12-31', // Format YYYY-MM-DD
 ]);
                  
 // =============== CREATE KETERTIBAN DAN PENGAWASAN 
-        Ketertiban::create([
-            'pengawasanlokasi_id'  => '11',
-            'pengawasanbangunangedung_id'  => '1',
-            'penanggungjawabteknis_id'  => '1',
-            'pengawasanstatus_id'  => '2',
-            'pengawasanstatus_id'  => '3',
-            'judul'  => '',
-            'tanggal_laporan'  => '',
-            'keterangan'  => '',
-            
-            // 'Jabatan'  => 'Yuyu Yuhana, ST., MM',
-        ]);
+Ketertiban::create([
+    'pengawasanlokasi_id' => '11', // ID lokasi pengawasan
+    'pengawasanbangunangedung_id' => '1', // ID bangunan yang diawasi
+    'penanggungjawabteknis_id' => '1', // ID penanggung jawab teknis
+    'pengawasanstatus_id' => '2', // ID status pengawasan
+    'pengawasantindakan_id' => '2', // ID tindakan pengawasan
+    'judul' => 'Laporan Ketertiban Bangunan', // Judul laporan
+    'tanggal_laporan' => now(), // Tanggal laporan (gunakan now() untuk tanggal saat ini)
+    'keterangan' => 'Bangunan dalam kondisi baik dan sesuai peraturan.', // Keterangan tambahan
+    
+    // 'Jabatan' => 'Yuyu Yuhana, ST., MM', // Jika ada jabatan, tambahkan di sini
+]);
+
 
 // =============== CREATE BERITA AGENDA 
 Beritaagenda::create([

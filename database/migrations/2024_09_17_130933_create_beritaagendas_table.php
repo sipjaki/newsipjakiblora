@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('pengawasanlokasi_id');
             // $table->foreignId('user_id');
             $table->string('statusprogram');
-            $table->text('nama_agenda');
+            $table->text('nama_agenda');    
             $table->text('keterangan');
             $table->integer('kuota');
             $table->date('tanggal_mulai');
