@@ -33,7 +33,7 @@ use App\Models\himbauandinas;
 use App\Models\isadmin;
 use App\Models\kegiatanjaskon;
 use App\Models\keterampilanpekerja;
-use App\Models\Ketertiban;
+use App\Models\ketertiban;
 use App\Models\metodepengadaan;
 use App\Models\paketpekerjaan;
 use App\Models\Paketpekerjaan as ModelsPaketpekerjaan;
@@ -131,7 +131,7 @@ penanggungjawabteknis::create([
 ]);
                  
 // =============== CREATE KETERTIBAN DAN PENGAWASAN 
-Ketertiban::create([
+ketertiban::create([
     'pengawasanlokasi_id' => '11', // ID lokasi pengawasan
     'pengawasanbangunangedung_id' => '1', // ID bangunan yang diawasi
     'penanggungjawabteknis_id' => '1', // ID penanggung jawab teknis
@@ -3594,67 +3594,67 @@ kegiatanjaskon::create([
 ]);
 
 
-kegiatanjaskon::create([
-                // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
-                'id' => 2,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-                'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-                'judul_kegiatan' => 'SIGIT SEPTIADI',
-                'alamat_kegiatan' => 'DESA BATULAYANG 40562 JAWA BARAT INDONESIA',
-                'pengawasanlokasi_id' => '11',
-                'tanggal' => '',
-                'berita1' => 'dokumentasipelatihan/new/BERITA2.jpg',
-                'berita2' => 'dokumentasipelatihan/new/BERITA1.jpg',
-                'berita3' => 'dokumentasipelatihan/new/BERITA3.jpg',
-                'berita4' => 'dokumentasipelatihan/new/BERITA4.jpg',
-                'berita5' => 'dokumentasipelatihan/new/BERITA5.jpg',
-                'berita6' => 'dokumentasipelatihan/new/BERITA6.jpg',
-                'berita7' => 'dokumentasipelatihan/new/BERITA7.jpg',
-                'berita8' => 'dokumentasipelatihan/new/BERITA8.jpg',
-                'berita9' => 'dokumentasipelatihan/new/BERITA9.jpg',
-                'berita10' => 'dokumentasipelatihan/new/BERITA10.jpg',
-                'berita11' => 'dokumentasipelatihan/new/BERITA11.jpg',
-                'berita12' => 'dokumentasipelatihan/new/BERITA12.jpg',
-                'berita13' => 'dokumentasipelatihan/new/BERITA13.jpg',
-                'berita14' => 'dokumentasipelatihan/new/BERITA14.jpg',
-                'berita15' => 'dokumentasipelatihan/new/BERITA15.jpg',
-                'berita16' => 'dokumentasipelatihan/new/BERITA16.jpg',
-                'berita17' => 'dokumentasipelatihan/new/BERITA17.jpg',
-                'berita18' => 'dokumentasipelatihan/new/BERITA18.jpg',
-                'berita19' => 'dokumentasipelatihan/new/BERITA19.jpg',
-                'berita20' => 'dokumentasipelatihan/new/BERITA20.jpg',
-                // 'laporanfoto1' => 'dokumentasipelatihan/new/BERITA21.jpeg',
-                // 'laporanfoto2' => 'dokumentasipelatihan/new/BERITA22.jpeg',
-                // 'laporanfoto3' => 'dokumentasipelatihan/new/BERITA23.jpeg',
-                // 'laporanfoto4' => 'dokumentasipelatihan/new/BERITA24.jpeg',
-                // 'laporanfoto5' => 'dokumentasipelatihan/new/BERITA25.jpeg',
-                // 'laporanfoto6' => 'dokumentasipelatihan/new/BERITA26.jpeg',
-                // 'laporanfoto7' => 'dokumentasipelatihan/new/BERITA27.jpg',
-                // 'laporanfoto8' => 'dokumentasipelatihan/new/BERITA28.jpg',
-                // 'laporanfoto9' => 'dokumentasipelatihan/new/BERITA29.jpg',
-                // 'laporanfoto10' => 'dokumentasipelatihan/new/BERITA30.jpg',
-                // 'laporanfoto11' => 'dokumentasipelatihan/new/BERITA31.jpg',
-                // 'laporanfoto12' => 'dokumentasipelatihan/new/BERITA32.jpg',
-                // 'laporanfoto13' => 'dokumentasipelatihan/new/BERITA33.jpg',
-                // 'laporanfoto14' => 'dokumentasipelatihan/new/BERITA34.jpg',
-                // 'laporanfoto15' => 'dokumentasipelatihan/new/BERITA35.jpg',
-                // 'laporanfoto16' => 'dokumentasipelatihan/new/BERITA36.jpg',
-                // 'laporanfoto17' => 'dokumentasipelatihan/new/BERITA37.jpg',
-                // 'laporanfoto18' => 'dokumentasipelatihan/new/BERITA38.jpg',
-                // 'laporanfoto19' => 'dokumentasipelatihan/new/BERITA39.jpg',
-                // 'laporanfoto20' => 'dokumentasipelatihan/new/BERITA40.jpg',
-                // 'laporanfoto21' => 'dokumentasipelatihan/new/BERITA41.jpg',
-                // 'laporanfoto22' => 'dokumentasipelatihan/new/BERITA42.jpg',
-                // 'laporanfoto23' => 'dokumentasipelatihan/new/BERITA43.jpg',
-                // 'laporanfoto24' => 'dokumentasipelatihan/new/BERITA44.jpg',
-                // 'laporanfoto25' => 'dokumentasipelatihan/new/BERITA45.jpg',
-                // 'laporanfoto26' => 'dokumentasipelatihan/new/BERITA46.jpg',
-                // 'laporanfoto27' => 'dokumentasipelatihan/new/BERITA47.jpg',
-                // 'laporanfoto28' => 'dokumentasipelatihan/new/BERITA48.jpg',
-                // // 'berita20' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA20.jpg',
-                'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-                'created_at' => now(),
-                'updated_at' => now(),
-]);
+// kegiatanjaskon::create([
+//                 // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
+//                 'id' => 2,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
+//                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
+//                 'judul_kegiatan' => 'SIGIT SEPTIADI',
+//                 'alamat_kegiatan' => 'DESA BATULAYANG 40562 JAWA BARAT INDONESIA',
+//                 'pengawasanlokasi_id' => '11',
+//                 'tanggal' => '',
+//                 'berita1' => 'dokumentasipelatihan/new/BERITA2.jpg',
+//                 'berita2' => 'dokumentasipelatihan/new/BERITA1.jpg',
+//                 'berita3' => 'dokumentasipelatihan/new/BERITA3.jpg',
+//                 'berita4' => 'dokumentasipelatihan/new/BERITA4.jpg',
+//                 'berita5' => 'dokumentasipelatihan/new/BERITA5.jpg',
+//                 'berita6' => 'dokumentasipelatihan/new/BERITA6.jpg',
+//                 'berita7' => 'dokumentasipelatihan/new/BERITA7.jpg',
+//                 'berita8' => 'dokumentasipelatihan/new/BERITA8.jpg',
+//                 'berita9' => 'dokumentasipelatihan/new/BERITA9.jpg',
+//                 'berita10' => 'dokumentasipelatihan/new/BERITA10.jpg',
+//                 'berita11' => 'dokumentasipelatihan/new/BERITA11.jpg',
+//                 'berita12' => 'dokumentasipelatihan/new/BERITA12.jpg',
+//                 'berita13' => 'dokumentasipelatihan/new/BERITA13.jpg',
+//                 'berita14' => 'dokumentasipelatihan/new/BERITA14.jpg',
+//                 'berita15' => 'dokumentasipelatihan/new/BERITA15.jpg',
+//                 'berita16' => 'dokumentasipelatihan/new/BERITA16.jpg',
+//                 'berita17' => 'dokumentasipelatihan/new/BERITA17.jpg',
+//                 'berita18' => 'dokumentasipelatihan/new/BERITA18.jpg',
+//                 'berita19' => 'dokumentasipelatihan/new/BERITA19.jpg',
+//                 'berita20' => 'dokumentasipelatihan/new/BERITA20.jpg',
+//                 // 'laporanfoto1' => 'dokumentasipelatihan/new/BERITA21.jpeg',
+//                 // 'laporanfoto2' => 'dokumentasipelatihan/new/BERITA22.jpeg',
+//                 // 'laporanfoto3' => 'dokumentasipelatihan/new/BERITA23.jpeg',
+//                 // 'laporanfoto4' => 'dokumentasipelatihan/new/BERITA24.jpeg',
+//                 // 'laporanfoto5' => 'dokumentasipelatihan/new/BERITA25.jpeg',
+//                 // 'laporanfoto6' => 'dokumentasipelatihan/new/BERITA26.jpeg',
+//                 // 'laporanfoto7' => 'dokumentasipelatihan/new/BERITA27.jpg',
+//                 // 'laporanfoto8' => 'dokumentasipelatihan/new/BERITA28.jpg',
+//                 // 'laporanfoto9' => 'dokumentasipelatihan/new/BERITA29.jpg',
+//                 // 'laporanfoto10' => 'dokumentasipelatihan/new/BERITA30.jpg',
+//                 // 'laporanfoto11' => 'dokumentasipelatihan/new/BERITA31.jpg',
+//                 // 'laporanfoto12' => 'dokumentasipelatihan/new/BERITA32.jpg',
+//                 // 'laporanfoto13' => 'dokumentasipelatihan/new/BERITA33.jpg',
+//                 // 'laporanfoto14' => 'dokumentasipelatihan/new/BERITA34.jpg',
+//                 // 'laporanfoto15' => 'dokumentasipelatihan/new/BERITA35.jpg',
+//                 // 'laporanfoto16' => 'dokumentasipelatihan/new/BERITA36.jpg',
+//                 // 'laporanfoto17' => 'dokumentasipelatihan/new/BERITA37.jpg',
+//                 // 'laporanfoto18' => 'dokumentasipelatihan/new/BERITA38.jpg',
+//                 // 'laporanfoto19' => 'dokumentasipelatihan/new/BERITA39.jpg',
+//                 // 'laporanfoto20' => 'dokumentasipelatihan/new/BERITA40.jpg',
+//                 // 'laporanfoto21' => 'dokumentasipelatihan/new/BERITA41.jpg',
+//                 // 'laporanfoto22' => 'dokumentasipelatihan/new/BERITA42.jpg',
+//                 // 'laporanfoto23' => 'dokumentasipelatihan/new/BERITA43.jpg',
+//                 // 'laporanfoto24' => 'dokumentasipelatihan/new/BERITA44.jpg',
+//                 // 'laporanfoto25' => 'dokumentasipelatihan/new/BERITA45.jpg',
+//                 // 'laporanfoto26' => 'dokumentasipelatihan/new/BERITA46.jpg',
+//                 // 'laporanfoto27' => 'dokumentasipelatihan/new/BERITA47.jpg',
+//                 // 'laporanfoto28' => 'dokumentasipelatihan/new/BERITA48.jpg',
+//                 // // 'berita20' => '/assets/library/kegiatanjaskon/sertifikasi/BERITA20.jpg',
+//                 'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
+//                 'created_at' => now(),
+//                 'updated_at' => now(),
+// ]);
 
 
 
@@ -3809,28 +3809,28 @@ laporankegiatan::create([
             ]);
 
 // ============== ============== ============== ============== ============== ============== ==============
-            laporankegiatan::create([
-                // Ganti dengan ID yang sesuai jika menggunakan foreign key
-            'kegiatanjaskon_id' => '2',
-            'user_id' => '1',
-            'judul_kegiatan' => 'Sigit  ',
-            'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
-            'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
-            'keterangan_berita' => '
+//             laporankegiatan::create([
+//                 // Ganti dengan ID yang sesuai jika menggunakan foreign key
+//             'kegiatanjaskon_id' => '2',
+//             'user_id' => '1',
+//             'judul_kegiatan' => 'Sigit  ',
+//             'jabatan' => 'sekertaris dinas PUPR pemerintah kabupaten bandung barat',
+//             'gambar' => 'acarasertifikasi/beritaacara/PA_SEKDIS.jpeg',
+//             'keterangan_berita' => '
 
-<p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
+// <p>**Rabu, 14 Agustus 2024 - Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat**</p>
 
-<p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
+// <p>Dinas Pekerjaan Umum dan Perumahan Rakyat (PUPR) menggelar acara bimbingan teknis dan Keselamatan dan Kesehatan Kerja (K3) di Desa Batulayang, Kecamatan Cililin, Kabupaten Bandung Barat. Acara ini dilaksanakan sebagai bagian dari komitmen PUPR untuk meningkatkan kualitas serta keselamatan dalam industri konstruksi. Kegiatan ini diharapkan dapat memastikan bahwa setiap pekerjaan konstruksi dilaksanakan dengan standar yang tinggi dan mematuhi semua regulasi yang berlaku.</p>
 
-<p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
+// <p>Dalam sambutannya, Sekretaris Dinas PUPR menekankan pentingnya keselamatan kerja di sektor konstruksi, yang tidak dapat ditawar. Bimbingan teknis ini dirancang untuk memberikan pemahaman mendalam mengenai praktik terbaik dalam keselamatan kerja serta penerapan standar K3 yang efektif. Peserta diharapkan memperoleh pengetahuan dan keterampilan praktis yang diperlukan untuk mengelola risiko dan mencegah kecelakaan di lokasi kerja.</p>
 
-<p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
+// <p>Selama sesi bimbingan, berbagai aspek teknis terkait konstruksi yang berhubungan dengan keselamatan akan dibahas. Narasumber berpengalaman diundang untuk berbagi wawasan dan solusi mengenai tantangan dalam pelaksanaan proyek konstruksi. Tujuan utama dari kegiatan ini adalah meningkatkan kesadaran dan kompetensi semua pihak terkait, guna menciptakan lingkungan kerja yang aman dan produktif.</p>
 
-<p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
-            'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
-            'created_at' => now(),
-            'updated_at' => now(),
-]);
+// <p>Penutupan acara diwarnai dengan ucapan terima kasih kepada semua pihak yang berkontribusi dalam penyelenggaraan bimbingan teknis ini. Diharapkan, bimbingan dan pelatihan ini akan memberikan manfaat signifikan yang dapat diterapkan dalam setiap proyek konstruksi, serta mendukung komitmen bersama untuk mencapai standar keselamatan yang tinggi. Acara ini merupakan langkah penting menuju keselamatan dan kesuksesan dalam industri konstruksi di wilayah Kabupaten Bandung Barat.</p>',
+//             'tanggal' => '2024-08-14', // Format tanggal YYYY-MM-DD
+//             'created_at' => now(),
+//             'updated_at' => now(),
+// ]);
  
 
 

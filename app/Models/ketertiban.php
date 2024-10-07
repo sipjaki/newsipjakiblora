@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Ketertiban extends Model
+class ketertiban extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
