@@ -282,10 +282,10 @@
                 </div>
             
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="kota" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                    <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                         <i class="fas fa-city me-2"></i> Kec/Kota
                     </label>
-                    <input style="text-transform: uppercase;" type="text" id="kota" name="kota" class="form-control" value="{{ old('kota', $dataasosiasipengusaha->kota) }}" required>
+                    <input style="text-transform: uppercase;" type="text" id="pengawasanlokasi_id" name="pengawasanlokasi_id" class="form-control" value="{{ old('pengawasanlokasi_id', $dataasosiasipengusaha->pengawasanlokasi->kota) }}" required>
                 </div>
             
                 <div class="form-group d-flex align-items-center mt-3">

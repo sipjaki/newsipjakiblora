@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Asosiasipengusaha extends Model
+class asosiasipengusaha extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
+
+    
+    public function pengawasanlokasi()
+    {
+        return $this->belongsTo(pengawasanlokasi::class);
+    }
 }

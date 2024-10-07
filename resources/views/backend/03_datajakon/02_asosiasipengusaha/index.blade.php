@@ -184,7 +184,7 @@
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
                         <td style="font-size: 12px; text-align:left; text-transform:uppercase;" >{{ $item->nama_asosiasi}}</td>
                         <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->alamat_kantor}}</td>
-                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->kota}}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->pengawasanlokasi->kota}}</td>
                         {{-- <td style="font-size: 12px; text-align:left;">{{ $item->provinsi}}</td> --}}
                         {{-- <td style="font-size: 12px; text-align:left;">{{ $item->kontak}}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->email}}</td>

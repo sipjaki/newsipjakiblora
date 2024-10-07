@@ -270,11 +270,13 @@ class DatajakonController extends Controller
     public function asosiasipengusaha()
     {
         $user = Auth::user();
+        $datapengawasanlokasi = pengawasanlokasi::all();
 
         $dataasosiasi = asosiasipengusaha::paginate(15);
         return view('backend.03_datajakon.02_asosiasipengusaha.index', [
             'data' => $dataasosiasi,
             'user' => $user,
+            'datapengawasanlokasi' => $datapengawasanlokasi,
             'title' => 'Asosiasi Pengusaha ',
            
         ]);
@@ -292,11 +294,14 @@ class DatajakonController extends Controller
 
     public function asosiasipengusahashowbyjudul($nama_asosiasi)
     {
+        $datapengawasanlokasi = pengawasanlokasi::all();
+
         $dataasosiasipengusaha = asosiasipengusaha::where('nama_asosiasi', $nama_asosiasi)->firstOrFail();
         $user = Auth::user();
 
         return view('backend.03_datajakon.02_asosiasipengusaha.show', [
             'data' => $dataasosiasipengusaha,
+            'datapengawasanlokasi' => $datapengawasanlokasi,
             'user' => $user,
             'title' => 'Details Asosiasi Pengusaha',
         ]);

@@ -38,4 +38,9 @@ class pengawasanlokasi extends Model
     {
         return $this->hasMany(tukangterampil::class);
     }
+
+    public function asosiasipengusaha()
+    {
+        return $this->hasMany(asosiasipengusaha::class);
+    }
 }

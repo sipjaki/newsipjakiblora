@@ -112,7 +112,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Kontraktor Nasional',
     'alamat_kantor' => 'Jl. Kontraktor No. 45, Jakarta',
-    'pengawasanlokasi_id' => '12',
+    'pengawasanlokasi_id' => 12,
     'provinsi' => 'DKI JAKARTA',
     'kontak' => '+62 811-2345-6789',
     'email' => 'info@akn.or.id',
@@ -126,7 +126,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Jasa Konstruksi',
     'alamat_kantor' => 'Jl. Jasa Konstruksi No. 101, Surabaya',
-    'pengawasanlokasi_id' => '13',
+    'pengawasanlokasi_id' => 13,
     'provinsi' => 'JAWA TIMUR',
     'kontak' => '+62 813-4567-8901',
     'email' => 'info@ajk.or.id',
@@ -140,7 +140,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Pengusaha Material Konstruksi',
     'alamat_kantor' => 'Jl. Material Konstruksi No. 15, Medan',
-    'pengawasanlokasi_id' => '14',
+    'pengawasanlokasi_id' => 14,
     'provinsi' => 'SUMATERA UTARA',
     'kontak' => '+62 814-5678-9012',
     'email' => 'info@apmk.or.id',
@@ -154,7 +154,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Ahli Konstruksi',
     'alamat_kantor' => 'Jl. Ahli Konstruksi No. 22, Semarang',
-    'pengawasanlokasi_id' => '15',
+    'pengawasanlokasi_id' => 15,
     'provinsi' => 'JAWA TENGAH',
     'kontak' => '+62 815-6789-0123',
     'email' => 'info@aak.or.id',
@@ -168,7 +168,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Konsultan Konstruksi',
     'alamat_kantor' => 'Jl. Konsultan Konstruksi No. 30, Bali',
-    'pengawasanlokasi_id' => '16',
+    'pengawasanlokasi_id' => 15,
     'provinsi' => 'BALI',
     'kontak' => '+62 816-7890-1234',
     'email' => 'info@akk.or.id',
@@ -182,7 +182,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Pemborong Konstruksi',
     'alamat_kantor' => 'Jl. Pemborong No. 5, Yogyakarta',
-    'pengawasanlokasi_id' => '17',
+    'pengawasanlokasi_id' => 14,
     'provinsi' => 'DI YOGYAKARTA',
     'kontak' => '+62 817-8901-2345',
     'email' => 'info@apk.or.id',
@@ -196,7 +196,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Pekerja Konstruksi',
     'alamat_kantor' => 'Jl. Pekerja Konstruksi No. 8, Makassar',
-    'pengawasanlokasi_id' => '18',
+    'pengawasanlokasi_id' => 13,
     'provinsi' => 'SULAWESI SELATAN',
     'kontak' => '+62 818-9012-3456',
     'email' => 'info@apk.or.id',
@@ -210,7 +210,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Perusahaan Jasa Konstruksi',
     'alamat_kantor' => 'Jl. Jasa Konstruksi No. 11, Palembang',
-    'pengawasanlokasi_id' => '19',
+    'pengawasanlokasi_id' => 12,
     'provinsi' => 'SUMATERA SELATAN',
     'kontak' => '+62 819-0123-4567',
     'email' => 'info@apjk.or.id',
@@ -224,7 +224,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Penyedia Konstruksi',
     'alamat_kantor' => 'Jl. Penyedia Konstruksi No. 14, Banjarmasin',
-    'pengawasanlokasi_id' => '20',
+    'pengawasanlokasi_id' => 11,
     'provinsi' => 'KALIMANTAN SELATAN',
     'kontak' => '+62 820-1234-5678',
     'email' => 'info@apk.or.id',
@@ -238,7 +238,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Perancang Konstruksi',
     'alamat_kantor' => 'Jl. Perancang Konstruksi No. 6, Samarinda',
-    'pengawasanlokasi_id' => '21',
+    'pengawasanlokasi_id' => 10,
     'provinsi' => 'KALIMANTAN TIMUR',
     'kontak' => '+62 821-2345-6789',
     'email' => 'info@apk.or.id',
@@ -252,7 +252,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Konstruksi Berkelanjutan',
     'alamat_kantor' => 'Jl. Konstruksi Berkelanjutan No. 3, Jakarta',
-    'pengawasanlokasi_id' => '22',
+    'pengawasanlokasi_id' => 9,
     'provinsi' => 'DKI JAKARTA',
     'kontak' => '+62 822-3456-7890',
     'email' => 'info@akb.or.id',
@@ -266,7 +266,7 @@ asosiasipengusaha::create([
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Pembangunan Infrastruktur',
     'alamat_kantor' => 'Jl. Infrastruktur No. 9, Denpasar',
-    'pengawasanlokasi_id' => '23',
+    'pengawasanlokasi_id' => 8,
     'provinsi' => 'BALI',
     'kontak' => '+62 823-4567-8901',
     'email' => 'info@api.or.id',
@@ -281,121 +281,121 @@ asosiasipengusaha::create([
 // =============== CREATE PAKET PEKERJAAN 
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '3',
+    'metodepengadaan_id' => 3,
     'instansi' => 'Dinas Pekerjaan Umum dan Penataan Ruang',
     'jumlah_pagu' => '3875647586',
     'pekerjaan' => 'Pembangunan Jembatan Cikapundung',
-    'foto_pekerjaan' => 'jembatan_cikapundung.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '50',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '3',
+    'metodepengadaan_id' => 3,
     'instansi' => 'Dinas Bina Marga',
     'jumlah_pagu' => '2500000000',
     'pekerjaan' => 'Perbaikan Jalan Raya',
-    'foto_pekerjaan' => 'perbaikan_jalan.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '30',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '2',
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Cipta Karya',
     'jumlah_pagu' => '4500000000',
     'pekerjaan' => 'Pembangunan Gedung Serbaguna',
-    'foto_pekerjaan' => 'gedung_serbaguna.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '70',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '1',
+    'metodepengadaan_id' => 1,
     'instansi' => 'Dinas Perumahan Rakyat',
     'jumlah_pagu' => '1500000000',
     'pekerjaan' => 'Renovasi Rumah Susun',
-    'foto_pekerjaan' => 'renovasi_rusun.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '20',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '3',
+    'metodepengadaan_id' => 3,
     'instansi' => 'Dinas Lingkungan Hidup',
     'jumlah_pagu' => '3000000000',
     'pekerjaan' => 'Pembangunan TPS',
-    'foto_pekerjaan' => 'pembangunan_tps.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '40',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '2',
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Pendidikan',
     'jumlah_pagu' => '5000000000',
     'pekerjaan' => 'Pembangunan Sekolah Baru',
-    'foto_pekerjaan' => 'pembangunan_sekolah.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '10',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '1',
+    'metodepengadaan_id' => 1,
     'instansi' => 'Dinas Kesehatan',
     'jumlah_pagu' => '800000000',
     'pekerjaan' => 'Pembangunan Puskesmas',
-    'foto_pekerjaan' => 'pembangunan_puskesmas.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '80',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '3',
+    'metodepengadaan_id' => 3,
     'instansi' => 'Dinas Kebudayaan dan Pariwisata',
     'jumlah_pagu' => '6000000000',
     'pekerjaan' => 'Pembangunan Taman Wisata',
-    'foto_pekerjaan' => 'taman_wisata.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '60',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '2',
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Pemadam Kebakaran',
     'jumlah_pagu' => '1000000000',
     'pekerjaan' => 'Pengadaan Mobil Pemadam',
-    'foto_pekerjaan' => 'mobil_pemadam.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '90',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '1',
+    'metodepengadaan_id' => 1,
     'instansi' => 'Dinas Pertanian',
     'jumlah_pagu' => '750000000',
     'pekerjaan' => 'Pengadaan Alat Pertanian',
-    'foto_pekerjaan' => 'alat_pertanian.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '20',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '3',
+    'metodepengadaan_id' => 3,
     'instansi' => 'Dinas Perhubungan',
     'jumlah_pagu' => '950000000',
     'pekerjaan' => 'Pembangunan Terminal Bus',
-    'foto_pekerjaan' => 'terminal_bus.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '75',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => '2',
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Sosial',
     'jumlah_pagu' => '500000000',
     'pekerjaan' => 'Pembangunan Panti Asuhan',
-    'foto_pekerjaan' => 'panti_asuhan.png',
+    'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '35',
 ]);
@@ -403,7 +403,7 @@ paketpekerjaan::create([
                  
 // =============== CREATE PENANGGUNG JAWAB TEKNIS 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '11', // Pastikan ID ini valid dalam tabel metodepengadaan
+    'pengawasanlokasi_id' => 11, // Pastikan ID ini valid dalam tabel metodepengadaan
     'nama_lengkap' => 'Yuyu Yuhana, ST., MM',
     'nopjt' => '45345356',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jembatan',
@@ -414,7 +414,7 @@ penanggungjawabteknis::create([
 
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '12',
+    'pengawasanlokasi_id' => 12,
     'nama_lengkap' => 'Andi Prasetyo, ST.',
     'nopjt' => '45345357',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Gedung',
@@ -424,7 +424,7 @@ penanggungjawabteknis::create([
 ]);
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '13',
+    'pengawasanlokasi_id' => 13,
     'nama_lengkap' => 'Budi Santoso, MT.',
     'nopjt' => '45345358',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jalan',
@@ -434,7 +434,7 @@ penanggungjawabteknis::create([
 ]);
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '14',
+    'pengawasanlokasi_id' => 14,
     'nama_lengkap' => 'Siti Aisyah, ST.',
     'nopjt' => '45345359',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Saluran',
@@ -444,7 +444,7 @@ penanggungjawabteknis::create([
 ]);
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '15',
+    'pengawasanlokasi_id' => 15,
     'nama_lengkap' => 'Rudi Hartono, ST., MM',
     'nopjt' => '45345360',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jembatan Flyover',
@@ -454,7 +454,7 @@ penanggungjawabteknis::create([
 ]);
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '16',
+    'pengawasanlokasi_id' => 15,
     'nama_lengkap' => 'Dewi Lestari, ST.',
     'nopjt' => '45345361',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Pembangunan Bendungan',
@@ -464,7 +464,7 @@ penanggungjawabteknis::create([
 ]);
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '17',
+    'pengawasanlokasi_id' => 14,
     'nama_lengkap' => 'Agus Salim, ST., MM',
     'nopjt' => '45345362',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Penataan Ruang',
@@ -474,7 +474,7 @@ penanggungjawabteknis::create([
 ]);
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '18',
+    'pengawasanlokasi_id' => 13,
     'nama_lengkap' => 'Fiona Larasati, ST.',
     'nopjt' => '45345363',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Instalasi Air',
@@ -484,7 +484,7 @@ penanggungjawabteknis::create([
 ]);
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '19',
+    'pengawasanlokasi_id' => 12,
     'nama_lengkap' => 'Nina Oktavia, ST.',
     'nopjt' => '45345364',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Drainase',
@@ -494,7 +494,7 @@ penanggungjawabteknis::create([
 ]);
 
 penanggungjawabteknis::create([
-    'pengawasanlokasi_id' => '20',
+    'pengawasanlokasi_id' => 13,
     'nama_lengkap' => 'Rian Setiawan, ST., MT.',
     'nopjt' => '45345365',
     'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jaringan Listrik',
@@ -506,22 +506,97 @@ penanggungjawabteknis::create([
                  
 // =============== CREATE KETERTIBAN DAN PENGAWASAN 
 ketertiban::create([
-    'pengawasanlokasi_id' => '11', // ID lokasi pengawasan
-    'pengawasanbangunangedung_id' => '1', // ID bangunan yang diawasi
-    'penanggungjawabteknis_id' => '1', // ID penanggung jawab teknis
-    'pengawasanstatus_id' => '2', // ID status pengawasan
-    'pengawasantindakan_id' => '2', // ID tindakan pengawasan
-    'judul' => 'Laporan Ketertiban Bangunan', // Judul laporan
-    'tanggal_laporan' => now(), // Tanggal laporan (gunakan now() untuk tanggal saat ini)
-    'keterangan' => 'Bangunan dalam kondisi baik dan sesuai peraturan.', // Keterangan tambahan
-    
-    // 'Jabatan' => 'Yuyu Yuhana, ST., MM', // Jika ada jabatan, tambahkan di sini
+    'pengawasanlokasi_id' => 1,
+    'pengawasanbangunangedung_id' => 1,
+    'penanggungjawabteknis_id' => 1,
+    'pengawasanstatus_id' => 1,
+    'pengawasantindakan_id' => 1,
+    'judul' => 'Laporan Ketertiban Gedung Perkantoran',
+    'tanggal_laporan' => now(),
+    'keterangan' => 'Gedung Perkantoran dalam kondisi baik dan sesuai peraturan.',
+]);
+
+ketertiban::create([
+    'pengawasanlokasi_id' => 2,
+    'pengawasanbangunangedung_id' => 2,
+    'penanggungjawabteknis_id' => 2,
+    'pengawasanstatus_id' => 2,
+    'pengawasantindakan_id' => 1,
+    'judul' => 'Laporan Ketertiban Gedung Kesehatan',
+    'tanggal_laporan' => now(),
+    'keterangan' => 'Gedung Kesehatan perlu sedikit perbaikan.',
+]);
+
+ketertiban::create([
+    'pengawasanlokasi_id' => 3,
+    'pengawasanbangunangedung_id' => 3,
+    'penanggungjawabteknis_id' => 1,
+    'pengawasanstatus_id' => 1,
+    'pengawasantindakan_id' => 2,
+    'judul' => 'Laporan Ketertiban Gedung Pendidikan',
+    'tanggal_laporan' => now(),
+    'keterangan' => 'Gedung Pendidikan sesuai peraturan dan tidak ada masalah.',
+]);
+
+ketertiban::create([
+    'pengawasanlokasi_id' => 4,
+    'pengawasanbangunangedung_id' => 4,
+    'penanggungjawabteknis_id' => 3,
+    'pengawasanstatus_id' => 2,
+    'pengawasantindakan_id' => 2,
+    'judul' => 'Laporan Ketertiban Gedung Olahraga',
+    'tanggal_laporan' => now(),
+    'keterangan' => 'Gedung Olahraga ada sedikit ketidaksesuaian.',
+]);
+
+ketertiban::create([
+    'pengawasanlokasi_id' => 5,
+    'pengawasanbangunangedung_id' => 5,
+    'penanggungjawabteknis_id' => 1,
+    'pengawasanstatus_id' => 1,
+    'pengawasantindakan_id' => 1,
+    'judul' => 'Laporan Ketertiban Gedung Komersial',
+    'tanggal_laporan' => now(),
+    'keterangan' => 'Gedung Komersial dalam kondisi baik.',
+]);
+
+ketertiban::create([
+    'pengawasanlokasi_id' => 6,
+    'pengawasanbangunangedung_id' => 6,
+    'penanggungjawabteknis_id' => 2,
+    'pengawasanstatus_id' => 1,
+    'pengawasantindakan_id' => 2,
+    'judul' => 'Laporan Ketertiban Gedung Transportasi',
+    'tanggal_laporan' => now(),
+    'keterangan' => 'Gedung Transportasi memerlukan pemeliharaan.',
+]);
+
+ketertiban::create([
+    'pengawasanlokasi_id' => 7,
+    'pengawasanbangunangedung_id' => 7,
+    'penanggungjawabteknis_id' => 1,
+    'pengawasanstatus_id' => 2,
+    'pengawasantindakan_id' => 1,
+    'judul' => 'Laporan Ketertiban Gedung Perhotelan',
+    'tanggal_laporan' => now(),
+    'keterangan' => 'Gedung Perhotelan sesuai dengan peraturan.',
+]);
+
+ketertiban::create([
+    'pengawasanlokasi_id' => 8,
+    'pengawasanbangunangedung_id' => 8,
+    'penanggungjawabteknis_id' => 3,
+    'pengawasanstatus_id' => 2,
+    'pengawasantindakan_id' => 2,
+    'judul' => 'Laporan Ketertiban Gedung Rekreasi',
+    'tanggal_laporan' => now(),
+    'keterangan' => 'Gedung Rekreasi ada beberapa pelanggaran.',
 ]);
 
 
 // =============== CREATE BERITA AGENDA 
 beritaagenda::create([
-    'pengawasanlokasi_id' => '11',
+    'pengawasanlokasi_id' => 11,
     'statusprogram' => 'Aktif',
     'nama_agenda' => 'Rapat Koordinasi Proyek Konstruksi',
     'keterangan' => 'Rapat koordinasi untuk membahas progres proyek dan permasalahan yang ada.',
@@ -531,7 +606,7 @@ beritaagenda::create([
 ]);
 
 beritaagenda::create([
-    'pengawasanlokasi_id' => '12',
+    'pengawasanlokasi_id' => 12,
     'statusprogram' => 'Aktif',
     'nama_agenda' => 'Sosialisasi Proyek Baru',
     'keterangan' => 'Sosialisasi untuk proyek baru yang akan dimulai pada tahun ini.',
@@ -541,7 +616,7 @@ beritaagenda::create([
 ]);
 
 beritaagenda::create([
-    'pengawasanlokasi_id' => '13',
+    'pengawasanlokasi_id' => 13,
     'statusprogram' => 'Aktif',
     'nama_agenda' => 'Pelatihan Keselamatan Kerja',
     'keterangan' => 'Pelatihan untuk meningkatkan keselamatan kerja di lokasi proyek.',
@@ -551,7 +626,7 @@ beritaagenda::create([
 ]);
 
 beritaagenda::create([
-    'pengawasanlokasi_id' => '14',
+    'pengawasanlokasi_id' => 14,
     'statusprogram' => 'Aktif',
     'nama_agenda' => 'Evaluasi Proyek Tahunan',
     'keterangan' => 'Evaluasi kinerja proyek yang telah dilaksanakan selama satu tahun.',
@@ -561,7 +636,7 @@ beritaagenda::create([
 ]);
 
 beritaagenda::create([
-    'pengawasanlokasi_id' => '15',
+    'pengawasanlokasi_id' => 15,
     'statusprogram' => 'Aktif',
     'nama_agenda' => 'Workshop Teknologi Konstruksi',
     'keterangan' => 'Workshop tentang teknologi terbaru dalam industri konstruksi.',
@@ -571,7 +646,7 @@ beritaagenda::create([
 ]);
 
 beritaagenda::create([
-    'pengawasanlokasi_id' => '16',
+    'pengawasanlokasi_id' => 16,
     'statusprogram' => 'Aktif',
     'nama_agenda' => 'Penyampaian Laporan Proyek',
     'keterangan' => 'Penyampaian laporan akhir proyek yang telah selesai dilaksanakan.',
@@ -583,192 +658,192 @@ beritaagenda::create([
 
 // =============== CREATE QA PERTANYAAN 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '3',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 3,
     'nama_lengkap' => 'Suhardi Wiharja',
     'email' => 'suhardi@example.com',
     'telepon' => '081234567890',
 ]);
 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '4',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 4,
     'nama_lengkap' => 'Dewi Sari',
     'email' => 'dewi@example.com',
     'telepon' => '081234567891',
 ]);
 
 qa::create([
-    'qasebagai_id' => '2',
-    'qapertanyaan_id' => '3',
+    'qasebagai_id' => 2,
+    'qapertanyaan_id' => 3,
     'nama_lengkap' => 'Budi Santoso',
     'email' => 'budi@example.com',
     'telepon' => '081234567892',
 ]);
 
 qa::create([
-    'qasebagai_id' => '2',
-    'qapertanyaan_id' => '2',
+    'qasebagai_id' => 2,
+    'qapertanyaan_id' => 2,
     'nama_lengkap' => 'Rina Agustina',
     'email' => 'rina@example.com',
     'telepon' => '081234567893',
 ]);
 
 qa::create([
-    'qasebagai_id' => '3',
-    'qapertanyaan_id' => '1',
+    'qasebagai_id' => 3,
+    'qapertanyaan_id' => 1,
     'nama_lengkap' => 'Joko Widodo',
     'email' => 'joko@example.com',
     'telepon' => '081234567894',
 ]);
 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '2',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 2,
     'nama_lengkap' => 'Siti Aminah',
     'email' => 'siti@example.com',
     'telepon' => '081234567895',
 ]);
 
 qa::create([
-    'qasebagai_id' => '3',
-    'qapertanyaan_id' => '3',
+    'qasebagai_id' => 3,
+    'qapertanyaan_id' => 3,
     'nama_lengkap' => 'Toni Prasetyo',
     'email' => 'toni@example.com',
     'telepon' => '081234567896',
 ]);
 
 qa::create([
-    'qasebagai_id' => '2',
-    'qapertanyaan_id' => '4',
+    'qasebagai_id' => 2,
+    'qapertanyaan_id' => 4,
     'nama_lengkap' => 'Anisa Putri',
     'email' => 'anisa@example.com',
     'telepon' => '081234567897',
 ]);
 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '4',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 4,
     'nama_lengkap' => 'Farhan Rizky',
     'email' => 'farhan@example.com',
     'telepon' => '081234567898',
 ]);
 
 qa::create([
-    'qasebagai_id' => '2',
-    'qapertanyaan_id' => '3',
+    'qasebagai_id' => 2,
+    'qapertanyaan_id' => 3,
     'nama_lengkap' => 'Indah Permata',
     'email' => 'indah@example.com',
     'telepon' => '081234567899',
 ]);
 
 qa::create([
-    'qasebagai_id' => '3',
-    'qapertanyaan_id' => '5',
+    'qasebagai_id' => 3,
+    'qapertanyaan_id' => 5,
     'nama_lengkap' => 'Rizal Mardiansyah',
     'email' => 'rizal@example.com',
     'telepon' => '081234567900',
 ]);
 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '6',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 6,
     'nama_lengkap' => 'Fika Ramadhani',
     'email' => 'fika@example.com',
     'telepon' => '081234567901',
 ]);
 
 qa::create([
-    'qasebagai_id' => '2',
-    'qapertanyaan_id' => '4',
+    'qasebagai_id' => 2,
+    'qapertanyaan_id' => 4,
     'nama_lengkap' => 'Krisna Utama',
     'email' => 'krisna@example.com',
     'telepon' => '081234567902',
 ]);
 
 qa::create([
-    'qasebagai_id' => '3',
-    'qapertanyaan_id' => '6',
+    'qasebagai_id' => 3,
+    'qapertanyaan_id' => 6,
     'nama_lengkap' => 'Lina Oktaviana',
     'email' => 'lina@example.com',
     'telepon' => '081234567903',
 ]);
 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '5',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 5,
     'nama_lengkap' => 'Dika Rahman',
     'email' => 'dika@example.com',
     'telepon' => '081234567904',
 ]);
 
 qa::create([
-    'qasebagai_id' => '2',
-    'qapertanyaan_id' => '4',
+    'qasebagai_id' => 2,
+    'qapertanyaan_id' => 4,
     'nama_lengkap' => 'Putri Lestari',
     'email' => 'putri@example.com',
     'telepon' => '081234567905',
 ]);
 
 qa::create([
-    'qasebagai_id' => '3',
-    'qapertanyaan_id' => '3',
+    'qasebagai_id' => 3,
+    'qapertanyaan_id' => 3,
     'nama_lengkap' => 'Asep Mulyana',
     'email' => 'asep@example.com',
     'telepon' => '081234567906',
 ]);
 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '2',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 2,
     'nama_lengkap' => 'Sari Rahmawati',
     'email' => 'sari@example.com',
     'telepon' => '081234567907',
 ]);
 
 qa::create([
-    'qasebagai_id' => '2',
-    'qapertanyaan_id' => '7',
+    'qasebagai_id' => 2,
+    'qapertanyaan_id' => 7,
     'nama_lengkap' => 'Denny Saputra',
     'email' => 'denny@example.com',
     'telepon' => '081234567908',
 ]);
 
 qa::create([
-    'qasebagai_id' => '3',
-    'qapertanyaan_id' => '5',
+    'qasebagai_id' => 3,
+    'qapertanyaan_id' => 5,
     'nama_lengkap' => 'Fahri Maulana',
     'email' => 'fahri@example.com',
     'telepon' => '081234567909',
 ]);
 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '6',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 6,
     'nama_lengkap' => 'Hani Salsabila',
     'email' => 'hani@example.com',
     'telepon' => '081234567910',
 ]);
 
 qa::create([
-    'qasebagai_id' => '2',
-    'qapertanyaan_id' => '4',
+    'qasebagai_id' => 2,
+    'qapertanyaan_id' => 4,
     'nama_lengkap' => 'Aulia Nabila',
     'email' => 'aulia@example.com',
     'telepon' => '081234567911',
 ]);
 
 qa::create([
-    'qasebagai_id' => '3',
-    'qapertanyaan_id' => '3',
+    'qasebagai_id' => 3,
+    'qapertanyaan_id' => 3,
     'nama_lengkap' => 'Wira Nugraha',
     'email' => 'wira@example.com',
     'telepon' => '081234567912',
 ]);
 
 qa::create([
-    'qasebagai_id' => '1',
-    'qapertanyaan_id' => '4',
+    'qasebagai_id' => 1,
+    'qapertanyaan_id' => 4,
     'nama_lengkap' => 'Eka Saputri',
     'email' => 'eka@example.com',
     'telepon' => '081234567913',

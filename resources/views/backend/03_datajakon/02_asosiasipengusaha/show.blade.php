@@ -237,7 +237,7 @@
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Kec/Kota</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                            {{ ucwords(strtolower($data->kota)) }}
+                            {{ ucwords(strtolower($data->pengawasanlokasi->kota)) }}
                         </td>
                     </tr>
                   
@@ -282,8 +282,8 @@
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Website</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                            {{ ucwords(strtolower($data->website)) }}
+                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px;  text-align: left; font-weight: 700; color: black;">
+                            {{ $data->website }}
                         </td>
                     </tr>
 
@@ -294,7 +294,7 @@
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Kepala Asosiasi</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                            {{ ucwords(strtolower($data->kepala_asosiasi)) }}
+                            {{ $data->kepala_asosiasi }}
                         </td>
                     </tr>
 
