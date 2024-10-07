@@ -22,7 +22,7 @@ class PenanggungjawabteknisFactory extends Factory
         return [
             'nama_lengkap' => $faker->name(), // Nama lengkap
             'foto_pjt' => 'profesional', // Nama lengkap
-            'pengawasanlokasi_id' => rand(1,16), // Tempat, lebih baik menggunakan 'city' daripada 'word'
+            'pengawasanlokasi_id' => $faker->randomElement(1,16), // Tempat, lebih baik menggunakan 'city' daripada 'word'
             'nopjt' => $faker->unique()->numerify('##########'),
             // Nomor PJT (unique untuk memastikan tidak ada duplikat)
             'sfesifikasi' => $faker->randomElement(['ELEKTRO', 'SIPIL', 'ARSITEKTUR', 'LINGKUNGAN']),
