@@ -6,7 +6,7 @@ namespace Database\Seeders;
 // namespace App\Models;
 
 use App\Models\agendasertifikasi;
-use App\Models\Agendastatus;
+use App\Models\agendastatus;
 use App\Models\Agendastatus as ModelsAgendastatus;
 use App\Models\asosiasipengusaha;
 use Illuminate\Database\Seeder;
@@ -1865,7 +1865,7 @@ metodepengadaan::create([
 
 
 //======================== PENGAWASAN LOKASI  ===================================================================================
-Agendastatus::create([
+agendastatus::create([
     'id' => '1',
     'status' => 'SEGERA HADIR',
     'created_at' => Carbon::now(),
@@ -1873,7 +1873,7 @@ Agendastatus::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-Agendastatus::create([
+agendastatus::create([
     'id' => '2',
     'status' => 'DI BATALKAN ',
     'created_at' => Carbon::now(),
@@ -1881,7 +1881,7 @@ Agendastatus::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-Agendastatus::create([
+agendastatus::create([
     'id' => '3',
     'status' => 'BERJALAN ',
     'created_at' => Carbon::now(),
@@ -1889,7 +1889,7 @@ Agendastatus::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-Agendastatus::create([
+agendastatus::create([
     'id' => '4',
     'status' => 'SELESAI ',
     'created_at' => Carbon::now(),
