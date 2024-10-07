@@ -94,19 +94,6 @@ class DatabaseSeeder extends Seeder
         // Qa::factory(15)->create();
                  
 // =============== CREATE TIM ASOSIASI PENGUSAHA 
-asosiasipengusaha::create([
-    'nama_asosiasi' => 'Asosiasi Pengusaha Konstruksi Indonesia',
-    'alamat_kantor' => 'Jl. Raya Konstruksi No. 123, Bandung, Jawa Barat',
-    'pengawasanlokasi_id' => '11',
-    'provinsi' => 'JAWA BARAT',
-    'kontak' => '+62 812-3456-7890',
-    'email' => 'info@apki.or.id',
-    'website' => 'https://www.apki.or.id',
-    'kepala_asosiasi' => 'Yuyu Yuhana, ST., MM',
-    'foto_asosiasi' => 'asosiasipengusaha/asosiasipengusaha.png',
-    'jumlah_anggota' => '234',
-    'status' => 'AKTIF',
-]);
 
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Pengusaha Konstruksi Indonesia',
@@ -292,15 +279,127 @@ asosiasipengusaha::create([
 
                  
 // =============== CREATE PAKET PEKERJAAN 
+
 paketpekerjaan::create([
-    'metodepengadaan_id' => '3', // Pastikan ID ini valid dalam tabel metodepengadaan
+    'metodepengadaan_id' => '3',
     'instansi' => 'Dinas Pekerjaan Umum dan Penataan Ruang',
     'jumlah_pagu' => '3875647586',
     'pekerjaan' => 'Pembangunan Jembatan Cikapundung',
-    'foto_pekerjaan' => 'jembatan_cikapundung.png', // Pastikan file ini ada di folder yang sesuai
+    'foto_pekerjaan' => 'jembatan_cikapundung.png',
     'tahun' => '2024',
-    'progress_fisik' => '50', // Progress dalam persen
+    'progress_fisik' => '50',
 ]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '3',
+    'instansi' => 'Dinas Bina Marga',
+    'jumlah_pagu' => '2500000000',
+    'pekerjaan' => 'Perbaikan Jalan Raya',
+    'foto_pekerjaan' => 'perbaikan_jalan.png',
+    'tahun' => '2024',
+    'progress_fisik' => '30',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '2',
+    'instansi' => 'Dinas Cipta Karya',
+    'jumlah_pagu' => '4500000000',
+    'pekerjaan' => 'Pembangunan Gedung Serbaguna',
+    'foto_pekerjaan' => 'gedung_serbaguna.png',
+    'tahun' => '2024',
+    'progress_fisik' => '70',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '1',
+    'instansi' => 'Dinas Perumahan Rakyat',
+    'jumlah_pagu' => '1500000000',
+    'pekerjaan' => 'Renovasi Rumah Susun',
+    'foto_pekerjaan' => 'renovasi_rusun.png',
+    'tahun' => '2024',
+    'progress_fisik' => '20',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '3',
+    'instansi' => 'Dinas Lingkungan Hidup',
+    'jumlah_pagu' => '3000000000',
+    'pekerjaan' => 'Pembangunan TPS',
+    'foto_pekerjaan' => 'pembangunan_tps.png',
+    'tahun' => '2024',
+    'progress_fisik' => '40',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '2',
+    'instansi' => 'Dinas Pendidikan',
+    'jumlah_pagu' => '5000000000',
+    'pekerjaan' => 'Pembangunan Sekolah Baru',
+    'foto_pekerjaan' => 'pembangunan_sekolah.png',
+    'tahun' => '2024',
+    'progress_fisik' => '10',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '1',
+    'instansi' => 'Dinas Kesehatan',
+    'jumlah_pagu' => '800000000',
+    'pekerjaan' => 'Pembangunan Puskesmas',
+    'foto_pekerjaan' => 'pembangunan_puskesmas.png',
+    'tahun' => '2024',
+    'progress_fisik' => '80',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '3',
+    'instansi' => 'Dinas Kebudayaan dan Pariwisata',
+    'jumlah_pagu' => '6000000000',
+    'pekerjaan' => 'Pembangunan Taman Wisata',
+    'foto_pekerjaan' => 'taman_wisata.png',
+    'tahun' => '2024',
+    'progress_fisik' => '60',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '2',
+    'instansi' => 'Dinas Pemadam Kebakaran',
+    'jumlah_pagu' => '1000000000',
+    'pekerjaan' => 'Pengadaan Mobil Pemadam',
+    'foto_pekerjaan' => 'mobil_pemadam.png',
+    'tahun' => '2024',
+    'progress_fisik' => '90',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '1',
+    'instansi' => 'Dinas Pertanian',
+    'jumlah_pagu' => '750000000',
+    'pekerjaan' => 'Pengadaan Alat Pertanian',
+    'foto_pekerjaan' => 'alat_pertanian.png',
+    'tahun' => '2024',
+    'progress_fisik' => '20',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '3',
+    'instansi' => 'Dinas Perhubungan',
+    'jumlah_pagu' => '950000000',
+    'pekerjaan' => 'Pembangunan Terminal Bus',
+    'foto_pekerjaan' => 'terminal_bus.png',
+    'tahun' => '2024',
+    'progress_fisik' => '75',
+]);
+
+paketpekerjaan::create([
+    'metodepengadaan_id' => '2',
+    'instansi' => 'Dinas Sosial',
+    'jumlah_pagu' => '500000000',
+    'pekerjaan' => 'Pembangunan Panti Asuhan',
+    'foto_pekerjaan' => 'panti_asuhan.png',
+    'tahun' => '2024',
+    'progress_fisik' => '35',
+]);
+
                  
 // =============== CREATE PENANGGUNG JAWAB TEKNIS 
 penanggungjawabteknis::create([
@@ -312,6 +411,98 @@ penanggungjawabteknis::create([
     'tanggal_terbit' => '2024-01-15', // Format YYYY-MM-DD
     'masa_berlaku' => '2024-12-31', // Format YYYY-MM-DD
 ]);
+
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '12',
+    'nama_lengkap' => 'Andi Prasetyo, ST.',
+    'nopjt' => '45345357',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Gedung',
+    'foto_pjt' => 'gedung.png',
+    'tanggal_terbit' => '2024-02-20',
+    'masa_berlaku' => '2025-02-20',
+]);
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '13',
+    'nama_lengkap' => 'Budi Santoso, MT.',
+    'nopjt' => '45345358',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jalan',
+    'foto_pjt' => 'jalan.png',
+    'tanggal_terbit' => '2024-03-10',
+    'masa_berlaku' => '2025-03-10',
+]);
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '14',
+    'nama_lengkap' => 'Siti Aisyah, ST.',
+    'nopjt' => '45345359',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Saluran',
+    'foto_pjt' => 'saluran.png',
+    'tanggal_terbit' => '2024-04-05',
+    'masa_berlaku' => '2025-04-05',
+]);
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '15',
+    'nama_lengkap' => 'Rudi Hartono, ST., MM',
+    'nopjt' => '45345360',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jembatan Flyover',
+    'foto_pjt' => 'flyover.png',
+    'tanggal_terbit' => '2024-05-15',
+    'masa_berlaku' => '2025-05-15',
+]);
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '16',
+    'nama_lengkap' => 'Dewi Lestari, ST.',
+    'nopjt' => '45345361',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Pembangunan Bendungan',
+    'foto_pjt' => 'bendungan.png',
+    'tanggal_terbit' => '2024-06-20',
+    'masa_berlaku' => '2025-06-20',
+]);
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '17',
+    'nama_lengkap' => 'Agus Salim, ST., MM',
+    'nopjt' => '45345362',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Penataan Ruang',
+    'foto_pjt' => 'penataan_ruang.png',
+    'tanggal_terbit' => '2024-07-25',
+    'masa_berlaku' => '2025-07-25',
+]);
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '18',
+    'nama_lengkap' => 'Fiona Larasati, ST.',
+    'nopjt' => '45345363',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Instalasi Air',
+    'foto_pjt' => 'instalasi_air.png',
+    'tanggal_terbit' => '2024-08-30',
+    'masa_berlaku' => '2025-08-30',
+]);
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '19',
+    'nama_lengkap' => 'Nina Oktavia, ST.',
+    'nopjt' => '45345364',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Drainase',
+    'foto_pjt' => 'drainase.png',
+    'tanggal_terbit' => '2024-09-10',
+    'masa_berlaku' => '2025-09-10',
+]);
+
+penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '20',
+    'nama_lengkap' => 'Rian Setiawan, ST., MT.',
+    'nopjt' => '45345365',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jaringan Listrik',
+    'foto_pjt' => 'jaringan_listrik.png',
+    'tanggal_terbit' => '2024-10-12',
+    'masa_berlaku' => '2025-10-12',
+]);
+
                  
 // =============== CREATE KETERTIBAN DAN PENGAWASAN 
 ketertiban::create([
@@ -330,13 +521,63 @@ ketertiban::create([
 
 // =============== CREATE BERITA AGENDA 
 beritaagenda::create([
-    'pengawasanlokasi_id' => '11', // Pastikan ID ini valid dalam tabel pengawasanlokasi
+    'pengawasanlokasi_id' => '11',
     'statusprogram' => 'Aktif',
     'nama_agenda' => 'Rapat Koordinasi Proyek Konstruksi',
     'keterangan' => 'Rapat koordinasi untuk membahas progres proyek dan permasalahan yang ada.',
-    'kuota' => '50', // Jumlah peserta yang diperbolehkan
-    'tanggal_mulai' => '2024-01-20', // Format YYYY-MM-DD
-    'tanggal_selesai' => '2024-01-20', // Format YYYY-MM-DD
+    'kuota' => '50',
+    'tanggal_mulai' => '2024-01-20',
+    'tanggal_selesai' => '2024-01-20',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => '12',
+    'statusprogram' => 'Aktif',
+    'nama_agenda' => 'Sosialisasi Proyek Baru',
+    'keterangan' => 'Sosialisasi untuk proyek baru yang akan dimulai pada tahun ini.',
+    'kuota' => '30',
+    'tanggal_mulai' => '2024-02-15',
+    'tanggal_selesai' => '2024-02-15',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => '13',
+    'statusprogram' => 'Aktif',
+    'nama_agenda' => 'Pelatihan Keselamatan Kerja',
+    'keterangan' => 'Pelatihan untuk meningkatkan keselamatan kerja di lokasi proyek.',
+    'kuota' => '25',
+    'tanggal_mulai' => '2024-03-10',
+    'tanggal_selesai' => '2024-03-10',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => '14',
+    'statusprogram' => 'Aktif',
+    'nama_agenda' => 'Evaluasi Proyek Tahunan',
+    'keterangan' => 'Evaluasi kinerja proyek yang telah dilaksanakan selama satu tahun.',
+    'kuota' => '20',
+    'tanggal_mulai' => '2024-04-05',
+    'tanggal_selesai' => '2024-04-05',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => '15',
+    'statusprogram' => 'Aktif',
+    'nama_agenda' => 'Workshop Teknologi Konstruksi',
+    'keterangan' => 'Workshop tentang teknologi terbaru dalam industri konstruksi.',
+    'kuota' => '40',
+    'tanggal_mulai' => '2024-05-12',
+    'tanggal_selesai' => '2024-05-12',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => '16',
+    'statusprogram' => 'Aktif',
+    'nama_agenda' => 'Penyampaian Laporan Proyek',
+    'keterangan' => 'Penyampaian laporan akhir proyek yang telah selesai dilaksanakan.',
+    'kuota' => '10',
+    'tanggal_mulai' => '2024-06-18',
+    'tanggal_selesai' => '2024-06-18',
 ]);
 
 

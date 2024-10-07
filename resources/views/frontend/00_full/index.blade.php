@@ -364,7 +364,7 @@
                         
                     <article class="quoteblock">
                         <div class="quotetxt arrow">
-                            <p><img style="width:10%" src="/assets/himbauan/PERSETUJUAN_BANGUNAN_GEDUNG.PNG" alt="/assets/himbauan/PERSETUJUAN_BANGUNAN_GEDUNG.PNG"></p>
+                            <p><img style="width:10%" src="{{asset('storage/' . $item->foto_pejabat)}}" alt="{{asset('storage/' . $item->foto_pejabat)}}"></p>
                             <p><span style="color: black">{!! $item->himbauan !!}</span></p>
                         </div>
                         <figure>
