@@ -53,15 +53,48 @@
                     </span>
                     <!--Toggle sidebar-->
                     <!--Notification icon-->
-                    <!-- <div class="menu-icon">
-                        <a class="" href="#" onclick="toggle_dropdown(this); return false" role="button" class="dropdown-toggle">
+                     <div class="menu-icon">
+                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
+                            <i class="fa fa-user"></i>
+                            <span class="badge badge-danger">3</span>
+                        </a>
+                        
+                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
+                            <i class="fa fa-cog"></i>
+                            <span class="badge badge-danger">1</span>
+                        </a>
+                        
+                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
                             <i class="fa fa-bell"></i>
                             <span class="badge badge-danger">5</span>
                         </a>
-                        <div class="dropdown dropdown-left bg-white shadow border " style="background: white;">
-                            <a class="dropdown-item" href="#" ;"><strong>Notifications</strong></a> -->
-                            <!-- <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
+                        
+                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
+                            <i class="fa fa-chart-line"></i>
+                            <span class="badge badge-danger">2</span>
+                        </a>
+                        
+                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
+                            <i class="fa fa-envelope"></i>
+                            <span class="badge badge-danger">4</span>
+                        </a>
+                        
+                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
+                            <i class="fa fa-users"></i>
+                            <span class="badge badge-danger">10</span>
+                        </a>
+{{--                         
+                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
+                            <i class="fa fa-folder"></i>
+                            <span class="badge badge-danger">7</span>
+                        </a> --}}
+                        
+                        
+                        
+                        {{-- <div class="dropdown dropdown-left bg-white shadow border " style="background: white;">
+                            <a class="dropdown-item" href="#";><strong>Notifications</strong></a> 
+                             <div class="dropdown-divider"></div> --}}
+                            {{-- <a href="#" class="dropdown-item">
                                 <div class="media">
                                     <div class="align-self-center mr-3 rounded-circle notify-icon bg-primary">
                                         <i class="fa fa-bookmark"></i>
@@ -72,9 +105,9 @@
                                         <small class="text-success">09:23am</small>
                                     </div>
                                 </div>
-                            </a> -->
-                            <!-- <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
+                            </a>  --}}
+                             {{-- <div class="dropdown-divider"></div> --}}
+                            {{-- <a href="#" class="dropdown-item">
                                 <div class="media">
                                     <div class="align-self-center mr-3 rounded-circle notify-icon bg-secondary">
                                         <i class="fa fa-link"></i>
@@ -85,9 +118,9 @@
                                         <small class="text-success">09:23am</small>
                                     </div>
                                 </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item">
+                            </a> --}}
+                            {{-- <div class="dropdown-divider"></div> --}}
+                            {{-- <a href="#" class="dropdown-item">
                                 <div class="media">
                                     <div class="align-self-center mr-3 rounded-circle notify-icon bg-warning">
                                         <i class="fa fa-user"></i>
@@ -98,11 +131,11 @@
                                         <small class="text-success">09:23am</small>
                                     </div>
                                 </div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-center link-all" href="#">See all notifications ></a> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
+                            </a> --}}
+                            {{-- <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-center link-all" href="#">See all notifications ></a>
+                         </div> --}}
+                     </div>
                     <!--Notication icon-->
 
 
@@ -125,7 +158,7 @@
             padding: 5px 10px;
             margin-top: 2.5px;
             margin-bottom: 2px;
-            margin-left: 160px;
+            margin-left: 150px;
             margin-right: 15px;
             border-radius: 20px;
             background: #00008b;
@@ -153,50 +186,21 @@
                 
                 <!--Menu Icons-->
 
-                <div class="menu-icon" style="margin-left: 10px;">
-                        <a class="" href="#" onclick="toggle_dropdown(this); return false" role="button" class="dropdown-toggle">
-                            <i class="fas fa-sign-out-alt" style="color: white;"></i>
-                            <!-- <span class="badge badge-danger">5</span> -->
-                        </a>
-                        <style>
-                            
-                        </style>
-                        <div class="menuheader dropdown dropdown-left bg-white shadow border">
-                            <a class="dropdown-item" href="#" style="color: white;"><strong><i class="fas fa-cogs me-2" style="margin-right: 0px;"></i> Pengaturan</strong></a>
-                            
-                            <div class="dropdown-divider"></div>
-                            <a href="#" class="dropdown-item" >
-                                <div class="media">
-                                    <div>
-                                        <i class="fa fa-user" style="color: white; margin-right:10px;"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <h6 style="color:white"><strong>Profil</strong></h6>
-                                        <!-- <p>New employee arrival</p> -->
-                                        <!-- <small class="text-success">09:23am</small> -->
-                                    </div>
-                                </div>
-                            </a>
-                            
-                            <div class="dropdown-divider"></div>
-                            <form action="/logout" method="POST" class="dropdown-item" style="border: none; background: transparent; padding: 0; margin: 0;">
-                                @csrf
-                                <button type="submit" style="border: none; background: transparent; padding: 0; margin: 0; width: 100%; text-align: left;">
-                                    <div class="media" style="display: flex; align-items: center;">
-                                        <i class="fas fa-sign-out-alt" style="margin-right: 10px; color: white;"></i>
-                                        <h6 style="color: white; margin: 0;"><strong>Logout</strong></h6>
-                                    </div>
-                                </button>
-                            </form>
+                            {{-- <div class="dropdown-divider"></div> --}}
                             
                             <!-- <div class="dropdown-divider"></div>
                             <a class="dropdown-item text-center link-all" href="#">See all notifications ></a> -->
-                        </div>
+                    <div class="menu-icon">
+                        <form action="/logout" method="POST" class="dropdown-item" style="border: none; background: transparent; padding: 0; margin: 0;">
+                            @csrf
+                            <button type="submit" style="border: none; background: white; width:60px; padding: 0; margin: 0; color: black; cursor: pointer;">
+                                <i class="fa fa-sign-out"></i>
+                                <span class="badge badge-danger">Logout</span>
+                            </button>
+                        </form>
+                        
                     </div>
-                    
-
-                    
-             
+                            
             </div>    
 
                 
