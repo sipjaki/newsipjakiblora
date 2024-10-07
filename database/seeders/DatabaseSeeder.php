@@ -27,7 +27,7 @@ use App\Models\suratedaran;
 use App\Models\pergubernur;
 use App\Models\suratkeputusan;
 use App\Models\berita;
-use App\Models\Beritaagenda;
+use App\Models\beritaagenda;
 use App\Models\giskbb;
 use App\Models\himbauandinas;
 use App\Models\isadmin;
@@ -146,7 +146,7 @@ ketertiban::create([
 
 
 // =============== CREATE BERITA AGENDA 
-Beritaagenda::create([
+beritaagenda::create([
     'pengawasanlokasi_id' => '11', // Pastikan ID ini valid dalam tabel pengawasanlokasi
     'statusprogram' => 'Aktif',
     'nama_agenda' => 'Rapat Koordinasi Proyek Konstruksi',
