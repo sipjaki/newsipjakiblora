@@ -1,10 +1,11 @@
-
-<!--Page loader-->
 <div class="loader-wrapper">
     <div class="loader-circle">
         <div class="loader-wave"></div>
+        <div class="loader-wind"></div>
+        <img src="/assets/sipjakikbb.png" alt="Loading" class="loader-image">
     </div>
 </div>
+
 <!--Page loader-->
 
 <!--Page Wrapper-->
@@ -273,7 +274,15 @@
                                     <span class="badge-notif">10</span>
                                 </a>
                             </div> --}}
-                                                    
+                            <style>
+                                .logout-button {
+                                    border: none; /* Menghilangkan border */
+                                    outline: none; /* Menghilangkan outline */
+                                    background: transparent; /* Atur background menjadi transparan */
+                                    cursor: pointer; /* Mengubah kursor menjadi pointer */
+                                }
+                            </style>
+                            
                             <div class="menu-icon">
                                 <form action="/logout" method="POST" class="dropdown-item" style="border: none; background: transparent; padding: 0; margin: 0;">
                                     @csrf
@@ -285,8 +294,6 @@
                                     </button>
                                 </form>
                             </div>
-                            
-                            
                             
             </div>    
 

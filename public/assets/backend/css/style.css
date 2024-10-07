@@ -136,14 +136,12 @@ table tbody tr td {
 /*======= General Rules =========*/
 
 /*====== Dasboard CSS Rules =====*/
-
-/*Loader CSS */
 .loader-wrapper {
     position: fixed;
     z-index: 9999;
     background: #fff;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
 }
@@ -152,61 +150,72 @@ table tbody tr td {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    border: 5px solid #fff;
-    box-shadow: 0 0 0 5px #0D47A1;
     overflow: hidden;
 }
 
 .loader-wave {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: #0D47A1;
     border-radius: 50%;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    background: rgba(13, 71, 161, 0.5);
+    animation: wave 4s infinite ease-in-out;
 }
 
-.loader-wave:before,
-.loader-wave:after {
-    content: '';
+.loader-wind {
     position: absolute;
-    width: 200%;
-    height: 200%;
-    top: 0%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -75%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: wind 3s infinite linear;
+    clip-path: ellipse(60% 70% at 50% 50%);
 }
 
-.loader-wave:before {
-    border-radius: 45%;
-    background: rgba(255,255,255,1);
-    animation: animate 5s linear infinite;
-    -webkit-animation: animate 5s linear infinite;
-    -ms-animation: animate 5s linear infinite;
-    -moz-animation: animate 5s linear infinite;
+.loader-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    animation: rotate 9s infinite linear;
 }
 
-.loader-wave:after {
-    border-radius: 40%;
-    background: rgba(255,255,255,.5);
-    animation: animate 10s linear infinite;
-    -webkit-animation: animate 10s linear infinite;
-    -ms-animation: animate 10s linear infinite;
-    -moz-animation: animate 10s linear infinite;
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
 }
 
-@keyframes animate {
-    0% { transform: translate(-50%, -75%) rotate(0deg) }
-    100% { transform: translate(-50%, -75%) rotate(360deg) }
-}
-
-@-webkit-keyframes animate {
-    0% { transform: translate(-50%, -75%) rotate(0deg) }
-    100% { transform: translate(-50%, -75%) rotate(360deg) }
+@keyframes wind {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+        opacity: 0.6;
+    }
 }
 
 

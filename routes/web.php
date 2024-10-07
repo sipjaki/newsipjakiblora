@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\DatajakonController;
 use App\Http\Controllers\FedashboardController;
 use App\Http\Controllers\GiskbbController;
@@ -244,16 +245,7 @@ Route::get('/peraturan/suratkeputusan/{judul}', [PeraturanController::class, 'fe
 // ================================================================================================================================================
 // ================================================================================================================================================
 
-Route::get('/dashboard', function () {
-    // return view('welcome');
-    
-    $user = Auth::user();
-
-    return view('backend.00_dashboard.index',[
-        'title' => 'Admin Dashboard Sipjaki KBB',
-        'user' => $user,
-    ]);
-})->middleware('auth');
+Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware('auth');  
 
 // ------------------- BACKEND QA PERTANYAAN --------------------------- 
 
