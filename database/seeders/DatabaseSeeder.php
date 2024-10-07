@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
 asosiasipengusaha::create([
     'nama_asosiasi' => 'Asosiasi Pengusaha Konstruksi Indonesia',
     'alamat_kantor' => 'Jl. Raya Konstruksi No. 123, Bandung, Jawa Barat',
-    'pengawasanlokasi_id' => '11',
+    'pengawasanlokasi_id' => 1,
     'provinsi' => 'JAWA BARAT',
     'kontak' => '+62 812-3456-7890',
     'email' => 'info@apki.or.id',
