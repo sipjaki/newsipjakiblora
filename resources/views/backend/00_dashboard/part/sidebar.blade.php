@@ -190,6 +190,20 @@
         </li>
     </ul>
 </li>
+<li class="parent">
+    <a href="#" onclick="toggle_menu('dataiujk'); return false" class="sbar">
+        <i class="fas fa-clipboard-list mr-2"></i> <!-- Ikon clipboard list untuk data -->
+        <span>DATA IUJK <i class="fa fa-angle-down pull-right align-bottom" style="color: black;"></i></span>
+    </a>
+    <ul class="children" id="dataiujk">
+        <li class="child">
+            <a href="/404" style="font-size: 12px;">
+                <i class="fas fa-building mr-2" style="margin-left: 20px;"></i>DATA PERUSAHAAN <!-- Ikon gedung -->
+            </a>
+        </li>
+    </ul>
+</li>
+
 
 
 <li class="parent">
