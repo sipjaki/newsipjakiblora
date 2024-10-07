@@ -36,6 +36,7 @@ use App\Models\keterampilanpekerja;
 use App\Models\Ketertiban;
 use App\Models\metodepengadaan;
 use App\Models\paketpekerjaan;
+use App\Models\Paketpekerjaan as ModelsPaketpekerjaan;
 use App\Models\pelatihan;
 use App\Models\Penanggungjawabteknis;
 use App\Models\pengawasanbangunangedung;
@@ -85,13 +86,86 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         
-        asosiasipengusaha::factory(15)->create();
-        paketpekerjaan::factory(15)->create();
-        penanggungjawabteknis::factory(15)->create();
-        ketertiban::factory(15)->create();
-        beritaagenda::factory(15)->create();  
-        Qa::factory(15)->create();
+        // asosiasipengusaha::factory(15)->create();
+        // paketpekerjaan::factory(15)->create();
+        // penanggungjawabteknis::factory(15)->create();
+        // ketertiban::factory(15)->create();
+        // beritaagenda::factory(15)->create();  
+        // Qa::factory(15)->create();
                  
+// =============== CREATE TIM ASOSIASI PENGUSAHA 
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Pengusaha Konstruksi Indonesia',
+    'alamat_kantor' => 'Jl. Raya Konstruksi No. 123, Bandung, Jawa Barat',
+    'pengawasanlokasi_id' => '11',
+    'provinsi' => 'JAWA BARAT',
+    'kontak' => '+62 812-3456-7890',
+    'email' => 'info@apki.or.id',
+    'website' => 'https://www.apki.or.id',
+    'kepala_asosiasi' => 'Yuyu Yuhana, ST., MM',
+    'foto_asosiasi' => 'asosiasipengusaha/asosiasipengusaha.png',
+    'jumlah_anggota' => '234',
+    'status' => 'AKTIF',
+]);
+                 
+// =============== CREATE PAKET PEKERJAAN 
+paketpekerjaan::create([
+    'metodepengadaan_id' => '3', // Pastikan ID ini valid dalam tabel metodepengadaan
+    'instansi' => 'Dinas Pekerjaan Umum dan Penataan Ruang',
+    'jumlah_pagu' => '3875647586',
+    'pekerjaan' => 'Pembangunan Jembatan Cikapundung',
+    'foto_pekerjaan' => 'jembatan_cikapundung.png', // Pastikan file ini ada di folder yang sesuai
+    'tahun' => '2024',
+    'progress_fisik' => '50', // Progress dalam persen
+]);
+                 
+// =============== CREATE PENANGGUNG JAWAB TEKNIS 
+Penanggungjawabteknis::create([
+    'pengawasanlokasi_id' => '11', // Pastikan ID ini valid dalam tabel metodepengadaan
+    'nama_lengkap' => 'Yuyu Yuhana, ST., MM',
+    'nopjt' => '45345356',
+    'sfesifikasi' => 'Spesifikasi Teknis Pekerjaan Jembatan',
+    'tanggal_terbit' => '2024-01-15', // Format YYYY-MM-DD
+    'masa_berlaku' => '2024-12-31', // Format YYYY-MM-DD
+]);
+                 
+// =============== CREATE KETERTIBAN DAN PENGAWASAN 
+        Ketertiban::create([
+            'pengawasanlokasi_id'  => '11',
+            'pengawasanbangunangedung_id'  => '1',
+            'penanggungjawabteknis_id'  => '1',
+            'pengawasanstatus_id'  => '2',
+            'pengawasanstatus_id'  => '3',
+            'judul'  => '',
+            'tanggal_laporan'  => '',
+            'keterangan'  => '',
+            
+            // 'Jabatan'  => 'Yuyu Yuhana, ST., MM',
+        ]);
+
+// =============== CREATE BERITA AGENDA 
+Beritaagenda::create([
+    'pengawasanlokasi_id' => '11', // Pastikan ID ini valid dalam tabel pengawasanlokasi
+    'statusprogram' => 'Aktif',
+    'nama_agenda' => 'Rapat Koordinasi Proyek Konstruksi',
+    'keterangan' => 'Rapat koordinasi untuk membahas progres proyek dan permasalahan yang ada.',
+    'kuota' => '50', // Jumlah peserta yang diperbolehkan
+    'tanggal_mulai' => '2024-01-20', // Format YYYY-MM-DD
+    'tanggal_selesai' => '2024-01-20', // Format YYYY-MM-DD
+]);
+
+
+// =============== CREATE QA PERTANYAAN 
+Qa::create([
+    'qasebagai_id' => '1', // ID yang sesuai dengan kategori pertanyaan
+    'qapertanyaan_id' => '3', // ID pertanyaan yang sudah ada di database
+    'nama_lengkap' => 'Suhardi Wiharja', // Nama lengkap pengisi
+    'email' => 'johndoe@example.com', // Email yang valid
+    'telepon' => '081234567890', // Nomor telepon yang valid
+    // 'Jabatan' => 'Yuyu Yuhana, ST., MM', // Jika ada jabatan, tambahkan di sini
+]);
+
+
 // =============== CREATE TIM PEMBINA 
         timpembina::create([
             'jabatandalamkedinasan'  => 'Fungsional Pembina Jasa Konstruksi Ahli Muda',
