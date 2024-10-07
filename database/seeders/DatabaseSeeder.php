@@ -107,6 +107,189 @@ asosiasipengusaha::create([
     'jumlah_anggota' => '234',
     'status' => 'AKTIF',
 ]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Pengusaha Konstruksi Indonesia',
+    'alamat_kantor' => 'Jl. Raya Konstruksi No. 123, Bandung, Jawa Barat',
+    'pengawasanlokasi_id' => '11',
+    'provinsi' => 'JAWA BARAT',
+    'kontak' => '+62 812-3456-7890',
+    'email' => 'info@apki.or.id',
+    'website' => 'https://www.apki.or.id',
+    'kepala_asosiasi' => 'Yuyu Yuhana, ST., MM',
+    'foto_asosiasi' => 'asosiasipengusaha/asosiasipengusaha.png',
+    'jumlah_anggota' => '234',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Kontraktor Nasional',
+    'alamat_kantor' => 'Jl. Kontraktor No. 45, Jakarta',
+    'pengawasanlokasi_id' => '12',
+    'provinsi' => 'DKI JAKARTA',
+    'kontak' => '+62 811-2345-6789',
+    'email' => 'info@akn.or.id',
+    'website' => 'https://www.akn.or.id',
+    'kepala_asosiasi' => 'Budi Santoso',
+    'foto_asosiasi' => 'asosiasipengusaha/akn.png',
+    'jumlah_anggota' => '150',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Jasa Konstruksi',
+    'alamat_kantor' => 'Jl. Jasa Konstruksi No. 101, Surabaya',
+    'pengawasanlokasi_id' => '13',
+    'provinsi' => 'JAWA TIMUR',
+    'kontak' => '+62 813-4567-8901',
+    'email' => 'info@ajk.or.id',
+    'website' => 'https://www.ajk.or.id',
+    'kepala_asosiasi' => 'Rina Suryani',
+    'foto_asosiasi' => 'asosiasipengusaha/ajk.png',
+    'jumlah_anggota' => '120',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Pengusaha Material Konstruksi',
+    'alamat_kantor' => 'Jl. Material Konstruksi No. 15, Medan',
+    'pengawasanlokasi_id' => '14',
+    'provinsi' => 'SUMATERA UTARA',
+    'kontak' => '+62 814-5678-9012',
+    'email' => 'info@apmk.or.id',
+    'website' => 'https://www.apmk.or.id',
+    'kepala_asosiasi' => 'Andi Wijaya',
+    'foto_asosiasi' => 'asosiasipengusaha/apmk.png',
+    'jumlah_anggota' => '98',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Ahli Konstruksi',
+    'alamat_kantor' => 'Jl. Ahli Konstruksi No. 22, Semarang',
+    'pengawasanlokasi_id' => '15',
+    'provinsi' => 'JAWA TENGAH',
+    'kontak' => '+62 815-6789-0123',
+    'email' => 'info@aak.or.id',
+    'website' => 'https://www.aak.or.id',
+    'kepala_asosiasi' => 'Hendrik Tanjung',
+    'foto_asosiasi' => 'asosiasipengusaha/aak.png',
+    'jumlah_anggota' => '200',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Konsultan Konstruksi',
+    'alamat_kantor' => 'Jl. Konsultan Konstruksi No. 30, Bali',
+    'pengawasanlokasi_id' => '16',
+    'provinsi' => 'BALI',
+    'kontak' => '+62 816-7890-1234',
+    'email' => 'info@akk.or.id',
+    'website' => 'https://www.akk.or.id',
+    'kepala_asosiasi' => 'Lina Agustina',
+    'foto_asosiasi' => 'asosiasipengusaha/akk.png',
+    'jumlah_anggota' => '250',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Pemborong Konstruksi',
+    'alamat_kantor' => 'Jl. Pemborong No. 5, Yogyakarta',
+    'pengawasanlokasi_id' => '17',
+    'provinsi' => 'DI YOGYAKARTA',
+    'kontak' => '+62 817-8901-2345',
+    'email' => 'info@apk.or.id',
+    'website' => 'https://www.apk.or.id',
+    'kepala_asosiasi' => 'Budi Prasetyo',
+    'foto_asosiasi' => 'asosiasipengusaha/apk.png',
+    'jumlah_anggota' => '80',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Pekerja Konstruksi',
+    'alamat_kantor' => 'Jl. Pekerja Konstruksi No. 8, Makassar',
+    'pengawasanlokasi_id' => '18',
+    'provinsi' => 'SULAWESI SELATAN',
+    'kontak' => '+62 818-9012-3456',
+    'email' => 'info@apk.or.id',
+    'website' => 'https://www.apk.or.id',
+    'kepala_asosiasi' => 'Diana Suharno',
+    'foto_asosiasi' => 'asosiasipengusaha/apk.png',
+    'jumlah_anggota' => '150',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Perusahaan Jasa Konstruksi',
+    'alamat_kantor' => 'Jl. Jasa Konstruksi No. 11, Palembang',
+    'pengawasanlokasi_id' => '19',
+    'provinsi' => 'SUMATERA SELATAN',
+    'kontak' => '+62 819-0123-4567',
+    'email' => 'info@apjk.or.id',
+    'website' => 'https://www.apjk.or.id',
+    'kepala_asosiasi' => 'Rizky Firmansyah',
+    'foto_asosiasi' => 'asosiasipengusaha/apjk.png',
+    'jumlah_anggota' => '300',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Penyedia Konstruksi',
+    'alamat_kantor' => 'Jl. Penyedia Konstruksi No. 14, Banjarmasin',
+    'pengawasanlokasi_id' => '20',
+    'provinsi' => 'KALIMANTAN SELATAN',
+    'kontak' => '+62 820-1234-5678',
+    'email' => 'info@apk.or.id',
+    'website' => 'https://www.apk.or.id',
+    'kepala_asosiasi' => 'Teguh Santoso',
+    'foto_asosiasi' => 'asosiasipengusaha/apk.png',
+    'jumlah_anggota' => '175',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Perancang Konstruksi',
+    'alamat_kantor' => 'Jl. Perancang Konstruksi No. 6, Samarinda',
+    'pengawasanlokasi_id' => '21',
+    'provinsi' => 'KALIMANTAN TIMUR',
+    'kontak' => '+62 821-2345-6789',
+    'email' => 'info@apk.or.id',
+    'website' => 'https://www.apk.or.id',
+    'kepala_asosiasi' => 'Maya Arista',
+    'foto_asosiasi' => 'asosiasipengusaha/apk.png',
+    'jumlah_anggota' => '220',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Konstruksi Berkelanjutan',
+    'alamat_kantor' => 'Jl. Konstruksi Berkelanjutan No. 3, Jakarta',
+    'pengawasanlokasi_id' => '22',
+    'provinsi' => 'DKI JAKARTA',
+    'kontak' => '+62 822-3456-7890',
+    'email' => 'info@akb.or.id',
+    'website' => 'https://www.akb.or.id',
+    'kepala_asosiasi' => 'Ferry Hidayat',
+    'foto_asosiasi' => 'asosiasipengusaha/akb.png',
+    'jumlah_anggota' => '250',
+    'status' => 'AKTIF',
+]);
+
+asosiasipengusaha::create([
+    'nama_asosiasi' => 'Asosiasi Pembangunan Infrastruktur',
+    'alamat_kantor' => 'Jl. Infrastruktur No. 9, Denpasar',
+    'pengawasanlokasi_id' => '23',
+    'provinsi' => 'BALI',
+    'kontak' => '+62 823-4567-8901',
+    'email' => 'info@api.or.id',
+    'website' => 'https://www.api.or.id',
+    'kepala_asosiasi' => 'Rudi Prabowo',
+    'foto_asosiasi' => 'asosiasipengusaha/api.png',
+    'jumlah_anggota' => '400',
+    'status' => 'AKTIF',
+]);
+
                  
 // =============== CREATE PAKET PEKERJAAN 
 paketpekerjaan::create([
