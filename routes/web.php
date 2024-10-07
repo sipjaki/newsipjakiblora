@@ -151,7 +151,7 @@ Route::get('/giskbb/{nama_kecamatan}', [GiskbbController::class, 'namakecamatans
 
 // -------- BAGIAN 03 ---------------------------------
 // RUTE UNTUK MENJALANKAN PENANGGUNG JAWAB TEKNIS
-Route::get('/tenagakerja/pjt', [SkktenagakerjaController::class, 'penanggungjawabteknis']); 
+Route::get('/tenagakerja/pjt', [SkktenagakerjaController::class, 'penanggungjawabteknis']);     
 Route::get('/tenagakerja/timpembina', [SkktenagakerjaController::class, 'timpembinajasakonstruksi']); 
 
 // ---------------------- 05 INFORMASI SPM -----------------------//
@@ -170,6 +170,18 @@ Route::get('/uijk/{nama_perusahaan}', [UijkController::class, 'feuijkshowByName'
 Route::get('/uijkpt', [UijkController::class, 'uijkpt']);
 Route::get('/uijkcv', [UijkController::class, 'uijkcv']);
 Route::get('/2020', [UijkController::class, '2020']);
+
+Route::get('/ijinusahajasakonstruksi/katperusahaan', [UijkController::class, 'kategoriperusahaan']);  
+Route::get('/iujk/katperusahaan', [UijkController::class, 'kategoriperusahaanfebyname']);  
+
+Route::get('/ijinusahajasakonstruksi/bidangusaha', [UijkController::class, 'bidangusaha']);  
+Route::get('/iujk/bidangusaha', [UijkController::class, 'bidangusahafebyname']);  
+
+Route::get('/ijinusahajasakonstruksi/tahunregistrasi', [UijkController::class, 'tahunregistrasi']);  
+Route::get('/iujk/tahunregistrasi', [UijkController::class, 'tahunregistrasifebyname']);  
+
+Route::get('/ijinusahajasakonstruksi/statistika', [UijkController::class, 'iujkstatistika']);  
+// Route::get('/iujk/tahunregistrasi', [UijkController::class, 'tahunregistrasifebyname']);  
 
 
 

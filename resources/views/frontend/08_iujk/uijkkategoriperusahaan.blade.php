@@ -47,8 +47,8 @@
     transition: background 0.5s ease, color 0.5s ease;
     " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
 
-Daftar Sertifikat Keterampilan Kerja <br> 
-Pemerintah Kabupaten Bandung
+Daftar Ijin Usaha Jasa Konstruksi <br> 
+Pemerintah Kabupaten Bandung Barat
 </h2>
 </div>
 <style>
@@ -294,7 +294,7 @@ Pemerintah Kabupaten Bandung
 
 
     <div class="container" style="display:flex; justify-content: flex-end;">
-        {{-- <div class="badge"><i class="fas fa-users me-2"></i><span>{{ $totaldata}}</span> Daftar Pekerja Tukang Terampil (SKK)</div> --}}
+        <div class="badge"><i class="fas fa-users me-2"></i><span>{{ $totaldata}}</span> Daftar Ijin Usaha Jasa Konstruksi </div>
         {{-- Menampilkan data kecamatan --}}
             {{-- Debugging untuk memastikan data dikirim ke view --}}
 {{-- {{ dd($data_kecamatan) }} --}}
@@ -344,23 +344,24 @@ Pemerintah Kabupaten Bandung
 
 
 {{-- ========================================================== --}}
-{{-- <form id="kecamatan-form" method="GET" action="{{ url('/tenagakerja/kecamatan') }}">
-    <div class="custom-select-wrapper">
+<form id="perusahaan-form" method="GET" action="{{ url('/iujk/katperusahaan') }}">
+    <div class="custom-select-wrapper" style="margin-left: 300px; width:350px;">
         <select name="judul" id="kecamatan-dropdown" onchange="submitForm()">
-            <option value="">PILIH KECAMATAN</option>
-            @foreach ($data_kecamatan as $kecamatan)
-                <option value="{{ $kecamatan }}">{{ $kecamatan }}</option>
+            <option value="">PILIH KATEGORI</option>
+            @foreach ($data_uijk as $item)
+                <option value="{{ $item->kategori_perusahaan }}">{{ $item->kategori_perusahaan }}</option>
             @endforeach
         </select>
         <i class="fas fa-search search-icon"></i>
     </div>
-</form> --}}
+</form>
 
 <script>
     function submitForm() {
-        document.getElementById('kecamatan-form').submit();
+        document.getElementById('perusahaan-form').submit();
     }
 </script>
+
 {{-- ========================================================== --}}
 
 
@@ -425,13 +426,15 @@ Pemerintah Kabupaten Bandung
      <table>
         <thead>
             <tr>
-                <th style="width:45px;">No</th>
-                <th style="width:200px;">NAMA LENGKAP</th>
-                <th style="width:150px;">KECAMATAN/KOTA</th>
-                <th style="width:200px;">KETERAMPILAN</th>
-                <th style="width:125px;">TAHUN BIMTEK</th>
-                <th style="width:125px;">KUALIFIKASI</th>
-                <th style="width:100px;">VIEW SKK</th>
+                <th style="width:45px;">NO</th>
+                <th style="width:100;">NAMA PERUSAHAAN</th>
+                <th style="width:100px;">KATEGORI PERUSAHAAN</th>
+                <th style="width:100px;">KLASIFIKASI BIDANG USAHA</th>
+                <th style="width:50px;">SUB KLASIFIKASI <br> BIDANG USAHA</th>
+                <th style="width:100px;">KETERANGAN</th>
+                {{-- <th style="width:75px;">VIEW</th> --}}
+                {{-- <th style="width:125px;">KUALIFIKASI</th>
+                <th style="width:100px;">VIEW SKK</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -445,9 +448,12 @@ Pemerintah Kabupaten Bandung
             
             <tr>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->nama }}</td>
-                
-                <td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left; width:100px;" >{{ $item->nama_perusahaan }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center; width:100px;">{{ $item->kategori_perusahaan }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left; width:100px;">{{ $item->klasifikasi_bidang_usaha }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:left; width:100px;">{{ $item->sub_klasifikasi_bidang_usaha }}</td>
+                <td style="font-size: 12px; text-transform: uppercase; text-align:center; width:100px;">{{ $item->keterangan }}</td>
+                {{-- <td>
                     
                 <style>
                                         /* Container for the buttons */
@@ -487,7 +493,7 @@ Pemerintah Kabupaten Bandung
                 </style>
 
                 <div class="button-container">
-                <a href="/tenagakerja/skaskt/{{ $item->nama}}" class="iconhover" title="View">
+                <a href="/404/{{ $item->nama}}" class="iconhover" title="View">
                     <i class="fas fa-eye" style="color: black"></i>
                 </a>
                         
@@ -498,7 +504,7 @@ Pemerintah Kabupaten Bandung
                             // Function to handle CSV download
                         }
                         </script>
-                </td>
+                </td> --}}
             </tr>
             @endforeach
             {{-- ============================================ --}}

@@ -245,3 +245,28 @@ public function createstoredokumentasipelatihan(Request $request)
     // Redirect ke halaman yang sesuai
     return redirect()->route('dokumentasipelatihan.index'); // Ganti dengan nama route yang sesuai
 }
+
+
+
+// Chart untuk Tahun Bimtek
+// var chart4 = new CanvasJS.Chart("bimtekchartContainer", {
+//     exportEnabled: true,
+//     animationEnabled: true,
+//     title: {
+//         text: "{{$judultahunbimtek}}",
+//         fontFamily: "Roboto",
+//         fontSize: 15
+//     },
+//     legend: {
+//         cursor: "pointer",
+//         itemclick: explodePie
+//     },
+//     data: [{
+//         type: "pie",
+//         showInLegend: true,
+//         toolTipContent: "{name}: <strong>{y}%</strong>",
+//         indexLabel: "{name} - {y}%",
+//         dataPoints: {!! json_encode($data_tahun_bimtek) !!} // Update dataPoints
+//     }]
+// });
+// chart4.render();

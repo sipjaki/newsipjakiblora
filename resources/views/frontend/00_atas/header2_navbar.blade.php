@@ -216,7 +216,7 @@
                             {{-- <a href="#">PROFIL</a> --}}
     
         {{-- <a href="/404" style="text-align: center">BADAN <br> USAHA </a> --}}
-        <a href="/ijinusahajasakonstruksi">SBU/UIJK</a>
+        <a href="/ijinusahajasakonstruksi">SBU/IUJK</a>
         {{-- <a href="/tdup">TDUP</a> --}}
         
         
