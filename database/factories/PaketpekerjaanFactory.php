@@ -8,7 +8,7 @@ use Faker\Factory as FakerFactory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\paketpekerjaan>
  */
-class paketpekerjaanFactory extends Factory
+class PaketpekerjaanFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -22,7 +22,7 @@ class paketpekerjaanFactory extends Factory
         return [
             'instansi' => $faker->company, // Nama instansi sebagai nama perusahaan acak
             'jumlah_pagu' => $faker->numberBetween(1000000, 10000000000), // Angka antara 1 juta hingga 10 milyar
-            'metodepengadaan_id' => $this->faker->randomElement(['1', '2', '3','4', '5', '6', '7', '8', '9' ]), // Metode pengadaan berupa kata acak
+            'metodepengadaan_id' => $this->faker->randomElement(['1', '2', '3','4', '5', '6', '7', '8', '9'  ]), // Metode pengadaan berupa kata acak
             'pekerjaan' => $faker->sentence, // Deskripsi pekerjaan sebagai kalimat acak
             'foto_pekerjaan' => $faker->imageUrl(), // URL gambar acak sebagai foto pekerjaan
             'tahun' => $faker->randomElement(['2023', '2024']), 
