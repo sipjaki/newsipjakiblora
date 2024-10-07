@@ -38,7 +38,7 @@ use App\Models\metodepengadaan;
 use App\Models\paketpekerjaan;
 use App\Models\Paketpekerjaan as ModelsPaketpekerjaan;
 use App\Models\pelatihan;
-use App\Models\Penanggungjawabteknis;
+use App\Models\penanggungjawabteknis;
 use App\Models\pengawasanbangunangedung;
 use App\Models\pengawasanketertiban;
 use App\Models\pengawasanlokasi;
@@ -120,7 +120,7 @@ paketpekerjaan::create([
 ]);
                  
 // =============== CREATE PENANGGUNG JAWAB TEKNIS 
-Penanggungjawabteknis::create([
+penanggungjawabteknis::create([
     'pengawasanlokasi_id' => '11', // Pastikan ID ini valid dalam tabel metodepengadaan
     'nama_lengkap' => 'Yuyu Yuhana, ST., MM',
     'nopjt' => '45345356',
