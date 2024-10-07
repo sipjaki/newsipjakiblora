@@ -44,7 +44,7 @@ use App\Models\pengawasanketertiban;
 use App\Models\pengawasanlokasi;
 use App\Models\pengawasanstatus;
 use App\Models\pengawasantindakan;
-use App\Models\Qa;
+use App\Models\qa;
 use App\Models\qapertanyaan;
 use App\Models\qasebagai;
 use App\Models\renstra;
@@ -158,7 +158,7 @@ beritaagenda::create([
 
 
 // =============== CREATE QA PERTANYAAN 
-Qa::create([
+qa::create([
     'qasebagai_id' => '1', // ID yang sesuai dengan kategori pertanyaan
     'qapertanyaan_id' => '3', // ID pertanyaan yang sudah ada di database
     'nama_lengkap' => 'Suhardi Wiharja', // Nama lengkap pengisi
