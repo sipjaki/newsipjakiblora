@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_asosiasi'); // Nama Asosiasi
             $table->string('alamat_kantor'); // Alamat Kantor
-            $table->string('kota'); // Kota
+            $table->string('pengawasanlokasi_id'); // Kota
             $table->string('provinsi'); // Provinsi
             $table->string('kontak')->nullable(); // Kontak
             $table->string('email')->nullable(); // Email

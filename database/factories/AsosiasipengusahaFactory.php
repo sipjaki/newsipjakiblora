@@ -31,7 +31,8 @@ class AsosiasipengusahaFactory extends Factory
         return [
             'nama_asosiasi' => $faker->company,
             'alamat_kantor' => $faker->address,
-            'kota' => $faker->randomElement($kotaList), // Pilih kota secara acak dari daftar
+            'pengawasanlokasi_id' => $faker->numberBetween(1, 16),
+ // Pilih kota secara acak dari daftar
             'provinsi' => 'Jawa Barat', // Tetapkan provinsi sebagai "Jawa Barat"
             'kontak' => $faker->phoneNumber,
             'email' => $faker->safeEmail,

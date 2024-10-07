@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
         <br>
          <h2 style="
@@ -151,7 +151,7 @@ Jumlah Kasus Kecelakaan Kerja
     text-align: center;
     width: 100%;
     margin-top:5px;
-    height: 100vh;
+    height: 150vh;
     background: linear-gradient(to bottom, yellow, white, white);
     align-items: center;
     position: relative;
@@ -159,53 +159,59 @@ Jumlah Kasus Kecelakaan Kerja
 
 
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
- <style>
-     .container-kasus {
-         background-color: #ffffff;
-         border-radius: 8px;
-         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-         padding: 20px;
-         margin: 20px auto;
-         max-width: 1200px;
-     }
-     
-     .container-kasus2 {
-         background-color: #ffffff;
-         border-radius: 8px;
-         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-         padding: 20px;
-         margin: 20px auto;
-         max-width: 1200px;
-     }
+<style>
+    /* Container untuk setiap chart */
+    .chart-container {
+        margin: 15px auto; /* Margin untuk memberi jarak */
+        width: 90%; /* Lebar responsif */
+        max-width: 900px; /* Maksimal lebar lebih besar */
+        height: 450px; /* Tinggi untuk memperpanjang chart */
+        border-radius: 10px; /* Sudut yang membulat */
+        background-color: #f9f9f9; /* Latar belakang terang */
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+        padding: 20px; /* Ruang di dalam container */
+        position: relative; /* Untuk positioning yang lebih baik */
+    }
 
-     #chartContainer {
-         height: 200px;
-         width: 880px;
-     }
+    /* Judul chart */
+    .canvasjs-chart-title {
+        font-family: 'Roboto', sans-serif; /* Font yang konsisten */
+        font-size: 12px; /* Ukuran font yang lebih besar */
+        font-weight: bold; /* Membuat judul lebih tegas */
+        text-align: center; /* Memusatkan teks */
+        color: #333; /* Warna teks yang kontras */
+        margin-bottom: 10px; /* Spasi di bawah judul */
+    }
 
-     #chartContainer2 {
-         height: 200px;
-         width: 880px;
-     }
+    /* Legend styling (opsional) */
+    .canvasjs-chart-legend {
+        font-family: 'Roboto', sans-serif; /* Font konsisten */
+        font-size: 12px; /* Ukuran font legend */
+    }
 
-     h6 {
-         text-align: center;
-         color: #333;
-         margin-bottom: 20px;
-     }
- </style>
+    /* Tooltip styling */
+    .canvasjs-tooltip {
+        border-radius: 8px; /* Sudut yang membulat */
+        padding: 8px; /* Padding dalam tooltip */
+        background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap */
+        color: white; /* Teks putih */
+        font-size: 12px; /* Ukuran font tooltip */
+    }
+</style>
+
+
  <script>
      window.onload = function () {
          var data = @json($data);
 
-         var chart = new CanvasJS.Chart("chartContainer", {
+         var chart = new CanvasJS.Chart("chartContainer-1", {
              animationEnabled: true,
              theme: "light2",
              title:{
                  text: ""
              },
              axisX: {
-                 title: "Tahun",
+                 title: "",
                  valueFormatString: "YYYY"
              },
              axisY: {
@@ -229,14 +235,14 @@ Jumlah Kasus Kecelakaan Kerja
                 return { x: new Date(point.tahun, 0), y: point.kasus };
             });
 
-            var chart2 = new CanvasJS.Chart("chartContainer2", {
+            var chart2 = new CanvasJS.Chart("chartContainer-2", {
                 animationEnabled: true,
                 theme: "light2", // "light1", "light2", "dark1", "dark2"
                 title:{
-                    text: "Kasus per Tahun"
+                    text: ""
                 },
                 axisX: {
-                    title: "Tahun",
+                    title: "",
                     valueFormatString: "YYYY"
                 },
                 axisY: {
@@ -257,19 +263,30 @@ Jumlah Kasus Kecelakaan Kerja
      }
  </script>
 
-<div class="container-kasus" style="width: 950px;">
+{{-- <div class="container-kasus" style="width: 950px;">
      <h5>Grafik Kasus Setiap Tahun</h5>
      
      <div id="chartContainer"></div>
      <h6>Sumber : Badan Penyelenggara Jaminan Sosial Ketenagakerjaan Republik Indonesia</h6>
- </div>
+ </div> --}}
 
+ <div class="chart-container">
+    <div id="chartContainer-1" style="height: 400px;"></div>
+    <h5>Grafik Kasus Setiap Tahun</h5>
+     <div id="chartContainer"></div>
+     <h6>Sumber : Badan Penyelenggara Jaminan Sosial Ketenagakerjaan Republik Indonesia</h6>
+</div>
+
+ <div class="chart-container">
+    <div id="chartContainer-2" style="height: 400px;"></div>
+</div>
+{{-- 
  <div class="container-kasus2" style="width: 950px;">
      <h5>Grafik Kasus Setiap Tahun</h5>
      
      <div id="chartContainer2"></div>
      <h6>Sumber : Badan Penyelenggara Jaminan Sosial Ketenagakerjaan Republik Indonesia</h6>
- </div>
+ </div> --}}
 
 
         
