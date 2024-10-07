@@ -54,35 +54,66 @@
                     <!--Toggle sidebar-->
                     <!--Notification icon-->
                      <div class="menu-icon">
-                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
-                            <i class="fa fa-user"></i>
-                            <span class="badge badge-danger">3</span>
-                        </a>
-                        
-                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
-                            <i class="fa fa-cog"></i>
-                            <span class="badge badge-danger">1</span>
-                        </a>
-                        
-                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
-                            <i class="fa fa-bell"></i>
-                            <span class="badge badge-danger">5</span>
-                        </a>
-                        
-                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
-                            <i class="fa fa-chart-line"></i>
-                            <span class="badge badge-danger">2</span>
-                        </a>
-                        
-                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
-                            <i class="fa fa-envelope"></i>
-                            <span class="badge badge-danger">4</span>
-                        </a>
-                        
-                        <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
-                            <i class="fa fa-users"></i>
-                            <span class="badge badge-danger">10</span>
-                        </a>
+                        <a style="margin-right: 10px; background: white; color: black; transition: background 0.3s, color 0.3s;" 
+   href="#" 
+   onclick="toggle_dropdown(this); return false" 
+   role="button" 
+   onmouseover="this.style.background='black'; this.style.color='white';" 
+   onmouseout="this.style.background='white'; this.style.color='black';">
+    <i class="fa fa-user"></i>
+    {{-- <span class="badge badge-danger">3</span> --}}
+</a>
+
+<a style="margin-right: 10px; background: white; color: black; transition: background 0.3s, color 0.3s;" 
+   href="#" 
+   onclick="toggle_dropdown(this); return false" 
+   role="button" 
+   onmouseover="this.style.background='black'; this.style.color='white';" 
+   onmouseout="this.style.background='white'; this.style.color='black';">
+    <i class="fa fa-cog"></i>
+    {{-- <span class="badge badge-danger">1</span> --}}
+</a>
+
+<a style="margin-right: 10px; background: white; color: black; transition: background 0.3s, color 0.3s;" 
+   href="#" 
+   onclick="toggle_dropdown(this); return false" 
+   role="button" 
+   onmouseover="this.style.background='black'; this.style.color='white';" 
+   onmouseout="this.style.background='white'; this.style.color='black';">
+    <i class="fa fa-bell"></i>
+    {{-- <span class="badge badge-danger">5</span> --}}
+</a>
+
+<a style="margin-right: 10px; background: white; color: black; transition: background 0.3s, color 0.3s;" 
+   href="#" 
+   onclick="toggle_dropdown(this); return false" 
+   role="button" 
+   onmouseover="this.style.background='black'; this.style.color='white';" 
+   onmouseout="this.style.background='white'; this.style.color='black';">
+    <i class="fa fa-chart-line"></i>
+    {{-- <span class="badge badge-danger">2</span> --}}
+</a>
+
+<a style="margin-right: 10px; background: white; color: black; transition: background 0.3s, color 0.3s;" 
+   href="#" 
+   onclick="toggle_dropdown(this); return false" 
+   role="button" 
+   onmouseover="this.style.background='black'; this.style.color='white';" 
+   onmouseout="this.style.background='white'; this.style.color='black';">
+    <i class="fa fa-envelope"></i>
+    {{-- <span class="badge badge-danger">4</span> --}}
+</a>
+
+<a style="margin-right: 10px; background: white; color: black; transition: background 0.3s, color 0.3s;" 
+   href="#" 
+   onclick="toggle_dropdown(this); return false" 
+   role="button" 
+   onmouseover="this.style.background='black'; this.style.color='white';" 
+   onmouseout="this.style.background='white'; this.style.color='black';">
+    <i class="fa fa-users"></i>
+    {{-- <span class="badge badge-danger">10</span> --}}
+</a>
+
 {{--                         
                         <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
                             <i class="fa fa-folder"></i>
@@ -195,7 +226,7 @@
                             @csrf
                             <button type="submit" style="border: none; background: white; width:60px; padding: 0; margin: 0; color: black; cursor: pointer;">
                                 <i class="fa fa-sign-out"></i>
-                                <span class="badge badge-danger">Logout</span>
+                                {{-- <span class="badge badge-danger">Logout</span> --}}
                             </button>
                         </form>
                         
