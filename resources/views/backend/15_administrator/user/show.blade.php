@@ -105,10 +105,10 @@
 
         </style>
         <a href="/administrator" style="background: white;">
-            <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
+            <div class="badge"><i class="fas fa-arrow-circle-left mr-2"></i>Kembali </div></label>
         </a>
         <a href="/administrator/update/{{$data->name}}" style="background: white; display:right;">
-            <div class="badge-update"><i class="fas fa-file mr-2"></i> Update </div></label>
+            <div class="badge-update"><i class="fas fa-file mr-2"></i>Update </div></label>
         </a>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
@@ -219,7 +219,7 @@
                     </tr>
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-cogs" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-user-shield" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Status Admin</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -229,7 +229,7 @@
                     </tr>
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-key" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-user-tag" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Username</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -249,7 +249,7 @@
                     </tr>
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-file" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-envelope" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Email</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -259,7 +259,7 @@
                     </tr>
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-list" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-lock" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Password</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -271,6 +271,7 @@
                             </button> --}}
                         </td>
                     </tr>
+                    
                     {{-- <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
                             <i class="fas fa-cogs" style="color: white; font-size: 12px;"></i>

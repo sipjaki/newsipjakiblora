@@ -264,9 +264,9 @@
                 <p class="success-message"><?php echo e(session('success')); ?></p>
             <?php endif; ?>
     
-            <form action="<?php echo e(route('update.dataadministrator', $datauser->name)); ?>" method="POST" enctype="multipart/form-data">
+            <form action="<?php echo e(route('updatestore.datapjt', $data->nama_lengkap)); ?>" method="POST" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
-                <?php echo method_field('PUT'); ?> <!-- Gunakan metode PUT untuk update data -->
+                <?php echo method_field('post'); ?> <!-- Gunakan metode PUT untuk update data -->
             
                 <div class="form-group">
                     <div class="form-group-inner">

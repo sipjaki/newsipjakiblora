@@ -120,13 +120,20 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-user" style="margin-right: 5px;"></i>Daftar Admin Sipjaki KBB</button>
+        <button id="previewBtn" class="badge" style="border: none; font-size: 15px; cursor: pointer;">
+            <i class="fas fa-users" style="margin-right: 5px;"></i>Daftar Admin Sipjaki KBB
+        </button>
         <a href="/kategoriadmin" style="background: inherit">
-            <button class="badge-menu1" style="border: none; font-size:15px; cursor:pointer "><i class="fab fa-ravelry" style="margin-right: 5px;"></i>Kategori Admin</button>
+            <button class="badge-menu1" style="border: none; font-size: 15px; cursor: pointer;">
+                <i class="fas fa-th-list" style="margin-right: 5px;"></i>Kategori Admin
+            </button>
         </a>
         <a href="/404" style="background: inherit">
-            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New Admin</button>
+            <button class="badge-plus" style="border: none; font-size: 15px; cursor: pointer;">
+                <i class="fas fa-user-plus" style="margin-right: 5px;"></i>Create New Admin
+            </button>
         </a>
+        
 </div>
 </div>
 
@@ -168,13 +175,13 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Status Admin</th>
-                        <th>Nama</th>
-                        <th>Username</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
-                        <th>Aksi</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:150px;; font-size:12px;">STATUS ADMIN</th>
+                        <th style="width:150px; font-size:12px;">NAMA</th>
+                        <th style="width:100px; font-size:12px;">USERNAME</th>
+                        <th style="width:100px; font-size:12px;">PHONE NUMBER</th>
+                        <th style="width:100px; font-size:12px;">EMAIL</th>
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
