@@ -183,13 +183,15 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Penanggung Jawab Teknis Jasa Konstruksi </div></label>
+            <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Penanggung Jawab Teknis Jasa Konstruksi </div>
         </a>
         
         <a href="/datapjt" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;"> 
+                <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 
 
@@ -343,7 +345,7 @@
                     
                     <div class="form-group">
                         <button style="float: right" class="badgenewupdate btn btn-primary" type="submit">
-                            <i class="fas fa-paper-plane" style="margin-right:10px;"></i> Update
+                            <i class="fas fa-paper-plane mr-2"></i>Update
                         </button>
                     </div>
                 </form>

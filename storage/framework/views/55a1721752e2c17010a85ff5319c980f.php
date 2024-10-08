@@ -104,12 +104,13 @@
             }
 
         </style>
-        <a href="/datapjt" style="background: white;">
-            <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
-        </a>
-        <a href="/datapjt/update/<?php echo e($data->nama_lengkap); ?>" style="background: white; display:right;">
-            <div class="badge-update"><i class="fas fa-file mr-2"></i> Update </div></label>
-        </a>
+   <a href="/datapjt" style="background: white;">
+    <div class="badge"><i class="fas fa-arrow-circle-left mr-2"></i>Kembali </div>
+</a>
+<a href="/datapjt/update/<?php echo e($data->nama_lengkap); ?>" style="background: white; display:right;">
+    <div class="badge-update"><i class="fas fa-pencil-alt mr-2"></i>Update </div>
+</a>
+
                         
 
 </div>
@@ -270,10 +271,10 @@
 <div style="text-align: right; margin-top: 20px;">
     
     <button id="previewBtn" class="badge">
-        <i class="fas fa-file me-2"></i> Preview
+        <i class="fas fa-file mr-2"></i>Preview
     </button>
     <button id="downloadBtn" data-nama="<?php echo e($data->nama_lengkap); ?>" class="badge">
-        <i class="fas fa-download me-2"></i>Download
+        <i class="fas fa-download mr-2"></i>Download
     </button>
 </div>
 

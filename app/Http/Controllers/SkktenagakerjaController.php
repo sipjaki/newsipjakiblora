@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\keterampilanpekerja;
-use App\Models\Penanggungjawabteknis;
+use App\Models\penanggungjawabteknis;
 use App\Models\pengawasanlokasi;
 use App\Models\tahunpilihan;
 use App\Models\timpembina;
@@ -993,7 +993,56 @@ public function datapjtshowByName($nama_lengkap)
             }                
             
 // ============================================================================================
+public function createdatapjt()
+{
+    $datapenanggungjawabteknis = penanggungjawabteknis::all();
+    $datapengawasanlokasi = pengawasanlokasi::all();
+                
+                $user = Auth::user();
+    
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.04_skk.02_pjt.create', [
+                    'data' => $datapenanggungjawabteknis,
+                    'datapengawasanlokasi' => $datapengawasanlokasi,
+                    'user' => $user,
+                    'title' => 'Create Data Penanggung Jawab Teknis'
+                ]);
+}
 
+// Menyimpan data asosiasi pengusaha
+
+public function createstoredatapjt(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'nama_lengkap' => 'required|string|max:255',
+                    'pengawasanlokasi_id' => 'required|integer', // Ensure it exists in the related table
+                    'nopjt' => 'required|string|max:255',
+                    'sfesifikasi' => 'required|string|max:255',
+                    'tanggal_terbit' => 'required|date',
+                    'masa_berlaku' => 'required|date',
+                    'foto_pjt' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    // Handle file uploads
+    $foto_pjt_path = $request->file('foto_pjt')->store('penanggungjawabteknis', 'public');
+
+    // Create a new entry in the database
+    penanggungjawabteknis::create([
+        'nama_lengkap' => $request->input('nama_lengkap'),
+                    'pengawasanlokasi_id' => $request->input('pengawasanlokasi_id'),
+                    'nopjt' => $request->input('nopjt'),
+                    'sfesifikasi' => $request->input('sfesifikasi'),
+                    'tanggal_terbit' => $request->input('tanggal_terbit'),
+                    'masa_berlaku' => $request->input('masa_berlaku'),
+                    'foto_pjt' => $foto_pjt_path,
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/datapjt'); // Adjust this to your desired route
+}
 
 // ============================================ DATA TIMPEMBINA JASA KONSTRUKSI ===================================================================
 

@@ -259,7 +259,7 @@
         <div class="container-update" style="col-lg-12">
             <!-- Menampilkan pesan sukses jika ada -->
             {{-- <form action="/beritaagendaupdatestore/{{$beritaagenda->nama_agenda}}" method="POST"> --}}
-                <form action="/newtenagakerjastore" method="POST" enctype="multipart/form-data">
+                <form action="/datapjtstore" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
                     
@@ -276,6 +276,7 @@
                         </label>
                         <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
                     </div>
+                    
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                             <i class="fas fa-map-marker-alt me-2"></i> Kecamatan
