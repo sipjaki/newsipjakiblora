@@ -176,7 +176,7 @@
                 <table style="width: 100%; border-collapse: collapse;">
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-user" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-users" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Nama Asosiasi</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -186,10 +186,9 @@
                         </td>
                     </tr>
                     
-                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-home" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-map-marker-alt" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Alamat Kantor</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -201,7 +200,7 @@
                     
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-road" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-map" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Kec/Kota</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -210,10 +209,10 @@
 
                         </td>
                     </tr>
-                  
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-building" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-globe" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Provinsi</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -223,7 +222,6 @@
                         </td>
                     </tr>
                     
-                  
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
                             <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
@@ -236,34 +234,33 @@
                         </td>
                     </tr>
                     
-                  
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
                             <i class="fas fa-envelope" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Email</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                            <?php echo e(ucwords(strtolower($data->email))); ?>
+                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-align: left; font-weight: 700; color: black;">
+                            <?php echo e($data->email); ?>
 
                         </td>
                     </tr>
-
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-file" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-laptop" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Website</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px;  text-align: left; font-weight: 700; color: black;">
+                        <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-align: left; font-weight: 700; color: black;">
                             <?php echo e($data->website); ?>
 
                         </td>
                     </tr>
-
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-user" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-user-tie" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Kepala Asosiasi</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -272,12 +269,10 @@
 
                         </td>
                     </tr>
-
                     
-
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-users" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-user-friends" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Anggota</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -288,7 +283,7 @@
                     
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-warning" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-exclamation-triangle" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Status</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -297,13 +292,6 @@
 
                         </td>
                     </tr>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     <tr>
                         <td colspan="4" style="background-color: white; text-align: right; padding: 10px;">
                             Asosiasi Pengusaha | Sistem Informasi Pembina Jasa Konstruksi Kabupaten Bandung Barat | sipjakikbb.com

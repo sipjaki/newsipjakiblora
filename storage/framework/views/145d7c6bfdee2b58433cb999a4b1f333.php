@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 135vh;
+    height: 140vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -183,13 +183,15 @@
 
         </style>
         <a style="background: white;">
-            <div class="badgekembali" style="margin-right:400px;"><i class="fas fa-plus mr-2"></i>Create Asosiasi Pengusaha Jasa Konstruksi </div></label>
+            <div class="badgekembali" style="margin-right: 400px;"><i class="fas fa-plus-circle mr-2"></i>Create Asosiasi Pengusaha Jasa Konstruksi</div>
         </a>
         
         <a href="/asosiasipengusaha" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;">
+                <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 
 
@@ -404,7 +406,7 @@
                     
                         <div class="form-group">
                             <button style="float: right" class="badgenewupdate" type="submit">
-                                <i class="fab fa-telegram" style="margin-right:10px;"></i> Create
+                                <i class="fab fa-telegram mr-2"></i> Create
                             </button>
                         </div>
                     </form>

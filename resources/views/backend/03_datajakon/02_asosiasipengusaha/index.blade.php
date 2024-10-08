@@ -30,7 +30,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 160vh;
+    height: 200vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -100,10 +100,15 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Asosiasi Pengusaha</button>
-                        <a href="/asosiasipengusahacreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
-                        </a>
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer">
+            <i class="fas fa-users" style="margin-right: 5px;"></i>Daftar Asosiasi Pengusaha
+        </button>
+        <a href="/asosiasipengusahacreate" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer">
+                <i class="fas fa-plus" style="margin-right: 5px;"></i>Create New
+            </button>
+        </a>
+        
 
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
@@ -155,10 +160,10 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Nama Asosiasi</th>
-                        <th>Alamat Kantor</th>
-                        <th>Kec/Kota</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:150px; font-size:12px;">NAMA ASOSIASI</th>
+                        <th style="width:200px; font-size:12px;">ALAMAT KANTOR</th>
+                        <th style="width:100px; font-size:12px;">KEC/KOTA</th>
                         {{-- <th>Provinsi</th> --}}
                         {{-- <th>Kontak</th>
                         <th>Email</th>
@@ -166,9 +171,9 @@
                         <th>Kepala Asosiasi</th>
                         <th>Berdiri</th>
                         <th>Jumlah Anggota</th> --}}
-                        <th>Status</th>
+                        <th style="width:100px; font-size:12px;">STATUS</th>
                         
-                        <th>Aksi</th>
+                        <th style="width:50px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
