@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 120vh;
+    height: 125vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -105,10 +105,10 @@
 
         </style>
         <a href="/acarapelatihan" style="background: white;">
-            <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
+            <div class="badge"><i class="fas fa-arrow-circle-left mr-2"></i>Kembali </div></label>
         </a>
         <a href="/acarapelatihanupdate/<?php echo e($data->judul_kegiatan); ?>" style="background: white; display:right;">
-            <div class="badge-update"><i class="fas fa-file mr-2"></i> Update Berita </div></label>
+            <div class="badge-update"><i class="fas fa-file mr-2"></i>Update Berita </div></label>
         </a>
                         
 
@@ -185,52 +185,51 @@
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
                 <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                    <i class="fas fa-tasks" style="color: white; font-size: 12px;"></i>
+                    <i class="fas fa-list-alt" style="color: white; font-size: 12px;"></i>
                 </th>
-                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Judul</th>
+                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 13px;">Judul</th>
                 <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
+                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 13px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
                     <?php echo e($data->kegiatanjaskon->judul_kegiatan); ?>
 
                 </td>
             </tr>
-
+            
             <tr>
                 <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                    <i class="fas fa-user-edit" style="color: white; font-size: 12px;"></i>
+                    <i class="fas fa-user" style="color: white; font-size: 12px;"></i>
                 </th>
-                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Penulis</th>
+                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 13px;">Penulis</th>
                 <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
+                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 13px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
                     <?php echo e(ucwords(strtolower($data->user->username))); ?>
 
                 </td>
             </tr>
-
+            
             <tr>
                 <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-calendar-alt" style="color: white; font-size: 12px;"></i>
                 </th>
-                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Judul Acara</th>
+                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 13px;">Judul Acara</th>
                 <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
+                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 13px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
                     <?php echo e($data->judul_kegiatan); ?>
 
                 </td>
             </tr>
-
+            
             <tr>
                 <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                    <i class="fas fa-briefcase" style="color: white; font-size: 12px;"></i>
+                    <i class="fas fa-id-badge" style="color: white; font-size: 12px;"></i>
                 </th>
-                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Jabatan</th>
+                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 13px;">Jabatan</th>
                 <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
+                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 13px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
                     <?php echo e($data->jabatan); ?>
 
                 </td>
             </tr>
-
             <tr>
                 <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-comment-dots" style="color: white; font-size: 12px;"></i>
@@ -245,19 +244,18 @@
                     <?php endif; ?>
                 </td>
             </tr>
-
             <tr>
                 <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
                     <i class="fas fa-calendar" style="color: white; font-size: 12px;"></i>
                 </th>
-                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Tanggal</th>
+                <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 13px;">Tanggal</th>
                 <td style="background-color: #FFCB0F; width: 20px;">:</td>
-                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
+                <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 13px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
                     <?php echo e(Carbon\Carbon::parse($data->tanggal)->locale('id')->translatedFormat('j F Y')); ?>
 
                 </td>
             </tr>
-
+            
             <tr>
                 <td colspan="4" style="background-color: white; text-align: right; padding: 10px;">
                     Berita Acara Pelatihan Pekerja | Sistem Informasi Pembina Jasa Konstruksi Kabupaten Bandung Barat | sipjakikbb.com

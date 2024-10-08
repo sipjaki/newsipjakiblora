@@ -99,14 +99,20 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Berita Jasa Konstruksi </button>
-                        <a href="/acarapelatihan" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer; float:right; "><i class="fas fa-arrow-left" style="margin-right:5px;" ></i>Kembali</button>
-                        </a>
-                        <a href="/acarapelatihancreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer; float:right; margin-left:440px; margin-right:5px;"><i class="fas fa-edit" style="margin-right:5px;" ></i>Create New</button>
-                        </a>
-
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer;">
+            <i class="fas fa-newspaper mr-2"></i>Daftar Berita Jasa Konstruksi
+        </button>
+        <a href="/acarapelatihan" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer; float:right;">
+                <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+            </button>
+        </a>
+        <a href="/acarapelatihancreate" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer; float:right; margin-left:440px; margin-right:5px;">
+                <i class="fas fa-plus-circle mr-2"></i>Create New
+            </button>
+        </a>
+        
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     
@@ -151,12 +157,12 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th style="width:600px">Acara</th>
-                        <th style="width:400px">Jabatan</th>
-                        <th style="width: 100px;">Penulis</th>
-                        <th style="width: 150px;">Foto</th>
-                        <th>Aksi</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:600px; font-size:12px;">ACARA</th>
+                        <th style="width:400px; font-size:12px;">JABATAN</th>
+                        <th style="width:100px; font-size:12px;">PENULIS</th>
+                        <th style="width:150px; font-size:12px;">FOTO</th>
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>

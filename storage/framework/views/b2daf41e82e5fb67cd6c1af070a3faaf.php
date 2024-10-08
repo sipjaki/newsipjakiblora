@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 200vh;
+    height: 180vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -183,13 +183,17 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Berita Acara Pelatihan Konstruksi Para Pekerja</div></label>
+            <div class="badge">
+                <i class="fas fa-newspaper mr-2"></i>Berita Acara Pelatihan Konstruksi Para Pekerja
+            </div>
         </a>
         
         <a href="/acarapelatihan" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer;">
+                <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 
 
@@ -346,7 +350,7 @@
             
                 <div class="form-group">
                     <button style="float: right" class="badgenewupdate btn btn-primary" type="submit">
-                        <i class="fab fa-telegram" style="margin-right:10px;"></i> Update
+                        <i class="fab fa-telegram mr-2"></i>Update
                     </button>
                 </div>
             </form>

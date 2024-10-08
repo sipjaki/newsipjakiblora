@@ -151,7 +151,10 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Dokumentai Acara Pelatihan Sertifikasi Pekerja Konstruksi</button>
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer;">
+            <i class="fas fa-folder-open" style="margin-right: 5px;"></i>Dokumentasi Acara Pelatihan Sertifikasi Pekerja Konstruksi
+        </button>
+        
                         {{-- <a href="/dokumentasipelatihancreate" style="background: inherit">
                             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create Agenda</button>
                         </a> --}}
@@ -206,10 +209,10 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th style="width:700px;">Dokumentasi Kegiatan</th>
-                        <th style="width:200px">Foto</th>
-                        <th style="width: 100px;">View Acara</th>
+                        <th style="width:10%; font-size:12px">NO</th>
+                        <th style="width:700px; font-size:12px">DOKUMENTASI KEGIATAN</th>
+                        <th style="width:200px; font-size:12px">FOTO</th>
+                        <th style="width:200px; font-size:12px">VIEW ACARA</th>
                         {{-- <th style="width: 100px;">Aksi</th> --}}
                     </tr>
                 </thead>
@@ -249,9 +252,9 @@
 
                         </style>
 
-                        <td style="font-size: 12px; text-align: left;">
+                        <td style="font-size: 12px; text-align: center;">
                             <a href="/acarapelatihan/{{$item->judul_kegiatan}}" style="text-decoration: none; background: inherit;">
-                                <button class="btn-gallery">
+                                <button class="btn-gallery" style="text-align: center;">
                                     GALERY
                                 </button>
                             </a>
