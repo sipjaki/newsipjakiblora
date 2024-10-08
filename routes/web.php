@@ -433,6 +433,18 @@ Route::post('/timpembina/{nama_lengkap}', [SkktenagakerjaController::class, 'del
 ->middleware('auth')
 ->name('delete.timpembina');
 
+// ======================================== DATA IUJK JASA KONSTRUKSI ====================================================================
+Route::get('/dataiujk', [UijkController::class, 'dataiujk'])->middleware('auth');  
+Route::get('/dataiujk/{nama_perusahaan}', [UijkController::class, 'dataiujkshowByName'])->name('dataiujk.show');
+Route::get('/dataiujk/update/{nama_perusahaan}', [UijkController::class, 'updatedatadataiujk'])->middleware('auth')->name('update.dataiujk');
+Route::post('/dataiujkupdatestore/{nama_perusahaan}', [UijkController::class, 'createupdatedataiujk'])->middleware('auth')->name('updatestore.dataiujk');
+Route::get('/dataiujkcreate', [UijkController::class, 'createdataiujk'])->middleware('auth');
+Route::post('/dataiujkstore', [UijkController::class, 'createstoredataiujk'])->middleware('auth')->name('create.dataiujk');
+
+Route::post('/dataiujk/{nama_perusahaan}', [UijkController::class, 'deletedatadataiujk'])
+->middleware('auth')
+->name('delete.dataiujk');
+
 
 // -------- BAGIAN 04 BACKEND ---------------------------------
 

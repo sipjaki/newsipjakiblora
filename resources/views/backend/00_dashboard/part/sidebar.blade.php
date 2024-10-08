@@ -197,7 +197,7 @@
     </a>
     <ul class="children" id="dataiujk">
         <li class="child">
-            <a href="/404" style="font-size: 12px;">
+            <a href="/dataiujk" style="font-size: 12px;">
                 <i class="fas fa-building mr-2" style="margin-left: 20px;"></i>DATA PERUSAHAAN <!-- Ikon gedung -->
             </a>
         </li>

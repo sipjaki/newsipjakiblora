@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\uijk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File; // Pastikan ini ada
+use Illuminate\Support\Facades\Storage; // Jika Anda menggunakan Storage juga
+
+use Illuminate\Support\Facades\Auth; 
+
 
 class UijkController extends Controller
 {
@@ -241,6 +246,35 @@ public function iujkstatistika()
         'judulkecamatan' => 'Data Berdasarkan Bidang Keahlian Perusahaan',
         'juduldesa' => 'Distribusi Registrasi Perusahaan',
         'total_data' => $totalCount,
+    ]);
+}
+
+
+
+public function dataiujk()
+{
+    // Mengambil data dengan pagination
+   $data = uijk::paginate(15);   
+    $user = Auth::user();
+
+    return view('backend.08_iujk.index', [
+        'title' => 'Ijin Usaha Jasa Konstruksi',
+        'user' => $user,
+        'data' => $data,
+        
+    ]);
+}
+
+
+public function dataiujkshowByName($nama_perusahaan)
+{
+    $item = uijk::where('nama_perusahaan', $nama_perusahaan)->firstOrFail();
+    $user = Auth::user();
+    
+    return view('backend.08_iujk.show', [
+        'data' => $item,
+        'user' => $user,
+        'title' => 'Detail Ijin Usaha Jasa Konstruksi',
     ]);
 }
 
