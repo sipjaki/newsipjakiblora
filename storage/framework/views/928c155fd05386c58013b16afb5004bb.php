@@ -183,13 +183,15 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Pekerja Jasa Konstruksi </div></label>
+            <div class="badge"><i class="fas fa-pencil-alt mr-2"></i>Update Data Pekerja Jasa Konstruksi </div>
         </a>
         
         <a href="/beskktenagakerja" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;"> 
+                <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 
 
@@ -260,24 +262,23 @@
                 <form action="/newtenagakerja/<?php echo e($datatukangterampil->nama); ?>" method="POST" enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
                     <?php echo method_field('POST'); ?> <!-- Use PUT for update -->
-                    
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="nama" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-user-circle me-2"></i> Nama Lengkap
+                            <i class="fas fa-user me-2"></i> Nama Lengkap
                         </label>
                         <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama', $datatukangterampil->nama)); ?>" required>
                     </div>
                     
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="tanggal_lahir" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-user-circle me-2"></i> Tanggal Lahir
+                            <i class="fas fa-calendar-alt me-2"></i> Tanggal Lahir
                         </label>
                         <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?php echo e(old('tanggal_lahir', $datatukangterampil->tanggal_lahir)); ?>" required>
                     </div>
                     
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-map-marker-alt me-2"></i> Lokasi Pengawasan
+                            <i class="fas fa-map-marker-alt me-2"></i> Kecamatan/Kota
                         </label>
                         <select class="form-control" id="pengawasanlokasi_id" name="pengawasanlokasi_id" required>
                             <?php $__currentLoopData = $datapengawasanlokasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lokasi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -305,7 +306,7 @@
                     
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="tahunpilihan_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-calendar-alt me-2"></i> Tahun Bimtek
+                            <i class="fas fa-calendar-check me-2"></i> Tahun Bimtek
                         </label>
                         <select class="form-control" id="tahunpilihan_id" name="tahunpilihan_id" required>
                             <?php $__currentLoopData = $datatahunpilihan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tahun): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -319,7 +320,7 @@
                     
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="desa" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-home me-2"></i> Desa
+                            <i class="fas fa-map-marker-alt me-2"></i> Desa
                         </label>
                         <input type="text" class="form-control" id="desa" name="desa" value="<?php echo e(old('desa', $datatukangterampil->desa)); ?>" required>
                     </div>
@@ -337,7 +338,7 @@
                         </label>
                         <input type="text" class="form-control" id="nik" name="nik" value="<?php echo e(old('nik', $datatukangterampil->nik)); ?>" required>
                     </div>
-                
+                    
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="kualifikasi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                             <i class="fas fa-graduation-cap me-2"></i> Kualifikasi
@@ -347,20 +348,20 @@
                             <option value="BELUM" <?php echo e(old('kualifikasi', $datatukangterampil->kualifikasi) == 'BELUM' ? 'selected' : ''); ?>>BELUM</option>
                         </select>
                     </div>
-                
+                    
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="registrasi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-registered me-2"></i> Registrasi
+                            <i class="fas fa-check-circle me-2"></i> Registrasi
                         </label>
                         <select class="form-control" id="registrasi" name="registrasi" required>
                             <option value="SUDAH" <?php echo e(old('registrasi', $datatukangterampil->registrasi) == 'SUDAH' ? 'selected' : ''); ?>>SUDAH</option>
                             <option value="BELUM" <?php echo e(old('registrasi', $datatukangterampil->registrasi) == 'BELUM' ? 'selected' : ''); ?>>BELUM</option>
                         </select>
                     </div>
-                
+                    
                     <div class="form-group">
                         <button style="float: right" class="badgenewupdate btn btn-primary" type="submit">
-                            <i class="fas fa-paper-plane" style="margin-right:10px;"></i> Update
+                            <i class="fas fa-paper-plane mr-2"></i>Update
                         </button>
                     </div>
                 </form>

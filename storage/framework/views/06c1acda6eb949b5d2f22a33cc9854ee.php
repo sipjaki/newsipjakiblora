@@ -124,13 +124,14 @@
             }
 
         </style>
-        <a href="javascript:void(0);" onclick="window.history.back();" style="background: white;">
-            <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div>
-        </a>
-        
-        <a href="/newtenagakerja/update/<?php echo e($data->nama); ?>" style="background: white; display:right;">
-            <div class="badge-update"><i class="fas fa-file mr-2"></i> Update </div></label>
-        </a>
+  <a href="javascript:void(0);" onclick="window.history.back();" style="background: white;">
+    <div class="badge"><i class="fas fa-arrow-left mr-2"></i>Kembali </div>
+</a>
+
+<a href="/newtenagakerja/update/<?php echo e($data->nama); ?>" style="background: white;">
+    <div class="badge-update"><i class="fas fa-edit mr-2"></i>Update </div>
+</a>
+
                         
 
 </div>
@@ -211,7 +212,7 @@
 <div style="text-align: right; margin-top: 20px;">
     
     <button id="sktgatensiBtn" class="badge">
-        <i style="margin-right:5px; " class="fas fa-download me-2"></i>KTA Gatensi
+        <i class="fas fa-download mr-2"></i>KTA Gatensi
     </button>
 
     <script>
@@ -237,7 +238,7 @@
     </script>
 
         <button id="skksertifikatBtn" class="badge">
-            <i style="margin-right:5px; " class="fas fa-download me-2"></i>SKK Sertifikat
+            <i class="fas fa-download mr-2"></i>SKK Sertifikat
         </button>
 
         <script>
@@ -265,10 +266,10 @@
 
 
     <button id="previewBtn" class="badge">
-        <i class="fas fa-file me-2"></i> Preview
+        <i class="fas fa-file mr-2"></i>Preview
     </button>
     <button id="downloadBtn" class="badge">
-        <i style="margin-right:5px; " class="fas fa-download me-2"></i>Download
+        <i class="fas fa-download mr-2"></i>Download
     </button>
 </div>
 

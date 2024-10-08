@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 150vh;
+    height: 165vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -189,13 +189,13 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Nama</th>
-                        <th>Kecamatan</th>
-                        <th>Keterampilan</th>
-                        <th>Tahun Bimtek</th>
-                        <th>Desa</th>
-                        <th>Aksi</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:250px; font-size:12px;">NAMA LENGKAP</th>
+                        <th style="width:100px; font-size:12px;">KECAMATAN</th>
+                        <th style="width:200px; font-size:12px;">KETERAMPILAN</th>
+                        <th style="width:75px; font-size:12px;">BIMTEK</th>
+                        <th style="width:100px; font-size:12px;">DESA</th>
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                     </tr>
                 </thead>

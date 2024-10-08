@@ -183,13 +183,15 @@
 
         </style>
         <a style="background: white;">
-            <div class="badgedownload" style="margin-right: 400px;"><i class="fas fa-plus mr-2"></i>Create Data Pekerja Jasa Konstruksi </div></label>
+            <div class="badgedownload" style="margin-right: 400px;"><i class="fas fa-plus-circle mr-2"></i>Create Data Pekerja Jasa Konstruksi</div>
         </a>
         
         <a href="/beskktenagakerja" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;">
+                <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 
 
@@ -547,7 +549,7 @@
                                         
                     <div class="form-group">
                         <button style="float: right" class="badgenewupdate btn btn-primary" type="submit">
-                            <i class="fas fa-paper-plane" style="margin-right:10px;"></i> Simpan
+                            <i class="fas fa-paper-plane mr-2"></i>Simpan
                         </button>
                     </div>
                 </form>
