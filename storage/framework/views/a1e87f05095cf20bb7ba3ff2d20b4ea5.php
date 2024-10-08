@@ -161,22 +161,29 @@
 }
 
         </style>
+
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Standar Biaya Umum Tentang Jasa Konstruksi</div></label>
-        </a>
-        <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i></div></label>
-        </a>
-        <a href="/standarbiayaumum" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
-        </a>
-        
-        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
-        
-        <a href="/standarbiayaumum/update/<?php echo e($data->judul); ?>" style="background: white;">
-            <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
-        </a>
-                        
+    <div class="badge"><i class="fas fa-file-alt mr-2"></i>Standar Biaya Umum Tentang Jasa Konstruksi</div>
+</a>
+<a style="background: white;">
+    <div class="badgehidden" style="color: white"><i class="fas fa-file-alt mr-2"></i></div>
+</a>
+<a href="/standarbiayaumum" style="background: white;">
+    <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;">
+        <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+    </button>
+</a>
+
+<button class="download-btn badgedownload" id="downloadBtn">
+    <i class="fas fa-file-download mr-2"></i>Download PDF
+</button>
+
+<a href="/standarbiayaumum/update/<?php echo e($data->judul); ?>" style="background: white;">
+    <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer;">
+        <i class="fas fa-pencil-alt mr-2"></i>Update
+    </button>
+</a>
+                
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
                         
                         <style>

@@ -121,11 +121,15 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Peraturan Standar Biaya Umum Tentang Jasa Konstruksi</button>
-                        <a href="/standarbiayaumumcreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
-                        </a>
-
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer;">
+            <i class="fas fa-file-alt" style="margin-right: 5px;"></i>Peraturan Standar Biaya Umum Tentang Jasa Konstruksi
+        </button>
+        <a href="/standarbiayaumumcreate" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer;">
+                <i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Create New
+            </button>
+        </a>
+        
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     {{-- <select id="entries" onchange="showEntries()">
@@ -176,10 +180,10 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Judul</th>
+                        <th style="width:3%; font-size:12px;">NO</th>
+                        <th style="width:400px; font-size:12px;">JUDUL</th>
                         
-                        <th>Aksi</th>
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
