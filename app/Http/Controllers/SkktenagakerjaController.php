@@ -25,7 +25,8 @@ class SkktenagakerjaController extends Controller
     public function index()
     {
         // Mengambil data dengan pagination
-        $data = Tukangterampil::paginate(15);
+        $data = Tukangterampil::orderBy('created_at', 'desc')->paginate(15);
+
         $totalData = Tukangterampil::count();
         $user = Auth::user();
 
