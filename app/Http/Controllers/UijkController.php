@@ -280,6 +280,54 @@ public function dataiujkshowByName($nama_perusahaan)
 
 
 
+            // -------------------- UPDATE DATA IUJK JASA KONSTRUKSI  ----------------------
+            public function updatedatadataiujk($nama_perusahaan)
+            {
+                // Cari data undang-undang berdasarkan nilai 'judul'
+                $dataijinusaha = uijk::where('nama_perusahaan', $nama_perusahaan)->firstOrFail();
+                // $datapengawasanlokasi = pengawasanlokasi::all();
+                
+                $user = Auth::user();
+    
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.08_iujk.update', [
+                    'data' => $dataijinusaha,
+                    // 'datapengawasanlokasi' => $datapengawasanlokasi,
+                    'user' => $user,
+                    'title' => 'Update Data Ijin Usaha Jasa Konstruksi'
+                ]);
+            }
+            
+            // -------------------- CREATE UPDATE TENAGA KERJA JASA KONSTRUKSI ----------------------
+            public function createupdatedataiujk(Request $request, $nama_perusahaan)
+            {
+                // Validate the incoming request data
+                $request->validate([
+                    'nama_perusahaan' => 'required|string|max:255',
+                    'kategori_perusahaan' => 'required|string|max:255',
+                    'klasifikasi_bidang_usaha' => 'required|string|max:255',
+                    'sub_klasifikasi_bidang_usaha' => 'required|string|max:255',
+                    'keterangan' => 'required|string|max:255',
+                ]);
+        
+                // Find the record by nama_lengkap or use another identifier
+                $data = uijk::where('nama_perusahaan', $nama_perusahaan)->firstOrFail();
+        
+                $data->update([
+                    'nama_perusahaan' => $request->input('nama_perusahaan'),
+                    'kategori_perusahaan' => $request->input('kategori_perusahaan'),
+                    'klasifikasi_bidang_usaha' => $request->input('klasifikasi_bidang_usaha'),
+                    'sub_klasifikasi_bidang_usaha' => $request->input('sub_klasifikasi_bidang_usaha'),
+                    'keterangan' => $request->input('keterangan'),
+                ]);
+            
+                // Flash pesan session
+                session()->flash('update', 'Data Ijin Usaha Jasa Konstruksi Berhasil Diupdate!');
+            
+                // Redirect ke halaman yang sesuai
+                return redirect('/dataiujk');
+            }
+
 }
 
 

@@ -186,7 +186,7 @@
             <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Penanggung Jawab Teknis Jasa Konstruksi </div></label>
         </a>
         
-        <a href="/datapjt" style="background: white;">
+        <a href="/timpembina" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
 
@@ -260,37 +260,34 @@
                 <form action="/timpembinaupdatestore/<?php echo e($data->nama_lengkap); ?>" method="POST" enctype="multipart/form-data">
                     <?php echo csrf_field(); ?>
                     <?php echo method_field('post'); ?> <!-- Use PUT for update -->
-                    
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="nama_lengkap" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-user me-2"></i> Nama Lengkap
+                            <i class="fas fa-user-circle me-2"></i> Nama Lengkap
                         </label>
                         <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?php echo e(old('nama_lengkap', $data->nama_lengkap)); ?>" required>
                     </div>
-                
                     
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="jabatandalamkedinasan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-user me-2"></i> Jabatan Kedinasan
+                            <i class="fas fa-id-badge me-2"></i> Jabatan Kedinasan
                         </label>
                         <input type="text" class="form-control" id="jabatandalamkedinasan" name="jabatandalamkedinasan" value="<?php echo e(old('jabatandalamkedinasan', $data->jabatandalamkedinasan)); ?>" required>
                     </div>
                     
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="email" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-user me-2"></i> Email
+                            <i class="fas fa-envelope me-2"></i> Email
                         </label>
                         <input type="text" class="form-control" id="email" name="email" value="<?php echo e(old('email', $data->email)); ?>" required>
                     </div>
                     
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="telepon" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-user me-2"></i> Telepon
+                            <i class="fas fa-phone me-2"></i> Telepon
                         </label>
                         <input type="text" class="form-control" id="telepon" name="telepon" value="<?php echo e(old('telepon', $data->telepon)); ?>" required>
                     </div>
-                
-                
+                    
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="fototimpembina" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
                             <i class="fas fa-image me-2"></i> Foto <br> Tim Pembina Jasa Konstruksi
@@ -301,6 +298,7 @@
                             <input type="file" id="fototimpembina" name="fototimpembina" accept="image/*" class="form-control-file">
                         </div>
                     </div>
+                    
                                     
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
