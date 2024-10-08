@@ -47,7 +47,7 @@ class AdminDashboardController extends Controller
         $jumlahDokumentasiAcara = laporankegiatan::count();  // Mendapatkan jumlah data
         $jumlahPengawasandanketeriban = ketertiban::count();  // Mendapatkan jumlah data
         $jumlahAsosiasiPengusaha = asosiasipengusaha::count();  // Mendapatkan jumlah data
-        $jumlahPaketPekerjaan = Paketpekerjaan::count();  // Mendapatkan jumlah data
+        $jumlahPaketPekerjaan = paketpekerjaan::count();  // Mendapatkan jumlah data
         $jumlahIjinUsaha = uijk::count();  // Mendapatkan jumlah data
         $jumlahSertifikatKetermpilan = Tukangterampil::count();  // Mendapatkan jumlah data
         $jumlahPenanggungJawabTeknis = penanggungjawabteknis::count();  // Mendapatkan jumlah data
