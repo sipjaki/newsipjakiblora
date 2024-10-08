@@ -162,19 +162,19 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Tupoksi Program dan Jasa Konstruksi Pemerintah Kabupaten Bandung Barat</div></label>
-        </a>
-      
-        <a href="/tupoksi" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <div class="badge"><i class="fas fa-tasks mr-2"></i> Tupoksi Program dan Jasa Konstruksi Pemerintah Kabupaten Bandung Barat</div>
         </a>
         
-        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
+        <a href="/tupoksi" style="background: white;">
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
+        </a>
+        
+        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download mr-2"></i>Download PDF</button>
                         
                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $items): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     
                 <a href="/tupoksi/update/<?php echo e($items->judul); ?>" style="background: white;">
-                    <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+                    <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file mr-2"></i>Update</button>
                 </a>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         

@@ -253,19 +253,23 @@
             <form action="{{ route('updatestore.struktur', $strukturdinas->judul) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST') <!-- Gunakan metode PUT untuk update data -->
-    
+               
                 <div class="form-group">
-                    <label for="judul" style="text-align:left;"><i class="fas fa-file me-2" ></i> Judul Undang Undang Jasa Konstruksi </label>
+                    <label for="judul" style="text-align:left; font-size: 14px;">
+                        <i class="fas fa-book me-2"></i> Judul Undang Undang Jasa Konstruksi
+                    </label>
                     <input type="text" id="judul" name="judul" value="{{ old('judul', $strukturdinas->judul) }}" required>
                 </div>
-    
+                
                 <div class="form-group">
-                    <label for="peraturan" style="text-align:left;"><i class="fas fa-file me-2" ></i> File Peraturan Undang-Undang</label>
+                    <label for="peraturan" style="text-align:left; font-size: 14px;">
+                        <i class="fas fa-upload me-2"></i> File Peraturan Undang-Undang
+                    </label>
                     <input type="file" id="peraturan" name="peraturan" value="{{ old('peraturan', $strukturdinas->peraturan) }}">
                 </div>
-    
+                
                 <div class="form-group">
-                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
+                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram mr-2" ></i>Update</button>
                 </div>
 
             </form>

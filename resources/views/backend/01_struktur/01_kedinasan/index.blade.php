@@ -162,19 +162,19 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Struktur Dinas Pekerjaan Umum Pemerintah Kabupaten Bandung Barat</div></label>
-        </a>
-      
-        <a href="/struktur" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <div class="badge"><i class="fas fa-info-circle mr-2"></i> Struktur Dinas Pekerjaan Umum Pemerintah Kabupaten Bandung Barat</div>
         </a>
         
-        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> Download PDF</button>
+        <a href="/struktur" style="background: white;">
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
+        </a>
+        
+        <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download mr-2"></i>Download PDF</button>
                         
                 @foreach ($data as $items )
                     
                 <a href="/struktur/update/{{$items->judul}}" style="background: white;">
-                    <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button>
+                    <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file mr-2"></i>Update</button>
                 </a>
                 @endforeach
                         {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}

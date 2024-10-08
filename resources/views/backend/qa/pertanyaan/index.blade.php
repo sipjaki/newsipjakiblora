@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 175vh;
+    height: 165vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
