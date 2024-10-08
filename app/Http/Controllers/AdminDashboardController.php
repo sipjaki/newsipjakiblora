@@ -10,7 +10,7 @@ use App\Models\kegiatanjaskon;
 use App\Models\keputusanmenteri;
 use App\Models\ketertiban;
 use App\Models\laporankegiatan;
-use App\Models\Paketpekerjaan;
+use App\Models\paketpekerjaan;
 use App\Models\pelatihan;
 use App\Models\penanggungjawabteknis;
 use App\Models\peraturan;
