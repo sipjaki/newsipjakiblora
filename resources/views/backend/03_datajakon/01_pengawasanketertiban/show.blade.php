@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 110vh;
+    height: 115vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -183,17 +183,21 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Pengawasan & Ketertiban Jasa Konstruksi</div></label>
+            <div class="badge"><i class="fas fa-eye mr-2"></i>Pengawasan & Ketertiban Jasa Konstruksi</div>
         </a>
         
-        <a href="/pengawasandanketertiban/update/{{$data->judul}}" style="background: inherit; ">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+        <a href="/pengawasandanketertiban/update/{{$data->judul}}" style="background: inherit;">
+            <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer;">
+                <i class="fas fa-pencil-alt mr-2"></i>Update
+            </button>
         </a>
         
         <a href="/pengawasandanketertiban" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer;">
+                <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 {{-- ========================================= --}}
 

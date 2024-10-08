@@ -182,13 +182,15 @@
 }
 
         </style>
-        <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Agenda Sertifikasi Jasa Konstruksi </div></label>
-        </a>
-        
-        <a href="/beritaagenda" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
-        </a>
+<a style="background: white;">
+    <div class="badge"><i class="fas fa-calendar-check mr-2"></i>Update Agenda Sertifikasi Jasa Konstruksi</div>
+</a>
+
+<a href="/pengawasandanketertiban" style="background: white;">
+    <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer;">
+        <i class="fas fa-arrow-circle-left" style="margin-right: 5px;"></i>Kembali
+    </button>
+</a>
 
         <br>
                 
