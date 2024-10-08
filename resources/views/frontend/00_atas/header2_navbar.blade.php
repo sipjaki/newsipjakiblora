@@ -75,7 +75,7 @@
         <div class="dropdown">
             <a href="#" class="dropdown-toggle">BERITA</a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
-            <div class="dropdown-content" style="min-width: 260px;">
+            <div class="dropdown-content" style="min-width: 280px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-bullhorn" style="margin-left: 3px; margin-right: 8px; background: linear-gradient(90deg, black, yellow);"></i>
                     <a href="/berita" style="color: black; text-decoration: none; text-align:left">BERITA</a>
@@ -83,7 +83,7 @@
                 
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-certificate" style="margin-left: 3px; margin-right: 8px; background: linear-gradient(90deg, black, yellow);"></i>
-                    <a href="/kegiatansertifikasi" style="color: black; text-decoration: none; text-align:left">SERTIFIKASI</a>
+                    <a href="/kegiatansertifikasi" style="color: black; text-decoration: none; text-align:left">DOKUMENTASI SERTIFIKASI</a>
                 </div>
                 
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
@@ -97,7 +97,7 @@
         <div class="dropdown">
             <a href="#" class="dropdown-toggle" style="text-align: left">DATA JAKON </a>
             {{-- <i class="fas fa-chevron-down arrow"></i> --}}
-            <div class="dropdown-content" style="min-width: 300px;">
+            <div class="dropdown-content" style="min-width: 320px;">
                 <div style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
                     <i class="fas fa-eye" style="margin-left: 3px; margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i>
                     <a href="/datajakon/pengawasan" style="color: black; text-decoration: none; text-align:left">PENGAWASAN DAN KETERTIBAN</a>

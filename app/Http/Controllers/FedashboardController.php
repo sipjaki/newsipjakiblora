@@ -24,6 +24,7 @@ class FedashboardController extends Controller
     public function index()
     {
         $data = berita::orderBy('created_at', 'desc')->get(); //
+        $databerita = berita::orderBy('created_at', 'desc')->get(); //
         $data_layanankami = layanankami::orderBy('created_at', 'desc')->get(); //
         $data_kegiatanjaskon = kegiatanjaskon::orderBy('created_at', 'desc')->get(); //
         $dataqapertanyaan = qa::orderBy('created_at', 'desc')->get(); //
@@ -45,6 +46,7 @@ class FedashboardController extends Controller
             'dataqapertanyaan' => $dataqapertanyaan, // Mengirimkan data paginasi ke view
             'datahimbauandinas' => $himbauandinas, // Mengirimkan data paginasi ke view
             'user' => $user, // Mengirimkan data paginasi ke view
+            'databerita' => $databerita, // Mengirimkan data paginasi ke view
         ]);
     }
 
@@ -79,19 +81,23 @@ class FedashboardController extends Controller
     
     public function portalberitashowByJudul($judul)
     {
+        
+
         $data_berita = berita::all(); //
         $data_layanankami = layanankami::all(); //
         $data = berita::where('judul', $judul)->firstOrFail();
         
+        $databerita = berita::orderBy('created_at', 'desc')->get(); //
         
         $user = Auth::user();
 
         return view('frontend.02_berita.01_portalberita.showindex', [
             'data' => $data,
             'data_berita' => $data_berita,
+            'databerita' => $databerita,
             'data_layanankami' => $data_layanankami,
             'user' => $user,
-                'title' => 'Portal Berita Sipjaki KBB',
+            'title' => 'Portal Berita Sipjaki KBB',
         ]);
     }
 

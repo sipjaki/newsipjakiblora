@@ -31,39 +31,41 @@
             </div>
             <div class="links">
                 <h1 style="color: yellow">Jelajah Menu</h1>
-                <a href="#">Sertifikat Laik Fungsi</a>
-                <a href="#">Persetujuan Bangunan Gedung</a>
-                <a href="#">Tanda Daftar Usaha Pariwisata</a>
-                <a href="#">Izin Usaha Jasa Konstruksi</a>
-                <a href="#">Berita Sipjaki KBB </a>
-                <a href="#">Agenda KBB</a>
-                <a href="#">Asosiasi Pekerja Konstruksi</a>
-                <a href="#">SKA/ SKT Tenaga Kerja</a>
-                <a href="#">Pelatihan Pekerja Konstruksi</a>
-                <a href="#">Peraturan Jasa Konstruksi</a>
-                <a href="#">Permodalan Tata Usaha</a>
-                <a href="#">Mitra Usaha KBB</a>
-                <a href="#">Laporan SPM Konstruksi</a>
-                <a href="#">Badan Usaha Kosntruksi</a>
-                <a href="#">Jaminan Usaha</a>
-                <a href="#">Informasi SPM</a>
-                <a href="#">Biaya Standar Umum</a>
-                <a href="#">Pembina Jasa Konstruksi</a>
-                <a href="#">Potensi Jasa Konstruksi</a>
+                <a href="#">Struktur Dinas PUPR </a>
+                <a href="#">Rencana Strategis PUPR </a>
+                <a href="#">Tupoksi Program & Jasa Konstruksi</a>
+                <a href="#">Berita Sipjaki</a>
+                <a href="#">Agenda Sertifikasi  </a>
+                <a href="#">Dokumentasi Sertifikasi</a>
+                <a href="#">Pengawasan & Ketertiban </a>
+                <a href="#">Asosiasi Pengusaha</a>
+                <a href="#">Standar Biaya Umum</a>
                 <a href="#">Progress Paket Pekerjaan</a>
+                <a href="#">Sertifikat Keterampilan Kerja</a>
                 <a href="#">Penanggung Jawab Teknis</a>
+                <a href="#">Pembina Jasa Konstruksi</a>
+                <a href="#">Informasi SPM</a>
+                <a href="#">SBU/IUJK</a>
+                <a href="#">Pelatihan</a>
+                <a href="#">Pengawasan</a>
+                <a href="#">Kecelakaan</a>
+                
             </div>
 
             <div class="posts">
+                
                 <h1 style="color: yellow">Berita Terakhir</h1>
-                <a href="#"><span>02<br>Juli</span>Pemerintah Kabupaten Bandung Barat Luncurkan SIPJAKI untuk Tingkatkan Transparansi Proyek Konstruksi</a>
-                
-                <a href="#"><span>07<br>Juli</span>Efisiensi Pengelolaan Proyek Konstruksi Melalui SIPJAKI di Kabupaten Bandung Barat</a>
-                <a href="#"><span>11<br>Juli</span>SIPJAKI Permudah Komunikasi antara Pemerintah dan Kontraktor Konstruksi di Bandung Barat</a>
-                <a href="#"><span>12<br>Juli</span>Peningkatan Kualitas Infrastruktur dengan SIPJAKI di Kabupaten Bandung Barat</a>
-                <a href="#"><span>15<br>Juli</span>Dukung Pembangunan Berkelanjutan, Kabupaten Bandung Barat Implementasikan SIPJAKI</a>
-                
+                <?php $__currentLoopData = $databerita->slice(-4); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <a href="#">
+                    <span style="font-size: 9px;"><?php echo e(\Carbon\Carbon::parse($item->tanggal)->translatedFormat('j F Y')); ?></span>
+                    <?php echo e($item->judul); ?>
+
+                </a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            
             </div>
+
+            
             <div class="contact">
                 <h1 style="color: yellow">Kontak Kami</h1>
                 <div style="width: 250px; height: 250px; margin-bottom: 10px;">
