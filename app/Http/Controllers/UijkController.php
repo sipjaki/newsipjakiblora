@@ -328,6 +328,27 @@ public function dataiujkshowByName($nama_perusahaan)
                 return redirect('/dataiujk');
             }
 
-}
+            // =================================================
 
+            
+            public function deletedatadataiujk($nama_perusahaan)
+            {
+                // Cari entri berdasarkan nama
+                $entry = uijk::where('nama_perusahaan', $nama_perusahaan)->first();
+            
+                // Jika entri ditemukan, hapus
+                if ($entry) {
+                    $entry->delete();
+                    session()->flash('success', 'Data berhasil dihapus!');
+                } else {
+                    // Set pesan flash jika data tidak ditemukan
+                    session()->flash('error', 'Data Tidak Ditemukan!');
+                }
+            
+                // Redirect ke halaman yang sesuai
+                return redirect('/dataiujk');
+            }
+            
+
+        }
 
