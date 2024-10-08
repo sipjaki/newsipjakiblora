@@ -184,13 +184,11 @@
             <div class="badge"><i class="fas fa-file mr-2"></i>Surat Edaran Menteri Tentang Jasa Konstruksi </div></label>
         </a>
         <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
+            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........................ ........</div></label>
         </a>
-        <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
-        </a>
+        
         <a href="/suratedaran" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-circle-left mr-2"></i>Kembali</button>
         </a>
 
         <br>
@@ -260,19 +258,23 @@
             <form action="{{ route('peruud.updatesuratedaran', $suratedaran->judul) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST') <!-- Gunakan metode PUT untuk update data -->
-    
                 <div class="form-group">
-                    <label for="judul" style="text-align:left;"><i class="fas fa-file me-2" ></i> Judul Edaran Menteri Tentang Jasa Konstruksi </label>
+                    <label for="judul" style="text-align:left; font-size: 14px;">
+                        <i class="fas fa-file-alt me-2"></i> Judul Edaran Menteri Tentang Jasa Konstruksi 
+                    </label>
                     <input type="text" id="judul" name="judul" value="{{ old('judul', $suratedaran->judul) }}" required>
                 </div>
-    
+                
                 <div class="form-group">
-                    <label for="peraturan" style="text-align:left;"><i class="fas fa-file me-2" ></i> File Peraturan Undang-Undang</label>
+                    <label for="peraturan" style="text-align:left; font-size: 14px;">
+                        <i class="fas fa-file-download me-2"></i> File Peraturan Undang-Undang
+                    </label>
                     <input type="file" id="peraturan" name="peraturan" value="{{ old('peraturan', $suratedaran->peraturan) }}">
                 </div>
+                
     
                 <div class="form-group">
-                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
+                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram mr-2"></i>Update</button>
                 </div>
 
             </form>

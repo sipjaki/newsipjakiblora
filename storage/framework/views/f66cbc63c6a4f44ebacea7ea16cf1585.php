@@ -150,10 +150,10 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Judul</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:600px; font-size:12px;">JUDUL</th>
                         
-                        <th>Aksi</th>
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>

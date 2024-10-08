@@ -184,13 +184,11 @@
             <div class="badge"><i class="fas fa-file mr-2"></i>Surat Referensi Tentang Jasa Konstruksi </div></label>
         </a>
         <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
+            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ................................ ........ ................ .............. ...... ........ ........</div></label>
         </a>
-        <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
-        </a>
+        
         <a href="/referensi" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
         </a>
 
         <br>
@@ -262,17 +260,21 @@
                 <?php echo method_field('POST'); ?> <!-- Gunakan metode PUT untuk update data -->
     
                 <div class="form-group">
-                    <label for="judul" style="text-align:left;"><i class="fas fa-file me-2" ></i> Judul Undang Undang Jasa Konstruksi </label>
+                    <label for="judul" style="text-align:left; font-size: 14px;">
+                        <i class="fas fa-file-alt me-2"></i> Judul Undang Undang Jasa Konstruksi 
+                    </label>
                     <input type="text" id="judul" name="judul" value="<?php echo e(old('judul', $referensi->judul)); ?>" required>
                 </div>
-    
+                
                 <div class="form-group">
-                    <label for="peraturan" style="text-align:left;"><i class="fas fa-file me-2" ></i> File Peraturan Undang-Undang</label>
+                    <label for="peraturan" style="text-align:left; font-size: 14px;">
+                        <i class="fas fa-file-download me-2"></i> File Peraturan Undang-Undang
+                    </label>
                     <input type="file" id="peraturan" name="peraturan" value="<?php echo e(old('peraturan', $referensi->peraturan)); ?>">
                 </div>
-    
+                
                 <div class="form-group">
-                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
+                    <button style="float: right" class="badgenewupdate" type="submit"><i class="fab fa-telegram mr-2"></i>Update</button>
                 </div>
 
             </form>

@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -202,7 +202,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 920px;
-                height: 65vh;
+                height: 55vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #E0E0E0; /* Warna silver */

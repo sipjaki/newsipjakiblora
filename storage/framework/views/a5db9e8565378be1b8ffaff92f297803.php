@@ -147,7 +147,7 @@
             }
     
     .badgekembali {
-                background: linear-gradient(to right, green, black);
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
@@ -165,7 +165,7 @@
             }
     
     .savedata {
-                background: linear-gradient(to right, green, black);
+                background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
@@ -206,7 +206,7 @@
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i> ........ ........ ........ ........ ........ ................  ........  ........ ........ ........ ........ ........</div></label>
         </a>
         <a href="/keputusan" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
         </a>
 
         <br>
@@ -273,16 +273,20 @@
             <form action="<?php echo e(route('peruud.createkeputusan')); ?>" method="POST" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <?php echo method_field('POST'); ?> <!-- Gunakan metode PUT untuk update data -->
-    
                 <div class="form-group d-flex align-items-center">
-                    <label for="judul" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-file me-2"></i> Judul</label>
+                    <label for="judul" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-file-alt me-2"></i> Judul
+                    </label>
                     <input type="text" class="form-control" id="judul" name="judul" required>
                 </div>
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="peraturan" class="mr-3" style="width: 200px; text-align:left"><i class="fas fa-file me-2"></i> Peraturan (PDF)</label>
+                    <label for="peraturan" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-file-upload me-2"></i> Peraturan (PDF)
+                    </label>
                     <input type="file" class="form-control-file" id="peraturan" name="peraturan" accept=".pdf" required>
                 </div>
-                <button class="savedata" type="submit" class="btn btn-primary mt-3"><i class="fas fa-save" style="margin-right:5px;"></i> Save</button>
+                
+                <button class="savedata" type="submit" class="btn btn-primary mt-3"><i class="fas fa-save mr-2"></i>Save</button>
             </form>
             
 
