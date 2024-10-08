@@ -183,13 +183,15 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Dokumentasi Sertifikasi Jasa Konstruksi </div></label>
+            <div class="badge"><i class="fas fa-folder-open mr-2"></i>Update Dokumentasi Sertifikasi Jasa Konstruksi </div>
         </a>
         
         <a href="/dokumentasipelatihan" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;">
+                <i class="fas fa-arrow-circle-left" style="margin-right: 5px;"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 {{-- ========================================= --}}
 
@@ -260,18 +262,19 @@
                 <form action="{{ route('update.dokumentasipelatihan', $kegiatanjaskon->judul_kegiatan) }}" method="POST">
                     @csrf
                     @method('POST') <!-- Use PUT for update -->
-                
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="judul_kegiatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-alt me-2"></i> Judul Kegiatan</label>
+                        <label for="judul_kegiatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-file-alt me-2"></i> Judul Kegiatan
+                        </label>
                         <input type="text" class="form-control" id="judul_kegiatan" name="judul_kegiatan" value="{{ old('judul_kegiatan', $kegiatanjaskon->judul_kegiatan) }}" required>
                     </div>
-
+                    
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-map-marker-alt me-2"></i> Lokasi Pengawasan
+                            <i class="fas fa-check-circle me-2"></i> Sertifikasi
                         </label>
                         <select class="form-control" id="pengawasanlokasi_id" name="pengawasanlokasi_id" required>
-                            <option value="" disabled selected>PILIH LOKASI</option> <!-- Show only once -->
+                            <option value="" disabled selected>PILIH LOKASI</option>
                             @foreach ($datapengawasanlokasi as $lokasi)
                                 <option value="{{ $lokasi->id }}" {{ old('pengawasanlokasi_id', $kegiatanjaskon->pengawasanlokasi_id) == $lokasi->id ? 'selected' : '' }}>
                                     {{ $lokasi->kota }}
@@ -280,25 +283,23 @@
                         </select>
                     </div>
                     
-{{--                  
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="user_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-edit me-2"></i> Kecamatan/Kota</label>
-                        <input type="text" class="form-control" id="user_id" name="user_id" value="{{ old('user_id', $kegiatanjaskon->user->username) }}" required readonly>
-                    </div> --}}
-                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="alamat_kegiatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-road me-2"></i> Alamat Kegiatan </label>
+                        <label for="alamat_kegiatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-map-signs me-2"></i> Alamat Kegiatan 
+                        </label>
                         <input type="text" class="form-control" id="alamat_kegiatan" name="alamat_kegiatan" value="{{ old('alamat_kegiatan', $kegiatanjaskon->alamat_kegiatan) }}" required>
                     </div>
-                 
+                    
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="tanggal" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar me-2"></i> Tanggal Kegiatan </label>
+                        <label for="tanggal" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-calendar-alt me-2"></i> Tanggal Kegiatan 
+                        </label>
                         <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ old('tanggal', $kegiatanjaskon->tanggal) }}" required>
                     </div>
                     
 
                     <div class="form-group">
-                        <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fas fa-paper-plane" style="margin-right:10px;"></i> Update</button>
+                        <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fas fa-paper-plane mr-2"></i>Update</button>
                     </div>
                 </form>
                 

@@ -187,7 +187,7 @@
         </a>
         
         <a href="/beritaagenda" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2" ></i>Kembali</button>
         </a>
 
         <br>
@@ -260,36 +260,44 @@
                 <form action="<?php echo e(route('update.beritaagenda', $beritaagenda->nama_agenda)); ?>" method="POST">
                     <?php echo csrf_field(); ?>
                     <?php echo method_field('POST'); ?> <!-- Use PUT for update -->
-                
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="nama_agenda" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-alt me-2"></i> Nama Agenda</label>
+                        <label for="nama_agenda" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-calendar-check me-2"></i> Nama Agenda
+                        </label>
                         <input type="text" class="form-control" id="nama_agenda" name="nama_agenda" value="<?php echo e(old('nama_agenda', $beritaagenda->nama_agenda)); ?>" required>
                     </div>
-                 
+                    
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="keterangan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-info-circle me-2"></i> Keterangan</label>
+                        <label for="keterangan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-info-circle me-2"></i> Keterangan
+                        </label>
                         <textarea class="form-control" id="keterangan" name="keterangan" rows="4" style="resize: vertical;" required><?php echo e(old('keterangan', $beritaagenda->keterangan)); ?></textarea>
                     </div>
-                
+                    
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="kuota" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-users me-2"></i> Kuota</label>
+                        <label for="kuota" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-user-friends me-2"></i> Kuota
+                        </label>
                         <input type="number" class="form-control" id="kuota" name="kuota" value="<?php echo e(old('kuota', $beritaagenda->kuota)); ?>" required>
                     </div>
-                
+                    
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="tanggal_mulai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-check me-2"></i> Tanggal Mulai</label>
+                        <label for="tanggal_mulai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-calendar-alt me-2"></i> Tanggal Mulai
+                        </label>
                         <input type="date" class="form-control" id="tanggal_mulai" name="tanggal_mulai" value="<?php echo e(old('tanggal_mulai', $beritaagenda->tanggal_mulai)); ?>" required>
                     </div>
-                
+                    
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="tanggal_selesai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-times me-2"></i> Tanggal Selesai</label>
+                        <label for="tanggal_selesai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-calendar-times me-2"></i> Tanggal Selesai
+                        </label>
                         <input type="date" class="form-control" id="tanggal_selesai" name="tanggal_selesai" value="<?php echo e(old('tanggal_selesai', $beritaagenda->tanggal_selesai)); ?>" required>
                     </div>
-                 
-
+                    
                     <div class="form-group d-flex align-items-center mt-3">
                         <label for="statusprogram" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-calendar-times me-2"></i> Status Program
+                            <i class="fas fa-clipboard-check me-2"></i> Status Program
                         </label>
                         <select class="form-control" id="statusprogram" name="statusprogram" required>
                             <option value="" disabled <?php echo e(old('statusprogram', $beritaagenda->statusprogram) == '' ? 'selected' : ''); ?>>PILIH STATUS</option>
@@ -301,10 +309,12 @@
                     </div>
                     
                     <div class="form-group d-flex align-items-center mt-3">
-                        <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-map-marker-alt me-2"></i> Lokasi Pengawasan</label>
+                        <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-map-marker-alt me-2"></i> Kecamatan/Kota
+                        </label>
                         <select class="form-control" id="pengawasanlokasi_id" name="pengawasanlokasi_id" required>
-                            <?php $__currentLoopData = $datapengawasanlokasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lokasi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="" disabled <?php echo e(old('pengawasanlokasi_id', $beritaagenda->pengawasanlokasi_id) == '' ? 'selected' : ''); ?>>PILIH LOKASI</option>
+                            <?php $__currentLoopData = $datapengawasanlokasi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lokasi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <option value="<?php echo e($lokasi->id); ?>" <?php echo e(old('pengawasanlokasi_id', $beritaagenda->pengawasanlokasi_id) == $lokasi->id ? 'selected' : ''); ?>>
                                     <?php echo e($lokasi->kota); ?>
 
@@ -312,10 +322,10 @@
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
-                 
+                    
 
                     <div class="form-group">
-                        <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fas fa-paper-plane" style="margin-right:10px;"></i> Update</button>
+                        <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fas fa-paper-plane mr-2"></i>Update</button>
                     </div>
                 </form>
                 

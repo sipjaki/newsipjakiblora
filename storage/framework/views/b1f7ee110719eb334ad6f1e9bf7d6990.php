@@ -151,11 +151,15 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Agenda Sertifikasi</button>
-                        <a href="/beritaagendacreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create Agenda</button>
-                        </a>
-
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> 
+            <i class="fas fa-calendar-check" style="margin-right: 5px;"></i>Daftar Agenda Sertifikasi
+        </button>
+        <a href="/beritaagendacreate" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer ">
+                <i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Create Agenda
+            </button>
+        </a>
+        
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     
@@ -200,16 +204,16 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Agenda</th>
-                        <th>Keterangan</th>
-                        <th style="width:100px">Kuota</th>
-                        <th style="width:100px">Mulai</th>
-                        <th style="width:100px">Selesai</th>
-                        <th>Lokasi</th>
-                        <th style="width:100px">Status</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:150px; font-size:12px;">AGENDA</th>
+                        <th style="width:300px; font-size:12px;">KETERANGAN</th>
+                        <th style="width:100px; font-size:12px;">KUOTA</th>
+                        <th style="width:100px; font-size:12px;">MULAI</th>
+                        <th style="width:100px; font-size:12px;">SELESAI</th>
+                        <th style="width:100px; font-size:12px;">LOKASI</th>
+                        <th style="width:100px; font-size:12px;">STATUS</th>
                         
-                        <th>Aksi</th>
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -206,7 +206,7 @@
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i> ........ ........ ........ ........ ........ ................  ........  ........ ........ ........ ........ ........</div></label>
         </a>
         <a href="/beritaagenda" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;"> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
         </a>
 
         <br>
@@ -274,59 +274,71 @@
             <form action="{{ route('create.beritaagenda') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST') <!-- Gunakan metode POST untuk menambahkan data -->
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="nama_agenda" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-calendar-alt me-2"></i> Nama Agenda
+                    </label>
+                    <input type="text" class="form-control" id="nama_agenda" name="nama_agenda" value="{{ old('nama_agenda') }}" required>
+                </div>
                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="nama_agenda" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-alt me-2"></i> Nama Agenda</label>
-                        <input type="text" class="form-control" id="nama_agenda" name="nama_agenda" value="{{ old('nama_agenda') }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="keterangan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-info-circle me-2"></i> Keterangan
+                    </label>
+                    <textarea class="form-control" id="keterangan" name="keterangan" rows="4" style="resize: vertical;" required>{{ old('keterangan') }}</textarea>
+                </div>
                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="keterangan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-info-circle me-2"></i> Keterangan</label>
-                        <textarea class="form-control" id="keterangan" name="keterangan" rows="4" style="resize: vertical;" required>{{ old('keterangan') }}</textarea>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="kuota" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-user-friends me-2"></i> Kuota
+                    </label>
+                    <input type="number" class="form-control" id="kuota" name="kuota" value="{{ old('kuota') }}" required>
+                </div>
                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="kuota" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-users me-2"></i> Kuota</label>
-                        <input type="number" class="form-control" id="kuota" name="kuota" value="{{ old('kuota') }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="tanggal_mulai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-calendar-check me-2"></i> Tanggal Mulai
+                    </label>
+                    <input type="date" class="form-control" id="tanggal_mulai" name="tanggal_mulai" value="{{ old('tanggal_mulai') }}" required>
+                </div>
                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="tanggal_mulai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-check me-2"></i> Tanggal Mulai</label>
-                        <input type="date" class="form-control" id="tanggal_mulai" name="tanggal_mulai" value="{{ old('tanggal_mulai') }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="tanggal_selesai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-calendar-times me-2"></i> Tanggal Selesai
+                    </label>
+                    <input type="date" class="form-control" id="tanggal_selesai" name="tanggal_selesai" value="{{ old('tanggal_selesai') }}" required>
+                </div>
                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="tanggal_selesai" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-calendar-times me-2"></i> Tanggal Selesai</label>
-                        <input type="date" class="form-control" id="tanggal_selesai" name="tanggal_selesai" value="{{ old('tanggal_selesai') }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="statusprogram" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-clipboard-check me-2"></i> Status Program
+                    </label>
+                    <select class="form-control" id="statusprogram" name="statusprogram" required>
+                        <option value="" disabled {{ old('statusprogram') == '' ? 'selected' : '' }}>PILIH STATUS</option>
+                        <option value="BERJALAN" {{ old('statusprogram') == 'BERJALAN' ? 'selected' : '' }}>BERJALAN</option>
+                        <option value="SEGERA HADIR" {{ old('statusprogram') == 'SEGERA HADIR' ? 'selected' : '' }}>SEGERA HADIR</option>
+                        <option value="DIBATALKAN" {{ old('statusprogram') == 'DIBATALKAN' ? 'selected' : '' }}>DIBATALKAN</option>
+                        <option value="SELESAI" {{ old('statusprogram') == 'SELESAI' ? 'selected' : '' }}>SELESAI</option>
+                    </select>
+                </div>
                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="statusprogram" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-calendar-times me-2"></i> Status Program
-                        </label>
-                        <select class="form-control" id="statusprogram" name="statusprogram" required>
-                            <option value="" disabled {{ old('statusprogram') == '' ? 'selected' : '' }}>PILIH STATUS</option>
-                            <option value="BERJALAN" {{ old('statusprogram') == 'BERJALAN' ? 'selected' : '' }}>BERJALAN</option>
-                            <option value="SEGERA HADIR" {{ old('statusprogram') == 'SEGERA HADIR' ? 'selected' : '' }}>SEGERA HADIR</option>
-                            <option value="DIBATALKAN" {{ old('statusprogram') == 'DIBATALKAN' ? 'selected' : '' }}>DIBATALKAN</option>
-                            <option value="SELESAI" {{ old('statusprogram') == 'SELESAI' ? 'selected' : '' }}>SELESAI</option>
-                        </select>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-map-marker-alt me-2"></i> Lokasi Agenda
+                    </label>
+                    <select class="form-control" id="pengawasanlokasi_id" name="pengawasanlokasi_id" required>
+                        <option value="" disabled {{ old('pengawasanlokasi_id') == '' ? 'selected' : '' }}>PILIH LOKASI</option>
+                        @foreach ($datapengawasanlokasi as $lokasi)
+                            <option value="{{ $lokasi->id }}" {{ old('pengawasanlokasi_id') == $lokasi->id ? 'selected' : '' }}>
+                                {{ $lokasi->kota }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
                 
-                    <div class="form-group d-flex align-items-center mt-3">
-                        <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-map-marker-alt me-2"></i> Lokasi Sertifikasi</label>
-                        <select class="form-control" id="pengawasanlokasi_id" name="pengawasanlokasi_id" required>
-                            <option value="" disabled {{ old('pengawasanlokasi_id') == '' ? 'selected' : '' }}>PILIH LOKASI</option>
-                            @foreach ($datapengawasanlokasi as $lokasi)
-                                <option value="{{ $lokasi->id }}" {{ old('pengawasanlokasi_id') == $lokasi->id ? 'selected' : '' }}>
-                                    {{ $lokasi->kota }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
                 
                     <div class="form-group">
-                        <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fas fa-save" style="margin-right:5px;"></i> Create</button>
+                        <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fas fa-save mr-2"></i>Create</button>
                     </div>
                 </form>
                 

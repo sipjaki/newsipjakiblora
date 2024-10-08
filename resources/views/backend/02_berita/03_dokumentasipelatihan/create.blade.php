@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 240vh;
+    height: 245vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -200,15 +200,19 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-plus mr-2"></i>Create Dokumentasi Pelatihan Pekerja Konstruksi   </div></label>
+            <div class="badge"><i class="fas fa-plus-circle mr-2"></i> Create Dokumentasi Pelatihan Pekerja Konstruksi</div>
         </a>
         <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i> ........ ........ ........ ........ ........ ................  ........  ........ ........ ........ ........ ........</div></label>
+            <div class="badgehidden" style="color: white;">
+                <i class="fas fa-file-alt mr-2"></i> ........ ........ ........ ........ ........ ................  ........  ........ ........ ........ ........ ........
+            </div>
         </a>
         <a href="/dokumentasipelatihan" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;">
+                <i class="fas fa-arrow-circle-left mr-2"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 {{-- ========================================= --}}
 
@@ -274,20 +278,19 @@
             <form action="{{ route('newcreatestore.dokumentasipelatihan') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
-            
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="judul_kegiatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                        <i class="fas fa-calendar-alt me-2"></i> Judul Kegiatan
+                        <i class="fas fa-file-alt me-2"></i> Judul Kegiatan
                     </label>
                     <input type="text" class="form-control" id="judul_kegiatan" name="judul_kegiatan" value="{{ old('judul_kegiatan') }}" required>
                     @if ($errors->has('judul_kegiatan'))
                         <div class="text-danger">{{ $errors->first('judul_kegiatan') }}</div>
                     @endif
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="pengawasanlokasi_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                        <i class="fas fa-map-marker-alt me-2"></i> Lokasi Pengawasan
+                        <i class="fas fa-map-marker-alt me-2"></i> Lokasi Sertifikasi
                     </label>
                     <select class="form-control" id="pengawasanlokasi_id" name="pengawasanlokasi_id" required>
                         <option value="" disabled selected>PILIH LOKASI</option>
@@ -301,7 +304,7 @@
                         <div class="text-danger">{{ $errors->first('pengawasanlokasi_id') }}</div>
                     @endif
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="user_id" class="mr-3" style="width: 200px; text-align:left;">
                         <i class="fas fa-user me-2"></i> Penulis
@@ -312,20 +315,20 @@
                         <div class="text-danger">{{ $errors->first('user_id') }}</div>
                     @endif
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="alamat_kegiatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                        <i class="fas fa-road me-2"></i> Alamat Kegiatan 
+                        <i class="fas fa-map-signs me-2"></i> Alamat Kegiatan 
                     </label>
                     <input type="text" class="form-control" id="alamat_kegiatan" name="alamat_kegiatan" value="{{ old('alamat_kegiatan') }}" required>
                     @if ($errors->has('alamat_kegiatan'))
                         <div class="text-danger">{{ $errors->first('alamat_kegiatan') }}</div>
                     @endif
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
                     <label for="tanggal" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                        <i class="fas fa-calendar me-2"></i> Tanggal Kegiatan 
+                        <i class="fas fa-calendar-alt me-2"></i> Tanggal Kegiatan 
                     </label>
                     <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ old('tanggal') }}" required>
                     @if ($errors->has('tanggal'))
@@ -849,7 +852,7 @@
             
                 <div class="form-group">
                     <button style="float: right" class="badgenewupdate btn btn-primary" type="submit">
-                        <i class="fas fa-paper-plane" style="margin-right:10px;"></i> Create
+                        <i class="fas fa-paper-plane mr-2"></i>Create
                     </button>
                 </div>
             </form>

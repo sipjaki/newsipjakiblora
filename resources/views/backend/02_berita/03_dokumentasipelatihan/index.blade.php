@@ -151,11 +151,15 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Dokumentai Pelatihan Sertifikasi Pekerja Konstruksi</button>
-                        <a href="/dokumentasipelatihancreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create Agenda</button>
-                        </a>
-
+        <button id="previewBtn" class="badge" style="border: none; font-size: 15px; cursor: pointer;">
+            <i class="fas fa-folder-open" style="margin-right: 5px;"></i> Dokumentasi Pelatihan Sertifikasi Pekerja Konstruksi
+        </button>
+        <a href="/dokumentasipelatihancreate" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size: 15px; cursor: pointer;">
+                <i class="fas fa-plus-circle" style="margin-right: 5px;"></i> Create Agenda
+            </button>
+        </a>
+        
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     {{-- <select id="entries" onchange="showEntries()">
@@ -206,13 +210,13 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Penulis</th>
-                        <th>Kegiatan</th>
-                        <th>Alamat Kegiatan</th>
-                        <th>Tanggal Kegiatan</th>
-                        <th>Galery</th>
-                        <th>Aksi</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:100px; font-size:12px;">PENULIS</th>
+                        <th style="width:200px; font-size:12px;">KEGIATAN</th>
+                        <th style="width:200px; font-size:12px;">ALAMAT KEGIATAN</th>
+                        <th style="width:100px; font-size:12px;">TANGGAL KEGIATAN</th>
+                        <th style="width:75px; font-size:12px;">GALERY</th>
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -230,7 +234,7 @@
                         <td style="font-size: 12px; text-align:left;">{{ $item->judul_kegiatan}}</td>
                         <td style="font-size: 12px; text-align:left;">{{ $item->alamat_kegiatan}}</td>
                         <td style="font-size: 12px; text-align:center;">
-                            {{ date('d F Y', strtotime($item->tanggal)) }}
+                            {{ \Carbon\Carbon::createFromFormat('Y-m-d', $item->tanggal)->locale('id')->translatedFormat('d F Y') }}
                         </td>
                         
                         <td style="font-size: 12px; text-align:center;">
