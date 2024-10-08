@@ -55,13 +55,14 @@
             <div class="posts">
                 
                 <h1 style="color: yellow">Berita Terakhir</h1>
-                @foreach ($databerita->slice(-4) as $item)
-                <a href="#">
-                    <span style="font-size: 9px;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('j F Y') }}</span>
-                    {{$item->judul}}
-                </a>
-            @endforeach
-            
+                <a href="#"><span>02<br>Juli</span>Pemerintah Kabupaten Bandung Barat Luncurkan SIPJAKI untuk Tingkatkan Transparansi Proyek Konstruksi</a>
+                {{-- <a href="#"><span>05<br>Juli</span>SIPJAKI: Inovasi Digital dalam Pengawasan Konstruksi di Bandung Barat</a> --}}
+                <a href="#"><span>07<br>Juli</span>Efisiensi Pengelolaan Proyek Konstruksi Melalui SIPJAKI di Kabupaten Bandung Barat</a>
+                <a href="#"><span>11<br>Juli</span>SIPJAKI Permudah Komunikasi antara Pemerintah dan Kontraktor Konstruksi di Bandung Barat</a>
+                <a href="#"><span>12<br>Juli</span>Peningkatan Kualitas Infrastruktur dengan SIPJAKI di Kabupaten Bandung Barat</a>
+                <a href="#"><span>15<br>Juli</span>Dukung Pembangunan Berkelanjutan, Kabupaten Bandung Barat Implementasikan SIPJAKI</a>
+                {{-- <a href="#"><span>16<br>Juli</span>SIPJAKI: Solusi Modern untuk Pengelolaan Proyek Konstruksi di Bandung Barat</a>
+                <a href="#"><span>17<br>Juli</span>Optimalisasi Proses Administrasi Proyek Konstruksi dengan SIPJAKI di Bandung Barat</a> --}}
             </div>
 
             
