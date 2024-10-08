@@ -182,8 +182,9 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Himbauan Dinas</div></label>
+            <div class="badge"><i class="fas fa-edit mr-2"></i>Update Data Himbauan Dinas</div>
         </a>
+        
         <a style="background: white;">
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
         </a>
@@ -191,7 +192,7 @@
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
         </a>
         <a href="/himbauandinas" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
         </a>
 
         <br>
@@ -269,23 +270,31 @@
                 <?php echo method_field('POST'); ?> <!-- Gunakan metode PUT untuk update data -->
             
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="nama_lengkap" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Nama Lengkap</label>
+                    <label for="nama_lengkap" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-user me-2"></i> Nama Lengkap
+                    </label>
                     <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?php echo e(old('nama_lengkap', $datahimbauandinas->nama_lengkap)); ?>" required>
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="jabatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Jabatan</label>
+                    <label for="jabatan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-briefcase me-2"></i> Jabatan
+                    </label>
                     <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?php echo e(old('jabatan', $datahimbauandinas->jabatan)); ?>" required>
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="himbauan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Himbauan</label>
+                    <label for="himbauan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-bullhorn me-2"></i> Himbauan
+                    </label>
                     <textarea id="himbauan" name="himbauan" class="form-control" rows="7" required><?php echo e(old('himbauan', $datahimbauandinas->himbauan)); ?></textarea>
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="avatar" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Foto Dinas Terkait</label>
-                    
+                    <label for="avatar" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Foto Dinas Terkait
+                    </label>
+                
                     <div class="d-flex align-items-center">
                         <div class="preview-container">
                             <img id="foto_pejabat-preview" src="<?php echo e(asset('storage/' . $datahimbauandinas->foto_pejabat)); ?>" alt="Preview" class="img-preview" style="width: 100px; height: 100px; object-fit: cover;"/>
@@ -293,7 +302,7 @@
                         <input type="file" id="foto_pejabat" name="foto_pejabat" accept="image/*" class="form-control-file ml-3">
                     </div>
                 </div>
-            
+                            
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         const fileInput = document.getElementById('foto_pejabat');
@@ -316,7 +325,7 @@
             
                 
                 <div class="form-group">
-                    <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
+                    <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fab fa-telegram mr-2"></i>Update</button>
                 </div>
             </form>
             

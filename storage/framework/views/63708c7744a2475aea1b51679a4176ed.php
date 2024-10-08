@@ -63,6 +63,7 @@
             </div>
             <div class="col-lg-5 px-0">
                 <div class="row mx-0">
+                    
                     <?php $__currentLoopData = $data->slice(-4); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         
                         <div class="col-md-6 px-0">

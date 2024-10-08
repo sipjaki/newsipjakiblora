@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 75vh;
+    height: 100vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -101,7 +101,11 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Himbauan Dinas Terkait</button>
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer ">
+            <i class="fas fa-info-circle" style="margin-right: 5px;"></i>
+            Himbauan Dinas Terkait
+        </button>
+        
                         {{-- <a href="/pergubernurcreate" style="background: inherit">
                             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
                         </a> --}}
@@ -156,10 +160,10 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Nama Lengkap</th>
-                        <th>Jabatan</th> 
-                        <th>Aksi</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:150px; font-size:12px;">NAMA LENGKAP</th>
+                        <th style="width:200px; font-size:12px;">JABATAN</th> 
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -173,8 +177,8 @@
                     
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->nama_lengkap}}</td>
-                        <td style="font-size: 12px; text-align:left;">{{ $item->jabatan}}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->nama_lengkap}}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;" >{{ $item->jabatan}}</td>
                         
                         <td>
                             
@@ -286,6 +290,7 @@
 
         </div>
 
+        <br><br>
         <div class="pagination-container" style="margin-top: 20px; margin-bottom:75px; display: flex; flex-direction: column; align-items: center;">
                 <div class="pagination-info mb-2" style="margin-bottom: 10px; color:orange; font-weight: 500;">
                     Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}

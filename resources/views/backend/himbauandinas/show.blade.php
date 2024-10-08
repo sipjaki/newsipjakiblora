@@ -105,10 +105,10 @@
 
         </style>
         <a href="/himbauandinas" style="background: white;">
-            <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
+            <div class="badge"><i class="fas fa-arrow-left mr-2"></i>Kembali </div></label>
         </a>
         <a href="/himbauandinas/update/{{$data->nama_lengkap}}" style="background: white; display:right;">
-            <div class="badge-update"><i class="fas fa-file mr-2"></i> Update </div></label>
+            <div class="badge-update"><i class="fas fa-file mr-2"></i>Update </div></label>
         </a>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
@@ -188,7 +188,7 @@
  <table id="datakeluar" style="width: 100%; border-collapse: collapse;">
     <thead>
         <tr>
-            <th colspan="2" style="background-color: #FFCB0F; text-align: center; font-size: 16px;">Biodata Admin Sipjaki | Pemerintah Kabupaten Bandung Barat</th>
+            <th colspan="2" style="background-color: #FFCB0F; text-align: center; font-size: 16px;">Dinas Terkait Jasa Konstruksi | Pemerintah Kabupaten Bandung Barat</th>
         </tr>
     </thead>
     <tbody>
@@ -219,7 +219,7 @@
                     </tr>
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-key" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-briefcase" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Jabatan</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -229,7 +229,7 @@
                     </tr>
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-phone" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-bullhorn" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Himbauan</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -259,10 +259,10 @@
         <i class="fas fa-download me-2"></i> Download Sertifikat
     </button> --}}
     <button id="previewBtn" class="badge">
-        <i class="fas fa-file me-2"></i> Preview
+        <i class="fas fa-file mr-2"></i>Preview
     </button>
     <button id="downloadBtn" class="badge">
-        <i class="fas fa-download me-2"></i>Download
+        <i class="fas fa-download mr-2"></i>Download
     </button>
 </div>
 
