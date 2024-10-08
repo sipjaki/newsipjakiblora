@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 160vh;
+    height: 190vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -101,11 +101,16 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Berita Jasa Konstruksi </button>
-                        <a href="/databeritacreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
-                        </a>
-
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer">
+            <i class="fas fa-newspaper" style="margin-right: 5px;"></i> Daftar Berita Jasa Konstruksi
+        </button>
+        
+        <a href="/databeritacreate" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer">
+                <i class="fas fa-pencil-alt" style="margin-right: 5px;"></i> Create New
+            </button>
+        </a>
+        
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     
@@ -150,11 +155,11 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Judul</th>
-                        <th>Penulis</th>
-                        <th style="width: 150px;">Foto</th>
-                        <th>Aksi</th>
+                        <th style="width:5%;">NO</th>
+                        <th style="width:350px;">JUDUL</th>
+                        <th style="width:75px;">PENULIS</th>
+                        <th style="width:150px;">FOTO</th>
+                        <th style="width:75px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>

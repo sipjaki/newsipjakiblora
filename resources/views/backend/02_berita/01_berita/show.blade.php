@@ -105,10 +105,10 @@
 
         </style>
         <a href="/databerita" style="background: white;">
-            <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
+            <div class="badge"><i class="fas fa-arrow-left mr-2"></i>Kembali </div></label>
         </a>
         <a href="/databerita/update/{{$data->judul}}" style="background: white; display:right;">
-            <div class="badge-update"><i class="fas fa-file mr-2"></i> Update </div></label>
+            <div class="badge-update"><i class="fas fa-file mr-2"></i>Update </div></label>
         </a>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
@@ -213,7 +213,7 @@
                  
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-file" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-newspaper" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Judul</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -221,11 +221,10 @@
                             {{ ucwords(strtolower($data->judul)) }}
                         </td>
                     </tr>
-                 
-                 
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-edit" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-user" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Penulis</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -233,9 +232,10 @@
                             {{ ucwords(strtolower($data->user->username)) }}
                         </td>
                     </tr>
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-edit" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-sticky-note" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Keterangan</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -247,7 +247,7 @@
                             @endif
                         </td>
                     </tr>
-                    
+                     
                     <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         var linkElement = document.getElementById('readMoreLink');

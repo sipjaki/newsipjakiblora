@@ -206,7 +206,7 @@
             <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i> ........ ........ ........ ........ ........ ................  ........  ........ ........ ........ ........ ........</div></label>
         </a>
         <a href="/databerita" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
         </a>
 
         <br>
@@ -274,34 +274,44 @@
             <form action="{{ route('create.databerita') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST') <!-- Gunakan metode POST untuk menambahkan data -->
-                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="judul" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-building me-2"></i> Judul</label>
+                    <label for="judul" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-file-alt me-2"></i> Judul
+                    </label>
                     <input type="text" class="form-control" id="judul" name="judul" required>
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="user_id" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-user me-2"></i> Penulis</label>
+                    <label for="user_id" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-user me-2"></i> Penulis
+                    </label>
                     <input type="text" class="form-control" id="user_id_display" value="{{ $currentUser->username }}" readonly>
                     <input type="hidden" id="user_id" name="user_id" value="{{ $currentUser->id }}">
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="tanggal" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-calendar me-2"></i>Tanggal</label>
+                    <label for="tanggal" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-calendar-alt me-2"></i> Tanggal
+                    </label>
                     <input type="date" class="form-control" id="tanggal" name="tanggal" required>
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="keterangan" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-info-circle me-2"></i> Keterangan Berita</label>
+                    <label for="keterangan" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-sticky-note me-2"></i> Keterangan Berita
+                    </label>
                     <textarea class="form-control" id="keterangan" name="keterangan" rows="5" required></textarea>
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="gambar" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-image me-2"></i> Foto Berita (Optional)</label>
+                    <label for="gambar" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-upload me-2"></i> Foto Berita (Optional)
+                    </label>
                     <input type="file" class="form-control-file" id="gambar" name="gambar" accept=".jpeg,.png,.jpg">
                 </div>
+                
             
-                <button class="savedata btn btn-primary mt-3" type="submit"><i class="fas fa-save" style="margin-right:5px;"></i> Save</button>
+                <button class="savedata btn btn-primary mt-3" type="submit"><i class="fas fa-save mr-2"></i>Save</button>
             </form>
             
             

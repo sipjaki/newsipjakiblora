@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 150vh;
+    height: 155vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -183,11 +183,11 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Berita Sipjaki Pemerintah Kabupaten Bandung Barat</div></label>
+            <div class="badge"><i class="fas fa-newspaper mr-2"></i> Berita Sipjaki Pemerintah Kabupaten Bandung Barat</div>
         </a>
         
         <a href="/databerita" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
         </a>
 
         <br>
@@ -260,25 +260,31 @@
             <form action="/databeritaupdatestore/<?php echo e($berita->judul); ?>" method="POST" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <?php echo method_field('POST'); ?> <!-- Gunakan metode PUT untuk update data -->
-            
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="judul" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Judul</label>
+                    <label for="judul" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-newspaper me-2"></i> Judul
+                    </label>
                     <input type="text" class="form-control" id="judul" name="judul" value="<?php echo e(old('judul', $berita->judul)); ?>" required>
                 </div>
-
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="judul" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Judul</label>
+                    <label for="tanggal" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-calendar-alt me-2"></i> Tanggal
+                    </label>
                     <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?php echo e(old('tanggal', $berita->tanggal)); ?>" required>
                 </div>
-
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="keterangan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Keterangan</label>
+                    <label for="keterangan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-sticky-note me-2"></i> Keterangan
+                    </label>
                     <textarea class="form-control" id="keterangan" name="keterangan" rows="20" style="resize: vertical;" required><?php echo e(old('keterangan', $berita->keterangan)); ?></textarea>
                 </div>
                 
-            
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="gambar" class="mr-3" style="width: 200px; text-align:left; font-size:14px;"><i class="fas fa-file me-2"></i> Foto Berita</label>
+                    <label for="gambar" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-upload me-2"></i> Foto Berita
+                    </label>
                     
                     <div class="d-flex align-items-center">
                         <div class="preview-container">
@@ -287,7 +293,7 @@
                         <input type="file" id="gambar" name="gambar" accept="image/*" class="form-control-file ml-3">
                     </div>
                 </div>
-            
+                
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         const fileInput = document.getElementById('gambar');
