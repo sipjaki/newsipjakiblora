@@ -270,3 +270,17 @@ public function createstoredokumentasipelatihan(Request $request)
 //     }]
 // });
 // chart4.render();
+
+
+
+<div class="posts">
+                
+    <h1 style="color: yellow">Berita Terakhir</h1>
+    @foreach ($databerita->slice(-4) as $item)
+    <a href="#">
+        <span style="font-size: 9px;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('j F Y') }}</span>
+        {{$item->judul}}
+    </a>
+@endforeach
+
+</div>
