@@ -101,11 +101,15 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Paket Pekerjaan</button>
-                        <a href="/paketpekerjaancreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create Paket Pekerjaan</button>
-                        </a>
-
+        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer">
+            <i class="fas fa-th-list" style="margin-right: 5px;"></i>Daftar Paket Pekerjaan
+        </button>
+        <a href="/paketpekerjaancreate" style="background: inherit">
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer">
+                <i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Create Paket Pekerjaan
+            </button>
+        </a>
+        
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     {{-- <select id="entries" onchange="showEntries()">
@@ -156,15 +160,15 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th>Instansi</th>
-                        <th>Jumlah Pagu</th>
-                        <th>Metode Pengadaan</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:350px; font-size:12px;">INSTANSI</th>
+                        <th style="width:150px; font-size:12px;">JUMLAH PAGU</th>
+                        <th style="width:100px; font-size:12px;">METODE PENGADAAN</th>
                         {{-- <th>Pekerjaan</th> --}}
                         {{-- <th>Tanggal Mulai</th>
                         <th>Tanggal Selesai</th> --}}
-                        <th>Progress Fisik</th>
-                        <th>Aksi</th>
+                        <th style="width:100px; font-size:12px;">PROGRESS FISIK</th>
+                        <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -199,15 +199,19 @@
 }
 
         </style>
-        <a style="background: white;">
-            <div class="badge"><i class="fas fa-plus mr-2"></i>Create Paket Pekerjaan Kabupaten Bandung Barat </div></label>
-        </a>
-        <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i> ........ ........ ........ ........ ........ ................  ........  ........ ........ ........ ........ ........</div></label>
-        </a>
-        <a href="/paketpekerjaan" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
-        </a>
+<a style="background: white;">
+    <div class="badge"><i class="fas fa-plus-circle mr-2"></i> Create Paket Pekerjaan Kabupaten Bandung Barat </div>
+</a>
+<a style="background: white;">
+    <div class="badgehidden" style="color: white;">
+        <i class="fas fa-file-alt mr-2"></i> ........ ........ ........ ........ ........ ................  ........  ........ ........ ........ ........ ........
+    </div>
+</a>
+<a href="/paketpekerjaan" style="background: white;">
+    <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;">
+        <i class="fa fa-arrow-circle-left mr-2"></i>Kembali
+    </button>
+</a>
 
         <br>
                 {{-- ========================================= --}}
@@ -278,16 +282,19 @@
             
             
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="instansi" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-building me-2"></i> Instansi</label>
-                    <input type="text" class="form-control" id="instansi" name="instansi" required>
+                    <label for="instansi" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-building me-2"></i> Instansi
+                    </label>
+                    <input type="text" class="form-control" id="instansi" name="instansi" required style="font-size: 14px;">
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="jumlah_pagu" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-money-bill me-2"></i> Jumlah Pagu</label>
-                    <input type="text" class="form-control" id="jumlah_pagu" name="jumlah_pagu" required>
+                    <label for="jumlah_pagu" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-money-bill-wave me-2"></i> Jumlah Pagu
+                    </label>
+                    <input type="text" class="form-control" id="jumlah_pagu" name="jumlah_pagu" required style="font-size: 14px;">
                 </div>
-            
-            
+                
                 <script>
                     function formatRupiah(angka, prefix) {
                         var number_string = angka.replace(/[^,\d]/g, '').toString(),
@@ -295,70 +302,75 @@
                             sisa = split[0].length % 3,
                             rupiah = split[0].substr(0, sisa),
                             ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-                            
+                
                         if (ribuan) {
                             separator = sisa ? '.' : '';
                             rupiah += separator + ribuan.join('.');
                         }
-            
+                
                         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
                         return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
                     }
-            
+                
                     const input = document.getElementById('jumlah_pagu');
-            
+                
                     input.addEventListener('input', function(e) {
                         let value = e.target.value;
                         e.target.value = formatRupiah(value, 'Rp. ');
                     });
-            
+                
                     input.addEventListener('blur', function(e) {
                         let value = e.target.value;
                         e.target.value = value.replace(/[^,\d]/g, '');
                     });
-            
+                
                     document.querySelector('form').addEventListener('submit', function(e) {
                         let input = document.getElementById('jumlah_pagu');
                         input.value = input.value.replace(/[^,\d]/g, '');
                     });
                 </script>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="pekerjaan" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-hammer me-2"></i> Pekerjaan</label>
-                    <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" required>
+                    <label for="pekerjaan" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-hammer me-2"></i> Pekerjaan
+                    </label>
+                    <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" required style="font-size: 14px;">
                 </div>
-            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="foto_pekerjaan" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-image me-2"></i> Foto Pekerjaan (Optional)</label>
+                    <label for="foto_pekerjaan" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-image me-2"></i> Foto Pekerjaan (Optional)
+                    </label>
                     <input type="file" class="form-control-file" id="foto_pekerjaan" name="foto_pekerjaan" accept=".jpeg,.png,.jpg">
                 </div>
-
-                            
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="metodepengadaan_id" class="mr-3" style="width: 200px; text-align:left;"><i class="fas fa-cogs me-2"></i> Metode Pengadaan</label>
-                    <select class="form-control" id="metodepengadaan_id" name="metodepengadaan_id" required>
-                        <!-- Populate options dynamically from the database -->
-                        @foreach($datametodepengadaan  as $metode)
+                    <label for="metodepengadaan_id" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-cogs me-2"></i> Metode Pengadaan
+                    </label>
+                    <select class="form-control" id="metodepengadaan_id" name="metodepengadaan_id" required style="font-size: 14px;">
+                        @foreach($datametodepengadaan as $metode)
                             <option value="{{ $metode->id }}">{{ $metode->metode }}</option>
                         @endforeach
                     </select>
                 </div>
-
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="tahun" class="mr-3" style="width: 200px; text-align: left;">
-                        <i class="fas fa-calendar me-2"></i> Tahun
+                    <label for="tahun" class="mr-3" style="width: 200px; text-align: left; font-size: 14px;">
+                        <i class="fas fa-calendar-alt me-2"></i> Tahun
                     </label>
-                    <select class="form-control" id="tahun" name="tahun" required>
+                    <select class="form-control" id="tahun" name="tahun" required style="font-size: 14px;">
                         @for ($year = 2021; $year <= 2029; $year++)
                             <option value="{{ $year }}">{{ $year }}</option>
                         @endfor
                     </select>
                 </div>
+                
                 <div class="form-group d-flex align-items-center mt-3">
-                    <label for="progress_fisik" class="mr-3" style="width: 200px; text-align: left;">
+                    <label for="progress_fisik" class="mr-3" style="width: 200px; text-align: left; font-size: 14px;">
                         <i class="fas fa-chart-line me-2"></i> Progress Fisik (%)
                     </label>
-                    <select class="form-control" id="progress_fisik" name="progress_fisik" required>
+                    <select class="form-control" id="progress_fisik" name="progress_fisik" required style="font-size: 14px;">
                         @for ($i = 0; $i <= 100; $i++)
                             <option value="{{ $i }}" {{ $i == 0 ? 'selected' : '' }}>{{ $i }}</option>
                         @endfor
@@ -366,7 +378,7 @@
                 </div>
                 
             
-                <button class="savedata" type="submit" class="btn btn-primary mt-3"><i class="fas fa-save" style="margin-right:5px;"></i> Save</button>
+                <button class="savedata" type="submit" class="btn btn-primary mt-3"><i class="fas fa-save mr-2"></i>Save</button>
 
 
             </form>

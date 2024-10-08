@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 135vh;
+    height: 100vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -105,10 +105,10 @@
 
         </style>
         <a href="/paketpekerjaan" style="background: white;">
-            <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
+            <div class="badge"><i class="fas fa-arrow-left mr-2"></i>Kembali </div></label>
         </a>
         <a href="/paketpekerjaan/update/{{$data->instansi}}" style="background: white; display:right;">
-            <div class="badge-update"><i class="fas fa-file mr-2"></i> Update </div></label>
+            <div class="badge-update"><i class="fas fa-file mr-2"></i>Update </div></label>
         </a>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
                         {{-- <button id="previewBtn" class="badge" style="border: none; font-size:12px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i> Preview</button>
@@ -212,7 +212,7 @@
                 <table style="width: 100%; border-collapse: collapse;">
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-user" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-building" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Nama Instansi</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -220,10 +220,10 @@
                             {{ ucwords(strtolower($data->instansi)) }}
                         </td>
                     </tr>
-                 
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-money-bill" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-money-check-alt" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Jumlah Pagu</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -231,10 +231,10 @@
                             {{ number_format($data->jumlah_pagu, 2, ',', '.') }}
                         </td>
                     </tr>
-                 
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-cogs" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-clipboard-list" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Metode Pengadaan</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -242,11 +242,10 @@
                             {{ ucwords(strtolower($data->metodepengadaan->metode)) }}
                         </td>
                     </tr>
-                 
-                 
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-cogs" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-hammer" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Pekerjaan</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -254,22 +253,21 @@
                             {{ ucwords(strtolower($data->pekerjaan)) }}
                         </td>
                     </tr>
-                 
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-calendar" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-calendar-alt" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Tanggal Anggaran</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
                         <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
-                            {{ $data->tahun  }}
+                            {{ $data->tahun }}
                         </td>
                     </tr>
-                 
-                   
+                    
                     <tr>
                         <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
-                            <i class="fas fa-file" style="color: white; font-size: 12px;"></i>
+                            <i class="fas fa-chart-bar" style="color: white; font-size: 12px;"></i>
                         </th>
                         <th style="background-color: #FFCB0F; width: 225px; text-align: left; font-size: 14px;">Progress Fisik</th>
                         <td style="background-color: #FFCB0F; width: 20px;">:</td>
@@ -277,7 +275,7 @@
                             {{ number_format($data->progress_fisik, 2) . '%' }}
                         </td>
                     </tr>
-                    
+                            
                     <tr>
                         <td colspan="4" style="background-color: white; text-align: right; padding: 10px;">
                             Paket Pekerjaan | Sistem Informasi Pembina Jasa Konstruksi Kabupaten Bandung Barat | sipjakikbb.com
@@ -299,10 +297,10 @@
         <i class="fas fa-download me-2"></i> Download Sertifikat
     </button> --}}
     <button id="previewBtn" class="badge">
-        <i class="fas fa-file me-2"></i> Preview
+        <i class="fas fa-file mr-2"></i>Preview
     </button>
     <button id="downloadBtn" class="badge">
-        <i class="fas fa-download me-2"></i>Download
+        <i class="fas fa-download mr-2"></i>Download
     </button>
 </div>
 

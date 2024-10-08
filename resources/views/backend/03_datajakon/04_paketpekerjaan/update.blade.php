@@ -31,7 +31,7 @@
     border-radius: 25px;
     text-align: center;
     width: 100%;
-    height: 110vh;
+    height: 115vh;
     margin-left: none;
     background: linear-gradient(to bottom, yellow, white, black);
     align-items: center;
@@ -182,18 +182,24 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Paket Pekerjaan </div></label>
+            <div class="badge"><i class="fas fa-file-alt mr-2"></i> Update Data Paket Pekerjaan </div>
         </a>
         <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
+            <div class="badgehidden" style="color: white;">
+                <i class="fas fa-file-alt mr-2"></i> ........ ........ ........ ........ ........ ........
+            </div>
         </a>
         <a style="background: white;">
-            <div class="badgehidden" style="color: white"><i class="fas fa-file mr-2"></i>........ ........ ........ ........ ........ ........</div></label>
+            <div class="badgehidden" style="color: white;">
+                <i class="fas fa-file-alt mr-2"></i> ........ ........ ........ ........ ........ ........
+            </div>
         </a>
         <a href="/paketpekerjaan" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer;">
+                <i class="fa fa-arrow-circle-left" style="margin-right: 5px;"></i>Kembali
+            </button>
         </a>
-
+        
         <br>
                 {{-- ========================================= --}}
 
@@ -204,7 +210,7 @@
             .container-update {
                 /* margin-top: 500px; */
                 width: 920px;
-                height: 70vh;
+                height: 75vh;
                 margin: 0 auto;
                 padding: 20px;
                 background-color: #E0E0E0; /* Warna silver */
@@ -267,21 +273,20 @@
             <form action="{{ route('updatestore.paketpekerjaan', $datapaketpekerjaan->instansi) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST') <!-- Ubah menjadi PUT jika ini adalah update -->
-            
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="instansi" style="font-size:14px;"><i class="fas fa-file me-2"></i> Instansi</label>
-                        <input type="text" id="instansi" name="instansi" value="{{ old('instansi', $datapaketpekerjaan->instansi) }}" required>
-                    </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="instansi" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-building me-2"></i> Instansi
+                    </label>
+                    <input type="text" id="instansi" name="instansi" value="{{ old('instansi', $datapaketpekerjaan->instansi) }}" required class="form-control">
                 </div>
-
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="jumlah_pagu" style="font-size:14px;"><i class="fas fa-file me-2"></i> Jumlah Pagu</label>
-                        <input type="text" id="jumlah_pagu" name="jumlah_pagu" value="{{ old('jumlah_pagu', number_format($datapaketpekerjaan->jumlah_pagu)) }}" required>
-                    </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="jumlah_pagu" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-money-check-alt me-2"></i> Jumlah Pagu
+                    </label>
+                    <input type="text" id="jumlah_pagu" name="jumlah_pagu" value="{{ old('jumlah_pagu', number_format($datapaketpekerjaan->jumlah_pagu)) }}" required class="form-control">
                 </div>
-            
+                
                 <script>
                     function formatRupiah(angka, prefix) {
                         var number_string = angka.replace(/[^,\d]/g, '').toString(),
@@ -289,92 +294,84 @@
                             sisa = split[0].length % 3,
                             rupiah = split[0].substr(0, sisa),
                             ribuan = split[0].substr(sisa).match(/\d{3}/gi);
-                            
+                
                         if (ribuan) {
                             separator = sisa ? '.' : '';
                             rupiah += separator + ribuan.join('.');
                         }
-            
+                
                         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
                         return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
                     }
-            
+                
                     const input = document.getElementById('jumlah_pagu');
-            
+                
                     input.addEventListener('input', function(e) {
                         let value = e.target.value;
                         e.target.value = formatRupiah(value, 'Rp. ');
                     });
-            
+                
                     input.addEventListener('blur', function(e) {
                         let value = e.target.value;
                         e.target.value = value.replace(/[^,\d]/g, '');
                     });
-            
+                
                     document.querySelector('form').addEventListener('submit', function(e) {
                         let input = document.getElementById('jumlah_pagu');
                         input.value = input.value.replace(/[^,\d]/g, '');
                     });
                 </script>
-                            
-            
-
-           <!-- Include the form HTML with proper ID and class attributes -->
-
-
-           <div class="form-group">
-            <div class="form-group-inner">
-                <label for="metodepengadaan_id" style="font-size:14px;">
-                    <i class="fas fa-file me-2"></i> Status
-                </label>
-                <select id="metodepengadaan_id" name="metodepengadaan_id" required class="form-control" style="width: 600px;">
-                    <!-- Menetapkan nilai yang dipilih dari data -->
-                    @foreach ($datametodepengadaan as $databaru)
-                        <option value="{{ $databaru->id }}" {{ $databaru->id == $datapaketpekerjaan->metodepengadaan_id ? 'selected' : '' }}>
-                            {{ $databaru->metode }}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="pekerjaan" style="font-size:14px;"><i class="fas fa-file me-2"></i> Pekerjaan</label>
-                        <input type="text" id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan', $datapaketpekerjaan->pekerjaan) }}" required>
-                    </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="metodepengadaan_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-list-alt me-2"></i> Status
+                    </label>
+                    <select id="metodepengadaan_id" name="metodepengadaan_id" required class="form-control">
+                        @foreach ($datametodepengadaan as $databaru)
+                            <option value="{{ $databaru->id }}" {{ $databaru->id == $datapaketpekerjaan->metodepengadaan_id ? 'selected' : '' }}>
+                                {{ $databaru->metode }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
                 
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="tahun" style="font-size:14px;"><i class="fas fa-file me-2"></i> Tahun Anggaran </label>
-                        <select  id="tahun" name="tahun" required class="form-control" style="width: 600px;">
-                            @foreach (range(2021, 2029) as $year)
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="pekerjaan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-hammer me-2"></i> Pekerjaan
+                    </label>
+                    <input type="text" id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan', $datapaketpekerjaan->pekerjaan) }}" required class="form-control">
+                </div>
+                
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="tahun" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-calendar-alt me-2"></i> Tahun Anggaran
+                    </label>
+                    <select id="tahun" name="tahun" required class="form-control">
+                        @foreach (range(2021, 2029) as $year)
                             <option value="{{ $year }}" {{ $year == old('tahun', $datapaketpekerjaan->tahun) ? 'selected' : '' }}>
-                                    {{ $year }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
+                                {{ $year }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
                 
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="progress_fisik" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-chart-line me-2"></i> Progress Fisik
+                    </label>
+                    <input type="text" id="progress_fisik" name="progress_fisik" value="{{ old('progress_fisik', $datapaketpekerjaan->progress_fisik) }}" required class="form-control">
+                </div>
                 
-                        <div class="form-group">
-                            <div class="form-group-inner">
-                                <label for="progress_fisik" style="font-size:14px;"><i class="fas fa-file me-2"></i> progress_fisik</label>
-                                <input type="text" id="progress_fisik" name="progress_fisik" value="{{ old('progress_fisik', $datapaketpekerjaan->progress_fisik) }}" required>
-                            </div>
-                        </div>
-                
-                <div class="form-group">
-                    <div class="form-group-inner">
-                        <label for="foto_pekerjaan" style="font-size:14px;"><i class="fas fa-file me-2"></i> Foto Pekerjaan</label>
-                        <div class="preview-container">
-                            <img id="foto_pekerjaan-preview" src="{{ asset('storage/' . $datapaketpekerjaan->foto_pekerjaan) }}" alt="Preview" class="img-preview" />
-                            <input type="file" id="foto_pekerjaan" name="foto_pekerjaan" accept="image/*">
-                        </div>
+                <div class="form-group d-flex align-items-center mt-3">
+                    <label for="foto_pekerjaan" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                        <i class="fas fa-image me-2"></i> Foto Pekerjaan
+                    </label>
+                    <div class="preview-container">
+                        <img id="foto_pekerjaan-preview" src="{{ asset('storage/' . $datapaketpekerjaan->foto_pekerjaan) }}" alt="Preview" class="img-preview" />
+                        <input type="file" id="foto_pekerjaan" name="foto_pekerjaan" accept="image/*" class="form-control mt-2">
                     </div>
                 </div>
+                                
             
                 {{-- <hr style="border: 1px solid #000000"> --}}
                 <div class="form-group">
