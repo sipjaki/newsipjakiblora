@@ -101,11 +101,15 @@
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-                        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Daftar Tim Pembina Jasa Konstruksi</button>
-                        <a href="/datapjtcreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
-                        </a>
-
+        <button id="previewBtn" class="badge" style="border: none; font-size: 15px; cursor: pointer;">
+            <i class="fas fa-file-alt" style="margin-right: 5px;"></i>Daftar Tim Pembina Jasa Konstruksi
+        </button>
+        <a href="/timpembinacreate" style="background: inherit; text-decoration: none;">
+            <button class="badge-plus" style="border: none; font-size: 15px; cursor: pointer;">
+                <i class="fas fa-plus" style="margin-right: 5px;"></i>Create New
+            </button>
+        </a>
+        
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     {{-- <select id="entries" onchange="showEntries()">
@@ -156,14 +160,14 @@
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px;">No</th>
-                        <th style="width:200px;">Jabatan Dalam Kedinasan</th>
-                        <th style="width:225px;">Nama Lengkap</th>
-                        <th style="width:150px;">Email</th>
+                        <th style="width:5%; font-size:12px;">NO</th>
+                        <th style="width:200px; font-size:12px;">JABATAN KEDINASAN</th>
+                        <th style="width:225px; font-size:12px;">NAMA LENGKAP</th>
+                        <th style="width:150px; font-size:12px;">EMAIL</th>
                         {{-- <th>Alamat Kantor</th> --}}
-                        <th style="width:150px;">Telepon</th>
-                        <th style="width:150px;">Foto Pembina</th>
-                        <th style="width:100px;">Aksi</th>
+                        <th style="width:150px; font-size:12px;">TELP</th>
+                        <th style="width:150px; font-size:12px;">FOTO PEMBINA</th>
+                        <th style="width:100px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>

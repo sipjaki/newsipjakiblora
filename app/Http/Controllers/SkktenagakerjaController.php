@@ -1167,6 +1167,56 @@ public function deletedatatimpembina($nama_lengkap)
 }                
 
 
+// ============================================================================================
+public function createtimpembina()
+{
+    $datatimpembina = timpembina::all();
+    // $datapengawasanlokasi = pengawasanlokasi::all();
+    
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.04_skk.03_timpembina.create', [
+        'data' => $datatimpembina,
+        // 'datapengawasanlokasi' => $datapengawasanlokasi,
+        'user' => $user,
+        'title' => 'Create Tim Pembina Jasa Konstruksi'
+    ]);
+
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstoretimpembina(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'jabatandalamkedinasan' => 'required|string|max:255',
+        'nama_lengkap' => 'required|string|max:255',
+        'email' => 'required|string|max:255',
+        'telepon' => 'required|string',
+         'fototimpembina' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    // Handle file uploads
+    $foto_pjt_path = $request->file('fototimpembina')->store('timpembina', 'public');
+
+    // Create a new entry in the database
+    timpembina::create([
+        'jabatandalamkedinasan' => $request->input('jabatandalamkedinasan'),
+        'nama_lengkap' => $request->input('nama_lengkap'),
+        'email' => $request->input('email'),
+        'telepon' => $request->input('telepon'),
+                    'fototimpembina' => $foto_pjt_path,
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/timpembina'); // Adjust this to your desired route
+}
+
+
 
 }
 
