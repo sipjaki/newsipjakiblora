@@ -339,7 +339,7 @@ public function dataiujkshowByName($nama_perusahaan)
                 // Jika entri ditemukan, hapus
                 if ($entry) {
                     $entry->delete();
-                    session()->flash('success', 'Data berhasil dihapus!');
+                    session()->flash('delete', 'Data berhasil dihapus!');
                 } else {
                     // Set pesan flash jika data tidak ditemukan
                     session()->flash('error', 'Data Tidak Ditemukan!');
@@ -348,6 +348,58 @@ public function dataiujkshowByName($nama_perusahaan)
                 // Redirect ke halaman yang sesuai
                 return redirect('/dataiujk');
             }
+
+            //  CREATE IJIN USAHA JASA KONSTRUKSI ============================================================================================
+public function createdataiujk()
+{
+    $dataiujk = uijk::all();
+    // $datapengawasanlokasi = pengawasanlokasi::all();
+    
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.08_iujk.create', [
+        'data' => $dataiujk,
+        // 'datapengawasanlokasi' => $datapengawasanlokasi,
+        'user' => $user,
+        'title' => 'Create Ijin Usaha Jasa Konstruksi'
+    ]);
+
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstoredataiujk(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'nama_perusahaan' => 'required|string|max:255',
+        'kategori_perusahaan' => 'required|string|max:255',
+        'klasifikasi_bidang_usaha' => 'required|string|max:255',
+        'sub_klasifikasi_bidang_usaha' => 'required|string|max:255',
+        'keterangan' => 'required|string|max:255',
+    ]);
+
+    // Handle file uploads
+    // $foto_pjt_path = $request->file('fototimpembina')->store('timpembina', 'public');
+
+    // Create a new entry in the database
+    uijk::create([
+        'nama_perusahaan' => $request->input('nama_perusahaan'),
+        'kategori_perusahaan' => $request->input('kategori_perusahaan'),
+        'klasifikasi_bidang_usaha' => $request->input('klasifikasi_bidang_usaha'),
+        'sub_klasifikasi_bidang_usaha' => $request->input('sub_klasifikasi_bidang_usaha'),
+        'keterangan' => $request->input('keterangan'),
+
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/dataiujk'); // Adjust this to your desired route
+}
+
+
             
 
         }

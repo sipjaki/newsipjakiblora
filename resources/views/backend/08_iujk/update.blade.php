@@ -186,7 +186,7 @@
             <div class="badge"><i class="fas fa-file mr-2"></i>Update Data Penanggung Jawab Teknis Jasa Konstruksi </div></label>
         </a>
         
-        <a href="/datapjt" style="background: white;">
+        <a href="/dataiujk" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>Kembali</button>
         </a>
 

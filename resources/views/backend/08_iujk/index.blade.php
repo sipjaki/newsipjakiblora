@@ -104,7 +104,7 @@
         <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer">
             <i class="fas fa-file-alt" style="margin-right: 5px;"></i>Daftar Ijin Usaha Jasa Konstruksi
         </button>
-        <a href="/datapjtcreate" style="background: inherit">
+        <a href="/dataiujkcreate" style="background: inherit">
             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer">
                 <i class="fas fa-plus-circle" style="margin-right: 5px;"></i>Create New
             </button>
