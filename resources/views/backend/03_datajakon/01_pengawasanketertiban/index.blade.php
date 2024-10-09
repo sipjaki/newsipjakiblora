@@ -93,7 +93,7 @@
                 margin-right: 10px;
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
-                margin-left: 580px;
+                margin-left: 400px;
             }
             .badge-plus:hover {
                 background: white;
