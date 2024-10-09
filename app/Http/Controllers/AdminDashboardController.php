@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\agendastatus;
 use App\Models\asosiasipengusaha;
 use App\Models\berita;
 use App\Models\beritaagenda;
 use App\Models\himbauandinas;
 use App\Models\kegiatanjaskon;
 use App\Models\keputusanmenteri;
+use App\Models\Keterampilanpekerja;
 use App\Models\ketertiban;
 use App\Models\laporankegiatan;
+use App\Models\metodepengadaan;
 use App\Models\paketpekerjaan;
 use App\Models\pelatihan;
 use App\Models\penanggungjawabteknis;
+use App\Models\pengawasanbangunangedung;
+use App\Models\pengawasanlokasi;
+use App\Models\pengawasanstatus;
+use App\Models\pengawasantindakan;
 use App\Models\peraturan;
 use App\Models\perbupatiwalikota;
 use App\Models\perdaerah;
@@ -21,9 +28,13 @@ use App\Models\permenteri;
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
 use App\Models\qa;
+use App\Models\qapertanyaan;
+use App\Models\qasebagai;
 use App\Models\referensi;
+use App\Models\statusadmin;
 use App\Models\suratedaran;
 use App\Models\suratkeputusan;
+use App\Models\tahunpilihan;
 use App\Models\timpembina;
 use App\Models\Tukangterampil;
 use App\Models\uijk;
@@ -64,6 +75,19 @@ class AdminDashboardController extends Controller
         $jumlahPeraturanGubernur = pergubernur::count();  // Mendapatkan jumlah data
         $jumlahPeraturanWalikotaBupati = perbupatiwalikota::count();  // Mendapatkan jumlah data
         $jumlahSuratKeputusan = suratkeputusan::count();  // Mendapatkan jumlah data
+
+        $jumlahstatusadmin = statusadmin::count();
+        $jumlahpengawasanlokasi = pengawasanlokasi::count();
+        $jumlahqasebagai = qasebagai::count();
+        $jumlahqapertanyaan = qapertanyaan::count();
+        $jumlahmetodepengadaan = metodepengadaan::count();
+        $jumlahpengawasanbangunangedung = pengawasanbangunangedung::count();
+        $jumlahpengawasanstatus = pengawasanstatus::count();
+        $jumlahpengawasantindakan = pengawasantindakan::count();
+        $jumlahagendastatus = agendastatus::count();
+        $jumlahketerampilanpekerja = Keterampilanpekerja::count();
+        $jumlahpilihantahun = tahunpilihan::count();
+
     
         $user = Auth::user();
     
@@ -95,6 +119,19 @@ class AdminDashboardController extends Controller
             'jumlahPeraturanGubernur' => $jumlahPeraturanGubernur,  // Menambahkan jumlah data ke view
             'jumlahPeraturanWalikotaBupati' => $jumlahPeraturanWalikotaBupati,  // Menambahkan jumlah data ke view
             'jumlahSuratKeputusan' => $jumlahSuratKeputusan,  // Menambahkan jumlah data ke view
+
+
+            'jumlahstatusadmin' => $jumlahstatusadmin, // Mengirimkan data kecamatan unik ke view
+            'jumlahpengawasanlokasi' => $jumlahpengawasanlokasi, // Mengirimkan data kecamatan unik ke view
+            'jumlahqasebagai' => $jumlahqasebagai, // Mengirimkan data kecamatan unik ke view
+            'jumlahqapertanyaan' => $jumlahqapertanyaan, // Mengirimkan data kecamatan unik ke view
+            'jumlahmetodepengadaan' => $jumlahmetodepengadaan, // Mengirimkan data kecamatan unik ke view
+            'jumlahpengawasanbangunangedung' => $jumlahpengawasanbangunangedung, // Mengirimkan data kecamatan unik ke view
+            'jumlahpengawasanstatus' => $jumlahpengawasanstatus, // Mengirimkan data kecamatan unik ke view
+            'jumlahpengawasantindakan' => $jumlahpengawasantindakan, // Mengirimkan data kecamatan unik ke view
+            'jumlahagendastatus' => $jumlahagendastatus, // Mengirimkan data kecamatan unik ke view
+            'jumlahketerampilanpekerja' => $jumlahketerampilanpekerja, // Mengirimkan data kecamatan unik ke view
+            'jumlahpilihantahun' => $jumlahpilihantahun, // Mengirimkan data kecamatan unik ke view
         ]);
     }
     

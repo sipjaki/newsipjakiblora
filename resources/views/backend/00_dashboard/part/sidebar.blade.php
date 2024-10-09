@@ -377,7 +377,7 @@
                             </a>
                             <ul class="children" id="settingsmenu">
                                 <li class="child">
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingsalldata" style="font-size: 12px;">
                                         <i class="fas fa-database mr-2" style="margin-left: 20px;"></i>ALL DATA
                                     </a>
                                     

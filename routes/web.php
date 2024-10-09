@@ -13,6 +13,7 @@ use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\UijkController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\SettingmenuController;
 use App\Http\Controllers\UndangundangController;
 use Database\Factories\DatajakonFactory;
 use Database\Factories\SkktenagakerjaFactory;
@@ -586,8 +587,9 @@ Route::post('/kategoriadmin/{id}', [AdministratorController::class, 'deletekateg
 ->middleware('auth')
 ->name('delete.deletekategoriadmin');
 
+// -------------------------- ROUTE UNTUK SETTINGS DATA MENU JASA KONSTRUKSI ============================================
 
-
+Route::get('/settingsalldata', [SettingmenuController::class, 'alldata'])->middleware('auth');  
 
 // Route::get('/$login', function () {
 //     // return view('welcome');
