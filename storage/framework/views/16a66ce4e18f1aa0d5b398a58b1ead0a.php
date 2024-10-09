@@ -295,6 +295,69 @@
                             
 
                          <p style="margin-bottom: 5px;"></p>
+                         
+                         <li class="parent">
+                            <a href="#" onclick="toggle_menu('settingsmenu'); return false" class="sbar">
+                                <i class="fas fa-cogs mr-2"></i> <!-- Ikon untuk pelatihan -->
+                                <span>SETTINGS<i class="fa fa-angle-down pull-right align-bottom" style="color: black;"></i></span>
+                            </a>
+                            <ul class="children" id="settingsmenu">
+                                <li class="child">
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-database mr-2" style="margin-left: 20px;"></i>ALL DATA
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-user-shield mr-2" style="margin-left: 20px;"></i>STATUS ADMIN
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-map-marker-alt mr-2" style="margin-left: 20px;"></i>KECAMATAN/KOTA
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-clipboard-list mr-2" style="margin-left: 20px;"></i>QA SEBAGAI
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-question-circle mr-2" style="margin-left: 20px;"></i>QA PERTANYAAN
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-database mr-2" style="margin-left: 20px;"></i>METODE PENGADAAN
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-building mr-2" style="margin-left: 20px;"></i>PENGAWASAN BANGUNAN GEDUNG
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-check-circle mr-2" style="margin-left: 20px;"></i>PENGAWASAN STATUS
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-exclamation-triangle mr-2" style="margin-left: 20px;"></i>PENGAWASAN TINDAKAN
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-calendar-check mr-2" style="margin-left: 20px;"></i>AGENDA STATUS
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-users-cog mr-2" style="margin-left: 20px;"></i>KETERAMPILAN PEKERJA
+                                    </a>
+                                    
+                                    <a href="/404" style="font-size: 12px;">
+                                        <i class="fas fa-calendar-alt mr-2" style="margin-left: 20px;"></i>TAHUN REGISTRASI
+                                    </a>
+                                    
+                                    
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    
+                         <p style="margin-bottom: 5px;"></p>
 
                          <li class="parent">
                             <a href="/administrator" class="sbar">
