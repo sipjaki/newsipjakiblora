@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\agendastatus;
-use App\Models\Keterampilanpekerja;
+use App\Models\keterampilanpekerja;
 use App\Models\metodepengadaan;
 use App\Models\pengawasanbangunangedung;
 use App\Models\pengawasanlokasi;
@@ -38,7 +38,7 @@ class SettingmenuController extends Controller
         $jumlahpengawasanstatus = pengawasanstatus::count();
         $jumlahpengawasantindakan = pengawasantindakan::count();
         $jumlahagendastatus = agendastatus::count();
-        $jumlahketerampilanpekerja = Keterampilanpekerja::count();
+        $jumlahketerampilanpekerja = keterampilanpekerja::count();
         $jumlahpilihantahun = tahunpilihan::count();
 
 
