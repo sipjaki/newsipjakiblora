@@ -187,7 +187,7 @@
         </a>
         
         <a href="/databerita" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-circle-left mr-2"></i>Kembali</button>
         </a>
 
         <br>
@@ -316,7 +316,7 @@
             
                 
                 <div class="form-group">
-                    <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fab fa-telegram" style="margin-right:10px;"></i> Update</button>
+                    <button style="float: right" class="badgenewupdate btn btn-primary" type="submit"><i class="fab fa-telegram mr-2"></i>Update</button>
                 </div>
             </form>
             

@@ -105,7 +105,7 @@
 
         </style>
         <a href="/dokumentasipelatihan" style="background: white;">
-            <div class="badge"><i class="fas fa-arrow-left mr-2"></i> Kembali </div></label>
+            <div class="badge"><i class="fas fa-arrow-circle-left mr-2"></i>Kembali </div></label>
         </a>
         
                         

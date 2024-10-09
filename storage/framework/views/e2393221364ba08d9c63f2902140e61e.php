@@ -188,7 +188,7 @@
         </a>
      
         <a href="/tupoksi" style="background: white;">
-            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left mr-2"></i>Kembali</button>
+            <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-circle-left mr-2"></i>Kembali</button>
         </a>
 
         <br>

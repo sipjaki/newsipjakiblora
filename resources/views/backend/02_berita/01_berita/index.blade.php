@@ -107,7 +107,7 @@
         
         <a href="/databeritacreate" style="background: inherit">
             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer">
-                <i class="fas fa-pencil-alt mr-2"></i> Create New
+                <i class="fas fa-pencil-alt mr-2"></i>Create New
             </button>
         </a>
         

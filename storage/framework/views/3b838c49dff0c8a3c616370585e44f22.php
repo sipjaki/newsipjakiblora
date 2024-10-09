@@ -93,7 +93,7 @@
                 margin-right: 10px;
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
-                margin-left: 580px;
+                margin-left: 450px;
             }
             .badge-plus:hover {
                 background: white;
@@ -107,7 +107,7 @@
         
         <a href="/databeritacreate" style="background: inherit">
             <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer">
-                <i class="fas fa-pencil-alt" style="margin-right: 5px;"></i> Create New
+                <i class="fas fa-pencil-alt mr-2"></i>Create New
             </button>
         </a>
         
