@@ -6,7 +6,7 @@ use App\Models\asosiasipengusaha;
 use App\Models\ketertiban;
 use App\Models\metodepengadaan;
 use App\Models\paketpekerjaan;
-use App\Models\Penanggungjawabteknis;
+use App\Models\penanggungjawabteknis;
 use App\Models\pengawasanbangunangedung;
 use App\Models\pengawasanketertiban;
 use App\Models\pengawasanlokasi;
@@ -99,7 +99,7 @@ class DatajakonController extends Controller
         $user = Auth::user();
         $datapengawasanlokasi = pengawasanlokasi::all();
         $datapengawasanbangunan = pengawasanbangunangedung::all();
-        $datapenanggungjawabteknis = Penanggungjawabteknis::all();
+        $datapenanggungjawabteknis = penanggungjawabteknis::all();
         $datapengawasanstatus = pengawasanstatus::all();
         $datapengawasantindakan = pengawasantindakan::all();
 
