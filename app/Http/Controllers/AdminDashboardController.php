@@ -9,7 +9,7 @@ use App\Models\beritaagenda;
 use App\Models\himbauandinas;
 use App\Models\kegiatanjaskon;
 use App\Models\keputusanmenteri;
-use App\Models\Keterampilanpekerja;
+use App\Models\keterampilanpekerja;
 use App\Models\ketertiban;
 use App\Models\laporankegiatan;
 use App\Models\metodepengadaan;
@@ -85,7 +85,7 @@ class AdminDashboardController extends Controller
         $jumlahpengawasanstatus = pengawasanstatus::count();
         $jumlahpengawasantindakan = pengawasantindakan::count();
         $jumlahagendastatus = agendastatus::count();
-        $jumlahketerampilanpekerja = Keterampilanpekerja::count();
+        $jumlahketerampilanpekerja = keterampilanpekerja::count();
         $jumlahpilihantahun = tahunpilihan::count();
 
     
