@@ -108,7 +108,7 @@
             </button>
         </a>
         <a href="/acarapelatihancreate" style="background: inherit">
-            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer; float:right; >
+            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer; float:right; ">
                 <i class="fas fa-plus-circle mr-2"></i>Create New
             </button>
         </a>
