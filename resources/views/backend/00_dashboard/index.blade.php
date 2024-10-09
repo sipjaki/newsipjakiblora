@@ -18,7 +18,7 @@
     <div class="mt-0 mb-2 button-container">
     <div class="row pl-1" style="margin-left: -3px; margin-right: -3px;">
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/himbauandinas" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -31,9 +31,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/qapertanyaan" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >    
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -46,9 +46,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/databerita" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -61,9 +61,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/beritaagenda" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >   
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -76,9 +76,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/dokumentasipelatihan" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >    
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -91,9 +91,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/acarapelatihan" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >    
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -106,9 +106,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/pengawasandanketertiban" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >    
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -121,9 +121,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/asosiasipengusaha" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >    
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -136,9 +136,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/paketpekerjaan" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >    
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -151,9 +151,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/dataiujk" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >   
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -166,24 +166,24 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/beskktenagakerja" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >    
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
                      onmouseout="this.parentNode.style.backgroundColor='#001f3f'; this.parentNode.style.color='white'; this.parentNode.style.boxShadow='0 4px 10px rgba(0, 0, 0, 0.2)'; this.querySelector('small').style.color='white';">
                     <h5 class="mb-0 mt-2 text-light">
-                        <small style="font-size:12px; color: white;"><strong>SERTIFIKAT KETERAMPILAN KERJA</strong></small>
+                        <small style="font-size:12px; color: white;"><strong>SERTIFIKAT KETERAMPILAN</strong></small>
                     </h5>
                     <div class="text-center" style="font-size:14px;">
                         <i class="fas fa-certificate" style="font-size: 20px; margin-right: 5px;"></i> {{$jumlahSertifikatKetermpilan}} SKK
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/datapjt" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -196,9 +196,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
+        <a href="/timpembina" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >    
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
                 <div class="p-2 text-center"
                      onmouseover="this.parentNode.style.backgroundColor='white'; this.parentNode.style.color='black'; this.parentNode.style.boxShadow='0 6px 15px rgba(0, 0, 0, 0.3)'; this.querySelector('small').style.color='black';" 
@@ -211,7 +211,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
         
         <div class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3">
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;">
@@ -267,6 +267,7 @@
 </div>
 <div class="mt-0 mb-2 button-container">
     <div class="row pl-1" style="margin-left: -3px; margin-right: -3px;">
+        
         <a href="/404" class="col-lg-3 col-md-3 col-sm-4 col-6 mb-3" style="background:inherit"   >
             <div style="background-color: #001f3f; border: 1px solid #001f3f; border-radius: 25px; padding: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); text-align: center; width: calc(100% - 10px); max-width: 250px; margin: 0 auto; cursor: pointer; color: white;"> 
                 <div class="p-2 text-center"
