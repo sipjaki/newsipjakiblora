@@ -183,7 +183,7 @@
 
         </style>
 <a style="background: white;">
-    <div class="badge"><i class="fas fa-calendar-check mr-2"></i>Create Ketertiban & Pengawasan Jasa Konstruksi </div>
+    <div class="badge"><i class="fas fa-calendar-check mr-2"></i>Update Ketertiban & Pengawasan Jasa Konstruksi </div>
 </a>
 
 <a href="/pengawasandanketertiban" style="background: white;">
