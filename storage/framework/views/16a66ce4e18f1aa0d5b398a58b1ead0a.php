@@ -335,19 +335,19 @@
                                         <i class="fas fa-check-circle mr-2" style="margin-left: 20px;"></i>PENGAWASAN STATUS
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingpengawasantindakan" style="font-size: 12px;">
                                         <i class="fas fa-exclamation-triangle mr-2" style="margin-left: 20px;"></i>PENGAWASAN TINDAKAN
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingagendastatus" style="font-size: 12px;">
                                         <i class="fas fa-calendar-check mr-2" style="margin-left: 20px;"></i>AGENDA STATUS
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingketerampilanpekerja" style="font-size: 12px;">
                                         <i class="fas fa-users-cog mr-2" style="margin-left: 20px;"></i>KETERAMPILAN PEKERJA
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingtahunpilihan" style="font-size: 12px;">
                                         <i class="fas fa-calendar-alt mr-2" style="margin-left: 20px;"></i>TAHUN REGISTRASI
                                     </a>
                                     

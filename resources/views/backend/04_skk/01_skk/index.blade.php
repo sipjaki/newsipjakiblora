@@ -67,43 +67,86 @@
     <label for="entries" style="margin-right: 5px;">
         <style>
             .badge {
-                background: linear-gradient(to right, yellow, black);
+                background: linear-gradient(to right, green, black);
                 color: white;
                 padding: 10px 20px;
+                border-radius: 10px;
+                display: inline-block;
+                font-size: 1rem;
+                margin-right: 0px;
+                text-align: center;
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .badge:hover {
+                background: white;
+                color: black;
+            }
+
+            .badge-plus {
+            background: linear-gradient(to right, navy, black);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute; /* Tambahkan ini */
+            top: 20px; /* Atur jarak dari atas jika diperlukan */
+            right: 20px; /* Atur jarak dari kanan jika diperlukan */
+        }
+
+        .badge-plus:hover {
+            background: white;
+            color: black;
+        }
+
+            .badge-menu1 {
+                background: linear-gradient(to right, navy, black);
+                color: white;
+                padding: 8px 15px;
                 border-radius: 10px;
                 display: inline-block;
                 font-size: 1rem;
                 margin-right: 10px;
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
+                margin-left: 0px;
             }
-    
-            .badge:hover {
-                background-color: white;
-                color: black;
-            }
-            .badge-create {
-                background: linear-gradient(to right, navy, black);
-                color: white;
-                padding: 8px 20px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                margin-left: 500px;
-                text-align: center;
-                transition: background-color 0.3s, color 0.3s;
-            }
-    
-            .badge-create:hover {
+            .badge-menu1:hover {
                 background: white;
                 color: black;
             }
-        </style>
-        <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
+        </style> <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
                         <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer "> <i class="fas fa-file" style="margin-right: 5px;"></i>Sertifikat Keterampilan Kerja</button>
-                        <a href="/newtenagakerjacreate" style="background: inherit">
-                            <button class="badge-create" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
+                        
+                        <a href="/settingkecamatan" style="background: inherit">
+                            <button class="badge" style="border: none; font-size: 14px; cursor: pointer; ">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </button>
                         </a>
+                        
+                        <a href="/settingketerampilanpekerja" style="background: inherit">
+                            <button class="badge" style="border: none; font-size: 14px; cursor: pointer; margin-left:-20px;">
+                                <i class="fas fa-graduation-cap"></i>
+                            </button>
+                        </a>
+                        
+                        <a href="/settingtahunpilihan" style="background: inherit">
+                            <button class="badge" style="border: none; font-size: 14px; cursor: pointer; margin-left:-20px;">
+                                <i class="fas fa-calendar-alt"></i>
+                            </button>
+                        </a>
+                        
+        
+                        
+                        
+                        <a href="/newtenagakerjacreate" style="background: inherit">
+                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
+                        </a>
+
+
                         <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
     {{-- <select id="entries" onchange="showEntries()">

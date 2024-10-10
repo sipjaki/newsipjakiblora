@@ -27,6 +27,7 @@ class SkktenagakerjaController extends Controller
         // Mengambil data dengan pagination
         $data = Tukangterampil::orderBy('created_at', 'desc')->paginate(15);
 
+        $datatahunpilihan = tahunpilihan::all();
         $totalData = Tukangterampil::count();
         $user = Auth::user();
 
@@ -42,6 +43,7 @@ class SkktenagakerjaController extends Controller
             'data' => $data,
             'data_kecamatan' => $datakecamatan, // Mengirimkan data kecamatan unik ke view
             'totaldata' => $totalData, // Mengirimkan data kecamatan unik ke view
+            'datatahunpilihan' => $datatahunpilihan, // Mengirimkan data kecamatan unik ke view
             'user' => $user, // Mengirimkan data kecamatan unik ke view
         ]);
     }

@@ -67,23 +67,42 @@
     <label for="entries" style="margin-right: 5px;">
         <style>
             .badge {
-                background: linear-gradient(to right, yellow, black);
+                background: linear-gradient(to right, green, black);
                 color: white;
                 padding: 10px 20px;
                 border-radius: 10px;
                 display: inline-block;
                 font-size: 1rem;
-                margin-right: 10px;
+                margin-right: 0px;
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
             }
     
             .badge:hover {
-                background-color: white;
+                background: white;
                 color: black;
             }
 
             .badge-plus {
+            background: linear-gradient(to right, navy, black);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute; /* Tambahkan ini */
+            top: 20px; /* Atur jarak dari atas jika diperlukan */
+            right: 20px; /* Atur jarak dari kanan jika diperlukan */
+        }
+
+        .badge-plus:hover {
+            background: white;
+            color: black;
+        }
+
+            .badge-menu1 {
                 background: linear-gradient(to right, navy, black);
                 color: white;
                 padding: 8px 15px;
@@ -93,31 +112,35 @@
                 margin-right: 10px;
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
-                margin-left: 425px;
+                margin-left: 0px;
             }
-            .badge-plus:hover {
+            .badge-menu1:hover {
                 background: white;
                 color: black;
             }
         </style>
-        <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-        <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer ">
-            <i class="fas fa-list" style="margin-right: 5px;"></i>Daftar Pertanyaan Publik
+    
+    <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer;">
+        <i class="fas fa-list mr-2"></i>Daftar Pertanyaan Publik
+    </button>
+    
+    <a href="/settingqasebagai" style="background: inherit">
+        <button class="badge" style="border: none; font-size: 14px; cursor: pointer;">
+            <i class="fas fa-cog mr-2"></i>QaSebagai
         </button>
-                  {{-- <a href="/pergubernurcreate" style="background: inherit">
-                            <button class="badge-plus" style="border: none; font-size:15px; cursor:pointer "><i class="fas fa-edit" style="margin-right: 5px;"></i>Create New</button>
-                        </a> --}}
+    </a>
+    
+    <a href="/settingqapertanyaan" style="background: inherit">
+        <button class="badge" style="border: none; font-size: 14px; cursor: pointer; margin-left:-10px;">
+            <i class="fas fa-question-circle mr-2"></i>QaPertanyaan
+        </button>
+    </a>
+    
+        
 
-                        <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
 
-    {{-- <select id="entries" onchange="showEntries()">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option value="25">25</option>
-        </select> --}}
-</div>
+
+    </div>
 </div>
 
 

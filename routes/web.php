@@ -646,6 +646,38 @@ Route::post('/settingpengawasanstatus/{id}', [SettingmenuController::class, 'del
 ->middleware('auth')
 ->name('delete.settingpengawasanstatus');
 
+// 08 SETTINGS MENU PENGAWASAN TINDAKAN 
+Route::get('/settingpengawasantindakan', [SettingmenuController::class, 'settingpengawasantindakan'])->middleware('auth');  
+Route::get('/settingpengawasantindakancreate', [SettingmenuController::class, 'createsettingpengawasantindakan'])->middleware('auth');
+Route::post('/settingpengawasantindakanstore', [SettingmenuController::class, 'createstoresettingpengawasantindakan'])->middleware('auth')->name('create.settingpengawasantindakan');
+Route::post('/settingpengawasantindakan/{id}', [SettingmenuController::class, 'deletesettingpengawasantindakan'])
+->middleware('auth')
+->name('delete.settingpengawasantindakan');
+
+// 09 SETTINGS MENU AGENDA STATUS 
+Route::get('/settingagendastatus', [SettingmenuController::class, 'settingagendastatus'])->middleware('auth');  
+Route::get('/settingagendastatuscreate', [SettingmenuController::class, 'createsettingagendastatus'])->middleware('auth');
+Route::post('/settingagendastatusstore', [SettingmenuController::class, 'createstoresettingagendastatus'])->middleware('auth')->name('create.settingagendastatus');
+Route::post('/settingagendastatus/{id}', [SettingmenuController::class, 'deletesettingagendastatus'])
+->middleware('auth')
+->name('delete.settingagendastatus');
+
+// 10 SETTINGS MENU KETERAMPILAN PEKERJA 
+Route::get('/settingketerampilanpekerja', [SettingmenuController::class, 'settingketerampilanpekerja'])->middleware('auth');  
+Route::get('/settingketerampilanpekerjacreate', [SettingmenuController::class, 'createsettingketerampilanpekerja'])->middleware('auth');
+Route::post('/settingketerampilanpekerjastore', [SettingmenuController::class, 'createstoresettingketerampilanpekerja'])->middleware('auth')->name('create.settingketerampilanpekerja');
+Route::post('/settingketerampilanpekerja/{id}', [SettingmenuController::class, 'deletesettingketerampilanpekerja'])
+->middleware('auth')
+->name('delete.settingketerampilanpekerja');
+
+// 11 SETTINGS MENU TAHUN PILIHAN 
+Route::get('/settingtahunpilihan', [SettingmenuController::class, 'settingtahunpilihan'])->middleware('auth');  
+Route::get('/settingtahunpilihancreate', [SettingmenuController::class, 'createsettingtahunpilihan'])->middleware('auth');
+Route::post('/settingtahunpilihanstore', [SettingmenuController::class, 'createstoresettingtahunpilihan'])->middleware('auth')->name('create.settingtahunpilihan');
+Route::post('/settingtahunpilihan/{id}', [SettingmenuController::class, 'deletesettingtahunpilihan'])
+->middleware('auth')
+->name('delete.settingtahunpilihan');
+
 
 // Route::get('/$login', function () {
 //     // return view('welcome');

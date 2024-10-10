@@ -125,16 +125,48 @@
                 color: black;
             }
         </style>
-        <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-        <button id="previewBtn" class="badge" style="border: none; font-size: 14px; cursor: pointer;">
-            <i class="fas fa-home mr-2"></i>Daftar Kecamatan Kabupaten Bandung Barat
-        </button>
-{{--         
-        <a href="/administrator" style="background: inherit">
-            <button class="badge" style="border: none; font-size: 14px; cursor: pointer;">
-                <i class="fas fa-user-cog" style="margin-right: 5px;"></i>Data Administrator
-            </button>
-        </a> --}}
+<button id="previewBtn" class="badge" style="border: none; font-size: 14px; cursor: pointer;">
+    <i class="fas fa-map mr-2"></i> Daftar Kecamatan Kabupaten Bandung Barat
+</button>
+
+<a href="/beritaagenda" style="background: inherit">
+    <button class="badge" style="border: none; font-size: 14px; cursor: pointer;">
+        <i class="fas fa-newspaper"></i>
+    </button>
+</a>
+
+<a href="/acarapelatihan" style="background: inherit">
+    <button class="badge" style="border: none; font-size: 14px; cursor: pointer; margin-left:-25px;">
+        <i class="fas fa-calendar-alt"></i>
+    </button>
+</a>
+
+<a href="/pengawasandanketertiban" style="background: inherit">
+    <button class="badge" style="border: none; font-size: 14px; cursor: pointer; margin-left:-25px;">
+        <i class="fas fa-eye"></i>
+    </button>
+</a>
+
+<a href="/asosiasipengusaha" style="background: inherit">
+    <button class="badge" style="border: none; font-size: 14px; cursor: pointer; margin-left:-25px;">
+        <i class="fas fa-briefcase"></i>
+    </button>
+</a>
+
+<a href="/beskktenagakerja" style="background: inherit">
+    <button class="badge" style="border: none; font-size: 14px; cursor: pointer; margin-left: -25px;">
+        <i class="fas fa-id-card"></i>
+    </button>
+</a>
+
+<a href="/datapjt" style="background: inherit">
+    <button class="badge" style="border: none; font-size: 14px; cursor: pointer; margin-left: -25px;">
+        <i class="fas fa-user-shield"></i>
+    </button>
+</a>
+
+
+
         
         <a href="/settingkecamatancreate" style="background: inherit">
             <button class="badge-plus" style="border: none; font-size: 14px; cursor: pointer;">
