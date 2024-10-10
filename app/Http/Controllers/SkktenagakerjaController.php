@@ -277,7 +277,7 @@ public function feskktenagakerja()
         $dataketerampilan = keterampilanpekerja::all();
         $datatahunpilihan = tahunpilihan::all();
 
-        $data= Tukangterampil::paginate(15); // Menggunakan paginate() untuk pagination
+        $data= Tukangterampil::orderBy('created_at', 'desc')->paginate(15); // Menggunakan paginate() untuk pagination
         $totalData = Tukangterampil::count();
 
           // Mengambil semua data untuk mendapatkan kecamatan unik
