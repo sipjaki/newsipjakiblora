@@ -282,10 +282,10 @@ Standar Biaya Umum Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
              <table>
                 <thead>
                     <tr>
-                        <th style="width:45px; font-size:12px;">NO</th>
-                        <th style="width:900px; font-size:12px;">JUDUL</th>
+                        <th style="width:45px; font-size:14px;">NO</th>
+                        <th style="width:900px; font-size:14px;">JUDUL</th>
                         
-                        <th style="font-size:12px;">AKSI</th>
+                        <th style="font-size:14px;">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
