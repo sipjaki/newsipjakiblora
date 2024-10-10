@@ -27,7 +27,7 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            margin-top:188px;
+            margin-top:165px;
         ">
 
             <h2 style="
@@ -167,10 +167,10 @@ border-radius:5px;
 <div class="badgehidden" style="color: white"></div></label>
 </a>
 <a href="/peraturan/daerah" style="background: white;">
-<button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-left" style="margin-right: 5px;"></i>KEMBALI</button>
+<button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-circle-left"></i>Kembali</button>
 </a>
 
-<button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download me-2"></i> DOWNLOAD PDF</button>
+<button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download mr-2"></i>Download .pdf</button>
 
             {{-- <button class="badgeupdate" style="border: none; font-size:12px; cursor:pointer; "> <i class="fas fa-file" style="margin-right: 5px;"></i> Update</button> --}}
             <!-- <button id="downloadBtn" class="badge" style="border:none; font-size:12px; cursor:pointer "> <i class="fas fa-download"></i> Download</button> -->
