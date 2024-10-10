@@ -638,6 +638,14 @@ Route::post('/settingpengawasanbangunangedung/{id}', [SettingmenuController::cla
 ->middleware('auth')
 ->name('delete.settingpengawasanbangunangedung');
 
+// 07 SETTINGS MENU PENGAWASAN STATUS 
+Route::get('/settingpengawasanstatus', [SettingmenuController::class, 'settingpengawasanstatus'])->middleware('auth');  
+Route::get('/settingpengawasanstatuscreate', [SettingmenuController::class, 'createsettingpengawasanstatus'])->middleware('auth');
+Route::post('/settingpengawasanstatusstore', [SettingmenuController::class, 'createstoresettingpengawasanstatus'])->middleware('auth')->name('create.settingpengawasanstatus');
+Route::post('/settingpengawasanstatus/{id}', [SettingmenuController::class, 'deletesettingpengawasanstatus'])
+->middleware('auth')
+->name('delete.settingpengawasanstatus');
+
 
 // Route::get('/$login', function () {
 //     // return view('welcome');

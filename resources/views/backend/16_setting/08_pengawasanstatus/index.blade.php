@@ -125,22 +125,21 @@
                 color: black;
             }
         </style>
-        <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Create New </div></label> -->
-        <button id="previewBtn" class="badge" style="border: none; font-size: 14px; cursor: pointer;">
-            <i class="fas fa-building mr-2"></i>Daftar Bangunan Gedung
-        </button>
-        
-        <a href="/pengawasandanketertiban" style="background: inherit">
-            <button class="badge" style="border: none; font-size: 14px; cursor: pointer;">
-                <i class="fas fa-gavel mr-2"></i>Ketertiban
-            </button>
-        </a>
-        
-        <a href="/settingpengawasanbangunangedungcreate" style="background: inherit">
-            <button class="badge-plus" style="border: none; font-size: 14px; cursor: pointer;">
-                <i class="fas fa-plus mr-2"></i>Create New
-            </button>
-        </a>
+<button id="previewBtn" class="badge" style="border: none; font-size: 14px; cursor: pointer;">
+    <i class="fas fa-eye mr-2"></i>Daftar Status Pengawasan
+</button>
+
+<a href="/pengawasandanketertiban" style="background: inherit">
+    <button class="badge" style="border: none; font-size: 14px; cursor: pointer;">
+        <i class="fas fa-gavel mr-2"></i>Ketertiban
+    </button>
+</a>
+
+<a href="/settingpengawasanstatuscreate" style="background: inherit">
+    <button class="badge-plus" style="border: none; font-size: 14px; cursor: pointer;">
+        <i class="fas fa-plus-circle mr-2"></i>Create New
+    </button>
+</a>
                   
                   
 </div>
@@ -185,7 +184,7 @@
                 <thead>
                     <tr>
                         <th style="width:5%; font-size:12px;">NO</th>
-                        <th style="width:800px;; font-size:12px;">JENIS BANGUNAN GEDUNG</th>
+                        <th style="width:800px;; font-size:12px;">STATUS PENGAWASAN</th>
                         <th style="width:75px; font-size:12px;">AKSI</th>
                     </tr>
                 </thead>
@@ -200,7 +199,7 @@
                     
                     <tr>
                         <td style="font-size: 12px;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->bangunan }}</td>
+                        <td style="font-size: 12px; text-align:left; text-transform:uppercase;">{{ $item->status }}</td>
                         
                         <td>
                             
@@ -250,7 +249,7 @@
                                 </a> --}}
 
 
-                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('delete.settingpengawasanbangunangedung', $item->id) }}')">
+                                <a href="#" class="iconhover" title="Delete" data-toggle="modal" data-target="#deleteModal" onclick="setDeleteAction('{{ route('delete.settingpengawasanstatus', $item->id) }}')">
                                     <i class="fas fa-trash"></i>
                                 </a>
                                 

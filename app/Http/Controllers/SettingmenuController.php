@@ -512,4 +512,79 @@ public function createstoresettingpengawasanbangunangedung(Request $request)
     return redirect('/settingpengawasanbangunangedung'); // Adjust this to your desired route
 }
 
+// 07 SEETING METODE PENGADAAN PEKERJAAN ============================================================================
+    public function settingpengawasanstatus()
+    {
+
+        $datapengawasanstatus = pengawasanstatus::orderBy('created_at', 'desc')->paginate(15);
+        $user = Auth::user();
+
+        return view('backend.16_setting.08_pengawasanstatus.index', [
+            'title' => 'Settings Pengawasan Status',
+            'user' => $user, // Mengirimkan data kecamatan unik ke view
+            'data' => $datapengawasanstatus, // Mengirimkan data kecamatan unik ke view
+           
+        ]);
+
+    }
+
+    public function deletesettingpengawasanstatus($id)
+    {
+        // Cari entri berdasarkan judul
+        $entry = pengawasanstatus::where('id', $id)->first();
+    
+        if ($entry) {
+            // Hapus entri dari database
+            pengawasanstatus::destroy($entry->id);
+    
+            // Set pesan flash untuk sukses
+            session()->flash('delete', 'Data Berhasil Dihapus!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingpengawasanstatus');
+        } else {
+            // Set pesan flash jika data tidak ditemukan
+            session()->flash('error', 'Data Tidak Ditemukan!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingpengawasanstatus');
+        }
+    }
+
+
+        
+// CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
+public function createsettingpengawasanstatus()
+{
+                $user = Auth::user();
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.16_setting.08_pengawasanstatus.create', [
+                    // 'data' => $datapenanggungjawabteknis,
+                    'user' => $user,
+                    'title' => 'Create Pengawasan Status'
+                ]);
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstoresettingpengawasanstatus(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'status' => 'required|string|max:255',
+                    
+    ]);
+
+    // Create a new entry in the database
+    pengawasanstatus::create([
+        'status' => $request->input('status'),
+               
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/settingpengawasanstatus'); // Adjust this to your desired route
+}
+
 }

@@ -331,7 +331,7 @@
                                         <i class="fas fa-building mr-2" style="margin-left: 20px;"></i>PENGAWASAN BANGUNAN GEDUNG
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingpengawasanstatus" style="font-size: 12px;">
                                         <i class="fas fa-check-circle mr-2" style="margin-left: 20px;"></i>PENGAWASAN STATUS
                                     </a>
                                     
