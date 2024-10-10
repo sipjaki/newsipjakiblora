@@ -211,7 +211,7 @@
             </div>
             <br>
             <button class="button-text" style="color: white;">{{ session('pertanyaan') }}</button>
-            <p style="margin-top: 25px; font-size:12px; color:#000;">Silakan muat ulang halaman ini ! <br> atau tekan tanda x di pojok kanan </p>
+            <p style="margin-top: 25px; font-size:12px; color:#000;">Silakan muat ulang halaman ini ! <br> atau tekan tanda x di pojok kanan atas </p>
         </div>
     </div>
 @endif

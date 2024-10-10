@@ -429,61 +429,84 @@
 {{-- ================ --}}
 @include('tambahan.alert')
 {{-- ================ --}}
+<form action="{{ route('create.qapertanyaan') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('POST')
 
-                <form action="{{ route('create.qapertanyaan') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('POST')
-                
-                    <div class="form-group d-flex align-items-center mt-1">
-                        <label for="qasebagai_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-map-marker-alt me-2"></i> Qa Sebagai
-                        </label>
-                        <select class="form-control" id="qasebagai_id" name="qasebagai_id" required>
-                            <option value="" disabled selected>Anda Sebagai ?</option>
-                            @foreach ($dataqasebagai as $item)
-                                <option value="{{ $item->id }}">{{ $item->sebagai }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                
-                    <div class="form-group d-flex align-items-center mt-1">
-                        <label for="qapertanyaan_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
-                            <i class="fas fa-question-circle me-2"></i> Qa Pertanyaan
-                        </label>
-                        <select class="form-control" id="qapertanyaan_id" name="qapertanyaan_id" required>
-                            <option value="" disabled selected>Pertanyaan Anda ?</option>
-                            @foreach ($dataqapertanyaan as $item)
-                                <option value="{{ $item->id }}">{{ $item->pertanyaan }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                
-                    <div class="form-group d-flex align-items-center mt-1">
-                        <label for="email" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
-                            <i class="fas fa-envelope me-2"></i> Email
-                        </label>
-                        <input type="text" class="form-control" id="email" name="email" required style="color: #000000">
-                    </div>
-                
-                    <div class="form-group d-flex align-items-center mt-1">
-                        <label for="nama_lengkap" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
-                            <i class="fas fa-envelope me-2"></i> Nama Lengkap
-                        </label>
-                        <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required style="color: #000000">
-                    </div>
-                
-                    <div class="form-group d-flex align-items-center mt-1">
-                        <label for="telepon" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
-                            <i class="fas fa-phone-alt me-2"></i> Telepon
-                        </label>
-                        <input type="number" class="form-control" id="telepon" name="telepon" required style="color: #000000">
-                    </div>
-                
-                    <button class="savedata btn btn-primary mt-3" type="submit">
-                        <i class="fas fa-save mr-2"></i> Save
-                    </button>
-                </form>
-                
+    <div class="form-group d-flex align-items-center mt-1" style="width: 100%;">
+        <label for="qasebagai_id" class="mr-3" style="flex: 0 0 200px; text-align:left; font-size:14px;">
+            <i class="fas fa-map-marker-alt mr-2" style="color: #000000"></i><span style="color: #000000; font-size:16px;"> Anda Sebagai </span>
+        </label>
+        <select class="form-control" id="qasebagai_id" name="qasebagai_id" required>
+            <option value="" disabled selected>Anda Sebagai ?</option>
+            @foreach ($dataqasebagai as $item)
+                <option value="{{ $item->id }}">{{ $item->sebagai }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="form-group d-flex align-items-center mt-1" style="width: 100%;">
+        <label for="qapertanyaan_id" class="mr-3" style="flex: 0 0 200px; text-align:left; font-size:14px;">
+            <i class="fas fa-question-circle mr-2" style="color: #000000"></i><span style="color: #000000; font-size:16px;" >Pertanyaan Saudara</span>
+        </label>
+        <select class="form-control" id="qapertanyaan_id" name="qapertanyaan_id" required>
+            <option value="" disabled selected>Pertanyaan Anda ?</option>
+            @foreach ($dataqapertanyaan as $item)
+                <option value="{{ $item->id }}">{{ $item->pertanyaan }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="form-group d-flex align-items-center mt-1" style="width: 100%;">
+        <label for="email" class="mr-3" style="flex: 0 0 200px; text-align:left; font-size: 14px;">
+            <i class="fas fa-envelope mr-2" style="color: #000000"></i><span style="color: #000000; font-size:16px;">Email</span>
+        </label>
+        <input type="text" class="form-control" id="email" name="email" required style="color: #000000;" placeholder="Masukan Email Saudara">
+    </div>
+
+    <div class="form-group d-flex align-items-center mt-1" style="width: 100%;">
+        <label for="nama_lengkap" class="mr-3" style="flex: 0 0 200px; text-align:left; font-size: 14px;">
+            <i class="fas fa-user mr-2" style="color: #000000"></i><span style="color: #000000; font-size:16px;">Nama Lengkap</span>
+        </label>
+        <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required style="color: #000000;" placeholder="Nama Lengkap">
+    </div>
+
+    <div class="form-group d-flex align-items-center mt-1" style="width: 100%;">
+        <label for="telepon" class="mr-3" style="flex: 0 0 200px; text-align:left; font-size: 14px;">
+            <i class="fas fa-phone-alt mr-2" style="color: #000000"></i><span style="color: #000000; font-size:16px;">Telepon</span>
+        </label>
+        <input type="number" class="form-control" id="telepon" name="telepon" required style="color: #000000;" placeholder="No Whatsapp">
+    </div>
+    
+    <style>
+        .badge-plus {
+        background: linear-gradient(to right, navy, black);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 10px;
+        display: inline-block;
+        font-size: 12px;
+        text-align: center;
+        /* margin-top: 1500px; */
+        transition: background-color 0.3s, color 0.3s;
+        position: absolute; /* Tambahkan ini */
+        top: 20px; /* Atur jarak dari atas jika diperlukan */
+        right: 20px; /* Atur jarak dari kanan jika diperlukan */
+    }
+
+    .badge-plus:hover {
+        background: white;
+        color: black;
+    }
+
+    </style>
+    <div class="container" style="margin-left:300px;">
+        <button class="btn btn-secondary mt-3" type="submit" style="border-radius:10px;">
+            <i class="fas fa-save mr-2"></i> Kirim Pertanyaan !
+        </button>
+    </div>
+</form>
+
               
             </div>
         </div>
