@@ -598,6 +598,22 @@ Route::post('/settingstatusadmin/{id}', [SettingmenuController::class, 'deletest
 ->middleware('auth')
 ->name('delete.statusadmin');
 
+// 02 SETTINGS MENU PENGWASAN LOKASI KECAMATAN KOTA
+Route::get('/settingkecamatan', [SettingmenuController::class, 'settingkecamatan'])->middleware('auth');  
+Route::get('/settingkecamatancreate', [SettingmenuController::class, 'createsettingkecamatan'])->middleware('auth');
+Route::post('/settingkecamatanstore', [SettingmenuController::class, 'createstoresettingkecamatan'])->middleware('auth')->name('create.settingkecamatan');
+Route::post('/settingkecamatan/{id}', [SettingmenuController::class, 'deletesettingkecamatan'])
+->middleware('auth')
+->name('delete.settingkecamatan');
+
+// 03 SETTINGS MENU QA SEBAGAI
+Route::get('/settingqasebagai', [SettingmenuController::class, 'settingqasebagai'])->middleware('auth');  
+Route::get('/settingqasebagaicreate', [SettingmenuController::class, 'createsettingqasebagai'])->middleware('auth');
+Route::post('/settingqasebagaistore', [SettingmenuController::class, 'createstoresettingqasebagai'])->middleware('auth')->name('create.settingqasebagai');
+Route::post('/settingqasebagai/{id}', [SettingmenuController::class, 'deletesettingqasebagai'])
+->middleware('auth')
+->name('delete.settingqasebagai');
+
 
 // Route::get('/$login', function () {
 //     // return view('welcome');

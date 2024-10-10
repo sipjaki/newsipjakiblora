@@ -202,10 +202,10 @@
 
         </style>
         <a style="background: white;">
-            <div class="badge"><i class="fas fa-plus mr-2"></i>Create Kategori Administrator Sipjaki </div></label>
+            <div class="badge"><i class="fas fa-plus mr-2"></i>Create Kecamatan </div></label>
         </a>
         
-        <a href="/settingstatusadmin" style="background: white;">
+        <a href="/settingkecamatan" style="background: white;">
             <button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-circle-left mr-2"></i>Kembali</button>
         </a>
 
@@ -270,33 +270,24 @@
             <!-- Menampilkan pesan sukses jika ada -->
                 
             {{-- <h2>Create New Peraturan</h2> --}}
-            <form action="{{ route('create.statusadminnewbaru') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('create.settingkecamatan') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST') <!-- Gunakan metode PUT untuk update data -->
-    
+
                 <div class="form-group d-flex align-items-center">
-                    <label for="status" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
-                        <i class="fas fa-users me-2" style="font-size: 14px;"></i> Status Admin
+                    <label for="kota" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                        <i class="fas fa-map-marker-alt me-2" style="font-size: 14px;"></i> Kecamatan
                     </label>
-                    <select class="form-control" id="status" name="status" required style="font-size: 14px;">
-                        <option value="" disabled selected>Pilih Status Admin</option>
-                        <option value="editor">Editor</option>
-                        <option value="moderator">Moderator</option>
-                        <option value="viewer">Viewer</option>
-                        <option value="contributor">Contributor</option>
-                        <option value="manager">Manager</option>
-                        <option value="analyst">Analyst</option>
-                        <option value="support">Support</option>
-                        <option value="guest">Guest</option>
-                    </select>
+                    <input type="text" class="form-control" id="kota" name="kota" required style="font-size: 14px; text-transform:uppercase;" placeholder="Masukan Kecamatan/Daerah">
                 </div>
+                
                 
                 
                 {{-- <div class="form-group d-flex align-items-center mt-3">
                     <label for="peraturan" class="mr-3" style="width: 200px; text-align:left"><i class="fas fa-file me-2"></i> Peraturan (PDF)</label>
                     <input type="file" class="form-control-file" id="peraturan" name="peraturan" accept=".pdf" required>
                 </div> --}}
-                <button class="savedata" type="submit" class="btn btn-primary mt-3"><i class="fas fa-save mr-2"></i> Save</button>
+                <button class="savedata" type="submit" class="btn btn-primary mt-3"><i class="fas fa-save mr-2"></i>Save</button>
             </form>
             
 

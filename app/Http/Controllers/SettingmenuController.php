@@ -61,7 +61,7 @@ class SettingmenuController extends Controller
         ]);
     }
 
-
+// 01 SEETING MENU STATUS ADMIN ============================================================================
     public function statusadmin()
     {
 
@@ -135,6 +135,156 @@ public function createstorestatusadmin(Request $request)
     
     // Redirect to the desired route
     return redirect('/settingstatusadmin'); // Adjust this to your desired route
+}
+
+// 02 SEETING MENU KECAMATAN LOKASI ============================================================================
+    public function settingkecamatan()
+    {
+
+        $datapengawasanlokasi = pengawasanlokasi::orderBy('created_at', 'desc')->paginate(15);
+        $user = Auth::user();
+
+        return view('backend.16_setting.03_kecamatan.index', [
+            'title' => 'Settings Kecamatan/Kota',
+            'user' => $user, // Mengirimkan data kecamatan unik ke view
+            'data' => $datapengawasanlokasi, // Mengirimkan data kecamatan unik ke view
+           
+        ]);
+
+    }
+
+    public function deletesettingkecamatan($id)
+    {
+        // Cari entri berdasarkan judul
+        $entry = pengawasanlokasi::where('id', $id)->first();
+    
+        if ($entry) {
+            // Hapus entri dari database
+            pengawasanlokasi::destroy($entry->id);
+    
+            // Set pesan flash untuk sukses
+            session()->flash('delete', 'Data Berhasil Dihapus!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingkecamatan');
+        } else {
+            // Set pesan flash jika data tidak ditemukan
+            session()->flash('error', 'Data Tidak Ditemukan!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingkecamatan');
+        }
+    }
+
+
+        
+// CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
+public function createsettingkecamatan()
+{
+                $user = Auth::user();
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.16_setting.03_kecamatan.create', [
+                    // 'data' => $datapenanggungjawabteknis,
+                    'user' => $user,
+                    'title' => 'Create Kecamatan/Kota'
+                ]);
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstoresettingkecamatan(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'kota' => 'required|string|max:255',
+                    
+    ]);
+
+    // Create a new entry in the database
+    pengawasanlokasi::create([
+        'kota' => $request->input('kota'),
+               
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/settingkecamatan'); // Adjust this to your desired route
+}
+
+// 03 SEETING QA SEBAGAI PERTANYAAN ============================================================================
+    public function settingqasebagai()
+    {
+
+        $dataqasebagai = qasebagai::orderBy('created_at', 'desc')->paginate(15);
+        $user = Auth::user();
+
+        return view('backend.16_setting.04_qasebagai.index', [
+            'title' => 'Settings QA Sebagai',
+            'user' => $user, // Mengirimkan data kecamatan unik ke view
+            'data' => $dataqasebagai, // Mengirimkan data kecamatan unik ke view
+           
+        ]);
+
+    }
+
+    public function deletesettingqasebagai($id)
+    {
+        // Cari entri berdasarkan judul
+        $entry = qasebagai::where('id', $id)->first();
+    
+        if ($entry) {
+            // Hapus entri dari database
+            qasebagai::destroy($entry->id);
+    
+            // Set pesan flash untuk sukses
+            session()->flash('delete', 'Data Berhasil Dihapus!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingqasebagai');
+        } else {
+            // Set pesan flash jika data tidak ditemukan
+            session()->flash('error', 'Data Tidak Ditemukan!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingqasebagai');
+        }
+    }
+
+
+        
+// CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
+public function createsettingqasebagai()
+{
+                $user = Auth::user();
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.16_setting.04_qasebagai.create', [
+                    // 'data' => $datapenanggungjawabteknis,
+                    'user' => $user,
+                    'title' => 'Create QA Sebagai'
+                ]);
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstoresettingqasebagai(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'sebagai' => 'required|string|max:255',
+                    
+    ]);
+
+    // Create a new entry in the database
+    qasebagai::create([
+        'sebagai' => $request->input('sebagai'),
+               
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/settingqasebagai'); // Adjust this to your desired route
 }
 
 }
