@@ -307,7 +307,7 @@
                                         <i class="fas fa-database mr-2" style="margin-left: 20px;"></i>ALL DATA
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingstatusadmin" style="font-size: 12px;">
                                         <i class="fas fa-user-shield mr-2" style="margin-left: 20px;"></i>STATUS ADMIN
                                     </a>
                                     

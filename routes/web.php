@@ -588,8 +588,16 @@ Route::post('/kategoriadmin/{id}', [AdministratorController::class, 'deletekateg
 ->name('delete.deletekategoriadmin');
 
 // -------------------------- ROUTE UNTUK SETTINGS DATA MENU JASA KONSTRUKSI ============================================
-
 Route::get('/settingsalldata', [SettingmenuController::class, 'alldata'])->middleware('auth');  
+
+// 01 SETTINGS MENU STATUS ADMIN
+Route::get('/settingstatusadmin', [SettingmenuController::class, 'statusadmin'])->middleware('auth');  
+Route::get('/settingstatusadmincreate', [SettingmenuController::class, 'createstatusadmin'])->middleware('auth');
+Route::post('/settingstatusadminstore', [SettingmenuController::class, 'createstorestatusadmin'])->middleware('auth')->name('create.statusadminnewbaru');
+Route::post('/settingstatusadmin/{id}', [SettingmenuController::class, 'deletestatusadmin'])
+->middleware('auth')
+->name('delete.statusadmin');
+
 
 // Route::get('/$login', function () {
 //     // return view('welcome');

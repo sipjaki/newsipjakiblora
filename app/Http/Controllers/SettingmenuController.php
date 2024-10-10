@@ -61,4 +61,80 @@ class SettingmenuController extends Controller
         ]);
     }
 
+
+    public function statusadmin()
+    {
+
+        $datastatusadmin = statusadmin::orderBy('created_at', 'desc')->paginate(15);
+        $user = Auth::user();
+
+        return view('backend.16_setting.02_statusadmin.index', [
+            'title' => 'Settings Status Admin',
+            'user' => $user, // Mengirimkan data kecamatan unik ke view
+            'data' => $datastatusadmin, // Mengirimkan data kecamatan unik ke view
+           
+        ]);
+
+    }
+
+    public function deletestatusadmin($id)
+    {
+        // Cari entri berdasarkan judul
+        $entry = statusadmin::where('id', $id)->first();
+    
+        if ($entry) {
+            // Hapus entri dari database
+            statusadmin::destroy($entry->id);
+    
+            // Set pesan flash untuk sukses
+            session()->flash('delete', 'Data Berhasil Dihapus!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingstatusadmin');
+        } else {
+            // Set pesan flash jika data tidak ditemukan
+            session()->flash('error', 'Data Tidak Ditemukan!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingstatusadmin');
+        }
+    }
+
+
+        
+// CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
+public function createstatusadmin()
+{
+                $user = Auth::user();
+    
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.16_setting.02_statusadmin.create', [
+                    // 'data' => $datapenanggungjawabteknis,
+                    'user' => $user,
+                    'title' => 'Create Status Admin'
+                ]);
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstorestatusadmin(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'status' => 'required|string|max:255',
+                    
+    ]);
+
+    // Create a new entry in the database
+    statusadmin::create([
+        'status' => $request->input('status'),
+               
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/settingstatusadmin'); // Adjust this to your desired route
+}
+
 }
