@@ -252,7 +252,7 @@ Pengawasan & Ketertiban Jasa Konstruksi  <br> Pemerintah Kabupaten Bandung Barat
 <table>
         <thead>
             <tr>
-                <th style="width:45px;">NO</th>
+                <th style="width:45px;">NOmor sigit</th>
                 <th style="width:100px;">LOKASI</th>
                 <th style="width:100px;">BANGUNAN GEDUNG</th>
                 <th style="width:200px;">PENANGGUNG JAWAB TEKNIS</th>
