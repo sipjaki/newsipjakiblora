@@ -252,7 +252,7 @@ Agenda Sertifikasi Pekerja Konstruksi <br> Kabupaten Bandung Barat
 <table>
         <thead>
             <tr>
-                <th style="width:45px;">No</th>
+                <th style="width:45px;">Noor</th>
                 <th style="width:100px;">LOKASI</th>
                 <th style="width:100px;">STATUS</th>
                 <th style="width:100px;">AGENDA</th>
