@@ -71,6 +71,7 @@ Peraturan Menteri Tentang Jasa Konstruksi
 
 
     <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+
     <div class="container" style="margin-top: 20px;">
     <style>
         .pdf-container {
