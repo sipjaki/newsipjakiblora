@@ -450,7 +450,7 @@
             <i class="fas fa-question-circle mr-2" style="color: #000000"></i><span style="color: #000000; font-size:16px;" >Pertanyaan Saudara</span>
         </label>
         <select class="form-control" id="qapertanyaan_id" name="qapertanyaan_id" required>
-            <option value="" disabled selected>Pertanyaan Anda ?</option>
+            <option value="" disabled selected>Pertanyaan ?</option>
             @foreach ($dataqapertanyaan as $item)
                 <option value="{{ $item->id }}">{{ $item->pertanyaan }}</option>
             @endforeach
