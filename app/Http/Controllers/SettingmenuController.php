@@ -287,4 +287,229 @@ public function createstoresettingqasebagai(Request $request)
     return redirect('/settingqasebagai'); // Adjust this to your desired route
 }
 
+// 04 SEETING DATA QA PERTANYAAN ============================================================================
+    public function settingqapertanyaan()
+    {
+
+        $dataqapertanyaan = qapertanyaan::orderBy('created_at', 'desc')->paginate(15);
+        $user = Auth::user();
+
+        return view('backend.16_setting.05_qapertanyaan.index', [
+            'title' => 'Settings QA Pertanyaan',
+            'user' => $user, // Mengirimkan data kecamatan unik ke view
+            'data' => $dataqapertanyaan, // Mengirimkan data kecamatan unik ke view
+           
+        ]);
+
+    }
+
+    public function deletesettingqapertanyaan($id)
+    {
+        // Cari entri berdasarkan judul
+        $entry = qapertanyaan::where('id', $id)->first();
+    
+        if ($entry) {
+            // Hapus entri dari database
+            qapertanyaan::destroy($entry->id);
+    
+            // Set pesan flash untuk sukses
+            session()->flash('delete', 'Data Berhasil Dihapus!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingqapertanyaan');
+        } else {
+            // Set pesan flash jika data tidak ditemukan
+            session()->flash('error', 'Data Tidak Ditemukan!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingqapertanyaan');
+        }
+    }
+
+
+        
+// CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
+public function createsettingqapertanyaan()
+{
+                $user = Auth::user();
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.16_setting.05_qapertanyaan.create', [
+                    // 'data' => $datapenanggungjawabteknis,
+                    'user' => $user,
+                    'title' => 'Create QA Pertanyaan'
+                ]);
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstoresettingqapertanyaan(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'pertanyaan' => 'required|string|max:255',
+                    
+    ]);
+
+    // Create a new entry in the database
+    qapertanyaan::create([
+        'pertanyaan' => $request->input('pertanyaan'),
+               
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/settingqapertanyaan'); // Adjust this to your desired route
+}
+
+// 05 SEETING METODE PENGADAAN PEKERJAAN ============================================================================
+    public function settingmetodepengadaan()
+    {
+
+        $datametodepengadaan = metodepengadaan::orderBy('created_at', 'desc')->paginate(15);
+        $user = Auth::user();
+
+        return view('backend.16_setting.06_metodepangadaan.index', [
+            'title' => 'Settings Metode Pengadaan',
+            'user' => $user, // Mengirimkan data kecamatan unik ke view
+            'data' => $datametodepengadaan, // Mengirimkan data kecamatan unik ke view
+           
+        ]);
+
+    }
+
+    public function deletesettingmetodepengadaan($id)
+    {
+        // Cari entri berdasarkan judul
+        $entry = metodepengadaan::where('id', $id)->first();
+    
+        if ($entry) {
+            // Hapus entri dari database
+            metodepengadaan::destroy($entry->id);
+    
+            // Set pesan flash untuk sukses
+            session()->flash('delete', 'Data Berhasil Dihapus!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingmetodepengadaan');
+        } else {
+            // Set pesan flash jika data tidak ditemukan
+            session()->flash('error', 'Data Tidak Ditemukan!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingmetodepengadaan');
+        }
+    }
+
+
+        
+// CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
+public function createsettingmetodepengadaan()
+{
+                $user = Auth::user();
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.16_setting.06_metodepangadaan.create', [
+                    // 'data' => $datapenanggungjawabteknis,
+                    'user' => $user,
+                    'title' => 'Create Metode Pengadaan'
+                ]);
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstoresettingmetodepengadaan(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'metode' => 'required|string|max:255',
+                    
+    ]);
+
+    // Create a new entry in the database
+    metodepengadaan::create([
+        'metode' => $request->input('metode'),
+               
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/settingmetodepengadaan'); // Adjust this to your desired route
+}
+
+// 06 SEETING METODE PENGADAAN PEKERJAAN ============================================================================
+    public function settingpengawasanbangunangedung()
+    {
+
+        $datapengawasanbangunangedung = pengawasanbangunangedung::orderBy('created_at', 'desc')->paginate(15);
+        $user = Auth::user();
+
+        return view('backend.16_setting.07_pengawasanbangunangedung.index', [
+            'title' => 'Settings Metode Pengawasan Bangunan',
+            'user' => $user, // Mengirimkan data kecamatan unik ke view
+            'data' => $datapengawasanbangunangedung, // Mengirimkan data kecamatan unik ke view
+           
+        ]);
+
+    }
+
+    public function deletesettingpengawasanbangunangedung($id)
+    {
+        // Cari entri berdasarkan judul
+        $entry = pengawasanbangunangedung::where('id', $id)->first();
+    
+        if ($entry) {
+            // Hapus entri dari database
+            pengawasanbangunangedung::destroy($entry->id);
+    
+            // Set pesan flash untuk sukses
+            session()->flash('delete', 'Data Berhasil Dihapus!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingpengawasanbangunangedung');
+        } else {
+            // Set pesan flash jika data tidak ditemukan
+            session()->flash('error', 'Data Tidak Ditemukan!');
+    
+            // Redirect ke halaman yang sesuai
+            return redirect('/settingpengawasanbangunangedung');
+        }
+    }
+
+
+        
+// CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
+public function createsettingpengawasanbangunangedung()
+{
+                $user = Auth::user();
+                // Tampilkan form update dengan data yang ditemukan
+                return view('backend.16_setting.07_pengawasanbangunangedung.create', [
+                    // 'data' => $datapenanggungjawabteknis,
+                    'user' => $user,
+                    'title' => 'Create Pengawasan Bangunan Gedung'
+                ]);
+}
+
+// Menyimpan data asosiasi pengusaha
+
+public function createstoresettingpengawasanbangunangedung(Request $request)
+{
+    // Validate input
+    $request->validate([
+        'bangunan' => 'required|string|max:255',
+                    
+    ]);
+
+    // Create a new entry in the database
+    pengawasanbangunangedung::create([
+        'bangunan' => $request->input('bangunan'),
+               
+    ]);
+
+    session()->flash('create', 'Data Berhasil Ditambahkan!');
+    
+    // Redirect to the desired route
+    return redirect('/settingpengawasanbangunangedung'); // Adjust this to your desired route
+}
+
 }

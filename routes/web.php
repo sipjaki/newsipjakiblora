@@ -614,6 +614,30 @@ Route::post('/settingqasebagai/{id}', [SettingmenuController::class, 'deletesett
 ->middleware('auth')
 ->name('delete.settingqasebagai');
 
+// 04 SETTINGS MENU QA PERTANYAAN
+Route::get('/settingqapertanyaan', [SettingmenuController::class, 'settingqapertanyaan'])->middleware('auth');  
+Route::get('/settingqapertanyaancreate', [SettingmenuController::class, 'createsettingqapertanyaan'])->middleware('auth');
+Route::post('/settingqapertanyaanstore', [SettingmenuController::class, 'createstoresettingqapertanyaan'])->middleware('auth')->name('create.settingqapertanyaan');
+Route::post('/settingqapertanyaan/{id}', [SettingmenuController::class, 'deletesettingqapertanyaan'])
+->middleware('auth')
+->name('delete.settingqapertanyaan');
+
+// 05 SETTINGS MENU METODE PENGADAAN
+Route::get('/settingmetodepengadaan', [SettingmenuController::class, 'settingmetodepengadaan'])->middleware('auth');  
+Route::get('/settingmetodepengadaancreate', [SettingmenuController::class, 'createsettingmetodepengadaan'])->middleware('auth');
+Route::post('/settingmetodepengadaanstore', [SettingmenuController::class, 'createstoresettingmetodepengadaan'])->middleware('auth')->name('create.settingmetodepengadaan');
+Route::post('/settingmetodepengadaan/{id}', [SettingmenuController::class, 'deletesettingmetodepengadaan'])
+->middleware('auth')
+->name('delete.settingmetodepengadaan');
+
+// 06 SETTINGS MENU PENGAWASAN BANGUNAN GEDUNG 
+Route::get('/settingpengawasanbangunangedung', [SettingmenuController::class, 'settingpengawasanbangunangedung'])->middleware('auth');  
+Route::get('/settingpengawasanbangunangedungcreate', [SettingmenuController::class, 'createsettingpengawasanbangunangedung'])->middleware('auth');
+Route::post('/settingpengawasanbangunangedungstore', [SettingmenuController::class, 'createstoresettingpengawasanbangunangedung'])->middleware('auth')->name('create.settingpengawasanbangunangedung');
+Route::post('/settingpengawasanbangunangedung/{id}', [SettingmenuController::class, 'deletesettingpengawasanbangunangedung'])
+->middleware('auth')
+->name('delete.settingpengawasanbangunangedung');
+
 
 // Route::get('/$login', function () {
 //     // return view('welcome');

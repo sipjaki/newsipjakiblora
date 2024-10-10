@@ -393,15 +393,15 @@
                                         <i class="fas fa-clipboard-list mr-2" style="margin-left: 20px;"></i>QA SEBAGAI
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingqapertanyaan" style="font-size: 12px;">
                                         <i class="fas fa-question-circle mr-2" style="margin-left: 20px;"></i>QA PERTANYAAN
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingmetodepengadaan" style="font-size: 12px;">
                                         <i class="fas fa-database mr-2" style="margin-left: 20px;"></i>METODE PENGADAAN
                                     </a>
                                     
-                                    <a href="/404" style="font-size: 12px;">
+                                    <a href="/settingpengawasanbangunangedung" style="font-size: 12px;">
                                         <i class="fas fa-building mr-2" style="margin-left: 20px;"></i>PENGAWASAN BANGUNAN GEDUNG
                                     </a>
                                     
