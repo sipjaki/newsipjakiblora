@@ -64,7 +64,7 @@
 </style>
 
     <div class="container">
-        <div class="loader" id="loader">Loading...</div>
+        <div class="loader" id="loader" style="color: fuchsia">Loading...</div>
         <div class="dashboard" id="dashboard" style="display: none;">
             <div class="card fade-in">
                 <canvas id="chart1"></canvas>
