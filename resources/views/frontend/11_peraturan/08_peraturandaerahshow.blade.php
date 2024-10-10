@@ -167,7 +167,7 @@ border-radius:5px;
 <div class="badgehidden" style="color: white"></div></label>
 </a>
 <a href="/peraturan/daerah" style="background: white;">
-<button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-circle-left"></i>Kembali</button>
+<button class="badgekembali" style="border: none; font-size:12px; cursor:pointer; "> <i class="fa fa-arrow-circle-left mr-2"></i>Kembali</button>
 </a>
 
 <button class="download-btn badgedownload" id="downloadBtn"><i class="fas fa-download mr-2"></i>Download .pdf</button>
