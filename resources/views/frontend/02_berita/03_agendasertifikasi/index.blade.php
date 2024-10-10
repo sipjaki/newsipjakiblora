@@ -252,14 +252,14 @@ Agenda Sertifikasi Pekerja Konstruksi <br> Kabupaten Bandung Barat
 <table>
         <thead>
             <tr>
-                <th style="width:45px;">Noor</th>
-                <th style="width:100px;">LOKASI</th>
-                <th style="width:100px;">STATUS</th>
-                <th style="width:100px;">AGENDA</th>
-                <th style="width:300px;">KETERANGAN</th>
-                <th style="width:100px;">KUOTA</th>
-                <th style="width:100px;">TANGGAL MULAI</th>
-                <th style="width:100px;">TANGGAL SELESAI</th>
+                <th style="width:45px; font-size:14px;">NO</th>
+                <th style="width:100px; font-size:14px;">LOKASI</th>
+                <th style="width:100px; font-size:14px;">STATUS</th>
+                <th style="width:100px; font-size:14px;">AGENDA</th>
+                <th style="width:300px; font-size:14px;">KETERANGAN</th>
+                <th style="width:100px; font-size:14px;">KUOTA</th>
+                <th style="width:100px; font-size:14px;">TANGGAL MULAI</th>
+                <th style="width:100px; font-size:14px;">TANGGAL SELESAI</th>
                 {{-- <th style="width:100px;">TANGGAL SELESAI</th> --}}
             </tr>
         </thead>
