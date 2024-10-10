@@ -109,6 +109,7 @@
         
     </style>
 
+
 <?php if(session('create')): ?>
     <div class="modal-alert-verifikasi">
         <div class="modal-content">
@@ -172,20 +173,49 @@
 <?php endif; ?>
 
 
-<?php if(session('pertanyaan')): ?>
-    <div class="modal-alert-verifikasi">
-        <div class="modal-content">
-            <button type="button" class="btnalert-view" onclick="document.querySelector('.modal-alert-verifikasi').style.display='none';">
-                &times;
-            </button>
+<style>
+    .modal-alert-pertanyaan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Mengubah menjadi fixed agar tetap di atas */
+    top: 0; /* Atur jarak dari atas */
+    left: 0; /* Atur jarak dari kiri */
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    z-index: 9999; /* Pastikan z-index lebih tinggi dari elemen lain */
+}
+
+.modal-content-pertanyaan {
+    background-color: white; /* Warna latar konten modal */
+    padding: 20px;
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+    max-width: 400px; /* Lebar maksimal modal */
+    width: 90%; 
+    z-index: 9999;/* Lebar responsif */
+}
+
+</style>
+
+<?php if(session('pertanyaan')): ?> 
+    <div class="modal-alert-pertanyaan">
+        <div class="modal-content-pertanyaan">
             <img src="/assets/icon/sipjakikbb.png" alt="Logo SIPJAKIKBB" style="width: 70px; height: 70px; object-fit: cover; margin: 20px;">
             <p style="color: black;">Pemerintah Kabupaten Bandung Barat</p>
-            
+            <div class="success-text" style="font-size: 18px;">Admin Kami Akan Menghubungi Saudara, Harap Menunggu !
+                <button type="button" class="btnalert-view" onclick="document.querySelector('.modal-alert-pertanyaan').style.display='none';" style="float: right;">
+                    &times;
+                </button>
+            </div>
             <br>
-            <button class="button-textupdate" style="color: white;"><?php echo e(session('pertanyaan')); ?></button> <!-- Wrapped text in a styled button -->
+            <button class="button-text" style="color: white;"><?php echo e(session('pertanyaan')); ?></button>
+            <p style="margin-top: 25px; font-size:12px; color:#000;">Silakan muat ulang halaman ini ! <br> atau tekan tanda x di pojok kanan </p>
         </div>
     </div>
 <?php endif; ?>
+
 
 
 

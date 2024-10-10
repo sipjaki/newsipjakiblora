@@ -334,7 +334,7 @@
         </div>
     </section> --}}
     
-  {{-- ------------------------------------------------------------------------------------------ --}}
+  {{-- --------------------------------------------------------------------------------------- --}}
   {{-- ------------------------------------------------------------------------------------------ --}}
   {{-- ------------------------------------------------------------------------------------------ --}}
 
@@ -423,103 +423,68 @@
                             "> Dinas Pekerjaan Umum dan Penataan Ruang <br>
                             Pemerintah Kabupaten Bandung Barat </p>
                 </aside>
-                <form id="form" action="/qapertanyaancreate" method="POST">
+
+                
+
+{{-- ================ --}}
+@include('tambahan.alert')
+{{-- ================ --}}
+
+                <form action="{{ route('create.qapertanyaan') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required 
-                        style="
-                            font-family: 'Lato', sans-serif;
-                            font-size: 14px; 
-                            padding: 10px;
-                            border: 1px solid #1a237e; 
-                            border-radius: 15px; 
-                            width: 40%; 
-                            height: 20%; 
-                            color: black;
-                        "
-                    >
-                    
-                    <input type="text" name="email" placeholder="Email" required 
-                        style="
-                            font-family: 'Lato', sans-serif;
-                            font-size: 14px; 
-                            padding: 10px;
-                            border: 1px solid #1a237e; 
-                            border-radius: 15px; 
-                            width: 40%; 
-                            height: 20%; 
-                            color: black;
-                            margin-bottom: 10px;
-                        "
-                    >
-                    
-                    <input type="number" name="telepon" placeholder="No Whatsapp" required 
-                        style="
-                            font-family: 'Lato', sans-serif;
-                            font-size: 14px; 
-                            padding: 10px;
-                            border: 1px solid #1a237e; 
-                            border-radius: 15px;
-                            width: 40%; 
-                            height: 20%; 
-                            color: black;
-                            margin-bottom: 10px;
-                        "
-                    >
-                    
-                    <style>
-                        .custom-select {
-                            font-family: 'Lato', sans-serif;
-                            font-size: 14px; 
-                            padding: 10px;
-                            border: 1px solid #1a237e; 
-                            border-radius: 15px;
-                            margin-bottom: 10px; 
-                            width: 490px;
-                            height: 50px; 
-                            color: black;
-                            background-color: white;
-                        }
-                        .custom-select:hover {
-                            background-color: white;
-                            color: black;
-                        }
-                    </style>
-                    
-                    <select name="qasebagai_id" id="qasebagai_id" class="custom-select" required>
-                        <option value="" disabled selected>Anda Sebagai</option>
-                        @foreach ($dataqasebagai as $data)
-                            <option value="{{ $data->sebagai }}">{{ $data->sebagai }}</option>
-                        @endforeach
-                    </select>
+                    @method('POST')
                 
-                    <select name="qapertanyaan_id" id="qapertanyaan_id" class="custom-select" required>
-                        <option value="" disabled selected>Jenis Q&A Pertanyaan Anda</option>
-                        @foreach ($dataqapertanyaan as $item)
-                            <option value="{{ $item->pertanyaan }}">{{ $item->pertanyaan }}</option>
-                        @endforeach
-                    </select>
+                    <div class="form-group d-flex align-items-center mt-1">
+                        <label for="qasebagai_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-map-marker-alt me-2"></i> Qa Sebagai
+                        </label>
+                        <select class="form-control" id="qasebagai_id" name="qasebagai_id" required>
+                            <option value="" disabled selected>Anda Sebagai ?</option>
+                            @foreach ($dataqasebagai as $item)
+                                <option value="{{ $item->id }}">{{ $item->sebagai }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 
-                    <br>
+                    <div class="form-group d-flex align-items-center mt-1">
+                        <label for="qapertanyaan_id" class="mr-3" style="width: 200px; text-align:left; font-size:14px;">
+                            <i class="fas fa-question-circle me-2"></i> Qa Pertanyaan
+                        </label>
+                        <select class="form-control" id="qapertanyaan_id" name="qapertanyaan_id" required>
+                            <option value="" disabled selected>Pertanyaan Anda ?</option>
+                            @foreach ($dataqapertanyaan as $item)
+                                <option value="{{ $item->id }}">{{ $item->pertanyaan }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 
-                    <button type="submit" style="
-                        font-family: 'Lato', sans-serif;
-                        font-size: 14px; 
-                        padding: 10px;
-                        border: 1px solid #1a237e; 
-                        border-radius: 15px;
-                        width: 200px; 
-                        height: 20%; 
-                        color: white;
-                        background-image: linear-gradient(to bottom, #FFCB0F, #000000);
-                        transition: background-color 0.3s, color 0.3s;
-                        margin-left: 100px;
-                        "
-                        onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" 
-                        onmouseout="this.style.background='linear-gradient(to right, black, #FFCB0F )'; this.style.color='white';">
-                        <i class="fab fa-telegram me-2"></i> Send QA
+                    <div class="form-group d-flex align-items-center mt-1">
+                        <label for="email" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                            <i class="fas fa-envelope me-2"></i> Email
+                        </label>
+                        <input type="text" class="form-control" id="email" name="email" required style="color: #000000">
+                    </div>
+                
+                    <div class="form-group d-flex align-items-center mt-1">
+                        <label for="nama_lengkap" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                            <i class="fas fa-envelope me-2"></i> Nama Lengkap
+                        </label>
+                        <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required style="color: #000000">
+                    </div>
+                
+                    <div class="form-group d-flex align-items-center mt-1">
+                        <label for="telepon" class="mr-3" style="width: 200px; text-align:left; font-size: 14px;">
+                            <i class="fas fa-phone-alt me-2"></i> Telepon
+                        </label>
+                        <input type="number" class="form-control" id="telepon" name="telepon" required style="color: #000000">
+                    </div>
+                
+                    <button class="savedata btn btn-primary mt-3" type="submit">
+                        <i class="fas fa-save mr-2"></i> Save
                     </button>
                 </form>
                 
+              
             </div>
         </div>
         

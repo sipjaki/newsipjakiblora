@@ -380,6 +380,33 @@ public function kategoriadmin()
                     return redirect('/himbauandinas');
                 }
 
+                // ------------------------------------- QA PERTANYAAN -------------------------
+                public function createstoreqapertanyaan(Request $request)
+                {
+                    // Validate input
+                    $request->validate([
+                        'qasebagai_id' => 'required|integer',
+                        'qapertanyaan_id' => 'required|integer',
+                        'email' => 'required|string|max:255',
+                        'telepon' => 'required|string|max:15', // Sesuaikan dengan panjang yang diinginkan
+                        'nama_lengkap' => 'required|string|max:15', // Sesuaikan dengan panjang yang diinginkan
+                    ]);
+                
+                    // Create a new entry in the database
+                    qa::create([
+                        'qasebagai_id' => $request->input('qasebagai_id'),
+                        'qapertanyaan_id' => $request->input('qapertanyaan_id'),
+                        'email' => $request->input('email'),
+                        'telepon' => $request->input('telepon'),
+                        'nama_lengkap' => $request->input('nama_lengkap'),
+                    ]);
+                
+                    session()->flash('pertanyaan', 'Pertanyaan Berhasil Dikirim!');
+                
+                    // Redirect to the desired route
+                    return redirect('/'); // Sesuaikan dengan rute yang diinginkan
+                }
+                
      
          
 }

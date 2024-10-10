@@ -253,7 +253,7 @@ Route::get('/dashboard', [AdminDashboardController::class, 'index'])->middleware
 // KATEGORI ADMIN  
 Route::get('/qapertanyaan', [AdministratorController::class, 'qapertanyaan'])->middleware('auth');  
 Route::get('/qapertanyaancreate', [AdministratorController::class, 'createqapertanyaan'])->middleware('auth');
-Route::post('/qapertanyaanstore', [AdministratorController::class, 'createstoreqapertanyaan'])->middleware('auth')->name('create.qapertanyaan');
+Route::post('/qapertanyaanstore', [AdministratorController::class, 'createstoreqapertanyaan'])->name('create.qapertanyaan');
 Route::post('/qapertanyaan/{id}', [AdministratorController::class, 'deleteqapertanyaan'])
 ->middleware('auth')
 ->name('delete.qapertanyaan');

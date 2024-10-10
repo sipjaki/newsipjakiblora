@@ -119,7 +119,8 @@
                 color: black;
             }
         </style>
-      <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer;">
+    
+    <button id="previewBtn" class="badge" style="border: none; font-size:15px; cursor:pointer;">
         <i class="fas fa-list mr-2"></i>Daftar Pertanyaan Publik
     </button>
     
