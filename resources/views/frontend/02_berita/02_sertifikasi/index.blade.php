@@ -162,7 +162,7 @@
                     <!-- Popular News End -->
 
 
-            @include('tambahan.layanankami')
+            {{-- @include('tambahan.layanankami') --}}
 
         </div>
         
