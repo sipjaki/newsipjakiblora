@@ -184,7 +184,7 @@
                             </a>
                         </div>
                     
-                        <div class="notification-container">
+                        {{-- <div class="notification-container">
                             <a style="margin-right: 10px; background: white; color: black; transition: background 0.3s, color 0.3s;" 
                                href="#" 
                                onclick="toggle_dropdown(this); return false" 
@@ -240,10 +240,10 @@
                                onmouseover="this.style.background='black'; this.style.color='white';" 
                                onmouseout="this.style.background='white'; this.style.color='black';">
                                 <i class="fa fa-users"></i>
-                                <span class="badge-notif">10</span>
+                                <span class="badge-notif">0</span>
                             </a>
                         </div>
-                    
+                     --}}
 {{--                         
                         <a style="margin-right: 10px; background: white; color: black;" href="#" onclick="toggle_dropdown(this); return false" role="button">
                             <i class="fa fa-folder"></i>
@@ -407,3 +407,34 @@ $(document).ready(function() {
 });
 </script>
 
+
+<script>
+
+    // Contoh menggunakan Google Analytics Reporting API v4
+fetch('https://analytics.googleapis.com/v4/reports:batchGet', {
+    method: 'POST',
+    headers: {
+        'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        "reportRequests": [{
+            "viewId": "YOUR_VIEW_ID",
+            "dateRanges": [{
+                "startDate": "30daysAgo",
+                "endDate": "today"
+            }],
+            "metrics": [{
+                "expression": "ga:users" // Jumlah pengguna
+            }]
+        }]
+    })
+})
+.then(response => response.json())
+.then(data => {
+    const totalVisitors = data.reports[0].data.totals[0].values[0];
+    document.getElementById('visitorCount').innerText = totalVisitors;
+})
+.catch(error => console.error('Error fetching data:', error));
+
+</script>
