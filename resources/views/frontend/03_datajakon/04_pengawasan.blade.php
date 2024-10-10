@@ -252,15 +252,15 @@ Pengawasan & Ketertiban Jasa Konstruksi  <br> Pemerintah Kabupaten Bandung Barat
 <table>
         <thead>
             <tr>
-                <th style="width:45px;">NOmor sigit</th>
-                <th style="width:100px;">LOKASI</th>
-                <th style="width:100px;">BANGUNAN GEDUNG</th>
-                <th style="width:200px;">PENANGGUNG JAWAB TEKNIS</th>
-                <th style="width:100px;">STATUS</th>
-                <th style="width:100px;">TINDAKAN</th>
-                <th style="width:100px;">JUDUL</th>
-                <th style="width:100px;">LAPORAN</th>
-                <th style="width:200px;">KETERANGAN</th>
+                <th style="width:45px; font-size:14px;">NO</th>
+                <th style="width:100px; font-size:14px;">LOKASI</th>
+                <th style="width:100px; font-size:14px;">BANGUNAN GEDUNG</th>
+                <th style="width:200px; font-size:14px;">PENANGGUNG JAWAB TEKNIS</th>
+                <th style="width:100px; font-size:14px;">STATUS</th>
+                <th style="width:100px; font-size:14px;">TINDAKAN</th>
+                <th style="width:100px; font-size:14px;">JUDUL</th>
+                <th style="width:100px; font-size:14px;">LAPORAN</th>
+                <th style="width:200px; font-size:14px;">KETERANGAN</th>
                 {{-- <th style="width:100px;">TANGGAL SELESAI</th> --}}
             </tr>
         </thead>
