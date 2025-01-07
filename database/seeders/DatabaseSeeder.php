@@ -945,6 +945,30 @@ qa::create([
         
 
         Tukangterampil::create([
+            'pengawasanlokasi_id' => '4',
+            'desa' => 'Kanangasari',
+            'nama' => 'WAHYUDIN',
+            'alamat' => 'Kp. Cibitung RT/RW 002/011 Kelurahan Kanangasari Kecamatan Cikalong Wetan Kabupaten Bandung Barat',
+            'tanggal_lahir' => '1962-08-10',
+            'nik' => '-',
+            'keterampilanpekerja_id' => '3',
+            'tahunpilihan_id' => '6',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => 'skktenagakerja/arsip/pas/Paspoto-Asesi-01.jpg',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/ANTON_HILMAN_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/ANTON_HILMAN_SKK_TUKANG_BANGUNAN_GEDUNG__J1.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/antonkegiatan1.jpeg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/antonkegiatan2.jpg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
+        // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
+
+        Tukangterampil::create([
             'pengawasanlokasi_id' => '11',
             'desa' => 'Budiharja',
             'nama' => 'ANTON HILMAN',
@@ -2286,6 +2310,14 @@ tahunpilihan::create([
 tahunpilihan::create([
     'id' => '6',
     'tahun' => '2024',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+tahunpilihan::create([
+    'id' => '7',
+    'tahun' => '2025',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
