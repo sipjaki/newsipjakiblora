@@ -989,6 +989,28 @@ qa::create([
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
+        Tukangterampil::create([
+            'pengawasanlokasi_id' => '4',
+            'desa' => 'Cipada',
+            'nama' => 'ADE SUTARYA',
+            'alamat' => 'Kp. Lembang Dano RT/RW 002/002 Kelurahan Cipada Kecamatan Cikalong Wetan Kabupaten Bandung Barat',
+            'tanggal_lahir' => '1963-06-03',
+            'nik' => '-',
+            'keterampilanpekerja_id' => '3',
+            'tahunpilihan_id' => '7',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => 'skktenagakerja/arsip/pas/A03_Paspoto.png',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/03_ADE_SUTARYA_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/03_ADE_SUTARYA_SKK.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/03_CK_KEGIATAN1.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/03_CK_KEGIATAN2.jpg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+
         // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
 
         Tukangterampil::create([
