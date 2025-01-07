@@ -1135,7 +1135,7 @@ qa::create([
             'registrasi' => 'SUDAH',
             'foto' => 'skktenagakerja/arsip/pas/A09_Paspoto.png',
             'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/09_SISWANDI_KTA_GATENSI.pdf',
-            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/09_SISWANDI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/09_SISWANDI_SKK.pdf',
             'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/--.jpg',
             'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/09_CK_KEGIATAN2.jpg',
             // 'usia' => $this->calculateAge('1993-03-09'), 
