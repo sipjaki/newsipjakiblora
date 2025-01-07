@@ -1054,6 +1054,28 @@ qa::create([
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
+        
+        Tukangterampil::create([
+            'pengawasanlokasi_id' => '4',
+            'desa' => 'Mandalasari',
+            'nama' => 'SOLIIHIN',
+            'alamat' => 'Kp. Ciawitali',
+            'tanggal_lahir' => '1993-03-11',
+            'nik' => '-',
+            'keterampilanpekerja_id' => '3',
+            'tahunpilihan_id' => '7',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => 'skktenagakerja/arsip/pas/A06_Paspoto.png',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/06_SOLIHIN_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/06_SOLIHIN_SKK.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/06_CK_KEGIATAN1.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/06_CK_KEGIATAN2.jpg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
 
         // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
 
