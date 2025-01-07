@@ -1014,7 +1014,7 @@ qa::create([
         Tukangterampil::create([
             'pengawasanlokasi_id' => '4',
             'desa' => 'Cipada',
-            'nama' => 'Asep Sutisna',
+            'nama' => 'ASEP SUTISNA',
             'alamat' => 'Kp. Lembang RT/RW 002/002 Kelurahan Cipada Kecamatan Cikalong Wetan Kabupaten Bandung Barat',
             'tanggal_lahir' => '1978-02-12',
             'nik' => '-',
@@ -1025,6 +1025,28 @@ qa::create([
             'foto' => 'skktenagakerja/arsip/pas/A04_Paspoto.png',
             'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/04_ASEP_SUTISNA_KTA_GATENSI.pdf',
             'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/04_ASEP_SUTISNA_SKK.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/04_CK_KEGIATAN1.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/04_CK_KEGIATAN2.jpg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
+        
+        Tukangterampil::create([
+            'pengawasanlokasi_id' => '4',
+            'desa' => 'Mekarjaya',
+            'nama' => 'LILI SUMANTRI',
+            'alamat' => 'Kp. Cipadagirang',
+            'tanggal_lahir' => '1982-07-07',
+            'nik' => '-',
+            'keterampilanpekerja_id' => '3',
+            'tahunpilihan_id' => '7',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => 'skktenagakerja/arsip/pas/A05_Paspoto.png',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/05_LILI_SUMANTRI_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/05_LILI_SUMANTRI_SKK.pdf',
             'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/04_CK_KEGIATAN1.jpg',
             'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/04_CK_KEGIATAN2.jpg',
             // 'usia' => $this->calculateAge('1993-03-09'), 
