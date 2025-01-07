@@ -1113,7 +1113,7 @@ qa::create([
             'foto' => 'skktenagakerja/arsip/pas/A08_Paspoto.png',
             'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/08_ENDANG_SUPRIATNA_KTA_GATENSI.pdf',
             'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/08_ENDANG_SUPRIATNA_SKK.pdf',
-            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/07_CK_KEGIATAN1.jpg',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/08_CK_KEGIATAN1.jpg',
             'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/08_CK_KEGIATAN2.jpg',
             // 'usia' => $this->calculateAge('1993-03-09'), 
             'created_at' => Carbon::now(),
