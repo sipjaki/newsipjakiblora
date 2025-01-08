@@ -1341,6 +1341,28 @@ qa::create([
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
+        
+        Tukangterampil::create([
+            'pengawasanlokasi_id' => '4',
+            'desa' => 'Ganjarsari',
+            'nama' => 'AYI NURDIN',
+            'alamat' => 'Kp. Bojong Sero RT/RW 003/004 Kelurahan Ganjarsari Kecamatan Cikalong Wetan Kabupaten Bandung Barat',
+            'tanggal_lahir' => '1980-07-01',
+            'nik' => '-',
+            'keterampilanpekerja_id' => '3',
+            'tahunpilihan_id' => '7',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => 'skktenagakerja/arsip/pas/A19_Paspoto.png',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/19_AYI_NURDIN_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/19_AYI_NURDIN_SKK.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/--.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/19_CK_KEGIATAN2.jpg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
 
         // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
 
