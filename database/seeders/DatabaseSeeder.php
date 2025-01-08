@@ -1259,7 +1259,7 @@ qa::create([
             'desa' => 'Cisomang Barat',
             'nama' => 'DADAN',
             'alamat' => 'Kp. Cisomang Barat RT/RW 001/012 Kelurahan Cisomang Barat Kecamatan Cikalong Wetan Kabupaten Bandung Barat',
-            'tanggal_lahir' => '1999-11-30',
+            'tanggal_lahir' => '1975-11-30',
             'nik' => '-',
             'keterampilanpekerja_id' => '3',
             'tahunpilihan_id' => '7',
