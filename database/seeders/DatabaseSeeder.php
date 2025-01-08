@@ -1429,6 +1429,28 @@ qa::create([
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
+        
+        Tukangterampil::create([
+            'pengawasanlokasi_id' => '4',
+            'desa' => 'Cisomang Barat ',
+            'nama' => 'WAWAN',
+            'alamat' => 'Kp. Cikara RT/RW 001/012 Kelurahan Cisomang Barat Kecamatan Cikalong Wetan Kabupaten Bandung Barat',
+            'tanggal_lahir' => '1980-04-03',
+            'nik' => '-',
+            'keterampilanpekerja_id' => '3',
+            'tahunpilihan_id' => '7',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => 'skktenagakerja/arsip/pas/A23_Paspoto.png',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/23_WAWAN_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/23_WAWAN_SKK.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/--.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/23_CK_KEGIATAN2.jpg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
 
         // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
 
