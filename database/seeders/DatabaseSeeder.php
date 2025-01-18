@@ -4155,18 +4155,8 @@ berita::create([
 berita::create([
     'judul' => 'Pemerintah Kabupaten Bandung Barat Melaksanakan Sertifikasi Jasa Konstruksi di Cisomang Barat',
     'user_id' => rand(1,5),
-    'gambar' => 'berita/databerita/pelatihancisomangbarat.jpg',
+    'gambar' => 'berita/databerita/pelatihancisomangbaat.jpg',
     'keterangan' => '<p>
-    **Pemerintah Kabupaten Bandung Barat Melaksanakan Sertifikasi Jasa Konstruksi di Cisomang Barat**  
-Bandung Barat, 2 Desember 2024 – Dalam upaya meningkatkan kompetensi dan legalitas tenaga kerja di sektor konstruksi, Pemerintah Kabupaten Bandung Barat baru-baru ini melaksanakan program Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat. Inisiatif ini bertujuan untuk meningkatkan efisiensi, transparansi, dan akuntabilitas dalam sektor jasa konstruksi, sekaligus memastikan bahwa para pekerja memiliki keterampilan yang sesuai dengan standar industri. Sertifikasi ini diharapkan dapat membawa perubahan signifikan dalam kualitas tenaga kerja dan pelaksanaan proyek konstruksi di wilayah tersebut.
-    </p>
-
-<p>
-Pemerintah Kabupaten Bandung Barat telah melaksanakan program Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat, yang diikuti oleh 30 peserta dari berbagai latar belakang, termasuk pekerja konstruksi dan masyarakat yang ingin mendapatkan pengakuan resmi atas keterampilannya. Acara ini turut dihadiri oleh perwakilan dari Pemerintah Provinsi Jawa Barat, Kepala Desa setempat, Kapolsek Cikalong Wetan, serta perangkat desa, yang menunjukkan dukungan penuh terhadap peningkatan kualitas tenaga kerja di sektor konstruksi. Para peserta mendapatkan pembekalan dari instruktur berpengalaman mengenai standar kerja, keselamatan, serta regulasi yang berlaku dalam industri konstruksi.
-</p>
-
-<p>
-Pemerintah Kabupaten Bandung Barat menegaskan komitmennya untuk terus mengadakan program sertifikasi guna meningkatkan daya saing tenaga kerja lokal dan memastikan pembangunan infrastruktur yang berkualitas serta berkelanjutan. Dengan adanya sertifikasi resmi, para pekerja diharapkan memiliki peluang lebih besar dalam mendapatkan proyek konstruksi, baik di tingkat daerah maupun nasional. Masyarakat Cisomang Barat menyambut baik kegiatan ini dan berharap sertifikasi jasa konstruksi dapat dilakukan secara rutin di masa mendatang agar lebih banyak tenaga kerja yang mendapat manfaat.
 </p>',
     'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
     'created_at' => Carbon::now(),
