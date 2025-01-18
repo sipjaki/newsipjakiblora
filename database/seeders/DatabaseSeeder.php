@@ -4149,24 +4149,6 @@ berita::create([
     'updated_at' => Carbon::now(),
 ]);
 
-// ======================================================
-// BERITA CISOMANG BARAT 
-// ======================================================
-berita::create([
-    'judul' => 'Pemerintah Kabupaten Bandung Barat Melaksanakan Sertifikasi Jasa Konstruksi di Cisomang Barat',
-    'user_id' => rand(1,5),
-    'gambar' => 'berita/databerita/pelatihancisomangbaat.jpg',
-    'keterangan' => '<p>
-</p>',
-    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-]);
-
-
-// ======================================================
-// BERITA CISOMANG BARAT 
-// ======================================================
 
 berita::create([
     'judul' => 'Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi',
