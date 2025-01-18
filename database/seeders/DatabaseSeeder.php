@@ -1583,6 +1583,28 @@ qa::create([
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
+        
+        Tukangterampil::create([
+            'pengawasanlokasi_id' => '4',
+            'desa' => 'Sadangmekar',
+            'nama' => 'RIFKI NOVALIMANI',
+            'alamat' => 'Kp. Cilengsar RT/RW 002/001 Kelurahan Sadangmekar Kecamatan Cikalong Wetan Kabupaten Bandung Barat',
+            'tanggal_lahir' => '2004-10-19',
+            'nik' => '-',
+            'keterampilanpekerja_id' => '3',
+            'tahunpilihan_id' => '7',
+            'kualifikasi' => 'SUDAH',
+            'registrasi' => 'SUDAH',
+            'foto' => 'skktenagakerja/arsip/pas/A30_Paspoto.png',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/30_RIFKI_NOVALIMANI_KTA_GATENSI.pdf',
+            'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/30_RIFKI_NOVALIMANI_SKK.pdf',
+            'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/--.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/29_CK_KEGIATAN2.jpg',
+            // 'usia' => $this->calculateAge('1993-03-09'), 
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        ]);
 
         // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
 
