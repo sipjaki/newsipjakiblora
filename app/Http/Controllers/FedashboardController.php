@@ -87,14 +87,14 @@ class FedashboardController extends Controller
         $data_layanankami = layanankami::all(); //
         $data = berita::where('judul', $judul)->firstOrFail();
         
-        $databerita = berita::orderBy('created_at', 'desc')->get(); //
+        $databeritaagenda = beritaagenda::orderBy('created_at', 'desc')->get(); //
         
         $user = Auth::user();
 
         return view('frontend.02_berita.01_portalberita.showindex', [
             'data' => $data,
             'data_berita' => $data_berita,
-            'databerita' => $databerita,
+            'dataagenda' => $databeritaagenda,
             'data_layanankami' => $data_layanankami,
             'user' => $user,
             'title' => 'Portal Berita Sipjaki KBB',
