@@ -1599,13 +1599,15 @@ qa::create([
             'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/30_RIFKI_NOVALIMANI_KTA_GATENSI.pdf',
             'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/30_RIFKI_NOVALIMANI_SKK.pdf',
             'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/--.jpg',
-            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/29_CK_KEGIATAN2.jpg',
+            'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/30_CK_KEGIATAN2.jpg',
             // 'usia' => $this->calculateAge('1993-03-09'), 
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
             'deleted_at' => null, // Jika Anda menggunakan soft deletes
         ]);
 
+        // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
+        // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
         // ------------------------------------------ CIKALONG WETAN SIPJAKI KBB KABUPATEN BANDUNG BARAT --------------
 
         Tukangterampil::create([
@@ -4053,6 +4055,25 @@ berita::create([
 <p>SIPJK menawarkan berbagai fitur unggulan seperti pendaftaran online, pelaporan kemajuan proyek secara real-time, dan akses mudah ke data proyek. Sistem ini diharapkan dapat mengurangi birokrasi, mempercepat proses administrasi, dan meminimalkan potensi terjadinya praktik korupsi. Selain itu, SIPJK juga bertujuan untuk meningkatkan keterlibatan publik dengan menyediakan informasi yang transparan dan mudah diakses tentang status dan perkembangan proyek konstruksi.</p>
 
 <p>Bupati Bandung Barat, menyampaikan antusiasmenya atas peluncuran SIPJK dan mengungkapkan harapannya bahwa sistem ini akan membawa perubahan positif dalam pengelolaan konstruksi di wilayahnya. Ia percaya bahwa SIPJK akan menjadi alat yang efektif dalam mendukung pembangunan berkelanjutan dan menjadi contoh bagi daerah lain dalam penerapan teknologi informasi untuk sektor publik.</p>
+
+',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+// ======================================================
+// BERITA CISOMANG BARAT 
+// ======================================================
+
+berita::create([
+    'judul' => 'Kabupaten Bandung Barat Gelar Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat',
+    'user_id' => rand(1,5),
+    'gambar' => 'berita/databerita/cisomangbarat.jpg',
+    'keterangan' => '
+<p>
+Kabupaten Bandung Barat telah sukses melaksanakan Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat. Kegiatan ini bertujuan untuk meningkatkan kompetensi tenaga kerja di sektor konstruksi, sejalan dengan kebutuhan akan tenaga terampil yang semakin meningkat. Pelatihan kali ini diikuti oleh sebanyak 30 peserta yang berasal dari berbagai latar belakang, termasuk pekerja konstruksi, tukang, dan pemuda yang tertarik untuk terjun ke industri ini.
+</p>
 
 ',
     'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
