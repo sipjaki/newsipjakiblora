@@ -1552,7 +1552,7 @@ qa::create([
             'kualifikasi' => 'SUDAH',
             'registrasi' => 'SUDAH',
             'foto' => 'skktenagakerja/arsip/pas/A28_Paspoto.png',
-            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/28_AYI_SOPANDI_KTA_GATENSI.pdf',
+            'kta_gatensi' => 'skktenagakerja/arsip/kta_gatensi/28_AYI_SOPANDI_KTA GATENSI.pdf',
             'skk_pekerja' => 'skktenagakerja/arsip/skk_pekerja/28_AYI_SOPANDI_SKK.pdf',
             'foto_kegiatanpekerja1' => 'skktenagakerja/arsip/foto_kegiatan1/--.jpg',
             'foto_kegiatanpekerja2' => 'skktenagakerja/arsip/foto_kegiatan2/28_CK_KEGIATAN2.jpg',
