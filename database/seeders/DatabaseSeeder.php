@@ -4072,7 +4072,7 @@ berita::create([
     'gambar' => 'berita/databerita/cisomangbarat.jpg',
     'keteranganberita' => '
 <p>
-Kabupaten Bandung Barat telah sukses melaksanakan Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat. Kegiatan ini bertujuan untuk meningkatkan kompetensi tenaga kerja di sektor konstruksi, sejalan dengan kebutuhan akan tenaga terampil yang semakin meningkat. Pelatihan kali ini diikuti oleh sebanyak 30 peserta yang berasal dari berbagai latar belakang, termasuk pekerja konstruksi, tukang, dan pemuda yang tertarik untuk terjun ke industri ini.
+Cisomang Barat 2 Desember 2024 - Kabupaten Bandung Barat telah sukses melaksanakan Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat. Kegiatan ini bertujuan untuk meningkatkan kompetensi tenaga kerja di sektor konstruksi, sejalan dengan kebutuhan akan tenaga terampil yang semakin meningkat. Pelatihan kali ini diikuti oleh sebanyak 30 peserta yang berasal dari berbagai latar belakang, termasuk pekerja konstruksi, tukang, dan pemuda yang tertarik untuk terjun ke industri ini.
 </p>
 
 <p>
@@ -4150,19 +4150,6 @@ berita::create([
 ]);
 
 
-berita::create([
-    'judul' => 'Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi',
-    'user_id' => rand(1,5),
-    'gambar' => 'berita/databerita/berita5.jpg',
-    'keteranganberita' => '<p>Bandung Barat, 11 Agustus 2024 – Dalam upaya untuk mendigitalkan dan menyempurnakan pengelolaan konstruksi, Pemerintah Kabupaten Bandung Barat baru-baru ini meluncurkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK). Inisiatif ini bertujuan untuk memperbaiki efisiensi, transparansi, dan akuntabilitas dalam administrasi proyek konstruksi di wilayahnya. SIPJK diharapkan akan membawa perubahan signifikan dalam cara proyek konstruksi dikelola dan diawasi.</p>
-
-<p>Sistem ini dilengkapi dengan berbagai fitur canggih yang memungkinkan pendaftaran dan pemantauan proyek secara online, serta pelaporan kemajuan yang dapat diakses secara real-time. Dengan penerapan SIPJK, diharapkan proses administrasi yang selama ini rumit dan memakan waktu dapat dipercepat, serta mengurangi potensi terjadinya penyimpangan atau praktik korupsi. Selain itu, sistem ini memberikan kemudahan bagi masyarakat untuk mendapatkan informasi yang transparan mengenai status proyek-proyek konstruksi.</p>
-
-<p>Bupati Bandung Barat, menyatakan bahwa peluncuran SIPJK adalah langkah penting dalam transformasi digital pemerintah daerah. Ia berharap sistem ini tidak hanya akan meningkatkan kualitas pengelolaan konstruksi tetapi juga dapat menjadi acuan bagi daerah lain dalam menerapkan teknologi untuk sektor publik. Peluncuran ini merupakan bagian dari komitmen pemerintah daerah untuk mendukung pembangunan yang lebih terintegrasi dan berkelanjutan.</p>',
-    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-]);
 
 // ============================================================================================
 // BERITA CISOMANG BARAT 
@@ -4206,6 +4193,21 @@ berita::create([
 <p>SIPJK menawarkan berbagai fitur inovatif, termasuk pendaftaran online untuk penyedia jasa konstruksi, pemantauan proyek secara real-time, dan pelaporan kemajuan yang mudah diakses. Dengan adanya sistem ini, diharapkan akan terjadi penurunan birokrasi dan praktik korupsi yang seringkali menghambat proses konstruksi. Sistem ini juga bertujuan untuk memberikan kemudahan akses informasi kepada masyarakat, sehingga meningkatkan keterlibatan publik dalam proses pembangunan.</p>
 
 <p>Bupati Bandung Barat menegaskan bahwa peluncuran SIPJK adalah langkah strategis dalam upaya mendukung pembangunan yang lebih berkelanjutan dan terencana. Ia berharap sistem ini dapat menjadi contoh bagi daerah lain dalam penerapan teknologi untuk pengelolaan sektor publik dan memajukan kualitas serta transparansi dalam proyek-proyek konstruksi.',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+
+berita::create([
+    'judul' => 'Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi',
+    'user_id' => rand(1,5),
+    'gambar' => 'berita/databerita/berita5.jpg',
+    'keteranganberita' => '<p>Bandung Barat, 11 Agustus 2024 – Dalam upaya untuk mendigitalkan dan menyempurnakan pengelolaan konstruksi, Pemerintah Kabupaten Bandung Barat baru-baru ini meluncurkan Sistem Informasi Pembina Jasa Konstruksi (SIPJK). Inisiatif ini bertujuan untuk memperbaiki efisiensi, transparansi, dan akuntabilitas dalam administrasi proyek konstruksi di wilayahnya. SIPJK diharapkan akan membawa perubahan signifikan dalam cara proyek konstruksi dikelola dan diawasi.</p>
+
+<p>Sistem ini dilengkapi dengan berbagai fitur canggih yang memungkinkan pendaftaran dan pemantauan proyek secara online, serta pelaporan kemajuan yang dapat diakses secara real-time. Dengan penerapan SIPJK, diharapkan proses administrasi yang selama ini rumit dan memakan waktu dapat dipercepat, serta mengurangi potensi terjadinya penyimpangan atau praktik korupsi. Selain itu, sistem ini memberikan kemudahan bagi masyarakat untuk mendapatkan informasi yang transparan mengenai status proyek-proyek konstruksi.</p>
+
+<p>Bupati Bandung Barat, menyatakan bahwa peluncuran SIPJK adalah langkah penting dalam transformasi digital pemerintah daerah. Ia berharap sistem ini tidak hanya akan meningkatkan kualitas pengelolaan konstruksi tetapi juga dapat menjadi acuan bagi daerah lain dalam menerapkan teknologi untuk sektor publik. Peluncuran ini merupakan bagian dari komitmen pemerintah daerah untuk mendukung pembangunan yang lebih terintegrasi dan berkelanjutan.</p>',
     'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
