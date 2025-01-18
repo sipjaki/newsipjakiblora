@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->text('judul');
             $table->string('gambar');
-            $table->text('keterangan');
+            $table->text('keteranganberita');
             $table->date('tanggal'); // Menambahkan kolom tanggal
             $table->softDeletes();
             $table->timestamps();            
