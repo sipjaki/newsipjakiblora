@@ -102,7 +102,7 @@
                                 {{-- <a class="text-body" href="">Jan 01, 2045</a> --}}
                             </div>
                             <h1 class="mb-3 text-uppercase font-weight-bold" style="color: black; font-size: 24px; text-align:left;">{{ $data->judul}}</h1>
-                            <h6 style="text-align: justify">{!! $item->keterangan !!}</h6>
+                            {{-- <h6 style="text-align: justify">{!! $item->keterangan !!}</h6> --}}
                         </div>
 
 
