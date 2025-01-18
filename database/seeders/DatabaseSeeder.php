@@ -4075,11 +4075,28 @@ berita::create([
 Kabupaten Bandung Barat telah sukses melaksanakan Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat. Kegiatan ini bertujuan untuk meningkatkan kompetensi tenaga kerja di sektor konstruksi, sejalan dengan kebutuhan akan tenaga terampil yang semakin meningkat. Pelatihan kali ini diikuti oleh sebanyak 30 peserta yang berasal dari berbagai latar belakang, termasuk pekerja konstruksi, tukang, dan pemuda yang tertarik untuk terjun ke industri ini.
 </p>
 
+<p>
+Pelatihan yang berlangsung selama beberapa hari ini mencakup berbagai materi, mulai dari teknik konstruksi dasar hingga penerapan standar keselamatan kerja. Para peserta mendapatkan bimbingan langsung dari instruktur berpengalaman serta praktek lapangan untuk mengasah keterampilan mereka. Diharapkan, setelah mengikuti pelatihan ini, peserta mampu menerapkan ilmu yang didapat untuk meningkatkan kualitas pekerjaan konstruksi di wilayah mereka masing-masing.
+</p>
+
+<p>
+Pemerintah Kabupaten Bandung Barat terus mendorong inisiatif serupa guna memperkuat sektor jasa konstruksi dan menciptakan tenaga kerja yang lebih profesional. Dengan adanya pelatihan ini, diharapkan pertumbuhan sektor konstruksi di daerah dapat lebih maju dan berdaya saing, serta mampu mendukung pembangunan infrastruktur yang berkualitas dan berkelanjutan.
+</p>
+
+<p>
+Masyarakat Kecamatan Cisomang Barat menyambut baik kegiatan ini dan berharap pelatihan serupa dapat diadakan secara berkala. Beberapa peserta mengungkapkan rasa terima kasih mereka karena mendapatkan kesempatan untuk meningkatkan keterampilan secara gratis. Pemerintah daerah pun berkomitmen untuk terus mengadakan program pelatihan guna mendukung peningkatan kualitas sumber daya manusia di berbagai sektor.
+</p>
+
 ',
     'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
 ]);
+
+
+// ======================================================
+// BERITA CISOMANG BARAT 
+// ======================================================
 
 
 berita::create([
@@ -4132,6 +4149,35 @@ berita::create([
     'updated_at' => Carbon::now(),
 ]);
 
+// ======================================================
+// BERITA CISOMANG BARAT 
+// ======================================================
+berita::create([
+    'judul' => 'Pemerintah Kabupaten Bandung Barat Melaksanakan Sertifikasi Jasa Konstruksi di Cisomang Barat',
+    'user_id' => rand(1,5),
+    'gambar' => 'berita/databerita/pelatihancisomangbarat.jpg',
+    'keterangan' => '<p>
+    **Pemerintah Kabupaten Bandung Barat Melaksanakan Sertifikasi Jasa Konstruksi di Cisomang Barat**  
+Bandung Barat, 2 Desember 2024 – Dalam upaya meningkatkan kompetensi dan legalitas tenaga kerja di sektor konstruksi, Pemerintah Kabupaten Bandung Barat baru-baru ini melaksanakan program Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat. Inisiatif ini bertujuan untuk meningkatkan efisiensi, transparansi, dan akuntabilitas dalam sektor jasa konstruksi, sekaligus memastikan bahwa para pekerja memiliki keterampilan yang sesuai dengan standar industri. Sertifikasi ini diharapkan dapat membawa perubahan signifikan dalam kualitas tenaga kerja dan pelaksanaan proyek konstruksi di wilayah tersebut.
+    </p>
+
+<p>
+Pemerintah Kabupaten Bandung Barat telah melaksanakan program Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat, yang diikuti oleh 30 peserta dari berbagai latar belakang, termasuk pekerja konstruksi dan masyarakat yang ingin mendapatkan pengakuan resmi atas keterampilannya. Acara ini turut dihadiri oleh perwakilan dari Pemerintah Provinsi Jawa Barat, Kepala Desa setempat, Kapolsek Cikalong Wetan, serta perangkat desa, yang menunjukkan dukungan penuh terhadap peningkatan kualitas tenaga kerja di sektor konstruksi. Para peserta mendapatkan pembekalan dari instruktur berpengalaman mengenai standar kerja, keselamatan, serta regulasi yang berlaku dalam industri konstruksi.
+</p>
+
+<p>
+Pemerintah Kabupaten Bandung Barat menegaskan komitmennya untuk terus mengadakan program sertifikasi guna meningkatkan daya saing tenaga kerja lokal dan memastikan pembangunan infrastruktur yang berkualitas serta berkelanjutan. Dengan adanya sertifikasi resmi, para pekerja diharapkan memiliki peluang lebih besar dalam mendapatkan proyek konstruksi, baik di tingkat daerah maupun nasional. Masyarakat Cisomang Barat menyambut baik kegiatan ini dan berharap sertifikasi jasa konstruksi dapat dilakukan secara rutin di masa mendatang agar lebih banyak tenaga kerja yang mendapat manfaat.
+</p>',
+    'tanggal' => Carbon::now()->toDateString(), // Atau gunakan tanggal yang spesifik
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+]);
+
+
+// ======================================================
+// BERITA CISOMANG BARAT 
+// ======================================================
+
 berita::create([
     'judul' => 'Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi',
     'user_id' => rand(1,5),
@@ -4145,6 +4191,7 @@ berita::create([
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
 ]);
+
 
 berita::create([
     'judul' => 'Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil ',
