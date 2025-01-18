@@ -4960,7 +4960,7 @@ kegiatanjaskon::create([
                 // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-                'judul_kegiatan' => '11 - 12 AGUSTUS 2024, KECAMATAN CILILIN BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI KABUPATEN BANDUNG BARAT',
+                'judul_kegiatan' => '11 - 12 AGUSTUS 2024, KECAMATAN CILILIN BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI',
                 'alamat_kegiatan' => 'DESA BATULAYANG 40562 JAWA BARAT INDONESIA',
                 'pengawasanlokasi_id' => '11',
                 'tanggal' => '',
@@ -4994,8 +4994,8 @@ kegiatanjaskon::create([
                 // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'id' => 2,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-                'judul_kegiatan' => '2 - 3 DESEMBER 2024, KECAMATAN CIKALONG WETAN BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI KABUPATEN BANDUNG BARAT',
-                'alamat_kegiatan' => 'DESA BATULAYANG 40562 JAWA BARAT INDONESIA',
+                'judul_kegiatan' => '2 - 3 DESEMBER 2024, KECAMATAN CIKALONG WETAN BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI',
+                'alamat_kegiatan' => 'DESA CISOMANG BARAT 40556 JAWA BARAT INDONESIA',
                 'pengawasanlokasi_id' => '11',
                 'tanggal' => '',
                 'berita1' => 'dokumentasipelatihan/new/BERITA1.jpg',
