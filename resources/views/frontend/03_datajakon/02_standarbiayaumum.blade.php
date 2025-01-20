@@ -71,7 +71,7 @@ Standar Biaya Umum Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
 </div>
 
 
-<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Kementrian Pekerjaan Umum Dan Penataan Ruang</button> </h1>
+<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Kementrian Pekerjaan Umum Dan Perumahan Rakyat</button> </h1>
 
 
 <style>

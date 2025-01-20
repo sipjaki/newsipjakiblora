@@ -70,7 +70,7 @@ Standar Biaya Umum Tentang Jasa Konstruksi
 </div>
 
     
-<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Penataan Ruang </h1>
+<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Perumahan Rakyat </h1>
 <br>
 
 <div class="controls" style="  
