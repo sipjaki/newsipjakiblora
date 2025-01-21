@@ -599,31 +599,32 @@ ketertiban::create([
 beritaagenda::create([
     'pengawasanlokasi_id' => 11,
     'statusprogram' => 'Selesai',
-    'nama_agenda' => 'Pelatihan Sertifikasi Para Pekerja Konstruksi',
-    'keterangan' => 'Pelatihan Sertifikasi Pekerja Konstruksi di Kecamatan Cililin.',
-    'kuota' => '30',
-    'tanggal_mulai' => '2024-08-11',
-    'tanggal_selesai' => '2024-08-14',
-]);
-
-beritaagenda::create([
-    'pengawasanlokasi_id' => 11,
-    'statusprogram' => 'Selesai',
-    'nama_agenda' => 'Pelatihan Sertifikasi Para Pekerja Konstruksi',
-    'keterangan' => 'Pelatihan Sertifikasi Pekerja Konstruksi di Kecamatan Cikalong Wetan.',
-    'kuota' => '30',
-    'tanggal_mulai' => '2024-12-02',
-    'tanggal_selesai' => '2024-12-04',
-]);
-
-beritaagenda::create([
-    'pengawasanlokasi_id' => 11,
-    'statusprogram' => 'Selesai',
     'nama_agenda' => 'Rapat Koordinasi Proyek Konstruksi',
     'keterangan' => 'Rapat koordinasi untuk membahas progres proyek Kabupaten Bandung Barat.',
     'kuota' => '50',
     'tanggal_mulai' => '2024-07-20',
     'tanggal_selesai' => '2024-07-27',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => 13,
+    'statusprogram' => 'Selesai',
+    'nama_agenda' => 'Pelatihan Keselamatan Kerja',
+    'keterangan' => 'Pelatihan untuk meningkatkan keselamatan kerja di lokasi proyek.',
+    'kuota' => '25',
+    'tanggal_mulai' => '2024-08-02',
+    'tanggal_selesai' => '2024-08-11',
+]);
+
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => 11,
+    'statusprogram' => 'Selesai',
+    'nama_agenda' => 'Pelatihan Sertifikasi Para Pekerja Konstruksi',
+    'keterangan' => 'Pelatihan Sertifikasi Pekerja Konstruksi di Kecamatan Cililin.',
+    'kuota' => '30',
+    'tanggal_mulai' => '2024-08-11',
+    'tanggal_selesai' => '2024-08-14',
 ]);
 
 beritaagenda::create([
@@ -637,13 +638,23 @@ beritaagenda::create([
 ]);
 
 beritaagenda::create([
-    'pengawasanlokasi_id' => 13,
+    'pengawasanlokasi_id' => 15,
     'statusprogram' => 'Selesai',
-    'nama_agenda' => 'Pelatihan Keselamatan Kerja',
-    'keterangan' => 'Pelatihan untuk meningkatkan keselamatan kerja di lokasi proyek.',
-    'kuota' => '25',
-    'tanggal_mulai' => '2024-08-02',
-    'tanggal_selesai' => '2024-08-11',
+    'nama_agenda' => 'Workshop Teknologi Konstruksi',
+    'keterangan' => 'Workshop tentang teknologi terbaru dalam industri konstruksi.',
+    'kuota' => '40',
+    'tanggal_mulai' => '2024-11-03',
+    'tanggal_selesai' => '2024-11-15',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => 11,
+    'statusprogram' => 'Selesai',
+    'nama_agenda' => 'Pelatihan Sertifikasi Para Pekerja Konstruksi',
+    'keterangan' => 'Pelatihan Sertifikasi Pekerja Konstruksi di Kecamatan Cikalong Wetan.',
+    'kuota' => '30',
+    'tanggal_mulai' => '2024-12-02',
+    'tanggal_selesai' => '2024-12-04',
 ]);
 
 beritaagenda::create([
@@ -656,15 +667,6 @@ beritaagenda::create([
     'tanggal_selesai' => '2024-12-23',
 ]);
 
-beritaagenda::create([
-    'pengawasanlokasi_id' => 15,
-    'statusprogram' => 'Selesai',
-    'nama_agenda' => 'Workshop Teknologi Konstruksi',
-    'keterangan' => 'Workshop tentang teknologi terbaru dalam industri konstruksi.',
-    'kuota' => '40',
-    'tanggal_mulai' => '2024-11-03',
-    'tanggal_selesai' => '2024-11-15',
-]);
 
 beritaagenda::create([
     'pengawasanlokasi_id' => 16,
