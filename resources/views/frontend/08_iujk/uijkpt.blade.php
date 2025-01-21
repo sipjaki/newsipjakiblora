@@ -70,7 +70,7 @@ Sertifikat Badan Usaha Perseroan Terbatas
 </div>
 
 
-    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Perumahan Rakyat </h1>
+    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Dinas Pekerjaan Umum Dan Tata Ruang </h1>
 
 <br>
     <style>

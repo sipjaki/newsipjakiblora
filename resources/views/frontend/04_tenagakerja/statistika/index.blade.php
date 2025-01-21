@@ -77,7 +77,7 @@ Statistika Daftar Para Pekerja Konstruksi <br> Pemerintah Kabupaten Bandung Bara
 </div>
 
 
-<h1 style="font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Kementrian Pekerjaan Umum Dan Perumahan Rakyat</button> </h1>
+<h1 style="font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;"><button class="badgekementrian">Dinas Pekerjaan Umum Dan Tata Ruang</button> </h1>
 
 
 <style>

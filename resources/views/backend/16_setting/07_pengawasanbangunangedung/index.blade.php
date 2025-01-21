@@ -49,7 +49,7 @@
 </div>
 
 
-    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700; "><span style="color: #000000;"> Kementrian Pekerjaan Umum Dan Penataan Ruang </span></h1>
+    <h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700; "><span style="color: #000000;"> Dinas Pekerjaan Umum Dan Penataan Ruang </span></h1>
     <div class="container">
         <div class="card" style="
             background-color: white;
