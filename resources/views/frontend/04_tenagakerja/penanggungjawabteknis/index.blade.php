@@ -255,7 +255,7 @@ Penanggung Jawab Teknis Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 <th style="width:45px;">NO</th>
                 <th style="width:150px;">LOKASI</th>
                 <th style="width:200px;">NAMA LENGKAP</th>
-                <th style="width:150px;">NO PJT</th>
+                {{-- <th style="width:150px;">NO PJT</th> --}}
                 <th style="width:150px;">SERTIFIKASI</th>
                 <th style="width:150px;">TANGGAL TERBIT</th>
                 <th style="width:150px;">MASA BELAKU</th>
@@ -275,7 +275,7 @@ Penanggung Jawab Teknis Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->metodepengadaan->metode }}</td> --}}
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->pengawasanlokasi->kota }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->nama_lengkap }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->nopjt }}</td>
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->nopjt }}</td> --}}
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->sfesifikasi }}</td>
              
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">
