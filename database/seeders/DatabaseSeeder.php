@@ -616,7 +616,6 @@ beritaagenda::create([
     'tanggal_selesai' => '2024-08-11',
 ]);
 
-
 beritaagenda::create([
     'pengawasanlokasi_id' => 11,
     'statusprogram' => 'Selesai',
@@ -648,7 +647,7 @@ beritaagenda::create([
 ]);
 
 beritaagenda::create([
-    'pengawasanlokasi_id' => 11,
+    'pengawasanlokasi_id' => 4,
     'statusprogram' => 'Selesai',
     'nama_agenda' => 'Pelatihan Sertifikasi Para Pekerja Konstruksi',
     'keterangan' => 'Pelatihan Sertifikasi Pekerja Konstruksi di Kecamatan Cikalong Wetan.',
