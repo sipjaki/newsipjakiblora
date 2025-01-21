@@ -256,9 +256,9 @@ Asosiasi Pengusaha Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 <th style="width:200px;">NAMA ASOSIASI</th>
                 {{-- <th style="width:100px;">ALAMAT KANTOR</th> --}}
                 {{-- <th style="width:200px;">KOTA</th> --}}
-                <th style="width:100px;">PROVINSI</th>
+                {{-- <th style="width:100px;">PROVINSI</th> --}}
                 <th style="width:200px;">KONTAK</th>
-                <th style="width:200px;">EMAIL</th>
+                {{-- <th style="width:200px;">EMAIL</th> --}}
                 {{-- <th style="width:100px;">WEBSITE</th> --}}
                 {{-- <th style="width:200px;">KEPALA ASOSIASI</th> --}}
                 <th style="width:100px;">JUMLAH ANGGOTA</th>
@@ -281,9 +281,9 @@ Asosiasi Pengusaha Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->nama_asosiasi }}</td>
                 {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->alamat_kantor }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->kota }}</td> --}}
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->provinsi }}</td>
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->provinsi }}</td> --}}
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->kontak }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->email }}</td>
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->email }}</td> --}}
                 {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->website }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->kepala_asosiasi }}</td> --}}
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->jumlah_anggota }}</td>
