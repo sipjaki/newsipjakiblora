@@ -282,7 +282,7 @@ asosiasipengusaha::create([
 // =============== CREATE PAKET PEKERJAAN 
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => 3,
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Pekerjaan Umum dan Penataan Ruang',
     'jumlah_pagu' => '3875647586',
     'pekerjaan' => 'Pembangunan Jembatan Cikapundung',
@@ -292,9 +292,9 @@ paketpekerjaan::create([
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => 3,
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Bina Marga',
-    'jumlah_pagu' => '2500000000',
+    'jumlah_pagu' => '2543567500',
     'pekerjaan' => 'Perbaikan Jalan Raya',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -304,7 +304,7 @@ paketpekerjaan::create([
 paketpekerjaan::create([
     'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Cipta Karya',
-    'jumlah_pagu' => '4500000000',
+    'jumlah_pagu' => '43450900',
     'pekerjaan' => 'Pembangunan Gedung Serbaguna',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -312,9 +312,9 @@ paketpekerjaan::create([
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => 1,
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Perumahan Rakyat',
-    'jumlah_pagu' => '1500000000',
+    'jumlah_pagu' => '1543236400',
     'pekerjaan' => 'Renovasi Rumah Susun',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -322,9 +322,9 @@ paketpekerjaan::create([
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => 3,
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Lingkungan Hidup',
-    'jumlah_pagu' => '3000000000',
+    'jumlah_pagu' => '3432546300',
     'pekerjaan' => 'Pembangunan TPS',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -334,17 +334,17 @@ paketpekerjaan::create([
 paketpekerjaan::create([
     'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Pendidikan',
-    'jumlah_pagu' => '5000000000',
-    'pekerjaan' => 'Pembangunan Sekolah Baru',
+    'jumlah_pagu' => '543563100',
+    'pekerjaan' => 'Renovasi Sekolah Baru',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
     'progress_fisik' => '10',
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => 1,
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Kesehatan',
-    'jumlah_pagu' => '800000000',
+    'jumlah_pagu' => '843523400',
     'pekerjaan' => 'Pembangunan Puskesmas',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -352,9 +352,9 @@ paketpekerjaan::create([
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => 3,
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Kebudayaan dan Pariwisata',
-    'jumlah_pagu' => '6000000000',
+    'jumlah_pagu' => '6748563700',
     'pekerjaan' => 'Pembangunan Taman Wisata',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -364,7 +364,7 @@ paketpekerjaan::create([
 paketpekerjaan::create([
     'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Pemadam Kebakaran',
-    'jumlah_pagu' => '1000000000',
+    'jumlah_pagu' => '1364827400',
     'pekerjaan' => 'Pengadaan Mobil Pemadam',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -372,9 +372,9 @@ paketpekerjaan::create([
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => 1,
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Pertanian',
-    'jumlah_pagu' => '750000000',
+    'jumlah_pagu' => '754637500',
     'pekerjaan' => 'Pengadaan Alat Pertanian',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -382,9 +382,9 @@ paketpekerjaan::create([
 ]);
 
 paketpekerjaan::create([
-    'metodepengadaan_id' => 3,
+    'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Perhubungan',
-    'jumlah_pagu' => '950000000',
+    'jumlah_pagu' => '957385700',
     'pekerjaan' => 'Pembangunan Terminal Bus',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
@@ -394,7 +394,7 @@ paketpekerjaan::create([
 paketpekerjaan::create([
     'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Sosial',
-    'jumlah_pagu' => '500000000',
+    'jumlah_pagu' => '552948500',
     'pekerjaan' => 'Pembangunan Panti Asuhan',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
