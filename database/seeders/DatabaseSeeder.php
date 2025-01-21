@@ -598,62 +598,82 @@ ketertiban::create([
 // =============== CREATE BERITA AGENDA 
 beritaagenda::create([
     'pengawasanlokasi_id' => 11,
-    'statusprogram' => 'Aktif',
+    'statusprogram' => 'Selesai',
+    'nama_agenda' => 'Pelatihan Sertifikasi Para Pekerja Konstruksi',
+    'keterangan' => 'Pelatihan Sertifikasi Pekerja Konstruksi di Kecamatan Cililin.',
+    'kuota' => '30',
+    'tanggal_mulai' => '2024-08-11',
+    'tanggal_selesai' => '2024-08-14',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => 11,
+    'statusprogram' => 'Selesai',
+    'nama_agenda' => 'Pelatihan Sertifikasi Para Pekerja Konstruksi',
+    'keterangan' => 'Pelatihan Sertifikasi Pekerja Konstruksi di Kecamatan Cikalong Wetan.',
+    'kuota' => '30',
+    'tanggal_mulai' => '2024-12-02',
+    'tanggal_selesai' => '2024-12-04',
+]);
+
+beritaagenda::create([
+    'pengawasanlokasi_id' => 11,
+    'statusprogram' => 'Selesai',
     'nama_agenda' => 'Rapat Koordinasi Proyek Konstruksi',
-    'keterangan' => 'Rapat koordinasi untuk membahas progres proyek dan permasalahan yang ada.',
+    'keterangan' => 'Rapat koordinasi untuk membahas progres proyek Kabupaten Bandung Barat.',
     'kuota' => '50',
-    'tanggal_mulai' => '2024-01-20',
-    'tanggal_selesai' => '2024-01-20',
+    'tanggal_mulai' => '2024-07-20',
+    'tanggal_selesai' => '2024-07-27',
 ]);
 
 beritaagenda::create([
     'pengawasanlokasi_id' => 12,
-    'statusprogram' => 'Aktif',
+    'statusprogram' => 'Selesai',
     'nama_agenda' => 'Sosialisasi Proyek Baru',
-    'keterangan' => 'Sosialisasi untuk proyek baru yang akan dimulai pada tahun ini.',
+    'keterangan' => 'Sosialisasi Paket Pekerjaan Konstruksi Tahun 2024.',
     'kuota' => '30',
-    'tanggal_mulai' => '2024-02-15',
-    'tanggal_selesai' => '2024-02-15',
+    'tanggal_mulai' => '2024-08-12',
+    'tanggal_selesai' => '2024-08-30',
 ]);
 
 beritaagenda::create([
     'pengawasanlokasi_id' => 13,
-    'statusprogram' => 'Aktif',
+    'statusprogram' => 'Selesai',
     'nama_agenda' => 'Pelatihan Keselamatan Kerja',
     'keterangan' => 'Pelatihan untuk meningkatkan keselamatan kerja di lokasi proyek.',
     'kuota' => '25',
-    'tanggal_mulai' => '2024-03-10',
-    'tanggal_selesai' => '2024-03-10',
+    'tanggal_mulai' => '2024-08-02',
+    'tanggal_selesai' => '2024-08-11',
 ]);
 
 beritaagenda::create([
     'pengawasanlokasi_id' => 14,
-    'statusprogram' => 'Aktif',
+    'statusprogram' => 'Selesai',
     'nama_agenda' => 'Evaluasi Proyek Tahunan',
     'keterangan' => 'Evaluasi kinerja proyek yang telah dilaksanakan selama satu tahun.',
     'kuota' => '20',
-    'tanggal_mulai' => '2024-04-05',
-    'tanggal_selesai' => '2024-04-05',
+    'tanggal_mulai' => '2024-12-12',
+    'tanggal_selesai' => '2024-12-23',
 ]);
 
 beritaagenda::create([
     'pengawasanlokasi_id' => 15,
-    'statusprogram' => 'Aktif',
+    'statusprogram' => 'Selesai',
     'nama_agenda' => 'Workshop Teknologi Konstruksi',
     'keterangan' => 'Workshop tentang teknologi terbaru dalam industri konstruksi.',
     'kuota' => '40',
-    'tanggal_mulai' => '2024-05-12',
-    'tanggal_selesai' => '2024-05-12',
+    'tanggal_mulai' => '2024-11-03',
+    'tanggal_selesai' => '2024-11-15',
 ]);
 
 beritaagenda::create([
     'pengawasanlokasi_id' => 16,
-    'statusprogram' => 'Aktif',
+    'statusprogram' => 'Selesai',
     'nama_agenda' => 'Penyampaian Laporan Proyek',
     'keterangan' => 'Penyampaian laporan akhir proyek yang telah selesai dilaksanakan.',
     'kuota' => '10',
-    'tanggal_mulai' => '2024-06-18',
-    'tanggal_selesai' => '2024-06-18',
+    'tanggal_mulai' => '2024-12-18',
+    'tanggal_selesai' => '2024-12-18',
 ]);
 
 
