@@ -277,17 +277,17 @@ Asosiasi Pengusaha Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
             @foreach($data as $item )
             
             <tr>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->nama_asosiasi }}</td>
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td> --}}
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->nama_asosiasi }}</td> --}}
                 {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->alamat_kantor }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->kota }}</td> --}}
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->provinsi }}</td>
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->provinsi }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->kontak }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->email }}</td>
-                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->website }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->kepala_asosiasi }}</td> --}}
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->jumlah_anggota }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->status }}</td>
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->website }}</td> --}}
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->kepala_asosiasi }}</td> --}} --}}
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->jumlah_anggota }}</td> --}}
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->status }}</td> --}}
                
                 {{--                 
                 <td style="font-size: 12px; text-align:center; text-transform:uppercase">
