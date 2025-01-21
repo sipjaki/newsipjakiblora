@@ -257,8 +257,8 @@ Penanggung Jawab Teknis Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 <th style="width:200px;">NAMA LENGKAP</th>
                 {{-- <th style="width:150px;">NO PJT</th> --}}
                 <th style="width:150px;">SERTIFIKASI</th>
-                <th style="width:150px;">TANGGAL TERBIT</th>
-                <th style="width:150px;">MASA BELAKU</th>
+                {{-- <th style="width:150px;">TANGGAL TERBIT</th> --}}
+                {{-- <th style="width:150px;">MASA BELAKU</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -277,13 +277,13 @@ Penanggung Jawab Teknis Jasa Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->nama_lengkap }}</td>
                 {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->nopjt }}</td> --}}
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->sfesifikasi }}</td>
-             
+{{--              
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">
                     {{ \Carbon\Carbon::parse($item->tanggal_terbit)->locale('id')->translatedFormat('d F Y') }}
-                </td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">
+                </td> --}}
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">
                     {{ \Carbon\Carbon::parse($item->masa_berlaku)->locale('id')->translatedFormat('d F Y') }}
-                </td>
+                </td> --}}
                    
                 {{--                 
                 <td style="font-size: 12px; text-align:center; text-transform:uppercase">
