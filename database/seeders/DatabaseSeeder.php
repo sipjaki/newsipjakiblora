@@ -304,7 +304,7 @@ paketpekerjaan::create([
 paketpekerjaan::create([
     'metodepengadaan_id' => 2,
     'instansi' => 'Dinas Cipta Karya',
-    'jumlah_pagu' => '43450900',
+    'jumlah_pagu' => '434500900',
     'pekerjaan' => 'Pembangunan Gedung Serbaguna',
     'foto_pekerjaan' => 'datajakon/paketpekerjaan/paketpekerjaan.png',
     'tahun' => '2024',
