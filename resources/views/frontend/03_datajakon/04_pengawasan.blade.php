@@ -259,7 +259,7 @@ Pengawasan & Ketertiban Jasa Konstruksi  <br> Pemerintah Kabupaten Bandung Barat
                 <th style="width:100px; font-size:14px;">STATUS</th>
                 <th style="width:100px; font-size:14px;">TINDAKAN</th>
                 <th style="width:100px; font-size:14px;">JUDUL</th>
-                <th style="width:100px; font-size:14px;">LAPORAN</th>
+                {{-- <th style="width:100px; font-size:14px;">LAPORAN</th> --}}
                 <th style="width:200px; font-size:14px;">KETERANGAN</th>
                 {{-- <th style="width:100px;">TANGGAL SELESAI</th> --}}
             </tr>
@@ -281,11 +281,10 @@ Pengawasan & Ketertiban Jasa Konstruksi  <br> Pemerintah Kabupaten Bandung Barat
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->pengawasanstatus->status }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->pengawasantindakan->tindakan }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->judul }}</td>
-                
+{{--                 
                 <td style="font-size: 12px; text-align:center; text-transform:uppercase">
-                    {{-- {{ \Carbon\Carbon::parse($item->tanggal_laporan)->locale('id')->translatedFormat(' d F Y') }} --}}
-                    <p>'---'</p>
-                </td>
+                    {{ \Carbon\Carbon::parse($item->tanggal_laporan)->locale('id')->translatedFormat(' d F Y') }}
+                </td> --}}
                 <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->keterangan }}</td>
                 {{--                 
                 <td style="font-size: 12px; text-align:center; text-transform:uppercase">
