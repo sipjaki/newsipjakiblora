@@ -283,7 +283,8 @@ Pengawasan & Ketertiban Jasa Konstruksi  <br> Pemerintah Kabupaten Bandung Barat
                 <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->judul }}</td>
                 
                 <td style="font-size: 12px; text-align:center; text-transform:uppercase">
-                    {{ \Carbon\Carbon::parse($item->tanggal_laporan)->locale('id')->translatedFormat(' d F Y') }}
+                    {{-- {{ \Carbon\Carbon::parse($item->tanggal_laporan)->locale('id')->translatedFormat(' d F Y') }} --}}
+                    <p>'---'</p>
                 </td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:left;">{{ $item->keterangan }}</td>
                 {{--                 

@@ -514,7 +514,7 @@ ketertiban::create([
     'pengawasantindakan_id' => 1,
     'judul' => 'Laporan Ketertiban Gedung Perkantoran',
     'tanggal_laporan' => now(),
-    'keterangan' => 'Gedung Perkantoran dalam kondisi baik dan sesuai peraturan.',
+    'keterangan' => 'Gedung Perkantoran dalam kondisi baik dan sudah memenuhi PKKPR yang diizinkan.',
 ]);
 
 ketertiban::create([
@@ -525,7 +525,7 @@ ketertiban::create([
     'pengawasantindakan_id' => 1,
     'judul' => 'Laporan Ketertiban Gedung Kesehatan',
     'tanggal_laporan' => now(),
-    'keterangan' => 'Gedung Kesehatan perlu sedikit perbaikan.',
+    'keterangan' => 'Gedung Kesehatan harus menambah IMB/PBG karena ada ketidaksesuaian.',
 ]);
 
 ketertiban::create([
@@ -536,7 +536,7 @@ ketertiban::create([
     'pengawasantindakan_id' => 2,
     'judul' => 'Laporan Ketertiban Gedung Pendidikan',
     'tanggal_laporan' => now(),
-    'keterangan' => 'Gedung Pendidikan sesuai peraturan dan tidak ada masalah.',
+    'keterangan' => 'Gedung Pendidikan sudah memenuhi ketentuan.',
 ]);
 
 ketertiban::create([
@@ -547,7 +547,7 @@ ketertiban::create([
     'pengawasantindakan_id' => 2,
     'judul' => 'Laporan Ketertiban Gedung Olahraga',
     'tanggal_laporan' => now(),
-    'keterangan' => 'Gedung Olahraga ada sedikit ketidaksesuaian.',
+    'keterangan' => 'Gedung Olahraga ada ketidaksesuaian antara IMB dan Bangunan Terbangun.',
 ]);
 
 ketertiban::create([
@@ -558,7 +558,7 @@ ketertiban::create([
     'pengawasantindakan_id' => 1,
     'judul' => 'Laporan Ketertiban Gedung Komersial',
     'tanggal_laporan' => now(),
-    'keterangan' => 'Gedung Komersial dalam kondisi baik.',
+    'keterangan' => 'Gedung Komersial dalam keadaan Laik Fungsi.',
 ]);
 
 ketertiban::create([
@@ -569,7 +569,7 @@ ketertiban::create([
     'pengawasantindakan_id' => 2,
     'judul' => 'Laporan Ketertiban Gedung Transportasi',
     'tanggal_laporan' => now(),
-    'keterangan' => 'Gedung Transportasi memerlukan pemeliharaan.',
+    'keterangan' => 'Gedung Transportasi memerlukan pemeliharaan lebih lanjut.',
 ]);
 
 ketertiban::create([
@@ -580,7 +580,7 @@ ketertiban::create([
     'pengawasantindakan_id' => 1,
     'judul' => 'Laporan Ketertiban Gedung Perhotelan',
     'tanggal_laporan' => now(),
-    'keterangan' => 'Gedung Perhotelan sesuai dengan peraturan.',
+    'keterangan' => 'Gedung Perhotelan sudah sesuai dengan IMB yang diterbitkan.',
 ]);
 
 ketertiban::create([
@@ -591,7 +591,7 @@ ketertiban::create([
     'pengawasantindakan_id' => 2,
     'judul' => 'Laporan Ketertiban Gedung Rekreasi',
     'tanggal_laporan' => now(),
-    'keterangan' => 'Gedung Rekreasi ada beberapa pelanggaran.',
+    'keterangan' => 'Gedung Rekreasi dalam keadaan Laik Fungsi',
 ]);
 
 
