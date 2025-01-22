@@ -92,8 +92,8 @@ class DatabaseSeeder extends Seeder
         // ketertiban::factory(15)->create();
         // beritaagenda::factory(15)->create();  
         // Qa::factory(15)->create();
-        
-        // Tukangterampil::factory(234)->create();
+        // BAHAN TUKANG TERAMPIL BLORA
+        Tukangterampil::factory(994)->create();
                        
 // =============== CREATE TIM ASOSIASI PENGUSAHA 
 asosiasipengusaha::create([
