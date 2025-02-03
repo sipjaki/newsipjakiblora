@@ -2297,311 +2297,311 @@ qa::create([
 
 
 // ====================================================================================================== 
-            Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'DEDE ROYANI',
-            'alamat' => 'KP.CIGARUNG RT 004/007 ',
-            'tanggal_lahir' => '1994-03-09',
-            'nik' => '3217122003940000',
-            'keterampilan' => 'LAS LISTRIK',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1994-03-09'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        //     Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'DEDE ROYANI',
+        //     'alamat' => 'KP.CIGARUNG RT 004/007 ',
+        //     'tanggal_lahir' => '1994-03-09',
+        //     'nik' => '3217122003940000',
+        //     'keterampilan' => 'LAS LISTRIK',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1994-03-09'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
     
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'RONI RUSTANDI',
-            'alamat' => 'KP.SARONGGE RT 001/003',
-            'tanggal_lahir' => '1993-03-26',
-            'nik' => '3217122603930000',
-            'keterampilan' => 'LAS LISTRIK',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1993-03-26'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'RONI RUSTANDI',
+        //     'alamat' => 'KP.SARONGGE RT 001/003',
+        //     'tanggal_lahir' => '1993-03-26',
+        //     'nik' => '3217122603930000',
+        //     'keterampilan' => 'LAS LISTRIK',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1993-03-26'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
     
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'AHMAD SANDI FAUIZI',
-            'alamat' => 'KP.CISALADAK RT 001/003',
-            'tanggal_lahir' => '1998-10-24',
-            'nik' => '3217122410980010',
-            'keterampilan' => 'LAS LISTRIK',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1998-10-24'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'AHMAD SANDI FAUIZI',
+        //     'alamat' => 'KP.CISALADAK RT 001/003',
+        //     'tanggal_lahir' => '1998-10-24',
+        //     'nik' => '3217122410980010',
+        //     'keterampilan' => 'LAS LISTRIK',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1998-10-24'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
     
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'IMAN',
-            'alamat' => 'KP.SADANG RT 003/003 ',
-            'tanggal_lahir' => '1985-07-06',
-            'nik' => '3217120607850040',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1985-07-06'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'IMAN',
+        //     'alamat' => 'KP.SADANG RT 003/003 ',
+        //     'tanggal_lahir' => '1985-07-06',
+        //     'nik' => '3217120607850040',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1985-07-06'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
     
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'DEDI MULYADI',
-            'alamat' => 'KP.SADANG RT 003/003  ',
-            'tanggal_lahir' => '1976-06-12',
-            'nik' => '3217121206760020',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1976-06-12'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'DEDI MULYADI',
+        //     'alamat' => 'KP.SADANG RT 003/003  ',
+        //     'tanggal_lahir' => '1976-06-12',
+        //     'nik' => '3217121206760020',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1976-06-12'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'AYI HERMAN',
-            'alamat' => 'KP.CILAME RT 003/005',
-            'tanggal_lahir' => '1980-04-20',
-            'nik' => '3217122004800010',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1980-04-20'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'AYI HERMAN',
+        //     'alamat' => 'KP.CILAME RT 003/005',
+        //     'tanggal_lahir' => '1980-04-20',
+        //     'nik' => '3217122004800010',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1980-04-20'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'ANTO.S',
-            'alamat' => 'KP.SADANG RT 003/003',
-            'tanggal_lahir' => '1986-03-08',
-            'nik' => '3217120803860010',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1986-03-08'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'ANTO.S',
+        //     'alamat' => 'KP.SADANG RT 003/003',
+        //     'tanggal_lahir' => '1986-03-08',
+        //     'nik' => '3217120803860010',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1986-03-08'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'ASEP SUTISNA',
-            'alamat' => 'KP.CIBANAS RT 005/003',
-            'tanggal_lahir' => '1973-07-04',
-            'nik' => '3217120407730010',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1973-07-04'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'ASEP SUTISNA',
+        //     'alamat' => 'KP.CIBANAS RT 005/003',
+        //     'tanggal_lahir' => '1973-07-04',
+        //     'nik' => '3217120407730010',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1973-07-04'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'IWAN SETIAWAN',
-            'alamat' => 'KP.CISALADAK RT 001/003 ',
-            'tanggal_lahir' => '1977-06-02',
-            'nik' => '3217120206770000',
-            'keterampilan' => 'PEMASANGAN BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1977-06-02'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'IWAN SETIAWAN',
+        //     'alamat' => 'KP.CISALADAK RT 001/003 ',
+        //     'tanggal_lahir' => '1977-06-02',
+        //     'nik' => '3217120206770000',
+        //     'keterampilan' => 'PEMASANGAN BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1977-06-02'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'NANDANG',
-            'alamat' => 'KP.CISALADAK RT 002/003',
-            'tanggal_lahir' => '1964-07-01',
-            'nik' => '3217120107640160',
-            'keterampilan' => 'KAYU',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1964-07-01'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'NANDANG',
+        //     'alamat' => 'KP.CISALADAK RT 002/003',
+        //     'tanggal_lahir' => '1964-07-01',
+        //     'nik' => '3217120107640160',
+        //     'keterampilan' => 'KAYU',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1964-07-01'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
 
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'DASEP',
-            'alamat' => 'KP.BABAKAN RT 004/005 ',
-            'tanggal_lahir' => '1968-09-08',
-            'nik' => '3217120809680000',
-            'keterampilan' => 'KAYU',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1968-09-08'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'DASEP',
+        //     'alamat' => 'KP.BABAKAN RT 004/005 ',
+        //     'tanggal_lahir' => '1968-09-08',
+        //     'nik' => '3217120809680000',
+        //     'keterampilan' => 'KAYU',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1968-09-08'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
    
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'ABUDIN',
-            'alamat' => 'KP.SUKASENANG RT 001/002',
-            'tanggal_lahir' => '1971-02-10',
-            'nik' => '3275101002710010',
-            'keterampilan' => 'KONSTRUKSI',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1971-02-10'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'ABUDIN',
+        //     'alamat' => 'KP.SUKASENANG RT 001/002',
+        //     'tanggal_lahir' => '1971-02-10',
+        //     'nik' => '3275101002710010',
+        //     'keterampilan' => 'KONSTRUKSI',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1971-02-10'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
 
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'MUHAMMAD NANDA I',
-            'alamat' => 'KP.SUKASENANG  RT 001/002',
-            'tanggal_lahir' => '1994-10-29',
-            'nik' => '3217122910940000',
-            'keterampilan' => 'KONSTRUKSI',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1994-10-29'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'MUHAMMAD NANDA I',
+        //     'alamat' => 'KP.SUKASENANG  RT 001/002',
+        //     'tanggal_lahir' => '1994-10-29',
+        //     'nik' => '3217122910940000',
+        //     'keterampilan' => 'KONSTRUKSI',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1994-10-29'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
         
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'HILMAN',
-            'alamat' => 'KP.SUKASENANG  RT 001/002',
-            'tanggal_lahir' => '1975-05-03',
-            'nik' => '3217120305750040',
-            'keterampilan' => 'BATU BATA',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1975-05-03'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'HILMAN',
+        //     'alamat' => 'KP.SUKASENANG  RT 001/002',
+        //     'tanggal_lahir' => '1975-05-03',
+        //     'nik' => '3217120305750040',
+        //     'keterampilan' => 'BATU BATA',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1975-05-03'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
         
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'AANG ANWAR',
-            'alamat' => 'KP.BABAKAN RT 004/005 ',
-            'tanggal_lahir' => '1987-07-25',
-            'nik' => '3217121607870005',
-            'keterampilan' => 'KONSTRUKSI BANGUNAN',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1987-07-25'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'AANG ANWAR',
+        //     'alamat' => 'KP.BABAKAN RT 004/005 ',
+        //     'tanggal_lahir' => '1987-07-25',
+        //     'nik' => '3217121607870005',
+        //     'keterampilan' => 'KONSTRUKSI BANGUNAN',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1987-07-25'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
         
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'NANANG RIANA',
-            'alamat' => 'KP.SUKASENANG  RT 001/002',
-            'tanggal_lahir' => '1982-08-18',
-            'nik' => '3217121808820012',
-            'keterampilan' => 'KONSTRUKSI BANGUNAN',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1982-08-18'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'NANANG RIANA',
+        //     'alamat' => 'KP.SUKASENANG  RT 001/002',
+        //     'tanggal_lahir' => '1982-08-18',
+        //     'nik' => '3217121808820012',
+        //     'keterampilan' => 'KONSTRUKSI BANGUNAN',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1982-08-18'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
         
-        Tukangterampil::create([
-            'kecamatan' => 'Cipongkor',
-            'desa' => 'MEKARSARI',
-            'nama' => 'IWAN SETIAWAN',
-            'alamat' => 'KP.CINAGEN RT 004/001 ',
-            'tanggal_lahir' => '1984-07-02',
-            'nik' => '3217120207840010',
-            'keterampilan' => 'KONSTRUKSI BANGUNAN',
-            'tahun_bimtek' => 'BELUM',
-            'kualifikasi' => 'BELUM',
-            'registrasi' => 'BELUM',
-            'foto' => 'professional',
-            'usia' => $this->calculateAge('1984-07-02'), 
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-            'deleted_at' => null, // Jika Anda menggunakan soft deletes
-        ]);
+        // Tukangterampil::create([
+        //     'kecamatan' => 'Cipongkor',
+        //     'desa' => 'MEKARSARI',
+        //     'nama' => 'IWAN SETIAWAN',
+        //     'alamat' => 'KP.CINAGEN RT 004/001 ',
+        //     'tanggal_lahir' => '1984-07-02',
+        //     'nik' => '3217120207840010',
+        //     'keterampilan' => 'KONSTRUKSI BANGUNAN',
+        //     'tahun_bimtek' => 'BELUM',
+        //     'kualifikasi' => 'BELUM',
+        //     'registrasi' => 'BELUM',
+        //     'foto' => 'professional',
+        //     'usia' => $this->calculateAge('1984-07-02'), 
+        //     'created_at' => Carbon::now(),
+        //     'updated_at' => Carbon::now(),
+        //     'deleted_at' => null, // Jika Anda menggunakan soft deletes
+        // ]);
 
 
         
