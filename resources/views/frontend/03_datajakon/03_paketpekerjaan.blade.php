@@ -276,9 +276,9 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $loop->iteration + $start - 1 }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->metodepengadaan->metode }}</td>
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->instansi }}</td>
-                <td style="font-size: 12px; text-transform: uppercase; text-align:center;">
+                {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">
                     Rp {{ number_format($item->jumlah_pagu, 2, ',', '.') }}
-                </td>
+                </td> --}}
                                 
                 <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->pekerjaan }}</td>
                 {{-- <td style="font-size: 12px; text-transform: uppercase; text-align:center;">{{ $item->f }}</td> --}}
