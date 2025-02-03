@@ -134,7 +134,8 @@ class TukangterampilFactory extends Factory
         $lastName = $faker->lastNameMale(); // Nama belakang
     
         return [
-            'tahunpilihan_id' => rand(1,8,9,10,11), 
+            // 'tahunpilihan_id' => rand(1,8,9,10,11),
+            'tahunpilihan_id' => [1, 8, 9, 10, 11][array_rand([1, 8, 9, 10, 11])],
             'pengawasanlokasi_id' => rand(1,16), // Kec. acak dari daftar
             'keterampilanpekerja_id' => rand(1,12),
             'desa' => $desa, // Desa acak dari kecamatan yang dipilih
