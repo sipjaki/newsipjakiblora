@@ -307,7 +307,7 @@ Pemerintah Kabupaten Bandung Barat
                                     </td>
                                 </tr>
                                 
-                                <tr>
+                                {{-- <tr>
                                     <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
                                         <i class="fas fa-address-card" style="color: white; font-size: 12px;"></i>
                                     </th>
@@ -316,9 +316,9 @@ Pemerintah Kabupaten Bandung Barat
                                     <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
                                         {{ ucwords(strtolower($data->alamat)) }}
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 
-                                <tr>
+                                {{-- <tr>
                                     <th style="background-color: navy; width: 20px; border-radius: 10px; text-align: center;">
                                         <i class="fas fa-birthday-cake" style="color: white; font-size: 12px;"></i>
                                     </th>
@@ -327,7 +327,7 @@ Pemerintah Kabupaten Bandung Barat
                                     <td style="background-color: rgba(192, 192, 192, 0.3); font-size: 14px; text-transform: capitalize; text-align: left; font-weight: 700; color: black;">
                                         {{ \Carbon\Carbon::parse($data->tanggal_lahir)->locale('id')->translatedFormat('d F Y') }}
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 
                                 <?php
                                 // Mengambil tanggal lahir dari data
