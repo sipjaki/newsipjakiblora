@@ -255,7 +255,7 @@ Paket Pekerjaan Konstruksi <br> Pemerintah Kabupaten Bandung Barat
                 <th style="width:45px;">NO</th>
                 <th style="width:200px;">METODE PENGADAAN</th>
                 <th style="width:200px;">INSTANSI</th>
-                <th style="width:150px;">JUMLAH PAGU</th>
+                {{-- <th style="width:150px;">JUMLAH PAGU</th> --}}
                 <th style="width:200px;">PEKERJAAN</th>
                 {{-- <th style="width:200px;">FOTO</th> --}}
                 <th style="width:75px;">TAHUN ANGGARAN</th>
