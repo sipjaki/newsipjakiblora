@@ -131,7 +131,7 @@ class TukangterampilFactory extends Factory
         $nik = '32052' . $faker->unique()->numerify('###########'); // Total 11 digit acak
     
         $firstName = $faker->firstNameMale(); // Nama depan laki-laki
-        $lastName = $faker->lastName(); // Nama belakang
+        $lastName = $faker->lastNameMale(); // Nama belakang
     
         return [
             'tahunpilihan_id' => rand(1,6), 
