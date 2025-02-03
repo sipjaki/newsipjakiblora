@@ -443,10 +443,10 @@ Pemerintah Kabupaten Bandung Barat
                 
                 
                 
-                <button id="previewBtn" class="badge">
+                {{-- <button id="previewBtn" class="badge">
                     <i class="fas fa-file me-2"></i>Preview
                 </button>
-                
+                 --}}
                 <button id="downloadBtn" class="badge">
                     <i class="fas fa-download me-2"></i>Download
                 </button>
