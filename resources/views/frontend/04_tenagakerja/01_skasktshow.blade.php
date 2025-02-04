@@ -408,9 +408,9 @@ Pemerintah Kabupaten Bandung Barat
                 </a>
 
 
-                <button id="ktagatensi-btn" class="badge">
+                {{-- <button id="ktagatensi-btn" class="badge">
                     <i class="fas fa-download me-2"></i>KTA Gatensi
-                </button>
+                </button> --}}
                 
                 <script>
                 document.getElementById('ktagatensi-btn').addEventListener('click', function() {
@@ -425,9 +425,9 @@ Pemerintah Kabupaten Bandung Barat
                 </script>
                 
             
-                <button id="sertifikat-btn" class="badge">
+                {{-- <button id="sertifikat-btn" class="badge">
                     <i class="fas fa-download me-2"></i>SKK Sertifikat
-                </button>
+                </button> --}}
                 
                 <script>
                 document.getElementById('sertifikat-btn').addEventListener('click', function() {
@@ -443,10 +443,10 @@ Pemerintah Kabupaten Bandung Barat
                 
                 
                 
-                <button id="previewBtn" class="badge">
+                {{-- <button id="previewBtn" class="badge">
                     <i class="fas fa-file me-2"></i>Preview
                 </button>
-                
+                 --}}
                  
                 <button id="downloadBtn" class="badge">
                     <i class="fas fa-download me-2"></i>Download
