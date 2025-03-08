@@ -1211,8 +1211,8 @@
                                 <h2>
                                     <span style="color: #FFD100; font-style: italic;">BANGUNAN GEDUNG</span>
                                 </h2>
-                                      <div class="widget-info">
-                                    <ul>
+                                      {{-- <div class="widget-info">
+                                        <ul>
                                         <li>
                                             <div class="info-icon">
                                                 <i class="flaticon-phone-call"></i>
@@ -1238,7 +1238,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </div>
                             <!-- Footer Widget End -->
                         </div>
