@@ -735,7 +735,7 @@
         <!-- Case Study End -->
 
         <!-- Features Start -->
-        <div class="section features-section" style="background-image: url(assets/images/bg/features-bg.jpg);">
+        {{-- <div class="section features-section" style="background-image: url(assets/images/bg/features-bg.jpg);">
             <!-- Features Thumb Start -->
             <div class="features-thumb d-flex align-items-end">
                 <div class="shape-1">
@@ -817,7 +817,7 @@
                 </div>
                 <!-- Features Wrap End -->
             </div>
-        </div>
+        </div> --}}
         <!-- Features End -->
 
         <!-- Team Start -->
