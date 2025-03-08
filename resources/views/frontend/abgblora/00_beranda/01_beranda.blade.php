@@ -273,71 +273,82 @@
 
             <div class="container" style="margin-top: 200px;">
                 <div class="service-wrap">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-6">
+                    <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                        <div class="col-lg-3 col-sm-6" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 250px;">
                             <!-- Service Item Start -->
-                            <div class="service-item text-center">
+                            <div class="service-item text-center" style="position: relative; padding: 30px; border-radius: 10px; background: #fff; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="" style="width: 50px;">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="" style="width: 80px;">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Strategy & <br> Discovery</a></h3>
-                                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                                    <h3 class="title" style="font-size: 18px; margin-top: 15px;">
+                                        <a href="#" style="text-decoration: none; color: #333;">Strategy & <br> Discovery</a>
+                                    </h3>
+                                    <p style="font-size: 14px; color: #666;">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                                 </div>
                             </div>
                             <!-- Service Item End -->
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+
+                        <div class="col-lg-3 col-sm-6" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 250px;">
                             <!-- Service Item Start -->
-                            <div class="service-item text-center">
+                            <div class="service-item text-center" style="position: relative; padding: 30px; border-radius: 10px; background: #fff; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="" style="width: 50px;">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-2.png" alt="" style="width: 80px;">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Custom <br> Software Solution</a></h3>
-                                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                                    <h3 class="title" style="font-size: 18px; margin-top: 15px;">
+                                        <a href="#" style="text-decoration: none; color: #333;">Custom <br> Software Solution</a>
+                                    </h3>
+                                    <p style="font-size: 14px; color: #666;">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                                 </div>
                             </div>
                             <!-- Service Item End -->
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+
+                        <div class="col-lg-3 col-sm-6" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 250px;">
                             <!-- Service Item Start -->
-                            <div class="service-item text-center">
+                            <div class="service-item text-center" style="position: relative; padding: 30px; border-radius: 10px; background: #fff; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="" style="width: 50px;">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-3.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-3.png" alt="" style="width: 80px;">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Technology <br> Consulting</a></h3>
-                                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                                    <h3 class="title" style="font-size: 18px; margin-top: 15px;">
+                                        <a href="#" style="text-decoration: none; color: #333;">Technology <br> Consulting</a>
+                                    </h3>
+                                    <p style="font-size: 14px; color: #666;">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                                 </div>
                             </div>
                             <!-- Service Item End -->
                         </div>
-                        <div class="col-lg-3 col-sm-6">
+
+                        <div class="col-lg-3 col-sm-6" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 250px;">
                             <!-- Service Item Start -->
-                            <div class="service-item text-center">
+                            <div class="service-item text-center" style="position: relative; padding: 30px; border-radius: 10px; background: #fff; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="" style="width: 50px;">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-4.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-4.png" alt="" style="width: 80px;">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Business <br> Analytics</a></h3>
-                                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                                    <h3 class="title" style="font-size: 18px; margin-top: 15px;">
+                                        <a href="#" style="text-decoration: none; color: #333;">Business <br> Analytics</a>
+                                    </h3>
+                                    <p style="font-size: 14px; color: #666;">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                                 </div>
                             </div>
                             <!-- Service Item End -->
