@@ -1196,8 +1196,8 @@
                         <div class="col-lg-3 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget-about">
-                                <a class="footer-logo" href="#"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo"></a>
-                                <a class="footer-logo" href="#"><img src="/assets/abgblora/logo/logopupr.png" alt="Logo"></a>
+                                <a class="footer-logo" href="#"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="400px;"></a>
+                                <a class="footer-logo" href="#"><img src="/assets/abgblora/logo/logopupr.png" width="400px;" alt="Logo"></a>
                                 <div class="widget-info">
                                     <ul>
                                         <li>
