@@ -267,7 +267,7 @@
 
 
         <!-- Service Start -->
-        <div class="section service-section" style="margin-top:300px;">
+        <div class="section service-section" style="margin-top:400px;">
             <div class="container">
                 <div class="service-wrap">
                     <div class="row">
@@ -347,7 +347,7 @@
 
 
         <!-- Hero Start -->
-        <div class="section tech-hero-section" style="background:white;">
+        {{-- <div class="section tech-hero-section" style="background:white;">
             <div class="shape-1"></div>
             <div class="container">
                 <div class="row">
@@ -365,7 +365,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Hero End -->
 
 
