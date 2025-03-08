@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>abg dpupr blora</title>
+    <title>Abg DPUPR BLora </title>
     <style>
       html, body {
         height: 100%;
