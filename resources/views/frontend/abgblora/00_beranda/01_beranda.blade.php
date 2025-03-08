@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/abgblora/logo/logokabupatenblora.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/abgblora/images/favicon.png">
 
     <!-- CSS
 	============================================ -->
@@ -267,7 +267,7 @@
 
 
         <!-- Hero Start -->
-        <div class="section tech-hero-section" style="background-image: url(/assets/abgblora/images/hero-1.jpg);">
+        <div class="section tech-hero-section" style="background-image: url(assets/images/hero-1.jpg);">
             <div class="shape-1"></div>
             <div class="container">
                 <div class="row">
