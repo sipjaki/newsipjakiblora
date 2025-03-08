@@ -1302,14 +1302,14 @@
                 <div class="container">
                     <div class="footer-copyright-wrap">
                         <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-8 col-md-8">
                                 <!-- Footer Copyright Text Start -->
                                 <div class="copyright-text">
-                                    <p>© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah Indonesia </p>
+                                    <p>© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah </p>
                                 </div>
                                 <!-- Footer Copyright Text End -->
                             </div>
-                            <div class="col-lg-6 col-md-6">
+                            <div class="col-lg-4 col-md-4">
                                 <!-- Footer Copyright Social Start -->
                                 <div class="copyright-social">
                                     <ul class="social">
