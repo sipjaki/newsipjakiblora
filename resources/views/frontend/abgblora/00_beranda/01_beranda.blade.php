@@ -295,145 +295,101 @@
                 <div class="service-wrap">
                     <div class="row">
 
+                        <style>
+                            /* Styling umum */
+                            .service-item {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-between;
+                                height: 100%; /* Pastikan semua card memiliki tinggi yang sama */
+                                padding: 20px;
+                                border-radius: 10px;
+                                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                                background: #fff;
+                                transition: transform 0.3s ease-in-out;
+                            }
 
-                        {{-- ------------------------------------ 1 --------------------- --}}
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item text-center">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
-                                </div>
+                            .service-item:hover {
+                                transform: translateY(-5px); /* Efek hover agar lebih menarik */
+                            }
+
+                            .service-content {
+                                flex-grow: 1; /* Mengisi ruang kosong agar semua card sama tinggi */
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                text-align: center;
+                            }
+
+                            .service-icon img {
+                                max-width: 80px; /* Ukuran ikon sama */
+                                height: auto;
+                            }
+
+                            .service-item h3 {
+                                font-size: 18px;
+                                margin-top: 10px;
+                            }
+
+                            /* Grid Layout agar responsif */
+                            .services-container {
+                                display: grid;
+                                grid-template-columns: repeat(4, 1fr); /* 4 kolom di layar besar */
+                                gap: 20px;
+                            }
+
+                            /* Responsive Breakpoints */
+                            @media (max-width: 1024px) {
+                                .services-container {
+                                    grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+                                }
+                            }
+
+                            @media (max-width: 768px) {
+                                .services-container {
+                                    grid-template-columns: repeat(1, 1fr); /* 1 kolom di HP */
+                                }
+                            }
+                        </style>
+
+                        <!-- Container untuk layanan -->
+                        <div class="services-container">
+                            <div class="service-item">
                                 <div class="service-icon">
                                     <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
-                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG)</a></h3>
                                 </div>
                             </div>
-                            <!-- Service Item End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item text-center">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
-                                </div>
+
+                            <div class="service-item">
                                 <div class="service-icon">
                                     <img src="/assets/abgblora/images/service/service-2.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Tracking PBG</a></h3>
-                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
-                            <!-- Service Item End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item text-center">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
-                                </div>
+
+                            <div class="service-item">
                                 <div class="service-icon">
                                     <img src="/assets/abgblora/images/service/service-3.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Data Bangunan Gedung</a></h3>
-                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
-                            <!-- Service Item End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item text-center">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
-                                </div>
+
+                            <div class="service-item">
                                 <div class="service-icon">
                                     <img src="/assets/abgblora/images/service/service-4.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Bantuan Teknis</a></h3>
-                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
-                            <!-- Service Item End -->
-                        </div>
-
-                        {{-- ------------------------------------ 2 --------------------- --}}
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item text-center">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h3 class="title"><a href="#">Sosialisasi & Pelatihan </a></h3>
-                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
-                                </div>
-                            </div>
-                            <!-- Service Item End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item text-center">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-2.png" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h3 class="title"><a href="#">Keterangan Rencana Kota</a></h3>
-                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
-                                </div>
-                            </div>
-                            <!-- Service Item End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item text-center">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-3.png" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h3 class="title"><a href="#">Penilik Bangunan Gedung</a></h3>
-                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
-                                </div>
-                            </div>
-                            <!-- Service Item End -->
-                        </div>
-                        <div class="col-lg-3 col-sm-6">
-                            <!-- Service Item Start -->
-                            <div class="service-item text-center">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-4.png" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h3 class="title"><a href="#">SPPD</a></h3>
-                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
-                                </div>
-                            </div>
-                            <!-- Service Item End -->
                         </div>
 
 
