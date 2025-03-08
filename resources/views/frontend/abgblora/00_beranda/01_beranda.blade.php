@@ -1269,7 +1269,6 @@
                                         <li><a href="#">Sertifikat Laik Fungsi (SLF)</a></li>
                                         <li><a href="#">Tracking PBG</a></li>
                                         <li><a href="#">Pendataan Bangunan Gedung</a></li>
-                                        <li><a href="#">Bantuan Teknis</a></li>
 
                                     </ul>
                                 </div>
@@ -1283,6 +1282,7 @@
 
                                 <div class="widget-link">
                                     <ul class="link">
+                                        <li><a href="#">Bantuan Teknis</a></li>
                                         <li><a href="#">Sosialisasi & Pelatihan</a></li>
                                         <li><a href="#">Keterangan Rencana Kota (KRK) </a></li>
                                         <li><a href="#">Penilik Bangunan Gedung</a></li>
