@@ -267,9 +267,9 @@
 
 
         <!-- Hero Start -->
-        {{-- <div class="section tech-hero-section" style="background-image: url(/assets/abgblora/images/hero-1.jpg);">
+        <div class="section tech-hero-section" style="background-image: url(/assets/abgblora/images/hero-1.jpg);">
             <div class="shape-1"></div>
-            <div class="container">
+            {{-- <div class="container">
                 <div class="row">
                     <div class="col-xl-6">
                         <!-- Hero Content Start -->
@@ -284,8 +284,8 @@
                         <!-- Hero Content End -->
                     </div>
                 </div>
-            </div>
-        </div> --}}
+            </div> --}}
+        </div>
         <!-- Hero End -->
 
         <!-- Service Start -->
