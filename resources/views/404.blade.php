@@ -94,8 +94,8 @@
         <h1 class="font-bold text-5xl font-Comforter-Brush text-amber-500 mb-10 mt-10 md:text-right">Coming Soon</h1>
 
         <main>
-            <h1>Dinas Pekerjaan Umum dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</h1>
-            <p>Our Website Is Under Construction <br> Please Wait</p>
+            <h1 style="color: white;">Dinas Pekerjaan Umum dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</h1>
+            <p style="color: white;">Our Website Is Under Construction <br> Please Wait</p>
           </main>
 
         {{-- <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-3xl mb-14 md:-mr-20 text-white md:text-left">Pemerintah <br> Provinsi Jawa Barat<span class="text-white/70 md:-mr-20"></span></h6> --}}
