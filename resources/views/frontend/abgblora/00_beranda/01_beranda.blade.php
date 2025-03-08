@@ -56,7 +56,7 @@
                 <!-- Header Wrap Start  -->
                 <div class="header-wrap">
 
-                    <div class="header-logo" style="display: flex; align-items: center; justify-content: flex-start; height: 80px; gap: 15px; padding-top: 10px; padding-bottom: 10px;">
+                    <div class="header-logo" style="display: flex; align-items: center; justify-content: flex-start; height: 80px; gap: 15px; padding-top: 10px; padding-bottom: 12px;">
                         <!-- Logo di kiri dengan margin atas -->
                         <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR"
                              style="width: 60px; height: auto; max-height: 100%; margin-top: 5px;">
