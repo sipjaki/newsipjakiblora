@@ -271,16 +271,11 @@
 
             <div class="shape-1"></div>
 
-            <div class="container" style="margin-top: 200px;">
-                <div class="service-wrap">
+            <div class="container" style="margin-top: 200px; margin-bottom: 100px;">
+                <div class="service-wrap" style="padding-bottom: 50px;">
                     <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
                         <div class="col-lg-3 col-sm-6" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 250px;">
-                            <!-- Service Item Start -->
                             <div class="service-item text-center" style="position: relative; padding: 30px; border-radius: 10px; background: #fff; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="" style="width: 50px;">
-                                </div>
                                 <div class="service-icon">
                                     <img src="/assets/abgblora/images/service/service-1.png" alt="" style="width: 80px;">
                                 </div>
@@ -291,16 +286,10 @@
                                     <p style="font-size: 14px; color: #666;">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                                 </div>
                             </div>
-                            <!-- Service Item End -->
                         </div>
 
                         <div class="col-lg-3 col-sm-6" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 250px;">
-                            <!-- Service Item Start -->
                             <div class="service-item text-center" style="position: relative; padding: 30px; border-radius: 10px; background: #fff; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="" style="width: 50px;">
-                                </div>
                                 <div class="service-icon">
                                     <img src="/assets/abgblora/images/service/service-2.png" alt="" style="width: 80px;">
                                 </div>
@@ -311,16 +300,10 @@
                                     <p style="font-size: 14px; color: #666;">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                                 </div>
                             </div>
-                            <!-- Service Item End -->
                         </div>
 
                         <div class="col-lg-3 col-sm-6" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 250px;">
-                            <!-- Service Item Start -->
                             <div class="service-item text-center" style="position: relative; padding: 30px; border-radius: 10px; background: #fff; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="" style="width: 50px;">
-                                </div>
                                 <div class="service-icon">
                                     <img src="/assets/abgblora/images/service/service-3.png" alt="" style="width: 80px;">
                                 </div>
@@ -331,16 +314,10 @@
                                     <p style="font-size: 14px; color: #666;">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                                 </div>
                             </div>
-                            <!-- Service Item End -->
                         </div>
 
                         <div class="col-lg-3 col-sm-6" style="flex: 1 1 calc(25% - 20px); max-width: calc(25% - 20px); min-width: 250px;">
-                            <!-- Service Item Start -->
                             <div class="service-item text-center" style="position: relative; padding: 30px; border-radius: 10px; background: #fff; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);">
-                                <div class="shape-1"></div>
-                                <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="" style="width: 50px;">
-                                </div>
                                 <div class="service-icon">
                                     <img src="/assets/abgblora/images/service/service-4.png" alt="" style="width: 80px;">
                                 </div>
@@ -351,11 +328,11 @@
                                     <p style="font-size: 14px; color: #666;">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                                 </div>
                             </div>
-                            <!-- Service Item End -->
                         </div>
                     </div>
                 </div>
             </div>
+
             {{-- <div class="container">
                 <div class="row">
                     <div class="col-xl-6">
