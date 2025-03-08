@@ -100,7 +100,7 @@
                     <!-- Header Meta Start -->
                     <div class="header-meta">
                         <!-- Header Info Start -->
-                        <div class="header-info d-none d-md-flex">
+                        {{-- <div class="header-info d-none d-md-flex">
                             <div class="info-icon">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
@@ -108,10 +108,10 @@
                                 <span>Free Consultant</span>
                                 <span class="number"><a href="#">+36 55 540 069</a></span>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Header Info End -->
                         <!-- Header Search Start -->
-                        <div class="header-search">
+                        {{-- <div class="header-search">
                             <a class="search-btn" href="#"><i class="flaticon-loupe"></i></a>
                             <div class="search-wrap">
                                 <div class="search-inner">
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- Header Search End -->
 
                         <!-- Header Cart Start -->
