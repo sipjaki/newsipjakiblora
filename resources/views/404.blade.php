@@ -88,7 +88,8 @@
 
 
   <!-- Header -->
-  <header class="w-full bg-[url('assets/img/under.jpg')] bg-cover bg-bottom">
+  <header class="w-full bg-cover bg-bottom">
+  {{-- <header class="w-full bg-[url('assets/img/under.jpg')] bg-cover bg-bottom"> --}}
     <div class="w-full min-h-screen md:w-1/2 bg-gradient-to-b from-gray-900/90 to-gray-900/95 p-10 flex">
       <div class="w-full text-center my-auto">
         <h1 class="font-bold text-5xl font-Comforter-Brush text-amber-500 mb-10 mt-10 md:text-right">Coming Soon</h1>
