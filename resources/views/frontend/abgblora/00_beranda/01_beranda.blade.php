@@ -368,7 +368,7 @@
         <!-- Service End -->
 
         <!-- About Start -->
-        <div class="section about-section section-padding">
+        {{-- <div class="section about-section section-padding">
             <div class="container">
                 <!-- About Wrap Start -->
                 <div class="about-wrap">
@@ -423,11 +423,11 @@
                 </div>
                 <!-- About Wrap End -->
             </div>
-        </div>
+        </div> --}}
         <!-- About End -->
 
         <!--  Skill Start -->
-        <div class="section skill-section section-padding">
+        {{-- <div class="section skill-section section-padding">
             <div class="container">
                 <div class="skill-wrap">
                     <!--  Skill Content Wrap Start -->
@@ -565,11 +565,11 @@
                     <!--  Skill Image Wrap End -->
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!--  Skill End -->
 
         <!-- Counter Start -->
-        <div class="section counter-section" style="background-image: url(assets/images/bg/counter-bg.jpg);">
+        {{-- <div class="section counter-section" style="background-image: url(assets/images/bg/counter-bg.jpg);">
             <div class="container">
                 <div class="counter-wrap">
                     <div class="row">
@@ -636,11 +636,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Counter End -->
 
         <!-- Case Study Start -->
-        <div class="section case-study-section section-padding">
+        {{-- <div class="section case-study-section section-padding">
             <div class="container">
                 <div class="case-study-wrap">
                     <div class="section-title text-center">
@@ -727,11 +727,11 @@
             </div>
             <!-- Case Study Button End -->
 
-        </div>
+        </div> --}}
         <!-- Case Study End -->
 
         <!-- Features Start -->
-        <div class="section features-section" style="background-image: url(assets/images/bg/features-bg.jpg);">
+        {{-- <div class="section features-section" style="background-image: url(assets/images/bg/features-bg.jpg);">
             <!-- Features Thumb Start -->
             <div class="features-thumb d-flex align-items-end">
                 <div class="shape-1">
@@ -813,7 +813,7 @@
                 </div>
                 <!-- Features Wrap End -->
             </div>
-        </div>
+        </div> --}}
         <!-- Features End -->
 
         <!-- Team Start -->
