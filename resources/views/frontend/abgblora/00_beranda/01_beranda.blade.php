@@ -294,6 +294,9 @@
             <div class="container">
                 <div class="service-wrap">
                     <div class="row">
+
+
+                        {{-- ------------------------------------ 1 --------------------- --}}
                         <div class="col-lg-3 col-sm-6">
                             <!-- Service Item Start -->
                             <div class="service-item text-center">
@@ -305,8 +308,8 @@
                                     <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Strategy & <br> Discovery</a></h3>
-                                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
                             <!-- Service Item End -->
@@ -322,8 +325,8 @@
                                     <img src="/assets/abgblora/images/service/service-2.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Custom <br> Software Solution</a></h3>
-                                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                                    <h3 class="title"><a href="#">Tracking PBG</a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
                             <!-- Service Item End -->
@@ -339,8 +342,8 @@
                                     <img src="/assets/abgblora/images/service/service-3.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Technology <br> Consulting</a></h3>
-                                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                                    <h3 class="title"><a href="#">Data Bangunan Gedung</a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
                             <!-- Service Item End -->
@@ -356,12 +359,84 @@
                                     <img src="/assets/abgblora/images/service/service-4.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Business <br> Analytics</a></h3>
-                                    <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                                    <h3 class="title"><a href="#">Bantuan Teknis</a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
                             <!-- Service Item End -->
                         </div>
+
+                        {{-- ------------------------------------ 2 --------------------- --}}
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Service Item Start -->
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
+                                <div class="service-icon">
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="#">Sosialisasi & Pelatihan </a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                </div>
+                            </div>
+                            <!-- Service Item End -->
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Service Item Start -->
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
+                                <div class="service-icon">
+                                    <img src="/assets/abgblora/images/service/service-2.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="#">Keterangan Rencana Kota</a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                </div>
+                            </div>
+                            <!-- Service Item End -->
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Service Item Start -->
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
+                                <div class="service-icon">
+                                    <img src="/assets/abgblora/images/service/service-3.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="#">Penilik Bangunan Gedung</a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                </div>
+                            </div>
+                            <!-- Service Item End -->
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <!-- Service Item Start -->
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
+                                <div class="service-icon">
+                                    <img src="/assets/abgblora/images/service/service-4.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="#">SPPD</a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                </div>
+                            </div>
+                            <!-- Service Item End -->
+                        </div>
+
+
                     </div>
                 </div>
             </div>
