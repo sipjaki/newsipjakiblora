@@ -906,7 +906,7 @@
         <!-- Team End -->
 
         <!-- Testimonial Start -->
-        <div class="section testimonial-section section-padding" style="background-image: url(assets/images/bg/testi-bg.jpg);">
+        {{-- <div class="section testimonial-section section-padding" style="background-image: url(assets/images/bg/testi-bg.jpg);">
             <div class="container">
                 <!-- Testimonial Wrap Start -->
                 <div class="testimonial-wrap">
@@ -1008,7 +1008,7 @@
                 <!-- Testimonial Wrap End -->
             </div>
         </div>
-        <!-- Testimonial End -->
+        <!-- Testimonial End --> --}}
 
         <!-- Blog Start -->
         {{-- <div class="section blog-section section-padding-02">
