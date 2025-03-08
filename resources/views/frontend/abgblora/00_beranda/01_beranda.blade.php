@@ -1011,7 +1011,7 @@
         <!-- Testimonial End -->
 
         <!-- Blog Start -->
-        <div class="section blog-section section-padding-02">
+        {{-- <div class="section blog-section section-padding-02">
             <div class="container">
                 <!-- Blog Wrap Start -->
                 <div class="blog-wrap">
@@ -1097,7 +1097,7 @@
                 </div>
                 <!-- Blog Wrap End -->
             </div>
-        </div>
+        </div> --}}
         <!-- Blog End -->
 
         <!-- Brand Logo Start -->
