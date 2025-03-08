@@ -218,14 +218,14 @@
         <div class="offcanvas offcanvas-start" id="offcanvasExample">
             <div class="offcanvas-header">
                 <!-- Offcanvas Logo Start -->
-                <div class="offcanvas-logo">
-                    <a href="#">
-                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="" width="30" height="30">
-                      </a>
-                      <a href="#">
-                        <img src="/assets/abgblora/logo/logopupr.png" alt="" width="30" height="30">
-                      </a>
-                            </div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a href="index.html">
+                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" style="width: 50px; height: auto;">
+                    </a>
+                    <a href="index.html">
+                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" style="width: 50px; height: auto;">
+                    </a>
+                </div>
                 <!-- Offcanvas Logo End -->
                 <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i class="flaticon-close"></i></button>
             </div>
