@@ -355,61 +355,78 @@
 
                         <!-- Container untuk layanan -->
                         <div class="services-container">
-                            <div class="service-item">
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
                                 <div class="service-icon">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-
                                     <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG)</a></h3>
+                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
 
-                            <div class="service-item">
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
                                 <div class="service-icon">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-
-                                    <img src="/assets/abgblora/images/service/service-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Tracking PBG</a></h3>
+                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
 
-                            <div class="service-item">
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
                                 <div class="service-icon">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-
-                                    <img src="/assets/abgblora/images/service/service-3.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Data Bangunan Gedung</a></h3>
+                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
 
-                            <div class="service-item">
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
                                 <div class="service-icon">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-
-                                    <img src="/assets/abgblora/images/service/service-4.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Bantuan Teknis</a></h3>
+                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
