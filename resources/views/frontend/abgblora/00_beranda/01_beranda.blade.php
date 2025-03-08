@@ -372,10 +372,10 @@
         <!-- Hero End -->
 
         <!-- About Start -->
-        {{-- <div class="section about-section section-padding">
+        <div class="section about-section section-padding">
             <div class="container">
                 <!-- About Wrap Start -->
-                <div class="about-wrap">
+                {{-- <div class="about-wrap">
                     <div class="row">
                         <div class="col-lg-6">
                             <!-- About Thumb Wrap Start -->
@@ -424,10 +424,10 @@
                             <!-- About Content End -->
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <!-- About Wrap End -->
             </div>
-        </div> --}}
+        </div>
         <!-- About End -->
 
         <!--  Skill Start -->
