@@ -372,7 +372,7 @@
         <!-- Hero End -->
 
         <!-- About Start -->
-        <div class="section about-section section-padding">
+        {{-- <div class="section about-section section-padding">
             <div class="container">
                 <!-- About Wrap Start -->
                 <div class="about-wrap">
@@ -427,7 +427,7 @@
                 </div>
                 <!-- About Wrap End -->
             </div>
-        </div>
+        </div> --}}
         <!-- About End -->
 
         <!--  Skill Start -->
