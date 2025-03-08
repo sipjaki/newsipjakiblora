@@ -1152,7 +1152,7 @@
         <!-- Brand Logo End -->
 
         <!-- Cta Start -->
-        <div class="section cta-section">
+        {{-- <div class="section cta-section">
             <div class="container">
                 <div class="cta-wrap" style="background-image: url(assets/images/bg/cta-bg.jpg);">
                     <div class="row align-items-center">
@@ -1174,7 +1174,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Cta End -->
 
         <!-- Footer Section Start -->
