@@ -431,7 +431,7 @@
         <!-- About End -->
 
         <!--  Skill Start -->
-        <div class="section skill-section section-padding">
+        {{-- <div class="section skill-section section-padding">
             <div class="container">
                 <div class="skill-wrap">
                     <!--  Skill Content Wrap Start -->
@@ -569,7 +569,7 @@
                     <!--  Skill Image Wrap End -->
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!--  Skill End -->
 
         {{-- <!-- Counter Start -->
