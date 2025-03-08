@@ -36,8 +36,8 @@ class FedashboardController extends Controller
         $user = Auth::user();
 
 
-        return view('/404', [
-        // return view('frontend.00_full.index', [
+        // return view('/404', [
+        return view('frontend.00_full.index', [
             'title' => 'Sipjaki Informasi Pembina Jasa Konstruksi',
             'data' => $data, // Mengirimkan data paginasi ke view
             'dataqapertanyaan' => $dataqapertanyaan, // Mengirimkan data paginasi ke view
