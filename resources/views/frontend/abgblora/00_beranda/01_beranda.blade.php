@@ -1284,7 +1284,7 @@
                                 <div class="widget-link">
                                     <ul class="link">
                                         <li><a href="#">Sosialisasi & Pelatihan</a></li>
-                                        <li><a href="#">KRK</a></li>
+                                        <li><a href="#">Keterangan Rencana Kota (KRK) </a></li>
                                         <li><a href="#">Penilik Bangunan Gedung</a></li>
                                         <li><a href="#">SPPD</a></li>
                                     </ul>
