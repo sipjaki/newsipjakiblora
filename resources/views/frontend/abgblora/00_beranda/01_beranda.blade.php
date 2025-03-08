@@ -266,29 +266,6 @@
         <!-- Offcanvas End -->
 
 
-        <!-- Hero Start -->
-        <div class="section tech-hero-section" style="background-image: url(/assets/abgblora/images/hero-1.jpg);">
-            <div class="shape-1"></div>
-            {{-- <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <!-- Hero Content Start -->
-                        <div class="hero-content">
-                            <h3 class="sub-title" data-aos-delay="600" data-aos="fade-up">Technology Releted Consultancy</h3>
-                            <h2 class="title" data-aos="fade-up" data-aos-delay="700">We bring great Ideas to life</h2>
-                            <p data-aos="fade-up" data-aos-delay="800">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
-                            <div class="hero-btn" data-aos="fade-up" data-aos-delay="900">
-                                <a class="btn" href="#">Read More</a>
-                            </div>
-                        </div>
-                        <!-- Hero Content End -->
-                    </div>
-                </div>
-            </div> --}}
-        </div>
-        <!-- Hero End -->
-
-        <!-- Service Start -->
         <div class="section service-section">
             <div class="container">
                 <div class="service-wrap">
@@ -365,6 +342,32 @@
                 </div>
             </div>
         </div>
+
+
+
+        <!-- Hero Start -->
+        <div class="section tech-hero-section" style="background-image: url(/assets/abgblora/images/hero-1.jpg);">
+            <div class="shape-1"></div>
+            {{-- <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <!-- Hero Content Start -->
+                        <div class="hero-content">
+                            <h3 class="sub-title" data-aos-delay="600" data-aos="fade-up">Technology Releted Consultancy</h3>
+                            <h2 class="title" data-aos="fade-up" data-aos-delay="700">We bring great Ideas to life</h2>
+                            <p data-aos="fade-up" data-aos-delay="800">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                            <div class="hero-btn" data-aos="fade-up" data-aos-delay="900">
+                                <a class="btn" href="#">Read More</a>
+                            </div>
+                        </div>
+                        <!-- Hero Content End -->
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+        <!-- Hero End -->
+
+        <!-- Service Start -->
         <!-- Service End -->
 
         <!-- About Start -->
