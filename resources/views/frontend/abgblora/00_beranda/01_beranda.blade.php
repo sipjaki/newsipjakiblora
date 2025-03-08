@@ -50,7 +50,7 @@
         <!-- Preloader End -->
 
         <!-- Header Start  -->
-        <div id="header" class="section header-section transparent-header" style="background: rgb(47, 44, 44)">
+        <div id="header" class="section header-section transparent-header" style="background: #000C29">
             <div class="container">
 
                 <!-- Header Wrap Start  -->
