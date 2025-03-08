@@ -1198,10 +1198,10 @@
                             <div class="footer-widget-about">
                                 <div style="display: flex; align-items: center; gap: 10px;">
                                     <a class="#" href="#">
-                                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="80">
+                                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="75">
                                     </a>
                                     <a class="#" href="#">
-                                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="80">
+                                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="75">
                                     </a>
                                 </div>
                                 <h2 style="display: flex; align-items: center; gap: 5px; margin: 0;">
