@@ -57,7 +57,7 @@
                 <div class="header-wrap">
 
                     <div class="header-logo">
-                        <a href="index.html"><img src="/assets/abgblora/images/logo.png" alt=""></a>
+                        <a href="index.html"><img src="/assets/abgblora/logo/logopupr.png" alt=""></a>
                     </div>
 
                     <div class="header-menu d-none d-lg-block">
