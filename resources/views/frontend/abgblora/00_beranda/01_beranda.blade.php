@@ -1189,7 +1189,7 @@
         <!-- Footer Section Start -->
         <div class="section footer-section" style="background-image: url(assets/images/bg/footer-bg.jpg);">
 
-            <div class="container" style="margin-top: -200px;">
+            <div class="container" style="margin-top: -150px;">
                 <!-- Footer Widget Wrap Start -->
                 <div class="footer-widget-wrap">
                     <div class="row">
