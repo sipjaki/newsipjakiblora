@@ -131,7 +131,7 @@
                         <!-- Header Cart Start -->
                         <div class="header-cart dropdown">
                             <button class="cart-btn" data-bs-toggle="dropdown">
-                                <i class="flaticon-shopping-cart"></i>
+                                <i class="flaticon-file"></i>
                                 <span class="count">0</span>
                             </button>
                             <!-- Header Dropdown Cart Start -->
