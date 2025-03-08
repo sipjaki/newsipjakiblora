@@ -1270,10 +1270,7 @@
                                         <li><a href="#">Tracking PBG</a></li>
                                         <li><a href="#">Pendataan Bangunan Gedung</a></li>
                                         <li><a href="#">Bantuan Teknis</a></li>
-                                        <li><a href="#">Sosialisasi & Pelatihan</a></li>
-                                        <li><a href="#">KRK</a></li>
-                                        <li><a href="#">Penilik Bangunan Gedung</a></li>
-                                        <li><a href="#">SPPD</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -1282,14 +1279,14 @@
                         <div class="col-lg-3 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
-                                <h4 class="footer-widget-title">Support</h4>
+                                {{-- <h4 class="footer-widget-title">Support</h4> --}}
 
                                 <div class="widget-link">
                                     <ul class="link">
-                                        <li><a href="#">Documentation</a></li>
-                                        <li><a href="#">Support</a></li>
-                                        <li><a href="#">FAQS</a></li>
-                                        <li><a href="#">Download</a></li>
+                                        <li><a href="#">Sosialisasi & Pelatihan</a></li>
+                                        <li><a href="#">KRK</a></li>
+                                        <li><a href="#">Penilik Bangunan Gedung</a></li>
+                                        <li><a href="#">SPPD</a></li>
                                     </ul>
                                 </div>
                             </div>
