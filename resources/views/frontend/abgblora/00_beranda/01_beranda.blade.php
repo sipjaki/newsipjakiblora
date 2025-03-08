@@ -62,7 +62,7 @@
 
                     <div class="header-menu d-none d-lg-block">
                         <ul class="main-menu">
-                            <li class="active-menu">
+                            {{-- <li class="active-menu">
                                 <a href="index.html">Home</a>
                                 <ul class="sub-menu">
                                     <li class="active"><a href="index.html">Home One</a></li>
@@ -93,7 +93,7 @@
                                     <li><a href="blog-details.html">Blog Details</a></li>
                                 </ul>
                             </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.html">Contact</a></li> --}}
                         </ul>
                     </div>
 
