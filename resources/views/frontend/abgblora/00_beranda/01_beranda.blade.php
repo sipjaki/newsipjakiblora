@@ -1204,6 +1204,10 @@
                                         <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="80">
                                     </a>
                                 </div>
+                                <h1 style="display: flex; align-items: center; gap: 5px; margin: 0;">
+                                    <span style="color: white; font-style: italic;">MASJAKI</span>
+                                    <span style="color: green; font-style: italic;">BLORA</span>
+                                </h1>
                                       <div class="widget-info">
                                     <ul>
                                         <li>
