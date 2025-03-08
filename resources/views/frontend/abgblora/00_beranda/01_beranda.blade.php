@@ -139,7 +139,7 @@
                                 <!-- Dropdown Cart Items Start -->
                                 <div class="cart-items">
                                     <!-- Single Cart Item Start -->
-                                    <div class="single-cart-item">
+                                    {{-- <div class="single-cart-item">
                                         <div class="item-image">
                                             <img src="assets/images/shop-cart-1.jpg" alt="cart">
                                         </div>
@@ -148,10 +148,10 @@
                                             <span class="quantity">2 x $59.99</span>
                                         </div>
                                         <button class="btn-close"></button>
-                                    </div>
+                                    </div> --}}
                                     <!-- Single Cart Item End -->
                                     <!-- Single Cart Item Start -->
-                                    <div class="single-cart-item">
+                                    {{-- <div class="single-cart-item">
                                         <div class="item-image">
                                             <img src="assets/images/shop-cart-2.jpg" alt="cart">
                                         </div>
@@ -160,10 +160,10 @@
                                             <span class="quantity">2 x $59.99</span>
                                         </div>
                                         <button class="btn-close"></button>
-                                    </div>
+                                    </div> --}}
                                     <!-- Single Cart Item End -->
                                     <!-- Single Cart Item Start -->
-                                    <div class="single-cart-item">
+                                    {{-- <div class="single-cart-item">
                                         <div class="item-image">
                                             <img src="assets/images/shop-cart-3.jpg" alt="cart">
                                         </div>
@@ -172,21 +172,21 @@
                                             <span class="quantity">2 x $59.99</span>
                                         </div>
                                         <button class="btn-close"></button>
-                                    </div>
+                                    </div> --}}
                                     <!-- Single Cart Item End -->
                                 </div>
                                 <!-- Dropdown Cart Items End -->
                                 <!-- Dropdown Cart Total Start -->
-                                <div class="cart-total">
+                                {{-- <div class="cart-total">
                                     <span class="label">Subtotal:</span>
                                     <span class="value">0</span>
-                                </div>
+                                </div> --}}
                                 <!-- Dropdown Cart Total End -->
                                 <!-- Dropdown Cart Button Start -->
-                                <div class="cart-btns">
+                                {{-- <div class="cart-btns">
                                     <a class="btn" href="#">View Cart</a>
                                     <a class="btn btn-2" href="#">Checkout</a>
-                                </div>
+                                </div> --}}
                                 <!-- Dropdown Cart Button End -->
                             </div>
                             <!-- Header Dropdown Cart End -->
