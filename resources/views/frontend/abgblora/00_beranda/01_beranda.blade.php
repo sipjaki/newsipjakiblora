@@ -267,7 +267,7 @@
 
 
         <!-- Service Start -->
-        <div class="section service-section" style="margin-top:400px;">
+        <div class="section service-section" style="margin-top:400px; margin-bottom:100px;">
             <div class="container">
                 <div class="service-wrap">
                     <div class="row">
