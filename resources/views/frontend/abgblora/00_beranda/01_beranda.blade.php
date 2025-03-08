@@ -817,7 +817,7 @@
         <!-- Features End -->
 
         <!-- Team Start -->
-        <div class="section team-section section-padding">
+        {{-- <div class="section team-section section-padding">
             <div class="container">
                 <!-- Team Wrap Start -->
                 <div class="team-wrap">
@@ -902,7 +902,7 @@
                 </div>
                 <!-- Team Wrap End -->
             </div>
-        </div>
+        </div> --}}
         <!-- Team End -->
 
         <!-- Testimonial Start -->
