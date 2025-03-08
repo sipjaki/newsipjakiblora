@@ -1245,14 +1245,14 @@
                         <div class="col-lg-3 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
-                                <h4 class="footer-widget-title">Useful Links</h4>
+                                {{-- <h4 class="footer-widget-title">Useful Links</h4> --}}
 
                                 <div class="widget-link">
                                     <ul class="link">
-                                        <li><a href="#">Terms & Conditions</a></li>
+                                        {{-- <li><a href="#">Terms & Conditions</a></li>
                                         <li><a href="#">About Company</a></li>
                                         <li><a href="#">Payment Gatway</a></li>
-                                        <li><a href="#">Policy</a></li>
+                                        <li><a href="#">Policy</a></li> --}}
                                     </ul>
                                 </div>
                             </div>
@@ -1261,14 +1261,19 @@
                         <div class="col-lg-3 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
-                                <h4 class="footer-widget-title">Our Services</h4>
+                                <h4 class="footer-widget-title">Layanan Kami</h4>
 
                                 <div class="widget-link">
                                     <ul class="link">
-                                        <li><a href="#">Data Security</a></li>
-                                        <li><a href="#">IT Managment</a></li>
-                                        <li><a href="#">Outsourcing</a></li>
-                                        <li><a href="#">Networking</a></li>
+                                        <li><a href="#">Persetujuan Bangunan Gedung (PBG)</a></li>
+                                        <li><a href="#">Sertifikat Laik Fungsi (SLF)</a></li>
+                                        <li><a href="#">Tracking PBG</a></li>
+                                        <li><a href="#">Pendataan Bangunan Gedung</a></li>
+                                        <li><a href="#">Bantuan Teknis</a></li>
+                                        <li><a href="#">Sosialisasi & Pelatihan</a></li>
+                                        <li><a href="#">KRK</a></li>
+                                        <li><a href="#">Penilik Bangunan Gedung</a></li>
+                                        <li><a href="#">SPPD</a></li>
                                     </ul>
                                 </div>
                             </div>
