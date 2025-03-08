@@ -1306,10 +1306,10 @@
                                 <!-- Footer Copyright Text Start -->
                                 <div class="copyright-text">
                                     <a class="#" href="#">
-                                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="80">
+                                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="10">
                                     </a>
                                     <a class="#" href="#">
-                                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="80">
+                                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="10">
                                     </a>
                                     <p>© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah </p>
                                 </div>
