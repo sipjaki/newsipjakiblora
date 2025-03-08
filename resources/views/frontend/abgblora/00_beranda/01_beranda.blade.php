@@ -56,8 +56,10 @@
                 <!-- Header Wrap Start  -->
                 <div class="header-wrap">
 
-                    <div class="header-logo">
-                        <a href="index.html"><img src="/assets/abgblora/logo/logopupr.png" alt=""></a>
+                    <div class="header-logo" style="display: flex; align-items: center; justify-content: center; height: 60px;">
+                        <a href="#">
+                            <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" style="width: 50px; height: auto; max-height: 100%;">
+                        </a>
                     </div>
 
                     <div class="header-menu d-none d-lg-block">
