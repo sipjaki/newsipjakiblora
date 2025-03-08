@@ -219,7 +219,7 @@
             <div class="offcanvas-header">
                 <!-- Offcanvas Logo Start -->
                 <div class="offcanvas-logo">
-                    <a href="index.html"><img src="assets/images/logo-white.png" alt=""></a>
+                    <a href="index.html"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt=""></a>
                 </div>
                 <!-- Offcanvas Logo End -->
                 <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i class="flaticon-close"></i></button>
