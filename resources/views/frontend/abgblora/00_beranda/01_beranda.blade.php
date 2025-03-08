@@ -386,7 +386,7 @@
                                     <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
+                                    <h3 class="title"><a href="#">Tracking (PBG) </a></h3>
                                     {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
@@ -404,7 +404,7 @@
                                     <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
+                                    <h3 class="title"><a href="#">Pendataan Bangunan Gedung </a></h3>
                                     {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
@@ -422,7 +422,79 @@
                                     <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
-                                    <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
+                                    <h3 class="title"><a href="#">Bantuan Teknis </a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                </div>
+                            </div>
+
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
+                                <div class="service-icon">
+                                    <div class="shape-1"></div>
+                                    <div class="shape-2">
+                                        <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    </div>
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="#">Sosialisasi & Pelatihan </a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                </div>
+                            </div>
+
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
+                                <div class="service-icon">
+                                    <div class="shape-1"></div>
+                                    <div class="shape-2">
+                                        <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    </div>
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="#">Keterangan Rencana Kota</a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                </div>
+                            </div>
+
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
+                                <div class="service-icon">
+                                    <div class="shape-1"></div>
+                                    <div class="shape-2">
+                                        <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    </div>
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="#">Penilik Bangunan Gedung</a></h3>
+                                    {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
+                                </div>
+                            </div>
+
+                            <div class="service-item text-center">
+                                <div class="shape-1"></div>
+                                <div class="shape-2">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                </div>
+                                <div class="service-icon">
+                                    <div class="shape-1"></div>
+                                    <div class="shape-2">
+                                        <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    </div>
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
+                                </div>
+                                <div class="service-content">
+                                    <h3 class="title"><a href="#">SPPD</a></h3>
                                     {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                 </div>
                             </div>
