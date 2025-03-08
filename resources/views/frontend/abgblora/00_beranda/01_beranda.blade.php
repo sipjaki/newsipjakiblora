@@ -1205,8 +1205,9 @@
                                     </a>
                                 </div>
                                 <h1 style="display: flex; align-items: center; gap: 5px; margin: 0;">
-                                    <span style="color: white; font-style: italic;">MASJAKI</span>
+                                    <span style="color: white; font-style: italic;">ABG</span>
                                     <span style="color: green; font-style: italic;">BLORA</span>
+                                    <span style="color: #FFD100; font-style: italic;">BANGUNAN GEDUNG</span>
                                 </h1>
                                       <div class="widget-info">
                                     <ul>
