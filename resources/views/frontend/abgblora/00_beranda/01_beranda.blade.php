@@ -267,11 +267,11 @@
 
 
         <!-- Hero Start -->
-        <div class="section tech-hero-section" style="background-image: url(/assets/abgblora/images/hero-1.jpg);">
+        <div class="section tech-hero-section" style="background:white;">
 
             <div class="shape-1"></div>
 
-            <div class="container">
+            <div class="container" style="margin-top: 200px;">
                 <div class="service-wrap">
                     <div class="row">
                         <div class="col-lg-3 col-sm-6">
