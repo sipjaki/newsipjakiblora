@@ -1101,7 +1101,7 @@
         <!-- Blog End -->
 
         <!-- Brand Logo Start -->
-        <div class="section Brand-section">
+        {{-- <div class="section Brand-section">
             <div class="container">
                 <!-- Brand Wrapper Start -->
                 <div class="brand-wrapper section-padding text-center">
@@ -1148,7 +1148,7 @@
                 </div>
                 <!-- Brand Wrapper End -->
             </div>
-        </div>
+        </div> --}}
         <!-- Brand Logo End -->
 
         <!-- Cta Start -->
