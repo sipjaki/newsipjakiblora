@@ -1197,10 +1197,10 @@
                             <!-- Footer Widget Start -->
                             <div class="footer-widget-about">
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <a class="footer-logo" href="#">
+                                    <a class="#" href="#">
                                         <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="80">
                                     </a>
-                                    <a class="footer-logo" href="#">
+                                    <a class="#" href="#">
                                         <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="80">
                                     </a>
                                 </div>
@@ -1305,6 +1305,12 @@
                             <div class="col-lg-8 col-md-8">
                                 <!-- Footer Copyright Text Start -->
                                 <div class="copyright-text">
+                                    <a class="#" href="#">
+                                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="80">
+                                    </a>
+                                    <a class="#" href="#">
+                                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="80">
+                                    </a>
                                     <p>© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah </p>
                                 </div>
                                 <!-- Footer Copyright Text End -->
