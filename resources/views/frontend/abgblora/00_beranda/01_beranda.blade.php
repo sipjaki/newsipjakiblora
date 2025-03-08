@@ -219,9 +219,13 @@
             <div class="offcanvas-header">
                 <!-- Offcanvas Logo Start -->
                 <div class="offcanvas-logo">
-                    <a href="index.html"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="" width="15"></a>
-                    <a href="index.html"><img src="/assets/abgblora/logo/logopupr.png" alt="" width="15"></a>
-                </div>
+                    <a href="#">
+                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="" width="30" height="30">
+                      </a>
+                      <a href="#">
+                        <img src="/assets/abgblora/logo/logopupr.png" alt="" width="30" height="30">
+                      </a>
+                            </div>
                 <!-- Offcanvas Logo End -->
                 <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i class="flaticon-close"></i></button>
             </div>
