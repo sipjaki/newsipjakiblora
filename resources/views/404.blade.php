@@ -10,8 +10,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -31,26 +31,26 @@
       }
     }
   </script>
-  
+
 </head>
 
 <body class="font-Noto-Sans">
 
-  
+
   <!-- Header -->
-  <header class="w-full bg-[url('assets/img/under.jpg')] bg-cover bg-bottom">  
+  <header class="w-full bg-[url('assets/img/under.jpg')] bg-cover bg-bottom">
     <div class="w-full min-h-screen md:w-1/2 bg-gradient-to-b from-gray-900/90 to-gray-900/95 p-10 flex">
       <div class="w-full text-center my-auto">
         <h1 class="font-bold text-5xl font-Comforter-Brush text-amber-500 mb-10 mt-10 md:text-right">Coming Soon</h1>
-        
-        <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-3xl mb-14 md:-mr-20 text-white md:text-left">Pemerintah <br> Kabupaten Bandung Barat<span class="text-white/70 md:-mr-20"></span></h6>
+
+        <h6 class="font-Montserrat font-bold uppercase text-4xl md:text-5xl lg:text-3xl mb-14 md:-mr-20 text-white md:text-left">Pemerintah <br> Provinsi Jawa Barat<span class="text-white/70 md:-mr-20"></span></h6>
 
         <div>
             <style>
                 .button-container {
                     display: inline-block;
                 }
-    
+
                 .back-button {
                     background: linear-gradient(to right, black, yellow);
                     border: none;
@@ -65,13 +65,13 @@
                     border-radius: 8px;
                     transition: background 0.3s;
                 }
-    
+
                 .back-button:hover {
                     background: linear-gradient(to right, white, black);
                     color: black;
                 }
             </style>
-    
+
     <div class="button-container">
         <button class="back-button" onclick="goBack()"><i class="fas fa-warning me-2"></i> KEMBALI</button>
     </div>
@@ -82,7 +82,7 @@
         }
     </script>
         </div>
-  </header>  
+  </header>
 
 </body>
 </html>
