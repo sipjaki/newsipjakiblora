@@ -1302,7 +1302,7 @@
                 <div class="container">
                     <div class="footer-copyright-wrap">
                         <div class="row align-items-center">
-                            <div class="col-lg-12 col-md-12">
+                            <div class="col-lg-8 col-md-8">
                                 <!-- Footer Copyright Text Start -->
                                 <div class="copyright-text">
                                     <div style="display: flex; align-items: center; gap: 10px;">
@@ -1317,7 +1317,7 @@
                                 </div>
                                 <!-- Footer Copyright Text End -->
                             </div>
-                            {{-- <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-4 col-md-4">
                                 <!-- Footer Copyright Social Start -->
                                 <div class="copyright-social">
                                     <ul class="social">
@@ -1328,7 +1328,7 @@
                                     </ul>
                                 </div>
                                 <!-- Footer Copyright Social End -->
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
