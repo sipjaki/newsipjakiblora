@@ -30,13 +30,14 @@ class FedashboardController extends Controller
         $dataqapertanyaan = qa::orderBy('created_at', 'desc')->get(); //
         $dataqasebagai = qasebagai::orderBy('created_at', 'desc')->get(); //
         $dataqapertanyaan = qapertanyaan::orderBy('created_at', 'desc')->get(); //
-        
+
         $himbauandinas = himbauandinas::orderBy('created_at', 'desc')->get(); //
 
         $user = Auth::user();
 
 
-        return view('frontend.00_full.index', [
+        return view('/404', [
+        // return view('frontend.00_full.index', [
             'title' => 'Sipjaki Informasi Pembina Jasa Konstruksi',
             'data' => $data, // Mengirimkan data paginasi ke view
             'dataqapertanyaan' => $dataqapertanyaan, // Mengirimkan data paginasi ke view
@@ -78,17 +79,17 @@ class FedashboardController extends Controller
     //         }
 
 
-    
+
     public function portalberitashowByJudul($judul)
     {
-        
+
 
         $data_berita = berita::all(); //
         $data_layanankami = layanankami::all(); //
         $data = berita::where('judul', $judul)->firstOrFail();
-        
+
         $databeritaagenda = beritaagenda::orderBy('created_at', 'desc')->get(); //
-        
+
         $user = Auth::user();
 
         return view('frontend.02_berita.01_portalberita.showindex', [
@@ -103,8 +104,8 @@ class FedashboardController extends Controller
 
     public function navbarberita()
     {
-        $data= berita::orderBy('created_at', 'desc')->get();; //    
-        
+        $data= berita::orderBy('created_at', 'desc')->get();; //
+
         $user = Auth::user();
 
 
@@ -115,14 +116,14 @@ class FedashboardController extends Controller
         ]);
     }
 
- 
+
     public function kegiatansertifikasi()
     {
         $data = berita::orderBy('created_at', 'desc')->get(); //
         $data_layanankami = layanankami::all(); //
         $data_kegiatanjaskon = kegiatanjaskon::orderBy('created_at', 'desc')->get(); //
 
-        
+
         $user = Auth::user();
 
         return view('frontend.02_berita.02_sertifikasi.index', [
@@ -134,14 +135,14 @@ class FedashboardController extends Controller
         ]);
     }
 
-    
+
     public function kegiatansertifikasishowByJudul($judul_kegiatan)
     {
         $data_berita = berita::first(); //
         $data_layanankami = layanankami::all(); //
         // $data_laporankegiatan = laporankegiatan::all(); //
         // $data_kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
-        
+
         $kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->first();
 
         if (!$kegiatanjaskon) {
@@ -164,7 +165,7 @@ class FedashboardController extends Controller
                 'title' => 'Kegiatan Sertifikasi',
         ]);
     }
-    
+
     public function detailskegiatanshowByJudul($jabatan)
     {
         $data_berita = berita::first(); //
@@ -172,7 +173,7 @@ class FedashboardController extends Controller
         $data_laporankegiatanall = laporankegiatan::all(); //
         $data_laporankegiatan =laporankegiatan::where('jabatan', $jabatan)->firstOrFail(); //
         // $data_kegiatanjaskon = kegiatanjaskon::where('judul_kegiatan', $judul_kegiatan)->firstOrFail();
-        
+
         $user = Auth::user();
 
         return view('frontend.02_berita.02_sertifikasi.showdetails', [
@@ -193,7 +194,7 @@ class FedashboardController extends Controller
     {
         $data = beritaagenda::paginate(8);
         $datapengawasanlokasi = pengawasanlokasi::all();
-        
+
         $user = Auth::user();
 
         return view('frontend.02_berita.03_agendasertifikasi.index', [
@@ -203,10 +204,10 @@ class FedashboardController extends Controller
             'datapengawasanlokasi' => $datapengawasanlokasi, // Mengirimkan data paginasi ke view
         ]);
     }
-    
 
 
-    
+
+
 
 }
 
