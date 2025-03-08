@@ -266,8 +266,30 @@
         <!-- Offcanvas End -->
 
 
+        <!-- Hero Start -->
+        <div class="section tech-hero-section" style="background-image: url(/assets/abgblora/images/hero-1.jpg);">
+            <div class="shape-1"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <!-- Hero Content Start -->
+                        <div class="hero-content">
+                            <h3 class="sub-title" data-aos-delay="600" data-aos="fade-up">Technology Releted Consultancy</h3>
+                            <h2 class="title" data-aos="fade-up" data-aos-delay="700">We bring great Ideas to life</h2>
+                            <p data-aos="fade-up" data-aos-delay="800">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                            <div class="hero-btn" data-aos="fade-up" data-aos-delay="900">
+                                <a class="btn" href="#">Read More</a>
+                            </div>
+                        </div>
+                        <!-- Hero Content End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
         <!-- Service Start -->
-        <div class="section service-section" style="margin-top:400px;">
+        <div class="section service-section">
             <div class="container">
                 <div class="service-wrap">
                     <div class="row">
@@ -342,38 +364,8 @@
                     </div>
                 </div>
             </div>
-
-            <div class="container" style="background: inherit; margin-bottom:100px;">
-
-            </div>
         </div>
-
-
         <!-- Service End -->
-
-
-        <!-- Hero Start -->
-        {{-- <div class="section tech-hero-section" style="background:white;">
-            <div class="shape-1"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <!-- Hero Content Start -->
-                        <div class="hero-content">
-                            <h3 class="sub-title" data-aos-delay="600" data-aos="fade-up">Technology Releted Consultancy</h3>
-                            <h2 class="title" data-aos="fade-up" data-aos-delay="700">We bring great Ideas to life</h2>
-                            <p data-aos="fade-up" data-aos-delay="800">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
-                            <div class="hero-btn" data-aos="fade-up" data-aos-delay="900">
-                                <a class="btn" href="#">Read More</a>
-                            </div>
-                        </div>
-                        <!-- Hero Content End -->
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-        <!-- Hero End -->
-
 
         <!-- About Start -->
         {{-- <div class="section about-section section-padding">
@@ -577,7 +569,7 @@
         <!--  Skill End -->
 
         <!-- Counter Start -->
-        {{-- <div class="section counter-section" style="background-image: url(assets/images/bg/counter-bg.jpg);">
+        <div class="section counter-section" style="background-image: url(assets/images/bg/counter-bg.jpg);">
             <div class="container">
                 <div class="counter-wrap">
                     <div class="row">
@@ -644,11 +636,11 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
         <!-- Counter End -->
 
         <!-- Case Study Start -->
-        {{-- <div class="section case-study-section section-padding">
+        <div class="section case-study-section section-padding">
             <div class="container">
                 <div class="case-study-wrap">
                     <div class="section-title text-center">
@@ -735,11 +727,11 @@
             </div>
             <!-- Case Study Button End -->
 
-        </div> --}}
+        </div>
         <!-- Case Study End -->
 
         <!-- Features Start -->
-        {{-- <div class="section features-section" style="background-image: url(assets/images/bg/features-bg.jpg);">
+        <div class="section features-section" style="background-image: url(assets/images/bg/features-bg.jpg);">
             <!-- Features Thumb Start -->
             <div class="features-thumb d-flex align-items-end">
                 <div class="shape-1">
@@ -821,11 +813,11 @@
                 </div>
                 <!-- Features Wrap End -->
             </div>
-        </div> --}}
+        </div>
         <!-- Features End -->
 
         <!-- Team Start -->
-        {{-- <div class="section team-section section-padding">
+        <div class="section team-section section-padding">
             <div class="container">
                 <!-- Team Wrap Start -->
                 <div class="team-wrap">
@@ -910,7 +902,7 @@
                 </div>
                 <!-- Team Wrap End -->
             </div>
-        </div> --}}
+        </div>
         <!-- Team End -->
 
         <!-- Testimonial Start -->
@@ -1109,7 +1101,7 @@
         <!-- Blog End -->
 
         <!-- Brand Logo Start -->
-        {{-- <div class="section Brand-section">
+        <div class="section Brand-section">
             <div class="container">
                 <!-- Brand Wrapper Start -->
                 <div class="brand-wrapper section-padding text-center">
@@ -1156,7 +1148,7 @@
                 </div>
                 <!-- Brand Wrapper End -->
             </div>
-        </div> --}}
+        </div>
         <!-- Brand Logo End -->
 
         <!-- Cta Start -->
@@ -1349,3 +1341,4 @@
 </body>
 
 </html>
+
