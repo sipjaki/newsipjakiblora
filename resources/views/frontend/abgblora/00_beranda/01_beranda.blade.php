@@ -1224,13 +1224,13 @@
                                         <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="75">
                                     </a>
                                 </div>
-                                <h2 style="display: flex; align-items: center; gap: 5px; margin: 0;">
+                                <h4 style="display: flex; align-items: center; gap: 5px; margin: 0;">
                                     <span style="color: white; font-style: italic;">ABG</span>
                                     <span style="color: green; font-style: italic;">BLORA</span>
-                                </h2>
-                                <h2>
+                                </h4>
+                                <h4>
                                     <span style="color: #FFD100; font-style: italic;">BANGUNAN GEDUNG</span>
-                                </h2>
+                                </h4>
                                       {{-- <div class="widget-info">
                                         <ul>
                                         <li>
