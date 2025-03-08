@@ -59,6 +59,13 @@
                     <div class="header-logo" style="display: flex; align-items: center; justify-content: center; height: 60px;">
                         <a href="#">
                             <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" style="width: 50px; height: auto; max-height: 100%;">
+                            <h4 style="display: flex; align-items: center; gap: 5px; margin: 0;">
+                                <span style="color: white; font-style: italic;">ABG</span>
+                                <span style="color: green; font-style: italic;">BLORA</span>
+                            </h4>
+                            <h6>
+                                <span style="color: #FFD100;">Dinas Pekerjaan Umum & Penataan Ruang Kabupaten Blora</span>
+                            </h6>
                         </a>
                     </div>
 
