@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/abgblora/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/abgblora/logo/logokabupatenblora.png">
 
     <!-- CSS
 	============================================ -->
@@ -141,7 +141,7 @@
                                     <!-- Single Cart Item Start -->
                                     <div class="single-cart-item">
                                         <div class="item-image">
-                                            <img src="/assets/abgblora/images/shop-cart-1.jpg" alt="cart">
+                                            <img src="assets/images/shop-cart-1.jpg" alt="cart">
                                         </div>
                                         <div class="item-content">
                                             <h4 class="title"><a href="#">Apple Iphone X</a></h4>
@@ -153,7 +153,7 @@
                                     <!-- Single Cart Item Start -->
                                     <div class="single-cart-item">
                                         <div class="item-image">
-                                            <img src="/assets/abgblora/images/shop-cart-2.jpg" alt="cart">
+                                            <img src="assets/images/shop-cart-2.jpg" alt="cart">
                                         </div>
                                         <div class="item-content">
                                             <h4 class="title"><a href="#">Sony Xperia Tablet</a></h4>
@@ -165,7 +165,7 @@
                                     <!-- Single Cart Item Start -->
                                     <div class="single-cart-item">
                                         <div class="item-image">
-                                            <img src="/assets/abgblora/images/shop-cart-3.jpg" alt="cart">
+                                            <img src="assets/images/shop-cart-3.jpg" alt="cart">
                                         </div>
                                         <div class="item-content">
                                             <h4 class="title"><a href="#">Camera Digital</a></h4>
@@ -216,7 +216,7 @@
             <div class="offcanvas-header">
                 <!-- Offcanvas Logo Start -->
                 <div class="offcanvas-logo">
-                    <a href="index.html"><img src="/assets/abgblora/images/logo-white.png" alt=""></a>
+                    <a href="index.html"><img src="assets/images/logo-white.png" alt=""></a>
                 </div>
                 <!-- Offcanvas Logo End -->
                 <button type="button" class="close-btn" data-bs-dismiss="offcanvas"><i class="flaticon-close"></i></button>
@@ -298,10 +298,10 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    <img src="assets/images/service/s-shape-2.png" alt="">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
+                                    <img src="assets/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Strategy & <br> Discovery</a></h3>
@@ -315,10 +315,10 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    <img src="assets/images/service/s-shape-2.png" alt="">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-2.png" alt="">
+                                    <img src="assets/images/service/service-2.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Custom <br> Software Solution</a></h3>
@@ -332,10 +332,10 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    <img src="assets/images/service/s-shape-2.png" alt="">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-3.png" alt="">
+                                    <img src="assets/images/service/service-3.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Technology <br> Consulting</a></h3>
@@ -349,10 +349,10 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    <img src="assets/images/service/s-shape-2.png" alt="">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="/assets/abgblora/images/service/service-4.png" alt="">
+                                    <img src="assets/images/service/service-4.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Business <br> Analytics</a></h3>
@@ -377,13 +377,13 @@
                             <!-- About Thumb Wrap Start -->
                             <div class="about-thumb-wrap">
                                 <div class="about-thumb-small">
-                                    <img src="/assets/abgblora/images/about-1.jpg" alt="">
+                                    <img src="assets/images/about-1.jpg" alt="">
                                 </div>
                                 <div class="about-thumb-big">
-                                    <img src="/assets/abgblora/images/about-2.jpg" alt="">
+                                    <img src="assets/images/about-2.jpg" alt="">
                                 </div>
                                 <div class="about-thumb-shape">
-                                    <img src="/assets/abgblora/images/ab-shape.png" alt="">
+                                    <img src="assets/images/ab-shape.png" alt="">
                                 </div>
                                 <div class="play-btn">
                                     <a class="popup-video" href="https://www.youtube.com/watch?time_continue=3&v=_X0eYtY8T_U"><i class="fas fa-play"></i></a>
@@ -401,11 +401,11 @@
                                 <p>Accelerate innovation with world-class tech teams We’ll match you to an entire remote team of incredible freelance talent for all your software development needs.</p>
                                 <div class="about-author-list">
                                     <div class="about-author">
-                                        <img src="/assets/abgblora/images/sign.png" alt="">
+                                        <img src="assets/images/sign.png" alt="">
                                         <h4 class="name">Mita Walker</h4>
                                         <span class="designation">CEO, Techmax</span>
                                         <div class="author-img">
-                                            <img src="/assets/abgblora/images/author-1.jpg" alt="">
+                                            <img src="assets/images/author-1.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="about-list">
@@ -512,7 +512,7 @@
                                 <!--  Skill Image Item Start -->
                                 <div class="skill-img-item">
                                     <div class="skill-img">
-                                        <a class="image" href="#"><img src="/assets/abgblora/images/skill/skill-img-1.jpg" alt=""></a>
+                                        <a class="image" href="#"><img src="assets/images/skill/skill-img-1.jpg" alt=""></a>
                                         <div class="skill-img-text">
                                             <h3 class="title"><a href="#">Data Security</a></h3>
                                             <a class="skill-btn" href="#">Learn More <i class="fas fa-long-arrow-alt-right"></i></a>
@@ -525,7 +525,7 @@
                                 <!--  Skill Image Item Start -->
                                 <div class="skill-img-item">
                                     <div class="skill-img">
-                                        <a class="image" href="#"><img src="/assets/abgblora/images/skill/skill-img-2.jpg" alt=""></a>
+                                        <a class="image" href="#"><img src="assets/images/skill/skill-img-2.jpg" alt=""></a>
                                         <div class="skill-img-text">
                                             <h3 class="title"><a href="#">IT Managment</a></h3>
                                             <a class="skill-btn" href="#">Learn More <i class="fas fa-long-arrow-alt-right"></i></a>
@@ -538,7 +538,7 @@
                                 <!--  Skill Image Item Start -->
                                 <div class="skill-img-item">
                                     <div class="skill-img">
-                                        <a class="image" href="#"><img src="/assets/abgblora/images/skill/skill-img-3.jpg" alt=""></a>
+                                        <a class="image" href="#"><img src="assets/images/skill/skill-img-3.jpg" alt=""></a>
                                         <div class="skill-img-text">
                                             <h3 class="title"><a href="#">Digital Marketing</a></h3>
                                             <a class="skill-btn" href="#">Learn More <i class="fas fa-long-arrow-alt-right"></i></a>
@@ -551,7 +551,7 @@
                                 <!--  Skill Image Item Start -->
                                 <div class="skill-img-item">
                                     <div class="skill-img">
-                                        <a class="image" href="#"><img src="/assets/abgblora/images/skill/skill-img-4.jpg" alt=""></a>
+                                        <a class="image" href="#"><img src="assets/images/skill/skill-img-4.jpg" alt=""></a>
                                         <div class="skill-img-text">
                                             <h3 class="title"><a href="#">Networking</a></h3>
                                             <a class="skill-btn" href="#">Learn More <i class="fas fa-long-arrow-alt-right"></i></a>
@@ -577,7 +577,7 @@
                             <!-- Counter Item Start -->
                             <div class="counter-item text-center">
                                 <div class="counter-icon">
-                                    <img src="/assets/abgblora/images/counter/counter-1.png" alt="">
+                                    <img src="assets/images/counter/counter-1.png" alt="">
                                 </div>
                                 <div class="counter-text">
                                     <span>
@@ -592,7 +592,7 @@
                             <!-- Counter Item Start -->
                             <div class="counter-item text-center">
                                 <div class="counter-icon">
-                                    <img src="/assets/abgblora/images/counter/counter-2.png" alt="">
+                                    <img src="assets/images/counter/counter-2.png" alt="">
                                 </div>
                                 <div class="counter-text">
                                     <span>
@@ -607,7 +607,7 @@
                             <!-- Counter Item Start -->
                             <div class="counter-item text-center">
                                 <div class="counter-icon">
-                                    <img src="/assets/abgblora/images/counter/counter-3.png" alt="">
+                                    <img src="assets/images/counter/counter-3.png" alt="">
                                 </div>
                                 <div class="counter-text">
                                     <span>
@@ -622,7 +622,7 @@
                             <!-- Counter Item Start -->
                             <div class="counter-item text-center">
                                 <div class="counter-icon">
-                                    <img src="/assets/abgblora/images/counter/counter-4.png" alt="">
+                                    <img src="assets/images/counter/counter-4.png" alt="">
                                 </div>
                                 <div class="counter-text">
                                     <span>
@@ -735,10 +735,10 @@
             <!-- Features Thumb Start -->
             <div class="features-thumb d-flex align-items-end">
                 <div class="shape-1">
-                    <img src="/assets/abgblora/images/features-shape.png" alt="">
+                    <img src="assets/images/features-shape.png" alt="">
                 </div>
                 <div class="image">
-                    <img src="/assets/abgblora/images/features-img.png" alt="">
+                    <img src="assets/images/features-img.png" alt="">
                 </div>
             </div>
             <!-- Features Thumb End -->
@@ -759,7 +759,7 @@
                                         <!-- Features Item Start -->
                                         <li class="features-item">
                                             <div class="features-icon">
-                                                <img src="/assets/abgblora/images/features-1.png" alt="">
+                                                <img src="assets/images/features-1.png" alt="">
                                             </div>
                                             <div class="features-text">
                                                 <h3 class="title">Expert Team</h3>
@@ -770,7 +770,7 @@
                                         <!-- Features Item Start -->
                                         <li class="features-item">
                                             <div class="features-icon">
-                                                <img src="/assets/abgblora/images/features-2.png" alt="">
+                                                <img src="assets/images/features-2.png" alt="">
                                             </div>
                                             <div class="features-text">
                                                 <h3 class="title">Quality Contro</h3>
@@ -781,7 +781,7 @@
                                         <!-- Features Item Start -->
                                         <li class="features-item">
                                             <div class="features-icon">
-                                                <img src="/assets/abgblora/images/features-3.png" alt="">
+                                                <img src="assets/images/features-3.png" alt="">
                                             </div>
                                             <div class="features-text">
                                                 <h3 class="title">Integration</h3>
@@ -792,7 +792,7 @@
                                         <!-- Features Item Start -->
                                         <li class="features-item">
                                             <div class="features-icon">
-                                                <img src="/assets/abgblora/images/features-4.png" alt="">
+                                                <img src="assets/images/features-4.png" alt="">
                                             </div>
                                             <div class="features-text">
                                                 <h3 class="title">24/7 Support</h3>
@@ -833,7 +833,7 @@
                                     <!-- Single Team Start -->
                                     <div class="single-team">
                                         <div class="team-img">
-                                            <a href="team.html"><img src="/assets/abgblora/images/team/team-1.jpg" alt=""></a>
+                                            <a href="team.html"><img src="assets/images/team/team-1.jpg" alt=""></a>
                                         </div>
                                         <div class="team-content">
                                             <div class="team-social">
@@ -854,7 +854,7 @@
                                     <!-- Single Team Start -->
                                     <div class="single-team">
                                         <div class="team-img">
-                                            <a href="team.html"><img src="/assets/abgblora/images/team/team-2.jpg" alt=""></a>
+                                            <a href="team.html"><img src="assets/images/team/team-2.jpg" alt=""></a>
                                         </div>
                                         <div class="team-content">
                                             <div class="team-social">
@@ -875,7 +875,7 @@
                                     <!-- Single Team Start -->
                                     <div class="single-team">
                                         <div class="team-img">
-                                            <a href="team.html"><img src="/assets/abgblora/images/team/team-3.jpg" alt=""></a>
+                                            <a href="team.html"><img src="assets/images/team/team-3.jpg" alt=""></a>
                                         </div>
                                         <div class="team-content">
                                             <div class="team-social">
@@ -1026,7 +1026,7 @@
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
                                     <div class="blog-img">
-                                        <a href="blog-details.html"><img src="/assets/abgblora/images/blog/blog-1.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="assets/images/blog/blog-1.jpg" alt=""></a>
                                         <div class="top-meta">
                                             <span class="date"><span>08</span>Aug</span>
                                         </div>
@@ -1049,7 +1049,7 @@
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
                                     <div class="blog-img">
-                                        <a href="blog-details.html"><img src="/assets/abgblora/images/blog/blog-2.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="assets/images/blog/blog-2.jpg" alt=""></a>
                                         <div class="top-meta">
                                             <span class="date"><span>10</span>Aug</span>
                                         </div>
@@ -1072,7 +1072,7 @@
                                 <!-- Single Blog Start -->
                                 <div class="single-blog">
                                     <div class="blog-img">
-                                        <a href="blog-details.html"><img src="/assets/abgblora/images/blog/blog-3.jpg" alt=""></a>
+                                        <a href="blog-details.html"><img src="assets/images/blog/blog-3.jpg" alt=""></a>
                                         <div class="top-meta">
                                             <span class="date"><span>08</span>Aug</span>
                                         </div>
@@ -1113,32 +1113,32 @@
                             <div class="swiper-wrapper">
                                 <!-- Single Brand Start -->
                                 <div class="swiper-slide single-brand">
-                                    <img src="/assets/abgblora/images/brand/brand-1.png" alt="Brand">
+                                    <img src="assets/images/brand/brand-1.png" alt="Brand">
                                 </div>
                                 <!-- Single Brand End -->
                                 <!-- Single Brand Start -->
                                 <div class="swiper-slide single-brand">
-                                    <img src="/assets/abgblora/images/brand/brand-2.png" alt="Brand">
+                                    <img src="assets/images/brand/brand-2.png" alt="Brand">
                                 </div>
                                 <!-- Single Brand End -->
                                 <!-- Single Brand Start -->
                                 <div class="swiper-slide single-brand">
-                                    <img src="/assets/abgblora/images/brand/brand-3.png" alt="Brand">
+                                    <img src="assets/images/brand/brand-3.png" alt="Brand">
                                 </div>
                                 <!-- Single Brand End -->
                                 <!-- Single Brand Start -->
                                 <div class="swiper-slide single-brand">
-                                    <img src="/assets/abgblora/images/brand/brand-4.png" alt="Brand">
+                                    <img src="assets/images/brand/brand-4.png" alt="Brand">
                                 </div>
                                 <!-- Single Brand End -->
                                 <!-- Single Brand Start -->
                                 <div class="swiper-slide single-brand">
-                                    <img src="/assets/abgblora/images/brand/brand-5.png" alt="Brand">
+                                    <img src="assets/images/brand/brand-5.png" alt="Brand">
                                 </div>
                                 <!-- Single Brand End -->
                                 <!-- Single Brand Start -->
                                 <div class="swiper-slide single-brand">
-                                    <img src="/assets/abgblora/images/brand/brand-2.png" alt="Brand">
+                                    <img src="assets/images/brand/brand-2.png" alt="Brand">
                                 </div>
                                 <!-- Single Brand End -->
                             </div>
@@ -1187,7 +1187,7 @@
                         <div class="col-lg-3 col-sm-6">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget-about">
-                                <a class="footer-logo" href="index.html"><img src="/assets/abgblora/images/logo-white.png" alt="Logo"></a>
+                                <a class="footer-logo" href="index.html"><img src="assets/images/logo-white.png" alt="Logo"></a>
                                 <div class="widget-info">
                                     <ul>
                                         <li>
@@ -1320,7 +1320,7 @@
 
     <!-- Bootstrap JS -->
     <script src="/assets/abgblora/js/plugins/popper.min.js"></script>
-    <script src="/assets/abgblora/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="/assets/abgblora/js/plugins/bootstrap.min.js"></script>
 
     <!-- Plugins JS -->
     <script src="/assets/abgblora/js/plugins/swiper-bundle.min.js"></script>
@@ -1341,4 +1341,3 @@
 </body>
 
 </html>
-
