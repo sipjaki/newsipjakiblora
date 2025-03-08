@@ -368,7 +368,7 @@
         <!-- Service End -->
 
         <!-- About Start -->
-        {{-- <div class="section about-section section-padding">
+        <div class="section about-section section-padding">
             <div class="container">
                 <!-- About Wrap Start -->
                 <div class="about-wrap">
@@ -423,11 +423,11 @@
                 </div>
                 <!-- About Wrap End -->
             </div>
-        </div> --}}
+        </div>
         <!-- About End -->
 
         <!--  Skill Start -->
-        {{-- <div class="section skill-section section-padding">
+        <div class="section skill-section section-padding">
             <div class="container">
                 <div class="skill-wrap">
                     <!--  Skill Content Wrap Start -->
@@ -565,7 +565,7 @@
                     <!--  Skill Image Wrap End -->
                 </div>
             </div>
-        </div> --}}
+        </div>
         <!--  Skill End -->
 
         <!-- Counter Start -->
@@ -906,7 +906,7 @@
         <!-- Team End -->
 
         <!-- Testimonial Start -->
-        {{-- <div class="section testimonial-section section-padding" style="background-image: url(assets/images/bg/testi-bg.jpg);">
+        <div class="section testimonial-section section-padding" style="background-image: url(assets/images/bg/testi-bg.jpg);">
             <div class="container">
                 <!-- Testimonial Wrap Start -->
                 <div class="testimonial-wrap">
@@ -1008,10 +1008,10 @@
                 <!-- Testimonial Wrap End -->
             </div>
         </div>
-        <!-- Testimonial End --> --}}
+        <!-- Testimonial End -->
 
         <!-- Blog Start -->
-        {{-- <div class="section blog-section section-padding-02">
+        <div class="section blog-section section-padding-02">
             <div class="container">
                 <!-- Blog Wrap Start -->
                 <div class="blog-wrap">
@@ -1097,7 +1097,7 @@
                 </div>
                 <!-- Blog Wrap End -->
             </div>
-        </div> --}}
+        </div>
         <!-- Blog End -->
 
         <!-- Brand Logo Start -->
@@ -1152,7 +1152,7 @@
         <!-- Brand Logo End -->
 
         <!-- Cta Start -->
-        {{-- <div class="section cta-section">
+        <div class="section cta-section">
             <div class="container">
                 <div class="cta-wrap" style="background-image: url(assets/images/bg/cta-bg.jpg);">
                     <div class="row align-items-center">
@@ -1174,7 +1174,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
         <!-- Cta End -->
 
         <!-- Footer Section Start -->
