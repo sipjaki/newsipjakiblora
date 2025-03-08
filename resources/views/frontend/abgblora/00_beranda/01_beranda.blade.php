@@ -1302,20 +1302,22 @@
                 <div class="container">
                     <div class="footer-copyright-wrap">
                         <div class="row align-items-center">
-                            <div class="col-lg-8 col-md-8">
+                            <div class="col-lg-12 col-md-12">
                                 <!-- Footer Copyright Text Start -->
                                 <div class="copyright-text">
-                                    <a class="#" href="#">
-                                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="10">
-                                    </a>
-                                    <a class="#" href="#">
-                                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="10">
-                                    </a>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <a class="#" href="#">
+                                            <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="20">
+                                        </a>
+                                        <a class="#" href="#">
+                                            <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="20">
+                                        </a>
+                                    </div>
                                     <p>© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah </p>
                                 </div>
                                 <!-- Footer Copyright Text End -->
                             </div>
-                            <div class="col-lg-4 col-md-4">
+                            {{-- <div class="col-lg-4 col-md-4">
                                 <!-- Footer Copyright Social Start -->
                                 <div class="copyright-social">
                                     <ul class="social">
@@ -1326,7 +1328,7 @@
                                     </ul>
                                 </div>
                                 <!-- Footer Copyright Social End -->
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
