@@ -572,7 +572,7 @@
         </div>
         <!--  Skill End -->
 
-        <!-- Counter Start -->
+        {{-- <!-- Counter Start -->
         <div class="section counter-section" style="background-image: url(assets/images/bg/counter-bg.jpg);">
             <div class="container">
                 <div class="counter-wrap">
@@ -640,11 +640,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!-- Counter End -->
 
         <!-- Case Study Start -->
-        <div class="section case-study-section section-padding">
+        {{-- <div class="section case-study-section section-padding">
             <div class="container">
                 <div class="case-study-wrap">
                     <div class="section-title text-center">
@@ -652,10 +652,10 @@
                         <h2 class="title">We are proud team of great project</h2>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- Case Study Slider Wrap Start -->
-            <div class="case-study-slider-wrap">
+            {{-- <div class="case-study-slider-wrap">
                 <div class="swiper-container case-study-active">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -731,7 +731,7 @@
             </div>
             <!-- Case Study Button End -->
 
-        </div>
+        </div> --}}
         <!-- Case Study End -->
 
         <!-- Features Start -->
