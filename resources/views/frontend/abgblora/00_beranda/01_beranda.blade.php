@@ -1305,7 +1305,7 @@
                             <div class="col-lg-6 col-md-6">
                                 <!-- Footer Copyright Text Start -->
                                 <div class="copyright-text">
-                                    <p>© Copyrights 2022 Techmax All rights reserved. </p>
+                                    <p>© Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora 58214 Provinsi Jawa Tengah Indonesia </p>
                                 </div>
                                 <!-- Footer Copyright Text End -->
                             </div>
