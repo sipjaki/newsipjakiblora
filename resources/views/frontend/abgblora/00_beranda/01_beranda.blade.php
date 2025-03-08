@@ -279,10 +279,10 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="assets/images/service/s-shape-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="assets/images/service/service-1.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Strategy & <br> Discovery</a></h3>
@@ -296,10 +296,10 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="assets/images/service/s-shape-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="assets/images/service/service-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-2.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Custom <br> Software Solution</a></h3>
@@ -313,10 +313,10 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="assets/images/service/s-shape-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="assets/images/service/service-3.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-3.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Technology <br> Consulting</a></h3>
@@ -330,10 +330,10 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="assets/images/service/s-shape-2.png" alt="">
+                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                 </div>
                                 <div class="service-icon">
-                                    <img src="assets/images/service/service-4.png" alt="">
+                                    <img src="/assets/abgblora/images/service/service-4.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Business <br> Analytics</a></h3>
