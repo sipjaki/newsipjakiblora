@@ -1218,10 +1218,10 @@
                             <div class="footer-widget-about">
                                 <div style="display: flex; align-items: center; gap: 10px;">
                                     <a class="#" href="#">
-                                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="75">
+                                        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="62">
                                     </a>
                                     <a class="#" href="#">
-                                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="75">
+                                        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="62">
                                     </a>
                                 </div>
                                 <h3 style="display: flex; align-items: center; gap: 5px; margin: 0;">
