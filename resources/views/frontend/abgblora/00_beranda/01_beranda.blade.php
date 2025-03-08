@@ -270,7 +270,7 @@
 
 
         <!-- Service Start -->
-        <div class="section service-section" style="margin-top:350px;">
+        <div class="section service-section" style="margin-top:350px; background:#FFD100;">
             <div class="container">
                 <div class="service-wrap">
                     <div class="row">
