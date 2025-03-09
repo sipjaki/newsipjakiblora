@@ -281,7 +281,7 @@
                             </ul> --}}
                         </li>
                         <li><a href="/404">Sosialisasi & Pelatihan</a></li>
-                        <li><a href="/404">Keterangan Rencana Kota</a></li>
+                        <li><a href="/404">Keterangan Rencana Kota (KRK) </a></li>
                         <li><a href="/404">Penilik Bangunan Gedung</a></li>
                         <li><a href="/404">SPPD</a></li>
                     </ul>
