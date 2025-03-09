@@ -368,7 +368,7 @@
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-                                    <img src="/assets/abgblora/logo/abgblora.png" alt="">
+                                    <img src="/assets/abgblora/logo/bangunan.png" alt="">
                                 </div>
                                 <div class="service-content">
                                     <h3 class="title"><a href="#">Persetujuan Bangunan Gedung (PBG) </a></h3>
