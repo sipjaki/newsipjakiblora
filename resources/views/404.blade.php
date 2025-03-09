@@ -64,11 +64,10 @@
             }
         </style>
 
-<img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" class="same-size-img">
-<img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" class="same-size-img">
+        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo Kabupaten Blora" class="same-size-img">
+        <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" class="same-size-img">
         <h1>Dinas Pekerjaan Umum dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</h1>
       <h4>Our Website Is Under Construction <br> Cooming Soon <br> Please Wait</h4>
-    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
     <style>
@@ -102,5 +101,7 @@
             window.history.back();
         }
     </script>
+    </main>
+
   </body>
 </html>
