@@ -64,14 +64,14 @@
                         <!-- Teks di kanan -->
                         <div style="display: flex; flex-direction: column;">
                             <!-- ABG BLORA (Sejajar) -->
-                            <h4 style="display: flex; align-items: center; gap: 5px; margin: 0;">
+                            <h3 style="display: flex; align-items: center; gap: 5px; margin: 0;">
                                 <span style="color: white; font-style: italic;">ABG</span>
                                 <span style="color: green; font-style: italic;">BLORA</span>
-                            </h4>
+                            </h3>
                             <!-- Dinas PUPR Blora (Di bawah ABG BLORA) -->
-                            <h6 style="margin: 0;">
+                            <h4 style="margin: 0;">
                                 <span style="color: white;">Dinas Pekerjaan Umum & Penataan Ruang Kabupaten Blora</span>
-                            </h6>
+                            </h4>
                         </div>
                     </div>
 
