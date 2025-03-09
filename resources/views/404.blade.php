@@ -55,8 +55,10 @@
   </head>
   <body>
     <main>
+        <img src="/assets/abgblora/logo/logokabupatenblora.png" alt="">
+        <img src="/assets/abgblora/logo/logopupr.png" alt="">
       <h1>Dinas Pekerjaan Umum dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</h1>
-      <p>Our Website Is Under Construction <br> Please Wait</p>
+      <h4>Our Website Is Under Construction <br> Cooming Soon <br> Please Wait</h4>
     </main>
   </body>
 </html>
