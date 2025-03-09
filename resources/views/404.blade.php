@@ -68,40 +68,58 @@
         <img src="/assets/abgblora/logo/logopupr.png" alt="Logo PUPR" class="same-size-img">
         <h1>Dinas Pekerjaan Umum dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</h1>
       <h4>Our Website Is Under Construction <br> Cooming Soon <br> Please Wait</h4>
-
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
-    <style>
-        .back-button {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background-color: #ffd100;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .back-button:hover {
-            background-color: white;
-            color: black;
-        }
-    </style>
-
-    <button class="back-button" onclick="goBack()">
-        <i data-lucide="arrow-left"></i>
-        Kembali
-    </button>
-    <script>
-        lucide.createIcons();
-        function goBack() {
-            window.history.back();
-        }
-    </script>
-    </main>
+      <!DOCTYPE html>
+      <html lang="id">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Button Kembali</title>
+          <script src="https://unpkg.com/lucide@latest"></script>
+          <style>
+              body {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+                  margin: 0;
+                  background-color: #f0f0f0;
+              }
+              .back-button {
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  background-color: #ffd100;
+                  color: black;
+                  border: none;
+                  padding: 10px 20px;
+                  font-size: 16px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  border-radius: 5px;
+                  transition: background-color 0.3s;
+              }
+              .back-button:hover {
+                  background-color: white;
+                  color: black;
+              }
+              .icon {
+                  width: 20px;
+                  height: 20px;
+              }
+          </style>
+      </head>
+      <body>
+          <button class="back-button" onclick="goBack()">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              Kembali
+          </button>
+          <script>
+              function goBack() {
+                  window.history.back();
+              }
+          </script>
 
   </body>
 </html>
