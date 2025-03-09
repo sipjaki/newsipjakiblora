@@ -251,14 +251,14 @@
                     <ul class="main-menu">
                         <li class="active-menu">
                             <a href="/404">Persetujuan Bangunan Gedung SLF</a>
-                            {{-- <ul class="sub-menu">
-                                <li class="active"><a href="index.html">Home One</a></li>
+                            <ul class="sub-menu">
+                                {{-- <li class="active"><a href="index.html">Home One</a></li>
                                 <li><a href="index-2.html">Home Two</a></li>
                                 <li><a href="index-3.html">Home Three</a></li>
                                 <li><a href="index-4.html">Home Four</a></li>
                                 <li><a href="index-5.html">Home Five</a></li>
-                                <li><a href="index-6.html">Home Six</a></li>
-                            </ul> --}}
+                                <li><a href="index-6.html">Home Six</a></li> --}}
+                            </ul>
                         </li>
                         <li>
                             <a href="/404">Tracking PBG</a>
