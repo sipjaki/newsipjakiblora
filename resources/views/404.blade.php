@@ -69,5 +69,38 @@
         <h1>Dinas Pekerjaan Umum dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</h1>
       <h4>Our Website Is Under Construction <br> Cooming Soon <br> Please Wait</h4>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+    <style>
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #ffd100;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+
+    <button class="back-button" onclick="goBack()">
+        <i data-lucide="arrow-left"></i>
+        Kembali
+    </button>
+    <script>
+        lucide.createIcons();
+        function goBack() {
+            window.history.back();
+        }
+    </script>
   </body>
 </html>
