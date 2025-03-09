@@ -361,12 +361,12 @@
                             <div class="service-item text-center">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
-                                    <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                    {{-- <img src="/assets/abgblora/images/service/s-shape-2.png" alt=""> --}}
                                 </div>
                                 <div class="service-icon">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
-                                        <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
+                                        {{-- <img src="/assets/abgblora/images/service/s-shape-2.png" alt=""> --}}
                                     </div>
                                     <img src="/assets/abgblora/images/service/service-1.png" alt="">
                                 </div>
