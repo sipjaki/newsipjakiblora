@@ -298,11 +298,11 @@
                         <!-- Container untuk layanan -->
                         <div class="services-container">
                             <div class="service-item text-center">
+                                <a href="/404">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
                                     <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                 </div>
-                                <a href="/404">
                                     <div class="service-icon">
                                         <div class="shape-1"></div>
                                         <div class="shape-2">
@@ -318,11 +318,11 @@
                             </div>
 
                             <div class="service-item text-center">
+                                <a href="/404">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
                                     <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                 </div>
-                                <a href="/404">
                                     <div class="service-icon">
                                         <div class="shape-1"></div>
                                         <div class="shape-2">
@@ -335,14 +335,14 @@
                                         {{-- <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p> --}}
                                     </div>
                                 </a>
-                                </div>
+                            </div>
 
-                                <div class="service-item text-center">
+                            <div class="service-item text-center">
+                                <a href="/404">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-                                    <a href="/404">
                                     <div class="service-icon">
                                         <div class="shape-1"></div>
                                         <div class="shape-2">
@@ -358,11 +358,11 @@
                                 </div>
 
                                 <div class="service-item text-center">
+                                    <a href="/404">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-                                    <a href="/404">
                                     <div class="service-icon">
                                         <div class="shape-1"></div>
                                         <div class="shape-2">
@@ -378,11 +378,11 @@
                                 </div>
 
                                 <div class="service-item text-center">
+                                    <a href="/404">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-                                    <a href="/404">
                                     <div class="service-icon">
                                         <div class="shape-1"></div>
                                         <div class="shape-2">
@@ -398,11 +398,11 @@
                             </div>
 
                             <div class="service-item text-center">
+                                <a href="/404">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
                                     <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                 </div>
-                                <a href="/404">
                                 <div class="service-icon">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
@@ -418,11 +418,11 @@
                             </div>
 
                             <div class="service-item text-center">
+                                <a href="/404">
                                 <div class="shape-1"></div>
                                 <div class="shape-2">
                                     <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                 </div>
-                                <a href="/404">
                                     <div class="service-icon">
                                         <div class="shape-1"></div>
                                         <div class="shape-2">
@@ -439,11 +439,11 @@
 
 
                                 <div class="service-item text-center">
+                                    <a href="/404">
                                     <div class="shape-1"></div>
                                     <div class="shape-2">
                                         <img src="/assets/abgblora/images/service/s-shape-2.png" alt="">
                                     </div>
-                                    <a href="/404">
                                     <div class="service-icon">
                                         <div class="shape-1"></div>
                                         <div class="shape-2">
