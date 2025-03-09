@@ -56,6 +56,10 @@
                         <li><a href="/404">SPPD</a></li>
                     </ul>
                 </div>
+                <div>
+                    <i class="fas fa-home">Lokasi Kami</i>
+                    <p>Alamat </p>
+                </div>
             </div>
             <!-- Offcanvas Body End -->
         </div>
