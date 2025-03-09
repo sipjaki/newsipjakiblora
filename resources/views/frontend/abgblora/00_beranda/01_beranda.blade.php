@@ -229,7 +229,7 @@
 
         {{-- JANGAN DI HAPUS  ====================================================--}}
 
-        {{-- @include('frontend.abgblora.00_fiturmenu.01_canvasmenuhp') --}}
+        @include('frontend.abgblora.00_fiturmenu.01_canvasmenuhp')
 
         <!-- Service Start -->
         <div class="section service-section" style="margin-top:350px;">
