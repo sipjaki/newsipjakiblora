@@ -47,77 +47,21 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <h2 class="card-title" style="color: black;">
-                            Data Details :
+                            Data Details Peserta :
                             <button class="btn btn-success"
                                     style="background-color: #1d643b; border-color: #1d643b; font-weight: bold; padding: 10px 20px;
                                            border-radius: 5px; font-size: 16px; margin-right: 10px;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000'; this.style.borderColor='#1d643b';"
                                     onmouseout="this.style.backgroundColor='#1d643b'; this.style.color='#ffffff'; this.style.borderColor='#1d643b';">
-                                {{ $data->namakegiatan }}
+                                {{ $data->user->name }}
                             </button>
                         </h2>
-                        <button id="status-{{ $data->id }}" class="btn btn-sm"></button>
-
-                        <script>
-                            function updateStatus() {
-                                let now = new Date().getTime();
-                                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($data->penutupan)->format('Y-m-d H:i:s') }}").getTime();
-                                let statusButton = document.getElementById("status-{{ $data->id }}");
-
-                                // CSS yang digunakan pada tombol
-                                let buttonStyle = "font-weight: bold; padding: 10px 20px; border-radius: 5px; font-size: 16px; margin-right: 10px;";
-
-                                if (now > tanggalHabis) {
-                                    statusButton.innerText = "DITUTUP";
-                                    statusButton.setAttribute("style", buttonStyle + " background-color: red; border-color: red; color: white;"); // Set to red for "TIDAK BERLAKU"
-                                    statusButton.className = "btn btn-danger btn-sm"; // Update class for 'danger' status
-
-                                    // Hover effect: keep background white on hover
-                                    statusButton.onmouseover = function() {
-                                        statusButton.style.backgroundColor = '#ffffff';
-                                        statusButton.style.color = '#000000'; // Color becomes black when hovered
-                                        statusButton.style.borderColor = 'red'; // Keep red border
-                                    };
-                                    statusButton.onmouseout = function() {
-                                        statusButton.style.backgroundColor = 'red';
-                                        statusButton.style.color = 'white'; // Keep white text when mouse out
-                                        statusButton.style.borderColor = 'red'; // Keep red border
-                                    };
-                                } else {
-                                    statusButton.innerText = "DIBUKA";
-                                    statusButton.setAttribute("style", buttonStyle + " background-color: #1d643b; border-color: #1d643b; color: white;");
-                                    statusButton.className = "btn btn-success btn-sm"; // Update class for 'success' status
-
-                                    // Hover effect: keep background white on hover
-                                    statusButton.onmouseover = function() {
-                                        statusButton.style.backgroundColor = '#ffffff';
-                                        statusButton.style.color = '#000000'; // Color becomes black when hovered
-                                        statusButton.style.borderColor = '#1d643b'; // Keep original border color
-                                    };
-                                    statusButton.onmouseout = function() {
-                                        statusButton.style.backgroundColor = '#1d643b';
-                                        statusButton.style.color = 'white'; // Keep white text when mouse out
-                                        statusButton.style.borderColor = '#1d643b'; // Keep original border color
-                                    };
-                                }
-                            }
-
-                            // Jalankan pertama kali saat halaman dimuat
-                            updateStatus();
-
-                            // Update setiap 1 detik untuk realtime
-                            setInterval(updateStatus, 1000);
-                        </script>
 
                     </div>
 
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
-                            <!--begin::Header-->
-                            {{-- <div class="card-header"><div class="card-title">Quick Example</div></div> --}}
-                            <!--end::Header-->
-                            <!--begin::Form-->
 
                             <form>
                                 <!--begin::Body-->
@@ -127,44 +71,45 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
+                                                    <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                                                 </label>
-                                                <input class="form-control" value="{{$data->namakegiatan}}" readonly/>
+                                                <input class="form-control" value="{{$data->user->name}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Kategori Pelatihan
+                                                    <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Jenjang Pendidikan
                                                 </label>
-                                                <input class="form-control" value="{{$data->kategoripelatihan->kategoripelatihan}}" readonly />
+                                                <input class="form-control" value="{{$data->jenjangpendidikan->jenjangpendidikan}}" readonly />
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Penyelenggara
+                                                    <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nomor Induk Kependudukan
                                                 </label>
-                                                <input class="form-control" value="{{$data->penyelenggara}}" readonly/>
+                                                <input class="form-control" value="{{$data->nik}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i> Penutupan
+                                                    <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Jenis Kelamin
                                                 </label>
-                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->penutupan)->translatedFormat('d F Y') }}" readonly/>
+                                                <input class="form-control" value="{{$data->jeniskelamin}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-clock-fill" style="margin-right: 8px; color: navy;"></i> Waktu Pelaksanaan
+                                                    <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i> Tanggal Lahir
                                                 </label>
-                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}" readonly/>
+                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->tanggallahir)->translatedFormat('d F Y') }}" readonly/>
                                             </div>
+
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-people-fill" style="margin-right: 8px; color: navy;"></i> Jumlah Peserta
+                                                    <i class="bi bi-people-fill" style="margin-right: 8px; color: navy;"></i> No Telepon
                                                 </label>
-                                                <input class="form-control" value="{{$data->jumlahpeserta}}" readonly/>
+                                                <input class="form-control" value="{{$data->notelepon}}" readonly/>
                                             </div>
                                         </div>
                                           <!-- End Left Column -->
@@ -172,34 +117,29 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i> Lokasi
+                                                    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i> Instansi
                                                 </label>
-                                                <input class="form-control" value="{{$data->lokasi}}" readonly/>
+                                                <input class="form-control" value="{{$data->instansi}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-info-circle-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
+                                                    <i class="bi bi-info-circle-fill" style="margin-right: 8px; color: navy;"></i> Verifikasi
                                                 </label>
-                                                <input class="form-control" value="{{$data->keterangan}}" readonly/>
+                                                <input class="form-control" value="{{$data->verifikasi}}" readonly/>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">
-                                                    <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Isi Agenda
-                                                </label>
-                                                <input class="form-control" value="{{$data->isiagenda}}" readonly/>
+                                            <div class="mb-3 text-center">
+                                                @if($data->sertifikat)
+                                                    <object data="{{ asset('storage/' . $data->sertifikat) }}" type="application/pdf" width="250" height="200" class="img-fluid rounded">
+                                                        <p>PDF tidak dapat ditampilkan. <a href="{{ asset('storage/' . $data->sertifikat) }}" target="_blank">Download Sertifikat</a></p>
+                                                    </object>
+                                                @else
+                                                    <div class="alert alert-danger d-inline-block p-2 rounded">Sertifikat Belum Terbit</div>
+                                                @endif
                                             </div>
 
-                                            <div class="mb-3">
-                                                <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid rounded" alt="Foto" width="250">
-                                            </div>
 
-                                            <div class="mb-3">
-                                                <a href="{{ asset('storage/' . $data->materi) }}" class="btn btn-primary" target="_blank">
-                                                    <i class="bi bi-file-earmark-text"></i> Lihat Materi
-                                                </a>
-                                            </div>
                                         </div>
                                                                             </div> <!-- end row -->
                                 </div>
