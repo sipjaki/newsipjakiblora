@@ -299,7 +299,7 @@
 
                   <!-- Peserta Pelatihan -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/bepesertapelatihan" class="nav-link">
                       <i class="nav-icon bi bi-person-lines-fill text-warning"></i> <!-- Ikon untuk Peserta Pelatihan -->
                       <p style="color: white">Peserta Pelatihan</p>
                     </a>
