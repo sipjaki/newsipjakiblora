@@ -136,7 +136,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>Kategori Pelatihan
                                                 </label>
-                                                <input class="form-control" value="{{$data->kategoripelatihan}}" readonly />
+                                                <input class="form-control" value="{{$data->kategoripelatihan->kategoripelatihan}}" readonly />
                                             </div>
 
                                             <div class="mb-3">
@@ -156,7 +156,7 @@
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Jenjang Pendidikan
+                                                    <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Waktu Pelaksanaan
                                                 </label>
                                                 <input class="form-control" value="{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}" readonly/>
                                                 {{-- <input class="form-control" value="{{$data->jenjangpendidikan->jenjangpendidikan}}" readonly/> --}}
@@ -198,14 +198,18 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Foto
                                                 </label>
-                                                <input class="form-control" value="{{$data->foto}}" readonly/>
+                                                <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid" alt="Foto" width="250">
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Materi
                                                 </label>
-                                                <input class="form-control" value="{{$data->materi}}" readonly/>
+                                                <a href="{{ asset('storage/' . $data->materi) }}" class="btn btn-primary" target="_blank">
+                                                    <i class="bi bi-file-earmark-text"></i> Lihat Materi
+                                                </a>
+
+                                                {{-- <input class="form-control" value="{{$data->materi}}" readonly/> --}}
                                             </div>
                                         </div>
 
