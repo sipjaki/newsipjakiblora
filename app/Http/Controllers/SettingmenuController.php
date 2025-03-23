@@ -20,7 +20,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\File; // Pastikan ini ada
 use Illuminate\Support\Facades\Storage; // Jika Anda menggunakan Storage juga
 
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 
 class SettingmenuController extends Controller
 {
@@ -38,7 +38,6 @@ class SettingmenuController extends Controller
         $jumlahpengawasanstatus = pengawasanstatus::count();
         $jumlahpengawasantindakan = pengawasantindakan::count();
         $jumlahagendastatus = agendastatus::count();
-        $jumlahketerampilanpekerja = keterampilanpekerja::count();
         $jumlahpilihantahun = tahunpilihan::count();
 
 
@@ -56,7 +55,6 @@ class SettingmenuController extends Controller
             'jumlahpengawasanstatus' => $jumlahpengawasanstatus, // Mengirimkan data kecamatan unik ke view
             'jumlahpengawasantindakan' => $jumlahpengawasantindakan, // Mengirimkan data kecamatan unik ke view
             'jumlahagendastatus' => $jumlahagendastatus, // Mengirimkan data kecamatan unik ke view
-            'jumlahketerampilanpekerja' => $jumlahketerampilanpekerja, // Mengirimkan data kecamatan unik ke view
             'jumlahpilihantahun' => $jumlahpilihantahun, // Mengirimkan data kecamatan unik ke view
         ]);
     }
@@ -72,7 +70,7 @@ class SettingmenuController extends Controller
             'title' => 'Settings Status Admin',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $datastatusadmin, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -81,32 +79,32 @@ class SettingmenuController extends Controller
     {
         // Cari entri berdasarkan judul
         $entry = statusadmin::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             statusadmin::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingstatusadmin');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingstatusadmin');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createstatusadmin()
 {
                 $user = Auth::user();
-    
+
                 // Tampilkan form update dengan data yang ditemukan
                 return view('backend.16_setting.02_statusadmin.create', [
                     // 'data' => $datapenanggungjawabteknis,
@@ -122,17 +120,17 @@ public function createstorestatusadmin(Request $request)
     // Validate input
     $request->validate([
         'status' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     statusadmin::create([
         'status' => $request->input('status'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingstatusadmin'); // Adjust this to your desired route
 }
@@ -148,7 +146,7 @@ public function createstorestatusadmin(Request $request)
             'title' => 'Settings Kecamatan/Kota',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $datapengawasanlokasi, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -157,27 +155,27 @@ public function createstorestatusadmin(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = pengawasanlokasi::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             pengawasanlokasi::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingkecamatan');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingkecamatan');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingkecamatan()
 {
@@ -197,17 +195,17 @@ public function createstoresettingkecamatan(Request $request)
     // Validate input
     $request->validate([
         'kota' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     pengawasanlokasi::create([
         'kota' => $request->input('kota'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingkecamatan'); // Adjust this to your desired route
 }
@@ -223,7 +221,7 @@ public function createstoresettingkecamatan(Request $request)
             'title' => 'Settings QA Sebagai',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $dataqasebagai, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -232,27 +230,27 @@ public function createstoresettingkecamatan(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = qasebagai::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             qasebagai::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingqasebagai');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingqasebagai');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingqasebagai()
 {
@@ -272,17 +270,17 @@ public function createstoresettingqasebagai(Request $request)
     // Validate input
     $request->validate([
         'sebagai' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     qasebagai::create([
         'sebagai' => $request->input('sebagai'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingqasebagai'); // Adjust this to your desired route
 }
@@ -298,7 +296,7 @@ public function createstoresettingqasebagai(Request $request)
             'title' => 'Settings QA Pertanyaan',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $dataqapertanyaan, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -307,27 +305,27 @@ public function createstoresettingqasebagai(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = qapertanyaan::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             qapertanyaan::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingqapertanyaan');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingqapertanyaan');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingqapertanyaan()
 {
@@ -347,17 +345,17 @@ public function createstoresettingqapertanyaan(Request $request)
     // Validate input
     $request->validate([
         'pertanyaan' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     qapertanyaan::create([
         'pertanyaan' => $request->input('pertanyaan'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingqapertanyaan'); // Adjust this to your desired route
 }
@@ -373,7 +371,7 @@ public function createstoresettingqapertanyaan(Request $request)
             'title' => 'Settings Metode Pengadaan',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $datametodepengadaan, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -382,27 +380,27 @@ public function createstoresettingqapertanyaan(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = metodepengadaan::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             metodepengadaan::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingmetodepengadaan');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingmetodepengadaan');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingmetodepengadaan()
 {
@@ -422,17 +420,17 @@ public function createstoresettingmetodepengadaan(Request $request)
     // Validate input
     $request->validate([
         'metode' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     metodepengadaan::create([
         'metode' => $request->input('metode'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingmetodepengadaan'); // Adjust this to your desired route
 }
@@ -448,7 +446,7 @@ public function createstoresettingmetodepengadaan(Request $request)
             'title' => 'Settings Metode Pengawasan Bangunan',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $datapengawasanbangunangedung, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -457,27 +455,27 @@ public function createstoresettingmetodepengadaan(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = pengawasanbangunangedung::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             pengawasanbangunangedung::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingpengawasanbangunangedung');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingpengawasanbangunangedung');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingpengawasanbangunangedung()
 {
@@ -497,17 +495,17 @@ public function createstoresettingpengawasanbangunangedung(Request $request)
     // Validate input
     $request->validate([
         'bangunan' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     pengawasanbangunangedung::create([
         'bangunan' => $request->input('bangunan'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingpengawasanbangunangedung'); // Adjust this to your desired route
 }
@@ -523,7 +521,7 @@ public function createstoresettingpengawasanbangunangedung(Request $request)
             'title' => 'Settings Pengawasan Status',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $datapengawasanstatus, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -532,27 +530,27 @@ public function createstoresettingpengawasanbangunangedung(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = pengawasanstatus::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             pengawasanstatus::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingpengawasanstatus');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingpengawasanstatus');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingpengawasanstatus()
 {
@@ -572,17 +570,17 @@ public function createstoresettingpengawasanstatus(Request $request)
     // Validate input
     $request->validate([
         'status' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     pengawasanstatus::create([
         'status' => $request->input('status'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingpengawasanstatus'); // Adjust this to your desired route
 }
@@ -598,7 +596,7 @@ public function createstoresettingpengawasanstatus(Request $request)
             'title' => 'Settings Pengawasan Tindakan',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $datapengawasantindakan, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -607,27 +605,27 @@ public function createstoresettingpengawasanstatus(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = pengawasantindakan::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             pengawasantindakan::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingpengawasantindakan');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingpengawasantindakan');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingpengawasantindakan()
 {
@@ -647,17 +645,17 @@ public function createstoresettingpengawasantindakan(Request $request)
     // Validate input
     $request->validate([
         'tindakan' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     pengawasantindakan::create([
         'tindakan' => $request->input('tindakan'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingpengawasantindakan'); // Adjust this to your desired route
 }
@@ -673,7 +671,7 @@ public function createstoresettingpengawasantindakan(Request $request)
             'title' => 'Settings Agenda Status',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $dataagendastatus, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -682,27 +680,27 @@ public function createstoresettingpengawasantindakan(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = agendastatus::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             agendastatus::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingagendastatus');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingagendastatus');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingagendastatus()
 {
@@ -722,62 +720,23 @@ public function createstoresettingagendastatus(Request $request)
     // Validate input
     $request->validate([
         'status' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     agendastatus::create([
         'status' => $request->input('status'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingagendastatus'); // Adjust this to your desired route
 }
 
-// 10 SEETING KETERAMPILAN PEKERJA ============================================================================
-    public function settingketerampilanpekerja()
-    {
-
-        $dataketerampilanpekerja = keterampilanpekerja::orderBy('created_at', 'desc')->paginate(15);
-        $user = Auth::user();
-
-        return view('backend.16_setting.11_keterampilanpekerja.index', [
-            'title' => 'Settings Keterampilan Pekerja',
-            'user' => $user, // Mengirimkan data kecamatan unik ke view
-            'data' => $dataketerampilanpekerja, // Mengirimkan data kecamatan unik ke view
-           
-        ]);
-
-    }
-
-    public function deletesettingketerampilanpekerja($id)
-    {
-        // Cari entri berdasarkan judul
-        $entry = keterampilanpekerja::where('id', $id)->first();
-    
-        if ($entry) {
-            // Hapus entri dari database
-            keterampilanpekerja::destroy($entry->id);
-    
-            // Set pesan flash untuk sukses
-            session()->flash('delete', 'Data Berhasil Dihapus!');
-    
-            // Redirect ke halaman yang sesuai
-            return redirect('/settingketerampilanpekerja');
-        } else {
-            // Set pesan flash jika data tidak ditemukan
-            session()->flash('error', 'Data Tidak Ditemukan!');
-    
-            // Redirect ke halaman yang sesuai
-            return redirect('/settingketerampilanpekerja');
-        }
-    }
 
 
-        
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingketerampilanpekerja()
 {
@@ -788,28 +747,6 @@ public function createsettingketerampilanpekerja()
                     'user' => $user,
                     'title' => 'Create Keterampilan Pekerja'
                 ]);
-}
-
-// Menyimpan data asosiasi pengusaha
-
-public function createstoresettingketerampilanpekerja(Request $request)
-{
-    // Validate input
-    $request->validate([
-        'keterampilan' => 'required|string|max:255',
-                    
-    ]);
-
-    // Create a new entry in the database
-    keterampilanpekerja::create([
-        'keterampilan' => $request->input('keterampilan'),
-               
-    ]);
-
-    session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
-    // Redirect to the desired route
-    return redirect('/settingketerampilanpekerja'); // Adjust this to your desired route
 }
 
 // 11 SEETING MENU TAHUN PILIHAN  ============================================================================
@@ -823,7 +760,7 @@ public function createstoresettingketerampilanpekerja(Request $request)
             'title' => 'Settings Tahun Registrasi',
             'user' => $user, // Mengirimkan data kecamatan unik ke view
             'data' => $datatahunpilihan, // Mengirimkan data kecamatan unik ke view
-           
+
         ]);
 
     }
@@ -832,27 +769,27 @@ public function createstoresettingketerampilanpekerja(Request $request)
     {
         // Cari entri berdasarkan judul
         $entry = tahunpilihan::where('id', $id)->first();
-    
+
         if ($entry) {
             // Hapus entri dari database
             tahunpilihan::destroy($entry->id);
-    
+
             // Set pesan flash untuk sukses
             session()->flash('delete', 'Data Berhasil Dihapus!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingtahunpilihan');
         } else {
             // Set pesan flash jika data tidak ditemukan
             session()->flash('error', 'Data Tidak Ditemukan!');
-    
+
             // Redirect ke halaman yang sesuai
             return redirect('/settingtahunpilihan');
         }
     }
 
 
-        
+
 // CREATE DATA SETTINGS STATUS ADMIN ============================================================================================
 public function createsettingtahunpilihan()
 {
@@ -872,17 +809,17 @@ public function createstoresettingtahunpilihan(Request $request)
     // Validate input
     $request->validate([
         'tahun' => 'required|string|max:255',
-                    
+
     ]);
 
     // Create a new entry in the database
     tahunpilihan::create([
         'tahun' => $request->input('tahun'),
-               
+
     ]);
 
     session()->flash('create', 'Data Berhasil Ditambahkan!');
-    
+
     // Redirect to the desired route
     return redirect('/settingtahunpilihan'); // Adjust this to your desired route
 }

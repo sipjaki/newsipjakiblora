@@ -7,10 +7,17 @@ use App\Models\sbulampiran1;
 use App\Models\sbulampiran2;
 use App\Models\sbulampiran3;
 use App\Models\standarbiayaumum;
+use App\Models\profiljakonidentitasopd;
+use App\Models\profiljakoninformasi;
+use App\Models\profiljakonkabid;
+use App\Models\profiljakonkepaladinas;
+use App\Models\profiljakonpersonil;
+use App\Models\profiljakonsipjaki;
+use App\Models\profiljakonsubkoordinator;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\Auth;
 
 
 use App\Models\struktur; // Pastikan namespace model sesuai dengan struktur direktori
@@ -19,20 +26,18 @@ use App\Models\tupoksi;
 
 class StrukturController extends Controller
 {
-    public function index()
+    public function strukturkedinasan()
     {
         $data= strukturdinas::all(); // Menggunakan paginate() untuk pagination
         $user = Auth::user();
 
-        return view('backend.01_struktur.01_kedinasan.index', [
-            'title' => 'Struktur Kedinasan PUPR Kabupaten Bandung Barat',
+        return view('backend.02_kelembagaan.01_strukturkedinasan.index', [
+            'title' => 'Struktur Kedinasan PUPR Kabupaten Blora Provinsi Jawa Tengah',
             'data' => $data, // Mengirimkan data paginasi ke view
             'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
 
-         
-                // -------------------- UPDATE DATA PERATURAN GUBERNUR JASA KONSTRUKSI ----------------------
                 public function updatestruktur($judul)
                 {
                     // Cari data undang-undang berdasarkan nilai 'judul'
@@ -46,7 +51,7 @@ class StrukturController extends Controller
                         'title' => 'Update Surat Kedinasan PUPR KBB'
                     ]);
                 }
-                
+
                 // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
                         public function createupdatestruktur(Request $request, $judul)
                     {
@@ -55,24 +60,24 @@ class StrukturController extends Controller
                             'judul' => 'required|string|max:255',
                             // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
                         ]);
-            
+
                         // Cari data undang-undang berdasarkan nilai 'judul'
                         $strukturdinas = strukturdinas::where('judul', $judul)->firstOrFail();
-                        
+
                         // Simpan file dan ambil path-nya
                         $filePath = null;
                         if ($request->hasFile('peraturan')) {
                             $file = $request->file('peraturan');
                             $filePath = $file->store('struktur/01_dinas', 'public'); // Menyimpan di storage/app/public/undangundang
                         }
-            
+
                         // Update data undang-undang dengan data dari form
                         $strukturdinas->update([
                             'judul' => $request->input('judul'),
                             'peraturan' => $filePath ? $filePath : $strukturdinas->peraturan, // Gunakan path baru jika ada file
                         ]);
-            
-                        
+
+
                         session()->flash('update', 'Data Struktur Kedinasan Berhasil Diupdate !');
                         // Redirect ke halaman yang sesuai
                         return redirect('/struktur');
@@ -106,7 +111,7 @@ class StrukturController extends Controller
                         'title' => 'Update Rencana Strategis'
                     ]);
                 }
-                
+
                 // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
                         public function createupdaterenstra(Request $request, $judul)
                     {
@@ -115,31 +120,31 @@ class StrukturController extends Controller
                             'judul' => 'required|string|max:255',
                             // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
                         ]);
-            
+
                         // Cari data undang-undang berdasarkan nilai 'judul'
                         $renstra = renstra::where('judul', $judul)->firstOrFail();
-                        
+
                         // Simpan file dan ambil path-nya
                         $filePath = null;
                         if ($request->hasFile('peraturan')) {
                             $file = $request->file('peraturan');
                             $filePath = $file->store('struktur/02_renstra', 'public'); // Menyimpan di storage/app/public/undangundang
                         }
-            
+
                         // Update data undang-undang dengan data dari form
                         $renstra->update([
                             'judul' => $request->input('judul'),
                             'peraturan' => $filePath ? $filePath : $renstra->peraturan, // Gunakan path baru jika ada file
                         ]);
-            
-                        
+
+
                         session()->flash('update', 'Data Rencana Strategis Berhasil Diupdate !');
                         // Redirect ke halaman yang sesuai
                         return redirect('/renstra');
                                }
-  
+
 // ===============================================
-    
+
     public function tupoksi()
     {
         $data= tupoksi::all(); // Menggunakan paginate() untuk pagination
@@ -158,7 +163,7 @@ class StrukturController extends Controller
                         // Cari data undang-undang berdasarkan nilai 'judul'
                         $tupoksi = tupoksi::where('judul', $judul)->firstOrFail();
                         $user = Auth::user();
-      
+
                         // Tampilkan form update dengan data yang ditemukan
                         return view('backend.01_struktur.03_tupoksi.update', [
                             'tupoksi' => $tupoksi,
@@ -166,7 +171,7 @@ class StrukturController extends Controller
                             'title' => 'Update Tupoksi Program'
                         ]);
                     }
-                    
+
                     // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
                             public function createupdatetupoksi(Request $request, $judul)
                         {
@@ -175,33 +180,33 @@ class StrukturController extends Controller
                                 'judul' => 'required|string|max:255',
                                 // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
                             ]);
-                
+
                             // Cari data undang-undang berdasarkan nilai 'judul'
                             $tupoksi = tupoksi::where('judul', $judul)->firstOrFail();
-                            
+
                             // Simpan file dan ambil path-nya
                             $filePath = null;
                             if ($request->hasFile('peraturan')) {
                                 $file = $request->file('peraturan');
                                 $filePath = $file->store('struktur/03_tupoksi', 'public'); // Menyimpan di storage/app/public/undangundang
                             }
-                
+
                             // Update data undang-undang dengan data dari form
                             $tupoksi->update([
                                 'judul' => $request->input('judul'),
                                 'peraturan' => $filePath ? $filePath : $tupoksi->peraturan, // Gunakan path baru jika ada file
                             ]);
-                
-                            
+
+
                             session()->flash('update', 'Data Tupoksi Berhasil Diupdate !');
                             // Redirect ke halaman yang sesuai
                             return redirect('/tupoksi');
                                    }
-      
+
 // ===============================================
-// DATABASE SURAT PERATURAN STANDAR BIAYA UMUM PUPR 
+// DATABASE SURAT PERATURAN STANDAR BIAYA UMUM PUPR
 // ===============================================
-    
+
 public function standarbiayaumum()
 {
     $data= standarbiayaumum::paginate(15); // Menggunakan paginate() untuk pagination
@@ -233,7 +238,7 @@ public function standarbiayaumumshowbyjudul($judul)
                  // Cari data undang-undang berdasarkan nilai 'judul'
                  $standarbiayaumum = standarbiayaumum::where('judul', $judul)->firstOrFail();
                  $user = Auth::user();
-   
+
                  // Tampilkan form update dengan data yang ditemukan
                  return view('backend.03_datajakon.03_standarbiayaumum.update', [
                      'standarbiayaumum' => $standarbiayaumum,
@@ -241,7 +246,7 @@ public function standarbiayaumumshowbyjudul($judul)
                      'title' => 'Update Standar Biaya Umum'
                  ]);
              }
-             
+
              // -------------------- UPDATE DATA CREATE DATA STANDAR BIAYA UMUM ----------------------
                      public function createupdatestandarbiayaumum(Request $request, $judul)
                  {
@@ -250,30 +255,30 @@ public function standarbiayaumumshowbyjudul($judul)
                          'judul' => 'required|string|max:255',
                          // 'peraturan' => 'required|file', // Validasi file sesuai jenis dan ukuran
                      ]);
-         
+
                      // Cari data undang-undang berdasarkan nilai 'judul'
                      $standarbiayaumum = standarbiayaumum::where('judul', $judul)->firstOrFail();
-                     
+
                      // Simpan file dan ambil path-nya
                      $filePath = null;
                      if ($request->hasFile('peraturan')) {
                          $file = $request->file('peraturan');
                          $filePath = $file->store('standarbiayaumum', 'public'); // Menyimpan di storage/app/public/undangundang
                      }
-         
+
                      // Update data undang-undang dengan data dari form
                      $standarbiayaumum->update([
                          'judul' => $request->input('judul'),
                          'peraturan' => $filePath ? $filePath : $standarbiayaumum->peraturan, // Gunakan path baru jika ada file
                      ]);
-         
-                     
+
+
                      session()->flash('update', 'Data Standar Biaya Berhasil Diupdate !');
                      // Redirect ke halaman yang sesuai
                      return redirect('/standarbiayaumum');
                             }
 
-                               
+
 // ------------ CREATE STANDAR BIAYA UMUM   ----------------
 
 public function createstandarbiayaumum()
@@ -310,7 +315,7 @@ public function createstorestandarbiayaumum(Request $request)
 }
 
 
-    // ==================== DELETE SURAT KEPUTUSAN MENTERI 
+    // ==================== DELETE SURAT KEPUTUSAN MENTERI
 
     public function deletestandarbiayaumum(Request $request, $judul)
 {
@@ -337,11 +342,11 @@ public function createstorestandarbiayaumum(Request $request)
     return redirect('/standarbiayaumum');
 }
 
-   
+
 // ===============================================
-// DATABASE STANDAR BIAYA UMUM LAMPIRAN 1 
+// DATABASE STANDAR BIAYA UMUM LAMPIRAN 1
 // ===============================================
-    
+
 public function sbulampiran1()
 {
     $data= sbulampiran1::paginate(15); // Menggunakan paginate() untuk pagination
@@ -366,11 +371,11 @@ public function sbulampiran1showbyjudul($judul)
         'title' => 'Details Lampiran 1',
     ]);
 }
-   
+
 // ===============================================
-// DATABASE STANDAR BIAYA UMUM LAMPIRAN 1 
+// DATABASE STANDAR BIAYA UMUM LAMPIRAN 1
 // ===============================================
-    
+
 public function sbulampiran2()
 {
     $data= sbulampiran2::paginate(15); // Menggunakan paginate() untuk pagination
@@ -397,9 +402,9 @@ public function sbulampiran2showbyjudul($judul)
 }
 
 // ===============================================
-// DATABASE STANDAR BIAYA UMUM LAMPIRAN 3 
+// DATABASE STANDAR BIAYA UMUM LAMPIRAN 3
 // ===============================================
-    
+
 public function sbulampiran3()
 {
     $data= sbulampiran3::paginate(15); // Menggunakan paginate() untuk pagination
@@ -428,31 +433,228 @@ public function sbulampiran3showbyjudul($judul)
 // --------------------------------------- DATA FRONTEND FROPIL -------------------
 
 
-public function strukturpuprbandungbarat()
+public function strukturdpuprkabblora()
 {
     $data= strukturdinas::all(); // Menggunakan paginate() untuk pagination
     $user = Auth::user();
 
-    return view('frontend.01_profil.01_struktur', [
-        'title' => 'Struktur Kedinasan PUPR Kabupaten Bandung Barat',
+    return view('frontend.01_masjaki_kelembagaan.01_strukturdpuprblora.index', [
+        'title' => 'Struktur Organisasi DPUPR Kabupaten Blora',
         'data' => $data, // Mengirimkan data paginasi ke view
         'user' => $user, // Mengirimkan data paginasi ke view
     ]);
 }
 
 // ==============================================================================================================
-
-public function rencanastrategispuprbandungbarat()
+public function rencanastrategisdpuprkabblora()
 {
-    $data= renstra::all(); // Menggunakan paginate() untuk pagination
+    $data = renstra::all(); // Menggunakan paginate() untuk pagination
+    $dataidentitasopd = profiljakonidentitasopd::all(); // Menggunakan paginate() untuk pagination
+    $datakepaladinas = profiljakonkepaladinas::all(); // Menggunakan paginate() untuk pagination
+    $datakabid = profiljakonkabid::all(); // Menggunakan paginate() untuk pagination
+    $datasubkoordinator = profiljakonsubkoordinator::all(); // Menggunakan paginate() untuk pagination
+    $datainformasi = profiljakoninformasi::all(); // Menggunakan paginate() untuk pagination
+    $datasipjaki = profiljakonsipjaki::all(); // Menggunakan paginate() untuk pagination
+    $datapersonil = profiljakonpersonil::all(); // Menggunakan paginate() untuk pagination
+
     $user = Auth::user();
 
-    return view('frontend.01_profil.02_rencanastrategis', [
-        'title' => 'Rencana Strategis PUPR Kabupaten Bandung Barat',
+    return view('frontend.01_masjaki_kelembagaan.02_profiljakon.index', [
+        'title' => 'Profil Jakon DPUPR Kabupaten Blora',
         'data' => $data, // Mengirimkan data paginasi ke view
         'user' => $user, // Mengirimkan data paginasi ke view
+
+        'dataidentitasopd' => $dataidentitasopd, // Mengirimkan data paginasi ke view
+        'datakepaladinas' => $datakepaladinas, // Mengirimkan data paginasi ke view
+        'datakabid' => $datakabid, // Mengirimkan data paginasi ke view
+        'datasubkoordinator' => $datasubkoordinator, // Mengirimkan data paginasi ke view
+        'datainformasi' => $datainformasi, // Mengirimkan data paginasi ke view
+        'datasipjaki' => $datasipjaki, // Mengirimkan data paginasi ke view
+        'datapersonil' => $datapersonil, // Mengirimkan data paginasi ke view
+
     ]);
 }
+
+public function beprofiljakon()
+{
+    // $data = renstra::all(); // Menggunakan paginate() untuk pagination
+    // $dataidentitasopd = profiljakonidentitasopd::all(); // Menggunakan paginate() untuk pagination
+    // $datakepaladinas = profiljakonkepaladinas::all(); // Menggunakan paginate() untuk pagination
+    // $datakabid = profiljakonkabid::all(); // Menggunakan paginate() untuk pagination
+    // $datasubkoordinator = profiljakonsubkoordinator::all(); // Menggunakan paginate() untuk pagination
+    // $datainformasi = profiljakoninformasi::all(); // Menggunakan paginate() untuk pagination
+    // $datasipjaki = profiljakonsipjaki::all(); // Menggunakan paginate() untuk pagination
+    // $datapersonil = profiljakonpersonil::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.index', [
+        'title' => 'Profil Jakon DPUPR Kabupaten Blora',
+        // 'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+        // 'dataidentitasopd' => $dataidentitasopd, // Mengirimkan data paginasi ke view
+        // 'datakepaladinas' => $datakepaladinas, // Mengirimkan data paginasi ke view
+        // 'datakabid' => $datakabid, // Mengirimkan data paginasi ke view
+        // 'datasubkoordinator' => $datasubkoordinator, // Mengirimkan data paginasi ke view
+        // 'datainformasi' => $datainformasi, // Mengirimkan data paginasi ke view
+        // 'datasipjaki' => $datasipjaki, // Mengirimkan data paginasi ke view
+        // 'datapersonil' => $datapersonil, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function beinformasiopd()
+{
+    $data = renstra::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.01_judul.index', [
+        'title' => 'Profil Jakon Informasi OPD',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function beinfoopd()
+{
+    $data = profiljakonidentitasopd::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.02_informasiopd.index', [
+        'title' => 'Profil Jakon Informasi Keterangan OPD',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function bekepaladinas()
+{
+    $data = profiljakonkepaladinas::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.03_kepaladinas.index', [
+        'title' => 'Profil Jakon Informasi Kepala Dinas',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function bekabidbaru()
+{
+    $data = profiljakonkabid::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.04_kabid.index', [
+        'title' => 'Profil Jakon Informasi Kepala Bidang Bangunan Gedung',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function besubbid()
+{
+    $data = profiljakonsubkoordinator::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.05_subkoordinator.index', [
+        'title' => 'Profil Jakon Informasi Sub Koordinator Bidang Bangunan Gedung',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function beinformasi()
+{
+    $data = profiljakoninformasi::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.06_keteranganopd.index', [
+        'title' => 'Profil Jakon Keterangan Organisasi Perangkat Daerah',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function besipjaki()
+{
+    $data = profiljakonsipjaki::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.07_personilsipjaki.index', [
+        'title' => 'Profil Jakon Personil Operator Sipjaki',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function bejabatan()
+{
+    $data = profiljakonpersonil::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.08_jabatanfungsional.index', [
+        'title' => 'Profil Jakon Jabatan Fungsioanal Jasa Konstruksi',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+public function bejabatandelete($namalengkap)
+{
+    // Cari item berdasarkan judul
+    $entry = profiljakonpersonil::where('namalengkap', $namalengkap)->first();
+
+    if ($entry) {
+        // Jika ada file header yang terdaftar, hapus dari storage
+        // if (Storage::disk('public')->exists($entry->header)) {
+            //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // Hapus entri dari database
+        $entry->delete();
+
+        // Redirect atau memberi respons sesuai kebutuhan
+        return redirect('/bejabatan')->with('delete', 'Data Berhasil Di Hapus !');
+
+    }
+
+    return redirect()->back()->with('error', 'Item not found');
+}
+
+public function betupoksi()
+{
+    $data = tupoksi::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.03_tupoksi.index', [
+        'title' => 'Tupoksi Program dan Jasa Konstruksi ',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+
+
+// MENU BACKEND PROFIL JAKON MAS JAKI
 
 
 // ==============================================================================================================
@@ -461,8 +663,9 @@ public function tupoksifekbb()
     $data= tupoksi::all(); // Menggunakan paginate() untuk pagination
     $user = Auth::user();
 
-    return view('frontend.01_profil.03_tupoksi', [
-        'title' => 'Tupoksi PUPR Kabupaten Bandung Barat',
+
+    return view('frontend.01_masjaki_kelembagaan.03_tupoksi.index', [
+        'title' => 'Tupoksi Jakon DPUPR Kabupaten Blora',
         'data' => $data, // Mengirimkan data paginasi ke view
         'user' => $user, // Mengirimkan data paginasi ke view
     ]);
