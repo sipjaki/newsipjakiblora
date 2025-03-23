@@ -64,9 +64,13 @@ class PesertapelatihanController extends Controller
 
     public function bepesertapelatihanshow($name)
     {
-            $datapeserta = pesertapelatihan::where('user_id->name', $name)->first();
-        // Ambil data user saat ini
-            $user = Auth::user();
+        // Cari data peserta berdasarkan nama user
+        $datapeserta = pesertapelatihan::whereHas('user', function ($query) use ($name) {
+            $query->where('name', $name);
+        })->first();
+
+        // Ambil data user yang sedang login
+        $user = Auth::user();
 
         return view('backend.05_agenda.02_pesertapelatihan.show', [
             'title' => 'Data Peserta Pelatihan',

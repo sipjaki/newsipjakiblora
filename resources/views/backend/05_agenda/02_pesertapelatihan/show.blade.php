@@ -53,7 +53,7 @@
                                            border-radius: 5px; font-size: 16px; margin-right: 10px;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000'; this.style.borderColor='#1d643b';"
                                     onmouseout="this.style.backgroundColor='#1d643b'; this.style.color='#ffffff'; this.style.borderColor='#1d643b';">
-                                {{ $data->name }}
+                                {{ $data->user->name }}
                             </button>
                         </h2>
 
@@ -73,7 +73,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                                                 </label>
-                                                <input class="form-control" value="{{$data->name}}" readonly/>
+                                                <input class="form-control" value="{{$data->user->name}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
