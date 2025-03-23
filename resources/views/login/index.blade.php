@@ -1,321 +1,177 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/assets/bahan1/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="/assets/bahan1/css/animate.compat.css" rel="stylesheet" type="text/css">
-    <link href="/assets/bahan1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/assets/bahan1/css/styles.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>{{$title}}</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="/assets/login/css/bootstrap-login-form.min.css" />
 
-    {{-- TEMPLATE 2 --}}
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="/assets/bahan2/css/bootstrap.min.css">
-      <!----css3---->
-      <link rel="stylesheet" href="/assets/bahan2/css/custom.css">
+  <link rel="icon" href="/assets/icon/logokabupatenblora.png"  type="image/x-icon">
 
-      <link rel="stylesheet" href="/assets/bahan2/font/flaticon.css">
-      <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-     <link rel="stylesheet" type="text/css" href="/assets/bahan2/css/settings.css" media="screen" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    <script defer src="/assets/bahan1/js/scripts.js"></script>
-    {{-- <title>Construction Company</title> --}}
-    <title>Silahkan Login !</title>
-
-    <link rel="icon" href="/assets/icon/sipjakikbb.png" type="image/x-icon">
 
 </head>
 
 <body>
+  <!-- Start your project here-->
 
-
-
-{{-- ------------------------------------------------------------------------------------------ --}}
-{{-- ------------------------------------------------------------------------------------------ --}}
-{{-- ------------------------------------------------------------------------------------------ --}}
-
-<section id="sec-0">
-
-    @include('frontend.00_atas.header1')
-
-        <header>
-
-        @include('frontend.00_atas.header2_navbar')
-
-        </header>
-        <div class="div" style="
-            justify-content: center;
-            text-align:center;
-            display: flex;
-            margin-left: 0;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        ">
-                    <h2 style="
-    margin-top: 10px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: #333;
-    text-transform: uppercase;
-    text-align: center;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 25px;
-    width: 500px;
-    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
-    transition: background 0.5s ease, color 0.5s ease;
-    " onmouseover="this.style.background='linear-gradient(to right, #f0f0f0, #e0e0e0)'; this.style.color='black';" onmouseout="this.style.background='linear-gradient(to right, black, yellow )'; this.style.color='white';">
-
-Silahkan Login !
-</h2>
-</div>
-<div class="container" style="
-     display: flex;
-    flex-direction: column;
-    background-color: #FFCB0F;
-    padding: 10px;
-    border: 1px solid black;
-    margin-bottom: 0px;
-    border-radius: 25px;
-    text-align: center;
-    width: 100%;
-    height: 85vh;
-    background: linear-gradient(to bottom, yellow, white, black);
-    align-items: center;
-    position: relative;
-">
-    <img src="/assets/icon/pupr.png" alt="Logo SIPJAKIKBB" style="width: 50px; height: 50px; object-fit: cover; padding: 0; margin-top: 10px;">
-<h1 style="margin-top:10px; font-size: 16px; font-family: 'Lato', sans-serif; font-weight: 700;">Kementrian Pekerjaan Umum Dan Perumahan Rakyat </h1>
-    <div class="container">
-        <div class="card" style="
-            background-color: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
-            margin: 20px auto;">
-
-
-            {{-- ------------------------------------ FITUR TAMBAHAN ------------- --}}
-
-            <div class="controls" style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            border-radius:5px;
-            ">
-
-<div class="show-entries" style="border-radius: 10px;">
-    <label for="entries" style="margin-right: 5px;">
-        <style>
-            .badge {
-                background: linear-gradient(to right, yellow, black);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                margin-right: 10px;
-                margin-left: 450px;
-                text-align: center;
-                transition: background-color 0.3s, color 0.3s;
-            }
-
-            .badge:hover {
-                background-color: white;
-                color: black;
-            }
-        </style>
-        <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Halaman Login !</div></label> -->
-
-</div>
-</div>
-
-{{-- =========================================================================== --}}
-
-<style>
-    /* Mengatur form dan input */
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.font-semibold {
-    font-weight: 600;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.btn-primary {
-    display: inline-block;
-    padding: 10px 22px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #fff;
-    border-radius: 9999px;
-    background-color: #0814b9;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #000;
-}
-
-.form-control {
-    padding: 10px;
-    border-radius: 9999px;
-    border: 1px solid #ddd;
-    width: 100%;
-}
-
-.invalid-feedback {
-    color: #dc3545;
-}
-
-@media (max-width: 576px) {
-    .btn-primary {
-        width: 100%;
+  <style>
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #eee;
     }
-}
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 100%;
+      }
+    }
+  </style>
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5 d-flex justify-content-center align-items-center"
+        style="gap: 15px;">
+       <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="Logo Kabupaten Blora" width="125" loading="lazy">
+       <img src="/assets/icon/pupr.png" class="img-fluid" alt="Logo PUPR" width="125" loading="lazy">
 
-</style>
-
-
-<form action="/login" method="post">
-    @csrf
-    <div class="form-group mt-0">
-        <label class="font-semibold text-center d-block" for="email" style="font-family: 'Lato', sans-serif; font-weight: 700;">
-            <i class="fas fa-envelope" style="margin-right: 10px; "></i> Email
-        </label>
-        <input
-        style="margin-left:330px; width: 400px; text-align:left; padding: 0px 15px;"
-        type="text"
-        name="email"
-        class="form-control rounded-full @error('email') is-invalid @enderror"
-        id="email"
-        placeholder="Email"
-        required
-        value="{{ old('email') }}"
-    />
-
-    @error('email')
-        <div class="invalid-feedback mb-2">
-            {{ $message }}
+       <div class="header-text" style="text-align: left; margin-bottom: 20px;">
+        <h1 class="header-title" style="font-family:  'Montserrat', sans-serif; font-size: 2.5rem; font-weight: bold;">
+            <span class="header-title-white" style="font-weight: bold; font-style: italic; color: black; text-align:left;">MASJAKI</span>
+            <span class="header-title-green" style="font-weight: bold; font-style: italic; color: #064420; text-align:left;">BLORA</span>
+        </h1>
+        <p class="header-description" style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: black; font-weight: bold;">
+            Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+        </p>
         </div>
-    @enderror
+
+        {{-- <h4>Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah</h4> --}}
+       </div>
+       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form action="/login" method="post">
+            @csrf
+
+            <!-- Email input -->
+            <div class="mb-4">
+                <input
+                    type="text"
+                    style="width: 300px; text-align:left; padding: 10px 15px;"
+                    name="email"
+                    class="form-control rounded-full @error('email') is-invalid @enderror"
+                    id="email"
+                    placeholder="Email"
+                    value="{{ old('email') }}"
+                />
+                <label class="form-label" for="email">Email address</label>
+
+                @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
+            <!-- Password input -->
+            <div class="mb-3">
+                <input
+                    type="password"
+                    name="password"
+                    class="form-control rounded-full @error('password') is-invalid @enderror"
+                    id="password"
+                    placeholder="Password"
+                    style="width: 300px; text-align:left; padding: 10px 15px;"
+                />
+                <label class="form-label" for="password">Password</label>
+
+                @error('password')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
+            <!-- General login error message (if authentication failed) -->
+            @if($errors->has('pesanlogin'))
+                <div class="alert alert-danger mb-2">
+                    {{ $errors->first('pesanlogin') }}  <!-- Display the custom error message -->
+                </div>
+            @endif
+
+            <!-- Remember me and Forgot password -->
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="form-check mb-0">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                    <label class="form-check-label" for="form2Example3">
+                        Remember me
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center text-lg-start mt-4 pt-2">
+                <button
+                    type="submit"
+                    class="btn btn-dark btn-lg"
+                    style="background-color: #064420; color: white; padding-left: 2.5rem; padding-right: 2.5rem; border: none;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#064420'; this.style.color='white';"
+                >
+                    Login
+                </button>
+
+                <p class="small fw-bold mt-2 pt-1 mb-0">
+                    Don't have an account?
+                    <a href="/404" class="link-danger">Register</a>
+                </p>
+            </div>
+        </form>
+
+
     </div>
 
-    <div class="form-group mt-0">
-        <label class="font-semibold text-center d-block mb-2" for="password" style="font-family: 'Lato', sans-serif; font-weight: 700;">
-            <i class="fas fa-key" style="margin-right: 10px;"></i> Password
-        </label>
-        <input
-        style="margin-left:330px; width: 400px; text-align:left; padding: 0px 15px;"
-        type="password"
-        name="password"
-        class="form-control rounded-full @error('password') is-invalid @enderror"
-        id="password"
-        placeholder="Password"
-        required
-    />
-
-    @error('password')
-        <div class="invalid-feedback mb-2">
-            {{ $message }}
         </div>
-    @enderror
-
-    @if ($errors->has('loginError'))
-        <div class="alert alert-danger">
-            {{ $errors->first('loginError') }}
-        </div>
-    @endif
+      </div>
     </div>
 
-    <div class="form-group mt-4 text-center" style="background-color: white;">
-    <style>
-            .masuk {
-                background: linear-gradient(to right, yellow, black);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 35px;
-                display: inline-block;
-                border: none;
-                font-size: 1rem;
-                margin-right: 10px;
-                /* margin-left: 450px; */
-                text-align: center;
-                transition: background-color 0.3s, color 0.3s;
-            }
+    <div class="d-flex flex-column text-center justify-content-center py-4 px-4 px-xl-5"
+    style="background: rgb(3, 69, 3); display: flex; align-items: center;">
 
-            .masuk:hover {
-                /* background-color: white; */
-                background: linear-gradient(to right, darkblue, white);
-                color: black;
-            }
-        </style>
-        <button type="submit" class="masuk" style="width: 300px; background-color: #FFCB0F; color: white; font-family: 'Lato', sans-serif; font-weight: 700;"><i class="fab fa-telegram" style="color: white; font-size: 16px; margin-right: 10px;"></i>Login</button>
-        <div style="margin-top: 10px;">
-            <a href="/404" class="text-black" style="font-family: 'Lato', sans-serif; font-weight: 700;">Register Here?</a>
-        </div>
-    </div>
-</form>
+   <!-- Logo -->
+   <div class="d-flex justify-content-center align-items-center" style="gap: 15px; margin-bottom: 10px;">
+       <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="Logo Kabupaten Blora" width="20" loading="lazy">
+       <img src="/assets/icon/pupr.png" class="img-fluid" alt="Logo PUPR" width="20" loading="lazy">
+   </div>
 
-                            {{-- =========================================================================== --}}
+   <!-- Copyright -->
+   <div class="text-white" style="font-size: 14px; font-weight: 400;">
+       © Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
+   </div>
 
-
-
-
-
-
-
-{{-- ------------------------------------ END FITUR ------------- --}}
-
-
-
-        </div>
 </div>
-</div>
 
+</section>
+  <!-- End your project here-->
 
+  <!-- MDB -->
+  <script type="text/javascript" src="/assets/login/js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript"></script>
+</body>
 
-<br><br>
-    </section>
-
-
-  {{-- ------------------------------------------------------------------------------------------ --}}
-  {{-- ------------------------------------------------------------------------------------------ --}}
-  {{-- ------------------------------------------------------------------------------------------ --}}
-
-
-  {{-- ------------------------------------------------------------------------------------------ --}}
-  {{-- ------------------------------------------------------------------------------------------ --}}
-  {{-- ------------------------------------------------------------------------------------------ --}}
-
-
-
-
-
-
-@include('frontend.00_atas.footer1')
-
-    {{-- ------------------------------------------------------------------------------- --}}
-    {{-- ------------------------------------------------------------------------------- --}}
-    {{-- ------------------------------------------------------------------------------- --}}
-@include('frontend.00_atas.footer2')
+</html>
