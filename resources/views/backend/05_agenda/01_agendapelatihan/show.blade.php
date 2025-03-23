@@ -235,7 +235,7 @@
                             Update
                         </button>
                         </a>
-                        <a href="/beskkallblora">
+                        <a href="/beagendapelatihan">
                             <button
                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                             onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
