@@ -192,16 +192,10 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">
-                                                    <i class="bi bi-card-image" style="margin-right: 8px; color: navy;"></i> Foto
-                                                </label>
                                                 <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid rounded" alt="Foto" width="250">
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">
-                                                    <i class="bi bi-file-earmark-arrow-down" style="margin-right: 8px; color: navy;"></i> Materi
-                                                </label>
                                                 <a href="{{ asset('storage/' . $data->materi) }}" class="btn btn-primary" target="_blank">
                                                     <i class="bi bi-file-earmark-text"></i> Lihat Materi
                                                 </a>
