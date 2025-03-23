@@ -15,7 +15,7 @@
       <link rel="stylesheet" href="/assets/bahan2/css/bootstrap.min.css">
       <!----css3---->
       <link rel="stylesheet" href="/assets/bahan2/css/custom.css">
-      
+
       <link rel="stylesheet" href="/assets/bahan2/font/flaticon.css">
       <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
      <link rel="stylesheet" type="text/css" href="/assets/bahan2/css/settings.css" media="screen" />
@@ -26,14 +26,13 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	   
-        @include('tambahan.portalberitaheader')
+
     <script defer src="/assets/bahan1/js/scripts.js"></script>
     {{-- <title>Construction Company</title> --}}
     <title>Silahkan Login !</title>
 
     <link rel="icon" href="/assets/icon/sipjakikbb.png" type="image/x-icon">
-  
+
 </head>
 
 <body>
@@ -45,13 +44,13 @@
 {{-- ------------------------------------------------------------------------------------------ --}}
 
 <section id="sec-0">
-    
+
     @include('frontend.00_atas.header1')
-    
+
         <header>
-        
+
         @include('frontend.00_atas.header2_navbar')
-            
+
         </header>
         <div class="div" style="
             justify-content: center;
@@ -110,7 +109,7 @@ Silahkan Login !
 
             {{-- ------------------------------------ FITUR TAMBAHAN ------------- --}}
 
-            <div class="controls" style="  
+            <div class="controls" style="
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -133,14 +132,14 @@ Silahkan Login !
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
             }
-    
+
             .badge:hover {
                 background-color: white;
                 color: black;
             }
         </style>
         <!-- <div class="badge"><i class="fas fa-edit me-2"></i>Halaman Login !</div></label> -->
-  
+
 </div>
 </div>
 
@@ -264,7 +263,7 @@ Silahkan Login !
                 text-align: center;
                 transition: background-color 0.3s, color 0.3s;
             }
-    
+
             .masuk:hover {
                 /* background-color: white; */
                 background: linear-gradient(to right, darkblue, white);
@@ -279,9 +278,9 @@ Silahkan Login !
 </form>
 
                             {{-- =========================================================================== --}}
-                        
-                  
-   
+
+
+
 
 
 
@@ -289,7 +288,7 @@ Silahkan Login !
 {{-- ------------------------------------ END FITUR ------------- --}}
 
 
-           
+
         </div>
 </div>
 </div>
