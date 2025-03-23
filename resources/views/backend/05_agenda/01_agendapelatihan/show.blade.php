@@ -127,93 +127,87 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-person-fill" style="margin-right: 8px; color: navy;"></i>Nama Kegiatan
+                                                    <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
                                                 </label>
                                                 <input class="form-control" value="{{$data->namakegiatan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i>Kategori Pelatihan
+                                                    <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Kategori Pelatihan
                                                 </label>
                                                 <input class="form-control" value="{{$data->kategoripelatihan->kategoripelatihan}}" readonly />
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-calendar-check" style="margin-right: 8px; color: navy;"></i>Penyelenggara
+                                                    <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Penyelenggara
                                                 </label>
                                                 <input class="form-control" value="{{$data->penyelenggara}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-mortarboard-fill" style="margin-right: 8px; color: navy;"></i>Penutupan
+                                                    <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i> Penutupan
                                                 </label>
                                                 <input class="form-control" value="{{ \Carbon\Carbon::parse($data->penutupan)->translatedFormat('d F Y') }}" readonly/>
-
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Waktu Pelaksanaan
+                                                    <i class="bi bi-clock-fill" style="margin-right: 8px; color: navy;"></i> Waktu Pelaksanaan
                                                 </label>
                                                 <input class="form-control" value="{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}" readonly/>
-                                                {{-- <input class="form-control" value="{{$data->jenjangpendidikan->jenjangpendidikan}}" readonly/> --}}
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-briefcase-fill" style="margin-right: 8px; color: navy;"></i>Jumlah Peserta
+                                                    <i class="bi bi-people-fill" style="margin-right: 8px; color: navy;"></i> Jumlah Peserta
                                                 </label>
                                                 <input class="form-control" value="{{$data->jumlahpeserta}}" readonly/>
                                             </div>
                                         </div>
-                                        <!-- End Left Column -->
+                                          <!-- End Left Column -->
                                         <!-- Right Column (6/12) -->
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-award-fill" style="margin-right: 8px; color: navy;"></i>Lokasi
+                                                    <i class="bi bi-geo-alt-fill" style="margin-right: 8px; color: navy;"></i> Lokasi
                                                 </label>
                                                 <input class="form-control" value="{{$data->lokasi}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-building-fill" style="margin-right: 8px; color: navy;"></i>Keterangan
+                                                    <i class="bi bi-info-circle-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
                                                 </label>
                                                 <input class="form-control" value="{{$data->keterangan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-book-fill" style="margin-right: 8px; color: navy;"></i>Isi Agenda
+                                                    <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Isi Agenda
                                                 </label>
                                                 <input class="form-control" value="{{$data->isiagenda}}" readonly/>
                                             </div>
 
-
                                             <div class="mb-3">
-                                                {{-- <label class="form-label">
-                                                    <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Foto
-                                                </label> --}}
-                                                <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid" alt="Foto" width="250">
+                                                <label class="form-label">
+                                                    <i class="bi bi-card-image" style="margin-right: 8px; color: navy;"></i> Foto
+                                                </label>
+                                                <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid rounded" alt="Foto" width="250">
                                             </div>
 
                                             <div class="mb-3">
-                                                {{-- <label class="form-label">
-                                                    <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Materi
-                                                </label> --}}
+                                                <label class="form-label">
+                                                    <i class="bi bi-file-earmark-arrow-down" style="margin-right: 8px; color: navy;"></i> Materi
+                                                </label>
                                                 <a href="{{ asset('storage/' . $data->materi) }}" class="btn btn-primary" target="_blank">
                                                     <i class="bi bi-file-earmark-text"></i> Lihat Materi
                                                 </a>
-
-                                                {{-- <input class="form-control" value="{{$data->materi}}" readonly/> --}}
                                             </div>
                                         </div>
-
-                                    </div> <!-- end row -->
+                                                                            </div> <!-- end row -->
                                 </div>
                             </form>
                             <!--end::Form-->
