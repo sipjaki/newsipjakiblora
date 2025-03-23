@@ -68,7 +68,7 @@ class PesertapelatihanController extends Controller
         // Ambil data user saat ini
             $user = Auth::user();
 
-        return view('backend.05_agenda.02_agendapelatihan.show', [
+        return view('backend.05_agenda.02_pesertapelatihan.show', [
             'title' => 'Data Peserta Pelatihan',
             'data' => $datapeserta,
         ]);
