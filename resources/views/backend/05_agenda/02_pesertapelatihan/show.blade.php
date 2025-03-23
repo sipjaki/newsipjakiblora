@@ -53,7 +53,7 @@
                                            border-radius: 5px; font-size: 16px; margin-right: 10px;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#000000'; this.style.borderColor='#1d643b';"
                                     onmouseout="this.style.backgroundColor='#1d643b'; this.style.color='#ffffff'; this.style.borderColor='#1d643b';">
-                                {{ $data->user->name }}
+                                {{ $data->name }}
                             </button>
                         </h2>
 
