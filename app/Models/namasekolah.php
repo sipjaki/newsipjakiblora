@@ -7,30 +7,25 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class tahunpilihan extends Model
+class namasekolah extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
     protected $guarded = ['id'];
 
-    public function bujkkontraktor()
+    public function skktenagakerjablora()
     {
-        return $this->hasMany(bujkkontraktor::class);
+        return $this->hasMany(skktenagakerjablora::class);
     }
 
-    public function bujkkonsultan()
+    public function skktenagakerjabloralist()
     {
-        return $this->hasMany(bujkkonsultan::class);
+        return $this->hasMany(skktenagakerjabloralist::class);
     }
 
     public function allskktenagakerjablora()
     {
         return $this->hasMany(allskktenagakerjablora::class);
-    }
-
-    public function paketpekerjaanmasjaki()
-    {
-        return $this->hasMany(paketpekerjaanmasjaki::class);
     }
 
 }
