@@ -293,7 +293,7 @@ class PembinaanController extends Controller
         $user = Auth::user();
 
             $datapesertapelatihan = pesertapelatihan::where('agendapelatihan_id', $agendapelatihan->id)
-                        ->select(['id', 'user_id', 'jeniskelamin', 'instansi', 'jenjangpendidikan_Id', 'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi' ])
+                        ->select(['id', 'user_id', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id', 'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi' ])
                         ->paginate(25);
 
         $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
