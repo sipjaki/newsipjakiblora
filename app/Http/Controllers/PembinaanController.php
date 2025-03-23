@@ -252,7 +252,7 @@ class PembinaanController extends Controller
         // Ambil data user saat ini
             $user = Auth::user();
 
-        return view('backend.04_datajakon.05_agenda.01_agendapelatihan.show', [
+        return view('backend.05_agenda.01_agendapelatihan.show', [
             'title' => 'Data Details Agenda Pelatihan',
             'data' => $dataagendapelatihan,
         ]);
