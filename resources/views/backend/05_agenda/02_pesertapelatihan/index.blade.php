@@ -169,19 +169,16 @@
  <thead>
      <tr>
          <th style="width: 75px; text-align:center; vertical-align: middle;">No</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Kategori Pelatihan</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Nama Kegiatan </th>
-         <th style="width: 300px; text-align:center; vertical-align: middle;">Penyelenggara</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Waktu Peleksanaan</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Penutupan</th>
-         <th style="width: 100px; text-align:center; vertical-align: middle;">Status</th>
-         <th style="width: 100px; text-align:center; vertical-align: middle;">Jumlah Peserta</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Lokasi</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Keterangan</th>
-         <th style="width: 600px; text-align:center; vertical-align: middle;">Isi Agenda</th>
-         <th style="width: 300px; text-align:center; vertical-align: middle;">Foto</th>
-         <th style="width: 300px; text-align:center; vertical-align: middle;">Materi</th>
-         <th style="width: 100px; text-align:center; vertical-align: middle;">Peserta</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Agenda Pelatihan</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Nama Lengkap </th>
+         <th style="width: 300px; text-align:center; vertical-align: middle;">Jenjang Pendidikan</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">NIK</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Jenis Kelamin</th>
+         <th style="width: 100px; text-align:center; vertical-align: middle;">Tanggal Lahir</th>
+         <th style="width: 100px; text-align:center; vertical-align: middle;">No Telepon</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Instansi</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Sertifikat</th>
+         <th style="width: 600px; text-align:center; vertical-align: middle;">Verifikasi</th>
          <th style="width: 200px; text-align:center; vertical-align: middle;">Aksi</th>
      </tr>
  </thead>
@@ -189,21 +186,27 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
-         <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: left;">{{$item->penyelenggara}}</td>
-         {{-- <td style="text-align: center;">
-            @if($item->asosiasimasjaki)
-                {{ $item->asosiasimasjaki->namaasosiasi }}
-            @else
-                <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
-            @endif
-        </td> --}}
-        {{-- <td style="text-align: left;">{{$item->penutupan}}</td> --}}
-        <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('l, d F Y') }}</td>
-        <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('l, d F Y') }}</td>
-        {{-- <td style="text-align: center;">{{$item->waktupelaksanaan}}</td> --}}
+         <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td>
+         <td style="text-align: left;">{{$item->user->name}}</td>
+         <td style="text-align: left;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
+         <td style="text-align: left;">{{$item->jenjangpendidikan->nik}}</td>
+         <td style="text-align: left;">{{$item->jenjangpendidikan->jeniskelamin}}</td>
+         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('l, d F Y') }}</td>
+         <td style="text-align: left;">{{$item->jenjangpendidikan->notelepon}}</td>
+         <td style="text-align: left;">{{$item->jenjangpendidikan->instansi}}</td>
 
+         <td style="text-align: center;">
+            @if($item->sertifikat)
+                <object data="{{ asset('storage/' . $item->sertifikat) }}" type="application/pdf" width="300" height="200">
+                    <p>PDF cannot be displayed. <a href="{{ asset('storage/' . $item->sertifikat) }}" target="_blank">Download Sertifikat</a></p>
+                </object>
+            @else
+                <button class="btn btn-danger btn-sm">Sertifikat Belum Terbit</button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">{{$item->verifikasi}}</td>
+{{--
         <td style="text-align: center;">
             <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
         </td>
@@ -228,46 +231,19 @@
 
             // Update setiap 1 detik untuk realtime
             setInterval(updateStatus, 1000);
-        </script>
+        </script> --}}
 
-        <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
-         <td style="text-align: left;">{{$item->lokasi}}</td>
-         <td style="text-align: left; text-align:justify;">{{$item->keterangan}}</td>
-         <td style="text-align: left; text-align:justify;">{{$item->isiagenda}}</td>
-         <td style="text-align: center; gap:10px;">
-            <img src="{{ asset('storage/' . $item->foto) }}" alt="Foto" width="200" style="border-radius: 15px;">
-        </td>
-        <td style="text-align: center; gap:10px;">
-            <object data="{{ asset('storage/' . $item->materi) }}" type="application/pdf" width="300" height="200">
-                <p>PDF cannot be displayed.</p>
-            </object>
-        </td>
-
-         <td style="text-align: center; vertical-align: middle; width: 100%; align-items:center; gap:10px; margin:left:25px;">
-            <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->namakegiatan) }}" style="text-decoration: none;">
-            <button
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='	#6B7280'; this.style.color='white';"
-                style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                       border-radius: 15px; font-size: 14px; cursor: pointer;
-                       display: flex; align-items: center; justify-content: center;
-                       transition: background-color 0.3s, color 0.3s; gap:10px;">
-                Lihat
-            </button>
-        </a>
-    </td>
-
-
-         <td style="text-align: center; vertical-align: middle;">
-             <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
+        <td style="text-align: center; vertical-align: middle;">
+             <a href="/bepesertapelatihan/show/{{$item->user->name}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
              <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
                  <i class="bi bi-pencil-square"></i>
              </a>
+
              <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
-                   data-judul="{{ $item->namakegiatan }}"
+                   data-judul="{{ $item->id }}"
                    onclick="setDeleteUrl(this)">
                     <i class="bi bi-trash"></i>
             </a>
@@ -312,9 +288,9 @@
 
                  <script>
                  function setDeleteUrl(button) {
-                     var namakegiatan = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = namakegiatan;
-                     var deleteUrl = "/beagendapelatihan/delete/" + encodeURIComponent(namakegiatan);
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/bepesertapelatihan/delete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
