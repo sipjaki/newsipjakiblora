@@ -25,6 +25,7 @@ use App\Http\Controllers\BeritajakonController;
 use App\Http\Controllers\KritikdansaranController;
 use App\Http\Controllers\AllskktenagakerjabloraController;
 use App\Http\Controllers\PaketpekerjaanmasjakiController;
+use App\Http\Controllers\PesertapelatihanController;
 // MAS JAKI
 
 // atas
@@ -540,6 +541,13 @@ Route::get('/beagendapelatihanpeserta/show/{namakegiatan}', [PembinaanController
 Route::get('/beagendapelatihan/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshow'])->middleware('auth');
 Route::delete('/beagendapelatihanpeserta/delete/{id}', [PembinaanController::class, 'beagendapelatihanpesertadelete'])->middleware('auth');
 Route::delete('/beagendapelatihan/delete/{namakegiatan}', [PembinaanController::class, 'beagendapelatihandelete'])->middleware('auth');
+// ___________________________________________________________________________________________________________________________________
+
+// ---------------------- MENU 02 PESERTA PELATIHAN   -----------------------------------------------------
+// ___________________________________________________________________________________________________________________________________
+Route::get('/bepesertapelatihan', [PesertapelatihanController::class, 'bepesertapelatihan'])->middleware('auth');
+Route::get('/bepesertapelatihan/show/{name}', [PesertapelatihanController::class, 'bepesertapelatihanshow'])->middleware('auth');
+Route::delete('/bepesertapelatihan/delete/{id}', [PesertapelatihanController::class, 'bepesertapelatihandelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 
 
