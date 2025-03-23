@@ -78,15 +78,25 @@
                 </div>
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                        <a href="/404">
+                            <button
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                <!-- Ikon kategori -->
+                                <i class="fa fa-tags" style="margin-right: 8px;"></i>
+                                Kategori Pelatihan
+                            </button>
+                        </a>
 
                         <a href="/404">
                             <button
                                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                 onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
                                 style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Database -->
-                                <i class="fa fa-database" style="margin-right: 8px;"></i>
-                                Kategori Pelatihan
+                                <!-- Ikon pelaksana -->
+                                <i class="fa fa-users" style="margin-right: 8px;"></i>
+                                Data LPS Pelaksana
                             </button>
                         </a>
 
