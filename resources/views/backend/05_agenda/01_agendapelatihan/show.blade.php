@@ -195,16 +195,16 @@
 
 
                                             <div class="mb-3">
-                                                <label class="form-label">
+                                                {{-- <label class="form-label">
                                                     <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Foto
-                                                </label>
+                                                </label> --}}
                                                 <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid" alt="Foto" width="250">
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">
+                                                {{-- <label class="form-label">
                                                     <i class="bi bi-shield-check" style="margin-right: 8px; color: navy;"></i>Materi
-                                                </label>
+                                                </label> --}}
                                                 <a href="{{ asset('storage/' . $data->materi) }}" class="btn btn-primary" target="_blank">
                                                     <i class="bi bi-file-earmark-text"></i> Lihat Materi
                                                 </a>
