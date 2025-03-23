@@ -188,11 +188,11 @@
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          {{-- <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td> --}}
          <td style="text-align: left;">{{$item->user->name}}</td>
-         <td style="text-align: left;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: left;">{{$item->nik}}</td>
-         <td style="text-align: left;">{{$item->eniskelamin}}</td>
+         <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
+         <td style="text-align: center;">{{$item->nik}}</td>
+         <td style="text-align: center;">{{$item->jeniskelamin}}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('l, d F Y') }}</td>
-         <td style="text-align: left;">{{$item->notelepon}}</td>
+         <td style="text-align: center;">{{$item->notelepon}}</td>
          <td style="text-align: left;">{{$item->instansi}}</td>
 
          <td style="text-align: center;">
@@ -205,7 +205,7 @@
             @endif
         </td>
 
-        <td style="text-align: left;">{{$item->verifikasi}}</td>
+        <td style="text-align: center;">{{$item->verifikasi}}</td>
 {{--
         <td style="text-align: center;">
             <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
