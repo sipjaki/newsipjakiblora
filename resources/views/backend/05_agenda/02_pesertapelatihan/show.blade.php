@@ -73,7 +73,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
                                                 </label>
-                                                <input class="form-control" value="{{$data->user->name}}" readonly/>
+                                                <input class="form-control" value="{{$data->name}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
