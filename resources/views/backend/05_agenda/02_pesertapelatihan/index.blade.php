@@ -122,7 +122,7 @@
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Tenaga Kerja Konstruksi ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Peserta ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -136,7 +136,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/beagendapelatihan?search=${input}`)
+                            fetch(`/bepesertapelatihan?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -171,14 +171,14 @@
          <th style="width: 75px; text-align:center; vertical-align: middle;">No</th>
          {{-- <th style="width: 250px; text-align:center; vertical-align: middle;">Agenda Pelatihan</th> --}}
          <th style="width: 250px; text-align:center; vertical-align: middle;">Nama Lengkap </th>
-         <th style="width: 300px; text-align:center; vertical-align: middle;">Jenjang Pendidikan</th>
+         <th style="width: 200px; text-align:center; vertical-align: middle;">Jenjang Pendidikan</th>
          <th style="width: 250px; text-align:center; vertical-align: middle;">NIK</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Jenis Kelamin</th>
-         <th style="width: 100px; text-align:center; vertical-align: middle;">Tanggal Lahir</th>
-         <th style="width: 100px; text-align:center; vertical-align: middle;">No Telepon</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Instansi</th>
+         <th style="width: 200px; text-align:center; vertical-align: middle;">Jenis Kelamin</th>
+         <th style="width: 200px; text-align:center; vertical-align: middle;">Tanggal Lahir</th>
+         <th style="width: 200px; text-align:center; vertical-align: middle;">No Telepon</th>
+         <th style="width: 400px; text-align:center; vertical-align: middle;">Instansi</th>
          <th style="width: 250px; text-align:center; vertical-align: middle;">Sertifikat</th>
-         <th style="width: 600px; text-align:center; vertical-align: middle;">Verifikasi</th>
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Verifikasi</th>
          <th style="width: 200px; text-align:center; vertical-align: middle;">Aksi</th>
      </tr>
  </thead>
@@ -189,11 +189,11 @@
          {{-- <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td> --}}
          <td style="text-align: left;">{{$item->user->name}}</td>
          <td style="text-align: left;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: left;">{{$item->jenjangpendidikan->nik}}</td>
-         <td style="text-align: left;">{{$item->jenjangpendidikan->jeniskelamin}}</td>
+         <td style="text-align: left;">{{$item->nik}}</td>
+         <td style="text-align: left;">{{$item->eniskelamin}}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('l, d F Y') }}</td>
-         <td style="text-align: left;">{{$item->jenjangpendidikan->notelepon}}</td>
-         <td style="text-align: left;">{{$item->jenjangpendidikan->instansi}}</td>
+         <td style="text-align: left;">{{$item->notelepon}}</td>
+         <td style="text-align: left;">{{$item->instansi}}</td>
 
          <td style="text-align: center;">
             @if($item->sertifikat)
