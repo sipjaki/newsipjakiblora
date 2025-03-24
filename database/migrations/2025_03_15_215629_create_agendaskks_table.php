@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('keterangan')->nullable();
             $table->text('isiagenda')->nullable();
             $table->string('foto')->nullable();
+            $table->string('materi')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

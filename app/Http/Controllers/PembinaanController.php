@@ -200,7 +200,7 @@ class PembinaanController extends Controller
 
 
 
-    // MENU BACKEND PROFIL PAKET PEKERJAAN
+    // MENU BACKEND AGENDA PELATIHAN
 
 
     public function beagendapelatihan(Request $request)

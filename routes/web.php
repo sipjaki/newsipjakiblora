@@ -551,6 +551,15 @@ Route::delete('/bepesertapelatihan/delete/{id}', [PesertapelatihanController::cl
 // ___________________________________________________________________________________________________________________________________
 
 
+// ---------------------- MENU 03 AGENDA SKK MAS JAKI BLORA JAWA TENGAH    -----------------------------------------------------
+// ___________________________________________________________________________________________________________________________________
+Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middleware('auth');
+Route::get('/beagendaskkpeserta/show/{namakegiatan}', [PembinaanController::class, 'beagendaskkpeserta'])->middleware('auth');
+Route::get('/beagendaskk/show/{namakegiatan}', [PembinaanController::class, 'beagendaskkshow'])->middleware('auth');
+Route::delete('/beagendaskkpeserta/delete/{id}', [PembinaanController::class, 'beagendaskkdeletepeserta'])->middleware('auth');
+Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class, 'beagendaskkdelete'])->middleware('auth');
+// ___________________________________________________________________________________________________________________________________
+
 
 
 
@@ -702,7 +711,7 @@ Route::post('/keputusandelete/{judul}', [PeraturanController::class, 'deletekepu
 
 // ====================================== ====================================== ====================================== ======================================
 // BAGIAN 15 ADMINISTRATOR MENU BACKEND
-// ====================================== ====================================== ====================================== ======================================
+// ====================================== =====================================bac= ====================================== ======================================
 // SURAT KEPUTUSAN TENTANG JASA KONSTRUKSI
 Route::get('/administrator', [AdministratorController::class, 'index'])->middleware('auth');
 Route::get('/administrator/{name}', [AdministratorController::class, 'administratorshowbyname'])->middleware('auth');
