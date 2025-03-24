@@ -169,7 +169,7 @@
  <thead>
      <tr>
          <th style="width: 75px; text-align:center; vertical-align: middle;">No</th>
-         {{-- <th style="width: 250px; text-align:center; vertical-align: middle;">Agenda Pelatihan</th> --}}
+         <th style="width: 250px; text-align:center; vertical-align: middle;">Agenda Pelatihan</th>
          <th style="width: 250px; text-align:center; vertical-align: middle;">Nama Lengkap </th>
          <th style="width: 200px; text-align:center; vertical-align: middle;">Jenjang Pendidikan</th>
          <th style="width: 250px; text-align:center; vertical-align: middle;">NIK</th>
@@ -186,7 +186,7 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         {{-- <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td> --}}
+         <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td>
          <td style="text-align: left;">{{$item->user->name}}</td>
          <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
          <td style="text-align: center;">{{$item->nik}}</td>
