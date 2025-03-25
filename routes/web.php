@@ -575,7 +575,10 @@ Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class,
 // -------- BAGIAN 01 BACKEND PROFIL ---------------------------------
 Route::get('/struktur', [StrukturController::class, 'index'])->middleware('auth');
 Route::get('/struktur/update/{judul}', [StrukturController::class, 'updatestruktur'])->middleware('auth')->name('update.struktur');
+// Route::post('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware('auth')->name('update.strukturcreate');
 Route::post('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware('auth')->name('update.strukturcreate');
+
+
 Route::post('/struktur/{judul}', [StrukturController::class, 'createupdatestruktur'])->middleware('auth')->name('updatestore.struktur');
 
 Route::get('/renstra', [StrukturController::class, 'renstra'])->middleware('auth');
