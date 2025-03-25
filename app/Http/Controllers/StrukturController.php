@@ -46,7 +46,7 @@ class StrukturController extends Controller
 
                     // Tampilkan form update dengan data yang ditemukan
                     return view('backend.02_kelembagaan.01_strukturkedinasan.update', [
-                        'strukturdinas' => $strukturdinas,
+                        'data' => $strukturdinas,
                         'user' => $user,
                         'title' => 'Update Surat Kedinasan PUPR KBB'
                     ]);
