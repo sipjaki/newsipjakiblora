@@ -69,8 +69,11 @@
                             <!--end::Header-->
                             <!--begin::Form-->
 
-                            <form>
-                                <!--begin::Body-->
+                            <form action="{{ route('update.strukturcreate', $data->judul) }}" method="POST">
+                                @csrf
+                                @method('POST')  <!-- or @method('PUT') jika menggunakan PUT request -->
+
+                                <!-- begin::Body -->
                                 <div class="card-body">
                                     <div class="row">
                                         <!-- Left Column (6/12) -->
@@ -79,26 +82,32 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Judul
                                                 </label>
-                                                <input class="form-control" value="{{$data->judul}}" readonly/>
+                                                <input type="text" name="judul" class="form-control" value="{{ old('judul', $data->judul) }}" />
                                             </div>
-
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
                                                 </label>
-                                                <input class="form-control" value="{{$data->Keterangan}}" readonly />
+                                                <textarea name="Keterangan" class="form-control">{{ old('Keterangan', $data->Keterangan) }}</textarea>
                                             </div>
-
-                                            <div class="mb-3">
-                                                <img src="{{ asset('storage/' . $data->peraturan) }}" class="img-fluid rounded" alt="Foto" width="250">
-                                            </div>
-
                                         </div>
-                                          <!-- End Left Column -->
-                                                                            </div> <!-- end row -->
+                                        <!-- End Left Column -->
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">
+                                                    <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar
+                                                </label>
+                                                <input type="file" name="peraturan" class="form-control" />
+                                                <img src="{{ asset('storage/' . $data->peraturan) }}" class="img-fluid rounded mt-2" alt="Foto" width="250">
+                                            </div>
+                                        </div>
+                                    </div> <!-- end row -->
                                 </div>
+                                <!-- end::Body -->
+
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </form>
-                            <!--end::Form-->
+
                         </div>
                         <!--end::Quick Example-->
 
