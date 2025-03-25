@@ -45,7 +45,7 @@ class StrukturController extends Controller
                     $user = Auth::user();
 
                     // Tampilkan form update dengan data yang ditemukan
-                    return view('backend.01_struktur.01_kedinasan.update', [
+                    return view('backend.02_kelembagaan.01_strukturkedinasan.update', [
                         'strukturdinas' => $strukturdinas,
                         'user' => $user,
                         'title' => 'Update Surat Kedinasan PUPR KBB'

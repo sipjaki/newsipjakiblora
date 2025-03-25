@@ -60,7 +60,6 @@
                         📌 Halaman : {{$title}}
                     </div>
 
-
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive">
@@ -86,35 +85,11 @@
                                         </td>
                                         <td style="text-align: justify;">{!! $item->keterangan !!}</td>
                                         <td style="text-align: center;">
-                                            <!-- Show Icon -->
-                                            {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
-                                                <i class="bi bi-eye"></i>
-                                            </a> --}}
-                                            <!-- Update Icon -->
-                                            <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+
+                                            <a href="/struktur/update/{{$item->judul}}" class="btn btn-sm btn-warning me-2" title="Update">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-                                            <!-- Delete Icon -->
-                                            <!-- Tombol Delete -->
-                                            {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                            data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash"></i>
-                                        </a> --}}
 
-
-                                        @include('backend.00_administrator.00_baganterpisah.05_modalcarddelete')
-
-                                            <style>
-                                                /* Hover effect */
-                                                .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
-                                                    background-color: #fff !important; /* Keep the background white on hover */
-                                                    color: black !important; /* Change text color to black on hover */
-                                                }
-
-                                                .btn-info:hover i, .btn-warning:hover i, .btn-danger:hover i {
-                                                    color: black !important; /* Ensure the icon color changes to black */
-                                                }
-                                            </style>
                                         </td>
 
                                     </tr>
