@@ -48,7 +48,7 @@ class StrukturController extends Controller
                     return view('backend.02_kelembagaan.01_strukturkedinasan.update', [
                         'data' => $strukturdinas,
                         'user' => $user,
-                        'title' => 'Update Surat Kedinasan PUPR KBB'
+                        'title' => 'Update Struktur Organisasi DPUPR Kab Blora'
                     ]);
                 }
 
