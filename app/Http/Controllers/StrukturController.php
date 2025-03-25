@@ -63,7 +63,7 @@ class StrukturController extends Controller
                     ]);
 
                     // Cari data strukturdinas berdasarkan nilai 'judul'
-                    $strukturdinas = Strukturdinas::where('judul', $judul)->firstOrFail();
+                    $strukturdinas = strukturdinas::where('judul', $judul)->firstOrFail();
 
                     // Cek apakah ada file baru yang diupload
                     if ($request->hasFile('peraturan')) {
