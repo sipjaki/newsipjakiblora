@@ -61,6 +61,12 @@
                     ">
                         📌 Halaman Update : {{$title}}
                     </div>
+                           {{-- ======================================================= --}}
+        {{-- ALERT --}}
+
+        @include('backend.00_administrator.00_baganterpisah.06_alert')
+
+        {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
@@ -119,7 +125,7 @@
                                         Update
                                     </button>
 
-                                    <a href="/beagendapelatihan">
+                                    <a href="/bestrukturdinas">
                                         <button
                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                         onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"

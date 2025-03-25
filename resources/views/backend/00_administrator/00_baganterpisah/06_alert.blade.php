@@ -74,41 +74,18 @@
 
 <div class="container alertku d-flex justify-content-center align-items-center" style="margin-right:10px; margin-left:10px;">
 
-    {{-- <div class="alert alert-primary">
+    @if (session('update'))
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
         <div class="icon__wrapper">
-            <span class="mdi mdi-alert-outline"></span>
+            <!-- Ikon dengan Font Awesome yang lebih sesuai -->
+            <span class="fas fa-info-circle" style="font-size: 1.5em; margin-right: 10px;"></span>
         </div>
-        <p>You’ve assigned Owner of <a href="#">Button Component.</a></p>
-        <span class="mdi mdi-open-in-new open"></span>
-        <span class="mdi mdi-close close"></span>
+        <p>{{ session('update') }}</p>
+        <!-- Tombol untuk menutup alert -->
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+@endif
 
-    <div class="alert alert-success">
-        <div class="icon__wrapper">
-            <span class="mdi mdi-alert-outline"></span>
-        </div>
-        <p>You’ve assigned Owner of <a href="#">Button Component.</a></p>
-        <span class="mdi mdi-open-in-new open"></span>
-        <span class="mdi mdi-close close"></span>
-    </div>
-
-    <div class="alert alert-warning">
-        <div class="icon__wrapper">
-            <span class="mdi mdi-alert-outline"></span>
-        </div>
-        <p>You’ve assigned Owner of <a href="#">Button Component.</a></p>
-        <span class="mdi mdi-open-in-new open"></span>
-        <span class="mdi mdi-close close"></span>
-  </div>
-
-  <div class="alert alert-dark">
-      <div class="icon__wrapper">
-          <span class="mdi mdi-alert-outline"></span>
-        </div>
-        <p>You’ve assigned Owner of <a href="#">Button Component.</a></p>
-        <span class="mdi mdi-open-in-new open"></span>
-        <span class="mdi mdi-close close"></span>
-    </div> --}}
 
     @if (session('delete'))
     <div class="alert alert-error alert-dismissible fade show" role="alert">
