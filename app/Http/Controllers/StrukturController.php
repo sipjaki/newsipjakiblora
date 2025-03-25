@@ -65,21 +65,29 @@ class StrukturController extends Controller
                     // Cari data strukturdinas berdasarkan nilai 'judul'
                     $strukturdinas = Strukturdinas::where('judul', $judul)->firstOrFail();
 
-                    // Variabel untuk menyimpan path file, jika ada file yang diupload
-                    $filePath = $strukturdinas->peraturan; // Jika tidak ada file baru, gunakan file lama
-
                     // Cek apakah ada file baru yang diupload
                     if ($request->hasFile('peraturan')) {
+                        // Jika ada file lama, hapus file tersebut
+                        if ($strukturdinas->peraturan) {
+                            $oldFilePath = storage_path('app/public/' . $strukturdinas->peraturan);
+                            if (file_exists($oldFilePath)) {
+                                unlink($oldFilePath); // Hapus file lama
+                            }
+                        }
+
+                        // Simpan file baru dan ambil path-nya
                         $file = $request->file('peraturan');
-                        // Simpan file dan ambil path-nya
                         $filePath = $file->store('01_kelembagaan/01_dinas', 'public');
+                    } else {
+                        // Jika tidak ada file baru, gunakan file lama
+                        $filePath = $strukturdinas->peraturan;
                     }
 
                     // Update data strukturdinas dengan data dari form
                     $strukturdinas->update([
                         'judul' => $request->input('judul'),
                         'keterangan' => $request->input('keterangan'),
-                        'peraturan' => $filePath, // Gunakan path file yang baru jika ada, atau yang lama jika tidak ada file baru
+                        'peraturan' => $filePath, // Gunakan path file yang baru jika ada
                     ]);
 
                     // Flash session untuk menampilkan pesan sukses
@@ -88,7 +96,6 @@ class StrukturController extends Controller
                     // Redirect ke halaman yang sesuai
                     return redirect('/bestrukturdinas');
                 }
-
 
     //    ======================================================================
 

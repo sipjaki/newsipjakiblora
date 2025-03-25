@@ -118,11 +118,14 @@
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar
                                             </label>
                                             <input type="file" name="peraturan" class="form-control" />
-                                            <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
-                                                <p>PDF cannot be displayed.</p>
-                                            </object>
+                                            @if($data->peraturan)  <!-- Cek jika ada file sebelumnya -->
+                                                <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
+                                                    <p>PDF cannot be displayed.</p>
+                                                </object>
+                                            @endif
                                         </div>
                                     </div>
+
                                 </div> <!-- end row -->
                             </div>
                             <!-- end::Body -->
