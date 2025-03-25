@@ -117,14 +117,49 @@
                                             <label class="form-label">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar
                                             </label>
-                                            <input type="file" name="peraturan" class="form-control" />
-                                            @if($data->peraturan)  <!-- Cek jika ada file sebelumnya -->
-                                                <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
-                                                    <p>PDF cannot be displayed.</p>
-                                                </object>
-                                            @endif
+                                            <input type="file" name="peraturan" class="form-control" id="fileUpload" />
+                                            <div id="filePreview" style="margin-top: 10px;">
+                                                @if($data->peraturan)  <!-- Cek jika ada file sebelumnya -->
+                                                    <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
+                                                        <p>PDF cannot be displayed.</p>
+                                                    </object>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <!-- JavaScript to preview the uploaded file -->
+                                    <script>
+                                        document.getElementById('fileUpload').addEventListener('change', function(event) {
+                                            var file = event.target.files[0];
+                                            var previewContainer = document.getElementById('filePreview');
+                                            previewContainer.innerHTML = '';  // Clear previous previews
+
+                                            if (file) {
+                                                var fileType = file.type;
+
+                                                if (fileType === 'application/pdf') {
+                                                    // Create an object tag for PDF preview
+                                                    var objectTag = document.createElement('object');
+                                                    objectTag.data = URL.createObjectURL(file);
+                                                    objectTag.type = 'application/pdf';
+                                                    objectTag.width = '300';
+                                                    objectTag.height = '200';
+                                                    previewContainer.appendChild(objectTag);
+                                                } else if (fileType.startsWith('image/')) {
+                                                    // Create an image tag for image preview
+                                                    var imgTag = document.createElement('img');
+                                                    imgTag.src = URL.createObjectURL(file);
+                                                    imgTag.style.maxWidth = '300px';
+                                                    imgTag.style.maxHeight = '200px';
+                                                    previewContainer.appendChild(imgTag);
+                                                } else {
+                                                    previewContainer.innerHTML = '<p>File type not supported for preview.</p>';
+                                                }
+                                            }
+                                        });
+                                    </script>
+
 
                                 </div> <!-- end row -->
                             </div>
