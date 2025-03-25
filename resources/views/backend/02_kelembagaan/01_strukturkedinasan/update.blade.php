@@ -70,7 +70,7 @@
 
 
         <div class="card card-primary card-outline mb-6">
-            <div style="display: flex; justify-content: flex-end; margin-top:5px;">
+            <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/bestrukturdinas">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -108,7 +108,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
                                                 </label>
-                                                <textarea name="Keterangan" class="form-control">{{ old('Keterangan', $data->Keterangan) }}</textarea>
+                                                <textarea name="Keterangan" class="form-control">{{ old('keterangan', $data->keterangan) }}</textarea>
                                             </div>
                                         </div>
                                         <!-- End Left Column -->
