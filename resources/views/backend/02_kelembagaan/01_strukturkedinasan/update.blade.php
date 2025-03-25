@@ -108,8 +108,9 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
                                                 </label>
-                                                <textarea name="Keterangan" class="form-control">{{ old('keterangan', $data->keterangan) }}</textarea>
+                                                <textarea name="Keterangan" class="form-control" rows="6">{{ old('keterangan', $data->keterangan) }}</textarea>
                                             </div>
+
                                         </div>
                                         <!-- End Left Column -->
                                         <div class="col-md-6">
