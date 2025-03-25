@@ -572,7 +572,7 @@ Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class,
 
 // ------------------- BACKEND BAGIAN HIMBAUAN DINAS ---------------------------
 
-// -------- BAGIAN 01 BACKEND PROFIL ---------------------------------
+// -------- BAGIAN 01 BACKEND PROFIL ---------------------------------p
 Route::get('/struktur', [StrukturController::class, 'index'])->middleware('auth');
 Route::get('/struktur/update/{judul}', [StrukturController::class, 'updatestruktur'])->middleware('auth')->name('update.struktur');
 // Route::post('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware('auth')->name('update.strukturcreate');

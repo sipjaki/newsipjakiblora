@@ -77,6 +77,8 @@ class StrukturController extends Controller
 
                         // Simpan file baru dan ambil path-nya
                         $file = $request->file('peraturan');
+
+                        // Pastikan file valid dan simpan
                         $filePath = $file->store('01_kelembagaan/01_dinas', 'public');
                     } else {
                         // Jika tidak ada file baru, gunakan file lama
