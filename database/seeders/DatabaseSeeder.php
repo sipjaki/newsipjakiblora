@@ -12416,6 +12416,8 @@ beritajakon::create([
     'tanggal' => '2025-03-05',
     'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora menggelar Pelatihan dan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 bagi tenaga kerja konstruksi untuk meningkatkan kualitas dan profesionalisme sesuai standar nasional. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor konstruksi dengan pembekalan teori dan praktik oleh instruktur serta asesor kompetensi bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menegaskan pentingnya sertifikasi ini dalam meningkatkan daya saing tenaga kerja konstruksi, sejalan dengan regulasi pemerintah yang mewajibkan kepemilikan SKK. Salah satu peserta,  menyatakan bahwa pelatihan ini sangat bermanfaat dalam meningkatkan pemahaman dan keterampilannya di bidang konstruksi. Uji kompetensi dilakukan secara ketat untuk menilai pemahaman terhadap standar konstruksi, keselamatan kerja, dan kemampuan teknis. Dengan pelatihan ini, diharapkan tenaga kerja konstruksi di Blora semakin berkualitas dan siap bersaing dalam industri nasional.',
     'foto' => '00_beranda/01_berita/berita1.JPG',
+    'foto1' => null,
+    'foto2' => null,
 ]);
 
 beritajakon::create([
@@ -12424,6 +12426,8 @@ beritajakon::create([
     'tanggal' => '2025-03-05',
     'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora mengadakan Pelatihan dan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 bagi tenaga kerja konstruksi guna meningkatkan profesionalisme dan daya saing mereka. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor konstruksi yang mendapatkan pembekalan teori serta praktik langsung oleh instruktur dan asesor kompetensi bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menegaskan pentingnya sertifikasi ini dalam mendukung standar nasional dan meningkatkan peluang kerja tenaga konstruksi di berbagai proyek. Salah satu peserta,  menyatakan bahwa pelatihan ini sangat membantu dalam meningkatkan keterampilan dan kepercayaan diri menghadapi dunia kerja. Dengan terselenggaranya kegiatan ini, diharapkan tenaga kerja konstruksi di Blora semakin berkualitas dan mampu bersaing dalam industri nasional.',
     'foto' => '00_beranda/01_berita/berita2.JPG',
+    'foto1' => null,
+    'foto2' => null,
 ]);
 
 beritajakon::create([
@@ -12432,6 +12436,8 @@ beritajakon::create([
     'tanggal' => '2025-03-05',
     'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora menggelar Pelatihan dan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 untuk meningkatkan kualitas tenaga kerja konstruksi sesuai standar nasional. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor konstruksi yang mendapatkan pembekalan teori dan praktik langsung dari instruktur serta asesor bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menyampaikan bahwa sertifikasi ini penting untuk meningkatkan daya saing tenaga kerja dan membuka peluang kerja lebih luas di sektor konstruksi. Salah satu peserta, mengaku pelatihan ini sangat bermanfaat dalam meningkatkan keterampilan dan kepercayaan diri di dunia kerja. Dengan adanya kegiatan ini, diharapkan tenaga kerja konstruksi di Blora semakin kompeten dan siap bersaing dalam industri nasional',
     'foto' => '00_beranda/01_berita/berita3.JPG',
+    'foto1' => null,
+    'foto2' => null,
 ]);
 
 beritajakon::create([
@@ -12440,6 +12446,8 @@ beritajakon::create([
     'tanggal' => '2025-03-05',
     'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora mengadakan Pelatihan dan Sertifikasi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 sebagai langkah strategis dalam meningkatkan standar tenaga kerja konstruksi di daerah ini. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor yang mendapatkan pembekalan teori dan praktik langsung oleh instruktur serta asesor bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menyatakan bahwa sertifikasi ini bertujuan untuk memastikan tenaga kerja konstruksi memiliki kompetensi sesuai standar nasional dan mampu bersaing di industri konstruksi. Salah satu peserta, menyampaikan bahwa pelatihan ini sangat bermanfaat dalam meningkatkan keterampilan dan peluang kerja di sektor konstruksi. Dengan adanya program ini, diharapkan tenaga kerja konstruksi di Blora semakin profesional dan berkontribusi dalam pembangunan yang berkualitas.',
     'foto' => '00_beranda/01_berita/berita4.JPG',
+    'foto1' => null,
+    'foto2' => null,
 ]);
 
 beritajakon::create([
@@ -12448,6 +12456,8 @@ beritajakon::create([
     'tanggal' => '2025-03-05',
     'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora mengadakan Pelatihan dan Sertifikasi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 untuk meningkatkan standar tenaga kerja konstruksi di daerah tersebut. Kegiatan ini diikuti oleh puluhan peserta yang mendapatkan pembekalan teori dan praktik langsung dari instruktur serta asesor bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menyatakan bahwa sertifikasi ini penting untuk memastikan tenaga kerja memiliki kompetensi sesuai standar nasional dan dapat bersaing di industri konstruksi. Salah satu peserta, mengungkapkan bahwa pelatihan ini sangat membantu dalam meningkatkan keterampilan dan peluang kerja. Dengan adanya program ini, diharapkan tenaga kerja konstruksi di Blora semakin profesional dan berkontribusi dalam pembangunan infrastruktur yang berkualitas.',
     'foto' => '00_beranda/01_berita/berita5.jpg',
+    'foto1' => null,
+    'foto2' => null,
 ]);
 
 beritajakon::create([
@@ -12456,6 +12466,8 @@ beritajakon::create([
     'tanggal' => '2025-03-05',
     'keterangan' => 'Blora, Dinas PUPR Kabupaten Blora menyelenggarakan Pelatihan dan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Jenjang 4 untuk meningkatkan kualitas tenaga kerja konstruksi di daerah tersebut. Kegiatan ini diikuti oleh puluhan peserta dari berbagai sektor yang mendapatkan pembekalan teori dan praktik dari instruktur serta asesor bersertifikat. Kepala Dinas PUPR Kabupaten Blora, menyampaikan bahwa sertifikasi ini bertujuan untuk memastikan tenaga kerja memiliki kompetensi sesuai standar nasional dan siap bersaing di industri konstruksi. Salah satu peserta, mengungkapkan bahwa pelatihan ini sangat membantu dalam meningkatkan keterampilan dan peluang kerja. Dengan adanya program ini, diharapkan tenaga kerja konstruksi di Blora semakin profesional dan mampu mendukung pembangunan infrastruktur yang berkualitas.',
     'foto' => '00_beranda/01_berita/berita6.JPG',
+    'foto1' => null,
+    'foto2' => null,
 ]);
 
 //======================== ===================================================================================

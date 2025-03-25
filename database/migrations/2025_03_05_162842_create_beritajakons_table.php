@@ -18,6 +18,8 @@ return new class extends Migration
             $table->date('tanggal')->nullable();
             $table->text('keterangan')->nullable();
             $table->string('foto')->nullable();
+            $table->string('foto1')->nullable();
+            $table->string('foto2')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
