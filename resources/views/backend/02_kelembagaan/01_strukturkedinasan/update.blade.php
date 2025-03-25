@@ -60,12 +60,7 @@
                         width: 100%;
                     ">
                         📌 Halaman Update : {{$title}}
-                    </div>
-                           {{-- ======================================================= --}}
-        {{-- ALERT --}}
 
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:5px;">
@@ -80,6 +75,13 @@
                 </button>
             </a>
         </div>
+                    </div>
+                           {{-- ======================================================= --}}
+        {{-- ALERT --}}
+
+
+        @include('backend.00_administrator.00_baganterpisah.06_alert')
+
 
         {{-- ======================================================= --}}
                     <div class="col-md-12">
