@@ -98,7 +98,9 @@
                                                     <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar
                                                 </label>
                                                 <input type="file" name="peraturan" class="form-control" />
-                                                <img src="{{ asset('storage/' . $data->peraturan) }}" class="img-fluid rounded mt-2" alt="Foto" width="250">
+                                                <object data="{{ asset('storage/' . $item->peraturan) }}" type="application/pdf" width="300" height="200">
+                                                    <p>PDF cannot be displayed.</p>
+                                                </object>
                                             </div>
                                         </div>
                                     </div> <!-- end row -->
