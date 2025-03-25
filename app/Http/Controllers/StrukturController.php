@@ -58,12 +58,12 @@ class StrukturController extends Controller
                     // Validasi input
                     $request->validate([
                         'judul' => 'required|string|max:255',
-                        'keterangan' => 'required|string', // Validasi untuk keterangan
-                        'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi file hanya PDF dan maksimal 5MB
+                        'keterangan' => 'required|string',
+                        'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
                     ]);
 
                     // Cari data strukturdinas berdasarkan nilai 'judul'
-                    $strukturdinas = strukturdinas::where('judul', $judul)->firstOrFail();
+                    $strukturdinas = Strukturdinas::where('judul', $judul)->firstOrFail();
 
                     // Cek apakah ada file baru yang diupload
                     if ($request->hasFile('peraturan')) {
@@ -77,8 +77,6 @@ class StrukturController extends Controller
 
                         // Simpan file baru dan ambil path-nya
                         $file = $request->file('peraturan');
-
-                        // Pastikan file valid dan simpan
                         $filePath = $file->store('01_kelembagaan/01_dinas', 'public');
                     } else {
                         // Jika tidak ada file baru, gunakan file lama

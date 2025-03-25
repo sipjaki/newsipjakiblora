@@ -88,10 +88,9 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-
                         <form action="{{ route('update.strukturcreate', $data->judul) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('POST') <!-- Menggunakan PUT untuk update -->
+                            @method('PUT')  <!-- Menggunakan PUT untuk update -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -159,8 +158,6 @@
                                             }
                                         });
                                     </script>
-
-
                                 </div> <!-- end row -->
                             </div>
                             <!-- end::Body -->
