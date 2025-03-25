@@ -91,7 +91,7 @@
 
                             <form action="{{ route('update.strukturcreate', $data->judul) }}" method="POST">
                                 @csrf
-                                @method('POST')  <!-- or @method('PUT') jika menggunakan PUT request -->
+                                @method('POST')
 
                                 <!-- begin::Body -->
                                 <div class="card-body">
@@ -108,7 +108,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
                                                 </label>
-                                                <textarea name="Keterangan" class="form-control" rows="6">{{ old('keterangan', $data->keterangan) }}</textarea>
+                                                <textarea name="keterangan" class="form-control" rows="6">{{ old('keterangan', $data->keterangan) }}</textarea>
                                             </div>
 
                                         </div>
