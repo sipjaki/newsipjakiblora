@@ -75,7 +75,7 @@
                             {{-- <div class="card-header"><div class="card-title">Quick Example</div></div> --}}
                             <!--end::Header-->
                             <!--begin::Form-->
-                            <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: flex-end; margin-top:2px;">
                                 <a href="/bestrukturdinas">
                                     <button
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
