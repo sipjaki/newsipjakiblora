@@ -67,26 +67,23 @@
 
         @include('backend.00_administrator.00_baganterpisah.06_alert')
 
+        <div class="card card-primary card-outline mb-6">
+            <div style="display: flex; justify-content: flex-end; margin-top:5px;">
+                <a href="/bestrukturdinas">
+                    <button
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                    <!-- Ikon Kembali -->
+                    <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
+                    Kembali
+                </button>
+            </a>
+        </div>
+
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <div class="card card-primary card-outline mb-6">
-                            <!--begin::Header-->
-                            {{-- <div class="card-header"><div class="card-title">Quick Example</div></div> --}}
-                            <!--end::Header-->
-                            <!--begin::Form-->
-                            <div style="display: flex; justify-content: flex-end; margin-top:2px;">
-                                <a href="/bestrukturdinas">
-                                    <button
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                    <!-- Ikon Kembali -->
-                                    <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
-                                    Kembali
-                                </button>
-                            </a>
-                        </div>
 
                             <form action="{{ route('update.strukturcreate', $data->judul) }}" method="POST">
                                 @csrf
