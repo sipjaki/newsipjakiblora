@@ -118,19 +118,45 @@
                                             <label class="form-label" for="peraturan">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar
                                             </label>
-                                            <input type="file" name="peraturan" class="form-control" id="fileUpload" />
-                                            <div id="filePreview" style="margin-top: 10px;">
+                                            <img src="img-preview img-fluid" alt="">
+                                            <input type="file" name="peraturan" class="form-control" id="peraturan" @error('peraturan') is-invalid @enderror onchange="previewImage()"/>
+                                            <div style="margin-top: 10px;">
                                                 @if($data->peraturan)  <!-- Cek jika ada file sebelumnya -->
                                                     <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
                                                         <p>PDF cannot be displayed.</p>
                                                     </object>
                                                 @endif
+                                                @error('peraturan')
+                                                <div class="invalid-feedback">
+                                                    {{$message}}
+                                                </div>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
                                 </div> <!-- end row -->
                             </div>
                             <!-- end::Body -->
+                            <script>
+                                function previewImage() {
+                                    const peraturan = document.querySelector('#peraturan');
+                                    const imgPreview = document.querySelector('.img-preview');
+
+                                    // Pastikan file dipilih
+                                    const file = peraturan.files[0];
+                                    if (file) {
+                                        // Pastikan file yang dipilih adalah gambar
+                                        const reader = new FileReader();
+
+                                        reader.onload = function(e) {
+                                            imgPreview.src = e.target.result;  // Menampilkan gambar yang dipilih
+                                            imgPreview.style.display = 'block'; // Menampilkan gambar setelah dipilih
+                                        }
+
+                                        reader.readAsDataURL(file);  // Membaca file gambar
+                                    }
+                                }
+                            </script>
 
                             <br><br>
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
