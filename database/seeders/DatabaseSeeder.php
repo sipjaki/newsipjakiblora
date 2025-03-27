@@ -11363,13 +11363,6 @@ hspkodepekerjaan3::create([
 ]);
 
 hspkodepekerjaan3::create([
-    'id' => 12,
-    'hsppaket3_id' => 6,
-    'kodepekerjaan' => '6',
-    'namapekerjaan' => 'Dinding Partisi',
-]);
-
-hspkodepekerjaan3::create([
     'id' => 13,
     'hsppaket3_id' => 7,
     'kodepekerjaan' => '1',
