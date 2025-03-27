@@ -121,7 +121,7 @@
                                             <input type="file" name="peraturan" class="form-control" id="fileUpload" />
                                             <div id="filePreview" style="margin-top: 10px;">
                                                 @if($data->peraturan)  <!-- Cek jika ada file sebelumnya -->
-                                                    <object data="{{ asset('storage/01_kelembagaan/01_dinas' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
+                                                    <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
                                                         <p>PDF cannot be displayed.</p>
                                                     </object>
                                                 @endif
