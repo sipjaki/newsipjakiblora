@@ -78,10 +78,11 @@
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{!! $item->judul !!}</td>
-                                        <td style="text-align: center;">
-                                            <iframe src="{{ asset('storage/' . $item->peraturan) }}" width="300" height="200"></iframe>
-                                        </td>
-                                        <td style="text-align: justify;">{!! $item->keterangan !!}</td>
+                                        <object data="{{ asset('storage/01_kelembagaan/01_dinas/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
+                                            <p>PDF cannot be displayed.</p>
+                                        </object>
+
+                                                                                <td style="text-align: justify;">{!! $item->keterangan !!}</td>
                                         <td style="text-align: center;">
 
                                             <a href="/struktur/update/{{$item->judul}}" class="btn btn-sm btn-warning me-2" title="Update">
