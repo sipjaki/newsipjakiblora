@@ -11342,13 +11342,6 @@ hspkodepekerjaan3::create([
 ]);
 
 hspkodepekerjaan3::create([
-    'id' => 9,
-    'hsppaket3_id' => 6,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Dinding Roster',
-]);
-
-hspkodepekerjaan3::create([
     'id' => 10,
     'hsppaket3_id' => 6,
     'kodepekerjaan' => '4',
