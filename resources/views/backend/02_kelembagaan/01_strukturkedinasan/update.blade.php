@@ -126,8 +126,8 @@
                                             <input type="file" name="peraturan" class="form-control @error('peraturan') is-invalid @enderror" id="peraturan" onchange="previewImage()" />
 
                                             <div style="margin-top: 10px;">
-                                                @if($strukturdinas->peraturan)  <!-- Cek jika ada file setelah diupload -->
-                                                    <object data="{{ asset('storage/' . $strukturdinas->peraturan) }}" type="application/pdf" width="300" height="200">
+                                                @if($data->peraturan)  <!-- Cek jika ada file setelah diupload -->
+                                                    <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
                                                         <p>PDF cannot be displayed.</p>
                                                     </object>
                                                 @else
