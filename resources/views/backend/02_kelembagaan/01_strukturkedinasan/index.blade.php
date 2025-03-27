@@ -78,7 +78,7 @@
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{!! $item->judul !!}</td>
-                                        <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
+                                        <object data="{{ asset('storage/' . $item->peraturan) }}" type="application/pdf" width="300" height="200">
                                             <p>PDF cannot be displayed.</p>
                                         </object>
 
