@@ -11376,12 +11376,6 @@ hspkodepekerjaan3::create([
     'namapekerjaan' => 'Pekerjaan Pengecatan dan Pelituran ',
 ]);
 
-hspkodepekerjaan3::create([
-    'id' => 15,
-    'hsppaket3_id' => 9,
-    'kodepekerjaan' => '1',
-    'namapekerjaan' => 'Ubin PC',
-]);
 
 hspkodepekerjaan3::create([
     'id' => 15,
