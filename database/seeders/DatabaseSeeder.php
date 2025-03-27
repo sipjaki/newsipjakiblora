@@ -12686,6 +12686,146 @@ hspkonstruksiumum3::create([
     'hargasatuan' => '118699',
 ]);
 
+hspkonstruksiumum3::create([
+    'id' => 85,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 8,
+    'kode' => '1',
+    'subhargadiv3_id' => 85,
+    'subhargadiv3bahan_id' => 85,
+    'subhargadiv3peralatan_id' => 85,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Dinding Conblock HB20 dengan Mortar Tipe S,fc’ 12, 5 MPa (Setara Campuran 1SP : 3PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '422905',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 86,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 8,
+    'kode' => '2',
+    'subhargadiv3_id' => 86,
+    'subhargadiv3bahan_id' => 86,
+    'subhargadiv3peralatan_id' => 86,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Dinding Conblock HB20 Campuran 1SP :4PP dengan Mortar Tipe N,fc’ 5,2 MPa (Setara Campuran 1SP : 4PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '432881',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 87,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 8,
+    'kode' => '3',
+    'subhargadiv3_id' => 87,
+    'subhargadiv3bahan_id' => 87,
+    'subhargadiv3peralatan_id' => 87,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Conblock HB15 dengan Mortar Tipe S, fc’ 12,5 MPa (Setara Campuran 1SP : 3PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '318819',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 88,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 8,
+    'kode' => '4',
+    'subhargadiv3_id' => 88,
+    'subhargadiv3bahan_id' => 88,
+    'subhargadiv3peralatan_id' => 88,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Conblock HB15 dengan Mortar Tipe N, fc’ 5,2 MPa (Setara Campuran 1SP : 4PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '192332',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 89,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 8,
+    'kode' => '5',
+    'subhargadiv3_id' => 89,
+    'subhargadiv3bahan_id' => 89,
+    'subhargadiv3peralatan_id' => 89,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Conblock HB10 dengan Mortar Tipe S, fc’ 12,5 MPa (Setara Campuran 1SP : 3PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '224255',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 90,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 8,
+    'kode' => '6',
+    'subhargadiv3_id' => 90,
+    'subhargadiv3bahan_id' => 90,
+    'subhargadiv3peralatan_id' => 90,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Conblock HB10 dengan Mortar Tipe N, fc’ 5,2 MPa (Setara Campuran 1SP : 4PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '162025',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 91,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 9,
+    'kode' => '1',
+    'subhargadiv3_id' => 91,
+    'subhargadiv3bahan_id' => 91,
+    'subhargadiv3peralatan_id' => 91,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Kerawang (Rooster) 12x11x24 dengan Mortar Tipe S,fc’ 12, 5 MPa (Setara Campuran 1SP : 3PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '460237',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 92,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 9,
+    'kode' => '2',
+    'subhargadiv3_id' => 92,
+    'subhargadiv3bahan_id' => 92,
+    'subhargadiv3peralatan_id' => 92,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Dinding Kerawang (rooster) 12x11x24 dengan Mortar Tipe N,fc’ 5,2 MPa (Setara Campuran 1SP : 4PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '460237',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 93,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 9,
+    'kode' => '3',
+    'subhargadiv3_id' => 93,
+    'subhargadiv3bahan_id' => 93,
+    'subhargadiv3peralatan_id' => 93,
+    'jenispekerjaan' => 'Pemasangan  1  m2   Dinding  Bata  Berongga  Ekspose  12x11x24 dengan Mortar Tipe S,fc’ 12, 5 MPa (Setara Campuran 1SP : 3PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '481385',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 94,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 9,
+    'kode' => '4',
+    'subhargadiv3_id' => 94,
+    'subhargadiv3bahan_id' => 94,
+    'subhargadiv3peralatan_id' => 94,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Glass Block 20x20 cm, 1 PC : 3 PP',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '352889',
+]);
+
 // MAKAN YU
 
 // ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
