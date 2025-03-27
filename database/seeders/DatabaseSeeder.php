@@ -9136,8 +9136,6 @@ satuanhargamaterial::create([
     'besaran' => '600',
 ]);
 
-
-// MAKAN YU
 //======================== ===================================================================================
 // SATUAN HARGA UPAH MAS JAKI BLORA
 satuanhargaupahtenagakerja::create([
@@ -11513,19 +11511,21 @@ hspkodepekerjaan3::create([
 // ================================================================================================================================
 
 hspkonstruksiumum3::create([
+    'id' => 1,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 1,
     'kode' => '1',
-'subhargadiv3_id' => 1,
-'subhargadiv3bahan_id' => 1,
-'subhargadiv3peralatan_id' => 1,
-'jenispekerjaan' => 'Pemasangan 1 m2 Atap Genteng Palentong Kecil',
-'satuanmaterial' => 'M2',
-'hargasatuan' => '104607.25',
+    'subhargadiv3_id' => 1,
+    'subhargadiv3bahan_id' => 1,
+    'subhargadiv3peralatan_id' => 1,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Genteng Palentong Kecil',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '104607.25',
 ]);
 
 hspkonstruksiumum3::create([
+    'id' => 2,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 1,
@@ -11539,6 +11539,7 @@ hspkonstruksiumum3::create([
 ]);
 
 hspkonstruksiumum3::create([
+    'id' => 3,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 1,
@@ -11552,6 +11553,7 @@ hspkonstruksiumum3::create([
 ]);
 
 hspkonstruksiumum3::create([
+    'id' => 4,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 1,
@@ -11565,6 +11567,7 @@ hspkonstruksiumum3::create([
 ]);
 
 hspkonstruksiumum3::create([
+    'id' => 5,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 1,
@@ -11578,6 +11581,7 @@ hspkonstruksiumum3::create([
 ]);
 
 hspkonstruksiumum3::create([
+    'id' => 6,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 1,
@@ -11591,6 +11595,7 @@ hspkonstruksiumum3::create([
 ]);
 
 hspkonstruksiumum3::create([
+    'id' => 7,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 1,
@@ -11604,6 +11609,7 @@ hspkonstruksiumum3::create([
 ]);
 
 hspkonstruksiumum3::create([
+    'id' => 8,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 1,
@@ -11617,6 +11623,7 @@ hspkonstruksiumum3::create([
 ]);
 
 hspkonstruksiumum3::create([
+    'id' => 9,
     'hspdivisi_id' => 3,
     'hsppaket3_id' => 1,
     'hspkodepekerjaan3_id' => 2,
@@ -11628,6 +11635,316 @@ hspkonstruksiumum3::create([
     'satuanmaterial' => 'M2',
     'hargasatuan' => '98834',
 ]);
+
+hspkonstruksiumum3::create([
+    'id' => 10,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '2',
+    'subhargadiv3_id' => 10,
+    'subhargadiv3bahan_id' => 10,
+    'subhargadiv3peralatan_id' => 10,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 92cm x 225cm x 5mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '109821',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 11,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '3',
+    'subhargadiv3_id' => 11,
+    'subhargadiv3bahan_id' => 11,
+    'subhargadiv3peralatan_id' => 11,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 92cm x 200cm x 5mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '109141',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 12,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '4',
+    'subhargadiv3_id' => 12,
+    'subhargadiv3bahan_id' => 12,
+    'subhargadiv3peralatan_id' => 12,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 92cm x 180cm x 5mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '128776',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 13,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '5',
+    'subhargadiv3_id' => 13,
+    'subhargadiv3bahan_id' => 13,
+    'subhargadiv3peralatan_id' => 13,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 105cm x 270cm x 4mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '82727',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 14,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '6',
+    'subhargadiv3_id' => 14,
+    'subhargadiv3bahan_id' => 14,
+    'subhargadiv3peralatan_id' => 14,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 105cm x 300cm x 5mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '77889',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 15,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '7',
+    'subhargadiv3_id' => 15,
+    'subhargadiv3bahan_id' => 15,
+    'subhargadiv3peralatan_id' => 15,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 105cm x 240cm x 5mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '72516',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 16,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '8',
+    'subhargadiv3_id' => 16,
+    'subhargadiv3bahan_id' => 16,
+    'subhargadiv3peralatan_id' => 16,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 105cm x 210cm x 5mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '73069',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 17,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '9',
+    'subhargadiv3_id' => 17,
+    'subhargadiv3bahan_id' => 17,
+    'subhargadiv3peralatan_id' => 17,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 105cm x 150cm x 5mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '78561',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 18,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '10',
+    'subhargadiv3_id' => 18,
+    'subhargadiv3bahan_id' => 18,
+    'subhargadiv3peralatan_id' => 18,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 108cm x 300cm x 6mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '84661',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 19,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '11',
+    'subhargadiv3_id' => 19,
+    'subhargadiv3bahan_id' => 19,
+    'subhargadiv3peralatan_id' => 19,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 108cm x 270cm x 6mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '81942',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 20,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '12',
+    'subhargadiv3_id' => 20,
+    'subhargadiv3bahan_id' => 20,
+    'subhargadiv3peralatan_id' => 20,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 108cm x 240cm x 6mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '79481',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 21,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '13',
+    'subhargadiv3_id' => 21,
+    'subhargadiv3bahan_id' => 21,
+    'subhargadiv3peralatan_id' => 21,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 108cm x 210cm x 6mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '76794',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 22,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '14',
+    'subhargadiv3_id' => 22,
+    'subhargadiv3bahan_id' => 22,
+    'subhargadiv3peralatan_id' => 22,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 108cm x 180cm x 6mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '71043',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 23,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '15',
+    'subhargadiv3_id' => 23,
+    'subhargadiv3bahan_id' => 23,
+    'subhargadiv3peralatan_id' => 23,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Setel Gelombang 92 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '80418',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 24,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '16',
+    'subhargadiv3_id' => 24,
+    'subhargadiv3bahan_id' => 24,
+    'subhargadiv3peralatan_id' => 24,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Setel Gelombang 105 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '121321',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 25,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '17',
+    'subhargadiv3_id' => 25,
+    'subhargadiv3bahan_id' => 25,
+    'subhargadiv3peralatan_id' => 25,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Setel Gelombang 108 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '117048',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 26,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '18',
+    'subhargadiv3_id' => 26,
+    'subhargadiv3bahan_id' => 26,
+    'subhargadiv3peralatan_id' => 26,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Paten (Permanen) 92 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '53963',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 27,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '19',
+    'subhargadiv3_id' => 27,
+    'subhargadiv3bahan_id' => 27,
+    'subhargadiv3peralatan_id' => 27,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Paten (Permanen) 105 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '55998',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 28,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '20',
+    'subhargadiv3_id' => 28,
+    'subhargadiv3bahan_id' => 28,
+    'subhargadiv3peralatan_id' => 28,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Paten (Permanen) 108 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '55998',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 29,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '21',
+    'subhargadiv3_id' => 29,
+    'subhargadiv3bahan_id' => 29,
+    'subhargadiv3peralatan_id' => 29,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Setel Rata 92 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '59020',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 30,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '22',
+    'subhargadiv3_id' => 30,
+    'subhargadiv3bahan_id' => 30,
+    'subhargadiv3peralatan_id' => 30,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Setel Rata 105 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '53963',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 31,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
+    'kode' => '23',
+    'subhargadiv3_id' => 31,
+    'subhargadiv3bahan_id' => 31,
+    'subhargadiv3peralatan_id' => 31,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Setel Rata 108 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '53963',
+]);
+
+// MAKAN YU
 
 // ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
 hsppaket4::create([
