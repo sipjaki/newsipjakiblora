@@ -7948,6 +7948,318 @@ satuanhargamaterial::create([
     'besaran' => '3000000',
 ]);
 
+satuanhargamaterial::create([
+    'uraian' => 'Pintu Tahan Api',
+    'satuan' => 'Unit',
+    'besaran' => '1000000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Besi Hitam 1" (tebal 1,6 mm)',
+    'satuan' => 'M1',
+    'besaran' => '19166',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Besi Hitam 1,5" (tebal 1,6 mm)',
+    'satuan' => 'M1',
+    'besaran' => '26333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Besi Hitam 2" (tebal 1,6 mm)',
+    'satuan' => 'M1',
+    'besaran' => '30500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Besi Hitam 3" (tebal 2 mm)',
+    'satuan' => 'M1',
+    'besaran' => '63000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC 3/4"',
+    'satuan' => 'M1',
+    'besaran' => '5400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plafon Akustik 30 x 30 cm (Jayaakustik Sopran Square Edge (SE) tebal 9 mm)',
+    'satuan' => 'Lembar',
+    'besaran' => '3637',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plafon Akustik 30 x 60 cm (Jayaakustik Sopran Square Edge (SE)  tebal 9 mm)',
+    'satuan' => 'Lembar',
+    'besaran' => '7275',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plafon Akustik 60 x 120 cm (Jayaakustik Sopran Square Edge (SE) tebal 9 mm)',
+    'satuan' => 'Lembar',
+    'besaran' => '29100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plamur',
+    'satuan' => 'Kg',
+    'besaran' => '15000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plastik Aerator',
+    'satuan' => 'Buah',
+    'besaran' => '110000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plat BJLS Galvalum',
+    'satuan' => 'M2',
+    'besaran' => '64000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Homogeneous Tile ukuran 10 s.d. 15 cm x 40 cm',
+    'satuan' => 'Buah',
+    'besaran' => '13171',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Homogeneous Tile ukuran 10 s.d. 15 cm x 60 cm',
+    'satuan' => 'Buah',
+    'besaran' => '32083',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Homogeneous Tile ukuran 10 s.d.15 cm x 30 cm',
+    'satuan' => 'Buah',
+    'besaran' => '10776',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Internal Cove 5x5x20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '21375',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Keramik 10-15 x 20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '2403',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Keramik 10-15 x 30 cm',
+    'satuan' => 'Buah',
+    'besaran' => '3681',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Keramik 10-15 x 40 cm',
+    'satuan' => 'Buah',
+    'besaran' => '5343',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Keramik 10-15 x 60 cm',
+    'satuan' => 'Buah',
+    'besaran' => '10680',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Teralux Kerang 10-15 x 30 cm',
+    'satuan' => 'Buah',
+    'besaran' => '7500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Teralux Kerang 10-15 x 40 cm',
+    'satuan' => 'Buah',
+    'besaran' => '10000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Teralux Kerang 10-15 x 60 cm',
+    'satuan' => 'Buah',
+    'besaran' => '20000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Teralux Marmer 10-15 x 30 cm',
+    'satuan' => 'Buah',
+    'besaran' => '30250',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Teralux Marmer 10-15 x 40 cm',
+    'satuan' => 'Buah',
+    'besaran' => '36972',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Teralux Marmer 10-15 x 60 cm',
+    'satuan' => 'Buah',
+    'besaran' => '73944',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Granit 10-15 x 30 cm',
+    'satuan' => 'Buah',
+    'besaran' => '40333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Granit 10-15 x 40 cm',
+    'satuan' => 'Buah',
+    'besaran' => '73944',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Granit 10-15 x 60 cm',
+    'satuan' => 'Buah',
+    'besaran' => '147888',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Granit 10-15 x 60 cm Merk China',
+    'satuan' => 'Buah',
+    'besaran' => '10833',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin PC Abu-Abu 10-15 x 20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '1800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin PC Abu-Abu 10-15 x 30 cm',
+    'satuan' => 'Buah',
+    'besaran' => '2040',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin PC Abu-Abu 10-15 x 40 cm',
+    'satuan' => 'Buah',
+    'besaran' => '4080',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin PC Abu-Abu 10-15 x 60 cm',
+    'satuan' => 'Buah',
+    'besaran' => '9180',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Teraso 10-15 x 30 cm',
+    'satuan' => 'Buah',
+    'besaran' => '11818',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Teraso 10-15 x 40 cm',
+    'satuan' => 'Buah',
+    'besaran' => '14444',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Warna 10-15 x 20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '2280',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Warna 10-15 x 30 cm',
+    'satuan' => 'Buah',
+    'besaran' => '2220',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Warna 10-15 x 40 cm',
+    'satuan' => 'Buah',
+    'besaran' => '4320',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plint Ubin Warna 10-15 x 60 cm',
+    'satuan' => 'Buah',
+    'besaran' => '9720',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plywood 4 mm, 120 x 240',
+    'satuan' => 'Lembar',
+    'besaran' => '70700',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plywood 6 mm',
+    'satuan' => 'Lembar',
+    'besaran' => '82500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plywood tebal 4 mm ukuran (90x220) cm',
+    'satuan' => 'Lembar',
+    'besaran' => '70700',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Porselen 10x20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '1800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Porselen 11x11 cm',
+    'satuan' => 'Dus',
+    'besaran' => '180000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Porselen 11x11 cm (buah)',
+    'satuan' => 'Buah',
+    'besaran' => '2168',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Porselen 20x20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '5000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Profil Aluminium',
+    'satuan' => 'M1',
+    'besaran' => '131250',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Profil Aluminium ”T”',
+    'satuan' => 'M1',
+    'besaran' => '14027',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Profil Aluminium  4" (Putih + Powder Coating)',
+    'satuan' => 'M1',
+    'besaran' => '89000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Profil Kaca tebal 6 mm',
+    'satuan' => 'M2',
+    'besaran' => '150880',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Ramset',
+    'satuan' => 'Buah',
+    'besaran' => '2000',
+]);
+
 
 
 
