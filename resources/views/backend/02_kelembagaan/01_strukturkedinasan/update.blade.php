@@ -118,8 +118,13 @@
                                             <label class="form-label" for="peraturan">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar
                                             </label>
-                                            <img src="img-preview img-fluid" alt="">
-                                            <input type="file" name="peraturan" class="form-control" id="peraturan" @error('peraturan') is-invalid @enderror onchange="previewImage()"/>
+
+                                            <!-- Preview Gambar -->
+                                            <img id="img-preview" class="img-fluid" alt="Preview Gambar" style="max-width: 100%; max-height: 200px; display: none;" />
+
+                                            <!-- Input File untuk Mengunggah Gambar -->
+                                            <input type="file" name="peraturan" class="form-control @error('peraturan') is-invalid @enderror" id="peraturan" onchange="previewImage()" />
+
                                             <div style="margin-top: 10px;">
                                                 @if($data->peraturan)  <!-- Cek jika ada file sebelumnya -->
                                                     <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
@@ -127,13 +132,14 @@
                                                     </object>
                                                 @endif
                                                 @error('peraturan')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
-                                                </div>
+                                                    <div class="invalid-feedback">
+                                                        {{$message}}
+                                                    </div>
                                                 @enderror
                                             </div>
                                         </div>
                                     </div>
+
                                 </div> <!-- end row -->
                             </div>
                             <!-- end::Body -->
