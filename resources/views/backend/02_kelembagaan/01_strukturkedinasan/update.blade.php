@@ -124,7 +124,7 @@
 
                                             <!-- Input File untuk Mengunggah Gambar -->
                                             <input type="file" name="peraturan" class="form-control @error('peraturan') is-invalid @enderror" id="peraturan" onchange="previewImage()" />
-
+{{--
                                             <div style="margin-top: 10px;">
                                                 @if($data->peraturan)  <!-- Cek jika ada file sebelumnya -->
                                                     <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
@@ -136,7 +136,7 @@
                                                         {{$message}}
                                                     </div>
                                                 @enderror
-                                            </div>
+                                            </div> --}}
                                         </div>
 
                                         <script>
