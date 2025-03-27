@@ -79,7 +79,7 @@
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{!! $item->judul !!}</td>
                                         <td style="text-align: center;">
-                                            <iframe src="{{ asset('storage/' . $item->peraturan) }}" width="300" height="200"></iframe>
+                                            <iframe src="{{ ('storage//kedinasan' . $item->peraturan) }}" width="300" height="200"></iframe>
                                         </td>
                                         <td style="text-align: justify;">{!! $item->keterangan !!}</td>
                                         <td style="text-align: center;">
