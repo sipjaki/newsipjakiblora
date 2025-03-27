@@ -11399,13 +11399,6 @@ hspkodepekerjaan3::create([
 ]);
 
 hspkodepekerjaan3::create([
-    'id' => 17,
-    'hsppaket3_id' => 9,
-    'kodepekerjaan' => '3',
-    'namapekerjaan' => 'Ubin Teraso',
-]);
-
-hspkodepekerjaan3::create([
     'id' => 18,
     'hsppaket3_id' => 9,
     'kodepekerjaan' => '4',
