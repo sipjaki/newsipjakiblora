@@ -138,31 +138,32 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <script>
-                                        function previewImage() {
-                                            const peraturan = document.querySelector('#peraturan');
-                                            const imgPreview = document.querySelector('#img-preview');
+                                        <script>
+                                            function previewImage() {
+                                                const peraturan = document.querySelector('#peraturan');
+                                                const imgPreview = document.querySelector('#img-preview');
 
-                                            // Pastikan file dipilih
-                                            const file = peraturan.files[0];
+                                                // Pastikan file dipilih
+                                                const file = peraturan.files[0];
 
-                                            // Jika ada file yang dipilih dan file tersebut adalah gambar
-                                            if (file && file.type.startsWith('image')) {
-                                                const reader = new FileReader();
+                                                // Jika ada file yang dipilih dan file tersebut adalah gambar
+                                                if (file && file.type.startsWith('image')) {
+                                                    const reader = new FileReader();
 
-                                                reader.onload = function(e) {
-                                                    imgPreview.src = e.target.result;  // Menampilkan gambar yang dipilih
-                                                    imgPreview.style.display = 'block'; // Menampilkan gambar setelah dipilih
+                                                    reader.onload = function(e) {
+                                                        imgPreview.src = e.target.result;  // Menampilkan gambar yang dipilih
+                                                        imgPreview.style.display = 'block'; // Menampilkan gambar setelah dipilih
+                                                    }
+
+                                                    reader.readAsDataURL(file);  // Membaca file gambar
+                                                } else {
+                                                    imgPreview.style.display = 'none';  // Menyembunyikan gambar jika file bukan gambar
                                                 }
-
-                                                reader.readAsDataURL(file);  // Membaca file gambar
-                                            } else {
-                                                imgPreview.style.display = 'none';  // Menyembunyikan gambar jika file bukan gambar
                                             }
-                                        }
-                                    </script>
+                                        </script>
+
+                                    </div>
 
                                 </div> <!-- end row -->
                             </div>
