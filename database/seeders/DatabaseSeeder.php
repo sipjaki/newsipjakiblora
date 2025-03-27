@@ -11958,6 +11958,216 @@ hspkonstruksiumum3::create([
     'hargasatuan' => '156850',
 ]);
 
+hspkonstruksiumum3::create([
+    'id' => 33,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '2.a',
+    'subhargadiv3_id' => 33,
+    'subhargadiv3bahan_id' => 33,
+    'subhargadiv3peralatan_id' => 33,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Kanopi Galvalum Rangka Hollow',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '601783',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 34,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '3',
+    'subhargadiv3_id' => 34,
+    'subhargadiv3bahan_id' => 34,
+    'subhargadiv3peralatan_id' => 34,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Sirap Kayu',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '154120',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 35,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '4',
+    'subhargadiv3_id' => 35,
+    'subhargadiv3bahan_id' => 35,
+    'subhargadiv3peralatan_id' => 35,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Fibreglass 90cm x 180cm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '95363',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 36,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '5',
+    'subhargadiv3_id' => 36,
+    'subhargadiv3bahan_id' => 36,
+    'subhargadiv3peralatan_id' => 36,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap UPVC',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '64303',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 37,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '6',
+    'subhargadiv3_id' => 37,
+    'subhargadiv3bahan_id' => 37,
+    'subhargadiv3peralatan_id' => 37,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Aspal/Bitumen',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '339760',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 38,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '7',
+    'subhargadiv3_id' => 38,
+    'subhargadiv3bahan_id' => 38,
+    'subhargadiv3peralatan_id' => 38,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Metal Lembaran',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '186542',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 39,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '8',
+    'subhargadiv3_id' => 39,
+    'subhargadiv3bahan_id' => 39,
+    'subhargadiv3peralatan_id' => 39,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Metal Menerus Tebal 0.4 mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '326737',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 40,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '9.1',
+    'subhargadiv3_id' => 40,
+    'subhargadiv3bahan_id' => 40,
+    'subhargadiv3peralatan_id' => 40,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Kaca Tempered tebal 8 mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '798129',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 41,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '10',
+    'subhargadiv3_id' => 41,
+    'subhargadiv3bahan_id' => 41,
+    'subhargadiv3peralatan_id' => 41,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Atap Seng Gelombang',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '54267',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 42,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '11',
+    'subhargadiv3_id' => 42,
+    'subhargadiv3bahan_id' => 42,
+    'subhargadiv3peralatan_id' => 42,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Atap Aluminium Gelombang',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '192715',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 43,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '13',
+    'subhargadiv3_id' => 43,
+    'subhargadiv3bahan_id' => 43,
+    'subhargadiv3peralatan_id' => 43,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Genteng Aspal/Bitumen',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '236390',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 44,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '14',
+    'subhargadiv3_id' => 44,
+    'subhargadiv3bahan_id' => 44,
+    'subhargadiv3peralatan_id' => 44,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Nok/Bubung Genteng Metal',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '116244',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 45,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '1',
+    'subhargadiv3_id' => 45,
+    'subhargadiv3bahan_id' => 45,
+    'subhargadiv3peralatan_id' => 45,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Lembaran Insulasi Atap',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '23760',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 46,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '2',
+    'subhargadiv3_id' => 46,
+    'subhargadiv3bahan_id' => 46,
+    'subhargadiv3peralatan_id' => 46,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Modul Insulasi Tebal 8 cm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '58889',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 47,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '3',
+    'subhargadiv3_id' => 47,
+    'subhargadiv3bahan_id' => 47,
+    'subhargadiv3peralatan_id' => 47,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Foam Insulasi Atap',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '51673',
+]);
+
 // MAKAN YU
 
 // ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
