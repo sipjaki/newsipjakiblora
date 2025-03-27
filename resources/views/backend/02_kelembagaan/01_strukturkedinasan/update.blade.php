@@ -90,7 +90,7 @@
                         <!--begin::Quick Example-->
                         <form action="{{ route('update.strukturcreatebaru', $data->judul) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('POST')  <!-- Menggunakan PUT untuk update -->
+                            @method('POST') <!-- Anda bisa ganti dengan PUT jika Anda ingin menggunakan metode PUT untuk update -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -98,26 +98,28 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label class="form-label">
+                                            <label class="form-label" for="judul">
                                                 <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Judul
                                             </label>
                                             <input type="text" id="judul" name="judul" class="form-control" value="{{ old('judul', $data->judul) }}" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">
+                                            <label class="form-label" for="keterangan">
                                                 <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
                                             </label>
                                             <textarea id="keterangan" name="keterangan" class="form-control" rows="6">{{ old('keterangan', $data->keterangan) }}</textarea>
                                         </div>
                                     </div>
                                     <!-- End Left Column -->
+
+                                    <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label class="form-label">
+                                            <label class="form-label" for="peraturan">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar
                                             </label>
-                                            <input type="file" name="peraturan" class="form-control" id="peraturan" />
-                                            <div id="peraturan" style="margin-top: 10px;">
+                                            <input type="file" name="peraturan" class="form-control" id="fileUpload" />
+                                            <div id="filePreview" style="margin-top: 10px;">
                                                 @if($data->peraturan)  <!-- Cek jika ada file sebelumnya -->
                                                     <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
                                                         <p>PDF cannot be displayed.</p>
@@ -126,7 +128,6 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div> <!-- end row -->
                             </div>
                             <!-- end::Body -->
@@ -139,7 +140,7 @@
                             </div>
                         </form>
 
-                        </div>
+                             </div>
                         <!--end::Quick Example-->
 
                     </div>

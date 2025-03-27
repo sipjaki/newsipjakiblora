@@ -54,42 +54,46 @@ class StrukturController extends Controller
 
                 // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
                 public function updatestrukturcreate(Request $request, $judul)
-                        {
-                            // Validasi input
-                            $request->validate([
-                                'judul' => 'required|string|max:255',
-                                'keterangan' => 'required|string',
-                                'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
-                            ]);
+{
+    // Validasi input
+    $request->validate([
+        'judul' => 'required|string|max:255',
+        'keterangan' => 'required|string',
+        'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
+    ]);
 
-                        // Cari data undang-undang berdasarkan nilai 'judul'
-                        $strukturdinas = strukturdinas::where('judul', $judul)->firstOrFail();
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $strukturdinas = Strukturdinas::where('judul', $judul)->firstOrFail();
 
-                        // Simpan file dan ambil path-nya
-                        $filePath = null;
-                        if ($request->hasFile('peraturan')) {
-                            $file = $request->file('peraturan');
-                            $filePath = $file->store('01_kelembagaan/01_dinas', 'public'); // Menyimpan di storage/app/public/undangundang
-                        }
+    // Simpan file jika ada yang di-upload
+    $filePath = $strukturdinas->peraturan; // Default ke file lama jika tidak ada file baru
+    if ($request->hasFile('peraturan')) {
+        // Jika ada file lama, hapus file tersebut
+        if ($strukturdinas->peraturan) {
+            $oldFilePath = storage_path('app/public/' . $strukturdinas->peraturan);
+            if (file_exists($oldFilePath)) {
+                unlink($oldFilePath); // Hapus file lama jika ada
+            }
+        }
 
-                        // Update data undang-undang dengan data dari form
-                        $strukturdinas->update([
-                            'judul' => $request->input('judul'),
-                            'peraturan' => $filePath ? $filePath : $strukturdinas->peraturan, // Gunakan path baru jika ada file
-                        ]);
-                            // Update data strukturdinas dengan data dari form
-                            $strukturdinas->update([
-                                'judul' => $request->input('judul'),
-                                'keterangan' => $request->input('keterangan'),
-                                'peraturan' => $filePath, // Menyimpan path file yang baru
-                            ]);
+        // Menyimpan file baru
+        $file = $request->file('peraturan');
+        $filePath = $file->store('01_kelembagaan/01_dinas', 'public'); // Menyimpan di storage/app/public
+    }
 
-                            // Flash session untuk menampilkan pesan sukses
-                            session()->flash('update', 'Data Berhasil Diupdate!');
+    // Update data strukturdinas dengan data dari form
+    $strukturdinas->update([
+        'judul' => $request->input('judul'),
+        'keterangan' => $request->input('keterangan'),
+        'peraturan' => $filePath, // Menyimpan path file yang baru
+    ]);
 
-                            // Redirect ke halaman yang sesuai
-                            return redirect('/bestrukturdinas');
-                        }
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/bestrukturdinas');
+}
 
     //    ======================================================================
 
