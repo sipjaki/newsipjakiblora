@@ -140,30 +140,34 @@
                                         </div>
                                     </div>
 
+                                    <script>
+                                        function previewImage() {
+                                            const peraturan = document.querySelector('#peraturan');
+                                            const imgPreview = document.querySelector('#img-preview');
+
+                                            // Pastikan file dipilih
+                                            const file = peraturan.files[0];
+
+                                            // Jika ada file yang dipilih dan file tersebut adalah gambar
+                                            if (file && file.type.startsWith('image')) {
+                                                const reader = new FileReader();
+
+                                                reader.onload = function(e) {
+                                                    imgPreview.src = e.target.result;  // Menampilkan gambar yang dipilih
+                                                    imgPreview.style.display = 'block'; // Menampilkan gambar setelah dipilih
+                                                }
+
+                                                reader.readAsDataURL(file);  // Membaca file gambar
+                                            } else {
+                                                imgPreview.style.display = 'none';  // Menyembunyikan gambar jika file bukan gambar
+                                            }
+                                        }
+                                    </script>
+
+
                                 </div> <!-- end row -->
                             </div>
                             <!-- end::Body -->
-                            <script>
-                                function previewImage() {
-                                    const peraturan = document.querySelector('#peraturan');
-                                    const imgPreview = document.querySelector('.img-preview');
-
-                                    // Pastikan file dipilih
-                                    const file = peraturan.files[0];
-                                    if (file) {
-                                        // Pastikan file yang dipilih adalah gambar
-                                        const reader = new FileReader();
-
-                                        reader.onload = function(e) {
-                                            imgPreview.src = e.target.result;  // Menampilkan gambar yang dipilih
-                                            imgPreview.style.display = 'block'; // Menampilkan gambar setelah dipilih
-                                        }
-
-                                        reader.readAsDataURL(file);  // Membaca file gambar
-                                    }
-                                }
-                            </script>
-
                             <br><br>
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
                                 <button type="submit" style="background-color: #117235; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
