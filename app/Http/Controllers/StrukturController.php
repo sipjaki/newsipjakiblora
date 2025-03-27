@@ -56,7 +56,7 @@ class StrukturController extends Controller
                 public function updatestrukturcreate(Request $request, $judul)
                 {
                     // Validasi input
-                    $request->validate([
+                    $validatedData = $request->validate([
                         'judul' => 'required|string|max:255',
                         'keterangan' => 'required|string',
                         'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
@@ -68,9 +68,15 @@ class StrukturController extends Controller
                     // Inisialisasi variabel filePath dengan nilai null
                     $filePath = null;
 
-                    if ($request->file('peraturan')) {
-                        // Jika ada file yang diupload, simpan file dan ambil path-nya
-                        $filePath = $request->file('peraturan')->store('kedinasan');
+                    // Jika ada file yang diupload
+                    if ($request->hasFile('peraturan')) {
+                        // Validasi tambahan jika file diupload
+                        $request->validate([
+                            'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
+                        ]);
+
+                        // Simpan file dan ambil path-nya
+                        $filePath = $request->file('peraturan')->store('kedinasan', 'public'); // Simpan di storage/public/kedinasan
                     }
 
                     // Update data strukturdinas dengan data dari form
@@ -86,6 +92,7 @@ class StrukturController extends Controller
                     // Redirect ke halaman yang sesuai
                     return redirect('/bestrukturdinas');
                 }
+
 
     //    ======================================================================
 
