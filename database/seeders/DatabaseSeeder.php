@@ -8260,6 +8260,288 @@ satuanhargamaterial::create([
     'besaran' => '2000',
 ]);
 
+satuanhargamaterial::create([
+    'uraian' => 'Rangka Aluminium',
+    'satuan' => 'M1',
+    'besaran' => '120000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Rangka Metal Hollow 20.40',
+    'satuan' => 'M1',
+    'besaran' => '5200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Rangka Metal Hollow 40.40',
+    'satuan' => 'M1',
+    'besaran' => '6700',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Hollow Galvanis Kotak uk. 40x40x1,5mm',
+    'satuan' => 'M1',
+    'besaran' => '28333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Hollow Galvanis Kotak uk.20x40x0,8mm',
+    'satuan' => 'M1',
+    'besaran' => '14166',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Rel Pintu Dorong',
+    'satuan' => 'Set',
+    'besaran' => '135000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Rel Pintu Sorong',
+    'satuan' => 'Set',
+    'besaran' => '135000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Residu atau Ter',
+    'satuan' => 'Liter',
+    'besaran' => '5400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Rolling Door Aluminium',
+    'satuan' => 'M2',
+    'besaran' => '525000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Rolling Door Besi',
+    'satuan' => 'M2',
+    'besaran' => '450000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Rooflight Ukuran 90cm x 180 cm',
+    'satuan' => 'Lembar',
+    'besaran' => '99000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sabun',
+    'satuan' => 'Kg',
+    'besaran' => '35000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sanding',
+    'satuan' => 'Kg',
+    'besaran' => '87500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sealant (tube)',
+    'satuan' => 'Tube',
+    'besaran' => '37500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sealent (buah)',
+    'satuan' => 'Buah',
+    'besaran' => '161071',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sealtape',
+    'satuan' => 'Buah',
+    'besaran' => '1600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sekat Kubikel + Aksesoris',
+    'satuan' => 'M2',
+    'besaran' => '2500000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sekat Urinoir',
+    'satuan' => 'Buah',
+    'besaran' => '1701000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sekrup',
+    'satuan' => 'Kg',
+    'besaran' => '31200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sekrup 3,5”',
+    'satuan' => 'Buah',
+    'besaran' => '885',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sekrup Fixer',
+    'satuan' => 'Buah',
+    'besaran' => '885',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Semen Warna',
+    'satuan' => 'Kg',
+    'besaran' => '1800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Seng Pelat (m)',
+    'satuan' => 'M',
+    'besaran' => '31000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Seng Pelat 3”x6” bjls 28',
+    'satuan' => 'Lembar',
+    'besaran' => '85500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat semen termasuk alat pasang (KALSIBOARD Papan Plafon Asbes Plafon Metric 1x1 3.5 mm)',
+    'satuan' => 'M2',
+    'besaran' => '23000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 105x150',
+    'satuan' => 'Lembar',
+    'besaran' => '54500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 105x210',
+    'satuan' => 'Lembar',
+    'besaran' => '75700',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 105x240',
+    'satuan' => 'Lembar',
+    'besaran' => '86600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 105x270',
+    'satuan' => 'Lembar',
+    'besaran' => '112825',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 105x300',
+    'satuan' => 'Lembar',
+    'besaran' => '122825',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 108x180',
+    'satuan' => 'Lembar',
+    'besaran' => '64500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 108x210',
+    'satuan' => 'Lembar',
+    'besaran' => '85700',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 108x240',
+    'satuan' => 'Lembar',
+    'besaran' => '96600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 108x270',
+    'satuan' => 'Lembar',
+    'besaran' => '122825',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 108x300',
+    'satuan' => 'Lembar',
+    'besaran' => '132825',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 92x180',
+    'satuan' => 'Lembar',
+    'besaran' => '119000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 92x200',
+    'satuan' => 'Lembar',
+    'besaran' => '119000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 92x225',
+    'satuan' => 'Lembar',
+    'besaran' => '119000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serat Semen Gelombang 92x250',
+    'satuan' => 'Lembar',
+    'besaran' => '122825',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serbuk Batu Granit',
+    'satuan' => 'Kg',
+    'besaran' => '8250',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Serbuk Batu Traso',
+    'satuan' => 'Kg',
+    'besaran' => '5555',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Silicone Sealant 300 ml',
+    'satuan' => 'Tube',
+    'besaran' => '5500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Sirap Kayu',
+    'satuan' => 'Buah',
+    'besaran' => '3000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Soap Holder',
+    'satuan' => 'Unit',
+    'besaran' => '138600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Soda Api (Caustic Soda)',
+    'satuan' => 'Kg',
+    'besaran' => '35000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Spring Knip',
+    'satuan' => 'Buah',
+    'besaran' => '25000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Stop Keran 1/2”',
+    'satuan' => 'Buah',
+    'besaran' => '90400',
+]);
+
 
 
 
