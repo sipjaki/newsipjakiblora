@@ -12129,7 +12129,7 @@ hspkonstruksiumum3::create([
 hspkonstruksiumum3::create([
     'id' => 45,
     'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
+    'hsppaket3_id' => 2,
     'hspkodepekerjaan3_id' => null,
     'kode' => '1',
     'subhargadiv3_id' => 45,
@@ -12143,7 +12143,7 @@ hspkonstruksiumum3::create([
 hspkonstruksiumum3::create([
     'id' => 46,
     'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
+    'hsppaket3_id' => 2,
     'hspkodepekerjaan3_id' => null,
     'kode' => '2',
     'subhargadiv3_id' => 46,
@@ -12157,7 +12157,7 @@ hspkonstruksiumum3::create([
 hspkonstruksiumum3::create([
     'id' => 47,
     'hspdivisi_id' => 3,
-    'hsppaket3_id' => 1,
+    'hsppaket3_id' => 2,
     'hspkodepekerjaan3_id' => null,
     'kode' => '3',
     'subhargadiv3_id' => 47,
@@ -12166,6 +12166,104 @@ hspkonstruksiumum3::create([
     'jenispekerjaan' => 'Pemasangan 1 m2 Foam Insulasi Atap',
     'satuanmaterial' => 'M2',
     'hargasatuan' => '51673',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 48,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 3,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '1',
+    'subhargadiv3_id' => 48,
+    'subhargadiv3bahan_id' => 48,
+    'subhargadiv3peralatan_id' => 48,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Talang Datar/ Jurai Seng BJLS 28 Lebar 90 cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '319274',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 49,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 3,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '2',
+    'subhargadiv3_id' => 49,
+    'subhargadiv3bahan_id' => 49,
+    'subhargadiv3peralatan_id' => 49,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Talang ½ Lingkaran D-15 cm, Seng Pelat BJLS 30',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '101987',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 50,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 3,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '3',
+    'subhargadiv3_id' => 50,
+    'subhargadiv3bahan_id' => 50,
+    'subhargadiv3peralatan_id' => 50,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Lisplank Ukuran (3 x 20) cm, Kayu Kelas I atau Kelas II',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '204784',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 51,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 3,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '4',
+    'subhargadiv3_id' => 51,
+    'subhargadiv3bahan_id' => 51,
+    'subhargadiv3peralatan_id' => 51,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Lisplank Ukuran (3 x 30) cm, Kayu Kelas I atau Kelas II',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '206945',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 52,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 3,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '5',
+    'subhargadiv3_id' => 52,
+    'subhargadiv3bahan_id' => 52,
+    'subhargadiv3peralatan_id' => 52,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Lisplank Non kayu (GRC, Serat Semen) Lebar 30cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '63155',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 53,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 3,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '6',
+    'subhargadiv3_id' => 53,
+    'subhargadiv3bahan_id' => 53,
+    'subhargadiv3peralatan_id' => 53,
+    'jenispekerjaan' => 'Pemasangan 1 m’ Lisplank Non kayu (GRC, Serat Semen) Lebar 20cm',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '53757',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 54,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 3,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '7',
+    'subhargadiv3_id' => 54,
+    'subhargadiv3bahan_id' => 54,
+    'subhargadiv3peralatan_id' => 54,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Lapisan Aluminium Foil',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '32407',
 ]);
 
 // MAKAN YU
