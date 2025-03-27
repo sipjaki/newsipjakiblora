@@ -7342,6 +7342,612 @@ satuanhargamaterial::create([
     'besaran' => '110000',
 ]);
 
+satuanhargamaterial::create([
+    'uraian' => 'Kaca Polos tebal 6 mm',
+    'satuan' => 'M2',
+    'besaran' => '187000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kaca Polos tebal 8 mm',
+    'satuan' => 'M2',
+    'besaran' => '242000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kaca Tempered (tebal 8 mm)',
+    'satuan' => 'M2',
+    'besaran' => '615000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kaca Tempered 12 mm',
+    'satuan' => 'M2',
+    'besaran' => '1071200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kaca Wireglassed 5 mm',
+    'satuan' => 'M2',
+    'besaran' => '3750000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kait Angin',
+    'satuan' => 'Buah',
+    'besaran' => '12800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kapur Padam',
+    'satuan' => 'Kg',
+    'besaran' => '17500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Karpet',
+    'satuan' => 'M2',
+    'besaran' => '30000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kawat Harmonika',
+    'satuan' => 'M2',
+    'besaran' => '7777',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kawat Nyamuk',
+    'satuan' => 'M2',
+    'besaran' => '25080',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kawat Ø4 mm',
+    'satuan' => 'Kg',
+    'besaran' => '47628',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kayu Balok Borneo',
+    'satuan' => 'M3',
+    'besaran' => '11247600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kayu Bekisting',
+    'satuan' => 'M2',
+    'besaran' => '7904',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kayu Lapis (tebal 4 mm)',
+    'satuan' => 'Lembar',
+    'besaran' => '49000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Perancah Kayu',
+    'satuan' => 'M3',
+    'besaran' => '1976000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Keramik 10x20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '1800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Keramik 20x20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '5760',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Keramik Artistik 10x20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '1800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Keramik Artistik 5x20 cm',
+    'satuan' => 'Buah',
+    'besaran' => '5100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kloset Duduk',
+    'satuan' => 'Unit',
+    'besaran' => '1196000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kloset Jongkok',
+    'satuan' => 'Unit',
+    'besaran' => '482000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kran Air 1/2 "',
+    'satuan' => 'Buah',
+    'besaran' => '34300',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kuas',
+    'satuan' => 'Buah',
+    'besaran' => '10700',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kunci Lemari',
+    'satuan' => 'Set',
+    'besaran' => '21400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kunci Silinder',
+    'satuan' => 'Buah',
+    'besaran' => '42800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kunci Slot',
+    'satuan' => 'Buah',
+    'besaran' => '25633',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kunci tanam',
+    'satuan' => 'Buah',
+    'besaran' => '107100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kunci Tanam Antik',
+    'satuan' => 'Buah',
+    'besaran' => '117000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kunci Tanam Biasa',
+    'satuan' => 'Buah',
+    'besaran' => '160600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kunci Tanam Kamar Mandi',
+    'satuan' => 'Buah',
+    'besaran' => '107100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Lantai UPVC Decking',
+    'satuan' => 'M2',
+    'besaran' => '241000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Lem Epoxy',
+    'satuan' => 'Kg',
+    'besaran' => '83600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Lem Karet',
+    'satuan' => 'Kg',
+    'besaran' => '75000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Lem Kayu',
+    'satuan' => 'Kg',
+    'besaran' => '19300',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'List Gypsum',
+    'satuan' => 'M1',
+    'besaran' => '12800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'List Kayu 2cm x 4cm',
+    'satuan' => 'M3',
+    'besaran' => '6750000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'List Kayu Profil',
+    'satuan' => 'M1',
+    'besaran' => '16666',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Marmer 100 x 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '910500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Marmer graphir 10x10 cm',
+    'satuan' => 'Buah',
+    'besaran' => '91050',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Marmer ukuran 100 cm x 100 cm, tebal 2 cm',
+    'satuan' => 'Buah',
+    'besaran' => '910500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Material Insulasi Foam (COOLGUARD - Foam Insulation : Pe Foam + Metalizing Foil Double Side; (1,2 x 25 meter, t : 5 mm))',
+    'satuan' => 'M2',
+    'besaran' => '28400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Melamic',
+    'satuan' => 'Kg',
+    'besaran' => '80300',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Membran Bakar (SikaSheild P24 S 3 mm)',
+    'satuan' => 'M2',
+    'besaran' => '100000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Menie',
+    'satuan' => 'Kg',
+    'besaran' => '40200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Menie A',
+    'satuan' => 'Kg',
+    'besaran' => '40800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Menie B',
+    'satuan' => 'Kg',
+    'besaran' => '52500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Menie Besi (Zinc Chromate)',
+    'satuan' => 'Kg',
+    'besaran' => '50304',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Mortar Perekat Bata Ringan',
+    'satuan' => 'Kg',
+    'besaran' => '1800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Mortar Siap Pakai (Semen Instan)',
+    'satuan' => 'Kg',
+    'besaran' => '2750',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Genteng Aspal (Nok bitumen selulose Onduline)',
+    'satuan' => 'Buah',
+    'besaran' => '66000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Genteng Beton',
+    'satuan' => 'Buah',
+    'besaran' => '9995',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Genteng Metal Panjang 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '56111',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Paten 105 cm',
+    'satuan' => 'Lembar',
+    'besaran' => '18500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Paten 108 cm',
+    'satuan' => 'Lembar',
+    'besaran' => '18500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Paten 92 cm',
+    'satuan' => 'Lembar',
+    'besaran' => '18500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Setel Rata 105 cm',
+    'satuan' => 'Lembar',
+    'besaran' => '18500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Setel Rata 108 cm',
+    'satuan' => 'Lembar',
+    'besaran' => '18500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Setel Rata 92 cm',
+    'satuan' => 'Lembar',
+    'besaran' => '18500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Nok Standar',
+    'satuan' => 'Lembar',
+    'besaran' => '35000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku 5 – 7 cm',
+    'satuan' => 'Kg',
+    'besaran' => '16400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku 1 cm - 2,5 cm',
+    'satuan' => 'Kg',
+    'besaran' => '17600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku 1 dan 2.5',
+    'satuan' => 'Kg',
+    'besaran' => '17600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku 10 cm',
+    'satuan' => 'Kg',
+    'besaran' => '16400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku 5 cm dan 10 cm',
+    'satuan' => 'Kg',
+    'besaran' => '16400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku 5 cm dan 7 cm',
+    'satuan' => 'Kg',
+    'besaran' => '16400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku 7 cm - 10 cm',
+    'satuan' => 'Kg',
+    'besaran' => '16400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Biasa  1"',
+    'satuan' => 'Kg',
+    'besaran' => '17600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Biasa ½”-1”',
+    'satuan' => 'Kg',
+    'besaran' => '17600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Biasa ½”-1” (1,5cm -2,5cm)',
+    'satuan' => 'Kg',
+    'besaran' => '17600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Biasa 2-5”',
+    'satuan' => 'Kg',
+    'besaran' => '17600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Pancing',
+    'satuan' => 'Kg',
+    'besaran' => '48333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Pancing 6x23',
+    'satuan' => 'Kg',
+    'besaran' => '48333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Rivet',
+    'satuan' => 'Buah',
+    'besaran' => '229',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Sekrup',
+    'satuan' => 'Kg',
+    'besaran' => '31200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Sekrup ½”-1”',
+    'satuan' => 'Kg',
+    'besaran' => '31200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Sekrup 1 cm – 2,5 cm',
+    'satuan' => 'Buah',
+    'besaran' => '885',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Sekrup 1-2 cm',
+    'satuan' => 'Buah',
+    'besaran' => '885',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Sekrup 2"',
+    'satuan' => 'Kg',
+    'besaran' => '31200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Sekrup 3,5”',
+    'satuan' => 'Buah',
+    'besaran' => '885',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Sekrup 10 cm',
+    'satuan' => 'Kg',
+    'besaran' => '31200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Sekrup 75mm',
+    'satuan' => 'Buah',
+    'besaran' => '885',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku Tripleks',
+    'satuan' => 'Kg',
+    'besaran' => '31200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paku/Sekrup 5cm',
+    'satuan' => 'Kg',
+    'besaran' => '31200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Papan Gypsum 120x240 cm',
+    'satuan' => 'Lembar',
+    'besaran' => '85600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Papan Kayu (Jati Kelas III)',
+    'satuan' => 'M3',
+    'besaran' => '11247600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Papan Kayu (Jati Kelas II)',
+    'satuan' => 'M3',
+    'besaran' => '13925600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Papan Kayu Kelas 1 (Jati)',
+    'satuan' => 'M3',
+    'besaran' => '16282200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Parquet Kayu (Kayu Jati)',
+    'satuan' => 'M2',
+    'besaran' => '487000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pasangan Bata 1PC:3PS',
+    'satuan' => 'M2',
+    'besaran' => '114100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pelat Besi tebal 3 mm',
+    'satuan' => 'Kg',
+    'besaran' => '17600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pelitur',
+    'satuan' => 'Liter',
+    'besaran' => '71950',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pelitur Jadi',
+    'satuan' => 'Liter',
+    'besaran' => '71950',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pen Acrylic dan Baut',
+    'satuan' => 'Buah',
+    'besaran' => '9000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pengelasan',
+    'satuan' => 'Cm',
+    'besaran' => '484',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pengelasan (Lot)',
+    'satuan' => 'Lot',
+    'besaran' => '100000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pengencer',
+    'satuan' => 'Kg',
+    'besaran' => '50000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Tiner Super',
+    'satuan' => 'Kg',
+    'besaran' => '50000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Penggantung Baju (Robe Hook)',
+    'satuan' => 'Unit',
+    'besaran' => '50000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Penutup Atap UPVC Ukuran 86cm x 1190 cm',
+    'satuan' => 'M2',
+    'besaran' => '198795',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pintu Lipat',
+    'satuan' => 'M2',
+    'besaran' => '545454',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pintu Panel Kayu Lampis Timbal ukuran 1 m x 2 m',
+    'satuan' => 'Unit',
+    'besaran' => '3000000',
+]);
+
 
 
 
