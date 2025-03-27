@@ -12266,6 +12266,76 @@ hspkonstruksiumum3::create([
     'hargasatuan' => '32407',
 ]);
 
+hspkonstruksiumum3::create([
+    'id' => 55,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 4,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '1',
+    'subhargadiv3_id' => 55,
+    'subhargadiv3bahan_id' => 55,
+    'subhargadiv3peralatan_id' => 55,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Waterproofing Membran Bakar',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '150673',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 56,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 4,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '2',
+    'subhargadiv3_id' => 56,
+    'subhargadiv3bahan_id' => 56,
+    'subhargadiv3peralatan_id' => 56,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Waterproofing Cristalin',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '149672',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 57,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 4,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '3',
+    'subhargadiv3_id' => 57,
+    'subhargadiv3bahan_id' => 57,
+    'subhargadiv3peralatan_id' => 57,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Waterproofing Semen Base',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '61081',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 58,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 4,
+    'hspkodepekerjaan3_id' => null,
+    'kode' => '4',
+    'subhargadiv3_id' => 58,
+    'subhargadiv3bahan_id' => 58,
+    'subhargadiv3peralatan_id' => 58,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Waterproofing Acrylic Base',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '119538',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 59,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 4,
+    'kode' => '1',
+    'subhargadiv3_id' => 59,
+    'subhargadiv3bahan_id' => 59,
+    'subhargadiv3peralatan_id' => 59,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Akustik Ukuran 30 x 30 cm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '76874',
+]);
+
 // MAKAN YU
 
 // ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
