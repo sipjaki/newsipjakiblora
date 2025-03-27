@@ -11177,7 +11177,9 @@ hspkonstruksiumum2::create([
     'hargasatuan' => '43684.30',
 ]);
 
-// ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 3 ===========================
+// ============================================= AHSP KONSTRUKSI UMUM DIVISI 3 ===========================
+// ===================================================================
+
 hsppaket3::create([
     'id' => 1,
     'hspdivisi_id' => 3,
@@ -11274,6 +11276,8 @@ hsppaket3::create([
     'hsppaket3' => 'Pekerjaan Sanitair',
 ]);
 
+// =======================================================
+
 hspkodepekerjaan3::create([
     'id' => 1,
     'hsppaket3_id' => 1,
@@ -11298,16 +11302,242 @@ hspkodepekerjaan3::create([
 hspkodepekerjaan3::create([
     'id' => 4,
     'hsppaket3_id' => 5,
-    'kodepekerjaan' => '4',
+    'kodepekerjaan' => '1',
     'namapekerjaan' => 'Langit=langit (Plafon) Akustik',
 ]);
 
 hspkodepekerjaan3::create([
     'id' => 5,
     'hsppaket3_id' => 5,
-    'kodepekerjaan' => '1',
+    'kodepekerjaan' => '2',
     'namapekerjaan' => 'Langit-langit PLAFON) Lainnya',
 ]);
+
+hspkodepekerjaan3::create([
+    'id' => 6,
+    'hsppaket3_id' => 5,
+    'kodepekerjaan' => '3',
+    'namapekerjaan' => 'Rangka Langit-langit Plafon',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 7,
+    'hsppaket3_id' => 6,
+    'kodepekerjaan' => '1',
+    'namapekerjaan' => 'Dinding Bata Merah',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 8,
+    'hsppaket3_id' => 6,
+    'kodepekerjaan' => '2',
+    'namapekerjaan' => 'Dinding Conblock',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 9,
+    'hsppaket3_id' => 6,
+    'kodepekerjaan' => '3',
+    'namapekerjaan' => 'Dinding Roster',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 9,
+    'hsppaket3_id' => 6,
+    'kodepekerjaan' => '3',
+    'namapekerjaan' => 'Dinding Roster',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 10,
+    'hsppaket3_id' => 6,
+    'kodepekerjaan' => '4',
+    'namapekerjaan' => 'Dinding Bata Ringan',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 11,
+    'hsppaket3_id' => 6,
+    'kodepekerjaan' => '5',
+    'namapekerjaan' => 'Dinding Batako',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 12,
+    'hsppaket3_id' => 6,
+    'kodepekerjaan' => '6',
+    'namapekerjaan' => 'Dinding Partisi',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 12,
+    'hsppaket3_id' => 6,
+    'kodepekerjaan' => '6',
+    'namapekerjaan' => 'Dinding Partisi',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 13,
+    'hsppaket3_id' => 7,
+    'kodepekerjaan' => '1',
+    'namapekerjaan' => 'Pekerjaan Plesteran dan Acian ',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 14,
+    'hsppaket3_id' => 8,
+    'kodepekerjaan' => '1',
+    'namapekerjaan' => 'Pekerjaan Pengecatan dan Pelituran ',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 15,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '1',
+    'namapekerjaan' => 'Ubin PC',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 15,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '1',
+    'namapekerjaan' => 'Ubin PC',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 16,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '2',
+    'namapekerjaan' => 'Ubin Warna',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 17,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '3',
+    'namapekerjaan' => 'Ubin Teraso',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 17,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '3',
+    'namapekerjaan' => 'Ubin Teraso',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 18,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '4',
+    'namapekerjaan' => 'Homogeneous Tile',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 19,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '5',
+    'namapekerjaan' => 'Ubin Granit',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 20,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '6',
+    'namapekerjaan' => 'Ubin Teralux',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 21,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '7',
+    'namapekerjaan' => 'Keramik Artistik',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 22,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '8',
+    'namapekerjaan' => 'Keramik',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 23,
+    'hsppaket3_id' => 9,
+    'kodepekerjaan' => '9',
+    'namapekerjaan' => 'Penutup Lantai Lainnya',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 24,
+    'hsppaket3_id' => 10,
+    'kodepekerjaan' => '1',
+    'namapekerjaan' => 'Dinding Keramik',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 25,
+    'hsppaket3_id' => 10,
+    'kodepekerjaan' => '2',
+    'namapekerjaan' => 'Dinding Homogeneous Tile',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 26,
+    'hsppaket3_id' => 10,
+    'kodepekerjaan' => '3',
+    'namapekerjaan' => 'Dinding Porselen',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 27,
+    'hsppaket3_id' => 10,
+    'kodepekerjaan' => '4',
+    'namapekerjaan' => 'Dinding Batu Alam',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 28,
+    'hsppaket3_id' => 10,
+    'kodepekerjaan' => '5',
+    'namapekerjaan' => 'Penutup Dinding Lainnya',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 29,
+    'hsppaket3_id' => 10,
+    'kodepekerjaan' => '6',
+    'namapekerjaan' => 'Rangka Dinding',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 30,
+    'hsppaket3_id' => 11,
+    'kodepekerjaan' => '1',
+    'namapekerjaan' => 'Pintu',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 31,
+    'hsppaket3_id' => 11,
+    'kodepekerjaan' => '2',
+    'namapekerjaan' => 'Jendela',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 32,
+    'hsppaket3_id' => 11,
+    'kodepekerjaan' => '3',
+    'namapekerjaan' => 'Kusen Pintu dan Jendela',
+]);
+
+hspkodepekerjaan3::create([
+    'id' => 33,
+    'hsppaket3_id' => 11,
+    'kodepekerjaan' => '4',
+    'namapekerjaan' => 'Aksesoris Pintu dan Jendela',
+]);
+
+// ================================================================================================================================
 
 hspkonstruksiumum3::create([
     'hspdivisi_id' => 3,
@@ -11413,18 +11643,17 @@ hspkonstruksiumum3::create([
     'hargasatuan' => '137970.80',
 ]);
 
-// HANYA PERCOBAAN
 hspkonstruksiumum3::create([
     'hspdivisi_id' => 3,
-    'hsppaket3_id' => 5,
-    'hspkodepekerjaan3_id' => 5,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 2,
     'kode' => '1',
     'subhargadiv3_id' => 9,
     'subhargadiv3bahan_id' => 9,
     'subhargadiv3peralatan_id' => 9,
-    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Akustik Ukuran 30 x 30 cm',
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Serat Semen Gelombang 92cm x 250cm x 5mm',
     'satuanmaterial' => 'M2',
-    'hargasatuan' => '76874.60',
+    'hargasatuan' => '98834',
 ]);
 
 // ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
