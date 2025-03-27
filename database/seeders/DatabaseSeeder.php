@@ -12336,6 +12336,356 @@ hspkonstruksiumum3::create([
     'hargasatuan' => '76874',
 ]);
 
+hspkonstruksiumum3::create([
+    'id' => 60,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 4,
+    'kode' => '2',
+    'subhargadiv3_id' => 60,
+    'subhargadiv3bahan_id' => 60,
+    'subhargadiv3peralatan_id' => 60,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Akustik Ukuran 30 x 60 cm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '75274',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 61,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 4,
+    'kode' => '3',
+    'subhargadiv3_id' => 61,
+    'subhargadiv3bahan_id' => 61,
+    'subhargadiv3peralatan_id' => 61,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Akustik Ukuran 60 x 120 cm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '72059',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 62,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 4,
+    'kode' => '4',
+    'subhargadiv3_id' => 62,
+    'subhargadiv3bahan_id' => 62,
+    'subhargadiv3peralatan_id' => 62,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Akustik Ukuran 60 x 120 cm dengan Rangka Aluminium',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '105374',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 63,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '1',
+    'subhargadiv3_id' => 63,
+    'subhargadiv3bahan_id' => 63,
+    'subhargadiv3peralatan_id' => 63,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Langit-langit (Plafon) Papan Gypsum, Tebal 9 mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '55359',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 64,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '1.a',
+    'subhargadiv3_id' => 64,
+    'subhargadiv3bahan_id' => 64,
+    'subhargadiv3peralatan_id' => 64,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Memasang Langit-langit PVC+Rangka Hollow Metal',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '188329',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 65,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '2.1',
+    'subhargadiv3_id' => 65,
+    'subhargadiv3bahan_id' => 65,
+    'subhargadiv3peralatan_id' => 65,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Serat Semen/GRC, Tebal 4 mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '43562',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 66,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '3.2',
+    'subhargadiv3_id' => 66,
+    'subhargadiv3bahan_id' => 66,
+    'subhargadiv3peralatan_id' => 66,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Kayu Lapis, Tebal 4 mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '45286',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 67,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '4',
+    'subhargadiv3_id' => 67,
+    'subhargadiv3bahan_id' => 67,
+    'subhargadiv3peralatan_id' => 67,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Lambrisering Kayu, Tebal 9 mm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '461401',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 68,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '5',
+    'subhargadiv3_id' => 68,
+    'subhargadiv3bahan_id' => 68,
+    'subhargadiv3peralatan_id' => 68,
+    'jenispekerjaan' => 'Pemasangan 1 m’ List Langit-langit (Plafon) Kayu Profil',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '26451',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 69,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '6',
+    'subhargadiv3_id' => 69,
+    'subhargadiv3bahan_id' => 69,
+    'subhargadiv3peralatan_id' => 69,
+    'jenispekerjaan' => 'Pemasangan 1 m’ List Langit-langit (Plafon) Gypsum',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '21772',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 70,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '6.a',
+    'subhargadiv3_id' => 70,
+    'subhargadiv3bahan_id' => 70,
+    'subhargadiv3peralatan_id' => 70,
+    'jenispekerjaan' => 'Pemasangan 1 m1 Lis Langit-Langit PVC',
+    'satuanmaterial' => 'M1',
+    'hargasatuan' => '22342',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 71,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 5,
+    'kode' => '7',
+    'subhargadiv3_id' => 71,
+    'subhargadiv3bahan_id' => 71,
+    'subhargadiv3peralatan_id' => 71,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Langit-langit (Plafon) Aluminium Spandrel',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '313292',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 72,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 6,
+    'kode' => '1',
+    'subhargadiv3_id' => 72,
+    'subhargadiv3bahan_id' => 72,
+    'subhargadiv3peralatan_id' => 72,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Rangka Langit-langit (Plafon) Besi Hollow 40.40',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '115308',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 73,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 6,
+    'kode' => '2',
+    'subhargadiv3_id' => 73,
+    'subhargadiv3bahan_id' => 73,
+    'subhargadiv3peralatan_id' => 73,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Rangka Besi Hollow Galvanis 40.40 mm, Modul 60 x 60 cm, untuk Langit-langit (Plafon)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '64669',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 74,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 5,
+    'hspkodepekerjaan3_id' => 6,
+    'kode' => '3',
+    'subhargadiv3_id' => 74,
+    'subhargadiv3bahan_id' => 74,
+    'subhargadiv3peralatan_id' => 74,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Rangka Langit-langit (Plafon) (50 x 100) cm, Kayu Kelas II atau III',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '69959',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 75,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '1',
+    'subhargadiv3_id' => 75,
+    'subhargadiv3bahan_id' => 75,
+    'subhargadiv3peralatan_id' => 75,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Bata Merah Tebal 1 Batu dengan Mortar Tipe M,fc’ 17, 2 MPa (Setara Campuran 1SP : 2PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '274570',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 76,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '2',
+    'subhargadiv3_id' => 76,
+    'subhargadiv3bahan_id' => 76,
+    'subhargadiv3peralatan_id' => 76,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Bata Merah Tebal 1 Batu dengan Mortar Tipe S,fc’ 12, 5 MPa (Setara Campuran 1SP : 3PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '261211',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 77,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '3',
+    'subhargadiv3_id' => 77,
+    'subhargadiv3bahan_id' => 77,
+    'subhargadiv3peralatan_id' => 77,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Bata Merah Tebal 1 Batu dengan Mortar Tipe N,fc’ 5,2 MPa (Setara Campuran 1SP : 4PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '251634',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 78,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '4',
+    'subhargadiv3_id' => 78,
+    'subhargadiv3bahan_id' => 78,
+    'subhargadiv3peralatan_id' => 78,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Bata Merah Tebal 1 Batu dengan Mortar Tipe O, fc’ 2,4 MPa (Setara Campuran 1SP : 5PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '247534',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 79,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '5',
+    'subhargadiv3_id' => 79,
+    'subhargadiv3bahan_id' => 79,
+    'subhargadiv3peralatan_id' => 79,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Dinding Bata Merah Tebal 1 Batu Campuran 1SP : 6PP',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '247940',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 80,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '6',
+    'subhargadiv3_id' => 80,
+    'subhargadiv3bahan_id' => 80,
+    'subhargadiv3peralatan_id' => 80,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Dinding Bata Merah Tebal ½ Batu dengan Mortar Tipe M, fc’ 17, 7 MPa (Setara Campuran 1SP : 2PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '132184',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 81,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '7',
+    'subhargadiv3_id' => 81,
+    'subhargadiv3bahan_id' => 81,
+    'subhargadiv3peralatan_id' => 81,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Dinding Bata Merah Tebal ½ Batu dengan Mortar Tipe S, fc’ 12, 5 MPa (Setara Campuran 1SP : 3PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '125510',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 82,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '8',
+    'subhargadiv3_id' => 82,
+    'subhargadiv3bahan_id' => 82,
+    'subhargadiv3peralatan_id' => 82,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Dinding Bata Merah Tebal ½ Batu dengan Mortar Tipe N,fc’ 5,2 MPa (Setara Campuran 1SP : 4PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '121878',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 83,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '9',
+    'subhargadiv3_id' => 83,
+    'subhargadiv3bahan_id' => 83,
+    'subhargadiv3peralatan_id' => 83,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Dinding Bata Merah Tebal ½ Batu dengan Mortar Tipe O, fc’ 2,4 MPa (Setara Campuran 1SP : 5PP)',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '119606',
+]);
+
+hspkonstruksiumum3::create([
+    'id' => 84,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 6,
+    'hspkodepekerjaan3_id' => 7,
+    'kode' => '10',
+    'subhargadiv3_id' => 84,
+    'subhargadiv3bahan_id' => 84,
+    'subhargadiv3peralatan_id' => 84,
+    'jenispekerjaan' => 'Pemasangan 1 m2  Dinding Bata Merah Tebal ½ Batu Campuran 1SP : 6PP',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '118699',
+]);
+
 // MAKAN YU
 
 // ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
