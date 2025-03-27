@@ -11944,6 +11944,20 @@ hspkonstruksiumum3::create([
     'hargasatuan' => '53963',
 ]);
 
+hspkonstruksiumum3::create([
+    'id' => 32,
+    'hspdivisi_id' => 3,
+    'hsppaket3_id' => 1,
+    'hspkodepekerjaan3_id' => 3,
+    'kode' => '2',
+    'subhargadiv3_id' => 32,
+    'subhargadiv3bahan_id' => 32,
+    'subhargadiv3peralatan_id' => 32,
+    'jenispekerjaan' => 'Pemasangan 1 m2 Atap Aluminium Gelombang 95cm x 180cm',
+    'satuanmaterial' => 'M2',
+    'hargasatuan' => '156850',
+]);
+
 // MAKAN YU
 
 // ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
