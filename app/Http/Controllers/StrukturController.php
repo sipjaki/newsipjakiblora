@@ -77,7 +77,12 @@ class StrukturController extends Controller
 
                         // Simpan file baru dan ambil path-nya
                         $file = $request->file('peraturan');
-                        $filePath = $file->store('01_kelembagaan/01_dinas', 'public');
+
+                        // Pastikan nama file unik dengan menambahkan waktu
+                        $fileName = time() . '_' . $file->getClientOriginalName();
+
+                        // Simpan file ke folder yang ditentukan
+                        $filePath = $file->storeAs('01_kelembagaan/01_dinas', $fileName, 'public');
                     } else {
                         // Jika tidak ada file baru, gunakan file lama
                         $filePath = $strukturdinas->peraturan;
@@ -91,7 +96,7 @@ class StrukturController extends Controller
                     ]);
 
                     // Flash session untuk menampilkan pesan sukses
-                    session()->flash('update', 'Data Berhasil Diupdate !');
+                    session()->flash('update', 'Data Berhasil Diupdate!');
 
                     // Redirect ke halaman yang sesuai
                     return redirect('/bestrukturdinas');
