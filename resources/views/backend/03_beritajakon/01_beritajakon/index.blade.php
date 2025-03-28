@@ -80,7 +80,7 @@
                     </div>
                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Badan Usaha ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <input type="search" id="searchInput" placeholder="Cari Berita Jakon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
@@ -133,7 +133,9 @@
             <th style="width: 250px; text-align:center;">Judul Berita</th>
             <th style="width: 100px; text-align:center;">Tanggal</th>
             <th style="width: 600px; text-align:center;">Isi Berita</th>
-            <th style="width: 300px; text-align:center;">Foto</th>
+            <th style="width: 300px; text-align:center;">Foto 1</th>
+            <th style="width: 300px; text-align:center;">Foto 2</th>
+            <th style="width: 300px; text-align:center;">Foto </th>
             <th style="width: 225px; text-align:center;">Aksi</th>
         </tr>
     </thead>
@@ -149,9 +151,18 @@
                     {!! $item->keterangan !!}
                 </div>
             </td>
+
             <td style="text-align: center;">
                 <img src="{{ asset('storage/'. $item->foto) }}" alt="Image" width="300" style="border-radius: 15px;">
             </td>
+
+            <td style="text-align: center;">
+                <img src="{{ asset('storage/'. $item->foto1) }}" alt="Image" width="300" style="border-radius: 15px;">
+            </td>
+            <td style="text-align: center;">
+                <img src="{{ asset('storage/'. $item->foto2) }}" alt="Image" width="300" style="border-radius: 15px;">
+            </td>
+
             <td style="text-align: center;">
                 <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                     <i class="bi bi-eye"></i>
