@@ -182,42 +182,45 @@ class BeritajakonController extends Controller
 
 
 
-        public function beberitajakon(Request $request)
-        {
-            $perPage = $request->input('perPage', 5);
-            $search = $request->input('search');
+    public function beberitajakon(Request $request)
+    {
+        $perPage = $request->input('perPage', 5);  // Ambil jumlah data per halaman dari request
+        $search = $request->input('search');  // Ambil query pencarian dari input
 
-            $query = beritajakon::query();
+        $query = beritajakon::query();
 
-            if ($search) {
-                $query->where('judulberita', 'LIKE', "%{$search}%")
-                    ->orWhere('tanggal', 'LIKE', "%{$search}%")
-                    ->orWhere('keterangan', 'LIKE', "%{$search}%")
-                    ->orWhere('foto', 'LIKE', "%{$search}%")
-                    ->orWhere('foto1', 'LIKE', "%{$search}%")
-                    ->orWhere('foto2', 'LIKE', "%{$search}%")
-                    ->orWhereHas('user', function ($q) use ($search) {
-                        $q->where('name', 'LIKE', "%{$search}%");
-                    });
-            }
+        if ($search) {
+            // Menambahkan kondisi pencarian pada berbagai kolom
+            $query->where('judulberita', 'LIKE', "%{$search}%")
+                ->orWhere('tanggal', 'LIKE', "%{$search}%")
+                ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                ->orWhere('foto', 'LIKE', "%{$search}%")
+                ->orWhere('foto1', 'LIKE', "%{$search}%")
+                ->orWhere('foto2', 'LIKE', "%{$search}%")
+                ->orWhereHas('user', function ($q) use ($search) {
+                    $q->where('name', 'LIKE', "%{$search}%");
+                });
+        }
 
-            $data = $query->paginate($perPage);
+        // Ambil data yang sesuai dengan pencarian dan pagination
+        $data = $query->paginate($perPage);
 
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('backend.03_beritajakon.01_beritajakon.partials.table', compact('data'))->render()
-                ]);
-            }
-
-            return view('backend.03_beritajakon.01_beritajakon.index', [
-                'title' => 'Berita Jasa Konstruksi Kabupaten Blora',
-                'data' => $data,
-                'perPage' => $perPage,
-                'search' => $search
+        if ($request->ajax()) {
+            // Kembalikan data dalam bentuk JSON untuk AJAX
+            return response()->json([
+                'html' => view('backend.03_beritajakon.01_beritajakon.partials.table', compact('data'))->render()
             ]);
         }
 
-// makan yu
+        return view('backend.03_beritajakon.01_beritajakon.index', [
+            'title' => 'Berita Jasa Konstruksi Kabupaten Blora',
+            'data' => $data,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+    // makan yu
 
         public function beberitajakondelete($judulberita)
 {
