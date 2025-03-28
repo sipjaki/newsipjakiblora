@@ -53,7 +53,7 @@ class StrukturController extends Controller
                 }
 
                 // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
-                public function updateStructure(Request $request, $id)
+                public function updatestrukturcreate(Request $request, $id)
                 {
                     // Validasi input
                     $validatedData = $request->validate([
