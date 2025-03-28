@@ -1098,6 +1098,47 @@ public function bejabatancreateupdate(Request $request, $id)
 }
 
 
+// MENU CREATE JABATAN FUNGSIONAL     ----------------------------------------------------------------------------
+
+public function bejabatancreate()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.02_profiljakon.08_jabatanfungsional.create', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'title' => 'Create Jabatan Fungsional Jasa Konstruksi'
+    ]);
+}
+
+// -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
+public function bejabatancreatenew(Request $request)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'jabatan' => 'required|string|max:255', // Validasi untuk Jabatan
+        'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+    ], [
+        'jabatan.required' => 'Jabatan wajib diisi!',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+    ]);
+
+    // Create new profiljakonpersonil record
+    profiljakonpersonil::create([
+        'jabatan' => $validatedData['jabatan'],  // Menggunakan data yang sudah tervalidasi
+        'namalengkap' => $validatedData['namalengkap'],  // Menggunakan data yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('create', 'Data Berhasil Dibuat!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/bejabatan');
+}
+
 
 public function bejabatandelete($namalengkap)
 {
