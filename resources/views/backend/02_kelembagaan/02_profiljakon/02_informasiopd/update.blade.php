@@ -97,24 +97,13 @@
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-12">
-                                        <!-- Judul -->
+                                        <!-- Nama OPD -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="judul">
-                                                <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Judul
+                                            <label class="form-label" for="namaopd">
+                                                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Nama OPD
                                             </label>
-                                            <input type="text" id="judul" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ old('judul', $data->judul) }}" />
-                                            @error('judul')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Keterangan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="keterangan">
-                                                <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
-                                            </label>
-                                            <textarea id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" rows="6">{{ old('keterangan', $data->keterangan) }}</textarea>
-                                            @error('keterangan')
+                                            <input type="text" id="namaopd" name="namaopd" class="form-control @error('namaopd') is-invalid @enderror" value="{{ old('namaopd', $data->namaopd) }}" />
+                                            @error('namaopd')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

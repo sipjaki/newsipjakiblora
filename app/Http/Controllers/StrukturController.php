@@ -655,8 +655,7 @@ public function beinfoopdupdatecreate(Request $request, $id)
 
     // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
     $jakonidentitasss->update([
-        'judul' => $validatedData['judul'],  // Menggunakan data yang sudah tervalidasi
-        'keterangan' => $validatedData['keterangan'],
+        'namaopd' => $validatedData['namaopd'],  // Menggunakan data yang sudah tervalidasi
         'alamatopd' => $validatedData['alamatopd'],  // Menambahkan kolom alamatopd
         'rtrw' => $validatedData['rtrw'],  // Menambahkan kolom rtrw
         'kodepos' => $validatedData['kodepos'],  // Menambahkan kolom kodepos
