@@ -130,12 +130,7 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                    <!-- End Left Column -->
 
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Keterangan -->
                                         <div class="mb-3">
                                             <label class="form-label" for="keterangan">
                                                 <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Keterangan
@@ -145,6 +140,13 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
+                                    </div>
+                                    <!-- End Left Column -->
+
+                                    <!-- Right Column (6/12) -->
+                                    <div class="col-md-6">
+                                        <!-- Keterangan -->
 
                                         <!-- Foto -->
                                         <div class="mb-3">
