@@ -138,7 +138,7 @@
                                             <div style="margin-top: 10px;">
                                                 @if($data->peraturan)  <!-- Cek jika ada file setelah diupload -->
                                                     <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
-                                                        <p>PDF cannot be displayed.</p>
+                                                     <p>PDF cannot be displayed.</p>
                                                     </object>
                                                 @else
                                                     <p>No file uploaded yet.</p>
