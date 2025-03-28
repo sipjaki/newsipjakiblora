@@ -443,7 +443,9 @@ Route::post('/bekabid/updatecreate/{id}', [StrukturController::class, 'bekabidba
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/besubbid', [StrukturController::class, 'besubbid'])->middleware('auth');
-Route::get('/besubbid/update/{namalengkap}', [StrukturController::class, 'besubbidupdate'])->middleware('auth');
+// Route::get('/besubbid/update/{namalengkap}', [StrukturController::class, 'besubbidupdate'])->middleware('auth');
+Route::get('/besubbid/update/{id}', [StrukturController::class, 'besubbidupdate'])->middleware('auth')->name('update.besubbidupdate');
+Route::post('/besubbid/updatecreate/{id}', [StrukturController::class, 'besubbidcreateupdate'])->middleware('auth')->name('update.besubbidcreateupdate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beinformasi', [StrukturController::class, 'beinformasi'])->middleware('auth');
