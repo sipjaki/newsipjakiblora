@@ -87,7 +87,7 @@
 
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-house-door-door" style="margin-right: 8px; color: navy;"></i> Alamat Organisasi Perangkat Daerah (OPD)
+                                                    <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> Alamat Organisasi Perangkat Daerah (OPD)
                                                 </label>
                                                 <input class="form-control" value="{{$item->alamatopd}}" readonly />
                                             </div>
