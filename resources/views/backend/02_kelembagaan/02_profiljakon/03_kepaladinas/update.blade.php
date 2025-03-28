@@ -71,7 +71,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/beinfoopd/">
+                <a href="/bekepaladinas">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -129,11 +129,9 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
 
-                                        <!-- Pangkat Golongan -->
-                                        <div class="mb-3">
+                                           <!-- Pangkat Golongan -->
+                                           <div class="mb-3">
                                             <label class="form-label" for="pangkatgolongan">
                                                 <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pangkat Golongan
                                             </label>
@@ -142,6 +140,11 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+
 
                                         <!-- Jabatan -->
                                         <div class="mb-3">
