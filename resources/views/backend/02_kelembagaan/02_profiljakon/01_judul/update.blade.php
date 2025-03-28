@@ -122,7 +122,7 @@
                             <!-- end::Body -->
                             <br><br>
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-                                <button type="submit" style="background-color: #28a745; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+                                <button type="submit" style="background-color: #117235; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
                                     <i class="fa fa-file" style="margin-right: 8px;"></i> Update
                                 </button>
                             </div>
