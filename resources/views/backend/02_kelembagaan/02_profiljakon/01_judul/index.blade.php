@@ -121,7 +121,10 @@
                                     @endforeach
                                 </tbody>
 
-<br>
+
+                            </table>
+
+                            <br>
             <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
                 <a href="/beprofiljakon">
                     <button
@@ -146,7 +149,6 @@
             </a>
             </div>
 
-                            </table>
                         </div>
                     </div>
                     <!-- /.card-body -->
