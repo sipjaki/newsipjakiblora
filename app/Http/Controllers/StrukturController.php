@@ -916,7 +916,7 @@ public function beinformasi()
 }
 
 
-// MENU UPDATE DAN UPDATE SUB KOORDINATOR   ----------------------------------------------------------------------------
+// MENU UPDATE DAN UPDATE KETERANGAN OPD   ----------------------------------------------------------------------------
 
 public function beinformasiupdate($id)
 {
@@ -932,7 +932,7 @@ public function beinformasiupdate($id)
     ]);
 }
 
-// -------------------- UPDATE DATA KEPALA DINAS ----------------------
+// -------------------- UPDATE DATA KETERANGAN OPD ----------------------
 public function beinformasicreateupdate(Request $request, $id)
 {
     // Validasi input dengan pesan kustom
@@ -983,6 +983,61 @@ public function besipjaki()
 
     ]);
 }
+
+// MENU UPDATE DAN UPDATE MENU OPERATOR SIPJAKI   ----------------------------------------------------------------------------
+
+public function besipjakiupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakonoperatossipjaki = profiljakonsipjaki::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.02_profiljakon.07_personilsipjaki.update', [
+        'data' => $jakonoperatossipjaki,
+        'user' => $user,
+        'title' => 'Update Operator Sipjaki'
+    ]);
+}
+
+// -------------------- UPDATE DATA MENU OPERATOR SIPJAKI  ----------------------
+public function besipjakicreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'nomor' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+        'operator1' => 'required|string|max:255', // Validasi untuk NIP
+        'operator2' => 'required|string|max:255', // Validasi untuk NIP
+        'operator3' => 'required|string|max:255', // Validasi untuk NIP
+        'operator4' => 'required|string|max:255', // Validasi untuk NIP
+    ], [
+        'nomor.required' => 'Nomor wajib diisi!',
+        'operator1.required' => 'Operator wajib diisi!',
+        'operator2.required' => 'Operator wajib diisi!',
+        'operator3.required' => 'Operator wajib diisi!',
+        'operator4.required' => 'Operator wajib diisi!',
+
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $jakonoperatossipjaki = profiljakonsipjaki::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $jakonoperatossipjaki->update([
+        'nomor' => $validatedData['nomor'],  // Menggunakan data yang sudah tervalidasi
+        'operator1' => $validatedData['operator1'],  // Menggunakan data yang sudah tervalidasi
+        'operator2' => $validatedData['operator2'],  // Menggunakan data yang sudah tervalidasi
+        'operator3' => $validatedData['operator3'],  // Menggunakan data yang sudah tervalidasi
+        'operator4' => $validatedData['operator4'],  // Menggunakan data yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/besipjaki');
+}
+
 
 public function bejabatan()
 {

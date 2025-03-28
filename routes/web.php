@@ -455,7 +455,9 @@ Route::post('/beinformasi/updatecreate/{id}', [StrukturController::class, 'beinf
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/besipjaki', [StrukturController::class, 'besipjaki'])->middleware('auth');
-Route::get('/besipjaki/update/{id}', [StrukturController::class, 'besipjakiupdate'])->middleware('auth');
+// Route::get('/besipjaki/update/{id}', [StrukturController::class, 'besipjakiupdate'])->middleware('auth');
+Route::get('/besipjaki/update/{id}', [StrukturController::class, 'besipjakiupdate'])->middleware('auth')->name('update.besipjakiupdate');
+Route::post('/besipjaki/updatecreate/{id}', [StrukturController::class, 'besipjakicreateupdate'])->middleware('auth')->name('update.besipjakicreateupdate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bejabatan', [StrukturController::class, 'bejabatan'])->middleware('auth');
