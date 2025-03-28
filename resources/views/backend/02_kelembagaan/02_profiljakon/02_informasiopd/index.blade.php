@@ -112,13 +112,14 @@
                                                 </label>
                                                 <input class="form-control" value="{{$item->kelurahan}}" readonly/>
                                             </div>
-
                                             <div class="mb-3">
                                                 <label class="form-label">
-                                                    <i class="bi bi-map-marker" style="margin-right: 8px; color: navy;"></i> Kecamatan
+                                                    <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Kecamatan
                                                 </label>
                                                 <input class="form-control" value="{{$item->kecamatan}}" readonly/>
                                             </div>
+
+
                                         </div>
 
 <!-- Right Column (6/12) -->
