@@ -88,7 +88,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('update.strukturcreatebaru', $data->judul) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('update.strukturcreatebaru', $data->judul) }}" method="PUT" enctype="multipart/form-data">
                             @csrf
                             @method('PUT') <!-- Menggunakan PUT jika kamu ingin melakukan update -->
 
