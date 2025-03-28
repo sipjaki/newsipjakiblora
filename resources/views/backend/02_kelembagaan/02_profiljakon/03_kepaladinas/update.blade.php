@@ -170,11 +170,19 @@
                                             <label class="form-label" for="pendidikanterakhir">
                                                 <i class="bi bi-graduation-cap" style="margin-right: 8px; color: navy;"></i> Pendidikan Terakhir
                                             </label>
-                                            <input type="text" id="pendidikanterakhir" name="pendidikanterakhir" class="form-control @error('pendidikanterakhir') is-invalid @enderror" value="{{ old('pendidikanterakhir', $data->pendidikanterakhir) }}" />
+                                            <select id="pendidikanterakhir" name="pendidikanterakhir" class="form-control @error('pendidikanterakhir') is-invalid @enderror">
+                                                <option value="">Pilih Pendidikan Terakhir</option>
+                                                <option value="Strata 1" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 1' ? 'selected' : '' }}>Strata 1 (S1)</option>
+                                                <option value="Strata 2" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 2' ? 'selected' : '' }}>Strata 2 (S2)</option>
+                                                <option value="Strata 3" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 3' ? 'selected' : '' }}>Strata 3 (S3)</option>
+                                                <option value="Magister" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Magister' ? 'selected' : '' }}>Magister (S2)</option>
+                                                <option value="Doktor" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Doktor' ? 'selected' : '' }}>Doktor (S3)</option>
+                                            </select>
                                             @error('pendidikanterakhir')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
                                     </div>
                                 </div>
                                 <!-- End row -->
