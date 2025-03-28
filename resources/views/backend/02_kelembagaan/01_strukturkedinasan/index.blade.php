@@ -82,7 +82,7 @@
                                         <td style="text-align: center;">
                                             {{-- <iframe src="{{('storage/01_kelembagaan/01_dinas/' . $item->peraturan) }}" width="300" height="200"></iframe> --}}
                                             {{-- <img src="{{ asset('storage/'.$item->peraturan)}}" width="300" height="200"> --}}
-                                            <img src="{{Storage::url("/storage/app/".$item->peraturan)}}" width="300" height="200">
+                                            <iframe src="{{Storage::url("/storage/app/".$item->peraturan)}}" width="300" height="200"></iframe>
  {{-- <img src="{{Storage::url("/storage/app/".$images->filename)}} /> --}}
                                         </td>
                                         <td style="text-align: justify;">{!! $item->keterangan !!}</td>
