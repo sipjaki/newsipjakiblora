@@ -74,6 +74,18 @@
 
 <div class="container alertku d-flex justify-content-center align-items-center" style="margin-right:10px; margin-left:10px;">
 
+    @if (session('create'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="icon__wrapper">
+            <!-- Ikon dengan Font Awesome yang lebih sesuai untuk sukses -->
+            <span class="fas fa-check-circle" style="font-size: 1.5em; margin-right: 10px;"></span>
+        </div>
+        <p>{{ session('create') }}</p>
+        <!-- Tombol untuk menutup alert -->
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
     @if (session('update'))
     <div class="alert alert-info alert-dismissible fade show" role="alert">
         <div class="icon__wrapper">
