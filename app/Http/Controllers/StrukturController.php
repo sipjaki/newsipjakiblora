@@ -74,10 +74,9 @@ class StrukturController extends Controller
                     // Inisialisasi variabel filePath dengan nilai null
                     $filePath = $strukturdinas->peraturan;  // Mempertahankan file lama jika tidak ada file baru yang diupload
 
-                    // Jika ada file yang diupload
                     if ($request->hasFile('peraturan')) {
-                        // Simpan file dan ambil path-nya
-                        $filePath = $request->file('peraturan')->store('01_kelembagaan', 'public'); // Simpan di storage/public/kedinasan
+                        $filePath = $request->file('peraturan')->store('01_kelembagaan/01_dinas', 'public');
+                        dd($filePath); // Debugging path file yang tersimpan
                     }
 
                     // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
