@@ -71,7 +71,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/beinformasiopd/">
+                <a href="/beinfoopd/">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -104,7 +104,7 @@
                                             </label>
                                             <input type="text" id="namaopd" name="namaopd" class="form-control @error('namaopd') is-invalid @enderror" value="{{ old('namaopd', $data->namaopd) }}" />
                                             @error('namaopd')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
@@ -115,29 +115,29 @@
                                             </label>
                                             <textarea id="alamatopd" name="alamatopd" class="form-control @error('alamatopd') is-invalid @enderror" rows="4">{{ old('alamatopd', $data->alamatopd) }}</textarea>
                                             @error('alamatopd')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
                                         <!-- RT/RW -->
                                         <div class="mb-3">
                                             <label class="form-label" for="rtrw">
-                                                <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> RT/RW
+                                                <i class="bi bi-house-door-door" style="margin-right: 8px; color: navy;"></i> RT/RW
                                             </label>
                                             <input type="text" id="rtrw" name="rtrw" class="form-control @error('rtrw') is-invalid @enderror" value="{{ old('rtrw', $data->rtrw) }}" />
                                             @error('rtrw')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
                                         <!-- Kode Pos -->
                                         <div class="mb-3">
                                             <label class="form-label" for="kodepos">
-                                                <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Kode Pos
+                                                <i class="bi bi-postage" style="margin-right: 8px; color: navy;"></i> Kode Pos
                                             </label>
                                             <input type="text" id="kodepos" name="kodepos" class="form-control @error('kodepos') is-invalid @enderror" value="{{ old('kodepos', $data->kodepos) }}" />
                                             @error('kodepos')
-                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
@@ -149,10 +149,10 @@
                                             <input type="text" id="kelurahan" name="kelurahan" class="form-control @error('kelurahan') is-invalid @enderror" value="{{ old('kelurahan', $data->kelurahan) }}" />
                                             @error('kelurahan')
                                                 <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                            </div>
+                                            @enderror
+                                        </div>
 
-                                            <!-- Kecamatan -->
+                                        <!-- Kecamatan -->
                                         <div class="mb-3">
                                             <label class="form-label" for="kecamatan">
                                                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Kecamatan
@@ -160,10 +160,12 @@
                                             <input type="text" id="kecamatan" name="kecamatan" class="form-control @error('kecamatan') is-invalid @enderror" value="{{ old('kecamatan', $data->kecamatan) }}" />
                                             @error('kecamatan')
                                                 <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                            </div>
+                                            @enderror
+                                        </div>
+                                    </div>
 
-                                            <!-- Kota -->
+                                    <div class="col-md-6">
+                                        <!-- Kota -->
                                         <div class="mb-3">
                                             <label class="form-label" for="kota">
                                                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Kota
@@ -171,14 +173,12 @@
                                             <input type="text" id="kota" name="kota" class="form-control @error('kota') is-invalid @enderror" value="{{ old('kota', $data->kota) }}" />
                                             @error('kota')
                                                 <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                            @enderror
+                                        </div>
 
-                                            <!-- Provinsi -->
-                                            <div class="mb-3">
-                                                <label class="form-label" for="provinsi">
+                                        <!-- Provinsi -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="provinsi">
                                                 <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Provinsi
                                             </label>
                                             <input type="text" id="provinsi" name="provinsi" class="form-control @error('provinsi') is-invalid @enderror" value="{{ old('provinsi', $data->provinsi) }}" />
@@ -190,7 +190,7 @@
                                         <!-- Negara -->
                                         <div class="mb-3">
                                             <label class="form-label" for="negara">
-                                                <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Negara
+                                                <i class="bi bi-globe" style="margin-right: 8px; color: navy;"></i> Negara
                                             </label>
                                             <input type="text" id="negara" name="negara" class="form-control @error('negara') is-invalid @enderror" value="{{ old('negara', $data->negara) }}" />
                                             @error('negara')
@@ -220,7 +220,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <!-- End Left Column -->
+                                                                        <!-- End Left Column -->
                                 </div>
                                 <!-- end row -->
                             </div>
