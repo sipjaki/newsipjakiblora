@@ -104,7 +104,7 @@
                                             </label>
                                             <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap', $data->namalengkap) }}" />
                                             @error('namalengkap')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
@@ -115,7 +115,7 @@
                                             </label>
                                             <input type="text" id="nip" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $data->nip) }}" />
                                             @error('nip')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
@@ -126,9 +126,11 @@
                                             </label>
                                             <input type="date" id="ttl" name="ttl" class="form-control @error('ttl') is-invalid @enderror" value="{{ old('ttl', $data->ttl) }}" />
                                             @error('ttl')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
 
                                         <!-- Pangkat Golongan -->
                                         <div class="mb-3">
@@ -137,7 +139,7 @@
                                             </label>
                                             <input type="text" id="pangkatgolongan" name="pangkatgolongan" class="form-control @error('pangkatgolongan') is-invalid @enderror" value="{{ old('pangkatgolongan', $data->pangkatgolongan) }}" />
                                             @error('pangkatgolongan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
