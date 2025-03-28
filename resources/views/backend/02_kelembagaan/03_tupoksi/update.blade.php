@@ -51,7 +51,7 @@
                         font-weight: 900;
                         font-size: 16px;
                         text-align: center;
-                        background: linear-gradient(135deg, #166534, #166534);
+                        background: linear-gradient(135deg, #1f50f1, #1f50f1);
                         color: white;
                         padding: 10px 25px;
                         border-radius: 10px;
@@ -59,7 +59,8 @@
                         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
                         width: 100%;
                     ">
-                        📌 Halaman : {{$title}}
+                        📌 Halaman Update : {{$title}}
+
                     </div>
 
                            {{-- ======================================================= --}}
