@@ -220,7 +220,130 @@ class BeritajakonController extends Controller
         ]);
     }
 
-    // makan yu
+    // MENU UPDATE DAN UPDATE MENU BERITA JASA KONSTRUKSI    ----------------------------------------------------------------------------
+
+public function beberitajakonupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.03_beritajakon.01_beritajakon.update', [
+        'data' => $databeritajakon,
+        'user' => $user,
+        'title' => 'Update Berita Jasa Konstruksi'
+    ]);
+}
+
+// -------------------- UPDATE DATA MENU JABATAN FUNGSIONAL  ----------------------
+public function beberitajakoncreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'user_id' => 'nullable|exists:users,id', // user_id bisa null, dan harus ada di tabel users jika ada
+        'judulberita' => 'nullable|string|max:255', // judulberita bisa null, harus string, dan panjangnya maksimal 255 karakter
+        'tanggal' => 'nullable|date', // tanggal bisa null, dan jika ada harus dalam format tanggal
+        'keterangan' => 'nullable|string', // keterangan bisa null, dan jika ada harus berupa string
+        'foto' => 'nullable|image|max:7168', // foto bisa null, harus image dan maksimal 7MB (7168KB)
+        'foto1' => 'nullable|image|max:7168', // foto1 bisa null, harus image dan maksimal 7MB (7168KB)
+        'foto2' => 'nullable|image|max:7168', // foto2 bisa null, harus image dan maksimal 7MB (7168KB)
+    ], [
+        'user_id.exists' => 'Penulis tidak ditemukan!',
+        'judulberita.string' => 'Judul berita wajib diisi!',
+        'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
+        'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
+        'keterangan.string' => 'Keterangan wajib diisi!',
+        'foto.image' => 'Foto harus berupa gambar!',
+        'foto.max' => 'Foto maksimal 7MB!',
+        'foto1.image' => 'Foto 1 harus berupa gambar!',
+        'foto1.max' => 'Foto 1 maksimal 7MB!',
+        'foto2.image' => 'Foto 2 harus berupa gambar!',
+        'foto2.max' => 'Foto 2 maksimal 7MB!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $databeritajakon->update([
+        'user_id' => $validatedData['user_id'],  // Menggunakan data user_id yang sudah tervalidasi
+        'judulberita' => $validatedData['judulberita'],  // Menggunakan data judulberita yang sudah tervalidasi
+        'tanggal' => $validatedData['tanggal'],  // Menggunakan data tanggal yang sudah tervalidasi
+        'keterangan' => $validatedData['keterangan'],  // Menggunakan data keterangan yang sudah tervalidasi
+        'foto' => $validatedData['foto'],  // Menggunakan data foto yang sudah tervalidasi
+        'foto1' => $validatedData['foto1'],  // Menggunakan data foto1 yang sudah tervalidasi
+        'foto2' => $validatedData['foto2'],  // Menggunakan data foto2 yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/beberitajakon');
+}
+
+
+// MENU CREATE JABATAN FUNGSIONAL     ----------------------------------------------------------------------------
+
+public function beberitajakoncreate()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.03_beritajakon.01_beritajakon.create', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'title' => 'Create Jabatan Fungsional Jasa Konstruksi'
+    ]);
+}
+
+// -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
+public function beberitajakoncreatenew(Request $request)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'user_id' => 'nullable|exists:users,id', // user_id bisa null, dan harus ada di tabel users jika ada
+        'judulberita' => 'nullable|string|max:255', // judulberita bisa null, harus string, dan panjangnya maksimal 255 karakter
+        'tanggal' => 'nullable|date', // tanggal bisa null, dan jika ada harus dalam format tanggal
+        'keterangan' => 'nullable|string', // keterangan bisa null, dan jika ada harus berupa string
+        'foto' => 'nullable|image|max:7168', // foto bisa null, harus image dan maksimal 7MB (7168KB)
+        'foto1' => 'nullable|image|max:7168', // foto1 bisa null, harus image dan maksimal 7MB (7168KB)
+        'foto2' => 'nullable|image|max:7168', // foto2 bisa null, harus image dan maksimal 7MB (7168KB)
+    ], [
+        'user_id.exists' => 'Penulis tidak ditemukan!',
+        'judulberita.string' => 'Judul berita wajib diisi!',
+        'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
+        'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
+        'keterangan.string' => 'Keterangan wajib diisi!',
+        'foto.image' => 'Foto harus berupa gambar!',
+        'foto.max' => 'Foto maksimal 7MB!',
+        'foto1.image' => 'Foto 1 harus berupa gambar!',
+        'foto1.max' => 'Foto 1 maksimal 7MB!',
+        'foto2.image' => 'Foto 2 harus berupa gambar!',
+        'foto2.max' => 'Foto 2 maksimal 7MB!',
+    ]);
+
+    // Membuat data baru di profiljakonpersonil
+    beritajakon::create([
+        'user_id' => $validatedData['user_id'],  // Menggunakan data user_id yang sudah tervalidasi
+        'judulberita' => $validatedData['judulberita'],  // Menggunakan data judulberita yang sudah tervalidasi
+        'tanggal' => $validatedData['tanggal'],  // Menggunakan data tanggal yang sudah tervalidasi
+        'keterangan' => $validatedData['keterangan'],  // Menggunakan data keterangan yang sudah tervalidasi
+        'foto' => $validatedData['foto'],  // Menggunakan data foto yang sudah tervalidasi
+        'foto1' => $validatedData['foto1'],  // Menggunakan data foto1 yang sudah tervalidasi
+        'foto2' => $validatedData['foto2'],  // Menggunakan data foto2 yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('create', 'Data Berhasil Dibuat!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/beberitajakon');
+}
+
 
         public function beberitajakondelete($judulberita)
 {
