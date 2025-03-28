@@ -197,7 +197,7 @@ class BeritajakonController extends Controller
                 ->orWhere('foto', 'LIKE', "%{$search}%")
                 ->orWhere('foto1', 'LIKE', "%{$search}%")
                 ->orWhere('foto2', 'LIKE', "%{$search}%")
-                ->orWhereHas('user', function ($q) use ($search) {
+                ->orWhereHas('users', function ($q) use ($search) {
                     $q->where('name', 'LIKE', "%{$search}%");
                 });
         }
