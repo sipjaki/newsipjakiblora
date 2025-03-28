@@ -1053,6 +1053,52 @@ public function bejabatan()
     ]);
 }
 
+// MENU UPDATE DAN UPDATE MENU JABATAN FUNGSIONAL    ----------------------------------------------------------------------------
+
+public function bejabatanupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.02_profiljakon.08_jabatanfungsional.update', [
+        'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'title' => 'Update Jabatan Fungsional Jasa Konstruksi'
+    ]);
+}
+
+// -------------------- UPDATE DATA MENU JABATAN FUNGSIONAL  ----------------------
+public function bejabatancreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'jabatan' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+        'namalengkap' => 'required|string|max:255', // Validasi untuk NIP
+    ], [
+        'jabatan.required' => 'Jabatan wajib diisi!',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $jakonpersonil = profiljakonpersonil::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $jakonpersonil->update([
+        'jabatan' => $validatedData['jabatan'],  // Menggunakan data yang sudah tervalidasi
+        'namalengkap' => $validatedData['namalengkap'],  // Menggunakan data yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/bejabatan');
+}
+
+
+
 public function bejabatandelete($namalengkap)
 {
     // Cari item berdasarkan judul
