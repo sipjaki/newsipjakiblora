@@ -1176,6 +1176,51 @@ public function betupoksi()
     ]);
 }
 
+// MENU UPDATE DAN UPDATE MENU TUPOKSI    ----------------------------------------------------------------------------
+
+public function betupoksiupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $tupoksi = tupoksi::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.03_tupoksi.update', [
+        'data' => $tupoksi,
+        'user' => $user,
+        'title' => 'Update Tupoksi Jakon Kabupaten Blora'
+    ]);
+}
+
+// -------------------- UPDATE DATA MENU JABATAN FUNGSIONAL  ----------------------
+public function betupoksicreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'judul' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+        'keterangan' => 'required|string|max:255', // Validasi untuk NIP
+    ], [
+        'judul.required' => 'Judul wajib diisi!',
+        'keterangan.required' => 'Keterangan wajib diisi!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $tupoksi = tupoksi::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $tupoksi->update([
+        'judul' => $validatedData['judul'],  // Menggunakan data yang sudah tervalidasi
+        'keterangan' => $validatedData['keterangan'],  // Menggunakan data yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/betupoksi');
+}
+
+
 
 
 // MENU BACKEND PROFIL JAKON MAS JAKI
