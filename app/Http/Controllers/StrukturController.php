@@ -806,7 +806,7 @@ public function bekabidbaruupdatecreate(Request $request, $id)
     ]);
 
     // Cari data strukturdinas berdasarkan nilai 'judul'
-    $jakonkepaladinas = profiljakonkepaladinas::where('id', $id)->firstOrFail();
+    $jakonkepaladinas = profiljakonkabid::where('id', $id)->firstOrFail();
 
     // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
     $jakonkepaladinas->update([
