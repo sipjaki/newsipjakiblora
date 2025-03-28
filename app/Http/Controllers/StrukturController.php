@@ -53,7 +53,7 @@ class StrukturController extends Controller
                 }
 
                 // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
-                public function updatestrukturcreate(Request $request, $id)
+                public function updatestrukturcreate(Request $request, $judul)
                 {
                     // Validasi input
                     $validatedData = $request->validate([
@@ -69,7 +69,7 @@ class StrukturController extends Controller
                     ]);
 
                     // Cari data strukturdinas berdasarkan 'id'
-                    $strukturdinas = strukturdinas::findOrFail($id);
+                    $strukturdinas = strukturdinas::findOrFail($judul);
 
                     // Inisialisasi variabel untuk filePath peraturan
                     $filePath = $strukturdinas->peraturan;  // Pertahankan file lama jika tidak ada file baru yang diupload
