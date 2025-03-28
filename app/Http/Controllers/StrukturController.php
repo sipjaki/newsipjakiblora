@@ -722,24 +722,24 @@ public function bekepaladinasupdatecreate(Request $request, $id)
         'perangkatdaerah' => 'nullable|string|max:255', // Validasi untuk Perangkat Daerah
         'pendidikanterakhir' => 'nullable|string|max:255', // Validasi untuk Pendidikan Terakhir
     ], [
-        'namalengkap.string' => 'Nama Lengkap harus berupa teks!',
+        'namalengkap.required' => 'Nama Lengkap harus berupa teks!',
         'namalengkap.max' => 'Nama Lengkap maksimal 255 karakter!',
 
-        'nip.string' => 'NIP harus berupa teks!',
+        'nip.required' => 'NIP harus berupa teks!',
         'nip.max' => 'NIP maksimal 255 karakter!',
 
-        'ttl.date' => 'Tempat Tanggal Lahir harus berupa format tanggal yang valid!',
+        'ttl.required' => 'Tempat Tanggal Lahir harus berupa format tanggal yang valid!',
 
-        'pangkatgolongan.string' => 'Pangkat Golongan harus berupa teks!',
+        'pangkatgolongan.required' => 'Pangkat Golongan harus berupa teks!',
         'pangkatgolongan.max' => 'Pangkat Golongan maksimal 255 karakter!',
 
-        'jabatan.string' => 'Jabatan harus berupa teks!',
+        'jabatan.required' => 'Jabatan harus berupa teks!',
         'jabatan.max' => 'Jabatan maksimal 255 karakter!',
 
-        'perangkatdaerah.string' => 'Perangkat Daerah harus berupa teks!',
+        'perangkatdaerah.required' => 'Perangkat Daerah harus berupa teks!',
         'perangkatdaerah.max' => 'Perangkat Daerah maksimal 255 karakter!',
 
-        'pendidikanterakhir.string' => 'Pendidikan Terakhir harus berupa teks!',
+        'pendidikanterakhir.required' => 'Pendidikan Terakhir harus berupa teks!',
         'pendidikanterakhir.max' => 'Pendidikan Terakhir maksimal 255 karakter!',
     ]);
 
