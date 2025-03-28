@@ -213,7 +213,8 @@ class BeritajakonController extends Controller
             ]);
         }
 
-        $users = User::all();  // Ambil semua pengguna
+        // $users = User::all();  // Ambil semua pengguna
+        $users = User::where('statusadmin_id', 1)->get();
 
         return view('backend.03_beritajakon.01_beritajakon.index', [
             'title' => 'Berita Jasa Konstruksi Kabupaten Blora',
@@ -231,7 +232,9 @@ public function beberitajakonupdate($id)
     // Cari data undang-undang berdasarkan nilai 'judul'
     $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
     $user = Auth::user();
-    $users = User::all();  // Ambil semua pengguna
+    // $users = User::all();  // Ambil semua pengguna
+
+    $users = User::where('statusadmin_id', 1)->get();
 
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.03_beritajakon.01_beritajakon.update', [
