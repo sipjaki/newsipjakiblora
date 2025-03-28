@@ -129,9 +129,9 @@
                 <a href="/beprofiljakon">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';"
+                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
                     style="
-                        background-color: navy;
+                        background-color: #374151;
                         color: white;
                         border: none;
                         margin-right: 10px;
