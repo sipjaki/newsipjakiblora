@@ -72,7 +72,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/betupoksi">
+                <a href="/beberitajakon">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -103,7 +103,7 @@
                                             <label class="form-label" for="user_id">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> User ID
                                             </label>
-                                            <input type="text" id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id', $data->user_id) }}" />
+                                            <input type="text" id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id', $data->user->name) }}" />
                                             @error('user_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
