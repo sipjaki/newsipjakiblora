@@ -80,9 +80,8 @@
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{!! $item->judul !!}</td>
                                         <td style="text-align: center;">
-                                            <img src="" alt="">
                                             {{-- <iframe src="{{('storage/01_kelembagaan/01_dinas/' . $item->peraturan) }}" width="300" height="200"></iframe> --}}
-                                            <img src="{{ asset('storage/'.$item->peraturan}}" width="300" height="200">
+                                            <img src="{{ asset('storage/'.$item->peraturan)}}" width="300" height="200">
                                             {{-- <img src="{{Storage::url("/storage/app/".$item->peraturan)}}" width="300" height="200"> --}}
  {{-- <img src="{{Storage::url("/storage/app/".$images->filename)}} /> --}}
                                         </td>
