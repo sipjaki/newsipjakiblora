@@ -652,7 +652,6 @@ public function beinfoopdupdatecreate(Request $request, $id)
     // Cari data strukturdinas berdasarkan nilai 'judul'
     $jakonidentitasss = profiljakonidentitasopd::where('id', $id)->firstOrFail();
 
-
     // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
     $jakonidentitasss->update([
         'namaopd' => $validatedData['namaopd'],  // Menggunakan data yang sudah tervalidasi
@@ -693,6 +692,80 @@ public function bekepaladinas()
 
     ]);
 }
+
+// MENU UPDATE DAN UPDATE KEPADA DINAS  ----------------------------------------------------------------------------
+
+public function bekepaladinasupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakonkepaladinas = profiljakonkepaladinas::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.02_profiljakon.03_kepaladinas.update', [
+        'data' => $jakonkepaladinas,
+        'user' => $user,
+        'title' => 'Update Informasi Kepala Dinas'
+    ]);
+}
+
+// -------------------- UPDATE DATA INFORMASI OPD ----------------------
+public function bekepaladinasupdatecreate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'namalengkap' => 'nullable|string|max:255', // Validasi untuk Nama Lengkap
+        'nip' => 'nullable|string|max:255', // Validasi untuk NIP
+        'ttl' => 'nullable|date', // Validasi untuk Tempat Tanggal Lahir
+        'pangkatgolongan' => 'nullable|string|max:255', // Validasi untuk Pangkat Golongan
+        'jabatan' => 'nullable|string|max:255', // Validasi untuk Jabatan
+        'perangkatdaerah' => 'nullable|string|max:255', // Validasi untuk Perangkat Daerah
+        'pendidikanterakhir' => 'nullable|string|max:255', // Validasi untuk Pendidikan Terakhir
+    ], [
+        'namalengkap.string' => 'Nama Lengkap harus berupa teks!',
+        'namalengkap.max' => 'Nama Lengkap maksimal 255 karakter!',
+
+        'nip.string' => 'NIP harus berupa teks!',
+        'nip.max' => 'NIP maksimal 255 karakter!',
+
+        'ttl.date' => 'Tempat Tanggal Lahir harus berupa format tanggal yang valid!',
+
+        'pangkatgolongan.string' => 'Pangkat Golongan harus berupa teks!',
+        'pangkatgolongan.max' => 'Pangkat Golongan maksimal 255 karakter!',
+
+        'jabatan.string' => 'Jabatan harus berupa teks!',
+        'jabatan.max' => 'Jabatan maksimal 255 karakter!',
+
+        'perangkatdaerah.string' => 'Perangkat Daerah harus berupa teks!',
+        'perangkatdaerah.max' => 'Perangkat Daerah maksimal 255 karakter!',
+
+        'pendidikanterakhir.string' => 'Pendidikan Terakhir harus berupa teks!',
+        'pendidikanterakhir.max' => 'Pendidikan Terakhir maksimal 255 karakter!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $jakonkepaladinas = profiljakonkepaladinas::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $jakonkepaladinas->update([
+        'namalengkap' => $validatedData['namalengkap'],  // Menggunakan data yang sudah tervalidasi
+        'nip' => $validatedData['nip'],  // Menggunakan data yang sudah tervalidasi
+        'ttl' => $validatedData['ttl'],  // Menggunakan data yang sudah tervalidasi
+        'pangkatgolongan' => $validatedData['pangkatgolongan'],  // Menggunakan data yang sudah tervalidasi
+        'jabatan' => $validatedData['jabatan'],  // Menggunakan data yang sudah tervalidasi
+        'perangkatdaerah' => $validatedData['perangkatdaerah'],  // Menggunakan data yang sudah tervalidasi
+        'pendidikanterakhir' => $validatedData['pendidikanterakhir'],  // Menggunakan data yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/bekepaladinas');
+}
+
+
+
 
 public function bekabidbaru()
 {

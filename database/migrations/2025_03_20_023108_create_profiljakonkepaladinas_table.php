@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('namalengkap')->nullable();
             $table->string('nip')->nullable();
-            $table->string('ttl')->nullable();
+            $table->date('ttl')->nullable();
             $table->string('pangkatgolongan')->nullable();
             $table->string('jabatan')->nullable();
             $table->string('perangkatdaerah')->nullable();
