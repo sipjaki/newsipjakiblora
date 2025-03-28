@@ -102,7 +102,7 @@
                                             <label class="form-label" for="nomor">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nomor
                                             </label>
-                                            <input type="text" id="nomor" name="nomor" class="form-control @error('nomor') is-invalid @enderror" value="{{ old('nomor', $data->nomor) }}" readonly />
+                                            <input type="text" id="nomor" name="nomor" class="form-control @error('nomor') is-invalid @enderror" value="{{ old('nomor', $data->nomor) }}"  />
                                             @error('nomor')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -117,7 +117,7 @@
                                             <label class="form-label" for="operator1">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 1
                                             </label>
-                                            <input type="text" id="operator1" name="operator1" class="form-control @error('operator1') is-invalid @enderror" value="{{ old('operator1', $data->operator1) }}" readonly />
+                                            <input type="text" id="operator1" name="operator1" class="form-control @error('operator1') is-invalid @enderror" value="{{ old('operator1', $data->operator1) }}"  />
                                             @error('operator1')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -128,7 +128,7 @@
                                             <label class="form-label" for="operator2">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 2
                                             </label>
-                                            <input type="text" id="operator2" name="operator2" class="form-control @error('operator2') is-invalid @enderror" value="{{ old('operator2', $data->operator2) }}" readonly />
+                                            <input type="text" id="operator2" name="operator2" class="form-control @error('operator2') is-invalid @enderror" value="{{ old('operator2', $data->operator2) }}"  />
                                             @error('operator2')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -139,7 +139,7 @@
                                             <label class="form-label" for="operator3">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 3
                                             </label>
-                                            <input type="text" id="operator3" name="operator3" class="form-control @error('operator3') is-invalid @enderror" value="{{ old('operator3', $data->operator3) }}" readonly />
+                                            <input type="text" id="operator3" name="operator3" class="form-control @error('operator3') is-invalid @enderror" value="{{ old('operator3', $data->operator3) }}"  />
                                             @error('operator3')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -150,7 +150,7 @@
                                             <label class="form-label" for="operator4">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 4
                                             </label>
-                                            <input type="text" id="operator4" name="operator4" class="form-control @error('operator4') is-invalid @enderror" value="{{ old('operator4', $data->operator4) }}" readonly />
+                                            <input type="text" id="operator4" name="operator4" class="form-control @error('operator4') is-invalid @enderror" value="{{ old('operator4', $data->operator4) }}"  />
                                             @error('operator4')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
