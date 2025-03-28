@@ -79,35 +79,34 @@
                         📌 Halaman : {{$title}}
                     </div>
                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                        <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Berita Jakon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                        <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                            <div style="position: relative; display: inline-block; margin-right:10px;">
+                                <input type="search" id="searchInput" placeholder="Cari Berita Jakon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            </div>
                         </div>
-                        <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
-
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
-
-                            fetch(`/beberitajakon?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
-
-                                </script>
 
 
+<script>
+    function searchTable() {
+        let searchInput = document.getElementById("searchInput").value;
+
+        // Membuat URL baru dengan parameter search
+        let url = new URL(window.location.href);
+        url.searchParams.set('search', searchInput);
+
+        // Melakukan request menggunakan fetch
+        fetch(url)
+            .then(response => response.text())
+            .then(html => {
+                let parser = new DOMParser();
+                let doc = parser.parseFromString(html, 'text/html');
+                let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                document.querySelector("#tableBody").innerHTML = newTableBody; // Update tabel
+            })
+            .catch(error => console.error('Error fetching search results:', error));
+    }
+</script>
                             <a href="/betupoksi/create">
                                 <button
                                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
