@@ -83,7 +83,6 @@
                             <input type="search" id="searchInput" placeholder="Cari Berita Jakon ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
-
                         <script>
                             function updateEntries() {
                                 let selectedValue = document.getElementById("entries").value;
@@ -93,20 +92,21 @@
                             }
 
                             function searchTable() {
-                                let input = document.getElementById("searchInput").value;
-                                let perPage = new URLSearchParams(window.location.search).get('perPage') || 5;  // Mengambil nilai perPage dari URL atau default ke 5
+                            let input = document.getElementById("searchInput").value;
 
-                                // Kirim query pencarian dan perPage ke server
-                                fetch(`/beberitajakon?search=${input}&perPage=${perPage}`)
-                                    .then(response => response.json())  // Mengharapkan response dalam format JSON
-                                    .then(data => {
-                                        // Perbarui konten tabel dengan data yang diterima
-                                        let newTableBody = data.html;
-                                        document.querySelector("#tableBody").innerHTML = newTableBody;
-                                    })
-                                    .catch(error => console.error("Terjadi kesalahan saat mengambil hasil pencarian:", error));
-                            }
-                        </script>
+                            fetch(`/beberitajakon?search=${input}`)
+                                .then(response => response.text())
+                                .then(html => {
+                                    let parser = new DOMParser();
+                                    let doc = parser.parseFromString(html, "text/html");
+                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                                    document.querySelector("#tableBody").innerHTML = newTableBody;
+                                })
+                                .catch(error => console.error("Error fetching search results:", error));
+                        }
+
+                                </script>
+
 
                             <a href="/betupoksi/create">
                                 <button
