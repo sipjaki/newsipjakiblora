@@ -90,7 +90,7 @@
                         <!--begin::Quick Example-->
                         <form action="{{ route('update.strukturcreatebaru', $data->judul) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('POST') <!-- Menggunakan PUT jika kamu ingin melakukan update -->
+                            @method('PUT') <!-- Menggunakan PUT untuk update data -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
