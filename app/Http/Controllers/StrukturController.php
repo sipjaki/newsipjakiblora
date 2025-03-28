@@ -841,6 +841,66 @@ public function besubbid()
     ]);
 }
 
+// MENU UPDATE DAN UPDATE SUB KOORDINATOR   ----------------------------------------------------------------------------
+
+public function besubbidupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakonsubbidang = profiljakonsubkoordinator::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.02_profiljakon.05_subkoordinator.update', [
+        'data' => $jakonsubbidang,
+        'user' => $user,
+        'title' => 'Update Informasi Sub Koordinator Bidang Bangunan Gedung'
+    ]);
+}
+
+// -------------------- UPDATE DATA KEPALA DINAS ----------------------
+public function besubbidcreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+        'nip' => 'required|string|max:255', // Validasi untuk NIP
+        'ttl' => 'required|date', // Validasi untuk Tempat Tanggal Lahir
+        'pangkatgolongan' => 'required|string|max:255', // Validasi untuk Pangkat Golongan
+        'jabatan' => 'required|string|max:255', // Validasi untuk Jabatan
+        'perangkatdaerah' => 'required|string|max:255', // Validasi untuk Perangkat Daerah
+        'pendidikanterakhir' => 'required|string|max:255', // Validasi untuk Pendidikan Terakhir
+    ], [
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+        'nip.required' => 'NIP wajib diisi!',
+        'ttl.required' => 'Tempat Tanggal Lahir wajib diisi dan harus berupa format tanggal yang valid!',
+        'pangkatgolongan.required' => 'Pangkat Golongan wajib diisi!',
+        'jabatan.required' => 'Jabatan wajib diisi!',
+        'perangkatdaerah.required' => 'Perangkat Daerah wajib diisi!',
+        'pendidikanterakhir.required' => 'Pendidikan Terakhir wajib diisi!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $jakonsubbkoordinator = profiljakonsubkoordinator::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $jakonsubbkoordinator->update([
+        'namalengkap' => $validatedData['namalengkap'],  // Menggunakan data yang sudah tervalidasi
+        'nip' => $validatedData['nip'],  // Menggunakan data yang sudah tervalidasi
+        'ttl' => $validatedData['ttl'],  // Menggunakan data yang sudah tervalidasi
+        'pangkatgolongan' => $validatedData['pangkatgolongan'],  // Menggunakan data yang sudah tervalidasi
+        'jabatan' => $validatedData['jabatan'],  // Menggunakan data yang sudah tervalidasi
+        'perangkatdaerah' => $validatedData['perangkatdaerah'],  // Menggunakan data yang sudah tervalidasi
+        'pendidikanterakhir' => $validatedData['pendidikanterakhir'],  // Menggunakan data yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/besubbid');
+}
+
+
 public function beinformasi()
 {
     $data = profiljakoninformasi::all(); // Menggunakan paginate() untuk pagination
