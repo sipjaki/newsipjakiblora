@@ -246,51 +246,59 @@ public function beberitajakonupdate($id)
 }
 
 // -------------------- UPDATE DATA MENU JABATAN FUNGSIONAL  ----------------------
-public function beberitajakoncreateupdate(Request $request, $id)
-{
-    // Validasi input dengan pesan kustom
-    $validatedData = $request->validate([
-        'user_id' => 'nullable|exists:users,id', // user_id bisa null, dan harus ada di tabel users jika ada
-        'judulberita' => 'nullable|string|max:255', // judulberita bisa null, harus string, dan panjangnya maksimal 255 karakter
-        'tanggal' => 'nullable|date', // tanggal bisa null, dan jika ada harus dalam format tanggal
-        'keterangan' => 'nullable|string', // keterangan bisa null, dan jika ada harus berupa string
-        'foto' => 'nullable|image|max:7168', // foto bisa null, harus image dan maksimal 7MB (7168KB)
-        'foto1' => 'nullable|image|max:7168', // foto1 bisa null, harus image dan maksimal 7MB (7168KB)
-        'foto2' => 'nullable|image|max:7168', // foto2 bisa null, harus image dan maksimal 7MB (7168KB)
-    ], [
-        'user_id.exists' => 'Penulis tidak ditemukan!',
-        'judulberita.string' => 'Judul berita wajib diisi!',
-        'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
-        'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
-        'keterangan.string' => 'Keterangan wajib diisi!',
-        'foto.image' => 'Foto harus berupa gambar!',
-        'foto.max' => 'Foto maksimal 7MB!',
-        'foto1.image' => 'Foto 1 harus berupa gambar!',
-        'foto1.max' => 'Foto 1 maksimal 7MB!',
-        'foto2.image' => 'Foto 2 harus berupa gambar!',
-        'foto2.max' => 'Foto 2 maksimal 7MB!',
-    ]);
+            public function beberitajakoncreateupdate(Request $request, $id)
+            {
+                // Validasi input dengan pesan kustom
+                $validatedData = $request->validate([
+                    'user_id' => 'nullable|exists:users,id', // user_id bisa null, dan harus ada di tabel users jika ada
+                    'judulberita' => 'nullable|string|max:255', // judulberita bisa null, harus string, dan panjangnya maksimal 255 karakter
+                    'tanggal' => 'nullable|date', // tanggal bisa null, dan jika ada harus dalam format tanggal
+                    'keterangan' => 'nullable|string', // keterangan bisa null, dan jika ada harus berupa string
+                    'foto' => 'nullable|image|max:7168', // foto bisa null, harus image dan maksimal 7MB (7168KB)
+                    'foto1' => 'nullable|image|max:7168', // foto1 bisa null, harus image dan maksimal 7MB (7168KB)
+                    'foto2' => 'nullable|image|max:7168', // foto2 bisa null, harus image dan maksimal 7MB (7168KB)
+                ], [
+                    'user_id.exists' => 'Penulis tidak ditemukan!',
+                    'judulberita.string' => 'Judul berita wajib diisi!',
+                    'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
+                    'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
+                    'keterangan.string' => 'Keterangan wajib diisi!',
+                    'foto.image' => 'Foto harus berupa gambar!',
+                    'foto.max' => 'Foto maksimal 7MB!',
+                    'foto1.image' => 'Foto 1 harus berupa gambar!',
+                    'foto1.max' => 'Foto 1 maksimal 7MB!',
+                    'foto2.image' => 'Foto 2 harus berupa gambar!',
+                    'foto2.max' => 'Foto 2 maksimal 7MB!',
+                ]);
+                $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
 
-    // Cari data strukturdinas berdasarkan nilai 'judul'
-    $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
+                // Update data hanya jika field tersebut ada di request
+                $updateData = [
+                    'user_id' => $validatedData['user_id'] ?? $databeritajakon->user_id, // Jika user_id tidak ada, gunakan data sebelumnya
+                    'judulberita' => $validatedData['judulberita'] ?? $databeritajakon->judulberita, // Jika judulberita tidak ada, gunakan data sebelumnya
+                    'tanggal' => $validatedData['tanggal'] ?? $databeritajakon->tanggal, // Jika tanggal tidak ada, gunakan data sebelumnya
+                    'keterangan' => $validatedData['keterangan'] ?? $databeritajakon->keterangan, // Jika keterangan tidak ada, gunakan data sebelumnya
+                ];
 
-    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
-    $databeritajakon->update([
-        'user_id' => $validatedData['user_id'],  // Menggunakan data user_id yang sudah tervalidasi
-        'judulberita' => $validatedData['judulberita'],  // Menggunakan data judulberita yang sudah tervalidasi
-        'tanggal' => $validatedData['tanggal'],  // Menggunakan data tanggal yang sudah tervalidasi
-        'keterangan' => $validatedData['keterangan'],  // Menggunakan data keterangan yang sudah tervalidasi
-        'foto' => $validatedData['foto'],  // Menggunakan data foto yang sudah tervalidasi
-        'foto1' => $validatedData['foto1'],  // Menggunakan data foto1 yang sudah tervalidasi
-        'foto2' => $validatedData['foto2'],  // Menggunakan data foto2 yang sudah tervalidasi
-    ]);
+                // Memeriksa apakah foto, foto1, dan foto2 ada dalam request
+                if (isset($validatedData['foto'])) {
+                    $updateData['foto'] = $validatedData['foto']; // Update foto jika ada
+                }
+                if (isset($validatedData['foto1'])) {
+                    $updateData['foto1'] = $validatedData['foto1']; // Update foto1 jika ada
+                }
+                if (isset($validatedData['foto2'])) {
+                    $updateData['foto2'] = $validatedData['foto2']; // Update foto2 jika ada
+                }
 
-    // Flash session untuk menampilkan pesan sukses
-    session()->flash('update', 'Data Berhasil Diupdate!');
+                // Gunakan $updateData untuk melakukan update
+                $databeritajakon->update($updateData);
+                // Flash session untuk menampilkan pesan sukses
+                session()->flash('update', 'Data Berhasil Diupdate!');
 
-    // Redirect ke halaman yang sesuai
-    return redirect('/beberitajakon');
-}
+                // Redirect ke halaman yang sesuai
+                return redirect('/beberitajakon');
+            }
 
 
 // MENU CREATE JABATAN FUNGSIONAL     ----------------------------------------------------------------------------
