@@ -77,66 +77,56 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <!-- Left Column (6/12) -->
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">
-                                                    <!-- Info Icon with Navy color -->
-                                                    <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Informasi OPD
-                                                </label>
-                                                <div style="max-width: 100%; padding: 10px;">
-                                                    <!-- Textarea with font size and proper styling -->
-                                                    <textarea class="form-control" readonly style="font-size: 16px; width: 100%; height: 150px; text-align: justify; background-color: #f8f9fa; border-color: #ced4da;">
-                                                        {{$item->informasiopd}}
-                                                    </textarea>
-                                                </div>
-                                                <div class="form-text"></div>
-                                            </div>
-                                        </div>
+<!-- Left Column (6/12) -->
+<div class="col-md-12">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nomor
+        </label>
+        <div style="max-width: 100%; padding: 10px; position: relative;">
+            <!-- Icon inside the input -->
+            <i class="fa fa-id-card" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: navy;"></i>
+            <input class="form-control ps-5" readonly value="{{$item->nomor}}" />
+        </div>
+        <div class="form-text"></div>
+    </div>
+</div>
+<!-- End Left Column -->
 
-                                                     <!-- End Left Column -->
+<!-- Right Column (6/12) -->
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 1
+        </label>
+        <input class="form-control" value="{{$item->operator1}}" readonly/>
+    </div>
 
-                                        <!-- Right Column (6/12) -->
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 2
+        </label>
+        <input class="form-control" value="{{$item->operator2}}" readonly/>
+    </div>
+</div>
+<!-- End Right Column -->
 
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">Operator 1</label>
-                                                <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <!-- Icon styling adjusted for size and color -->
-                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: navy;"></i>
-                                                    <input class="form-control ps-5" value="{{$item->operator1}}" readonly />
-                                                </div>
-                                            </div>
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 3
+        </label>
+        <input class="form-control" value="{{$item->operator3}}" readonly/>
+    </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">Operator 2</label>
-                                                <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <!-- Icon styling adjusted for size and color -->
-                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: navy;"></i>
-                                                    <input class="form-control ps-5" value="{{$item->operator2}}" readonly />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">Operator 3</label>
-                                                <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <!-- Icon styling adjusted for size and color -->
-                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: navy;"></i>
-                                                    <input class="form-control ps-5" value="{{$item->operator3}}" readonly />
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label">Operator 4</label>
-                                                <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <!-- Icon styling adjusted for size and color -->
-                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: navy;"></i>
-                                                    <input class="form-control ps-5" value="{{$item->operator4}}" readonly />
-                                                </div>
-                                            </div>
-                                        </div>
-                                                                                <!-- End Right Column -->
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 4
+        </label>
+        <input class="form-control" value="{{$item->operator4}}" readonly/>
+    </div>
+</div>
+<!-- End Right Column -->
 
                                     </div> <!-- end row -->
                                 </div>
