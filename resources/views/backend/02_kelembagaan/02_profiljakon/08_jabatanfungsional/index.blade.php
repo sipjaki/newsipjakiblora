@@ -76,7 +76,7 @@
                                 </button>
                             </a>
                         </div>
-
+<hr>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
