@@ -59,7 +59,7 @@
                             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
                             width: 100%;
                         ">
-                            📌 Halaman Update : {{$title}}
+                            📌 Halaman Tambah Data : {{$title}}
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/besipjaki">
+                <a href="/bejabatan">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
