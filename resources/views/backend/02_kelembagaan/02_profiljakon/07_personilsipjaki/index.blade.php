@@ -80,48 +80,54 @@
                                         <div class="col-md-12">
                                             <div class="mb-3">
                                                 <label class="form-label">Nomor</label>
-                                                <div style="max-width: 100%; padding: 10px;">
-                                                    <input class="form-control" readonly value="{{$item->nomor}}" />
+                                                <div style="max-width: 100%; padding: 10px; position: relative;">
+                                                    <!-- Icon inside the input -->
+                                                    <i class="fa fa-id-card" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <input class="form-control ps-5" readonly value="{{$item->nomor}}" />
                                                 </div>
                                                 <div class="form-text"></div>
                                             </div>
-
                                         </div>
-                                        <!-- End Left Column -->
+                                                     <!-- End Left Column -->
 
                                         <!-- Right Column (6/12) -->
 
                                         <div class="col-md-6">
-
-
                                             <div class="mb-3">
                                                 <label class="form-label">Operator 1</label>
-                                                <input class="form-control" value="{{$item->operator1}}" readonly/>
+                                                <div style="max-width: 100%; padding: 10px; position: relative;">
+                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <input class="form-control ps-5" value="{{$item->operator1}}" readonly />
+                                                </div>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">Operator 2</label>
-                                                <input class="form-control" value="{{$item->operator2}}" readonly/>
+                                                <div style="max-width: 100%; padding: 10px; position: relative;">
+                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <input class="form-control ps-5" value="{{$item->operator2}}" readonly />
+                                                </div>
                                             </div>
-
                                         </div>
-                                        <!-- End Right Column -->
 
                                         <div class="col-md-6">
-
-
                                             <div class="mb-3">
                                                 <label class="form-label">Operator 3</label>
-                                                <input class="form-control" value="{{$item->operator3}}" readonly/>
+                                                <div style="max-width: 100%; padding: 10px; position: relative;">
+                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <input class="form-control ps-5" value="{{$item->operator3}}" readonly />
+                                                </div>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">Operator 4</label>
-                                                <input class="form-control" value="{{$item->operator4}}" readonly/>
+                                                <div style="max-width: 100%; padding: 10px; position: relative;">
+                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <input class="form-control ps-5" value="{{$item->operator4}}" readonly />
+                                                </div>
                                             </div>
-
                                         </div>
-                                        <!-- End Right Column -->
+                                                                                <!-- End Right Column -->
 
                                     </div> <!-- end row -->
                                 </div>
