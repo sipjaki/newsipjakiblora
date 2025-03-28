@@ -542,6 +542,61 @@ public function beinfoopd()
     ]);
 }
 
+
+
+// MENU UPDATE DAN UPDATE CREATE INFORMASI OPD ----------------------------------------------------------------------------
+
+
+public function beinformasiopdupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakonidentitasopd = renstra::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.02_profiljakon.01_judul.update', [
+        'data' => $jakonidentitasopd,
+        'user' => $user,
+        'title' => 'Update Informasi Keterangan OPD'
+    ]);
+}
+
+// -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
+public function beinformasiopdupdatecreate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'judul' => 'required|string|max:255',
+        'keterangan' => 'required|string',
+        // 'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
+    ], [
+        'judul.required' => 'Judul Wajib Diisi!',
+        'judul.max' => 'Judul tidak boleh lebih dari 255 karakter.',
+        'keterangan.required' => 'Keterangan wajib diisi !',
+        // 'peraturan.mimes' => 'File yang diunggah harus berformat PDF.',
+        // 'peraturan.max' => 'Ukuran file PDF terlalu besar, maksimal 5MB.',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $judulopd = renstra::where('id', $id)->firstOrFail();
+
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $judulopd->update([
+        'judul' => $validatedData['judul'],  // Menggunakan data yang sudah tervalidasi
+        'keterangan' => $validatedData['keterangan'],
+        // 'peraturan' => $filePath, // Menyimpan path file yang baru
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/beinformasiopd');
+}
+
+// ================================================================================================================
+
 public function bekepaladinas()
 {
     $data = profiljakonkepaladinas::all(); // Menggunakan paginate() untuk pagination

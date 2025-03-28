@@ -418,7 +418,10 @@ Route::get('/beprofiljakon', [StrukturController::class, 'beprofiljakon'])->midd
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beinformasiopd', [StrukturController::class, 'beinformasiopd'])->middleware('auth');
-Route::get('/beinformasiopd/update/{judul}', [StrukturController::class, 'beinformasiopdupdate'])->middleware('auth');
+// Route::get('/beinformasiopd/update/{judul}', [StrukturController::class, 'beinformasiopdupdate'])->middleware('auth');
+Route::get('/beinformasiopd/update/{id}', [StrukturController::class, 'beinformasiopdupdate'])->middleware('auth')->name('update.beinformasiopd');
+Route::post('/beinformasiopd/updatecreate/{id}', [StrukturController::class, 'beinformasiopdupdatecreate'])->middleware('auth')->name('update.beinformasiopdupdatecreate');
+
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beinfoopd', [StrukturController::class, 'beinfoopd'])->middleware('auth');
@@ -575,8 +578,8 @@ Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class,
 // -------- BAGIAN 01 BACKEND PROFIL ---------------------------------p
 Route::get('/struktur', [StrukturController::class, 'index'])->middleware('auth');
 Route::get('/struktur/update/{judul}', [StrukturController::class, 'updatestruktur'])->middleware('auth')->name('update.struktur');
-// Route::post('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware('auth')->name('update.strukturcreate');
 Route::post('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware('auth')->name('update.strukturcreatebaru');
+// Route::post('/struktur/updatecreate/{judul}', [StrukturController::class, 'updatestrukturcreate'])->middleware('auth')->name('update.strukturcreate');
 
 
 Route::post('/struktur/{judul}', [StrukturController::class, 'createupdatestruktur'])->middleware('auth')->name('updatestore.struktur');
