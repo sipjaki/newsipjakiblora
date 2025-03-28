@@ -113,7 +113,7 @@
                                             <label class="form-label" for="notelepon">
                                                 <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> No Telepon
                                             </label>
-                                            <input type="text" id="notelepon" name="notelepon" class="form-control @error('notelepon') is-invalid @enderror" value="{{ old('notelepon', $data->notelepon) }}" />
+                                            <input type="number" id="notelepon" name="notelepon" class="form-control @error('notelepon') is-invalid @enderror" value="{{ old('notelepon', $data->notelepon) }}" />
                                             @error('notelepon')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
