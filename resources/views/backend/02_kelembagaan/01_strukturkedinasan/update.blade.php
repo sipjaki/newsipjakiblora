@@ -101,13 +101,19 @@
                                             <label class="form-label" for="judul">
                                                 <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Judul
                                             </label>
-                                            <input type="text" id="judul" name="judul" class="form-control" value="{{ old('judul', $data->judul) }}" />
+                                            <input type="text" id="judul" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ old('judul', $data->judul) }}" />
+                                            @error('judul')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="keterangan">
                                                 <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Keterangan
                                             </label>
-                                            <textarea id="keterangan" name="keterangan" class="form-control" rows="6">{{ old('keterangan', $data->keterangan) }}</textarea>
+                                            <textarea id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" rows="6">{{ old('keterangan', $data->keterangan) }}</textarea>
+                                            @error('keterangan')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                     <!-- End Left Column -->
@@ -125,6 +131,10 @@
                                             <!-- Input File untuk Mengunggah Gambar -->
                                             <input type="file" name="peraturan" class="form-control @error('peraturan') is-invalid @enderror" id="peraturan" onchange="previewImage()" />
 
+                                            @error('peraturan')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+
                                             <div style="margin-top: 10px;">
                                                 @if($data->peraturan)  <!-- Cek jika ada file setelah diupload -->
                                                     <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
@@ -133,12 +143,6 @@
                                                 @else
                                                     <p>No file uploaded yet.</p>
                                                 @endif
-
-                                                @error('peraturan')
-                                                    <div class="invalid-feedback">
-                                                        {{$message}}
-                                                    </div>
-                                                @enderror
                                             </div>
 
                                         </div>

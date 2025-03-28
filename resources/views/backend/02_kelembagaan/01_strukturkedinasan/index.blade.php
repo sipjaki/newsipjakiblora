@@ -74,6 +74,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     @foreach ($data as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>

@@ -55,34 +55,35 @@ class StrukturController extends Controller
                 // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
                 public function updatestrukturcreate(Request $request, $judul)
                 {
-                    // Validasi input
+                    // Validasi input dengan pesan kustom
                     $validatedData = $request->validate([
                         'judul' => 'required|string|max:255',
                         'keterangan' => 'required|string',
                         'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
+                    ], [
+                        'judul.required' => 'Judul harus diisi, dong!',
+                        'judul.max' => 'Judul tidak boleh lebih dari 255 karakter.',
+                        'keterangan.required' => 'Keterangan wajib diisi. Jangan biarkan kosong!',
+                        'peraturan.mimes' => 'File yang diunggah harus berformat PDF.',
+                        'peraturan.max' => 'Ukuran file PDF terlalu besar, maksimal 5MB.',
                     ]);
 
                     // Cari data strukturdinas berdasarkan nilai 'judul'
                     $strukturdinas = strukturdinas::where('judul', $judul)->firstOrFail();
 
                     // Inisialisasi variabel filePath dengan nilai null
-                    $filePath = null;
+                    $filePath = $strukturdinas->peraturan;  // Mempertahankan file lama jika tidak ada file baru yang diupload
 
                     // Jika ada file yang diupload
                     if ($request->hasFile('peraturan')) {
-                        // Validasi tambahan jika file diupload
-                        $request->validate([
-                            'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
-                        ]);
-
                         // Simpan file dan ambil path-nya
-                        $filePath = $request->file('peraturan')->store('kedinasan', 'public'); // Simpan di storage/public/kedinasan
+                        $filePath = $request->file('peraturan')->store('01_kelembagaan', 'public'); // Simpan di storage/public/kedinasan
                     }
 
-                    // Update data strukturdinas dengan data dari form
+                    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
                     $strukturdinas->update([
-                        'judul' => $request->input('judul'),
-                        'keterangan' => $request->input('keterangan'),
+                        'judul' => $validatedData['judul'],  // Menggunakan data yang sudah tervalidasi
+                        'keterangan' => $validatedData['keterangan'],
                         'peraturan' => $filePath, // Menyimpan path file yang baru
                     ]);
 
@@ -92,7 +93,6 @@ class StrukturController extends Controller
                     // Redirect ke halaman yang sesuai
                     return redirect('/bestrukturdinas');
                 }
-
 
     //    ======================================================================
 
