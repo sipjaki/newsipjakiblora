@@ -61,6 +61,7 @@
                     ">
                         📌 Halaman : {{$title}}
                     </div>
+
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
