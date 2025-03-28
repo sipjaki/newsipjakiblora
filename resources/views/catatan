@@ -1,3 +1,38 @@
 ssh -p 65002 u123385283@46.202.138.41
 
 SipjakiBlora$$123
+
+
+
+
+Kembali (Hitam):
+
+Warna Latar: #000000 (Hitam)
+
+Warna Teks: #FFFFFF (Putih)
+
+Border: #000000 (Hitam)
+
+Update (Hijau):
+
+Warna Latar: #28a745 (Hijau)
+
+Warna Teks: #FFFFFF (Putih)
+
+Border: #28a745 (Hijau)
+
+Create (Biru):
+
+Warna Latar: #007bff (Biru)
+
+Warna Teks: #FFFFFF (Putih)
+
+Border: #007bff (Biru)
+
+Delete (Merah):
+
+Warna Latar: #dc3545 (Merah)
+
+Warna Teks: #FFFFFF (Putih)
+
+Border: #dc3545 (Merah)
