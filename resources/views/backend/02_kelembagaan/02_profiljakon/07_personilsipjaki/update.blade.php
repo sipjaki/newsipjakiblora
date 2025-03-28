@@ -97,94 +97,66 @@
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
-                                        <!-- Nama Lengkap -->
+                                        <!-- Nomor -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
+                                            <label class="form-label" for="nomor">
+                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Nomor
                                             </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap', $data->namalengkap) }}" />
-                                            @error('namalengkap')
+                                            <input type="text" id="nomor" name="nomor" class="form-control @error('nomor') is-invalid @enderror" value="{{ old('nomor', $data->nomor) }}" readonly />
+                                            @error('nomor')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-
-                                        <!-- NIP -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nip">
-                                                <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> NIP
-                                            </label>
-                                            <input type="text" id="nip" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $data->nip) }}" />
-                                            @error('nip')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Tempat Tanggal Lahir -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="ttl">
-                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tempat Tanggal Lahir
-                                            </label>
-                                            <input type="date" id="ttl" name="ttl" class="form-control @error('ttl') is-invalid @enderror" value="{{ old('ttl', $data->ttl) }}" />
-                                            @error('ttl')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Pangkat Golongan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pangkatgolongan">
-                                                <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pangkat Golongan
-                                            </label>
-                                            <input type="text" id="pangkatgolongan" name="pangkatgolongan" class="form-control @error('pangkatgolongan') is-invalid @enderror" value="{{ old('pangkatgolongan', $data->pangkatgolongan) }}" />
-                                            @error('pangkatgolongan')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
                                     </div>
+                                    <!-- End Left Column -->
+
+                                    <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
-                                        <!-- Jabatan -->
+                                        <!-- Operator 1 -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="jabatan">
-                                                <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Jabatan
+                                            <label class="form-label" for="operator1">
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 1
                                             </label>
-                                            <input type="text" id="jabatan" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" value="{{ old('jabatan', $data->jabatan) }}" />
-                                            @error('jabatan')
+                                            <input type="text" id="operator1" name="operator1" class="form-control @error('operator1') is-invalid @enderror" value="{{ old('operator1', $data->operator1) }}" readonly />
+                                            @error('operator1')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
-                                        <!-- Perangkat Daerah -->
+                                        <!-- Operator 2 -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="perangkatdaerah">
-                                                <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Perangkat Daerah
+                                            <label class="form-label" for="operator2">
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 2
                                             </label>
-                                            <input type="text" id="perangkatdaerah" name="perangkatdaerah" class="form-control @error('perangkatdaerah') is-invalid @enderror" value="{{ old('perangkatdaerah', $data->perangkatdaerah) }}" />
-                                            @error('perangkatdaerah')
+                                            <input type="text" id="operator2" name="operator2" class="form-control @error('operator2') is-invalid @enderror" value="{{ old('operator2', $data->operator2) }}" readonly />
+                                            @error('operator2')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
-                                        <!-- Pendidikan Terakhir -->
+                                        <!-- Operator 3 -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="pendidikanterakhir">
-                                                <i class="bi bi-graduation-cap" style="margin-right: 8px; color: navy;"></i> Pendidikan Terakhir
+                                            <label class="form-label" for="operator3">
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 3
                                             </label>
-                                            <select id="pendidikanterakhir" name="pendidikanterakhir" class="form-control @error('pendidikanterakhir') is-invalid @enderror">
-                                                <option value="">Pilih Pendidikan Terakhir</option>
-                                                <option value="Strata 1" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 1' ? 'selected' : '' }}>Strata 1 (S1)</option>
-                                                <option value="Strata 2" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 2' ? 'selected' : '' }}>Strata 2 (S2)</option>
-                                                <option value="Strata 3" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Strata 3' ? 'selected' : '' }}>Strata 3 (S3)</option>
-                                                <option value="Magister" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Magister' ? 'selected' : '' }}>Magister (S2)</option>
-                                                <option value="Doktor" {{ old('pendidikanterakhir', $data->pendidikanterakhir) == 'Doktor' ? 'selected' : '' }}>Doktor (S3)</option>
-                                            </select>
-                                            @error('pendidikanterakhir')
+                                            <input type="text" id="operator3" name="operator3" class="form-control @error('operator3') is-invalid @enderror" value="{{ old('operator3', $data->operator3) }}" readonly />
+                                            @error('operator3')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
-
+                                        <!-- Operator 4 -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="operator4">
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Operator 4
+                                            </label>
+                                            <input type="text" id="operator4" name="operator4" class="form-control @error('operator4') is-invalid @enderror" value="{{ old('operator4', $data->operator4) }}" readonly />
+                                            @error('operator4')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                     </div>
+                                    <!-- End Right Column -->
                                 </div>
                                 <!-- End row -->
                             </div>

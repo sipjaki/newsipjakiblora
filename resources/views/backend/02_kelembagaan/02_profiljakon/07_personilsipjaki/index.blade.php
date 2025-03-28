@@ -85,7 +85,7 @@
         </label>
         <div style="max-width: 100%; padding: 10px; position: relative;">
             <!-- Icon inside the input -->
-            <i class="fa fa-id-card" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: navy;"></i>
+            {{-- <i class="fa fa-id-card" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: navy;"></i> --}}
             <input class="form-control ps-5" readonly value="{{$item->nomor}}" />
         </div>
         <div class="form-text"></div>
