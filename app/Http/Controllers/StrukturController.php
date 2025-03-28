@@ -76,7 +76,7 @@ class StrukturController extends Controller
                         ]);
 
                         // Simpan file dan ambil path-nya
-                        $filePath = $request->file('peraturan')->store('kedinasan', 'public'); // Simpan di storage/public/kedinasan
+                        $filePath = $request->file('peraturan')->store('barulagi', 'public'); // Simpan di storage/public/kedinasan
                     }
 
                     // Update data strukturdinas dengan data dari form
