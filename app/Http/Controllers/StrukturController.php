@@ -76,7 +76,7 @@ class StrukturController extends Controller
 
                     if ($request->hasFile('peraturan')) {
                         $filePath = $request->file('peraturan')->store('01_kelembagaan/01_dinas', 'public');
-                        dd($filePath); // Debugging path file yang tersimpan
+                        // dd($filePath); // Debugging path file yang tersimpan
                     }
 
                     // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
