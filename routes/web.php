@@ -437,7 +437,9 @@ Route::post('/bekepaladinas/updatecreate/{id}', [StrukturController::class, 'bek
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bekabid', [StrukturController::class, 'bekabidbaru'])->middleware('auth');
-Route::get('/bekabid/update/{namalengkap}', [StrukturController::class, 'bekabidshow'])->middleware('auth');
+// Route::get('/bekabid/update/{namalengkap}', [StrukturController::class, 'bekabidshow'])->middleware('auth');
+Route::get('/bekabid/update/{id}', [StrukturController::class, 'bekabidbaruupdate'])->middleware('auth')->name('update.bekabidbaru');
+Route::post('/bekabid/updatecreate/{id}', [StrukturController::class, 'bekabidbaruupdatecreate'])->middleware('auth')->name('update.bekabidbaruupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/besubbid', [StrukturController::class, 'besubbid'])->middleware('auth');
