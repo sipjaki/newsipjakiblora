@@ -213,11 +213,14 @@ class BeritajakonController extends Controller
             ]);
         }
 
+        $users = User::all();  // Ambil semua pengguna
+
         return view('backend.03_beritajakon.01_beritajakon.index', [
             'title' => 'Berita Jasa Konstruksi Kabupaten Blora',
             'data' => $data,
             'perPage' => $perPage,
-            'search' => $search
+            'search' => $search,
+            'users' => $users
         ]);
     }
 
