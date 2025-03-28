@@ -463,8 +463,8 @@ Route::post('/besipjaki/updatecreate/{id}', [StrukturController::class, 'besipja
 Route::get('/bejabatan', [StrukturController::class, 'bejabatan'])->middleware('auth');
 Route::get('/bejabatan/update/{id}', [StrukturController::class, 'bejabatanupdate'])->middleware('auth')->name('update.bejabatanupdate');
 Route::post('/bejabatan/updatecreate/{id}', [StrukturController::class, 'bejabatancreateupdate'])->middleware('auth')->name('update.bejabatancreateupdate');
-Route::get('/bejabatan/create', [StrukturController::class, 'bejabatancreate'])->middleware('auth')->name('create.bejabatancreate');
-Route::post('/bejabatan/createnew/{id}', [StrukturController::class, 'bejabatancreatenew'])->middleware('auth')->name('create.bejabatancreatenew');
+Route::get('/bejabatan/create', [StrukturController::class, 'bejabatancreate'])->middleware('auth')->name('create.create.bejabatancreatenew');
+// Route::post('/bejabatan/createnew/{id}', [StrukturController::class, 'bejabatancreatenew'])->middleware('auth')->name('create.bejabatancreatenew');
 Route::delete('/bejabatan/delete/{namalengkap}', [StrukturController::class, 'bejabatandelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 
