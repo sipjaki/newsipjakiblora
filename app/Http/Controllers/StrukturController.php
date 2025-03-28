@@ -1126,7 +1126,7 @@ public function bejabatancreatenew(Request $request)
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
     ]);
 
-    // Create new profiljakonpersonil record
+    // Membuat data baru di profiljakonpersonil
     profiljakonpersonil::create([
         'jabatan' => $validatedData['jabatan'],  // Menggunakan data yang sudah tervalidasi
         'namalengkap' => $validatedData['namalengkap'],  // Menggunakan data yang sudah tervalidasi

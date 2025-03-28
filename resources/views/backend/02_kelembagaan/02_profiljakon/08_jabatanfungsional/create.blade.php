@@ -93,7 +93,7 @@
                             <!-- begin::Body -->
                             <div class="card-body">
                                 <div class="row">
-                                    <!-- Left Column (6/12) -->
+                                    <!-- Kolom Kiri (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
@@ -106,9 +106,9 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <!-- End Left Column -->
+                                    <!-- Akhir Kolom Kiri -->
 
-                                    <!-- Right Column (6/12) -->
+                                    <!-- Kolom Kanan (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Jabatan -->
                                         <div class="mb-3">
@@ -121,14 +121,14 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <!-- End Right Column -->
+                                    <!-- Akhir Kolom Kanan -->
                                 </div>
-                                <!-- End row -->
+                                <!-- Akhir baris -->
                             </div>
-                            <!-- end::Body -->
+                            <!-- akhir::Body -->
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-                                <button type="submit" style="background-color: #007bff; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+                                <button type="submit" style="background-color: #117235; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
                                     <i class="fa fa-file" style="margin-right: 8px;"></i> Create
                                 </button>
                             </div>
