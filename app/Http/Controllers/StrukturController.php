@@ -915,6 +915,61 @@ public function beinformasi()
     ]);
 }
 
+
+// MENU UPDATE DAN UPDATE SUB KOORDINATOR   ----------------------------------------------------------------------------
+
+public function beinformasiupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakoninformasi = profiljakoninformasi::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.02_profiljakon.06_keteranganopd.update', [
+        'data' => $jakoninformasi,
+        'user' => $user,
+        'title' => 'Update Informasi Keterangan Profil Jakon'
+    ]);
+}
+
+// -------------------- UPDATE DATA KEPALA DINAS ----------------------
+public function beinformasicreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'informasiopd' => 'required|string', // Validasi untuk Nama Lengkap
+        'notelepon' => 'required|string|max:255', // Validasi untuk NIP
+        'instagram' => 'required|date', // Validasi untuk Tempat Tanggal Lahir
+        'tiktok' => 'required|string|max:255', // Validasi untuk Pangkat Golongan
+        'email' => 'required|string|max:255', // Validasi untuk Jabatan
+    ], [
+        'informasiopd.required' => 'Nama OPD wajib diisi!',
+        'notelepon.required' => 'No telepon wajib diisi!',
+        'instagram.required' => 'Instagram Wajib Diisi',
+        'tiktok.required' => 'Tiktok wajib diisi!',
+        'email.required' => 'Email wajib diisi!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $jakoninformasi = profiljakoninformasi::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $jakoninformasi->update([
+        'informasiopd' => $validatedData['informasiopd'],  // Menggunakan data yang sudah tervalidasi
+        'notelepon' => $validatedData['notelepon'],  // Menggunakan data yang sudah tervalidasi
+        'instagram' => $validatedData['instagram'],  // Menggunakan data yang sudah tervalidasi
+        'tiktok' => $validatedData['tiktok'],  // Menggunakan data yang sudah tervalidasi
+        'email' => $validatedData['email'],  // Menggunakan data yang sudah tervalidasi
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/beinformasi');
+}
+
+
 public function besipjaki()
 {
     $data = profiljakonsipjaki::all(); // Menggunakan paginate() untuk pagination
