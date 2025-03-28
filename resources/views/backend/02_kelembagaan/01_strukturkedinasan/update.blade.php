@@ -90,7 +90,7 @@
                         <!--begin::Quick Example-->
                         <form action="{{ route('update.strukturcreatebaru', $data->judul) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('POST') <!-- Anda bisa ganti dengan PUT jika Anda ingin menggunakan metode PUT untuk update -->
+                            @method('PUT') <!-- Menggunakan PUT jika kamu ingin melakukan update -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -122,19 +122,10 @@
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="peraturan">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Gambar
+                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> File Peraturan (PDF)
                                             </label>
 
-                                            <!-- Preview Gambar -->
-                                            <img id="img-preview" class="img-fluid" alt="Preview Gambar" style="max-width: 100%; max-height: 200px; display: none;" />
-
-                                            <!-- Input File untuk Mengunggah Gambar -->
-                                            <input type="file" name="peraturan" class="form-control @error('peraturan') is-invalid @enderror" id="peraturan" onchange="previewImage()" />
-
-                                            @error('peraturan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-
+                                            <!-- Preview PDF -->
                                             <div style="margin-top: 10px;">
                                                 @if($data->peraturan)  <!-- Cek jika ada file setelah diupload -->
                                                     <object data="{{ asset('storage/' . $data->peraturan) }}" type="application/pdf" width="300" height="200">
@@ -145,51 +136,26 @@
                                                 @endif
                                             </div>
 
+                                            <!-- Input File untuk Mengunggah PDF -->
+                                            <input type="file" name="peraturan" class="form-control @error('peraturan') is-invalid @enderror" id="peraturan" />
+                                            @error('peraturan')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                         </div>
 
-                                        <script>
-                                            function previewImage() {
-                                                const peraturan = document.querySelector('#peraturan');
-                                                const imgPreview = document.querySelector('#img-preview');
-
-                                                // Pastikan file dipilih
-                                                const file = peraturan.files[0];
-
-                                                // Jika ada file yang dipilih dan file tersebut adalah gambar
-                                                if (file && file.type.startsWith('image')) {
-                                                    const reader = new FileReader();
-
-                                                    reader.onload = function(e) {
-                                                        imgPreview.src = e.target.result;  // Menampilkan gambar yang dipilih
-                                                        imgPreview.style.display = 'block'; // Menampilkan gambar setelah dipilih
-                                                    }
-
-                                                    reader.readAsDataURL(file);  // Membaca file gambar
-                                                } else {
-                                                    imgPreview.style.display = 'none';  // Menyembunyikan gambar jika file bukan gambar
-                                                }
-                                            }
-                                        </script>
-
                                     </div>
-
                                 </div> <!-- end row -->
                             </div>
                             <!-- end::Body -->
                             <br><br>
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                    <button type="submit"
+                                <button type="submit"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                     onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
                                     style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                    <!-- Ikon Kembali -->
-                                    {{-- <i class="fa fa-circle-o-notch fa-spin" style="margin-right: 8px;"></i> Update --}}
                                     <i class="fa fa-edit" style="margin-right: 8px;"></i> Update
-
                                 </button>
-                        </div>
-
-
+                            </div>
                         </form>
 
                              </div>
