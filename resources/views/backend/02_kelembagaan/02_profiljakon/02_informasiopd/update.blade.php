@@ -214,11 +214,19 @@
                                             <label class="form-label" for="tipedinas">
                                                 <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Tipe Dinas
                                             </label>
-                                            <input type="text" id="tipedinas" name="tipedinas" class="form-control @error('tipedinas') is-invalid @enderror" value="{{ old('tipedinas', $data->tipedinas) }}" />
+                                            <select id="tipedinas" name="tipedinas" class="form-control @error('tipedinas') is-invalid @enderror">
+                                                <option value="" disabled selected>Pilih Tipe Dinas</option>
+                                                <option value="A" {{ old('tipedinas', $data->tipedinas) == 'A' ? 'selected' : '' }}>A</option>
+                                                <option value="B" {{ old('tipedinas', $data->tipedinas) == 'B' ? 'selected' : '' }}>B</option>
+                                                <option value="C" {{ old('tipedinas', $data->tipedinas) == 'C' ? 'selected' : '' }}>C</option>
+                                                <option value="D" {{ old('tipedinas', $data->tipedinas) == 'D' ? 'selected' : '' }}>D</option>
+                                                <option value="E" {{ old('tipedinas', $data->tipedinas) == 'E' ? 'selected' : '' }}>E</option>
+                                            </select>
                                             @error('tipedinas')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
                                     </div>
                                                                         <!-- End Left Column -->
                                 </div>
