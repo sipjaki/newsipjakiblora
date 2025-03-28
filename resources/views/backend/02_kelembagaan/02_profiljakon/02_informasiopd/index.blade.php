@@ -46,10 +46,21 @@
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        <h2 style="color: black;" class="card-title">Halaman Pengaturan : {{$title}} </h2>
-
+                        <div style="
+                        margin-bottom:10px;
+                        font-weight: 900;
+                        font-size: 16px;
+                        text-align: center;
+                        background: linear-gradient(135deg, #166534, #166534);
+                        color: white;
+                        padding: 10px 25px;
+                        border-radius: 10px;
+                        display: inline-block;
+                        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                        width: 100%;
+                    ">
+                        📌 Halaman : {{$title}}
                     </div>
-
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
@@ -67,66 +78,87 @@
                                         <!-- Left Column (6/12) -->
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label class="form-label">Nama Organisasi Perangkat Daerah (OPD)</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> Nama Organisasi Perangkat Daerah (OPD)
+                                                </label>
                                                 <input class="form-control" value="{{$item->namaopd}}" readonly/>
                                                 <div class="form-text"></div>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">Alamat Organisasi Perangkat Daerah (OPD) </label>
-                                                <input class="form-control" value="{{$item->alamatopd}} " readonly />
+                                                <label class="form-label">
+                                                    <i class="bi bi-house-door-door" style="margin-right: 8px; color: navy;"></i> Alamat Organisasi Perangkat Daerah (OPD)
+                                                </label>
+                                                <input class="form-control" value="{{$item->alamatopd}}" readonly />
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">RT/RW </label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-house-door" style="margin-right: 8px; color: navy;"></i> RT/RW
+                                                </label>
                                                 <input class="form-control" value="{{$item->rtrw}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">Kode Pos</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-mailbox" style="margin-right: 8px; color: navy;"></i> Kode Pos
+                                                </label>
                                                 <input class="form-control" value="{{$item->kodepos}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">Kelurahan</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Kelurahan
+                                                </label>
                                                 <input class="form-control" value="{{$item->kelurahan}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">Kecamatan</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-map-marker" style="margin-right: 8px; color: navy;"></i> Kecamatan
+                                                </label>
                                                 <input class="form-control" value="{{$item->kecamatan}}" readonly/>
                                             </div>
                                         </div>
-                                        <!-- End Left Column -->
 
-                                        <!-- Right Column (6/12) -->
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label class="form-label">Kota</label>
-                                                <input class="form-control" value="{{$item->kota}}" readonly/>
-                                            </div>
+<!-- Right Column (6/12) -->
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Kota
+        </label>
+        <input class="form-control" value="{{$item->kota}}" readonly/>
+    </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">Provinsi</label>
-                                                <input class="form-control" value="{{$item->provinsi}}" readonly/>
-                                            </div>
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-geo-alt" style="margin-right: 8px; color: navy;"></i> Provinsi
+        </label>
+        <input class="form-control" value="{{$item->provinsi}}" readonly/>
+    </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">Negara</label>
-                                                <input class="form-control" value="{{$item->negara}}" readonly/>
-                                            </div>
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-globe" style="margin-right: 8px; color: navy;"></i> Negara
+        </label>
+        <input class="form-control" value="{{$item->negara}}" readonly/>
+    </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">Titik Geografis</label>
-                                                <input class="form-control" value="{{$item->posisigeografis}}" readonly/>
-                                            </div>
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-map" style="margin-right: 8px; color: navy;"></i> Titik Geografis
+        </label>
+        <input class="form-control" value="{{$item->posisigeografis}}" readonly/>
+    </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">Tipe Dinas</label>
-                                                <input class="form-control" value="{{$item->tipedinas}}" readonly/>
-                                            </div>
-                                        </div>
-                                        <!-- End Right Column -->
+    <div class="mb-3">
+        <label class="form-label">
+            <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Tipe Dinas
+        </label>
+        <input class="form-control" value="{{$item->tipedinas}}" readonly/>
+    </div>
+</div>
+<!-- End Right Column -->
 
                                     </div> <!-- end row -->
                                 </div>
