@@ -79,15 +79,20 @@
                                         <!-- Left Column (6/12) -->
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label class="form-label">Nomor</label>
-                                                <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <!-- Icon inside the input -->
-                                                    <i class="fa fa-id-card" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
-                                                    <input class="form-control ps-5" readonly value="{{$item->nomor}}" />
+                                                <label class="form-label">
+                                                    <!-- Info Icon with Navy color -->
+                                                    <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Informasi OPD
+                                                </label>
+                                                <div style="max-width: 100%; padding: 10px;">
+                                                    <!-- Textarea with font size and proper styling -->
+                                                    <textarea class="form-control" readonly style="font-size: 16px; width: 100%; height: 150px; text-align: justify; background-color: #f8f9fa; border-color: #ced4da;">
+                                                        {{$item->informasiopd}}
+                                                    </textarea>
                                                 </div>
                                                 <div class="form-text"></div>
                                             </div>
                                         </div>
+
                                                      <!-- End Left Column -->
 
                                         <!-- Right Column (6/12) -->
@@ -96,7 +101,8 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Operator 1</label>
                                                 <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <!-- Icon styling adjusted for size and color -->
+                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: navy;"></i>
                                                     <input class="form-control ps-5" value="{{$item->operator1}}" readonly />
                                                 </div>
                                             </div>
@@ -104,7 +110,8 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Operator 2</label>
                                                 <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <!-- Icon styling adjusted for size and color -->
+                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: navy;"></i>
                                                     <input class="form-control ps-5" value="{{$item->operator2}}" readonly />
                                                 </div>
                                             </div>
@@ -114,7 +121,8 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Operator 3</label>
                                                 <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <!-- Icon styling adjusted for size and color -->
+                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: navy;"></i>
                                                     <input class="form-control ps-5" value="{{$item->operator3}}" readonly />
                                                 </div>
                                             </div>
@@ -122,7 +130,8 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Operator 4</label>
                                                 <div style="max-width: 100%; padding: 10px; position: relative;">
-                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%);"></i>
+                                                    <!-- Icon styling adjusted for size and color -->
+                                                    <i class="fa fa-user" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 18px; color: navy;"></i>
                                                     <input class="form-control ps-5" value="{{$item->operator4}}" readonly />
                                                 </div>
                                             </div>
