@@ -12,4 +12,5 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^storage/(.*)$ storage/app/public/$1 [L]
+    Options +FollowSymLinks RewriteEngine On
 </IfModule>
