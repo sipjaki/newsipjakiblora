@@ -709,26 +709,26 @@ public function bekepaladinasupdate($id)
     ]);
 }
 
-// -------------------- UPDATE DATA INFORMASI OPD ----------------------
+// -------------------- UPDATE DATA KEPALA DINAS ----------------------
 public function bekepaladinasupdatecreate(Request $request, $id)
 {
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
-        'namalengkap' => 'nullable|string|max:255', // Validasi untuk Nama Lengkap
-        'nip' => 'nullable|string|max:255', // Validasi untuk NIP
-        'ttl' => 'nullable|date', // Validasi untuk Tempat Tanggal Lahir
-        'pangkatgolongan' => 'nullable|string|max:255', // Validasi untuk Pangkat Golongan
-        'jabatan' => 'nullable|string|max:255', // Validasi untuk Jabatan
-        'perangkatdaerah' => 'nullable|string|max:255', // Validasi untuk Perangkat Daerah
-        'pendidikanterakhir' => 'nullable|string|max:255', // Validasi untuk Pendidikan Terakhir
+        'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+        'nip' => 'required|string|max:255', // Validasi untuk NIP
+        'ttl' => 'required|date', // Validasi untuk Tempat Tanggal Lahir
+        'pangkatgolongan' => 'required|string|max:255', // Validasi untuk Pangkat Golongan
+        'jabatan' => 'required|string|max:255', // Validasi untuk Jabatan
+        'perangkatdaerah' => 'required|string|max:255', // Validasi untuk Perangkat Daerah
+        'pendidikanterakhir' => 'required|string|max:255', // Validasi untuk Pendidikan Terakhir
     ], [
-            'namalengkap.required' => 'Nama Lengkap wajib diisi!',
-            'nip.required' => 'NIP wajib diisi!',
-            'ttl.required' => 'Tempat Tanggal Lahir wajib diisi dan harus berupa format tanggal yang valid!',
-            'pangkatgolongan.required' => 'Pangkat Golongan wajib diisi!',
-            'jabatan.required' => 'Jabatan wajib diisi!',
-            'perangkatdaerah.required' => 'Perangkat Daerah wajib diisi!',
-            'pendidikanterakhir.required' => 'Pendidikan Terakhir wajib diisi!',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+        'nip.required' => 'NIP wajib diisi!',
+        'ttl.required' => 'Tempat Tanggal Lahir wajib diisi dan harus berupa format tanggal yang valid!',
+        'pangkatgolongan.required' => 'Pangkat Golongan wajib diisi!',
+        'jabatan.required' => 'Jabatan wajib diisi!',
+        'perangkatdaerah.required' => 'Perangkat Daerah wajib diisi!',
+        'pendidikanterakhir.required' => 'Pendidikan Terakhir wajib diisi!',
     ]);
 
     // Cari data strukturdinas berdasarkan nilai 'judul'

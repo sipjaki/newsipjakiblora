@@ -90,7 +90,7 @@
                         <!--begin::Quick Example-->
                         <form action="{{ route('update.bekepaladinasupdatecreate', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('POST') <!-- Ganti dengan PUT untuk update -->
+                            @method('PUT') <!-- Ganti dengan PUT untuk update -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -130,8 +130,8 @@
                                             @enderror
                                         </div>
 
-                                           <!-- Pangkat Golongan -->
-                                           <div class="mb-3">
+                                        <!-- Pangkat Golongan -->
+                                        <div class="mb-3">
                                             <label class="form-label" for="pangkatgolongan">
                                                 <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Pangkat Golongan
                                             </label>
@@ -143,9 +143,6 @@
 
                                     </div>
                                     <div class="col-md-6">
-
-
-
                                         <!-- Jabatan -->
                                         <div class="mb-3">
                                             <label class="form-label" for="jabatan">
@@ -153,7 +150,7 @@
                                             </label>
                                             <input type="text" id="jabatan" name="jabatan" class="form-control @error('jabatan') is-invalid @enderror" value="{{ old('jabatan', $data->jabatan) }}" />
                                             @error('jabatan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
@@ -164,7 +161,7 @@
                                             </label>
                                             <input type="text" id="perangkatdaerah" name="perangkatdaerah" class="form-control @error('perangkatdaerah') is-invalid @enderror" value="{{ old('perangkatdaerah', $data->perangkatdaerah) }}" />
                                             @error('perangkatdaerah')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
@@ -175,7 +172,7 @@
                                             </label>
                                             <input type="text" id="pendidikanterakhir" name="pendidikanterakhir" class="form-control @error('pendidikanterakhir') is-invalid @enderror" value="{{ old('pendidikanterakhir', $data->pendidikanterakhir) }}" />
                                             @error('pendidikanterakhir')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
                                     </div>
