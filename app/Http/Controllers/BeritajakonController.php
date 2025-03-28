@@ -182,19 +182,42 @@ class BeritajakonController extends Controller
 
 
 
-        public function beberitajakon()
+        public function beberitajakon(Request $request)
         {
-            $data = beritajakon::paginate(5); // Menggunakan paginate() untuk pagination
-            $user = Auth::user();
+            $perPage = $request->input('perPage', 5);
+            $search = $request->input('search');
+
+            $query = beritajakon::query();
+
+            if ($search) {
+                $query->where('judulberita', 'LIKE', "%{$search}%")
+                    ->orWhere('tanggal', 'LIKE', "%{$search}%")
+                    ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                    ->orWhere('foto', 'LIKE', "%{$search}%")
+                    ->orWhere('foto1', 'LIKE', "%{$search}%")
+                    ->orWhere('foto2', 'LIKE', "%{$search}%")
+                    ->orWhereHas('user', function ($q) use ($search) {
+                        $q->where('name', 'LIKE', "%{$search}%");
+                    });
+            }
+
+            $data = $query->paginate($perPage);
+
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('backend.03_beritajakon.01_beritajakon.partials.table', compact('data'))->render()
+                ]);
+            }
 
             return view('backend.03_beritajakon.01_beritajakon.index', [
-                'title' => 'Berita Jasa Konstruksi',
-                'data' => $data, // Mengirimkan data paginasi ke view
-                'user' => $user, // Mengirimkan data paginasi ke view
-
+                'title' => 'Berita Jasa Konstruksi Kabupaten Blora',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search
             ]);
         }
 
+// makan yu
 
         public function beberitajakondelete($judulberita)
 {
@@ -261,6 +284,7 @@ class BeritajakonController extends Controller
     }
 
 }
+
 
 
 
