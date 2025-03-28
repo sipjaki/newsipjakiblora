@@ -534,24 +534,7 @@ public function beinformasiopd()
     ]);
 }
 
-public function beinfoopd()
-{
-    $data = profiljakonidentitasopd::all(); // Menggunakan paginate() untuk pagination
-
-    $user = Auth::user();
-
-    return view('backend.02_kelembagaan.02_profiljakon.02_informasiopd.index', [
-        'title' => 'Profil Jakon Informasi Keterangan OPD',
-        'data' => $data, // Mengirimkan data paginasi ke view
-        'user' => $user, // Mengirimkan data paginasi ke view
-
-    ]);
-}
-
-
-
 // MENU UPDATE DAN UPDATE CREATE INFORMASI OPD ----------------------------------------------------------------------------
-
 
 public function beinformasiopdupdate($id)
 {
@@ -600,6 +583,101 @@ public function beinformasiopdupdatecreate(Request $request, $id)
     // Redirect ke halaman yang sesuai
     return redirect('/beinformasiopd');
 }
+
+
+public function beinfoopd()
+{
+    $data = profiljakonidentitasopd::all(); // Menggunakan paginate() untuk pagination
+
+    $user = Auth::user();
+
+    return view('backend.02_kelembagaan.02_profiljakon.02_informasiopd.index', [
+        'title' => 'Profil Jakon Informasi Keterangan OPD',
+        'data' => $data, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+    ]);
+}
+
+// MENU UPDATE DAN UPDATE CREATE INFORMASI OPD ----------------------------------------------------------------------------
+
+public function beinfoopdupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakoninformasiopd = profiljakonidentitasopd::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.02_kelembagaan.02_profiljakon.02_informasiopd.update', [
+        'data' => $jakoninformasiopd,
+        'user' => $user,
+        'title' => 'Update Informasi Keterangan Organisasi Perangkat Daerah'
+    ]);
+}
+
+// -------------------- UPDATE DATA INFORMASI OPD ----------------------
+public function beinfoopdupdatecreate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'namaopd' => 'nullable|string|max:255', // Menambahkan validasi yang benar
+        'alamatopd' => 'required|string', // Tipe text, tidak perlu batasan max karena bisa lebih panjang
+        'rtrw' => 'required|string|max:255',
+        'kodepos' => 'required|string|max:255',
+        'kelurahan' => 'required|string|max:255',
+        'kecamatan' => 'required|string|max:255',
+        'kota' => 'required|string|max:255',
+        'provinsi' => 'required|string|max:255',
+        'negara' => 'required|string|max:255',
+        'posisigeografis' => 'nullable|string', // Tipe text, tidak perlu batasan max
+        'tipedinas' => 'required|string|max:255',
+    ], [
+        'namaopd.required' => 'Nama OPD wajib diisi!',
+        'alamatopd.required' => 'Alamat OPD wajib diisi!',
+        'rtrw.required' => 'RT/RW wajib diisi!',
+        'kodepos.required' => 'Kode pos wajib diisi!',
+        'kelurahan.required' => 'Kelurahan wajib diisi!',
+        'kecamatan.required' => 'Kecamatan wajib diisi!',
+        'kota.required' => 'Kota wajib diisi!',
+        'provinsi.required' => 'Provinsi wajib diisi!',
+        'negara.required' => 'Negara wajib diisi!',
+        'posisigeografis.required' => 'Posisi geografis wajib diisi!',
+        'tipedinas.required' => 'Tipe dinas wajib diisi!',
+        'namaopd.string' => 'Nama OPD harus berupa teks!',
+        'alamatopd.string' => 'Alamat OPD harus berupa teks!',
+        'posisigeografis.string' => 'Posisi geografis harus berupa teks!',
+        'namaopd.max' => 'Nama OPD tidak boleh lebih dari 255 karakter!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $jakonidentitasss = profiljakonidentitasopd::where('id', $id)->firstOrFail();
+
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+    $jakonidentitasss->update([
+        'judul' => $validatedData['judul'],  // Menggunakan data yang sudah tervalidasi
+        'keterangan' => $validatedData['keterangan'],
+        'alamatopd' => $validatedData['alamatopd'],  // Menambahkan kolom alamatopd
+        'rtrw' => $validatedData['rtrw'],  // Menambahkan kolom rtrw
+        'kodepos' => $validatedData['kodepos'],  // Menambahkan kolom kodepos
+        'kelurahan' => $validatedData['kelurahan'],  // Menambahkan kolom kelurahan
+        'kecamatan' => $validatedData['kecamatan'],  // Menambahkan kolom kecamatan
+        'kota' => $validatedData['kota'],  // Menambahkan kolom kota
+        'provinsi' => $validatedData['provinsi'],  // Menambahkan kolom provinsi
+        'negara' => $validatedData['negara'],  // Menambahkan kolom negara
+        'posisigeografis' => $validatedData['posisigeografis'],  // Menambahkan kolom posisigeografis
+        'tipedinas' => $validatedData['tipedinas'],  // Menambahkan kolom tipedinas
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/beinfoopd');
+}
+
+
+
 
 // ================================================================================================================
 

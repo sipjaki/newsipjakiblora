@@ -425,7 +425,9 @@ Route::post('/beinformasiopd/updatecreate/{id}', [StrukturController::class, 'be
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beinfoopd', [StrukturController::class, 'beinfoopd'])->middleware('auth');
-Route::get('/beinfoopd/update/{judul}', [StrukturController::class, 'beinfoopdupdate'])->middleware('auth');
+// Route::get('/beinfoopd/update/{judul}', [StrukturController::class, 'beinfoopdupdate'])->middleware('auth');
+Route::get('/beinfoopd/update/{id}', [StrukturController::class, 'beinfoopdupdate'])->middleware('auth')->name('update.beinfoopd');
+Route::post('/beinfoopd/updatecreate/{id}', [StrukturController::class, 'beinfoopdupdatecreate'])->middleware('auth')->name('update.beinfoopdupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bekepaladinas', [StrukturController::class, 'bekepaladinas'])->middleware('auth');
