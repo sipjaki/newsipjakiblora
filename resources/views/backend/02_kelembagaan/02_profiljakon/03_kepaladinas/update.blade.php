@@ -88,9 +88,9 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('update.beinfoopdupdatecreate', $data->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('update.bekepaladinasupdatecreate', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT') <!-- Ganti dengan PUT untuk update -->
+                            @method('POST') <!-- Ganti dengan PUT untuk update -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
