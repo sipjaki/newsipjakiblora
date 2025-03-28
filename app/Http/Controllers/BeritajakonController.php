@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\artikeljakon;
 use App\Models\artikeljakonmasjaki;
 use App\Models\beritajakon;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -227,11 +228,13 @@ public function beberitajakonupdate($id)
     // Cari data undang-undang berdasarkan nilai 'judul'
     $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
     $user = Auth::user();
+    $users = User::all();  // Ambil semua pengguna
 
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.03_beritajakon.01_beritajakon.update', [
         'data' => $databeritajakon,
         'user' => $user,
+        'users' => $users,
         'title' => 'Update Berita Jasa Konstruksi'
     ]);
 }
@@ -291,11 +294,14 @@ public function beberitajakoncreate()
     // Cari data undang-undang berdasarkan nilai 'judul'
     // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
     $user = Auth::user();
+    $users = User::all();  // Ambil semua pengguna
+
 
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.03_beritajakon.01_beritajakon.create', [
         // 'data' => $jakonjabatanfungsional,
         'user' => $user,
+        'users' => $users,
         'title' => 'Create Jabatan Fungsional Jasa Konstruksi'
     ]);
 }
