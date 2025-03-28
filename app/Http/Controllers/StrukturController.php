@@ -61,7 +61,7 @@ class StrukturController extends Controller
                         'keterangan' => 'required|string',
                         'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
                     ], [
-                        'judul.required' => 'Judul harus diisi, dong!',
+                        'judul.required' => 'Judul Wajib Diisi!',
                         'judul.max' => 'Judul tidak boleh lebih dari 255 karakter.',
                         'keterangan.required' => 'Keterangan wajib diisi. Jangan biarkan kosong!',
                         'peraturan.mimes' => 'File yang diunggah harus berformat PDF.',
