@@ -80,49 +80,54 @@
                                         <!-- Left Column (6/12) -->
                                         <div class="col-md-12">
                                             <div class="mb-3">
-                                                <label class="form-label">Informasi OPD</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-info-circle" style="margin-right: 8px; color: navy;"></i> Informasi OPD
+                                                </label>
                                                 <div style="max-width: 100%; padding: 10px;">
                                                     <textarea class="form-control" readonly style="font-size: 16px; width: 100%; height: 150px; text-align:justify;">{{$item->informasiopd}}</textarea>
                                                 </div>
                                                 <div class="form-text"></div>
                                             </div>
-
                                         </div>
+
                                         <!-- End Left Column -->
 
                                         <!-- Right Column (6/12) -->
 
                                         <div class="col-md-6">
-
-
                                             <div class="mb-3">
-                                                <label class="form-label">No Telepon</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> No Telepon
+                                                </label>
                                                 <input class="form-control" value="{{$item->notelepon}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">Instagram</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-instagram" style="margin-right: 8px; color: navy;"></i> Instagram
+                                                </label>
                                                 <input class="form-control" value="{{$item->instagram}}" readonly/>
                                             </div>
-
                                         </div>
+
                                         <!-- End Right Column -->
 
                                         <div class="col-md-6">
-
-
                                             <div class="mb-3">
-                                                <label class="form-label">Tiktok</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-tiktok" style="margin-right: 8px; color: navy;"></i> Tiktok
+                                                </label>
                                                 <input class="form-control" value="{{$item->tiktok}}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">Email</label>
+                                                <label class="form-label">
+                                                    <i class="bi bi-envelope" style="margin-right: 8px; color: navy;"></i> Email
+                                                </label>
                                                 <input class="form-control" value="{{$item->email}}" readonly/>
                                             </div>
-
                                         </div>
-                                        <!-- End Right Column -->
+                                                                                <!-- End Right Column -->
 
                                     </div> <!-- end row -->
                                 </div>
