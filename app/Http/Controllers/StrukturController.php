@@ -939,7 +939,7 @@ public function beinformasicreateupdate(Request $request, $id)
     $validatedData = $request->validate([
         'informasiopd' => 'required|string', // Validasi untuk Nama Lengkap
         'notelepon' => 'required|string|max:255', // Validasi untuk NIP
-        'instagram' => 'required|date', // Validasi untuk Tempat Tanggal Lahir
+        'instagram' => 'required|string|max:255', // Validasi untuk Tempat Tanggal Lahir
         'tiktok' => 'required|string|max:255', // Validasi untuk Pangkat Golongan
         'email' => 'required|string|max:255', // Validasi untuk Jabatan
     ], [
