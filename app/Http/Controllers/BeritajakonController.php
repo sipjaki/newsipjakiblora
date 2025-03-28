@@ -259,15 +259,15 @@ public function beberitajakonupdate($id)
                     'foto2' => 'nullable|image|max:7168', // foto2 bisa null, harus image dan maksimal 7MB (7168KB)
                 ], [
                     'user_id.exists' => 'Penulis tidak ditemukan!',
-                    'judulberita.string' => 'Judul berita wajib diisi!',
+                    'judulberita.required' => 'Judul berita wajib diisi!',
                     'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
-                    'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
-                    'keterangan.string' => 'Keterangan wajib diisi!',
-                    'foto.image' => 'Foto harus berupa gambar!',
+                    'tanggal.required' => 'Tanggal harus berupa format tanggal yang valid!',
+                    'keterangan.required' => 'Keterangan wajib diisi!',
+                    'foto.required' => 'Foto harus berupa gambar!',
                     'foto.max' => 'Foto maksimal 7MB!',
-                    'foto1.image' => 'Foto 1 harus berupa gambar!',
+                    'foto1.required' => 'Foto 1 harus berupa gambar!',
                     'foto1.max' => 'Foto 1 maksimal 7MB!',
-                    'foto2.image' => 'Foto 2 harus berupa gambar!',
+                    'foto2.required' => 'Foto 2 harus berupa gambar!',
                     'foto2.max' => 'Foto 2 maksimal 7MB!',
                 ]);
                 $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
