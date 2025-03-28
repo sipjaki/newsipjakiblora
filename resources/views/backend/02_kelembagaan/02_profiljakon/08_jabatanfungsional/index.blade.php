@@ -65,7 +65,7 @@
                         <div class="table-responsive">
                             <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
 
-                                <a href="/404">
+                                <a href="/bejabatan/create">
                                     <button
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                     onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"
