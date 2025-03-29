@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\asosiasimasjaki;
+use App\Models\Asosiasimasjaki as ModelsAsosiasimasjaki;
 use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
 use App\Models\bujkkontraktor;
@@ -340,7 +341,7 @@ public function bebujkkonstruksicreate()
     // Cari data undang-undang berdasarkan nilai 'judul'
     // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
     $user = Auth::user();
-    $asosiasimasjaki = asosiasimasjaki::all();  // Ambil semua pengguna
+    $asosiasimasjaki = Asosiasimasjaki::all();  // Ambil semua pengguna
 
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.04_datajakon.01_bujkkonstruksi.create', [
@@ -355,7 +356,7 @@ public function bebujkkonstruksicreate()
 public function bebujkkonstruksicreatenew(Request $request)
 {
     // Ambil data asosiasi dari database untuk digunakan di form
-    $asosiasimasjaki = asosiasimasjaki::all();
+    $asosiasimasjaki = Asosiasimasjaki::all();
 
     // Validasi input form
     $validatedData = $request->validate([
