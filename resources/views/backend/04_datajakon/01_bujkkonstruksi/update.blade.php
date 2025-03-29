@@ -71,7 +71,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/bebujkkonstruksi">
+                <a href="/bejabatan">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -90,7 +90,7 @@
                         <!--begin::Quick Example-->
                         <form action="{{ route('update.bebujkkonstruksicreateupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('POST') <!-- Ganti dengan PUT untuk update jika perlu -->
+                            @method('PUT') <!-- Changed from POST to PUT for updating -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
@@ -108,6 +108,7 @@
                                             @enderror
                                         </div>
 
+                                        <!-- Nama Asosiasi -->
                                         <div class="mb-3">
                                             <label class="form-label" for="asosiasimasjaki_id">
                                                 <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Nama Asosiasi
@@ -125,6 +126,7 @@
                                             @enderror
                                         </div>
 
+                                        <!-- No Telepon -->
                                         <div class="mb-3">
                                             <label class="form-label" for="no_telepon">
                                                 <i class="bi bi-telephone" style="margin-right: 10px; color: navy;"></i> No Telepon
@@ -135,6 +137,7 @@
                                             @enderror
                                         </div>
 
+                                        <!-- Email -->
                                         <div class="mb-3">
                                             <label class="form-label" for="email">
                                                 <i class="bi bi-envelope" style="margin-right: 10px; color: navy;"></i> Email
@@ -144,10 +147,22 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
+                                        <!-- Alamat -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="alamat">
+                                                <i class="bi bi-house-door" style="margin-right: 10px; color: navy;"></i> Alamat
+                                            </label>
+                                            <textarea id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror">{{ old('alamat', $data->alamat) }}</textarea>
+                                            @error('alamat')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
                                     </div>
 
-                                    <!-- Nomor Induk Berusaha -->
+                                    <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
+                                        <!-- Nomor Induk Berusaha -->
                                         <div class="mb-3">
                                             <label class="form-label" for="nomorindukberusaha">
                                                 <i class="bi bi-credit-card" style="margin-right: 10px; color: navy;"></i> Nomor Induk Berusaha
@@ -158,6 +173,7 @@
                                             @enderror
                                         </div>
 
+                                        <!-- Penanggung Jawab Umum -->
                                         <div class="mb-3">
                                             <label class="form-label" for="pju">
                                                 <i class="bi bi-person-lines-fill" style="margin-right: 10px; color: navy;"></i> Penanggung Jawab Umum
@@ -168,6 +184,7 @@
                                             @enderror
                                         </div>
 
+                                        <!-- No Akte -->
                                         <div class="mb-3">
                                             <label class="form-label" for="no_akte">
                                                 <i class="bi bi-card-checklist" style="margin-right: 10px; color: navy;"></i> No Akte
@@ -178,7 +195,7 @@
                                             @enderror
                                         </div>
 
-
+                                        <!-- Tanggal -->
                                         <div class="mb-3">
                                             <label class="form-label" for="tanggal">
                                                 <i class="bi bi-calendar-event" style="margin-right: 10px; color: navy;"></i> Tanggal
@@ -189,6 +206,7 @@
                                             @enderror
                                         </div>
 
+                                        <!-- Nama Notaris -->
                                         <div class="mb-3">
                                             <label class="form-label" for="nama_notaris">
                                                 <i class="bi bi-file-earmark-person" style="margin-right: 10px; color: navy;"></i> Nama Notaris
@@ -199,6 +217,7 @@
                                             @enderror
                                         </div>
 
+                                        <!-- No Pengesahan -->
                                         <div class="mb-3">
                                             <label class="form-label" for="no_pengesahan">
                                                 <i class="bi bi-file-earmark-check" style="margin-right: 10px; color: navy;"></i> No Pengesahan
@@ -219,6 +238,7 @@
                                 </button>
                             </div>
                         </form>
+
 
                                                      </div>
                         <!--end::Quick Example-->
