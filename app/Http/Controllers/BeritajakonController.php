@@ -344,7 +344,7 @@ public function beberitajakoncreatenew(Request $request)
 {
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
-        'user_id' => 'required|exists:users,id', // user_id wajib diisi dan harus ada di tabel users
+        'user_id' => 'nullable|exists:users,id', // user_id wajib diisi dan harus ada di tabel users
         'judulberita' => 'required|string|max:255', // judulberita wajib diisi, harus string, dan panjangnya maksimal 255 karakter
         'tanggal' => 'required|date', // tanggal wajib diisi dan harus dalam format tanggal
         'keterangan' => 'required|string', // keterangan wajib diisi dan harus berupa string
