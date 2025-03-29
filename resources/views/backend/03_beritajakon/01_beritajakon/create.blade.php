@@ -99,7 +99,7 @@
                                         <!-- User ID -->
                                         <div class="mb-3">
                                             <label class="form-label" for="user_id">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> User ID
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Penulis Berita
                                             </label>
                                             <select id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror" disabled>
                                                 <option value="" disabled selected>Pilih Penulis</option>
