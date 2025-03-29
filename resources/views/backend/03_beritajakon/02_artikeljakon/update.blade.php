@@ -148,32 +148,7 @@
                                             @enderror
                                         </div>
 
-                                    </div>
-                                    <!-- End Left Column -->
 
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Keterangan -->
-
-                                        <!-- Foto -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="berkas">
-                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: red;"></i> Berkas (PDF)
-                                            </label>
-                                            <!-- Mengubah input untuk menerima file PDF -->
-                                            <input type="file" id="berkas" name="berkas" class="form-control @error('berkas') is-invalid @enderror" accept="application/pdf" />
-
-                                            @error('berkas')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-
-                                            @if ($data->berkas)
-                                            <div class="mt-2">
-                                                <!-- Menampilkan PDF jika berkas ada -->
-                                                <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="100px"></iframe>
-                                            </div>
-                                            @endif
-                                        </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="foto1">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
@@ -220,6 +195,34 @@
                                             <div class="mt-2">
                                                 <!-- Menyamaakan ukuran gambar: width dan height -->
                                                 <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto 3" style="width: 100px; height: 100px; object-fit: cover;" />
+                                            </div>
+                                            @endif
+                                        </div>
+
+
+                                    </div>
+                                    <!-- End Left Column -->
+
+                                    <!-- Right Column (6/12) -->
+                                    <div class="col-md-6">
+                                        <!-- Keterangan -->
+
+                                        <!-- Foto -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="berkas">
+                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: red;"></i> Berkas (PDF)
+                                            </label>
+                                            <!-- Mengubah input untuk menerima file PDF -->
+                                            <input type="file" id="berkas" name="berkas" class="form-control @error('berkas') is-invalid @enderror" accept="application/pdf" />
+
+                                            @error('berkas')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+
+                                            @if ($data->berkas)
+                                            <div class="mt-2">
+                                                <!-- Menampilkan PDF jika berkas ada -->
+                                                <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="400px"></iframe>
                                             </div>
                                             @endif
                                         </div>
