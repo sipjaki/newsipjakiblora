@@ -143,7 +143,6 @@
                                     <div class="col-md-6">
                                         <!-- Foto -->
                                         <!-- Foto -->
-
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
@@ -162,7 +161,7 @@
 
                                         <!-- Modal untuk menampilkan PDF -->
                                         <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-lg">
+                                            <div class="modal-dialog modal-xl"> <!-- Menggunakan modal-xl untuk ukuran lebih besar -->
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
@@ -171,7 +170,7 @@
                                                     <div class="modal-body">
                                                         <!-- Menampilkan PDF di dalam iframe -->
                                                         @if ($data->berkas)
-                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="500px"></iframe>
+                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="800px"></iframe> <!-- Tinggi iframe diperbesar -->
                                                         @else
                                                             <p>No Berkas available</p>
                                                         @endif
@@ -179,6 +178,14 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <!-- Link ke Bootstrap 5 JS dan CSS (jika belum dimasukkan) -->
+                                        <!-- Link ke Bootstrap CSS -->
+                                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+                                        <!-- Link ke Bootstrap JS dan Popper -->
+                                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
