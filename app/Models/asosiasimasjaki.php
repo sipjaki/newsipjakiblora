@@ -15,22 +15,22 @@ class asosiasimasjaki extends Model
 
     public function skktenagakerjabloralist()
     {
-        return $this->hasMany(skktenagakerjabloralist::class, 'asosiasimasjaki_id');
+        return $this->hasMany(skktenagakerjabloralist::class);
     }
 
     public function skktenagakerjablora()
     {
-        return $this->hasMany(skktenagakerjablora::class, 'asosiasimasjaki_id');
+        return $this->hasMany(skktenagakerjablora::class);
     }
 
     public function bujkkontraktor()
     {
-        return $this->hasMany(bujkkontraktor::class, 'asosiasimasjaki_id');
+        return $this->hasMany(bujkkontraktor::class);
     }
 
     public function bujkkonsultan()
     {
-        return $this->hasMany(bujkkonsultan::class, 'asosiasimasjaki_id');
+        return $this->hasMany(bujkkonsultan::class);
     }
 
 }

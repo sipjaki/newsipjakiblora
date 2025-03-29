@@ -357,7 +357,7 @@ public function bebujkkonstruksicreatenew(Request $request)
     $asosiasimasjaki_id = asosiasimasjaki::all();
 
     $validatedData = $request->validate([
-        // 'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
+        'bujkkontraktorsub_id' => 'required|exists:bujkkontraktorsub,id', // Validasi untuk ID kontraktor
         'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id', // Validasi untuk ID asosiasi
         'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
         'alamat' => 'required|string', // Validasi untuk Alamat
@@ -371,6 +371,7 @@ public function bebujkkonstruksicreatenew(Request $request)
         'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
     ], [
 
+        'bujkkontraktorsub_id.required' => 'Sub Klasifikasi Layanan harus dipilih!',
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
         'alamat.required' => 'Alamat wajib diisi!',
@@ -388,6 +389,7 @@ public function bebujkkonstruksicreatenew(Request $request)
 
     // Membuat data baru di tabel beritajakon
     bujkkontraktor::create([
+        'bujkkontraktorsub_id' => $validatedData['bujkkontraktorsub_id'],  // Menyimpan user_id yang sudah diatur otomatis
         'asosiasimasjaki_id' => $asosiasimasjaki_id,  // Menyimpan user_id yang sudah diatur otomatis
         'namalengkap' => $validatedData['namalengkap'],
         'alamat' => $validatedData['alamat'],

@@ -26,6 +26,7 @@ use App\Models\renstra;
 use App\Models\sbulampiran1;
 use App\Models\sbulampiran2;
 use App\Models\sbulampiran3;
+use App\Models\asosiasimasjaki;
 
 // use App\Models\sertifikasiagenda;
 use App\Models\standarbiayaumum;
@@ -45,7 +46,7 @@ use App\Models\jenjang;
 use App\Models\lpspenerbit;
 use App\Models\skktenagakerjablora;
 use App\Models\skktenagakerjabloralist;
-use App\Models\asosiasimasjaki;
+use App\Models\daftarasosiasi;
 use App\Models\prosespaket;
 use App\Models\pengawasanbujk;
 use App\Models\kecelakaankerjamasjaki;
@@ -4955,7 +4956,7 @@ jabatankerja::create([
 
 //======================== ===================================================================================
 // DATA ASOSIAS KABUPATEN BLORA JAWA TENGAH
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '1',
     'namaasosiasi' => 'AK3L',
     'created_at' => Carbon::now(),
