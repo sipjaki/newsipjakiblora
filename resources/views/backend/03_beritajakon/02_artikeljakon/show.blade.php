@@ -160,7 +160,8 @@
                                         </div>
 
                                         <!-- Modal untuk menampilkan PDF -->
-                                        <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true">
+                                        <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                            <!-- Menambahkan data-bs-backdrop="static" dan data-bs-keyboard="false" untuk menonaktifkan penutupan otomatis -->
                                             <div class="modal-dialog modal-xl"> <!-- Menggunakan modal-xl untuk ukuran lebih besar -->
                                                 <div class="modal-content">
                                                     <div class="modal-header">
