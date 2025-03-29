@@ -377,7 +377,7 @@ public function bebujkkonstruksiupdate($id)
 {
     // Cari data undang-undang berdasarkan nilai 'judul'
     $jakonkonstruksi = bujkkontraktor::where('id', $id)->firstOrFail();
-    $asosiasimasjakiList = Asosiasimasjaki::all(); // Ambil semua asosiasi
+    $asosiasimasjakiList = asosiasimasjaki::all(); // Ambil semua asosiasi
 
     $user = Auth::user();
 
@@ -390,7 +390,7 @@ public function bebujkkonstruksiupdate($id)
     ]);
 }
 
-// -------------------- UPDATE DATA MENU JABATAN FUNGSIONAL  ----------------------
+// -------------------- UPDATE DATA MENU BUJK KONTRAKTOR  ----------------------
 public function bebujkkonstruksicreateupdate(Request $request, $id)
 {
     // Validasi input dengan pesan kustom
@@ -408,7 +408,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
         'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
     ], [
-        // 'bujkkontraktorsub_id.required' => 'ID kontraktor wajib diisi!',
+
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
         'alamat.required' => 'Alamat wajib diisi!',
