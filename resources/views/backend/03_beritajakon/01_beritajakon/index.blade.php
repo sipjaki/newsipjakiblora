@@ -133,9 +133,9 @@
             <th style="width: 250px; text-align:center;">Judul Berita</th>
             <th style="width: 300px; text-align:center;">Tanggal</th>
             <th style="width: 600px; text-align:center;">Isi Berita</th>
-            <th style="width: 300px; text-align:center;">Foto 1</th>
-            <th style="width: 300px; text-align:center;">Foto 2</th>
-            <th style="width: 300px; text-align:center;">Foto </th>
+            <th style="width: 400px; text-align:center;">Foto 1</th>
+            <th style="width: 400px; text-align:center;">Foto 2</th>
+            <th style="width: 400px; text-align:center;">Foto </th>
             <th style="width: 225px; text-align:center;">Aksi</th>
         </tr>
     </thead>
