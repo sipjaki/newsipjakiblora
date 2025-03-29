@@ -487,6 +487,7 @@ public function beartikeljakoncreatenew(Request $request)
         'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
         'keterangan.required' => 'Keterangan wajib diisi!',
         'keterangan.string' => 'Keterangan harus berupa teks!',
+        'berkas.required' => 'Berkas wajib diisi!',
         'foto1.required' => 'Foto/Brosur 1 wajib diisi!',
         'foto1.image' => 'Foto/Brosur 1 harus berupa gambar!',
         'foto1.max' => 'Foto/Brosur 1 maksimal 7MB!',
