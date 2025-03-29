@@ -204,7 +204,9 @@ class BeritajakonController extends Controller
         }
 
         // Ambil data yang sesuai dengan pencarian dan pagination
-        $data = $query->paginate($perPage);
+        // $data = $query->paginate($perPage);
+        $data = $query->orderBy('created_at', 'desc')  // Mengurutkan berdasarkan created_at (terbaru dulu)
+        ->paginate($perPage);
 
         if ($request->ajax()) {
             // Kembalikan data dalam bentuk JSON untuk AJAX
