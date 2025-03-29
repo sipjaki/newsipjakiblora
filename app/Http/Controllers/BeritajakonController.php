@@ -232,10 +232,12 @@ public function beberitajakonshow($id)
     // Cari data undang-undang berdasarkan nilai 'judul'
     $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
     $user = Auth::user();
+    $users = user::all();
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.03_beritajakon.01_beritajakon.show', [
         'data' => $databeritajakon,
         'user' => $user,
+        'users' => $users,
         'title' => 'Data Details Berita Jasa Konstruksi Kabupaten Blora'
     ]);
 }
