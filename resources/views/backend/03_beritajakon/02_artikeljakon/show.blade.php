@@ -162,7 +162,7 @@
 
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
                                             </label>
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto1)
@@ -177,7 +177,7 @@
                                         <!-- Foto 1 -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto1">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 2
                                             </label>
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto2)
@@ -192,7 +192,7 @@
                                         <!-- Foto 2 -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto2">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 3
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 3
                                             </label>
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto3)
