@@ -80,8 +80,6 @@
                         📌 Halaman : {{$title}}
                     </div>
 
-                 </div>
-
                  <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                     <div style="position: relative; display: inline-block; margin-right:10px;">
                         <input type="search" id="searchInput" placeholder="Cari Badan Usaha ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
@@ -124,6 +122,9 @@
                     </a>
 
                  </div>
+
+
+                </div>
 
                  <!-- /.card-header -->
                  <div class="card-body p-0">
