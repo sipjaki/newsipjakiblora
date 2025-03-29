@@ -118,11 +118,11 @@
 
                                         <!-- Judul Berita -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="judulberita">
+                                            <label class="form-label" for="judul">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Artikel
                                             </label>
-                                            <input type="text" id="judulberita" name="judulberita" class="form-control @error('judulberita') is-invalid @enderror" value="{{ old('judulberita', $data->judulberita) }}" />
-                                            @error('judulberita')
+                                            <input type="text" id="judul" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ old('judul', $data->judul) }}" />
+                                            @error('judul')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

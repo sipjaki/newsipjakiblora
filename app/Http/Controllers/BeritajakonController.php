@@ -394,21 +394,21 @@ public function beartikeljakonupdate($id)
                // Validasi input dengan pesan kustom
                     $validatedData = $request->validate([
                         'user_id' => 'required|exists:users,id',  // Pastikan user_id harus ada
-                        'judulberita' => 'required|string|max:255',  // Judul wajib diisi
+                        'judul' => 'required|string|max:255',  // Judul wajib diisi
                         'tanggal' => 'required|date',  // Tanggal wajib diisi
                         'keterangan' => 'required|string',  // Keterangan wajib diisi
-                        'foto' => 'nullable|image|max:7168', // Foto tetap bisa null tapi jika ada harus image
-                        'foto1' => 'nullable|image|max:7168',
+                        'foto1' => 'nullable|image|max:7168', // Foto tetap bisa null tapi jika ada harus image
                         'foto2' => 'nullable|image|max:7168',
+                        'foto3' => 'nullable|image|max:7168',
                     ], [
                         'user_id.required' => 'Penulis harus dipilih!',
                         'user_id.exists' => 'Penulis tidak ditemukan!',
-                        'judulberita.required' => 'Judul berita wajib diisi!',
+                        'judul.required' => 'Judul berita wajib diisi!',
                         'tanggal.required' => 'Tanggal harus diisi!',
                         'keterangan.required' => 'Keterangan wajib diisi!',
-                        'foto.image' => 'Foto harus berupa gambar!',
-                        'foto1.image' => 'Foto 1 harus berupa gambar!',
-                        'foto2.image' => 'Foto 2 harus berupa gambar!',
+                        'foto1.image' => 'Foto/Brosur 1 harus berupa gambar!',
+                        'foto2.image' => 'Foto/Brosur 2 harus berupa gambar!',
+                        'foto3.image' => 'Foto/Brosur 3 harus berupa gambar!',
                     ]);
 
                 // Cari data berdasarkan ID
