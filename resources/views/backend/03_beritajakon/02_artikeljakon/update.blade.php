@@ -157,19 +157,24 @@
 
                                         <!-- Foto -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="foto">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Berkas
+                                            <label class="form-label" for="berkas">
+                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: red;"></i> Berkas (PDF)
                                             </label>
-                                            <input type="file" id="berkas" name="berkas" class="form-control @error('foto') is-invalid @enderror" />
+                                            <!-- Mengubah input untuk menerima file PDF -->
+                                            <input type="file" id="berkas" name="berkas" class="form-control @error('berkas') is-invalid @enderror" accept="application/pdf" />
+
                                             @error('berkas')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
+
                                             @if ($data->berkas)
                                             <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->berkas) }}" alt="Foto" width="100" />
+                                                <!-- Menampilkan PDF jika berkas ada -->
+                                                <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="500px"></iframe>
                                             </div>
                                             @endif
                                         </div>
+
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
