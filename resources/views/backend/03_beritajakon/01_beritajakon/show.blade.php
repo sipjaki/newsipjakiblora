@@ -88,99 +88,114 @@
 
         {{-- ======================================================= --}}
                     <div class="col-md-12">
-
-                        <!-- begin::Body -->
-<div class="card-body">
-    <div class="row">
-        <!-- Left Column (6/12) -->
-        <div class="col-md-6">
-            <!-- User ID -->
-            <div class="mb-3">
-                <label class="form-label" for="user_id">
-                    <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> User ID
-                </label>
-                <p>{{ $data->user->name ?? 'N/A' }}</p> <!-- Menampilkan nama user -->
-            </div>
-
-            <!-- Judul Berita -->
-            <div class="mb-3">
-                <label class="form-label" for="judulberita">
-                    <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Berita
-                </label>
-                <p>{{ $data->judulberita }}</p> <!-- Menampilkan judul berita -->
-            </div>
-
-            <!-- Tanggal -->
-            <div class="mb-3">
-                <label class="form-label" for="tanggal">
-                    <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
-                </label>
-                <p>{{ \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</p> <!-- Menampilkan tanggal -->
-            </div>
-
-            <!-- Keterangan -->
-            <div class="mb-3">
-                <label class="form-label" for="keterangan">
-                    <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Keterangan
-                </label>
-                <p>{{ $data->keterangan }}</p> <!-- Menampilkan keterangan -->
-            </div>
-
-        </div>
-        <!-- End Left Column -->
-
-        <!-- Right Column (6/12) -->
-        <div class="col-md-6">
-            <!-- Foto -->
-            <div class="mb-3">
-                <label class="form-label" for="foto">
-                    <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto
-                </label>
-                <div class="form-control" style="border: none;">
-                    @if ($data->foto)
-                        <img src="{{ asset('storage/' . $data->foto) }}" alt="Foto" width="100" />
-                    @else
-                        <p>No Photo</p>
-                    @endif
-                </div>
-            </div>
-
-            <!-- Foto 1 -->
-            <div class="mb-3">
-                <label class="form-label" for="foto1">
-                    <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
-                </label>
-                <div class="form-control" style="border: none;">
-                    @if ($data->foto1)
-                        <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto 1" width="100" />
-                    @else
-                        <p>No Photo</p>
-                    @endif
-                </div>
-            </div>
-
-            <!-- Foto 2 -->
-            <div class="mb-3">
-                <label class="form-label" for="foto2">
-                    <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
-                </label>
-                <div class="form-control" style="border: none;">
-                    @if ($data->foto2)
-                        <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 2" width="100" />
-                    @else
-                        <p>No Photo</p>
-                    @endif
-                </div>
-            </div>
-        </div>
-        <!-- End Right Column -->
-    </div>
-    <!-- End row -->
-</div>
-<!-- end::Body -->
-
                         <!--begin::Quick Example-->
-                             </div>
+                        <form action="{{ route('update.beberitajakoncreateupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('POST') <!-- Ganti dengan PUT untuk update -->
+
+                            <!-- begin::Body -->
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Left Column (6/12) -->
+                                    <div class="col-md-6">
+                                        <!-- User ID -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="user_id">
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> User ID
+                                            </label>
+                                            <select id="user_id" name="user_id" class="form-control" disabled>
+                                                <option value="" disabled selected>Pilih Penulis</option>
+                                                @foreach($users as $user)
+                                                    <option value="{{ $user->id }}" {{ $data->user_id == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+
+                                        <!-- Judul Berita -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="judulberita">
+                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Berita
+                                            </label>
+                                            <input type="text" id="judulberita" name="judulberita" class="form-control" value="{{ $data->judulberita }}" disabled />
+                                        </div>
+
+                                        <!-- Tanggal -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="tanggal">
+                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
+                                            </label>
+                                            <input type="date" id="tanggal" name="tanggal" class="form-control" value="{{ $data->tanggal }}" disabled />
+                                        </div>
+
+                                        <!-- Keterangan -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="keterangan">
+                                                <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Keterangan
+                                            </label>
+                                            <textarea id="keterangan" name="keterangan" class="form-control" style="height: 150px;" disabled>{{ $data->keterangan }}</textarea>
+                                        </div>
+
+                                    </div>
+                                    <!-- End Left Column -->
+
+                                    <!-- Right Column (6/12) -->
+                                    <div class="col-md-6">
+                                        <!-- Foto -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="foto">
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto
+                                            </label>
+                                            <div class="form-control" style="border: none;">
+                                                @if ($data->foto)
+                                                    <img src="{{ asset('storage/' . $data->foto) }}" alt="Foto" width="100" />
+                                                @else
+                                                    <p>No Photo</p>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <!-- Foto 1 -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="foto1">
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
+                                            </label>
+                                            <div class="form-control" style="border: none;">
+                                                @if ($data->foto1)
+                                                    <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto 1" width="100" />
+                                                @else
+                                                    <p>No Photo</p>
+                                                @endif
+                                            </div>
+                                        </div>
+
+                                        <!-- Foto 2 -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="foto2">
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
+                                            </label>
+                                            <div class="form-control" style="border: none;">
+                                                @if ($data->foto2)
+                                                    <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 2" width="100" />
+                                                @else
+                                                    <p>No Photo</p>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Right Column -->
+                                </div>
+                                <!-- End row -->
+                            </div>
+                            <!-- end::Body -->
+
+                            <!-- Button (Optional) -->
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+                                <button type="button" class="btn btn-secondary" style="padding: 10px 20px; border-radius: 15px; font-size: 16px;">
+                                    <i class="fa fa-eye" style="margin-right: 8px;"></i> View Only
+                                </button>
+                            </div>
+                        </form>
+                                                     </div>
                         <!--end::Quick Example-->
 
                     </div>
