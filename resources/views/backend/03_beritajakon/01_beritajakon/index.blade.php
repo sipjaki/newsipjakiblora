@@ -132,10 +132,10 @@
             <th style="width: 200px; text-align:center;">Penulis</th>
             <th style="width: 250px; text-align:center;">Judul Berita</th>
             <th style="width: 300px; text-align:center;">Tanggal</th>
-            <th style="width: 600px; text-align:center;">Isi Berita</th>
-            <th style="width: 400px; text-align:center;">Foto 1</th>
+            {{-- <th style="width: 600px; text-align:center;">Isi Berita</th> --}}
+            {{-- <th style="width: 400px; text-align:center;">Foto 1</th>
             <th style="width: 400px; text-align:center;">Foto 2</th>
-            <th style="width: 400px; text-align:center;">Foto </th>
+            <th style="width: 400px; text-align:center;">Foto </th> --}}
             <th style="width: 225px; text-align:center;">Aksi</th>
         </tr>
     </thead>
@@ -146,12 +146,12 @@
             <td style="text-align: left;">{{$item->user->name}}</td>
             <td style="text-align: left;">{!! $item->judulberita !!}</td>
             <td style="text-align: left;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</td>
-            <td>
+            {{-- <td>
                 <div class="isi-berita" style="text-align: justify;">
                     {!! $item->keterangan !!}
                 </div>
-            </td>
-
+            </td> --}}
+{{--
             <td style="text-align: center;">
                 <img src="{{ asset('storage/'. $item->foto) }}" alt="Image" width="300" style="border-radius: 15px;">
             </td>
@@ -161,7 +161,7 @@
             </td>
             <td style="text-align: center;">
                 <img src="{{ asset('storage/'. $item->foto2) }}" alt="Image" width="300" style="border-radius: 15px;">
-            </td>
+            </td> --}}
 
             <td style="text-align: center;">
                 <a href="/beberitajakon/show/{{$item->id}}" class="btn btn-sm btn-info me-2" title="Show">
