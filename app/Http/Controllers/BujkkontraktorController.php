@@ -411,7 +411,7 @@ if ($entry) {
 $parentId = $entry->bujkkontraktor_id; // Sesuaikan dengan nama kolom di database
 $entry->delete();
 
-return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['id' => $parentId])
+return redirect()->route('/bebujkkonstruksi')
     ->with('delete', 'Data Berhasil Dihapus!');
 
 }
