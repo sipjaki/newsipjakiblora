@@ -1,4 +1,6 @@
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!--begin::Body-->
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
@@ -142,64 +144,56 @@
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Foto -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="foto">
-                                                <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
-                                            </label>
-                                            <div class="form-control" style="border: none;">
-                                                @if ($data->berkas)
-                                                    <!-- Tombol untuk membuka modal -->
-                                                    <button type="button" class="btn btn-primary" id="btnBerkas">
-                                                        Lihat Berkas
-                                                    </button>
-                                                @else
-                                                    <p>No Berkas available</p>
-                                                @endif
-                                            </div>
-                                        </div>
+                                        <!-- Pastikan untuk load Bootstrap dan Popper.js yang benar -->
 
-                                        <!-- Modal untuk menampilkan PDF -->
-                                        <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                                            <div class="modal-dialog" style="max-width: 80%; min-width: 600px;">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        @if ($data->berkas)
-                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="600px"></iframe>
-                                                        @else
-                                                            <p>No Berkas available</p>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>                                        <!-- Pastikan Script Berjalan dengan Benar -->
-                                        <script>
-                                            // Menginisialisasi modal menggunakan Bootstrap Modal API
-                                            var modalElement = document.getElementById('modalBerkas');
-                                            var modal = new bootstrap.Modal(modalElement, {
-                                                backdrop: 'static',  // Menonaktifkan backdrop (klik di luar modal tidak menutup)
-                                                keyboard: false      // Menonaktifkan tombol Escape
-                                            });
+<div class="mb-3">
+    <label class="form-label" for="foto">
+        <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
+    </label>
+    <div class="form-control" style="border: none;">
+        @if ($data->berkas)
+            <!-- Tombol untuk membuka modal -->
+            <button type="button" class="btn btn-primary" id="btnBerkas">
+                Lihat Berkas
+            </button>
+        @else
+            <p>No Berkas available</p>
+        @endif
+    </div>
+</div>
 
-                                            // Event listener untuk tombol membuka modal
-                                            document.getElementById('btnBerkas').addEventListener('click', function () {
-                                                modal.show();  // Menampilkan modal
-                                            });
+<!-- Modal untuk menampilkan PDF -->
+<div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog" style="max-width: 80%; min-width: 600px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @if ($data->berkas)
+                    <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="600px"></iframe>
+                @else
+                    <p>No Berkas available</p>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
 
-                                            // Mencegah form atau event lain yang menyebabkan reload halaman
-                                            window.addEventListener('beforeunload', function (e) {
-                                                e.preventDefault();
-                                                e.returnValue = '';  // Menghindari refresh otomatis halaman
-                                            });
+<script>
+    // Inisialisasi modal menggunakan Bootstrap Modal API
+    var modalElement = document.getElementById('modalBerkas');
+    var modal = new bootstrap.Modal(modalElement, {
+        backdrop: 'static',  // Modal tidak akan menutup jika diklik di luar
+        keyboard: false      // Modal tidak akan menutup jika tombol Escape ditekan
+    });
 
-                                            // Jika modal dimuat, pastikan ia tetap terbuka
-                                            modalElement.addEventListener('hidden.bs.modal', function (event) {
-                                                event.preventDefault(); // Mencegah penutupan modal jika diklik di luar atau Escape
-                                            });
-                                        </script>
+    // Event listener untuk tombol membuka modal
+    document.getElementById('btnBerkas').addEventListener('click', function () {
+        modal.show();  // Menampilkan modal saat tombol diklik
+    });
+</script>
 
 
                                                                                 <div class="mb-3">
@@ -281,7 +275,5 @@
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
                                                                                 <!-- Link ke Bootstrap 5 JS dan CSS -->
-                                                                                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
                                                                                 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
                                                                                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
