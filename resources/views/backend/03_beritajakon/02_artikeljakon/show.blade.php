@@ -163,7 +163,7 @@
                                         <!-- Modal untuk menampilkan PDF -->
                                         <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                                             <!-- Menambahkan data-bs-backdrop="static" dan data-bs-keyboard="false" untuk menonaktifkan penutupan otomatis -->
-                                            <div class="modal-dialog modal-xl"> <!-- Modal size diperbesar menggunakan modal-xl -->
+                                            <div class="modal-dialog modal-xl">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
@@ -180,6 +180,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
 
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
@@ -261,9 +262,6 @@
       @include('backend.00_administrator.00_baganterpisah.02_footer')
 
                                         <!-- Link ke Bootstrap 5 JS dan CSS (jika belum dimasukkan) -->
-                                        <!-- Link ke Bootstrap CSS -->
                                         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-                                        <!-- Link ke Bootstrap JS dan Popper -->
                                         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
                                         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
