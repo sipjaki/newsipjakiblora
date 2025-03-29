@@ -150,13 +150,33 @@
                                             </label>
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->berkas)
-                                                    <!-- Memperbesar gambar -->
-                                                    <a href="{{ asset('storage/' . $data->berkas) }}" target="_blank">
-                                                        <button class="btn btn-primary">Lihat Berkas</button>
-                                                    </a>
+                                                    <!-- Tombol untuk membuka modal -->
+                                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBerkas">
+                                                        Lihat Berkas
+                                                    </button>
                                                 @else
                                                     <p>No Berkas available</p>
                                                 @endif
+                                            </div>
+                                        </div>
+
+                                        <!-- Modal untuk menampilkan PDF -->
+                                        <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <!-- Menampilkan PDF di dalam iframe -->
+                                                        @if ($data->berkas)
+                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="500px"></iframe>
+                                                        @else
+                                                            <p>No Berkas available</p>
+                                                        @endif
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
