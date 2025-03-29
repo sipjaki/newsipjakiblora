@@ -146,54 +146,62 @@
                                         <!-- Foto -->
                                         <!-- Pastikan untuk load Bootstrap dan Popper.js yang benar -->
 
-<div class="mb-3">
-    <label class="form-label" for="foto">
-        <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
-    </label>
-    <div class="form-control" style="border: none;">
-        @if ($data->berkas)
-            <!-- Tombol untuk membuka modal -->
-            <button type="button" class="btn btn-primary" id="btnBerkas">
-                Lihat Berkas
-            </button>
-        @else
-            <p>No Berkas available</p>
-        @endif
-    </div>
-</div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="foto">
+                                                <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
+                                            </label>
+                                            <div class="form-control" style="border: none;">
+                                                @if ($data->berkas)
+                                                    <!-- Tombol untuk membuka modal -->
+                                                    <button type="button" class="btn btn-primary" id="btnBerkas">
+                                                        Lihat Berkas
+                                                    </button>
+                                                @else
+                                                    <p>No Berkas available</p>
+                                                @endif
+                                            </div>
+                                        </div>
 
-<!-- Modal untuk menampilkan PDF -->
-<div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-    <div class="modal-dialog" style="max-width: 80%; min-width: 600px;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                @if ($data->berkas)
-                    <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="600px"></iframe>
-                @else
-                    <p>No Berkas available</p>
-                @endif
-            </div>
-        </div>
-    </div>
-</div>
+                                        <!-- Modal untuk menampilkan PDF -->
+                                        <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                                            <div class="modal-dialog" style="max-width: 80%; min-width: 600px;">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        @if ($data->berkas)
+                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="600px"></iframe>
+                                                        @else
+                                                            <p>No Berkas available</p>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-<script>
-    // Inisialisasi modal menggunakan Bootstrap Modal API
-    var modalElement = document.getElementById('modalBerkas');
-    var modal = new bootstrap.Modal(modalElement, {
-        backdrop: 'static',  // Modal tidak akan menutup jika diklik di luar
-        keyboard: false      // Modal tidak akan menutup jika tombol Escape ditekan
-    });
+                                        <script>
+                                            document.addEventListener("DOMContentLoaded", function () {
+                                                // Menginisialisasi modal dengan Bootstrap Modal API
+                                                var modalElement = document.getElementById('modalBerkas');
+                                                var modal = new bootstrap.Modal(modalElement, {
+                                                    backdrop: 'static',  // Menonaktifkan penutupan modal jika klik di luar modal
+                                                    keyboard: false      // Menonaktifkan penutupan modal dengan tombol Escape
+                                                });
 
-    // Event listener untuk tombol membuka modal
-    document.getElementById('btnBerkas').addEventListener('click', function () {
-        modal.show();  // Menampilkan modal saat tombol diklik
-    });
-</script>
+                                                // Event listener untuk tombol membuka modal
+                                                document.getElementById('btnBerkas').addEventListener('click', function () {
+                                                    modal.show();  // Menampilkan modal saat tombol diklik
+                                                });
+
+                                                // Mencegah form atau event lain yang menyebabkan reload halaman
+                                                window.addEventListener('beforeunload', function (e) {
+                                                    e.preventDefault();
+                                                    e.returnValue = '';  // Menghindari refresh otomatis halaman
+                                                });
+                                            });
+                                        </script>
 
 
                                                                                 <div class="mb-3">
