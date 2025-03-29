@@ -174,34 +174,18 @@
                                             </div>
                                             @endif
                                         </div>
-
                                         <div class="mb-3">
-                                            <label class="form-label" for="foto">
+                                            <label class="form-label" for="foto1">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
                                             </label>
-                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto') is-invalid @enderror" />
+                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" />
                                             @error('foto1')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                             @if ($data->foto1)
                                             <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto" width="100" />
-                                            </div>
-                                            @endif
-                                        </div>
-
-                                        <!-- Foto 1 -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="foto1">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 2
-                                            </label>
-                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto1') is-invalid @enderror" />
-                                            @error('foto2')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                            @if ($data->foto2)
-                                            <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 1" width="100" />
+                                                <!-- Menyamaakan ukuran gambar: width dan height -->
+                                                <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto 1" style="width: 100px; height: 100px; object-fit: cover;" />
                                             </div>
                                             @endif
                                         </div>
@@ -211,16 +195,35 @@
                                             <label class="form-label" for="foto2">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 2
                                             </label>
-                                            <input type="file" id="foto3" name="foto3" class="form-control @error('foto2') is-invalid @enderror" />
+                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" />
+                                            @error('foto2')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                            @if ($data->foto2)
+                                            <div class="mt-2">
+                                                <!-- Menyamaakan ukuran gambar: width dan height -->
+                                                <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 2" style="width: 100px; height: 100px; object-fit: cover;" />
+                                            </div>
+                                            @endif
+                                        </div>
+
+                                        <!-- Foto 3 -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="foto3">
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 3
+                                            </label>
+                                            <input type="file" id="foto3" name="foto3" class="form-control @error('foto3') is-invalid @enderror" />
                                             @error('foto3')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                             @if ($data->foto3)
                                             <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto 2" width="100" />
+                                                <!-- Menyamaakan ukuran gambar: width dan height -->
+                                                <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto 3" style="width: 100px; height: 100px; object-fit: cover;" />
                                             </div>
                                             @endif
                                         </div>
+
                                     </div>
                                     <!-- End Right Column -->
                                 </div>
