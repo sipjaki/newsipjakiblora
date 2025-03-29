@@ -478,7 +478,8 @@ public function beartikeljakoncreatenew(Request $request)
         'foto1' => 'required|image|max:7168', // foto wajib diisi, harus image dan maksimal 7MB (7168KB)
         'foto2' => 'required|image|max:7168', // foto1 wajib diisi, harus image dan maksimal 7MB (7168KB)
         'foto3' => 'required|image|max:7168', // foto2 wajib diisi, harus image dan maksimal 7MB (7168KB)
-        'berkas' => 'required|string', // keterangan wajib diisi dan harus berupa string
+        'berkas' => 'required|mimes:pdf|max:8192',
+            // keterangan wajib diisi dan harus berupa string
     ], [
         'judul.required' => 'Judul berita wajib diisi!',
         'judul.string' => 'Judul berita harus berupa teks!',

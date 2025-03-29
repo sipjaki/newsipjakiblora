@@ -190,7 +190,7 @@
                                         <!-- Foto -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto1">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Brosur 2
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Brosur 1
                                             </label>
                                             <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" onchange="previewImage('foto1', 'previewFoto1')" />
                                             <div>
