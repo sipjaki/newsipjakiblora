@@ -161,8 +161,8 @@
 
                                         <!-- Modal untuk menampilkan PDF -->
                                         <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                                            <!-- Modal dengan ukuran yang tepat menggunakan modal-dialog modal-lg -->
-                                            <div class="modal-dialog modal-lg">
+                                            <!-- Modal dialog untuk ukuran presisi -->
+                                            <div class="modal-dialog" style="max-width: 80%; min-width: 600px;"> <!-- Sesuaikan dengan lebar yang presisi -->
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
@@ -171,7 +171,7 @@
                                                     <div class="modal-body">
                                                         <!-- Menampilkan PDF di dalam iframe -->
                                                         @if ($data->berkas)
-                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="600px"></iframe> <!-- Tinggi iframe disesuaikan dengan 600px -->
+                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="600px"></iframe> <!-- Ukuran iframe yang sesuai -->
                                                         @else
                                                             <p>No Berkas available</p>
                                                         @endif
@@ -179,6 +179,8 @@
                                                 </div>
                                             </div>
                                         </div>
+
+
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
