@@ -270,9 +270,11 @@ public function beberitajakonupdate($id)
                     'foto2.required' => 'Foto 2 harus berupa gambar!',
                     'foto2.max' => 'Foto 2 maksimal 7MB!',
                 ]);
+
+                // Cari data berdasarkan ID
                 $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
 
-                // Update data hanya jika field tersebut ada di request
+                // Persiapkan data update
                 $updateData = [
                     'user_id' => $validatedData['user_id'] ?? $databeritajakon->user_id, // Jika user_id tidak ada, gunakan data sebelumnya
                     'judulberita' => $validatedData['judulberita'] ?? $databeritajakon->judulberita, // Jika judulberita tidak ada, gunakan data sebelumnya
@@ -280,26 +282,28 @@ public function beberitajakonupdate($id)
                     'keterangan' => $validatedData['keterangan'] ?? $databeritajakon->keterangan, // Jika keterangan tidak ada, gunakan data sebelumnya
                 ];
 
-                // Memeriksa apakah foto, foto1, dan foto2 ada dalam request
-                if (isset($validatedData['foto'])) {
-                    $updateData['foto'] = $validatedData['foto']; // Update foto jika ada
-                }
-                if (isset($validatedData['foto1'])) {
-                    $updateData['foto1'] = $validatedData['foto1']; // Update foto1 jika ada
-                }
-                if (isset($validatedData['foto2'])) {
-                    $updateData['foto2'] = $validatedData['foto2']; // Update foto2 jika ada
+                // Memeriksa apakah foto, foto1, dan foto2 ada dalam request dan jika ada di-upload
+                if ($request->hasFile('foto')) {
+                    $updateData['foto'] = $request->file('foto')->store('photos', 'public'); // Menyimpan foto dan mengambil path-nya
                 }
 
-                // Gunakan $updateData untuk melakukan update
+                if ($request->hasFile('foto1')) {
+                    $updateData['foto1'] = $request->file('foto1')->store('photos', 'public'); // Menyimpan foto1 dan mengambil path-nya
+                }
+
+                if ($request->hasFile('foto2')) {
+                    $updateData['foto2'] = $request->file('foto2')->store('photos', 'public'); // Menyimpan foto2 dan mengambil path-nya
+                }
+
+                // Update data berita berdasarkan data yang sudah tervalidasi
                 $databeritajakon->update($updateData);
+
                 // Flash session untuk menampilkan pesan sukses
                 session()->flash('update', 'Data Berhasil Diupdate!');
 
                 // Redirect ke halaman yang sesuai
                 return redirect('/beberitajakon');
             }
-
 
 // MENU CREATE JABATAN FUNGSIONAL     ----------------------------------------------------------------------------
 
