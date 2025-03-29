@@ -170,7 +170,7 @@
                                             @if ($data->berkas)
                                             <div class="mt-2">
                                                 <!-- Menampilkan PDF jika berkas ada -->
-                                                <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="500px"></iframe>
+                                                <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="100px"></iframe>
                                             </div>
                                             @endif
                                         </div>
