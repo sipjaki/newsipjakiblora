@@ -491,6 +491,11 @@ Route::delete('/beberitajakon/delete/{judulberita}', [BeritajakonController::cla
 // ---------------------- MENU 2 ARTIKEL JAKON MAS JAKI BLORA   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beartikeljakon', [BeritajakonController::class, 'beartikeljakon'])->middleware('auth');
+Route::get('/beartikeljakon/show/{id}', [BeritajakonController::class, 'beartikeljakonshow'])->middleware('auth');
+Route::get('/beartikeljakon/update/{id}', [BeritajakonController::class, 'beartikeljakonupdate'])->middleware('auth')->name('update.beartikeljakonupdate');
+Route::post('/beartikeljakon/updatecreate/{id}', [BeritajakonController::class, 'beartikeljakoncreateupdate'])->middleware('auth')->name('update.beartikeljakoncreateupdate');
+Route::get('/beartikeljakon/create', [BeritajakonController::class, 'beartikeljakoncreate'])->middleware('auth')->name('create.beartikeljakoncreate');
+Route::post('/beartikeljakon/createnew', [BeritajakonController::class, 'beartikeljakoncreatenew'])->middleware('auth')->name('create.beartikeljakoncreatenew');
 Route::delete('/beartikeljakon/delete/{judulberita}', [BeritajakonController::class, 'beartikeljakondelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 

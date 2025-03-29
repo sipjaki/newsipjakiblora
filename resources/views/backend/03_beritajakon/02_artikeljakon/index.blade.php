@@ -63,69 +63,94 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-                    <div class="card-header">
-                        <div style="
-                        margin-bottom:10px;
-                        font-weight: 900;
-                        font-size: 16px;
-                        text-align: center;
-                        background: linear-gradient(135deg, #166534, #166534);
-                        color: white;
-                        padding: 10px 25px;
-                        border-radius: 10px;
-                        display: inline-block;
-                        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                        width: 100%;
-                    ">
-                        📌 Halaman : {{$title}}
-                    </div>
-
-                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                    <div style="position: relative; display: inline-block; margin-right:10px;">
-                        <input type="search" id="searchInput" placeholder="Cari Artikel Jasa Konstruksi ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                        <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                    <script>
-                        function updateEntries() {
-                            let selectedValue = document.getElementById("entries").value;
-                            let url = new URL(window.location.href);
-                            url.searchParams.set("perPage", selectedValue);
-                            window.location.href = url.toString();
-                        }
-
-                        function searchTable() {
-                        let input = document.getElementById("searchInput").value;
-
-                        fetch(`/bebujkkonstruksi?search=${input}`)
-                            .then(response => response.text())
-                            .then(html => {
-                                let parser = new DOMParser();
-                                let doc = parser.parseFromString(html, "text/html");
-                                let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                document.querySelector("#tableBody").innerHTML = newTableBody;
-                            })
-                            .catch(error => console.error("Error fetching search results:", error));
-                    }
-
-                            </script>
-
-                    </div>
-
-                    <a href="/beartikeljakon/create">
-                        <button
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white';"
-                        style="background-color: #156f2a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                        <!-- Ikon Kembali -->
-                        <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                        Create
-                    </button>
-                    </a>
-
-                 </div>
-
-
+                    <div style="
+                    font-weight: 900;
+                    font-size: 16px;
+                    text-align: center;
+                    background: linear-gradient(135deg, #00378a, #00378a);
+                    color: white;
+                    padding: 8px 10px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                ">
+                    ⚙️ Setting Database
                 </div>
 
+                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                         <a href="/404">
+                             <button
+                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                             onmouseout="this.style.backgroundColor='#00378a'; this.style.color='white';"
+                             style="background-color: #00378a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                             <!-- Ikon Kembali -->
+                             <i class="fa fa-database" style="margin-right: 8px;"></i>
+                             Asosiasi
+                         </button>
+                         </a>
+
+                     </div>
+                 </div>
+                 <!-- /.card-header -->
+                 <div class="card-header">
+                    <div style="
+                    margin-bottom:10px;
+                    font-weight: 900;
+                    font-size: 16px;
+                    text-align: center;
+                    background: linear-gradient(135deg, #166534, #166534);
+                    color: white;
+                    padding: 10px 25px;
+                    border-radius: 10px;
+                    display: inline-block;
+                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                    width: 100%;
+                ">
+                    📌 Halaman : {{$title}}
+                </div>
+
+                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                        <div style="position: relative; display: inline-block; margin-right:10px;">
+                            <input type="search" id="searchInput" placeholder="Cari Artikel Jasa Konstruksi ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                        </div>
+                        <script>
+                            function updateEntries() {
+                                let selectedValue = document.getElementById("entries").value;
+                                let url = new URL(window.location.href);
+                                url.searchParams.set("perPage", selectedValue);
+                                window.location.href = url.toString();
+                            }
+
+                            function searchTable() {
+                            let input = document.getElementById("searchInput").value;
+
+                            fetch(`/beartikeljakon?search=${input}`)
+                                .then(response => response.text())
+                                .then(html => {
+                                    let parser = new DOMParser();
+                                    let doc = parser.parseFromString(html, "text/html");
+                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                                    document.querySelector("#tableBody").innerHTML = newTableBody;
+                                })
+                                .catch(error => console.error("Error fetching search results:", error));
+                        }
+
+                                </script>
+
+
+                         <a href="/beartikeljakon/create">
+                             <button
+                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                             onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"
+                             style="background-color: #007bff; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                             <!-- Ikon Kembali -->
+                             <i class="fa fa-plus" style="margin-right: 8px;"></i>
+                             Create
+                         </button>
+                         </a>
+                     </div>
+                 </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
@@ -133,62 +158,38 @@
 <table class="table table-striped">
  <thead>
      <tr>
-         <th style="width: 100px; text-align:center;">No</th>
-         <th style="width: 200px; text-align:center;">Penulis</th>
-         <th style="width: 300px; text-align:center;">Judul Berita</th>
-         <th style="width: 200px; text-align:center;">Tanggal</th>
-         <th style="width: 400px; text-align:center;">Foto Header</th>
-         <th style="width: 400px; text-align:center;">Foto Isi 1</th>
-         <th style="width: 400px; text-align:center;">Foto Isi 2</th>
-         <th style="width: 400px; text-align:center;">Berkas</th>
-         <th style="width: 400px; text-align:center;">Keterangan</th>
+         <th style="width: 75px; text-align:center;">No</th>
+         <th style="width: 200px; text-align:center; background:white; color:black;">Penulis</th>
+         <th style="width: 500px; text-align:center;">Judul Berita</th>
+         <th style="width: 150px; text-align:center;">Tanggal</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
- <tbody>
+ <tbody id="tableBody">
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: center;">{{$item->user->name}}</td>
-         <td style="text-align: left;">{{ $item->judul }}</td>
+         <td style="text-align: left;">{{$item->judulberita}}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</td>
 
-         <td style="text-align: center;">
-             <img src="{{ asset('storage/'. $item->foto1) }}" alt="Image" width="300" style="border-radius: 15px;">
-         </td>
-         <td style="text-align: center;">
-             <img src="{{ asset('storage/'. $item->foto2) }}" alt="Image" width="300" style="border-radius: 15px;">
-         </td>
-         <td style="text-align: center;">
-             <img src="{{ asset('storage/'. $item->foto3) }}" alt="Image" width="300" style="border-radius: 15px;">
-         </td>
-
-         <td style="text-align: center;">
-            <object data="{{ asset('storage/' . $item->berkas) }}" type="application/pdf" width="300" height="200">
-                <p>PDF cannot be displayed.</p>
-            </object>
-        </td>
-
-         <td>
-            <div class="isi-berita" style="text-align: justify;">
-                {!! $item->keterangan !!}
-            </div>
-        </td>
-
-
-         <td style="text-align: center;">
-             <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
+         <td style="text-align: center; vertical-align: middle;">
+             <a href="/beartikeljakon/show/{{$item->id}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
-             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+             <a href="/beartikeljakon/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                  <i class="bi bi-pencil-square"></i>
              </a>
-             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                data-judul="{{ $item->judul }}" onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>
-             </a>
+             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                   data-bs-toggle="modal" data-bs-target="#deleteModal"
+                   data-judul="{{ $item->judul }}"
+                   onclick="setDeleteUrl(this)">
+                    <i class="bi bi-trash"></i>
+            </a>
          </td>
-     </tr>
+
+        </tr>
+
      @endforeach
  </tbody>
 </table>
@@ -258,3 +259,4 @@
 
 
    @include('backend.00_administrator.00_baganterpisah.02_footer')
+
