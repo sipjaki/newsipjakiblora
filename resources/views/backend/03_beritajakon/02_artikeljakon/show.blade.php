@@ -137,18 +137,19 @@
 
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
+                                                <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
                                             </label>
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->berkas)
                                                     <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->berkas) }}" alt="Foto" width="300" />  <!-- Mengatur lebar gambar menjadi 300px -->
+                                                    <a href="{{ asset('storage/' . $data->berkas) }}" target="_blank">
+                                                        <button class="btn btn-primary">Lihat Berkas</button>
+                                                    </a>
                                                 @else
-                                                    <p>No Photo</p>
+                                                    <p>No Berkas available</p>
                                                 @endif
                                             </div>
                                         </div>
-
 
                                     </div>
                                     <!-- End Left Column -->

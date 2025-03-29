@@ -354,7 +354,7 @@ public function beberitajakoncreatenew(Request $request)
 public function beartikeljakonshow($id)
 {
     // Cari data undang-undang berdasarkan nilai 'judul'
-    $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
+    $databeritajakon = artikeljakonmasjaki::where('id', $id)->firstOrFail();
     $user = Auth::user();
     $users = user::all();
     // Tampilkan form update dengan data yang ditemukan
@@ -372,7 +372,7 @@ public function beartikeljakonshow($id)
 public function beartikeljakonupdate($id)
 {
     // Cari data undang-undang berdasarkan nilai 'judul'
-    $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
+    $databeritajakon = artikeljakonmasjaki::where('id', $id)->firstOrFail();
     $user = Auth::user();
     // $users = User::all();  // Ambil semua pengguna
 
