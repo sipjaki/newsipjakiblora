@@ -167,7 +167,7 @@
                                             <div class="modal-dialog" style="max-width: 80%; min-width: 600px;">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
+                                                        <h5 class="modal-title" id="modalBerkasLabel" style="font-family: 'Poppins', sans-serif;">Berkas Artikel Jakon</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
