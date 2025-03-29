@@ -260,7 +260,6 @@ public function beberitajakonupdate($id)
                 ], [
                     'user_id.exists' => 'Penulis tidak ditemukan!',
                     'judulberita.required' => 'Judul berita wajib diisi!',
-                    'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
                     'tanggal.required' => 'Tanggal harus berupa format tanggal yang valid!',
                     'keterangan.required' => 'Keterangan wajib diisi!',
                     'foto.required' => 'Foto harus berupa gambar!',
@@ -284,15 +283,15 @@ public function beberitajakonupdate($id)
 
                 // Memeriksa apakah foto, foto1, dan foto2 ada dalam request dan jika ada di-upload
                 if ($request->hasFile('foto')) {
-                    $updateData['foto'] = $request->file('foto')->store('photos', 'public'); // Menyimpan foto dan mengambil path-nya
+                    $updateData['foto'] = $request->file('foto')->store('02_beritajakon/berita', 'public'); // Menyimpan foto dan mengambil path-nya
                 }
 
                 if ($request->hasFile('foto1')) {
-                    $updateData['foto1'] = $request->file('foto1')->store('photos', 'public'); // Menyimpan foto1 dan mengambil path-nya
+                    $updateData['foto1'] = $request->file('foto1')->store('02_beritajakon/berita', 'public'); // Menyimpan foto1 dan mengambil path-nya
                 }
 
                 if ($request->hasFile('foto2')) {
-                    $updateData['foto2'] = $request->file('foto2')->store('photos', 'public'); // Menyimpan foto2 dan mengambil path-nya
+                    $updateData['foto2'] = $request->file('foto2')->store('02_beritajakon/berita', 'public'); // Menyimpan foto2 dan mengambil path-nya
                 }
 
                 // Update data berita berdasarkan data yang sudah tervalidasi
