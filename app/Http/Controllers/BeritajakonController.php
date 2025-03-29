@@ -330,7 +330,6 @@ public function beberitajakoncreate()
     $user = Auth::user();
     $users = User::all();  // Ambil semua pengguna
 
-
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.03_beritajakon.01_beritajakon.create', [
         // 'data' => $jakonjabatanfungsional,
