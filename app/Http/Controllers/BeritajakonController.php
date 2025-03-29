@@ -185,7 +185,7 @@ class BeritajakonController extends Controller
 
     public function beberitajakon(Request $request)
     {
-        $perPage = $request->input('perPage', 5);  // Ambil jumlah data per halaman dari request
+        $perPage = $request->input('perPage', 15);  // Ambil jumlah data per halaman dari request
         $search = $request->input('search');  // Ambil query pencarian dari input
 
         $query = beritajakon::query();
