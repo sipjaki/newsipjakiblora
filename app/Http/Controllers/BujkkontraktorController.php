@@ -409,7 +409,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
     ], [
         // 'bujkkontraktorsub_id.required' => 'ID kontraktor wajib diisi!',
-        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id',
+        'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
         'alamat.required' => 'Alamat wajib diisi!',
         'no_telepon.required' => 'Nomor Telepon wajib diisi!',
