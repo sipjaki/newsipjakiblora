@@ -431,9 +431,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
 
     // Proses update setelah data tervalidasi
     $jakonkontraktor->update([
-        'jabatan' => $validatedData['jabatan'],  // Menggunakan data yang sudah tervalidasi
         'namalengkap' => $validatedData['namalengkap'],  // Menggunakan data yang sudah tervalidasi
-        'bujkkontraktorsub_id' => $validatedData['bujkkontraktorsub_id'], // Menambahkan data yang tervalidasi lainnya
         'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'], // Menambahkan data yang tervalidasi lainnya
         'alamat' => $validatedData['alamat'], // Menambahkan data yang tervalidasi lainnya
         'no_telepon' => $validatedData['no_telepon'], // Menambahkan data yang tervalidasi lainnya
