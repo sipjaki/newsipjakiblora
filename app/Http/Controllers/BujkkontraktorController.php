@@ -395,8 +395,8 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
 {
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
-        'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
-        'asosiasimasjaki_id' => 'required|string|max:255', // Validasi untuk ID asosiasi
+        // 'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
+        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id', // Validasi untuk ID asosiasi
         'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
         'alamat' => 'required|string', // Validasi untuk Alamat
         'no_telepon' => 'required|string|max:255', // Validasi untuk No Telepon
@@ -408,8 +408,8 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
         'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
     ], [
-        'bujkkontraktorsub_id.required' => 'ID kontraktor wajib diisi!',
-        'asosiasimasjaki_id.required' => 'ID asosiasi wajib diisi!',
+        // 'bujkkontraktorsub_id.required' => 'ID kontraktor wajib diisi!',
+        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
         'alamat.required' => 'Alamat wajib diisi!',
         'no_telepon.required' => 'Nomor Telepon wajib diisi!',
