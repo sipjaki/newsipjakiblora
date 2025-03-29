@@ -150,7 +150,7 @@
 
                          </button>
                          </a>
-                         <a href="/404">
+                         <a href="/bebujkkonstruksi/create">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"

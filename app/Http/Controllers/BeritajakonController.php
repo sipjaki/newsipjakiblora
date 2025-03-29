@@ -213,7 +213,7 @@ public function beberitajakonupdate($id)
                 return redirect('/beberitajakon');
             }
 
-// MENU CREATE JABATAN FUNGSIONAL     ----------------------------------------------------------------------------
+// MENU CREATE BERITA JAKON      ----------------------------------------------------------------------------
 
 public function beberitajakoncreate()
 {

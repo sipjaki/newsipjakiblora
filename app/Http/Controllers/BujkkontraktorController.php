@@ -333,7 +333,80 @@ public function bebujkkonstruksi(Request $request)
 }
 
 
+// MENU CREATE BUJK KONTRAKTOR ===============================================================================
+public function bebujkkonstruksicreate()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+    // $users = User::all();  // Ambil semua pengguna
 
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.04_datajakon.01_bujkkonstruksi.create', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        // 'users' => $users,
+        'title' => 'Create BUJK Kontruksi'
+    ]);
+}
+
+// -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
+public function bebujkkonstruksicreatenew(Request $request)
+{
+    // Pastikan user yang sedang login adalah super_admin (id = 1)
+    $asosiasimasjaki_id = asosiasimasjaki::all();
+
+    $validatedData = $request->validate([
+        // 'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
+        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id', // Validasi untuk ID asosiasi
+        'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+        'alamat' => 'required|string', // Validasi untuk Alamat
+        'no_telepon' => 'required|string|max:255', // Validasi untuk No Telepon
+        'email' => 'required|email', // Validasi untuk Email
+        'nomorindukberusaha' => 'required|string|max:255', // Validasi untuk Nomor Induk Berusaha
+        'pju' => 'required|string|max:255', // Validasi untuk PJU
+        'no_akte' => 'required|string|max:255', // Validasi untuk No Akte
+        'tanggal' => 'required|date', // Validasi untuk Tanggal
+        'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
+        'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
+    ], [
+
+        'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+        'alamat.required' => 'Alamat wajib diisi!',
+        'no_telepon.required' => 'Nomor Telepon wajib diisi!',
+        'email.required' => 'Email wajib diisi!',
+        'email.email' => 'Format email tidak valid!',
+        'nomorindukberusaha.required' => 'Nomor Induk Berusaha wajib diisi!',
+        'pju.required' => 'PJU wajib diisi!',
+        'no_akte.required' => 'No Akte wajib diisi!',
+        'tanggal.required' => 'Tanggal wajib diisi!',
+        'tanggal.date' => 'Format Tanggal tidak valid!',
+        'nama_notaris.required' => 'Nama Notaris wajib diisi!',
+        'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
+    ]);
+
+    // Membuat data baru di tabel beritajakon
+    bujkkontraktor::create([
+        'asosiasimasjaki_id' => $asosiasimasjaki_id,  // Menyimpan user_id yang sudah diatur otomatis
+        'namalengkap' => $validatedData['namalengkap'],
+        'alamat' => $validatedData['alamat'],
+        'no_telepon' => $validatedData['no_telepon'],
+        'email' => $validatedData['email'],
+        'nomorindukberusaha' => $validatedData['nomorindukberusaha'],
+        'pju' => $validatedData['pju'],
+        'no_akte' => $validatedData['no_akte'],
+        'tanggal' => $validatedData['tanggal'],
+        'nama_notaris' => $validatedData['nama_notaris'],
+        'no_pengesahan' => $validatedData['no_pengesahan'],
+    ]);
+
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('create', 'Data Berhasil Dibuat!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/beberitajakon');
+}
 
 
 // BUJKKONTRAKTOR SHOW
@@ -390,6 +463,8 @@ public function bebujkkonstruksiupdate($id)
     ]);
 }
 
+
+// MENU EROR BELUM DI PERBAIKI -----------------------------------------------
 // -------------------- UPDATE DATA MENU BUJK KONTRAKTOR  ----------------------
 public function bebujkkonstruksicreateupdate(Request $request, $id)
 {
