@@ -90,7 +90,7 @@
                         <!--begin::Quick Example-->
                         <form action="{{ route('update.bebujkkonstruksicreateupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT') <!-- Changed from POST to PUT for updating -->
+                            @method('POST') <!-- Changed from POST to PUT for updating -->
 
                             <!-- begin::Body -->
                             <div class="card-body">
