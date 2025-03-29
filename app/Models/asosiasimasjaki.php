@@ -25,12 +25,12 @@ class asosiasimasjaki extends Model
 
     public function bujkkontraktor()
     {
-        return $this->hasMany(bujkkontraktor::class);
+        return $this->hasMany(bujkkontraktor::class, 'asosiasimasjaki_id');
     }
 
     public function bujkkonsultan()
     {
-        return $this->hasMany(bujkkonsultan::class);
+        return $this->hasMany(bujkkonsultan::class, 'asosiasimasjaki_id');
     }
 
 }
