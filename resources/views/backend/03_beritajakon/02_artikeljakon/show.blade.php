@@ -179,14 +179,6 @@
                                             </div>
                                         </div>
 
-                                        <!-- Link ke Bootstrap 5 JS dan CSS (jika belum dimasukkan) -->
-                                        <!-- Link ke Bootstrap CSS -->
-                                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-                                        <!-- Link ke Bootstrap JS dan Popper -->
-                                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
@@ -265,3 +257,11 @@
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+                                        <!-- Link ke Bootstrap 5 JS dan CSS (jika belum dimasukkan) -->
+                                        <!-- Link ke Bootstrap CSS -->
+                                        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+                                        <!-- Link ke Bootstrap JS dan Popper -->
+                                        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
