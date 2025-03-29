@@ -158,7 +158,11 @@
                                             <label class="form-label" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto
                                             </label>
-                                            <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />
+                                            <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" onchange="previewImage('foto', 'previewFoto')" />
+                                            <div>
+                                                <!-- Preview Image -->
+                                                <img id="previewFoto" src="{{ old('foto') ? asset('storage/' . old('foto')) : '' }}" style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
+                                            </div>
                                             @error('foto')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -169,7 +173,11 @@
                                             <label class="form-label" for="foto1">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
                                             </label>
-                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" />
+                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" onchange="previewImage('foto1', 'previewFoto1')" />
+                                            <div>
+                                                <!-- Preview Image 1 -->
+                                                <img id="previewFoto1" src="{{ old('foto1') ? asset('storage/' . old('foto1')) : '' }}" style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
+                                            </div>
                                             @error('foto1')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -180,7 +188,11 @@
                                             <label class="form-label" for="foto2">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
                                             </label>
-                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" />
+                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" onchange="previewImage('foto2', 'previewFoto2')" />
+                                            <div>
+                                                <!-- Preview Image 2 -->
+                                                <img id="previewFoto2" src="{{ old('foto2') ? asset('storage/' . old('foto2')) : '' }}" style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
+                                            </div>
                                             @error('foto2')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -198,6 +210,21 @@
                                 </button>
                             </div>
                         </form>
+
+                        <script>
+                            function previewImage(inputId, previewId) {
+                                var file = document.getElementById(inputId).files[0];
+                                var reader = new FileReader();
+
+                                reader.onloadend = function () {
+                                    document.getElementById(previewId).src = reader.result;
+                                }
+
+                                if (file) {
+                                    reader.readAsDataURL(file); // Membaca file dan menampilkan pratinjau gambar
+                                }
+                            }
+                        </script>
 
                                                      </div>
                         <!--end::Quick Example-->
