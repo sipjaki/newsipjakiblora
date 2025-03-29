@@ -132,7 +132,7 @@
                                             <label class="form-label" for="keterangan">
                                                 <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Keterangan
                                             </label>
-                                            <textarea id="keterangan" name="keterangan" class="form-control" style="height: 150px;" disabled>{{ $data->keterangan }}</textarea>
+                                            <textarea id="keterangan" name="keterangan" class="form-control" style="height: 400px;" disabled>{{ $data->keterangan }}</textarea>
                                         </div>
 
                                     </div>
@@ -144,7 +144,7 @@
                                         <!-- Foto -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
                                             </label>
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto)
@@ -159,7 +159,7 @@
                                         <!-- Foto 1 -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto1">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
                                             </label>
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto1)
@@ -174,7 +174,7 @@
                                         <!-- Foto 2 -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto2">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 3
                                             </label>
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto2)
