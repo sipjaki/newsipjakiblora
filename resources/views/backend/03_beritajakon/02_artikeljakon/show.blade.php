@@ -142,7 +142,6 @@
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Foto -->
-                                        <!-- Foto -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
@@ -150,7 +149,7 @@
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->berkas)
                                                     <!-- Tombol untuk membuka modal -->
-                                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBerkas">
+                                                    <button type="button" class="btn btn-primary" id="btnBerkas">
                                                         Lihat Berkas
                                                     </button>
                                                 @else
@@ -161,11 +160,10 @@
 
                                         <!-- Modal untuk menampilkan PDF -->
                                         <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                                            <!-- Modal dialog untuk ukuran presisi -->
                                             <div class="modal-dialog" style="max-width: 80%; min-width: 600px;">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="modalBerkasLabel">Artikel Jakon</h5>
+                                                        <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
@@ -180,26 +178,30 @@
                                         </div>
                                                                                 <!-- Pastikan Script Berjalan dengan Benar -->
                                         <script>
-                                            // Pastikan modal tidak dapat menutup secara otomatis dengan klik di luar modal atau tombol escape
+                                            // Pastikan modal tidak menutup otomatis dan tidak melakukan refresh
                                             var modalElement = document.getElementById('modalBerkas');
                                             var modal = new bootstrap.Modal(modalElement, {
-                                                backdrop: 'static',  // Menonaktifkan backdrop, sehingga modal tidak menutup ketika klik di luar modal
+                                                backdrop: 'static',  // Menonaktifkan backdrop
                                                 keyboard: false      // Menonaktifkan tombol escape
                                             });
 
-                                            // Menampilkan modal secara manual ketika tombol diklik
-                                            modalElement.addEventListener('show.bs.modal', function (event) {
-                                                modal.show();
+                                            // Event listener untuk tombol membuka modal
+                                            document.getElementById('btnBerkas').addEventListener('click', function () {
+                                                modal.show();  // Menampilkan modal
                                             });
 
-                                            // Menghindari penutupan otomatis modal
+                                            // Mencegah form atau event lain yang menyebabkan reload halaman
+                                            window.addEventListener('beforeunload', function (e) {
+                                                e.preventDefault();
+                                                e.returnValue = '';  // Menghindari refresh otomatis halaman
+                                            });
+
+                                            // Jika modal dimuat, pastikan ia tetap terbuka
                                             modalElement.addEventListener('hidden.bs.modal', function (event) {
-                                                // Cegah penutupan modal ketika diklik di luar atau dengan escape
                                                 event.preventDefault();
                                             });
                                         </script>
-
-                                        <div class="mb-3">
+                                                                                <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
                                             </label>
