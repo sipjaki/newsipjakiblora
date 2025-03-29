@@ -1,6 +1,5 @@
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!--begin::Body-->
   <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
