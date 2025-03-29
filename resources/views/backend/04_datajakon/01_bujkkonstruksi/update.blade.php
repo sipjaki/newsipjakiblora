@@ -107,12 +107,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                    <!-- End Left Column -->
 
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Asosiasi -->
                                         <div class="mb-3">
                                             <label class="form-label" for="asosiasimasjaki_id">
                                                 <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Nama Asosiasi
@@ -129,14 +124,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                    <!-- End Right Column -->
-                                </div>
-                                <!-- End row -->
 
-                                <div class="row">
-                                    <!-- No Telepon -->
-                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="no_telepon">
                                                 <i class="bi bi-telephone" style="margin-right: 10px; color: navy;"></i> No Telepon
@@ -146,12 +134,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <!-- Email -->
-                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="email">
                                                 <i class="bi bi-envelope" style="margin-right: 10px; color: navy;"></i> Email
@@ -174,12 +157,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <!-- Penanggung Jawab Umum -->
-                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="pju">
                                                 <i class="bi bi-person-lines-fill" style="margin-right: 10px; color: navy;"></i> Penanggung Jawab Umum
@@ -189,10 +167,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
 
-                                    <!-- No Akte -->
-                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="no_akte">
                                                 <i class="bi bi-card-checklist" style="margin-right: 10px; color: navy;"></i> No Akte
@@ -202,12 +177,8 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="row">
-                                    <!-- Tanggal -->
-                                    <div class="col-md-6">
+
                                         <div class="mb-3">
                                             <label class="form-label" for="tanggal">
                                                 <i class="bi bi-calendar-event" style="margin-right: 10px; color: navy;"></i> Tanggal
@@ -217,10 +188,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
 
-                                    <!-- Nama Notaris -->
-                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="nama_notaris">
                                                 <i class="bi bi-file-earmark-person" style="margin-right: 10px; color: navy;"></i> Nama Notaris
@@ -230,10 +198,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
 
-                                    <!-- No Pengesahan -->
-                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" for="no_pengesahan">
                                                 <i class="bi bi-file-earmark-check" style="margin-right: 10px; color: navy;"></i> No Pengesahan
