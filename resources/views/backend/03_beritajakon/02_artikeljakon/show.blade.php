@@ -143,6 +143,7 @@
                                     <div class="col-md-6">
                                         <!-- Foto -->
                                         <!-- Foto -->
+
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
@@ -162,7 +163,7 @@
                                         <!-- Modal untuk menampilkan PDF -->
                                         <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                                             <!-- Menambahkan data-bs-backdrop="static" dan data-bs-keyboard="false" untuk menonaktifkan penutupan otomatis -->
-                                            <div class="modal-dialog modal-xl"> <!-- Menggunakan modal-xl untuk ukuran lebih besar -->
+                                            <div class="modal-dialog modal-xl"> <!-- Modal size diperbesar menggunakan modal-xl -->
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
