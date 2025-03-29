@@ -342,9 +342,11 @@ public function beberitajakoncreate()
 // -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
 public function beberitajakoncreatenew(Request $request)
 {
+    // Pastikan user yang sedang login adalah super_admin (id = 1)
+    $user_id = Auth::user()->statusadmin->id == 1 ? Auth::user()->id : null;
+
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
-        'user_id' => 'nullable|exists:users,id', // user_id wajib diisi dan harus ada di tabel users
         'judulberita' => 'required|string|max:255', // judulberita wajib diisi, harus string, dan panjangnya maksimal 255 karakter
         'tanggal' => 'required|date', // tanggal wajib diisi dan harus dalam format tanggal
         'keterangan' => 'required|string', // keterangan wajib diisi dan harus berupa string
@@ -352,11 +354,13 @@ public function beberitajakoncreatenew(Request $request)
         'foto1' => 'required|image|max:7168', // foto1 wajib diisi, harus image dan maksimal 7MB (7168KB)
         'foto2' => 'required|image|max:7168', // foto2 wajib diisi, harus image dan maksimal 7MB (7168KB)
     ], [
-        // 'user_id.required' => 'Penulis wajib diisi!',
-        'user_id.exists' => 'Penulis tidak ditemukan!',
         'judulberita.required' => 'Judul berita wajib diisi!',
-        'tanggal.required' => 'Tanggal harus berupa format tanggal yang valid!',
+        'judulberita.string' => 'Judul berita harus berupa teks!',
+        'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
+        'tanggal.required' => 'Tanggal wajib diisi!',
+        'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
         'keterangan.required' => 'Keterangan wajib diisi!',
+        'keterangan.string' => 'Keterangan harus berupa teks!',
         'foto.required' => 'Foto wajib diisi!',
         'foto.image' => 'Foto harus berupa gambar!',
         'foto.max' => 'Foto maksimal 7MB!',
@@ -368,20 +372,20 @@ public function beberitajakoncreatenew(Request $request)
         'foto2.max' => 'Foto 2 maksimal 7MB!',
     ]);
 
-    // Menyimpan file gambar jika ada, pastikan file tersebut diupload
+    // Menyimpan file gambar jika ada
     $foto = $request->file('foto')->store('public/02_beritajakon/berita');
     $foto1 = $request->file('foto1')->store('public/02_beritajakon/berita');
     $foto2 = $request->file('foto2')->store('public/02_beritajakon/berita');
 
     // Membuat data baru di tabel beritajakon
     beritajakon::create([
-        'user_id' => $validatedData['user_id'],  // Menggunakan data user_id yang sudah tervalidasi
-        'judulberita' => $validatedData['judulberita'],  // Menggunakan data judulberita yang sudah tervalidasi
-        'tanggal' => $validatedData['tanggal'],  // Menggunakan data tanggal yang sudah tervalidasi
-        'keterangan' => $validatedData['keterangan'],  // Menggunakan data keterangan yang sudah tervalidasi
-        'foto' => $foto,  // Menyimpan file foto yang diupload
-        'foto1' => $foto1,  // Menyimpan file foto1 yang diupload
-        'foto2' => $foto2,  // Menyimpan file foto2 yang diupload
+        'user_id' => $user_id,  // Menyimpan user_id yang sudah diatur otomatis
+        'judulberita' => $validatedData['judulberita'],
+        'tanggal' => $validatedData['tanggal'],
+        'keterangan' => $validatedData['keterangan'],
+        'foto' => $foto,
+        'foto1' => $foto1,
+        'foto2' => $foto2,
     ]);
 
     // Flash session untuk menampilkan pesan sukses

@@ -96,7 +96,7 @@
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
-                                        <!-- User ID -->
+                                        <!-- User ID (Penulis Berita) -->
                                         <div class="mb-3">
                                             <label class="form-label" for="user_id">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Penulis Berita
@@ -105,7 +105,7 @@
                                                 <option value="" disabled selected>Pilih Penulis</option>
                                                 @foreach($users as $user)
                                                     <option value="{{ $user->id }}"
-                                                        {{ (old('user_id') == $user->id || (Auth::check() && Auth::user()->statusadmin->id == 1 && Auth::user()->id == $user->id)) ? 'selected' : '' }}>
+                                                        {{ Auth::check() && Auth::user()->statusadmin->id == 1 && Auth::user()->id == $user->id ? 'selected' : '' }}>
                                                         {{ $user->name }}
                                                     </option>
                                                 @endforeach
@@ -114,7 +114,8 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                              <!-- Judul Berita -->
+
+                                        <!-- Judul Berita -->
                                         <div class="mb-3">
                                             <label class="form-label" for="judulberita">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Berita
@@ -136,6 +137,7 @@
                                             @enderror
                                         </div>
 
+                                        <!-- Keterangan -->
                                         <div class="mb-3">
                                             <label class="form-label" for="keterangan">
                                                 <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Keterangan
@@ -156,7 +158,7 @@
                                             <label class="form-label" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto
                                             </label>
-                                            <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />{{ old('foto') }}
+                                            <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />
                                             @error('foto')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -167,7 +169,7 @@
                                             <label class="form-label" for="foto1">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
                                             </label>
-                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" />{{ old('foto1') }}
+                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" />
                                             @error('foto1')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -178,7 +180,7 @@
                                             <label class="form-label" for="foto2">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
                                             </label>
-                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" />{{ old('foto2') }}
+                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" />
                                             @error('foto2')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -196,6 +198,7 @@
                                 </button>
                             </div>
                         </form>
+
                                                      </div>
                         <!--end::Quick Example-->
 
