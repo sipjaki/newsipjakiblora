@@ -344,36 +344,44 @@ public function beberitajakoncreatenew(Request $request)
 {
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
-        'user_id' => 'nullable|exists:users,id', // user_id bisa null, dan harus ada di tabel users jika ada
-        'judulberita' => 'nullable|string|max:255', // judulberita bisa null, harus string, dan panjangnya maksimal 255 karakter
-        'tanggal' => 'nullable|date', // tanggal bisa null, dan jika ada harus dalam format tanggal
-        'keterangan' => 'nullable|string', // keterangan bisa null, dan jika ada harus berupa string
-        'foto' => 'nullable|image|max:7168', // foto bisa null, harus image dan maksimal 7MB (7168KB)
-        'foto1' => 'nullable|image|max:7168', // foto1 bisa null, harus image dan maksimal 7MB (7168KB)
-        'foto2' => 'nullable|image|max:7168', // foto2 bisa null, harus image dan maksimal 7MB (7168KB)
+        'user_id' => 'required|exists:users,id', // user_id wajib diisi dan harus ada di tabel users
+        'judulberita' => 'required|string|max:255', // judulberita wajib diisi, harus string, dan panjangnya maksimal 255 karakter
+        'tanggal' => 'required|date', // tanggal wajib diisi dan harus dalam format tanggal
+        'keterangan' => 'required|string', // keterangan wajib diisi dan harus berupa string
+        'foto' => 'required|image|max:7168', // foto wajib diisi, harus image dan maksimal 7MB (7168KB)
+        'foto1' => 'required|image|max:7168', // foto1 wajib diisi, harus image dan maksimal 7MB (7168KB)
+        'foto2' => 'required|image|max:7168', // foto2 wajib diisi, harus image dan maksimal 7MB (7168KB)
     ], [
+        'user_id.required' => 'Penulis wajib diisi!',
         'user_id.exists' => 'Penulis tidak ditemukan!',
-        'judulberita.string' => 'Judul berita wajib diisi!',
-        'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
-        'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
-        'keterangan.string' => 'Keterangan wajib diisi!',
+        'judulberita.required' => 'Judul berita wajib diisi!',
+        'tanggal.required' => 'Tanggal harus berupa format tanggal yang valid!',
+        'keterangan.required' => 'Keterangan wajib diisi!',
+        'foto.required' => 'Foto wajib diisi!',
         'foto.image' => 'Foto harus berupa gambar!',
         'foto.max' => 'Foto maksimal 7MB!',
+        'foto1.required' => 'Foto 1 wajib diisi!',
         'foto1.image' => 'Foto 1 harus berupa gambar!',
         'foto1.max' => 'Foto 1 maksimal 7MB!',
+        'foto2.required' => 'Foto 2 wajib diisi!',
         'foto2.image' => 'Foto 2 harus berupa gambar!',
         'foto2.max' => 'Foto 2 maksimal 7MB!',
     ]);
 
-    // Membuat data baru di profiljakonpersonil
+    // Menyimpan file gambar jika ada, pastikan file tersebut diupload
+    $foto = $request->file('foto')->store('public/02_beritajakon/berita');
+    $foto1 = $request->file('foto1')->store('public/02_beritajakon/berita');
+    $foto2 = $request->file('foto2')->store('public/02_beritajakon/berita');
+
+    // Membuat data baru di tabel beritajakon
     beritajakon::create([
         'user_id' => $validatedData['user_id'],  // Menggunakan data user_id yang sudah tervalidasi
         'judulberita' => $validatedData['judulberita'],  // Menggunakan data judulberita yang sudah tervalidasi
         'tanggal' => $validatedData['tanggal'],  // Menggunakan data tanggal yang sudah tervalidasi
         'keterangan' => $validatedData['keterangan'],  // Menggunakan data keterangan yang sudah tervalidasi
-        'foto' => $validatedData['foto'],  // Menggunakan data foto yang sudah tervalidasi
-        'foto1' => $validatedData['foto1'],  // Menggunakan data foto1 yang sudah tervalidasi
-        'foto2' => $validatedData['foto2'],  // Menggunakan data foto2 yang sudah tervalidasi
+        'foto' => $foto,  // Menyimpan file foto yang diupload
+        'foto1' => $foto1,  // Menyimpan file foto1 yang diupload
+        'foto2' => $foto2,  // Menyimpan file foto2 yang diupload
     ]);
 
     // Flash session untuk menampilkan pesan sukses
