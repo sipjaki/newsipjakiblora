@@ -99,13 +99,13 @@
                                         <!-- Asosiasi Masjaki -->
                                         <div class="mb-3">
                                             <label class="form-label" for="asosiasimasjaki_id">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Asosiasi Masjaki
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Asosiasi Jasa Konstruksi
                                             </label>
                                             <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
                                                 <option value="" disabled selected>Pilih Asosiasi</option>
                                                 @foreach($asosiasimasjaki as $asosiasi)
                                                     <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id') == $asosiasi->id ? 'selected' : '' }}>
-                                                        {{ $asosiasi->name }}
+                                                        {{ $asosiasi->namaasosiasi }}
                                                     </option>
                                                 @endforeach
                                             </select>

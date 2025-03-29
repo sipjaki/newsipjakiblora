@@ -339,13 +339,13 @@ public function bebujkkonstruksicreate()
     // Cari data undang-undang berdasarkan nilai 'judul'
     // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
     $user = Auth::user();
-    // $users = User::all();  // Ambil semua pengguna
+    $asosiasimasjaki = asosiasimasjaki::all();  // Ambil semua pengguna
 
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.04_datajakon.01_bujkkonstruksi.create', [
         // 'data' => $jakonjabatanfungsional,
         'user' => $user,
-        // 'users' => $users,
+        'asosiasimasjaki' => $asosiasimasjaki,
         'title' => 'Create BUJK Kontruksi'
     ]);
 }
