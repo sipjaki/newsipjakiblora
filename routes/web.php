@@ -479,11 +479,13 @@ Route::post('/betupoksi/updatecreate/{id}', [StrukturController::class, 'betupok
 // ---------------------- MENU 1 DAFTAR BERITA MAS JAKI JAKON   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beberitajakon', [BeritajakonController::class, 'beberitajakon'])->middleware('auth');
+Route::get('/beberitajakon/show/{id}', [BeritajakonController::class, 'beberitajakonshow'])->middleware('auth');
 Route::get('/beberitajakon/update/{id}', [BeritajakonController::class, 'beberitajakonupdate'])->middleware('auth')->name('update.beberitajakonupdate');
 Route::post('/beberitajakon/updatecreate/{id}', [BeritajakonController::class, 'beberitajakoncreateupdate'])->middleware('auth')->name('update.beberitajakoncreateupdate');
 Route::get('/beberitajakon/create', [BeritajakonController::class, 'beberitajakoncreate'])->middleware('auth')->name('create.beberitajakoncreate');
 Route::post('/beberitajakon/createnew', [BeritajakonController::class, 'beberitajakoncreatenew'])->middleware('auth')->name('create.beberitajakoncreatenew');
 Route::delete('/beberitajakon/delete/{judulberita}', [BeritajakonController::class, 'beberitajakondelete'])->middleware('auth');
+
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 2 ARTIKEL JAKON MAS JAKI BLORA   -----------------------------------------------------

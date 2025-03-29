@@ -225,6 +225,22 @@ class BeritajakonController extends Controller
         ]);
     }
 
+    // MENU SHOW BERITA JASA KONSTRUKSI ------------------------------------------------------------------------------------
+
+public function beberitajakonshow($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.03_beritajakon.01_beritajakon.show', [
+        'data' => $databeritajakon,
+        'user' => $user,
+        'title' => 'Data Details Berita Jasa Konstruksi Kabupaten Blora'
+    ]);
+}
+
+
     // MENU UPDATE DAN UPDATE MENU BERITA JASA KONSTRUKSI    ----------------------------------------------------------------------------
 
 public function beberitajakonupdate($id)
