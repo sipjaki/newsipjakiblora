@@ -352,7 +352,7 @@ public function beberitajakoncreatenew(Request $request)
         'foto1' => 'required|image|max:7168', // foto1 wajib diisi, harus image dan maksimal 7MB (7168KB)
         'foto2' => 'required|image|max:7168', // foto2 wajib diisi, harus image dan maksimal 7MB (7168KB)
     ], [
-        'user_id.required' => 'Penulis wajib diisi!',
+        // 'user_id.required' => 'Penulis wajib diisi!',
         'user_id.exists' => 'Penulis tidak ditemukan!',
         'judulberita.required' => 'Judul berita wajib diisi!',
         'tanggal.required' => 'Tanggal harus berupa format tanggal yang valid!',
