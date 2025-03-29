@@ -371,6 +371,84 @@ public function bebujkkonstruksiklasifikasi($namalengkap)
     ]);
 }
 
+// BUJK KONTRAKTOR UPDATE DAN CREATE UPDATE ------------------------------------------------------------------------------------
+
+public function bebujkkonstruksiupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakonkonstruksi = bujkkontraktor::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.04_datajakon.01_bujkkonstruksi.update', [
+        'data' => $jakonkonstruksi,
+        'user' => $user,
+        'title' => 'Update BUJK Kontraktor'
+    ]);
+}
+
+// -------------------- UPDATE DATA MENU JABATAN FUNGSIONAL  ----------------------
+public function bebujkkonstruksicreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
+        'asosiasimasjaki_id' => 'required|string|max:255', // Validasi untuk ID asosiasi
+        'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+        'alamat' => 'required|string', // Validasi untuk Alamat
+        'no_telepon' => 'required|string|max:255', // Validasi untuk No Telepon
+        'email' => 'required|email', // Validasi untuk Email
+        'nomorindukberusaha' => 'required|string|max:255', // Validasi untuk Nomor Induk Berusaha
+        'pju' => 'required|string|max:255', // Validasi untuk PJU
+        'no_akte' => 'required|string|max:255', // Validasi untuk No Akte
+        'tanggal' => 'required|date', // Validasi untuk Tanggal
+        'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
+        'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
+    ], [
+        'bujkkontraktorsub_id.required' => 'ID kontraktor wajib diisi!',
+        'asosiasimasjaki_id.required' => 'ID asosiasi wajib diisi!',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+        'alamat.required' => 'Alamat wajib diisi!',
+        'no_telepon.required' => 'Nomor Telepon wajib diisi!',
+        'email.required' => 'Email wajib diisi!',
+        'email.email' => 'Format email tidak valid!',
+        'nomorindukberusaha.required' => 'Nomor Induk Berusaha wajib diisi!',
+        'pju.required' => 'PJU wajib diisi!',
+        'no_akte.required' => 'No Akte wajib diisi!',
+        'tanggal.required' => 'Tanggal wajib diisi!',
+        'tanggal.date' => 'Format Tanggal tidak valid!',
+        'nama_notaris.required' => 'Nama Notaris wajib diisi!',
+        'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $jakonkontraktor = bujkkontraktor::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+
+    // Proses update setelah data tervalidasi
+    $jakonkontraktor->update([
+        'jabatan' => $validatedData['jabatan'],  // Menggunakan data yang sudah tervalidasi
+        'namalengkap' => $validatedData['namalengkap'],  // Menggunakan data yang sudah tervalidasi
+        'bujkkontraktorsub_id' => $validatedData['bujkkontraktorsub_id'], // Menambahkan data yang tervalidasi lainnya
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'], // Menambahkan data yang tervalidasi lainnya
+        'alamat' => $validatedData['alamat'], // Menambahkan data yang tervalidasi lainnya
+        'no_telepon' => $validatedData['no_telepon'], // Menambahkan data yang tervalidasi lainnya
+        'email' => $validatedData['email'], // Menambahkan data yang tervalidasi lainnya
+        'nomorindukberusaha' => $validatedData['nomorindukberusaha'], // Menambahkan data yang tervalidasi lainnya
+        'pju' => $validatedData['pju'], // Menambahkan data yang tervalidasi lainnya
+        'no_akte' => $validatedData['no_akte'], // Menambahkan data yang tervalidasi lainnya
+        'tanggal' => $validatedData['tanggal'], // Menambahkan data yang tervalidasi lainnya
+        'nama_notaris' => $validatedData['nama_notaris'], // Menambahkan data yang tervalidasi lainnya
+        'no_pengesahan' => $validatedData['no_pengesahan'], // Menambahkan data yang tervalidasi lainnya
+    ]);
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/bebujkkonstruksi');
+}
+
 
 public function bebujkkonstruksidelete($namalengkap)
 {
