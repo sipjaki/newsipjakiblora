@@ -100,17 +100,15 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nama Asosiasi -->
+
+                                        <!-- Nama Lengkap -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki_id">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Asosiasi
+                                            <label class="form-label" for="namalengkap">
+                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Asosiasi
                                             </label>
-                                            <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control">
-                                                <option value="" disabled selected>Pilih Asosiasi</option>
-                                                @foreach($asosiasi as $asos)
-                                                    <option value="{{ $asos->id }}" {{ $data->asosiasimasjaki_id == $asos->id ? 'selected' : '' }}>{{ $asos->namaasosiasi }}</option>
-                                                @endforeach
-                                            </select>
+                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control" value="{{ $data->asosiasimasjaki->namaasosiasi }}" />
                                         </div>
+
 
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
