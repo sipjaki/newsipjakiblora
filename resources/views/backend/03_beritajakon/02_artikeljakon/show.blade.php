@@ -143,7 +143,6 @@
                                     <div class="col-md-6">
                                         <!-- Foto -->
                                         <!-- Foto -->
-
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
@@ -162,17 +161,16 @@
 
                                         <!-- Modal untuk menampilkan PDF -->
                                         <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                                            <!-- Menambahkan data-bs-backdrop="static" dan data-bs-keyboard="false" untuk menonaktifkan penutupan otomatis -->
-                                            <div class="modal-dialog modal-xl">
+                                            <div class="modal-dialog modal-fullscreen"> <!-- Menggunakan modal-fullscreen untuk modal yang lebih besar dan penuh layar -->
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Tombol Close untuk menutup modal -->
                                                     </div>
                                                     <div class="modal-body">
                                                         <!-- Menampilkan PDF di dalam iframe -->
                                                         @if ($data->berkas)
-                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="800px"></iframe> <!-- Tinggi iframe diperbesar -->
+                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="100%"></iframe> <!-- Tinggi iframe dan lebar diperbesar -->
                                                         @else
                                                             <p>No Berkas available</p>
                                                         @endif
@@ -180,7 +178,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
 
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
