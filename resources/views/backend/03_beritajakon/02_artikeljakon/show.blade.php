@@ -162,16 +162,15 @@
                                         <!-- Modal untuk menampilkan PDF -->
                                         <div class="modal fade" id="modalBerkas" tabindex="-1" aria-labelledby="modalBerkasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                                             <!-- Modal dialog untuk ukuran presisi -->
-                                            <div class="modal-dialog" style="max-width: 80%; min-width: 600px;"> <!-- Sesuaikan dengan lebar yang presisi -->
+                                            <div class="modal-dialog" style="max-width: 80%; min-width: 600px;">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="modalBerkasLabel">Lihat Berkas PDF</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!-- Tombol Close untuk menutup modal -->
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <!-- Menampilkan PDF di dalam iframe -->
                                                         @if ($data->berkas)
-                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="600px"></iframe> <!-- Ukuran iframe yang sesuai -->
+                                                            <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="600px"></iframe>
                                                         @else
                                                             <p>No Berkas available</p>
                                                         @endif
@@ -180,6 +179,14 @@
                                             </div>
                                         </div>
 
+                                        <!-- Pastikan Script Berjalan dengan Benar -->
+                                        <script>
+                                            // Menjaga modal tetap terbuka
+                                            var myModal = new bootstrap.Modal(document.getElementById('modalBerkas'), {
+                                                backdrop: 'static', // Menonaktifkan backdrop
+                                                keyboard: false // Menonaktifkan tombol escape
+                                            });
+                                        </script>
 
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
