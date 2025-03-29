@@ -332,7 +332,7 @@ public function beberitajakoncreatenew(Request $request)
                             });
                     }
 
-                    $data = $query->paginate($perPage);
+                    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
                     if ($request->ajax()) {
                         return response()->json([
