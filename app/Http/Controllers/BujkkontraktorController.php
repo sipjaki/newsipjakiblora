@@ -353,44 +353,43 @@ public function bebujkkonstruksicreate()
 // -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
 public function bebujkkonstruksicreatenew(Request $request)
 {
-    // Pastikan user yang sedang login adalah super_admin (id = 1)
-    $asosiasimasjaki_id = asosiasimasjaki::all();
+    // Ambil data asosiasi dari database untuk digunakan di form
+    $asosiasimasjaki = Asosiasimasjaki::all();
 
+    // Validasi input form
     $validatedData = $request->validate([
-        'bujkkontraktorsub_id' => 'required|exists:bujkkontraktorsub,id', // Validasi untuk ID kontraktor
-        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id', // Validasi untuk ID asosiasi
-        'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
-        'alamat' => 'required|string', // Validasi untuk Alamat
-        'no_telepon' => 'required|string|max:255', // Validasi untuk No Telepon
-        'email' => 'required|email', // Validasi untuk Email
-        'nomorindukberusaha' => 'required|string|max:255', // Validasi untuk Nomor Induk Berusaha
-        'pju' => 'required|string|max:255', // Validasi untuk PJU
-        'no_akte' => 'required|string|max:255', // Validasi untuk No Akte
-        'tanggal' => 'required|date', // Validasi untuk Tanggal
-        'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
-        'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
+        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id',  // Validasi asosiasi
+        'namalengkap' => 'required|string|max:255',
+        'alamat' => 'required|string',
+        'no_telepon' => 'required|string|max:255',
+        'email' => 'required|email',
+        'nomorindukberusaha' => 'required|string|max:255',
+        'pju' => 'required|string|max:255',
+        'no_akte' => 'required|string|max:255',
+        'tanggal' => 'required|date',
+        'nama_notaris' => 'required|string|max:255',
+        'no_pengesahan' => 'required|string|max:255',
     ], [
-
-        'bujkkontraktorsub_id.required' => 'Sub Klasifikasi Layanan harus dipilih!',
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
         'alamat.required' => 'Alamat wajib diisi!',
         'no_telepon.required' => 'Nomor Telepon wajib diisi!',
         'email.required' => 'Email wajib diisi!',
-        'email.email' => 'Format email tidak valid!',
         'nomorindukberusaha.required' => 'Nomor Induk Berusaha wajib diisi!',
         'pju.required' => 'PJU wajib diisi!',
         'no_akte.required' => 'No Akte wajib diisi!',
         'tanggal.required' => 'Tanggal wajib diisi!',
-        'tanggal.date' => 'Format Tanggal tidak valid!',
         'nama_notaris.required' => 'Nama Notaris wajib diisi!',
         'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
     ]);
 
-    // Membuat data baru di tabel beritajakon
-    bujkkontraktor::create([
-        'bujkkontraktorsub_id' => $validatedData['bujkkontraktorsub_id'],  // Menyimpan user_id yang sudah diatur otomatis
-        'asosiasimasjaki_id' => $asosiasimasjaki_id,  // Menyimpan user_id yang sudah diatur otomatis
+    // Mengambil ID pertama dari BujkkontraktorSub
+    $bujkkontraktorsub_id = BujkkontraktorSub::first()->id;
+
+    // Menyimpan data ke dalam tabel bujkkontraktor
+    Bujkkontraktor::create([
+        'bujkkontraktorsub_id' => $bujkkontraktorsub_id, // ID dari kontraktor sub
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'], // Asosiasi yang dipilih
         'namalengkap' => $validatedData['namalengkap'],
         'alamat' => $validatedData['alamat'],
         'no_telepon' => $validatedData['no_telepon'],
@@ -409,7 +408,6 @@ public function bebujkkonstruksicreatenew(Request $request)
     // Redirect ke halaman yang sesuai
     return redirect('/bebujkkonstruksi');
 }
-
 
 // BUJKKONTRAKTOR SHOW
 
