@@ -194,10 +194,10 @@ class BeritajakonController extends Controller
             // Menambahkan kondisi pencarian pada berbagai kolom
             $query->where('judulberita', 'LIKE', "%{$search}%")
                 ->orWhere('tanggal', 'LIKE', "%{$search}%")
-                ->orWhere('keterangan', 'LIKE', "%{$search}%");
-                // ->orWhereHas('users', function ($q) use ($search) {
-                //     $q->where('name', 'LIKE', "%{$search}%");
-                // });
+                ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                ->orWhereHas('user', function ($q) use ($search) {
+                    $q->where('name', 'LIKE', "%{$search}%");
+                });
         }
 
         // Ambil data yang sesuai dengan pencarian dan pagination
