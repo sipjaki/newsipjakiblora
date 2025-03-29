@@ -177,11 +177,11 @@
                                             </div>
                                         </div>                                        <!-- Pastikan Script Berjalan dengan Benar -->
                                         <script>
-                                            // Pastikan modal tidak menutup otomatis dan tidak melakukan refresh
+                                            // Menginisialisasi modal menggunakan Bootstrap Modal API
                                             var modalElement = document.getElementById('modalBerkas');
                                             var modal = new bootstrap.Modal(modalElement, {
-                                                backdrop: 'static',  // Menonaktifkan backdrop
-                                                keyboard: false      // Menonaktifkan tombol escape
+                                                backdrop: 'static',  // Menonaktifkan backdrop (klik di luar modal tidak menutup)
+                                                keyboard: false      // Menonaktifkan tombol Escape
                                             });
 
                                             // Event listener untuk tombol membuka modal
@@ -197,9 +197,10 @@
 
                                             // Jika modal dimuat, pastikan ia tetap terbuka
                                             modalElement.addEventListener('hidden.bs.modal', function (event) {
-                                                event.preventDefault();
+                                                event.preventDefault(); // Mencegah penutupan modal jika diklik di luar atau Escape
                                             });
                                         </script>
+
 
                                                                                 <div class="mb-3">
                                             <label class="form-label" for="foto">
