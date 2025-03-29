@@ -377,12 +377,15 @@ public function bebujkkonstruksiupdate($id)
 {
     // Cari data undang-undang berdasarkan nilai 'judul'
     $jakonkonstruksi = bujkkontraktor::where('id', $id)->firstOrFail();
+    $asosiasimasjakiList = Asosiasimasjaki::all(); // Ambil semua asosiasi
+
     $user = Auth::user();
 
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.04_datajakon.01_bujkkonstruksi.update', [
         'data' => $jakonkonstruksi,
         'user' => $user,
+        'asosiasimasjakiList' => $asosiasimasjakiList,
         'title' => 'Update BUJK Kontraktor'
     ]);
 }
