@@ -101,7 +101,7 @@
                                             <label class="form-label" for="user_id">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> User ID
                                             </label>
-                                            <select id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror">
+                                            <select id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror" disabled>
                                                 <option value="" disabled selected>Pilih Penulis</option>
                                                 @foreach($users as $user)
                                                     <option value="{{ $user->id }}"
@@ -114,8 +114,7 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-
-                                        <!-- Judul Berita -->
+                                              <!-- Judul Berita -->
                                         <div class="mb-3">
                                             <label class="form-label" for="judulberita">
                                                 <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Berita
