@@ -249,26 +249,25 @@ public function beberitajakonupdate($id)
             public function beberitajakoncreateupdate(Request $request, $id)
             {
                 // Validasi input dengan pesan kustom
-                $validatedData = $request->validate([
-                    'user_id' => 'nullable|exists:users,id', // user_id bisa null, dan harus ada di tabel users jika ada
-                    'judulberita' => 'nullable|string|max:255', // judulberita bisa null, harus string, dan panjangnya maksimal 255 karakter
-                    'tanggal' => 'nullable|date', // tanggal bisa null, dan jika ada harus dalam format tanggal
-                    'keterangan' => 'nullable|string', // keterangan bisa null, dan jika ada harus berupa string
-                    'foto' => 'nullable|image|max:7168', // foto bisa null, harus image dan maksimal 7MB (7168KB)
-                    'foto1' => 'nullable|image|max:7168', // foto1 bisa null, harus image dan maksimal 7MB (7168KB)
-                    'foto2' => 'nullable|image|max:7168', // foto2 bisa null, harus image dan maksimal 7MB (7168KB)
-                ], [
-                    'user_id.exists' => 'Penulis tidak ditemukan!',
-                    'judulberita.required' => 'Judul berita wajib diisi!',
-                    'tanggal.required' => 'Tanggal harus berupa format tanggal yang valid!',
-                    'keterangan.required' => 'Keterangan wajib diisi!',
-                    'foto.required' => 'Foto harus berupa gambar!',
-                    'foto.max' => 'Foto maksimal 7MB!',
-                    'foto1.required' => 'Foto 1 harus berupa gambar!',
-                    'foto1.max' => 'Foto 1 maksimal 7MB!',
-                    'foto2.required' => 'Foto 2 harus berupa gambar!',
-                    'foto2.max' => 'Foto 2 maksimal 7MB!',
-                ]);
+               // Validasi input dengan pesan kustom
+                    $validatedData = $request->validate([
+                        'user_id' => 'required|exists:users,id',  // Pastikan user_id harus ada
+                        'judulberita' => 'required|string|max:255',  // Judul wajib diisi
+                        'tanggal' => 'required|date',  // Tanggal wajib diisi
+                        'keterangan' => 'required|string',  // Keterangan wajib diisi
+                        'foto' => 'nullable|image|max:7168', // Foto tetap bisa null tapi jika ada harus image
+                        'foto1' => 'nullable|image|max:7168',
+                        'foto2' => 'nullable|image|max:7168',
+                    ], [
+                        'user_id.required' => 'Penulis harus dipilih!',
+                        'user_id.exists' => 'Penulis tidak ditemukan!',
+                        'judulberita.required' => 'Judul berita wajib diisi!',
+                        'tanggal.required' => 'Tanggal harus diisi!',
+                        'keterangan.required' => 'Keterangan wajib diisi!',
+                        'foto.image' => 'Foto harus berupa gambar!',
+                        'foto1.image' => 'Foto 1 harus berupa gambar!',
+                        'foto2.image' => 'Foto 2 harus berupa gambar!',
+                    ]);
 
                 // Cari data berdasarkan ID
                 $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
