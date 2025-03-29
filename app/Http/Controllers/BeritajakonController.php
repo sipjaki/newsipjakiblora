@@ -337,7 +337,7 @@ public function beberitajakoncreate()
         // 'data' => $jakonjabatanfungsional,
         'user' => $user,
         'users' => $users,
-        'title' => 'Create Jabatan Fungsional Jasa Konstruksi'
+        'title' => 'Create Berita Jasa Konstruksi'
     ]);
 }
 
