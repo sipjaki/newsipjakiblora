@@ -160,7 +160,7 @@
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
          <th style="width: 200px; text-align:center; background:white; color:black;">Penulis</th>
-         <th style="width: 500px; text-align:center;">Judul Berita</th>
+         <th style="width: 500px; text-align:center;">Artikel Jakon</th>
          <th style="width: 150px; text-align:center;">Tanggal</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
@@ -170,7 +170,7 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: center;">{{$item->user->name}}</td>
-         <td style="text-align: left;">{{$item->judulberita}}</td>
+         <td style="text-align: left;">{{$item->judul}}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</td>
 
          <td style="text-align: center; vertical-align: middle;">
