@@ -1,6 +1,5 @@
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
-@include('backend.00_administrator.00_baganterpisah.08_style')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!--begin::Body-->
