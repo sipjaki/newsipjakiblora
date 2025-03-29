@@ -135,6 +135,15 @@
                                             <textarea id="keterangan" name="keterangan" class="form-control" style="height: 400px;" disabled>{{ $data->keterangan }}</textarea>
                                         </div>
 
+
+                                    </div>
+                                    <!-- End Left Column -->
+
+                                    <!-- Right Column (6/12) -->
+                                    <div class="col-md-6">
+                                        <!-- Foto -->
+                                        <!-- Foto -->
+
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
@@ -151,19 +160,12 @@
                                             </div>
                                         </div>
 
-                                    </div>
-                                    <!-- End Left Column -->
-
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Foto -->
-                                        <!-- Foto -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
                                             </label>
                                             <div class="form-control" style="border: none;">
-                                                @if ($data->foto)
+                                                @if ($data->foto1)
                                                     <!-- Memperbesar gambar -->
                                                     <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto" width="300" />  <!-- Mengatur lebar gambar menjadi 300px -->
                                                 @else
@@ -178,7 +180,7 @@
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
                                             </label>
                                             <div class="form-control" style="border: none;">
-                                                @if ($data->foto1)
+                                                @if ($data->foto2)
                                                     <!-- Memperbesar gambar -->
                                                     <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 1" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
                                                 @else
@@ -193,7 +195,7 @@
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 3
                                             </label>
                                             <div class="form-control" style="border: none;">
-                                                @if ($data->foto2)
+                                                @if ($data->foto3)
                                                     <!-- Memperbesar gambar -->
                                                     <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto 2" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
                                                 @else
