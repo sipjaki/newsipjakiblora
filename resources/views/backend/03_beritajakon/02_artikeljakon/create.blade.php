@@ -190,12 +190,12 @@
                                         <!-- Foto -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto1">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Brosur 1
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Brosur 2
                                             </label>
                                             <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" onchange="previewImage('foto1', 'previewFoto1')" />
                                             <div>
-                                                <!-- Preview Image -->
-                                                <img id="previewFoto" src="{{ old('foto1') ? asset('storage/' . old('foto1')) : '' }}" style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
+                                                <!-- Preview Image 1 -->
+                                                <img id="previewFoto1" src="{{ old('foto1') ? asset('storage/' . old('foto1')) : '' }}" style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
                                             </div>
                                             @error('foto1')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -204,7 +204,7 @@
 
                                         <!-- Foto 1 -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="foto1">
+                                            <label class="form-label" for="foto2">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Brosur 2
                                             </label>
                                             <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" onchange="previewImage('foto2', 'previewFoto2')" />
