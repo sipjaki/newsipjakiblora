@@ -189,12 +189,16 @@
                             <!-- end::Body -->
 
                             <!-- Button (Optional) -->
-                            <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-                                <button type="button" class="btn btn-secondary" style="padding: 10px 20px; border-radius: 15px; font-size: 16px;">
-                                    <i class="fa fa-eye" style="margin-right: 8px;"></i> View Only
-                                </button>
-                            </div>
+                            <a href="/beberitajakon/update/{{$item->id}}>
+                                <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+                                    <button type="submit" style="background-color: #117235; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+                                        <i class="fa fa-file" style="margin-right: 8px;"></i> Update
+                                    </button>
+                                </div>
+                            </a>
                         </form>
+
+
                                                      </div>
                         <!--end::Quick Example-->
 
