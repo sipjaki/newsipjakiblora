@@ -101,7 +101,7 @@
                                         <!-- User ID -->
                                         <div class="mb-3">
                                             <label class="form-label" for="user_id">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> User ID
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Penulis Artikel Jasa Konstruksi
                                             </label>
                                             <select id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror">
                                                 <option value="" disabled selected>Pilih Penulis</option>
@@ -119,7 +119,7 @@
                                         <!-- Judul Berita -->
                                         <div class="mb-3">
                                             <label class="form-label" for="judulberita">
-                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Berita
+                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Judul Artikel
                                             </label>
                                             <input type="text" id="judulberita" name="judulberita" class="form-control @error('judulberita') is-invalid @enderror" value="{{ old('judulberita', $data->judulberita) }}" />
                                             @error('judulberita')
@@ -158,15 +158,29 @@
                                         <!-- Foto -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Berkas
                                             </label>
-                                            <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />
-                                            @error('foto')
+                                            <input type="file" id="berkas" name="berkas" class="form-control @error('foto') is-invalid @enderror" />
+                                            @error('berkas')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                            @if ($data->foto)
+                                            @if ($data->berkas)
                                             <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->foto) }}" alt="Foto" width="100" />
+                                                <img src="{{ asset('storage/' . $data->berkas) }}" alt="Foto" width="100" />
+                                            </div>
+                                            @endif
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="foto">
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 1
+                                            </label>
+                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto') is-invalid @enderror" />
+                                            @error('foto1')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                            @if ($data->foto1)
+                                            <div class="mt-2">
+                                                <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto" width="100" />
                                             </div>
                                             @endif
                                         </div>
@@ -174,15 +188,15 @@
                                         <!-- Foto 1 -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto1">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 2
                                             </label>
-                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" />
-                                            @error('foto1')
+                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto1') is-invalid @enderror" />
+                                            @error('foto2')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                            @if ($data->foto1)
+                                            @if ($data->foto2)
                                             <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto 1" width="100" />
+                                                <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 1" width="100" />
                                             </div>
                                             @endif
                                         </div>
@@ -190,15 +204,15 @@
                                         <!-- Foto 2 -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto2">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 2
                                             </label>
-                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" />
-                                            @error('foto2')
+                                            <input type="file" id="foto3" name="foto3" class="form-control @error('foto2') is-invalid @enderror" />
+                                            @error('foto3')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
-                                            @if ($data->foto2)
+                                            @if ($data->foto3)
                                             <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 2" width="100" />
+                                                <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto 2" width="100" />
                                             </div>
                                             @endif
                                         </div>
