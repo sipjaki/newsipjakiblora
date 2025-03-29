@@ -125,7 +125,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bebujkkonstruksi?search=${input}`)
+                            fetch(`/beberitajakon?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -170,8 +170,8 @@
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
          <th style="width: 200px; text-align:center; background:white; color:black;">Penulis</th>
-         <th style="width: 250px; text-align:center;">Judul Berita</th>
-         <th style="width: 250px; text-align:center;">Tanggal</th>
+         <th style="width: 500px; text-align:center;">Judul Berita</th>
+         <th style="width: 150px; text-align:center;">Tanggal</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
