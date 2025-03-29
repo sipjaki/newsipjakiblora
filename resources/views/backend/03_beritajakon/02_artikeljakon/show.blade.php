@@ -175,9 +175,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <!-- Pastikan Script Berjalan dengan Benar -->
+                                        </div>                                        <!-- Pastikan Script Berjalan dengan Benar -->
                                         <script>
                                             // Pastikan modal tidak menutup otomatis dan tidak melakukan refresh
                                             var modalElement = document.getElementById('modalBerkas');
