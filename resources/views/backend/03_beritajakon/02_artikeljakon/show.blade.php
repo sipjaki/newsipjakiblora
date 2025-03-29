@@ -178,13 +178,24 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <!-- Pastikan Script Berjalan dengan Benar -->
+                                                                                <!-- Pastikan Script Berjalan dengan Benar -->
                                         <script>
-                                            // Menjaga modal tetap terbuka
-                                            var myModal = new bootstrap.Modal(document.getElementById('modalBerkas'), {
-                                                backdrop: 'static', // Menonaktifkan backdrop
-                                                keyboard: false // Menonaktifkan tombol escape
+                                            // Pastikan modal tidak dapat menutup secara otomatis dengan klik di luar modal atau tombol escape
+                                            var modalElement = document.getElementById('modalBerkas');
+                                            var modal = new bootstrap.Modal(modalElement, {
+                                                backdrop: 'static',  // Menonaktifkan backdrop, sehingga modal tidak menutup ketika klik di luar modal
+                                                keyboard: false      // Menonaktifkan tombol escape
+                                            });
+
+                                            // Menampilkan modal secara manual ketika tombol diklik
+                                            modalElement.addEventListener('show.bs.modal', function (event) {
+                                                modal.show();
+                                            });
+
+                                            // Menghindari penutupan otomatis modal
+                                            modalElement.addEventListener('hidden.bs.modal', function (event) {
+                                                // Cegah penutupan modal ketika diklik di luar atau dengan escape
+                                                event.preventDefault();
                                             });
                                         </script>
 
