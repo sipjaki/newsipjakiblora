@@ -170,6 +170,13 @@
                                         </div>
 
                                         <!-- PJU -->
+
+                                    </div>
+                                    <!-- End Left Column -->
+
+                                    <!-- Right Column (6/12) -->
+                                    <div class="col-md-6">
+
                                         <div class="mb-3">
                                             <label class="form-label" for="pju">
                                                 <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> PJU
@@ -179,11 +186,6 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                    <!-- End Left Column -->
-
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
                                         <!-- No Akte -->
                                         <div class="mb-3">
                                             <label class="form-label" for="no_akte">
