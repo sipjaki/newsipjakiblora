@@ -405,7 +405,7 @@ public function bebujkkonstruksicreatenew(Request $request)
     session()->flash('create', 'Data Berhasil Dibuat!');
 
     // Redirect ke halaman yang sesuai
-    return redirect('/beberitajakon');
+    return redirect('/bebujkkonstruksi');
 }
 
 
