@@ -131,7 +131,7 @@
             <th style="width: 100px; text-align:center;">No</th>
             <th style="width: 200px; text-align:center;">Penulis</th>
             <th style="width: 250px; text-align:center;">Judul Berita</th>
-            <th style="width: 100px; text-align:center;">Tanggal</th>
+            <th style="width: 300px; text-align:center;">Tanggal</th>
             <th style="width: 600px; text-align:center;">Isi Berita</th>
             <th style="width: 300px; text-align:center;">Foto 1</th>
             <th style="width: 300px; text-align:center;">Foto 2</th>
