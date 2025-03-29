@@ -156,7 +156,7 @@
                                             <label class="form-label" for="foto">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto
                                             </label>
-                                            <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />
+                                            <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />{{ old('foto') }}
                                             @error('foto')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -167,7 +167,7 @@
                                             <label class="form-label" for="foto1">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
                                             </label>
-                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" />
+                                            <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" />{{ old('foto1') }}
                                             @error('foto1')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -178,7 +178,7 @@
                                             <label class="form-label" for="foto2">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
                                             </label>
-                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" />
+                                            <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" />{{ old('foto2') }}
                                             @error('foto2')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
