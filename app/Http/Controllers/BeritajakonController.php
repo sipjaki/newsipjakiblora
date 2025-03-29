@@ -426,18 +426,43 @@ public function beberitajakoncreatenew(Request $request)
     // ======================================================================================
     // ARTIKEL JAKON MAS JAKI
 
-        public function beartikeljakon()
-        {
-            $data = artikeljakonmasjaki::paginate(5); // Menggunakan paginate() untuk pagination
-            $user = Auth::user();
+        public function beartikeljakon(Request $request)
+                {
+                    $perPage = $request->input('perPage', 15);
+                    $search = $request->input('search');
 
-            return view('backend.03_beritajakon.02_artikeljakon.index', [
-                'title' => 'Artikel Jasa Konstruksi',
-                'data' => $data, // Mengirimkan data paginasi ke view
-                'user' => $user, // Mengirimkan data paginasi ke view
+                    $query = artikeljakonmasjaki::query();
 
-            ]);
-        }
+                    if ($search) {
+                        $query->where('judul', 'LIKE', "%{$search}%")
+                            ->orWhere('tanggal', 'LIKE', "%{$search}%")
+                            ->orWhere('foto', 'LIKE', "%{$search}%")
+                            ->orWhere('foto1', 'LIKE', "%{$search}%")
+                            ->orWhere('foto2', 'LIKE', "%{$search}%")
+                            ->orWhere('berkas', 'LIKE', "%{$search}%")
+                            ->orWhere('keterangan', 'LIKE', "%{$search}%")
+
+                            ->orWhereHas('user', function ($q) use ($search) {
+                                $q->where('name', 'LIKE', "%{$search}%");
+                            });
+                    }
+
+                    $data = $query->paginate($perPage);
+
+                    if ($request->ajax()) {
+                        return response()->json([
+                            'html' => view('backend.03_beritajakon.02_artikeljakon.partials.table', compact('data'))->render()
+                        ]);
+                    }
+
+                    return view('backend.03_beritajakon.02_artikeljakon.index', [
+                        'title' => 'Artikel Jasa Konstruksi',
+                        'data' => $data,
+                        'perPage' => $perPage,
+                        'search' => $search
+                    ]);
+                }
+
 
 
         public function beartikeljakondelete($judul)

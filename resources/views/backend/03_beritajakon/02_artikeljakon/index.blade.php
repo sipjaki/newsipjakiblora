@@ -63,21 +63,67 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-                     <h2 style="color: black; font-weight:900;" class="card-title">Halaman Pengaturan : {{$title}} </h2>
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                         <a href="/betupoksi/create">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white';"
-                             style="background-color: #156f2a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                             Create
-                         </button>
-                         </a>
+                    <div class="card-header">
+                        <div style="
+                        margin-bottom:10px;
+                        font-weight: 900;
+                        font-size: 16px;
+                        text-align: center;
+                        background: linear-gradient(135deg, #166534, #166534);
+                        color: white;
+                        padding: 10px 25px;
+                        border-radius: 10px;
+                        display: inline-block;
+                        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                        width: 100%;
+                    ">
+                        📌 Halaman : {{$title}}
+                    </div>
 
-                     </div>
                  </div>
+
+                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                    <div style="position: relative; display: inline-block; margin-right:10px;">
+                        <input type="search" id="searchInput" placeholder="Cari Badan Usaha ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                        <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                    <script>
+                        function updateEntries() {
+                            let selectedValue = document.getElementById("entries").value;
+                            let url = new URL(window.location.href);
+                            url.searchParams.set("perPage", selectedValue);
+                            window.location.href = url.toString();
+                        }
+
+                        function searchTable() {
+                        let input = document.getElementById("searchInput").value;
+
+                        fetch(`/bebujkkonstruksi?search=${input}`)
+                            .then(response => response.text())
+                            .then(html => {
+                                let parser = new DOMParser();
+                                let doc = parser.parseFromString(html, "text/html");
+                                let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                                document.querySelector("#tableBody").innerHTML = newTableBody;
+                            })
+                            .catch(error => console.error("Error fetching search results:", error));
+                    }
+
+                            </script>
+
+                     <a href="/beartikeljakon/create">
+                         <button
+                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                         onmouseout="this.style.backgroundColor='#156f2a'; this.style.color='white';"
+                         style="background-color: #156f2a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                         <!-- Ikon Kembali -->
+                         <i class="fa fa-plus" style="margin-right: 8px;"></i>
+                         Create
+                     </button>
+                     </a>
+                    </div>
+
+                 </div>
+
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
