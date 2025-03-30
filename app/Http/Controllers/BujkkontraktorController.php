@@ -361,7 +361,7 @@ public function bebujkkonstruksicreatenew(Request $request)
 
     // Validasi input form
     $validatedData = $request->validate([
-        'asosiasimasjaki_id' => 'required|string|max:255',  // Validasi asosiasi
+        'daftarasosiasi_id' => 'required|string|max:255',  // Validasi asosiasi
         'namalengkap' => 'required|string|max:255',
         'alamat' => 'required|string',
         'no_telepon' => 'required|string|max:255',
@@ -373,7 +373,7 @@ public function bebujkkonstruksicreatenew(Request $request)
         'nama_notaris' => 'required|string|max:255',
         'no_pengesahan' => 'required|string|max:255',
     ], [
-        'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
+        'daftarasosiasi_id.required' => 'Asosiasi harus dipilih!',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
         'alamat.required' => 'Alamat wajib diisi!',
         'no_telepon.required' => 'Nomor Telepon wajib diisi!',
