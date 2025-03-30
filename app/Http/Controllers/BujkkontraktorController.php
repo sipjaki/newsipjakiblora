@@ -8,6 +8,7 @@ use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
 use App\Models\bujkkontraktor;
 use App\Models\bujkkontraktorsub;
+use App\Models\daftarasosiasi;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -356,7 +357,7 @@ public function bebujkkonstruksicreate()
 public function bebujkkonstruksicreatenew(Request $request)
 {
     // Ambil data asosiasi dari database untuk digunakan di form
-    $asosiasimasjaki = Asosiasimasjaki::all();
+    $daftarasosiasi = daftarasosiasi::all();
 
     // Validasi input form
     $validatedData = $request->validate([
@@ -391,7 +392,7 @@ public function bebujkkonstruksicreatenew(Request $request)
     // Menyimpan data ke dalam tabel bujkkontraktor
     Bujkkontraktor::create([
         'bujkkontraktorsub_id' => $bujkkontraktorsub_id, // ID dari kontraktor sub
-        'asosiasimasjaki_id' => $asosiasimasjaki, // Asosiasi yang dipilih
+        'daftarasosiasi_id' => $daftarasosiasi, // Asosiasi yang dipilih
         'namalengkap' => $validatedData['namalengkap'],
         'alamat' => $validatedData['alamat'],
         'no_telepon' => $validatedData['no_telepon'],

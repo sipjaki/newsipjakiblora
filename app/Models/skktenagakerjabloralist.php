@@ -53,4 +53,9 @@ class skktenagakerjabloralist extends Model
         return $this->belongsTo(asosiasimasjaki::class);
     }
 
+    public function daftarasosiasi()
+    {
+        return $this->belongsTo(daftarasosiasi::class, 'daftarasosiasi_id');
+    }
+
 }

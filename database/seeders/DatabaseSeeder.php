@@ -27,6 +27,8 @@ use App\Models\sbulampiran1;
 use App\Models\sbulampiran2;
 use App\Models\sbulampiran3;
 use App\Models\asosiasimasjaki;
+// -perubahan
+use App\Models\daftarasosiasi;
 
 // use App\Models\sertifikasiagenda;
 use App\Models\standarbiayaumum;
@@ -46,7 +48,6 @@ use App\Models\jenjang;
 use App\Models\lpspenerbit;
 use App\Models\skktenagakerjablora;
 use App\Models\skktenagakerjabloralist;
-use App\Models\daftarasosiasi;
 use App\Models\prosespaket;
 use App\Models\pengawasanbujk;
 use App\Models\kecelakaankerjamasjaki;
@@ -479,7 +480,7 @@ tupoksi::create([
 bujkkontraktor::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 1, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Mandra Kanta Unggul',
     'alamat' => 'Desa Tawangrejo 003/005 Kunduran Kab. Blora Jawa Tengah',
     'no_telepon' => '082324908547',
@@ -577,7 +578,7 @@ bujkkontraktorsub::create([
 bujkkontraktor::create([
     'id' => 2, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 2, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Ramai Jaya Bumi',
     'alamat' => 'Jl. Gajah Mada No. 24A 000/000 Cepu Kab. Blora Jawa Tengah',
     'no_telepon' => '02965104662',
@@ -936,7 +937,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 3, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 3, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TRIBAKTI BINTANG SEJAHTERA',
     'alamat' => 'BERAN 001/003 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -1034,7 +1035,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 4, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 4, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'DIZA PERMATA HATI',
     'alamat' => 'DESA BANDUNGROJO RT. 001 RW. 001, Ngawen,Kab. Blora',
     'no_telepon' => '082138576435',
@@ -1208,7 +1209,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 5, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 5, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TUNGGAL GUNA KARYA',
     'alamat' => 'DESA GENENG 003/001 Jepon Kab. Blora Jawa Tengah',
     'no_telepon' => '082314931935',
@@ -1370,7 +1371,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 6, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 6, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TRI GRAHA MEGAH JAYA',
     'alamat' => 'DESA PATALAN 003/005 Kab. Blora Jawa Tengah',
     'no_telepon' => '081325225577',
@@ -1531,7 +1532,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 7, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 7, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'BERKAH HPL MANDIRI',
     'alamat' => 'DESA PENGKOLREJO 001/004 Japah Kab. Blora Jawa Tengah',
     'no_telepon' => '08122607371',
@@ -1614,7 +1615,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 8, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 8, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'KARYA DWI PUTRI',
     'alamat' => 'DESA TODANAN, Desa/Kelurahan Todanan, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085212848598',
@@ -1749,7 +1750,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 9, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 9, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'CV. DHA YASA MULIA',
     'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81326704319',
@@ -1806,7 +1807,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 10, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 10, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'RASI SINAR RAYA',
     'alamat' => 'DK. KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085218340935',
@@ -1904,7 +1905,7 @@ bujkkontraktorsub ::create([
 bujkkonsultan::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 1, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1,
+    'daftarasosiasi_id' => 1,
     'namalengkap' => 'Tiara Energi',
     'alamat' => 'Desa Gersi, Desa/Kelurahan Gersi, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081325657254',
@@ -1975,7 +1976,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 2, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 2, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 5,
+    'daftarasosiasi_id' => 5,
     'namalengkap' => 'KARYA INTI KONSULTAN',
     'alamat' => 'DUKUH SENDANG KLAMPOK, Desa/Kelurahan Tempurejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '082133220199',
@@ -2020,7 +2021,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 3, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 3, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 4,
+    'daftarasosiasi_id' => 4,
     'namalengkap' => 'BEGAWAN ABIYOSO',
     'alamat' => ' DUKUH WUNI, Desa/Kelurahan Balong, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '085292559491',
@@ -2053,7 +2054,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 4, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 4, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 2,
+    'daftarasosiasi_id' => 2,
     'namalengkap' => 'GRAHACIPTA PERKASA',
     'alamat' => ' Ds. Tambahrejo, Desa/Kelurahan Tambahrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081327421757',
@@ -2111,7 +2112,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 5, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 5, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 3,
+    'daftarasosiasi_id' => 3,
     'namalengkap' => 'BEKONS',
     'alamat' => 'Dukuh Bengir, Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '085326420963',
@@ -4964,7 +4965,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '2',
     'namaasosiasi' => 'ASDAMKINDO',
     'created_at' => Carbon::now(),
@@ -4972,7 +4973,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '3',
     'namaasosiasi' => 'ASTEKINDO',
     'created_at' => Carbon::now(),
@@ -4980,7 +4981,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '4',
     'namaasosiasi' => 'ASTTATINDO',
     'created_at' => Carbon::now(),
@@ -4988,7 +4989,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '5',
     'namaasosiasi' => 'ATAKI',
     'created_at' => Carbon::now(),
@@ -4996,7 +4997,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '6',
     'namaasosiasi' => 'ATAKNAS',
     'created_at' => Carbon::now(),
@@ -5004,7 +5005,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '7',
     'namaasosiasi' => 'ATAKSI',
     'created_at' => Carbon::now(),
@@ -5012,7 +5013,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '8',
     'namaasosiasi' => 'GATAKI',
     'created_at' => Carbon::now(),
@@ -5020,7 +5021,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '9',
     'namaasosiasi' => 'GATENSI',
     'created_at' => Carbon::now(),
@@ -5028,7 +5029,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '10',
     'namaasosiasi' => 'HATSINDO',
     'created_at' => Carbon::now(),
@@ -5036,7 +5037,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '11',
     'namaasosiasi' => 'HPJI',
     'created_at' => Carbon::now(),
@@ -5044,7 +5045,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '12',
     'namaasosiasi' => 'IAKI',
     'created_at' => Carbon::now(),
@@ -5052,7 +5053,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '13',
     'namaasosiasi' => 'LPJK',
     'created_at' => Carbon::now(),
@@ -5060,7 +5061,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '14',
     'namaasosiasi' => 'PAKKI',
     'created_at' => Carbon::now(),
@@ -5068,7 +5069,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '15',
     'namaasosiasi' => 'PARABI',
     'created_at' => Carbon::now(),
@@ -5076,7 +5077,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '16',
     'namaasosiasi' => 'PASTALI',
     'created_at' => Carbon::now(),
@@ -5084,7 +5085,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '17',
     'namaasosiasi' => 'PASTI',
     'created_at' => Carbon::now(),
@@ -5092,7 +5093,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '18',
     'namaasosiasi' => 'PERPAKOM',
     'created_at' => Carbon::now(),
@@ -5100,7 +5101,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '19',
     'namaasosiasi' => 'PERTAHKINDO',
     'created_at' => Carbon::now(),
@@ -5108,7 +5109,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '20',
     'namaasosiasi' => 'PERTAMA',
     'created_at' => Carbon::now(),
@@ -5116,7 +5117,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '21',
     'namaasosiasi' => 'PERTAPIN',
     'created_at' => Carbon::now(),
@@ -5124,7 +5125,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '22',
     'namaasosiasi' => 'PETAKINDO',
     'created_at' => Carbon::now(),
@@ -5132,7 +5133,7 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-asosiasimasjaki::create([
+daftarasosiasi::create([
     'id' => '23',
     'namaasosiasi' => 'PETAKOM',
     'created_at' => Carbon::now(),
@@ -5352,7 +5353,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 77,
     'jenjang_id' => 1,
-    'asosiasimasjaki_id' => 1,
+    'daftarasosiasi_id' => 1,
     'lpspenerbit_id' => 2,
     'tanggalterbit' => '2023-10-08',
     'tanggalhabis' => '2028-12-07',
@@ -5368,7 +5369,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 76,
     'jenjang_id' => 2,
-    'asosiasimasjaki_id' => 13,
+    'daftarasosiasi_id' => 13,
     'lpspenerbit_id' => 2,
     'tanggalterbit' => '2023-10-08',
     'tanggalhabis' => '2028-12-28',
@@ -5384,7 +5385,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 67,
     'jenjang_id' => 3,
-    'asosiasimasjaki_id' => 1,
+    'daftarasosiasi_id' => 1,
     'lpspenerbit_id' => 2,
     'tanggalterbit' => '2023-10-08',
     'tanggalhabis' => '2028-12-07',
@@ -5400,7 +5401,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => 2010,
     'jabatankerja_id' => 1,
     'jenjang_id' => 4,
-    'asosiasimasjaki_id' => 1,
+    'daftarasosiasi_id' => 1,
     'lpspenerbit_id' => 1,
     'tanggalterbit' => null,
     'tanggalhabis' => null,
@@ -5416,7 +5417,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 57,
     'jenjang_id' => 5,
-    'asosiasimasjaki_id' => 6,
+    'daftarasosiasi_id' => 6,
     'lpspenerbit_id' => 1,
     'tanggalterbit' => '2023-10-08',
     'tanggalhabis' => '2028-07-24',
@@ -5432,7 +5433,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 50,
     'jenjang_id' => 6,
-    'asosiasimasjaki_id' => 6,
+    'daftarasosiasi_id' => 6,
     'lpspenerbit_id' => 1,
     'tanggalterbit' => '2023-08-10',
     'tanggalhabis' => '2028-04-18',
@@ -5448,7 +5449,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 35,
     'jenjang_id' => 7,
-    'asosiasimasjaki_id' => 3,
+    'daftarasosiasi_id' => 3,
     'lpspenerbit_id' => 2,
     'tanggalterbit' => '2023-08-10',
     'tanggalhabis' => '2028-01-12',
@@ -5464,7 +5465,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 19,
     'jenjang_id' => 8,
-    'asosiasimasjaki_id' => 2,
+    'daftarasosiasi_id' => 2,
     'lpspenerbit_id' => 4,
     'tanggalterbit' => '2023-08-10',
     'tanggalhabis' => '2028-07-05',
@@ -5480,7 +5481,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 10,
     'jenjang_id' => 9,
-    'asosiasimasjaki_id' => 3,
+    'daftarasosiasi_id' => 3,
     'lpspenerbit_id' => 4,
     'tanggalterbit' => '2023-08-10',
     'tanggalhabis' => '2027-05-19',
@@ -17701,7 +17702,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2024-03-10',
     'statusterbit' => 'TERBIT',
@@ -17717,7 +17718,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -17733,7 +17734,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2029-03-10',
     'statusterbit' => 'TERBIT',
@@ -17749,7 +17750,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -17765,7 +17766,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -17781,7 +17782,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2029-03-10',
     'statusterbit' => 'TERBIT',
@@ -17797,7 +17798,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -17813,7 +17814,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -17829,7 +17830,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -17845,7 +17846,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -17861,7 +17862,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 5,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2029-03-10',
     'statusterbit' => 'TERBIT',
@@ -17877,7 +17878,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 7,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-30',
     'tanggalhabis' => '2029-03-29',
     'statusterbit' => 'TERBIT',
@@ -17893,7 +17894,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 3,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'asosiasimasjaki_id' => null,
+    'daftarasosiasi_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',

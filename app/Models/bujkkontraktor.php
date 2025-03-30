@@ -13,14 +13,19 @@ class bujkkontraktor extends Model
 
     protected $guarded = ['id'];
 
-    public function bujkkontraktorsub()
-    {
-        return $this->belongsTo(bujkkontraktorsub::class, 'bujkkontraktorsub_id');
-    }
+        public function bujkkontraktorsub()
+        {
+            return $this->belongsTo(bujkkontraktorsub::class, 'bujkkontraktorsub_id');
+        }
 
         public function asosiasimasjaki()
         {
             return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
+        }
+
+        public function daftarasosiasi()
+        {
+            return $this->belongsTo(daftarasosiasi::class, 'daftarasosiasi_id');
         }
 
         public function tahunpilihan()
