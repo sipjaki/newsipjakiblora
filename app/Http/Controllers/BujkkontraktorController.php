@@ -336,6 +336,7 @@ public function bebujkkonstruksi(Request $request)
 }
 
 
+
 // MENU CREATE BUJK KONTRAKTOR ===============================================================================
 public function bebujkkonstruksicreate()
 {
