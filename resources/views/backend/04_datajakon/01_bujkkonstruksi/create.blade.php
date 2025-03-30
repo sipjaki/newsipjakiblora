@@ -109,7 +109,7 @@
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            @error('asosiasimasjaki_id')
+                                            @error('daftarasosiasi_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
