@@ -11,8 +11,8 @@ class daftarasosiasi extends Model
 {
     use HasFactory, SoftDeletes, HasApiTokens;
 
-    // protected $guarded = ['id'];
-    protected $table = 'daftarasosiasi';
+    protected $guarded = ['id'];
+    // protected $table = 'daftarasosiasi';
 
     public function skktenagakerjabloralist()
     {
