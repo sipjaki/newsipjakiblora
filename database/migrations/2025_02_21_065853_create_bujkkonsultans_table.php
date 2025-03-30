@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bujkkonsultans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('bujkkonsultansub_id')->nullable();
-            $table->foreignId('asosiasimasjaki_id')->nullable();
+            $table->foreignId('daftarasosiasi_id')->nullable();
             $table->string('namalengkap')->nullable();
             $table->text('alamat')->nullable();
             $table->string('no_telepon')->nullable();
