@@ -361,7 +361,7 @@ public function bebujkkonstruksicreatenew(Request $request)
 
     // Validasi input form
     $validatedData = $request->validate([
-        'asosiasimasjaki_id' => 'nullable|exists:asosiasimasjaki,id',  // Validasi asosiasi
+        'asosiasimasjaki_id' => 'required|string|max:255',  // Validasi asosiasi
         'namalengkap' => 'required|string|max:255',
         'alamat' => 'required|string',
         'no_telepon' => 'required|string|max:255',
