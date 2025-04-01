@@ -546,6 +546,23 @@ public function beartikeljakoncreatenew(Request $request)
     return redirect()->back()->with('error', 'Item not found');
     }
 
+
+
+    // ================================================================= MENU FRONTEND ANDROID =================================================================
+
+
+    public function androidberita()
+    {
+        $user = Auth::user();
+        $databerita = beritajakon::paginate(6);
+
+        return view('frontend.00_android.01_berita.index', [
+            'title' => 'Berita Jasa Konstruksi',
+            'user' => $user, // Mengirimkan data paginasi ke view
+            'data' => $databerita, // Mengirimkan data paginasi ke view
+        ]);
+    }
+
 }
 
 

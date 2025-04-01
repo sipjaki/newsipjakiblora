@@ -207,7 +207,7 @@
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
                 @foreach ($data->take(4) as $item)
-                <a href="/" class="card">
+                <a href="/resberita" class="card">
                     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                         <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
                             <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
