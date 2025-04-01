@@ -216,7 +216,7 @@
                         <div class="flex flex-col gap-1">
                             <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">{{$item->judulberita}}</p>
                             {{-- <p class="text-xs leading-[18px]">Target --}}
-                                <span class="font-bold text-[#ffffff]">
+                                <span class="text-[#ffffff]">
                                     @php
                                         $text = $item->keterangan;
                                         $limit = 100;
@@ -226,7 +226,7 @@
                                 </span>
                             </p>
                             <p class="text-xs text-blue-500 cursor-pointer" id="moreText" style="display: none;">
-                                <span class="font-bold text-[#ffffff]">{{ $item->keterangan }}</span>
+                                <span class="text-[#ffffff]">{{ $item->keterangan }}</span>
                             </p>
                             <button class="text-xs text-blue-500 mt-2" onclick="toggleText()">Selengkapnya</button>
 
