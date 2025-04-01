@@ -9,9 +9,8 @@
     </div>
 
     <div class="flex justify-center items-center">
-
+<br><br>
     </div>
-
            <div class="px-4 flex justify-center items-center mt-[5px]" style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
                <h2 class="font-bold text-sm text-stone-800 border-spacing-2" style="font-weight: 700; font-size: 0.875rem; color: #4B5563;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora Provinsi Jawa Tengah</h2>
            </div>
