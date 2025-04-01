@@ -18,7 +18,7 @@
                         <br>
                         <p class="font-semibold text-xl text-white">{{$title}}</p>
                     </div>
-<br><br>
+
                     <!-- Ikon bagian kanan -->
                     <a href="" class="w-10 h-10 flex shrink-0">
                         <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
@@ -27,6 +27,7 @@
             </div>
 
                     <div class="flex flex-col gap-4 px-4">
+                        <br><br>
             @foreach ($data as $item)
             <a href="/" class="card">
                 <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
