@@ -19,7 +19,7 @@
             </nav>
             <div class="w-full h-full absolute bg-white overflow-hidden">
                 <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
-                <img src="assets/images/thumbnails/th4.png" class="w-full h-full object-cover" alt="cover">
+                <img src="{{asset('storage/' . $data->foto)}}" class="w-full h-full object-cover" alt="cover">
             </div>
         </div>
         <div class="flex flex-col z-30">
