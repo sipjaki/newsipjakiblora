@@ -202,17 +202,19 @@
         <div id="latest-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora  <br>Berita Jasa Konstruksi </h2>
+                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
-                <a href="details.html" class="card">
+                @foreach ($data as $item)
+                <a href="/" class="card">
                     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                         <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                            <img src="/assets/00_android/images/thumbnails/th5.png" class="w-full h-full object-cover" alt="thumbnail">
+                            <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail">
                         </div>
                         <div class="flex flex-col gap-1">
-                            {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none">Operasi Ginjal Kanan</p> --}}
-                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 55.000.000</span></p> --}}
+                            <p class="font-bold line-clamp-1 hover:line-clamp-none">Bangun Desa Angga</p>
+                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 18.500.000.000</span></p>
                             <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
                                 {{-- <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p> --}}
                                 <div class="flex shrink-0">
@@ -222,40 +224,8 @@
                         </div>
                     </div>
                 </a>
-                <a href="details.html" class="card">
-                    <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                        <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                            <img src="/assets/00_android/images/thumbnails/th6.png" class="w-full h-full object-cover" alt="thumbnail">
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none">Buku Edukasi Peduli Anak lorem ipsum</p> --}}
-                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
-                            <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
-                                {{-- <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p> --}}
-                                <div class="flex shrink-0">
-                                    <img src="/assets/00_android/images/icons/tick-circle.svg" alt="icon">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="details.html" class="card">
-                    <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                        <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                            <img src="/assets/00_android/images/thumbnails/th7.png" class="w-full h-full object-cover" alt="thumbnail">
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none">Bangun Desa Angga</p> --}}
-                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 18.500.000.000</span></p> --}}
-                            <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
-                                {{-- <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p> --}}
-                                <div class="flex shrink-0">
-                                    <img src="/assets/00_android/images/icons/tick-circle.svg" alt="icon">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                @endforeach
+
             </div>
         </div>
 
