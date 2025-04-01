@@ -40,9 +40,9 @@
                             <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo">
                         </div>
                         <div class="flex gap-1 items-center">
-                            <p class="font-semibold text-sm">{{$item->user->name}}</p>
+                            <p class="font-semibold text-sm">{{$data->user->name}}</p>
                             <div class="flex shrink-0">
-                                <img src="{{}}" alt="icon">
+                                <img src="{{$data->user->avatar}}" alt="icon">
                             </div>
                         </div>
                     </div>
