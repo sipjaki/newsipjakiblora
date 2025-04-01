@@ -11,7 +11,9 @@
                         <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy">
                     </a>
                 </div>
-                <p class="font-semibold text-sm text-white">{{$title}}</p>
+                <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+                <br>
+                <p class="font-semibold text-xl text-white">{{$title}}</p>
                 <a href="" class="w-10 h-10 flex shrink-0">
                     <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" width="80%">
                 </a>
