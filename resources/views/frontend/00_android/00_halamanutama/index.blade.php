@@ -206,6 +206,7 @@
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
+
                 @foreach ($data as $item)
                 <a href="/" class="card">
                     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
@@ -213,8 +214,37 @@
                             <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail">
                         </div>
                         <div class="flex flex-col gap-1">
-                            <p class="font-bold line-clamp-1 hover:line-clamp-none">Bangun Desa Angga</p>
-                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 18.500.000.000</span></p>
+                            <p class="font-bold line-clamp-1 hover:line-clamp-none">{{$item->judulberita}}</p>
+                            <p class="text-xs leading-[18px]">Target
+                                <span class="font-bold text-[#FF7815]">
+                                    @php
+                                        $text = $item->keterangan;
+                                        $limit = 100;
+                                        $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
+                                    @endphp
+                                    {{ $truncatedText }}
+                                </span>
+                            </p>
+                            <p class="text-xs text-blue-500 cursor-pointer" id="moreText" style="display: none;">
+                                <span class="font-bold text-[#FF7815]">{{ $item->keterangan }}</span>
+                            </p>
+                            <button class="text-xs text-blue-500 mt-2" onclick="toggleText()">Selengkapnya</button>
+
+                            <script>
+                                function toggleText() {
+                                    var moreText = document.getElementById("moreText");
+                                    var button = document.querySelector("button");
+
+                                    if (moreText.style.display === "none") {
+                                        moreText.style.display = "inline";
+                                        button.innerHTML = "Tutup";
+                                    } else {
+                                        moreText.style.display = "none";
+                                        button.innerHTML = "Selengkapnya";
+                                    }
+                                }
+                            </script>
+
                             <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
                                 {{-- <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p> --}}
                                 <div class="flex shrink-0">
