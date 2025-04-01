@@ -66,80 +66,13 @@
                     <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->keterangan!!}</p>
 
                 </div>
-                <div class="flex flex-col gap-3">
-                    <div class="flex items-center justify-between">
-                        <h2 class="font-semibold text-sm">Supporters (18,309)</h2>
-                        <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">View All</a>
-                    </div>
-                    <div class="flex flex-col gap-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-[50px] h-[50px] flex shrink-0 rounded-full overflow-hidden">
-                                <img src="assets/images/photos/avatar-default.svg" class="w-full h-full object-cover" alt="avatar">
-                            </div>
-                            <div class="flex flex-col gap-[2px] w-full">
-                                <div class="flex items-center justify-between">
-                                    <p class="font-bold">Rp 200.000</p>
-                                    <p class="font-semibold text-[10px] leading-[15px] text-right text-[#66697A]">by Annemi</p>
-                                </div>
-                                <p class="caption text-xs leading-[18px] text-[#66697A]">“Ayo semangat pasti kamu bisa!”</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-[50px] h-[50px] flex shrink-0 rounded-full overflow-hidden">
-                                <img src="assets/images/photos/avatar-default.svg" class="w-full h-full object-cover" alt="avatar">
-                            </div>
-                            <div class="flex flex-col gap-[2px] w-full">
-                                <div class="flex items-center justify-between">
-                                    <p class="font-bold">Rp 12.500.000</p>
-                                    <p class="font-semibold text-[10px] leading-[15px] text-right text-[#66697A]">by Saranova</p>
-                                </div>
-                                <p class="caption text-xs leading-[18px] text-[#66697A]">“Jangan lupa berdoa agar lancar”</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-[50px] h-[50px] flex shrink-0 rounded-full overflow-hidden">
-                                <img src="assets/images/photos/avatar-default.svg" class="w-full h-full object-cover" alt="avatar">
-                            </div>
-                            <div class="flex flex-col gap-[2px] w-full">
-                                <div class="flex items-center justify-between">
-                                    <p class="font-bold">Rp 15.000.000</p>
-                                    <p class="font-semibold text-[10px] leading-[15px] text-right text-[#66697A]">by Angga</p>
-                                </div>
-                                <p class="caption text-xs leading-[18px] text-[#66697A]">“Terus dicoba saya yakin bisa”</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-[50px] h-[50px] flex shrink-0 rounded-full overflow-hidden">
-                                <img src="assets/images/photos/avatar-default.svg" class="w-full h-full object-cover" alt="avatar">
-                            </div>
-                            <div class="flex flex-col gap-[2px] w-full">
-                                <div class="flex items-center justify-between">
-                                    <p class="font-bold">Rp 80.000</p>
-                                    <p class="font-semibold text-[10px] leading-[15px] text-right text-[#66697A]">by Dermatopi</p>
-                                </div>
-                                <p class="caption text-xs leading-[18px] text-[#66697A]">“Ayo semangat pasti kamu bisa!”</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-[50px] h-[50px] flex shrink-0 rounded-full overflow-hidden">
-                                <img src="assets/images/photos/avatar-default.svg" class="w-full h-full object-cover" alt="avatar">
-                            </div>
-                            <div class="flex flex-col gap-[2px] w-full">
-                                <div class="flex items-center justify-between">
-                                    <p class="font-bold">Rp 560.000.000</p>
-                                    <p class="font-semibold text-[10px] leading-[15px] text-right text-[#66697A]">by Shayna</p>
-                                </div>
-                                <p class="caption text-xs leading-[18px] text-[#66697A]">“Jangan lupa berdoa agar lancar”</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 
         @include('frontend.00_android.00_fiturmenu.keterangan')
 
-        <br><br><br><br>
+        <br><br><br><br><br>
 
                 @include('frontend.00_android.00_fiturmenu.android')
 
