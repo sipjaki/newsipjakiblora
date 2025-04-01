@@ -6,7 +6,7 @@
           <div class="w-6 h-6 flex shrink-0">
             <img src="/assets/00_android/menuhape/agenda.png" alt="icon">
           </div>
-          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Agenda</p>
+          {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Agenda</p> --}}
         </div>
       </a>
 
@@ -15,7 +15,7 @@
           <div class="w-6 h-6 flex shrink-0">
             <img src="/assets/00_android/menuhape/dashboard.png" alt="icon">
           </div>
-          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Menu</p>
+          {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Menu</p> --}}
         </div>
       </a>
       <a href="/">
@@ -29,7 +29,7 @@
           <div class="w-6 h-6 flex shrink-0">
             <img src="/assets/00_android/menuhape/ahsp.png" alt="icon">
           </div>
-          <p class="text-xs leading-[10px] font-medium text-[#757C98]">AHSP</p>
+          {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">AHSP</p> --}}
         </div>
       </a>
       <script>
@@ -56,7 +56,7 @@
           <div class="w-6 h-6 flex shrink-0">
             <img src="/assets/00_android/menuhape/login.png" alt="icon">
           </div>
-          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Login</p>
+          {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Login</p> --}}
         </div>
       </a>
 
@@ -66,7 +66,7 @@
           <div class="w-6 h-6 flex shrink-0">
             <img src="/assets/00_android/menuhape/setting.png" alt="icon">
           </div>
-          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Pengaturan</p>
+          {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Pengaturan</p> --}}
         </div>
       </a>
 
