@@ -37,12 +37,14 @@
                     <h1 class="font-extrabold text-[26px] leading-[39px]">{{$data->judulberita}}</h1>
                     <div class="flex items-center gap-2">
                         <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
-                            <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo">
+                            {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
+                            <img src="{{asset('storage/' . $data->user->avatar)}}" class="w-full h-full object-cover" alt="photo">
+
                         </div>
                         <div class="flex gap-1 items-center">
-                            <p class="font-semibold text-sm">{{$data->user->name}}</p>
+                            <p class="font-semibold text-sm">{{$item->user->name}}</p>
                             <div class="flex shrink-0">
-                                <img src="{{asset('storage/' . $data->user->avatar)}}" alt="icon">
+                                <img src="assets/images/icons/tick-circle.svg" alt="icon">
                             </div>
                         </div>
                     </div>
