@@ -144,7 +144,7 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a href="/404" class="font-bold line-clamp-2 hover:line-clamp-none">AHSP Konstruksi Umum</a>
+                            <a href="/404" class="font-bold line-clamp-2 hover:line-clamp-none text-sm">AHSP Konstruksi Umum</a>
                             {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 25.000.000</span></p> --}}
                         </div>
                         {{-- <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
@@ -158,7 +158,7 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">SHST Kab Blora 2025</a>
+                            <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none text-sm">SHST Kab Blora 2025</a>
                             {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 12.000.000</span></p> --}}
                         </div>
                         {{-- <progress id="fund" value="10" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
