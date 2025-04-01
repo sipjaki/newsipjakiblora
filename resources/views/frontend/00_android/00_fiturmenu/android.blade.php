@@ -15,7 +15,7 @@
           <div class="w-6 h-6 flex shrink-0">
             <img src="/assets/00_android/menuhape/dashboard.png" alt="icon">
           </div>
-          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Dashboard</p>
+          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Menu</p>
         </div>
       </a>
       <a href="">
