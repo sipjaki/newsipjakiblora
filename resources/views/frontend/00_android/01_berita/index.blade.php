@@ -17,8 +17,9 @@
                     <p class="font-semibold text-xl text-white">{{$title}}</p>
                 </div>
                 <a href="" class="w-10 h-10 flex shrink-0">
-                    <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" width="80%" height="80%">
+                    <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" width="40" height="40" class="object-contain">
                 </a>
+
             </nav>
             {{-- <div class="mt-5">
                 <h1 class="font-bold text-[26px] leading-[39px] text-white text-center">Natural Disasters</h1>
