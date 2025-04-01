@@ -27,31 +27,53 @@
         </div>
         <div class="flex flex-col gap-4 px-4">
             @foreach ($data as $item)
-
-            <a href="/404" class="card">
-                <div class="w-full flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+            <a href="/" class="card">
+                <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                     <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                        <img src="{{asset('storage/' . $item->foto)}}" class="w-full h-full object-cover" alt="thumbnail">
+                        <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                     </div>
                     <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none">{{$item->judul}}</p>
-                        <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p>
-                        <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
-                            <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p>
-                            <div class="flex shrink-0">
-                                <img src="assets/images/icons/tick-circle.svg" alt="icon">
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->judulberita}}</p>
+                        {{-- <p class="text-xs leading-[18px]">Target --}}
+                            <span class="text-[#ffffff]">
+                                @php
+                                    $text = $item->keterangan;
+                                    $limit = 100;
+                                    $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
+                                    @endphp
+                                {{ $truncatedText }}
+                            </span>
+                        </p>
+                        <p class="text-xs text-blue-500 cursor-pointer" id="moreText" style="display: none;">
+                            <span class="text-[#ffffff]">{{ $item->keterangan }}</span>
+                        </p>
+                        <button class="text-xs text-blue-500 mt-2" onclick="toggleText()">Selengkapnya</button>
+
+                        <script>
+                            function toggleText() {
+                                var moreText = document.getElementById("moreText");
+                                var button = document.querySelector("button");
+
+                                if (moreText.style.display === "none") {
+                                    moreText.style.display = "inline";
+                                    button.innerHTML = "Tutup";
+                                } else {
+                                    moreText.style.display = "none";
+                                    button.innerHTML = "Selengkapnya";
+                                }
+                            }
+                            </script>
+
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            @endforeach
+                            </div>
+                            </a>
+                            @endforeach
 
             @include('frontend.00_android.00_fiturmenu.keterangan')
         </div>
 
 
-<br><br><br><br><br>
+<br><br><br><br>
 
         @include('frontend.00_android.00_fiturmenu.android')
     </section>
