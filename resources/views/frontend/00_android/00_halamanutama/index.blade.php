@@ -239,6 +239,9 @@
         </div>
 
 
+
+
+        @include('frontend.00_android.00_fiturmenu.keterangan')
         @include('frontend.00_android.00_fiturmenu.android')
 
     </section>
