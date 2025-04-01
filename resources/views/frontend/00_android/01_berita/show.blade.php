@@ -42,7 +42,7 @@
 
                         </div>
                         <div class="flex gap-1 items-center">
-                            <p class="font-semibold text-sm">{{$item->user->name}}</p>
+                            <p class="font-semibold text-sm">{{$data->user->name}}</p>
                             <div class="flex shrink-0">
                                 <img src="assets/images/icons/tick-circle.svg" alt="icon">
                             </div>
