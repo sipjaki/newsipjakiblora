@@ -18,7 +18,7 @@
                         <br>
                         <p class="font-semibold text-xl text-white">{{$title}}</p>
                     </div>
-
+<br><br>
                     <!-- Ikon bagian kanan -->
                     <a href="" class="w-10 h-10 flex shrink-0">
                         <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
