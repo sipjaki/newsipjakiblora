@@ -60,7 +60,7 @@
                 </div>
                 <div class="flex flex-col gap-[2px]">
                     <h2 class="font-semibold text-sm">Redaksi</h2>
-                    <p class="desc-less text-sm leading-[26px]">{!!$data->keterangan!!}<button class="text-[#FF7815] underline" onclick="toggleSeeMoreLess()">see more</button></p>
+                    <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->keterangan!!}</p>
 
                 </div>
                 <div class="flex flex-col gap-3">
