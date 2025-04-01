@@ -220,7 +220,7 @@
                                         $text = $item->keterangan;
                                         $limit = 100;
                                         $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
-                                    @endphp
+                                        @endphp
                                     {{ $truncatedText }}
                                 </span>
                             </p>
@@ -242,12 +242,12 @@
                                         button.innerHTML = "Selengkapnya";
                                     }
                                 }
-                            </script>
+                                </script>
 
-                        </div>
-                    </div>
-                </a>
-            @endforeach
+                                </div>
+                                </div>
+                                </a>
+                                @endforeach
 
             </div>
         </div>
@@ -255,9 +255,11 @@
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora <br>Dokumentasi </h2>
+                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
+
                 <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="details.html">
@@ -272,50 +274,65 @@
                         <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
                     </div>
                 </div>
-                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
-                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
-                        <a href="details.html">
-                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/images/thumbnails/th2.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                            </div>
-                        </a>
-                        <div class="flex flex-col gap-[6px]">
-                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Bangun Panti Asuhan 10,000 Yatim Piatu</a> --}}
-                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 25.000.000</span></p> --}}
-                        </div>
-                        <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
-                    </div>
-                </div>
-                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
-                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
-                        <a href="details.html">
-                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/images/thumbnails/th3.png" class="w-full h-full object-cover" alt="thumbnail">
-                            </div>
-                        </a>
-                        <div class="flex flex-col gap-[6px]">
-                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Banjir 10 Meter Kota Saranjopa Iyola</a> --}}
-                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 12.000.000</span></p> --}}
-                        </div>
-                        <progress id="fund" value="10" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
-                    </div>
-                </div>
-                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
-                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
-                        <a href="details.html">
-                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/images/thumbnails/th4.png" class="w-full h-full object-cover" alt="thumbnail">
-                            </div>
-                        </a>
-                        <div class="flex flex-col gap-[6px]">
-                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Perbaikan Asli Kebakaran Hutan</a> --}}
-                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
-                        </div>
-                        <progress id="fund" value="88" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
-                    </div>
-                </div>
+
             </div>
         </div>
+
+
+        <div id="latest-fundrising" class="mt-8">
+            <div class="px-4 flex justify-between items-center">
+                <h2 class="font-bold text-xl">Mas Jaki Blora  <br>Artikel Jasa Konstruksi </h2>
+                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%" loading="lazy">
+                {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
+            </div>
+            <div class="flex flex-col gap-4 mt-[14px] px-4">
+                @foreach ($dataartikel->take(2) as $item)
+                <a href="/" class="card">
+                    <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                        <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
+                            <img src="{{asset('storage/' . $item->foto1 )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">{{$item->judul}}</p>
+                            {{-- <p class="text-xs leading-[18px]">Target --}}
+                                <span class="text-[#ffffff]">
+                                    @php
+                                        $text = $item->keterangan;
+                                        $limit = 100;
+                                        $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
+                                        @endphp
+                                    {{ $truncatedText }}
+                                </span>
+                            </p>
+                            <p class="text-xs text-blue-500 cursor-pointer" id="moreText" style="display: none;">
+                                <span class="text-[#ffffff]">{{ $item->keterangan }}</span>
+                            </p>
+                            <button class="text-xs text-blue-500 mt-2" onclick="toggleText()">Selengkapnya</button>
+
+                            <script>
+                                function toggleText() {
+                                    var moreText = document.getElementById("moreText");
+                                    var button = document.querySelector("button");
+
+                                    if (moreText.style.display === "none") {
+                                        moreText.style.display = "inline";
+                                        button.innerHTML = "Tutup";
+                                    } else {
+                                        moreText.style.display = "none";
+                                        button.innerHTML = "Selengkapnya";
+                                    }
+                                }
+                                </script>
+                                <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">{{$item->title}}</p>
+
+                    </div>
+                    </div>
+                    </a>
+                    @endforeach
+
+</div>
+        </div>
+
 
 
 
