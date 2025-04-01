@@ -4,7 +4,7 @@
       <a href="/404">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/agenda.png" alt="icon">
+            <img src="/assets/00_android/menuhape/agenda.png" alt="icon" loading="lazy">
           </div>
           {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Agenda</p> --}}
         </div>
@@ -13,21 +13,21 @@
       <a href="/404">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/dashboard.png" alt="icon">
+            <img src="/assets/00_android/menuhape/dashboard.png" alt="icon" loading="lazy">
           </div>
           {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Menu</p> --}}
         </div>
       </a>
       <a href="/">
         <div class="w-[48px] h-[48px] flex shrink-0">
-          <img src="/assets/00_android/menuhape/home.png" alt="icon">
+          <img src="/assets/00_android/menuhape/home.png" alt="icon" loading="lazy">
         </div>
       </a>
 
       <a href="/404">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/ahsp.png" alt="icon">
+            <img src="/assets/00_android/menuhape/ahsp.png" alt="icon" loading="lazy">
           </div>
           {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">AHSP</p> --}}
         </div>
@@ -54,7 +54,7 @@
       <a href="/404" id="login-icon" style="display:none;">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/login.png" alt="icon">
+            <img src="/assets/00_android/menuhape/login.png" alt="icon" loading="lazy">
           </div>
           {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Login</p> --}}
         </div>
@@ -64,7 +64,7 @@
       <a href="/404" id="settings-icon" style="display:none;">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/setting.png" alt="icon">
+            <img src="/assets/00_android/menuhape/setting.png" alt="icon" loading="lazy">
           </div>
           {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Pengaturan</p> --}}
         </div>

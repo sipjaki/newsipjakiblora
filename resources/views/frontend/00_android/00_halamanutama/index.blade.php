@@ -10,7 +10,7 @@
         <nav class="pt-5 px-3 flex justify-between items-center">
             <div class="flex items-center gap-[10px]">
                 <div class="w-10 h-10 flex shrink-0">
-                    <img src="/assets/icon/logokabupatenblora.png" alt="icon">
+                    <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy">
                 </div>
                 <div class="flex flex-col text-white">
                     <p class="text-xs leading-[18px]">Dinas Pekerjaan Umum dan Penataan Ruang </p>
@@ -18,14 +18,14 @@
                 </div>
             </div>
             <a href="" class="w-10 h-10 flex shrink-0">
-                <img src="/assets/00_android//images/icons/menu.svg" alt="icon">
+                <img src="/assets/00_android//images/icons/menu.svg" alt="icon" loading="lazy">
             </a>
         </nav>
         <div class="mt-[30px] z-10">
             <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
         </div>
         <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center">
-            <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="500px">
+            <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="500px" loading="lazy">
         </div>
 
     </div>
@@ -116,7 +116,7 @@
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora <br>AHSP Konstruksi Umum</h2>
-                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%">
+                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
@@ -125,7 +125,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/404">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/satuanhargadasar.png" class="w-full h-full object-cover" alt="thumbnail">
+                                <img src="/assets/00_android/iconmenu/satuanhargadasar.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -140,7 +140,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/404">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/ahspkonstruksiumum.png" class="w-full h-full object-cover" alt="thumbnail">
+                                <img src="/assets/00_android/iconmenu/ahspkonstruksiumum.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -154,7 +154,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/404">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/shstblora.png" class="w-full h-full object-cover" alt="thumbnail">
+                                <img src="/assets/00_android/iconmenu/shstblora.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -171,7 +171,7 @@
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora <br>Agenda Pelatihan dan SKK</h2>
-                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%">
+                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
@@ -182,7 +182,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="details.html">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="{{asset('storage/' . $item->foto)}}" class="w-full h-full object-cover" alt="thumbnail">
+                                <img src="{{asset('storage/' . $item->foto)}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -202,7 +202,7 @@
         <div id="latest-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora  <br>Berita Jasa Konstruksi </h2>
-                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%">
+                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
@@ -211,7 +211,7 @@
                 <a href="/" class="card">
                     <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                         <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                            <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail">
+                            <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                         </div>
                         <div class="flex flex-col gap-1">
                             <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">{{$item->judulberita}}</p>
@@ -263,7 +263,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="details.html">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/images/thumbnails/th1.png" class="w-full h-full object-cover" alt="thumbnail">
+                                <img src="/assets/00_android/images/thumbnails/th1.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -277,7 +277,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="details.html">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/images/thumbnails/th2.png" class="w-full h-full object-cover" alt="thumbnail">
+                                <img src="/assets/00_android/images/thumbnails/th2.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
