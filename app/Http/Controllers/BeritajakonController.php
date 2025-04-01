@@ -563,6 +563,23 @@ public function beartikeljakoncreatenew(Request $request)
         ]);
     }
 
+    public function androidberitashow($judulberita)
+    {
+        $databeritajakon = beritajakon::where('judulberita', $judulberita)->first();
+        $databerita = beritajakon::paginate(6);
+        $user = Auth::user();
+
+    return view('frontend.00_android.01_berita.show', [
+        'title' => 'Show Berita Jasa Konstruksi',
+        'data' => $databeritajakon,
+        'databerita' => $databerita,
+        // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+        'user' => $user,
+        // 'start' => $start,
+    ]);
+    }
+
+
 }
 
 
