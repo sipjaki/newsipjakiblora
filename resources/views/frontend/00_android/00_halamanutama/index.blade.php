@@ -5,7 +5,7 @@
             <nav class="pt-5 px-3 flex justify-between items-center">
                 <div class="flex items-center gap-[10px]">
                     <div class="w-10 h-10 flex shrink-0">
-                        <img src="/assets/abgblora/iconmenu/logokabupatenblora.png" alt="icon">
+                        <img src="/assets/icon/logokabupatenblora.png" alt="icon">
                     </div>
                     <div class="flex flex-col text-white">
                         <p class="text-xs leading-[18px]">Dinas Pekerjaan Umum dan Penataan Ruang </p>
