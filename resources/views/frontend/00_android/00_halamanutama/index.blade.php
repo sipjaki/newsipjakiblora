@@ -17,7 +17,7 @@
                 </a>
             </nav>
             <div class="mt-[30px] z-10">
-                <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Help Other People.<br>Life Becomes Happier.</h1>
+                <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
             </div>
             <div class="w-full h-fit overflow-hidden -mt-[33px]">
                 <img src="/assets/00_android/images/backgrounds/hero-background.png" class="w-full h-full object-contain" alt="background">
