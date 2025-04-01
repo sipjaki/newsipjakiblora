@@ -27,14 +27,14 @@
         <div class="flex flex-col z-30">
             <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
                 <div class="w-[30px] h-[30px] flex shrink-0">
-                    <img src="assets/images/icons/lovely.svg" alt="icon">
+                    {{-- <img src="assets/images/icons/lovely.svg" alt="icon"> --}}
                 </div>
                 {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                 <div class="flex flex-col gap-[10px]">
                     {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
-                    <h1 class="font-extrabold text-[26px] leading-[39px]">{{$data->judulberita}}</h1>
+                    <h1 class="font-extrabold leading-[39px]" style="font-size: 16px;">{{$data->judulberita}}</h1>
                     <div class="flex items-center gap-2">
                         <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
                             {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
@@ -43,18 +43,12 @@
                         </div>
                         <div class="flex gap-1 items-center">
                             <p class="font-semibold text-sm">{{$data->user->name}}</p>
-                            <div class="flex shrink-0">
-                                <img src="assets/images/icons/tick-circle.svg" alt="icon">
-                            </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">
-                    <h2 class="font-semibold text-sm">Progress</h2>
-                    <div class="flex items-center justify-between">
-                        <p class="text-sm text-[#66697A]">Rp 7.500.000</p>
-                        <p class="font-bold text-[20px] leading-[30px] text-[#76AE43]">Rp 12.000.000</p>
-                    </div>
+
                     <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
                 </div>
                 <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
