@@ -31,6 +31,7 @@ class FedashboardController extends Controller
         $data = beritajakon::orderBy('created_at', 'desc')->get(); //
         $dataartikel = artikeljakonmasjaki::orderBy('created_at', 'desc')->get(); //
         $dataheaderberanda = headerberanda::orderBy('created_at', 'desc')->get(); //
+        $dataagendapelatihan = agendapelatihan::orderBy('created_at', 'desc')->get(); //
 
 
         $user = Auth::user();
@@ -39,12 +40,13 @@ class FedashboardController extends Controller
         // return view('frontend.00_full.index', [
         // return view('404', [
         // return view('frontend.00_approve.00_utama.index', [
-        return view('frontend.00_android.00_halamanutama.index', [
-            'title' => 'Mas Jaki DPUPR Blora | Sistem Informasi Pembina Jasa Konstruksi ',
-            'data' => $data, // Mengirimkan data paginasi ke view
-            'dataartikel' => $dataartikel, // Mengirimkan data paginasi ke view
-            'dataheaderberanda' => $dataheaderberanda, // Mengirimkan data paginasi ke view
-            'user' => $user, // Mengirimkan data paginasi ke view
+            return view('frontend.00_android.00_halamanutama.index', [
+                'title' => 'Mas Jaki DPUPR Blora | Sistem Informasi Pembina Jasa Konstruksi ',
+                'data' => $data, // Mengirimkan data paginasi ke view
+                'dataartikel' => $dataartikel, // Mengirimkan data paginasi ke view
+                'dataheaderberanda' => $dataheaderberanda, // Mengirimkan data paginasi ke view
+                'user' => $user, // Mengirimkan data paginasi ke view
+                'dataagendapelatihan' => $dataagendapelatihan, // Mengirimkan data paginasi ke view
             // 'databerita' => $databerita, // Mengirimkan data paginasi ke view
         ]);
     }
