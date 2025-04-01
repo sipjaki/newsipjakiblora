@@ -116,6 +116,7 @@
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-lg">Mas Jaki Blora <br>Agenda Pelatihan dan SKK</h2>
+                <img src="/assets/00_android/iconmenu/bg.png" alt="">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
