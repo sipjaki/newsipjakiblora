@@ -6,12 +6,12 @@
             <nav class="pt-5 px-3 flex justify-between items-center">
                 <div class="flex items-center gap-[10px]">
                     <a href="index.html" class="w-10 h-10 flex shrink-0">
-                        <img src="/assets/icon/logokabupatenblora.png" alt="icon">
+                        <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy">
                     </a>
                 </div>
                 <p class="font-semibold text-sm text-white">{{$title}}</p>
                 <a href="" class="w-10 h-10 flex shrink-0">
-                    <img src="/assets/icon/pupr.png" alt="icon">
+                    <img src="/assets/icon/pupr.png" alt="icon" loading="lazy">
                 </a>
             </nav>
             <div class="mt-5">
