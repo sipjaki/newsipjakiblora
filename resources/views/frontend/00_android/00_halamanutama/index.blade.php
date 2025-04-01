@@ -1,8 +1,7 @@
 @include('frontend.00_android.00_fiturmenu.header')
 
 <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-white overflow-x-hidden pb-[134px]">
-            <div class="header flex flex-col bg-gradient-to-b from-[#4CAF50] to-[#FFD100] rounded-b-[50px] overflow-hidden h-[200px]">
-                <!-- Konten lainnya di sini -->
+        <div class="header flex flex-col bg-gradient-to-b from-[#3CBBDB] to-[#EAD380] rounded-b-[50px] overflow-hidden">
             <nav class="pt-5 px-3 flex justify-between items-center">
                 <div class="flex items-center gap-[10px]">
                     <div class="w-10 h-10 flex shrink-0">
