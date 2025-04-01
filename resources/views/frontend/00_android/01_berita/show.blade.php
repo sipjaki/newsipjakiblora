@@ -54,7 +54,10 @@
                 <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
                     {{-- <h2 class="font-semibold text-sm">Mereka Senang dan Bahagia</h2> --}}
                     <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
-                        <img src="assets/images/thumbnails/support-finished.png" class="w-full h-full object-cover" alt="thumbnail">
+                        <img src="{{asset('storage/' . $data->foto1)}}" class="w-full h-full object-cover" alt="thumbnail">
+                    </div>
+                    <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
+                        <img src="{{asset('storage/' . $data->foto2)}}" class="w-full h-full object-cover" alt="thumbnail">
                     </div>
                     {{-- <p class="text-sm leading-[26px]">{!!$data->keterangan!!}</p> --}}
                 </div>
