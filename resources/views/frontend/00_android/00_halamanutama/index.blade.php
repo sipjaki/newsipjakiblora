@@ -25,7 +25,7 @@
                 <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
             </div>
             <div class="w-full h-fit overflow-hidden -mt-[33px]">
-                <img src="/assets/icon/bangunangedung.png" class="w-full h-full object-contain" alt="background">
+                <img src="/assets/icon/bangunangedung.png" class="w-full h-full object-contain" alt="background" width="70%">
             </div>
         </div>
         <div id="popular-fundrising" class="mt-8">
