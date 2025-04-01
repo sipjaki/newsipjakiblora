@@ -6,13 +6,13 @@
             <nav class="pt-5 px-3 flex justify-between items-center relative z-20">
                 <div class="flex items-center gap-[10px]">
                     <a href="#" class="w-10 h-10 flex shrink-0">
-                        <img src="assets/images/icons/back.svg" alt="icon">
+                        {{-- <img src="assets/images/icons/back.svg" alt="icon"> --}}
                         <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
                     </a>
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <p class="text-xs leading-[18px] text-white">Details</p>
-                    <p class="font-semibold text-sm text-white">#WeNeedHelp</p>
+                    <p class="text-xs leading-[18px] text-white">{{$title}}</p>
+                    {{-- <p class="font-semibold text-sm text-white">#WeNeedHelp</p> --}}
                 </div>
                 <a href="" class="w-10 h-10 flex shrink-0">
                     {{-- <img src="assets/images/icons/like.svg" alt="icon"> --}}
@@ -29,20 +29,20 @@
                 <div class="w-[30px] h-[30px] flex shrink-0">
                     <img src="assets/images/icons/lovely.svg" alt="icon">
                 </div>
-                <p class="font-semibold text-sm text-white">This Fundraising has been finished</p>
+                {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                 <div class="flex flex-col gap-[10px]">
-                    <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p>
-                    <h1 class="font-extrabold text-[26px] leading-[39px]">Perbaikan Kebakaran Alam Hutani Perlidanita</h1>
+                    {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
+                    <h1 class="font-extrabold text-[26px] leading-[39px]">{{$data->judulberita}}</h1>
                     <div class="flex items-center gap-2">
                         <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
                             <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo">
                         </div>
                         <div class="flex gap-1 items-center">
-                            <p class="font-semibold text-sm">Angga Risky</p>
+                            <p class="font-semibold text-sm">{{$item->user->name}}</p>
                             <div class="flex shrink-0">
-                                <img src="assets/images/icons/tick-circle.svg" alt="icon">
+                                <img src="{{}}" alt="icon">
                             </div>
                         </div>
                     </div>
