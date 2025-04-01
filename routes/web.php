@@ -46,9 +46,11 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // ------------------------- FRONTEND HALAMAN UTAMA MAS JAKI BLORA  --------------------------
-
 Route::get('/resberita', [BeritajakonController::class, 'androidberita']);
 Route::get('/resberita/{judulberita}', [BeritajakonController::class, 'androidberitashow']);
+
+// -----------------------------------------------------------------------------------------------
+Route::get('/ressatuanhargadasar', [SatuanhargamaterialController::class, 'satuanhargamaterial']);
 
 
 // ==========================================================================================================================================

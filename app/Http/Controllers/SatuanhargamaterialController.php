@@ -1098,5 +1098,18 @@ class SatuanhargamaterialController extends Controller
     }
 
 
+    // ==================================================================================================================================
+    // FE ANDROID SATUAN HARGA MATERIAL
 
+    public function satuanhargamaterial()
+    {
+        $user = Auth::user();
+        // $datamaterial = satuanhargamaterial::paginate(10);
+
+        return view('frontend.00_android.02_satuanhargadasar.index', [
+            'title' => 'Satuan Harga Dasar',
+            'user' => $user, // Mengirimkan data paginasi ke view
+            // 'data' => $datamaterial, // Mengirimkan data paginasi ke view
+        ]);
+    }
 }
