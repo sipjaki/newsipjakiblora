@@ -5,11 +5,11 @@
             <nav class="pt-5 px-3 flex justify-between items-center">
                 <div class="flex items-center gap-[10px]">
                     <div class="w-10 h-10 flex shrink-0">
-                        <img src="/assets/00_android/images/icons/loc.svg" alt="icon">
+                        <img src="/assets/abgblora/iconmenu/logokabupatenblora.png" alt="icon">
                     </div>
                     <div class="flex flex-col text-white">
-                        <p class="text-xs leading-[18px]">Location</p>
-                        <p class="font-semibold text-sm">Bali, Indonesia</p>
+                        <p class="text-xs leading-[18px]">Dinas Pekerjaan Umum dan Penataan Ruang </p>
+                        <p class="font-semibold text-sm">Kabupaten Blora, Provinsi Jawa Tengah</p>
                     </div>
                 </div>
                 <a href="" class="w-10 h-10 flex shrink-0">
