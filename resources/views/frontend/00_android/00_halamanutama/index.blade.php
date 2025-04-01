@@ -8,28 +8,31 @@
         <div class="header flex flex-col" style="background: linear-gradient(to bottom, #28A745, #FFD100); border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;">
 
         <nav class="pt-5 px-3 flex justify-between items-center">
-                <div class="flex items-center gap-[10px]">
-                    <div class="w-10 h-10 flex shrink-0">
-                        <img src="/assets/icon/logokabupatenblora.png" alt="icon">
-                    </div>
-                    <div class="flex flex-col text-white">
-                        <p class="text-xs leading-[18px]">Dinas Pekerjaan Umum dan Penataan Ruang </p>
-                        <p class="font-semibold text-sm">Kabupaten Blora, Provinsi Jawa Tengah</p>
-                    </div>
+            <div class="flex items-center gap-[10px]">
+                <div class="w-10 h-10 flex shrink-0">
+                    <img src="/assets/icon/logokabupatenblora.png" alt="icon">
                 </div>
-                <a href="" class="w-10 h-10 flex shrink-0">
-                    <img src="/assets/00_android//images/icons/menu.svg" alt="icon">
-                </a>
-            </nav>
-            <div class="mt-[30px] z-10">
-                <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
+                <div class="flex flex-col text-white">
+                    <p class="text-xs leading-[18px]">Dinas Pekerjaan Umum dan Penataan Ruang </p>
+                    <p class="font-semibold text-sm">Kabupaten Blora, Provinsi Jawa Tengah</p>
+                </div>
             </div>
-            <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center">
-                <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="500px">
-            </div>
-
+            <a href="" class="w-10 h-10 flex shrink-0">
+                <img src="/assets/00_android//images/icons/menu.svg" alt="icon">
+            </a>
+        </nav>
+        <div class="mt-[30px] z-10">
+            <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
         </div>
-        <div id="popular-fundrising" class="mt-8">
+        <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center">
+            <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="500px">
+        </div>
+
+    </div>
+
+    @include('frontend.00_android.00_fiturmenu.menunavigasi')
+
+    <div id="popular-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-lg">Popular <br>Fundraisings</h2>
                 <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a>
