@@ -32,7 +32,7 @@
 
     @include('frontend.00_android.00_fiturmenu.menunavigasi')
 
-    <div id="popular-fundrising" class="mt-8">
+    {{-- <div id="popular-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-lg">Popular <br>Fundraisings</h2>
                 <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a>
@@ -111,7 +111,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-lg">Mas Jaki Blora <br>Agenda Pelatihan dan SKK</h2>

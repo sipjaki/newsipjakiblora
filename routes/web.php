@@ -50,6 +50,7 @@ use Illuminate\Support\Facades\Auth;
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
 Route::get('/', [FedashboardController::class, 'index']);
+Route::get('/web', [FedashboardController::class, 'web']);
 
 Route::get('/404', function () {
     // return view('welcome');
