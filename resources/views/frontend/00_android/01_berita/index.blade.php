@@ -47,7 +47,7 @@
                         <p class="text-xs text-blue-500 cursor-pointer" id="moreText" style="display: none;">
                             <span class="text-[#ffffff]">{{ $item->keterangan }}</span>
                         </p>
-                        <button class="text-xs text-blue-500 mt-2" onclick="toggleText()">Selengkapnya</button>
+                        <button class="text-xs mt-2" onclick="toggleText()" style="color: navy;">Selengkapnya</button>
 
                         <script>
                             function toggleText() {
