@@ -18,7 +18,7 @@
           <p class="text-xs leading-[10px] font-medium text-[#757C98]">Menu</p>
         </div>
       </a>
-      <a href="">
+      <a href="/">
         <div class="w-[48px] h-[48px] flex shrink-0">
           <img src="/assets/00_android/menuhape/home.png" alt="icon">
         </div>
