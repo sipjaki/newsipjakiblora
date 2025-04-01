@@ -45,7 +45,7 @@
                             </span>
                         </p>
                         <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
-                            <span class="text-[#ffffff]">{{ $item->keterangan }}</span>
+                            <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none">{{ $item->keterangan }}</span>
                         </p>
                         <button class="text-xs mt-2" onclick="toggleText()" style="color: navy;">Selengkapnya</button>
 
