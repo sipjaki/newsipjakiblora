@@ -3,8 +3,8 @@
 
     <div class="px-4 flex justify-center items-center" style="display: flex; justify-content: center; align-items: center;" style="margin-top:40px;">
         <div class="w-10 h-10 flex justify-center items-center shrink-0">
-            <img src="/assets/icon/logokabupatenblora.png" alt="icon" width="25%">
-            <img src="/assets/icon/pupr.png" alt="icon" width="25%">
+            <img src="/assets/icon/logokabupatenblora.png" alt="icon" width="75%" style="margin-right: 10px;">
+            <img src="/assets/icon/pupr.png" alt="icon" width="75%">
         </div>
     </div>
 
