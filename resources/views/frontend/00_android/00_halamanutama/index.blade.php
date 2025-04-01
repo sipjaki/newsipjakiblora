@@ -216,7 +216,7 @@
                         <div class="flex flex-col gap-1">
                             <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">{{$item->judulberita}}</p>
                             {{-- <p class="text-xs leading-[18px]">Target --}}
-                                <span class="font-bold text-[#FF7815]">
+                                <span class="font-bold text-[#ffffff]">
                                     @php
                                         $text = $item->keterangan;
                                         $limit = 100;
@@ -245,12 +245,6 @@
                                 }
                             </script>
 
-                            <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
-                                {{-- <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p> --}}
-                                <div class="flex shrink-0">
-                                    <img src="/assets/00_android/images/icons/tick-circle.svg" alt="icon">
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </a>
