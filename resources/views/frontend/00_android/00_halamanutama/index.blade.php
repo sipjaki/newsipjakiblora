@@ -293,7 +293,7 @@
                             <img src="{{asset('storage/' . $item->foto1 )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                         </div>
                         <div class="flex flex-col gap-1">
-                            <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">{{$item->judul}}</p>
+                            <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->judul}}</p>
                             {{-- <p class="text-xs leading-[18px]">Target --}}
                                 <span class="text-[#ffffff]">
                                     @php
