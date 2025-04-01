@@ -111,8 +111,8 @@
         </div>
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
-                <h2 class="font-bold text-lg">KitaBantu <br>Best Choices</h2>
-                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a>
+                <h2 class="font-bold text-lg">Mas Jaki Blora <br>Agenda Pelatihan dan SKK</h2>
+                {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
                 <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
@@ -123,8 +123,8 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Makanan Bergizi Warga Terdampar</a>
-                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p>
+                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Makanan Bergizi Warga Terdampar</a> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
                         </div>
                         <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
                     </div>
@@ -137,8 +137,8 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Bangun Panti Asuhan 10,000 Yatim Piatu</a>
-                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 25.000.000</span></p>
+                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Bangun Panti Asuhan 10,000 Yatim Piatu</a> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 25.000.000</span></p> --}}
                         </div>
                         <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
                     </div>
@@ -151,8 +151,8 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Banjir 10 Meter Kota Saranjopa Iyola</a>
-                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 12.000.000</span></p>
+                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Banjir 10 Meter Kota Saranjopa Iyola</a> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 12.000.000</span></p> --}}
                         </div>
                         <progress id="fund" value="10" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
                     </div>
@@ -165,18 +165,20 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Perbaikan Asli Kebakaran Hutan</a>
-                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p>
+                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Perbaikan Asli Kebakaran Hutan</a> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
                         </div>
                         <progress id="fund" value="88" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
                     </div>
                 </div>
             </div>
         </div>
+
+
         <div id="latest-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
-                <h2 class="font-bold text-lg">Latests <br>Fundraisings</h2>
-                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a>
+                <h2 class="font-bold text-lg">Mas Jaki Blora  <br>Berita Jasa Konstruksi </h2>
+                {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
                 <a href="details.html" class="card">
@@ -185,10 +187,10 @@
                             <img src="/assets/00_android/images/thumbnails/th5.png" class="w-full h-full object-cover" alt="thumbnail">
                         </div>
                         <div class="flex flex-col gap-1">
-                            <p class="font-bold line-clamp-1 hover:line-clamp-none">Operasi Ginjal Kanan</p>
-                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 55.000.000</span></p>
+                            {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none">Operasi Ginjal Kanan</p> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 55.000.000</span></p> --}}
                             <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
-                                <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p>
+                                {{-- <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p> --}}
                                 <div class="flex shrink-0">
                                     <img src="/assets/00_android/images/icons/tick-circle.svg" alt="icon">
                                 </div>
@@ -202,10 +204,10 @@
                             <img src="/assets/00_android/images/thumbnails/th6.png" class="w-full h-full object-cover" alt="thumbnail">
                         </div>
                         <div class="flex flex-col gap-1">
-                            <p class="font-bold line-clamp-1 hover:line-clamp-none">Buku Edukasi Peduli Anak lorem ipsum</p>
-                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p>
+                            {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none">Buku Edukasi Peduli Anak lorem ipsum</p> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
                             <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
-                                <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p>
+                                {{-- <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p> --}}
                                 <div class="flex shrink-0">
                                     <img src="/assets/00_android/images/icons/tick-circle.svg" alt="icon">
                                 </div>
@@ -219,10 +221,10 @@
                             <img src="/assets/00_android/images/thumbnails/th7.png" class="w-full h-full object-cover" alt="thumbnail">
                         </div>
                         <div class="flex flex-col gap-1">
-                            <p class="font-bold line-clamp-1 hover:line-clamp-none">Bangun Desa Angga</p>
-                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 18.500.000.000</span></p>
+                            {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none">Bangun Desa Angga</p> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 18.500.000.000</span></p> --}}
                             <div class="flex items-center gap-1 sm:flex-row-reverse sm:justify-end">
-                                <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p>
+                                {{-- <p class="font-semibold sm:font-medium text-xs leading-[18px]">Putra Bangsa</p> --}}
                                 <div class="flex shrink-0">
                                     <img src="/assets/00_android/images/icons/tick-circle.svg" alt="icon">
                                 </div>
@@ -232,29 +234,12 @@
                 </a>
             </div>
         </div>
-        <div id="menu" class="max-w-[341px] w-full fixed bottom-[20px] p-3 flex items-center justify-between rounded-[30px] bg-[#1E2037] transform -translate-x-1/2 left-1/2">
-            <a href="" class="p-[14px_16px] flex items-center gap-[6px] rounded-full bg-[#FF7815]">
-                <div class="flex shrink-0">
-                    <img src="/assets/00_android/images/icons/heart.svg" alt="icon">
-                </div>
-                <span class="font-semibold text-sm text-white">Discover</span>
-            </a>
-            <a href="" class="flex items-center justify-center w-[56px] h-[52px] p-[14px_16px]">
-                <div class="flex shrink-0 w-6 h-6 overflow-hidden">
-                    <img src="/assets/00_android/images/icons/crown.svg" alt="icon">
-                </div>
-            </a>
-            <a href="" class="flex items-center justify-center w-[56px] h-[52px] p-[14px_16px]">
-                <div class="flex shrink-0 w-6 h-6 overflow-hidden">
-                    <img src="/assets/00_android/images/icons/3dcube.svg" alt="icon">
-                </div>
-            </a>
-            <a href="" class="flex items-center justify-center w-[56px] h-[52px] p-[14px_16px]">
-                <div class="flex shrink-0 w-6 h-6 overflow-hidden">
-                    <img src="/assets/00_android/images/icons/setting-2.svg" alt="icon">
-                </div>
-            </a>
-        </div>
+
+
+        {{-- ============================================================================================ --}}
+        {{-- MENU ANDROID  --}}
+        {{-- ============================================================================================ --}}
+        {{--  --}}
     </section>
 
 
