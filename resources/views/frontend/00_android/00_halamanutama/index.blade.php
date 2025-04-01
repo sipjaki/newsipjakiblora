@@ -251,12 +251,12 @@
 
             </div>
         </div>
-
+{{--
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora <br>Dokumentasi </h2>
                 <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%" loading="lazy">
-                {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
+                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a>
             </div>
             <div class="main-carousel mt-[14px]">
 
@@ -268,15 +268,15 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Makanan Bergizi Warga Terdampar</a> --}}
-                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
+                            <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Makanan Bergizi Warga Terdampar</a>
+                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p>
                         </div>
                         <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
                     </div>
                 </div>
 
             </div>
-        </div>
+        </div> --}}
 
 
         <div id="latest-fundrising" class="mt-8">
