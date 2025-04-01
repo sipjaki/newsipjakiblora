@@ -8,5 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/00_android/js/flickity.min.css" media="screen">
+    <title>{{$title}}</title>
+
 </head>
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
