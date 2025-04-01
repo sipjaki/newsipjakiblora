@@ -25,6 +25,7 @@
                     </a>
                 </nav>
             </div>
+
                     <div class="flex flex-col gap-4 px-4">
             @foreach ($data as $item)
             <a href="/" class="card">
