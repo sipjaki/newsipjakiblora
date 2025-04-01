@@ -22,6 +22,7 @@
                     <!-- Ikon bagian kanan -->
                     <a href="" class="w-10 h-10 flex shrink-0">
                         <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
+
                     </a>
                 </nav>
             </div>
@@ -71,9 +72,9 @@
                             </a>
                             @endforeach
 
-            @include('frontend.00_android.00_fiturmenu.keterangan')
-        </div>
+                        </div>
 
+                        @include('frontend.00_android.00_fiturmenu.keterangan')
 
 <br><br><br><br>
 
