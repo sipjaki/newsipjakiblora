@@ -42,7 +42,7 @@
                         <div class="flex gap-1 items-center">
                             <p class="font-semibold text-sm">{{$data->user->name}}</p>
                             <div class="flex shrink-0">
-                                <img src="{{$data->user->avatar}}" alt="icon">
+                                <img src="{{asset('storage/' . $data->user->avatar)}}" alt="icon">
                             </div>
                         </div>
                     </div>
