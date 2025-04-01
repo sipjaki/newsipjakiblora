@@ -49,19 +49,19 @@
                 </div>
                 <div class="flex flex-col gap-2">
 
-                    <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
+                    {{-- <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
                 </div>
                 <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
-                    <h2 class="font-semibold text-sm">Mereka Senang dan Bahagia</h2>
+                    {{-- <h2 class="font-semibold text-sm">Mereka Senang dan Bahagia</h2> --}}
                     <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
                         <img src="assets/images/thumbnails/support-finished.png" class="w-full h-full object-cover" alt="thumbnail">
                     </div>
-                    <p class="text-sm leading-[26px]">Kami bersyukur bahwa seluruh dana sudah terkumpul dan sudah diberikan kpd setiap penerima untuk membeli bahan pokok.</p>
+                    {{-- <p class="text-sm leading-[26px]">{!!$data->keterangan!!}</p> --}}
                 </div>
                 <div class="flex flex-col gap-[2px]">
-                    <h2 class="font-semibold text-sm">About</h2>
-                    <p class="desc-less text-sm leading-[26px]">Kebakaran Hutan dan Lahan (Karhutla) yang terjadi di sejumlah titik di wilayah Kalimantan Barat (Kalbar) selama beberapa <button class="text-[#FF7815] underline" onclick="toggleSeeMoreLess()">see more</button></p>
-                    <p class="desc-more text-sm leading-[26px] hidden">Kebakaran Hutan dan Lahan (Karhutla) yang terjadi di sejumlah titik di wilayah Kalimantan Barat (Kalbar) selama beberapa Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis a earum iure nihil voluptas tenetur. <button class="text-[#FF7815] underline" onclick="toggleSeeMoreLess()">see less</button></p>
+                    <h2 class="font-semibold text-sm">Redaksi</h2>
+                    <p class="desc-less text-sm leading-[26px]">{!!$data->keterangan!!}<button class="text-[#FF7815] underline" onclick="toggleSeeMoreLess()">see more</button></p>
+
                 </div>
                 <div class="flex flex-col gap-3">
                     <div class="flex items-center justify-between">
