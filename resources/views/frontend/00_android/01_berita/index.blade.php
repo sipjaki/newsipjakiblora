@@ -11,7 +11,7 @@
                 </div>
                 <p class="font-semibold text-sm text-white">{{$title}}</p>
                 <a href="" class="w-10 h-10 flex shrink-0">
-                    <img src="/assets/icon/pupr.png" alt="icon" loading="lazy">
+                    <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" width="80%">
                 </a>
             </nav>
             <div class="mt-5">
