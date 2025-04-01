@@ -4,9 +4,9 @@
       <a href="/404">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/android/icons/setting-linear-grey.svg" alt="icon">
+            <img src="/assets/00_android/menuhape/agenda.png" alt="icon">
           </div>
-          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Berkas</p>
+          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Agenda</p>
         </div>
       </a>
 
