@@ -187,7 +187,7 @@
                         </a>
                         <div class="flex flex-col gap-[6px]">
                             {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Makanan Bergizi Warga Terdampar</a> --}}
-                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
+                            <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">{{$item->namakegiatan}}</span></p>
                         </div>
                         <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
                     </div>
