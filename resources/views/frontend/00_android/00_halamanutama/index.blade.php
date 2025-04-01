@@ -115,6 +115,72 @@
 
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
+                <h2 class="font-bold text-lg">Mas Jaki Blora <br>AHSP Konstruksi Umum</h2>
+                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%">
+                {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
+            </div>
+            <div class="main-carousel mt-[14px]">
+                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
+                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
+                        <a href="details.html">
+                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
+                                <img src="/assets/00_android/images/thumbnails/th1.png" class="w-full h-full object-cover" alt="thumbnail">
+                            </div>
+                        </a>
+                        <div class="flex flex-col gap-[6px]">
+                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Makanan Bergizi Warga Terdampar</a> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
+                        </div>
+                        <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
+                    </div>
+                </div>
+                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
+                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
+                        <a href="details.html">
+                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
+                                <img src="/assets/00_android/images/thumbnails/th2.png" class="w-full h-full object-cover" alt="thumbnail">
+                            </div>
+                        </a>
+                        <div class="flex flex-col gap-[6px]">
+                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Bangun Panti Asuhan 10,000 Yatim Piatu</a> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 25.000.000</span></p> --}}
+                        </div>
+                        <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
+                    </div>
+                </div>
+                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
+                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
+                        <a href="details.html">
+                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
+                                <img src="/assets/00_android/images/thumbnails/th3.png" class="w-full h-full object-cover" alt="thumbnail">
+                            </div>
+                        </a>
+                        <div class="flex flex-col gap-[6px]">
+                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Banjir 10 Meter Kota Saranjopa Iyola</a> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 12.000.000</span></p> --}}
+                        </div>
+                        <progress id="fund" value="10" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
+                    </div>
+                </div>
+                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
+                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
+                        <a href="details.html">
+                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
+                                <img src="/assets/00_android/images/thumbnails/th4.png" class="w-full h-full object-cover" alt="thumbnail">
+                            </div>
+                        </a>
+                        <div class="flex flex-col gap-[6px]">
+                            {{-- <a href="details.html" class="font-bold line-clamp-2 hover:line-clamp-none">Perbaikan Asli Kebakaran Hutan</a> --}}
+                            {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
+                        </div>
+                        <progress id="fund" value="88" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="best-choices" class="mt-8 -mb-6">
+            <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-lg">Mas Jaki Blora <br>Agenda Pelatihan dan SKK</h2>
                 <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
