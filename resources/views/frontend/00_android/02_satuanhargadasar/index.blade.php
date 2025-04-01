@@ -38,7 +38,7 @@
                     <div class="flex flex-col gap-1">
 
                         <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
-                            <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none">Satuan Harga Material</span>
+                            <span class="line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Material</span>
                         </p>
                             </div>
                             </div>
@@ -52,7 +52,7 @@
                     <div class="flex flex-col gap-1">
 
                         <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
-                            <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none">Satuan Harga Upah Tenaga Kerja</span>
+                            <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Upah Tenaga Kerja</span>
                         </p>
                             </div>
                             </div>
@@ -66,7 +66,7 @@
                     <div class="flex flex-col gap-1">
 
                         <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
-                            <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none">Satuan Harga Peralatan</span>
+                            <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Peralatan</span>
                         </p>
                             </div>
                             </div>
