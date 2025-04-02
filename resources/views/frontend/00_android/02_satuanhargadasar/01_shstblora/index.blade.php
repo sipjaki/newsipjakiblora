@@ -101,8 +101,8 @@
                                     @foreach ($data as $item )
                                     <tr>
                                         <td style="width:100px;"></td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->bangunankantortidaksederhana, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->bangunankantorsederhana, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->bangunankantortidaksederhana, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->bangunankantorsederhana, 0, ',', '.') }},00</td>
                                     </tr>
 
                                     @endforeach
@@ -141,9 +141,9 @@
                                     @foreach ($data as $item )
                                     <tr>
                                         <td style="width:100px;"></td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipea, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipeb, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipecde, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipea, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipeb, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipecde, 0, ',', '.') }},00</td>
                                     </tr>
 
                                     @endforeach
@@ -183,9 +183,9 @@
                                     @foreach ($data as $item )
                                     <tr>
                                         <td style="width:100px;"></td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahdepan, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahbelakang, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahsamping, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahdepan, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahbelakang, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahsamping, 0, ',', '.') }},00</td>
                                     </tr>
 
                                     @endforeach
@@ -226,9 +226,9 @@
                                     @foreach ($data as $item )
                                     <tr>
                                         <td style="width:100px;"></td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegaradepan, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegarabelakang, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegarasamping, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegaradepan, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegarabelakang, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegarasamping, 0, ',', '.') }},00</td>
                                     </tr>
 
                                     @endforeach
