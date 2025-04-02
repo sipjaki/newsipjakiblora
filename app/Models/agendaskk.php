@@ -19,5 +19,10 @@ class agendaskk extends Model
         return $this->belongsTo(allskktenagakerjablora::class, 'allskktenagakerjablora_id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(user::class, 'user_id');
+    }
+
 
 }

@@ -226,6 +226,16 @@ headerberanda::create([
         ]);
 
         User::create([
+            'id'  => 4,
+            'name'  => 'Sigit Septiadi',
+            'username' => 'Sigit',
+            'statusadmin_id' => '2',
+            'avatar' => 'user/avatar/sigit.jpg',
+            'email' => 'sigitseptiadi1@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
             'id'  => 2,
             'name'  => 'Anex Fachrian, ST. MT',
             'username' => 'Anex',
@@ -248,7 +258,7 @@ headerberanda::create([
         User::create([
             'id'  => 4,
             'name'  => 'Rahmat Irianto',
-            'username' => 'Sigitpekerja',
+            'username' => 'Sup Pabrik',
             'statusadmin_id' => '3',
             'avatar' => 'user/avatar/sigit.jpg',
             'email' => 'sigitpekerja@gmail.com',
@@ -258,7 +268,7 @@ headerberanda::create([
         User::create([
             'id'  => 5,
             'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
+            'username' => 'Sup Peralatan ',
             'statusadmin_id' => '4',
             'avatar' => 'user/avatar/sigit.jpg',
             'email' => 'sigitsupp_pabrik@gmail.com',
@@ -268,7 +278,7 @@ headerberanda::create([
         User::create([
             'id'  => 6,
             'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
+            'username' => 'Sup Bangunan',
             'statusadmin_id' => '5',
             'avatar' => 'user/avatar/sigit.jpg',
             'email' => 'sigitsupp_peralatan@gmail.com',
@@ -278,7 +288,7 @@ headerberanda::create([
         User::create([
             'id'  => 7,
             'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
+            'username' => 'LSP Penerbit',
             'statusadmin_id' => '6',
             'avatar' => 'user/avatar/sigit.jpg',
             'email' => 'sigitsupp_tokobangunan@gmail.com',
@@ -288,7 +298,7 @@ headerberanda::create([
         User::create([
             'id'  => 8,
             'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
+            'username' => 'Operator',
             'statusadmin_id' => '7',
             'avatar' => 'user/avatar/sigit.jpg',
             'email' => 'sigitlpspenerbit@gmail.com',
@@ -298,22 +308,13 @@ headerberanda::create([
         User::create([
             'id'  => 9,
             'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
+            'username' => 'Dinas DPUPR Blora',
             'statusadmin_id' => '8',
             'avatar' => 'user/avatar/sigit.jpg',
             'email' => 'sigitoperator@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
-        User::create([
-            'id'  => 10,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Sigitsupppabrik',
-            'statusadmin_id' => '9',
-            'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitdinas@gmail.com',
-            'password' => bcrypt('adminadmin123$$')
-        ]);
 
         // =================================================================
         statusadmin::create([
