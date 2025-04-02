@@ -2,7 +2,7 @@
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
     <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-white overflow-x-hidden">
-        <div class="header flex flex-col bg-[#56BBC5] overflow-hidden h-[350px] relative -mb-[92px]">
+        <div class="header flex flex-col bg-[#56BBC5] rounded-b-[50px] overflow-hidden h-[320px] -mb-[181px]" style="background: linear-gradient(to bottom, #28A745, #FFD100);">
             <nav class="pt-5 px-3 flex justify-between items-center relative z-20">
                 <div class="flex items-center gap-[10px]">
                     <a href="#" class="w-10 h-10 flex shrink-0">
@@ -11,7 +11,7 @@
                     </a>
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <p class="text-xs leading-[18px] text-white">{{$title}}</p>
+                    {{-- <p class="text-xs leading-[18px] text-white">{{$title}}</p> --}}
                     {{-- <p class="font-semibold text-sm text-white">#WeNeedHelp</p> --}}
                 </div>
                 <a href="" class="w-10 h-10 flex shrink-0">
@@ -35,14 +35,6 @@
                         <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p>
                         <div class="flex flex-col gap-[10px]">
                             {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
-                            <div class="flex items-center gap-2">
-                                <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
-                                    {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
-                                </div>
-                                <div class="flex gap-1 items-center">
-                                    {{-- Add any content you need here --}}
-                                </div>
-                            </div>
 
                             <div style="position: relative; display: inline-block; margin-right: 10px;">
                                 <input type="search" id="searchInput" placeholder="Cari Bahan Material ...." onkeyup="searchTable()"
