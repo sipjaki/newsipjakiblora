@@ -226,12 +226,12 @@ headerberanda::create([
         ]);
 
         User::create([
-            'id'  => 4,
+            'id'  => 10,
             'name'  => 'Sigit Admin',
             'username' => 'Sigit Admin',
             'statusadmin_id' => '2',
             'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitseptiadi2@gmail.com',
+            'email' => 'sigitadminadmin@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
