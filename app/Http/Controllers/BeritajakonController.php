@@ -582,6 +582,37 @@ public function beartikeljakoncreatenew(Request $request)
     }
 
 
+    public function androidartikeljakon()
+    {
+        $user = Auth::user();
+        $databerita = artikeljakonmasjaki::paginate(6);
+
+        return view('frontend.00_android.01_artikeljakon.index', [
+            'title' => 'Artikel Jasa Konstruksi',
+            'user' => $user, // Mengirimkan data paginasi ke view
+            'data' => $databerita, // Mengirimkan data paginasi ke view
+        ]);
+    }
+
+    public function androidartikeljakonshow($judul)
+    {
+        $dataartikeljakon = artikeljakonmasjaki::where('judul', $judul)->first();
+        $dataartikeljakons = artikeljakonmasjaki::paginate(6);
+        $user = Auth::user();
+        $users = user::all();
+
+        return view('frontend.00_android.01_artikeljakon.show', [
+        'title' => 'Artikel Jasa Konstruksi',
+        'data' => $dataartikeljakon,
+        'dataartikeljakon' => $dataartikeljakons,
+        // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+        'user' => $user,
+        'users' => $users,
+        // 'start' => $start,
+    ]);
+    }
+
+
 }
 
 

@@ -49,6 +49,9 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/resberita', [BeritajakonController::class, 'androidberita']);
 Route::get('/resberita/{judulberita}', [BeritajakonController::class, 'androidberitashow']);
 
+Route::get('/resartikeljakon', [BeritajakonController::class, 'androidartikeljakon']);
+Route::get('/resartikeljakon/{judul}', [BeritajakonController::class, 'androidartikeljakonshow']);
+
 // -----------------------------------------------------------------------------------------------
 Route::get('/ressatuanhargadasar', [SatuanhargamaterialController::class, 'satuanhargamaterial']);
 Route::get('/ressatuanhargamaterial', [SatuanhargamaterialController::class, 'satuanhargamaterialshow']);
