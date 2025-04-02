@@ -88,12 +88,12 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align:center; width:100px;" rowspan="2"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="40" height="40" style="margin-right: 5px; margin-left:5px;" loading="lazy"></th>
-                                        <th style="text-align:center" colspan="2"> Harga Satuan Pembangunan Gedung Negara Per M2 (Meter Persegi)</th>
+                                        <th style="text-align:center" colspan="2" style="font-size: 13px;"> Harga Satuan Pembangunan Gedung Negara Per M2 (Meter Persegi)</th>
                                         {{-- <th style="text-align:center" >View</th> --}}
                                     </tr>
                                     <tr>
-                                        <th style="text-align: center">Bangunan Tidak Sederhana</th>
-                                        <th style="text-align: center">Bangunan Sederhana</th>
+                                        <th style="text-align: center" style="font-size: 13px;">Bangunan Tidak Sederhana</th>
+                                        <th style="text-align: center" style="font-size: 13px;">Bangunan Sederhana</th>
                                     </tr>
                                 </thead>
                                 <tbody style="background: white">
@@ -101,8 +101,8 @@
                                     @foreach ($data as $item )
                                     <tr>
                                         <td style="width:100px;"></td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->bangunankantortidaksederhana, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->bangunankantorsederhana, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->bangunankantortidaksederhana, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->bangunankantorsederhana, 0, ',', '.') }},00</td>
                                     </tr>
 
                                     @endforeach
@@ -129,21 +129,21 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align:center: width:100px;" rowspan="3" ><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="40" height="40" style="margin-right: 5px; margin-left:5px;" loading="lazy"></th>
-                                        <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Rumah Negara Per M2 (Meter Persegi)</th>
+                                        <th style="text-align:center" colspan="3" style="font-size: 13px;">Harga Satuan Pembangunan Rumah Negara Per M2 (Meter Persegi)</th>
                                     </tr>
                                     <tr>
-                                        <th style="text-align: center;">Rumah Negara Tipe A</th>
-                                        <th style="text-align: center;">Rumah Negara Tipe B</th>
-                                        <th style="text-align: center;">Rumah Negara Tipe C, D, E</th>
+                                        <th style="text-align: center;" style="font-size: 13px;">Rumah Negara Tipe A</th>
+                                        <th style="text-align: center;" style="font-size: 13px;">Rumah Negara Tipe B</th>
+                                        <th style="text-align: center;" style="font-size: 13px;">Rumah Negara Tipe C, D, E</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $item )
                                     <tr>
                                         <td style="width:100px;"></td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->rumahnegaratipea, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->rumahnegaratipeb, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->rumahnegaratipecde, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipea, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipeb, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->rumahnegaratipecde, 0, ',', '.') }},00</td>
                                     </tr>
 
                                     @endforeach
@@ -170,12 +170,12 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="40" height="40" style="margin-right: 5px; margin-left:5px;" loading="lazy"></th>
-                                        <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Gedung Negara Per M1 (Meter Lari)</th>
+                                        <th style="text-align:center" colspan="3" style="font-size: 13px;">Harga Satuan Pembangunan Pagar Gedung Negara Per M1 (Meter Lari)</th>
                                     </tr>
                                     <tr>
-                                        <th>Pagar Depan M1 (Meter Lari) Rupiah</th>
-                                        <th>Pagar Belakang M1 (Meter Lari) Rupiah</th>
-                                        <th>Pagar Samping M1 (Meter Lari) Rupiah</th>
+                                        <th style="font-size: 13px;">Pagar Depan M1 (Meter Lari) Rupiah</th>
+                                        <th style="font-size: 13px;">Pagar Belakang M1 (Meter Lari) Rupiah</th>
+                                        <th style="font-size: 13px;">Pagar Samping M1 (Meter Lari) Rupiah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -183,9 +183,9 @@
                                     @foreach ($data as $item )
                                     <tr>
                                         <td style="width:100px;"></td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahdepan, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahbelakang, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahsamping, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahdepan, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahbelakang, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahsamping, 0, ',', '.') }},00</td>
                                     </tr>
 
                                     @endforeach
@@ -213,12 +213,12 @@
                                 <thead>
                                     <tr>
                                         <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="40" height="40" style="margin-right: 5px; margin-left:5px;" loading="lazy"></th>
-                                        <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Rumah Negara Per M1 (Meter Lari) </th>
+                                        <th style="text-align:center" colspan="3" style="font-size: 13px;">Harga Satuan Pembangunan Pagar Rumah Negara Per M1 (Meter Lari) </th>
                                     </tr>
                                     <tr>
-                                        <th style="text-align: center">Pagar Depan Rumah Negara M1 (Meter Lari) Rupiah</th>
-                                        <th style="text-align: center">Pagar Samping Rumah Negara M1 (Meter Lari) Rupiah</th>
-                                        <th style="text-align: center">Pagar Belakang Rumah Negara M1 (Meter Lari) Rupiah</th>
+                                        <th style="text-align: center" style="font-size: 13px;">Pagar Depan Rumah Negara M1 (Meter Lari) Rupiah</th>
+                                        <th style="text-align: center" style="font-size: 13px;">Pagar Samping Rumah Negara M1 (Meter Lari) Rupiah</th>
+                                        <th style="text-align: center" style="font-size: 13px;">Pagar Belakang Rumah Negara M1 (Meter Lari) Rupiah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -226,9 +226,9 @@
                                     @foreach ($data as $item )
                                     <tr>
                                         <td style="width:100px;"></td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegaradepan, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegarabelakang, 0, ',', '.') }},00</td>
-                                        <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegarasamping, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegaradepan, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegarabelakang, 0, ',', '.') }},00</td>
+                                        <td style="text-align: center; font-weight:bold; font-size:18px;" style="font-size: 13px;">{{ 'Rp ' . number_format($item->pagarrumahnegarasamping, 0, ',', '.') }},00</td>
                                     </tr>
 
                                     @endforeach
