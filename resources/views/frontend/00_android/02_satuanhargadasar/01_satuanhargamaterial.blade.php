@@ -21,7 +21,6 @@
             </nav>
             <div class="w-full h-full absolute bg-white overflow-hidden">
                 <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
-                <img src="{{asset('storage/' . $data->foto)}}" class="w-full h-full object-cover" alt="cover">
             </div>
         </div>
         <div class="flex flex-col z-30">
@@ -34,15 +33,12 @@
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                 <div class="flex flex-col gap-[10px]">
                     {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
-                    <h1 class="font-extrabold leading-[39px]" style="font-size: 16px;">{{$data->judulberita}}</h1>
                     <div class="flex items-center gap-2">
                         <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
                             {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
-                            <img src="{{asset('storage/' . $data->user->avatar)}}" class="w-full h-full object-cover" alt="photo">
 
                         </div>
                         <div class="flex gap-1 items-center">
-                            <p class="font-semibold text-sm">{{$data->user->name}}</p>
 
                         </div>
                     </div>
@@ -53,18 +49,12 @@
                 </div>
                 <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
                     {{-- <h2 class="font-semibold text-sm">Mereka Senang dan Bahagia</h2> --}}
-                    <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
-                        <img src="{{asset('storage/' . $data->foto1)}}" class="w-full h-full object-cover" alt="thumbnail">
-                    </div>
-                    <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
-                        <img src="{{asset('storage/' . $data->foto2)}}" class="w-full h-full object-cover" alt="thumbnail">
-                    </div>
+
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quis laboriosam delectus, ullam modi ea beatae sint repudiandae perferendis excepturi id! Magni recusandae, ipsam ab voluptas dolorum itaque ipsa repellat sit, quos natus dolorem nam earum commodi cum nobis harum non id eaque vero tempore odit? Asperiores, culpa, pariatur nostrum alias modi dignissimos fuga sapiente nemo accusantium laudantium similique vel deserunt ipsum. Architecto accusantium enim labore saepe, voluptate maxime, quasi recusandae nemo fugit fuga molestias sed a! Exercitationem perferendis dolorum ducimus totam quae suscipit dolor numquam provident dicta, autem maiores dolore tempora dolorem at, eveniet assumenda quis illo eius quaerat.</p>
                     {{-- <p class="text-sm leading-[26px]">{!!$data->keterangan!!}</p> --}}
                 </div>
                 <div class="flex flex-col gap-[2px]">
                     <h2 class="font-semibold text-sm">Redaksi</h2>
-                    <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->keterangan!!}</p>
-
                 </div>
 
             </div>
