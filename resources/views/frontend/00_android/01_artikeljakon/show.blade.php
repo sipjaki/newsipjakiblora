@@ -39,21 +39,21 @@
                         <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
                             {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
                             <img src="{{asset('storage/' . $data->user->avatar)}}" class="w-full h-full object-cover" alt="photo">
-
                         </div>
                         <div class="flex gap-1 items-center">
                             <p class="font-semibold text-sm">{{$data->user->name}}</p>
-
                         </div>
-                        <div style="display: inline-block; float: right;">
+                        <!-- Tombol berada di kanan -->
+                        <div class="ml-auto">
                             <button id="sertifikat-btn" class="badge"
-                               style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                               onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                               onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
                                 <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
                             </button>
                         </div>
                     </div>
+
                 </div>
                 <div class="flex flex-col gap-2">
 
