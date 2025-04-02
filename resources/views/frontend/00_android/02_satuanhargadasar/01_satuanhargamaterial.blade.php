@@ -32,7 +32,7 @@
             </div>
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                     <div class="flex flex-col gap-[10px]">
-                        <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p>
+                        <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p>
                         <div class="flex flex-col gap-[10px]">
                             {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
                             <div class="flex items-center gap-2">
@@ -44,10 +44,12 @@
                                 </div>
                             </div>
 
-                            <div style="position: relative; display: inline-block; margin-right:10px;">
-                                <input type="search" id="searchInput" placeholder="Cari Bahan Material ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                                <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <div style="position: relative; display: inline-block; margin-right: 10px;">
+                                <input type="search" id="searchInput" placeholder="Cari Bahan Material ...." onkeyup="searchTable()"
+                                       style="border: 1px solid #ccc; padding: 10px 40px 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                             </div>
+
 
                             <script>
                                 function updateEntries() {
