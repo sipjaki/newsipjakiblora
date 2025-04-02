@@ -9801,6 +9801,736 @@ satuanhargamaterial::create([
     'satuan' => 'M1',
     'besaran' => '24500',
 ]);
+// ------------
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 1-1/2" ; (40 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '75083',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 2" ; (50 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '100283',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 3" ; (80 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '207833',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 3/4" ; (20 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '32383',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 4" ; (100 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '295333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 6" ; (150 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '516333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 8" ; (200 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '788000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis MED CLASS ; Dia. 1/2" ; (15 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '12833',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis MED CLASS ; Dia. 1-1/2" ; (40 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '22166',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis MED CLASS ; Dia. 2" ; (50 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '38166',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis MED CLASS ; Dia. 2-1/2" ; (65 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '48333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis MED CLASS ; Dia. 3" ; (80 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '89500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 1" ; (25 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '59683',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 1/2" ; (15 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '31150',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 1-1/2" ; (40 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '96600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 2" ; (50 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '128800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 3" ; (80 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '267500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 4" ; (100 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '380000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 5" ; (125 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '514000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 6" ; (150 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '664333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa galvanis SCH 40 ; Dia. 8" ; (200 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '1018000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 10 ; Dia. 1" ; (25 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '23045',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 10 ; Dia. 1/2" ; (15 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '10945',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 10 ; Dia. 1-1/2" ; (40 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '56650',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 10 ; Dia. 1-1/4" ; (32 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '36520',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 10 ; Dia. 2" ; (50 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '89677',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 10 ; Dia. 3" ; (80 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '181115',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 10 ; Dia. 4" ; (100 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '268977',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 10 ; Dia. 6" ; (150 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '916685',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 20 ; Dia. 1" ; (25 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '38675',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 20 ; Dia. 1/2" ; (15 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '15325',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 20 ; Dia. 1-1/2" ; (40 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '93175',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 20 ; Dia. 2" ; (50 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '147625',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 20 ; Dia. 3" ; (80 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '300375',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 20 ; Dia. 4" ; (100 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '448900',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PPR PN 20 ; Dia. 6" ; (150 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '1529825',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC AW ; Dia. 1" ; (25 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '22500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'PIPA PVC AW ; Dia. 1" ; (25 mm) dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '22500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC AW ; Dia. 1/2" ; (15 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '13500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'PIPA PVC AW ; Dia. 1/2" ; (15 mm) dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '13500',
+]);
+
+// -------------
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC AW ; Dia. 1-1/2" ; (40 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '35000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC AW ; Dia. 2" ; (50 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '38750',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'PIPA PVC AW ; Dia. 2" ; (50 mm) dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '35000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'PIPA PVC AW ; Dia. 3" (80 mm) dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '65000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC AW ; Dia. 3" ; (80 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '65000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC AW ; Dia. 4" ; (100 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '167500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC AW ; Dia. 6" ; (150 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '252500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC AW ; Dia. 8" ; (200 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '395000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC D ; Dia. 2" ; (50 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '18000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC D ; Dia. 3" (80 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '31750',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC D ; Dia. 4" ; (100 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '74500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pompa Booster 150 lpm (Vertical in Line - Packaged) + Material Bantu / Aksesoris',
+    'satuan' => 'Set',
+    'besaran' => '51470000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pompa Jet 100 lpm + Material Bantu / Aksesoris',
+    'satuan' => 'Set',
+    'besaran' => '3700000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pompa Jet 27 lpm + Material Bantu / Aksesoris',
+    'satuan' => 'Set',
+    'besaran' => '41000000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pompa Sump Pit (Submersible Cutter Pump) Kapasitas 100 liter/menit + Material Bantu / Aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '16500000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pompa  Sumbmersible ( Speed For Pump data = 10700 rpm, rateflow 5 m3/h, ratehead = 73 - 100 m )',
+    'satuan' => 'Unit',
+    'besaran' => '18000000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Roof Drain ; Dia. 2“ (50 mm) + Material Bantu',
+    'satuan' => 'Buah',
+    'besaran' => '244000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Roof Drain ; Dia. 3“ (80 mm) + Material Bantu',
+    'satuan' => 'Buah',
+    'besaran' => '305000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Roof Drain ; Dia. 4“ (100 mm) + Material Bantu',
+    'satuan' => 'Buah',
+    'besaran' => '321000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Tangki Toren Kapasitas 0,7 m3 + Material Bantu / Aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '1550000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Tangki Toren Kapasitas 1,5 m3 + Material Bantu / Aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '3200000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Tangki Toren Kapasitas 3 m3 + Material Bantu / Aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '5300000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Tangki Toren Kapasitas 5 m3 + Material Bantu / Aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '10100000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Water Meter Kuningan ; Dia. 1/2“ (15 mm) + Material Bantu',
+    'satuan' => 'Buah',
+    'besaran' => '375000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'WLC dan Pengkabelan + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '3000000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kanstin uk 10x18x40 beton f\'c 20 MPa',
+    'satuan' => 'Buah',
+    'besaran' => '18700',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paving Block Tebal 6 cm f\'c 20 Mpa',
+    'satuan' => 'M2',
+    'besaran' => '72800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paving Block Tebal 6 cm f\'c 25 Mpa',
+    'satuan' => 'M2',
+    'besaran' => '74800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paving Block Tebal 8 cm f\'c 20 MPa',
+    'satuan' => 'M2',
+    'besaran' => '86400',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Paving Block Tebal 8 cm f\'c 25 MPa',
+    'satuan' => 'M2',
+    'besaran' => '88400',
+]);
+
+// -----------------------
+satuanhargamaterial::create([
+    'uraian' => 'Topi Uskup 30 x 6 x 21 tebal 6 cm f\'c 20 Mpa',
+    'satuan' => 'Buah',
+    'besaran' => '5000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Topi Uskup 30 x 6 x 21 tebal 6 cm f\'c 25 Mpa',
+    'satuan' => 'Buah',
+    'besaran' => '7000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Topi Uskup 30 x 6 x 21 tebal 8 cm f\'c 20 Mpa',
+    'satuan' => 'Buah',
+    'besaran' => '5500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Topi Uskup 30 x 6 x 21 tebal 8 cm f\'c 25 Mpa',
+    'satuan' => 'Buah',
+    'besaran' => '7500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton 1/2 D 30 - 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '52250',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton 1/2 D 40 - 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '66000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton 1/2 D 50 - 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '101750',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton 1/2 D 60 - 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '137500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton 1/2 D 80 - 50 cm',
+    'satuan' => 'Buah',
+    'besaran' => '68750',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton 1/2 D 100 - 50 cm',
+    'satuan' => 'Buah',
+    'besaran' => '82500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton D 30 - 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '104500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton D 40 - 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '132000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton D 50 - 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '203500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton D 60 - 100 cm',
+    'satuan' => 'Buah',
+    'besaran' => '275000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton D 80 - 50 cm',
+    'satuan' => 'Buah',
+    'besaran' => '137500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Buis Beton D 100 - 50 cm',
+    'satuan' => 'Buah',
+    'besaran' => '165000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Lantai kerja f\'c 7,5 MPa',
+    'satuan' => 'M3',
+    'besaran' => '1007057',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pas. Plesteran 1 SP : 4 PP tebal 15 mm',
+    'satuan' => 'M2',
+    'besaran' => '47387',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pemasangan Plesteran 1 SP : 4 PP tebal 15 mm',
+    'satuan' => 'M2',
+    'besaran' => '47387',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Urukan pasir uruk',
+    'satuan' => 'M3',
+    'besaran' => '300144',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Bata Merah (m3)',
+    'satuan' => 'M3',
+    'besaran' => '578900',
+]);
+
+// ----------------
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Galvanis Ø 63 mm',
+    'satuan' => 'M1',
+    'besaran' => '48333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Galvanis Ø 12,5 mm',
+    'satuan' => 'M1',
+    'besaran' => '12833',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Galvanis Ø 37,5 mm',
+    'satuan' => 'M1',
+    'besaran' => '22166',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Galvanis Ø 50 mm',
+    'satuan' => 'M1',
+    'besaran' => '38166',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Galvanis Ø 75 mm',
+    'satuan' => 'M1',
+    'besaran' => '89500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa HDPE Ø 100 mm',
+    'satuan' => 'M1',
+    'besaran' => '112100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa HDPE Ø 150 mm',
+    'satuan' => 'M1',
+    'besaran' => '235800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa HDPE Ø 12,5 mm',
+    'satuan' => 'M1',
+    'besaran' => '7000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa HDPE Ø 37,5 mm',
+    'satuan' => 'M1',
+    'besaran' => '28500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa HDPE Ø 50 mm',
+    'satuan' => 'M1',
+    'besaran' => '36800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa HDPE Ø 75 mm',
+    'satuan' => 'M1',
+    'besaran' => '75000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC Ø 12,5 mm',
+    'satuan' => 'M1',
+    'besaran' => '13500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC Ø 25 mm',
+    'satuan' => 'M1',
+    'besaran' => '22500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC Ø 37,5 mm',
+    'satuan' => 'M1',
+    'besaran' => '35000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC Ø 50 mm',
+    'satuan' => 'M1',
+    'besaran' => '38500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC Ø 75 mm',
+    'satuan' => 'M1',
+    'besaran' => '65000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa PVC Ø 100 mm',
+    'satuan' => 'M1',
+    'besaran' => '167500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Tee galvanish Ø 12,5 mm',
+    'satuan' => 'Buah',
+    'besaran' => '20000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Valve socket Ø 12,5 mm',
+    'satuan' => 'Buah',
+    'besaran' => '20000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Clam sadle 2x 1,5 "',
+    'satuan' => 'Buah',
+    'besaran' => '40000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Knee galvanish 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '20000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Water moor kuningan 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '22500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Double nippel galvanish 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '20000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Fouket socket galvanish 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '35000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Stop Kran Kuningan 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '25000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Fit kran kuningan 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '20000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Bok meter air + Logo',
+    'satuan' => 'Buah',
+    'besaran' => '150000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Katup searah kuningan 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '74000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Plug kran kuningan 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '80000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Fouket elbow galvanish 0,5"',
+    'satuan' => 'Buah',
+    'besaran' => '20000',
+]);
 
 // makan yu
 
