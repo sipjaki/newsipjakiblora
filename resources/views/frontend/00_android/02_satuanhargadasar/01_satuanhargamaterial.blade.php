@@ -1,3 +1,38 @@
+    <style>
+    /* Gaya untuk tabel */
+    .fl-table {
+        margin-top: 15px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .fl-table th, .fl-table td {
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Gaya untuk kepala tabel */
+    .fl-table thead {
+        background-color: #374151; /* Warna latar belakang untuk header tabel */
+        color: white;
+    }
+
+    /* Gaya belang-belang */
+    .fl-table tbody tr:nth-child(odd) {
+        background-color: #f1f1f1; /* Abu-abu muda untuk baris ganjil */
+    }
+
+    .fl-table tbody tr:nth-child(even) {
+        background-color: #e0e0e0; /* Abu-abu lebih gelap untuk baris genap */
+    }
+
+    /* Gaya hover pada baris tabel */
+    .fl-table tbody tr:hover {
+        background-color: #d3d3d3; /* Efek hover dengan warna abu lebih gelap */
+    }
+</style>
+
+
 @include('frontend.00_android.00_fiturmenu.header')
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
@@ -103,18 +138,15 @@
 
 
                             <!-- Table Section -->
-                            <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+
+                            <table class="fl-table" id="sortableTable">
                                 <thead>
                                     <tr>
                                         <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                         <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Bahan Material </th>
-                                        {{-- <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:200px;"> Kode <span class="sort-icon">⇅</span></th> --}}
                                         <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;"> Satuan </th>
                                         <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px;"> Rp </th>
                                         <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Besaran </th>
-                                        {{-- <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:100px;"> Rp. <span class="sort-icon">⇅</span></th>
-                                        <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:200px;"> Besaran Per Jam  <span class="sort-icon">⇅</span></th> --}}
-                                        {{-- <th style="text-align:center; width:100px;"> View </th> --}}
                                     </tr>
                                 </thead>
                                 <tbody id="tableBody">
@@ -123,17 +155,13 @@
                                     <tr>
                                         <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                         <td style="text-align: left;">{{$item->uraian}}</td>
-                                        {{-- <td style="text-align: center;">{{$item->kode}}</td> --}}
                                         <td style="text-align: center; color:red;">{{$item->satuan}}</td>
                                         <td style="text-align: center;">Rp.</td>
                                         <td style="text-align: right; color:black;">{{ number_format((float) $item->besaran, 0, ',', '.') }},-</td>
-                                        {{-- <td style="text-align: center;">Rp.</td>
-                                        <td style="text-align: right;">{{ number_format((float) $item->besaranperjam, 0, ',', '.') }},-</td> --}}
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-
                             <!-- Description Section -->
                             <br>
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} Kab Blora Tahun 2025</p>
