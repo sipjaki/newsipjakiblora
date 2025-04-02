@@ -146,8 +146,8 @@
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px; padding: 5px;"> Kode </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Pekerjaan </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px; padding: 5px;"> Kode </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:400px; padding: 5px;"> Pekerjaan </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Satuan </th>
                                             <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> Rp </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Besaran </th>
