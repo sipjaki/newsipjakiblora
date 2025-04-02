@@ -155,15 +155,45 @@
                                 </thead>
                                 <tbody id="tableBody">
                                     @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
-                                    @foreach ($data as $item )
+                                    @foreach ($data as $item)
                                     <tr>
                                         <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                        <td style="text-align: left;">{{$item->uraian}}</td>
-                                        <td style="text-align: center; color:red;">{{$item->satuan}}</td>
-                                        <td style="text-align: center;">Rp.</td>
-                                        <td style="text-align: right; color:black;">{{ number_format((float) $item->besaran, 0, ',', '.') }},-</td>
+                                        <td style="text-align: center;">
+                                            {{ optional($item->hspdivisi)->id }}.
+                                            {{ optional($item->hsppaket)->id }}.
+                                            {{ optional($item->hspkodepekerjaan)->kodepekerjaan }}.
+                                            {{$item->kode}}
+                                            {{-- {{ optional($item->kode->id) }} --}}
+                                        </td>
+                                        {{-- <td style="text-align: center;">{{$item->hspkodepekerjaan->namapekerjaan}}</td> --}}
+                                        <td style="text-align: left">
+                                            @if(isset($item->id) && !empty($item->id))
+                                                <a href="javascript:void(0);"
+                                                   style="color: blue; text-decoration: none;"
+                                                   onclick="redirectToPage('{{ $item->id }}')">
+                                                    {{ $item->jenispekerjaan }}
+                                                </a>
+                                            @else
+                                                <span style="color: red;">ID Tidak Ditemukan</span>
+                                            @endif
+                                        </td>
+
+                                        <script>
+                                            function redirectToPage(id) {
+                                                if (!id) { // Pastikan ID tidak kosong
+                                                    alert("ID tidak valid!");
+                                                    return;
+                                                }
+                                                window.location.href = "/satuanhargadivisi1/" + encodeURIComponent(id);
+                                            }
+                                        </script>
+
+                                        <td style="text-align: center; color:red;" >{{$item->satuanmaterial}}</td>
+                                        <td style="text-align: center;">Rp</td>
+                                        <td style="text-align: right;">{{ number_format((float) $item->hargasatuan, 0, ',', '.') }},-</td>
                                     </tr>
                                     @endforeach
+
                                 </tbody>
                             </table>
                             <!-- Description Section -->
