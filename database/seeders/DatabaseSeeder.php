@@ -17871,10 +17871,11 @@ agendapelatihan::create([
 // AGENDA SKK TENAGA KERJA KONSTRUKSI
 agendaskk::create([
     'id' => 1,
+    'user_id' => 7,
     'namakegiatan' => 'Sertifikasi Keahlian Tenaga Kerja Konstruksi Bangunan Gedung - Jenjang 4',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
     'penutupan' => '2025-02-13',
-    'waktupelaksanaan' => '2025-02-15',
+    'waktupelaksanaan' => '2025-05-15',
     'jumlahpeserta' => 40,
     'lokasi' => 'Jln Blora No. 10',
     'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja konstruksi bangunan gedung.',
@@ -17884,53 +17885,15 @@ agendaskk::create([
 
 agendaskk::create([
     'id' => 2,
+    'user_id' => 7,
     'namakegiatan' => 'Sertifikasi Keterampilan Tukang Bangunan Sipil - Jenjang 6',
     'penyelenggara' => 'Balai Jasa Konstruksi Wilayah IV Surabaya',
     'penutupan' => '2025-03-10',
-    'waktupelaksanaan' => '2025-03-12',
+    'waktupelaksanaan' => '2025-05-12',
     'jumlahpeserta' => 50,
     'lokasi' => 'Jln Raya Semarang No. 22',
     'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja di bidang tukang bangunan sipil.',
     'isiagenda' => 'Materi meliputi teknik pemasangan struktur beton dan perawatan bangunan...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendaskk::create([
-    'id' => 3,
-    'namakegiatan' => 'Sertifikasi Tenaga Ahli Struktur Baja dalam Konstruksi - Jenjang 7',
-    'penyelenggara' => 'Kementerian PUPR',
-    'penutupan' => '2025-04-05',
-    'waktupelaksanaan' => '2025-04-07',
-    'jumlahpeserta' => 35,
-    'lokasi' => 'Jln Solo No. 18',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga ahli struktur baja dalam konstruksi.',
-    'isiagenda' => 'Peserta akan belajar teknik perhitungan beban dan pemasangan struktur baja...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendaskk::create([
-    'id' => 4,
-    'namakegiatan' => 'Sertifikasi Pengawas Konstruksi Bangunan dan Jalan - Jenjang 8',
-    'penyelenggara' => 'Asosiasi Kontraktor Indonesia',
-    'penutupan' => '2025-05-20',
-    'waktupelaksanaan' => '2025-05-22',
-    'jumlahpeserta' => 45,
-    'lokasi' => 'Jln Bandung No. 5',
-    'Keterangan' => 'Pelatihan dan sertifikasi pengawas konstruksi bangunan dan jalan.',
-    'isiagenda' => 'Peserta akan dibekali keterampilan dalam pengawasan proyek konstruksi...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-]);
-
-agendaskk::create([
-    'id' => 5,
-    'namakegiatan' => 'Sertifikasi Ahli Keselamatan dan Kesehatan Kerja Konstruksi - Jenjang 9',
-    'penyelenggara' => 'Universitas Teknologi Bandung',
-    'penutupan' => '2025-06-15',
-    'waktupelaksanaan' => '2025-06-17',
-    'jumlahpeserta' => 30,
-    'lokasi' => 'Jln Cirebon No. 8',
-    'Keterangan' => 'Pelatihan tentang standar keselamatan kerja dalam proyek konstruksi.',
-    'isiagenda' => 'Peserta akan memahami prosedur keselamatan dalam setiap tahap konstruksi...',
     'foto' => '01_agendapelatihan/agendapelatihans.jpg',
 ]);
 
