@@ -193,7 +193,7 @@
                             $isClosed = $today->greaterThanOrEqualTo($eventDate);
                             @endphp
                             @if ($isClosed)
-                                <button style="
+                            <button style="
                                     background-color: #FF0000;
                                     color: white;
                                     border: 2px solid #FF0000;
@@ -210,7 +210,7 @@
                                 " disabled>
                                     <i class="fas fa-times-circle"></i> Ditutup
                                 </button>
-                            @else
+                                @else
                                 <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
                                     <button style="
                                     background-color: #00098d;
@@ -238,6 +238,9 @@
                 </div>
 
                 @endforeach
+
+            </div>
+            <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
 
                 @foreach ($dataagendaskk as $item)
 
@@ -302,7 +305,7 @@
 
                 @endforeach
 
-            </div>
+        </div>
         </div>
 
 
