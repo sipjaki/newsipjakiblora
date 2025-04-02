@@ -45,6 +45,19 @@
                                 <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                             </div>
 
+                            <div>
+                                <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
+                                <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="75">75</option>
+                                    <option value="100">100</option>
+                                    <option value="150">150</option>
+                                    <option value="200">200</option>
+                                </select>
+                            </div>
+
 
                             <script>
                                 function updateEntries() {
@@ -108,6 +121,12 @@
                             <!-- Description Section -->
                             <br>
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} Kab Blora Tahun 2025</p>
+
+                            <div class="pagination-info-box" style="margin-right:300px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
+                                <div class="pagination-info" style="color: black; font-weight: 500; font-size:20px;">
+                                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
+                                </div>
+                            </div>
 
                             <!-- Pagination Section -->
                             <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
