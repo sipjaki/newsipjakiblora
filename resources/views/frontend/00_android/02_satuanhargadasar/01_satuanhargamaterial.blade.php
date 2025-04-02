@@ -8,6 +8,7 @@
 
     .fl-table th, .fl-table td {
         text-align: center;
+        border-radius: 10px;
         /* padding: 10px; */
     }
 
@@ -15,6 +16,7 @@
     .fl-table thead {
         background-color: #374151; /* Warna latar belakang untuk header tabel */
         color: white;
+        padding: 5px;
     }
 
     /* Gaya belang-belang */
