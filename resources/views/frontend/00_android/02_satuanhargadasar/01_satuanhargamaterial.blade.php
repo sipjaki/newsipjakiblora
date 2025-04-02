@@ -29,16 +29,16 @@
         <div class="flex flex-col z-30">
             <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
                 <div class="w-[30px] h-[30px] flex shrink-0">
-                    <button onclick="javascript:history.back()" style="background-color: white; border: 2px solid #ccc; border-radius: 15px; padding: 10px 20px; font-size: 16px; display: flex; align-items: center;">
-                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
-                    </button>
 
-                                    </div>
+                </div>
                 {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                     <div class="flex flex-col gap-[10px]">
                         <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p>
+                        <button onclick="javascript:history.back()" style="background-color: navy; border: 2px solid black; border-radius: 15px; padding: 10px 20px; font-size: 16px; display: flex; align-items: center;">
+                            <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+                        </button>
                         <div class="flex flex-col gap-[10px]">
                             {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
 
