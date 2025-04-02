@@ -82,7 +82,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: center;">
                                 <!-- Left: Search Input -->
                                 <div style="position: relative; display: inline-block; margin-right: 5px;">
-                                    <input type="search" id="searchInput" placeholder="Cari Bahan Material ...." onkeyup="searchTable()"
+                                    <input type="search" id="searchInput" placeholder="Cari Tukang ...." onkeyup="searchTable()"
                                            style="border: 1px solid #ccc; padding: 10px 40px 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                                     <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
@@ -125,7 +125,7 @@
                                 function searchTable() {
                                 let input = document.getElementById("searchInput").value;
 
-                                fetch(`/ressatuanhargamaterial?search=${input}`)
+                                fetch(`/ressatuanhargaupah?search=${input}`)
                                     .then(response => response.text())
                                     .then(html => {
                                         let parser = new DOMParser();
@@ -146,7 +146,7 @@
                                 <thead>
                                     <tr>
                                         <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                        <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Bahan Material </th>
+                                        <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Keahlian</th>
                                         <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;"> Satuan </th>
                                         <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px;"> Rp </th>
                                         <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Besaran </th>
