@@ -186,7 +186,7 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <p class="text-xs leading-[18px]">Kegiatan : <span class="font-bold" style="color: #28A745;">{{$item->namakegiatan}}</span></p>
+                            <p class="text-xs leading-[18px]">Kegiatan : <span class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</span></p>
                             @php
                             $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
                             $today = \Carbon\Carbon::now();
@@ -249,7 +249,7 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <p class="text-xs leading-[18px]">Kegiatan : <span class="font-bold" style="color: #28A745;">{{$menu->namakegiatan}}</span></p>
+                            <p class="text-xs leading-[18px]">Kegiatan : <span class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$menu->namakegiatan}}</span></p>
                             @php
                             $eventDate = \Carbon\Carbon::parse($menu->penutupan)->subDays(0);
                             $today = \Carbon\Carbon::now();
