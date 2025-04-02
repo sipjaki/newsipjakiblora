@@ -33,6 +33,7 @@ class FedashboardController extends Controller
         $dataartikel = artikeljakonmasjaki::orderBy('created_at', 'desc')->get(); //
         $dataheaderberanda = headerberanda::orderBy('created_at', 'desc')->get(); //
         $dataagendapelatihan = agendapelatihan::orderBy('created_at', 'desc')->get(); //
+        $agendaskk = agendaskk::orderBy('created_at', 'desc')->get(); //
 
 
         $user = Auth::user();
@@ -48,6 +49,7 @@ class FedashboardController extends Controller
                 'dataheaderberanda' => $dataheaderberanda, // Mengirimkan data paginasi ke view
                 'user' => $user, // Mengirimkan data paginasi ke view
                 'dataagendapelatihan' => $dataagendapelatihan, // Mengirimkan data paginasi ke view
+                'agendaskk' => $agendaskk, // Mengirimkan data paginasi ke view
             // 'databerita' => $databerita, // Mengirimkan data paginasi ke view
         ]);
     }
