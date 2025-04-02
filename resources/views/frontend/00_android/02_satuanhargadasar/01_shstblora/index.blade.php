@@ -208,7 +208,7 @@
 
                                 </section> --}}
 
-                            <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
+                            <div class="table-wrapper" style="margin-top:-130px;">
                             <table class="fl-table">
                                 <thead>
                                     <tr>
