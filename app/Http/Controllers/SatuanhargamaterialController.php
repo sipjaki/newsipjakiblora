@@ -1198,7 +1198,7 @@ class SatuanhargamaterialController extends Controller
             ]);
         }
 
-        return view('frontend.00_android.02_satuanhargadasar.03_satuanhargaperalatan.index', [
+        return view('frontend.00_android.02_satuanhargadasar.03_satuanhargaperalatan', [
             'title' => 'Satuan Harga Dasar Peralatan',
             'data' => $data,
             'perPage' => $perPage,
