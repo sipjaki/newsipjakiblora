@@ -213,19 +213,19 @@
                             @else
                                 <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
                                     <button style="
-                                        background-color: #001f3f;
-                                        color: white;
-                                        border: 2px solid #001f3f;
-                                        padding: 8px 12px;
-                                        font-size: 14px;
-                                        font-weight: bold;
-                                        border-radius: 6px;
-                                        cursor: pointer;
-                                        transition: all 0.3s ease;
-                                        display: flex;
-                                        align-items: center;
-                                        justify-content: center;
-                                        gap: 6px;
+                                    background-color: #001f3f;
+                                    color: white;
+                                    border: 2px solid #001f3f;
+                                    padding: 8px 12px;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    border-radius: 6px;
+                                    cursor: not-allowed;
+                                    opacity: 0.6;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    gap: 6px;
                                     " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
                                        onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
                                         <i class="fas fa-user-check"></i> Daftar
