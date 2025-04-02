@@ -233,7 +233,7 @@
                                 </a>
                             @endif
                         </div>
-                        <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
+                        {{-- <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
                     </div>
                 </div>
 
