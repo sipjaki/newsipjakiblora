@@ -29,39 +29,10 @@
         <div class="flex flex-col z-30">
             <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
                 <div class="w-[30px] h-[30px] flex shrink-0">
-                    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-                        <button onclick="window.history.back();"
-                                style="padding: 10px 20px;
-                                       background-color: white;
-                                       color: navy;
-                                       font-size: 16px;
-                                       border: 2px solid navy;
-                                       border-radius: 15px;
-                                       cursor: pointer;
-                                       transition: all 0.3s ease;
-                                       display: flex;
-                                       align-items: center;">
-                            <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
-                        </button>
-                    </div>
-
-                    <script>
-                        // Hover effect added via JavaScript
-                        const button = document.querySelector('button');
-                        button.addEventListener('mouseover', function () {
-                            button.style.backgroundColor = '#d3d3d3'; // Light gray background on hover
-                            button.style.color = 'white'; // White text color on hover
-                            button.style.borderColor = '#d3d3d3'; // Match border with background
-                        });
-
-                        button.addEventListener('mouseout', function () {
-                            button.style.backgroundColor = 'white'; // Reset to white background
-                            button.style.color = 'navy'; // Reset text to navy
-                            button.style.borderColor = 'navy'; // Reset border color to navy
-                        });
-                    </script>
-
-                </div>
+                    <a href="javascript:history.back()">
+                        <i class="fas fa-arrow-left"></i> Kembali
+                    </a>
+                                    </div>
                 {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
