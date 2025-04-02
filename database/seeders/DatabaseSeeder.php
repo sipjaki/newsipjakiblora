@@ -231,7 +231,7 @@ headerberanda::create([
             'username' => 'Sigit',
             'statusadmin_id' => '2',
             'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitseptiadi1@gmail.com',
+            'email' => 'sigitseptiadi2@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
