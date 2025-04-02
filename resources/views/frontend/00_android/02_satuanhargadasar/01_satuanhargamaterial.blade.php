@@ -4,11 +4,12 @@
         margin-top: 15px;
         width: 100%;
         border-collapse: collapse;
+        border-radius: 10px;
     }
 
     .fl-table th, .fl-table td {
         text-align: center;
-        border-radius: 10px;
+        /* border-radius: 10px; */
         /* padding: 10px; */
     }
 
