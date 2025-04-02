@@ -60,7 +60,7 @@
                             button.style.borderColor = 'navy'; // Reset border color to navy
                         });
                     </script>
-                    <img src="assets/images/icons/lovely.svg" alt="icon">
+                    {{-- <img src="assets/images/icons/lovely.svg" alt="icon"> --}}
                 </div>
                 {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
