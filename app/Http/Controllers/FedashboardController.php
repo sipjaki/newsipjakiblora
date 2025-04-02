@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\agendapelatihan;
+use App\Models\agendaskk;
 use Illuminate\Http\Request;
 
 use App\Models\berita; // Pastikan namespace model sesuai dengan struktur direktori
@@ -57,6 +58,7 @@ class FedashboardController extends Controller
         $dataartikel = artikeljakonmasjaki::orderBy('created_at', 'desc')->get(); //
         $dataheaderberanda = headerberanda::orderBy('created_at', 'desc')->get(); //
         $dataagendapelatihan = agendapelatihan::orderBy('created_at', 'desc')->get(); //
+        $dataagendaskk = agendaskk::orderBy('created_at', 'desc')->get(); //
         $user = Auth::user();
 
 
@@ -69,6 +71,7 @@ class FedashboardController extends Controller
             'dataartikel' => $dataartikel, // Mengirimkan data paginasi ke view
             'dataheaderberanda' => $dataheaderberanda, // Mengirimkan data paginasi ke view
             'dataagendapelatihan' => $dataagendapelatihan, // Mengirimkan data paginasi ke view
+            'dataagendaskk' => $dataagendaskk, // Mengirimkan data paginasi ke view
             'user' => $user, // Mengirimkan data paginasi ke view
             // 'databerita' => $databerita, // Mengirimkan data paginasi ke view
         ]);

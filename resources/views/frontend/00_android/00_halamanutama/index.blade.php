@@ -239,6 +239,69 @@
 
                 @endforeach
 
+                @foreach ($dataagendaskk as $item)
+
+                <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
+                    <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
+                        <a href="details.html">
+                            <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
+                                <img src="{{asset('storage/' . $item->foto)}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                            </div>
+                        </a>
+                        <div class="flex flex-col gap-[6px]">
+                            <p class="text-xs leading-[18px]">Kegiatan : <span class="font-bold" style="color: #28A745;">{{$item->namakegiatan}}</span></p>
+                            @php
+                            $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
+                            $today = \Carbon\Carbon::now();
+                            $isClosed = $today->greaterThanOrEqualTo($eventDate);
+                            @endphp
+                            @if ($isClosed)
+                                <button style="
+                                    background-color: #FF0000;
+                                    color: white;
+                                    border: 2px solid #FF0000;
+                                    padding: 8px 12px;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    border-radius: 6px;
+                                    cursor: not-allowed;
+                                    opacity: 0.6;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    gap: 6px;
+                                " disabled>
+                                    <i class="fas fa-times-circle"></i> Ditutup
+                                </button>
+                            @else
+                                <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
+                                    <button style="
+                                    background-color: #00098d;
+                                    color: white;
+                                    border: 2px solid #00098d;
+                                    padding: 8px 12px;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    border-radius: 6px;
+                                    opacity: 0.6;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    gap: 6px;
+                                    width:100%;
+                                    " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
+                                       onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
+                                        <i class="fas fa-user-check"></i> Daftar
+                                    </button>
+                                </a>
+                            @endif
+                        </div>
+                        {{-- <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
+                    </div>
+                </div>
+
+                @endforeach
+
             </div>
         </div>
 
