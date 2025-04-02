@@ -9138,6 +9138,128 @@ satuanhargamaterial::create([
     'besaran' => '600',
 ]);
 
+// -----------------
+satuanhargamaterial::create([
+    'uraian' => 'Lamp Indicator dan aksesoris',
+    'satuan' => 'unit',
+    'besaran' => '400000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Lampu Sorot LED 100 Watt dan aksesoris',
+    'satuan' => 'unit',
+    'besaran' => '1000000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Lampu Sorot RGB 30 Watt untuk Outdoor dan aksesoris',
+    'satuan' => 'unit',
+    'besaran' => '400000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Lasdop',
+    'satuan' => 'buah',
+    'besaran' => '200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCB Box dan aksesoris',
+    'satuan' => 'unit',
+    'besaran' => '250000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCB 6 A; 4,5 KA (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '72050',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCB 10 A / 6 KA (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '105000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCB MCB 20 A / 10 KA (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '178200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 10 A / 18 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '729850',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 16 A / 18 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '729850',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 20 A / 18 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '859050',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 25 A / 18 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '859050',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 35 A / 18 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '945000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 40 A / 18 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '945000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 50 A / 25 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '1150000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 60 A / 25 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '1150000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 80 A / 25 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '1200000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 100 A / 25 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '1332100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 125 A / 25 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '1394800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 140 A / 25 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'unit',
+    'besaran' => '1454200',
+]);
+
+
 //======================== ===================================================================================
 // SATUAN HARGA UPAH MAS JAKI BLORA
 satuanhargaupahtenagakerja::create([
