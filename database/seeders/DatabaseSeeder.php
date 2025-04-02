@@ -9141,123 +9141,305 @@ satuanhargamaterial::create([
 // -----------------
 satuanhargamaterial::create([
     'uraian' => 'Lamp Indicator dan aksesoris',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '400000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'Lampu Sorot LED 100 Watt dan aksesoris',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '1000000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'Lampu Sorot RGB 30 Watt untuk Outdoor dan aksesoris',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '400000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'Lasdop',
-    'satuan' => 'buah',
+    'satuan' => 'Buah',
     'besaran' => '200',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCB Box dan aksesoris',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '250000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCB 6 A; 4,5 KA (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '72050',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCB 10 A / 6 KA (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '105000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCB MCB 20 A / 10 KA (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '178200',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 10 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '729850',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 16 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '729850',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 20 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '859050',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 25 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '859050',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 35 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '945000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 40 A / 18 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '945000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 50 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '1150000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 60 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '1150000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 80 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '1200000',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 100 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '1332100',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 125 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '1394800',
 ]);
 
 satuanhargamaterial::create([
     'uraian' => 'MCCB 140 A / 25 KA, 3P (Eks. Schneider / setara)',
-    'satuan' => 'unit',
+    'satuan' => 'Unit',
     'besaran' => '1454200',
 ]);
+
+// ----------
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 160 A / 25 KA, 3P',
+    'satuan' => 'Unit',
+    'besaran' => '1454200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 200 A / 36 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'Unit',
+    'besaran' => '1799600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 250 A / 36 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'Unit',
+    'besaran' => '1799600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 300 A / 36 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'Unit',
+    'besaran' => '2997500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 350 A / 50 KA, 3P',
+    'satuan' => 'Unit',
+    'besaran' => '3500000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 400 A / 50 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'Unit',
+    'besaran' => '3825800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 500 A / 50 KA, 3P (Eks. Schneider / setara)',
+    'satuan' => 'Unit',
+    'besaran' => '7746750',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MCCB 1000 A / 50 KA, 3P',
+    'satuan' => 'Unit',
+    'besaran' => '17500000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Penyambungan Daya PLN (Rata-rata)',
+    'satuan' => 'Va',
+    'besaran' => '1500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pilot lamp',
+    'satuan' => 'Buah',
+    'besaran' => '42500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Fuse 2A',
+    'satuan' => 'Buah',
+    'besaran' => '15000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'CT',
+    'satuan' => 'Buah',
+    'besaran' => '100000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Kabel 50 mm2',
+    'satuan' => 'M1',
+    'besaran' => '95000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => '1 unit Ground 5/8\' Panjang 4 meter',
+    'satuan' => 'Unit',
+    'besaran' => '1500000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => '1 bh Pasang Ampere meter + CT 0 - 1000 A',
+    'satuan' => 'Buah',
+    'besaran' => '375000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => '1 bh Pasang Volt meter',
+    'satuan' => 'Buah',
+    'besaran' => '400000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => '1 bh Pasang Selektor 380v/220v',
+    'satuan' => 'Buah',
+    'besaran' => '225000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Penangkal Petir Sangkar Faraday Radius ± 120',
+    'satuan' => 'Set',
+    'besaran' => '12000000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MDP Wall Mounted ukuran 60 x 100 x 25 Cm termasuk material bantu / aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '3130600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'MDP Wall Mounted ukuran 80 x 120 x 30 Cm termasuk material bantu / aksesoris',
+    'satuan' => 'unit',
+    'besaran' => '5509900',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 2 x 4 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '17000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 3 x 4 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '23000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 10 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '105600',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 16 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '156000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 25 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '239500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 35 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '326500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 4 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '47300',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 50 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '433000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 6 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '66200',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 70 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '614000',
+]);
+
 
 
 //======================== ===================================================================================
