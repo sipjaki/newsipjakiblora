@@ -160,8 +160,8 @@
                                             <td style="text-align: center; padding: 5px;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td style="text-align: center; padding: 5px;">
                                                 {{ optional($item->hspdivisi)->id }}.
-                                                {{ optional($item->hsppaket)->id }}.
-                                                {{ optional($item->hspkodepekerjaan)->kodepekerjaan }}.
+                                                {{ optional($item->hsppaket7)->id }}.
+                                                {{ optional($item->hspkodepekerjaan7)->kodepekerjaan }}.
                                                 {{$item->kode}}
                                             </td>
                                             <td style="text-align: left; padding: 5px;">
