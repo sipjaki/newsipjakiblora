@@ -53,6 +53,7 @@ Route::get('/resberita/{judulberita}', [BeritajakonController::class, 'androidbe
 Route::get('/ressatuanhargadasar', [SatuanhargamaterialController::class, 'satuanhargamaterial']);
 Route::get('/ressatuanhargamaterial', [SatuanhargamaterialController::class, 'satuanhargamaterialshow']);
 Route::get('/ressatuanhargaupah', [SatuanhargamaterialController::class, 'ressatuanhargaupah']);
+Route::get('/ressatuanhargaperalatan', [SatuanhargamaterialController::class, 'ressatuanhargaperalatan']);
 
 
 // ==========================================================================================================================================
