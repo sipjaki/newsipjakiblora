@@ -1220,5 +1220,49 @@ class SatuanhargamaterialController extends Controller
         ]);
     }
 
+    public function resahspdiv1(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.01_divisi1.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.01_divisi1.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi I Persiapan Pekerjaan',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+
 
 }

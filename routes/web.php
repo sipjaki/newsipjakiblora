@@ -56,6 +56,7 @@ Route::get('/ressatuanhargaupah', [SatuanhargamaterialController::class, 'ressat
 Route::get('/ressatuanhargaperalatan', [SatuanhargamaterialController::class, 'ressatuanhargaperalatan']);
 Route::get('/resshstblora', [ShstbloraController::class, 'resshstblora']);
 Route::get('/resahspkonstruksi', [SatuanhargamaterialController::class, 'resahspkonstruksi']);
+Route::get('/resahspdiv1', [SatuanhargamaterialController::class, 'resahspdiv1']);
 
 
 // ==========================================================================================================================================
