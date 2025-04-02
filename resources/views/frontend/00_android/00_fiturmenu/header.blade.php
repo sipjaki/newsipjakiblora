@@ -10,6 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/assets/00_android/js/flickity.min.css" media="screen">
     <link rel="icon" href="/assets/icon/logokabupatenblora.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <title>{{$title}}</title>
 
