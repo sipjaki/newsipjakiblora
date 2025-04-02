@@ -29,10 +29,10 @@
         <div class="flex flex-col z-30">
             <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
                 <div class="w-[30px] h-[30px] flex shrink-0">
-
-                    <button onclick="javascript:history.back()">
-                        <i class="fas fa-arrow-left"></i> Kembali
+                    <button onclick="javascript:history.back()" style="background-color: white; border: 2px solid #ccc; border-radius: 15px; padding: 10px 20px; font-size: 16px; display: flex; align-items: center;">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
                     </button>
+
                                     </div>
                 {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
