@@ -45,19 +45,28 @@
                                 <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                             </div>
 
-                            <div>
-                                <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
-                                <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="75">75</option>
-                                    <option value="100">100</option>
-                                    <option value="150">150</option>
-                                    <option value="200">200</option>
-                                </select>
-                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <!-- Left: Search Input -->
+                                <div style="position: relative; display: inline-block; margin-right: 10px;">
+                                    <input type="search" id="searchInput" placeholder="Cari Bahan Material ...." onkeyup="searchTable()"
+                                           style="border: 1px solid #ccc; padding: 10px 40px 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                    <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                                </div>
 
+                                <!-- Right: Show Entries Dropdown -->
+                                <div>
+                                    <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
+                                    <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="75">75</option>
+                                        <option value="100">100</option>
+                                        <option value="150">150</option>
+                                        <option value="200">200</option>
+                                    </select>
+                                </div>
+                            </div>
 
                             <script>
                                 function updateEntries() {
