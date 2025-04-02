@@ -1264,5 +1264,354 @@ class SatuanhargamaterialController extends Controller
     }
 
 
+    public function resahspdiv2(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum2::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.02_divisi2.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.02_divisi2.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi II Pekerjaan Struktur',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+
+
+    public function resahspdiv3(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum3::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.03_divisi3.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.03_divisi3.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi III Pekerjaan Arsitektur',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+    public function resahspdiv4(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum4::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.04_divisi4.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.04_divisi4.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi IV Pekerjaan Lansekap',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+
+
+    public function resahspdiv5(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum5::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.05_divisi5.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.05_divisi5.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi V Pekerjaan Mekanikal Elektrikal',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+    public function resahspdiv6(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum6::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.06_divisi6.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.06_divisi6.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi VI Pekerjaan Plumbing',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+    public function resahspdiv7(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum7::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.07_divisi7.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.07_divisi7.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi VII Pekerjaan Jalan Pada Permukiman',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+    public function resahspdiv8(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum8::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.08_divisi8.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.08_divisi8.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi VIII Drainase Jalan',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+    public function resahspdiv9(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = hspkonstruksiumum9::query();
+
+        if ($search) {
+            $query->where('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('jenispekerjaan', 'LIKE', "%{$search}%")
+                  ->orWhere('hargasatuan', 'LIKE', "%{$search}%")
+                  ->orWhere('satuanmaterial', 'LIKE', "%{$search}%")
+
+                  ->orWhereHas('hspdivisi', function ($q) use ($search) {
+                      $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+
+                  ->orWhereHas('hsppaket', function ($q) use ($search) {
+                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  })
+
+                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                      $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  });
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.09_divisi9.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.09_divisi9.index', [
+            'title' => 'Harga Satuan Pekerjaan Divisi IX Pekerjaan Pipa di Luar Bangunan Gedung',
+            'data' => $data,
+            // 'subdata' => $subdata,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+
 
 }

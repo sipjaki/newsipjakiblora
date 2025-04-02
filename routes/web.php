@@ -57,6 +57,14 @@ Route::get('/ressatuanhargaperalatan', [SatuanhargamaterialController::class, 'r
 Route::get('/resshstblora', [ShstbloraController::class, 'resshstblora']);
 Route::get('/resahspkonstruksi', [SatuanhargamaterialController::class, 'resahspkonstruksi']);
 Route::get('/resahspdiv1', [SatuanhargamaterialController::class, 'resahspdiv1']);
+Route::get('/resahspdiv2', [SatuanhargamaterialController::class, 'resahspdiv2']);
+Route::get('/resahspdiv3', [SatuanhargamaterialController::class, 'resahspdiv3']);
+Route::get('/resahspdiv4', [SatuanhargamaterialController::class, 'resahspdiv4']);
+Route::get('/resahspdiv5', [SatuanhargamaterialController::class, 'resahspdiv5']);
+Route::get('/resahspdiv6', [SatuanhargamaterialController::class, 'resahspdiv6']);
+Route::get('/resahspdiv7', [SatuanhargamaterialController::class, 'resahspdiv7']);
+Route::get('/resahspdiv8', [SatuanhargamaterialController::class, 'resahspdiv8']);
+Route::get('/resahspdiv9', [SatuanhargamaterialController::class, 'resahspdiv9']);
 
 
 // ==========================================================================================================================================

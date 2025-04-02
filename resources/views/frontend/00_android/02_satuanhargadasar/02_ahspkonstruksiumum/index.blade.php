@@ -45,7 +45,7 @@
                             </a>
 
 
-                        <a href="/404" class="card">
+                        <a href="/resahspdiv2" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -60,7 +60,7 @@
                             </a>
 
 
-                        <a href="/404" class="card">
+                        <a href="/resahspdiv3" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -74,7 +74,7 @@
                             </div>
                             </a>
 
-                        <a href="/404" class="card">
+                        <a href="/resahspdiv4" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -88,7 +88,7 @@
                             </div>
                             </a>
 
-                        <a href="/404" class="card">
+                        <a href="/resahspdiv5" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -102,7 +102,7 @@
                             </div>
                             </a>
 
-                        <a href="/404" class="card">
+                        <a href="/resahspdiv6" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -116,7 +116,7 @@
                             </div>
                             </a>
 
-                        <a href="/404" class="card">
+                        <a href="/resahspdiv7" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -130,7 +130,7 @@
                             </div>
                             </a>
 
-                        <a href="/404" class="card">
+                        <a href="/resahspdiv8" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -144,7 +144,7 @@
                             </div>
                             </a>
 
-                        <a href="/404" class="card">
+                        <a href="/resahspdiv9" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
