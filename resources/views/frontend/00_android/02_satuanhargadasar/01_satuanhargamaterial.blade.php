@@ -43,7 +43,6 @@
 
                             <div style="display: flex; justify-content: space-between; align-items: center;">
                                 <!-- Left: Search Input -->
-                                <div style="display: flex; align-items: center; gap: 10px;">
                                     <!-- Input Search -->
                                     <div style="position: relative; flex-grow: 1;">
                                         <input type="search" id="searchInput" placeholder="Cari Bahan Material ...." onkeyup="searchTable()"
@@ -75,7 +74,6 @@
                                             <option value="200">200</option>
                                         </select>
                                     </div>
-                                </div>
 
                             <script>
                                 function updateEntries() {
