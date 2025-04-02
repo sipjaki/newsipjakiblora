@@ -84,7 +84,7 @@
                                     <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
 
-                                <a href="javascript:history.back()">
+                                {{-- <a href="javascript:history.back()">
                                     <button
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -93,7 +93,7 @@
                                     <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
                                     Kembali
                                 </button>
-                                </a>
+                                </a> --}}
 
                                 <!-- Right: Show Entries Dropdown -->
                                 <div>
