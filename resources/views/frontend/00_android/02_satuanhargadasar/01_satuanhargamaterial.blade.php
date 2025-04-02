@@ -54,17 +54,6 @@
                                     </button>
                                 </div>
 
-                                <style>
-                                    div:hover {
-                                        background-color: white;
-                                    }
-
-                                    button:hover {
-                                        background-color: transparent;
-                                        color: black;
-                                    }
-                                </style>
-
                                 <!-- Right: Show Entries Dropdown -->
                                 <div>
                                     <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
