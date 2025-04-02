@@ -152,7 +152,7 @@
                 </div>
                 <div class="px-2 first-of-type:pl-4 last-of-type:pr-4 mb-6">
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
-                        <a href="/404">
+                        <a href="/resshstblora">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
                                 <img src="/assets/00_android/iconmenu/shstblora.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>

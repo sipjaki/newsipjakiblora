@@ -21,4 +21,19 @@ class ShstbloraController extends Controller
         ]);
     }
 
+    // VERSI ANDROID
+    public function resshstblora()
+    {
+        $data = shstblora::all();
+        $user = Auth::user();
+
+        return view('frontend.00_android.02_satuanhargadasar.01_shstblora.index', [
+            'title' => 'Standar Harga Satuan Tertinggi Tahun 2025 Kabupaten Blora',
+            'user' => $user, // Mengirimkan data paginasi ke view
+            'data' => $data, // Mengirimkan data paginasi ke view
+        ]);
+    }
+
+
+
 }
