@@ -31,18 +31,74 @@
                 {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
-                <div class="flex flex-col gap-[10px]">
-                    {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
-                    <div class="flex items-center gap-2">
-                        <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
-                            {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
+                    <div class="flex flex-col gap-[10px]">
+                        {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
+                        <div class="flex flex-col gap-[10px]">
+                            {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
+                            <div class="flex items-center gap-2">
+                                <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
+                                    {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
+                                </div>
+                                <div class="flex gap-1 items-center">
+                                    {{-- Add any content you need here --}}
+                                </div>
+                            </div>
 
-                        </div>
-                        <div class="flex gap-1 items-center">
+                            <!-- Table Section -->
+                            <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr>
+                                        <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
+                                        <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Bahan Material <span class="sort-icon">⇅</span></th>
+                                        {{-- <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:200px;"> Kode <span class="sort-icon">⇅</span></th> --}}
+                                        <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;"> Satuan <span class="sort-icon">⇅</span></th>
+                                        <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px;"> Rp. <span class="sort-icon">⇅</span></th>
+                                        <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Besaran <span class="sort-icon">⇅</span></th>
+                                        {{-- <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:100px;"> Rp. <span class="sort-icon">⇅</span></th>
+                                        <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:200px;"> Besaran Per Jam  <span class="sort-icon">⇅</span></th> --}}
+                                        {{-- <th style="text-align:center; width:100px;"> View </th> --}}
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                                    @foreach ($data as $item )
+                                    <tr>
+                                        <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                        <td style="text-align: left;">{{$item->uraian}}</td>
+                                        {{-- <td style="text-align: center;">{{$item->kode}}</td> --}}
+                                        <td style="text-align: center; color:red;">{{$item->satuan}}</td>
+                                        <td style="text-align: center;">Rp.</td>
+                                        <td style="text-align: right; color:black;">{{ number_format((float) $item->besaran, 0, ',', '.') }},-</td>
+                                        {{-- <td style="text-align: center;">Rp.</td>
+                                        <td style="text-align: right;">{{ number_format((float) $item->besaranperjam, 0, ',', '.') }},-</td> --}}
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
 
+                            <!-- Description Section -->
+                            <br>
+                            <p style="color: black; font-weight:bold;">Keterangan : {{$title}} Kab Blora Tahun 2025</p>
+
+                            <!-- Pagination Section -->
+                            <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
+                                <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
+                                    <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
+                                        <a class="page-link" href="{{ $data->previousPageUrl() }}">
+                                            <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>Previous
+                                        </a>
+                                    </li>
+                                    <li class="page-item {{ $data->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
+                                        <a class="page-link" href="{{ $data->nextPageUrl() }}">
+                                            Next <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+
                     </div>
-                </div>
+
                 <div class="flex flex-col gap-2">
 
                     {{-- <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
@@ -53,6 +109,7 @@
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quis laboriosam delectus, ullam modi ea beatae sint repudiandae perferendis excepturi id! Magni recusandae, ipsam ab voluptas dolorum itaque ipsa repellat sit, quos natus dolorem nam earum commodi cum nobis harum non id eaque vero tempore odit? Asperiores, culpa, pariatur nostrum alias modi dignissimos fuga sapiente nemo accusantium laudantium similique vel deserunt ipsum. Architecto accusantium enim labore saepe, voluptate maxime, quasi recusandae nemo fugit fuga molestias sed a! Exercitationem perferendis dolorum ducimus totam quae suscipit dolor numquam provident dicta, autem maiores dolore tempora dolorem at, eveniet assumenda quis illo eius quaerat.</p>
                     {{-- <p class="text-sm leading-[26px]">{!!$data->keterangan!!}</p> --}}
                 </div>
+
                 <div class="flex flex-col gap-[2px]">
                     <h2 class="font-semibold text-sm">Redaksi</h2>
                 </div>
