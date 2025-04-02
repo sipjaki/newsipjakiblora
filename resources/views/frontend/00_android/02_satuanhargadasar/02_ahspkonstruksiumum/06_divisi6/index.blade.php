@@ -125,7 +125,7 @@
                                 function searchTable() {
                                 let input = document.getElementById("searchInput").value;
 
-                                fetch(`/resahspdiv1?search=${input}`)
+                                fetch(`/resahspdiv6?search=${input}`)
                                     .then(response => response.text())
                                     .then(html => {
                                         let parser = new DOMParser();
