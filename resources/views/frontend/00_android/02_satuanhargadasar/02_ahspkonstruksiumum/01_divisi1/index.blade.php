@@ -141,31 +141,30 @@
 
 
                             <!-- Table Section -->
-
-                            <div style="overflow-x: auto; margin-top: 15px;">
-                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
+                            <div style="overflow-x: auto; margin-top: 15px; border-radius: 15px; border: 1px solid #ccc;">
+                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden;">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Kode </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;"> Pekerjaan </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;"> Satuan </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px;"> Rp </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Besaran </th>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> No </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px; padding: 5px;"> Kode </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Pekerjaan </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Satuan </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> Rp </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Besaran </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
                                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
                                         @foreach ($data as $item)
                                         <tr>
-                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-align: center;">
+                                            <td style="text-align: center; padding: 5px;">{{ $loop->iteration + $start - 1 }}</td>
+                                            <td style="text-align: center; padding: 5px;">
                                                 {{ optional($item->hspdivisi)->id }}.
                                                 {{ optional($item->hsppaket)->id }}.
                                                 {{ optional($item->hspkodepekerjaan)->kodepekerjaan }}.
                                                 {{$item->kode}}
                                             </td>
-                                            <td style="text-align: left">
+                                            <td style="text-align: left; padding: 5px;">
                                                 @if(isset($item->id) && !empty($item->id))
                                                     <a href="javascript:void(0);"
                                                        style="color: blue; text-decoration: none;"
@@ -185,14 +184,15 @@
                                                     window.location.href = "/satuanhargadivisi1/" + encodeURIComponent(id);
                                                 }
                                             </script>
-                                            <td style="text-align: center; color:red;" >{{$item->satuanmaterial}}</td>
-                                            <td style="text-align: center;">Rp</td>
-                                            <td style="text-align: right;">{{ number_format((float) $item->hargasatuan, 0, ',', '.') }},-</td>
+                                            <td style="text-align: center; color:red; padding: 5px;" >{{$item->satuanmaterial}}</td>
+                                            <td style="text-align: center; padding: 5px;">Rp</td>
+                                            <td style="text-align: right; padding: 5px;">{{ number_format((float) $item->hargasatuan, 0, ',', '.') }},-</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
                             </div>
+
                             <!-- Description Section -->
                             <br>
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} Kab Blora Tahun 2025</p>
