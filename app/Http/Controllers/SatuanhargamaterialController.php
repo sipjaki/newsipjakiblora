@@ -1281,11 +1281,11 @@ class SatuanhargamaterialController extends Controller
                       $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
 
-                  ->orWhereHas('hsppaket', function ($q) use ($search) {
-                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  ->orWhereHas('hsppaket2', function ($q) use ($search) {
+                      $q->where('hsppaket2', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   })
 
-                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                  ->orWhereHas('hspkodepekerjaan2', function ($q) use ($search) {
                       $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   });
         }
@@ -1326,11 +1326,11 @@ class SatuanhargamaterialController extends Controller
                       $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
 
-                  ->orWhereHas('hsppaket', function ($q) use ($search) {
-                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  ->orWhereHas('hsppaket3', function ($q) use ($search) {
+                      $q->where('hsppaket3', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   })
 
-                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                  ->orWhereHas('hspkodepekerjaan3', function ($q) use ($search) {
                       $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   });
         }
@@ -1369,11 +1369,11 @@ class SatuanhargamaterialController extends Controller
                       $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
 
-                  ->orWhereHas('hsppaket', function ($q) use ($search) {
-                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  ->orWhereHas('hsppaket4', function ($q) use ($search) {
+                      $q->where('hsppaket4', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   })
 
-                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                  ->orWhereHas('hspkodepekerjaan4', function ($q) use ($search) {
                       $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   });
         }
@@ -1414,11 +1414,11 @@ class SatuanhargamaterialController extends Controller
                       $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
 
-                  ->orWhereHas('hsppaket', function ($q) use ($search) {
-                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  ->orWhereHas('hsppaket5', function ($q) use ($search) {
+                      $q->where('hsppaket5', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   })
 
-                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                  ->orWhereHas('hspkodepekerjaan5', function ($q) use ($search) {
                       $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   });
         }
@@ -1457,11 +1457,11 @@ class SatuanhargamaterialController extends Controller
                       $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
 
-                  ->orWhereHas('hsppaket', function ($q) use ($search) {
-                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  ->orWhereHas('hsppaket6', function ($q) use ($search) {
+                      $q->where('hsppaket6', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   })
 
-                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                  ->orWhereHas('hspkodepekerjaan6', function ($q) use ($search) {
                       $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   });
         }
@@ -1500,11 +1500,11 @@ class SatuanhargamaterialController extends Controller
                       $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
 
-                  ->orWhereHas('hsppaket', function ($q) use ($search) {
-                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  ->orWhereHas('hsppaket7', function ($q) use ($search) {
+                      $q->where('hsppaket7', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   })
 
-                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                  ->orWhereHas('hspkodepekerjaan7', function ($q) use ($search) {
                       $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   });
         }
@@ -1543,11 +1543,11 @@ class SatuanhargamaterialController extends Controller
                       $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
 
-                  ->orWhereHas('hsppaket', function ($q) use ($search) {
-                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  ->orWhereHas('hsppaket8', function ($q) use ($search) {
+                      $q->where('hsppaket8', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   })
 
-                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                  ->orWhereHas('hspkodepekerjaan8', function ($q) use ($search) {
                       $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   });
         }
@@ -1586,11 +1586,11 @@ class SatuanhargamaterialController extends Controller
                       $q->where('hspdivisi', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
 
-                  ->orWhereHas('hsppaket', function ($q) use ($search) {
-                      $q->where('hsppaket', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+                  ->orWhereHas('hsppaket9', function ($q) use ($search) {
+                      $q->where('hsppaket9', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   })
 
-                  ->orWhereHas('hspkodepekerjaan', function ($q) use ($search) {
+                  ->orWhereHas('hspkodepekerjaan9', function ($q) use ($search) {
                       $q->where('namapekerjaan', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
                   });
         }
