@@ -48,11 +48,15 @@
                                            style="border: 1px solid #ccc; padding: 10px 40px 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                                     <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
-                                <div style="display: inline-block; background-color: #90ee90; border-radius: 15px; padding: 10px 20px; transition: background-color 0.3s; border: 2px solid #ccc;">
-                                    <button onclick="javascript:history.back()" style="background-color: transparent; border: none; font-size: 14px; color: black; display: flex; align-items: center;">
-                                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
-                                    </button>
-                                </div>
+                                <a href="javascript:history.back()">
+                                    <button
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                    <!-- Ikon Kembali -->
+                                    <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
+                                    Kembali
+                                </button>
 
                                 <!-- Right: Show Entries Dropdown -->
                                 <div>
