@@ -29,7 +29,7 @@
         <div class="flex flex-col z-30">
             <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
                 <div class="w-[30px] h-[30px] flex shrink-0">
-                    <div style="display: flex; justify-content: center; align-items: center;">
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
                         <button onclick="window.history.back();"
                                 style="padding: 10px 20px;
                                        background-color: white;
@@ -60,7 +60,7 @@
                             button.style.borderColor = 'navy'; // Reset border color to navy
                         });
                     </script>
-                    {{-- <img src="assets/images/icons/lovely.svg" alt="icon"> --}}
+
                 </div>
                 {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
