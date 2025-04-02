@@ -32,7 +32,7 @@
             </div>
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                     <div class="flex flex-col gap-[10px]">
-                        {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
+                        <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p>
                         <div class="flex flex-col gap-[10px]">
                             {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
                             <div class="flex items-center gap-2">
@@ -43,6 +43,38 @@
                                     {{-- Add any content you need here --}}
                                 </div>
                             </div>
+
+                            <div style="position: relative; display: inline-block; margin-right:10px;">
+                                <input type="search" id="searchInput" placeholder="Cari Bahan Material ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            </div>
+
+                            <script>
+                                function updateEntries() {
+                                    let selectedValue = document.getElementById("entries").value;
+                                    let url = new URL(window.location.href);
+                                    url.searchParams.set("perPage", selectedValue);
+                                    window.location.href = url.toString();
+                                }
+
+
+                                function searchTable() {
+                                let input = document.getElementById("searchInput").value;
+
+                                fetch(`/ressatuanhargamaterial?search=${input}`)
+                                    .then(response => response.text())
+                                    .then(html => {
+                                        let parser = new DOMParser();
+                                        let doc = parser.parseFromString(html, "text/html");
+                                        let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                                        document.querySelector("#tableBody").innerHTML = newTableBody;
+                                    })
+                                    .catch(error => console.error("Error fetching search results:", error));
+                            }
+
+                                    </script>
+
+
 
                             <!-- Table Section -->
                             <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
@@ -95,6 +127,8 @@
                                     </li>
                                 </ul>
                             </div>
+
+
                         </div>
 
                     </div>
@@ -102,16 +136,6 @@
                 <div class="flex flex-col gap-2">
 
                     {{-- <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
-                </div>
-                <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
-                    {{-- <h2 class="font-semibold text-sm">Mereka Senang dan Bahagia</h2> --}}
-
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet quis laboriosam delectus, ullam modi ea beatae sint repudiandae perferendis excepturi id! Magni recusandae, ipsam ab voluptas dolorum itaque ipsa repellat sit, quos natus dolorem nam earum commodi cum nobis harum non id eaque vero tempore odit? Asperiores, culpa, pariatur nostrum alias modi dignissimos fuga sapiente nemo accusantium laudantium similique vel deserunt ipsum. Architecto accusantium enim labore saepe, voluptate maxime, quasi recusandae nemo fugit fuga molestias sed a! Exercitationem perferendis dolorum ducimus totam quae suscipit dolor numquam provident dicta, autem maiores dolore tempora dolorem at, eveniet assumenda quis illo eius quaerat.</p>
-                    {{-- <p class="text-sm leading-[26px]">{!!$data->keterangan!!}</p> --}}
-                </div>
-
-                <div class="flex flex-col gap-[2px]">
-                    <h2 class="font-semibold text-sm">Redaksi</h2>
                 </div>
 
             </div>
