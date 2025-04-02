@@ -158,7 +158,7 @@
                                         @foreach ($data as $item)
                                         <tr>
                                             <td style="text-align: center; padding: 5px;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-align: center; padding: 5px;">
+                                            <td style="text-align: left; padding: 5px;">
                                                 {{ optional($item->hspdivisi)->id }}.
                                                 {{ optional($item->hsppaket3)->id }}.
                                                 {{ optional($item->hspkodepekerjaan3)->kodepekerjaan }}.
