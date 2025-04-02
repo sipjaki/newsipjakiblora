@@ -1112,4 +1112,35 @@ class SatuanhargamaterialController extends Controller
             // 'data' => $datamaterial, // Mengirimkan data paginasi ke view
         ]);
     }
+
+    public function satuanhargamaterialshow(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = satuanhargamaterial::query();
+
+        if ($search) {
+            $query->where('uraian', 'LIKE', "%{$search}%")
+                  ->orWhere('satuan', 'LIKE', "%{$search}%")
+                  ->orWhere('besaran', 'LIKE', "%{$search}%");
+                //   ->orWhere('keterangan', 'LIKE', "%{$search}%");
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.01_satuanhargamaterial', [
+            'title' => 'Satuan Harga Dasar Material',
+            'data' => $data,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
 }
