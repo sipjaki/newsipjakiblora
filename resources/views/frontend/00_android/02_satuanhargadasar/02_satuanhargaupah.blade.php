@@ -1,4 +1,4 @@
-    <style>
+<style>
     /* Gaya untuk tabel */
     .fl-table {
         margin-top: 15px;

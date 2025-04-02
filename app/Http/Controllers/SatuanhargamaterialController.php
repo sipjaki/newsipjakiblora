@@ -1143,4 +1143,37 @@ class SatuanhargamaterialController extends Controller
         ]);
     }
 
+    public function ressatuanhargaupah(Request $request)
+    {
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search');
+
+        $query = satuanhargaupahtenagakerja::query();
+
+        if ($search) {
+            $query->where('uraian', 'LIKE', "%{$search}%")
+                  ->orWhere('kode', 'LIKE', "%{$search}%")
+                  ->orWhere('satuan', 'LIKE', "%{$search}%")
+                  ->orWhere('besaran', 'LIKE', "%{$search}%")
+                  ->orWhere('besaranperjam', 'LIKE', "%{$search}%");
+                //   ->orWhere('keterangan', 'LIKE', "%{$search}%");
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.02_satuanhargadasar.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('frontend.00_android.02_satuanhargadasar.02_satuanhargaupah', [
+            'title' => 'Satuan Harga Dasar Upah Tenaga Kerja',
+            'data' => $data,
+            'perPage' => $perPage,
+            'search' => $search
+        ]);
+    }
+
+
 }

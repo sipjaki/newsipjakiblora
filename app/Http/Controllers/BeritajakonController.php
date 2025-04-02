@@ -571,7 +571,7 @@ public function beartikeljakoncreatenew(Request $request)
         $users = user::all();
 
         return view('frontend.00_android.01_berita.show', [
-        'title' => 'Show Berita Jasa Konstruksi',
+        'title' => 'Berita Jasa Konstruksi',
         'data' => $databeritajakon,
         'databerita' => $databerita,
         // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
