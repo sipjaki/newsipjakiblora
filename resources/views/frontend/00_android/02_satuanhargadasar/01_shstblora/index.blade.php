@@ -166,7 +166,7 @@
 
 
 
-                            <div class="table-wrapper" style="margin-top:-130px;>
+                            <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
                             <table class="fl-table" style="border-radius:15px;">
                                 <thead>
                                     <tr>
