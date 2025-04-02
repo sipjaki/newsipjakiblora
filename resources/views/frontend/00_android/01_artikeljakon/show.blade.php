@@ -45,6 +45,14 @@
                             <p class="font-semibold text-sm">{{$data->user->name}}</p>
 
                         </div>
+                        <div style="display: inline-block; float: right;">
+                            <button id="sertifikat-btn" class="badge"
+                               style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                               onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                               onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2">
@@ -66,14 +74,7 @@
                     <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->keterangan!!}</p>
 
                 </div>
-                <div style="display: inline-block; float: right;">
-                    <button id="sertifikat-btn" class="badge"
-                       style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                       onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                       onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                        <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                    </button>
-                </div>
+
 
         <script>
             document.getElementById('sertifikat-btn').addEventListener('click', function() {
