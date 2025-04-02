@@ -1206,6 +1206,19 @@ class SatuanhargamaterialController extends Controller
         ]);
     }
 
+// AHSP KONSTRUKSI 9 DIVISI
+
+    public function resahspkonstruksi()
+    {
+        $user = Auth::user();
+        // $datamaterial = satuanhargamaterial::paginate(10);
+
+        return view('frontend.00_android.02_satuanhargadasar.02_ahspkonstruksiumum.index', [
+            'title' => 'AHSP Konstruksi Umum',
+            'user' => $user, // Mengirimkan data paginasi ke view
+            // 'data' => $datamaterial, // Mengirimkan data paginasi ke view
+        ]);
+    }
 
 
 }
