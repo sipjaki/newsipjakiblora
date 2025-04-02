@@ -85,7 +85,7 @@
                             <table class="fl-table" style="border-radius:15px;">
                                 <thead>
                                     <tr>
-                                        <th style="text-align:center; width:100px;" rowspan="2"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
+                                        <th style="text-align:center; width:100px;" rowspan="2"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 10px; margin-left:10px;" loading="lazy"></th>
                                         <th style="text-align:center" colspan="2"> Harga Satuan Pembangunan Gedung Negara Per M2 (Meter Persegi)</th>
                                         {{-- <th style="text-align:center" >View</th> --}}
                                     </tr>
@@ -113,7 +113,7 @@
                             <table class="fl-table" style="border-radius:15px;">
                                 <thead>
                                     <tr>
-                                        <th style="text-align:center: width:100px;" rowspan="3" ><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
+                                        <th style="text-align:center: width:100px;" rowspan="3" ><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 10px; margin-left:10px;" loading="lazy"></th>
                                         <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Rumah Negara Per M2 (Meter Persegi)</th>
                                     </tr>
                                     <tr>
@@ -140,7 +140,7 @@
                             <table class="fl-table" style="border-radius:15px;">
                                 <thead>
                                     <tr>
-                                        <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
+                                        <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 10px; margin-left:10px;" loading="lazy"></th>
                                         <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Gedung Negara Per M1 (Meter Lari)</th>
                                     </tr>
                                     <tr>
@@ -170,7 +170,7 @@
                             <table class="fl-table" style="border-radius:15px;">
                                 <thead>
                                     <tr>
-                                        <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
+                                        <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 10px; margin-left:10px;" loading="lazy"></th>
                                         <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Rumah Negara Per M1 (Meter Lari) </th>
                                     </tr>
                                     <tr>
