@@ -21,7 +21,7 @@
             </nav>
             <div class="w-full h-full absolute bg-white overflow-hidden">
                 <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
-                <img src="{{asset('storage/' . $data->foto)}}" class="w-full h-full object-cover" alt="cover">
+                <img src="{{asset('storage/' . $data->foto1)}}" class="w-full h-full object-cover" alt="cover">
             </div>
         </div>
         <div class="flex flex-col z-30">
@@ -34,7 +34,7 @@
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                 <div class="flex flex-col gap-[10px]">
                     {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
-                    <h1 class="font-extrabold leading-[39px]" style="font-size: 16px;">{{$data->judulberita}}</h1>
+                    <h1 class="font-extrabold leading-[39px]" style="font-size: 16px;">{{$data->judul}}</h1>
                     <div class="flex items-center gap-2">
                         <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
                             {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}

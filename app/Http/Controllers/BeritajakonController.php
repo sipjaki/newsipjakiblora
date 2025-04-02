@@ -585,12 +585,12 @@ public function beartikeljakoncreatenew(Request $request)
     public function androidartikeljakon()
     {
         $user = Auth::user();
-        $databerita = artikeljakonmasjaki::paginate(6);
+        $dataartikel = artikeljakonmasjaki::paginate(6);
 
         return view('frontend.00_android.01_artikeljakon.index', [
             'title' => 'Artikel Jasa Konstruksi',
             'user' => $user, // Mengirimkan data paginasi ke view
-            'data' => $databerita, // Mengirimkan data paginasi ke view
+            'data' => $dataartikel, // Mengirimkan data paginasi ke view
         ]);
     }
 
