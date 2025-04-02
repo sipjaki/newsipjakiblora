@@ -48,9 +48,23 @@
                                            style="border: 1px solid #ccc; padding: 10px 40px 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                                     <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
-                                <button onclick="javascript:history.back()" style="background-color: white; border: 2px solid #ccc; border-radius: 15px; padding: 10px 20px; font-size: 16px; display: flex; align-items: center;">
-                                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
-                                </button>
+                                <div style="display: inline-block; background-color: #90ee90; border-radius: 15px; padding: 10px 20px; transition: background-color 0.3s; border: 2px solid #ccc;">
+                                    <button onclick="javascript:history.back()" style="background-color: transparent; border: none; font-size: 14px; color: black; display: flex; align-items: center;">
+                                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+                                    </button>
+                                </div>
+
+                                <style>
+                                    div:hover {
+                                        background-color: white;
+                                    }
+
+                                    button:hover {
+                                        background-color: transparent;
+                                        color: black;
+                                    }
+                                </style>
+
                                 <!-- Right: Show Entries Dropdown -->
                                 <div>
                                     <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
