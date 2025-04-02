@@ -121,7 +121,6 @@
                                     window.location.href = url.toString();
                                 }
 
-
                                 function searchTable() {
                                 let input = document.getElementById("searchInput").value;
 
