@@ -9440,7 +9440,369 @@ satuanhargamaterial::create([
     'besaran' => '614000',
 ]);
 
+// -----------------
+satuanhargamaterial::create([
+    'uraian' => 'NYY 4 x 95 mm² dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '845500',
+]);
 
+satuanhargamaterial::create([
+    'uraian' => 'Pelindung Lampu',
+    'satuan' => 'Unit',
+    'besaran' => '50000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 12,7 mm (1/2") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '105000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 15,9 mm (5/8") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '155000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 19,1 mm (3/4") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '190000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 22,2 mm (7/8") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '237000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 25,4 mm (1") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '300000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 28,6 mm (1- 1/8") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '340000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 34,9 mm (1- 3/8") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '385000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 41,3 mm (1- 5/8") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '460000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 6,4 mm (1/4") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '625000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa Tembaga B280 Dia. 9,5 mm (3/8") dan aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '68000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Programming, testing & commisioning',
+    'satuan' => 'Lot',
+    'besaran' => '50000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'RM TKI 2 x 16 Watt LED dan aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '400000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Saklar Ganda dan aksesoris',
+    'satuan' => 'Buah',
+    'besaran' => '20000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Saklar Tunggal dan aksesoris',
+    'satuan' => 'Buah',
+    'besaran' => '18000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'SDP Wall Mounted ukuran 30 x 40 x 20 Cm termasuk material bantu / aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '897050',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'SDP Wall Mounted ukuran 40 x 60 x 25 Cm termasuk material bantu / aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '1397000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'SDP Wall Mounted ukuran 50 x 70 x 25 Cm termasuk material bantu / aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '1921700',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'SDP Wall Mounted ukuran 60 x 80 x 25 Cm termasuk material bantu / aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '2318800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Smoke Detector Addressable dan aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '200000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Socket Conduit 20 mm',
+    'satuan' => 'Buah',
+    'besaran' => '1100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Stop Kontak 1 P, 10 A, 200 W dan aksesoris',
+    'satuan' => 'Buah',
+    'besaran' => '27000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Stop Kontak AC dan aksesoris',
+    'satuan' => 'Buah',
+    'besaran' => '80000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'T Dus',
+    'satuan' => 'Buah',
+    'besaran' => '4000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Terminal Box Fire Alarm (Lengkap dengan Modul) dan aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '2000000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Wall Speaker dan aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '130000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Wiring Management dan aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '2200000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Ball Valve ; Dia. 1/2“ (15 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '120000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Ball Valve ; Dia. 1“ (25 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '205000',
+]);
+
+// ------------------------------
+satuanhargamaterial::create([
+    'uraian' => 'Ball Valve ; Dia. 1-1/2“ (40 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '458000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Ball Valve ; Dia. 2“ (50 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '930000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Ball Valve ; Dia. 3“ (80 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '2995000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Ball Valve ; Dia. 4“ (100 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '5650000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Check Valve 10 K ; Dia. 1“ (25 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '265300',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Check Valve 10 K ; Dia. 1-1/2“ (40 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '420000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Check Valve 10 K ; Dia. 2“ (50 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '842000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Check Valve 10 K ; Dia. 3“ (80 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '1650000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Check Valve 10 K ; Dia. 6“ (150 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '5261500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Check Valve 10 K ; Dia. 1/2“ (15 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '110000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Check Valve 10 K ; Dia. 4“ (100 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '2222220',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Dop PVC Dia. 0,5” (12,5 mm) + Material Bantu',
+    'satuan' => 'Buah',
+    'besaran' => '4000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Gate Valve 10 K ; Dia. 1/2“ (15 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '86500',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Gate Valve 10 K ; Dia. 1“ (25 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '220000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Gate Valve 10 K ; Dia. 1-1/2“ (40 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '395000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Gate Valve 10 K ; Dia. 2“ (50 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '490000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Gate Valve 10 K ; Dia. 3“ (80 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '1332000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Gate Valve 10 K ; Dia. 4“ (100 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '1692750',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Gate Valve 10 K ; Dia. 6“ (150 mm) + Material Bantu',
+    'satuan' => 'Unit',
+    'besaran' => '4157950',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Grease Trap Portable (Stainless) Kap. 30 Liter + Material Bantu / Aksesoris',
+    'satuan' => 'Unit',
+    'besaran' => '480000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS MED CLASS ; Dia. 1" ; (25 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '44800',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS MED CLASS ; Dia. 1/2" ; (15 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '23450',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS MED CLASS ; Dia. 2" ; (50 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '92050',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS MED CLASS ; Dia. 3" ; (80 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '151550',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS MED CLASS ; Dia. 3/4" ; (20 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '30100',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS MED CLASS ; Dia. 4" ; (100 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '219166',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS MED CLASS ; Dia. 6" ; (150 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '351000',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS MED CLASS ; Dia. 8" ; (200 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '621333',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 1" ; (25 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '46550',
+]);
+
+satuanhargamaterial::create([
+    'uraian' => 'Pipa BS SCH 40 ; Dia. 1/2" ; (15 mm) + fitting & aksesoris',
+    'satuan' => 'M1',
+    'besaran' => '24500',
+]);
+
+// makan yu
 
 //======================== ===================================================================================
 // SATUAN HARGA UPAH MAS JAKI BLORA
