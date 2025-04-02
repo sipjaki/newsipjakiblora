@@ -65,6 +65,7 @@
                 <div class="flex flex-col gap-[2px]">
                     <h2 class="font-semibold text-sm">Keterangan : </h2>
                     <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->keterangan!!}</p>
+                    <br>
                     <div class="ml-auto">
                         <button id="sertifikat-btn" class="badge"
                             style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
