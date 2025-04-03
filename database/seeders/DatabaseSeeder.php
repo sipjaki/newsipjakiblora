@@ -2048,6 +2048,327 @@ bujkkontraktor::create([
     'no_pengesahan' => 'AHU-0042027-AH.01.14 Tahun 2022',
 ]);
 
+// -----
+bujkkontraktor::create([
+    'id' => 21,
+    'bujkkontraktorsub_id' => 21,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => "A'LA PUTRA",
+    'alamat' => 'Desa Gempolrejo, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081390299355',
+    'email' => 'alaputrareborn2023@gmail.com',
+    'nomorindukberusaha' => '220004340649',
+    'pju' => 'SUHARTINI',
+    'no_akte' => '143',
+    'tanggal' => '2016-12-31',
+    'nama_notaris' => 'NIKEN SUKMAWATI, SH., M.KN',
+    'no_pengesahan' => 'AHU-0013830-AH.01.15 Tahun 2020',
+]);
+
+bujkkontraktor::create([
+    'id' => 22,
+    'bujkkontraktorsub_id' => 22,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'BANGUN KELUARGA. CV',
+    'alamat' => 'Desa Kedungrejo RT. 002 RW. 002, Desa/Kelurahan Kedungrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '085327005412',
+    'email' => 'cv.bangunkeluarga@yahoo.co.id',
+    'nomorindukberusaha' => '9120007570032',
+    'pju' => 'AGUS CAHYONO',
+    'no_akte' => '33',
+    'tanggal' => '2022-05-23',
+    'nama_notaris' => 'MADSARI MUSLIM S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0027422-AH.01.16 Tahun 2022',
+]);
+
+bujkkontraktor::create([
+    'id' => 23,
+    'bujkkontraktorsub_id' => 23,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'INDO JAVA MUSTIKA',
+    'alamat' => 'Dk. Catak RT. 002 RW. 004, Desa/Kelurahan Adirejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'indojavamustika@gmail.com',
+    'nomorindukberusaha' => '1217000302437',
+    'pju' => 'OFVI SIGIT HERMANSYAH',
+    'no_akte' => '135',
+    'tanggal' => '2021-03-04',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0020610-AH.01.14 Tahun 2021',
+]);
+
+bujkkontraktor::create([
+    'id' => 24,
+    'bujkkontraktorsub_id' => 24,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'RAFI PUTRA',
+    'alamat' => 'DUKUH SADANG, Desa/Kelurahan Bicak, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '085226414172',
+    'email' => 'cvrafip@gmail.com',
+    'nomorindukberusaha' => '9120112031579',
+    'pju' => 'EKO BUDI CAHYONO',
+    'no_akte' => '10',
+    'tanggal' => '2020-07-14',
+    'nama_notaris' => 'DIAH TRIMURTI SALEH',
+    'no_pengesahan' => 'AHU-0040770-AH.01.15 Tahun 2020',
+]);
+
+bujkkontraktor::create([
+    'id' => 25,
+    'bujkkontraktorsub_id' => 25,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'TIRTA WENING',
+    'alamat' => null, // Tidak ada alamat yang diberikan
+    'no_telepon' => '082326221139',
+    'email' => 'tirtawening.cv@gmail.com',
+    'nomorindukberusaha' => '9120109551835',
+    'pju' => 'ISMUJIANTO',
+    'no_akte' => '81',
+    'tanggal' => '2022-06-06',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0029763-AH.01.16 Tahun 2022',
+]);
+
+bujkkontraktor::create([
+    'id' => 26,
+    'bujkkontraktorsub_id' => 26,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'GREMA JAYA USAHA',
+    'alamat' => 'Doplang, Kel. Doplang, Kec. Jati, Kab. Blora, Prov. Jawa Tengah',
+    'no_telepon' => '081230462473',
+    'email' => 'grema.blora@gmail.com',
+    'nomorindukberusaha' => '220006320526',
+    'pju' => 'KRISTI AGENG HERMAWAN',
+    'no_akte' => '177',
+    'tanggal' => '2019-12-17',
+    'nama_notaris' => 'YANI DWI RAHAYU, SH., M.KN',
+    'no_pengesahan' => 'AHU-0000158A-AH.01.14 Tahun 2020',
+]);
+
+bujkkontraktor::create([
+    'id' => 27,
+    'bujkkontraktorsub_id' => 27,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'BUMI ABADI PRATAMA',
+    'alamat' => 'Ds. Temurejo, Desa/Kelurahan Temurejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082227496123',
+    'email' => 'bumiabadi.pratama@yahoo.com',
+    'nomorindukberusaha' => '9120100220914',
+    'pju' => 'SETYO BUDI',
+    'no_akte' => '25',
+    'tanggal' => '2017-01-07',
+    'nama_notaris' => 'NIKEN SUKMAWATI ,SH,Mkn',
+    'no_pengesahan' => '13 / CV/ 2017/pn. Bla',
+]);
+
+bujkkontraktor::create([
+    'id' => 28,
+    'bujkkontraktorsub_id' => 28,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'JENGGALA ARUNIKA',
+    'alamat' => 'Dukuh Karangnongko, Desa/Kelurahan Buluroto, Kec. Banjarejo, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082226170575',
+    'email' => 'jenggalaarunika.oss@gmail.com',
+    'nomorindukberusaha' => '1804230041606',
+    'pju' => 'DIAH AYU',
+    'no_akte' => '190',
+    'tanggal' => null, // Tidak ada tanggal yang diberikan
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0027846-AH.01.14 Tahun 2023',
+]);
+
+bujkkontraktor::create([
+    'id' => 29,
+    'bujkkontraktorsub_id' => 29,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'ALFA',
+    'alamat' => 'Dukuh Klatak, Desa/Kelurahan Doplang, Kec. Jati, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => null, // Tidak ada nomor telepon
+    'email' => null, // Tidak ada email
+    'nomorindukberusaha' => '220002560644',
+    'pju' => null, // Tidak ada data PJU
+    'no_akte' => null, // Tidak ada data akte
+    'tanggal' => null, // Tidak ada tanggal
+    'nama_notaris' => null, // Tidak ada nama notaris
+    'no_pengesahan' => null, // Tidak ada nomor pengesahan
+]);
+
+bujkkontraktor::create([
+    'id' => 30,
+    'bujkkontraktorsub_id' => 30,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'LIMA KARSA',
+    'alamat' => 'Dukuh Ngori , Desa/Kelurahan Sumurboto, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082138380700',
+    'email' => 'cvlimakarsa@gmail.com',
+    'nomorindukberusaha' => '9120308430244',
+    'pju' => 'RATNO',
+    'no_akte' => '174',
+    'tanggal' => '2022-03-09',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0013866-AH.01.16 Tahun 2022',
+]);
+// -----
+bujkkontraktor::create([
+    'id' => 31,
+    'bujkkontraktorsub_id' => 31,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'AGENG NUGROHO',
+    'alamat' => 'Dusun Bleboh RT 002 RW 002, Kec. Jepon, Kab. Blora Jawa Tengah',
+    'no_telepon' => '81390350640',
+    'email' => 'cvagengnugroho84@gmail.com',
+    'nomorindukberusaha' => '220104101331',
+    'pju' => 'SAYANA',
+    'no_akte' => '146',
+    'tanggal' => '2023-03-25',
+    'nama_notaris' => 'WAHYU WIDIASTUTI S.H.',
+    'no_pengesahan' => 'AHU-0015046-AH.01.16 Tahun 2023',
+]);
+
+bujkkontraktor::create([
+    'id' => 32,
+    'bujkkontraktorsub_id' => 32,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'WARU BENGKONG',
+    'alamat' => 'Dusun Tambakwatu, Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '82221207336',
+    'email' => 'cv.warubengkong23@gmail.com',
+    'nomorindukberusaha' => '2805230004372',
+    'pju' => 'TEGUH SUTRISNO',
+    'no_akte' => '3',
+    'tanggal' => '2023-05-10',
+    'nama_notaris' => 'RENI PERMATASARI GUMAY, SH., M.KN S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0031324-AH.01.14 Tahun 2023',
+]);
+
+bujkkontraktor::create([
+    'id' => 33,
+    'bujkkontraktorsub_id' => 33,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'ANGGREK',
+    'alamat' => 'JL. BHAYANGKARA NOMOR 20, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '296533641',
+    'email' => 'cv.anggrekblora@yahoo.com',
+    'nomorindukberusaha' => '9120006241834',
+    'pju' => 'TRI GUNARSO PUTRO',
+    'no_akte' => '110',
+    'tanggal' => '2022-02-08',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0007205-AH.01.16 Tahun 2022',
+]);
+
+bujkkontraktor::create([
+    'id' => 34,
+    'bujkkontraktorsub_id' => 34,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'SETIADI',
+    'alamat' => 'JALAN BHAYANGKARA NOMOR 10, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '(0296)533641',
+    'email' => 'cv.setiadiblora@yahoo.com',
+    'nomorindukberusaha' => '9120006261544',
+    'pju' => 'HAJI SUDJOKO',
+    'no_akte' => '112',
+    'tanggal' => '2022-02-08',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0007207-AH.01.16 Tahun 2022',
+]);
+
+bujkkontraktor::create([
+    'id' => 35,
+    'bujkkontraktorsub_id' => 35,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'GRIYA PUTRA LAKSANA',
+    'alamat' => 'JALAN BHAYANGKARA SELATAN NO 8 TEMPELAN BLORA, Desa/Kelurahan Tempelan, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '81325631331',
+    'email' => 'cv.gplblora@yahoo.com',
+    'nomorindukberusaha' => '9120103241134',
+    'pju' => 'DWI AGUNG DEWANTORO',
+    'no_akte' => '9',
+    'tanggal' => '2002-02-14',
+    'nama_notaris' => 'BAMBANG HARIJANTO, SH',
+    'no_pengesahan' => '67/CV/2002/PN.BLA',
+]);
+
+bujkkontraktor::create([
+    'id' => 36,
+    'bujkkontraktorsub_id' => 36,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'NUSA INDAH MAKMUR',
+    'alamat' => 'JALAN CENDANA NOMOR 48, Desa/Kelurahan Beran, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '81225657158',
+    'email' => 'cvnusaindahmakmurberan@yahoo.com',
+    'nomorindukberusaha' => '220100381835',
+    'pju' => 'JOKO MARYANTO',
+    'no_akte' => '15',
+    'tanggal' => '2022-03-02',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0011975-AH.01.16 Tahun 2022',
+]);
+
+bujkkontraktor::create([
+    'id' => 37,
+    'bujkkontraktorsub_id' => 37,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'MENARA MUKTI',
+    'alamat' => 'JALAN DESA SEMBONGIN, Desa/Kelurahan Sembongin, Kec. Banjarejo, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '82298169055',
+    'email' => 'rustika775@gmail.com',
+    'nomorindukberusaha' => '9120106840089',
+    'pju' => 'SITI RUSTIKAWATI',
+    'no_akte' => '29',
+    'tanggal' => '2021-12-29',
+    'nama_notaris' => 'BAMBANG HARIJANTO S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0014690-AH.01.16 Tahun 2021',
+]);
+
+bujkkontraktor::create([
+    'id' => 38,
+    'bujkkontraktorsub_id' => 38,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'PURNA MA JAYA',
+    'alamat' => 'JALAN DIPONEGORO V/55 CEPU, Desa/Kelurahan Cepu, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '296421681',
+    'email' => 'purnamajaya.cvcepu@gmail.com',
+    'nomorindukberusaha' => '220102250843',
+    'pju' => 'SRI WAHYUNI,HJ',
+    'no_akte' => '1',
+    'tanggal' => '2023-03-02',
+    'nama_notaris' => 'RENI PERMATASARI GUMAY, SH., M.Kn S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0012191-AH.01.16 Tahun 2023',
+]);
+
+bujkkontraktor::create([
+    'id' => 39,
+    'bujkkontraktorsub_id' => 39,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'KARUNIA ABADI',
+    'alamat' => 'JALAN DIPONEGORO, SITIMULYO LR. 2C NO. 11A, CEPU, Desa/Kelurahan Cepu, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '0812 2830 7033',
+    'email' => 'cvkaruniaabadi.cepu@gmail.com',
+    'nomorindukberusaha' => '1237000431536',
+    'pju' => 'ROESTAMADJI',
+    'no_akte' => '298',
+    'tanggal' => null, // Tidak ada tanggal yang diberikan
+    'nama_notaris' => 'WAHYU WIDIASTUTI, SH.',
+    'no_pengesahan' => 'AHU-0005788-AH.01.17 Tahun 2021',
+]);
+
+bujkkontraktor::create([
+    'id' => 40,
+    'bujkkontraktorsub_id' => 40,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'BARATAMA KONSTRUKSI',
+    'alamat' => 'JALAN GUNUNG SLAMET II/21, Desa/Kelurahan Tempelan, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '82221628225',
+    'email' => 'baratamakonstruksi@gmail.com',
+    'nomorindukberusaha' => '1902230002736',
+    'pju' => 'BASUKI RAHMAT',
+    'no_akte' => '11',
+    'tanggal' => '2023-02-04',
+    'nama_notaris' => 'BAMBANG HARIJANTO S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0011896-AH.01.14 Tahun 2023',
+]);
+
 
 // makanyu
 
