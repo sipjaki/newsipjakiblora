@@ -31,7 +31,7 @@
                 </p>
             </div>
         </a>
-        <a href="/404">
+        <a href="/resdatajakon">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
                     <img src="/assets/00_android/iconmenu/3.datajakon.png" class="w-[80%] h-[80%] object-contain" alt="icon">

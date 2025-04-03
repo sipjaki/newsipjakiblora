@@ -33,6 +33,8 @@ class AndroidVersionController extends Controller
     ]);
     }
 
+    // ================ MENU KELEMBAGAAN =======================================
+
     public function menukelembagaan()
     {
         $user = Auth::user();
@@ -95,6 +97,18 @@ class AndroidVersionController extends Controller
                 'data' => $data, // Mengirimkan data paginasi ke view
                 'user' => $user, // Mengirimkan data paginasi ke view
             ]);
+        }
+
+        // ===========================================================
+
+        public function menudatajakon()
+        {
+            $user = Auth::user();
+
+            return view('frontend.00_android.C_datajakon.index', [
+            'title' => 'Menu Data Jakon',
+            'user' => $user,
+        ]);
         }
 
 

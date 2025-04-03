@@ -83,7 +83,11 @@ Route::get('/resprofiljakon', [AndroidVersionController::class, 'menuprofiljakon
 // ================================================ MENU 3 TUPOKSI JASA KONSTRUKSI  ===========================================
 Route::get('/restupoksi', [AndroidVersionController::class, 'menutupoksi']);
 
+// ================================================ MENU DATA JAKON
+Route::get('/resdatajakon', [AndroidVersionController::class, 'menudatajakon']);
 // makanyu
+
+
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
