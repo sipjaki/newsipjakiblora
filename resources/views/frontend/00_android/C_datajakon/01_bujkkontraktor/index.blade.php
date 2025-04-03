@@ -191,7 +191,7 @@
                                 </div>
                             </div>
                             <!-- Pagination Section -->
-                            <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
+                            <div class="pagination-container" style="display: flex; flex-direction: column; align-items: center;">
                                 <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
                                     <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
                                         <a class="page-link" href="{{ $data->previousPageUrl() }}" style="padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; color: black; font-size: 14px;">
@@ -210,11 +210,6 @@
                         </div>
 
                     </div>
-
-                <div class="flex flex-col gap-2">
-
-                    {{-- <progress id="fund" value="66" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
-                </div>
 
             </div>
         </div>
