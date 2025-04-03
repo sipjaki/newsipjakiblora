@@ -402,7 +402,7 @@ h5 {
                             <td style="width:50px; text-align:center;">2</td>
                             <td class="label">Instagram</td>
                             <td class="colon">:</td>
-                            <td>@{{$item->instagram}}</td>
+                            <td>@ {{$item->instagram}}</td>
                         </tr>
                         <tr>
                             <td style="width:50px; text-align:center;">3</td>
