@@ -129,7 +129,7 @@
                                         <tr>
                                             <td>5</td>
                                             <td>Nomor Induk Berusaha</td>
-                                            <td>{{$data->nib}}</td>
+                                            <td>{{$data->nomorindukberusaha}}</td>
                                         </tr>
 
                                         {{-- @endforeach --}}
