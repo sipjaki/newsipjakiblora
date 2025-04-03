@@ -19,10 +19,10 @@
                     <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
                 </a>
             </nav>
-            <div class="w-full h-full absolute bg-white overflow-hidden">
+            {{-- <div class="w-full h-full absolute bg-white overflow-hidden">
                 <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
                 <img src="{{asset('storage/' . $data->foto)}}" class="w-full h-full object-cover" alt="cover">
-            </div>
+            </div> --}}
         </div>
         <div class="flex flex-col z-30">
             <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
