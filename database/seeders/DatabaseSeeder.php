@@ -11659,6 +11659,307 @@ bujkkontraktorsub::create([
 ]);
 
 
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 6,
+    'nama_pengurus' => 'KHOIRUL NI\'AM',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'RK001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-01-24',
+    'masa_berlaku' => '2026-01-23',
+    'nama_psjk' => 'ARI NUGRAHENI ANGGUNG M',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 6,
+    'nama_pengurus' => 'KHOIRUL NIAM',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
+    'kode' => 'RK002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PERKONINDO KONSULTAN KONSTRUKSI MANDIRI',
+    'tanggal_terbit' => '2024-04-19',
+    'masa_berlaku' => '2027-04-18',
+    'nama_psjk' => 'RIZKI AZAH MAHBUBAH',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 6,
+    'nama_pengurus' => 'KHOIRUL NI\'AM',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+    'kode' => 'RK003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-01-24',
+    'masa_berlaku' => '2026-01-23',
+    'nama_psjk' => 'MUHAMMAD IKLIL',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 7,
+    'nama_pengurus' => 'NURVANY FATMAWATI',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'RK001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'tanggal_terbit' => '2024-06-10',
+    'masa_berlaku' => '2027-06-09',
+    'nama_psjk' => 'RIZA FAJRI SAPUTRA',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 7,
+    'nama_pengurus' => 'NURVANY FATMAWATI',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
+    'kode' => 'RK002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'tanggal_terbit' => '2024-06-10',
+    'masa_berlaku' => '2027-06-09',
+    'nama_psjk' => 'RIZA FAJRI SAPUTRA',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 9,
+    'nama_pengurus' => 'NUNUNG AGUS WINARTO, ST',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'RK001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-02-21',
+    'masa_berlaku' => '2026-02-20',
+    'nama_psjk' => 'HANIF NANDA SYAHPUTRA',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 9,
+    'nama_pengurus' => 'NUNUNG AGUS WINARTO, ST',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+    'kode' => 'RK003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-02-21',
+    'masa_berlaku' => '2026-02-20',
+    'nama_psjk' => 'NAUFAL ZAKY, S.T.',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+]);
+
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 10,
+    'nama_pengurus' => 'ARIS MUNANTO',
+    'sub_klasifikasi_layanan' => 'Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'AR001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2022-06-15',
+    'masa_berlaku' => '2025-06-14',
+    'nama_psjk' => 'LINTANG PAMUNGKAS',
+    'sub_kualifikasi_bu' => 'Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 10,
+    'nama_pengurus' => 'ARIS MUNANTO',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+    'kode' => 'RK003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-04-13',
+    'masa_berlaku' => '2026-04-12',
+    'nama_psjk' => 'AUNUR ROFIQ',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 11,
+    'nama_pengurus' => 'OKTORINA DYAN ISTIYARINI',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'RK001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2022-11-09',
+    'masa_berlaku' => '2025-11-08',
+    'nama_psjk' => 'ARIEF KUSBIANTORO',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 12,
+    'nama_pengurus' => 'SITI NUR HAMIDA',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'RK001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2022-12-23',
+    'masa_berlaku' => '2025-12-22',
+    'nama_psjk' => 'ARIEF BUDI SANTOSO, S.T.',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 12,
+    'nama_pengurus' => 'SITI NUR HAMIDA',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
+    'kode' => 'RK002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2022-12-23',
+    'masa_berlaku' => '2025-12-22',
+    'nama_psjk' => 'SUDARNO, S.T.',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 12,
+    'nama_pengurus' => 'SITI NUR HAMIDA',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+    'kode' => 'RK003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2022-12-23',
+    'masa_berlaku' => '2025-12-22',
+    'nama_psjk' => 'WIRA AKBAR WIBOWO, S.T.',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 13,
+    'nama_pengurus' => 'HERU DIDIK KURNIAWAN, ST',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'RK001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2022-12-26',
+    'masa_berlaku' => '2025-12-25',
+    'nama_psjk' => 'ACHMAD HADI SUMARNO, S.T.',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 13,
+    'nama_pengurus' => 'HERU DIDIK KURNIAWAN, ST',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+    'kode' => 'RK003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2022-12-26',
+    'masa_berlaku' => '2025-12-25',
+    'nama_psjk' => 'AGUNG HERMANTO, S.T.',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 14,
+    'nama_pengurus' => 'BAMBANG SUTEJO',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
+    'kode' => 'RK002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-01-30',
+    'masa_berlaku' => '2026-01-29',
+    'nama_psjk' => 'JANURMAN, A.MD',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 14,
+    'nama_pengurus' => 'BAMBANG SUTEJO',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+    'kode' => 'RK003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-04-12',
+    'masa_berlaku' => '2026-04-11',
+    'nama_psjk' => 'YUSTINA DIAN TRI ARIYANTI',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+]);
+
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 15,
+    'nama_pengurus' => 'MITA ARIS ARGARINI, SE',
+    'sub_klasifikasi_layanan' => 'Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'AR001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'tanggal_terbit' => '2023-06-23',
+    'masa_berlaku' => '2026-06-22',
+    'nama_psjk' => 'YUANITA NUR ULFA',
+    'sub_kualifikasi_bu' => 'Jasa Arsitektural Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 15,
+    'nama_pengurus' => 'MITA ARIS ARGARINI, SE',
+    'sub_klasifikasi_layanan' => 'Jasa Arsitektural Lainnya',
+    'kode' => 'AR002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'tanggal_terbit' => '2023-06-23',
+    'masa_berlaku' => '2026-06-22',
+    'nama_psjk' => 'YUANITA NUR ULFA',
+    'sub_kualifikasi_bu' => 'Jasa Arsitektural Lainnya',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 15,
+    'nama_pengurus' => 'MITA ARIS ARGARINI, SE',
+    'sub_klasifikasi_layanan' => 'Jasa Desain Interior pada Bangunan Gedung dan Bangunan Sipil',
+    'kode' => 'AR003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'tanggal_terbit' => '2023-06-23',
+    'masa_berlaku' => '2026-06-22',
+    'nama_psjk' => 'YUANITA NUR ULFA',
+    'sub_kualifikasi_bu' => 'Jasa Desain Interior pada Bangunan Gedung dan Bangunan Sipil',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 15,
+    'nama_pengurus' => 'MITA ARIS ARGARINI, SE',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+    'kode' => 'RK003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'tanggal_terbit' => '2023-06-23',
+    'masa_berlaku' => '2026-06-22',
+    'nama_psjk' => 'FIAN BAGUS PERMANA',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 17,
+    'nama_pengurus' => 'ENDAH TRI LESTARI ISUSILANINGTYAS, ST',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+    'kode' => 'RK001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-03-09',
+    'masa_berlaku' => '2026-03-08',
+    'nama_psjk' => 'MUSLIM ADI WIJAYA, S.T.',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Konstruksi Bangunan Gedung Hunian dan Non Hunian',
+]);
+
+bujkkonsultansub::create([
+    'bujkkonsultan_id' => 17,
+    'nama_pengurus' => 'ENDAH TRI LESTARI ISUSILANINGTYAS, ST',
+    'sub_klasifikasi_layanan' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+    'kode' => 'RK003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Lembaga Sertifikasi INKINDO',
+    'tanggal_terbit' => '2023-03-09',
+    'masa_berlaku' => '2026-03-08',
+    'nama_psjk' => 'DEWI RUKMINI, ST',
+    'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Transportasi',
+]);
+
 
 
 
