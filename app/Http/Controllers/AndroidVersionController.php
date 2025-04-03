@@ -14,6 +14,10 @@ use App\Models\profiljakonkepaladinas;
 use App\Models\profiljakonpersonil;
 use App\Models\profiljakonsipjaki;
 use App\Models\profiljakonsubkoordinator;
+use App\Models\bujkkontraktor;
+use App\Models\bujkkontraktorsub;
+use App\Models\bujkkonsultan;
+use App\Models\bujkkonsultansub;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -109,6 +113,37 @@ class AndroidVersionController extends Controller
             'title' => 'Menu Data Jakon',
             'user' => $user,
         ]);
+        }
+
+
+        public function menubujkkontraktor(Request $request)
+        {
+            $perPage = $request->input('perPage', 10);
+            $search = $request->input('search');
+
+            $query = bujkkontraktor::query();
+
+            if ($search) {
+                $query->where('namalengkap', 'LIKE', "%{$search}%")
+                      ->orWhere('alamat', 'LIKE', "%{$search}%")
+                      ->orWhere('email', 'LIKE', "%{$search}%")
+                      ->orWhere('nib', 'LIKE', "%{$search}%");
+            }
+
+            $data = $query->paginate($perPage);
+
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.C_datajakon.01_bujkkontraktor.partials.table', compact('data'))->render()
+                ]);
+            }
+
+            return view('frontend.00_android.C_datajakon.01_bujkkontraktor.index', [
+                'title' => 'BUJK Konstruksi',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search
+            ]);
         }
 
 
