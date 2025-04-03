@@ -31,18 +31,18 @@
                         <br><br>
 
                         <a href="/404" class="card">
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white hover:bg-green-500">
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                                 </div>
 
-                                <div class="flex flex-col gap-1">
-                                    <p class="font-bold line-clamp-1 hover:line-clamp-none text-black hover:text-white">
-                                        Struktur Organisasi DPUPR Kabupaten Blora
-                                    </p>
-                                </div>
+                            <div class="flex flex-col gap-1">
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Struktur Organisasi DPUPR Kabupaten Blora</p>
+                        </p>
+
                             </div>
-                        </a>
+                            </div>
+                            </a>
 
                         <a href="/404" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">

@@ -32,6 +32,16 @@ class AndroidVersionController extends Controller
     ]);
     }
 
+    public function menustruktur()
+    {
+        $user = Auth::user();
+
+        return view('frontend.00_android.B_menukelembagaan.01_struktur.index', [
+        'title' => 'Struktur Organisasi Bidang Bangunan Gedung DPUPR Kabupaten Blora',
+        'user' => $user,
+    ]);
+    }
+
 
 
 
