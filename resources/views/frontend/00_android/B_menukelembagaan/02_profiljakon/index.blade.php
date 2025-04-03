@@ -1,3 +1,23 @@
+<style>
+    .header-surat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    height: 100vh; /* Atur agar elemen berada di tengah halaman */
+}
+
+.header-text {
+    max-width: 600px; /* Membatasi lebar agar teks tidak terlalu lebar */
+    margin: 0 auto;
+}
+
+.header-text h3, .header-text h4, .header-text p {
+    margin: 5px 0; /* Memberikan jarak antar elemen */
+}
+
+</style>
 @include('frontend.00_android.00_fiturmenu.header')
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
@@ -36,8 +56,6 @@
 
                 <div class="container-surat">
                     <div class="header-surat">
-                        <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora" width="5%">
-                        <br>
                         <div class="header-text">
                             <h3>PEMERINTAH KABUPATEN BLORA</h3>
                             <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
@@ -48,6 +66,7 @@
                             <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h4>
                         </div>
                     </div>
+
                     <br>
 
                     <h4>I. IDENTITAS OPD</h4>
