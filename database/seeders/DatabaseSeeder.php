@@ -1915,7 +1915,7 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '0601220027116',
     'pju' => 'YOYOK PRASETYO',
     'no_akte' => '02',
-    'tanggal' => '04 Januari 2022',
+    'tanggal' => '2022-01-04',
     'nama_notaris' => 'DR. DIAN CAHAYANI S.H., S.E., M.KN.',
     'no_pengesahan' => 'AHU-0000386-AH.01.14 Tahun 2022',
 ]);
@@ -1931,7 +1931,7 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '8120215033114',
     'pju' => 'GAGAT SEPTIAN TYASKORO',
     'no_akte' => '52',
-    'tanggal' => '31 Agustus 2018',
+    'tanggal' => '2018-08-31',
     'nama_notaris' => 'MADSARI MUSLIM, S.H., M.Kn.',
     'no_pengesahan' => '96/CV/2018/PN.BLA',
 ]);
@@ -1947,7 +1947,7 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '9120311032313',
     'pju' => 'SOBIRIN',
     'no_akte' => '8',
-    'tanggal' => '02 Februari 2021',
+    'tanggal' => '2021-02-02',
     'nama_notaris' => 'DIAH TRIMURTI SALEH',
     'no_pengesahan' => 'AHU-0004866-AH.01.15 Tahun 2021',
 ]);
@@ -1963,7 +1963,7 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '220200220036',
     'pju' => 'DJUHADI',
     'no_akte' => '7',
-    'tanggal' => '05 Juli 2022',
+    'tanggal' => '2022-07-05',
     'nama_notaris' => 'Widyaningrum Retno Rudatiningsih S.H., M.Kn.',
     'no_pengesahan' => 'AHU-0035549-AH.01.16 Tahun 2022',
 ]);
@@ -1979,7 +1979,7 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '220007461763',
     'pju' => 'SUMARLAN',
     'no_akte' => '135',
-    'tanggal' => '13 Januari 2020',
+    'tanggal' => '2020-01-13',
     'nama_notaris' => 'NIKEN SUKMAWATI, SH., M.KN.',
     'no_pengesahan' => 'AHU-0004890-AH.01.14 Tahun 2020',
 ]);
@@ -1995,7 +1995,7 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '1299000522944',
     'pju' => 'SUPRIYANTO',
     'no_akte' => '9',
-    'tanggal' => null,
+    'tanggal' => null, // Belum ada tanggal yang valid
     'nama_notaris' => 'DIAH TRIMURTI SALEH',
     'no_pengesahan' => 'AHU-0004738-AH.01.17 Tahun 2021',
 ]);
@@ -2011,7 +2011,7 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '1278000410018',
     'pju' => 'ERNA SAFIATI',
     'no_akte' => '420',
-    'tanggal' => '14 Maret 2022',
+    'tanggal' => '2022-03-14',
     'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
     'no_pengesahan' => 'AHU-0021260-AH.01.16 Tahun 2022',
 ]);
@@ -2027,7 +2027,7 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '1512210023315',
     'pju' => 'SUNTORO',
     'no_akte' => '1',
-    'tanggal' => '07 Desember 2021',
+    'tanggal' => '2021-12-07',
     'nama_notaris' => 'DEWI ANGGRAENI S.H., M.Kn.',
     'no_pengesahan' => 'AHU-0041530-AH.01.16 Tahun 2021',
 ]);
@@ -2043,10 +2043,11 @@ bujkkontraktor::create([
     'nomorindukberusaha' => '911220321514',
     'pju' => 'AGUS SUPRIADI',
     'no_akte' => '361',
-    'tanggal' => '20 Juni 2022',
+    'tanggal' => '2022-06-20',
     'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
     'no_pengesahan' => 'AHU-0042027-AH.01.14 Tahun 2022',
 ]);
+
 
 // makanyu
 
