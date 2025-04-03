@@ -240,43 +240,43 @@ h5 {
                     <table class="table-profil">
                         @foreach ($datakepaladinas as $item)
                         <tr>
-                            <td class="label">1.</td>
+                            <td style="width:50px;">1</td>
                             <td class="label">Nama Lengkap</td>
                             <td class="colon">:</td>
                             <td>{{$item->namalengkap}}</td>
                         </tr>
                         <tr>
-                            <td class="label">2.</td>
+                            <td style="width:50px;">2</td>
                             <td class="label">NIP</td>
                             <td class="colon">:</td>
                             <td>{{$item->nip}}</td>
                         </tr>
                         <tr>
-                            <td class="label">3.</td>
+                            <td style="width:50px;">3</td>
                             <td class="label">Tempat, Tanggal Lahir</td>
                             <td class="colon">:</td>
                             <td>{{$item->ttl}}</td>
                         </tr>
                         <tr>
-                            <td class="label">4.</td>
+                            <td style="width:50px;">4</td>
                             <td class="label">Pangkat / Golongan</td>
                             <td class="colon">:</td>
                             <td>{{$item->pangkatgolongan}}</td>
                         </tr>
                         <tr>
-                            <td class="label">5.</td>
+                            <td style="width:50px;">5</td>
                             <td class="label">Jabatan</td>
                             <td class="colon">:</td>
                             <td>{{$item->jabatan}}</td>
                         </tr>
                         <tr>
-                            <td class="label">6.</td>
+                            <td style="width:50px;">6</td>
                             <td class="label">Perangkat Daerah</td>
                             <td class="colon">:</td>
                             <td>{{$item->perangkatdaerah}}</td>
                         </tr>
                         <tr>
-                            <td class="label">7.</td>
+                            <td style="width:50px;">7</td>
                             <td class="label">Pendidikan Terakhir</td>
                             <td class="colon">:</td>
                             <td>{{$item->pendidikanterakhir}}</td>
