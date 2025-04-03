@@ -11683,7 +11683,7 @@ bujkkontraktorsub::create([
 bujkkonsultan::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 1, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1,
+    'daftarasosiasi_id' => null,
     'namalengkap' => 'Tiara Energi',
     'alamat' => 'Desa Gersi, Desa/Kelurahan Gersi, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081325657254',
@@ -11754,7 +11754,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 2, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 2, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 5,
+    'daftarasosiasi_id' => null,
     'namalengkap' => 'KARYA INTI KONSULTAN',
     'alamat' => 'DUKUH SENDANG KLAMPOK, Desa/Kelurahan Tempurejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '082133220199',
@@ -11799,7 +11799,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 3, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 3, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 4,
+    'daftarasosiasi_id' => null,
     'namalengkap' => 'BEGAWAN ABIYOSO',
     'alamat' => ' DUKUH WUNI, Desa/Kelurahan Balong, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '085292559491',
@@ -11832,7 +11832,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 4, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 4, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 2,
+    'daftarasosiasi_id' => null,
     'namalengkap' => 'GRAHACIPTA PERKASA',
     'alamat' => ' Ds. Tambahrejo, Desa/Kelurahan Tambahrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081327421757',
@@ -11890,7 +11890,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 5, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 5, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 3,
+    'daftarasosiasi_id' => null,
     'namalengkap' => 'BEKONS',
     'alamat' => 'Dukuh Bengir, Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '085326420963',
@@ -11942,6 +11942,198 @@ bujkkonsultansub::create([
     'sub_kualifikasi_bu' => 'Jasa Rekayasa Pekerjaan Teknik Sipil Sumber Daya Air'
 ]);
 
+
+bujkkonsultan::create([
+    'id' => 6,
+    'bujkkonsultansub_id' => 6,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'WIRAYA CIPTA',
+    'alamat' => 'Dukuh Dukoh , Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '085329008618',
+    'email' => 'wirayacipta@gmail.com',
+    'nomorindukberusaha' => '1201220016383',
+    'pju' => 'KHOIRUL NIAM',
+    'no_akte' => '15',
+    'tanggal' => '2021-11-09',
+    'nama_notaris' => 'BAMBANG HARIJANTO S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0076448-AH.01.14 Tahun 2021',
+]);
+
+bujkkonsultan::create([
+    'id' => 7,
+    'bujkkonsultansub_id' => 7,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'CAHAYA KEJORA KREASINDO',
+    'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082135143883',
+    'email' => 'cahyakejorakreasindo@gmail.com',
+    'nomorindukberusaha' => '220302282762',
+    'pju' => 'RANGGA TEGAR',
+    'no_akte' => '22',
+    'tanggal' => '2024-02-05',
+    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0006573-AH.01.16 Tahun 2024',
+]);
+
+bujkkonsultan::create([
+    'id' => 8,
+    'bujkkonsultansub_id' => 8,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'WISMA REKA DESAIN',
+    'alamat' => 'Dukuh Kalisangku, Kab. Blora Jawa Tengah',
+    'no_telepon' => '085878718827',
+    'email' => 'wismareka@gmail.com',
+    'nomorindukberusaha' => '8120017290955',
+    'pju' => 'AHMAD RISBIYANTO',
+    'no_akte' => '351',
+    'tanggal' => '2022-01-20',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0004494-AH.01.16 Tahun 2022',
+]);
+
+bujkkonsultan::create([
+    'id' => 9,
+    'bujkkonsultansub_id' => 9,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'CRYSTAL DESIGN',
+    'alamat' => 'JALAN A. YANI Gg. 5 nO. 19, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'crystaldesign719@gmail.com',
+    'nomorindukberusaha' => '9120106231158',
+    'pju' => null,
+    'no_akte' => null,
+    'tanggal' => null,
+    'nama_notaris' => null,
+    'no_pengesahan' => null,
+]);
+
+bujkkonsultan::create([
+    'id' => 10,
+    'bujkkonsultansub_id' => 10,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'BARRAMUNDI RATU SAMUDERA',
+    'alamat' => 'JALAN H.A SUMIJAN NOMOR 14, Desa/Kelurahan Kedungjenar, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082328706846',
+    'email' => 'ratubarramundi06@gmail.com',
+    'nomorindukberusaha' => '2103220030568',
+    'pju' => 'ARIS MUNANTO',
+    'no_akte' => '433',
+    'tanggal' => '2022-02-18',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0020056-AH.01.14 Tahun 2022',
+]);
+
+bujkkonsultan::create([
+    'id' => 11,
+    'bujkkonsultansub_id' => 11,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'KARTIKA JAYA CONSULTANT',
+    'alamat' => 'JL. PUNTODEWO I NO. 14 A, Desa/Kelurahan Bangkle, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082243313999',
+    'email' => 'kartikajayacvblora@gmail.com',
+    'nomorindukberusaha' => '220102660297',
+    'pju' => 'OKTORINA DYAN',
+    'no_akte' => '10',
+    'tanggal' => '2022-03-04',
+    'nama_notaris' => 'DIAH TRIMURTI SALEH S.E., S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0012081-AH.01.16 Tahun 2022',
+]);
+
+bujkkonsultan::create([
+    'id' => 12,
+    'bujkkonsultansub_id' => 12,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'STATIKA TEKNIK',
+    'alamat' => 'Jalan Bhayangkara Utara I/ID, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082225633211',
+    'email' => 'statika.cv@gmail.com',
+    'nomorindukberusaha' => '220004312446',
+    'pju' => 'ARIEF BUDI',
+    'no_akte' => '344',
+    'tanggal' => '2020-01-30',
+    'nama_notaris' => 'YANI DWI RAHAYU, SH., M.KN',
+    'no_pengesahan' => 'AHU-0003288-AH.01.16 Tahun 2020',
+]);
+
+bujkkonsultan::create([
+    'id' => 13,
+    'bujkkonsultansub_id' => 13,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'ARCHIDAS DESIGN',
+    'alamat' => 'Jalan Halmahera Lorong II Nomor 71 B, Desa/Kelurahan Tambahrejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081215938652',
+    'email' => 'designarchidas@gmail.com',
+    'nomorindukberusaha' => '9120306821957',
+    'pju' => 'HERU DIDIK',
+    'no_akte' => '2',
+    'tanggal' => '2004-05-05',
+    'nama_notaris' => 'ELIZABETH ESTININGSIH, SH',
+    'no_pengesahan' => 'AHU-0054142-AH.01.15 TAHUN 2019',
+]);
+
+bujkkonsultan::create([
+    'id' => 14,
+    'bujkkonsultansub_id' => 14,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'STATIKAGISTA',
+    'alamat' => 'Jalan Raya Blora Cepu KM 13 , Desa/Kelurahan Jiken, Kec. Jiken, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'b.sutejo980@gmail.com',
+    'nomorindukberusaha' => '220200102272',
+    'pju' => null,
+    'no_akte' => null,
+    'tanggal' => null,
+    'nama_notaris' => null,
+    'no_pengesahan' => null,
+]);
+
+bujkkonsultan::create([
+    'id' => 15,
+    'bujkkonsultansub_id' => 15,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'DUTA CAHAYA DESIGN',
+    'alamat' => 'Jl. Flamboyan NO. 188 , Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081316597482',
+    'email' => 'dutacahayadesign117@gmail.com',
+    'nomorindukberusaha' => '220005632037',
+    'pju' => 'MITA ARIS',
+    'no_akte' => '117',
+    'tanggal' => '2020-03-30',
+    'nama_notaris' => 'TUNJUNG WIDHI WASESA SUWADJI S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0021500-AH.01.14 Tahun 2020',
+]);
+
+bujkkonsultan::create([
+    'id' => 16,
+    'bujkkonsultansub_id' => 16,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'GALANG PRATAMA DESIGN',
+    'alamat' => 'Jl.Gunung Selamet No.II/21, Kab. Blora Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'galangpratamacv@gmail.com',
+    'nomorindukberusaha' => '9120216000626',
+    'pju' => 'SUPARMAN',
+    'no_akte' => '18',
+    'tanggal' => '2017-10-12',
+    'nama_notaris' => 'BAMBANG HARIJANTO, S.H., M.Kn',
+    'no_pengesahan' => '65/Cv 2017',
+]);
+
+bujkkonsultan::create([
+    'id' => 17,
+    'bujkkonsultansub_id' => 17,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'MUSTIKA JAYA ABADI KONSULTAN',
+    'alamat' => 'TAMBAKROMO, Desa/Kelurahan Tambakromo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '082134711118',
+    'email' => 'mustikaj64@gmail.com',
+    'nomorindukberusaha' => '2409210011096',
+    'pju' => 'ENDAH TRI',
+    'no_akte' => '126',
+    'tanggal' => '2021-06-17',
+    'nama_notaris' => 'YANI DWI RAHAYU S.H., M.KN.',
+    'no_pengesahan' => 'AHU-0045595-AH.01.14 Tahun 2021',
+]);
 
 
 //======================== ===================================================================================
