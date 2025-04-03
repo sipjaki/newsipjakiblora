@@ -6,10 +6,7 @@ use App\Models\allskktenagakerjablora;
 use App\Models\strukturdinas;
 
 use App\Models\renstra;
-use App\Models\sbulampiran1;
-use App\Models\sbulampiran2;
-use App\Models\sbulampiran3;
-use App\Models\standarbiayaumum;
+use App\Models\tupoksi;
 use App\Models\profiljakonidentitasopd;
 use App\Models\profiljakoninformasi;
 use App\Models\profiljakonkabid;
@@ -87,6 +84,19 @@ class AndroidVersionController extends Controller
 
         ]);
     }
+
+            public function menutupoksi()
+        {
+            $data= tupoksi::all(); // Menggunakan paginate() untuk pagination
+            $user = Auth::user();
+
+            return view('frontend.00_android.B_menukelembagaan.03_tupoksi.index', [
+                'title' => 'Tupoksi Jakon DPUPR Kabupaten Blora',
+                'data' => $data, // Mengirimkan data paginasi ke view
+                'user' => $user, // Mengirimkan data paginasi ke view
+            ]);
+        }
+
 
 
 }

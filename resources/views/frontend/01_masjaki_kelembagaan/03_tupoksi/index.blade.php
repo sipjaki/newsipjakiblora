@@ -57,7 +57,9 @@
 
     <!-- Konten Tupoksi -->
     <div style="background-color: white; padding: 20px; border-radius: 0 0 10px 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
-        <h3 style="color: #2E7D32; text-align: center; font-weight: 600; font-size: 24px; margin-bottom: 20px;">Tupoksi Jasa Konstruksi</h3>
+        @foreach ($data as $item)
+        <h3 style="color: #2E7D32; text-align: center; font-weight: 600; font-size: 24px; margin-bottom: 20px;">{{$item->judul}}</h3>
+        @endforeach
 
         <ul style="padding-left: 20px; list-style-type: none; font-size: 16px;">
             <li style="background-color: #E8F5E9; margin: 10px 0; padding: 12px; border-radius: 5px;">
@@ -83,13 +85,14 @@
 </div>
 
 <div class="portfolio-details-content-text">
-    <p style="text-align: justify;">
-        Dinas Pekerjaan Umum dan Penataan Ruang (DPUPR) Kabupaten Blora memiliki peran strategis dalam pembinaan jasa konstruksi guna mendukung pembangunan infrastruktur yang berkualitas. DPUPR bertugas menyusun kebijakan teknis, mengembangkan sistem informasi konstruksi, serta meningkatkan kapasitas badan usaha konstruksi agar lebih kompetitif dan profesional.
-    </p>
+
+    @foreach ($data as $item)
 
     <p style="text-align: justify;">
-        Selain itu, DPUPR juga berperan dalam pengawasan dan penjaminan mutu konstruksi, penyuluhan serta bimtek kepada para pelaku jasa konstruksi, serta pengembangan pasar dan kerja sama konstruksi. Dengan pendekatan berbasis regulasi dan inovasi, DPUPR terus berupaya menciptakan ekosistem konstruksi yang tertib, berdaya saing, dan mendukung pertumbuhan ekonomi Kabupaten Blora.
+        {!!$item->keterangan!!}
     </p>
+
+    @endforeach
 </div>
 			</div><!-- portfolio-details-content -->
 		</div><!-- container -->
