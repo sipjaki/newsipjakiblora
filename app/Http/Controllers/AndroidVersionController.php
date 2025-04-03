@@ -22,6 +22,16 @@ class AndroidVersionController extends Controller
     ]);
     }
 
+    public function menukelembagaan()
+    {
+        $user = Auth::user();
+
+        return view('frontend.00_android.B_kelembagaan.index', [
+        'title' => 'Menu Kelembagaan',
+        'user' => $user,
+    ]);
+    }
+
 
 
 
