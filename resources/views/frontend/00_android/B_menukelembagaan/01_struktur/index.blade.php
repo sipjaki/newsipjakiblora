@@ -45,7 +45,7 @@
 
                         </div>
                         <br>
-                        <div class="portfolio-details-content-text">
+                        <div class="portfolio-details-content">
                             <p style=desc-less text-sm leading-[26px]" style="text-align: justify;">
                         {!! $item->keterangan !!}
                             </p>
