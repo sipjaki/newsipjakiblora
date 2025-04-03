@@ -24,7 +24,7 @@
         <div class="mt-[30px] z-10">
             <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
         </div>
-        <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center">
+        <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 25px; margin-bottom:100px;">
             <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="300px" loading="lazy">
         </div>
 
