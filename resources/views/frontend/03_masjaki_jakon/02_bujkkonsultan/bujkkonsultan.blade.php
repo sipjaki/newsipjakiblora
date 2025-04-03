@@ -276,7 +276,7 @@ color: #45a049;
                                             <td>{{$item->no_pengesahan}}</td> --}}
                                             {{-- <td style="text-align: center;">{{$item->tahunpilihan->tahunpilihan}}</td> --}}
                                             <td style="text-align: center">
-                                                <a href="/datajakon/bujkkontraktor/{{$item->namalengkap}}">
+                                                <a href="/datajakon/bujkkonsultan/{{$item->namalengkap}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>
