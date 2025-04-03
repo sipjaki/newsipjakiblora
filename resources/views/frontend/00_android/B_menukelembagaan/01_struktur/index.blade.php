@@ -46,7 +46,7 @@
                         </div>
                         <br>
                         <div class="portfolio-details-content-text">
-                            <p style="text-align: justify" >
+                            <p style=desc-less text-sm leading-[26px]" style="text-align: justify;">
                         {!! $item->keterangan !!}
                             </p>
                         </div><!-- portfolio-details-content-text -->
