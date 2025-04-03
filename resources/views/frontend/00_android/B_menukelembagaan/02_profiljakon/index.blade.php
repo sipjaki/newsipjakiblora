@@ -5,11 +5,10 @@
     align-items: center;
     text-align: center;
     padding: 20px;
-    height: 100vh; /* Atur agar elemen berada di tengah halaman */
+
 }
 
 .header-text {
-    max-width: 600px; /* Membatasi lebar agar teks tidak terlalu lebar */
     margin: 0 auto;
 }
 
