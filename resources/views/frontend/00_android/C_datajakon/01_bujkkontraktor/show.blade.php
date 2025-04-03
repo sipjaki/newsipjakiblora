@@ -169,7 +169,6 @@
                                 </table>
                             </div>
                                  <!-- Description Section -->
-                            <br>
                         </div>
 
                     </div>
