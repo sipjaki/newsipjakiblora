@@ -87,7 +87,7 @@
                         {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p> --}}
 
                         <button class="green-button" style="margin-bottom:10px; text-transform:uppercase">
-                            <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy">
+                            {{-- <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"> --}}
                             <i class="fas fa-file mr-2" style="margin-right:5px;"></i> <span style="color: black;">INFORMASI BUJK KONSTRUKSI : {{$data->namalengkap}}</span>
                         </button>
 
@@ -137,7 +137,8 @@
                                     </tbody>
                                 </table>
                                 <br>
-                                <p>Sub Klasifikasi Layanan </p>
+                                <p style="font-weight: bold;">Sub Klasifikasi Layanan </p>
+                                <br>
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
