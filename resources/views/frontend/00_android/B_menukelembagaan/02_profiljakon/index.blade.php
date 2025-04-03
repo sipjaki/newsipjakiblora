@@ -155,7 +155,7 @@ h5 {
                             <h3>BLORA 58214</h3>
                             <p>_____________________________________________________________</p>
                             <h3>PROFIL OPD JASA KONSTRUKSI</h3>
-                            <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h4>
+                            <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
                         </div>
                     </div>
 
