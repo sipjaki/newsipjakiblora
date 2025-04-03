@@ -31,6 +31,7 @@
                 </div>
                 {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
             </div>
+
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
                 <div class="container" style="background-image: url(assets/00_dokmasjaki/03_datajakon/putihbaru.jpg);">
@@ -49,7 +50,6 @@
                             <h2 class="font-semibold text-sm">Keterangan : </h2>
                             <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$item->keterangan!!}</p>
                         </div>
-                        <br>
 
                     </div><!-- portfolio-details-content -->
                     @endforeach
