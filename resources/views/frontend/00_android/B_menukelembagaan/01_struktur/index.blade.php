@@ -39,9 +39,12 @@
                     @foreach ($data as $item )
                     <iframe src="{{ asset('storage/' . $item->peraturan) }}" width="100%" height="750" style="border: none; margin-bottom:25px;"></iframe>
                     <div class="portfolio-details-content">
-                        <div class="portfolio-details-content-title">
-                            <h3>{!! $item->judul !!}</h3>
-                        </div><!-- portfolio-details-content-title -->
+                        <div class="flex flex-col gap-[2px]">
+                            <h2 class="font-semibold text-sm">Redaksi</h2>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$item->judul!!}</p>
+
+                        </div>
+                        <br>
                         <div class="portfolio-details-content-text">
                             <p style="text-align: justify" >
                         {!! $item->keterangan !!}
