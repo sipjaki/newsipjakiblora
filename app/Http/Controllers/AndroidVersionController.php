@@ -26,7 +26,7 @@ class AndroidVersionController extends Controller
     {
         $user = Auth::user();
 
-        return view('frontend.00_android.B_kelembagaan.index', [
+        return view('frontend.00_android.B_menukelembagaan.index', [
         'title' => 'Menu Kelembagaan',
         'user' => $user,
     ]);
