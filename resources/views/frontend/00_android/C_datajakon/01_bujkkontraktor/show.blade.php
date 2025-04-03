@@ -144,11 +144,11 @@
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Sub Klasifikasi Layanan  </th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Kode </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;"> Kualifikasi </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:200px;"> Penerbit </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Tanggal Terbit </th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:200px;"> Masa Berlaku </th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;"> Kode </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> Kualifikasi </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:400px;"> Penerbit </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:350px;"> Tanggal Terbit </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:350px;"> Masa Berlaku </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -156,12 +156,12 @@
                                         @foreach ($subData as $item)
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td>{{$item->sub_klasifikasi_layanan}}</td>
-                                            <td>{{$item->kode}}</td>
-                                            <td>{{$item->kualifikasi}}</td>
-                                            <td>{{$item->penerbit}}</td>
-                                            <td>{{ \Carbon\Carbon::parse($item->tanggal_terbit)->translatedFormat('j F Y') }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($item->masa_berlaku)->translatedFormat('j F Y') }}</td>
+                                            <td style="text-align: left">{{$item->sub_klasifikasi_layanan}}</td>
+                                            <td style="text-align: center;">{{$item->kode}}</td>
+                                            <td style="text-align: center;">{{$item->kualifikasi}}</td>
+                                            <td style="text-align: left">{{$item->penerbit}}</td>
+                                            <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal_terbit)->translatedFormat('j F Y') }}</td>
+                                            <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->masa_berlaku)->translatedFormat('j F Y') }}</td>
                                                </tr>
                                         @endforeach
 
