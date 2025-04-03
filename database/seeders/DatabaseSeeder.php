@@ -5551,7 +5551,7 @@ bujkkontraktorsub::create([
     'kualifikasi' => 'Kecil',
     'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
     'tanggal_terbit' => '2024-02-28',
-    'masa_berlaku' => '27/02/2027',
+    'masa_berlaku' => '2027-02-27',  // Format tanggal yang benar
     'nama_psjk' => 'EKO RIYAN HERMAWAN',
     'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
 ]);
