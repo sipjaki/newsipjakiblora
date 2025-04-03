@@ -4465,7 +4465,6 @@ bujkkontraktorsub::create([
     'nama_psjk' => null,
     'sub_kualifikasi_bu' => null
 ]);
-
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 21,
     'nama_pengurus' => 'SUHARTINI',
@@ -4483,39 +4482,39 @@ bujkkontraktorsub::create([
     'bujkkontraktor_id' => 21,
     'nama_pengurus' => 'SUHARTINI',
     'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'null',
-    'kualifikasi' => 'null',
+    'kode' => null,
+    'kualifikasi' => null,
     'penerbit' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
-    'tanggal_terbit' => 'null',
-    'masa_berlaku' => 'null',
-    'nama_psjk' => 'null',
-    'sub_kualifikasi_bu' => 'null',
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
 ]);
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 21,
     'nama_pengurus' => 'SUHARTINI',
     'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
-    'kode' => 'null',
-    'kualifikasi' => 'null',
+    'kode' => null,
+    'kualifikasi' => null,
     'penerbit' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
-    'tanggal_terbit' => 'null',
-    'masa_berlaku' => 'null',
-    'nama_psjk' => 'null',
-    'sub_kualifikasi_bu' => 'null',
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
 ]);
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 21,
     'nama_pengurus' => 'SUHARTINI',
     'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
-    'kode' => 'null',
-    'kualifikasi' => 'null',
+    'kode' => null,
+    'kualifikasi' => null,
     'penerbit' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
-    'tanggal_terbit' => 'null',
-    'masa_berlaku' => 'null',
-    'nama_psjk' => 'null',
-    'sub_kualifikasi_bu' => 'null',
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
 ]);
 
 bujkkontraktorsub::create([
