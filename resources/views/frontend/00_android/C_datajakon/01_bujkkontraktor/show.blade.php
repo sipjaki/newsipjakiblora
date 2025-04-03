@@ -160,8 +160,8 @@
                                             <td>{{$item->kode}}</td>
                                             <td>{{$item->kualifikasi}}</td>
                                             <td>{{$item->penerbit}}</td>
-                                            <td>{{$item->tanggal_terbit}}</td>
-                                            <td>{{$item->masa_berlaku}}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->tanggal_terbit)->format('d/m/Y') }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->masa_berlaku)->format('d/m/Y') }}</td>
                                         </tr>
                                         @endforeach
 
