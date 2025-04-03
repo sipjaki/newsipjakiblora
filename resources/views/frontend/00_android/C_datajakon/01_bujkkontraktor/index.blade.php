@@ -172,7 +172,7 @@
                                             <td>{{$item->alamat}}</td>
                                             <td style="text-align: center;">{{$item->no_telepon}}</td>
                                             <td style="text-align: center">
-                                                <a href="/datajakon/bujkkontraktor/{{$item->namalengkap}}">
+                                                <a href="/resbujkkontraktor/{{$item->namalengkap}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>

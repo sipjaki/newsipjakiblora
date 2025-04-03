@@ -86,7 +86,7 @@ Route::get('/restupoksi', [AndroidVersionController::class, 'menutupoksi']);
 // ================================================ MENU DATA JAKON
 Route::get('/resdatajakon', [AndroidVersionController::class, 'menudatajakon']);
 Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
-Route::get('/resbujkkontraktordetails', [AndroidVersionController::class, 'menubujkkontraktordetails']);
+Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
 // makanyu
 
