@@ -1,7 +1,7 @@
 
 <div id="Feature" class="px-[18px] relative z-10">
     <div class="bg-white p-[18px_16px] rounded-xl overflow-hidden grid grid-cols-4 gap-[27px]">
-        <a href="/">
+        {{-- <a href="/">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
                     <img src="/assets/00_android/iconmenu/beranda.png" class="w-[100%] h-[100%] object-contain" alt="icon" width="120%">
@@ -10,7 +10,7 @@
                     Beranda
                 </p>
             </div>
-        </a>
+        </a> --}}
         <a href="/404">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
