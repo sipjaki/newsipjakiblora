@@ -9544,8 +9544,8 @@ bujkkontraktorsub::create([
     'kode' => 'BS001',
     'kualifikasi' => 'Kecil',
     'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '01/01/2023',
-    'masa_berlaku' => '31/12/2025',
+    'tanggal_terbit' => '2023-01-01',
+    'masa_berlaku' => '2025-12-31',
     'nama_psjk' => 'SUGIYANTO',
     'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan',
 ]);
@@ -9557,8 +9557,8 @@ bujkkontraktorsub::create([
     'kode' => 'BS005',
     'kualifikasi' => 'Kecil',
     'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '01/01/2023',
-    'masa_berlaku' => '31/12/2025',
+    'tanggal_terbit' => '2023-01-01',
+    'masa_berlaku' => '2025-12-31',
     'nama_psjk' => 'BEBY SAPUTRA',
     'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
 ]);
