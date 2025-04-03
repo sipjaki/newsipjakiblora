@@ -6,27 +6,27 @@
             <div class="header flex flex-col bg-[#56BBC5] rounded-b-[50px] overflow-hidden h-[320px] -mb-[181px]" style="background: linear-gradient(to bottom, #28A745, #FFD100);">
                 <nav class="pt-5 px-3 flex justify-between items-center">
                     <!-- Logo bagian kiri -->
-                    <div class="flex items-center gap-[10px]">
-                        <a href="index.html" class="w-10 h-10 flex shrink-0">
-                            <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
-                        </a>
-                    </div>
-
-                    <!-- Judul bagian tengah -->
-                    <div class="flex flex-col items-center justify-center text-center">
-                        <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-                        <br>
-                        <p class="font-semibold text-xl text-white">{{$title}}</p>
-                    </div>
-
-                    <!-- Ikon bagian kanan -->
-                    <a href="" class="w-10 h-10 flex shrink-0">
-                        <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
-
-                    </a>
-                    <div class="w-full h-full absolute bg-white overflow-hidden">
-                        <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
-                        <img src="/assets/00_android/iconmenu/menuutama.jpg" class="w-full h-full object-cover" alt="cover">
+                    <div class="header flex flex-col bg-[#56BBC5] overflow-hidden h-[350px] relative -mb-[92px]">
+                        <nav class="pt-5 px-3 flex justify-between items-center relative z-20">
+                            <div class="flex items-center gap-[10px]">
+                                <a href="#" class="w-10 h-10 flex shrink-0">
+                                    {{-- <img src="assets/images/icons/back.svg" alt="icon"> --}}
+                                    <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
+                                </a>
+                            </div>
+                            <div class="flex flex-col items-center text-center">
+                                <p class="text-xs leading-[18px] text-white">{{$title}}</p>
+                                {{-- <p class="font-semibold text-sm text-white">#WeNeedHelp</p> --}}
+                            </div>
+                            <a href="" class="w-10 h-10 flex shrink-0">
+                                {{-- <img src="assets/images/icons/like.svg" alt="icon"> --}}
+                                <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
+                            </a>
+                        </nav>
+                        <div class="w-full h-full absolute bg-white overflow-hidden">
+                            <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
+                            <img src="/assets/00_android/iconmenu/menuutama.jpg" class="w-full h-full object-cover" alt="cover">
+                        </div>
                     </div>
                 </nav>
             </div>
