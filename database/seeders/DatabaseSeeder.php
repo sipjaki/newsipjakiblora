@@ -4178,6 +4178,7 @@ bujkkontraktorsub::create([
     'sub_kualifikasi_bu' => null
 ]);
 
+
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 19,
     'nama_pengurus' => 'SUNTORO',
@@ -4206,7 +4207,7 @@ bujkkontraktorsub::create([
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 19,
-    'nama_pengurus' => 'SUNTORO',
+    'nama_pengurus' => 'null',
     'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
     'kode' => 'null',
     'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
@@ -4219,7 +4220,7 @@ bujkkontraktorsub::create([
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 19,
-    'nama_pengurus' => 'SUNTORO',
+    'nama_pengurus' => 'null',
     'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
     'kode' => 'null',
     'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
@@ -4232,7 +4233,7 @@ bujkkontraktorsub::create([
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 19,
-    'nama_pengurus' => 'SUNTORO',
+    'nama_pengurus' => 'null',
     'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
     'kode' => 'null',
     'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
@@ -4245,7 +4246,7 @@ bujkkontraktorsub::create([
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 19,
-    'nama_pengurus' => 'SUNTORO',
+    'nama_pengurus' => 'null',
     'sub_klasifikasi_layanan' => 'Konstruksi Jalan Rel',
     'kode' => 'null',
     'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
@@ -4258,7 +4259,7 @@ bujkkontraktorsub::create([
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 19,
-    'nama_pengurus' => 'SUNTORO',
+    'nama_pengurus' => 'null',
     'sub_klasifikasi_layanan' => 'Instalasi Saluran Air (Plambing)',
     'kode' => 'null',
     'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
@@ -4271,7 +4272,7 @@ bujkkontraktorsub::create([
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 19,
-    'nama_pengurus' => 'SUNTORO',
+    'nama_pengurus' => 'null',
     'sub_klasifikasi_layanan' => 'Penyewaan Alat Konstruksi Dengan Operator',
     'kode' => 'null',
     'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
@@ -4281,18 +4282,7 @@ bujkkontraktorsub::create([
     'nama_psjk' => 'null',
     'sub_kualifikasi_bu' => 'null',
 ]);
-bujkkontraktorsub::create([
-    'bujkkontraktor_id' => 19,
-    'nama_pengurus' => 'SUNTORO',
-    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
-    'kode' => 'BG005',
-    'kualifikasi' => 'Kecil',
-    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '2022-05-18',
-    'masa_berlaku' => '2025-05-17',
-    'nama_psjk' => 'SANIJAYA',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
-]);
+
 
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 19,
