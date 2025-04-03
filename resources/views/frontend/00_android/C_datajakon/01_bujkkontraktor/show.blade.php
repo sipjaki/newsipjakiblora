@@ -84,7 +84,13 @@
 
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                     <div class="flex flex-col gap-[10px]">
-                        <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p>
+                        {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p> --}}
+
+                        <button class="green-button" style="margin-bottom:10px; text-transform:uppercase">
+                            <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy">
+                            <i class="fas fa-file mr-2" style="margin-right:5px;"></i> <span style="color: black;">INFORMASI BUJK KONSTRUKSI : {{$data->namalengkap}}</span>
+                        </button>
+
 
                         <div class="flex flex-col gap-[10px]">
                             {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
@@ -92,6 +98,46 @@
                             <!-- Table Section -->
 
                             <div class="custom-table-container">
+                                <table class="custom-fl-table" id="sortableTable">
+                                    <tbody id="tableBody">
+                                        {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp --}}
+                                        {{-- @foreach ($subData as $item) --}}
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Nama Badan Usaha</td>
+                                            <td>{{$data->namalengkap}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>2</td>
+                                            <td>No Telepon</td>
+                                            <td>{{$data->no_telepon}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Alamat</td>
+                                            <td>{{$data->alamat}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Email</td>
+                                            <td>{{$data->email}}</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Nomor Induk Berusaha</td>
+                                            <td>{{$data->nib}}</td>
+                                        </tr>
+
+                                        {{-- @endforeach --}}
+
+                                    </tbody>
+                                </table>
+                                <br>
+                                <p>Sub Klasifikasi Layanan </p>
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
