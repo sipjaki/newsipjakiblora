@@ -3523,6 +3523,35 @@ bujkkontraktor::create([
     'no_pengesahan' => null,
 ]);
 
+// ======================SUB KLASIFIKASI LAYANAN BUJK KONTRAKTOR
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 11, // Ganti dengan ID yang sesuai
+    'nama_pengurus' => 'VIKI RISQA YULIAN',
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => 'BS001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
+    'tanggal_terbit' => '2022-06-07',
+    'masa_berlaku' => '2025-06-06',
+    'nama_psjk' => 'VIKI RISQA YULIAN',
+    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan'
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 11, // Ganti dengan ID yang sesuai
+    'nama_pengurus' => 'MUH ALI TSURAYYA',
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => 'BS004',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
+    'tanggal_terbit' => '2022-06-07',
+    'masa_berlaku' => '2025-06-06',
+    'nama_psjk' => 'MUH ALI TSURAYYA',
+    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase'
+]);
+
+
 
 // makanyu
 
@@ -12171,6 +12200,8 @@ satuanhargamaterial::create([
     'satuan' => 'Buah',
     'besaran' => '20000',
 ]);
+
+
 
 // makan yu
 
