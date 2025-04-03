@@ -213,9 +213,9 @@
                             @else
                                 <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
                                     <button style="
-                                    background-color: #00098d;
+                                    background-color: #006b1b;
                                     color: white;
-                                    border: 2px solid #00098d;
+                                    border: 2px solid #006b1b;
                                     padding: 8px 12px;
                                     font-size: 14px;
                                     font-weight: bold;

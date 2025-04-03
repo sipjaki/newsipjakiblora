@@ -26,6 +26,7 @@ use App\Http\Controllers\KritikdansaranController;
 use App\Http\Controllers\AllskktenagakerjabloraController;
 use App\Http\Controllers\PaketpekerjaanmasjakiController;
 use App\Http\Controllers\PesertapelatihanController;
+use App\Http\Controllers\AndroidVersionController;
 // MAS JAKI
 
 // atas
@@ -69,6 +70,9 @@ Route::get('/resahspdiv7', [SatuanhargamaterialController::class, 'resahspdiv7']
 Route::get('/resahspdiv8', [SatuanhargamaterialController::class, 'resahspdiv8']);
 Route::get('/resahspdiv9', [SatuanhargamaterialController::class, 'resahspdiv9']);
 
+// ---------------------------- MENU UTAMA ANDROID ------------------------------------------------
+// MENU BERITA
+Route::get('/berita', [AndroidVersionController::class, 'menuberita']);
 
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
