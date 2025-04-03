@@ -71,11 +71,15 @@ Route::get('/resahspdiv8', [SatuanhargamaterialController::class, 'resahspdiv8']
 Route::get('/resahspdiv9', [SatuanhargamaterialController::class, 'resahspdiv9']);
 
 // ---------------------------- MENU UTAMA ANDROID ------------------------------------------------
-// makanyu
-// MENU BERITA
+// ================================================ MENU BERITA
 Route::get('/berita', [AndroidVersionController::class, 'menuberita']);
-Route::get('/kelembagaan', [AndroidVersionController::class, 'menukelembagaan']);
 
+// ================================================ MENU KELEMBAGAAN
+Route::get('/kelembagaan', [AndroidVersionController::class, 'menukelembagaan']);
+// ================================================ MENU 1 STRUKTUR ORGANISASI ===========================================
+Route::get('/struktur', [AndroidVersionController::class, 'menukelembagaan']);
+
+// makanyu
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
