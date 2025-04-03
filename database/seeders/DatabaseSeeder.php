@@ -6158,6 +6158,657 @@ bujkkontraktorsub::create([
     'sub_kualifikasi_bu' => null,
 ]);
 
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => 'DWI AGUNG DEWANTORO PUTRO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
+    'kode' => 'BG002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-04-06',
+    'masa_berlaku' => '2026-04-05',
+    'nama_psjk' => 'SUMARJO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => 'DWI AGUNG DEWANTORO PUTRO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => 'BG005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-04-13',
+    'masa_berlaku' => '2026-04-12',
+    'nama_psjk' => 'SUMARJO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => 'DWI AGUNG DEWANTORO PUTRO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => 'BG006',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-04-13',
+    'masa_berlaku' => '2026-04-12',
+    'nama_psjk' => 'SUMARJO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => 'DWI AGUNG DEWANTORO PUTRO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Tempat Hiburan dan Olahraga',
+    'kode' => 'BG008',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-04-13',
+    'masa_berlaku' => '2026-04-12',
+    'nama_psjk' => 'SUMARJO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Tempat Hiburan dan Olahraga',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Prasarana Sumber Daya Air',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Fasilitas Olah Raga',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Lainnya Ytdl',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 35,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Dekorasi Eksterior',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => 'JOKO MARYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
+    'kode' => 'BG002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-03-31',
+    'masa_berlaku' => '2026-03-30',
+    'nama_psjk' => 'ACHMAD RUYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => 'JOKO MARYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => 'BG005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-03-31',
+    'masa_berlaku' => '2026-03-30',
+    'nama_psjk' => 'ACHMAD RUYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => 'JOKO MARYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => 'BG006',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-03-31',
+    'masa_berlaku' => '2026-03-30',
+    'nama_psjk' => 'ACHMAD RUYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => 'JOKO MARYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
+    'kode' => 'BG009',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-03-31',
+    'masa_berlaku' => '2026-03-30',
+    'nama_psjk' => 'ACHMAD RUYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Lainnya',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => 'JOKO MARYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => 'BS001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-05-31',
+    'masa_berlaku' => '2026-05-30',
+    'nama_psjk' => 'SUJONO',
+    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => 'JOKO MARYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => 'BS004',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-03-09',
+    'masa_berlaku' => '2026-03-08',
+    'nama_psjk' => 'SUYANTO',
+    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => 'JOKO MARYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
+    'kode' => 'BS005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-03-06',
+    'masa_berlaku' => '2026-03-05',
+    'nama_psjk' => 'FETY RAHMADHANI',
+    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Tempat Hiburan dan Olahraga',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Pembuatan/Pengeboran Sumur Air Tanah',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 36,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Prasarana Sumber Daya Air',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => 'SRI WAHYUNI,HJ',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => 'BG005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-05-15',
+    'masa_berlaku' => '2026-05-14',
+    'nama_psjk' => 'Nanda Bastian',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => 'SRI WAHYUNI,HJ',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => 'BG006',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-05-15',
+    'masa_berlaku' => '2026-05-14',
+    'nama_psjk' => 'Nanda Bastian',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => 'SRI WAHYUNI,HJ',
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => 'BS001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-07-29',
+    'masa_berlaku' => '2026-07-28',
+    'nama_psjk' => 'SYARIFA KALSUM',
+    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => 'SRI WAHYUNI,HJ',
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => 'BS004',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-11-06',
+    'masa_berlaku' => '2026-11-05',
+    'nama_psjk' => 'HERLINDA ANGGRAENI',
+    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Instalasi Minyak Dan Gas',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Instalasi Mekanikal',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Instalasi Saluran Air (Plambing)',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Pemasangan Pondasi Dan Tiang Pancang',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Prasarana Sumber Daya Air',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Industri',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perbelanjaan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perbelanjaan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Jasa Pekerjaan Konstruksi Prapabrikasi Bangunan Gedung',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Dekorasi Interior',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Dekorasi Eksterior',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Pengerjaan Lantai, Dinding, Peralatan Saniter Dan Plafon',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Pengecatan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Elektrikal',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Pembuatan/Pengeboran Sumur Air Tanah',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi, Komunikasi, dan Limbah Lainnya',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Pembongkaran',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 38,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Penyiapan Lahan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan SERTIFIKAT STANDAR (OSS)',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+
 
 
 
