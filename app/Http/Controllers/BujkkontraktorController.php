@@ -33,14 +33,14 @@ class BujkkontraktorController extends Controller
     public function asosiasimasjaki(Request $request)
     {
 
-        $databujkkontraktor = bujkkontraktor::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
-        ->groupBy('asosiasimasjaki_id')
-        ->with('asosiasimasjaki') // Pastikan ada relasi ke tabel asosiasi
+        $databujkkontraktor = bujkkontraktor::select('daftarasosiasi_id', DB::raw('count(*) as jumlah'))
+        ->groupBy('daftarasosiasi_id')
+        ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
         ->get();
 
-        $databujkkonsultan = bujkkonsultan::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
-        ->groupBy('asosiasimasjaki_id')
-        ->with('asosiasimasjaki') // Pastikan ada relasi ke tabel asosiasi
+        $databujkkonsultan = bujkkonsultan::select('daftarasosiasi_id', DB::raw('count(*) as jumlah'))
+        ->groupBy('daftarasosiasi_id')
+        ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
         ->get();
 
         $perPage = $request->input('perPage', 10);
@@ -90,7 +90,7 @@ class BujkkontraktorController extends Controller
             $perPage = $request->input('perPage', 15);
             $search = $request->input('search');
 
-            $query = asosiasimasjaki::query();
+            $query = daftarasosiasi::query();
 
             if ($search) {
                 $query->where('namaasosiasi', 'LIKE', "%{$search}%");

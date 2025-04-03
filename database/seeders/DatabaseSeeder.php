@@ -8801,6 +8801,720 @@ bujkkontraktorsub::create([
 ]);
 
 
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 58,
+    'nama_pengurus' => 'AHMAD BAKRI',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
+    'kode' => 'BG002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-06-05',
+    'masa_berlaku' => '2026-06-04',
+    'nama_psjk' => 'TRI MEI IDA RIYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 58,
+    'nama_pengurus' => 'AHMAD BAKRI',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Industri',
+    'kode' => 'BG003',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-06-05',
+    'masa_berlaku' => '2026-06-04',
+    'nama_psjk' => 'TRI MEI IDA RIYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Industri',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 58,
+    'nama_pengurus' => 'AHMAD BAKRI',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => 'BG005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-06-05',
+    'masa_berlaku' => '2026-06-04',
+    'nama_psjk' => 'TRI MEI IDA RIYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 58,
+    'nama_pengurus' => 'AHMAD BAKRI',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => 'BG006',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-06-05',
+    'masa_berlaku' => '2026-06-04',
+    'nama_psjk' => 'TRI MEI IDA RIYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 58,
+    'nama_pengurus' => 'AHMAD BAKRI',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Tempat Hiburan dan Olahraga',
+    'kode' => 'BG008',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-06-05',
+    'masa_berlaku' => '2026-06-04',
+    'nama_psjk' => 'TRI MEI IDA RIYADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Tempat Hiburan dan Olahraga',
+]);
+
+// Data "Belum melengkapi persyaratan"
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 58,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 58,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 58,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => 'DARWANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
+    'kode' => 'BG002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-05-09',
+    'masa_berlaku' => '2026-05-08',
+    'nama_psjk' => 'ANDHY SEPTHYAN NUGRAHA',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => 'DARWANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => 'BG005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-05-09',
+    'masa_berlaku' => '2026-05-08',
+    'nama_psjk' => 'ANDHY SEPTHYAN NUGRAHA',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => 'DARWANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => 'BG006',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-05-09',
+    'masa_berlaku' => '2026-05-08',
+    'nama_psjk' => 'ANDHY SEPTHYAN NUGRAHA',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => 'DARWANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => 'BS001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2023-05-13',
+    'masa_berlaku' => '2026-05-12',
+    'nama_psjk' => 'ANA ENDRA SETIAWATI',
+    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => 'DARWANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => 'BS004',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
+    'tanggal_terbit' => '2024-08-06',
+    'masa_berlaku' => '2027-08-05',
+    'nama_psjk' => 'AHMAD ALSA ZAKI FUAD',
+    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase',
+]);
+
+// Data "Belum melengkapi persyaratan"
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Instalasi Saluran Air (Plambing)',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Pelabuhan Perikanan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Jalan Rel',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 59,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perbelanjaan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 60,
+    'nama_pengurus' => 'DWI ASYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => 'BG005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PT PANCA SATYA JAYATAMA NUSANTARA (GABPEKNAS)',
+    'tanggal_terbit' => '2024-03-06',
+    'masa_berlaku' => '2027-03-05',
+    'nama_psjk' => 'TABAH IRFAN SANTOSO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 60,
+    'nama_pengurus' => 'DWI ASYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => 'BG006',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
+    'tanggal_terbit' => '2023-06-12',
+    'masa_berlaku' => '2026-06-11',
+    'nama_psjk' => 'TABAH IRFAN SANTOSO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 60,
+    'nama_pengurus' => 'DWI ASYANTO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
+    'kode' => 'BG009',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'PT PANCA SATYA JAYATAMA NUSANTARA (GABPEKNAS)',
+    'tanggal_terbit' => '2024-03-06',
+    'masa_berlaku' => '2027-03-05',
+    'nama_psjk' => 'TABAH IRFAN SANTOSO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Lainnya',
+]);
+
+// Data "Belum melengkapi persyaratan"
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 60,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perbelanjaan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 60,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 60,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 60,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => 'SUPARMIN',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
+    'kode' => 'BG002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-04-14',
+    'masa_berlaku' => '2026-04-13',
+    'nama_psjk' => 'RAKHMAD SUCIANTO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => 'SUPARMIN',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perbelanjaan',
+    'kode' => 'BG004',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2024-05-31',
+    'masa_berlaku' => '2027-05-30',
+    'nama_psjk' => 'RAKHMAD SUCIANTO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perbelanjaan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => 'SUPARMIN',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => 'BG005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-02-06',
+    'masa_berlaku' => '2026-02-05',
+    'nama_psjk' => 'RAKHMAD SUCIANTO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => 'SUPARMIN',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => 'BG006',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-01-31',
+    'masa_berlaku' => '2026-01-30',
+    'nama_psjk' => 'RAKHMAD SUCIANTO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => 'SUPARMIN',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
+    'kode' => 'BG009',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-02-13',
+    'masa_berlaku' => '2026-02-12',
+    'nama_psjk' => 'RAKHMAD SUCIANTO',
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Lainnya',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => 'SUPARMIN',
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => 'BS001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-01-19',
+    'masa_berlaku' => '2026-01-18',
+    'nama_psjk' => 'ACHMADI',
+    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => 'SUPARMIN',
+    'sub_klasifikasi_layanan' => 'Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
+    'kode' => 'BG002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-04-03',
+    'masa_berlaku' => '2026-04-02',
+    'nama_psjk' => 'ACHMADI',
+    'sub_kualifikasi_bu' => 'Bangunan Sipil Jembatan, Jalan Layang, Fly Over, dan Underpass',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => 'SUPARMIN',
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => 'BS004',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2024-02-05',
+    'masa_berlaku' => '2027-02-04',
+    'nama_psjk' => 'BANU SULISTIYONO',
+    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase',
+]);
+
+// Data "Belum melengkapi persyaratan"
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Tempat Hiburan dan Olahraga',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Prasarana Sumber Daya Air',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 61,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Hunian',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perbelanjaan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 62,
+    'nama_pengurus' => null,
+    'sub_klasifikasi_layanan' => 'Instalasi Saluran Air (Plambing)',
+    'kode' => null,
+    'kualifikasi' => 'Belum melengkapi persyaratan',
+    'penerbit' => null,
+    'tanggal_terbit' => null,
+    'masa_berlaku' => null,
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => null,
+]);
+
+
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 63,
+    'nama_pengurus' => 'JOHAN PRASETYO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perkantoran',
+    'kode' => 'BG002',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2024-09-07',
+    'masa_berlaku' => '2027-09-06',
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 63,
+    'nama_pengurus' => 'JOHAN PRASETYO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Perbelanjaan',
+    'kode' => 'BG004',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-05-23',
+    'masa_berlaku' => '2026-05-22',
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Perbelanjaan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 63,
+    'nama_pengurus' => 'JOHAN PRASETYO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Kesehatan',
+    'kode' => 'BG005',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2024-09-07',
+    'masa_berlaku' => '2027-09-06',
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 63,
+    'nama_pengurus' => 'JOHAN PRASETYO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Pendidikan',
+    'kode' => 'BG006',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2023-05-23',
+    'masa_berlaku' => '2026-05-22',
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 63,
+    'nama_pengurus' => 'JOHAN PRASETYO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Gedung Lainnya',
+    'kode' => 'BG009',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => '2024-09-07',
+    'masa_berlaku' => '2027-09-06',
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Lainnya',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 63,
+    'nama_pengurus' => 'JOHAN PRASETYO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Jalan',
+    'kode' => 'BS001',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => null,  // "Belum melengkapi persyaratan" status
+    'masa_berlaku' => null,    // "Belum melengkapi persyaratan" status
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 63,
+    'nama_pengurus' => 'JOHAN PRASETYO',
+    'sub_klasifikasi_layanan' => 'Konstruksi Jaringan Irigasi dan Drainase',
+    'kode' => 'BS004',
+    'kualifikasi' => 'Kecil',
+    'penerbit' => 'Gamana Krida Bhakti (GAPENSI)',
+    'tanggal_terbit' => null,  // "Belum melengkapi persyaratan" status
+    'masa_berlaku' => null,    // "Belum melengkapi persyaratan" status
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase',
+]);
+
+bujkkontraktorsub::create([
+    'bujkkontraktor_id' => 63,
+    'nama_pengurus' => 'null',
+    'sub_klasifikasi_layanan' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
+    'kode' => null,  // "Belum melengkapi persyaratan" status
+    'kualifikasi' => null,  // "Belum melengkapi persyaratan" status
+    'penerbit' => null,  // "Belum melengkapi persyaratan" status
+    'tanggal_terbit' => null,  // "Belum melengkapi persyaratan" status
+    'masa_berlaku' => null,    // "Belum melengkapi persyaratan" status
+    'nama_psjk' => null,
+    'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Pengolahan Air Bersih',
+]);
+
+
+
+
 
 
 
