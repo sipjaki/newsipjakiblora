@@ -16,6 +16,99 @@
     margin: 5px 0; /* Memberikan jarak antar elemen */
 }
 
+.table-identitas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-identitas td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+}
+
+.table-identitas .label {
+    font-weight: bold;
+}
+
+.table-identitas .colon {
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-identitas tr:nth-child(even) {
+    background-color: #f9f9f9; /* Memberikan latar belakang berbeda pada baris genap */
+}
+
+.table-identitas tr:hover {
+    background-color: #f1f1f1; /* Efek hover untuk baris */
+}
+
+.table-identitas td {
+    vertical-align: middle; /* Memastikan konten ter-align dengan baik di tengah */
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.table-profil {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table-profil td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+}
+
+.table-profil .label {
+    font-weight: bold;
+    width: 25%; /* Menjaga label agar tidak terlalu melebar */
+}
+
+.table-profil .colon {
+    text-align: center;
+    font-weight: bold;
+    width: 10%;
+}
+
+.table-profil tr:nth-child(even) {
+    background-color: #f9f9f9; /* Memberikan latar belakang berbeda pada baris genap */
+}
+
+.table-profil tr:hover {
+    background-color: #f1f1f1; /* Efek hover untuk baris */
+}
+
+.table-profil td {
+    vertical-align: middle; /* Memastikan konten ter-align dengan baik di tengah */
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+
+
 </style>
 @include('frontend.00_android.00_fiturmenu.header')
 
@@ -67,78 +160,75 @@
                     </div>
 
                     <br>
-
                     <h4>I. IDENTITAS OPD</h4>
-                    <table>
+                    <table class="table-identitas">
                         @foreach ($dataidentitasopd as $item)
-
                         <tr>
-                            <td>1.</td>
-                            <td>Nama OPD</td>
-                            <td>:</td>
+                            <td class="label">1.</td>
+                            <td class="label">Nama OPD</td>
+                            <td class="colon">:</td>
                             <td>{{$item->namaopd}}</td>
                         </tr>
                         <tr>
-                            <td>2.</td>
-                            <td>Alamat OPD</td>
-                            <td>:</td>
+                            <td class="label">2.</td>
+                            <td class="label">Alamat OPD</td>
+                            <td class="colon">:</td>
                             <td>{{$item->alamatopd}}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>RT / RW</td>
-                            <td>:</td>
+                            <td class="label">RT / RW</td>
+                            <td class="colon">:</td>
                             <td>{{$item->rtrw}}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Kode Pos</td>
-                            <td>:</td>
+                            <td class="label">Kode Pos</td>
+                            <td class="colon">:</td>
                             <td>{{$item->kodepos}}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Kelurahan</td>
-                            <td>:</td>
+                            <td class="label">Kelurahan</td>
+                            <td class="colon">:</td>
                             <td>{{$item->kelurahan}}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Kecamatan</td>
-                            <td>:</td>
+                            <td class="label">Kecamatan</td>
+                            <td class="colon">:</td>
                             <td>{{$item->kecamatan}}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Kota</td>
-                            <td>:</td>
+                            <td class="label">Kota</td>
+                            <td class="colon">:</td>
                             <td>{{$item->kota}}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Provinsi</td>
-                            <td>:</td>
+                            <td class="label">Provinsi</td>
+                            <td class="colon">:</td>
                             <td>{{$item->provinsi}}</td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Negara</td>
-                            <td>:</td>
+                            <td class="label">Negara</td>
+                            <td class="colon">:</td>
                             <td>{{$item->negara}}</td>
                         </tr>
                         <tr>
-                            <td>3.</td>
-                            <td>Posisi Geografis</td>
-                            <td>:</td>
+                            <td class="label">3.</td>
+                            <td class="label">Posisi Geografis</td>
+                            <td class="colon">:</td>
                             <td>{{$item->posisigeografis}}</td>
                         </tr>
                         <tr>
-                            <td>4.</td>
-                            <td>Tipe Dinas</td>
-                            <td>:</td>
+                            <td class="label">4.</td>
+                            <td class="label">Tipe Dinas</td>
+                            <td class="colon">:</td>
                             <td>{{$item->tipedinas}}</td>
                         </tr>
-
                         @endforeach
                     </table>
 
@@ -147,159 +237,152 @@
                     <h4>II. PROFIL PIMPINAN OPD</h4>
 
                     <h5>KEPALA DINAS</h5>
-                    <table>
+                    <table class="table-profil">
                         @foreach ($datakepaladinas as $item)
-
                         <tr>
-                            <td>1.</td>
-                            <td>Nama Lengkap</td>
-                            <td>:</td>
+                            <td class="label">1.</td>
+                            <td class="label">Nama Lengkap</td>
+                            <td class="colon">:</td>
                             <td>{{$item->namalengkap}}</td>
                         </tr>
                         <tr>
-                            <td>2.</td>
-                            <td>NIP</td>
-                            <td>:</td>
+                            <td class="label">2.</td>
+                            <td class="label">NIP</td>
+                            <td class="colon">:</td>
                             <td>{{$item->nip}}</td>
                         </tr>
                         <tr>
-                            <td>3.</td>
-                            <td>Tempat, Tanggal Lahir</td>
-                            <td>:</td>
+                            <td class="label">3.</td>
+                            <td class="label">Tempat, Tanggal Lahir</td>
+                            <td class="colon">:</td>
                             <td>{{$item->ttl}}</td>
                         </tr>
                         <tr>
-                            <td>4.</td>
-                            <td>Pangkat / Golongan</td>
-                            <td>:</td>
+                            <td class="label">4.</td>
+                            <td class="label">Pangkat / Golongan</td>
+                            <td class="colon">:</td>
                             <td>{{$item->pangkatgolongan}}</td>
                         </tr>
                         <tr>
-                            <td>5.</td>
-                            <td>Jabatan</td>
-                            <td>:</td>
+                            <td class="label">5.</td>
+                            <td class="label">Jabatan</td>
+                            <td class="colon">:</td>
                             <td>{{$item->jabatan}}</td>
                         </tr>
                         <tr>
-                            <td>6.</td>
-                            <td>Perangkat Daerah</td>
-                            <td>:</td>
+                            <td class="label">6.</td>
+                            <td class="label">Perangkat Daerah</td>
+                            <td class="colon">:</td>
                             <td>{{$item->perangkatdaerah}}</td>
                         </tr>
                         <tr>
-                            <td>7.</td>
-                            <td>Pendidikan Terakhir</td>
-                            <td>:</td>
-                            <td>{{$item->pendidikanterakhir}}</td>
-                        </tr>
-
-                        @endforeach
-                    </table>
-
-                    <br>
-
-                    <h5>KEPALA BIDANG BANGUNAN GEDUNG</h5>
-                    <table>
-
-                        @foreach ($datakabid as $item)
-
-                        <tr>
-                            <td>1.</td>
-                            <td>Nama Lengkap</td>
-                            <td>:</td>
-                            <td>{{$item->namalengkap}}</td>
-                        </tr>
-                        <tr>
-                            <td>2.</td>
-                            <td>NIP</td>
-                            <td>:</td>
-                            <td>{{$item->nip}}</td>
-                        </tr>
-                        <tr>
-                            <td>3.</td>
-                            <td>Tempat, Tanggal Lahir</td>
-                            <td>:</td>
-                            <td>{{$item->ttl}}</td>
-                        </tr>
-                        <tr>
-                            <td>4.</td>
-                            <td>Pangkat / Golongan</td>
-                            <td>:</td>
-                            <td>{{$item->pangkatgolongan}}</td>
-                        </tr>
-                        <tr>
-                            <td>5.</td>
-                            <td>Jabatan</td>
-                            <td>:</td>
-                            <td>{{$item->pangkatgolongan}}</td>
-                        </tr>
-                        <tr>
-                            <td>6.</td>
-                            <td>Perangkat Daerah</td>
-                            <td>:</td>
-                            <td>{{$item->perangkatdaerah}}</td>
-                        </tr>
-                        <tr>
-                            <td>7.</td>
-                            <td>Pendidikan Terakhir</td>
-                            <td>:</td>
+                            <td class="label">7.</td>
+                            <td class="label">Pendidikan Terakhir</td>
+                            <td class="colon">:</td>
                             <td>{{$item->pendidikanterakhir}}</td>
                         </tr>
                         @endforeach
                     </table>
+                                        <br>
+
+                                        <h5>KEPALA BIDANG BANGUNAN GEDUNG</h5>
+                                        <table class="table-profil">
+                                            @foreach ($datakabid as $item)
+                                            <tr>
+                                                <td class="label">1.</td>
+                                                <td class="label">Nama Lengkap</td>
+                                                <td class="colon">:</td>
+                                                <td>{{$item->namalengkap}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">2.</td>
+                                                <td class="label">NIP</td>
+                                                <td class="colon">:</td>
+                                                <td>{{$item->nip}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">3.</td>
+                                                <td class="label">Tempat, Tanggal Lahir</td>
+                                                <td class="colon">:</td>
+                                                <td>{{$item->ttl}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">4.</td>
+                                                <td class="label">Pangkat / Golongan</td>
+                                                <td class="colon">:</td>
+                                                <td>{{$item->pangkatgolongan}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">5.</td>
+                                                <td class="label">Jabatan</td>
+                                                <td class="colon">:</td>
+                                                <td>{{$item->pangkatgolongan}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">6.</td>
+                                                <td class="label">Perangkat Daerah</td>
+                                                <td class="colon">:</td>
+                                                <td>{{$item->perangkatdaerah}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="label">7.</td>
+                                                <td class="label">Pendidikan Terakhir</td>
+                                                <td class="colon">:</td>
+                                                <td>{{$item->pendidikanterakhir}}</td>
+                                            </tr>
+                                            @endforeach
+                                        </table>
 
                     <br>
-
                     <h5>SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
-                    <table>
+                    <table class="table-profil">
                         @foreach ($datasubkoordinator as $item)
-
                         <tr>
-                            <td>1.</td>
-                            <td>Nama Lengkap</td>
-                            <td>:</td>
+                            <td class="label">1.</td>
+                            <td class="label">Nama Lengkap</td>
+                            <td class="colon">:</td>
                             <td>{{$item->namalengkap}}</td>
                         </tr>
                         <tr>
-                            <td>2.</td>
-                            <td>NIP</td>
-                            <td>:</td>
+                            <td class="label">2.</td>
+                            <td class="label">NIP</td>
+                            <td class="colon">:</td>
                             <td>{{$item->nip}}</td>
                         </tr>
                         <tr>
-                            <td>3.</td>
-                            <td>Tempat, Tanggal Lahir</td>
-                            <td>:</td>
+                            <td class="label">3.</td>
+                            <td class="label">Tempat, Tanggal Lahir</td>
+                            <td class="colon">:</td>
                             <td>{{$item->ttl}}</td>
                         </tr>
                         <tr>
-                            <td>4.</td>
-                            <td>Pangkat/Golongan</td>
-                            <td>:</td>
+                            <td class="label">4.</td>
+                            <td class="label">Pangkat/Golongan</td>
+                            <td class="colon">:</td>
                             <td>{{$item->pangkatgolongan}}</td>
                         </tr>
                         <tr>
-                            <td>5.</td>
-                            <td>Jabatan</td>
-                            <td>:</td>
+                            <td class="label">5.</td>
+                            <td class="label">Jabatan</td>
+                            <td class="colon">:</td>
                             <td>{{$item->jabatan}}</td>
                         </tr>
                         <tr>
-                            <td>6.</td>
-                            <td>Pendidikan Terakhir</td>
-                            <td>:</td>
+                            <td class="label">6.</td>
+                            <td class="label">Pendidikan Terakhir</td>
+                            <td class="colon">:</td>
                             <td>{{$item->pendidikanterakhir}}</td>
                         </tr>
                         @endforeach
                     </table>
                     <br>
+
 
                     <h4>III. OPD Jakon</h4>
-                    <table>
+                    <table class="table-profil">
                         @foreach ($datainformasi as $item)
-
                         <tr>
-                            <td></td>
+                            <td class="label"></td>
                             <td>{!!$item->informasiopd!!}</td>
                         </tr>
                         @endforeach
@@ -307,91 +390,85 @@
                     <br>
 
                     <h4>IV. Kontak OPD</h4>
-                    <table>
+                    <table class="table-profil">
                         @foreach ($datainformasi as $item)
-
                         <tr>
-                            <td>1</td>
-                            <td>Nomor Telepon</td>
-                            <td>:</td>
+                            <td class="label">1</td>
+                            <td class="label">Nomor Telepon</td>
+                            <td class="colon">:</td>
                             <td>{{$item->notelepon}}</td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>Instagram</td>
-                            <td>:</td>
+                            <td class="label">2</td>
+                            <td class="label">Instagram</td>
+                            <td class="colon">:</td>
                             <td>@{{$item->instagram}}</td>
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td>Tiktok</td>
-                            <td>:</td>
+                            <td class="label">3</td>
+                            <td class="label">Tiktok</td>
+                            <td class="colon">:</td>
                             <td>{{$item->tiktok}}</td>
-                            {{-- <td>'@bangunan.gedung.dpupr'</td> --}}
                         </tr>
                         <tr>
-                            <td>3</td>
-                            <td>Tiktok</td>
-                            <td>:</td>
+                            <td class="label">4</td>
+                            <td class="label">Email</td>
+                            <td class="colon">:</td>
                             <td>{{$item->email}}</td>
-                            {{-- <td>'@bangunan.gedung.dpupr'</td> --}}
                         </tr>
                         @endforeach
                     </table>
-
                     <br>
+
                     <h4>V. SK SIPJAKI</h4>
-                    <table>
+                    <table class="table-profil">
                         @foreach ($datasipjaki as $item)
                         <tr>
-                            <td></td>
-                            <td>Nomor</td>
-                            <td>:</td>
+                            <td class="label"></td>
+                            <td class="label">Nomor</td>
+                            <td class="colon">:</td>
                             <td>{{$item->nomor}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>Nama Operator SIPJAKI</td>
-                            <td>:</td>
+                            <td class="label"></td>
+                            <td class="label">Nama Operator SIPJAKI</td>
+                            <td class="colon">:</td>
                             <td>{{$item->operator1}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>Nama Operator SIPJAKI</td>
-                            <td>:</td>
+                            <td class="label"></td>
+                            <td class="label">Nama Operator SIPJAKI</td>
+                            <td class="colon">:</td>
                             <td>{{$item->operator2}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>Nama Operator SIPJAKI</td>
-                            <td>:</td>
+                            <td class="label"></td>
+                            <td class="label">Nama Operator SIPJAKI</td>
+                            <td class="colon">:</td>
                             <td>{{$item->operator3}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>Nama Operator SIPJAKI</td>
-                            <td>:</td>
+                            <td class="label"></td>
+                            <td class="label">Nama Operator SIPJAKI</td>
+                            <td class="colon">:</td>
                             <td>{{$item->operator4}}</td>
                         </tr>
                         @endforeach
                     </table>
+                                        <br>
 
-                    <br>
-                    <h4>VI. SK PERSONIL JABATAN FUNGSIONAL JASA KONSTRUKSI</h4>
-                    <table>
-                        @foreach ($datapersonil as $item)
-
-                        <tr>
-                            <td>{{$loop->iteration}}</td>
-                            <td>{{$item->jabatan}}</td>
-                            <td>:</td>
-                            <td>{{$item->namalengkap}}</td>
-                        </tr>
-
-                        @endforeach
-                    </table>
-
-                </div>
+                                        <h4>VI. SK PERSONIL JABATAN FUNGSIONAL JASA KONSTRUKSI</h4>
+                                        <table class="table-profil">
+                                            @foreach ($datapersonil as $item)
+                                            <tr>
+                                                <td class="label">{{$loop->iteration}}</td>
+                                                <td class="label">{{$item->jabatan}}</td>
+                                                <td class="colon">:</td>
+                                                <td>{{$item->namalengkap}}</td>
+                                            </tr>
+                                            @endforeach
+                                        </table>
+                                                        </div>
 
             </div>
         </div>
