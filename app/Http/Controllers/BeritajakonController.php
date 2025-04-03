@@ -20,12 +20,14 @@ class BeritajakonController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $users = user::all();
         $databerita = beritajakon::paginate(6);
 
 
         return view('frontend.02_beritajakon.index', [
             'title' => 'Berita Jasa Konstruksi',
             'user' => $user, // Mengirimkan data paginasi ke view
+            'users' => $users, // Mengirimkan data paginasi ke view
             'data' => $databerita, // Mengirimkan data paginasi ke view
         ]);
     }
