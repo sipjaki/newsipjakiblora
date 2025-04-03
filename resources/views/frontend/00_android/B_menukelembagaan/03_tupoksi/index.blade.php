@@ -38,7 +38,7 @@
                     {{-- <img src="assets/image/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="img-109"> --}}
                     <div style="background-color: white; padding: 20px; border-radius: 0 0 10px 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
                         @foreach ($data as $item)
-                        <h3 style="color: #2E7D32; text-align: center; font-weight: 600; font-size: 24px; margin-bottom: 20px;">{{$item->judul}}</h3>
+                        <h3 style="color: #2E7D32; text-align: center; font-weight: 600; font-size: 14px; margin-bottom: 20px;">{{$item->judul}}</h3>
                         @endforeach
 
                         <ul style="padding-left: 20px; list-style-type: none; font-size: 16px;">
@@ -65,7 +65,8 @@
                 </div>
 
                 <div class="portfolio-details-content-text">
-
+                        <p style="font-weight: bold;">Keterangan : </p>
+                        <br>
                     @foreach ($data as $item)
 
                     <p style="text-align: justify;">
