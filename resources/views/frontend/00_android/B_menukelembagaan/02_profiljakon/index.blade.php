@@ -236,47 +236,47 @@ h5 {
 
                     <h4>II. PROFIL PIMPINAN OPD</h4>
 
-                    <h5>KEPALA DINAS</h5>
+                    <h5>A. KEPALA DINAS</h5>
                     <table class="table-profil">
                         @foreach ($datakepaladinas as $item)
                         <tr>
-                            <td style="width:50px;">1</td>
+                            <td style="width:50px; text-align:center;">1</td>
                             <td class="label">Nama Lengkap</td>
                             <td class="colon">:</td>
                             <td>{{$item->namalengkap}}</td>
                         </tr>
                         <tr>
-                            <td style="width:50px;">2</td>
+                            <td style="width:50px; text-align:center;">2</td>
                             <td class="label">NIP</td>
                             <td class="colon">:</td>
                             <td>{{$item->nip}}</td>
                         </tr>
                         <tr>
-                            <td style="width:50px;">3</td>
+                            <td style="width:50px; text-align:center;">3</td>
                             <td class="label">Tempat, Tanggal Lahir</td>
                             <td class="colon">:</td>
                             <td>{{$item->ttl}}</td>
                         </tr>
                         <tr>
-                            <td style="width:50px;">4</td>
+                            <td style="width:50px; text-align:center;">4</td>
                             <td class="label">Pangkat / Golongan</td>
                             <td class="colon">:</td>
                             <td>{{$item->pangkatgolongan}}</td>
                         </tr>
                         <tr>
-                            <td style="width:50px;">5</td>
+                            <td style="width:50px; text-align:center;">5</td>
                             <td class="label">Jabatan</td>
                             <td class="colon">:</td>
                             <td>{{$item->jabatan}}</td>
                         </tr>
                         <tr>
-                            <td style="width:50px;">6</td>
+                            <td style="width:50px; text-align:center;">6</td>
                             <td class="label">Perangkat Daerah</td>
                             <td class="colon">:</td>
                             <td>{{$item->perangkatdaerah}}</td>
                         </tr>
                         <tr>
-                            <td style="width:50px;">7</td>
+                            <td style="width:50px; text-align:center;">7</td>
                             <td class="label">Pendidikan Terakhir</td>
                             <td class="colon">:</td>
                             <td>{{$item->pendidikanterakhir}}</td>
@@ -289,43 +289,43 @@ h5 {
                                         <table class="table-profil">
                                             @foreach ($datakabid as $item)
                                             <tr>
-                                                <td class="label">1.</td>
+                                                <td style="width:50px; text-align:center;">1</td>
                                                 <td class="label">Nama Lengkap</td>
                                                 <td class="colon">:</td>
                                                 <td>{{$item->namalengkap}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="label">2.</td>
+                                                <td style="width:50px; text-align:center;">2</td>
                                                 <td class="label">NIP</td>
                                                 <td class="colon">:</td>
                                                 <td>{{$item->nip}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="label">3.</td>
+                                                <td style="width:50px; text-align:center;">3</td>
                                                 <td class="label">Tempat, Tanggal Lahir</td>
                                                 <td class="colon">:</td>
                                                 <td>{{$item->ttl}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="label">4.</td>
+                                                <td style="width:50px; text-align:center;">4</td>
                                                 <td class="label">Pangkat / Golongan</td>
                                                 <td class="colon">:</td>
                                                 <td>{{$item->pangkatgolongan}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="label">5.</td>
+                                                <td style="width:50px; text-align:center;">5</td>
                                                 <td class="label">Jabatan</td>
                                                 <td class="colon">:</td>
                                                 <td>{{$item->pangkatgolongan}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="label">6.</td>
+                                                <td style="width:50px; text-align:center;">6</td>
                                                 <td class="label">Perangkat Daerah</td>
                                                 <td class="colon">:</td>
                                                 <td>{{$item->perangkatdaerah}}</td>
                                             </tr>
                                             <tr>
-                                                <td class="label">7.</td>
+                                                <td style="width:50px; text-align:center;">7</td>
                                                 <td class="label">Pendidikan Terakhir</td>
                                                 <td class="colon">:</td>
                                                 <td>{{$item->pendidikanterakhir}}</td>
@@ -338,37 +338,37 @@ h5 {
                     <table class="table-profil">
                         @foreach ($datasubkoordinator as $item)
                         <tr>
-                            <td class="label">1.</td>
+                            <td style="width:50px; text-align:center;">1</td>
                             <td class="label">Nama Lengkap</td>
                             <td class="colon">:</td>
                             <td>{{$item->namalengkap}}</td>
                         </tr>
                         <tr>
-                            <td class="label">2.</td>
+                            <td style="width:50px; text-align:center;">2</td>
                             <td class="label">NIP</td>
                             <td class="colon">:</td>
                             <td>{{$item->nip}}</td>
                         </tr>
                         <tr>
-                            <td class="label">3.</td>
+                            <td style="width:50px; text-align:center;">3</td>
                             <td class="label">Tempat, Tanggal Lahir</td>
                             <td class="colon">:</td>
                             <td>{{$item->ttl}}</td>
                         </tr>
                         <tr>
-                            <td class="label">4.</td>
+                            <td style="width:50px; text-align:center;">4</td>
                             <td class="label">Pangkat/Golongan</td>
                             <td class="colon">:</td>
                             <td>{{$item->pangkatgolongan}}</td>
                         </tr>
                         <tr>
-                            <td class="label">5.</td>
+                            <td style="width:50px; text-align:center;">5</td>
                             <td class="label">Jabatan</td>
                             <td class="colon">:</td>
                             <td>{{$item->jabatan}}</td>
                         </tr>
                         <tr>
-                            <td class="label">6.</td>
+                            <td style="width:50px; text-align:center;">6</td>
                             <td class="label">Pendidikan Terakhir</td>
                             <td class="colon">:</td>
                             <td>{{$item->pendidikanterakhir}}</td>
@@ -382,7 +382,7 @@ h5 {
                     <table class="table-profil">
                         @foreach ($datainformasi as $item)
                         <tr>
-                            <td class="label"></td>
+                            <td style="width:50px; text-align:center;"></td>
                             <td>{!!$item->informasiopd!!}</td>
                         </tr>
                         @endforeach
@@ -393,25 +393,25 @@ h5 {
                     <table class="table-profil">
                         @foreach ($datainformasi as $item)
                         <tr>
-                            <td class="label">1</td>
+                            <td style="width:50px; text-align:center;">1</td>
                             <td class="label">Nomor Telepon</td>
                             <td class="colon">:</td>
                             <td>{{$item->notelepon}}</td>
                         </tr>
                         <tr>
-                            <td class="label">2</td>
+                            <td style="width:50px; text-align:center;">2</td>
                             <td class="label">Instagram</td>
                             <td class="colon">:</td>
                             <td>@{{$item->instagram}}</td>
                         </tr>
                         <tr>
-                            <td class="label">3</td>
+                            <td style="width:50px; text-align:center;">3</td>
                             <td class="label">Tiktok</td>
                             <td class="colon">:</td>
                             <td>{{$item->tiktok}}</td>
                         </tr>
                         <tr>
-                            <td class="label">4</td>
+                            <td style="width:50px; text-align:center;">4</td>
                             <td class="label">Email</td>
                             <td class="colon">:</td>
                             <td>{{$item->email}}</td>
@@ -424,31 +424,31 @@ h5 {
                     <table class="table-profil">
                         @foreach ($datasipjaki as $item)
                         <tr>
-                            <td class="label"></td>
+                            <td style="width:50px; text-align:center;"></td>
                             <td class="label">Nomor</td>
                             <td class="colon">:</td>
                             <td>{{$item->nomor}}</td>
                         </tr>
                         <tr>
-                            <td class="label"></td>
+                            <td style="width:50px; text-align:center;"></td>
                             <td class="label">Nama Operator SIPJAKI</td>
                             <td class="colon">:</td>
                             <td>{{$item->operator1}}</td>
                         </tr>
                         <tr>
-                            <td class="label"></td>
+                            <td style="width:50px; text-align:center;"></td>
                             <td class="label">Nama Operator SIPJAKI</td>
                             <td class="colon">:</td>
                             <td>{{$item->operator2}}</td>
                         </tr>
                         <tr>
-                            <td class="label"></td>
+                            <td style="width:50px; text-align:center;"></td>
                             <td class="label">Nama Operator SIPJAKI</td>
                             <td class="colon">:</td>
                             <td>{{$item->operator3}}</td>
                         </tr>
                         <tr>
-                            <td class="label"></td>
+                            <td style="width:50px; text-align:center;"></td>
                             <td class="label">Nama Operator SIPJAKI</td>
                             <td class="colon">:</td>
                             <td>{{$item->operator4}}</td>
@@ -461,7 +461,7 @@ h5 {
                                         <table class="table-profil">
                                             @foreach ($datapersonil as $item)
                                             <tr>
-                                                <td class="label">{{$loop->iteration}}</td>
+                                                <td style="width:50px; text-align:center;">{{$loop->iteration}}</td>
                                                 <td class="label">{{$item->jabatan}}</td>
                                                 <td class="colon">:</td>
                                                 <td>{{$item->namalengkap}}</td>
