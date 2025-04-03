@@ -160,7 +160,7 @@ h5 {
                     </div>
 
                     <br>
-                    <h4>I. IDENTITAS OPD</h4>
+                    <h4 style="font-weight:bold;">I. IDENTITAS OPD</h4>
                     <table class="table-identitas">
                         @foreach ($dataidentitasopd as $item)
                         <tr>
@@ -234,9 +234,9 @@ h5 {
 
                     <br>
 
-                    <h4>II. PROFIL PIMPINAN OPD</h4>
+                    <h4 style="font-weight:bold;">II. PROFIL PIMPINAN OPD</h4>
 
-                    <h5>A. KEPALA DINAS</h5>
+                    <h5 style="font-weight:bold;">A. KEPALA DINAS</h5>
                     <table class="table-profil">
                         @foreach ($datakepaladinas as $item)
                         <tr>
@@ -285,7 +285,7 @@ h5 {
                     </table>
                                         <br>
 
-                                        <h5>KEPALA BIDANG BANGUNAN GEDUNG</h5>
+                                        <h5 style="font-weight:bold;">B. KEPALA BIDANG BANGUNAN GEDUNG</h5>
                                         <table class="table-profil">
                                             @foreach ($datakabid as $item)
                                             <tr>
@@ -334,7 +334,7 @@ h5 {
                                         </table>
 
                     <br>
-                    <h5>SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
+                    <h5 style="font-weight:bold;">C. SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
                     <table class="table-profil">
                         @foreach ($datasubkoordinator as $item)
                         <tr>
@@ -378,7 +378,7 @@ h5 {
                     <br>
 
 
-                    <h4>III. OPD Jakon</h4>
+                    <h4 style="font-weight:bold;">III. OPD Jakon</h4>
                     <table class="table-profil">
                         @foreach ($datainformasi as $item)
                         <tr>
@@ -389,7 +389,7 @@ h5 {
                     </table>
                     <br>
 
-                    <h4>IV. Kontak OPD</h4>
+                    <h4 style="font-weight:bold;">IV. Kontak OPD</h4>
                     <table class="table-profil">
                         @foreach ($datainformasi as $item)
                         <tr>
@@ -420,7 +420,7 @@ h5 {
                     </table>
                     <br>
 
-                    <h4>V. SK SIPJAKI</h4>
+                    <h4 style="font-weight:bold;">V. SK SIPJAKI</h4>
                     <table class="table-profil">
                         @foreach ($datasipjaki as $item)
                         <tr>
@@ -457,7 +457,7 @@ h5 {
                     </table>
                                         <br>
 
-                                        <h4>VI. SK PERSONIL JABATAN FUNGSIONAL JASA KONSTRUKSI</h4>
+                                        <h4 style="font-weight:bold;">VI. SK PERSONIL JABATAN FUNGSIONAL JASA KONSTRUKSI</h4>
                                         <table class="table-profil">
                                             @foreach ($datapersonil as $item)
                                             <tr>
