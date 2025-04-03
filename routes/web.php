@@ -77,7 +77,7 @@ Route::get('/berita', [AndroidVersionController::class, 'menuberita']);
 // ================================================ MENU KELEMBAGAAN
 Route::get('/kelembagaan', [AndroidVersionController::class, 'menukelembagaan']);
 // ================================================ MENU 1 STRUKTUR ORGANISASI ===========================================
-Route::get('/struktur', [AndroidVersionController::class, 'menukelembagaan']);
+Route::get('/resstruktur', [AndroidVersionController::class, 'menustruktur']);
 
 // makanyu
 // ==========================================================================================================================================
