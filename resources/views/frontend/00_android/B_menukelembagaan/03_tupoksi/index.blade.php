@@ -11,7 +11,7 @@
                     </a>
                 </div>
                 <div class="flex flex-col items-center text-center">
-                    <p class="text-xs leading-[18px] text-white">{{$title}}</p>
+                    <p class="text-xs leading-[24px] text-white">{{$title}}</p>
                     {{-- <p class="font-semibold text-sm text-white">#WeNeedHelp</p> --}}
                 </div>
                 <a href="" class="w-10 h-10 flex shrink-0">
