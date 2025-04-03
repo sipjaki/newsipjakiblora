@@ -1887,6 +1887,169 @@ bujkkontraktorsub ::create([
     'sub_kualifikasi_bu' => '-'
 ]);
 
+bujkkontraktor::create([
+    'id' => 11, // ID yang sesuai
+    'bujkkontraktorsub_id' => 11, // ID yang sesuai
+    'daftarasosiasi_id' => null, // Tidak ada ID asosiasi yang diberikan
+    'namalengkap' => 'KUKUH PERKASA',
+    'alamat' => 'DK. PATIHAN DS. KETILENG, Desa/Kelurahan Ketileng, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081326500270', // Nomor telepon sudah diawali dengan 0
+    'email' => 'cvkukuhperkasa@gmail.com',
+    'nomorindukberusaha' => '9120310021477',
+    'pju' => 'JAIS',
+    'no_akte' => '58',
+    'tanggal' => null, // Tidak ada tanggal yang diberikan
+    'nama_notaris' => 'ELIZABETH ESTININGSIH, S. H.',
+    'no_pengesahan' => '09/CV/2015',
+    // 'tahunpilihan_id' => null, // ID tahun pilihan tidak ada
+]);
+
+bujkkontraktor::create([
+    'id' => 12,
+    'bujkkontraktorsub_id' => 12,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'PELANGI KONSTRUKSI',
+    'alamat' => 'DK. PUDAK RT 001 RW 001, Kec.Ngawen, Kab.Blora, Provinsi JawaTengah',
+    'no_telepon' => '081328617256',
+    'email' => 'pelangi.pudak@gmail.com',
+    'nomorindukberusaha' => '0601220027116',
+    'pju' => 'YOYOK PRASETYO',
+    'no_akte' => '02',
+    'tanggal' => '04 Januari 2022',
+    'nama_notaris' => 'DR. DIAN CAHAYANI S.H., S.E., M.KN.',
+    'no_pengesahan' => 'AHU-0000386-AH.01.14 Tahun 2022',
+]);
+
+bujkkontraktor::create([
+    'id' => 13,
+    'bujkkontraktorsub_id' => 13,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'GADA PERKASA',
+    'alamat' => 'DUKUH BENGIR RT. 003 RW. 005, Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '085225026999',
+    'email' => 'gadaperkasa.blora@gmail.com',
+    'nomorindukberusaha' => '8120215033114',
+    'pju' => 'GAGAT SEPTIAN TYASKORO',
+    'no_akte' => '52',
+    'tanggal' => '31 Agustus 2018',
+    'nama_notaris' => 'MADSARI MUSLIM, S.H., M.Kn.',
+    'no_pengesahan' => '96/CV/2018/PN.BLA',
+]);
+
+bujkkontraktor::create([
+    'id' => 14,
+    'bujkkontraktorsub_id' => 14,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'RAFI JAYA BERKARYA',
+    'alamat' => 'DUKUH GENENG, Desa/Kelurahan Prigi, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081215555414',
+    'email' => 'cvrafija@gmail.com',
+    'nomorindukberusaha' => '9120311032313',
+    'pju' => 'SOBIRIN',
+    'no_akte' => '8',
+    'tanggal' => '02 Februari 2021',
+    'nama_notaris' => 'DIAH TRIMURTI SALEH',
+    'no_pengesahan' => 'AHU-0004866-AH.01.15 Tahun 2021',
+]);
+
+bujkkontraktor::create([
+    'id' => 15,
+    'bujkkontraktorsub_id' => 15,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'WAHYU PUTRA MANDIRI',
+    'alamat' => 'DUKUH KAJANGAN, Desa/Kelurahan Sonorejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'djuhadiwahyuputramandiri@gmail.com',
+    'nomorindukberusaha' => '220200220036',
+    'pju' => 'DJUHADI',
+    'no_akte' => '7',
+    'tanggal' => '05 Juli 2022',
+    'nama_notaris' => 'Widyaningrum Retno Rudatiningsih S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0035549-AH.01.16 Tahun 2022',
+]);
+
+bujkkontraktor::create([
+    'id' => 16,
+    'bujkkontraktorsub_id' => 16,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'NOGO',
+    'alamat' => 'DUKUH KAJENGAN, Desa/Kelurahan Kajengan, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => null,
+    'email' => 'nogo.cv@gmail.com',
+    'nomorindukberusaha' => '220007461763',
+    'pju' => 'SUMARLAN',
+    'no_akte' => '135',
+    'tanggal' => '13 Januari 2020',
+    'nama_notaris' => 'NIKEN SUKMAWATI, SH., M.KN.',
+    'no_pengesahan' => 'AHU-0004890-AH.01.14 Tahun 2020',
+]);
+
+bujkkontraktor::create([
+    'id' => 17,
+    'bujkkontraktorsub_id' => 17,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'LAMAYU JATI PERKASA',
+    'alamat' => 'DUKUH KARANGNONGKO, Desa/Kelurahan Buluroto, Kec. Banjarejo, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081229247886',
+    'email' => 'lamayujati@yahoo.com',
+    'nomorindukberusaha' => '1299000522944',
+    'pju' => 'SUPRIYANTO',
+    'no_akte' => '9',
+    'tanggal' => null,
+    'nama_notaris' => 'DIAH TRIMURTI SALEH',
+    'no_pengesahan' => 'AHU-0004738-AH.01.17 Tahun 2021',
+]);
+
+bujkkontraktor::create([
+    'id' => 18,
+    'bujkkontraktorsub_id' => 18,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'MEURAH INTAN',
+    'alamat' => 'DUKUH MAGUAN, Desa/Kelurahan Tamanrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081229247886',
+    'email' => 'Meurah77@yahoo.com',
+    'nomorindukberusaha' => '1278000410018',
+    'pju' => 'ERNA SAFIATI',
+    'no_akte' => '420',
+    'tanggal' => '14 Maret 2022',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0021260-AH.01.16 Tahun 2022',
+]);
+
+bujkkontraktor::create([
+    'id' => 19,
+    'bujkkontraktorsub_id' => 19,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'MULYO JOYO ABADI',
+    'alamat' => 'DUKUH PLOSOREJO, Desa/Kelurahan Nglangitan, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '081326131617',
+    'email' => 'joyomulyo51@gmail.com',
+    'nomorindukberusaha' => '1512210023315',
+    'pju' => 'SUNTORO',
+    'no_akte' => '1',
+    'tanggal' => '07 Desember 2021',
+    'nama_notaris' => 'DEWI ANGGRAENI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0041530-AH.01.16 Tahun 2021',
+]);
+
+bujkkontraktor::create([
+    'id' => 20,
+    'bujkkontraktorsub_id' => 20,
+    'daftarasosiasi_id' => null,
+    'namalengkap' => 'ADITIYA JAYA PERKASA',
+    'alamat' => 'DUKUH SORONINI, Desa/Kelurahan Sonokulon, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
+    'no_telepon' => '085290405097',
+    'email' => 'aditiyajayaperkasa.65@gmail.com',
+    'nomorindukberusaha' => '911220321514',
+    'pju' => 'AGUS SUPRIADI',
+    'no_akte' => '361',
+    'tanggal' => '20 Juni 2022',
+    'nama_notaris' => 'NIKEN SUKMAWATI S.H., M.Kn.',
+    'no_pengesahan' => 'AHU-0042027-AH.01.14 Tahun 2022',
+]);
+
+// makanyu
+
 // bujkkontraktorsub ::create([
 //     'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
 //     'nama_pengurus' => '-',
