@@ -164,7 +164,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
-                                        {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp --}}
+                                        @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
                                         @foreach ($data as $item )
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
