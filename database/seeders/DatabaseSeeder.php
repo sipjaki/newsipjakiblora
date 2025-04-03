@@ -3668,7 +3668,6 @@ bujkkontraktorsub::create([
     'nama_psjk' => null, // Nama PSJK tidak diberikan
     'sub_kualifikasi_bu' => null, // Sub kualifikasi bu tidak diberikan
 ]);
-
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 13,
     'nama_pengurus' => 'GAGAT SEPTIAN TYASKORO',
@@ -3676,8 +3675,8 @@ bujkkontraktorsub::create([
     'kode' => 'BG002',
     'kualifikasi' => 'Kecil',
     'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '24/06/2022',
-    'masa_berlaku' => '23/06/2025',
+    'tanggal_terbit' => '2022-06-24',
+    'masa_berlaku' => '2025-06-23',
     'nama_psjk' => 'CANDRA HERI PURNAWANTO',
     'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran',
 ]);
@@ -3689,7 +3688,7 @@ bujkkontraktorsub::create([
     'kode' => 'BG005',
     'kualifikasi' => 'Kecil',
     'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '08/05/2023',
+    'tanggal_terbit' => '2023-05-08',
     'masa_berlaku' => '2026-05-07',
     'nama_psjk' => 'WIWIT YULI WIDIYANTO',
     'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
@@ -3702,8 +3701,8 @@ bujkkontraktorsub::create([
     'kode' => 'BG006',
     'kualifikasi' => 'Kecil',
     'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '08/05/2023',
-    'masa_berlaku' => '07/05/2026',
+    'tanggal_terbit' => '2023-05-08',
+    'masa_berlaku' => '2026-05-07',
     'nama_psjk' => 'WIWIT YULI WIDIYANTO',
     'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
 ]);
@@ -3715,8 +3714,8 @@ bujkkontraktorsub::create([
     'kode' => 'BS001',
     'kualifikasi' => 'Kecil',
     'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
-    'tanggal_terbit' => '24/06/2022',
-    'masa_berlaku' => '23/06/2025',
+    'tanggal_terbit' => '2022-06-24',
+    'masa_berlaku' => '2025-06-23',
     'nama_psjk' => 'SUPRIYANTO',
     'sub_kualifikasi_bu' => 'Konstruksi Bangunan Sipil Jalan',
 ]);
@@ -3729,7 +3728,7 @@ bujkkontraktorsub::create([
     'kualifikasi' => 'Kecil',
     'penerbit' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
     'tanggal_terbit' => '2022-06-24',
-    'masa_berlaku' => '23/06/2025',
+    'masa_berlaku' => '2025-06-23',
     'nama_psjk' => 'HARI DIRGA MARDIKA',
     'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase',
 ]);
@@ -3744,7 +3743,7 @@ bujkkontraktorsub::create([
     'tanggal_terbit' => '2022-06-29',
     'masa_berlaku' => '2025-06-28',
     'nama_psjk' => 'FENY FITRATUZ ZAHRO',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan'
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Kesehatan',
 ]);
 
 bujkkontraktorsub::create([
@@ -3757,7 +3756,7 @@ bujkkontraktorsub::create([
     'tanggal_terbit' => '2023-06-14',
     'masa_berlaku' => '2026-06-13',
     'nama_psjk' => 'FIRMAN HADI SOLEKHAN',
-    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan'
+    'sub_kualifikasi_bu' => 'Konstruksi Gedung Pendidikan',
 ]);
 
 bujkkontraktorsub::create([
@@ -3798,7 +3797,6 @@ bujkkontraktorsub::create([
     'nama_psjk' => 'AHMAT MUSLIM',
     'sub_kualifikasi_bu' => 'Konstruksi Bangunan Prasarana Sumber Daya Air'
 ]);
-
 bujkkontraktorsub::create([
     'bujkkontraktor_id' => 15,
     'nama_pengurus' => 'DJUHADI',
@@ -3807,7 +3805,7 @@ bujkkontraktorsub::create([
     'kualifikasi' => 'Kecil',
     'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
     'tanggal_terbit' => '2023-03-04',
-    'masa_berlaku' => '03/03/2026',
+    'masa_berlaku' => '2026-03-03',
     'nama_psjk' => 'AYUNDA PATRIANTO, A.Md',
     'sub_kualifikasi_bu' => 'Konstruksi Gedung Perkantoran',
 ]);
