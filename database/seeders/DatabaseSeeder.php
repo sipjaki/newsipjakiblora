@@ -4198,8 +4198,8 @@ bujkkontraktorsub::create([
     'kode' => 'BS004',
     'kualifikasi' => 'Kecil',
     'penerbit' => 'ASPEKNAS KONSTRUKSI MANDIRI (ASPEKNAS)',
-    'tanggal_terbit' => '18/05/2022',
-    'masa_berlaku' => '17/05/2025',
+    'tanggal_terbit' => '2022-05-18',
+    'masa_berlaku' => '2025-05-17',
     'nama_psjk' => 'DUDI GURNADI KARTASASMITA',
     'sub_kualifikasi_bu' => 'Konstruksi Jaringan Irigasi dan Drainase',
 ]);
