@@ -29117,6 +29117,8 @@ pengawasanbujk::create([
 
 //======================== ===================================================================================
 // SKK TENAGA KERJA MAS JAKI BLORA
+
+
 skktenagakerjablora::create([
     'nama' => 'AFILIA NANDA DWI NOVIANTI',
     'alamat' => 'Dusun Jenu RT 002/RW 007 Desa Gadu Kec. Sambong Kab. Blora',
@@ -29130,7 +29132,7 @@ skktenagakerjablora::create([
     'lpspenerbit_id' => 1,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2029-03-10',
-    'statusterbit' => 'Telah Terbit',
+    'statusterbit' => 'TERBIT',
 ]);
 
 skktenagakerjablora::create([
@@ -29146,7 +29148,7 @@ skktenagakerjablora::create([
     'lpspenerbit_id' => 1,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
-    'statusterbit' => 'Telah Terbit',
+    'statusterbit' => 'TERBIT',
 ]);
 
 skktenagakerjablora::create([
@@ -29162,9 +29164,8 @@ skktenagakerjablora::create([
     'lpspenerbit_id' => 1,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2029-03-10',
-    'statusterbit' => 'Telah Terbit',
+    'statusterbit' => 'TERBIT',
 ]);
-
 
 
 //======================== ===================================================================================
