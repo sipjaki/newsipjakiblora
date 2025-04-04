@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\allskktenagakerjablora;
 use App\Models\strukturdinas;
 
+use Illuminate\Support\Facades\Cache;
+
 use App\Models\renstra;
 use App\Models\tupoksi;
 use App\Models\profiljakonidentitasopd;
@@ -238,23 +240,31 @@ class AndroidVersionController extends Controller
 
         public function menuresalltkkblora(Request $request)
         {
+
             $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
 
-            $query = skktenagakerjablora::query();
+            $query = skktenagakerjablora::select('id', 'nama');
+
             if ($search) {
-                $query->where('nama', 'LIKE', "%{$search}%")
-                    //     ->where('statusterbit', 'LIKE', "%{$search}%")
-                    //     ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                    //       $q->where('jabatankerja', 'LIKE', "%{$search}%");
-                    //   })
-                    //   ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                    //       $q->where('namasosiasi', 'LIKE', "%{$search}%");
-                    //   })
-                      ;
+                $query->where(function ($q) use ($search) {
+                    $q->where('nama', 'LIKE', "%{$search}%");
+                    // ->orWhere('statusterbit', 'LIKE', "%{$search}%");
+                // })
+                // ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                //     $q->where('jabatankerja', 'LIKE', "%{$search}%");
+                // })
+                // ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                //     $q->where('namasosiasi', 'LIKE', "%{$search}%");
+                });
             }
 
-            $data = $query->paginate($perPage);
+            // Gunakan caching jika memungkinkan
+            $cacheKey = "search_" . md5($search . $perPage);
+            $data = Cache::remember($cacheKey, 60, function () use ($query, $perPage) {
+                return $query->paginate($perPage);
+            });
+
 
             if ($request->ajax()) {
                 return response()->json([
