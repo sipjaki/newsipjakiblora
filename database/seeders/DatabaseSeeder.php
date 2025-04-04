@@ -30878,6 +30878,977 @@ skktenagakerjablora::create([
 ]);
 
 
+// TKK SELURUH KABUPATEN BLORA
+skktenagakerjablora::create([
+    'nama' => 'SUGIYANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 66,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUS SUWITO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 123,
+    'jenjangpendidikan_id' => 13,
+    'jurusan_id' => null,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUS SUNARYO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUS SUPRIADI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'EDDY PRAYITNO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "IMAM SYAFI'I",
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'IPUNG',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MUHAMMAD DENDI PRIHANDONO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'PUJIARNO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'RAMBIYO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'RIFAI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SRIYANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SUPARNO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'WAWAN SUGITO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => 50,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'HERIANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => null,
+    'jenjangpendidikan_id' => 10,
+    'jurusan_id' => null,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => 13,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-05-01',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'M. ABDUL AZIZ ASRODIN M A',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => null,
+    'jenjangpendidikan_id' => 10,
+    'jurusan_id' => null,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => 13,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-05-01',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'YUSUF MAULANA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => null,
+    'jenjangpendidikan_id' => 10,
+    'jurusan_id' => null,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 77,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => 13,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-08-01',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ALI IMRON',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => null,
+    'jenjangpendidikan_id' => null,
+    'jurusan_id' => null,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 80,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 4,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2027-12-28',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AMAR MAKRUF',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 70,
+    'jenjangpendidikan_id' => 12,
+    'jurusan_id' => null,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 78,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => 3,
+    'lpspenerbit_id' => 4,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2027-04-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUNG LAM ALIF',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 75,
+    'jenjangpendidikan_id' => 10,
+    'jurusan_id' => null,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 79,
+    'jenjang_id' => 1,
+    'asosiasimasjaki_id' => 3,
+    'lpspenerbit_id' => 4,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-06-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'ANAS FARIDZ ZAMZAMY',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 5,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 76,
+    'jenjang_id' => 2,
+    'asosiasimasjaki_id' => 13,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2027-12-28',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'GALUH SETIAWAN',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 122,
+    'jenjangpendidikan_id' => 13,
+    'jurusan_id' => 9,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 76,
+    'jenjang_id' => 2,
+    'asosiasimasjaki_id' => 13,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2027-12-28',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'HASTARI NASTITI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 55,
+    'jenjang_id' => 2,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 10,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2027-12-28',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MOH. MUHTAR',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 86,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 67,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SUGIYANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 39,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 13,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 67,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 2,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-12-07',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MUHAMMAD JAIS',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 117,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 48,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 4,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-08-02',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ANANDRA RIZKY ROOZIKA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 50,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 47,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 20,
+    'lpspenerbit_id' => 4,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2027-12-28',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'DWI MEILY RAHMAWATI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 18,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-07-04',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AHMAD INDRA PRASTIYA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 11,
+    'jurusan_id' => 13,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 18,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-07-04',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'TEGAR SETIEYANA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 47,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 18,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-07-04',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'FANDY HERMAWAN',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 66,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 20,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-05-21',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'JOKO BAIDI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 66,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 20,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-05-21',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'UNTUNG SUBARI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 15,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => null,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 20,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-05-21',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AHMAD ZAINURI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 11,
+    'jurusan_id' => 14,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 20,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-05-21',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AMIN SAMSURI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 57,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 20,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-05-21',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'DEDI FARIA ARDIYANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 11,
+    'jurusan_id' => 19,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 71,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 20,
+    'lpspenerbit_id' => 5,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-05-21',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SUSANTI RAHAYU',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 109,
+    'jenjangpendidikan_id' => 11,
+    'jurusan_id' => 27,
+    'tahunlulus' => null,
+    'jabatankerja_id' => 72,
+    'jenjang_id' => 3,
+    'asosiasimasjaki_id' => 12,
+    'lpspenerbit_id' => 11,
+    'tanggalterbit' => '2023-10-08',
+    'tanggalhabis' => '2028-07-09',
+    'statusterbit' => 'TERBIT',
+]);
+
+// Yang tidak ada tanggal terbit dan habis, isi dengan null
+skktenagakerjablora::create([
+    'nama' => 'BAHARUDDIN YUSUF HABIBI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 50,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 1,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUS SUDIYONO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 1995,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'DEDY PRASETYO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 107,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 18,
+    'tahunlulus' => 2004,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'MEI YUNIANI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2014,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ROY SETIAWAN',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2013,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'RIKO MAHERA PURBA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2022,
+    'jabatankerja_id' => 2,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MUH AGUS EKO PRIYANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2023,
+    'jabatankerja_id' => 2,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'JUMADI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 29,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 1,
+    'tahunlulus' => 1997,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MADDALI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 4,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 2012,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+// dan seterusnya...
+
+skktenagakerjablora::create([
+    'nama' => 'PRIYONO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => null,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 5,
+    'tahunlulus' => 1991,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MOCH. SARONI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 13,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 1999,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MUHAMMAD HANIF NUR SASONGKO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'VITRIA DWI HANDAYANI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2005,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'EDI SUMARSONO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'NURRIZKY DANNY ADITIYA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2011,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SAYANA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 11,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'REYHAN WIDYA PERMANA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 22,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MOHAMMAD KHAMAMI MUBAROK',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 10,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 1,
+    'tahunlulus' => 2001,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'IRIYANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 3,
+    'tahunlulus' => 1982,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SUPRAPTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 3,
+    'tahunlulus' => 1984,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MULYADI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 42,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 4,
+    'tahunlulus' => 1981,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'NGATINI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 15,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 2013,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'BANU SULISTIYONO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 1990,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+
+
 // makanyu
 
 
