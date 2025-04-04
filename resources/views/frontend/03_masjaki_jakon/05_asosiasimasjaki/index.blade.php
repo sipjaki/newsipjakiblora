@@ -192,12 +192,11 @@ color: #45a049;
                         <body>
                             <div class="table-wrapper" style="margin-top:-130px; position: relative;">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
-                                    <div class="pagination-info-box" style="margin-right:150px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
+                                    {{-- <div class="pagination-info-box" style="margin-right:150px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
                                         <div class="pagination-info" style="color: black; font-weight: 500; font-size:18px;">
                                             Data Ke {{ $databujkkontraktorpaginate->firstItem() }} Sampai {{ $databujkkontraktorpaginate->lastItem() }} Dari {{ $databujkkontraktorpaginate->total() }} Jumlah : BUJK Konstruksi
-                                             {{-- {{$title}} --}}
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div>
                                         <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
                                         <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
@@ -304,15 +303,16 @@ color: #45a049;
 
 
 <br><br><br><br><br><br><br>
+
                         <body>
                             <div class="table-wrapper" style="margin-top:-130px; position: relative;">
                                 <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
-                                    <div class="pagination-info-box" style="margin-right:150px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
+                                    {{-- <div class="pagination-info-box" style="margin-right:150px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
                                         <div class="pagination-info" style="color: black; font-weight: 500; font-size:18px;">
                                             Data Ke {{ $databujkkonsultanpaginate->firstItem() }} Sampai {{ $databujkkonsultanpaginate->lastItem() }} Dari {{ $databujkkonsultanpaginate->total() }} Jumlah : BUJK Konsultasi Konstruksi
-                                             {{-- {{$title}} --}}
-                                        </div>
-                                    </div>
+
+                                            </div>
+                                    </div> --}}
                                     <div>
                                         <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
                                         <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
