@@ -160,6 +160,7 @@
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:1000px;"> Nama Lengkap </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:900px;"> Jabatan Kerja</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:500px;"> Penyelenggara/Asosiasi </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Status </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
                                         </tr>
                                     </thead>
@@ -171,6 +172,7 @@
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
                                             <td style="text-align: center;">{{$item->asosiasimasjaki->namaasosiasi}}</td>
+                                            <td style="text-align: center;">{{$item->statusterbit}}</td>
                                             <td style="text-align: center">
                                                 <a href="/resalltkkblora/{{$item->id}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
