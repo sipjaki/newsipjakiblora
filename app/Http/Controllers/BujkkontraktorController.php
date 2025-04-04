@@ -30,6 +30,7 @@ class BujkkontraktorController extends Controller
             'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
+
     public function asosiasimasjaki(Request $request)
     {
         // Mengambil data dari tabel bujkkontraktor dan bujkkonsultan
@@ -50,7 +51,7 @@ class BujkkontraktorController extends Controller
         $user = Auth::user();
 
         // Query untuk pencarian berdasarkan search
-        $queryKontraktor = BujkKontraktor::query();
+        $queryKontraktor = bujkkontraktor::query();
 
         if ($search) {
             $queryKontraktor->whereHas('namaasosiasi', function ($q) use ($search) {
