@@ -28,7 +28,6 @@ use App\Models\sbulampiran2;
 use App\Models\sbulampiran3;
 use App\Models\asosiasimasjaki;
 // -perubahan
-use App\Models\daftarasosiasi;
 
 // use App\Models\sertifikasiagenda;
 use App\Models\standarbiayaumum;
@@ -481,7 +480,7 @@ tupoksi::create([
 bujkkontraktor::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 1, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Mandra Kanta Unggul',
     'alamat' => 'Desa Tawangrejo 003/005 Kunduran Kab. Blora Jawa Tengah',
     'no_telepon' => '082324908547',
@@ -579,7 +578,7 @@ bujkkontraktorsub::create([
 bujkkontraktor::create([
     'id' => 2, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 2, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Ramai Jaya Bumi',
     'alamat' => 'Jl. Gajah Mada No. 24A 000/000 Cepu Kab. Blora Jawa Tengah',
     'no_telepon' => '02965104662',
@@ -938,7 +937,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 3, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 3, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TRIBAKTI BINTANG SEJAHTERA',
     'alamat' => 'BERAN 001/003 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -1036,7 +1035,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 4, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 4, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'DIZA PERMATA HATI',
     'alamat' => 'DESA BANDUNGROJO RT. 001 RW. 001, Ngawen,Kab. Blora',
     'no_telepon' => '082138576435',
@@ -1210,7 +1209,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 5, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 5, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TUNGGAL GUNA KARYA',
     'alamat' => 'DESA GENENG 003/001 Jepon Kab. Blora Jawa Tengah',
     'no_telepon' => '082314931935',
@@ -1372,7 +1371,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 6, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 6, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TRI GRAHA MEGAH JAYA',
     'alamat' => 'DESA PATALAN 003/005 Kab. Blora Jawa Tengah',
     'no_telepon' => '081325225577',
@@ -1533,7 +1532,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 7, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 7, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'BERKAH HPL MANDIRI',
     'alamat' => 'DESA PENGKOLREJO 001/004 Japah Kab. Blora Jawa Tengah',
     'no_telepon' => '08122607371',
@@ -1616,7 +1615,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 8, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 8, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'KARYA DWI PUTRI',
     'alamat' => 'DESA TODANAN, Desa/Kelurahan Todanan, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085212848598',
@@ -1751,7 +1750,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 9, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 9, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'CV. DHA YASA MULIA',
     'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81326704319',
@@ -1808,7 +1807,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 10, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 10, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
     'namalengkap' => 'RASI SINAR RAYA',
     'alamat' => 'DK. KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085218340935',
@@ -1890,7 +1889,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 11, // ID yang sesuai
     'bujkkontraktorsub_id' => 11, // ID yang sesuai
-    'daftarasosiasi_id' => null, // Tidak ada ID asosiasi yang diberikan
+    'asosiasimasjaki_id' => null, // Tidak ada ID asosiasi yang diberikan
     'namalengkap' => 'KUKUH PERKASA',
     'alamat' => 'DK. PATIHAN DS. KETILENG, Desa/Kelurahan Ketileng, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081326500270', // Nomor telepon sudah diawali dengan 0
@@ -1907,7 +1906,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 12,
     'bujkkontraktorsub_id' => 12,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PELANGI KONSTRUKSI',
     'alamat' => 'DK. PUDAK RT 001 RW 001, Kec.Ngawen, Kab.Blora, Provinsi JawaTengah',
     'no_telepon' => '081328617256',
@@ -1923,7 +1922,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 13,
     'bujkkontraktorsub_id' => 13,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'GADA PERKASA',
     'alamat' => 'DUKUH BENGIR RT. 003 RW. 005, Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085225026999',
@@ -1939,7 +1938,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 14,
     'bujkkontraktorsub_id' => 14,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'RAFI JAYA BERKARYA',
     'alamat' => 'DUKUH GENENG, Desa/Kelurahan Prigi, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081215555414',
@@ -1955,7 +1954,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 15,
     'bujkkontraktorsub_id' => 15,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'WAHYU PUTRA MANDIRI',
     'alamat' => 'DUKUH KAJANGAN, Desa/Kelurahan Sonorejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -1971,7 +1970,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 16,
     'bujkkontraktorsub_id' => 16,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'NOGO',
     'alamat' => 'DUKUH KAJENGAN, Desa/Kelurahan Kajengan, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -1987,7 +1986,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 17,
     'bujkkontraktorsub_id' => 17,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'LAMAYU JATI PERKASA',
     'alamat' => 'DUKUH KARANGNONGKO, Desa/Kelurahan Buluroto, Kec. Banjarejo, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081229247886',
@@ -2003,7 +2002,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 18,
     'bujkkontraktorsub_id' => 18,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MEURAH INTAN',
     'alamat' => 'DUKUH MAGUAN, Desa/Kelurahan Tamanrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081229247886',
@@ -2019,7 +2018,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 19,
     'bujkkontraktorsub_id' => 19,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MULYO JOYO ABADI',
     'alamat' => 'DUKUH PLOSOREJO, Desa/Kelurahan Nglangitan, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081326131617',
@@ -2035,7 +2034,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 20,
     'bujkkontraktorsub_id' => 20,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ADITIYA JAYA PERKASA',
     'alamat' => 'DUKUH SORONINI, Desa/Kelurahan Sonokulon, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085290405097',
@@ -2052,7 +2051,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 21,
     'bujkkontraktorsub_id' => 21,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => "A'LA PUTRA",
     'alamat' => 'Desa Gempolrejo, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081390299355',
@@ -2068,7 +2067,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 22,
     'bujkkontraktorsub_id' => 22,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BANGUN KELUARGA. CV',
     'alamat' => 'Desa Kedungrejo RT. 002 RW. 002, Desa/Kelurahan Kedungrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085327005412',
@@ -2084,7 +2083,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 23,
     'bujkkontraktorsub_id' => 23,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'INDO JAVA MUSTIKA',
     'alamat' => 'Dk. Catak RT. 002 RW. 004, Desa/Kelurahan Adirejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -2100,7 +2099,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 24,
     'bujkkontraktorsub_id' => 24,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'RAFI PUTRA',
     'alamat' => 'DUKUH SADANG, Desa/Kelurahan Bicak, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085226414172',
@@ -2116,7 +2115,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 25,
     'bujkkontraktorsub_id' => 25,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'TIRTA WENING',
     'alamat' => null, // Tidak ada alamat yang diberikan
     'no_telepon' => '082326221139',
@@ -2132,7 +2131,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 26,
     'bujkkontraktorsub_id' => 26,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'GREMA JAYA USAHA',
     'alamat' => 'Doplang, Kel. Doplang, Kec. Jati, Kab. Blora, Prov. Jawa Tengah',
     'no_telepon' => '081230462473',
@@ -2148,7 +2147,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 27,
     'bujkkontraktorsub_id' => 27,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BUMI ABADI PRATAMA',
     'alamat' => 'Ds. Temurejo, Desa/Kelurahan Temurejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082227496123',
@@ -2164,7 +2163,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 28,
     'bujkkontraktorsub_id' => 28,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'JENGGALA ARUNIKA',
     'alamat' => 'Dukuh Karangnongko, Desa/Kelurahan Buluroto, Kec. Banjarejo, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082226170575',
@@ -2180,7 +2179,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 29,
     'bujkkontraktorsub_id' => 29,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ALFA',
     'alamat' => 'Dukuh Klatak, Desa/Kelurahan Doplang, Kec. Jati, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -2196,7 +2195,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 30,
     'bujkkontraktorsub_id' => 30,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'LIMA KARSA',
     'alamat' => 'Dukuh Ngori , Desa/Kelurahan Sumurboto, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082138380700',
@@ -2212,7 +2211,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 31,
     'bujkkontraktorsub_id' => 31,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'AGENG NUGROHO',
     'alamat' => 'Dusun Bleboh RT 002 RW 002, Kec. Jepon, Kab. Blora Jawa Tengah',
     'no_telepon' => '81390350640',
@@ -2228,7 +2227,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 32,
     'bujkkontraktorsub_id' => 32,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'WARU BENGKONG',
     'alamat' => 'Dusun Tambakwatu, Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82221207336',
@@ -2244,7 +2243,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 33,
     'bujkkontraktorsub_id' => 33,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ANGGREK',
     'alamat' => 'JL. BHAYANGKARA NOMOR 20, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '296533641',
@@ -2260,7 +2259,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 34,
     'bujkkontraktorsub_id' => 34,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'SETIADI',
     'alamat' => 'JALAN BHAYANGKARA NOMOR 10, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '(0296)533641',
@@ -2276,7 +2275,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 35,
     'bujkkontraktorsub_id' => 35,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'GRIYA PUTRA LAKSANA',
     'alamat' => 'JALAN BHAYANGKARA SELATAN NO 8 TEMPELAN BLORA, Desa/Kelurahan Tempelan, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81325631331',
@@ -2292,7 +2291,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 36,
     'bujkkontraktorsub_id' => 36,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'NUSA INDAH MAKMUR',
     'alamat' => 'JALAN CENDANA NOMOR 48, Desa/Kelurahan Beran, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81225657158',
@@ -2308,7 +2307,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 37,
     'bujkkontraktorsub_id' => 37,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MENARA MUKTI',
     'alamat' => 'JALAN DESA SEMBONGIN, Desa/Kelurahan Sembongin, Kec. Banjarejo, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82298169055',
@@ -2324,7 +2323,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 38,
     'bujkkontraktorsub_id' => 38,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PURNA MA JAYA',
     'alamat' => 'JALAN DIPONEGORO V/55 CEPU, Desa/Kelurahan Cepu, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '296421681',
@@ -2340,7 +2339,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 39,
     'bujkkontraktorsub_id' => 39,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARUNIA ABADI',
     'alamat' => 'JALAN DIPONEGORO, SITIMULYO LR. 2C NO. 11A, CEPU, Desa/Kelurahan Cepu, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '0812 2830 7033',
@@ -2356,7 +2355,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 40,
     'bujkkontraktorsub_id' => 40,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BARATAMA KONSTRUKSI',
     'alamat' => 'JALAN GUNUNG SLAMET II/21, Desa/Kelurahan Tempelan, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82221628225',
@@ -2373,7 +2372,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 41,
     'bujkkontraktorsub_id' => 41,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'WAHYU PUTRA',
     'alamat' => 'JALAN JENDRAL SUDIRMAN NO 169, Desa/Kelurahan Bangkle, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '8122910954',
@@ -2389,7 +2388,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 42,
     'bujkkontraktorsub_id' => 42,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARTIKA KARYA',
     'alamat' => 'JALAN MELIWIS NOMOR 29, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81390270821',
@@ -2405,7 +2404,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 43,
     'bujkkontraktorsub_id' => 43,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'LAVANYA PERDANA',
     'alamat' => 'JALAN MENDEN NOMOR 25, Desa/Kelurahan Pilang, Kec. Randublatung, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81226957668',
@@ -2421,7 +2420,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 44,
     'bujkkontraktorsub_id' => 44,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ASI KONTRAKTOR',
     'alamat' => 'JALAN PUNTODEWA V/4, Desa/Kelurahan Bangkle, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81329352146',
@@ -2437,7 +2436,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 45,
     'bujkkontraktorsub_id' => 45,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PEMBANGUNAN',
     'alamat' => 'JL. AGIL KUSUMODYO II / 2, Desa/Kelurahan Kunden, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085292116190',
@@ -2453,7 +2452,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 46,
     'bujkkontraktorsub_id' => 46,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'DWI PUTRA',
     'alamat' => 'JL. PRAMUKA N0. 7 CEPU, Desa/Kelurahan Cepu, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '0296424421',
@@ -2469,7 +2468,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 47,
     'bujkkontraktorsub_id' => 47,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'SURYA INDAH',
     'alamat' => 'JL. TAMAN BAHAGIA NO. 6B, Desa/Kelurahan Cepu, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '0296425374',
@@ -2485,7 +2484,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 48,
     'bujkkontraktorsub_id' => 48,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARINA',
     'alamat' => 'Jalan Cempaka No. 9, Desa/Kelurahan Mlangsen, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -2501,7 +2500,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 49,
     'bujkkontraktorsub_id' => 49,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PURNA MA YASA',
     'alamat' => 'Jalan Cendana No. 19A 008/003 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => '8122885810',
@@ -2517,7 +2516,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 50,
     'bujkkontraktorsub_id' => 50,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ALTARA JAYA',
     'alamat' => 'Jalan Kedungtuban - Krogo Kilometer 2, Desa/Kelurahan Kedungtuban, Kec. Kedungtuban, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -2533,7 +2532,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 51,
     'bujkkontraktorsub_id' => 51,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ADHI KARYA MANDIRI',
     'alamat' => 'Jl. A. Yani Lorong XIII No. 14, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082135855368',
@@ -2549,7 +2548,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 52,
     'bujkkontraktorsub_id' => 52,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'CIPTA MULYA JAYA',
     'alamat' => 'Jl. Ahmad Yani Nomor 105, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082221923885',
@@ -2565,7 +2564,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 53,
     'bujkkontraktorsub_id' => 53,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ANUGERAH ABADI',
     'alamat' => 'Jl. Bhayangkara Gg. Masjid 3, Desa/Kelurahan Tempelan, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082138955534',
@@ -2581,7 +2580,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 54,
     'bujkkontraktorsub_id' => 54,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ARDHANA BANGUN JAYA',
     'alamat' => 'Jl. Cendana 16 B , Desa/Kelurahan Mlangsen, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081226164069',
@@ -2597,7 +2596,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 55,
     'bujkkontraktorsub_id' => 55,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'TUNJUNGAN JAYA KONSTRUKSI',
     'alamat' => 'JALAN GATOT SUBROTO KILOMETER 2, , Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '08122714098',
@@ -2613,7 +2612,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 56,
     'bujkkontraktorsub_id' => 56,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'CATUR PUTRA',
     'alamat' => 'Jl. Gelatik III / 3 Perumnas, Kab. Blora Jawa Tengah',
     'no_telepon' => '5298302',
@@ -2629,7 +2628,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 57,
     'bujkkontraktorsub_id' => 57,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ALHIKAM',
     'alamat' => 'Jl. Kamolan-banjarejo, , Kab. Blora, Provinsi Jawa Tengah Kode Pos: 58253',
     'no_telepon' => '081329236957',
@@ -2645,7 +2644,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 58,
     'bujkkontraktorsub_id' => 58,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ARHAMI NABILA GROUP',
     'alamat' => 'Jl. Lorong I RT. 003 RW. 001, Desa/Kelurahan Ngrambitan, Kec. Japah, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -2661,7 +2660,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 59,
     'bujkkontraktorsub_id' => 59,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ANNAFA PUTRA',
     'alamat' => 'Jl. Mr. Iskandar 12 No. 14, Desa/Kelurahan Jetis, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82328047359',
@@ -2677,7 +2676,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 60,
     'bujkkontraktorsub_id' => 60,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'DUTARIZADA KONSTRUKSI',
     'alamat' => 'JALAN MISTER ISKANDAR XII/1B, Desa/Kelurahan Jetis, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '85257960695',
@@ -2694,7 +2693,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 61,
     'bujkkontraktorsub_id' => 61,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'TRI BHAKTI',
     'alamat' => 'Jl. Reksodiputro Gang Duku No. 18, Desa/Kelurahan Mlangsen, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82137029898',
@@ -2710,7 +2709,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 62,
     'bujkkontraktorsub_id' => 62,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'CV KEDUNG JAYA',
     'alamat' => 'Jalan Seso - Sayuran KM. 01 006/001 Jepon Kab. Blora Jawa Tengah',
     'no_telepon' => '81225683722',
@@ -2726,7 +2725,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 63,
     'bujkkontraktorsub_id' => 63,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'GLOBAL SAKTI UTAMA',
     'alamat' => 'KELURAHAN KARANGJATI, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '89531678103',
@@ -2742,7 +2741,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 64,
     'bujkkontraktorsub_id' => 64,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MAHARDIKA JAYA ABADI',
     'alamat' => 'Kauman , Desa/Kelurahan Kauman, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82220753611',
@@ -2758,7 +2757,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 65,
     'bujkkontraktorsub_id' => 65,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MUSTIKA NUSANTARA',
     'alamat' => 'JALAN NUSANTARA 3 NOMOR 40 006/001 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => '85290789302',
@@ -2774,7 +2773,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 66,
     'bujkkontraktorsub_id' => 66,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'GADING KENCANA',
     'alamat' => 'MENGGUNG NO. 14, , Kab. Blora, Provinsi Jawa Tengah Kode Pos: 58315',
     'no_telepon' => '82220172420',
@@ -2790,7 +2789,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 67,
     'bujkkontraktorsub_id' => 67,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'SUMBER RIZKI',
     'alamat' => 'NGELO, Desa/Kelurahan Ngelo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82236517158',
@@ -2806,7 +2805,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 68,
     'bujkkontraktorsub_id' => 68,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BISMA PERKASA',
     'alamat' => 'RT 002 RW 005 KELURAHAN NGELO, Desa/Kelurahan Ngelo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81331467099',
@@ -2822,7 +2821,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 69,
     'bujkkontraktorsub_id' => 69,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'REZEKY MUJI KONSTRUKSI',
     'alamat' => 'RT. 001 RW. 001, Desa/Kelurahan Nglanjuk, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '85950328850',
@@ -2838,7 +2837,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 70,
     'bujkkontraktorsub_id' => 70,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KUDUS PUTRA',
     'alamat' => 'RT. 002 RW. 004 Desa Kunduran Kecamatan Kunduran Kabupaten Blora 002/004 Kunduran Kab. Blora Jawa Tengah',
     'no_telepon' => '82242824099',
@@ -2854,7 +2853,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 71,
     'bujkkontraktorsub_id' => 71,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'QURATA JAYA',
     'alamat' => 'SITIREJO RT. 05 RW. 01, Desa/Kelurahan Sitirejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085201181185', // Nomor telepon sudah diawali dengan 0
@@ -2870,7 +2869,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 72,
     'bujkkontraktorsub_id' => 72,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARTIKA KARYA KONTRUKSINDO',
     'alamat' => 'Jalan Meliwis Nomor 29 Perumnas, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -2886,7 +2885,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 73,
     'bujkkontraktorsub_id' => 73,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PETROWELL ENERGI',
     'alamat' => 'Jl. Dumai No. 42A, Desa/Kelurahan Balun, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '0296421197', // Nomor telepon sudah diawali dengan 0
@@ -2902,7 +2901,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 74,
     'bujkkontraktorsub_id' => 74,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'WIDYATAMA',
     'alamat' => 'Jalan Gunung Slamet II nomor 21, Desa/Kelurahan Tempelan, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081325864514', // Nomor telepon sudah diawali dengan 0
@@ -2918,7 +2917,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 75,
     'bujkkontraktorsub_id' => 75,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'WAHYU PUTRA MANDIRI',
     'alamat' => 'DUKUH KAJANGAN, Desa/Kelurahan Sonorejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -2934,7 +2933,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 76,
     'bujkkontraktorsub_id' => 76,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'VARIA USAHA MANDIRI',
     'alamat' => 'JL. CAMAR II NO. 2 009/005 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => '081225173957', // Nomor telepon sudah diawali dengan 0
@@ -2950,7 +2949,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 77,
     'bujkkontraktorsub_id' => 77,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'TUNJUNGAN JAYA KONTRUKSI',
     'alamat' => 'JALAN GATOT SUBROTO KILOMETER 2, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '08122714098', // Nomor telepon sudah diawali dengan 0
@@ -2966,7 +2965,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 78,
     'bujkkontraktorsub_id' => 78,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'SUMBER JAYA PERKASA',
     'alamat' => 'Dk. Cangaan, Desa/Kelurahan Kalangrejo, Kec. Kunduran, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081225137779', // Nomor telepon sudah diawali dengan 0
@@ -2982,7 +2981,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 79,
     'bujkkontraktorsub_id' => 79,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'SUKET IJO PERDANA',
     'alamat' => 'Jalan Jenderal Sudirman Gang Nakula nomor 92 C, Desa/Kelurahan Bangkle, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -2998,7 +2997,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 80,
     'bujkkontraktorsub_id' => 80,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'RESTU BUMI MUSTIKA',
     'alamat' => 'DUKUH NGAMPON, Desa/Kelurahan Beran, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085329653929', // Nomor telepon sudah diawali dengan 0
@@ -3014,7 +3013,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 81,
     'bujkkontraktorsub_id' => 81,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PUTRO SEMBODO',
     'alamat' => 'JL. SITIMULYO LR.II NO.8, Desa/Kelurahan Cepu, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81325997600',
@@ -3030,7 +3029,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 82,
     'bujkkontraktorsub_id' => 82,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PUTRA GRAHA PERMAI',
     'alamat' => 'Jl. Taman Bahagia No. 03 RT. 001 RW. 015, Desa/Kelurahan Balun, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81360025362',
@@ -3046,7 +3045,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 83,
     'bujkkontraktorsub_id' => 83,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PURNAMA YASA',
     'alamat' => 'Jalan Cendana No. 19A, Desa/Kelurahan Mlangsen, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '8122885810',
@@ -3062,7 +3061,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 84,
     'bujkkontraktorsub_id' => 84,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PILAR UTAMA',
     'alamat' => 'JALAN HALMAHERA I NOMOR 13 001/002 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => '81325121364',
@@ -3078,7 +3077,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 85,
     'bujkkontraktorsub_id' => 85,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'LUMINTU JAYA',
     'alamat' => 'JALAN GUNUNG LAWU NOMOR 82 BLORA, Desa/Kelurahan Tempelan, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '295100257',
@@ -3094,7 +3093,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 86,
     'bujkkontraktorsub_id' => 86,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'LUGAS SEMBADA',
     'alamat' => 'DESA MOJOWETAN, Desa/Kelurahan Mojowetan, Kec. Banjarejo, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81326503121',
@@ -3110,7 +3109,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 87,
     'bujkkontraktorsub_id' => 87,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KRISNA',
     'alamat' => 'JALAN AGIL KUSUMADYA LORONG II, Desa/Kelurahan Kunden, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82137241199',
@@ -3126,7 +3125,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 88,
     'bujkkontraktorsub_id' => 88,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KINAN KARYA GEMILANG',
     'alamat' => 'Cepu Indah Regency, Jl. Safira D-18, RT. 002 RW. 017, Desa/Kelurahan Cepu, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81325244303',
@@ -3142,7 +3141,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 89,
     'bujkkontraktorsub_id' => 89,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KERSA KARYA UTAMA',
     'alamat' => 'Jl. Cempaka No, 9 Mlangsen - Blora, Desa/Kelurahan Mlangsen, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -3158,7 +3157,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 90,
     'bujkkontraktorsub_id' => 90,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KEMBAR DUA',
     'alamat' => 'JL. SMP 2, GANG MUNDU NO. 6, KAMPUNG BARU, Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81328868594',
@@ -3174,7 +3173,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 91,
     'bujkkontraktorsub_id' => 91,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARYA USAHA MANDIRI',
     'alamat' => 'Kodokan 02/02 Kunduran Kab. Blora Jawa Tengah',
     'no_telepon' => '085291229512', // Nomor telepon sudah diawali dengan 0
@@ -3190,7 +3189,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 92,
     'bujkkontraktorsub_id' => 92,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARYA LESTARI',
     'alamat' => 'DUKUH SUWATU, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081328862548', // Nomor telepon sudah diawali dengan 0
@@ -3206,7 +3205,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 93,
     'bujkkontraktorsub_id' => 93,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'JANUR KUNING',
     'alamat' => 'JL. RSU NO. 81, Desa/Kelurahan Balun, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -3222,7 +3221,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 94,
     'bujkkontraktorsub_id' => 94,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'JAGAD TEKNIKA',
     'alamat' => 'DUKUH BAKAL 002/004 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => '081325664927', // Nomor telepon sudah diawali dengan 0
@@ -3238,7 +3237,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 95,
     'bujkkontraktorsub_id' => 95,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'INDO JAVA HERMANSYAH',
     'alamat' => 'Dk. Catak RT. 002 RW. 004, Desa/Kelurahan Adirejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -3254,7 +3253,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 96,
     'bujkkontraktorsub_id' => 96,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'GRIYA LARAS',
     'alamat' => 'Dukuh Karangnongko 002/004 Banjarejo Kab. Blora Jawa Tengah',
     'no_telepon' => '081325788648', // Nomor telepon sudah diawali dengan 0
@@ -3270,7 +3269,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 97,
     'bujkkontraktorsub_id' => 97,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'DUTA MAJU KONTRUKSI',
     'alamat' => 'Jl Flamboyan No 188 Mentul Indah, Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085145718253', // Nomor telepon sudah diawali dengan 0
@@ -3286,7 +3285,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 98,
     'bujkkontraktorsub_id' => 98,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'DAMAI SEJAHTERA',
     'alamat' => 'DESA GERSI 002/002 Jepon Kab. Blora Jawa Tengah',
     'no_telepon' => '0296525106', // Nomor telepon sudah diawali dengan 0
@@ -3302,7 +3301,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 99,
     'bujkkontraktorsub_id' => 99,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'CENGKIR GADING',
     'alamat' => 'BALUN KESEHATAN GG. VII NO. 1, Desa/Kelurahan Balun, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -3318,7 +3317,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 100,
     'bujkkontraktorsub_id' => 100,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'CAKRA BERLIAN',
     'alamat' => 'Jalan Jenderal Sudirman Gang Nakula nomor 92, Desa/Kelurahan Bangkle, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -3334,7 +3333,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 101,
     'bujkkontraktorsub_id' => 101,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BAKOH SETIYANA JAYA',
     'alamat' => 'DUKUH GENENG, Desa/Kelurahan Prigi, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '82242507009',
@@ -3350,7 +3349,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 102,
     'bujkkontraktorsub_id' => 102,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ARUM JAYA',
     'alamat' => 'KAMPUNG BARU GANG MANGGIS NOMOR 7, Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '296422714',
@@ -3366,7 +3365,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 103,
     'bujkkontraktorsub_id' => 103,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ARHAMI NABILA GROUP',
     'alamat' => 'Jl. Lorong I RT. 003 RW. 001, Desa/Kelurahan Ngrambitan, Kec. Japah, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -3382,7 +3381,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 104,
     'bujkkontraktorsub_id' => 104,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ANAS PUTRA PERKASA',
     'alamat' => 'DK. KALISANGKU 004/005 Tunjungan Kab. Blora Jawa Tengah',
     'no_telepon' => '85640796528',
@@ -3398,7 +3397,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 105,
     'bujkkontraktorsub_id' => 105,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'CITROSUMO',
     'alamat' => 'JALAN RA. KARTINI LORONG V NO. 5 001/003 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -3414,7 +3413,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 106,
     'bujkkontraktorsub_id' => 106,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BLORA MITRA UTAMA',
     'alamat' => 'JL Pemuda No. 103 002/001 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -3430,7 +3429,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 107,
     'bujkkontraktorsub_id' => 107,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MULTI BINA KARYA',
     'alamat' => 'JALAN RADEN AJENG KARTINI NOMOR 16 001/003 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -3446,7 +3445,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 108,
     'bujkkontraktorsub_id' => 108,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'PUTRA JAYA MANDIRI',
     'alamat' => 'DK. WUNI 006/001 Jepon Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -3462,7 +3461,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 109,
     'bujkkontraktorsub_id' => 109,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MAJU JAYA',
     'alamat' => 'Jalan Taman Makam Pahlawan No. 45A 005/001 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -3478,7 +3477,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 110,
     'bujkkontraktorsub_id' => 110,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARTINI MUSTIKA',
     'alamat' => 'JL GUNUNG LAWU LORONG I NO. 41 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -3494,7 +3493,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 111,
     'bujkkontraktorsub_id' => 111,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'SURYA DIMAS AGENG SAHPUTRA',
     'alamat' => 'JL.DIPONEGORO GANG 7 NO.11A 04/04 Cepu Kab. Blora Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -3510,7 +3509,7 @@ bujkkontraktor::create([
 bujkkontraktor::create([
     'id' => 112,
     'bujkkontraktorsub_id' => 112,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MITRA KARYA MANDIRI',
     'alamat' => 'DESA JEJERUK 002/001 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null, // Tidak ada nomor telepon
@@ -11984,7 +11983,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 1, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'Tiara Energi',
     'alamat' => 'Desa Gersi, Desa/Kelurahan Gersi, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081325657254',
@@ -12055,7 +12054,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 2, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 2, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARYA INTI KONSULTAN',
     'alamat' => 'DUKUH SENDANG KLAMPOK, Desa/Kelurahan Tempurejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '082133220199',
@@ -12100,7 +12099,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 3, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 3, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BEGAWAN ABIYOSO',
     'alamat' => ' DUKUH WUNI, Desa/Kelurahan Balong, Kec. Jepon, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '085292559491',
@@ -12133,7 +12132,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 4, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 4, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'GRAHACIPTA PERKASA',
     'alamat' => ' Ds. Tambahrejo, Desa/Kelurahan Tambahrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081327421757',
@@ -12191,7 +12190,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 5, // Ganti dengan ID yang sesuai
     'bujkkonsultansub_id' => 5, // Ganti dengan ID yang sesuai
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BEKONS',
     'alamat' => 'Dukuh Bengir, Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah ',
     'no_telepon' => '085326420963',
@@ -12247,7 +12246,7 @@ bujkkonsultansub::create([
 bujkkonsultan::create([
     'id' => 6,
     'bujkkonsultansub_id' => 6,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'WIRAYA CIPTA',
     'alamat' => 'Dukuh Dukoh , Desa/Kelurahan Keser, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085329008618',
@@ -12263,7 +12262,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 7,
     'bujkkonsultansub_id' => 7,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'CAHAYA KEJORA KREASINDO',
     'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082135143883',
@@ -12279,7 +12278,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 8,
     'bujkkonsultansub_id' => 8,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'WISMA REKA DESAIN',
     'alamat' => 'Dukuh Kalisangku, Kab. Blora Jawa Tengah',
     'no_telepon' => '085878718827',
@@ -12295,7 +12294,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 9,
     'bujkkonsultansub_id' => 9,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'CRYSTAL DESIGN',
     'alamat' => 'JALAN A. YANI Gg. 5 nO. 19, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -12311,7 +12310,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 10,
     'bujkkonsultansub_id' => 10,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'BARRAMUNDI RATU SAMUDERA',
     'alamat' => 'JALAN H.A SUMIJAN NOMOR 14, Desa/Kelurahan Kedungjenar, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082328706846',
@@ -12327,7 +12326,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 11,
     'bujkkonsultansub_id' => 11,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'KARTIKA JAYA CONSULTANT',
     'alamat' => 'JL. PUNTODEWO I NO. 14 A, Desa/Kelurahan Bangkle, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082243313999',
@@ -12343,7 +12342,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 12,
     'bujkkonsultansub_id' => 12,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'STATIKA TEKNIK',
     'alamat' => 'Jalan Bhayangkara Utara I/ID, Desa/Kelurahan Karangjati, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082225633211',
@@ -12359,7 +12358,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 13,
     'bujkkonsultansub_id' => 13,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'ARCHIDAS DESIGN',
     'alamat' => 'Jalan Halmahera Lorong II Nomor 71 B, Desa/Kelurahan Tambahrejo, Kec. Blora, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081215938652',
@@ -12375,7 +12374,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 14,
     'bujkkonsultansub_id' => 14,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'STATIKAGISTA',
     'alamat' => 'Jalan Raya Blora Cepu KM 13 , Desa/Kelurahan Jiken, Kec. Jiken, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => null,
@@ -12391,7 +12390,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 15,
     'bujkkonsultansub_id' => 15,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'DUTA CAHAYA DESIGN',
     'alamat' => 'Jl. Flamboyan NO. 188 , Desa/Kelurahan Karangboyo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '081316597482',
@@ -12407,7 +12406,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 16,
     'bujkkonsultansub_id' => 16,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'GALANG PRATAMA DESIGN',
     'alamat' => 'Jl.Gunung Selamet No.II/21, Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -12423,7 +12422,7 @@ bujkkonsultan::create([
 bujkkonsultan::create([
     'id' => 17,
     'bujkkonsultansub_id' => 17,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'namalengkap' => 'MUSTIKA JAYA ABADI KONSULTAN',
     'alamat' => 'TAMBAKROMO, Desa/Kelurahan Tambakromo, Kec. Cepu, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '082134711118',
@@ -15228,7 +15227,7 @@ jabatankerja::create([
 
 //======================== ===================================================================================
 // DATA ASOSIAS KABUPATEN BLORA JAWA TENGAH
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '1',
     'namaasosiasi' => 'AK3L',
     'created_at' => Carbon::now(),
@@ -15236,7 +15235,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '2',
     'namaasosiasi' => 'ASDAMKINDO',
     'created_at' => Carbon::now(),
@@ -15244,7 +15243,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '3',
     'namaasosiasi' => 'ASTEKINDO',
     'created_at' => Carbon::now(),
@@ -15252,7 +15251,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '4',
     'namaasosiasi' => 'ASTTATINDO',
     'created_at' => Carbon::now(),
@@ -15260,7 +15259,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '5',
     'namaasosiasi' => 'ATAKI',
     'created_at' => Carbon::now(),
@@ -15268,7 +15267,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '6',
     'namaasosiasi' => 'ATAKNAS',
     'created_at' => Carbon::now(),
@@ -15276,7 +15275,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '7',
     'namaasosiasi' => 'ATAKSI',
     'created_at' => Carbon::now(),
@@ -15284,7 +15283,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '8',
     'namaasosiasi' => 'GATAKI',
     'created_at' => Carbon::now(),
@@ -15292,7 +15291,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '9',
     'namaasosiasi' => 'GATENSI',
     'created_at' => Carbon::now(),
@@ -15300,7 +15299,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '10',
     'namaasosiasi' => 'HATSINDO',
     'created_at' => Carbon::now(),
@@ -15308,7 +15307,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '11',
     'namaasosiasi' => 'HPJI',
     'created_at' => Carbon::now(),
@@ -15316,7 +15315,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '12',
     'namaasosiasi' => 'IAKI',
     'created_at' => Carbon::now(),
@@ -15324,7 +15323,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '13',
     'namaasosiasi' => 'LPJK',
     'created_at' => Carbon::now(),
@@ -15332,7 +15331,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '14',
     'namaasosiasi' => 'PAKKI',
     'created_at' => Carbon::now(),
@@ -15340,7 +15339,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '15',
     'namaasosiasi' => 'PARABI',
     'created_at' => Carbon::now(),
@@ -15348,7 +15347,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '16',
     'namaasosiasi' => 'PASTALI',
     'created_at' => Carbon::now(),
@@ -15356,7 +15355,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '17',
     'namaasosiasi' => 'PASTI',
     'created_at' => Carbon::now(),
@@ -15364,7 +15363,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '18',
     'namaasosiasi' => 'PERPAKOM',
     'created_at' => Carbon::now(),
@@ -15372,7 +15371,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '19',
     'namaasosiasi' => 'PERTAHKINDO',
     'created_at' => Carbon::now(),
@@ -15380,7 +15379,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '20',
     'namaasosiasi' => 'PERTAMA',
     'created_at' => Carbon::now(),
@@ -15388,7 +15387,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '21',
     'namaasosiasi' => 'PERTAPIN',
     'created_at' => Carbon::now(),
@@ -15396,7 +15395,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '22',
     'namaasosiasi' => 'PETAKINDO',
     'created_at' => Carbon::now(),
@@ -15404,7 +15403,7 @@ daftarasosiasi::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
-daftarasosiasi::create([
+asosiasimasjaki::create([
     'id' => '23',
     'namaasosiasi' => 'PETAKOM',
     'created_at' => Carbon::now(),
@@ -15624,7 +15623,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 77,
     'jenjang_id' => 1,
-    'daftarasosiasi_id' => 1,
+    'asosiasimasjaki_id' => 1,
     'lpspenerbit_id' => 2,
     'tanggalterbit' => '2023-10-08',
     'tanggalhabis' => '2028-12-07',
@@ -15640,7 +15639,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 76,
     'jenjang_id' => 2,
-    'daftarasosiasi_id' => 13,
+    'asosiasimasjaki_id' => 13,
     'lpspenerbit_id' => 2,
     'tanggalterbit' => '2023-10-08',
     'tanggalhabis' => '2028-12-28',
@@ -15656,7 +15655,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 67,
     'jenjang_id' => 3,
-    'daftarasosiasi_id' => 1,
+    'asosiasimasjaki_id' => 1,
     'lpspenerbit_id' => 2,
     'tanggalterbit' => '2023-10-08',
     'tanggalhabis' => '2028-12-07',
@@ -15672,7 +15671,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => 2010,
     'jabatankerja_id' => 1,
     'jenjang_id' => 4,
-    'daftarasosiasi_id' => 1,
+    'asosiasimasjaki_id' => 1,
     'lpspenerbit_id' => 1,
     'tanggalterbit' => null,
     'tanggalhabis' => null,
@@ -15688,7 +15687,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 57,
     'jenjang_id' => 5,
-    'daftarasosiasi_id' => 6,
+    'asosiasimasjaki_id' => 6,
     'lpspenerbit_id' => 1,
     'tanggalterbit' => '2023-10-08',
     'tanggalhabis' => '2028-07-24',
@@ -15704,7 +15703,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 50,
     'jenjang_id' => 6,
-    'daftarasosiasi_id' => 6,
+    'asosiasimasjaki_id' => 6,
     'lpspenerbit_id' => 1,
     'tanggalterbit' => '2023-08-10',
     'tanggalhabis' => '2028-04-18',
@@ -15720,7 +15719,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 35,
     'jenjang_id' => 7,
-    'daftarasosiasi_id' => 3,
+    'asosiasimasjaki_id' => 3,
     'lpspenerbit_id' => 2,
     'tanggalterbit' => '2023-08-10',
     'tanggalhabis' => '2028-01-12',
@@ -15736,7 +15735,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 19,
     'jenjang_id' => 8,
-    'daftarasosiasi_id' => 2,
+    'asosiasimasjaki_id' => 2,
     'lpspenerbit_id' => 4,
     'tanggalterbit' => '2023-08-10',
     'tanggalhabis' => '2028-07-05',
@@ -15752,7 +15751,7 @@ skktenagakerjabloralist::create([
     'tahunlulus' => null,
     'jabatankerja_id' => 10,
     'jenjang_id' => 9,
-    'daftarasosiasi_id' => 3,
+    'asosiasimasjaki_id' => 3,
     'lpspenerbit_id' => 4,
     'tanggalterbit' => '2023-08-10',
     'tanggalhabis' => '2027-05-19',
@@ -29266,7 +29265,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2024-03-10',
     'statusterbit' => 'TERBIT',
@@ -29282,7 +29281,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -29298,7 +29297,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2029-03-10',
     'statusterbit' => 'TERBIT',
@@ -29314,7 +29313,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -29330,7 +29329,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -29346,7 +29345,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2029-03-10',
     'statusterbit' => 'TERBIT',
@@ -29362,7 +29361,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -29378,7 +29377,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -29394,7 +29393,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -29410,7 +29409,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 4,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
@@ -29426,7 +29425,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 5,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-11',
     'tanggalhabis' => '2029-03-10',
     'statusterbit' => 'TERBIT',
@@ -29442,7 +29441,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 7,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-30',
     'tanggalhabis' => '2029-03-29',
     'statusterbit' => 'TERBIT',
@@ -29458,7 +29457,7 @@ skktenagakerjablora::create([
     'jabatankerja_id' => 3,
     'jenjang_id' => 4,
     'lpspenerbit_id' => 1,
-    'daftarasosiasi_id' => null,
+    'asosiasimasjaki_id' => null,
     'tanggalterbit' => '2024-03-16',
     'tanggalhabis' => '2029-03-15',
     'statusterbit' => 'TERBIT',
