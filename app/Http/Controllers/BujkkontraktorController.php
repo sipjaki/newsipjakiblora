@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\asosiasimasjaki;
+// use App\Models\daftarasosiasi;
 use App\Models\Asosiasimasjaki as ModelsAsosiasimasjaki;
 use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
