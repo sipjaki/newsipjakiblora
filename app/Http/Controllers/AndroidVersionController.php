@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\allskktenagakerjablora;
 use App\Models\strukturdinas;
 
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 use App\Models\renstra;
 use App\Models\tupoksi;
 use App\Models\profiljakonidentitasopd;
@@ -241,21 +244,30 @@ class AndroidVersionController extends Controller
 
             $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
+            $page = $request->input('page', 1);
 
-            $query = skktenagakerjablora::query();
-            if ($search) {
-                $query->where('nama', 'LIKE', "%{$search}%")
-                    //     ->where('statusterbit', 'LIKE', "%{$search}%")
-                    //     ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                    //       $q->where('jabatankerja', 'LIKE', "%{$search}%");
-                    //   })
-                    //   ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                    //       $q->where('namasosiasi', 'LIKE', "%{$search}%");
-                    //   })
-                      ;
-            }
+            // Buat kunci cache berdasarkan pencarian (tanpa halaman)
+            $cacheKey = "search_" . md5($search);
 
-            $data = $query->paginate($perPage);
+            // Cek apakah data sudah ada di cache
+            $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+                $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
+
+                if ($search) {
+                    $query->where('nama', 'LIKE', "%{$search}%");
+                }
+
+                return $query->get(); // Ambil semua hasil, tapi cache hanya query-nya
+            });
+
+            // Manual Paginate dari hasil cache
+            $total = count($allData);
+            $items = collect($allData)->forPage($page, $perPage)->values(); // Potong data sesuai halaman
+            $data = new \Illuminate\Pagination\LengthAwarePaginator($items, $total, $perPage, $page, [
+                'path' => request()->url(),
+                'query' => request()->query()
+            ]);
+
 
             if ($request->ajax()) {
                 return response()->json([
