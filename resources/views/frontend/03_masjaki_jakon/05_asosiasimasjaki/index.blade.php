@@ -233,11 +233,11 @@ color: #45a049;
 
                                         <tr>
                                             <td style="text-align: center;">{{ $nomor++ }}</td>
-                                            <td>{{$item->daftarasosiasi->namaasosiasi}}</td>
+                                            <td>{{$item->daftarasosiasi}}</td>
                                             <td style="text-align: center;">{{$item->jumlah}}</td>
 
                                             <td style="text-align: center">
-                                                <a href="/datajakon/asosiasikonstruksi/{{$item->daftarasosiasi->namaasosiasi}}">
+                                                <a href="/datajakon/asosiasikonstruksi/{{$item->daftarasosiasi}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>
@@ -349,11 +349,11 @@ color: #45a049;
 
                                         <tr>
                                             <td style="text-align: center;">{{ $nomor++ }}</td>
-                                            <td>{{$item->daftarasosiasi->namaasosiasi}}</td>
+                                            <td>{{$item->daftarasosiasi}}</td>
                                             <td style="text-align: center;">{{$item->jumlah}}</td>
 
                                             <td style="text-align: center">
-                                                <a href="/datajakon/asosiasikonsultan/{{$item->daftarasosiasi->namaasosiasi}}">
+                                                <a href="/datajakon/asosiasikonsultan/{{$item->daftarasosiasi}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>
