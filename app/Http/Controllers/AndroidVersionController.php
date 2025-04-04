@@ -244,7 +244,7 @@ class AndroidVersionController extends Controller
             $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
 
-            $query = skktenagakerjablora::select('id', 'nama');
+            $query = skktenagakerjablora::select('id', 'nama', 'jabatankerja_id', 'asosiasimasjaki_id');
 
             if ($search) {
                 $query->where(function ($q) use ($search) {
