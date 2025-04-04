@@ -233,11 +233,11 @@ color: #45a049;
 
                                         <tr>
                                             <td style="text-align: center;">{{ $nomor++ }}</td>
-                                            <td>{{$item->namaasosiasi->namaasosiasi}}</td>
+                                            <td>{{$item->daftarasosiasi->namaasosiasi}}</td>
                                             <td style="text-align: center;">{{$item->jumlah}}</td>
 
                                             <td style="text-align: center">
-                                                <a href="/datajakon/asosiasikonstruksi/{{$item->namaasosiasi->namaasosiasi}}">
+                                                <a href="/datajakon/asosiasikonstruksi/{{$item->daftarasosiasi->namaasosiasi}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>
@@ -349,11 +349,11 @@ color: #45a049;
 
                                         <tr>
                                             <td style="text-align: center;">{{ $nomor++ }}</td>
-                                            <td>{{$item->namaasosiasii->namaasosiasi}}</td>
+                                            <td>{{$item->daftarasosiasi->namaasosiasi}}</td>
                                             <td style="text-align: center;">{{$item->jumlah}}</td>
 
                                             <td style="text-align: center">
-                                                <a href="/datajakon/asosiasikonsultan/{{$item->namaasosiasi->namaasosiasi}}">
+                                                <a href="/datajakon/asosiasikonsultan/{{$item->daftarasosiasi->namaasosiasi}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>
