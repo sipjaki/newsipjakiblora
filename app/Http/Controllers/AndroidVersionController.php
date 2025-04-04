@@ -18,6 +18,7 @@ use App\Models\bujkkontraktor;
 use App\Models\bujkkontraktorsub;
 use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
+use App\Models\skktenagakerjablora;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -228,6 +229,57 @@ class AndroidVersionController extends Controller
                 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
                 'user' => $user,
                 'start' => $start,
+            ]);
+        }
+
+
+
+        // -==============================================================================================================
+
+        public function menuresalltkkblora(Request $request)
+        {
+            $perPage = $request->input('perPage', 10);
+            $search = $request->input('search');
+
+            $query = skktenagakerjablora::query();
+            if ($search) {
+                $query->where('nama', 'LIKE', "%{$search}%")
+                        ->where('statusterbit', 'LIKE', "%{$search}%")
+                        ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                          $q->where('jabatankerja', 'LIKE', "%{$search}%");
+                      })
+                      ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                          $q->where('namasosiasi', 'LIKE', "%{$search}%");
+                      });
+            }
+
+            $data = $query->paginate($perPage);
+
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.C_datajakon.06_tkkkabblora.partials.table', compact('data'))->render()
+                ]);
+            }
+
+            return view('frontend.00_android.C_datajakon.06_tkkkabblora.index', [
+                'title' => 'TKK Kabupaten Blora',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search
+            ]);
+        }
+
+        public function menuresalltkkbloradetails($id)
+    {
+        $dataskktenagakerjablora = skktenagakerjablora::where('id', $id)->first();
+            // Ambil data user saat ini
+            $user = Auth::user();
+
+            return view('frontend.00_android.C_datajakon.06_tkkkabblora.show', [
+                'title' => 'Details Data TKK Kabupaten Blora',
+                'data' => $dataskktenagakerjablora,
+                'user' => $user,
+
             ]);
         }
 

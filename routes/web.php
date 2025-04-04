@@ -93,6 +93,17 @@ Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class,
 Route::get('/resbujkkonsultan', [AndroidVersionController::class, 'menubujkkonsultan']);
 Route::get('/resbujkkonsultan/{namalengkap}', [AndroidVersionController::class, 'menubujkkonsultandetails']);
 
+// MENU DATA ASOSIASI MAS JAKI ------------------------------------------------
+// Route::get('/resbujkkonsultan', [AndroidVersionController::class, 'menubujkkonsultan']);
+// Route::get('/resbujkkonsultan/{namalengkap}', [AndroidVersionController::class, 'menubujkkonsultandetails']);
+
+// MENU DATA TKK DPUPR BLORA
+// Route::get('/resbujkkonsultan', [AndroidVersionController::class, 'menubujkkonsultan']);
+// Route::get('/resbujkkonsultan/{namalengkap}', [AndroidVersionController::class, 'menubujkkonsultandetails']);
+
+// MENU DATA TKK KABUPATEN BLORA
+Route::get('/resalltkkblora', [AndroidVersionController::class, 'menuresalltkkblora']);
+Route::get('/resalltkkblora/{id}', [AndroidVersionController::class, 'menuresalltkkbloradetails']);
 // makanyu
 
 
