@@ -86,8 +86,8 @@ class BujkkontraktorController extends Controller
             'user' => $user,
             'databujkkontraktor' => $databujkkontraktor,
             'databujkkonsultan' => $databujkkonsultan,
-            'databujkkontraktorPaginated' => $databujkkontraktorPaginated,
-            'databujkkonsultanPaginated' => $databujkkonsultanPaginated,
+            'databujkkontraktorpaginated' => $databujkkontraktorPaginated,
+            'databujkkonsultanpaginated' => $databujkkonsultanPaginated,
             'perPage' => $perPage,
             'search' => $search
         ]);
