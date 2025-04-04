@@ -238,36 +238,38 @@ class AndroidVersionController extends Controller
 
 
         // -==============================================================================================================
-
         public function menuresalltkkblora(Request $request)
         {
-
             $perPage = $request->input('perPage', 10);
-            $search = $request->input('search');
+            $search = $request->input('search', '');
             $page = $request->input('page', 1);
 
-            // Buat kunci cache berdasarkan pencarian (tanpa halaman)
+            // Cache key unik berdasarkan search tanpa halaman (biar cache tetap valid)
             $cacheKey = "search_" . md5($search);
 
-            // Cek apakah data sudah ada di cache
+            // Hapus cache jika ada search baru
+            if ($page == 1) {
+                Cache::forget($cacheKey);
+            }
+
+            // Ambil data dari cache atau query database
             $allData = Cache::remember($cacheKey, 300, function () use ($search) {
                 $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
 
-                if ($search) {
+                if (!empty($search)) {
                     $query->where('nama', 'LIKE', "%{$search}%");
                 }
 
-                return $query->get(); // Ambil semua hasil, tapi cache hanya query-nya
+                return $query->get(); // Ambil semua hasil, biar pagination tetap berjalan
             });
 
             // Manual Paginate dari hasil cache
             $total = count($allData);
-            $items = collect($allData)->forPage($page, $perPage)->values(); // Potong data sesuai halaman
-            $data = new \Illuminate\Pagination\LengthAwarePaginator($items, $total, $perPage, $page, [
+            $items = collect($allData)->forPage($page, $perPage)->values();
+            $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
                 'path' => request()->url(),
                 'query' => request()->query()
             ]);
-
 
             if ($request->ajax()) {
                 return response()->json([
