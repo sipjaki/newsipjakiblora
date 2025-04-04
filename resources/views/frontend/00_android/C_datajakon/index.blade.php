@@ -65,7 +65,7 @@
                                 </div>
 
                             <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Asosiasi Mas Jaki</p>
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Asosiasi Konstruksi dan Konsultasi Kabupaten Blora</p>
                         </p>
 
                             </div>
