@@ -171,7 +171,7 @@
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-                                            <td style="text-align: center;">{{$item->asosiasimasjaki->namaasosiasi}}</td>
+                                            <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
                                             <td style="text-align: center;">{{$item->statusterbit}}</td>
                                             <td style="text-align: center">
                                                 <a href="/resalltkkblora/{{$item->id}}">
