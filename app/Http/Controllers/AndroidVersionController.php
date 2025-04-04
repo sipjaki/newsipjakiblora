@@ -174,7 +174,7 @@ class AndroidVersionController extends Controller
         }
 
 
-        public function resbujkkonsultan(Request $request)
+        public function menubujkkonsultan(Request $request)
         {
             $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
