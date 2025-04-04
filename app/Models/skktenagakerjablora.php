@@ -48,9 +48,9 @@ class skktenagakerjablora extends Model
         return $this->belongsTo(lpspenerbit::class);
     }
 
-    public function daftarasosiasi()
+    public function asosiasimasjaki()
     {
-        return $this->belongsTo(daftarasosiasi::class, 'daftarasosiasi_id');
+        return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
     }
 
 }

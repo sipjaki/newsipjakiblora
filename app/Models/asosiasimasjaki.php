@@ -13,11 +13,6 @@ class asosiasimasjaki extends Model
 
     protected $guarded = ['id'];
 
-    public function skktenagakerjabloralist()
-    {
-        return $this->hasMany(skktenagakerjabloralist::class);
-    }
-
     public function skktenagakerjablora()
     {
         return $this->hasMany(skktenagakerjablora::class);
