@@ -158,7 +158,7 @@
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:1000px;"> Nama Lengkap </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:700px;"> Jabatan Kerja</th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:900px;"> Jabatan Kerja</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:500px;"> Penyelenggara/Asosiasi </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
                                         </tr>
