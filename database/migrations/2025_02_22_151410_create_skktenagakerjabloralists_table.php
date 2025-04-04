@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('jurusan_id')->nullable();
             $table->foreignId('jabatankerja_id')->nullable();
             $table->foreignId('jenjang_id')->nullable();
-            $table->foreignId('daftarasosiasi_id')->nullable();
+            $table->foreignId('asosiasimasjaki_id')->nullable();
             $table->foreignId('lpspenerbit_id')->nullable();
             // ------------------------------------------------------
             $table->date('tanggalterbit')->nullable();
