@@ -32650,6 +32650,168 @@ skktenagakerjablora::create([
 ]);
 
 
+skktenagakerjablora::create([
+    'nama' => 'DWI GIYARTATIK',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 22,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 1998,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'YESI SULISTRYOWATI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 25,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AHMAT MUSLIM',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 66,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2005,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ALI MAHMUDI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 12,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MOHAMMAD ARIDHOTUL SOB\'RI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 14,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ADHY DERMAWAN DWI SAPUTRA',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 18,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'FITRIA ROSMELI DESI',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 20,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2014,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ARIS KURNIAWAN',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 23,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2003,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ANDHI KRISTANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 1999,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ANDRI DWI SUSANTO',
+    'alamat' => 'Kab. Blora',
+    'namasekolah_id' => 6,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2014,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => null,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => null,
+    'tanggalhabis' => null,
+    'statusterbit' => 'TERBIT',
+]);
+
+
+
 
 
 
