@@ -243,25 +243,19 @@ class AndroidVersionController extends Controller
 
             $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
+            $page = $request->input('page', 1); // Ambil halaman saat ini
 
-            $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
+            // Buat kunci cache unik berdasarkan pencarian dan halaman
+            $cacheKey = "search_" . md5($search . "_page_" . $page . "_perPage_" . $perPage);
 
-            if ($search) {
-                $query->where(function ($q) use ($search) {
-                    $q->where('nama', 'LIKE', "%{$search}%")
-                    ->orWhere('statusterbit', 'LIKE', "%{$search}%");
-                })
-                ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                    $q->where('jabatankerja', 'LIKE', "%{$search}%");
-                })
-                ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                    $q->where('namasosiasi', 'LIKE', "%{$search}%");
-                });
-            }
+            // Cek cache dulu sebelum query ke database
+            $data = Cache::remember($cacheKey, 300, function () use ($search, $perPage) {
+                $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
 
-            // Gunakan caching jika memungkinkan
-            $cacheKey = "search_" . md5($search . $perPage);
-            $data = Cache::remember($cacheKey, 60, function () use ($query, $perPage) {
+                if ($search) {
+                    $query->where('nama', 'LIKE', "%{$search}%");
+                }
+
                 return $query->paginate($perPage);
             });
 
