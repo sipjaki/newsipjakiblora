@@ -363,7 +363,7 @@ color: #45a049;
                                     </tbody>
                                 </table>
 
-                                <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
+                                {{-- <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
                                     <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
                                         <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
                                             <a class="page-link" href="{{ $data->previousPageUrl() }}">
@@ -376,7 +376,7 @@ color: #45a049;
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <style>
