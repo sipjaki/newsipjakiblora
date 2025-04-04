@@ -23,7 +23,7 @@ class bujkkonsultan extends Model
         return $this->belongsTo(asosiasimasjaki::class);
     }
 
-    public function daftarasosiasi()
+    public function namaasosiasi()
     {
         return $this->belongsTo(daftarasosiasi::class, 'daftarasosiasi_id');
     }
