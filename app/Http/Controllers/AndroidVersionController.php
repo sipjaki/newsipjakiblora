@@ -244,18 +244,18 @@ class AndroidVersionController extends Controller
             $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
 
-            $query = skktenagakerjablora::select('id', 'nama', 'jabatankerja_id', 'asosiasimasjaki_id');
+            $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
 
             if ($search) {
                 $query->where(function ($q) use ($search) {
-                    $q->where('nama', 'LIKE', "%{$search}%");
-                    // ->orWhere('statusterbit', 'LIKE', "%{$search}%");
-                // })
-                // ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                //     $q->where('jabatankerja', 'LIKE', "%{$search}%");
-                // })
-                // ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                //     $q->where('namasosiasi', 'LIKE', "%{$search}%");
+                    $q->where('nama', 'LIKE', "%{$search}%")
+                    ->orWhere('statusterbit', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                    $q->where('jabatankerja', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                    $q->where('namasosiasi', 'LIKE', "%{$search}%");
                 });
             }
 
