@@ -189,7 +189,7 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: center;">{{$item->daftarasosiasi?->namaasosiasi}}</td>
+         <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
          <td style="text-align: left;">{{$item->namalengkap}}</td>
          <td style="text-align: left;">{{$item->alamat}}</td>
          <td style="text-align: center;">{{$item->no_telepon}}</td>
