@@ -30,57 +30,66 @@ class BujkkontraktorController extends Controller
             'user' => $user, // Mengirimkan data paginasi ke view
         ]);
     }
-
     public function asosiasimasjaki(Request $request)
     {
-
+        // Mengambil data dari tabel bujkkontraktor dan bujkkonsultan
         $databujkkontraktor = bujkkontraktor::select('daftarasosiasi_id', DB::raw('count(*) as jumlah'))
-        ->groupBy('daftarasosiasi_id')
-        ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
-        ->get();
+            ->groupBy('daftarasosiasi_id')
+            ->with('namaasosiasi') // Memastikan relasi namaasosiasi ada di model
+            ->get();
 
         $databujkkonsultan = bujkkonsultan::select('daftarasosiasi_id', DB::raw('count(*) as jumlah'))
-        ->groupBy('daftarasosiasi_id')
-        ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
-        ->get();
+            ->groupBy('daftarasosiasi_id')
+            ->with('namaasosiasi') // Memastikan relasi namaasosiasi ada di model
+            ->get();
 
+        // Mendapatkan input pagination dan search
         $perPage = $request->input('perPage', 10);
         $search = $request->input('search');
 
         $user = Auth::user();
-        // $data = asosiasimasjaki::paginate(15);
 
-        $databujkkontraktorpaginate = bujkkontraktor::paginate(15);
-        $databujkkonsultanpaginate = bujkkonsultan::paginate(15);
-
-        $query = bujkkonsultan::query();
-        $query = bujkkontraktor::query();
+        // Query untuk pencarian berdasarkan search
+        $query = BujkKontraktor::query();
 
         if ($search) {
-            $query->where('namaasosiasi', 'LIKE', "%{$search}%");
-                //   ->orWhere('alamat', 'LIKE', "%{$search}%")
-                //   ->orWhere('email', 'LIKE', "%{$search}%")
-                //   ->orWhere('nib', 'LIKE', "%{$search}%");
+            $query->whereHas('namaasosiasi', function ($q) use ($search) {
+                $q->where('nama', 'LIKE', "%{$search}%");
+            });
         }
 
-        $data = $query->paginate($perPage);
+        // Paginate hasil query
+        $databujkkontraktorPaginated = $query->paginate($perPage);
 
+        // Query untuk bujkkonsultan jika ingin mencari konsultan berdasarkan asosiasi
+        $query = bujkkonsultan::query();
+
+        if ($search) {
+            $query->whereHas('namaasosiasi', function ($q) use ($search) {
+                $q->where('nama', 'LIKE', "%{$search}%");
+            });
+        }
+
+        // Paginate hasil query
+        $databujkkonsultanPaginated = $query->paginate($perPage);
+
+        // Jika request Ajax, return hanya bagian view yang diperlukan
         if ($request->ajax()) {
             return response()->json([
-                'html' => view('frontend.03_masjaki_jakon.05_asosiasimasjaki.partials.table', compact('data'))->render()
+                'html' => view('frontend.03_masjaki_jakon.05_asosiasimasjaki.partials.table', compact('databujkkontraktorPaginated', 'databujkkonsultanPaginated'))->render()
             ]);
         }
 
+        // Return view dengan data yang relevan
         return view('frontend.03_masjaki_jakon.05_asosiasimasjaki.index', [
             'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
-            'user' => $user, // Mengirimkan data paginasi ke view
-            'data' => $data, // Mengirimkan data paginasi ke view
-            'perPage' => $perPage,
-            'search' => $search,
+            'user' => $user,
             'databujkkontraktor' => $databujkkontraktor,
-            'databujkkontraktorpaginate' => $databujkkontraktorpaginate,
-            'databujkkonsultanpaginate' => $databujkkonsultanpaginate,
             'databujkkonsultan' => $databujkkonsultan,
+            'databujkkontraktorPaginated' => $databujkkontraktorPaginated,
+            'databujkkonsultanPaginated' => $databujkkonsultanPaginated,
+            'perPage' => $perPage,
+            'search' => $search
         ]);
     }
 
