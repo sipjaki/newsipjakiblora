@@ -15411,6 +15411,14 @@ asosiasimasjaki::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
+asosiasimasjaki::create([
+    'id' => '99',
+    'namaasosiasi' => 'DPUPR Kab Blora',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
 
 //======================== ===================================================================================
 // JENJANG PEKERJAAN MAS JAKI BLORA
