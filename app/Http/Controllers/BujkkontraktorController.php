@@ -8,7 +8,7 @@ use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
 use App\Models\bujkkontraktor;
 use App\Models\bujkkontraktorsub;
-use App\Models\daftarasosiasi;
+// use App\Models\asosiasimasjaki;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -90,7 +90,7 @@ class BujkkontraktorController extends Controller
             $perPage = $request->input('perPage', 15);
             $search = $request->input('search');
 
-            $query = daftarasosiasi::query();
+            $query = asosiasimasjaki::query();
 
             if ($search) {
                 $query->where('namaasosiasi', 'LIKE', "%{$search}%");
@@ -343,7 +343,7 @@ public function bebujkkonstruksicreate()
     // Cari data undang-undang berdasarkan nilai 'judul'
     // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
     $user = Auth::user();
-    $asosiasimasjaki = daftarasosiasi::all();  // Ambil semua pengguna
+    $asosiasimasjaki = asosiasimasjaki::all();  // Ambil semua pengguna
 
     // Tampilkan form update dengan data yang ditemukan
     return view('backend.04_datajakon.01_bujkkonstruksi.create', [
@@ -358,11 +358,11 @@ public function bebujkkonstruksicreate()
 public function bebujkkonstruksicreatenew(Request $request)
 {
     // Ambil data asosiasi dari database untuk digunakan di form
-    $daftarasosiasi = daftarasosiasi::all();
+    $asosiasimasjaki = asosiasimasjaki::all();
 
     // Validasi input form
     $validatedData = $request->validate([
-        'asosiasimasjaki_id' => 'required|integer|exists:daftarasosiasi,id',
+        'asosiasimasjaki_id' => 'required|integer|exists:asosiasimasjaki,id',
         'namalengkap' => 'required|string|max:255',
         'alamat' => 'required|string',
         'no_telepon' => 'required|string|max:255',
@@ -393,7 +393,7 @@ public function bebujkkonstruksicreatenew(Request $request)
     // Menyimpan data ke dalam tabel bujkkontraktor
     Bujkkontraktor::create([
         'bujkkontraktorsub_id' => $bujkkontraktorsub_id, // ID dari kontraktor sub
-        'asosiasimasjaki_id' => $daftarasosiasi, // Asosiasi yang dipilih
+        'asosiasimasjaki_id' => $asosiasimasjaki, // Asosiasi yang dipilih
         'namalengkap' => $validatedData['namalengkap'],
         'alamat' => $validatedData['alamat'],
         'no_telepon' => $validatedData['no_telepon'],
