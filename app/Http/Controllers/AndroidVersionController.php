@@ -245,18 +245,17 @@ class AndroidVersionController extends Controller
             $search = $request->input('search');
             $page = $request->input('page', 1); // Ambil halaman saat ini
 
-            // Buat kunci cache unik berdasarkan pencarian dan halaman
+            // Buat kunci cache unik berdasarkan pencarian & halaman
             $cacheKey = "search_" . md5($search . "_page_" . $page . "_perPage_" . $perPage);
 
-            // Cek cache dulu sebelum query ke database
-            $data = Cache::remember($cacheKey, 300, function () use ($search, $perPage) {
+            $data = Cache::remember($cacheKey, 300, function () use ($search, $perPage, $page) {
                 $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
 
                 if ($search) {
                     $query->where('nama', 'LIKE', "%{$search}%");
                 }
 
-                return $query->paginate($perPage);
+                return $query->paginate($perPage, ['*'], 'page', $page); // Pastikan pagination tetap jalan
             });
 
 
