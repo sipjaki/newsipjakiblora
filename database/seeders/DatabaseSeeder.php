@@ -11960,10 +11960,6 @@ bujkkonsultansub::create([
 ]);
 
 
-
-
-// makanyu
-
 // bujkkontraktorsub ::create([
 //     'bujkkontraktor_id' => 6, // Ganti dengan ID yang sesuai
 //     'nama_pengurus' => '-',
@@ -20665,9 +20661,6 @@ satuanhargamaterial::create([
 ]);
 
 
-
-// makan yu
-
 //======================== ===================================================================================
 // SATUAN HARGA UPAH MAS JAKI BLORA
 satuanhargaupahtenagakerja::create([
@@ -24357,8 +24350,6 @@ hspkonstruksiumum3::create([
     'satuanmaterial' => 'M2',
     'hargasatuan' => '352889',
 ]);
-
-// MAKAN YU
 
 // ============================================= LIST DAFTAR HARGA KONSTRUKSI UMUM DIVISI 4 ===========================
 hsppaket4::create([
@@ -29166,6 +29157,1728 @@ skktenagakerjablora::create([
     'tanggalhabis' => '2029-03-10',
     'statusterbit' => 'TERBIT',
 ]);
+
+skktenagakerjablora::create([
+    'nama' => 'ANDI SUSANTO',
+    'alamat' => 'JL. CAMAR II NO. 2 RT 009 RW 005 KEL. KARANGJATI KEC. BLORA KAB. BLORA',
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'BAGUS SUTRISNO',
+    'alamat' => 'RT01/06 Dk.Krabyakan Ds.Temurejo Kec.Blora Kab.Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 24,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 1994,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'BANU SULISTIYONO',
+    'alamat' => 'Dk. Ketangar RT 002 RW 001 Karangjati Blora',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 1990,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'EKO ZAINUL ARIFIN',
+    'alamat' => 'Gang Swadaya Rt 01/Rw 11 Balun cepu',
+    'namasekolah_id' => 30,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 14,
+    'tahunlulus' => 2004,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'HERU PUJIYANTO',
+    'alamat' => 'JL. BERINGIN TIMUR RT 008 RW 003 KEL. MLANGSEN KEC. BLORA KAB. BLORA',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 18,
+    'tahunlulus' => 2003,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ILHAM KRISTUAJI',
+    'alamat' => 'RT 002/RW 001 Dk. Ketangar Kel. Karangjati Kec. Blora Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 18,
+    'tahunlulus' => 2019,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'IRIYANTO',
+    'alamat' => 'RT 003 RW 004 Jl. Jenderal Sudirman No. 177 Kel. Bangkle Kec. Blora Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 3,
+    'tahunlulus' => 1982,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MAS PUTRA NONI VIANTO',
+    'alamat' => 'NGROTO RT 001 RW 002 CEPU',
+    'namasekolah_id' => 30,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 20,
+    'tahunlulus' => 2016,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MAT ZAENURI',
+    'alamat' => 'RT 6 RW 1 Dukuh Janar Desa Nglanjuk Kec. Cepu Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 1,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 14,
+    'tahunlulus' => 2002,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MOHAMMAD ISHAQ RAHMADI',
+    'alamat' => 'Rt 02 Rw 04 Dukuh Catak Desa Adirejo Kec.Tunjungan Kab.Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2006,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MOHAMMAD KHAMAMI MUBAROK',
+    'alamat' => 'RT 005 RW 005 Dukuh Kalisangku Desa Gempolrejo Kec. Tunjungan Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 10,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 1,
+    'tahunlulus' => 2001,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MUHAMMAD NUR UDIANSYAH',
+    'alamat' => 'Jatirejo RT 02 RW 05 Karangboyo Cepu',
+    'namasekolah_id' => 19,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2013,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MULYADI',
+    'alamat' => 'Jl. Jend. Sudirman No. 172 kel. Bangkle kec. Blora kab. Blora',
+    'namasekolah_id' => 42,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 4,
+    'tahunlulus' => 1981,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'NGATINI',
+    'alamat' => 'Desa Sumurboto Rt 003 Rw 002 Kecamatan Jepon Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 15,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 2013,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SAYFUDIN ZUHRI EVEMBRI',
+    'alamat' => 'RT 3 RW 1 Desa Gagaan Kec. Kunduran Kab. Blora',
+    'namasekolah_id' => 35,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2017,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SUNARDI',
+    'alamat' => 'RT 005/RW 002 Desa Todanan Kec. Todanan Kab. Blora',
+    'namasekolah_id' => 24,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SUPRAPTO',
+    'alamat' => 'Jl. Jendral sudirman no. 102',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 3,
+    'tahunlulus' => 1984,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'NOVI ANDINI',
+    'alamat' => 'RT.03 RW.01 DUKUH PLOSO KULON DESA KEDIREN KECAMATAN RANDUBLATUNG KABUPATEN BLORA PROVINSI JAWA TENGAH',
+    'namasekolah_id' => 21,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'PRAMONO',
+    'alamat' => 'DUKUH BELIK RT 002 RW 006 DESA TAMBAKSARI KECAMATAN BLORA',
+    'namasekolah_id' => 29,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 11,
+    'tahunlulus' => 2012,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'PUJI SUBIANTORO',
+    'alamat' => 'DS. TAMBAKSARI RT 001 RW 001 DESA TAMBAKSARI BLORA',
+    'namasekolah_id' => 22,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-30',
+    'tanggalhabis' => '2029-03-29',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'REYHAN WIDYA PERMANA',
+    'alamat' => 'RT 5 RW 3 Dukuh Karangnongkp Desa Buluroto Kec. Banjarejo Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 22,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'RIZKY ADAN NOVIAR',
+    'alamat' => 'Sambonganyar 04/01 Ngawen Blora Jawa Tengah',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 12,
+    'tahunlulus' => 2018,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'TEGUH GURITNO',
+    'alamat' => 'DK. GULINGAN RT 003 RW 002 DESA TEMPUREJO KECAMATAN BLORA',
+    'namasekolah_id' => 40,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 4,
+    'tahunlulus' => 1991,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AHMAD SUKODRI',
+    'alamat' => 'RT 002 RW 002 Dk. Tegalgunung Kel. Tegalgunung Kecamatan Blora Kabupaten Blora',
+    'namasekolah_id' => 40,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 2,
+    'tahunlulus' => 1991,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AMENAN',
+    'alamat' => 'DK. NGLAROH RT 004 RW 002 DESA BALONG KEC. JEPON KAB. BLORA',
+    'namasekolah_id' => 40,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 4,
+    'tahunlulus' => 1988,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-19',
+    'tanggalhabis' => '2029-03-18',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'INDRA KARTA SASMITA',
+    'alamat' => 'Tambahrejo, RT 02/RW 01, Kel. Tambahrejo, Kec. Blora, Kab. Blora',
+    'namasekolah_id' => 49,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2021,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MACHMUD',
+    'alamat' => 'JL. KI. SORENG NO. 75 RT. 002 RW 003 KEL. KARANGJATI KEC. BLORA KAB. BLORA',
+    'namasekolah_id' => 41,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 22,
+    'tahunlulus' => 1988,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'TRI SUKMA SUPRIHATINI',
+    'alamat' => 'RT 3 RW 2 Dukuh Tegal Giling Desa Temurejo Kec. Blora',
+    'namasekolah_id' => 11,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2022,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-05-07',
+    'tanggalhabis' => '2029-05-06',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'TRI WIDIYANTO PAMUNGKAS',
+    'alamat' => 'RT 05 RW 15 JL.BRI No.4 Desa Balun Kec.Cepu Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 11,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 18,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'WAHYU PRATAMA',
+    'alamat' => 'RT 03 RW 01 Dukuh Ketileng Desa Ketileng Kec. Todanan Kab. Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 35,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2017,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-17',
+    'tanggalhabis' => '2029-03-16',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'WANDA DWI NUR CAHYANI',
+    'alamat' => 'Dk. Karangnongko RT 002/RW 004 Ds. Buluroto Kec. Banjarejo Kab. Blora',
+    'namasekolah_id' => 53,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2023,
+    'jabatankerja_id' => 4,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUS KURNIAWAN',
+    'alamat' => 'Dk. Pesantren Rt.01/04 Ds. Sembongin Banjarejo Blora',
+    'namasekolah_id' => 5,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 2009,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'FATUR IRVANDA',
+    'alamat' => 'Jl. Mr. Iskandar Lr. XI/31',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 22,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'FRENDY ISTIFAR PRADANA',
+    'alamat' => 'RT 03 RW 01 Dukuh Weru Desa Temurejo Kec. Blora Kabupaten Blora Jawa Tengah',
+    'namasekolah_id' => 53,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2020,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'JUSUP MURSIT',
+    'alamat' => 'RT 002 RW 005 Dukuh Ngelo Brangkat Desa Ngelo Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 11,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2002,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MIFTAHUL HUDA',
+    'alamat' => 'JL. BIMA IV NO 21 RT 004 RW 002 DESA BANGKLE KECAMATAN BLORA',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 18,
+    'tahunlulus' => 2011,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MOHAMMAD DAVIT ALFIAN',
+    'alamat' => 'Perum Grasenda Blok E No 30 RT 003 RW 009',
+    'namasekolah_id' => '',
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2016,
+    'jabatankerja_id' => 5,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MULYONO',
+    'alamat' => 'KELURAHAN WULUNG RT 001 RW 001 KECAMATAN RANDUBLATUNG',
+    'namasekolah_id' => 42,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 4,
+    'tahunlulus' => 1983,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-04-24',
+    'tanggalhabis' => '2029-03-23',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'RIVAN RUBIYANTO',
+    'alamat' => 'Jalan Manggis No. 20 RT 007 RW 002 Mlangsen Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 22,
+    'tahunlulus' => 2011,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'RIZCYI HIMAWAN',
+    'alamat' => 'RT 02 RW 01 Dukuh Maguan Desa Tamanrejo Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2019,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SLAMET YUNIANTO',
+    'alamat' => 'DK. SASAK RT 005 RW 001 DESA BULUROTO KECAMATAN BANJAREJO',
+    'namasekolah_id' => 42,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 4,
+    'tahunlulus' => 1983,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SUMARJO',
+    'alamat' => 'DK KETANGAR, RT/TW 011/001, KARANGJATI, KEC BLORA, KAB BLORA',
+    'namasekolah_id' => 16,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 1984,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'TIKA AYUK MARIYANA',
+    'alamat' => 'DESA NGELOBENER RT. 006/008, KELURAHAN JEPON, KECAMATAN JEPON, KABUPATEN BLORA',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 22,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 7,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'EDI SUMARSONO',
+    'alamat' => 'Dk. Ploserejo Ds. Nglangitan Rt.01/05 Tunjungan Blora',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'JUMADI',
+    'alamat' => 'RT. 02 RW. 02 Ds. Puledagel Kec. Jepon Kab. Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 29,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 1,
+    'tahunlulus' => 1997,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MADDALI',
+    'alamat' => 'Ds. Sambeng Rt. 011 Rw. 004 Kec. Kasiman Kab. Bojonegoro',
+    'namasekolah_id' => 4,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 2012,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-18',
+    'tanggalhabis' => '2029-03-17',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MOCH. SARONI',
+    'alamat' => 'NGELO BRONGKAH RT. 03 RW.05 KELURAHAN NGELO KEC. CEPU KABUPATEN BLORA PROPINSI JAWA TENGAH',
+    'namasekolah_id' => 13,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 1999,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'MUHAMMAD HANIF NUR SASONGKO',
+    'alamat' => 'Jl. Gatot Subroto RT 001 RW 001 Kel. Sonorejo Kec. Blora Kab. Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'NURRIZKY DANNY ADITIYA',
+    'alamat' => 'Dk. Sasak RT 001 RW 001 Desa Buluroto Kec. Banjarejo Kab. Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2011,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'PRIYONO',
+    'alamat' => 'Sumberarum',
+    'namasekolah_id' => null,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 5,
+    'tahunlulus' => 1991,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'SAYANA',
+    'alamat' => 'RT 002 RW 002 Dukuh Bleboh Desa Bleboh Kecamatan Jiken Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 11,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'VITRIA DWI HANDAYANI',
+    'alamat' => 'Dk. Nglawiyan RT 03 RW 04 Kel. Karangjati Kec. Blora Kab. Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2005,
+    'jabatankerja_id' => 3,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUS SUDIYONO',
+    'alamat' => 'RT 005/RW 002 Ds. Buluroto Kec. Banjarejo Kab. Blora',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 1995,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'BAHARUDDIN YUSUF HABIBI',
+    'alamat' => 'RT 3 RW 4 Dukuh Temon Desa Temurejo Kecamatan Blora Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 50,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 1,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'DEDY PRASETYO',
+    'alamat' => 'Kalisangku gempolrejo RT.04/05 tunjungan',
+    'namasekolah_id' => 27,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 18,
+    'tahunlulus' => 2004,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MEI YUNIANI',
+    'alamat' => 'RT 02 RW 02 Dukuh Weru Desa Temurejo Kec. Blora Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2014,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-11',
+    'tanggalhabis' => '2029-03-10',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MUH AGUS EKO PRIYANTO',
+    'alamat' => 'Kp. Sawati Rt. 002 Rw. 002 Ds. Cipondok Kec. Sukaresik Kab. Tasikmalaya',
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2023,
+    'jabatankerja_id' => 2,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'ROY SETIAWAN',
+    'alamat' => 'JL. NUSANTARA 3 NO. 41 RT 006 RW 001 KEL. JETIS KEC. BLORA KAB. BLORA',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2013,
+    'jabatankerja_id' => 1,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'RIKO MAHERA PURBA',
+    'alamat' => 'Dk. Putat, Ds. Sambongrejo Rt 04 Rw 03 kec. Tunjungan Kab. Blora, prov. Jawa Tengah',
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2022,
+    'jabatankerja_id' => 2,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUS DIDIK SEGER WARAS',
+    'alamat' => 'RT 18 RW 03 DUKUH NGRAYUNG DESA BRUMBUNG KEC. JEPON KAB. BLORA JAWA TENGAH',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 6,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AGUS PRATOMO',
+    'alamat' => 'RT 03 RW 03 Dukuh Tambaksari Desa Tambaksari Kec.Blora Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 15,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2016,
+    'jabatankerja_id' => 6,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'DANANG ABDUL WAHID',
+    'alamat' => 'Dk. Putat Rt. 04 Rw. 03 Ds. Sambongrejo Kec. Tunjungan Kab. Blora',
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2021,
+    'jabatankerja_id' => 6,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'DANU AHMAD APRIYANTO',
+    'alamat' => 'DUKUH NGRAYUNG DESA BRUMBUNG RT. 17 RW. 003 KEC. JEPON KAB. BLORA',
+    'namasekolah_id' => 31,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 6,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'NGADI',
+    'alamat' => 'RT 07 RW 03 Dukuh Cerme Desa Pojokwatu Kec.Sambong Kab.Blora Jawa Tengah',
+    'namasekolah_id' => 8,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2019,
+    'jabatankerja_id' => 6,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AMIN',
+    'alamat' => 'RT. 03 RW. 02 KEL. BERAN KEC. BLORA KAB. BLORA PROVINSI JAWA TENGAH',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2005,
+    'jabatankerja_id' => 8,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-17',
+    'tanggalhabis' => '2029-03-16',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ANIK TRI MURYANI',
+    'alamat' => 'Jalan Reksodiputro Gang Duku No. 18 RT 007 RW 002 Mlangsen Blora',
+    'namasekolah_id' => 26,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 1,
+    'tahunlulus' => 1990,
+    'jabatankerja_id' => 8,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'DIAH AYU PENTANINGRUM',
+    'alamat' => 'Jalan Mr. Iskandar Lr. XII Gang F RT 004 RW 004 Jetis Blora',
+    'namasekolah_id' => 15,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 2015,
+    'jabatankerja_id' => 8,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-15',
+    'tanggalhabis' => '2029-03-14',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => "MASYA'IK SYUKHRON",
+    'alamat' => 'JL. NUSANTARA 3 NO. 41 RT 006 RW 001 KEL. JETIS KEC. BLORA KAB. BLORA',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 4,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 8,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'NOVIANTORO',
+    'alamat' => 'Jl. Anggrek V No.6 Rt. 7 Rw. 5 Pekunden',
+    'namasekolah_id' => 46,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 18,
+    'tahunlulus' => 2001,
+    'jabatankerja_id' => 8,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-16',
+    'tanggalhabis' => '2029-03-15',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ADHY DERMAWAN DWI SAPUTRA',
+    'alamat' => 'DS.PATALAN RT/RW 02/03 KEC.BLORA KAB. BLORA',
+    'namasekolah_id' => 18,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AHMAD ANDI SAPUTRA',
+    'alamat' => 'RT 07 RW 05 Dk.Kalisangku Ds.Gempolrejo Kec.Tunjungan Kab.Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2019,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'AHMAT MUSLIM',
+    'alamat' => 'RT 2 RW 3 DUKUH PATIHAN DESA KETILENG KEC. TODANAN KABUPATEN BLORA',
+    'namasekolah_id' => 7,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2005,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ALI MAHMUDI',
+    'alamat' => 'RT 003 RW 002 Dukuh Tegalgiling Desa Temurejo Kec.Blora Kab.Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 12,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ANDHI KRISTANTO',
+    'alamat' => 'rt 001/ rw 009 desa sendangharjo dukuh pilangrejo  kec Blora kota kab Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 17,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 1999,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ANDREYAN',
+    'alamat' => 'Rt:02 Rw:04 Dukuh Nglawiyan Desa Karangjati Kec. Blora Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 34,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2019,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ANDRI DWI SUSANTO',
+    'alamat' => 'RT 21 RW 06 DESA SAMBENG , KEC KASIMAN , KAB, BOJONEGORO',
+    'namasekolah_id' => 6,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2014,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'ARI ANDI PRASETYO',
+    'alamat' => 'Kebun kelapa no.4 rt 2 rw 15 cepu',
+    'namasekolah_id' => 30,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 20,
+    'tahunlulus' => 1996,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => "ARIS KURNIAWAN",
+    'alamat' => "RT 10 RW 03 DS SAMBENG KEC KASIMAN KAB BOJONEGORO",
+    'namasekolah_id' => 23,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2003,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "BAGAS ADI PRASETYO",
+    'alamat' => "RT 002/RW 002 Kel. Kemadu Kec. Sulang Kab. Rembang",
+    'namasekolah_id' => 32,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2014,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "BIMANTARA GUSTAMI PUTRA",
+    'alamat' => "Gg Dewarucci 2",
+    'namasekolah_id' => 2,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 17,
+    'tahunlulus' => 2022,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "BUDI WALUYO",
+    'alamat' => "Kp. Sidoarjo Lr. V / 25 B RT 04 RW 02 Cepu",
+    'namasekolah_id' => 39,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 20,
+    'tahunlulus' => 1992,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "DARMAWAN",
+    'alamat' => "BALUN PINGGIRAN LR.IV RT 01 RW 08 KEC. CEPU BLORA",
+    'namasekolah_id' => 39,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 20,
+    'tahunlulus' => 1992,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "DWI GIYARTATIK",
+    'alamat' => "TEMUREJO RT 01 RW 02 KEC. BLORA",
+    'namasekolah_id' => 22,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 1998,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "EKO BUDI CAHYONO",
+    'alamat' => "RT 7 RW 2 Dukuh Sadang Desa Bicak Kec. Todanan Kabupaten Blora",
+    'namasekolah_id' => 57,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 9,
+    'tahunlulus' => 2011,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "FAIZAL MAYONG KURNIAWAN",
+    'alamat' => "RT 04 RW 04 Kelurahan Tambakromo Kec. Cepu Kabupaten Blora Provinsi Jawa Tengah",
+    'namasekolah_id' => 30,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2018,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "FERMI TERRA YANUAR",
+    'alamat' => "Jalan Kedongdong 1 GMS RT 007 RW 006 Desa Karangboyo Kec. Cepu Kabupaten Blora Provinsi Jawa Tengah",
+    'namasekolah_id' => 48,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 16,
+    'tahunlulus' => 2023,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "FIRMAN HADI SOLEKHAN",
+    'alamat' => "RT 2 RW 1 Dukuh Bicak Desa Bicak Kec. Todanan Kabupaten Blora",
+    'namasekolah_id' => 3,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2014,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => 'FITRIA ROSMELI DESI',
+    'alamat' => 'Jl. Pemuda No. 198A RT 002 RW 005 Kel. Karangboyo Kec. Cepu Kab. Blora Prov. Jawa Tengah',
+    'namasekolah_id' => 20,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2014,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'HILMI SETO PANGGALIH',
+    'alamat' => 'Jl. Mangga No.10 GMS Karangboyo Cepu',
+    'namasekolah_id' => 47,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 16,
+    'tahunlulus' => 2023,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'IIS SUGIHARTI',
+    'alamat' => 'Kebun Kelapa RT 3 RW 15 Kel. Cepu Kec. Cepu Kabupaten Blora Provinsi Jawa Tengah',
+    'namasekolah_id' => 43,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 10,
+    'tahunlulus' => 2006,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'IMAM SUBANDI',
+    'alamat' => 'LR. BENGAWAN II CEPU RT 002 RW 003',
+    'namasekolah_id' => 39,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 20,
+    'tahunlulus' => 1992,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'IRVAN PRASETIYO',
+    'alamat' => 'PRANGI RT 01 RW 01 DESA PRANGI KEC. PADANGAN KAB. BOJONEGORO PROV. JAWA TIMUR',
+    'namasekolah_id' => 38,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2018,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'IRWAN KRISTYO PUTRO PAMUNGKAS',
+    'alamat' => 'Jl raya lorong kebun kelapa rt 3 rw 15',
+    'namasekolah_id' => 30,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 14,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'JULIANTO',
+    'alamat' => 'Rt 06 RW 03, Tanggal, Randublatung, Blora, Jawa Tengah',
+    'namasekolah_id' => 48,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 15,
+    'tahunlulus' => 2023,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'LILIS MARETHA SARI',
+    'alamat' => 'Desa Temurejo 003/001 Kec. Blora Kab. Blora',
+    'namasekolah_id' => 45,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 8,
+    'tahunlulus' => 2023,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "MOHAMMAD ARIDHOTUL SOB'RI",
+    'alamat' => 'Dk. Wangil Rt.06/03 Ds. Sambonganyar Ngawen Blora',
+    'namasekolah_id' => 14,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 6,
+    'tahunlulus' => 2010,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => 'MUH. MUHAIMIN',
+    'alamat' => 'RT 04 RW 02 , Desa Gedongsari, Kec. Banjarejo , Kabupaten Blora, Provinsi Jawa Tengah',
+    'namasekolah_id' => 10,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 1,
+    'tahunlulus' => 2000,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+skktenagakerjablora::create([
+    'nama' => "NANANG WIDIONO",
+    'alamat' => "RT 04 RW 02 DUKUH SORONINI DESA SONOKULON KEC.TODANAN KAB.BLORA",
+    'namasekolah_id' => 28,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 19,
+    'tahunlulus' => 2013,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "NUNUNG SETIYA WATI",
+    'alamat' => "RT 6 RW 1 Dukuh Brangkal Desa Sendangwates Kec. Kunduran Kab. Blora Provinsi Jawa Tengah",
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2020,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "RUKIN",
+    'alamat' => "RT 11RW04 DESA BETET Kec. KASIMAN Kabupaten Bojonegoro Provinsi Jawa Timur",
+    'namasekolah_id' => 58,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 18,
+    'tahunlulus' => 2002,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "SITI NI'MATUL IZAH",
+    'alamat' => "DS.LEDOK RT 03 RW 01 KEC.SAMBONG KAB.BLORA",
+    'namasekolah_id' => 51,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 20,
+    'tahunlulus' => 2016,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "SUPRIYANTO",
+    'alamat' => "Dk. Karangnongko Rt.01/03 Buluroto Banjarejo Blora",
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2016,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "TRI JULIARDI",
+    'alamat' => "RT 012 RW 004 DUSUN GRMBIRO DESA KRANDON KEC.KESESI KABUPATEN PEKALONGAN JAWA TENGAH",
+    'namasekolah_id' => 37,
+    'jenjangpendidikan_id' => 4,
+    'jurusan_id' => 13,
+    'tahunlulus' => 2004,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "UMARIA LI'ULFA ROSI BRIYANTI",
+    'alamat' => "RT 02 RW 01 Desa Bogorejo Kecamatan Japah Kabupaten Blora Provinsi Jawa Tengah",
+    'namasekolah_id' => 9,
+    'jenjangpendidikan_id' => 1,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2022,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "VIKI RISQA YULIAN",
+    'alamat' => "RT 1 RW 2 Dekuh Todanan Desa Todanan Kec. Todanan Kabupaten Blora",
+    'namasekolah_id' => 52,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 7,
+    'tahunlulus' => 2012,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "YESI SULISTRYOWATI",
+    'alamat' => "NGELO BRONGKAH RT. 02 RW.05 KELURAHAN NGELO KEC. CEPU KABUPATEN BLORA PROPINSI JAWA TENGAH",
+    'namasekolah_id' => 25,
+    'jenjangpendidikan_id' => 3,
+    'jurusan_id' => 5,
+    'tahunlulus' => 2008,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-20',
+    'tanggalhabis' => '2029-03-19',
+    'statusterbit' => 'TERBIT',
+]);
+
+skktenagakerjablora::create([
+    'nama' => "ZAENUR ROZIKIN",
+    'alamat' => "Jl. Agil Kusumodyo Kunden No 75B RT/RW 03/02 Kunden, Blora, Jateng",
+    'namasekolah_id' => 44,
+    'jenjangpendidikan_id' => 2,
+    'jurusan_id' => 21,
+    'tahunlulus' => 2021,
+    'jabatankerja_id' => 9,
+    'jenjang_id' => 4,
+    'asosiasimasjaki_id' => 99,
+    'lpspenerbit_id' => 1,
+    'tanggalterbit' => '2024-03-13',
+    'tanggalhabis' => '2029-03-12',
+    'statusterbit' => 'TERBIT',
+]);
+
+
+// makanyu
 
 
 //======================== ===================================================================================
