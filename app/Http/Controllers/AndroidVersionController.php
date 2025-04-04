@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\allskktenagakerjablora;
 use App\Models\strukturdinas;
 
-use Illuminate\Support\Facades\Cache;
-
 use App\Models\renstra;
 use App\Models\tupoksi;
 use App\Models\profiljakonidentitasopd;
@@ -243,21 +241,21 @@ class AndroidVersionController extends Controller
 
             $perPage = $request->input('perPage', 10);
             $search = $request->input('search');
-            $page = $request->input('page', 1); // Ambil halaman saat ini
 
-            // Buat kunci cache unik berdasarkan pencarian & halaman
-            $cacheKey = "search_" . md5($search . "_page_" . $page . "_perPage_" . $perPage);
+            $query = skktenagakerjablora::query();
+            if ($search) {
+                $query->where('nama', 'LIKE', "%{$search}%")
+                    //     ->where('statusterbit', 'LIKE', "%{$search}%")
+                    //     ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                    //       $q->where('jabatankerja', 'LIKE', "%{$search}%");
+                    //   })
+                    //   ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                    //       $q->where('namasosiasi', 'LIKE', "%{$search}%");
+                    //   })
+                      ;
+            }
 
-            $data = Cache::remember($cacheKey, 300, function () use ($search, $perPage, $page) {
-                $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
-
-                if ($search) {
-                    $query->where('nama', 'LIKE', "%{$search}%");
-                }
-
-                return $query->paginate($perPage, ['*'], 'page', $page); // Pastikan pagination tetap jalan
-            });
-
+            $data = $query->paginate($perPage);
 
             if ($request->ajax()) {
                 return response()->json([
