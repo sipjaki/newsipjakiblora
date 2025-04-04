@@ -29738,7 +29738,7 @@ skktenagakerjablora::create([
 skktenagakerjablora::create([
     'nama' => 'MOHAMMAD DAVIT ALFIAN',
     'alamat' => 'Perum Grasenda Blok E No 30 RT 003 RW 009',
-    'namasekolah_id' => '',
+    'namasekolah_id' => null,
     'jenjangpendidikan_id' => 4,
     'jurusan_id' => 19,
     'tahunlulus' => 2016,
