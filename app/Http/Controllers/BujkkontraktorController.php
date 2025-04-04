@@ -36,12 +36,12 @@ class BujkkontraktorController extends Controller
         // Mengambil data dari tabel bujkkontraktor dan bujkkonsultan
         $databujkkontraktor = bujkkontraktor::select('daftarasosiasi_id', DB::raw('count(*) as jumlah'))
             ->groupBy('daftarasosiasi_id')
-            ->with('namaasosiasi') // Memastikan relasi namaasosiasi ada di model
+            ->with('daftarasosiasi') // Memastikan relasi namaasosiasi ada di model
             ->get();
 
         $databujkkonsultan = bujkkonsultan::select('daftarasosiasi_id', DB::raw('count(*) as jumlah'))
             ->groupBy('daftarasosiasi_id')
-            ->with('namaasosiasi') // Memastikan relasi namaasosiasi ada di model
+            ->with('daftarasosiasi') // Memastikan relasi namaasosiasi ada di model
             ->get();
 
         // Mendapatkan input pagination dan search
