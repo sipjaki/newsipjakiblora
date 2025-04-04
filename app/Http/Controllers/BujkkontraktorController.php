@@ -50,28 +50,28 @@ class BujkkontraktorController extends Controller
         $user = Auth::user();
 
         // Query untuk pencarian berdasarkan search
-        $query = BujkKontraktor::query();
+        $queryKontraktor = BujkKontraktor::query();
 
         if ($search) {
-            $query->whereHas('namaasosiasi', function ($q) use ($search) {
+            $queryKontraktor->whereHas('namaasosiasi', function ($q) use ($search) {
                 $q->where('nama', 'LIKE', "%{$search}%");
             });
         }
 
         // Paginate hasil query
-        $databujkkontraktorPaginated = $query->paginate($perPage);
+        $databujkkontraktorPaginated = $queryKontraktor->paginate($perPage);
 
         // Query untuk bujkkonsultan jika ingin mencari konsultan berdasarkan asosiasi
-        $query = bujkkonsultan::query();
+        $queryKonsultan =  bujkkonsultan::query();
 
         if ($search) {
-            $query->whereHas('namaasosiasi', function ($q) use ($search) {
+            $queryKonsultan->whereHas('namaasosiasi', function ($q) use ($search) {
                 $q->where('nama', 'LIKE', "%{$search}%");
             });
         }
 
         // Paginate hasil query
-        $databujkkonsultanPaginated = $query->paginate($perPage);
+        $databujkkonsultanPaginated = $queryKonsultan->paginate($perPage);
 
         // Jika request Ajax, return hanya bagian view yang diperlukan
         if ($request->ajax()) {
