@@ -240,7 +240,7 @@ class AndroidVersionController extends Controller
         // -==============================================================================================================
         public function menuresalltkkblora(Request $request)
         {
-            $perPage = $request->input('perPage', 10);
+            $perPage = $request->input('perPage', 25);
             $search = $request->input('search', '');
             $page = $request->input('page', 1);
 
