@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->text('alamat')->nullable();
             $table->year('tahunlulus')->nullable();
+            $table->year('tahunbimtek')->nullable();
             // -----------------------------------------------------------------------
             $table->foreignId('namasekolah_id')->nullable();
             $table->foreignId('jenjangpendidikan_id')->nullable();
