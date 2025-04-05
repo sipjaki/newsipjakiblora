@@ -222,7 +222,7 @@ h5 {
                             <td class="label">10</td>
                             <td class="label">Asosiasi</td>
                             <td class="colon">:</td>
-                            <td>{{$data->asosiasimasjaki->namaasosiasi}}</td>
+                            <td>{{$data->asosiasimasjaki?->namaasosiasi}}</td>
                         </tr>
                         <tr>
                             <td class="label">11</td>
