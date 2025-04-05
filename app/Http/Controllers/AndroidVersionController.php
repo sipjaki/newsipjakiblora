@@ -23,7 +23,7 @@ use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
 use App\Models\skktenagakerjablora;
 use App\Models\paketpekerjaanmasjaki;
-use App\Models\user;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
