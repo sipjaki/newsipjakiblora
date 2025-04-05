@@ -205,7 +205,7 @@
                                                                     #ff9999 60%,
                                                                     #ffb3b3 70%,
                                                                     #ffcccc 80%,
-                                                                    #ffe6e6 90%,
+                                                                    #117235 90%,
                                                                     #ffffff 100%);
                                                                 border-radius: 10px;">
                                                     </div>
@@ -218,7 +218,7 @@
                                             </td>
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = isset($item->detailsnamapaketpekerjaan->id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->detailsnamapaketpekerjaan->id) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
                                                     $route = route('detailsnamapaketpekerjaan.show', $item->detailsnamapaketpekerjaan->id ?? '');
                                                     if ($buttonText == 'LIHAT') {
@@ -236,7 +236,7 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = isset($item->detailspaketpekerjaan_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->detailspaketpekerjaan_id) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
                                                     $route = route('detailspaketpekerjaan.show', $item->detailspaketpekerjaan_id ?? '');
                                                     if ($buttonText == 'LIHAT') {
@@ -254,7 +254,7 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = isset($item->sppbj_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->sppbj_id) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
                                                     $route = route('sppbj.show', $item->sppbj_id ?? '');
                                                     if ($buttonText == 'LIHAT') {
@@ -272,7 +272,7 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = isset($item->spk_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->spk_id) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
                                                     $route = route('spk.show', $item->spk_id ?? '');
                                                     if ($buttonText == 'LIHAT') {
@@ -290,7 +290,7 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = isset($item->sskk_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->sskk_id) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
                                                     $route = route('sskk.show', $item->sskk_id ?? '');
                                                     if ($buttonText == 'LIHAT') {
@@ -308,7 +308,7 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = isset($item->suratperjanjianpekerjaan_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->suratperjanjianpekerjaan_id) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
                                                     $route = route('suratperjanjianpekerjaan.show', $item->suratperjanjianpekerjaan_id ?? '');
                                                     if ($buttonText == 'LIHAT') {
@@ -323,6 +323,7 @@
                                                     </button>
                                                 </a>
                                             </td>
+
 
 
                                             <td style="text-align: center">
