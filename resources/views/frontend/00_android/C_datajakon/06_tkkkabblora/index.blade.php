@@ -177,7 +177,7 @@
                                                     {{ $item->asosiasimasjaki->namaasosiasi }}
                                                 @else
                                                     <button style="font-size: 12px; background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 4px;">
-                                                        DATA ASOSIASI BELUM DI UPDATE
+                                                        DATA ASOSIASI <br> BELUM DI UPDATE
                                                     </button>
                                                 @endif
                                             </td>
