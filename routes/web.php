@@ -112,6 +112,24 @@ Route::get('/resprofilpaketpekerjaan', [AndroidVersionController::class, 'menure
 Route::get('/resprofilpaketpekerjaan/{id}', [AndroidVersionController::class, 'menuresprofilpaketpekerjaandetails']);
 
 
+// Rute untuk detailsnamapaketpekerjaan
+Route::get('/detailsnamapaketpekerjaan/{id}', [AndroidVersionController::class, 'show'])->name('detailsnamapaketpekerjaan.show');
+
+// Rute untuk detailspaketpekerjaan
+Route::get('/detailspaketpekerjaan/{id}', [AndroidVersionController::class, 'show'])->name('detailspaketpekerjaan.show');
+
+// Rute untuk sppbj
+Route::get('/sppbj/{id}', [AndroidVersionController::class, 'show'])->name('sppbj.show');
+
+// Rute untuk spk
+Route::get('/spk/{id}', [AndroidVersionController::class, 'show'])->name('spk.show');
+
+// Rute untuk sskk
+Route::get('/sskk/{id}', [AndroidVersionController::class, 'show'])->name('sskk.show');
+
+// Rute untuk suratperjanjianpekerjaan
+Route::get('/suratperjanjianpekerjaan/{id}', [AndroidVersionController::class, 'show'])->name('suratperjanjianpekerjaan.show');
+
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
