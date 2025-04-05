@@ -177,7 +177,7 @@
                                         @foreach ($data as $item )
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user->name)) }}</td>
+                                            <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user?->name)) }}</td>
                                             <td style="text-align: left;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
                                             <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
                                             <td style="text-align: left;">{{$item->namapekerjaan}}</td>
