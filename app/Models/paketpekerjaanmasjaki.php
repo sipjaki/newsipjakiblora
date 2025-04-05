@@ -13,11 +13,6 @@ class paketpekerjaanmasjaki extends Model
 
     protected $guarded = ['id'];
 
-    public function prosespaket()
-    {
-        return $this->belongsTo(prosespaket::class);
-    }
-
     public function profiljenispekerjaan()
     {
         return $this->belongsTo(profiljenispekerjaan::class);
@@ -36,6 +31,11 @@ class paketpekerjaanmasjaki extends Model
     public function tahunpilihan()
     {
         return $this->belongsTo(tahunpilihan::class);
+    }
+
+    public function bulanrekap()
+    {
+        return $this->belongsTo(bulanrekap::class);
     }
 
 }

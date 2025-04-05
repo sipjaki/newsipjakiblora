@@ -23,11 +23,6 @@ class bujkkontraktor extends Model
             return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
         }
 
-        public function daftarasosiasi()
-        {
-            return $this->belongsTo(daftarasosiasi::class, 'daftarasosiasi_id');
-        }
-
         public function tahunpilihan()
         {
             return $this->belongsTo(tahunpilihan::class);

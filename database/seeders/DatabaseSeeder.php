@@ -235,6 +235,116 @@ headerberanda::create([
         ]);
 
         User::create([
+            'id'  => 11,
+            'name'  => 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
+            'username' => 'dpuprblora',
+            'statusadmin_id' => '9',
+            'avatar' => '/assets/icon/logokabupatenblora.png',
+            'email' => 'dpuprkabblora@gmail.com',
+            'password' => bcrypt('admindpuprblora')
+        ]);
+
+        User::create([
+            'id'  => 12,
+            'name'  => 'Dinas Kesehatan',
+            'username' => 'dinaskesehatan',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaskesehatankabblora@gmail.com',
+            'password' => bcrypt('admindinaskesehatanblora')
+        ]);
+
+        User::create([
+            'id'  => 13,
+            'name'  => 'Dinas Lingkungan Hidup',
+            'username' => 'dinaslingkunganhidup',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaslhkabblora@gmail.com',
+            'password' => bcrypt('adminlhkabblora')
+        ]);
+
+        User::create([
+            'id'  => 14,
+            'name'  => 'Dinas Pangan, Pertanian, Peternakan, Dan Perikanan',
+            'username' => 'dinaspangan',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaspangankabblora@gmail.com',
+            'password' => bcrypt('adminpangankabblora')
+        ]);
+
+        User::create([
+            'id'  => 15,
+            'name'  => 'Dinas Pengendalian Penduduk Dan Keluarga Berencana',
+            'username' => 'dinaspengendalian',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaspengendaliankabblora@gmail.com',
+            'password' => bcrypt('admindinaspengendaliankabblora')
+        ]);
+
+        User::create([
+            'id'  => 16,
+            'name'  => 'DINAS PERDAGANGAN, KOPERASI USAHA KECIL DAN MENENGAH',
+            'username' => 'dinasperdagangan',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinasperdagangankabblora@gmail.com',
+            'password' => bcrypt('admindinasperdagangankabblora')
+        ]);
+
+        User::create([
+            'id'  => 17,
+            'name'  => 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN',
+            'username' => 'dinasperumahan',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinasperumahankabblora@gmail.com',
+            'password' => bcrypt('admindinasperumahankabblora')
+        ]);
+
+        User::create([
+            'id'  => 18,
+            'name'  => 'DINAS SOSIAL PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK',
+            'username' => 'dinassosial',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinassosialkabblora@gmail.com',
+            'password' => bcrypt('admindinassosialkabblora')
+        ]);
+
+        User::create([
+            'id'  => 19,
+            'name'  => 'RUMAH SAKIT UMUM DR R SOEPRAPTO CEPU',
+            'username' => 'rsucepu',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'rsucepukabblora@gmail.com',
+            'password' => bcrypt('adminrsucepukabblora')
+        ]);
+
+        User::create([
+            'id'  => 20,
+            'name'  => 'RUMAH SAKIT UMUM DR. R SOETIJONO BLORA',
+            'username' => 'rsusoetijonoblora',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'rsusoetijonoblorakabblora@gmail.com',
+            'password' => bcrypt('adminrsusoetijonoblora')
+        ]);
+
+        User::create([
+            'id'  => 21,
+            'name'  => 'SEKRETARIAT DAERAH',
+            'username' => 'sekdablora',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sekdakabblora@gmail.com',
+            'password' => bcrypt('adminsekdakabblora')
+        ]);
+
+        User::create([
             'id'  => 2,
             'name'  => 'Anex Fachrian, ST. MT',
             'username' => 'Anex',
@@ -314,6 +424,67 @@ headerberanda::create([
             'password' => bcrypt('adminadmin123$$')
         ]);
 
+
+        // =================================================================
+        bulanrekap::create([
+            'id'  => '1',
+            'bulanrekap'  => 'Januari',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '2',
+            'bulanrekap'  => 'Februari',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '3',
+            'bulanrekap'  => 'Maret',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '4',
+            'bulanrekap'  => 'April',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '5',
+            'bulanrekap'  => 'Mei',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '6',
+            'bulanrekap'  => 'Juni',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '7',
+            'bulanrekap'  => 'Juli',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '8',
+            'bulanrekap'  => 'Agustus',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '9',
+            'bulanrekap'  => 'September',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '10',
+            'bulanrekap'  => 'Oktober',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '11',
+            'bulanrekap'  => 'November',
+        ]);
+
+        bulanrekap::create([
+            'id'  => '12',
+            'bulanrekap'  => 'Desember',
+        ]);
 
         // =================================================================
         statusadmin::create([
@@ -27548,9 +27719,8 @@ paketstatuspekerjaan::create([
 //==========================================================================================================
 // DATA PAKET PEERJAAN MASJAKI
 paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
     'paketstatuspekerjaan_id'    => 1,
+    'profiljenispekerjaan_id'    => 1,
     'namapekerjaan'              => 'Rehabilitasi Checkdam Talokwohmojo Kec Ngawen Lanjutan',
     'tahunpilihan_id'            => 4,
     'cvptpenyedia'               => 'CV Restu Bumi Mustika',
@@ -27559,101 +27729,13 @@ paketpekerjaanmasjaki::create([
     'sumberdana_id'              => 2,
     'jeniskontrak'               => 'Harga Satuan',
     'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => '2024-08-01',
-    'bulanselesai'               => '2024-12-01',
+    'bulanmulai'                 => 'Agustus',
+    'bulanselesai'               => 'desember',
+    'bulanrekap_id'              => null,
     'progress'                   => 50,
-    'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
+    'user_id'                    => 'Dinas Pekerjaan Umum dan Penataan Ruang'
 ]);
 
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 2,
-    'namapekerjaan'              => 'BELANJA MODAL BANGUNAN KESEHATAN-BELANJA MODAL PAGAR',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV. REZEKY MUJI KONSTRUKSI',
-    'nib'                        => '3011220047491',
-    'nilaikontrak'               => 857589920.00,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => '2024-10-01',
-    'bulanselesai'               => '2024-12-01',
-    'progress'                   => 50,
-    'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 3,
-    'namapekerjaan'              => 'Pembangunan Saluran Pengendali Banjir Kecamatan Cepu Lanjutan',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV. KINAN KARYA GEMILANG',
-    'nib'                        => '0260010050988',
-    'nilaikontrak'               => 763241000.00,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => '2024-07-01',
-    'bulanselesai'               => '2024-12-01',
-    'progress'                   => 50,
-    'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 3,
-    'namapekerjaan'              => 'Pembangunan Saluran Pengendali Banjir Ruas Jalan Sonokidul Kecamatan Kunduran',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV Restu Bumi Mustika',
-    'nib'                        => '1105240037134',
-    'nilaikontrak'               => 451076000.00,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => '2024-08-01',
-    'bulanselesai'               => '2024-12-01',
-    'progress'                   => 50,
-    'dinas'                      => 'Dinas Pekerjaan Umum dan Penataan Ruang'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 3,
-    'namapekerjaan'              => 'PEMBANGUNAN SARANA DAN PRASARANA DRAINASE LINGKUNGAN PERMUKIMAN KUMUH DRAINASE LINGKUNGAN RT 2 RW 9 KELURAHAN CEPU KECAMATAN CEPU KAB. BLORA',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV.KEMBAR DUA',
-    'nib'                        => '0246000912019',
-    'nilaikontrak'               => 161453878.91,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => '2024-08-01',
-    'bulanselesai'               => '2024-11-01',
-    'progress'                   => 50,
-    'dinas'                      => 'DINAS PERUMAHAN PEMUKIMAN DAN PERHUBUNGAN'
-]);
-
-paketpekerjaanmasjaki::create([
-    'prosespaket_id'            => 1,
-    'profiljenispekerjaan_id'    => 1,
-    'paketstatuspekerjaan_id'    => 3,
-    'namapekerjaan'              => 'Pembangunan Saluran Pengendali Banjir Kel. Kunduran Kec. Kunduran Lanjutan',
-    'tahunpilihan_id'            => 4,
-    'cvptpenyedia'               => 'CV. WIRATAMA GEMILANG',
-    'nib'                        => 'N/A',
-    'nilaikontrak'               =>  421000000.00,
-    'sumberdana_id'              => 2,
-    'jeniskontrak'               => 'Harga Satuan',
-    'karakteristikkontrak'       => 'Tahun Tunggal', // Duplikat dihapus
-    'bulanmulai'                 => '2024-08-01',
-    'bulanselesai'               => '2024-12-01',
-    'progress'                   => 50,
-    'dinas'                      => 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG'
-]);
 
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
@@ -28060,99 +28142,6 @@ subhargadiv3::create([
 //     'bulanselesai' => '2026-06-30',
 //     'dinas' => 'Dinas Kesehatan Blora',
 // ]);
-
-
-// =========================================================
-// PROSES PAKET PEKERJAAN TENDER
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 1, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 2, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 3, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 4, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 5, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 6, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 7, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 8, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 9, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
-
-prosespaket::create([
-    'profilpaketpekerjaanblora_id' => 10, // Sesuaikan dengan ID yang ada di tabel terkait
-    'persiapan' => 'SELESAI',
-    'pengadaan' => 'SELESAI',
-    'pelaksanaan' => 'SELESAI',
-    'pemeliharaan' => 'SELESAI',
-    'paketselesai' => 'SELESAI',
-]);
 
 //======================== ===================================================================================
 // PENGAWASAN BUJK MAS JAKI BLORA

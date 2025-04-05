@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('paketpekerjaanmasjakis', function (Blueprint $table) {
             $table->id();
             // ----------------------------------------------------------------
-            $table->foreignId('prosespaket_id')->nullable();
             $table->foreignId('profiljenispekerjaan_id')->nullable();
             $table->foreignId('paketstatuspekerjaan_id')->nullable();
             $table->foreignId('sumberdana_id')->nullable();
             $table->foreignId('tahunpilihan_id')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('bulanrekap_id')->nullable();
             // ----------------------------------------------------------------
             $table->string('namapekerjaan')->nullable();
             $table->string('cvptpenyedia')->nullable();
@@ -28,7 +29,6 @@ return new class extends Migration
             $table->string('karakteristikkontrak')->nullable();
             $table->date('bulanmulai')->nullable(); // Menyimpan tanggal mulai
             $table->date('bulanselesai')->nullable(); // Menyimpan tanggal selesai
-            $table->string('dinas')->nullable();
             $table->integer('progress')->default(0);
             $table->softDeletes();
             $table->timestamps();
