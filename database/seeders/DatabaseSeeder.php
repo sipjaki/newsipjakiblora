@@ -43757,7 +43757,7 @@ standarbiayaumum::create([
     'peraturan' => 'standarbiayaumum/Permen_PUPR_Nomor_8_Tahun_2023.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 standarbiayaumum::create([
@@ -43765,7 +43765,7 @@ standarbiayaumum::create([
     'peraturan' => 'standarbiayaumum/Permen_PUPR_Nomor_14_Tahun_2020.pdf',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 //======================== ===================================================================================
 

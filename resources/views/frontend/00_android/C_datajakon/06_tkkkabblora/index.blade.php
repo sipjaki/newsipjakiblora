@@ -172,7 +172,17 @@
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
                                             <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
-                                            <td style="text-align: center;">{{$item->statusterbit}}</td>
+
+                                            <td class="text-center">
+                                                @if($item->statusterbit == 'TERBIT')
+                                                    <button class="px-2 py-1 text-white text-sm bg-green-600 rounded">TERBIT</button>
+                                                @elseif($item->statusterbit == 'DALAM PROSES')
+                                                    <button class="px-2 py-1 text-white text-sm bg-red-600 rounded">DALAM PROSES</button>
+                                                @else
+                                                    <button class="px-2 py-1 text-white text-sm bg-gray-500 rounded">{{$item->statusterbit}}</button>
+                                                @endif
+                                            </td>
+
                                             <td style="text-align: center">
                                                 <a href="/resalltkkblora/{{$item->id}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
