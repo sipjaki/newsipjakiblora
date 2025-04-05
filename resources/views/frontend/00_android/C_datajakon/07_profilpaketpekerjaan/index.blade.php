@@ -157,11 +157,11 @@
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:1000px;"> Dinas </th>
+                                            {{-- <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:1000px;"> Dinas </th> --}}
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:900px;"> Jenis Pekerjaan </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:500px;"> Paket Pekerjaan  </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Nama Pekerjaan</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:1000px;"> Nama Pekerjaan</th>
+                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th> --}}
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Progress</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Details</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Pekerjaan</th>
