@@ -38,4 +38,36 @@ class paketpekerjaanmasjaki extends Model
         return $this->belongsTo(bulanrekap::class);
     }
 
+    // ---------
+
+        public function detailsnamapaketpekerjaan()
+        {
+            return $this->belongsTo(detailsnamapaketpekerjaan::class);
+        }
+
+        public function detailspaketpekerjaan()
+        {
+            return $this->belongsTo(detailspaketpekerjaan::class);
+        }
+
+        public function spk()
+        {
+            return $this->belongsTo(spk::class);
+        }
+
+        public function sppbj()
+        {
+            return $this->belongsTo(sppbj::class);
+        }
+
+        public function sskk()
+        {
+            return $this->belongsTo(sskk::class);
+        }
+
+        public function suratperjanjianpekerjaan()
+        {
+            return $this->belongsTo(suratperjanjianpekerjaan::class);
+        }
+
 }
