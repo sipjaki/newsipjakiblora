@@ -107,6 +107,10 @@ Route::get('/resalltkkbloradpupr', [AndroidVersionController::class, 'menuresall
 Route::get('/resalltkkblora/{id}', [AndroidVersionController::class, 'menuresalltkkbloradetails']);
 // makanyu
 
+// MENU PROFIL PAKET PEKERJAAN MAS JAKI BLORA
+Route::get('/resprofilpaketpekerjaan', [AndroidVersionController::class, 'menuresprofilpaketpekerjaan']);
+Route::get('/resprofilpaketpekerjaan/{id}', [AndroidVersionController::class, 'menuresprofilpaketpekerjaandetails']);
+
 
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
