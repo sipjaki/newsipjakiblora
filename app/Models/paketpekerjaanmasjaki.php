@@ -70,4 +70,9 @@ class paketpekerjaanmasjaki extends Model
             return $this->belongsTo(suratperjanjianpekerjaan::class);
         }
 
+        public function user()
+        {
+            return $this->belongsTo(user::class);
+        }
+
 }
