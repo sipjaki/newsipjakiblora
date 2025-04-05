@@ -238,52 +238,101 @@ class AndroidVersionController extends Controller
 
 
         // -==============================================================================================================
+        // public function menuresalltkkblora(Request $request)
+        // {
+        //     $perPage = $request->input('perPage', 25);
+        //     $search = $request->input('search', '');
+        //     $page = $request->input('page', 1);
+
+        //     // Cache key unik berdasarkan search tanpa halaman (biar cache tetap valid)
+        //     $cacheKey = "search_" . md5($search);
+
+        //     // Hapus cache jika ada search baru
+        //     if ($page == 1) {
+        //         Cache::forget($cacheKey);
+        //     }
+
+        //     // Ambil data dari cache atau query database
+        //     $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+        //         $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
+
+        //         if (!empty($search)) {
+        //             $query->where('nama', 'LIKE', "%{$search}%");
+        //         }
+
+        //         return $query->get(); // Ambil semua hasil, biar pagination tetap berjalan
+        //     });
+
+        //     // Manual Paginate dari hasil cache
+        //     $total = count($allData);
+        //     $items = collect($allData)->forPage($page, $perPage)->values();
+        //     $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+        //         'path' => request()->url(),
+        //         'query' => request()->query()
+        //     ]);
+
+        //     if ($request->ajax()) {
+        //         return response()->json([
+        //             'html' => view('frontend.00_android.C_datajakon.06_tkkkabblora.partials.table', compact('data'))->render()
+        //         ]);
+        //     }
+
+        //     return view('frontend.00_android.C_datajakon.06_tkkkabblora.index', [
+        //         'title' => 'TKK Kabupaten Blora',
+        //         'data' => $data,
+        //         'perPage' => $perPage,
+        //         'search' => $search
+        //     ]);
+        // }
+
         public function menuresalltkkblora(Request $request)
-        {
-            $perPage = $request->input('perPage', 25);
-            $search = $request->input('search', '');
-            $page = $request->input('page', 1);
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search', '');
+    $page = $request->input('page', 1);
 
-            // Cache key unik berdasarkan search tanpa halaman (biar cache tetap valid)
-            $cacheKey = "search_" . md5($search);
+    // Cache key unik berdasarkan search dan filter
+    $cacheKey = "search_" . md5($search . '_exclude_asosiasi_99');
 
-            // Hapus cache jika ada search baru
-            if ($page == 1) {
-                Cache::forget($cacheKey);
-            }
+    // Hapus cache jika ada search baru
+    if ($page == 1) {
+        Cache::forget($cacheKey);
+    }
 
-            // Ambil data dari cache atau query database
-            $allData = Cache::remember($cacheKey, 300, function () use ($search) {
-                $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id');
+    // Ambil data dari cache atau query database
+    $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+        $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
+            ->where('asosiasimasjaki_id', '!=', 99); // ⛔
 
-                if (!empty($search)) {
-                    $query->where('nama', 'LIKE', "%{$search}%");
-                }
-
-                return $query->get(); // Ambil semua hasil, biar pagination tetap berjalan
-            });
-
-            // Manual Paginate dari hasil cache
-            $total = count($allData);
-            $items = collect($allData)->forPage($page, $perPage)->values();
-            $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
-                'path' => request()->url(),
-                'query' => request()->query()
-            ]);
-
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('frontend.00_android.C_datajakon.06_tkkkabblora.partials.table', compact('data'))->render()
-                ]);
-            }
-
-            return view('frontend.00_android.C_datajakon.06_tkkkabblora.index', [
-                'title' => 'TKK Kabupaten Blora',
-                'data' => $data,
-                'perPage' => $perPage,
-                'search' => $search
-            ]);
+        if (!empty($search)) {
+            $query->where('nama', 'LIKE', "%{$search}%");
         }
+
+        return $query->get(); // Ambil semua data untuk pagination manual
+    });
+
+    // Manual Paginate dari hasil cache
+    $total = count($allData);
+    $items = collect($allData)->forPage($page, $perPage)->values();
+    $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+        'path' => request()->url(),
+        'query' => request()->query()
+    ]);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.C_datajakon.06_tkkkabblora.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.C_datajakon.06_tkkkabblora.index', [
+        'title' => 'TKK Kabupaten Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
 
 
         // -==============================================================================================================
