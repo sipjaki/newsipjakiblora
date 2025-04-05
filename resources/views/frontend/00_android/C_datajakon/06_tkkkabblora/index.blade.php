@@ -183,10 +183,7 @@
                                                         border: none;
                                                         border-radius: 4px;
                                                         cursor: default;
-                                                        transition: 0.3s;
-                                                    "
-                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                                    ">
                                                         DATA ASOSIASI BELUM DI UPDATE
                                                     </button>
                                                 @endif
