@@ -291,10 +291,8 @@ class AndroidVersionController extends Controller
     $search = $request->input('search', '');
     $page = $request->input('page', 1);
 
-    // Cache key unik berdasarkan search + filter asosiasi
     $cacheKey = "search_" . md5($search . '_exclude_asosiasi_99');
 
-    // Hapus cache jika ada search baru di halaman 1
     if ($page == 1) {
         Cache::forget($cacheKey);
     }
@@ -303,17 +301,18 @@ class AndroidVersionController extends Controller
         $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
             ->where(function ($q) {
                 $q->where('asosiasimasjaki_id', '!=', 99)
-                  ->orWhereNull('asosiasimasjaki_id'); // tampilkan yang null juga
+                  ->orWhereNull('asosiasimasjaki_id'); // tetap tampilkan data yang null
             });
 
         if (!empty($search)) {
-            $query->where('nama', 'LIKE', "%{$search}%");
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'LIKE', "%{$search}%");
+            });
         }
 
         return $query->get();
     });
 
-    // Manual paginate
     $total = count($allData);
     $items = collect($allData)->forPage($page, $perPage)->values();
     $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
@@ -334,9 +333,6 @@ class AndroidVersionController extends Controller
         'search' => $search
     ]);
 }
-
-
-
         // -==============================================================================================================
         public function menuresalltkkbloradpupr(Request $request)
         {
