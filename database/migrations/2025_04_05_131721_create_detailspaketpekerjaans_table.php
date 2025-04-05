@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('detailspaketpekerjaans', function (Blueprint $table) {
             $table->id();
+            $table->string('paketpekerjaan')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
