@@ -82,4 +82,9 @@ class User extends Authenticatable
         return $this->hasMany(agendaskk::class);
     }
 
+    public function paketpekerjaanmasjaki()
+    {
+        return $this->hasMany(paketpekerjaanmasjaki::class);
+    }
+
 }
