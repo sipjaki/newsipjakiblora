@@ -27733,8 +27733,8 @@ paketpekerjaanmasjaki::create([
     'bulanmulai'                 => '8',
     'bulanselesai'               => '12',
     'bulanrekap_id'              => null,
-    'progress'                   => 50,
-    'user_id'                    => 'Dinas Pekerjaan Umum dan Penataan Ruang'
+    'progress'                   => 100,
+    'user_id'                    => 11,
 ]);
 
 
