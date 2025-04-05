@@ -179,9 +179,7 @@
                                                 @if($asosiasi)
                                                     {{ $asosiasi }}
                                                 @else
-                                                    <button style="background-color: navy; color: white; padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; border: none; cursor: default;">
-                                                        DATA ASOSIASI BELUM DI UPDATE
-                                                    </button>
+                                                <p>Data Tidak Tersedia</p>
                                                 @endif
                                             </td>
 
