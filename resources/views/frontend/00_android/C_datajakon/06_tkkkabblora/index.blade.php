@@ -173,13 +173,13 @@
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
                                             <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
 
-                                            <td class="text-center">
+                                            <td style="text-align: center;">
                                                 @if($item->statusterbit == 'TERBIT')
-                                                    <button class="px-2 py-1 text-white text-sm bg-green-600 rounded">TERBIT</button>
+                                                    <button class="btn btn-sm btn-success">TERBIT</button>
                                                 @elseif($item->statusterbit == 'DALAM PROSES')
-                                                    <button class="px-2 py-1 text-white text-sm bg-red-600 rounded">DALAM PROSES</button>
+                                                    <button class="btn btn-sm btn-danger">DALAM PROSES</button>
                                                 @else
-                                                    <button class="px-2 py-1 text-white text-sm bg-gray-500 rounded">{{$item->statusterbit}}</button>
+                                                    <button class="btn btn-sm btn-secondary">{{$item->statusterbit}}</button>
                                                 @endif
                                             </td>
 
