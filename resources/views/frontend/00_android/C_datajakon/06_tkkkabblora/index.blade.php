@@ -172,8 +172,8 @@
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
                                             <td style="text-align: center;">
-                                                @if($item->asosiasimasjaki?->namaasosiasi)
-                                                    {{$item->asosiasimasjaki->namaasosiasi}}
+                                                @if(isset($item->asosiasimasjaki) && !empty($item->asosiasimasjaki->namaasosiasi))
+                                                    {{ $item->asosiasimasjaki->namaasosiasi }}
                                                 @else
                                                     <button style="
                                                         font-size: 12px;
