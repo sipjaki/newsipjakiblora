@@ -252,7 +252,7 @@ h5 {
                                     $tanggalHabis = Carbon::parse($data->tanggalhabis);
                                 @endphp
 
-                                {{ $tanggalHabis->translatedFormat('j F Y') }}
+                                {{-- {{ $tanggalHabis->translatedFormat('j F Y') }} --}}
 
                                 @if($tanggalHabis->isFuture())
                                     <button style="margin-left: 10px; background-color: #16a34a; color: white; padding: 2px 8px; font-size: 0.875rem; border-radius: 5px;">
