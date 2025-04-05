@@ -103,6 +103,7 @@ Route::get('/resbujkkonsultan/{namalengkap}', [AndroidVersionController::class, 
 
 // MENU DATA TKK KABUPATEN BLORA
 Route::get('/resalltkkblora', [AndroidVersionController::class, 'menuresalltkkblora']);
+Route::get('/resalltkkbloradpupr', [AndroidVersionController::class, 'menuresalltkkbloradpupr']);
 Route::get('/resalltkkblora/{id}', [AndroidVersionController::class, 'menuresalltkkbloradetails']);
 // makanyu
 
