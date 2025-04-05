@@ -417,27 +417,27 @@ class AndroidVersionController extends Controller
             }
 
             // Query untuk mengambil data dengan relasi 'user' dan pencarian
-            $query = paketpekerjaanmasjaki::select('id', 'user_id', 'profiljenispekerjaan_id', 'paketstatuspekerjaan_id', 'namapekerjaan', 'bulanrekap_id', 'progress', 'detailsnamapaketpekerjaan_id', 'detailspaketpekerjaan_id', 'sppbj_id', 'spk_id', 'sskk_id', 'suratperjanjianpekerjaan_id')
-                ->with('user:id,name'); // Memuat relasi 'user' hanya mengambil id dan name
+            $query = paketpekerjaanmasjaki::select('id', 'user_id', 'profiljenispekerjaan_id', 'paketstatuspekerjaan_id', 'namapekerjaan', 'bulanrekap_id', 'progress', 'detailsnamapaketpekerjaan_id', 'detailspaketpekerjaan_id', 'sppbj_id', 'spk_id', 'sskk_id', 'suratperjanjianpekerjaan_id'); // Memuat relasi 'user' hanya mengambil id dan name
 
             // Menambahkan pencarian berdasarkan kolom
             if (!empty($search)) {
                 $query->where(function ($q) use ($search) {
-                    $q->where('namapekerjaan', 'LIKE', "%{$search}%")
-                        ->orWhere('profiljenispekerjaan_id', 'LIKE', "%{$search}%")
-                        ->orWhere('paketstatuspekerjaan_id', 'LIKE', "%{$search}%")
-                        ->orWhere('bulanrekap_id', 'LIKE', "%{$search}%")
-                        ->orWhere('detailsnamapaketpekerjaan_id', 'LIKE', "%{$search}%")
-                        ->orWhere('detailspaketpekerjaan_id', 'LIKE', "%{$search}%")
-                        ->orWhere('sppbj_id', 'LIKE', "%{$search}%")
-                        ->orWhere('spk_id', 'LIKE', "%{$search}%")
-                        ->orWhere('sskk_id', 'LIKE', "%{$search}%")
-                        ->orWhere('suratperjanjianpekerjaan_id', 'LIKE', "%{$search}%");
+                    $q->where('namapekerjaan', 'LIKE', "%{$search}%");
+                        // ->orWhere('profiljenispekerjaan_id', 'LIKE', "%{$search}%")
+                        // ->orWhere('paketstatuspekerjaan_id', 'LIKE', "%{$search}%")
+                        // ->orWhere('bulanrekap_id', 'LIKE', "%{$search}%")
+                        // ->orWhere('detailsnamapaketpekerjaan_id', 'LIKE', "%{$search}%")
+                        // ->orWhere('detailspaketpekerjaan_id', 'LIKE', "%{$search}%")
+                        // ->orWhere('sppbj_id', 'LIKE', "%{$search}%")
+                        // ->orWhere('spk_id', 'LIKE', "%{$search}%")
+                        // ->orWhere('sskk_id', 'LIKE', "%{$search}%")
+                        // ->orWhere('suratperjanjianpekerjaan_id', 'LIKE', "%{$search}%");
 
                     // Pencarian untuk nama user melalui relasi 'user'
                     $q->orWhereHas('user', function ($query) use ($search) {
                         $query->where('name', 'LIKE', "%{$search}%");
                     });
+
                 });
             }
 
