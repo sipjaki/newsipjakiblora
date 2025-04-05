@@ -21,8 +21,6 @@ return new class extends Migration
             $table->foreignId('sskk_id')->nullable();
             $table->foreignId('suratperjanjianpekerjaan_id')->nullable();
             // ----------------------------------------------------------------
-            $table->string('namapekerjaan')->nullable();
-            // ----------------------------------------------------------------
             $table->foreignId('profiljenispekerjaan_id')->nullable();
             $table->foreignId('paketstatuspekerjaan_id')->nullable();
             $table->foreignId('sumberdana_id')->nullable();
