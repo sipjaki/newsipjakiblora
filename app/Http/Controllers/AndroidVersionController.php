@@ -406,69 +406,71 @@ class AndroidVersionController extends Controller
         public function menuresprofilpaketpekerjaan(Request $request)
         {
             $perPage = $request->input('perPage', 25);
-                $search = $request->input('search', '');
-                $page = $request->input('page', 1);
+            $search = $request->input('search', '');
+            $page = $request->input('page', 1);
 
-                // Cache key yang konsisten dan jelas
-                $cacheKey = "paketpekerjaanmasjaki_" . md5("page_{$page}_search_{$search}");
+            // Cache key yang konsisten dan jelas
+            $cacheKey = "paketpekerjaanmasjaki_" . md5("page_{$page}_search_{$search}");
 
-                if ($page == 1) {
-                    Cache::forget($cacheKey);  // Menghapus cache jika berada di halaman pertama
-                }
+            if ($page == 1) {
+                Cache::forget($cacheKey);  // Menghapus cache jika berada di halaman pertama
+            }
 
-                $query = paketpekerjaanmasjaki::select('id', 'user_id', 'profiljenispekerjaan_id', 'paketstatuspekerjaan_id', 'namapekerjaan', 'bulanrekap_id', 'progress', 'detailsnamapaketpekerjaan_id', 'detailspaketpekerjaan_id', 'sppbj_id', 'spk_id', 'sskk_id', 'suratperjanjianpekerjaan_id')
+            // Query untuk mengambil data dengan relasi 'user' dan pencarian
+            $query = paketpekerjaanmasjaki::select('id', 'user_id', 'profiljenispekerjaan_id', 'paketstatuspekerjaan_id', 'namapekerjaan', 'bulanrekap_id', 'progress', 'detailsnamapaketpekerjaan_id', 'detailspaketpekerjaan_id', 'sppbj_id', 'spk_id', 'sskk_id', 'suratperjanjianpekerjaan_id')
                 ->with('user:id,name'); // Memuat relasi 'user' hanya mengambil id dan name
 
-                if (!empty($search)) {
-                    $query->where(function ($q) use ($search) {
-                        // Pencarian untuk kolom dengan nama pekerjaan langsung
-                        $q->where('namapekerjaan', 'LIKE', "%{$search}%");
-
-                        // Pencarian untuk kolom yang berakhiran _id
-                        $q->orWhere('profiljenispekerjaan_id', 'LIKE', "%{$search}%")
+            // Menambahkan pencarian berdasarkan kolom
+            if (!empty($search)) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+                        ->orWhere('profiljenispekerjaan_id', 'LIKE', "%{$search}%")
                         ->orWhere('paketstatuspekerjaan_id', 'LIKE', "%{$search}%")
                         ->orWhere('bulanrekap_id', 'LIKE', "%{$search}%")
                         ->orWhere('detailsnamapaketpekerjaan_id', 'LIKE', "%{$search}%")
-                      ->orWhere('detailspaketpekerjaan_id', 'LIKE', "%{$search}%")
-                      ->orWhere('sppbj_id', 'LIKE', "%{$search}%")
-                      ->orWhere('spk_id', 'LIKE', "%{$search}%")
-                      ->orWhere('sskk_id', 'LIKE', "%{$search}%")
-                      ->orWhere('suratperjanjianpekerjaan_id', 'LIKE', "%{$search}%");
+                        ->orWhere('detailspaketpekerjaan_id', 'LIKE', "%{$search}%")
+                        ->orWhere('sppbj_id', 'LIKE', "%{$search}%")
+                        ->orWhere('spk_id', 'LIKE', "%{$search}%")
+                        ->orWhere('sskk_id', 'LIKE', "%{$search}%")
+                        ->orWhere('suratperjanjianpekerjaan_id', 'LIKE', "%{$search}%");
 
-                      // Menambahkan pencarian untuk nama user melalui relasi 'user'
-                      $q->orWhereHas('user', function ($query) use ($search) {
-                          $query->where('name', 'LIKE', "%{$search}%");
-                        });
+                    // Pencarian untuk nama user melalui relasi 'user'
+                    $q->orWhereHas('user', function ($query) use ($search) {
+                        $query->where('name', 'LIKE', "%{$search}%");
                     });
-                }
+                });
+            }
 
-                $allData = $query->get(); // Mendapatkan hasil query
-
+            // Mengambil semua data berdasarkan query dan pagination
+            $allData = $query->get();
             $total = count($allData);
             $items = collect($allData)->forPage($page, $perPage)->values();
             $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
                 'path' => request()->url(),
-                    'query' => request()->query()
-                ]);
+                'query' => request()->query()
+            ]);
 
-                if ($request->ajax()) {
-                    return response()->json([
-                        'html' => view('frontend.00_android.C_datajakon.07_profilpaketpekerjaan.partials.table', compact('data'))->render()
-                    ]);
-                }
-
-                $user = Auth::user();
-                $users = user::all();
-
-                return view('frontend.00_android.C_datajakon.07_profilpaketpekerjaan.index', [
-                    'title' => 'Paket Pekerjaan Kabupaten Blora',
-                    'data' => $data,
-                    'user' => $user,
-                    'users' => $users,
-                    'perPage' => $perPage,
-                    'search' => $search
+            // Cek jika request menggunakan ajax
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.C_datajakon.07_profilpaketpekerjaan.partials.table', compact('data'))->render()
                 ]);
             }
 
+            // Ambil data user yang sedang login
+            $user = Auth::user();
+            // Ambil semua user jika diperlukan (misalnya untuk dropdown)
+            $users = User::all(); // Perhatikan penulisan dengan huruf kapital di "User"
+
+            // Kembalikan view dengan data
+            return view('frontend.00_android.C_datajakon.07_profilpaketpekerjaan.index', [
+                'title' => 'Paket Pekerjaan Kabupaten Blora',
+                'data' => $data,
+                'user' => $user,
+                'users' => $users,
+                'perPage' => $perPage,
+                'search' => $search
+            ]);
+        }
 
         }
