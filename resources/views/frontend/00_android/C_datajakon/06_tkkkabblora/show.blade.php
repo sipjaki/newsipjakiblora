@@ -234,14 +234,38 @@ h5 {
                             <td>11</td>
                             <td class="label">Tanggal Terbit</td>
                             <td class="colon">:</td>
-                            <td>{{$data->tanggalterbit}}</td>
+                            <td>{{ \Carbon\Carbon::parse($data->tanggalterbit)->translatedFormat('j F Y') }}</td>
                         </tr>
                         <tr>
                             <td>12</td>
                             <td class="label">Tanggal Habis</td>
                             <td class="colon">:</td>
-                            <td>{{$data->tanggalhabis}}</td>
+                            <td>{{ \Carbon\Carbon::parse($data->tanggalhabis)->translatedFormat('j F Y') }}</td>
                         </tr>
+                        <tr>
+                            <td>12</td>
+                            <td class="label">Masa Berlaku</td>
+                            <td class="colon">:</td>
+                            <td>
+                                @php
+                                    use Carbon\Carbon;
+                                    $tanggalHabis = Carbon::parse($data->tanggalhabis);
+                                @endphp
+
+                                {{ $tanggalHabis->translatedFormat('j F Y') }}
+
+                                @if($tanggalHabis->isFuture())
+                                    <button style="margin-left: 10px; background-color: #16a34a; color: white; padding: 2px 8px; font-size: 0.875rem; border-radius: 5px;">
+                                        BERLAKU
+                                    </button>
+                                @else
+                                    <button style="margin-left: 10px; background-color: #dc2626; color: white; padding: 2px 8px; font-size: 0.875rem; border-radius: 5px;">
+                                        TIDAK BERLAKU
+                                    </button>
+                                @endif
+                            </td>
+                        </tr>
+
 
                     </table>
 
