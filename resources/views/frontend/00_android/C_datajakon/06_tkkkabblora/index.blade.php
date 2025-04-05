@@ -171,16 +171,9 @@
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-                                            <td class="text-center">
-                                                @php
-                                                    $asosiasi = $item->asosiasimasjaki?->namaasosiasi;
-                                                @endphp
 
-                                                @if($asosiasi)
-                                                    {{ $asosiasi }}
-                                                @else
-                                                <p>Data Tidak Tersedia</p>
-                                                @endif
+                                            <td class="text-center">
+                                                {{ $item->asosiasimasjaki?->namaasosiasi ?? 'Data Tidak Tersedia' }}
                                             </td>
 
                                         <td class="text-center">
