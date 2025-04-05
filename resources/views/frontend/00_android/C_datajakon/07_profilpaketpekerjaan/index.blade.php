@@ -182,32 +182,41 @@
                                             <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
                                             <td style="text-align: left;">{{$item->namapekerjaan}}</td>
                                             {{-- <td style="text-align: left;">{{$item->bulanrekap->bulanrekap}}</td> --}}
-
                                             <td style="text-align: left;">
                                                 @php
                                                     // Mendapatkan progress dalam bentuk persentase
                                                     $progress = $item->progress;
                                                     // Membatasi nilai progress agar tidak lebih dari 100
                                                     $progress = min($progress, 100);
+
+                                                    // Menentukan warna berdasarkan interval
+                                                    if ($progress <= 10) {
+                                                        $color = '#ff0000'; // Merah untuk 0-10%
+                                                    } elseif ($progress <= 20) {
+                                                        $color = '#ff1a1a'; // Merah terang untuk 10-20%
+                                                    } elseif ($progress <= 30) {
+                                                        $color = '#ff3333'; // Merah muda untuk 20-30%
+                                                    } elseif ($progress <= 40) {
+                                                        $color = '#ff4d4d'; // Merah marun untuk 30-40%
+                                                    } elseif ($progress <= 50) {
+                                                        $color = '#ff6666'; // Pink muda untuk 40-50%
+                                                    } elseif ($progress <= 60) {
+                                                        $color = '#ff8080'; // Pink untuk 50-60%
+                                                    } elseif ($progress <= 70) {
+                                                        $color = '#ff9999'; // Merah muda cerah untuk 60-70%
+                                                    } elseif ($progress <= 80) {
+                                                        $color = '#ffb3b3'; // Pink pucat untuk 70-80%
+                                                    } elseif ($progress <= 90) {
+                                                        $color = '#ffcccc'; // Pucat untuk 80-90%
+                                                    } else {
+                                                        $color = '#117235'; // Hijau untuk 90-100%
+                                                    }
                                                 @endphp
 
                                                 <!-- Membuat progress bar dengan warna dinamis -->
                                                 <div style="position: relative; width: 100%; height: 20px; background-color: #e0e0e0; border-radius: 10px;">
-                                                    <!-- Bar progress dengan warna dinamis per 10% -->
-                                                    <div style="height: 100%; width: {{ $progress }}%;
-                                                                background: linear-gradient(to right,
-                                                                    #ff0000 0%,
-                                                                    #ff1a1a 10%,
-                                                                    #ff3333 20%,
-                                                                    #ff4d4d 30%,
-                                                                    #ff6666 40%,
-                                                                    #ff8080 50%,
-                                                                    #ff9999 60%,
-                                                                    #ffb3b3 70%,
-                                                                    #ffcccc 80%,
-                                                                    #117235 90%,
-                                                                    #ffffff 100%);
-                                                                border-radius: 10px;">
+                                                    <!-- Bar progress dengan warna sesuai dengan interval -->
+                                                    <div style="height: 100%; width: {{ $progress }}%; background-color: {{ $color }}; border-radius: 10px;">
                                                     </div>
 
                                                     <!-- Menampilkan angka progress di tengah bar -->
@@ -216,11 +225,11 @@
                                                     </span>
                                                 </div>
                                             </td>
-                                            <td class="text-center">
+                                                  <td class="text-center">
                                                 @php
-                                                    $buttonText = !empty($item->detailsnamapaketpekerjaan->id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = route('detailsnamapaketpekerjaan.show', $item->detailsnamapaketpekerjaan->id ?? '');
+                                                    $route = !empty($item->detailsnamapaketpekerjaan) ? route('detailsnamapaketpekerjaan.show', $item->detailsnamapaketpekerjaan->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
@@ -236,9 +245,9 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = !empty($item->detailspaketpekerjaan_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->detailspaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = route('detailspaketpekerjaan.show', $item->detailspaketpekerjaan_id ?? '');
+                                                    $route = !empty($item->detailspaketpekerjaan) ? route('detailspaketpekerjaan.show', $item->detailspaketpekerjaan->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
@@ -254,9 +263,9 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = !empty($item->sppbj_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->sppbj) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = route('sppbj.show', $item->sppbj_id ?? '');
+                                                    $route = !empty($item->sppbj) ? route('sppbj.show', $item->sppbj->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
@@ -272,9 +281,9 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = !empty($item->spk_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->spk) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = route('spk.show', $item->spk_id ?? '');
+                                                    $route = !empty($item->spk) ? route('spk.show', $item->spk->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
@@ -290,9 +299,9 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = !empty($item->sskk_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->sskk) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = route('sskk.show', $item->sskk_id ?? '');
+                                                    $route = !empty($item->sskk) ? route('sskk.show', $item->sskk->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
@@ -308,9 +317,9 @@
 
                                             <td class="text-center">
                                                 @php
-                                                    $buttonText = !empty($item->suratperjanjianpekerjaan_id) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->suratperjanjianpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = route('suratperjanjianpekerjaan.show', $item->suratperjanjianpekerjaan_id ?? '');
+                                                    $route = !empty($item->suratperjanjianpekerjaan) ? route('suratperjanjianpekerjaan.show', $item->suratperjanjianpekerjaan->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
@@ -323,8 +332,6 @@
                                                     </button>
                                                 </a>
                                             </td>
-
-
 
                                             <td style="text-align: center">
                                                 <a href="/resprofilpaketpekerjaan/{{$item->id}}">
