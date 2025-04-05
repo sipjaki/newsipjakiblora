@@ -162,13 +162,13 @@
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:500px;"> Paket Pekerjaan  </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:1000px;"> Nama Pekerjaan</th>
                                             {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th> --}}
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Progress</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Details</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Pekerjaan</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> SPPBJ</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> SPK</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> SSKK</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Perjanjian Harga Satuan</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Progress</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Details</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Pekerjaan</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> SPPBJ</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> SPK</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> SSKK</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Perjanjian Harga Satuan</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
                                         </tr>
                                     </thead>
