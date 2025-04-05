@@ -172,18 +172,22 @@
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
                                             <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
+                                            @php
+                                            $status = strtoupper(trim($item->statusterbit));
+                                            $bgColor = '';
 
-                                            <td class="text-center">
-                                                @php $status = Str::upper(trim($item->statusterbit)); @endphp
+                                            if ($status == 'TERBIT' || $status == 'TELAH TERBIT') {
+                                                $bgColor = 'background-color: #16a34a; color: white;'; // bg-green-600
+                                            } elseif ($status == 'DALAM PROSES') {
+                                                $bgColor = 'background-color: #dc2626; color: white;'; // bg-red-600
+                                            } else {
+                                                $bgColor = 'background-color: #6b7280; color: white;'; // bg-gray-500
+                                            }
+                                        @endphp
 
-                                                @if($status == 'TERBIT')
-                                                    <button class="px-2 py-1 text-white text-sm bg-green-600 rounded">TERBIT</button>
-                                                @elseif($status == 'DALAM PROSES')
-                                                    <button class="px-2 py-1 text-white text-sm bg-red-600 rounded">DALAM PROSES</button>
-                                                @else
-                                                    <button class="px-2 py-1 text-white text-sm bg-gray-500 rounded">{{$item->statusterbit}}</button>
-                                                @endif
-                                            </td>
+                                        <td class="text-center" style="padding: 6px 12px; font-size: 0.875rem; border-radius: 4px; {{ $bgColor }}">
+                                            {{ $item->statusterbit ?? 'TIDAK ADA DATA' }}
+                                        </td>
 
                                             <td style="text-align: center">
                                                 <a href="/resalltkkblora/{{$item->id}}">
