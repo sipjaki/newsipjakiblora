@@ -179,7 +179,19 @@ h5 {
                             <td></td>
                             <td class="label">Tahun Lulus</td>
                             <td class="colon">:</td>
-                            <td>{{$data->tahunbimtek}}</td>
+                            <td>{{$data->tahunlulus}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="label">Sekolah/Universitas/Instansi</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->namasekolah->namasekolah}}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="label">Pendidikan</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->jenjangpendidikan->jenjangpendidikan}}</td>
                         </tr>
 
                     </table>
