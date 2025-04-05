@@ -291,7 +291,8 @@ class AndroidVersionController extends Controller
     $search = $request->input('search', '');
     $page = $request->input('page', 1);
 
-    $cacheKey = "search_" . md5($search . '_exclude_asosiasi_99');
+    // Cache key yang konsisten dan jelas
+    $cacheKey = "blora_tkk_" . md5("page_{$page}_search_{$search}");
 
     if ($page == 1) {
         Cache::forget($cacheKey);
@@ -299,11 +300,13 @@ class AndroidVersionController extends Controller
 
     $allData = Cache::remember($cacheKey, 300, function () use ($search) {
         $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
+            // HANYA tampilkan data yang TIDAK 99 atau NULL
             ->where(function ($q) {
                 $q->where('asosiasimasjaki_id', '!=', 99)
-                  ->orWhereNull('asosiasimasjaki_id'); // tetap tampilkan data yang null
+                  ->orWhereNull('asosiasimasjaki_id');
             });
 
+        // Cek kalau ada pencarian
         if (!empty($search)) {
             $query->where(function ($q) use ($search) {
                 $q->where('nama', 'LIKE', "%{$search}%");
@@ -322,11 +325,11 @@ class AndroidVersionController extends Controller
 
     if ($request->ajax()) {
         return response()->json([
-            'html' => view('frontend.00_android.C_datajakon.05_tkkdpupr.partials.table', compact('data'))->render()
+            'html' => view('frontend.00_android.C_datajakon.06_tkkkabblora.partials.table', compact('data'))->render()
         ]);
     }
 
-    return view('frontend.00_android.C_datajakon.05_tkkdpupr.index', [
+    return view('frontend.00_android.C_datajakon.06_tkkkabblora.index', [
         'title' => 'TKK Kabupaten Blora',
         'data' => $data,
         'perPage' => $perPage,
