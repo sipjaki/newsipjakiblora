@@ -287,52 +287,103 @@ class AndroidVersionController extends Controller
 
 
         // -==============================================================================================================
+        // public function menuresalltkkbloradpupr(Request $request)
+        // {
+        //     $perPage = $request->input('perPage', 25);
+        //     $search = $request->input('search', '');
+        //     $page = $request->input('page', 1);
+
+        //     // Cache key unik berdasarkan search + filter asosiasi
+        //     $cacheKey = "search_" . md5($search . '_asosiasi_99');
+
+        //     // Hapus cache jika ada search baru di halaman 1
+        //     if ($page == 1) {
+        //         Cache::forget($cacheKey);
+        //     }
+
+        //     $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+        //         $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
+        //             ->where('asosiasimasjaki_id', 99); // hanya ambil data asosiasi ID 99
+
+        //         if (!empty($search)) {
+        //             $query->where('nama', 'LIKE', "%{$search}%");
+        //         }
+
+        //         return $query->get(); // Ambil semua hasil, untuk keperluan pagination
+        //     });
+
+        //     // Manual paginate
+        //     $total = count($allData);
+        //     $items = collect($allData)->forPage($page, $perPage)->values();
+        //     $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+        //         'path' => request()->url(),
+        //         'query' => request()->query()
+        //     ]);
+
+        //     if ($request->ajax()) {
+        //         return response()->json([
+        //             'html' => view('frontend.00_android.C_datajakon.05_tkkdpupr.partials.table', compact('data'))->render()
+        //         ]);
+        //     }
+
+        //     return view('frontend.00_android.C_datajakon.05_tkkdpupr.index', [
+        //         'title' => 'TKK Di Selenggarakan DPUPR',
+        //         'data' => $data,
+        //         'perPage' => $perPage,
+        //         'search' => $search
+        //     ]);
+        // }
+
+
         public function menuresalltkkbloradpupr(Request $request)
-        {
-            $perPage = $request->input('perPage', 25);
-            $search = $request->input('search', '');
-            $page = $request->input('page', 1);
+{
+    $perPage = $request->input('perPage', 25);
+    $search = $request->input('search', '');
+    $page = $request->input('page', 1);
 
-            // Cache key unik berdasarkan search + filter asosiasi
-            $cacheKey = "search_" . md5($search . '_asosiasi_99');
+    // Cache key unik berdasarkan search + filter asosiasi
+    $cacheKey = "search_" . md5($search . '_exclude_asosiasi_99');
 
-            // Hapus cache jika ada search baru di halaman 1
-            if ($page == 1) {
-                Cache::forget($cacheKey);
-            }
+    // Hapus cache jika ada search baru di halaman 1
+    if ($page == 1) {
+        Cache::forget($cacheKey);
+    }
 
-            $allData = Cache::remember($cacheKey, 300, function () use ($search) {
-                $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
-                    ->where('asosiasimasjaki_id', 99); // hanya ambil data asosiasi ID 99
-
-                if (!empty($search)) {
-                    $query->where('nama', 'LIKE', "%{$search}%");
-                }
-
-                return $query->get(); // Ambil semua hasil, untuk keperluan pagination
+    $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+        $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
+            ->where(function ($q) {
+                $q->where('asosiasimasjaki_id', '!=', 99)
+                  ->orWhereNull('asosiasimasjaki_id'); // tampilkan yang null juga
             });
 
-            // Manual paginate
-            $total = count($allData);
-            $items = collect($allData)->forPage($page, $perPage)->values();
-            $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
-                'path' => request()->url(),
-                'query' => request()->query()
-            ]);
-
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('frontend.00_android.C_datajakon.05_tkkdpupr.partials.table', compact('data'))->render()
-                ]);
-            }
-
-            return view('frontend.00_android.C_datajakon.05_tkkdpupr.index', [
-                'title' => 'TKK Di Selenggarakan DPUPR',
-                'data' => $data,
-                'perPage' => $perPage,
-                'search' => $search
-            ]);
+        if (!empty($search)) {
+            $query->where('nama', 'LIKE', "%{$search}%");
         }
+
+        return $query->get();
+    });
+
+    // Manual paginate
+    $total = count($allData);
+    $items = collect($allData)->forPage($page, $perPage)->values();
+    $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+        'path' => request()->url(),
+        'query' => request()->query()
+    ]);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.C_datajakon.05_tkkdpupr.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.C_datajakon.05_tkkdpupr.index', [
+        'title' => 'TKK Di Selenggarakan DPUPR',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
 
         public function menuresalltkkbloradetails($id)
     {
