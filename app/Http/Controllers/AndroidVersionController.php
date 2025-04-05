@@ -460,7 +460,7 @@ class AndroidVersionController extends Controller
             // Ambil data user yang sedang login
             $user = Auth::user();
             // Ambil semua user jika diperlukan (misalnya untuk dropdown)
-            $users = User::all(); // Perhatikan penulisan dengan huruf kapital di "User"
+            $users = user::all(); // Perhatikan penulisan dengan huruf kapital di "User"
 
             // Kembalikan view dengan data
             return view('frontend.00_android.C_datajakon.07_profilpaketpekerjaan.index', [
