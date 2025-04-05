@@ -171,27 +171,8 @@
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-                                            <td style="text-align: center;">
-                                                @if($item->asosiasimasjaki?->namaasosiasi)
-                                                    {{$item->asosiasimasjaki->namaasosiasi}}
-                                                @else
-                                                    <button style="
-                                                        font-size: 12px;
-                                                        background-color: navy;
-                                                        color: white;
-                                                        padding: 4px 8px;
-                                                        border: none;
-                                                        border-radius: 4px;
-                                                        cursor: default;
-                                                        transition: 0.3s;
-                                                    "
-                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                                        DATA ASOSIASI BELUM DI UPDATE
-                                                    </button>
-                                                @endif
-                                            </td>
-                                                       <td class="text-center">
+
+                                        <td class="text-center">
                                                 @php
                                                     $status = strtoupper(trim($item->statusterbit));
                                                     $style = '';
