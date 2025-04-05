@@ -172,22 +172,25 @@
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
                                             <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
-                                            @php
-                                            $status = strtoupper(trim($item->statusterbit));
-                                            $bgColor = '';
+                                            <td class="text-center">
+                                                @php
+                                                    $status = strtoupper(trim($item->statusterbit));
+                                                    $style = '';
 
-                                            if ($status == 'TERBIT' || $status == 'TELAH TERBIT') {
-                                                $bgColor = 'background-color: #16a34a; color: white;'; // bg-green-600
-                                            } elseif ($status == 'DALAM PROSES') {
-                                                $bgColor = 'background-color: #dc2626; color: white;'; // bg-red-600
-                                            } else {
-                                                $bgColor = 'background-color: #6b7280; color: white;'; // bg-gray-500
-                                            }
-                                        @endphp
+                                                    if ($status == 'TERBIT' || $status == 'TELAH TERBIT') {
+                                                        $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                    } elseif ($status == 'DALAM PROSES') {
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                    } else {
+                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                    }
+                                                @endphp
 
-                                        <td class="text-center" style="padding: 6px 12px; font-size: 0.875rem; border-radius: 4px; {{ $bgColor }}">
-                                            {{ $item->statusterbit ?? 'TIDAK ADA DATA' }}
-                                        </td>
+                                                <button style="{{ $style }}">
+                                                    {{ $item->statusterbit ?? 'TIDAK ADA DATA' }}
+                                                </button>
+                                            </td>
+
 
                                             <td style="text-align: center">
                                                 <a href="/resalltkkblora/{{$item->id}}">
