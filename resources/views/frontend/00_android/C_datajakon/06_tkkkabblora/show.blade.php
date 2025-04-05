@@ -164,86 +164,86 @@ h5 {
                     <table class="table-identitas">
                         {{-- @foreach ($dataidentitasopd as $item) --}}
                         <tr>
-                            <td class="label">1.</td>
+                            <td class="label">1</td>
                             <td class="label">Nama Lengkap</td>
                             <td class="colon">:</td>
                             <td>{{$data->nama}}</td>
                         </tr>
                         <tr>
-                            <td class="label">2.</td>
+                            <td class="label">2</td>
                             <td class="label">Alamat </td>
                             <td class="colon">:</td>
                             <td>{{$data->alamat}}</td>
                         </tr>
                         <tr>
-                            <td>3</td>
+                            <td class="label">3</td>
                             <td class="label">Tahun Lulus</td>
                             <td class="colon">:</td>
                             <td>{{$data->tahunlulus}}</td>
                         </tr>
                         <tr>
                         <tr>
-                            <td>3</td>
+                            <td class="label">4</td>
                             <td class="label">Tahun Bimtek</td>
                             <td class="colon">:</td>
                             <td>{{$data->tahunbimtek}}</td>
                         </tr>
                         <tr>
-                            <td>4</td>
+                            <td class="label">5</td>
                             <td class="label">Sekolah/Universitas</td>
                             <td class="colon">:</td>
                             <td>{{$data->namasekolah->namasekolah}}</td>
                         </tr>
                         <tr>
-                            <td>5</td>
+                            <td class="label">6</td>
                             <td class="label">Pendidikan</td>
                             <td class="colon">:</td>
                             <td>{{$data->jenjangpendidikan->jenjangpendidikan}}</td>
                         </tr>
                         <tr>
-                            <td>6</td>
+                            <td class="label">7</td>
                             <td class="label">Jurusan</td>
                             <td class="colon">:</td>
                             <td>{{$data->jurusan->jurusan}}</td>
                         </tr>
                         <tr>
-                            <td>7</td>
+                            <td class="label">8</td>
                             <td class="label">Jabatan Kerja</td>
                             <td class="colon">:</td>
                             <td>{{$data->jabatankerja->jabatankerja}}</td>
                         </tr>
                         <tr>
-                            <td>8</td>
+                            <td class="label">9</td>
                             <td class="label">Jenjang</td>
                             <td class="colon">:</td>
                             <td>{{$data->jenjang->jenjang}}</td>
                         </tr>
                         <tr>
-                            <td>9</td>
+                            <td class="label">10</td>
                             <td class="label">Asosiasi</td>
                             <td class="colon">:</td>
                             <td>{{$data->asosiasimasjaki->namaasosiasi}}</td>
                         </tr>
                         <tr>
-                            <td>10</td>
+                            <td class="label">11</td>
                             <td class="label">LSP Penerbit</td>
                             <td class="colon">:</td>
                             <td>{{$data->lpspenerbit->lpspenerbit}}</td>
                         </tr>
                         <tr>
-                            <td>11</td>
+                            <td class="label">12</td>
                             <td class="label">Tanggal Terbit</td>
                             <td class="colon">:</td>
                             <td>{{ \Carbon\Carbon::parse($data->tanggalterbit)->translatedFormat('j F Y') }}</td>
                         </tr>
                         <tr>
-                            <td>12</td>
+                            <td class="label">13</td>
                             <td class="label">Tanggal Habis</td>
                             <td class="colon">:</td>
                             <td>{{ \Carbon\Carbon::parse($data->tanggalhabis)->translatedFormat('j F Y') }}</td>
                         </tr>
                         <tr>
-                            <td>12</td>
+                            <td class="label">14</td>
                             <td class="label">Masa Berlaku</td>
                             <td class="colon">:</td>
                             <td>
