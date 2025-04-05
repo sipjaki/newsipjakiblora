@@ -176,22 +176,71 @@ h5 {
                             <td>{{$data->alamat}}</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td>3</td>
                             <td class="label">Tahun Lulus</td>
                             <td class="colon">:</td>
                             <td>{{$data->tahunlulus}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td class="label">Sekolah/Universitas/Instansi</td>
+                        <tr>
+                            <td>3</td>
+                            <td class="label">Tahun Bimtek</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->tahunbimtek}}</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="label">Sekolah/Universitas</td>
                             <td class="colon">:</td>
                             <td>{{$data->namasekolah->namasekolah}}</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td>5</td>
                             <td class="label">Pendidikan</td>
                             <td class="colon">:</td>
                             <td>{{$data->jenjangpendidikan->jenjangpendidikan}}</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="label">Jurusan</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->jurusan->jurusan}}</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="label">Jabatan Kerja</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->jabatankerja->jabatankerja}}</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td class="label">Jenjang</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->jenjang->jenjang}}</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td class="label">Asosiasi</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->asosiasimasjaki->namaasosiasi}}</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td class="label">LSP Penerbit</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->lpspenerbit->lpspenerbit}}</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td class="label">Tanggal Terbit</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->tanggalterbit}}</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td class="label">Tanggal Habis</td>
+                            <td class="colon">:</td>
+                            <td>{{$data->tanggalhabis}}</td>
                         </tr>
 
                     </table>
