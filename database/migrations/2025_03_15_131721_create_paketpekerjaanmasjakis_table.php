@@ -14,6 +14,15 @@ return new class extends Migration
         Schema::create('paketpekerjaanmasjakis', function (Blueprint $table) {
             $table->id();
             // ----------------------------------------------------------------
+            $table->foreignId('detailsnamapaketpekerjaan_id')->nullable();
+            $table->foreignId('detailspaketpekerjaan_id')->nullable();
+            $table->foreignId('sppbj_id')->nullable();
+            $table->foreignId('spk_id')->nullable();
+            $table->foreignId('sskk_id')->nullable();
+            $table->foreignId('suratperjanjianpekerjaan_id')->nullable();
+            // ----------------------------------------------------------------
+            $table->string('namapekerjaan')->nullable();
+            // ----------------------------------------------------------------
             $table->foreignId('profiljenispekerjaan_id')->nullable();
             $table->foreignId('paketstatuspekerjaan_id')->nullable();
             $table->foreignId('sumberdana_id')->nullable();
