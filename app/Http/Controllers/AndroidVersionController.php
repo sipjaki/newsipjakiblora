@@ -328,7 +328,7 @@ class AndroidVersionController extends Controller
     }
 
     return view('frontend.00_android.C_datajakon.05_tkkdpupr.index', [
-        'title' => 'TKK Di Selenggarakan DPUPR',
+        'title' => 'TKK Kabupaten Blora',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search
@@ -378,7 +378,7 @@ class AndroidVersionController extends Controller
             }
 
             return view('frontend.00_android.C_datajakon.05_tkkdpupr.index', [
-                'title' => 'TKK Kabupaten Blora',
+                'title' => 'TKK Di Selenggarakan DPUPR',
                 'data' => $data,
                 'perPage' => $perPage,
                 'search' => $search
