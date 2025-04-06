@@ -21,7 +21,7 @@
                 <img src="/assets/00_android//images/icons/menu.svg" alt="icon" loading="lazy">
             </a> --}}
         </nav>
-        <div class="mt-[60px] z-10">
+        <div class="mt-[100px] z-10">
             <h1 class="font-bold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
         </div>
         <br><br>
