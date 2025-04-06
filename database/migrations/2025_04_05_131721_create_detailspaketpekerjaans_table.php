@@ -56,7 +56,6 @@ return new class extends Migration
             $table->string('kotanotaris')->nullable();
             $table->string('notarisperubahan')->nullable();
             $table->string('nomornotaris')->nullable();
-            $table->date('tanggalnotaris')->nullable();
             $table->string('kodenotarisperubahan')->nullable();
             // 35
             $table->string('nilaikontrak')->nullable();
