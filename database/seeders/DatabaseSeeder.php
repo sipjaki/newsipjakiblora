@@ -12912,6 +12912,46 @@ profiljenispekerjaan::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
+profiljenispekerjaan::create([
+    'id' => '22',
+    'jenispekerjaan' => 'Database',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+profiljenispekerjaan::create([
+    'id' => '23',
+    'jenispekerjaan' => 'Database Gedung',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+profiljenispekerjaan::create([
+    'id' => '24',
+    'jenispekerjaan' => 'Database Jalan',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+profiljenispekerjaan::create([
+    'id' => '25',
+    'jenispekerjaan' => 'Konsultasi',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+profiljenispekerjaan::create([
+    'id' => '26',
+    'jenispekerjaan' => 'Survey Harga Bahan',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
 //======================== ===================================================================================
 // DATA NAMA SEKOLAH MAS JAKI BLORA
 sumberdana::create([
