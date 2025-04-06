@@ -511,5 +511,17 @@ class AndroidVersionController extends Controller
         ]);
         }
 
+        // MENU RANTAI PASOK JASA KONSTRUKSI
+        // -==============================================================================================================
+        public function menuresrantaipasok()
+        {
+            $user = Auth::user();
+
+            return view('frontend.00_android.G_rantaipasok.index', [
+            'title' => 'Menu Rantai Pasok Jasa Konstruksi Kabupaten Blora',
+            'user' => $user,
+        ]);
+        }
+
 
         }
