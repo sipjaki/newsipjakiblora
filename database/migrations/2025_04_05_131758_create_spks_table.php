@@ -53,7 +53,7 @@ return new class extends Migration
         $table->string('waktupelaksanaan')->nullable();
         $table->string('terbilangpelaksanaan')->nullable();
         $table->string('waktupemeliharaan')->nullable();
-        $table->string('terbilangpemeliharaan')->nullable();
+        $table->string('terbilangpemeliharaan2')->nullable();
         $table->string('hargakontrak')->nullable();
         $table->string('hargaterbilang')->nullable();
 

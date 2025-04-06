@@ -58898,7 +58898,7 @@ for ($i = 2; $i <= 1221; $i++) {
 
 
 for ($i = 1; $i <= 1221; $i++) {
-    Sppbj::create([
+    spk::create([
         'id' => $i,
         'kecamatanblora_id' => null, // Foreign key nullable
         'sumberdana_id' => null, // Foreign key nullable
@@ -58962,7 +58962,7 @@ for ($i = 1; $i <= 1221; $i++) {
         'waktuspmk' => $faker->word, // Waktu SPMK acak
         'jumlahhari' => rand(1, 30), // Jumlah hari acak
         'waktupemeliharaan2' => $faker->word, // Waktu pemeliharaan acak
-        'terbilangpemeliharaan' => 'Terbilang Pemeliharaan ' . rand(1, 100), // Terbilang pemeliharaan acak
+        'terbilangpemeliharaan2' => 'Terbilang Pemeliharaan ' . rand(1, 100), // Terbilang pemeliharaan acak
         'tanggalsurat1' => $faker->date, // Tanggal surat 1 acak
         'namaselaku2' => $faker->name, // Nama selaku 2 acak
         'namappk2' => $faker->name, // Nama PPK 2 acak
@@ -58979,7 +58979,7 @@ for ($i = 1; $i <= 1221; $i++) {
 // DATA KOSONGAN SAJA
 
 // for ($i = 1; $i <= 1221; $i++) {
-//     Sppbj::create([
+//     spk::create([
 //         'id' => $i,
 //         'kecamatanblora_id' => null,  // Foreign key nullable
 //         'sumberdana_id' => null,      // Foreign key nullable
@@ -59043,7 +59043,7 @@ for ($i = 1; $i <= 1221; $i++) {
 //         'waktuspmk' => null,          // String null
 //         'jumlahhari' => null,         // String null
 //         'waktupemeliharaan2' => null,  // String null
-//         'terbilangpemeliharaan' => null,// String null
+//         'terbilangpemeliharaan2' => null,// String null
 //         'tanggalsurat1' => null,      // Date null
 //         'namaselaku2' => null,       // String null
 //         'namappk2' => null,           // String null
