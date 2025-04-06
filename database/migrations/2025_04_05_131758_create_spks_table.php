@@ -103,7 +103,6 @@ return new class extends Migration
         $table->string('kerjajabatan')->nullable();
         $table->string('kerjaalamat')->nullable();
         $table->string('kerjafisik')->nullable();
-        $table->string('tahunpilihan_id')->nullable();
         $table->string('kerjapaket')->nullable();
         $table->string('kerjanomor')->nullable();
         $table->string('kerjatanggal')->nullable();
