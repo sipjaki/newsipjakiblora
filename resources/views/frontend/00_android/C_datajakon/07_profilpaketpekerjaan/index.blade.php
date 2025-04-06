@@ -245,7 +245,6 @@
                                                     </button>
                                                 </a>
                                             </td>
-
                                             <td class="text-center">
                                                 @php
                                                     $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
@@ -341,6 +340,7 @@
                                                     </button>
                                                 </a>
                                             </td>
+
 
                                             <td style="text-align: center">
                                                 <a href="/resprofilpaketpekerjaan/{{$item->id}}">
