@@ -9,6 +9,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\spk;
 use App\Models\peraturan;
+use App\Models\sskk;
 use App\Models\agendaskk;
 use App\Models\pesertapelatihan;
 use App\Models\permenteri;
@@ -58800,6 +58801,7 @@ for ($i = 1; $i <= 1221; $i++) {
 //     ]);
 // }
 
+// GARIS PAKET PEKERJAAN
 
 for ($i = 1; $i <= 1221; $i++) {
     detailsnamapaketpekerjaan::create([
@@ -59120,6 +59122,56 @@ for ($i = 1; $i <= 1221; $i++) {
         //         'tahunanggarancover' => null,
         //     ]);
         // }
+
+        for ($i = 1; $i <= 1221; $i++) {
+            sskk::create([
+                'id' => $i,
+                'nama1' => 'Nama 1 ' . $i, // Nama 1 dengan angka
+                'alamat1' => 'Alamat 1 ' . $i, // Alamat 1 dengan angka
+                'telepon1' => '0812' . rand(1000000, 9999999), // No telepon 1 acak
+                'website1' => 'http://website1' . $i . '.com', // Website 1 dengan angka
+                'email1' => 'email1' . $i . '@example.com', // Email 1 dengan angka
+                'nama2' => 'Nama 2 ' . $i, // Nama 2 dengan angka
+                'alamat2' => 'Alamat 2 ' . $i, // Alamat 2 dengan angka
+                'telepon2' => '0812' . rand(1000000, 9999999), // No telepon 2 acak
+                'website2' => 'http://website2' . $i . '.com', // Website 2 dengan angka
+                'email2' => 'email2' . $i . '@example.com', // Email 2 dengan angka
+
+                // Kolom tambahan yang diisi
+                'pelaksanaan1' => 'Pelaksanaan 1 ' . $i, // Data acak untuk pelaksanaan1
+                'haripelaksanaan1' => 'Hari ' . rand(1, 31), // Data acak untuk haripelaksanaan1
+                'pelaksanaan2' => 'Pelaksanaan 2 ' . $i, // Data acak untuk pelaksanaan2
+                'haripelaksanaan2' => 'Hari ' . rand(1, 31), // Data acak untuk haripelaksanaan2
+                'pelaksanaan3' => 'Pelaksanaan 3 ' . $i, // Data acak untuk pelaksanaan3
+                'haripelaksanaan3' => 'Hari ' . rand(1, 31), // Data acak untuk haripelaksanaan3
+            ]);
+        }
+
+        for ($i = 1; $i <= 1221; $i++) {
+            sskk::create([
+                'id' => $i,
+                'nama1' => null, // Kosongkan nilai untuk nama1
+                'alamat1' => null, // Kosongkan nilai untuk alamat1
+                'telepon1' => null, // Kosongkan nilai untuk telepon1
+                'website1' => null, // Kosongkan nilai untuk website1
+                'email1' => null, // Kosongkan nilai untuk email1
+                'nama2' => null, // Kosongkan nilai untuk nama2
+                'alamat2' => null, // Kosongkan nilai untuk alamat2
+                'telepon2' => null, // Kosongkan nilai untuk telepon2
+                'website2' => null, // Kosongkan nilai untuk website2
+                'email2' => null, // Kosongkan nilai untuk email2
+
+                // Kolom baru yang Anda tambahkan
+                'pelaksanaan1' => null, // Kosongkan nilai untuk pelaksanaan1
+                'haripelaksanaan1' => null, // Kosongkan nilai untuk haripelaksanaan1
+                'pelaksanaan2' => null, // Kosongkan nilai untuk pelaksanaan2
+                'haripelaksanaan2' => null, // Kosongkan nilai untuk haripelaksanaan2
+                'pelaksanaan3' => null, // Kosongkan nilai untuk pelaksanaan3
+                'haripelaksanaan3' => null, // Kosongkan nilai untuk haripelaksanaan3
+            ]);
+        }
+
+
 // makanyu
 
 //==========================================================================================================
