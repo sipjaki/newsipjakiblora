@@ -1,6 +1,9 @@
 
-<div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
-    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]">
+{{-- <div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
+
+    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]"> --}}
+        <div id="Menu-bar" class="fixed bottom-[24px] w-full px-4 z-30">
+            <div class="bg-white p-[14px_12px] flex items-center justify-between shadow-[0_8px_30px_0_#0A093212] rounded-none w-full">
 
         <a href="/404">
         <div class="flex flex-col gap-1 items-center">
