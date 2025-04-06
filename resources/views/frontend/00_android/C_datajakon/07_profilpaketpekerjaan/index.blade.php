@@ -181,8 +181,8 @@
                                             <td style="text-align: left;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
                                             <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
                                             <td style="text-align: left;">{{$item->namapekerjaan}}</td>
-                                            <td style="text-align: left;">Selesai</td>
-                                            {{-- <td style="text-align: left;">{{$item->bulan->bulanrekap}}</td> --}}
+                                            {{-- <td style="text-align: left;">Selesai</td> --}}
+                                            <td style="text-align: left;">{{$item->bulan?->bulanrekap}}</td>
                                             <td style="text-align: left;">
                                                 @php
                                                     // Mendapatkan progress dalam bentuk persentase
