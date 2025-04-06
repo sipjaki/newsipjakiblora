@@ -43,33 +43,6 @@
     background-color: #555;
 }
 
-/* Common button styles */
-button {
-    padding: 4px 8px;
-    font-size: 0.875rem;
-    border-radius: 4px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* For 'LIHAT' button */
-.btn-lihat {
-    background-color: #16a34a;
-    color: white;
-}
-
-/* For 'TIDAK ADA DATA' button */
-.btn-tidak-ada-data {
-    background-color: #6b7280;
-    color: white;
-}
-
-/* Hover effect for both buttons */
-button:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-
 </style>
 
 
@@ -258,16 +231,21 @@ button:hover {
                                             <td class="text-center">
                                                 @php
                                                     $buttonText = !empty($item->detailspaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $style = '';
                                                     $route = !empty($item->detailspaketpekerjaan) ? route('detailspaketpekerjaan.show', $item->detailspaketpekerjaan->id) : '#';
+                                                    if ($buttonText == 'LIHAT') {
+                                                        $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                    } else {
+                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                    }
                                                 @endphp
                                                 <a href="{{ $route }}">
-                                                    <button class="btn-hover {{ $buttonText == 'LIHAT' ? 'btn-lihat' : 'btn-tidak-ada-data' }}">
+                                                    <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
                                             </td>
-
-                                            <td class="text-center">
+                                                  <td class="text-center">
                                                 @php
                                                     $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
