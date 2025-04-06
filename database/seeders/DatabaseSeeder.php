@@ -237,7 +237,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 11,
-            'name'  => 'Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora',
+            'name'  => 'DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA',
             'username' => 'dpuprblora',
             'statusadmin_id' => '9',
             'avatar' => '/assets/icon/logokabupatenblora.png',
@@ -247,7 +247,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 12,
-            'name'  => 'Dinas Kesehatan',
+            'name'  => 'DINAS KESEHATAN',
             'username' => 'dinaskesehatan',
             'statusadmin_id' => '9',
             'avatar' => 'user/avatar/foto4.png',
@@ -257,7 +257,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 13,
-            'name'  => 'Dinas Lingkungan Hidup',
+            'name'  => 'DINAS LINGKUNGAN HIDUP',
             'username' => 'dinaslingkunganhidup',
             'statusadmin_id' => '9',
             'avatar' => 'user/avatar/foto4.png',
@@ -267,7 +267,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 14,
-            'name'  => 'Dinas Pangan, Pertanian, Peternakan, Dan Perikanan',
+            'name'  => 'DINAS PANGAN, PERTANIAN, PETERNAKAN, DAN PERIKANAN',
             'username' => 'dinaspangan',
             'statusadmin_id' => '9',
             'avatar' => 'user/avatar/foto4.png',
@@ -277,7 +277,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 15,
-            'name'  => 'Dinas Pengendalian Penduduk Dan Keluarga Berencana',
+            'name'  => 'DINAS PENGENDALIAN PENDUDUK DAN KELUARGA BERENCANA',
             'username' => 'dinaspengendalian',
             'statusadmin_id' => '9',
             'avatar' => 'user/avatar/foto4.png',
@@ -344,6 +344,137 @@ headerberanda::create([
             'email' => 'sekdakabblora@gmail.com',
             'password' => bcrypt('adminsekdakabblora')
         ]);
+
+        User::create([
+            'id'  => 22,
+            'name'  => 'DINAS PENDIDIKAN',
+            'username' => 'dinaspendidikan',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaspendidikankabblora@gmail.com',
+            'password' => bcrypt('admindinaspendidikan')
+        ]);
+
+        User::create([
+            'id'  => 23,
+            'name'  => 'DINAS PERINDUSTRIAN DAN TENAGA KERJA',
+            'username' => 'dinasperindustrian',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinasperindustriankabblora@gmail.com',
+            'password' => bcrypt('admindinasperindustrian')
+        ]);
+
+        User::create([
+            'id'  => 24,
+            'name'  => 'KECAMATAN BLORA',
+            'username' => 'kecamatanblora',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'kecamatanblora@gmail.com',
+            'password' => bcrypt('adminkecamatanblora')
+        ]);
+
+        User::create([
+            'id'  => 25,
+            'name'  => 'KECAMATAN BOGOREJO',
+            'username' => 'kecamatanblora',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'kecamatanbogorejo@gmail.com',
+            'password' => bcrypt('adminkecamatanbogorejo')
+        ]);
+
+        User::create([
+            'id'  => 26,
+            'name'  => 'KECAMATAN CEPU',
+            'username' => 'kecamatancepu',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'kecamatancepu@gmail.com',
+            'password' => bcrypt('adminkecamatancepu')
+        ]);
+
+        User::create([
+            'id'  => 27,
+            'name'  => 'KECAMATAN JEPON',
+            'username' => 'kecamatan jepon',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'kecamatanjepon@gmail.com',
+            'password' => bcrypt('adminkecamatanjepon')
+        ]);
+
+        User::create([
+            'id'  => 28,
+            'name'  => 'KECAMATAN KUNDURAN',
+            'username' => 'kecamatan kunduran',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'kecamatankunduran@gmail.com',
+            'password' => bcrypt('adminkecamatankunduran')
+        ]);
+
+        User::create([
+            'id'  => 29,
+            'name'  => 'KECAMATAN NGAWEN',
+            'username' => 'kecamatan ngawen',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'kecamatangawen@gmail.com',
+            'password' => bcrypt('adminkecamatanngawen')
+        ]);
+
+        User::create([
+            'id'  => 30,
+            'name'  => 'KECAMATAN RANDUBLATUNG',
+            'username' => 'kecamatan randublatung',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'kecamatanrandublatung@gmail.com',
+            'password' => bcrypt('adminkecamatanrandublatung')
+        ]);
+
+        User::create([
+            'id'  => 31,
+            'name'  => 'KECAMATAN TUNJUNGAN',
+            'username' => 'kecamatan tunjungan',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'kecamatantunjungan@gmail.com',
+            'password' => bcrypt('adminkecamatantunjungan')
+        ]);
+
+        User::create([
+            'id'  => 32,
+            'name'  => 'SEKRETARIAT DEWAN',
+            'username' => 'sekdewan',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sekdewankabblora@gmail.com',
+            'password' => bcrypt('adminsekdewan')
+        ]);
+
+        User::create([
+            'id'  => 33,
+            'name'  => 'DINAS KOMUNIKASI DAN INFORMATIKA',
+            'username' => 'sekdewan',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sekdewankabblora@gmail.com',
+            'password' => bcrypt('adminsekdewan')
+        ]);
+
+        User::create([
+            'id'  => 34,
+            'name'  => 'DINAS KEPEMUDAAN, OLAH RAGA, KEBUDAYAAN DAN PARIWISATA',
+            'username' => 'dinaspemuda',
+            'statusadmin_id' => '9',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'dinaspemudakabblora@gmail.com',
+            'password' => bcrypt('adminsekdewan')
+        ]);
+
 
         User::create([
             'id'  => 2,
@@ -424,6 +555,8 @@ headerberanda::create([
             'email' => 'sigitoperator@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
+
+
 
 
         // =================================================================
@@ -12742,6 +12875,22 @@ profiljenispekerjaan::create([
 profiljenispekerjaan::create([
     'id' => '17',
     'jenispekerjaan' => 'Talud',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+profiljenispekerjaan::create([
+    'id' => '18',
+    'jenispekerjaan' => 'Penyusunan Database',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+profiljenispekerjaan::create([
+    'id' => '19',
+    'jenispekerjaan' => 'Pengawasan Jalan',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -30535,6 +30684,209 @@ paketpekerjaanmasjaki::create([
     'progress' => 100,
     'user_id' => 21,
 ]);
+
+paketpekerjaanmasjaki::create([
+    'id' => 113,
+    'detailspaketpekerjaan_id' => 113,
+    'detailsnamapaketpekerjaan_id' => 113,
+    'sppbj_id' => 113,
+    'spk_id' => 113,
+    'sskk_id' => 113,
+    'suratperjanjianpekerjaan_id' => 113,
+    'paketstatuspekerjaan_id' => 3,
+    'profiljenispekerjaan_id' => 18,
+    'namapekerjaan' => 'Penyusunan Database SPAM Zona I ( UPTD Wilayah I ), Penyusunan Database SPAM Zona II ( UPTD Wilayah II ), Penyusunan Database SPAM Zona III ( UPTD Wilayah III ), Penyusunan Database SPAM Zona IV ( UPTD Wilayah IV )',
+    'tahunpilihan_id' => 4,
+    'cvptpenyedia' => 'PT. Tri Patra Konsultan',
+    'nib' => 'N/A',
+    'nilaikontrak' => 332112000,
+    'sumberdana_id' => 2,
+    'jeniskontrak' => 'Lumsum',
+    'karakteristikkontrak' => 'Tahun Tunggal',
+    'bulanmulai' => 9,
+    'bulanselesai' => 11,
+    'bulanrekap_id' => 13,
+    'progress' => 100,
+    'user_id' => 11,
+]);
+
+paketpekerjaanmasjaki::create([
+    'id' => 114,
+    'detailspaketpekerjaan_id' => 114,
+    'detailsnamapaketpekerjaan_id' => 114,
+    'sppbj_id' => 114,
+    'spk_id' => 114,
+    'sskk_id' => 114,
+    'suratperjanjianpekerjaan_id' => 114,
+    'paketstatuspekerjaan_id' => 3,
+    'profiljenispekerjaan_id' => 18,
+    'namapekerjaan' => 'Penyusunan Database Sanitasi Zona I ( UPTD Wilayah I ), Penyusunan Database Sanitasi Zona II ( UPTD Wilayah II ), Penyusunan Database Sanitasi Zona III ( UPTD Wilayah III ), Penyusunan Database Sanitasi Zona IV ( UPTD Wilayah IV )',
+    'tahunpilihan_id' => 4,
+    'cvptpenyedia' => 'PT. Trikarsa Buwana Persada Gemilang',
+    'nib' => 'N/A',
+    'nilaikontrak' => 275352150,
+    'sumberdana_id' => 2,
+    'jeniskontrak' => 'Lumsum',
+    'karakteristikkontrak' => 'Tahun Tunggal',
+    'bulanmulai' => 9,
+    'bulanselesai' => 11,
+    'bulanrekap_id' => 13,
+    'progress' => 100,
+    'user_id' => 11,
+]);
+
+paketpekerjaanmasjaki::create([
+    'id' => 115,
+    'detailspaketpekerjaan_id' => 115,
+    'detailsnamapaketpekerjaan_id' => 115,
+    'sppbj_id' => 115,
+    'spk_id' => 115,
+    'sskk_id' => 115,
+    'suratperjanjianpekerjaan_id' => 115,
+    'paketstatuspekerjaan_id' => 3,
+    'profiljenispekerjaan_id' => 19,
+    'namapekerjaan' => 'Pengawasan Peningkatan Jalan Jepon - Bogorejo - Batas Kab. Tuban',
+    'tahunpilihan_id' => 4,
+    'cvptpenyedia' => 'PT. DUTA BHUANA JAYA',
+    'nib' => 'N/A',
+    'nilaikontrak' => 109434900,
+    'sumberdana_id' => 2,
+    'jeniskontrak' => 'Lumsum',
+    'karakteristikkontrak' => 'Tahun Tunggal',
+    'bulanmulai' => 2,
+    'bulanselesai' => 8,
+    'bulanrekap_id' => 13,
+    'progress' => 100,
+    'user_id' => 11,
+]);
+
+
+
+paketpekerjaanmasjaki::create([
+    'id' => 116,
+    'detailspaketpekerjaan_id' => 116,
+    'detailsnamapaketpekerjaan_id' => 116,
+    'sppbj_id' => 116,
+    'spk_id' => 116,
+    'sskk_id' => 116,
+    'suratperjanjianpekerjaan_id' => 116,
+    'paketstatuspekerjaan_id' => 2,
+    'profiljenispekerjaan_id' => 13,
+    'namapekerjaan' => 'Belanja Modal Bangunan Gedung Kantor ( Blora Creatif Space )',
+    'tahunpilihan_id' => 4,
+    'cvptpenyedia' => 'CV. SUMBER JAYA PERKASA RAYA',
+    'nib' => '1804230041606',
+    'nilaikontrak' => 136182000,
+    'sumberdana_id' => 2,
+    'jeniskontrak' => 'Lumsum',
+    'karakteristikkontrak' => 'Tahun Tunggal',
+    'bulanmulai' => 5,
+    'bulanselesai' => 5,
+    'bulanrekap_id' => 13,
+    'progress' => 100,
+    'user_id' => 34,
+]);
+
+paketpekerjaanmasjaki::create([
+    'id' => 117,
+    'detailspaketpekerjaan_id' => 117,
+    'detailsnamapaketpekerjaan_id' => 117,
+    'sppbj_id' => 117,
+    'spk_id' => 117,
+    'sskk_id' => 117,
+    'suratperjanjianpekerjaan_id' => 117,
+    'paketstatuspekerjaan_id' => 2,
+    'profiljenispekerjaan_id' => 13,
+    'namapekerjaan' => 'Belanja pemeliharaan bangunangedung - bangunan gedung tempat kerja - bangunan gedung tempat olahraga',
+    'tahunpilihan_id' => 4,
+    'cvptpenyedia' => 'CV. MAJU JAYA',
+    'nib' => '0220005602113',
+    'nilaikontrak' => 39532242.54,
+    'sumberdana_id' => 2,
+    'jeniskontrak' => 'Lumsum',
+    'karakteristikkontrak' => 'Tahun Tunggal',
+    'bulanmulai' => 3,
+    'bulanselesai' => 4,
+    'bulanrekap_id' => 13,
+    'progress' => 100,
+    'user_id' => 34,
+]);
+
+paketpekerjaanmasjaki::create([
+    'id' => 118,
+    'detailspaketpekerjaan_id' => 118,
+    'detailsnamapaketpekerjaan_id' => 118,
+    'sppbj_id' => 118,
+    'spk_id' => 118,
+    'sskk_id' => 118,
+    'suratperjanjianpekerjaan_id' => 118,
+    'paketstatuspekerjaan_id' => 2,
+    'profiljenispekerjaan_id' => 12,
+    'namapekerjaan' => 'Pengadaan Instalasi Air Bersih Puskesmas Doplang',
+    'tahunpilihan_id' => 4,
+    'cvptpenyedia' => 'TRUBUS UTOMO',
+    'nib' => '9120209960021',
+    'nilaikontrak' => 99822122.43,
+    'sumberdana_id' => 2,
+    'jeniskontrak' => 'Harga Satuan',
+    'karakteristikkontrak' => 'Tahun Tunggal',
+    'bulanmulai' => 4,
+    'bulanselesai' => 8,
+    'bulanrekap_id' => 13,
+    'progress' => 100,
+    'user_id' => 12,
+]);
+
+paketpekerjaanmasjaki::create([
+    'id' => 119,
+    'detailspaketpekerjaan_id' => 119,
+    'detailsnamapaketpekerjaan_id' => 119,
+    'sppbj_id' => 119,
+    'spk_id' => 119,
+    'sskk_id' => 119,
+    'suratperjanjianpekerjaan_id' => 119,
+    'paketstatuspekerjaan_id' => 2,
+    'profiljenispekerjaan_id' => 5,
+    'namapekerjaan' => 'Rehab Pustu Sempu',
+    'tahunpilihan_id' => 4,
+    'cvptpenyedia' => 'CV. DUTARIZADA KONSTRUKSI',
+    'nib' => '0220001392418',
+    'nilaikontrak' => 198219659.33,
+    'sumberdana_id' => 2,
+    'jeniskontrak' => 'Harga Satuan',
+    'karakteristikkontrak' => 'Tahun Tunggal',
+    'bulanmulai' => 7,
+    'bulanselesai' => 11,
+    'bulanrekap_id' => 13,
+    'progress' => 100,
+    'user_id' => 12,
+]);
+
+paketpekerjaanmasjaki::create([
+    'id' => 120,
+    'detailspaketpekerjaan_id' => 120,
+    'detailsnamapaketpekerjaan_id' => 120,
+    'sppbj_id' => 120,
+    'spk_id' => 120,
+    'sskk_id' => 120,
+    'suratperjanjianpekerjaan_id' => 120,
+    'paketstatuspekerjaan_id' => 2,
+    'profiljenispekerjaan_id' => 5,
+    'namapekerjaan' => 'Rehab Pustu Botoreco',
+    'tahunpilihan_id' => 4,
+    'cvptpenyedia' => 'CV. DUTARIZADA KONSTRUKSI',
+    'nib' => '0220001392418',
+    'nilaikontrak' => 198285904.11,
+    'sumberdana_id' => 2,
+    'jeniskontrak' => 'Harga Satuan',
+    'karakteristikkontrak' => 'Tahun Tunggal',
+    'bulanmulai' => 7,
+    'bulanselesai' => 11,
+    'bulanrekap_id' => 13,
+    'progress' => 100,
+    'user_id' => 12,
+]);
+
 
 
 
