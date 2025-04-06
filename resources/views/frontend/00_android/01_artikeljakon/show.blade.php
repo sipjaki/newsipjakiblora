@@ -25,12 +25,7 @@
             </div>
         </div>
         <div class="flex flex-col z-30">
-            <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
-                <div class="w-[30px] h-[30px] flex shrink-0">
-                    {{-- <img src="assets/images/icons/lovely.svg" alt="icon"> --}}
-                </div>
-                {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
-            </div>
+
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                 <div class="flex flex-col gap-[10px]">
                     {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
