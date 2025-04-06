@@ -487,6 +487,11 @@ headerberanda::create([
             'bulanrekap'  => 'Desember',
         ]);
 
+        bulanrekap::create([
+            'id'  => '13',
+            'bulanrekap'  => 'Selesai',
+        ]);
+
         // =================================================================
         statusadmin::create([
             'id'  => '1',
@@ -27740,7 +27745,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -27765,7 +27770,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -27790,7 +27795,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -27815,7 +27820,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 10,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -27840,7 +27845,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -27866,7 +27871,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -27891,7 +27896,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -27916,7 +27921,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -27941,7 +27946,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -27966,7 +27971,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -27991,7 +27996,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28016,7 +28021,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28041,7 +28046,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28066,7 +28071,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28091,7 +28096,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28117,7 +28122,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 8,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 13,
 ]);
@@ -28142,7 +28147,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 8,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 13,
 ]);
@@ -28167,7 +28172,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 3,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 14,
 ]);
@@ -28192,7 +28197,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 14,
 ]);
@@ -28217,7 +28222,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 14,
 ]);
@@ -28242,7 +28247,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28267,7 +28272,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28292,7 +28297,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28317,7 +28322,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28342,7 +28347,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28368,7 +28373,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28393,7 +28398,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28418,7 +28423,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28443,7 +28448,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28468,7 +28473,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28493,7 +28498,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28518,7 +28523,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28543,7 +28548,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28568,7 +28573,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 2,
     'bulanselesai' => 8,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28593,7 +28598,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 2,
     'bulanselesai' => 8,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28618,7 +28623,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 2,
     'bulanselesai' => 8,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28643,7 +28648,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 2,
     'bulanselesai' => 8,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28668,7 +28673,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 2,
     'bulanselesai' => 9,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28693,7 +28698,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 2,
     'bulanselesai' => 8,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28718,7 +28723,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 2,
     'bulanselesai' => 8,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28743,7 +28748,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28768,7 +28773,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28793,7 +28798,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28818,7 +28823,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28843,7 +28848,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28869,7 +28874,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28894,7 +28899,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28919,7 +28924,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28944,7 +28949,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28969,7 +28974,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28994,7 +28999,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29019,7 +29024,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29044,7 +29049,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29069,7 +29074,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29094,7 +29099,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29120,7 +29125,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29145,7 +29150,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29170,7 +29175,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29195,7 +29200,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29220,7 +29225,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29245,7 +29250,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29270,7 +29275,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29295,7 +29300,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29320,7 +29325,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29345,7 +29350,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29371,7 +29376,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29396,7 +29401,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29421,7 +29426,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29446,7 +29451,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29471,7 +29476,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29496,7 +29501,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29521,7 +29526,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29546,7 +29551,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29571,7 +29576,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29596,7 +29601,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29622,7 +29627,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29647,7 +29652,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29672,7 +29677,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29697,7 +29702,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29722,7 +29727,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29747,7 +29752,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29772,7 +29777,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29797,7 +29802,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29822,7 +29827,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29847,7 +29852,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29874,7 +29879,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29899,7 +29904,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29924,7 +29929,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29949,7 +29954,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29974,7 +29979,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -29999,7 +30004,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -30024,7 +30029,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -30049,7 +30054,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -30074,7 +30079,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -30099,7 +30104,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -30125,7 +30130,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -30150,7 +30155,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 7,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 15,
 ]);
@@ -30175,7 +30180,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 11,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 16,
 ]);
@@ -30200,7 +30205,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 17,
 ]);
@@ -30225,7 +30230,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 17,
 ]);
@@ -30250,7 +30255,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 17,
 ]);
@@ -30275,7 +30280,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 10,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 17,
 ]);
@@ -30300,7 +30305,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 12,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 17,
 ]);
@@ -30325,7 +30330,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 6,
     'bulanselesai' => 6,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 18,
 ]);
@@ -30350,7 +30355,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 19,
 ]);
@@ -30376,7 +30381,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 6,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 19,
 ]);
@@ -30401,7 +30406,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 6,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 19,
 ]);
@@ -30426,7 +30431,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 6,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 19,
 ]);
@@ -30451,7 +30456,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 20,
 ]);
@@ -30476,7 +30481,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 11,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 20,
 ]);
@@ -30501,7 +30506,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 7,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 21,
 ]);
@@ -30526,7 +30531,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 5,
     'bulanselesai' => 7,
-    'bulanrekap_id' => null,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 21,
 ]);
