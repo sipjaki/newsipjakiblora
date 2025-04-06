@@ -13,19 +13,24 @@ return new class extends Migration
     {
         Schema::create('detailsnamapaketpekerjaans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kecamatanblora_id')->nullable();
-            $table->foreignId('sumberdana_id')->nullable();
+            $table->foreignId('kecamatanblora_id')->nullable()->constrained('kecamatanbloras')->onDelete('set null');
+            $table->foreignId('sumberdana_id')->nullable()->constrained('sumberdanas')->onDelete('set null');
             // ------------------------------------------------------
+            // Columns for the table
             $table->string('namapaket')->nullable();
             $table->string('nilaikontrak')->nullable();
-            $table->string('tanggalkontrak')->nullable();
-            $table->string('waktupelaksanaan')->nullable();
+            $table->date('tanggalkontrak')->nullable();
+            $table->date('waktupelaksanaan')->nullable();
             $table->string('terbilanghari')->nullable();
-            $table->string('tanggalmulai')->nullable();
+            $table->date('tanggalmulai')->nullable();
             $table->string('konsultanpengawas')->nullable();
             $table->string('penyediajasa')->nullable();
+            // Soft deletes (optional)
             $table->softDeletes();
+
+            // Timestamps (created_at and updated_at)
             $table->timestamps();
+
         });
     }
 

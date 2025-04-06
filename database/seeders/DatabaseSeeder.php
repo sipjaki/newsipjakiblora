@@ -80,6 +80,7 @@ use App\Models\profiljakoninformasi;
 use App\Models\profiljakonsipjaki;
 use App\Models\profiljakonpersonil;
 use App\Models\detailspaketpekerjaan;
+use App\Models\detailsnamapaketpekerjaan;
 // use App\Models\artikeljakon;
 
 // atasan
@@ -58776,6 +58777,23 @@ for ($i = 1; $i <= 1221; $i++) {
     'konsultanpengawas' => null,
     ]);
 }
+
+for ($i = 1; $i <= 1221; $i++) {
+    detailsnamapaketpekerjaan::create([
+        'id' => $i,
+        'kecamatanlora_id' => null,       // Foreign key, nullable
+        'sumberdana_id' => 2,             // Static value
+        'namapaket' => null,               // String
+        'nilaikontrak' => null,            // String
+        'tanggalkontrak' => null,          // Date
+        'waktupelaksanaan' => null,       // Date
+        'terbilanghari' => null,          // String
+        'tanggalmulai' => null,           // Date
+        'konsultanpengawas' => null,      // String
+        'penyediajasa' => null,           // String
+    ]);
+}
+
 
 
 // makanyu
