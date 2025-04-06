@@ -234,17 +234,18 @@
                                                     $style = '';
                                                     $route = !empty($item->detailspaketpekerjaan) ? route('detailspaketpekerjaan.show', $item->detailspaketpekerjaan->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
-                                                        $style = 'background-color: #000080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
                                                     } else {
-                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
-                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='#333';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#000080' : '#6b7280' }}';">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
                                             </td>
+
                                             <td class="text-center">
                                                 @php
                                                     $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
