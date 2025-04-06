@@ -11,117 +11,119 @@ return new class extends Migration
      */public function up(): void
      {
          Schema::create('spks', function (Blueprint $table) {
-             $table->id();
-             // surat pertama
-             $table->foreignId('kecamatanblora_id')->nullable();
-             $table->foreignId('sumberdana_id')->nullable();
-             $table->foreignId('tahunpilihan_id')->nullable();
+            $table->id();
 
-        $table->text('alamatdinas')->nullable();
-        $table->string('satuankerja')->nullable();
-        $table->string('nomorspk')->nullable();
-        $table->date('tanggalspk')->nullable();
-        $table->string('namalengkapspk')->nullable();
-        $table->string('nipspk')->nullable();
-        $table->string('spkppk')->nullable();
-        $table->string('berkedudukanspk')->nullable();
-        $table->string('spkpemerintah')->nullable();
-        $table->string('spkkeputusan')->nullable();
-        $table->string('spknomorkeputusan')->nullable();
-        $table->date('spktanggalkeputusan')->nullable();
-        $table->date('spktanggalppk')->nullable();
-        $table->year('tahunanggaran1')->nullable();
-        $table->string('namapenyedia')->nullable();
-        $table->string('jabatanpenyedia')->nullable();
-        $table->string('berkedudukanpenyedia')->nullable();
-        $table->string('nomorpenyedia')->nullable();
-        $table->date('tanggalpenyedia')->nullable();
-        $table->string('notarispenyedia')->nullable();
-        $table->string('atasnamapenyedia')->nullable();
-        $table->string('ppk1')->nullable();
-        $table->string('ppk2')->nullable();
-        $table->string('spkuntukpenyediappk2')->nullable();
+            // Surat pertama
+            $table->foreignId('kecamatanblora_id')->nullable();
+            $table->foreignId('sumberdana_id')->nullable();
+            $table->foreignId('tahunpilihan_id')->nullable();
 
-        // surat kedua
-        $table->string('paketpekerjaan1')->nullable();
-        $table->string('nomorpaketpekerjaan')->nullable();
-        $table->string('hasilpaketpekerjaan')->nullable();
-        $table->string('bapekerjaan')->nullable();
-        $table->string('penetapanpemenangpekerjaan')->nullable();
-        $table->string('nomordpa')->nullable();
-        $table->year('anggaran')->nullable();
-        $table->string('waktupelaksanaan')->nullable();
-        $table->string('terbilangpelaksanaan')->nullable();
-        $table->string('waktupemeliharaan')->nullable();
-        $table->string('terbilangpemeliharaan2')->nullable();
-        $table->string('hargakontrak')->nullable();
-        $table->string('hargaterbilang')->nullable();
+            $table->text('alamatdinas')->nullable();
+            $table->string('satuankerja', 100)->nullable();
+            $table->string('nomorspk', 100)->nullable();
+            $table->date('tanggalspk')->nullable();
+            $table->string('namalengkapspk', 100)->nullable();
+            $table->string('nipspk', 50)->nullable();
+            $table->string('spkppk', 100)->nullable();
+            $table->string('berkedudukanspk', 100)->nullable();
+            $table->string('spkpemerintah', 100)->nullable();
+            $table->string('spkkeputusan', 100)->nullable();
+            $table->string('spknomorkeputusan', 100)->nullable();
+            $table->date('spktanggalkeputusan')->nullable();
+            $table->date('spktanggalppk')->nullable();
+            $table->year('tahunanggaran1')->nullable();
+            $table->string('namapenyedia', 100)->nullable();
+            $table->string('jabatanpenyedia', 100)->nullable();
+            $table->string('berkedudukanpenyedia', 100)->nullable();
+            $table->string('nomorpenyedia', 100)->nullable();
+            $table->date('tanggalpenyedia')->nullable();
+            $table->string('notarispenyedia', 100)->nullable();
+            $table->string('atasnamapenyedia', 100)->nullable();
+            $table->string('ppk1', 100)->nullable();
+            $table->string('ppk2', 100)->nullable();
+            $table->string('spkuntukpenyediappk2', 100)->nullable();
 
-        // surat ketiga
-        $table->string('ruanglingkup')->nullable();
-        $table->string('bank')->nullable();
-        $table->string('rekening')->nullable();
-        $table->string('atasnamabank')->nullable();
-        $table->string('dp')->nullable();
-        $table->string('terbilang')->nullable();
-        $table->string('namaselaku1')->nullable();
-        $table->string('namappk1')->nullable();
-        $table->string('nip1')->nullable();
-        $table->string('namajabatan1')->nullable();
-        $table->string('namamenyetujui1')->nullable();
+            // Surat kedua
+            $table->string('paketpekerjaan1', 100)->nullable();
+            $table->string('nomorpaketpekerjaan', 100)->nullable();
+            $table->string('hasilpaketpekerjaan', 100)->nullable();
+            $table->string('bapekerjaan', 100)->nullable();
+            $table->string('penetapanpemenangpekerjaan', 100)->nullable();
+            $table->string('nomordpa', 100)->nullable();
+            $table->year('anggaran')->nullable();
+            $table->string('waktupelaksanaan', 100)->nullable();
+            $table->string('terbilangpelaksanaan', 100)->nullable();
+            $table->string('waktupemeliharaan', 100)->nullable();
+            $table->string('terbilangpemeliharaan2', 100)->nullable();
+            $table->string('hargakontrak', 100)->nullable();
+            $table->string('hargaterbilang', 100)->nullable();
 
-        // surat keempat
-        $table->string('nomorspmk')->nullable();
-        $table->string('paketpekerjaanspmk')->nullable();
-        $table->string('namaspmk')->nullable();
-        $table->string('alamatspmk')->nullable();
-        $table->date('tanggalspmk')->nullable();
-        $table->string('namaspmkpenujukan')->nullable();
-        $table->string('alamatspmkpenunjukan')->nullable();
-        $table->date('tanggalmulaispmk')->nullable();
-        $table->string('waktuspmk')->nullable();
-        $table->string('jumlahhari')->nullable();
-        $table->string('waktupemeliharaan2')->nullable();
-        $table->string('terbilangpemeliharaan')->nullable();
-        $table->date('tanggalsurat1')->nullable();
-        $table->string('namaselaku2')->nullable();
-        $table->string('namappk2')->nullable();
-        $table->string('nip2')->nullable();
-        $table->string('namajabatan2')->nullable();
-        $table->string('namamenyetujui2')->nullable();
+            // Surat ketiga
+            $table->text('ruanglingkup')->nullable();
+            $table->string('bank', 100)->nullable();
+            $table->string('rekening', 100)->nullable();
+            $table->string('atasnamabank', 100)->nullable();
+            $table->string('dp', 100)->nullable();
+            $table->string('terbilang', 100)->nullable();
+            $table->string('namaselaku1', 100)->nullable();
+            $table->string('namappk1', 100)->nullable();
+            $table->string('nip1', 50)->nullable();
+            $table->string('namajabatan1', 100)->nullable();
+            $table->string('namamenyetujui1', 100)->nullable();
 
-        // SURAT KELIMA
-        $table->string('nomorlokasikerja')->nullable();
-        $table->string('kerjahari')->nullable();
-        $table->date('kerjatanggal')->nullable();
-        $table->string('kerjabulan')->nullable();
-        $table->string('kerjatahun')->nullable();
-        $table->string('kerjakepala')->nullable();
-        $table->string('kerjapaketpekerjaan')->nullable();
-        $table->year('tahunpilihan')->nullable();
-        $table->string('kerjanama')->nullable();
-        $table->string('kerjajabatan')->nullable();
-        $table->string('kerjaalamat')->nullable();
-        $table->string('kerjafisik')->nullable();
-        $table->string('kerjapaket')->nullable();
-        $table->string('kerjanomor')->nullable();
-        $table->date('kerjatanggal2')->nullable();
-        $table->string('kerjakecamatan')->nullable();
-        $table->date('tanggalsurat2')->nullable();
-        $table->string('namaselaku3')->nullable();
-        $table->string('namappk3')->nullable();
-        $table->string('nip3')->nullable();
-        $table->string('namajabatan3')->nullable();
-        $table->string('namamenyetujui3')->nullable();
+            // Surat keempat
+            $table->string('nomorspmk', 100)->nullable();
+            $table->string('paketpekerjaanspmk', 100)->nullable();
+            $table->string('namaspmk', 100)->nullable();
+            $table->string('alamatspmk', 100)->nullable();
+            $table->date('tanggalspmk')->nullable();
+            $table->string('namaspmkpenujukan', 100)->nullable();
+            $table->string('alamatspmkpenunjukan', 100)->nullable();
+            $table->date('tanggalmulaispmk')->nullable();
+            $table->string('waktuspmk', 100)->nullable();
+            $table->string('jumlahhari', 100)->nullable();
+            $table->string('waktupemeliharaan2', 100)->nullable();
+            $table->string('terbilangpemeliharaan', 100)->nullable();
+            $table->date('tanggalsurat1')->nullable();
+            $table->string('namaselaku2', 100)->nullable();
+            $table->string('namappk2', 100)->nullable();
+            $table->string('nip2', 50)->nullable();
+            $table->string('namajabatan2', 100)->nullable();
+            $table->string('namamenyetujui2', 100)->nullable();
 
-        // COVER
-        $table->string('nomorspkcover')->nullable();
-        $table->date('tanggalspkcover')->nullable();
-        $table->string('paketpekerjaancover')->nullable();
-        $table->year('tahunanggarancover')->nullable();
+            // Surat kelima
+            $table->string('nomorlokasikerja', 100)->nullable();
+            $table->string('kerjahari', 50)->nullable();
+            $table->date('kerjatanggal')->nullable();
+            $table->string('kerjabulan', 50)->nullable();
+            $table->string('kerjatahun', 50)->nullable();
+            $table->string('kerjakepala', 100)->nullable();
+            $table->string('kerjapaketpekerjaan', 100)->nullable();
+            $table->year('tahunpilihan')->nullable();
+            $table->string('kerjanama', 100)->nullable();
+            $table->string('kerjajabatan', 100)->nullable();
+            $table->string('kerjaalamat', 100)->nullable();
+            $table->string('kerjafisik', 100)->nullable();
+            $table->string('kerjapaket', 100)->nullable();
+            $table->string('kerjanomor', 100)->nullable();
+            $table->date('kerjatanggal2')->nullable();
+            $table->string('kerjakecamatan', 100)->nullable();
+            $table->date('tanggalsurat2')->nullable();
+            $table->string('namaselaku3', 100)->nullable();
+            $table->string('namappk3', 100)->nullable();
+            $table->string('nip3', 50)->nullable();
+            $table->string('namajabatan3', 100)->nullable();
+            $table->string('namamenyetujui3', 100)->nullable();
 
-        $table->softDeletes();
-        $table->timestamps();
+            // Cover
+            $table->string('nomorspkcover', 100)->nullable();
+            $table->date('tanggalspkcover')->nullable();
+            $table->string('paketpekerjaancover', 100)->nullable();
+            $table->year('tahunanggarancover')->nullable();
+
+            $table->softDeletes();
+            $table->timestamps();
+
     });
 }
 
