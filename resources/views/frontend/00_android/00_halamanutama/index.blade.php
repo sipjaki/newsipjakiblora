@@ -13,8 +13,8 @@
                     <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy">
                 </div>
                 <div class="flex flex-col text-white">
-                    <p class="text-xs leading-[18px]">Dinas Pekerjaan Umum dan Penataan Ruang </p>
-                    <p class="font-semibold text-sm">Kabupaten Blora, Provinsi Jawa Tengah</p>
+                    <p class="text-xs leading-[18px]" style="color:black">Dinas Pekerjaan Umum dan Penataan Ruang </p>
+                    <p class="font-semibold text-sm" style="color:black">Kabupaten Blora, Provinsi Jawa Tengah</p>
                 </div>
             </div>
             {{-- <a href="" class="w-10 h-10 flex shrink-0">
@@ -24,9 +24,9 @@
         <div class="mt-[30px] z-10">
             <h1 class="font-bold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
         </div>
-        {{-- <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
-            <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy">
-        </div> --}}
+        <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
+            {{-- <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy"> --}}
+        </div>
 
     </div>
 
