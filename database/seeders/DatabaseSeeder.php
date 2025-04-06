@@ -461,7 +461,7 @@ headerberanda::create([
             'username' => 'sekdewan',
             'statusadmin_id' => '9',
             'avatar' => 'user/avatar/foto4.png',
-            'email' => 'sekdewankabblora@gmail.com',
+            'email' => 'dinaskomunikasikabblora@gmail.com',
             'password' => bcrypt('adminsekdewan')
         ]);
 
