@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('asosiasimasjakis', function (Blueprint $table) {
             $table->id();
-            $table->string('namaasosiasi')->nullable();
+            $table->string('namaasosiasi')->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->index('deleted_at');
+
         });
     }
 

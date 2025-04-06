@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('namasekolah')->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->index('deleted_at');
+
         });
     }
 

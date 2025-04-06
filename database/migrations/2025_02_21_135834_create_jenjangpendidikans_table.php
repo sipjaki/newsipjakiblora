@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('jenjangpendidikan', 50)->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->index('deleted_at');
+
         });
     }
 
