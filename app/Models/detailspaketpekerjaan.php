@@ -15,7 +15,7 @@ class detailspaketpekerjaan extends Model
 
     public function paketpekerjaanmasjaki()
     {
-        return $this->hasMany(paketpekerjaanmasjaki::class);
+        return $this->hasOne(paketpekerjaanmasjaki::class);
     }
 
     public function kecamatanblora()
