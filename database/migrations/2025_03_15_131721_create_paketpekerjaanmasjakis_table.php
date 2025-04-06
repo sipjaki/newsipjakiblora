@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('spk_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('sskk_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('suratperjanjianpekerjaan_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->foreignId('detailsnamapaketpekerjaan_id')->nullable()->constrained('detailsnamapaketpekerjaans')->cascadeOnDelete();
+            // $table->foreignId('detailsnamapaketpekerjaan_id')->nullable()->constrained('detailsnamapaketpekerjaans')->cascadeOnDelete();
             // ----------------------------------------------------------------
             $table->foreignId('profiljenispekerjaan_id')->nullable();
             $table->foreignId('paketstatuspekerjaan_id')->nullable();
