@@ -30,28 +30,14 @@
                     <div class="flex flex-col gap-4 px-4">
                         <br><br>
 
-                        <a href="/resbujkkontraktor" class="card">
+                        <a href="/404" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                                 </div>
 
                             <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">BUJK Kontraktor</p>
-                        </p>
-
-                            </div>
-                            </div>
-                            </a>
-
-                        <a href="/resbujkkonsultan" class="card">
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
-                                    <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                                </div>
-
-                            <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">BUJK Konstultan</p>
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Agenda Pelatihan</p>
                         </p>
 
                             </div>
@@ -65,57 +51,12 @@
                                 </div>
 
                             <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Asosiasi Konstruksi dan Konsultasi Kabupaten Blora</p>
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Daftar Peserta Pelatihan</p>
                         </p>
 
                             </div>
                             </div>
                             </a>
-
-                            <a href="/resalltkkbloradpupr" class="card">
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
-                                    <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                                </div>
-
-                            <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">TKK Di Selenggarakan DPUPR</p>
-                        </p>
-
-                            </div>
-                            </div>
-                            </a>
-
-
-                            <a href="/resalltkkblora" class="card">
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
-                                    <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                                </div>
-
-                            <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">TKK Kabupaten Blora</p>
-                        </p>
-
-                            </div>
-                            </div>
-                            </a>
-
-
-                            <a href="/resprofilpaketpekerjaan" class="card">
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
-                                    <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                                </div>
-
-                            <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Profil Paket Pekerjaan</p>
-                        </p>
-
-                            </div>
-                            </div>
-                            </a>
-
 
                             <a href="/404" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
@@ -124,7 +65,21 @@
                                 </div>
 
                             <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Data Statistika</p>
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Agenda Sertifikasi TKK</p>
+                        </p>
+
+                            </div>
+                            </div>
+                            </a>
+
+                            <a href="/404" class="card">
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
+                                    <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                </div>
+
+                            <div class="flex flex-col gap-1">
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Daftar Peserta TKK</p>
                         </p>
 
                             </div>
