@@ -58660,13 +58660,13 @@ paketpekerjaanmasjaki::create([
 ]);
 
 
-// ------------------------------------------------
-// detailspaketpekerjaan::create([
-//     'id' => 1,
-//     'kecamatanlora_id' => null,
-//     'tahunpilihan_id' => 4,
-//     'sumberdana_id' => 2,
-//     'paket' => null,
+// for ($i = 1; $i <= 1221; $i++) {
+//     detailspaketpekerjaan::create([
+//         'id' => $i,
+//         'kecamatanlora_id' => null,
+//         'tahunpilihan_id' => 4,
+//         'sumberdana_id' => 2,
+//         'paket' => null,
 //     'nopenetapan' => null,
 //     'tanggalpenetapan' => null,
 //     'tanggalsppj' => null,
@@ -58717,88 +58717,136 @@ paketpekerjaanmasjaki::create([
 //     'namabank' => null,
 //     'bank' => null,
 //     'konsultanpengawas' => null,
-// ]);
+//     ]);
+// }
 
+
+// DATA ADAAN BUKAN KOSONG
 for ($i = 1; $i <= 1221; $i++) {
     detailspaketpekerjaan::create([
         'id' => $i,
-        'kecamatanlora_id' => null,
+        'kecamatanlora_id' => null, // Menjaga _id tetap kosong
         'tahunpilihan_id' => 4,
         'sumberdana_id' => 2,
-        'paket' => null,
-    'nopenetapan' => null,
-    'tanggalpenetapan' => null,
-    'tanggalsppj' => null,
-    'nosppbj' => null,
-    'nobahp' => null,
-    'nonotadinas' => null,
-    'tanggalnotadinas' => null,
-    'nomorkontrak' => null,
-    'harikontrak' => null,
-    'tanggal' => null,
-    'bulan' => null,
-    'tanggalawal' => null,
-    'tanggalakhir' => null,
-    'tanggalakhirpemeliharaan' => null,
-    'namadirektur' => null,
-    'waktukontrak' => null,
-    'terbilangwaktukontrak' => null,
-    'waktupemeliharaan' => null,
-    'terbilangpemeliharaan' => null,
-    'jabatan' => null,
-    'uangmuka' => null,
-    'terbilang' => null,
-    'penyedia' => null,
-    'alamatcvpt' => null,
-    'emailcvpt' => null,
-    'website' => null,
-    'notelepon' => null,
-    'notaris' => null,
-    'tanggalnotaris' => null,
-    'kotanotaris' => null,
-    'notarisperubahan' => null,
-    'nomornotaris' => null,
-    'tanggalnotaris' => null,
-    'kodenotarisperubahan' => null,
-    'nilaikontrak' => null,
-    'terbilangnilaikontrak' => null,
-    'nilaiuangmuka' => null,
-    'dana' => null,
-    'tahunanggaran' => null,
-    'nospmk' => null,
-    'tanggalspmk' => null,
-    'harispmk' => null,
-    'terbitspmk' => null,
-    'nospl' => null,
-    'nodpa' => null,
-    'tanggaldpa' => null,
-    'rekening' => null,
-    'namabank' => null,
-    'bank' => null,
-    'konsultanpengawas' => null,
+        'paket' => $faker->word, // Menggunakan data acak untuk paket
+        'nopenetapan' => $faker->word, // Data acak untuk nomor penetapan
+        'tanggalpenetapan' => $faker->date, // Data acak untuk tanggal
+        'tanggalsppj' => $faker->date, // Data acak untuk tanggal sppj
+        'nosppbj' => $faker->word, // Data acak untuk nomor sppbj
+        'nobahp' => $faker->word, // Data acak untuk nomor bahp
+        'nonotadinas' => $faker->word, // Data acak untuk nomor notadinas
+        'tanggalnotadinas' => $faker->date, // Data acak untuk tanggal notadinas
+        'nomorkontrak' => $faker->word, // Data acak untuk nomor kontrak
+        'harikontrak' => $faker->word, // Data acak untuk hari kontrak
+        'tanggal' => $faker->date, // Data acak untuk tanggal
+        'bulan' => $faker->monthName, // Data acak untuk bulan
+        'tanggalawal' => $faker->date, // Data acak untuk tanggal awal
+        'tanggalakhir' => $faker->date, // Data acak untuk tanggal akhir
+        'tanggalakhirpemeliharaan' => $faker->date, // Data acak untuk tanggal akhir pemeliharaan
+        'namadirektur' => $faker->name, // Nama acak untuk direktur
+        'waktukontrak' => $faker->word, // Data acak untuk waktu kontrak
+        'terbilangwaktukontrak' => $faker->word, // Data acak untuk terbilang waktu kontrak
+        'waktupemeliharaan' => $faker->word, // Data acak untuk waktu pemeliharaan
+        'terbilangpemeliharaan' => $faker->word, // Data acak untuk terbilang pemeliharaan
+        'jabatan' => $faker->jobTitle, // Data acak untuk jabatan
+        'uangmuka' => $faker->randomFloat(2, 0, 100000), // Data acak untuk uang muka
+        'terbilang' => $faker->word, // Data acak untuk terbilang
+        'penyedia' => $faker->company, // Data acak untuk penyedia
+        'alamatcvpt' => $faker->address, // Data acak untuk alamat cvpt
+        'emailcvpt' => $faker->email, // Data acak untuk email cvpt
+        'website' => $faker->url, // Data acak untuk website
+        'notelepon' => $faker->phoneNumber, // Data acak untuk no telepon
+        'notaris' => $faker->name, // Data acak untuk notaris
+        'tanggalnotaris' => $faker->date, // Data acak untuk tanggal notaris
+        'kotanotaris' => $faker->city, // Data acak untuk kota notaris
+        'notarisperubahan' => $faker->name, // Data acak untuk notaris perubahan
+        'nomornotaris' => $faker->word, // Data acak untuk nomor notaris
+        'tanggalnotaris' => $faker->date, // Data acak untuk tanggal notaris
+        'kodenotarisperubahan' => $faker->word, // Data acak untuk kode notaris perubahan
+        'nilaikontrak' => $faker->randomFloat(2, 100000, 1000000), // Data acak untuk nilai kontrak
+        'terbilangnilaikontrak' => $faker->word, // Data acak untuk terbilang nilai kontrak
+        'nilaiuangmuka' => $faker->randomFloat(2, 10000, 100000), // Data acak untuk nilai uang muka
+        'dana' => $faker->randomFloat(2, 1000, 50000), // Data acak untuk dana
+        'tahunanggaran' => $faker->year, // Data acak untuk tahun anggaran
+        'nospmk' => $faker->word, // Data acak untuk nomor spmk
+        'tanggalspmk' => $faker->date, // Data acak untuk tanggal spmk
+        'harispmk' => $faker->word, // Data acak untuk hari spmk
+        'terbitspmk' => $faker->date, // Data acak untuk terbit spmk
+        'nospl' => $faker->word, // Data acak untuk nomor spl
+        'nodpa' => $faker->word, // Data acak untuk nomor dpa
+        'tanggaldpa' => $faker->date, // Data acak untuk tanggal dpa
+        'rekening' => $faker->bankAccountNumber, // Data acak untuk rekening
+        'namabank' => $faker->company, // Data acak untuk nama bank
+        'bank' => $faker->company, // Data acak untuk bank
+        'konsultanpengawas' => $faker->company, // Data acak untuk konsultan pengawas
     ]);
 }
+
+
+// for ($i = 1; $i <= 1221; $i++) {
+//     detailsnamapaketpekerjaan::create([
+//         'id' => $i,
+//         'kecamatanblora_id' => null,       // Foreign key, nullable
+//         'sumberdana_id' => 2,             // Static value
+//         'namapaket' => null,               // String
+//         'nilaikontrak' => null,            // String
+//         'tanggalkontrak' => null,          // Date
+//         'waktupelaksanaan' => null,       // Date
+//         'terbilanghari' => null,          // String
+//         'tanggalmulai' => null,           // Date
+//         'konsultanpengawas' => null,      // String
+//         'penyediajasa' => null,           // String
+//     ]);
+// }
+
 
 for ($i = 1; $i <= 1221; $i++) {
     detailsnamapaketpekerjaan::create([
         'id' => $i,
-        'kecamatanblora_id' => null,       // Foreign key, nullable
-        'sumberdana_id' => 2,             // Static value
-        'namapaket' => null,               // String
-        'nilaikontrak' => null,            // String
-        'tanggalkontrak' => null,          // Date
-        'waktupelaksanaan' => null,       // Date
-        'terbilanghari' => null,          // String
-        'tanggalmulai' => null,           // Date
-        'konsultanpengawas' => null,      // String
-        'penyediajasa' => null,           // String
+        'kecamatanblora_id' => null, // Menjaga _id tetap kosong
+        'sumberdana_id' => 2, // Nilai statis untuk sumberdana_id
+        'namapaket' => $faker->word, // Data acak untuk nama paket
+        'nilaikontrak' => $faker->randomFloat(2, 100000, 1000000), // Data acak untuk nilai kontrak
+        'tanggalkontrak' => $faker->date, // Data acak untuk tanggal kontrak
+        'waktupelaksanaan' => $faker->date, // Data acak untuk waktu pelaksanaan
+        'terbilanghari' => $faker->word, // Data acak untuk terbilang hari
+        'tanggalmulai' => $faker->date, // Data acak untuk tanggal mulai
+        'konsultanpengawas' => $faker->company, // Data acak untuk konsultan pengawas
+        'penyediajasa' => $faker->company, // Data acak untuk penyedia jasa
     ]);
 }
+
+// DATA KOSONGAN SAJA
+// for ($i = 2; $i <= 1221; $i++) {
+//     sppbj::create([
+//         'id' => $i,
+//         'nomor' => null,
+//         'koptanggal' => null,           // Nilai null untuk tanggal
+//         'lampiran' => null,
+//         'kepadayth' => null,
+//         'alamatdi' => null,
+//         'perihal1' => null,
+//         'nomorkontrak' => null,
+//         'tanggal' => null,
+//         'perihalnomor' => null,
+//         'penawaran' => null,
+//         'hargaterkoreksi' => null,
+//         'hargaterbilang' => null,
+//         'dp' => null,
+//         'terbilang' => null,
+//         'berlaku' => null,
+//         'terbilangberlaku' => null,
+//         'kegiatansatuan' => null,
+//         'namalengkap' => null,
+//         'jabatan' => null,
+//         'nip' => null,
+//     ]);
+// }
+
 
 for ($i = 1; $i <= 1; $i++) {
     sppbj::create([
         'id' => 1,
-        'user_id' => null,             // Foreign key, nullable
         'nomor' => 'Nomor ' . rand(1000, 9999),   // Data acak nomor
         'koptanggal' => now(),         // Menggunakan tanggal saat ini
         'lampiran' => 'Lampiran ' . rand(1, 100),  // Data acak untuk lampiran
@@ -58825,7 +58873,6 @@ for ($i = 1; $i <= 1; $i++) {
 for ($i = 2; $i <= 1221; $i++) {
     sppbj::create([
         'id' => $i,
-        'user_id' => null,
         'nomor' => 'Nomor ' . $i,
         'koptanggal' => now(),           // Menggunakan tanggal saat ini
         'lampiran' => 'Lampiran ' . $i,
@@ -58850,6 +58897,165 @@ for ($i = 2; $i <= 1221; $i++) {
 }
 
 
+for ($i = 1; $i <= 1221; $i++) {
+    Sppbj::create([
+        'id' => $i,
+        'kecamatanblora_id' => null, // Foreign key nullable
+        'sumberdana_id' => null, // Foreign key nullable
+        'tahunpilihan_id' => null, // Foreign key nullable
+        'alamatdinas' => $faker->address, // Alamat dinas acak
+        'satuankerja' => $faker->word, // Satuan kerja acak
+        'nomorspk' => 'Nomor SPK ' . rand(1000, 9999), // Nomor SPK acak
+        'tanggalspk' => $faker->date, // Tanggal SPK acak
+        'namalengkapspk' => $faker->name, // Nama lengkap SPK acak
+        'nipspk' => 'NIP ' . rand(1000000000, 9999999999), // NIP SPK acak
+        'spkppk' => $faker->word, // SPK PPK acak
+        'berkedudukanspk' => $faker->address, // Berkedudukan SPK acak
+        'spkpemerintah' => $faker->company, // SPK Pemerintah acak
+        'spkkeputusan' => 'Keputusan ' . rand(1, 100), // SPK Keputusan acak
+        'spknomorkeputusan' => 'Nomor ' . rand(1, 1000), // SPK Nomor Keputusan acak
+        'spktanggalkeputusan' => $faker->date, // SPK Tanggal Keputusan acak
+        'spktanggalppk' => $faker->date, // SPK Tanggal PPK acak
+        'tahunanggaran1' => rand(2010, 2025), // Tahun anggaran acak
+        'namapenyedia' => $faker->company, // Nama penyedia acak
+        'jabatanpenyedia' => $faker->jobTitle, // Jabatan penyedia acak
+        'berkedudukanpenyedia' => $faker->address, // Berkedudukan penyedia acak
+        'nomorpenyedia' => 'Nomor ' . rand(1000, 9999), // Nomor penyedia acak
+        'tanggalpenyedia' => $faker->date, // Tanggal penyedia acak
+        'notarispenyedia' => $faker->name, // Notaris penyedia acak
+        'atasnamapenyedia' => $faker->company, // Atas nama penyedia acak
+        'ppk1' => $faker->name, // PPK 1 acak
+        'ppk2' => $faker->name, // PPK 2 acak
+        'spkuntukpenyediappk2' => $faker->word, // SPK untuk penyedia PPK2 acak
+        'paketpekerjaan1' => $faker->word, // Paket pekerjaan 1 acak
+        'nomorpaketpekerjaan' => 'Nomor ' . rand(1000, 9999), // Nomor paket pekerjaan acak
+        'hasilpaketpekerjaan' => $faker->word, // Hasil paket pekerjaan acak
+        'bapekerjaan' => $faker->word, // BAP pekerjaan acak
+        'penetapanpemenangpekerjaan' => 'Penetapan Pemenang ' . rand(1, 100), // Penetapan pemenang acak
+        'nomordpa' => 'Nomor DPA ' . rand(1000, 9999), // Nomor DPA acak
+        'anggaran' => rand(2010, 2025), // Anggaran acak
+        'waktupelaksanaan' => $faker->word, // Waktu pelaksanaan acak
+        'terbilangpelaksanaan' => 'Terbilang Pelaksanaan ' . rand(1, 100), // Terbilang pelaksanaan acak
+        'waktupemeliharaan' => $faker->word, // Waktu pemeliharaan acak
+        'terbilangpemeliharaan' => 'Terbilang Pemeliharaan ' . rand(1, 100), // Terbilang pemeliharaan acak
+        'hargakontrak' => rand(100000, 1000000), // Harga kontrak acak
+        'hargaterbilang' => 'Harga Terbilang ' . rand(100000, 1000000), // Harga terbilang acak
+        'ruanglingkup' => $faker->word, // Ruang lingkup acak
+        'bank' => $faker->company, // Bank acak
+        'rekening' => 'Rekening ' . rand(1000000, 9999999), // Rekening acak
+        'atasnamabank' => $faker->name, // Atas nama bank acak
+        'dp' => rand(1000, 10000), // DP acak
+        'terbilang' => 'Terbilang ' . rand(1, 100), // Terbilang acak
+        'namaselaku1' => $faker->name, // Nama Selaku 1 acak
+        'namappk1' => $faker->name, // Nama PPK 1 acak
+        'nip1' => 'NIP ' . rand(1000000000, 9999999999), // NIP 1 acak
+        'namajabatan1' => $faker->jobTitle, // Nama jabatan 1 acak
+        'namamenyetujui1' => $faker->name, // Nama Menyetujui 1 acak
+        'nomorspmk' => 'Nomor SPMK ' . rand(1000, 9999), // Nomor SPMK acak
+        'paketpekerjaanspmk' => $faker->word, // Paket pekerjaan SPMK acak
+        'namaspmk' => $faker->name, // Nama SPMK acak
+        'alamatspmk' => $faker->address, // Alamat SPMK acak
+        'tanggalspmk' => $faker->date, // Tanggal SPMK acak
+        'namaspmkpenujukan' => $faker->name, // Nama SPMK penunjukan acak
+        'alamatspmkpenunjukan' => $faker->address, // Alamat SPMK penunjukan acak
+        'tanggalmulaispmk' => $faker->date, // Tanggal mulai SPMK acak
+        'waktuspmk' => $faker->word, // Waktu SPMK acak
+        'jumlahhari' => rand(1, 30), // Jumlah hari acak
+        'waktupemeliharaan' => $faker->word, // Waktu pemeliharaan acak
+        'terbilangpemeliharaan' => 'Terbilang Pemeliharaan ' . rand(1, 100), // Terbilang pemeliharaan acak
+        'tanggalsurat1' => $faker->date, // Tanggal surat 1 acak
+        'namaselaku2' => $faker->name, // Nama selaku 2 acak
+        'namappk2' => $faker->name, // Nama PPK 2 acak
+        'nip2' => 'NIP ' . rand(1000000000, 9999999999), // NIP 2 acak
+        'namajabatan2' => $faker->jobTitle, // Nama jabatan 2 acak
+        'namamenyetujui2' => $faker->name, // Nama menyetujui 2 acak
+        'nomorspkcover' => 'Nomor SPK Cover ' . rand(1000, 9999), // Nomor SPK Cover acak
+        'tanggalspkcover' => $faker->date, // Tanggal SPK Cover acak
+        'paketpekerjaancover' => $faker->word, // Paket pekerjaan cover acak
+        'tahunanggarancover' => rand(2010, 2025), // Tahun anggaran cover acak
+    ]);
+}
+
+// DATA KOSONGAN SAJA
+
+// for ($i = 1; $i <= 1221; $i++) {
+//     Sppbj::create([
+//         'id' => $i,
+//         'kecamatanblora_id' => null,  // Foreign key nullable
+//         'sumberdana_id' => null,      // Foreign key nullable
+//         'tahunpilihan_id' => null,    // Foreign key nullable
+//         'alamatdinas' => null,        // String null
+//         'satuankerja' => null,        // String null
+//         'nomorspk' => null,           // String null
+//         'tanggalspk' => null,         // Date null
+//         'namalengkapspk' => null,     // String null
+//         'nipspk' => null,             // String null
+//         'spkppk' => null,             // String null
+//         'berkedudukanspk' => null,    // String null
+//         'spkpemerintah' => null,      // String null
+//         'spkkeputusan' => null,       // String null
+//         'spknomorkeputusan' => null,  // String null
+//         'spktanggalkeputusan' => null,// Date null
+//         'spktanggalppk' => null,      // Date null
+//         'tahunanggaran1' => null,     // Integer null
+//         'namapenyedia' => null,       // String null
+//         'jabatanpenyedia' => null,    // String null
+//         'berkedudukanpenyedia' => null,// String null
+//         'nomorpenyedia' => null,      // String null
+//         'tanggalpenyedia' => null,    // Date null
+//         'notarispenyedia' => null,    // String null
+//         'atasnamapenyedia' => null,   // String null
+//         'ppk1' => null,               // String null
+//         'ppk2' => null,               // String null
+//         'spkuntukpenyediappk2' => null,// String null
+//         'paketpekerjaan1' => null,    // String null
+//         'nomorpaketpekerjaan' => null,// String null
+//         'hasilpaketpekerjaan' => null,// String null
+//         'bapekerjaan' => null,        // String null
+//         'penetapanpemenangpekerjaan' => null,// String null
+//         'nomordpa' => null,           // String null
+//         'anggaran' => null,           // Integer null
+//         'waktupelaksanaan' => null,   // String null
+//         'terbilangpelaksanaan' => null,// String null
+//         'waktupemeliharaan' => null,  // String null
+//         'terbilangpemeliharaan' => null,// String null
+//         'hargakontrak' => null,       // String null
+//         'hargaterbilang' => null,     // String null
+//         'ruanglingkup' => null,       // String null
+//         'bank' => null,               // String null
+//         'rekening' => null,           // String null
+//         'atasnamabank' => null,       // String null
+//         'dp' => null,                 // String null
+//         'terbilang' => null,          // String null
+//         'namaselaku1' => null,       // String null
+//         'namappk1' => null,           // String null
+//         'nip1' => null,               // String null
+//         'namajabatan1' => null,       // String null
+//         'namamenyetujui1' => null,    // String null
+//         'nomorspmk' => null,          // String null
+//         'paketpekerjaanspmk' => null, // String null
+//         'namaspmk' => null,           // String null
+//         'alamatspmk' => null,         // String null
+//         'tanggalspmk' => null,        // Date null
+//         'namaspmkpenujukan' => null,  // String null
+//         'alamatspmkpenunjukan' => null,// String null
+//         'tanggalmulaispmk' => null,   // Date null
+//         'waktuspmk' => null,          // String null
+//         'jumlahhari' => null,         // String null
+//         'waktupemeliharaan' => null,  // String null
+//         'terbilangpemeliharaan' => null,// String null
+//         'tanggalsurat1' => null,      // Date null
+//         'namaselaku2' => null,       // String null
+//         'namappk2' => null,           // String null
+//         'nip2' => null,               // String null
+//         'namajabatan2' => null,       // String null
+//         'namamenyetujui2' => null,    // String null
+//         'nomorspkcover' => null,      // String null
+//         'tanggalspkcover' => null,    // Date null
+//         'paketpekerjaancover' => null,// String null
+//         'tahunanggarancover' => null, // Integer null
+//     ]);
+// }
 // makanyu
 
 //==========================================================================================================

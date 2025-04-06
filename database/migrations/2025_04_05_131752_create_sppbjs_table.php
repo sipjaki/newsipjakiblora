@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sppbjs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable();
+
             $table->string('nomor')->nullable();
             $table->date('koptanggal')->nullable();
             $table->string('lampiran')->nullable();
