@@ -33,10 +33,6 @@ class paketpekerjaanmasjaki extends Model
         return $this->belongsTo(tahunpilihan::class);
     }
 
-    public function bulanrekap()
-    {
-        return $this->belongsTo(bulanrekap::class);
-    }
 
     // ---------
 
@@ -74,5 +70,10 @@ class paketpekerjaanmasjaki extends Model
         {
             return $this->belongsTo(User::class, 'user_id');
         }
+
+            public function bulan()
+            {
+                return $this->belongsTo(bulanrekap::class, 'bulanrekap_id');
+            }
 
 }
