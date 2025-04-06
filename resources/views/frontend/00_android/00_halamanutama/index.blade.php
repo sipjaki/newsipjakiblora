@@ -25,7 +25,7 @@
             <h1 class="font-bold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
         </div>
         <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
-            <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy">
+            <img src="/assets/00_android/00_iconmenuutama/01_menuutama/1.png" class="object-contain" alt="background" width="350px" loading="lazy">
         </div>
 
     </div>
@@ -116,7 +116,7 @@
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora <br>AHSP Konstruksi Umum</h2>
-                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="8%" loading="lazy">
+                <img src="/assets/00_android/00_iconmenuutama/01_menuutama/menu.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
@@ -171,7 +171,7 @@
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora <br>Agenda Pelatihan dan SKK</h2>
-                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="5%" loading="lazy">
+                <img src="/assets/00_android/00_iconmenuutama/01_menuutama/menu.png" alt="" width="5%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="main-carousel mt-[14px]">
@@ -309,7 +309,7 @@
         <div id="latest-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora  <br>Berita Jasa Konstruksi </h2>
-                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="5%" loading="lazy">
+                <img src="/assets/00_android/00_iconmenuutama/01_menuutama/menu.png" alt="" width="5%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
@@ -389,7 +389,7 @@
         <div id="latest-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
                 <h2 class="font-bold text-xl">Mas Jaki Blora  <br>Artikel Jasa Konstruksi </h2>
-                <img src="/assets/00_android/iconmenu/bg.png" alt="" width="5%" loading="lazy">
+                <img src="/assets/00_android/00_iconmenuutama/01_menuutama/menu.png" alt="" width="5%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
