@@ -81,7 +81,7 @@ return new class extends Migration
         $table->date('tanggalmulaispmk')->nullable();
         $table->string('waktuspmk')->nullable();
         $table->string('jumlahhari')->nullable();
-        $table->string('waktupemeliharaan')->nullable();
+        $table->string('waktupemeliharaan2')->nullable();
         $table->string('terbilangpemeliharaan')->nullable();
         $table->date('tanggalsurat1')->nullable();
         $table->string('namaselaku2')->nullable();

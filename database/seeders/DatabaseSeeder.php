@@ -58961,7 +58961,7 @@ for ($i = 1; $i <= 1221; $i++) {
         'tanggalmulaispmk' => $faker->date, // Tanggal mulai SPMK acak
         'waktuspmk' => $faker->word, // Waktu SPMK acak
         'jumlahhari' => rand(1, 30), // Jumlah hari acak
-        'waktupemeliharaan' => $faker->word, // Waktu pemeliharaan acak
+        'waktupemeliharaan2' => $faker->word, // Waktu pemeliharaan acak
         'terbilangpemeliharaan' => 'Terbilang Pemeliharaan ' . rand(1, 100), // Terbilang pemeliharaan acak
         'tanggalsurat1' => $faker->date, // Tanggal surat 1 acak
         'namaselaku2' => $faker->name, // Nama selaku 2 acak
@@ -59042,7 +59042,7 @@ for ($i = 1; $i <= 1221; $i++) {
 //         'tanggalmulaispmk' => null,   // Date null
 //         'waktuspmk' => null,          // String null
 //         'jumlahhari' => null,         // String null
-//         'waktupemeliharaan' => null,  // String null
+//         'waktupemeliharaan2' => null,  // String null
 //         'terbilangpemeliharaan' => null,// String null
 //         'tanggalsurat1' => null,      // Date null
 //         'namaselaku2' => null,       // String null
