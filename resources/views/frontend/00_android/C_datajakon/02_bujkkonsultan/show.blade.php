@@ -75,7 +75,7 @@
             </nav>
         </div>
 
-        <div class="flex flex-col z-30" style="margin-top: -25px;">
+        <div class="flex flex-col z-30" style="margin-top: -100px;">
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                     <div class="flex flex-col gap-[10px]">
                         {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p> --}}
