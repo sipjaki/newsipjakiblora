@@ -486,4 +486,17 @@ class AndroidVersionController extends Controller
             'user' => $user,
         ]);
         }
+
+        // -==============================================================================================================
+        public function menurespengawasan()
+        {
+            $user = Auth::user();
+
+            return view('frontend.00_android.E_pengawasan.index', [
+            'title' => 'Menu Pengawasan Jasa Konstruksi',
+            'user' => $user,
+        ]);
+        }
+
+
         }

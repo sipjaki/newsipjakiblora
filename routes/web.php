@@ -138,6 +138,13 @@ Route::get('/respembinaan', [AndroidVersionController::class, 'menurespembinaan'
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
+
+// ================================================ MENU E. PENGAWASAN
+// MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
+Route::get('/respengawasan', [AndroidVersionController::class, 'menurespengawasan']);
+// Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
+// Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
+
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
