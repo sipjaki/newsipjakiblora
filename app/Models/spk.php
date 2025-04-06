@@ -18,4 +18,19 @@ class spk extends Model
         return $this->hasMany(paketpekerjaanmasjaki::class);
     }
 
+    public function kecamatanblora()
+    {
+        return $this->belongsTo(kecamatanblora::class);
+    }
+
+    public function sumberdana()
+    {
+        return $this->belongsTo(sumberdana::class);
+    }
+
+    public function tahunpilihan()
+    {
+        return $this->belongsTo(tahunpilihan::class);
+    }
+
 }

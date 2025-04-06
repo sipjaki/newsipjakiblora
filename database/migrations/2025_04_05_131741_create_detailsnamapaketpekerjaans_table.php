@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('detailsnamapaketpekerjaans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kecamatanblora_id')->nullable()->constrained('kecamatanbloras')->onDelete('set null');
-            $table->foreignId('sumberdana_id')->nullable()->constrained('sumberdanas')->onDelete('set null');
+            $table->foreignId('kecamatanblora_id')->nullable();
+            $table->foreignId('sumberdana_id')->nullable();
             // ------------------------------------------------------
             // Columns for the table
             $table->string('namapaket')->nullable();

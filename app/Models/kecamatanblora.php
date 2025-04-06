@@ -28,4 +28,14 @@ class kecamatanblora extends Model
         return $this->hasMany(detailspaketpekerjaan::class);
     }
 
+    public function detailsnamapaketpekerjaan()
+    {
+        return $this->hasMany(detailsnamapaketpekerjaan::class);
+    }
+
+    public function spk()
+    {
+        return $this->hasMany(spk::class);
+    }
+
 }

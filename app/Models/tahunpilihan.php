@@ -38,5 +38,9 @@ class tahunpilihan extends Model
         return $this->hasMany(detailspaketpekerjaan::class);
     }
 
+    public function spk()
+    {
+        return $this->hasMany(spk::class);
+    }
 
 }
