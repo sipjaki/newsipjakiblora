@@ -158,7 +158,7 @@
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:1500px;"> Dinas </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:1500px;"> Jenis Pekerjaan </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:1000px;"> Jenis Pekerjaan </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:500px;"> Paket Pekerjaan  </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:1500px;"> Nama Pekerjaan</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th>
@@ -177,10 +177,10 @@
                                         @foreach ($data as $item )
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize;">{{$item->user->name}}</td>
-                                            <td style="text-align: left;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
+                                            <td style="text-transform: capitalize;" style="width:1500px;">{{$item->user->name}}</td>
+                                            <td style="text-align: left;" style="width:1000px;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
                                             <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
-                                            <td style="text-align: left;">{{$item->namapekerjaan}}</td>
+                                            <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan}}</td>
                                             {{-- <td style="text-align: left;">Selesai</td> --}}
                                             <td style="text-align: left;">{{$item->bulan?->bulanrekap}}</td>
                                             <td style="text-align: left;">
