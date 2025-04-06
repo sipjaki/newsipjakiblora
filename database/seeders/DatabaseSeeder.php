@@ -28,6 +28,7 @@ use App\Models\sbulampiran2;
 use App\Models\sbulampiran3;
 use App\Models\asosiasimasjaki;
 use App\Models\bulanrekap;
+use App\Models\sppbj;
 // -perubahan
 
 // use App\Models\sertifikasiagenda;
@@ -58778,8 +58779,35 @@ for ($i = 1; $i <= 1221; $i++) {
     ]);
 }
 
-for ($i = 1; $i <= 1221; $i++) {
+for ($i = 1; $i <= 1; $i++) {
     detailsnamapaketpekerjaan::create([
+        'id' => 1,
+        'user_id' => null,             // Foreign key, nullable
+        'nomor' => 'Nomor ' . rand(1000, 9999),   // Data acak nomor
+        'koptanggal' => now(),         // Menggunakan tanggal saat ini
+        'lampiran' => 'Lampiran ' . rand(1, 100),  // Data acak untuk lampiran
+        'kepadayth' => 'Kepada Yth. ' . 'Person ' . rand(1, 10), // Data acak untuk Kepada Yth
+        'alamatdi' => 'Alamat ' . rand(1, 50),  // Data acak alamat
+        'perihal1' => 'Perihal ' . rand(1, 100),  // Data acak perihal
+        'nomor' => 'Nomor ' . rand(1, 1000),    // Data acak nomor
+        'tanggal' => now(),             // Menggunakan tanggal saat ini
+        'perihalnomor' => 'Perihal Nomor ' . rand(1, 100), // Data acak untuk perihal nomor
+        'penawaran' => 'Penawaran ' . rand(1000, 9999), // Data acak penawaran
+        'hargaterkoreksi' => 'Harga ' . rand(100000, 999999), // Data acak harga terkoreksi
+        'hargaterbilang' => 'Harga Terbilang ' . rand(100000, 999999), // Data acak harga terbilang
+        'dp' => rand(1000, 5000),     // Data acak DP
+        'terbilang' => 'Terbilang ' . rand(1, 100), // Data acak terbilang
+        'berlaku' => 'Berlaku sampai ' . now()->addDays(rand(10, 30))->toDateString(), // Data acak berlaku
+        'terbilangberlaku' => 'Terbilang Berlaku ' . rand(1, 100), // Data acak terbilang berlaku
+        'kegiatansatuan' => 'Kegiatan ' . rand(1, 50), // Data acak kegiatan satuan
+        'namalengkap' => 'Nama Lengkap ' . rand(1, 100), // Data acak nama lengkap
+        'jabatan' => 'Jabatan ' . rand(1, 10), // Data acak jabatan
+        'nip' => 'NIP ' . rand(1000000000, 9999999999), // Data acak NIP
+    ]);
+}
+
+for ($i = 2; $i <= 1221; $i++) {
+    sppbj::create([
         'id' => $i,
         'kecamatanblora_id' => null,       // Foreign key, nullable
         'sumberdana_id' => 2,             // Static value

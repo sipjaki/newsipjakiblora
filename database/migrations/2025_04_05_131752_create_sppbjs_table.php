@@ -13,7 +13,27 @@ return new class extends Migration
     {
         Schema::create('sppbjs', function (Blueprint $table) {
             $table->id();
-            $table->string('paketpekerjaan')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->string('nomor')->nullable();
+            $table->date('koptanggal')->nullable();
+            $table->string('lampiran')->nullable();
+            $table->string('kepadayth')->nullable();
+            $table->string('alamatdi')->nullable();
+            $table->string('perihal1')->nullable();
+            $table->string('nomor')->nullable();
+            $table->date('tanggal')->nullable();
+            $table->string('perihalnomor')->nullable();
+            $table->string('penawaran')->nullable();
+            $table->string('hargaterkoreksi')->nullable();
+            $table->string('hargaterbilang')->nullable();
+            $table->string('dp')->nullable();
+            $table->string('terbilang')->nullable();
+            $table->string('berlaku')->nullable();
+            $table->string('terbilangberlaku')->nullable();
+            $table->string('kegiatansatuan')->nullable();
+            $table->string('namalengkap')->nullable();
+            $table->string('jabatan')->nullable();
+            $table->string('nip')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
