@@ -62,7 +62,7 @@
 
                 <!-- Judul bagian tengah -->
                 <div class="flex flex-col items-center justify-center text-center">
-                    <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+                    <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                     <br>
                     <p class="font-semibold text-xl text-white">{{$title}}</p>
                 </div>
@@ -75,15 +75,8 @@
             </nav>
         </div>
 
-        <div class="flex flex-col z-30">
-            <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
-                <div class="w-[30px] h-[30px] flex shrink-0">
-
-                </div>
-                {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
-            </div>
-
-            <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
+        <div class="flex flex-col z-30" style="margin-top: -150px;">
+                     <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                     <div class="flex flex-col gap-[10px]">
                         {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p> --}}
 
