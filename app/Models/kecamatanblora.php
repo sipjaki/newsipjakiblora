@@ -23,4 +23,9 @@ class kecamatanblora extends Model
         return $this->hasMany(tokobangunanblora::class);
     }
 
+    public function detailspaketpekerjaan()
+    {
+        return $this->hasMany(detailspaketpekerjaan::class);
+    }
+
 }

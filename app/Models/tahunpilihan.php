@@ -33,4 +33,10 @@ class tahunpilihan extends Model
         return $this->hasMany(paketpekerjaanmasjaki::class);
     }
 
+    public function detailspaketpekerjaan()
+    {
+        return $this->hasMany(detailspaketpekerjaan::class);
+    }
+
+
 }

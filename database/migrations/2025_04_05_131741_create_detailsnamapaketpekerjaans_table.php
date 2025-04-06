@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('detailsnamapaketpekerjaans', function (Blueprint $table) {
             $table->id();
-            $table->string('paketpekerjaan')->nullable();
+            $table->foreignId('kecamatanblora_id')->nullable();
+            $table->foreignId('sumberdana_id')->nullable();
+            // ------------------------------------------------------
+            $table->string('namapaket')->nullable();
+            $table->string('nilaikontrak')->nullable();
+            $table->string('tanggalkontrak')->nullable();
+            $table->string('waktupelaksanaan')->nullable();
+            $table->string('terbilanghari')->nullable();
+            $table->string('tanggalmulai')->nullable();
+            $table->string('konsultanpengawas')->nullable();
+            $table->string('penyediajasa')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

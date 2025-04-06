@@ -18,19 +18,11 @@ class sumberdana extends Model
         return $this->hasMany(paketpekerjaanmasjaki::class);
     }
 
-    // public function profilpaketpekerjaannontender()
-    // {
-    //     return $this->hasMany(profilpaketpekerjaannontender::class);
-    // }
+    public function detailspaketpekerjaan()
+    {
+        return $this->hasMany(detailspaketpekerjaan::class);
+    }
 
-    // public function profilpaketkonsultasi()
-    // {
-    //     return $this->hasMany(profilpaketkonsultasi::class);
-    // }
 
-    // public function profilpaketkonsultasinontender()
-    // {
-    //     return $this->hasMany(profilpaketkonsultasinontender::class);
-    // }
 
 }
