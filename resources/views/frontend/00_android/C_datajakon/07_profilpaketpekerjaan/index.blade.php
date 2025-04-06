@@ -226,23 +226,7 @@
                                                     </span>
                                                 </div>
                                             </td>
-                                                  <td class="text-center">
-                                                @php
-                                                    $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
-                                                    $style = '';
-                                                    $route = !empty($item->detailsnamapaketpekerjaan) ? route('detailsnamapaketpekerjaan.show', $item->detailsnamapaketpekerjaan->id) : '#';
-                                                    if ($buttonText == 'LIHAT') {
-                                                        $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
-                                                    } else {
-                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
-                                                    }
-                                                @endphp
-                                                <a href="{{ $route }}">
-                                                    <button style="{{ $style }}">
-                                                        {{ $buttonText }}
-                                                    </button>
-                                                </a>
-                                            </td>
+
 
                                             <td class="text-center">
                                                 @php
@@ -261,6 +245,25 @@
                                                     </button>
                                                 </a>
                                             </td>
+
+                                            <td class="text-center">
+                                                @php
+                                                    $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $style = '';
+                                                    $route = !empty($item->detailsnamapaketpekerjaan) ? route('detailsnamapaketpekerjaan.show', $item->detailsnamapaketpekerjaan->id) : '#';
+                                                    if ($buttonText == 'LIHAT') {
+                                                        $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                    } else {
+                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                    }
+                                                @endphp
+                                                <a href="{{ $route }}">
+                                                    <button style="{{ $style }}">
+                                                        {{ $buttonText }}
+                                                    </button>
+                                                </a>
+                                            </td>
+
 
                                             <td class="text-center">
                                                 @php
