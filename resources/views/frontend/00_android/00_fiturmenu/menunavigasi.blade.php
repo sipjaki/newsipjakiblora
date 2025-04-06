@@ -14,7 +14,7 @@
         <a href="/berita">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/1.png" class="w-[80%] h-[80%] object-contain" alt="icon">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/1.png" class="w-[80%] h-[80%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
                     Berita
@@ -24,7 +24,7 @@
         <a href="/kelembagaan">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/2.png" class="w-[80%] h-[80%] object-contain" alt="icon">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/2.png" class="w-[80%] h-[80%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
                     Kelembagaan
@@ -34,7 +34,7 @@
         <a href="/resdatajakon">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/3.png" class="w-[80%] h-[80%] object-contain" alt="icon">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/3.png" class="w-[80%] h-[80%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
                     Data Jakon
@@ -44,7 +44,7 @@
         <a href="/respembinaan">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/4.png" class="w-[80%] h-[80%] object-contain" alt="icon">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/4.png" class="w-[80%] h-[80%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
                     Pembinaan
@@ -54,7 +54,7 @@
         <a href="/respengawasan">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/5.png" class="w-[80%] h-[80%] object-contain" alt="icon">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/5.png" class="w-[80%] h-[80%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
                     Pengawasan
@@ -64,7 +64,7 @@
         <a href="/resahsp">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/6.png" class="w-[80%] h-[80%] object-contain" alt="icon">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/6.png" class="w-[80%] h-[80%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
                     AHSP
@@ -74,7 +74,7 @@
         <a href="/resrantaipasok">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/7.png" class="w-[80%] h-[80%] object-contain" alt="icon">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/7.png" class="w-[80%] h-[80%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
                     Rantai Pasok
@@ -84,10 +84,10 @@
         <a href="/web">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/8.png" class="w-[80%] h-[80%] object-contain" alt="icon">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutama/9.png" class="w-[80%] h-[80%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
-                    Web
+                    Dekstop
                 </p>
             </div>
         </a>
