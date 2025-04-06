@@ -161,7 +161,7 @@
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:900px;"> Jenis Pekerjaan </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:500px;"> Paket Pekerjaan  </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:1000px;"> Nama Pekerjaan</th>
-                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th> --}}
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Progress</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Details</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Pekerjaan</th>
@@ -177,11 +177,11 @@
                                         @foreach ($data as $item )
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            {{-- <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user->name)) }}</td> --}}
+                                            <td style="text-transform: capitalize;">{{$item->user->name}}</td>
                                             <td style="text-align: left;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
                                             <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
                                             <td style="text-align: left;">{{$item->namapekerjaan}}</td>
-                                            {{-- <td style="text-align: left;">{{$item->bulanrekap->bulanrekap}}</td> --}}
+                                            <td style="text-align: left;">{{$item->bulanrekap->bulanrekap}}</td>
                                             <td style="text-align: left;">
                                                 @php
                                                     // Mendapatkan progress dalam bentuk persentase
