@@ -251,7 +251,7 @@
                                                     $style = '';
                                                     $route = !empty($item->detailsnamapaketpekerjaan) ? route('detailsnamapaketpekerjaan.show', $item->detailsnamapaketpekerjaan->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
-                                                        $style = 'background-color: #FFD100; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #808080; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
                                                         // 'TIDAK ADA DATA' button in red
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
@@ -270,7 +270,7 @@
                                                     $style = '';
                                                     $route = !empty($item->sppbj) ? route('sppbj.show', $item->sppbj->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
-                                                        $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
                                                         // 'TIDAK ADA DATA' button in red
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
@@ -290,7 +290,7 @@
                                                     $route = !empty($item->spk) ? route('spk.show', $item->spk->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         // Light blue color for 'LIHAT' button
-                                                        $style = 'background-color: #ADD8E6; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #808080; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
                                                         // 'TIDAK ADA DATA' button in red
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
@@ -310,7 +310,7 @@
                                                     $route = !empty($item->sskk) ? route('sskk.show', $item->sskk->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         // Light green color for 'LIHAT' button
-                                                        $style = 'background-color: #90EE90; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #808080; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
                                                         // 'TIDAK ADA DATA' button in red
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
@@ -330,7 +330,7 @@
                                                     $route = !empty($item->suratperjanjianpekerjaan) ? route('suratperjanjianpekerjaan.show', $item->suratperjanjianpekerjaan->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         // Fuchsia color for 'LIHAT' button
-                                                        $style = 'background-color: #FF00FF; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
                                                         // 'TIDAK ADA DATA' button in red
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
