@@ -58781,7 +58781,7 @@ for ($i = 1; $i <= 1221; $i++) {
 for ($i = 1; $i <= 1221; $i++) {
     detailsnamapaketpekerjaan::create([
         'id' => $i,
-        'kecamatanlora_id' => null,       // Foreign key, nullable
+        'kecamatanblora_id' => null,       // Foreign key, nullable
         'sumberdana_id' => 2,             // Static value
         'namapaket' => null,               // String
         'nilaikontrak' => null,            // String
