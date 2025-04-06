@@ -183,7 +183,7 @@
                                             <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan}}</td>
                                             {{-- <td style="text-align: left;">Selesai</td> --}}
                                             <td style="text-align: left;">{{$item->bulan?->bulanrekap}}</td>
-                                            <td style="text-align: left;">
+                                            <td style="text-align: center;">
                                                 @php
                                                     // Mendapatkan progress dalam bentuk persentase
                                                     $progress = $item->progress;
@@ -228,7 +228,7 @@
                                             </td>
 
 
-                                            <td class="text-center">
+                                            <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->detailspaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -245,7 +245,7 @@
                                                     </button>
                                                 </a>
                                             </td>
-                                            <td class="text-center">
+                                            <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -264,7 +264,7 @@
                                                 </a>
                                             </td>
 
-                                            <td class="text-center">
+                                            <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->sppbj) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -283,7 +283,7 @@
                                                 </a>
                                             </td>
 
-                                            <td class="text-center">
+                                            <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->spk) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -303,7 +303,7 @@
                                                 </a>
                                             </td>
 
-                                            <td class="text-center">
+                                            <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->sskk) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -323,7 +323,7 @@
                                                 </a>
                                             </td>
 
-                                            <td class="text-center">
+                                            <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->suratperjanjianpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -344,7 +344,7 @@
                                             </td>
 
 
-                                            <td style="text-align: center">
+                                            <td style="text-align: center" style="text-align: center;">
                                                 <a href="/resprofilpaketpekerjaan/{{$item->id}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
