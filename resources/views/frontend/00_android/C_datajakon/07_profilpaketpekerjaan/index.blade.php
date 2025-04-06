@@ -253,7 +253,8 @@
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #FFD100; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
-                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        // 'TIDAK ADA DATA' button in red
+                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
@@ -271,7 +272,8 @@
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
-                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        // 'TIDAK ADA DATA' button in red
+                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
@@ -290,8 +292,8 @@
                                                         // Light blue color for 'LIHAT' button
                                                         $style = 'background-color: #ADD8E6; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
-                                                        // Darker gray for 'TIDAK ADA DATA' button
-                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        // 'TIDAK ADA DATA' button in red
+                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
@@ -310,8 +312,8 @@
                                                         // Light green color for 'LIHAT' button
                                                         $style = 'background-color: #90EE90; color: black; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
-                                                        // Darker gray for 'TIDAK ADA DATA' button
-                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        // 'TIDAK ADA DATA' button in red
+                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
@@ -330,8 +332,8 @@
                                                         // Fuchsia color for 'LIHAT' button
                                                         $style = 'background-color: #FF00FF; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
-                                                        // Darker gray for 'TIDAK ADA DATA' button
-                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        // 'TIDAK ADA DATA' button in red
+                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
