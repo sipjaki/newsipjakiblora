@@ -93,7 +93,7 @@ return new class extends Migration
         // SURAT KELIMA
         $table->string('nomorlokasikerja')->nullable();
         $table->string('kerjahari')->nullable();
-        $table->string('kerjatanggal')->nullable();
+        $table->date('kerjatanggal')->nullable();
         $table->string('kerjabulan')->nullable();
         $table->string('kerjatahun')->nullable();
         $table->string('kerjakepala')->nullable();
@@ -105,7 +105,7 @@ return new class extends Migration
         $table->string('kerjafisik')->nullable();
         $table->string('kerjapaket')->nullable();
         $table->string('kerjanomor')->nullable();
-        $table->string('kerjatanggal')->nullable();
+        $table->date('kerjatanggal2')->nullable();
         $table->string('kerjakecamatan')->nullable();
         $table->date('tanggalsurat2')->nullable();
         $table->string('namaselaku3')->nullable();
