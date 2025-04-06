@@ -482,11 +482,12 @@ class AndroidVersionController extends Controller
             $user = Auth::user();
 
             return view('frontend.00_android.D_pembinaan.index', [
-            'title' => 'Menu Pembinaan Jasa Konstruksi',
-            'user' => $user,
-        ]);
+                'title' => 'Menu Pembinaan Jasa Konstruksi',
+                'user' => $user,
+            ]);
         }
 
+        // MENU PENGAWASAN JASA KONSTRUKSI
         // -==============================================================================================================
         public function menurespengawasan()
         {
@@ -494,6 +495,18 @@ class AndroidVersionController extends Controller
 
             return view('frontend.00_android.E_pengawasan.index', [
             'title' => 'Menu Pengawasan Jasa Konstruksi',
+            'user' => $user,
+        ]);
+        }
+
+        // MENU AHSP JASA KONSTRUKSI
+        // -==============================================================================================================
+        public function menuresahsp()
+        {
+            $user = Auth::user();
+
+            return view('frontend.00_android.F_ahsp.index', [
+            'title' => 'Menu AHSP Jasa Konstruksi',
             'user' => $user,
         ]);
         }

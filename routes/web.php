@@ -145,6 +145,12 @@ Route::get('/respengawasan', [AndroidVersionController::class, 'menurespengawasa
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
+// ================================================ MENU F. AHSP
+// MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
+Route::get('/resahsp', [AndroidVersionController::class, 'menuresahsp']);
+// Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
+// Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
+
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
