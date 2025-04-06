@@ -114,7 +114,8 @@ h5 {
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
     <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-white overflow-x-hidden">
-        <div class="header flex flex-col bg-[#56BBC5] overflow-hidden h-[350px] relative -mb-[92px]">
+        <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama3.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden; height: 350px;">
+
             <nav class="pt-5 px-3 flex justify-between items-center relative z-20">
                 <div class="flex items-center gap-[10px]">
                     <a href="#" class="w-10 h-10 flex shrink-0">
@@ -136,13 +137,7 @@ h5 {
                 <img src="/assets/00_android/iconmenu/menuutama.jpg" class="w-full h-full object-cover" alt="cover">
             </div>
         </div>
-        <div class="flex flex-col z-30">
-            <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
-                <div class="w-[30px] h-[30px] flex shrink-0">
-                    {{-- <img src="assets/images/icons/lovely.svg" alt="icon"> --}}
-                </div>
-                {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
-            </div>
+        <div class="flex flex-col z-30" style="margin-top: -100px; ">
 
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 

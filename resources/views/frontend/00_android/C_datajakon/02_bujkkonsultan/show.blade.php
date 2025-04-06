@@ -50,7 +50,8 @@
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
     <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-white overflow-x-hidden">
-        <div class="header flex flex-col bg-[#56BBC5] rounded-b-[50px] overflow-hidden h-[320px] -mb-[181px]" style="background: linear-gradient(to bottom, #28A745, #FFD100);">
+        <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama3.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden; height: 350px;">
+
             <nav class="pt-5 px-3 flex justify-between items-center">
                 <!-- Logo bagian kiri -->
                 <div class="flex items-center gap-[10px]">
@@ -61,7 +62,7 @@
 
                 <!-- Judul bagian tengah -->
                 <div class="flex flex-col items-center justify-center text-center">
-                    <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+                    <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                     <br>
                     <p class="font-semibold text-xl text-white">{{$title}}</p>
                 </div>
@@ -74,14 +75,7 @@
             </nav>
         </div>
 
-        <div class="flex flex-col z-30">
-            <div id="status" class="w-full h-[92px] bg-[#76AE43] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
-                <div class="w-[30px] h-[30px] flex shrink-0">
-
-                </div>
-                {{-- <p class="font-semibold text-sm text-white">This Fundraising has been finished</p> --}}
-            </div>
-
+        <div class="flex flex-col z-30" style="margin-top: -100px;">
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
                     <div class="flex flex-col gap-[10px]">
                         {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p> --}}
