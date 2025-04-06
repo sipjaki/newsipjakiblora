@@ -58779,8 +58779,24 @@ for ($i = 1; $i <= 1221; $i++) {
     ]);
 }
 
-for ($i = 1; $i <= 1; $i++) {
+for ($i = 1; $i <= 1221; $i++) {
     detailsnamapaketpekerjaan::create([
+        'id' => $i,
+        'kecamatanblora_id' => null,       // Foreign key, nullable
+        'sumberdana_id' => 2,             // Static value
+        'namapaket' => null,               // String
+        'nilaikontrak' => null,            // String
+        'tanggalkontrak' => null,          // Date
+        'waktupelaksanaan' => null,       // Date
+        'terbilanghari' => null,          // String
+        'tanggalmulai' => null,           // Date
+        'konsultanpengawas' => null,      // String
+        'penyediajasa' => null,           // String
+    ]);
+}
+
+for ($i = 1; $i <= 1; $i++) {
+    sppbj::create([
         'id' => 1,
         'user_id' => null,             // Foreign key, nullable
         'nomor' => 'Nomor ' . rand(1000, 9999),   // Data acak nomor
@@ -58789,7 +58805,7 @@ for ($i = 1; $i <= 1; $i++) {
         'kepadayth' => 'Kepada Yth. ' . 'Person ' . rand(1, 10), // Data acak untuk Kepada Yth
         'alamatdi' => 'Alamat ' . rand(1, 50),  // Data acak alamat
         'perihal1' => 'Perihal ' . rand(1, 100),  // Data acak perihal
-        'nomor' => 'Nomor ' . rand(1, 1000),    // Data acak nomor
+        'nomorkontrak' => 'Nomor ' . rand(1, 1000),    // Data acak nomor
         'tanggal' => now(),             // Menggunakan tanggal saat ini
         'perihalnomor' => 'Perihal Nomor ' . rand(1, 100), // Data acak untuk perihal nomor
         'penawaran' => 'Penawaran ' . rand(1000, 9999), // Data acak penawaran
@@ -58809,19 +58825,29 @@ for ($i = 1; $i <= 1; $i++) {
 for ($i = 2; $i <= 1221; $i++) {
     sppbj::create([
         'id' => $i,
-        'kecamatanblora_id' => null,       // Foreign key, nullable
-        'sumberdana_id' => 2,             // Static value
-        'namapaket' => null,               // String
-        'nilaikontrak' => null,            // String
-        'tanggalkontrak' => null,          // Date
-        'waktupelaksanaan' => null,       // Date
-        'terbilanghari' => null,          // String
-        'tanggalmulai' => null,           // Date
-        'konsultanpengawas' => null,      // String
-        'penyediajasa' => null,           // String
+        'user_id' => null,
+        'nomor' => 'Nomor ' . $i,
+        'koptanggal' => now(),           // Menggunakan tanggal saat ini
+        'lampiran' => 'Lampiran ' . $i,
+        'kepadayth' => 'Kepada Yth. ' . $i,
+        'alamatdi' => 'Alamat ' . $i,
+        'perihal1' => 'Perihal ' . $i,
+        'nomorkontrak' => 'Nomor ' . $i,
+        'tanggal' => now(),
+        'perihalnomor' => 'Perihal ' . $i,
+        'penawaran' => 'Penawaran ' . $i,
+        'hargaterkoreksi' => 'Harga ' . $i,
+        'hargaterbilang' => 'Harga Terbilang ' . $i,
+        'dp' => 'DP ' . $i,
+        'terbilang' => 'Terbilang ' . $i,
+        'berlaku' => 'Berlaku ' . $i,
+        'terbilangberlaku' => 'Terbilang Berlaku ' . $i,
+        'kegiatansatuan' => 'Kegiatan ' . $i,
+        'namalengkap' => 'Nama Lengkap ' . $i,
+        'jabatan' => 'Jabatan ' . $i,
+        'nip' => 'NIP ' . $i,
     ]);
 }
-
 
 
 // makanyu

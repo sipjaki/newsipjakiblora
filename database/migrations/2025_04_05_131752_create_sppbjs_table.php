@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('kepadayth')->nullable();
             $table->string('alamatdi')->nullable();
             $table->string('perihal1')->nullable();
-            $table->string('nomor')->nullable();
+            $table->string('nomorkontrak')->nullable();
             $table->date('tanggal')->nullable();
             $table->string('perihalnomor')->nullable();
             $table->string('penawaran')->nullable();
