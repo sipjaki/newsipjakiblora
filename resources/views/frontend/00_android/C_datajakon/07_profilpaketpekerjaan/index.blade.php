@@ -234,17 +234,18 @@
                                                     $style = '';
                                                     $route = !empty($item->detailspaketpekerjaan) ? route('detailspaketpekerjaan.show', $item->detailspaketpekerjaan->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
-                                                        $style = 'background-color: #16a34a; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #000080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
                                                     } else {
-                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #6b7280; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
-                                                    <button style="{{ $style }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='#333';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#000080' : '#6b7280' }}';">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
                                             </td>
+
                                                   <td class="text-center">
                                                 @php
                                                     $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
