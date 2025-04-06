@@ -5,7 +5,7 @@
         {{-- <div class="header flex flex-col bg-gradient-to-b from-[#28A745] to-[#FFDC00] rounded-b-[50px] overflow-hidden"> --}}
             <!-- Konten lainnya di sini -->
         {{-- </div> --}}
-        <div class="header flex flex-col" style="background: linear-gradient(to bottom, #28A745, #FFD100); border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;">
+        <div class="header flex flex-col" style="background: linear-gradient(to bottom, #097c24, #FFD100); border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;">
 
         <nav class="pt-5 px-3 flex justify-between items-center">
             <div class="flex items-center gap-[10px]">
@@ -22,7 +22,7 @@
             </a> --}}
         </nav>
         <div class="mt-[30px] z-10">
-            <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
+            <h1 class="font-bold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
         </div>
         <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
             <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy">
