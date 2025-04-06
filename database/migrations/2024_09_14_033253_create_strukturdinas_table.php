@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('peraturan', 255)->nullable();
             $table->text('keterangan')->nullable();
 
-            // Menambahkan Full-Text Index
             $table->fullText(['judul', 'keterangan']);
             $table->softDeletes();
             $table->timestamps();

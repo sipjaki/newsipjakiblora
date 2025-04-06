@@ -16,15 +16,17 @@ return new class extends Migration
             $table->foreignId('bujkkontraktor_id')->nullable()->index();
             $table->string('nama_pengurus', 255)->nullable()->index();
             $table->string('sub_klasifikasi_layanan', 255)->nullable();
-            $table->string('kode', 255)->nullable()->index(); //
+            $table->string('kode', 255)->nullable()->index();
             $table->string('kualifikasi', 255)->nullable();
-            $table->string('penerbit', 255)->nullable()->index(); //
+            $table->string('penerbit', 255)->nullable()->index();
             $table->date('tanggal_terbit')->nullable();
             $table->date('masa_berlaku')->nullable();
-            $table->string('nama_psjk', 255)->nullable()->index(); //
-            $table->string('sub_kualifikasi_bu', 255)->nullable(); //
+            $table->string('nama_psjk', 255)->nullable()->index();
+            $table->string('sub_kualifikasi_bu', 255)->nullable();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->index('deleted_at');
         });
     }
 

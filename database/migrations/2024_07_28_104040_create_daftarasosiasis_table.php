@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('daftarasosiasis', function (Blueprint $table) {
             $table->id();
-            $table->string('namaasosiasi')->nullable()->index();  // Menambahkan index
+            $table->string('namaasosiasi')->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
         });

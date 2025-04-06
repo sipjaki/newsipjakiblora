@@ -16,7 +16,6 @@ return new class extends Migration
             $table->text('judul')->nullable();
             $table->text('keterangan')->nullable();
 
-            // Menambahkan full-text index pada kolom 'judul' dan 'keterangan' untuk pencarian berbasis kata
             $table->fullText(['judul', 'keterangan']);
 
             $table->softDeletes();

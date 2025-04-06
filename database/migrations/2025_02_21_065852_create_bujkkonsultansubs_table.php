@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('sub_kualifikasi_bu', 255)->nullable();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->index('deleted_at');
         });
     }
 

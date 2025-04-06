@@ -29,6 +29,7 @@ return new class extends Migration
             $table->fullText(['alamat']);
             $table->softDeletes();
             $table->timestamps();
+            $table->index('deleted_at');
         });
     }
 

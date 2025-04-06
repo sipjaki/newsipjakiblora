@@ -75993,41 +75993,6 @@ suratkeputusan::create([
 //     'updated_at' => Carbon::now(),
 // ]);
 
-// kegiatanjaskon::create([
-//                 // 'laporankegiatan_id' => 2, // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                 'id' => 2,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                 'user_id' => 1,           // Ganti dengan ID yang sesuai jika menggunakan foreign key
-//                 'judul_kegiatan' => '2 - 3 DESEMBER 2024, KECAMATAN CIKALONG WETAN BIMBINGAN TEKNIS KESELAMATAN DAN KESEHATAN KERJA PARA PEKERJA KONSTRUKSI',
-//                 'alamat_kegiatan' => 'DESA CISOMANG BARAT 40556 JAWA BARAT INDONESIA',
-//                 'pengawasanlokasi_id' => '11',
-//                 'tanggal' => '',
-//                 'berita1' => 'dokumentasipelatihan/new/01_CB.jpg',
-//                 'berita2' => 'dokumentasipelatihan/new/02_CB.jpg',
-//                 'berita3' => 'dokumentasipelatihan/new/03_CB.jpg',
-//                 'berita4' => 'dokumentasipelatihan/new/04_CB.jpg',
-//                 'berita5' => 'dokumentasipelatihan/new/05_CB.jpg',
-//                 'berita6' => 'dokumentasipelatihan/new/06_CB.jpg',
-//                 'berita7' => 'dokumentasipelatihan/new/07_CB.jpg',
-//                 'berita8' => 'dokumentasipelatihan/new/08_CB.jpg',
-//                 'berita9' => 'dokumentasipelatihan/new/09_CB.jpg',
-//                 'berita10' => 'dokumentasipelatihan/new/10_CB.jpg',
-//                 'berita11' => 'dokumentasipelatihan/new/11_CB.jpg',
-//                 'berita12' => 'dokumentasipelatihan/new/12_CB.jpg',
-//                 'berita13' => 'dokumentasipelatihan/new/13_CB.jpg',
-//                 'berita14' => 'dokumentasipelatihan/new/14_CB.jpg',
-//                 'berita15' => 'dokumentasipelatihan/new/15_CB.jpg',
-//                 'berita16' => 'dokumentasipelatihan/new/16_CB.jpg',
-//                 'berita17' => 'dokumentasipelatihan/new/17_CB.jpg',
-//                 'berita18' => 'dokumentasipelatihan/new/18_CB.jpg',
-//                 'berita19' => 'dokumentasipelatihan/new/19_CB.jpg',
-//                 'berita20' => 'dokumentasipelatihan/new/20_CB.jpg',
-
-//                 'tanggal' => '2024-12-02', // Format tanggal YYYY-MM-DD
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-// ]);
-
-
 // ==========================================================================================================
 // DATA YANG DIRUBAH DARI PEMERINTAH KABUPATEN BANDUNG BARAT
 // laporankegiatan::create([
