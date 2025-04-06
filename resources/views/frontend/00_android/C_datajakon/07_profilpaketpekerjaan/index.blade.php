@@ -158,18 +158,18 @@
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:1500px;"> Dinas </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:1000px;"> Jenis Pekerjaan </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:500px;"> Paket Pekerjaan  </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:1500px;"> Nama Pekerjaan</th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:1000px;"> Jenis Pekerjaan </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:500px;"> Paket Pekerjaan  </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:1500px;"> Nama Pekerjaan</th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Progress</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Details</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Pekerjaan</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> SPPBJ</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> SPK</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> SSKK</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Perjanjian Harga Satuan</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:250px;"> Progress</th>
+                                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Details</th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:250px;"> Pekerjaan</th>
+                                            <th onclick="sortTable(9)" style="cursor:pointer; text-align:center; width:250px;"> SPPBJ</th>
+                                            <th onclick="sortTable(10)" style="cursor:pointer; text-align:center; width:250px;"> SPK</th>
+                                            <th onclick="sortTable(11)" style="cursor:pointer; text-align:center; width:250px;"> SSKK</th>
+                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Perjanjian Harga Satuan</th> --}}
+                                            <th onclick="sortTable(12)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -323,7 +323,7 @@
                                                 </a>
                                             </td>
 
-                                            <td class="text-center" style="text-align: center;">
+                                            {{-- <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->suratperjanjianpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
@@ -341,7 +341,7 @@
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
-                                            </td>
+                                            </td> --}}
 
 
                                             <td style="text-align: center" style="text-align: center;">
