@@ -3,7 +3,8 @@
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
     <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#FCF7F1] overflow-x-hidden pb-4">
         {{-- <div class="header flex flex-col" style="background: linear-gradient(to bottom, #28A745, #FFD100); border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;"> --}}
-            <div class="header flex flex-col bg-[#56BBC5] rounded-b-[50px] overflow-hidden h-[320px] -mb-[181px]" style="background: linear-gradient(to bottom, #28A745, #FFD100);">
+            <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama1.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden; height: 350px;">
+
                 <nav class="pt-5 px-3 flex justify-between items-center">
                     <!-- Logo bagian kiri -->
                     <div class="flex items-center gap-[10px]">
@@ -14,7 +15,7 @@
 
                     <!-- Judul bagian tengah -->
                     <div class="flex flex-col items-center justify-center text-center">
-                        <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+                        <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                         <br>
                         <p class="font-semibold text-xl text-white">{{$title}}</p>
                     </div>
@@ -27,7 +28,7 @@
                 </nav>
             </div>
 
-                    <div class="flex flex-col gap-4 px-4">
+                    <div class="flex flex-col gap-4 px-4" style="margin-top: -150px;">
                         <br><br>
 
                         <a href="/404" class="card">
