@@ -13,32 +13,33 @@ return new class extends Migration
     {
         Schema::create('pengawasanbujks', function (Blueprint $table) {
             $table->id();
-            $table->string('kodeproyek')->nullable();
-            $table->string('namaperusahaan')->nullable();;
-            $table->text('alamatperusahaan')->nullable();;  // Menggunakan text karena alamat bisa lebih panjang
-            $table->string('statusmodal')->nullable();;
-            $table->string('jenisperusahaan')->nullable();;
-            $table->string('nib')->nullable();;
-            $table->string('kbli')->nullable();;
-            $table->text('uraiankbli')->nullable();;  // Menggunakan text jika deskripsi lebih panjang
-            $table->string('sektor')->nullable();;
-            $table->string('alamatproyek')->nullable();;
-            $table->string('wilayah')->nullable();;
-            $table->decimal('luastanah', 10, 2)->nullable();;  // Menggunakan decimal untuk luas tanah (dengan 2 desimal)
-            $table->integer('tki_lakilaki')->default(0)->nullable();;  // Menggunakan integer untuk jumlah
-            $table->integer('tki_perempuan')->default(0)->nullable();;
-            $table->integer('tka_lakilaki')->default(0)->nullable();;
-            $table->integer('tka_perempuan')->default(0)->nullable();;
-            $table->string('resiko')->nullable();;
-            $table->string('sumberdata')->nullable();;
-            $table->decimal('investasi', 15, 2)->nullable();;  // Menggunakan decimal untuk nilai investasi (dengan 2 desimal)
-            $table->string('skalausahaperusahaan')->nullable();;
-            $table->string('skalausahaproyek')->nullable();;
-            $table->string('kewenangankoordinator')->nullable();;
-            $table->string('kewenanganpengawas')->nullable();;
-            $table->string('PSN');
+            $table->string('kodeproyek', 100)->nullable();
+            $table->string('namaperusahaan', 255)->nullable();
+            $table->text('alamatperusahaan')->nullable();  // Sudah tepat untuk alamat
+            $table->string('statusmodal', 50)->nullable();
+            $table->string('jenisperusahaan', 100)->nullable();
+            $table->string('nib', 100)->nullable();
+            $table->string('kbli', 20)->nullable();
+            $table->text('uraiankbli')->nullable();  // Sudah tepat untuk deskripsi panjang
+            $table->string('sektor', 100)->nullable();
+            $table->string('alamatproyek', 255)->nullable();
+            $table->string('wilayah', 100)->nullable();
+            $table->decimal('luastanah', 10, 2)->nullable();
+            $table->integer('tki_lakilaki')->default(0);
+            $table->integer('tki_perempuan')->default(0);
+            $table->integer('tka_lakilaki')->default(0);
+            $table->integer('tka_perempuan')->default(0);
+            $table->string('resiko', 50)->nullable();
+            $table->string('sumberdata', 100)->nullable();
+            $table->decimal('investasi', 15, 2)->nullable();
+            $table->string('skalausahaperusahaan', 100)->nullable();
+            $table->string('skalausahaproyek', 100)->nullable();
+            $table->string('kewenangankoordinator', 100)->nullable();
+            $table->string('kewenanganpengawas', 100)->nullable();
+            $table->string('PSN', 100);
             $table->softDeletes();
             $table->timestamps();
+            $table->index('deleted_at');
         });
 
     }

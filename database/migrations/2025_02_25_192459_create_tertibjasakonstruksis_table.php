@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tertibjasakonstruksis', function (Blueprint $table) {
             $table->id();
-            $table->string('penyediastatustertibjakon_id');
+            $table->string('penyediastatustertibjakon_id')->nullable()->index();
             $table->string('nib')->nullable();
             $table->string('namapekerjaan')->nullable();
             $table->string('namabadanusaha')->nullable();

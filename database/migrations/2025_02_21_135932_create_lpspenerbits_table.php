@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('lpspenerbits', function (Blueprint $table) {
             $table->id();
-            $table->string('lpspenerbit');
+            $table->string('lpspenerbit', 255)->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -13,16 +13,17 @@ return new class extends Migration
     {
         Schema::create('kecelakaankerjamasjakis', function (Blueprint $table) {
             $table->id();
-            $table->string('namapaketpekerjaan')->nullable();  // Nama paket pekerjaan, bisa nullable
-            $table->year('tahun')->nullable(); // Tipe tahun lebih sesuai dengan data tahun
-            $table->string('namaperusahaan')->nullable();  // Nama perusahaan, bisa nullable
-            $table->string('namatenagakerja')->nullable();  // Nama tenaga kerja, bisa nullable
-            $table->string('lokasikecelakaan')->nullable();  // Lokasi kecelakaan, bisa nullable
-            $table->dateTime('waktukecelakaan')->nullable();  // Waktu kecelakaan, lebih baik menggunakan dateTime
-            $table->text('keterangan')->nullable();  // Keterangan kecelakaan, bisa panjang
-            $table->decimal('nilaikerugian', 15, 2)->nullable();  // Nilaikerugian menggunakan tipe decimal
-            $table->softDeletes();  // Untuk soft delete
-            $table->timestamps();  // Waktu dibuat dan diperbarui
+            $table->string('namapaketpekerjaan', 255)->nullable();
+            $table->year('tahun')->nullable();
+            $table->string('namaperusahaan', 255)->nullable();
+            $table->string('namatenagakerja', 255)->nullable();
+            $table->string('lokasikecelakaan', 255)->nullable();
+            $table->dateTime('waktukecelakaan')->nullable();
+            $table->text('keterangan')->nullable();
+            $table->decimal('nilaikerugian', 15, 2)->nullable();
+            $table->softDeletes();
+            $table->timestamps();
+            $table->index('deleted_at');
         });
 
     }
