@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('tupoksis', function (Blueprint $table) {
             $table->id();
-            $table->string('judul')->nullable();
+            $table->text('judul')->nullable();
             $table->text('keterangan')->nullable();
+
+            // Menambahkan full-text index pada kolom 'judul' dan 'keterangan' untuk pencarian berbasis kata
+            $table->fullText(['judul', 'keterangan']);
             $table->softDeletes();
             $table->timestamps();
         });

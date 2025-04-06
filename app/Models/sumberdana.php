@@ -28,6 +28,11 @@ class sumberdana extends Model
         return $this->hasMany(detailsnamapaketpekerjaan::class);
     }
 
+    public function spk()
+    {
+        return $this->hasMany(spk::class);
+    }
+
 
 
 }

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('suratkeputusans', function (Blueprint $table) {
             $table->id();
-            $table->text('judul');
-            $table->string('peraturan');
+            $table->string('judul', 255)->index();
+            $table->string('peraturan', 255)->index();
             $table->softDeletes();
             $table->timestamps();
         });

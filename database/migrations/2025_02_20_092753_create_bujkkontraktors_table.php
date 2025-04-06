@@ -13,20 +13,20 @@ return new class extends Migration
     {
         Schema::create('bujkkontraktors', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignId('bujkkontraktorsub_id')->nullable();
-            $table->foreignId('asosiasimasjaki_id')->nullable();
-            $table->string('namalengkap')->nullable();
+            $table->foreignId('bujkkontraktorsub_id')->nullable()->index();
+            $table->foreignId('asosiasimasjaki_id')->nullable()->index();
+            $table->string('namalengkap', 255)->nullable()->index();
             $table->text('alamat')->nullable();
-            $table->string('no_telepon')->nullable();
-            $table->string('email')->nullable();
-            $table->string('nomorindukberusaha')->nullable();
-            $table->string('pju')->nullable();
-            $table->string('no_akte')->nullable();
+            $table->string('no_telepon', 20)->nullable()->index();
+            $table->string('email', 255)->nullable()->index();
+            $table->string('nomorindukberusaha', 255)->nullable()->index();
+            $table->string('pju', 255)->nullable();
+            $table->string('no_akte', 255)->nullable();
             $table->date('tanggal')->nullable();
-            $table->string('nama_notaris')->nullable();
-            $table->string('no_pengesahan')->nullable();
-            // $table->foreignId('tahunpilihan_id')->nullable();
+            $table->string('nama_notaris', 255)->nullable();
+            $table->string('no_pengesahan', 255)->nullable();
+
+            $table->fullText(['alamat']);
             $table->softDeletes();
             $table->timestamps();
         });
