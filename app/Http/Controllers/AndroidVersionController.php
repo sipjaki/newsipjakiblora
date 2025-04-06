@@ -472,4 +472,18 @@ class AndroidVersionController extends Controller
             ]);
         }
 
+
+
+        // MENU PEMBINAAN JASA KONSTRUKSI
+
+        // -==============================================================================================================
+        public function menurespembinaan()
+        {
+            $user = Auth::user();
+
+            return view('frontend.00_android.D_pembinaan.index', [
+            'title' => 'Menu Pembinaan Jasa Konstruksi',
+            'user' => $user,
+        ]);
+        }
         }

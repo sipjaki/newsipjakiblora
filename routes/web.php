@@ -130,6 +130,14 @@ Route::get('/sskk/{id}', [AndroidVersionController::class, 'show'])->name('sskk.
 // Rute untuk suratperjanjianpekerjaan
 Route::get('/suratperjanjianpekerjaan/{id}', [AndroidVersionController::class, 'show'])->name('suratperjanjianpekerjaan.show');
 
+
+
+// ================================================ MENU D. PEMBINAAN
+// MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
+Route::get('/respembinaan', [AndroidVersionController::class, 'menurespembinaan']);
+// Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
+// Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
+
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
