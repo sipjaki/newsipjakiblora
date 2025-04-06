@@ -405,7 +405,7 @@ class AndroidVersionController extends Controller
 
         public function menuresprofilpaketpekerjaan(Request $request)
         {
-            $perPage = $request->input('perPage', 15);
+            $perPage = $request->input('perPage', 25);
             $search = $request->input('search', '');
             $page = $request->input('page', 1);
 
