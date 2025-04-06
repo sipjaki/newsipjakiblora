@@ -136,7 +136,7 @@ h5 {
                 <img src="/assets/00_android/iconmenu/menuutama3.jpg" class="w-full h-full object-cover" alt="cover">
             </div>
         </div>
-        <div class="flex flex-col z-30" style="margin-top: -100px; ">
+        <div class="flex flex-col z-30" style="margin-top: 200px; ">
 
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
