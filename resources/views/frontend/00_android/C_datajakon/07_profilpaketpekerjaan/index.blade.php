@@ -269,7 +269,7 @@
                                                     $style = '';
                                                     $route = !empty($item->sppbj) ? route('sppbj.show', $item->sppbj->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
-                                                        // Brown color when 'LIHAT'
+                                                        // Light brown color when 'LIHAT'
                                                         $style = 'background-color: #8B4513; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     } else {
                                                         // Darker brown when 'TIDAK ADA DATA'
