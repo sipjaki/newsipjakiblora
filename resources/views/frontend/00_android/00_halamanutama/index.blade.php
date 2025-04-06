@@ -5,7 +5,7 @@
         {{-- <div class="header flex flex-col bg-gradient-to-b from-[#28A745] to-[#FFDC00] rounded-b-[50px] overflow-hidden"> --}}
             <!-- Konten lainnya di sini -->
         {{-- </div> --}}
-        <div class="header flex flex-col" style="background: linear-gradient(to bottom, #097c24, #FFD100); border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;">
+        <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;">
 
         <nav class="pt-5 px-3 flex justify-between items-center">
             <div class="flex items-center gap-[10px]">
