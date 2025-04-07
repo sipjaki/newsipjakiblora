@@ -157,7 +157,7 @@
                                             <td style="text-align: left">{{$item->penerbit}}</td>
                                             <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal_terbit)->translatedFormat('j F Y') }}</td>
                                             <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->masa_berlaku)->translatedFormat('j F Y') }}</td>
-                                            <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->masa_berlaku)->translatedFormat('j F Y') }}</td>
+                                            {{-- <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->masa_berlaku)->translatedFormat('j F Y') }}</td> --}}
                                             <td style="text-align: center;">
                                                 @php
                                                     $masaBerlaku = \Carbon\Carbon::parse($item->masa_berlaku);
