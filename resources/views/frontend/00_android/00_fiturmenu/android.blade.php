@@ -30,7 +30,7 @@
                 <div class="w-6 h-6 flex shrink-0">
                     <img src="/assets/00_android/menuhape/2.png" alt="icon" loading="lazy">
                 </div>
-                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center">AHSP</p>
+                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center">Sertifikat</p>
             </div>
         </a>
 
