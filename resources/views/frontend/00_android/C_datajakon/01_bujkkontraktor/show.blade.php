@@ -143,6 +143,7 @@
                                             <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:400px;"> Penerbit </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:350px;"> Tanggal Terbit </th>
                                             <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:350px;"> Masa Berlaku </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:350px;"> Status </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -156,7 +157,22 @@
                                             <td style="text-align: left">{{$item->penerbit}}</td>
                                             <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal_terbit)->translatedFormat('j F Y') }}</td>
                                             <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->masa_berlaku)->translatedFormat('j F Y') }}</td>
-                                               </tr>
+                                            <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->masa_berlaku)->translatedFormat('j F Y') }}</td>
+                                            <td style="text-align: center;">
+                                                @php
+                                                    $masaBerlaku = \Carbon\Carbon::parse($item->masa_berlaku);
+                                                @endphp
+
+                                                @if ($masaBerlaku->isPast())
+                                                    <!-- Jika sudah lewat (expired), tombol merah -->
+                                                    <button class="btn btn-danger" style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px;">BERLAKU HABIS</button>
+                                                @else
+                                                    <!-- Jika belum lewat (valid), tombol hijau -->
+                                                    <button class="btn btn-success" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">BERLAKU</button>
+                                                @endif
+                                            </td>
+
+                                        </tr>
                                         @endforeach
 
                                     </tbody>
