@@ -92,18 +92,6 @@
                                     <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
 
-                                {{-- <a href="javascript:history.back()">
-                                    <button
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                    style="background-color: #374151; color: white; border: none; padding: 8px 15px; border-radius: 15px; font-size: 14px; cursor: pointer; display: transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                    <!-- Ikon Kembali -->
-                                    <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
-                                    Kembali
-                                </button>
-                                </a> --}}
-
-                                <!-- Right: Show Entries Dropdown -->
                                 <div>
                                     <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
                                     <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">

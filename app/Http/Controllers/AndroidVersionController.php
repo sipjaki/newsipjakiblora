@@ -499,7 +499,9 @@ class AndroidVersionController extends Controller
 
             if ($search) {
                 $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                ->orWhere('keterangan', 'LIKE', "%{$search}%");
+                ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                ->orWhere('penutupan', 'LIKE', "%{$search}%")
+                ->orWhere('foto', 'LIKE', "%{$search}%");
                 // ->orWhere('no_telepon', 'LIKE', "%{$search}%");
             }
 
