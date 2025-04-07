@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\agendapelatihan;
 use App\Models\allskktenagakerjablora;
 use App\Models\strukturdinas;
 
@@ -484,6 +485,19 @@ class AndroidVersionController extends Controller
             return view('frontend.00_android.D_pembinaan.index', [
                 'title' => 'Menu Pembinaan Jasa Konstruksi',
                 'user' => $user,
+            ]);
+        }
+
+        // MENU AGENDA PELATIHAN ------------------
+        public function menuresagendapelatihan()
+        {
+            $user = Auth::user();
+            $databerita = agendapelatihan::paginate(6);
+
+            return view('frontend.00_android.D_pembinaan.01_agendapelatihan.index', [
+                'title' => 'Agenda Pelatihan Jasa Konstruksi',
+                'user' => $user, // Mengirimkan data paginasi ke view
+                'data' => $databerita, // Mengirimkan data paginasi ke view
             ]);
         }
 

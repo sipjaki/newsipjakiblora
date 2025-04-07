@@ -30,6 +30,7 @@
 
                     <div class="flex flex-col gap-4 px-4" style="margin-top: -150px;">
                         <br><br>
+
             @foreach ($data as $item)
             <a href="/resberita/{{$item->judulberita}}" class="card">
                 <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">

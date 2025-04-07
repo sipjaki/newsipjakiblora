@@ -135,6 +135,10 @@ Route::get('/suratperjanjianpekerjaan/{id}', [AndroidVersionController::class, '
 // ================================================ MENU D. PEMBINAAN
 // MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
 Route::get('/respembinaan', [AndroidVersionController::class, 'menurespembinaan']);
+
+// MENU 1 AGENDA PELATIHAN ------------------------------------------------
+Route::get('/resagendapelatihan', [AndroidVersionController::class, 'menuresagendapelatihan']);
+
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
