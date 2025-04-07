@@ -15,7 +15,7 @@
 
                     <!-- Judul bagian tengah -->
                     <div class="flex flex-col items-center justify-center text-center">
-                        <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+                        <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                         <br>
                         <p class="font-semibold text-xl text-white">{{$title}}</p>
                     </div>
