@@ -127,7 +127,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/ressatuanhargadasar">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/satuanhargadasar.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/satuan1.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -142,7 +142,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/resahspkonstruksi">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/ahspkonstruksiumum.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/satuan2.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
@@ -156,7 +156,7 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="/resshstblora">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="/assets/00_android/iconmenu/shstblora.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                <img src="/assets/00_android/iconmenu/satuan3.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
