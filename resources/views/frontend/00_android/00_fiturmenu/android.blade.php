@@ -6,7 +6,7 @@
                 <div class="w-6 h-6 flex shrink-0">
                     <img src="/assets/00_android/menuhape/1.png" alt="icon" loading="lazy">
                 </div>
-                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center">Dashboard</p>
+                <p class="leading-[10px] font-medium text-[#757C98] text-center" style="font-size:8px;">Dashboard</p>
             </div>
         </a>
 
@@ -15,7 +15,7 @@
                 <div class="w-6 h-6 flex shrink-0">
                     <img src="/assets/00_android/menuhape/3.png" alt="icon" loading="lazy">
                 </div>
-                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center">Informasi</p>
+                <p class="leading-[10px] font-medium text-[#757C98] text-center" style="font-size:8px;">Informasi</p>
             </div>
         </a>
 
@@ -30,7 +30,7 @@
                 <div class="w-6 h-6 flex shrink-0">
                     <img src="/assets/00_android/menuhape/2.png" alt="icon" loading="lazy">
                 </div>
-                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center">Sertifikat</p>
+                <p class="leading-[10px] font-medium text-[#757C98] text-center" style="font-size:8px;">Sertifikat</p>
             </div>
         </a>
 
@@ -40,7 +40,7 @@
                 <div class="w-6 h-6 flex shrink-0">
                     <img src="/assets/00_android/menuhape/6.png" alt="icon" loading="lazy">
                 </div>
-                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center" style="margin-right: 5px; margin-left:5px;">Login</p>
+                <p class="leading-[10px] font-medium text-[#757C98] text-center" style="margin-right: 5px; margin-left:5px; font-size:8px;" >Login</p>
             </div>
         </a>
 
