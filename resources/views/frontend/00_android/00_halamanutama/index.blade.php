@@ -21,11 +21,10 @@
                 <img src="/assets/00_android//images/icons/menu.svg" alt="icon" loading="lazy">
             </a> --}}
         </nav>
-        <br><br><br>
-        <div class="mt-[60px] z-10">
+        <div class="z-10">
             <h1 class="font-bold text-2xl leading-[36px] text-white text-center">Mas Jaki Blora <br>Sistem Informasi Pembina Jasa Konstruksi</h1>
         </div>
-        <br><br>
+        <br><br><br><br><br>
         <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
             {{-- <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy"> --}}
         </div>
