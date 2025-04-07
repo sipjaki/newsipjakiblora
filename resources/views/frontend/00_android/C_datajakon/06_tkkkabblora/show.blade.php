@@ -148,7 +148,7 @@ h5 {
                             <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
                             <h3>BLORA 58214</h3>
                             <p>_____________________________________________________________</p>
-                            <h3>PROFIL DATA SKK TENAGA KERJA</h3>
+                            <h3>PROFIL DATA TENAGA KERJA KONSTRUKSI</h3>
                             {{-- <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4> --}}
                         </div>
                     </div>
