@@ -1,51 +1,52 @@
+<style>
+    /* Styling umum */
+    #menu-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        margin-bottom: 0;
+    }
 
-        <style>
-            /* Styling untuk perangkat mobile */
-            @media (max-width: 768px) {
-                #menu-bar {
-                    position: fixed;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    z-index: 30;
-                    margin-bottom: 0;
-                }
+    .menu-container {
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 8px 30px 0 rgba(10, 9, 50, 0.12);
+        width: 100%;
+        border-radius: 0;
+        padding: 10px 0;
+    }
 
-                .menu-container {
-                    background-color: white;
-                    padding: 10px 0;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    box-shadow: 0 8px 30px 0 rgba(10, 9, 50, 0.12);
-                    width: 100%;
-                    border-radius: 0;
-                }
-            }
+    .menu-item {
+        padding: 10px;
+        text-align: center;
+    }
 
-            /* Styling untuk perangkat desktop */
-            @media (min-width: 769px) {
-                #menu-bar {
-                    position: fixed;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    z-index: 30;
-                    margin-bottom: 0;
-                }
+    /* Media Query untuk Mobile */
+    @media (max-width: 768px) {
+        .menu-container {
+            flex-direction: row; /* Menu horizontal untuk mobile */
+        }
 
-                .menu-container {
-                    background-color: white;
-                    padding: 20px 0;  /* Bisa sesuaikan padding agar lebih besar di desktop */
-                    display: flex;
-                    justify-content: space-evenly; /* Sesuaikan jika perlu */
-                    align-items: center;
-                    box-shadow: 0 8px 30px 0 rgba(10, 9, 50, 0.12);
-                    width: 100%;
-                    border-radius: 0;
-                }
-            }
-        </style>
+        .menu-item {
+            flex: 1;
+        }
+    }
+
+    /* Media Query untuk Desktop */
+    @media (min-width: 769px) {
+        .menu-container {
+            justify-content: space-around; /* Sesuaikan jarak antar item di desktop */
+        }
+
+        .menu-item {
+            padding: 15px 20px;  /* Bisa sesuaikan padding di desktop */
+        }
+    }
+</style>
 
 {{-- <div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
 
