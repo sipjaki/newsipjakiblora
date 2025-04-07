@@ -40,7 +40,7 @@
                 <div class="w-6 h-6 flex shrink-0">
                     <img src="/assets/00_android/menuhape/6.png" alt="icon" loading="lazy">
                 </div>
-                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center">Login</p>
+                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center" style="margin-right: 5px; margin-left:5px;">Login</p>
             </div>
         </a>
 
