@@ -1,57 +1,12 @@
-<style>
-    /* Styling umum */
-    #menu-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 30;
-        margin-bottom: 0;
-    }
 
-    .menu-container {
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 8px 30px 0 rgba(10, 9, 50, 0.12);
-        width: 100%;
-        border-radius: 0;
-        padding: 10px 0;
-    }
 
-    .menu-item {
-        padding: 10px;
-        text-align: center;
-    }
+{{-- <div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
 
-    /* Media Query untuk Mobile */
-    @media (max-width: 768px) {
-        .menu-container {
-            flex-direction: row; /* Menu horizontal untuk mobile */
-        }
+    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]"> --}}
 
-        .menu-item {
-            flex: 1;
-        }
-    }
+        <div id="Menu-bar" class="fixed bottom-[24px] left-0 right-0 w-full z-30" style="margin-bottom: -25px;">
 
-    /* Media Query untuk Desktop */
-    @media (min-width: 769px) {
-        .menu-container {
-            justify-content: space-around; /* Sesuaikan jarak antar item di desktop */
-        }
-
-        .menu-item {
-            padding: 15px 20px;  /* Bisa sesuaikan padding di desktop */
-        }
-    }
-</style>
-
-<div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
-
-    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center shadow-[0_8px_30px_0_#0A093212]">
-
+            <div class="bg-white p-[14px_0] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]">
 
         <a href="/404">
         <div class="flex flex-col gap-1 items-center">
