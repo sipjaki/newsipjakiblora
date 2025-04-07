@@ -1,4 +1,52 @@
 
+        <style>
+            /* Styling untuk perangkat mobile */
+            @media (max-width: 768px) {
+                #menu-bar {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 30;
+                    margin-bottom: 0;
+                }
+
+                .menu-container {
+                    background-color: white;
+                    padding: 10px 0;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    box-shadow: 0 8px 30px 0 rgba(10, 9, 50, 0.12);
+                    width: 100%;
+                    border-radius: 0;
+                }
+            }
+
+            /* Styling untuk perangkat desktop */
+            @media (min-width: 769px) {
+                #menu-bar {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 30;
+                    margin-bottom: 0;
+                }
+
+                .menu-container {
+                    background-color: white;
+                    padding: 20px 0;  /* Bisa sesuaikan padding agar lebih besar di desktop */
+                    display: flex;
+                    justify-content: space-evenly; /* Sesuaikan jika perlu */
+                    align-items: center;
+                    box-shadow: 0 8px 30px 0 rgba(10, 9, 50, 0.12);
+                    width: 100%;
+                    border-radius: 0;
+                }
+            }
+        </style>
+
 {{-- <div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
 
     <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]"> --}}
