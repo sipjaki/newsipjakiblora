@@ -187,7 +187,6 @@
                                     }
                                     </script>
 
-                                    </div>
 
 
                                     @php
@@ -196,7 +195,7 @@
                                     $isClosed = $today->greaterThanOrEqualTo($eventDate);
                                     @endphp
                                     @if ($isClosed)
-                                        <button style="
+                                    <button style="
                                             background-color: #FF0000;
                                             color: white;
                                             border: 2px solid #FF0000;
@@ -210,10 +209,10 @@
                                             align-items: center;
                                             justify-content: center;
                                             gap: 6px;
-                                        " disabled>
+                                            " disabled>
                                             <i class="fas fa-times-circle"></i> Ditutup
                                         </button>
-                                    @else
+                                        @else
                                         <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
                                             <button style="
                                             background-color: #006b1b;
@@ -231,13 +230,14 @@
                                             width:100%;
                                             " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
                                                onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
-                                                <i class="fas fa-user-check"></i> Daftar
+                                               <i class="fas fa-user-check"></i> Daftar
                                             </button>
                                         </a>
-                                    @endif
+                                        @endif
 
                                     </div>
 
+                                </div>
 
                                     @endforeach
 
