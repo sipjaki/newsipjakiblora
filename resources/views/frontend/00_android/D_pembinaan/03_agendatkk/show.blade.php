@@ -149,7 +149,7 @@ h5 {
                     </div>
 
                     <br>
-                    <h4 style="font-weight:bold;">I. IDENTITAS OPD</h4>
+                    <h4 style="font-weight:bold;">I. INFORMASI AGENDA PELATIHAN</h4>
                     <table class="table-identitas">
                         @foreach ($data as $item)
                         <tr>
@@ -182,8 +182,23 @@ h5 {
                             <td class="colon">:</td>
                             <td>{{$item->jumlahpeserta}}</td>
                         </tr>
-                        @endforeach
                     </table>
+
+                    <div class="portfolio-details-content">
+                        <div class="flex flex-col gap-[2px]">
+                            <h2 class="font-semibold text-sm">Isi Agenda: </h2>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$item->isiagenda!!}</p>
+                        </div>
+                        <br>
+
+                        <div class="flex flex-col gap-[2px]">
+                            <h2 class="font-semibold text-sm">Keterangan : </h2>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$item->keterangan!!}</p>
+                        </div>
+
+                    </div><!-- portfolio-details-content -->
+
+                    @endforeach
 
                     <br>
 
@@ -201,9 +216,10 @@ h5 {
                             </thead>
                             <tbody id="tableBody">
                                 @php
-                                    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+                                    $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
                                 @endphp
-                                @foreach ($data as $item)
+
+                                @foreach ($datamateripelatihan as $item)
                                 <tr>
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
@@ -228,23 +244,10 @@ h5 {
                                         @endif
                                     </td>
                                 </tr>
+                                @endforeach
 
                             </tbody>
                             </table>
-                                <div class="portfolio-details-content">
-                                    <div class="flex flex-col gap-[2px]">
-                                        <h2 class="font-semibold text-sm">Isi Agenda: </h2>
-                                        <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$item->isiagenda!!}</p>
-                                    </div>
-                                    <br>
-
-                                    <div class="flex flex-col gap-[2px]">
-                                        <h2 class="font-semibold text-sm">Keterangan : </h2>
-                                        <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$item->keterangan!!}</p>
-                                    </div>
-
-                                </div><!-- portfolio-details-content -->
-                        @endforeach
                     </div>
 
                     <br>
