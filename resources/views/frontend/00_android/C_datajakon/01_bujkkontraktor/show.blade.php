@@ -82,7 +82,7 @@
 
                         <button class="green-button" style="margin-bottom:10px; text-transform:uppercase">
                             {{-- <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"> --}}
-                            <i class="fas fa-file mr-2" style="margin-right:5px;"></i> <span style="color: black;">INFORMASI BUJK KONSTRUKSI : <br> </BR> {{$data->namalengkap}}</span>
+                            <i class="fas fa-file mr-2" style="margin-right:5px;"></i> <span style="color: black;">INFORMASI BUJK KONSTRUKSI : <br>{{$data->namalengkap}}</span>
                         </button>
 
 
