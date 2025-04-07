@@ -87,7 +87,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: center;">
                                 <!-- Left: Search Input -->
                                 <div style="position: relative; display: inline-block; margin-right: 5px;">
-                                    <input type="search" id="searchInput" placeholder="Cari Badan Usaha ...." onkeyup="searchTable()"
+                                    <input type="search" id="searchInput" placeholder="Cari Agenda Pelatihan ...." onkeyup="searchTable()"
                                            style="border: 1px solid #ccc; padding: 10px 40px 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                                     <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
@@ -130,7 +130,7 @@
                                 function searchTable() {
                                 let input = document.getElementById("searchInput").value;
 
-                                fetch(`/resbujkkontraktor?search=${input}`)
+                                fetch(`/resagendapelatihan?search=${input}`)
                                     .then(response => response.text())
                                     .then(html => {
                                         let parser = new DOMParser();
@@ -150,7 +150,7 @@
                                 <br><br>
 
                     @foreach ($data as $item)
-                    <a href="/resberita/{{$item->judulberita}}" class="card">
+                    <a href="/agendapembinaan/{{$item->judulberita}}" class="card">
                         <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                             <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
                                 <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
