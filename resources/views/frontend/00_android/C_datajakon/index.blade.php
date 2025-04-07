@@ -38,7 +38,7 @@
                                 </div>
 
                             <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">BUJK Kontraktor</p>
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">BUJK Konstruksi</p>
                         </p>
 
                             </div>
