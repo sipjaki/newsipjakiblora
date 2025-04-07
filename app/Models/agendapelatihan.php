@@ -29,5 +29,10 @@ class agendapelatihan extends Model
         return $this->belongsTo(user::class);
     }
 
+    public function materipelatihan()
+    {
+        return $this->belongsTo(materipelatihan::class);
+    }
+
 
 }
