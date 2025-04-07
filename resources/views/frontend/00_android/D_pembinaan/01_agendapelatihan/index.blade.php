@@ -146,7 +146,7 @@
 
 
                             <!-- Table Section -->
-                            <div class="flex flex-col gap-4 px-4" style="margin-top: -150px;">
+                            <div class="flex flex-col gap-4 px-4">
                                 <br><br>
 
                     @foreach ($data as $item)
