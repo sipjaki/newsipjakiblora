@@ -84,7 +84,7 @@
         <a href="/web">
             <div class="flex flex-col items-center gap-2 w-full">
                 <div class="w-[50px] h-[50px] flex justify-center items-center shrink-0 rounded-full bg-gray-100 overflow-hidden">
-                    <img src="/assets/00_android/00_iconmenuutama/01_menuutam/8.png" class="w-[70%] h-[70%] object-contain" alt="icon" loading="lazy">
+                    <img src="/assets/00_android/00_iconmenuutama/01_menuutam/9.png" class="w-[70%] h-[70%] object-contain" alt="icon" loading="lazy">
                 </div>
                 <p class="font-medium text-sm text-[#757C98] leading-[21px] w-full text-center whitespace-nowrap">
                     Dekstop
