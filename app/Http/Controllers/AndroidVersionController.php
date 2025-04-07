@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\agendapelatihan;
+use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
 use App\Models\strukturdinas;
 
@@ -515,7 +516,43 @@ class AndroidVersionController extends Controller
             $user = Auth::user();
 
             return view('frontend.00_android.D_pembinaan.01_agendapelatihan.index', [
-                'title' => 'Agenda Pelatihan Jasa Konstruksi',
+                'title' => 'Agenda Pelatihan Jasa Konstruksi Kabupaten Blora',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search,
+                'user' => $user, // Mengirimkan data paginasi ke view
+            ]);
+        }
+
+
+        // MENU AGENDA TKK KAB BLORA  ------------------
+
+        public function menuresagendatkk(Request $request)
+        {
+            $perPage = $request->input('perPage', 5);
+            $search = $request->input('search');
+
+            $query = agendaskk::query();
+
+            if ($search) {
+                $query->where('namakegiatan', 'LIKE', "%{$search}%")
+                ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                ->orWhere('penutupan', 'LIKE', "%{$search}%")
+                ->orWhere('foto', 'LIKE', "%{$search}%");
+                // ->orWhere('no_telepon', 'LIKE', "%{$search}%");
+            }
+
+            $data = $query->paginate($perPage);
+
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.D_pembinaan.03_agendatkk.partials.table', compact('data'))->render()
+                ]);
+            }
+            $user = Auth::user();
+
+            return view('frontend.00_android.D_pembinaan.03_agendatkk.index', [
+                'title' => 'Agenda TKK Jasa Konstruksi Kabupaten Blora',
                 'data' => $data,
                 'perPage' => $perPage,
                 'search' => $search,
