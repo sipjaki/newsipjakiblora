@@ -489,17 +489,40 @@ class AndroidVersionController extends Controller
         }
 
         // MENU AGENDA PELATIHAN ------------------
-        public function menuresagendapelatihan()
+
+        public function menuresagendapelatihan(Request $request)
         {
+            $perPage = $request->input('perPage', 5);
+            $search = $request->input('search');
+
+            $query = agendapelatihan::query();
+
+            if ($search) {
+                $query->where('namakegiatan', 'LIKE', "%{$search}%")
+                ->orWhere('keterangan', 'LIKE', "%{$search}%");
+                // ->orWhere('no_telepon', 'LIKE', "%{$search}%");
+            }
+
+            $data = $query->paginate($perPage);
+
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.D_pembinaan.01_agendapelatihan.partials.table', compact('data'))->render()
+                ]);
+            }
             $user = Auth::user();
-            $databerita = agendapelatihan::paginate(6);
 
             return view('frontend.00_android.D_pembinaan.01_agendapelatihan.index', [
                 'title' => 'Agenda Pelatihan Jasa Konstruksi',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search,
                 'user' => $user, // Mengirimkan data paginasi ke view
-                'data' => $databerita, // Mengirimkan data paginasi ke view
             ]);
         }
+
+
+
 
         // MENU PENGAWASAN JASA KONSTRUKSI
         // -==============================================================================================================
@@ -538,4 +561,6 @@ class AndroidVersionController extends Controller
         }
 
 
-        }
+
+
+}
