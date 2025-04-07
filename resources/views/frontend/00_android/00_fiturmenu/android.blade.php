@@ -1,13 +1,8 @@
 
 
-{{-- <div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
+<div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
 
-    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]"> --}}
-
-        <div id="Menu-bar" class="fixed bottom-[24px] left-0 right-0 w-full z-30" style="margin-bottom: -25px;">
-
-            <div class="bg-white p-[14px_0] rounded-none flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212] w-full">
-                <!-- Isi menu bar Anda di sini -->
+    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]">
 
         <a href="/404">
         <div class="flex flex-col gap-1 items-center">
