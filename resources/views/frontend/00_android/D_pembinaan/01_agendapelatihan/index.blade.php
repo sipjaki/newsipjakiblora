@@ -146,7 +146,7 @@
 
 
                             <!-- Table Section -->
-                            <div class="flex flex-col gap-4 px-4">
+                            <div class="flex flex-col gap-4 px-4" style="margin-top: -25px;">
                                 <br><br>
 
                     @foreach ($data as $item)
@@ -190,6 +190,56 @@
                                     </div>
                                     </div>
                                     </a>
+
+                                    <div class="flex flex-col gap-[6px]">
+                                        <p class="text-xs leading-[18px]">Kegiatan : <span class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</span></p>
+                                        @php
+                                        $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
+                                        $today = \Carbon\Carbon::now();
+                                        $isClosed = $today->greaterThanOrEqualTo($eventDate);
+                                        @endphp
+                                        @if ($isClosed)
+                                            <button style="
+                                                background-color: #FF0000;
+                                                color: white;
+                                                border: 2px solid #FF0000;
+                                                padding: 8px 12px;
+                                                font-size: 14px;
+                                                font-weight: bold;
+                                                border-radius: 6px;
+                                                cursor: not-allowed;
+                                                opacity: 0.6;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                gap: 6px;
+                                            " disabled>
+                                                <i class="fas fa-times-circle"></i> Ditutup
+                                            </button>
+                                        @else
+                                            <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
+                                                <button style="
+                                                background-color: #006b1b;
+                                                color: white;
+                                                border: 2px solid #006b1b;
+                                                padding: 8px 12px;
+                                                font-size: 14px;
+                                                font-weight: bold;
+                                                border-radius: 6px;
+                                                opacity: 0.6;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                gap: 6px;
+                                                width:100%;
+                                                " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
+                                                   onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
+                                                    <i class="fas fa-user-check"></i> Daftar
+                                                </button>
+                                            </a>
+                                        @endif
+                                    </div>
+
                                     @endforeach
 
                                 </div>
