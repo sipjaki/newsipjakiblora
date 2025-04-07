@@ -48,12 +48,10 @@
     }
 </style>
 
-{{-- <div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
+<div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
 
-    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]"> --}}
+    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-center gap-8 shadow-[0_8px_30px_0_#0A093212]">
 
-        <div id="menu-bar" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 30; margin-bottom: 0;">
-            <div class="menu-container" style="background-color: white; padding: 10px 0; display: flex; justify-content: space-around; align-items: center; box-shadow: 0 8px 30px 0 rgba(10, 9, 50, 0.12); width: 100%; border-radius: 0;">
 
         <a href="/404">
         <div class="flex flex-col gap-1 items-center">
