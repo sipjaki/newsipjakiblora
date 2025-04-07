@@ -7,18 +7,18 @@
         <a href="/404">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/dashboard.png" alt="icon" loading="lazy">
+            <img src="/assets/00_android/menuhape/1.png" alt="icon" loading="lazy">
           </div>
-          {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Agenda</p> --}}
+          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Dashboard</p>
         </div>
       </a>
 
       <a href="/404">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/informasi.png" alt="icon" loading="lazy">
+            <img src="/assets/00_android/menuhape/3.png" alt="icon" loading="lazy">
           </div>
-          {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">Menu</p> --}}
+          <p class="text-xs leading-[10px] font-medium text-[#757C98]">Informasi</p>
         </div>
       </a>
       <a href="/">
@@ -30,9 +30,9 @@
       <a href="/404">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/berkas.png" alt="icon" loading="lazy">
+            <img src="/assets/00_android/menuhape/2.png" alt="icon" loading="lazy">
           </div>
-          {{-- <p class="text-xs leading-[10px] font-medium text-[#757C98]">AHSP</p> --}}
+          <p class="text-xs leading-[10px] font-medium text-[#757C98]">AHSP</p>
         </div>
       </a>
       <script>
@@ -57,7 +57,7 @@
       <a href="/404" id="login-icon" style="display:none;">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/login.png" alt="icon" loading="lazy">
+            <img src="/assets/00_android/menuhape/6.png" alt="icon" loading="lazy">
           </div>
           <p class="text-xs leading-[10px] font-medium text-[#757C98]">Login</p>
         </div>
@@ -67,7 +67,7 @@
       <a href="/404" id="settings-icon" style="display:none;">
         <div class="flex flex-col gap-1 items-center">
           <div class="w-6 h-6 flex shrink-0">
-            <img src="/assets/00_android/menuhape/settings.png" alt="icon" loading="lazy">
+            <img src="/assets/00_android/menuhape/5.png" alt="icon" loading="lazy">
           </div>
           <p class="text-xs leading-[10px] font-medium text-[#757C98]">Pengaturan</p>
         </div>
