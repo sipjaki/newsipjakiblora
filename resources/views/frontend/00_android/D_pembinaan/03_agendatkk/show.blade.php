@@ -205,51 +205,48 @@ h5 {
 
                     <h4 style="font-weight:bold;">II. DOWNLOAD MATERI PELATIHAN </h4>
 
-                    <table class="custom-fl-table" id="sortableTable">
-                        <thead>
-                            <tr>
-                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Judul </th>
-                                <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Materi </th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                            @php
-                                $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
-                                $materiFound = false; // Variabel untuk mengecek apakah ada materi
-                            @endphp
-
-                            @foreach ($datamateripelatihan as $item)
-                            <tr>
-                                <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
-                                <td>
-                                    @if(!empty($item->materipelatihan) && Storage::exists('public/' . $item->materipelatihan))
-                                        <!-- Jika ada file materi yang valid, tampilkan tombol untuk download -->
-                                        <button id="sertifikat-btn-{{ $loop->iteration }}" class="btn btn-primary">Download Materi</button>
-                                        <script>
-                                            document.getElementById('sertifikat-btn-{{ $loop->iteration }}').addEventListener('click', function() {
-                                                const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}"; // URL file yang ingin diunduh
-                                                const a = document.createElement('a');
-                                                a.href = fileUrl;
-                                                a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                                                document.body.appendChild(a);
-                                                a.click();
-                                                document.body.removeChild(a);
-                                            });
-                                        </script>
-                                        @php $materiFound = true; @endphp <!-- Set variabel jadi true jika ada materi -->
-                                    @endif
-                                </td>
-                            </tr>
-                            @endforeach
-
-                        </tbody>
-                    </table>
-
-                    @if(!$materiFound)
-                        <p>Materi Belum Di Upload</p> <!-- Pesan ini hanya muncul jika tidak ada materi yang ditemukan -->
-                    @endif
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%; border-collapse: collapse;">
+                            <thead style="background-color: #343a40; color: white;">
+                                <tr>
+                                    <th style="text-align: center; padding: 12px;">No</th>
+                                    <th style="padding: 12px; text-transform: capitalize;">Judul Materi Pelatihan</th>
+                                    <th style="padding: 12px;">Status Materi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                @php
+                                    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+                                @endphp
+                                @foreach ($data as $item)
+                                <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'transparent' }};">
+                                    <td style="text-align: center; padding: 12px;">{{ $loop->iteration + $start - 1 }}</td>
+                                    <td style="padding: 12px; text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
+                                    <td style="padding: 12px;">
+                                        @if($item->materipelatihan)
+                                            <!-- Jika ada file materi, tampilkan tombol untuk download -->
+                                            <button id="sertifikat-btn-{{ $item->id }}" style="padding: 5px 10px; font-size: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px;">Download Materi</button>
+                                            <script>
+                                                document.getElementById('sertifikat-btn-{{ $item->id }}').addEventListener('click', function() {
+                                                    const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}"; // URL file yang ingin diunduh
+                                                    const a = document.createElement('a');
+                                                    a.href = fileUrl;
+                                                    a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
+                                                    document.body.appendChild(a);
+                                                    a.click();
+                                                    document.body.removeChild(a);
+                                                });
+                                            </script>
+                                        @else
+                                            <!-- Jika tidak ada file materi, tampilkan teks -->
+                                            <span style="color: red; font-weight: bold;">MATERI BELUM DI UPLOAD</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
 
 
                     <br>
