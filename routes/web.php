@@ -139,10 +139,13 @@ Route::get('/respembinaan', [AndroidVersionController::class, 'menurespembinaan'
 // MENU 1 AGENDA PELATIHAN ------------------------------------------------
 Route::get('/resagendapelatihan', [AndroidVersionController::class, 'menuresagendapelatihan']);
 Route::get('/resagendapelatihan/{namakegiatan}', [AndroidVersionController::class, 'menuresagendapelatihandetails']);
+Route::get('/respesertapelatihan', [AndroidVersionController::class, 'respesertapelatihan']);
+Route::get('/respelatihanpeserta/{namakegiatan}', [AndroidVersionController::class, 'menurespelatihanpeserta']);
 
 // MENU 3 AGENDA TKK KONSTRUKSI KAB BLORA ------------------------------------------------
 Route::get('/resagendatkk', [AndroidVersionController::class, 'menuresagendatkk']);
 Route::get('/resagendatkk/{namakegiatan}', [AndroidVersionController::class, 'menuresagendatkkdetails']);
+Route::get('/respelatihanskk/{namakegiatan}', [AndroidVersionController::class, 'menurespelatihanskk']);
 
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);

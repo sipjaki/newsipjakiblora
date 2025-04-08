@@ -6,7 +6,10 @@ use App\Models\agendapelatihan;
 use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
 use App\Models\strukturdinas;
+use App\Models\pesertapelatihan;
 use App\Models\materipelatihanskk;
+use App\Models\jenjang;
+use App\Models\kategoripelatihan;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -555,6 +558,106 @@ class AndroidVersionController extends Controller
                  // 'start' => $start,
              ]);
              }
+
+
+             public function respesertapelatihan(Request $request)
+    {
+        $perPage = $request->input('perPage', 10);
+        $search = $request->input('search');
+
+        $query = agendapelatihan::query();
+
+        if ($search) {
+            $query->where('namakegiatan', 'LIKE', "%{$search}%")
+                  ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
+                  ->orWhere('lokasi', 'LIKE', "%{$search}%")
+                  ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                  ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                      $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+                  });
+
+        }
+
+        $data = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.D_pembinaan.02_pesertapelatihan.table', compact('data'))->render()
+            ]);
+        }
+
+        $user = Auth::user();
+        $datasub = jenjang::all();
+        $datasubkategori = kategoripelatihan::all();
+
+
+        return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.index', [
+            'title' => 'Agenda Pelatihan Konstruksi Kab Blora',
+            'data' => $data,
+            'perPage' => $perPage,
+            'search' => $search,
+            'datasub' => $datasub,
+            'datasubkategori' => $datasubkategori,
+            'user' => $user
+        ]);
+    }
+
+            //  MENU PESERTA AGENDA PERLATIHAN ===================================================
+
+            public function menurespelatihanpeserta(Request $request, $namakegiatan)
+    {
+        $perPage = $request->input('perPage', 50);
+        $search = $request->input('search');
+
+        $query = pesertapelatihan::query();
+
+        if ($search) {
+            $query->where('jeniskelamin', 'LIKE', "%{$search}%")
+                  ->orWhere('instansi', 'LIKE', "%{$search}%")
+                  ->orWhereHas('user', function ($q) use ($search) {
+                      $q->where('user', 'LIKE', "%{$search}%");
+                  });
+
+        }
+
+        $datapesertapelatihan = $query->paginate($perPage);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.00_android.D_pembinaan.02_pesertapelatihan.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        $agendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
+
+        // Jika asosiasi tidak ditemukan, tampilkan 404
+        if (!$agendapelatihan) {
+            return abort(404, 'Asosiasi tidak ditemukan');
+        }
+
+        $user = Auth::user();
+
+            $datapesertapelatihan = pesertapelatihan::where('agendapelatihan_id', $agendapelatihan->id)
+                        ->select(['id', 'user_id', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id', 'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi' ])
+                        ->paginate(25);
+
+        $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
+        // $datauser = user::all();
+
+        // Ambil data user saat ini
+        $user = Auth::user();
+
+
+        return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.show', [
+            'title' => 'Daftar Peserta Agenda ',
+            'data' => $dataagendapelatihan,
+            'datapeserta' => $datapesertapelatihan,
+            'perPage' => $perPage,
+            'search' => $search,
+            'user' => $user,
+            // 'datapeserta' => $datauser
+        ]);
+    }
 
 
         // MENU AGENDA SERTIFIKASI TKK JASA KONSTRUKSI KAB BLORA  ------------------
