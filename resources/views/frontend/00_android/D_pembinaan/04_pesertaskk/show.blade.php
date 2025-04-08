@@ -177,7 +177,7 @@ h5 {
             </nav>
             <div class="w-full h-full absolute bg-white overflow-hidden">
                 <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
-                <img src="/assets/00_android/iconmenu/menuutama2.jpg" class="w-full h-full object-cover" alt="cover">
+                <img src="/assets/00_android/iconmenu/menuutama3.jpg" class="w-full h-full object-cover" alt="cover">
             </div>
         </div>
         <div class="flex flex-col z-30">
@@ -185,150 +185,138 @@ h5 {
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
                 <div class="container-surat">
-                    <div class="header-surat">
-                        <div class="header-text">
-                            <h3>AGENDA SERTIFIKASI TKK KABUPATEN BLORA </h3>
-                            <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
-                            <p>------------------------------------------------------------</p>
+
+                    <body>
+
+                        <div class="table-wrapper" style="position: relative;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
+                                <div>
+                                    <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
+                                    <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="75">75</option>
+                                        <option value="100">100</option>
+                                        <option value="150">150</option>
+                                        <option value="200">200</option>
+                                    </select>
+                                </div>
+
+                                <div style="position: relative; display: inline-block; margin-right:10px;">
+                                    <input type="search" id="searchInput" placeholder="Cari Peserta Pelatihan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                    <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                                </div>
+
+                            </div>
+<br>
+                            <div>
+                                <span style="font-weight:bold;"><p>Judul : {{$data->namakegiatan}}</p></span>
+                            </div>
+                            <div style="overflow-x: auto; margin-top: 15px;">
+                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Nama Lengkap  </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Gender </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Instansi </th>
+                                            {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
+                                        @foreach ($datapeserta as $item )
+                                        <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
+                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                            <td style="text-transform: capitalize;">
+                                                {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
+
+                                            </td>
+                                            <td style="text-align: center;">{{$item->jeniskelamin}}</td>
+                                            <td>{{$item->instansi}}</td>
+
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br><br>
+
+                            <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
+                            <div class="pagination-info-box" style="margin: 20px 0; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px; width: 100%; text-align: center;">
+                                <div class="pagination-info" style="color: black; font-weight: 500; font-size: 14px; display: inline-block;">
+                                    Data Ke {{ $datapeserta->firstItem() }} Sampai {{ $datapeserta->lastItem() }} Dari {{ $datapeserta->total() }} Jumlah {{$title}}
+                                </div>
+                            </div>
+                            <!-- Pagination Section -->
+                            <div class="pagination-container" style="display: flex; flex-direction: column; align-items: center;">
+                                <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
+                                    <li class="page-item {{ $datapeserta->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
+                                        <a class="page-link" href="{{ $datapeserta->previousPageUrl() }}" style="padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; color: black; font-size: 14px;">
+                                            <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>Previous
+                                        </a>
+                                    </li>
+                                    <li class="page-item {{ $datapeserta->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
+                                        <a class="page-link" href="{{ $datapeserta->nextPageUrl() }}" style="padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; color: black; font-size: 14px;">
+                                            Next <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+                        <script>
+                            // Fungsi untuk mengupdate jumlah entri per halaman
+                            function updateEntries() {
+                                let selectedValue = document.getElementById("entries").value;
+                                let url = new URL(window.location.href);
+                                url.searchParams.set("perPage", selectedValue);  // Update parameter perPage
+                                window.location.href = url.toString();  // Mengarahkan ke URL yang baru
+                            }
+
+                            // Fungsi untuk melakukan pencarian tabel
+                            function searchTable() {
+                                let input = document.getElementById("searchInput").value;
+
+                                // Pastikan namakegiatan di-encode dengan benar jika diperlukan
+                                const namakegiatan = encodeURIComponent("{{$data->namakegiatan}}");
+
+                                // Melakukan fetch dengan search query
+                                fetch(`/respelatihanpeserta/${namakegiatan}?search=${encodeURIComponent(input)}`)
+                                    .then(response => response.text())
+                                    .then(html => {
+                                        // Menggunakan DOMParser untuk mengambil isi baru tabel
+                                        let parser = new DOMParser();
+                                        let doc = parser.parseFromString(html, "text/html");
+                                        let newTableBody = doc.querySelector("#tableBody").innerHTML;
+
+                                        // Update bagian tabel dengan data baru
+                                        document.querySelector("#tableBody").innerHTML = newTableBody;
+                                    })
+                                    .catch(error => console.error("Error fetching search results:", error));  // Menangani error jika ada
+                            }
+                        </script>
+                                                            </div><!-- donate-box-inner -->
+                                    </div><!-- col-xl-8 col-lg-12 -->
+                                </div><!-- row -->
+                            </div><!-- container -->
+                            @include('frontend.00_android.00_fiturmenu.keterangan')
+
+                            <br><br><br><br><br>
+
+                                    @include('frontend.00_android.00_fiturmenu.android')
+
+                            {{-- @include('frontend.00_approve.01_cssterpisah.paginator') --}}
+                        </section><!-- donate-section -->
+
+
                     </div>
 
-                    <br>
-                    <h4 style="font-weight:bold;">I. INFORMASI AGENDA SERTIFIKASI </h4>
-                    <table class="table-identitas">
-                        {{-- @foreach ($data as $item) --}}
-                        <tr>
-                            <td class="label">1</td>
-                            <td class="label">Nama Kegiatan</td>
-                            <td class="colon">:</td>
-                            <td>{{$data->namakegiatan}}</td>
-                        </tr>
-                        <tr>
-                            <td class="label">2</td>
-                            <td class="label">Waktu Pelaksanaan</td>
-                            <td class="colon">:</td>
-                            <td>{{$data->waktupelaksanaan}}</td>
-                        </tr>
-                        <tr>
-                            <td class="label">3</td>
-                            <td class="label">Penyelenggara</td>
-                            <td class="colon">:</td>
-                            <td>{{$data->penyelenggara}}</td>
-                        </tr>
-                        <tr>
-                            <td class="label">4</td>
-                            <td class="label">Lokasi</td>
-                            <td class="colon">:</td>
-                            <td>{{$data->lokasi}}</td>
-                        </tr>
-                        <tr>
-                            <td class="label">5</td>
-                            <td class="label">Jumlah Peserta</td>
-                            <td class="colon">:</td>
-                            <td>{{$data->jumlahpeserta}}</td>
-                        </tr>
-                    </table>
-                            <br>
-                    <div class="portfolio-details-content">
-                        <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold" style="font-size: 16px;">Isi Agenda: </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
-                        </div>
-                        <br>
-
-                        <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold text-sm" style="font-size: 16px;">Keterangan : </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
-                        </div>
-
-                    </div><!-- portfolio-details-content -->
-
-                    {{-- @endforeach --}}
-
-                    <br>
-
-                    <h4 style="font-weight:bold;">II. DOWNLOAD MATERI SERTIFIKASI </h4>
-                    <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
-                        <table class="custom-fl-table" id="sortableTable">
-                            <thead>
-                                <tr>
-                                    <th onclick="sortTable(0)" style="cursor:pointer; width:100px;"> No </th>
-                                    <th onclick="sortTable(1)" style="cursor:pointer; width:500px;"> Judul </th>
-                                    <th onclick="sortTable(2)" style="cursor:pointer; width:800px;"> Materi </th>
-                                </tr>
-                            </thead>
-                            <tbody id="tableBody">
-                                @php
-                                    $start = ($datamateripelatihanskk->currentPage() - 1) * $datamateripelatihanskk->perPage() + 1;
-                                    $materiFound = false; // Variabel untuk mengecek apakah ada materi
-                                    $dataAvailable = false; // Variabel untuk mengecek apakah ada data
-                                @endphp
-
-                                @foreach ($datamateripelatihanskk as $item)
-                                <tr>
-                                    <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                    <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulskk)) }}</td>
-                                    <td>
-                                        <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
-                                        <script>
-                                            // Cek apakah file materi pelatihan ada
-                                            const fileUrl = "{{ asset('storage/' . $item->materipelatihanskk) }}";
-                                            const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek jika URL file valid atau kosong
-
-                                            if (!isFileAvailable) {
-                                                // Jika file tidak ada, tampilkan tombol merah dengan tulisan "Materi Belum Di Upload"
-                                                document.write(`
-                                                    <button class="badge"
-                                                            style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
-                                                        Materi Belum Di Upload
-                                                    </button>
-                                                `);
-                                            } else {
-                                                // Jika file ada, tampilkan tombol download
-                                                document.write(`
-                                                    <button id="sertifikat-btn" class="badge"
-                                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                                        <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                                    </button>
-                                                `);
-                                                document.getElementById('sertifikat-btn').addEventListener('click', function() {
-                                                    const a = document.createElement('a');
-                                                    a.href = fileUrl;
-                                                    a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                                                    document.body.appendChild(a);
-                                                    a.click();
-                                                    document.body.removeChild(a);
-                                                });
-                                            }
-                                        </script>
-                                    </td>
-
-                                </tr>
-                                @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
-                                @endforeach
-
-                            </tbody>
-                        </table>
-
-                        <!-- Jika tidak ada data sama sekali, tampilkan pesan di luar tabel -->
-                        @if(!$dataAvailable)
-                            <p class="no-data-message">MATERI BELUM DI UPLOAD</p>
-                        @endif
-                    </div>
-
-                    <br>
                     </div>
 
             </div>
         </div>
 
-        @include('frontend.00_android.00_fiturmenu.keterangan')
-
-        <br><br><br><br><br>
-
-                @include('frontend.00_android.00_fiturmenu.android')
 
     </section>
 

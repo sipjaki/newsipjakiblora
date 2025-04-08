@@ -1,97 +1,194 @@
 <style>
-    /* Gaya untuk tabel */
-    .custom-table-container {
-    width: 100%;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
-    border-radius: 15px; /* Round the corners of the container */
-    border: 1px solid #ddd; /* Optional: Adds a border around the container */
+    /* Styling untuk tabel */
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    .custom-fl-table th, .custom-fl-table td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .custom-fl-table th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+    }
+
+    .custom-fl-table td {
+        background-color: #f9f9f9;
+    }
+
+    /* Styling untuk baris yang tidak memiliki materi */
+    .no-materi-message {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        background-color: #ffcccc;
+        display: block;
+        margin: 10px 0;
+        padding: 5px;
+    }
+
+    /* Styling untuk pesan 'MATERI BELUM DI UPLOAD' di luar tabel */
+    .no-data-message {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+
+    .header-surat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
 }
 
-.custom-fl-table {
+.header-text {
+    margin: 0 auto;
+}
+
+.header-text h3, .header-text h4, .header-text p {
+    margin: 5px 0; /* Memberikan jarak antar elemen */
+}
+
+.table-identitas {
     width: 100%;
     border-collapse: collapse;
-    min-width: 700px; /* Prevents the table from shrinking too much */
+    margin-top: 20px;
 }
 
-.custom-fl-table th, .custom-fl-table td {
-    padding: 10px;
+.table-identitas td {
+    padding: 8px 12px;
     border: 1px solid #ddd;
-    text-align: left;
 }
 
-.custom-fl-table th {
-    background-color: #f4f4f4;
+.table-identitas .label {
     font-weight: bold;
 }
 
-.custom-fl-table td {
-    text-transform: capitalize;
+.table-identitas .colon {
+    text-align: center;
+    font-weight: bold;
 }
 
-/* Optional: Add some styles to make the scrollbar appear nicer */
-.custom-table-container::-webkit-scrollbar {
-    height: 8px;
+.table-identitas tr:nth-child(even) {
+    background-color: #f9f9f9; /* Memberikan latar belakang berbeda pada baris genap */
 }
 
-.custom-table-container::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
+.table-identitas tr:hover {
+    background-color: #f1f1f1; /* Efek hover untuk baris */
 }
 
-.custom-table-container::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+.table-identitas td {
+    vertical-align: middle; /* Memastikan konten ter-align dengan baik di tengah */
 }
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.table-profil {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.table-profil td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+}
+
+.table-profil .label {
+    font-weight: bold;
+    width: 25%; /* Menjaga label agar tidak terlalu melebar */
+}
+
+.table-profil .colon {
+    text-align: center;
+    font-weight: bold;
+    width: 10%;
+}
+
+.table-profil tr:nth-child(even) {
+    background-color: #f9f9f9; /* Memberikan latar belakang berbeda pada baris genap */
+}
+
+.table-profil tr:hover {
+    background-color: #f1f1f1; /* Efek hover untuk baris */
+}
+
+.table-profil td {
+    vertical-align: middle; /* Memastikan konten ter-align dengan baik di tengah */
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+
 
 </style>
-
-
 @include('frontend.00_android.00_fiturmenu.header')
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
     <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-white overflow-x-hidden">
-        <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama2.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden; height: 350px;">
-
-            <nav class="pt-5 px-3 flex justify-between items-center">
-                <!-- Logo bagian kiri -->
+        <div class="header flex flex-col bg-[#56BBC5] overflow-hidden h-[350px] relative -mb-[92px]">
+            <nav class="pt-5 px-3 flex justify-between items-center relative z-20">
                 <div class="flex items-center gap-[10px]">
                     <a href="#" class="w-10 h-10 flex shrink-0">
+                        {{-- <img src="assets/images/icons/back.svg" alt="icon"> --}}
                         <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
                     </a>
                 </div>
-
-                <!-- Judul bagian tengah -->
-                <div class="flex flex-col items-center justify-center text-center">
-                    <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
-                    <br>
-                    <p class="font-semibold text-xl text-white">{{$title}}</p>
+                <div class="flex flex-col items-center text-center">
+                    <p class="text-xs leading-[18px] text-white">{{$title}}</p>
+                    {{-- <p class="font-semibold text-sm text-white">#WeNeedHelp</p> --}}
                 </div>
-
-                <!-- Ikon bagian kanan -->
                 <a href="" class="w-10 h-10 flex shrink-0">
+                    {{-- <img src="assets/images/icons/like.svg" alt="icon"> --}}
                     <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
-
                 </a>
             </nav>
+            <div class="w-full h-full absolute bg-white overflow-hidden">
+                <div class="w-full h-[266px] bg-gradient-to-b from-black/90 to-[#080925]/0 absolute z-10"></div>
+                <img src="/assets/00_android/iconmenu/menuutama2.jpg" class="w-full h-full object-cover" alt="cover">
+            </div>
         </div>
-
-        <div class="flex flex-col z-30" style="margin-top:-100px;">
+        <div class="flex flex-col z-30">
 
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
-                    <div class="flex flex-col gap-[10px]">
-                        <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">{{$title}}</p>
 
-                        <div class="flex flex-col gap-[10px]">
-                            {{-- <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p> --}}
+                <div class="container-surat">
 
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <!-- Left: Search Input -->
-                                <div style="position: relative; display: inline-block; margin-right: 5px;">
-                                    <input type="search" id="searchInput" placeholder="Cari Agenda Pelatihan ...." onkeyup="searchTable()"
-                                           style="border: 1px solid #ccc; padding: 10px 40px 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                                    <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                                </div>
+                    <body>
 
+                        <div class="table-wrapper" style="position: relative;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
                                 <div>
                                     <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
                                     <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
@@ -104,134 +201,59 @@
                                         <option value="200">200</option>
                                     </select>
                                 </div>
-                            </div>
 
-                            <script>
-                                function updateEntries() {
-                                    let selectedValue = document.getElementById("entries").value;
-                                    let url = new URL(window.location.href);
-                                    url.searchParams.set("perPage", selectedValue);
-                                    window.location.href = url.toString();
-                                }
-
-
-                                function searchTable() {
-                                let input = document.getElementById("searchInput").value;
-
-                                fetch(`/respesertaskk?search=${input}`)
-                                    .then(response => response.text())
-                                    .then(html => {
-                                        let parser = new DOMParser();
-                                        let doc = parser.parseFromString(html, "text/html");
-                                        let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                        document.querySelector("#tableBody").innerHTML = newTableBody;
-                                    })
-                                    .catch(error => console.error("Error fetching search results:", error));
-                            }
-
-                                    </script>
-
-
-
-                            <!-- Table Section -->
-                            <div class="flex flex-col gap-4 px-4" style="margin-top: -25px;">
-                                <br><br>
-
-                    @foreach ($data as $item)
-                    <class="card" id="tableBody">
-                        <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                            <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                                <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</p>
-                                {{-- <p class="text-xs leading-[18px]">Target --}}
-                                    <span class="text-[#ffffff]">
-                                        @php
-                                            $text = $item->keterangan;
-                                            $limit = 100;
-                                            $truncatedText = strlen($text) > $limit ? substr($text, 0, $limit) . '...' : $text;
-                                            @endphp
-                                        {{ $truncatedText }}
-                                    </span>
-                                </p>
-                                <p class="text-xs text-blue-500 cursor-pointer line-clamp-1 hover:line-clamp-none" id="moreText" style="display: none;">
-                                    <span class="text-[#ffffff] line-clamp-1 hover:line-clamp-none">{{ $item->keterangan }}</span>
-                                </p>
-                                <button class="text-xs mt-2" onclick="toggleText()" style="color: navy;">Selengkapnya</button>
-
-                                <script>
-                                    function toggleText() {
-                                        var moreText = document.getElementById("moreText");
-                                        var button = document.querySelector("button");
-
-                                        if (moreText.style.display === "none") {
-                                            moreText.style.display = "inline";
-                                            button.innerHTML = "Tutup";
-                                        } else {
-                                            moreText.style.display = "none";
-                                            button.innerHTML = "Selengkapnya";
-                                        }
-                                    }
-                                    </script>
-
-
-
-                                    @php
-                                    $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
-                                    $today = \Carbon\Carbon::now();
-                                    $isClosed = $today->greaterThanOrEqualTo($eventDate);
-                                    @endphp
-                                    @if ($isClosed)
-                                    <button style="
-                                            background-color: #FF0000;
-                                            color: white;
-                                            border: 2px solid #FF0000;
-                                            padding: 8px 12px;
-                                            font-size: 14px;
-                                            font-weight: bold;
-                                            border-radius: 6px;
-                                            cursor: not-allowed;
-                                            opacity: 0.6;
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: center;
-                                            gap: 6px;
-                                            " disabled>
-                                            <i class="fas fa-times-circle"></i> Ditutup
-                                        </button>
-                                        @else
-                                        <a href="/resskkpeserta/{{$item->namakegiatan}}" style="text-decoration: none;">
-                                            <button style="
-                                            background-color: #006b1b;
-                                            color: white;
-                                            border: 2px solid #006b1b;
-                                            padding: 8px 12px;
-                                            font-size: 14px;
-                                            font-weight: bold;
-                                            border-radius: 6px;
-                                            opacity: 0.6;
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: center;
-                                            gap: 6px;
-                                            width:100%;
-                                            " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
-                                               onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
-                                               <i class="fas fa-user-check"></i> Daftar
-                                            </button>
-                                        </a>
-                                        @endif
-
-                                    </div>
-
+                                <div style="position: relative; display: inline-block; margin-right:10px;">
+                                    <input type="search" id="searchInput" placeholder="Cari Pelatihan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                    <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
 
-                                    @endforeach
+                            </div>
 
-                                </div>
-
-                                <br>
+                            <div style="overflow-x: auto; margin-top: 15px;">
+                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kategori </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Nama Kegiatan </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th>
+                                            <th style="text-align:center; width:100px;"> View Peserta </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                                        @foreach ($data as $item )
+                                        <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
+                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                            <td>{{$item->kategoripelatihan->kategoripelatihan}}</td>
+                                            <td>{{$item->namakegiatan}}</td>
+                                            <td>{{$item->keterangan}}</td>
+                                            <td style="text-align: center">
+                                                <div style="
+                                                    display: inline-block;
+                                                    font-size:14px;
+                                                    padding: 8px 16px;
+                                                    background-color: navy;
+                                                    color: white;
+                                                    text-decoration: none;
+                                                    border-radius: 5px;
+                                                    font-weight: bold;
+                                                    transition: all 0.3s ease-in-out;
+                                                    border: 1px solid navy;
+                                                "
+                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                                    <a href="/respelatihanpeserta/{{$item->namakegiatan}}" style="color: inherit; text-decoration: none;">
+                                                        <i class="fas fa-users" style="margin-right: 5px; font-size:14px;"></i> Peserta
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br><br>
 
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
                             <div class="pagination-info-box" style="margin: 20px 0; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px; width: 100%; text-align: center;">
@@ -254,21 +276,47 @@
                                     </li>
                                 </ul>
                             </div>
-
-
                         </div>
+                   <script>
+                        function updateEntries() {
+                            let selectedValue = document.getElementById("entries").value;
+                            let url = new URL(window.location.href);
+                            url.searchParams.set("perPage", selectedValue);
+                            window.location.href = url.toString();
+                        }
 
-                    </div>
+
+                        function searchTable() {
+                        let input = document.getElementById("searchInput").value;
+
+                        fetch(`/respesertapelatihan?search=${input}`)
+                            .then(response => response.text())
+                            .then(html => {
+                                let parser = new DOMParser();
+                                let doc = parser.parseFromString(html, "text/html");
+                                let newTableBody = doc.querySelector("#tableBody").innerHTML;
+                                document.querySelector("#tableBody").innerHTML = newTableBody;
+                            })
+                            .catch(error => console.error("Error fetching search results:", error));
+                    }
+
+                            </script>
+                                    </div><!-- donate-box-inner -->
+                                    </div><!-- col-xl-8 col-lg-12 -->
+                                </div><!-- row -->
+                            </div><!-- container -->
+                            {{-- @include('frontend.00_approve.01_cssterpisah.paginator') --}}
+
+                            @include('frontend.00_android.00_fiturmenu.keterangan')
+
+                            <br><br><br><br><br>
+
+                                    @include('frontend.00_android.00_fiturmenu.android')
+                        </section><!-- donate-section -->
+
 
             </div>
         </div>
-
-        @include('frontend.00_android.00_fiturmenu.keterangan')
-
-        <br><br><br><br><br>
-
-                @include('frontend.00_android.00_fiturmenu.android')
-
     </section>
 
     @include('frontend.00_android.00_fiturmenu.footer')
