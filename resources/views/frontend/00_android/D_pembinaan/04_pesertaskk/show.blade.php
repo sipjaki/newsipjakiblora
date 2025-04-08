@@ -218,15 +218,16 @@ h5 {
                                     <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
                                         <thead>
                                             <tr>
-                                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:600px;"> Nama Lengkap </th>
-                                                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Gender </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:500px;"> NIK </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:800px;"> Jabatan Kerja </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendidikan </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Email</th>
+                                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; padding: 10px;"> No </th>
+                                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:left; width:200px; padding: 10px;"> Nama Lengkap </th>
+                                                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px; padding: 10px;"> Gender </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:200px; padding: 10px;"> NIK </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:left; width:250px; padding: 10px;"> Jabatan Kerja </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:200px; padding: 10px;"> Pendidikan </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:left; width:250px; padding: 10px;"> Email </th>
                                                 {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
                                             </tr>
+
                                         </thead>
                                         <tbody id="tableBody">
                                             @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
