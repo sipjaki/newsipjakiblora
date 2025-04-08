@@ -185,35 +185,6 @@ h5 {
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
                 <div class="container-surat">
-                    <section class="document-section" style="margin-top: -100px;">
-                        <div class="container" style="max-width: 95%">
-                          <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                              {{-- <img src="/assets/icon/logopupr.png" class="img-fluid" alt="img-25" width="50" style="margin-right: 20px;" loading="lazy"> --}}
-
-                              {{-- <br><p style="font-size: 16px; color:black;">Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora</p> --}}
-                              <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-top: 20px;">
-
-                                <!-- Tombol dan kolom pencarian di kanan -->
-                                <div style="display: flex; align-items: center;">
-{{--
-                                    <div style="position: relative; display: inline-block; margin-right:10px;">
-                                        <input type="search" placeholder="Pencarian...." style="border: 1px solid #ccc; padding: 5px 10px; font-size: 14px; border-radius: 5px; width: 200px;">
-                                        <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                                    </div> --}}
-
-                                    {{-- <a href="/datajakon/bujk" style="background: white;">
-                                        <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer; margin-right: 10px;">
-                                            <i class="fas fa-arrow-circle-left mr-2" style="margin-right: 20px; color:red;"></i><span style="color: black; font-size:20px;">KEMBALI</span>
-                                        </button>
-                                    </a> --}}
-
-                                </div>
-                            </div>
-
-                            </ul>
-                        </div>
-                    </section>
-
 
                     <body>
 
@@ -233,7 +204,6 @@ h5 {
                                 </div>
 
                                 <div style="position: relative; display: inline-block; margin-right:10px;">
-                                    <label for="">Cari Kegiatan</label>
                                     <input type="search" id="searchInput" placeholder="Cari Kegiatan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                                     <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
@@ -334,11 +304,7 @@ h5 {
                                 </tbody>
                             </table>
 
-                            <div class="pagination-info-box" style="margin-right:0px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
-                                <div class="pagination-info" style="color: black; font-weight: 500; font-size:20px;">
-                                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
-                                </div>
-                            </div>
+
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
                             <div class="pagination-info-box" style="margin: 20px 0; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px; width: 100%; text-align: center;">
                                 <div class="pagination-info" style="color: black; font-weight: 500; font-size: 14px; display: inline-block;">
