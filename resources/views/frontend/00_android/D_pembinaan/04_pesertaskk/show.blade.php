@@ -214,32 +214,33 @@ h5 {
                                 <span style="font-weight:bold;"><p>Judul : {{$data->namakegiatan}}</p></span>
                             </div>
                             <div style="overflow-x: auto; margin-top: 15px;">
-                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
-                                    <thead>
-                                        <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Nama Lengkap  </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Gender </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Instansi </th>
-                                            {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableBody">
-                                        @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
-                                        @foreach ($datapeserta as $item )
-                                        <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
-                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize;">
-                                                {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
+                                <div style="overflow-x: auto; width: 100%;">
+                                    <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
+                                        <thead>
+                                            <tr>
+                                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
+                                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Nama Lengkap </th>
+                                                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Gender </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
+                                                {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                            @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
+                                            @foreach ($datapeserta as $item )
+                                            <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
+                                                <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                                <td style="text-transform: capitalize;">
+                                                    {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
+                                                </td>
+                                                <td style="text-align: center;">{{$item->jeniskelamin}}</td>
+                                                <td>{{$item->nik}}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
 
-                                            </td>
-                                            <td style="text-align: center;">{{$item->jeniskelamin}}</td>
-                                            <td>{{$item->instansi}}</td>
-
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
                             </div>
                             <br><br>
 
