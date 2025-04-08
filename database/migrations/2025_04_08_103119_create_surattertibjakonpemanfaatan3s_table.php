@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('surattertibjakonpemanfaatan3s', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('tertibjakonpemanfaatan_id')->nullable()->index();
+            $table->string('nama');
+
             $table->timestamps();
         });
     }
