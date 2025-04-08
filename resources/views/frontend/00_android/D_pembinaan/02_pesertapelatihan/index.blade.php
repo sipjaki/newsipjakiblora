@@ -254,6 +254,7 @@ h5 {
                                     </tbody>
                                 </table>
                             </div>
+                            <br><br>
 
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
                             <div class="pagination-info-box" style="margin: 20px 0; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px; width: 100%; text-align: center;">
@@ -277,23 +278,7 @@ h5 {
                                 </ul>
                             </div>
                         </div>
-
-                        <style>
-                            .sort-icon {
-                                font-size: 16px;
-                                color: gray;
-                                margin-left: 5px;
-                            }
-                            th {
-                                padding: 10px;
-                                border-bottom: 2px solid black;
-                            }
-                            th:hover {
-                                background-color: #f2f2f2;
-                            }
-                        </style>
-
-                        <script>
+                   <script>
                         function updateEntries() {
                             let selectedValue = document.getElementById("entries").value;
                             let url = new URL(window.location.href);
@@ -317,10 +302,7 @@ h5 {
                     }
 
                             </script>
-
-
-
-                    </div><!-- donate-box-inner -->
+                                    </div><!-- donate-box-inner -->
                                     </div><!-- col-xl-8 col-lg-12 -->
                                 </div><!-- row -->
                             </div><!-- container -->
@@ -330,7 +312,6 @@ h5 {
 
                     </div>
 
-                    <br>
                     </div>
 
             </div>
