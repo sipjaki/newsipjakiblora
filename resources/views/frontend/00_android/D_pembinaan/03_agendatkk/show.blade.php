@@ -279,7 +279,7 @@ h5 {
 
                         <script>
                             document.getElementById('sertifikat-btn').addEventListener('click', function() {
-                                const fileUrl = "{{ asset('storage/' . $data->materipelatihan) }}"; // URL file yang ingin diunduh
+                                const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}"; // URL file yang ingin diunduh
                                 const a = document.createElement('a');
                                 a.href = fileUrl;
                                 a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
