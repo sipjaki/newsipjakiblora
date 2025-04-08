@@ -216,9 +216,9 @@ h5 {
                             </thead>
                             <tbody id="tableBody">
                                 @php
-                                    $start = ($data->currentPage() - 1) * $data->perPage() + 1;
+                                    $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
                                 @endphp
-                                @foreach ($data as $item)
+                                @foreach ($datamateripelatihan as $item)
                                 <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'transparent' }};">
                                     <td style="text-align: center; padding: 12px;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="padding: 12px; text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
