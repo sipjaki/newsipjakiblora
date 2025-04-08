@@ -188,7 +188,7 @@ h5 {
 
                     <body>
 
-                        <div class="table-wrapper" style="margin-top:-130px; position: relative;">
+                        <div class="table-wrapper" style="position: relative;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
                                 <div>
                                     <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
