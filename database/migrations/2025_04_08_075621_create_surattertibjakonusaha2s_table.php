@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('surattertibjakonusaha2s', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->softDeletes();
+
             $table->timestamps();
         });
     }

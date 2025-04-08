@@ -849,7 +849,7 @@ class AndroidVersionController extends Controller
 
         public function menuresjakonusaha()
     {
-        $data = tertibjasakonstruksi::all(); // Menggunakan paginate() untuk pagination
+        $data = tertibjasakonstruksi::paginate('15'); // Menggunakan paginate() untuk pagination
         $satasurat1 = surattertibjakonusaha1::all(); // Menggunakan paginate() untuk pagination
         $satasurat2 = surattertibjakonusaha2::all(); // Menggunakan paginate() untuk pagination
         $satasurat3 = surattertibjakonusaha3::all(); // Menggunakan paginate() untuk pagination
@@ -862,7 +862,7 @@ class AndroidVersionController extends Controller
             'data' => $data, // Mengirimkan data paginasi ke view
             'user' => $user, // Mengirimkan data paginasi ke view
             'datasurat1' => $satasurat1, // Mengirimkan data paginasi ke view
-            'datasurat2' => $satasurat3, // Mengirimkan data paginasi ke view
+            'datasurat2' => $satasurat2, // Mengirimkan data paginasi ke view
             'datasurat3' => $satasurat3, // Mengirimkan data paginasi ke view
             'datasurat4' => $satasurat4, // Mengirimkan data paginasi ke view
 
