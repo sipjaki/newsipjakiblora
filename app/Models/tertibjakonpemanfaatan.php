@@ -19,7 +19,7 @@ class tertibjakonpemanfaatan extends Model
     }
 
     // Relasi dengan surattertibjakonpemanfaatan1
-    public function surattertibjakonpemanfaatan1()
+    public function surattertibjakonmanfaat1()
     {
         return $this->belongsTo(surattertibjakonpemanfaatan1::class); // Ganti dengan kelas yang sesuai
     }
