@@ -210,100 +210,50 @@ h5 {
 
                             </div>
 
-                            <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
-                                <thead>
+                            <div style="overflow-x: auto; margin-top: 15px;">
+                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
+                                    <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kategori Pelatihan </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kategori </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Nama Kegiatan </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th>
                                             <th style="text-align:center; width:100px;"> View Peserta </th>
                                         </tr>
-
-                                </thead>
-
-                                <tbody id="tableBody">
-                                    @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
-                                    @foreach ($data as $item )
-                                    <tr>
-                                        <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                        <td>{{$item->kategoripelatihan->kategoripelatihan}}</td>
-                                        <td>{{$item->namakegiatan}}</td>
-                                        <td>{{$item->keterangan}}</td>
-                                        {{-- <td>{{$item->keterangan}}</td> --}}
-                                        <td style="text-align: center">
-                                            <div style="
-                                                display: inline-block;
-                                                font-size:14px;
-                                                padding: 8px 16px;
-                                                background-color: navy;
-                                                color: white;
-                                                text-decoration: none;
-                                                border-radius: 5px;
-                                                font-weight: bold;
-                                                transition: all 0.3s ease-in-out;
-                                                border: 1px solid navy;
-                                            "
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                                <a href="/daftarpesertapelatihans/{{$item->namakegiatan}}" style="color: inherit; text-decoration: none;">
-                                                    <i class="fas fa-users" style="margin-right: 5px; font-size:14px;"></i> Peserta
-                                                </a>
-                                            </div>
-                                        </td>
-
-                                        {{-- <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
-                                            @php
-                                            $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
-                                            $today = \Carbon\Carbon::now();
-                                            $isClosed = $today->greaterThanOrEqualTo($eventDate);
-                                            @endphp
-                                            @if ($isClosed)
-                                                <button style="
-                                                    background-color: #FF0000;
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                                        @foreach ($data as $item )
+                                        <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
+                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                            <td>{{$item->kategoripelatihan->kategoripelatihan}}</td>
+                                            <td>{{$item->namakegiatan}}</td>
+                                            <td>{{$item->keterangan}}</td>
+                                            <td style="text-align: center">
+                                                <div style="
+                                                    display: inline-block;
+                                                    font-size:14px;
+                                                    padding: 8px 16px;
+                                                    background-color: navy;
                                                     color: white;
-                                                    border: 2px solid #FF0000;
-                                                    padding: 8px 12px;
-                                                    font-size: 14px;
+                                                    text-decoration: none;
+                                                    border-radius: 5px;
                                                     font-weight: bold;
-                                                    border-radius: 6px;
-                                                    cursor: not-allowed;
-                                                    opacity: 0.6;
-                                                    display: flex;
-                                                    align-items: center;
-                                                    justify-content: center;
-                                                    gap: 6px;
-                                                " disabled>
-                                                    <i class="fas fa-times-circle"></i> Ditutup
-                                                </button>
-                                            @else
-                                                <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
-                                                    <button style="
-                                                        background-color: #001f3f;
-                                                        color: white;
-                                                        border: 2px solid #001f3f;
-                                                        padding: 8px 12px;
-                                                        font-size: 14px;
-                                                        font-weight: bold;
-                                                        border-radius: 6px;
-                                                        cursor: pointer;
-                                                        transition: all 0.3s ease;
-                                                        display: flex;
-                                                        align-items: center;
-                                                        justify-content: center;
-                                                        gap: 6px;
-                                                    " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
-                                                       onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
-                                                        <i class="fas fa-user-check"></i> Daftar
-                                                    </button>
-                                                </a>
-                                            @endif
-                                        </td> --}}
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-
+                                                    transition: all 0.3s ease-in-out;
+                                                    border: 1px solid navy;
+                                                "
+                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                                    <a href="/daftarpesertapelatihans/{{$item->namakegiatan}}" style="color: inherit; text-decoration: none;">
+                                                        <i class="fas fa-users" style="margin-right: 5px; font-size:14px;"></i> Peserta
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
 
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
                             <div class="pagination-info-box" style="margin: 20px 0; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px; width: 100%; text-align: center;">
