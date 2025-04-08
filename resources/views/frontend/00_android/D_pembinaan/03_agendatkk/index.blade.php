@@ -118,7 +118,7 @@
                                 function searchTable() {
                                 let input = document.getElementById("searchInput").value;
 
-                                fetch(`/resagendapelatihan?search=${input}`)
+                                fetch(`/resagendatkk?search=${input}`)
                                     .then(response => response.text())
                                     .then(html => {
                                         let parser = new DOMParser();

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('agendaskks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('allskktenagakerjablora_id')->nullable();
+            $table->foreignId('materipelatihanskk_id')->nullable();
             $table->foreignId('user_id')->nullable();
             // $table->foreignId('jenjang_id')->nullable();
             $table->string('namakegiatan')->nullable();
