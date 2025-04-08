@@ -239,7 +239,7 @@ h5 {
                                                 </td>
                                                 <td style="text-align: center; padding: 10px;">{{$item->jeniskelamin}}</td>
                                                 <td style="padding: 10px;">
-                                                    {{ substr($item->nik, 0, 4) . 'XXXXXX' }}
+                                                    {{ substr($item->nik, 0, 7) . 'XXXXXXXXXX' }}
                                                 </td>
                                                    <td style="padding: 10px;">{{$item->jabatankerja->jabatankerja}}</td>
                                                 <td style="padding: 10px;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
