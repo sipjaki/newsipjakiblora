@@ -268,7 +268,8 @@ h5 {
                                 <tr>
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
-                                    <td>
+                                    <td style="text-transform: capitalize;">{{ asset('storage/' . $item->materipelatihan) }}</td>
+                                    {{-- <td>
                                         @if(!empty($item->materipelatihan) && Storage::exists('public/' . $item->materipelatihan))
                                             <!-- Jika ada file materi yang valid, tampilkan tombol untuk download -->
                                             <button id="sertifikat-btn-{{ $loop->iteration }}" class="btn btn-primary">Download Materi</button>
@@ -288,7 +289,7 @@ h5 {
                                             <!-- Jika tidak ada file materi, tampilkan pesan -->
                                             <span class="no-materi-message">MATERI BELUM DI UPLOAD</span>
                                         @endif
-                                    </td>
+                                    </td> --}}
                                 </tr>
                                 @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
                                 @endforeach
