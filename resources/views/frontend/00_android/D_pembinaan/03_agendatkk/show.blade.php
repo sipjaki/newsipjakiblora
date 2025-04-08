@@ -269,33 +269,31 @@ h5 {
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
                                     <td>
+                                        <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
+                                        <script>
+                                            // Cek apakah file materi pelatihan ada
+                                            const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}";
+                                            const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek jika URL file valid atau kosong
 
-                                        <button id="sertifikat-btn" class="badge"
-                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                            <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                        </button>
-
-                        <script>
-                            document.getElementById('sertifikat-btn').addEventListener('click', function() {
-                                const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}"; // URL file yang ingin diunduh
-                                const a = document.createElement('a');
-                                a.href = fileUrl;
-                                a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                                document.body.appendChild(a);
-                                a.click();
-                                document.body.removeChild(a);
-                            });
-                            </script>
-
-                                    {{-- <td>
-                                        @if(!empty($item->materipelatihan) && Storage::exists('public/' . $item->materipelatihan))
-                                            <!-- Jika ada file materi yang valid, tampilkan tombol untuk download -->
-                                            <button id="sertifikat-btn-{{ $loop->iteration }}" class="btn btn-primary">Download Materi</button>
-                                            <script>
-                                                document.getElementById('sertifikat-btn-{{ $loop->iteration }}').addEventListener('click', function() {
-                                                    const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}"; // URL file yang ingin diunduh
+                                            if (!isFileAvailable) {
+                                                // Jika file tidak ada, tampilkan tombol merah dengan tulisan "Materi Belum Di Upload"
+                                                document.write(`
+                                                    <button class="badge"
+                                                            style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
+                                                        Materi Belum Di Upload
+                                                    </button>
+                                                `);
+                                            } else {
+                                                // Jika file ada, tampilkan tombol download
+                                                document.write(`
+                                                    <button id="sertifikat-btn" class="badge"
+                                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                                        <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                                    </button>
+                                                `);
+                                                document.getElementById('sertifikat-btn').addEventListener('click', function() {
                                                     const a = document.createElement('a');
                                                     a.href = fileUrl;
                                                     a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
@@ -303,18 +301,11 @@ h5 {
                                                     a.click();
                                                     document.body.removeChild(a);
                                                 });
-                                            </script>
-                                            @php $materiFound = true; @endphp <!-- Set variabel jadi true jika ada materi -->
-                                        @else
-                                            <!-- Jika tidak ada file materi, tampilkan pesan -->
-                                            <span class="no-materi-message">MATERI BELUM DI UPLOAD</span>
-                                        @endif
-                                    </td> --}}
-
+                                            }
+                                        </script>
                                     </td>
+
                                 </tr>
-                                @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
-                                @endforeach
 
                             </tbody>
                         </table>
