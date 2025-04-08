@@ -269,30 +269,55 @@ h5 {
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
                                     <td>
-                                        <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
                                         <script>
                                             // Cek apakah file materi pelatihan ada
                                             const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}";
-                                            const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek jika URL file valid atau kosong
+                                            const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek apakah file tersedia
 
                                             if (!isFileAvailable) {
                                                 // Jika file tidak ada, tampilkan tombol merah dengan tulisan "Materi Belum Di Upload"
-                                                document.write(`
-                                                    <button class="badge"
-                                                            style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
-                                                        Materi Belum Di Upload
-                                                    </button>
-                                                `);
+                                                const button = document.createElement('button');
+                                                button.classList.add('badge');
+                                                button.style.backgroundColor = 'red';
+                                                button.style.color = 'white';
+                                                button.style.border = 'none';
+                                                button.style.padding = '10px 20px';
+                                                button.style.fontSize = '13px';
+                                                button.style.borderRadius = '5px';
+                                                button.textContent = 'Materi Belum Di Upload';
+
+                                                // Menambahkan tombol ke dalam elemen td
+                                                document.querySelector('td').appendChild(button);
                                             } else {
                                                 // Jika file ada, tampilkan tombol download
-                                                document.write(`
-                                                    <button id="sertifikat-btn" class="badge"
-                                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                                        <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                                    </button>
-                                                `);
+                                                const button = document.createElement('button');
+                                                button.id = 'sertifikat-btn';
+                                                button.classList.add('badge');
+                                                button.style.backgroundColor = 'navy';
+                                                button.style.color = 'white';
+                                                button.style.border = 'none';
+                                                button.style.transition = '0.3s';
+                                                button.style.padding = '10px 20px';
+                                                button.style.fontSize = '13px';
+                                                button.style.borderRadius = '5px';
+                                                button.innerHTML = '<i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf';
+
+                                                button.onmouseover = function() {
+                                                    this.style.backgroundColor = 'white';
+                                                    this.style.color = 'black';
+                                                    this.style.border = '1px solid black';
+                                                };
+
+                                                button.onmouseout = function() {
+                                                    this.style.backgroundColor = 'navy';
+                                                    this.style.color = 'white';
+                                                    this.style.border = 'none';
+                                                };
+
+                                                // Menambahkan tombol download ke dalam elemen td
+                                                document.querySelector('td').appendChild(button);
+
+                                                // Menambahkan event listener untuk tombol download
                                                 document.getElementById('sertifikat-btn').addEventListener('click', function() {
                                                     const a = document.createElement('a');
                                                     a.href = fileUrl;
