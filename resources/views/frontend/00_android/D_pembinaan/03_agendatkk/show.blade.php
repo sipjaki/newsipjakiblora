@@ -259,20 +259,20 @@ h5 {
                             </thead>
                             <tbody id="tableBody">
                                 @php
-                                    $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
+                                    $start = ($datamateripelatihanskk->currentPage() - 1) * $datamateripelatihanskk->perPage() + 1;
                                     $materiFound = false; // Variabel untuk mengecek apakah ada materi
                                     $dataAvailable = false; // Variabel untuk mengecek apakah ada data
                                 @endphp
 
-                                @foreach ($datamateripelatihan as $item)
+                                @foreach ($datamateripelatihanskk as $item)
                                 <tr>
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                    <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
+                                    <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulskk)) }}</td>
                                     <td>
                                         <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
                                         <script>
                                             // Cek apakah file materi pelatihan ada
-                                            const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}";
+                                            const fileUrl = "{{ asset('storage/' . $item->materipelatihanskk) }}";
                                             const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek jika URL file valid atau kosong
 
                                             if (!isFileAvailable) {
