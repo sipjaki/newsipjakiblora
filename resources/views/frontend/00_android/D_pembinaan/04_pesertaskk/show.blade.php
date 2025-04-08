@@ -218,10 +218,10 @@ h5 {
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:400px;"> Nama Lengkap </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;"> Nama Lengkap </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Gender </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> NIK </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:800px;"> Jabatan Kerja </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:1200px;"> Jabatan Kerja </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> Pendidikan  </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> Email </th>
                                             {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
@@ -234,7 +234,9 @@ h5 {
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td>{{$item->user->name}}</td>
                                             <td>{{$item->jeniskelamin}}</td>
-                                            <td>{{$item->nik}}</td>
+                                            <td style="padding: 10px;">
+                                                {{ substr($item->nik, 0, 7) . 'XXXXXXXX' }}
+                                            </td>
                                             <td>{{$item->jabatankerja->jabatankerja}}</td>
                                             <td>{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
                                             <td>{{$item->email}}</td>
