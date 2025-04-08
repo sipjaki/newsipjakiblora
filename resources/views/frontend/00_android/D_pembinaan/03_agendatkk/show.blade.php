@@ -189,7 +189,7 @@ h5 {
                         <div class="header-text">
                             <h3>AGENDA PELATIHAN TKK KABUPATEN BLORA </h3>
                             <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
-                            <p>------------------------------------------------------------------------------</p>
+                            <p>------------------------------------------------------------</p>
                         </div>
                     </div>
 
