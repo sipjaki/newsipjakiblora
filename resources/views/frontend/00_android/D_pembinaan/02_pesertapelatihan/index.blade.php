@@ -196,23 +196,23 @@ h5 {
                                   <a href="#" style="background: white;">
                                       <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer;">
                                         <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy">
-                                        <i class="fas fa-edit mr-2" style="margin-right: 10px; color:#ffd100;"></i> <span style="text-transform: uppercase; color:black; font-size:16px;">{{$title}}</span><span style="color:black; font-size:16px; text-transform:uppercase;"> | {{$data->namakegiatan}}</span>
+                                        <i class="fas fa-edit mr-2" style="margin-right: 10px; color:#ffd100;"></i> <span style="text-transform: uppercase; color:black; font-size:20px;">{{$title}}</span>
                                     </button>
                                 </a>
 
                                 <!-- Tombol dan kolom pencarian di kanan -->
                                 <div style="display: flex; align-items: center;">
-
+{{--
                                     <div style="position: relative; display: inline-block; margin-right:10px;">
                                         <input type="search" placeholder="Pencarian...." style="border: 1px solid #ccc; padding: 5px 10px; font-size: 14px; border-radius: 5px; width: 200px;">
                                         <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                                    </div>
+                                    </div> --}}
 
-                                    <a href="javascript:window.history.back();" style="background: white;">
+                                    {{-- <a href="/datajakon/bujk" style="background: white;">
                                         <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer; margin-right: 10px;">
-                                            <i class="fas fa-arrow-circle-left mr-2" style="margin-right: 20px; color:red;"></i><span style="color: black; font-size:15px;">KEMBALI</span>
+                                            <i class="fas fa-arrow-circle-left mr-2" style="margin-right: 20px; color:red;"></i><span style="color: black; font-size:20px;">KEMBALI</span>
                                         </button>
-                                    </a>
+                                    </a> --}}
 
                                 </div>
                             </div>
@@ -226,11 +226,16 @@ h5 {
 
                         <div class="table-wrapper" style="margin-top:-130px; position: relative;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
+                                <div class="pagination-info-box" style="margin-right:0px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
+                                    <div class="pagination-info" style="color: black; font-weight: 500; font-size:20px;">
+                                        Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
+                                    </div>
+                                </div>
                                 <div>
                                     <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
                                     <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
-                                        {{-- <option value="10">10</option>
-                                        <option value="25">25</option> --}}
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
                                         <option value="50">50</option>
                                         <option value="75">75</option>
                                         <option value="100">100</option>
@@ -240,54 +245,122 @@ h5 {
                                 </div>
 
                                 <div style="position: relative; display: inline-block; margin-right:10px;">
-                                    <input type="search" id="searchInput" placeholder="Cari Peserta...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                    <label>Masukan NIK</label>
+                                    <input type="search" id="searchsertifikat" placeholder="Download Sertifikat" onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                                    {{-- <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i> --}}
+                                </div>
+
+                                <div style="position: relative; display: inline-block; margin-right:10px;">
+                                    <label for="">Cari Kegiatan</label>
+                                    <input type="search" id="searchInput" placeholder="Cari Kegiatan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                                     <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
+
                             </div>
 
                             <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                                 <thead>
-                                    <tr>
-                                        <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
-                                        <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Nama Lengkap <span class="sort-icon">⇅</span></th>
-                                        <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:100;"> Gender <span class="sort-icon">⇅</span></th>
-                                        <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:400px;"> Instansi <span class="sort-icon">⇅</span></th>
-                                        {{-- <th style="text-align:center; width:100px;"> View </th> --}}
-                                    </tr>
-                                </thead>
-                                <tbody id="tableBody">
-                                    {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp --}}
-                                    @foreach ($datapeserta as $item )
-                                    <tr>
-                                        <td style="text-align: center;">{{ $loop->index + 1 }}</td>
+                                        <tr>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kategori Pelatihan <span class="sort-icon">⇅</span></th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Nama Kegiatan <span class="sort-icon">⇅</span></th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan <span class="sort-icon">⇅</span></th>
+                                            <th style="text-align:center; width:100px;"> View Peserta </th>
+                                        </tr>
 
-                                        <td style="text-transform: capitalize;">
-                                            {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
+                                </thead>
+
+                                <tbody id="tableBody">
+                                    @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                                    @foreach ($data as $item )
+                                    <tr>
+                                        <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                        <td>{{$item->kategoripelatihan->kategoripelatihan}}</td>
+                                        <td>{{$item->namakegiatan}}</td>
+                                        <td>{{$item->keterangan}}</td>
+                                        {{-- <td>{{$item->keterangan}}</td> --}}
+                                        <td style="text-align: center">
+                                            <div style="
+                                                display: inline-block;
+                                                font-size:14px;
+                                                padding: 8px 16px;
+                                                background-color: navy;
+                                                color: white;
+                                                text-decoration: none;
+                                                border-radius: 5px;
+                                                font-weight: bold;
+                                                transition: all 0.3s ease-in-out;
+                                                border: 1px solid navy;
+                                            "
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                                <a href="/daftarpesertapelatihans/{{$item->namakegiatan}}" style="color: inherit; text-decoration: none;">
+                                                    <i class="fas fa-users" style="margin-right: 5px; font-size:14px;"></i> Peserta
+                                                </a>
+                                            </div>
                                         </td>
-                                        {{-- <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user->name)) }}</td> --}}
-                                        {{-- <td>{{$item->user->name}}</td> --}}
-                                        <td>{{$item->jeniskelamin}}</td>
-                                        <td style="text-align: center;">{{$item->instansi}}</td>
+
+                                        {{-- <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
+                                            @php
+                                            $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
+                                            $today = \Carbon\Carbon::now();
+                                            $isClosed = $today->greaterThanOrEqualTo($eventDate);
+                                            @endphp
+                                            @if ($isClosed)
+                                                <button style="
+                                                    background-color: #FF0000;
+                                                    color: white;
+                                                    border: 2px solid #FF0000;
+                                                    padding: 8px 12px;
+                                                    font-size: 14px;
+                                                    font-weight: bold;
+                                                    border-radius: 6px;
+                                                    cursor: not-allowed;
+                                                    opacity: 0.6;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    gap: 6px;
+                                                " disabled>
+                                                    <i class="fas fa-times-circle"></i> Ditutup
+                                                </button>
+                                            @else
+                                                <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
+                                                    <button style="
+                                                        background-color: #001f3f;
+                                                        color: white;
+                                                        border: 2px solid #001f3f;
+                                                        padding: 8px 12px;
+                                                        font-size: 14px;
+                                                        font-weight: bold;
+                                                        border-radius: 6px;
+                                                        cursor: pointer;
+                                                        transition: all 0.3s ease;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        gap: 6px;
+                                                    " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
+                                                       onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
+                                                        <i class="fas fa-user-check"></i> Daftar
+                                                    </button>
+                                                </a>
+                                            @endif
+                                        </td> --}}
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
 
                             <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
-                                <div class="pagination-info-box" style="margin-right:50px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
-                                    <div class="pagination-info" style="color: black; font-weight: 500; font-size:18px;">
-                                        Data Ke {{ $datapeserta->firstItem() }} Sampai {{ $datapeserta->lastItem() }} Dari {{ $datapeserta->total() }} Jumlah {{$title}} <span style="color: blue"> {{$data->namakegiatan}}</span>
-                                    </div>
-                                </div>
-
                                 <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
-                                    <li class="page-item {{ $datapeserta->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
-                                        <a class="page-link" href="{{ $datapeserta->previousPageUrl() }}">
+                                    <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
+                                        <a class="page-link" href="{{ $data->previousPageUrl() }}">
                                             <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>Previous
                                         </a>
                                     </li>
-                                    <li class="page-item {{ $datapeserta->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
-                                        <a class="page-link" href="{{ $datapeserta->nextPageUrl() }}">
+                                    <li class="page-item {{ $data->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
+                                        <a class="page-link" href="{{ $data->nextPageUrl() }}">
                                             Next <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
                                         </a>
                                     </li>
@@ -318,10 +391,11 @@ h5 {
                             window.location.href = url.toString();
                         }
 
+
                         function searchTable() {
                         let input = document.getElementById("searchInput").value;
 
-                        fetch(`/daftarpesertapelatihans?search=${input}`)
+                        fetch(`/daftarpesertapelatihan?search=${input}`)
                             .then(response => response.text())
                             .then(html => {
                                 let parser = new DOMParser();
