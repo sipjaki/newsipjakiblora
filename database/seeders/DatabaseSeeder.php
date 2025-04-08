@@ -59180,21 +59180,21 @@ for ($i = 1; $i <= 1221; $i++) {
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
 materipelatihan::create([
     'id'    => 1,
-    'agendapelatihan_id'            => 3,
+    'agendapelatihan_id'            => 1,
     'judulmateripelatihan'          => 'Pelatihan',
     'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 
 materipelatihan::create([
     'id'    => 2,
-    'agendapelatihan_id'            => 3,
+    'agendapelatihan_id'            => 1,
     'judulmateripelatihan'          => 'Konstruksi',
     'materipelatihan'          => null,
 ]);
 
 materipelatihan::create([
     'id'    => 3,
-    'agendapelatihan_id'            => 3,
+    'agendapelatihan_id'            => 2,
     'judulmateripelatihan'          => 'Pelatihan',
     'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
@@ -59503,8 +59503,8 @@ agendapelatihan::create([
     'namakegiatan' => 'Pelatihan Manajemen Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
     // 'jenjang_id' => '4',
-    'penutupan' => '2025-02-13',
-    'waktupelaksanaan' => '2025-02-15',
+    'penutupan' => '2025-12-13',
+    'waktupelaksanaan' => '2025-12-15',
     'jumlahpeserta' => 40,
     'lokasi' => 'Jln Blora No. 10',
     'Keterangan' => 'Pelatihan untuk meningkatkan kualitas tenaga kerja konstruksi.',
@@ -59520,7 +59520,7 @@ agendapelatihan::create([
     'namakegiatan' => 'Pelatihan Ahli K3 Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
     // 'jenjang_id' => '5',
-    'penutupan' => '2025-02-08',
+    'penutupan' => '2025-12-08',
     'waktupelaksanaan' => '2025-02-10',
     'jumlahpeserta' => 30,
     'lokasi' => 'Balai Latihan Kerja Blora',
