@@ -210,9 +210,13 @@ h5 {
 
                             </div>
 <br>
-                            <div>
-                                <span style="font-weight:bold;"><p>Judul : {{$data->namakegiatan}}</p></span>
-                            </div>
+<div style="margin-bottom: 20px;">
+    <p style="font-size: 18px; font-weight: bold; color: #2c3e50; margin: 0;">
+        Kegiatan Sertifikasi:
+        <span style="font-size: 20px; color: #2980b9; font-weight: normal;">{{$data->namakegiatan}}</span>
+    </p>
+</div>
+
                             <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px;">
                                 <table class="fl-table" id="sortableTable" style="min-width: 1000px; border-collapse: collapse;">
                                     <thead>
