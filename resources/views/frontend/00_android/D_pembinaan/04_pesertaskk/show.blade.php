@@ -213,7 +213,7 @@ h5 {
 <div style="margin-bottom: 20px;">
     <p style="font-size: 18px; font-weight: bold; color: #2c3e50; margin: 0;">
         Kegiatan Sertifikasi:
-        <span style="font-size: 16px; color: #2980b9; font-weight: normal;">{{$data->namakegiatan}}</span>
+        <span style="font-size: 18px; color: #2980b9; font-weight: normal;">{{$data->namakegiatan}}</span>
     </p>
 </div>
 
