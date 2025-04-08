@@ -208,9 +208,8 @@ h5 {
                                 </div>
 
                             </div>
-
-                            <div style="overflow-x: auto; margin-top: 15px;">
-                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
+                            <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px;">
+                                <table class="fl-table" id="sortableTable" style="min-width: 1000px; border-collapse: collapse;">
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
@@ -253,6 +252,7 @@ h5 {
                                     </tbody>
                                 </table>
                             </div>
+
                             <br><br>
 
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
