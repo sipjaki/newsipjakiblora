@@ -18,7 +18,7 @@ class penyediastatustertibjakon extends Model
         return $this->hasMany(tertibjasakonstruksi::class);
     }
 
-    public function tertibjakonpemanfaatan2()
+    public function tertibjakonpemanfaatan1()
     {
         return $this->hasMany(tertibjakonpemanfaatan::class);
     }
