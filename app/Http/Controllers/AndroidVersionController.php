@@ -847,28 +847,58 @@ class AndroidVersionController extends Controller
         ]);
         }
 
-        public function menuresjakonusaha()
-    {
-        $data = tertibjasakonstruksi::paginate('15'); // Menggunakan paginate() untuk pagination
-        $satasurat1 = surattertibjakonusaha1::all(); // Menggunakan paginate() untuk pagination
-        $satasurat2 = surattertibjakonusaha2::all(); // Menggunakan paginate() untuk pagination
-        $satasurat3 = surattertibjakonusaha3::all(); // Menggunakan paginate() untuk pagination
-        $satasurat4 = surattertibjakonusaha4::all(); // Menggunakan paginate() untuk pagination
+        public function menuresjakonusaha(Request $request)
+        {
+            // Ambil parameter perPage dan search dari request
+            $perPage = $request->input('perPage', 15);  // Default 15 per halaman
+            $search = $request->input('search');
 
-        $user = Auth::user();
+            // Membuat query untuk model tertibjasakonstruksi
+            $query = tertibjasakonstruksi::query();
 
-        return view('frontend.00_android.E_pengawasan.01_tertibjakonusaha.index', [
-            'title' => 'Profil Jakon DPUPR Kabupaten Blora',
-            'data' => $data, // Mengirimkan data paginasi ke view
-            'user' => $user, // Mengirimkan data paginasi ke view
-            'datasurat1' => $satasurat1, // Mengirimkan data paginasi ke view
-            'datasurat2' => $satasurat2, // Mengirimkan data paginasi ke view
-            'datasurat3' => $satasurat3, // Mengirimkan data paginasi ke view
-            'datasurat4' => $satasurat4, // Mengirimkan data paginasi ke view
+            // Tambahkan kondisi pencarian jika ada keyword pencarian
+            if ($search) {
+                $query->where('namabadanusaha', 'LIKE', "%{$search}%")
+                      ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                    //   ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                      // Menggunakan whereHas untuk relasi penyedia
+                      ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
+                          $q->where('penyedia', 'LIKE', "%{$search}%"); // Ganti penyedia_column_name dengan nama kolom yang relevan di relasi 'penyedia'
+                      });
+            }
 
-        ]);
-    }
+            // Lakukan pagination dengan hasil pencarian
+            $data = $query->paginate($perPage);
 
+            // Jika request adalah AJAX, kembalikan hasil dalam bentuk HTML
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.E_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render()
+                ]);
+            }
+
+            // Ambil data untuk surat-surat terkait
+            $satasurat1 = surattertibjakonusaha1::all();
+            $satasurat2 = surattertibjakonusaha2::all();
+            $satasurat3 = surattertibjakonusaha3::all();
+            $satasurat4 = surattertibjakonusaha4::all();
+
+            // Ambil data user yang sedang login
+            $user = Auth::user();
+
+            // Mengirimkan data ke view
+            return view('frontend.00_android.E_pengawasan.01_tertibjakonusaha.index', [
+                'title' => 'Profil Jakon DPUPR Kabupaten Blora',
+                'data' => $data,  // Mengirimkan data paginasi ke view
+                'user' => $user,  // Mengirimkan data user ke view
+                'datasurat1' => $satasurat1,  // Mengirimkan data surat1 ke view
+                'datasurat2' => $satasurat2,  // Mengirimkan data surat2 ke view
+                'datasurat3' => $satasurat3,  // Mengirimkan data surat3 ke view
+                'datasurat4' => $satasurat4,  // Mengirimkan data surat4 ke view
+                'search' => $search,  // Mengirimkan parameter pencarian ke view
+                'perPage' => $perPage,  // Mengirimkan parameter perPage ke view
+            ]);
+        }
 
         // MENU AHSP JASA KONSTRUKSI
         // -==============================================================================================================
