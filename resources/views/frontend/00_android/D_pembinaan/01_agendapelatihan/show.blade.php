@@ -1,4 +1,48 @@
 <style>
+
+    /* Styling untuk tabel */
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    .custom-fl-table th, .custom-fl-table td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .custom-fl-table th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+    }
+
+    .custom-fl-table td {
+        background-color: #f9f9f9;
+    }
+
+    /* Styling untuk baris yang tidak memiliki materi */
+    .no-materi-message {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        background-color: #ffcccc;
+        display: block;
+        margin: 10px 0;
+        padding: 5px;
+    }
+
+    /* Styling untuk pesan 'MATERI BELUM DI UPLOAD' di luar tabel */
+    .no-data-message {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+
     .header-surat {
     display: flex;
     justify-content: center;
@@ -145,319 +189,143 @@ h5 {
                         <div class="header-text">
                             <h3>AGENDA PELATIHAN TKK KABUPATEN BLORA </h3>
                             <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
+                            <p>------------------------------------------------------------</p>
                         </div>
                     </div>
 
                     <br>
-                    <h4 style="font-weight:bold;">I. IDENTITAS OPD</h4>
+                    <h4 style="font-weight:bold;">I. INFORMASI AGENDA PELATIHAN </h4>
                     <table class="table-identitas">
-                        @foreach ($dataidentitasopd as $item)
+                        {{-- @foreach ($data as $item) --}}
                         <tr>
-                            <td class="label">1.</td>
-                            <td class="label">Nama OPD</td>
+                            <td class="label">1</td>
+                            <td class="label">Nama Kegiatan</td>
                             <td class="colon">:</td>
-                            <td>{{$item->namaopd}}</td>
+                            <td>{{$data->namakegiatan}}</td>
                         </tr>
                         <tr>
-                            <td class="label">2.</td>
-                            <td class="label">Alamat OPD</td>
+                            <td class="label">2</td>
+                            <td class="label">Pelatihan</td>
                             <td class="colon">:</td>
-                            <td>{{$item->alamatopd}}</td>
+                            <td>{{$data->kategoripelatihan->kategoripelatihan}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td class="label">RT / RW</td>
+                            <td class="label">3</td>
+                            <td class="label">Waktu Pelaksanaan</td>
                             <td class="colon">:</td>
-                            <td>{{$item->rtrw}}</td>
+                            <td>{{$data->waktupelaksanaan}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td class="label">Kode Pos</td>
+                            <td class="label">4</td>
+                            <td class="label">Penyelenggara</td>
                             <td class="colon">:</td>
-                            <td>{{$item->kodepos}}</td>
+                            <td>{{$data->penyelenggara}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td class="label">Kelurahan</td>
+                            <td class="label">5</td>
+                            <td class="label">Lokasi</td>
                             <td class="colon">:</td>
-                            <td>{{$item->kelurahan}}</td>
+                            <td>{{$data->lokasi}}</td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td class="label">Kecamatan</td>
+                            <td class="label">6</td>
+                            <td class="label">Jumlah Peserta</td>
                             <td class="colon">:</td>
-                            <td>{{$item->kecamatan}}</td>
+                            <td>{{$data->jumlahpeserta}}</td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td class="label">Kota</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->kota}}</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="label">Provinsi</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->provinsi}}</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="label">Negara</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->negara}}</td>
-                        </tr>
-                        <tr>
-                            <td class="label">3.</td>
-                            <td class="label">Posisi Geografis</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->posisigeografis}}</td>
-                        </tr>
-                        <tr>
-                            <td class="label">4.</td>
-                            <td class="label">Tipe Dinas</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->tipedinas}}</td>
-                        </tr>
-                        @endforeach
                     </table>
+                            <br>
+                    <div class="portfolio-details-content">
+                        <div class="flex flex-col gap-[2px]">
+                            <h2 class="font-semibold" style="font-size: 16px;">Isi Agenda: </h2>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
+                        </div>
+                        <br>
+
+                        <div class="flex flex-col gap-[2px]">
+                            <h2 class="font-semibold text-sm" style="font-size: 16px;">Keterangan : </h2>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
+                        </div>
+
+                    </div><!-- portfolio-details-content -->
+
+                    {{-- @endforeach --}}
 
                     <br>
 
-                    <h4 style="font-weight:bold;">II. PROFIL PIMPINAN OPD</h4>
+                    <h4 style="font-weight:bold;">II. DOWNLOAD MATERI SERTIFIKASI </h4>
+                    <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+                        <table class="custom-fl-table" id="sortableTable">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable(0)" style="cursor:pointer; width:100px;"> No </th>
+                                    <th onclick="sortTable(1)" style="cursor:pointer; width:500px;"> Judul </th>
+                                    <th onclick="sortTable(2)" style="cursor:pointer; width:800px;"> Materi </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                @php
+                                    $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
+                                    $materiFound = false; // Variabel untuk mengecek apakah ada materi
+                                    $dataAvailable = false; // Variabel untuk mengecek apakah ada data
+                                @endphp
 
-                    <h5 style="font-weight:bold;">A. KEPALA DINAS</h5>
-                    <table class="table-profil">
-                        @foreach ($datakepaladinas as $item)
-                        <tr>
-                            <td style="width:50px; text-align:center;">1</td>
-                            <td class="label">Nama Lengkap</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->namalengkap}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">2</td>
-                            <td class="label">NIP</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->nip}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">3</td>
-                            <td class="label">Tempat, Tanggal Lahir</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->ttl}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">4</td>
-                            <td class="label">Pangkat / Golongan</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->pangkatgolongan}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">5</td>
-                            <td class="label">Jabatan</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->jabatan}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">6</td>
-                            <td class="label">Perangkat Daerah</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->perangkatdaerah}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">7</td>
-                            <td class="label">Pendidikan Terakhir</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->pendidikanterakhir}}</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                                        <br>
+                                @foreach ($datamateripelatihan as $item)
+                                <tr>
+                                    <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                    <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
+                                    <td>
+                                        <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
+                                        <script>
+                                            // Cek apakah file materi pelatihan ada
+                                            const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}";
+                                            const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek jika URL file valid atau kosong
 
-                                        <h5 style="font-weight:bold;">B. KEPALA BIDANG BANGUNAN GEDUNG</h5>
-                                        <table class="table-profil">
-                                            @foreach ($datakabid as $item)
-                                            <tr>
-                                                <td style="width:50px; text-align:center;">1</td>
-                                                <td class="label">Nama Lengkap</td>
-                                                <td class="colon">:</td>
-                                                <td>{{$item->namalengkap}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:50px; text-align:center;">2</td>
-                                                <td class="label">NIP</td>
-                                                <td class="colon">:</td>
-                                                <td>{{$item->nip}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:50px; text-align:center;">3</td>
-                                                <td class="label">Tempat, Tanggal Lahir</td>
-                                                <td class="colon">:</td>
-                                                <td>{{$item->ttl}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:50px; text-align:center;">4</td>
-                                                <td class="label">Pangkat / Golongan</td>
-                                                <td class="colon">:</td>
-                                                <td>{{$item->pangkatgolongan}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:50px; text-align:center;">5</td>
-                                                <td class="label">Jabatan</td>
-                                                <td class="colon">:</td>
-                                                <td>{{$item->pangkatgolongan}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:50px; text-align:center;">6</td>
-                                                <td class="label">Perangkat Daerah</td>
-                                                <td class="colon">:</td>
-                                                <td>{{$item->perangkatdaerah}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width:50px; text-align:center;">7</td>
-                                                <td class="label">Pendidikan Terakhir</td>
-                                                <td class="colon">:</td>
-                                                <td>{{$item->pendidikanterakhir}}</td>
-                                            </tr>
-                                            @endforeach
-                                        </table>
+                                            if (!isFileAvailable) {
+                                                // Jika file tidak ada, tampilkan tombol merah dengan tulisan "Materi Belum Di Upload"
+                                                document.write(`
+                                                    <button class="badge"
+                                                            style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
+                                                        Materi Belum Di Upload
+                                                    </button>
+                                                `);
+                                            } else {
+                                                // Jika file ada, tampilkan tombol download
+                                                document.write(`
+                                                    <button id="sertifikat-btn" class="badge"
+                                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                                        <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                                    </button>
+                                                `);
+                                                document.getElementById('sertifikat-btn').addEventListener('click', function() {
+                                                    const a = document.createElement('a');
+                                                    a.href = fileUrl;
+                                                    a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
+                                                    document.body.appendChild(a);
+                                                    a.click();
+                                                    document.body.removeChild(a);
+                                                });
+                                            }
+                                        </script>
+                                    </td>
+
+                                </tr>
+                                @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
+                                @endforeach
+
+                            </tbody>
+                        </table>
+
+                        <!-- Jika tidak ada data sama sekali, tampilkan pesan di luar tabel -->
+                        @if(!$dataAvailable)
+                            <p class="no-data-message">MATERI BELUM DI UPLOAD</p>
+                        @endif
+                    </div>
 
                     <br>
-                    <h5 style="font-weight:bold;">C. SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
-                    <table class="table-profil">
-                        @foreach ($datasubkoordinator as $item)
-                        <tr>
-                            <td style="width:50px; text-align:center;">1</td>
-                            <td class="label">Nama Lengkap</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->namalengkap}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">2</td>
-                            <td class="label">NIP</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->nip}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">3</td>
-                            <td class="label">Tempat, Tanggal Lahir</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->ttl}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">4</td>
-                            <td class="label">Pangkat/Golongan</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->pangkatgolongan}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">5</td>
-                            <td class="label">Jabatan</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->jabatan}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">6</td>
-                            <td class="label">Pendidikan Terakhir</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->pendidikanterakhir}}</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                    <br>
-
-
-                    <h4 style="font-weight:bold;">III. OPD Jakon</h4>
-                    <table class="table-profil">
-                        @foreach ($datainformasi as $item)
-                        <tr>
-                            <td style="width:50px; text-align:center;"></td>
-                            <td>{!!$item->informasiopd!!}</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                    <br>
-
-                    <h4 style="font-weight:bold;">IV. Kontak OPD</h4>
-                    <table class="table-profil">
-                        @foreach ($datainformasi as $item)
-                        <tr>
-                            <td style="width:50px; text-align:center;">1</td>
-                            <td class="label">Nomor Telepon</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->notelepon}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">2</td>
-                            <td class="label">Instagram</td>
-                            <td class="colon">:</td>
-                            <td>@ {{$item->instagram}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">3</td>
-                            <td class="label">Tiktok</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->tiktok}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;">4</td>
-                            <td class="label">Email</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->email}}</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                    <br>
-
-                    <h4 style="font-weight:bold;">V. SK SIPJAKI</h4>
-                    <table class="table-profil">
-                        @foreach ($datasipjaki as $item)
-                        <tr>
-                            <td style="width:50px; text-align:center;"></td>
-                            <td class="label">Nomor</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->nomor}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;"></td>
-                            <td class="label">Nama Operator SIPJAKI</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->operator1}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;"></td>
-                            <td class="label">Nama Operator SIPJAKI</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->operator2}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;"></td>
-                            <td class="label">Nama Operator SIPJAKI</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->operator3}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width:50px; text-align:center;"></td>
-                            <td class="label">Nama Operator SIPJAKI</td>
-                            <td class="colon">:</td>
-                            <td>{{$item->operator4}}</td>
-                        </tr>
-                        @endforeach
-                    </table>
-                                        <br>
-
-                                        <h4 style="font-weight:bold;">VI. SK PERSONIL JABATAN FUNGSIONAL JASA KONSTRUKSI</h4>
-                                        <table class="table-profil">
-                                            @foreach ($datapersonil as $item)
-                                            <tr>
-                                                <td style="width:50px; text-align:center;">{{$loop->iteration}}</td>
-                                                <td class="label">{{$item->jabatan}}</td>
-                                                <td class="colon">:</td>
-                                                <td>{{$item->namalengkap}}</td>
-                                            </tr>
-                                            @endforeach
-                                        </table>
-                                                        </div>
+                    </div>
 
             </div>
         </div>
