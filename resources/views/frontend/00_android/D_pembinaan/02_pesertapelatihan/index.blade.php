@@ -1,5 +1,4 @@
 <style>
-
     /* Styling untuk tabel */
     .custom-fl-table {
         width: 100%;
@@ -308,11 +307,6 @@ h5 {
                             </div><!-- container -->
                             {{-- @include('frontend.00_approve.01_cssterpisah.paginator') --}}
                         </section><!-- donate-section -->
-
-
-                    </div>
-
-                    </div>
 
             </div>
         </div>
