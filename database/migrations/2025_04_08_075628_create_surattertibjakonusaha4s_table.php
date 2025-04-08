@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('surattertibjakonusaha4s', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->foreignId('tertibjasakonstruksi_id')->nullable()->index();
+            $table->string('namavarian')->nullable()->index();
+            $table->string('subvarian')->nullable()->index();
+            $table->string('merkproduk')->nullable()->index();
+            $table->string('sertifikat')->nullable()->index();
+            $table->string('sni')->nullable()->index();
+            $table->string('simpk')->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
         });

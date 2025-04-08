@@ -33,6 +33,10 @@ use App\Models\asosiasimasjaki;
 use App\Models\bulanrekap;
 use App\Models\sppbj;
 use App\Models\materipelatihanskk;
+use App\Models\surattertibjakonusaha1;
+use App\Models\surattertibjakonusaha2;
+use App\Models\surattertibjakonusaha3;
+use App\Models\surattertibjakonusaha4;
 // -perubahan
 
 // use App\Models\sertifikasiagenda;
@@ -59174,7 +59178,33 @@ for ($i = 1; $i <= 1221; $i++) {
         // }
 
 
-// makanyu
+// DATABASE TERTIB JASA KONSTRUKSI USAHA
+  // Definisikan array untuk pilihan acak
+  $jenisUsaha = ['Konstruksi', 'Pertanian', 'Teknologi', 'Transportasi', 'Perdagangan'];
+  $kesesuaian = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
+  $sifatUsaha = ['Aktif', 'Non-Aktif'];
+  $layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
+
+  // Jumlah data yang ingin dibuat
+  $jumlahData = 100; // Jumlah data = 100
+
+  // Membuat 100 data dengan informasi acak
+  for ($i = 1; $i <= $jumlahData; $i++) {
+      surattertibjakonusaha1::create([
+          'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
+          'namapaketpekerjaan' => 'Pekerjaan ' . rand(1, 100), // Nama pekerjaan acak
+          'jenisusaha' => $jenisUsaha[array_rand($jenisUsaha)],  // Pilih acak jenis usaha
+          'kesesuaian' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian
+          'sifatusaha' => $sifatUsaha[array_rand($sifatUsaha)],  // Pilih acak status usaha
+          'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian SBU
+          'subklasifikasi' => 'Subklasifikasi ' . rand(1, 100), // Subklasifikasi acak
+          'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian klasifikasi
+          'layananusaha' => $layananUsaha[array_rand($layananUsaha)],  // Pilih acak layanan usaha
+          'kesesuaianlayananusaha' => $kesesuaian[array_rand($kesesuaian)],  // Pilih acak kesesuaian layanan usaha
+      ]);
+  }
+
+  // makanyu
 
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
@@ -59668,11 +59698,11 @@ penyediastatustertibjakon::create([
 //======================== ===================================================================================
 // TERTIB JAKON BIDAN USAHA MAS JAKI BLORA
 tertibjasakonstruksi::create([
-    'penyediastatustertibjakon_id' => '1',
-    'surattertibjakonusaha1_id' => '1',
-    'surattertibjakonusaha2_id' => '1',
-    'surattertibjakonusaha3_id' => '1',
-    'surattertibjakonusaha4_id' => '1',
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonusaha1_id' => 1,
+    'surattertibjakonusaha2_id' => 1,
+    'surattertibjakonusaha3_id' => 1,
+    'surattertibjakonusaha4_id' => 1,
     'nib' => '0208220001109',
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV MANDRA KANTA UNGGUL',
@@ -59685,19 +59715,19 @@ tertibjasakonstruksi::create([
     'segmentasipasar_kualifikasi' => 'TERTIB',
     'syarat_SBU' => 'TERTIB',
     'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'TERTIB',      // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
+    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 tertibjasakonstruksi::create([
-    'penyediastatustertibjakon_id' => '2',
-    'surattertibjakonusaha1_id' => '2',
-    'surattertibjakonusaha2_id' => '2',
-    'surattertibjakonusaha3_id' => '2',
-    'surattertibjakonusaha4_id' => '2',
-    'nib' => '0911220321514',
+    'penyediastatustertibjakon_id' => 2,
+    'surattertibjakonusaha1_id' => 1,
+    'surattertibjakonusaha2_id' => 2,
+    'surattertibjakonusaha3_id' => 2,
+    'surattertibjakonusaha4_id' => 2,
+    'nib' => '9120304751314',
     'namapekerjaan' => null,
-    'namabadanusaha' => 'CV. ADITIYA JAYA PERKASA',
-    'pjbu' => 'Agus Supriadi',
+    'namabadanusaha' => 'CV. ADHI BAYU MUSTIKA',
+    'pjbu' => 'Ny Musikawati Ningsih',
     'sesuai_jenis' => 'TERTIB',
     'sesuai_sifat' => 'TERTIB',
     'sesuai_klasifikasi' => 'TERTIB',
@@ -59706,16 +59736,16 @@ tertibjasakonstruksi::create([
     'segmentasipasar_kualifikasi' => 'TERTIB',
     'syarat_SBU' => 'TERTIB',
     'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'TERTIB',      // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
+    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 tertibjasakonstruksi::create([
-    'penyediastatustertibjakon_id' => '3',
-    'surattertibjakonusaha1_id' => '3',
-    'surattertibjakonusaha2_id' => '3',
-    'surattertibjakonusaha3_id' => '3',
-    'surattertibjakonusaha4_id' => '3',
-    'nib' => '1261000381957',
+    'penyediastatustertibjakon_id' => 3,
+    'surattertibjakonusaha1_id' => 1,
+    'surattertibjakonusaha2_id' => 3,
+    'surattertibjakonusaha3_id' => 3,
+    'surattertibjakonusaha4_id' => 3,
+    'nib' => '1261000321957',
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADHI KARYA MANDIRI',
     'pjbu' => 'Santoso',
@@ -59727,8 +59757,73 @@ tertibjasakonstruksi::create([
     'segmentasipasar_kualifikasi' => 'TERTIB',
     'syarat_SBU' => 'TERTIB',
     'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'TERTIB',      // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
+    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
+
+tertibjasakonstruksi::create([
+    'penyediastatustertibjakon_id' => 4,
+    'surattertibjakonusaha1_id' => 1,
+    'surattertibjakonusaha2_id' => 4,
+    'surattertibjakonusaha3_id' => 4,
+    'surattertibjakonusaha4_id' => 4,
+    'nib' => '0911220321514',
+    'namapekerjaan' => null,
+    'namabadanusaha' => 'CV. ADITYA JAYA PERKASA',
+    'pjbu' => 'Agus Supriadi',
+    'sesuai_jenis' => 'TERTIB',
+    'sesuai_sifat' => 'TERTIB',
+    'sesuai_klasifikasi' => 'TERTIB',
+    'sesuai_layanan' => 'TERTIB',
+    'segmentasipasar_bentuk' => 'TERTIB',
+    'segmentasipasar_kualifikasi' => 'TERTIB',
+    'syarat_SBU' => 'TERTIB',
+    'syarat_NIB' => 'TERTIB',
+    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+]);
+
+tertibjasakonstruksi::create([
+    'penyediastatustertibjakon_id' => 5,
+    'surattertibjakonusaha1_id' => 1,
+    'surattertibjakonusaha2_id' => 5,
+    'surattertibjakonusaha3_id' => 5,
+    'surattertibjakonusaha4_id' => 5,
+    'nib' => '0220002560644',
+    'namapekerjaan' => null,
+    'namabadanusaha' => 'CV. ALFA',
+    'pjbu' => 'Siti Utifah',
+    'sesuai_jenis' => 'TERTIB',
+    'sesuai_sifat' => 'TERTIB',
+    'sesuai_klasifikasi' => 'TERTIB',
+    'sesuai_layanan' => 'TERTIB',
+    'segmentasipasar_bentuk' => 'TERTIB',
+    'segmentasipasar_kualifikasi' => 'TERTIB',
+    'syarat_SBU' => 'TERTIB',
+    'syarat_NIB' => 'TERTIB',
+    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+]);
+
+tertibjasakonstruksi::create([
+    'penyediastatustertibjakon_id' => 6,
+    'surattertibjakonusaha1_id' => 1,
+    'surattertibjakonusaha2_id' => 6,
+    'surattertibjakonusaha3_id' => 6,
+    'surattertibjakonusaha4_id' => 6,
+    'nib' => '0220009351039',
+    'namapekerjaan' => null,
+    'namabadanusaha' => 'CV. ANANDA',
+    'pjbu' => 'Suryati',
+    'sesuai_jenis' => 'TERTIB',
+    'sesuai_sifat' => 'TERTIB',
+    'sesuai_klasifikasi' => 'TERTIB',
+    'sesuai_layanan' => 'TERTIB',
+    'segmentasipasar_bentuk' => 'TERTIB',
+    'segmentasipasar_kualifikasi' => 'TERTIB',
+    'syarat_SBU' => 'TERTIB',
+    'syarat_NIB' => 'TERTIB',
+    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+]);
+
+// Data lainnya lanjutkan sesuai format yang sama.
 
 //======================== ===================================================================================
 // TERTIB JAKON PEMANFAATAN MAS JAKI
