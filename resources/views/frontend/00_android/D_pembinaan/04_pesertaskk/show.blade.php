@@ -228,7 +228,7 @@ h5 {
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
-                                        @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                                        @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
                                         @foreach ($datapeserta as $item )
                                         <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
