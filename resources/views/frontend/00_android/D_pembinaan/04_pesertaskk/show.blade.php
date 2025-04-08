@@ -213,45 +213,38 @@ h5 {
                             <div>
                                 <span style="font-weight:bold;"><p>Judul : {{$data->namakegiatan}}</p></span>
                             </div>
-                            <div style="overflow-x: auto; margin-top: 15px;">
-                                <div style="overflow-x: auto; width: 100%;">
-                                    <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
-                                        <thead>
-                                            <tr>
-                                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; padding: 10px;"> No </th>
-                                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:left; width:500px; padding: 10px;"> Nama_Lengkap </th>
-                                                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px; padding: 10px;"> Gender </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:200px; padding: 10px;"> NIK </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:left; width:600px; padding: 10px;"> Jabatan_Kerja </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:200px; padding: 10px;"> Pendidikan </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:left; width:250px; padding: 10px;"> Email </th>
-                                                {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
-                                            </tr>
+                            <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 15px;">
+                                <table class="fl-table" id="sortableTable" style="min-width: 1000px; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:400px;"> Nama Lengkap </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Gender </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> NIK </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> Jabatan Kerja </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> Pendidikan  </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> Email </th>
+                                            <th style="text-align:center; width:100px;"> View Peserta </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                                        @foreach ($datapeserta as $item )
+                                        <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
+                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                            <td>{{$item->user->name}}</td>
+                                            <td>{{$item->jeniskelamin}}</td>
+                                            <td>{{$item->nik}}</td>
+                                            <td>{{$item->jabatankerja->jabatankerja}}</td>
+                                            <td>{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
+                                            <td>{{$item->email}}</td>
 
-                                        </thead>
-                                        <tbody id="tableBody">
-                                            @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
-                                            @foreach ($datapeserta as $item )
-                                            <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
-                                                <td style="text-align: center; padding: 10px;">{{ $loop->iteration + $start - 1 }}</td>
-                                                <td style="text-transform: capitalize; padding: 10px;">
-                                                    {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
-                                                </td>
-                                                <td style="text-align: center; padding: 10px;">{{$item->jeniskelamin}}</td>
-                                                <td style="padding: 10px;">
-                                                    {{ substr($item->nik, 0, 7) . 'XXXXXXXXXX' }}
-                                                </td>
-                                                   <td style="padding: 10px;">{{$item->jabatankerja->jabatankerja}}</td>
-                                                <td style="padding: 10px;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-                                                <td style="padding: 10px;">{{$item->email}}</td>
-                                            </tr>
-
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
+
                             <br><br>
 
                             <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
