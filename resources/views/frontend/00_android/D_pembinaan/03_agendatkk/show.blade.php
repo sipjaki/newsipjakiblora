@@ -224,8 +224,8 @@ h5 {
                                 <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                 <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
                                 <td>
-                                    @if($item->materipelatihan)
-                                        <!-- Jika ada file materi, tampilkan tombol untuk download -->
+                                    @if(!empty($item->materipelatihan) && Storage::exists('public/' . $item->materipelatihan))
+                                        <!-- Jika ada file materi yang valid, tampilkan tombol untuk download -->
                                         <button id="sertifikat-btn-{{ $loop->iteration }}" class="btn btn-primary">Download Materi</button>
                                         <script>
                                             document.getElementById('sertifikat-btn-{{ $loop->iteration }}').addEventListener('click', function() {
@@ -239,7 +239,7 @@ h5 {
                                             });
                                         </script>
                                     @else
-                                        <!-- Jika tidak ada file materi, tampilkan teks -->
+                                        <!-- Jika tidak ada file materi atau file tidak ditemukan, tampilkan teks -->
                                         MATERI BELUM DI UPLOAD
                                     @endif
                                 </td>
