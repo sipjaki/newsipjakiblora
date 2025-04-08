@@ -59496,7 +59496,7 @@ agendapelatihan::create([
     'namakegiatan' => 'Pelatihan Manajemen Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
     // 'jenjang_id' => '4',
-    'penutupan' => '2025-12-13',
+    'penutupan' => '2025-01-13',
     'waktupelaksanaan' => '2025-12-15',
     'jumlahpeserta' => 40,
     'lokasi' => 'Jln Blora No. 10',
@@ -59513,7 +59513,7 @@ agendapelatihan::create([
     'namakegiatan' => 'Pelatihan Ahli K3 Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
     // 'jenjang_id' => '5',
-    'penutupan' => '2025-12-08',
+    'penutupan' => '2025-01-08',
     'waktupelaksanaan' => '2025-02-10',
     'jumlahpeserta' => 30,
     'lokasi' => 'Balai Latihan Kerja Blora',
@@ -59523,22 +59523,6 @@ agendapelatihan::create([
     'materi' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
 ]);
 
-agendapelatihan::create([
-    'id' => 3,
-    'user_id' => 7,
-    'kategoripelatihan_id' => '2',
-    'namakegiatan' => 'Pelatihan Ahli K3 Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    // 'jenjang_id' => '5',
-    'penutupan' => '2025-08-08',
-    'waktupelaksanaan' => '2025-02-10',
-    'jumlahpeserta' => 30,
-    'lokasi' => 'Balai Latihan Kerja Blora',
-    'Keterangan' => 'Pelatihan sertifikasi ahli K3 di bidang konstruksi.',
-    'isiagenda' => 'Pelatihan ini ditujukan bagi tenaga kerja konstruksi yang ingin mendapatkan sertifikasi Ahli K3. Materi meliputi identifikasi risiko kerja, prosedur keselamatan, serta penerapan standar K3 dalam proyek konstruksi. Dengan mengikuti pelatihan ini, peserta diharapkan mampu meningkatkan keselamatan dan kesehatan kerja di lingkungan konstruksi.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
-    'materi' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-]);
 
 // 'foto' => '00_dokmasjaki/03_datajakon/agendapelatihan.jpg',
 // iqlima
@@ -59565,7 +59549,7 @@ agendaskk::create([
     'user_id' => 7,
     'namakegiatan' => 'Sertifikasi Keahlian Tenaga Kerja Konstruksi Bangunan Gedung - Jenjang 4',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    'penutupan' => '2025-05-16',
+    'penutupan' => '2025-01-16',
     'waktupelaksanaan' => '2025-05-15',
     'jumlahpeserta' => 40,
     'lokasi' => 'Jln Blora No. 10',
@@ -59579,7 +59563,7 @@ agendaskk::create([
     'user_id' => 7,
     'namakegiatan' => 'Sertifikasi Keterampilan Tukang Bangunan Sipil - Jenjang 6',
     'penyelenggara' => 'Balai Jasa Konstruksi Wilayah IV Surabaya',
-    'penutupan' => '2025-05-06',
+    'penutupan' => '2025-01-06',
     'waktupelaksanaan' => '2025-05-12',
     'jumlahpeserta' => 50,
     'lokasi' => 'Jln Raya Semarang No. 22',
