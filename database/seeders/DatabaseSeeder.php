@@ -61625,59 +61625,6 @@ tertibjasakonstruksi::create([
 //======================== ===================================================================================
 // TERTIB JAKON PEMANFAATAN MAS JAKI
 
-tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => '1',
-    'namapekerjaan' => null,
-    'namabangunan' => 'Kawasan Taman Budaya Cepu',
-    'nomorkontrak' => '640/BG.080/2023',
-    'lokasi' => 'Kec. Cepu Kab. Blora',
-    'tanggalpembangunan' => '2023-07-06',
-    'tanggalpemanfaatan' => '2023-11-02',
-    'umurkonstruksi' => '5',
-    'peruntukan_fungsi' => 'TERTIB',
-    'peruntukan_lokasi' => 'TERTIB',
-    'rencanaumur' => 'TERTIB',
-    'kapasitasdanbeban' => 'BELUM TERTIB',
-    'pemeliharaan_konstruksi' => 'BELUM TERTIB',
-    'pemeliharaan_struktur' => 'BELUM TERTIB',
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => '2',
-    'namapekerjaan' => null,
-    'namabangunan' => 'RSUD Randublatung Type D Blora',
-    'nomorkontrak' => '050/03.1/RS.RAN/2020',
-    'lokasi' => 'Gang Kabayan RT 06 RW 01',
-    'tanggalpembangunan' => '2020-06-06',
-    'tanggalpemanfaatan' => '2020-12-20',
-    'umurkonstruksi' => '5',
-    'peruntukan_fungsi' => 'TERTIB',
-    'peruntukan_lokasi' => 'TERTIB',
-    'rencanaumur' => 'TERTIB',
-    'kapasitasdanbeban' => 'BELUM TERTIB',
-    'pemeliharaan_konstruksi' => 'BELUM TERTIB',
-    'pemeliharaan_struktur' => 'BELUM TERTIB',
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
-
-tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => '3',
-    'namapekerjaan' => null,
-    'namabangunan' => 'KANTOR PT POS PROPERTI INDONESIA',
-    'nomorkontrak' => '-',
-    'lokasi' => 'Jl. Ronggolawe No. 37',
-    'tanggalpembangunan' => '2024-01-25',
-    'tanggalpemanfaatan' => '2024-06-25',
-    'umurkonstruksi' => '5',
-    'peruntukan_fungsi' => 'TERTIB',
-    'peruntukan_lokasi' => 'TERTIB',
-    'rencanaumur' => 'TERTIB',
-    'kapasitasdanbeban' => 'BELUM TERTIB',
-    'pemeliharaan_konstruksi' => 'BELUM TERTIB',
-    'pemeliharaan_struktur' => 'BELUM TERTIB',
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
-]);
 
 // DATA TERTIB JASA KONSTRUKSI PENYELENGGARAAN MAS JAKI BLORA
 // ================================================================================================
