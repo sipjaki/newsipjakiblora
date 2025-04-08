@@ -59181,7 +59181,7 @@ materipelatihan::create([
     'id'    => 1,
     'agendapelatihan_id'            => 1,
     'judulmateripelatihan'          => 'Pelatihan',
-    'materipelatihan'          => '00_beranda/02_artikeljakon/artikeljakon.pdf',
+    'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 
 materipelatihan::create([
