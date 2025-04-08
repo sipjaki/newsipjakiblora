@@ -151,54 +151,54 @@ h5 {
                     <br>
                     <h4 style="font-weight:bold;">I. INFORMASI AGENDA PELATIHAN</h4>
                     <table class="table-identitas">
-                        @foreach ($data as $item)
+                        {{-- @foreach ($data as $item) --}}
                         <tr>
                             <td class="label">1</td>
                             <td class="label">Nama Kegiatan</td>
                             <td class="colon">:</td>
-                            <td>{{$item->namakegiatan}}</td>
+                            <td>{{$data->namakegiatan}}</td>
                         </tr>
                         <tr>
                             <td class="label">2</td>
                             <td class="label">Waktu Pelaksanaan</td>
                             <td class="colon">:</td>
-                            <td>{{$item->waktupelaksanaan}}</td>
+                            <td>{{$data->waktupelaksanaan}}</td>
                         </tr>
                         <tr>
                             <td class="label">3</td>
                             <td class="label">Penyelenggara</td>
                             <td class="colon">:</td>
-                            <td>{{$item->penyelenggara}}</td>
+                            <td>{{$data->penyelenggara}}</td>
                         </tr>
                         <tr>
                             <td class="label">4</td>
                             <td class="label">Lokasi</td>
                             <td class="colon">:</td>
-                            <td>{{$item->lokasi}}</td>
+                            <td>{{$data->lokasi}}</td>
                         </tr>
                         <tr>
                             <td class="label">5</td>
                             <td class="label">Jumlah Peserta</td>
                             <td class="colon">:</td>
-                            <td>{{$item->jumlahpeserta}}</td>
+                            <td>{{$data->jumlahpeserta}}</td>
                         </tr>
                     </table>
 
                     <div class="portfolio-details-content">
                         <div class="flex flex-col gap-[2px]">
                             <h2 class="font-semibold text-sm">Isi Agenda: </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$item->isiagenda!!}</p>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->isiagenda!!}</p>
                         </div>
                         <br>
 
                         <div class="flex flex-col gap-[2px]">
                             <h2 class="font-semibold text-sm">Keterangan : </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$item->keterangan!!}</p>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->keterangan!!}</p>
                         </div>
 
                     </div><!-- portfolio-details-content -->
 
-                    @endforeach
+                    {{-- @endforeach --}}
 
                     <br>
 

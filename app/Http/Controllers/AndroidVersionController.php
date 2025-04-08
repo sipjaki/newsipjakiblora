@@ -596,22 +596,29 @@ class AndroidVersionController extends Controller
         {
             $dataagendaskk = agendaskk::where('namakegiatan', $namakegiatan)->first();
 
+            if (!$dataagendaskk) {
+                // Tangani jika kegiatan tidak ditemukan
+                return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+            }
+
+            // Menggunakan paginate() untuk pagination
+            $subdata = materipelatihan::where('agendapelatihan_id', $dataagendaskk->id)->paginate(50);
+
+              // Menghitung nomor urut mulai
+                $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
+
         $user = Auth::user();
-        $datamateripelatihan = materipelatihan::all();
+
 
         return view('frontend.00_android.D_pembinaan.03_agendatkk.show', [
             'title' => 'Agenda SKK Tenaga Kerja Konstruksi Kabupaten Blora',
             'data' => $dataagendaskk,
-            'datamateripelatihan' => $datamateripelatihan,
+            'datamateripelatihan' => $subdata,
             // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
             'user' => $user,
             // 'start' => $start,
         ]);
         }
-
-
-
-
 
 
         // MENU PENGAWASAN JASA KONSTRUKSI
