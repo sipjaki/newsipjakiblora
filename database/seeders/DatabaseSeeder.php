@@ -25,6 +25,7 @@ use App\Models\suratkeputusan;
 use App\Models\paketpekerjaanmasjaki;
 use App\Models\paketstatuspekerjaan;
 use App\Models\renstra;
+use App\Models\materipelatihan;
 use App\Models\sbulampiran1;
 use App\Models\sbulampiran2;
 use App\Models\sbulampiran3;
@@ -59174,6 +59175,21 @@ for ($i = 1; $i <= 1221; $i++) {
 
 // makanyu
 
+//==========================================================================================================
+// DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
+materipelatihan::create([
+    'id'    => 1,
+    'agendapelatihan_id'            => 1,
+    'judulmateripelatihan'          => 'Pelatihan',
+    'materipelatihan'          => '00_beranda/02_artikeljakon/artikeljakon.jpg',
+]);
+
+materipelatihan::create([
+    'id'    => 2,
+    'agendapelatihan_id'            => 1,
+    'judulmateripelatihan'          => 'Konstruksi',
+    'materipelatihan'          => null,
+]);
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
 pesertapelatihan::create([
