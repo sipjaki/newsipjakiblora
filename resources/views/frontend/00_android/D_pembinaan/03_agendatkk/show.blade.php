@@ -145,6 +145,7 @@ h5 {
                         <div class="header-text">
                             <h3>AGENDA PELATIHAN TKK KABUPATEN BLORA </h3>
                             <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
+                            <hr>
                         </div>
                     </div>
 
@@ -183,17 +184,17 @@ h5 {
                             <td>{{$data->jumlahpeserta}}</td>
                         </tr>
                     </table>
-
+                            <br>
                     <div class="portfolio-details-content">
                         <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold text-sm">Isi Agenda: </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->isiagenda!!}</p>
+                            <h2 class="font-semibold" style="font-size: 16px;">Isi Agenda: </h2>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
                         </div>
                         <br>
 
                         <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold text-sm">Keterangan : </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify;">{!!$data->keterangan!!}</p>
+                            <h2 class="font-semibold text-sm" style="font-size: 16px;">Keterangan : </h2>
+                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
                         </div>
 
                     </div><!-- portfolio-details-content -->
