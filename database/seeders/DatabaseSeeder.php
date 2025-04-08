@@ -59502,7 +59502,7 @@ agendapelatihan::create([
     'lokasi' => 'Jln Blora No. 10',
     'Keterangan' => 'Pelatihan untuk meningkatkan kualitas tenaga kerja konstruksi.',
     'isiagenda' => 'Pelatihan ini bertujuan untuk meningkatkan kemampuan manajemen konstruksi bagi tenaga kerja di bidang konstruksi. Materi yang diberikan mencakup perencanaan proyek, pengendalian biaya, dan strategi pengawasan yang efektif. Dengan pelatihan ini, diharapkan para peserta dapat lebih profesional dalam mengelola proyek konstruksi secara efisien.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
+    'foto' => '01_agendapelatihan/pelatihan.jpg',
     'materi' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
 ]);
 
@@ -59519,7 +59519,7 @@ agendapelatihan::create([
     'lokasi' => 'Balai Latihan Kerja Blora',
     'Keterangan' => 'Pelatihan sertifikasi ahli K3 di bidang konstruksi.',
     'isiagenda' => 'Pelatihan ini ditujukan bagi tenaga kerja konstruksi yang ingin mendapatkan sertifikasi Ahli K3. Materi meliputi identifikasi risiko kerja, prosedur keselamatan, serta penerapan standar K3 dalam proyek konstruksi. Dengan mengikuti pelatihan ini, peserta diharapkan mampu meningkatkan keselamatan dan kesehatan kerja di lingkungan konstruksi.',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
+    'foto' => '01_agendapelatihan/pelatihan.jpg',
     'materi' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
 ]);
 
@@ -59555,7 +59555,7 @@ agendaskk::create([
     'lokasi' => 'Jln Blora No. 10',
     'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja konstruksi bangunan gedung.',
     'isiagenda' => 'Peserta akan diberikan pemahaman mendalam tentang konstruksi bangunan gedung...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
+    'foto' => '01_agendapelatihan/sertifikasi.jpg',
 ]);
 
 agendaskk::create([
@@ -59569,7 +59569,7 @@ agendaskk::create([
     'lokasi' => 'Jln Raya Semarang No. 22',
     'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja di bidang tukang bangunan sipil.',
     'isiagenda' => 'Materi meliputi teknik pemasangan struktur beton dan perawatan bangunan...',
-    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
+    'foto' => '01_agendapelatihan/sertifikasi.jpg',
 ]);
 
 
