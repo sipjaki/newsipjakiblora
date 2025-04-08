@@ -268,6 +268,8 @@ h5 {
                                 <tr>
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
+
+
                                     <td>
                                         <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
                                         <script>
