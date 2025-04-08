@@ -259,6 +259,7 @@ color: #45a049;
 
                                             <td style="text-transform: capitalize;">
                                                 {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
+
                                             </td>
                                             {{-- <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user->name)) }}</td> --}}
                                             {{-- <td>{{$item->user->name}}</td> --}}
