@@ -214,8 +214,8 @@ h5 {
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kategori </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Nama Kegiatan </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kuota </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th>
                                             <th style="text-align:center; width:100px;"> View Peserta </th>
                                         </tr>
@@ -225,8 +225,8 @@ h5 {
                                         @foreach ($data as $item )
                                         <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td>{{$item->kategoripelatihan->kategoripelatihan}}</td>
                                             <td>{{$item->namakegiatan}}</td>
+                                            <td>{{$item->jumlahpeserta}} Peserta</td>
                                             <td>{{$item->keterangan}}</td>
                                             <td style="text-align: center">
                                                 <div style="
