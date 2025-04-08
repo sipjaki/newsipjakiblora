@@ -6,6 +6,7 @@ use App\Models\agendapelatihan;
 use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
 use App\Models\strukturdinas;
+use App\Models\materipelatihanskk;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Pagination\LengthAwarePaginator;
