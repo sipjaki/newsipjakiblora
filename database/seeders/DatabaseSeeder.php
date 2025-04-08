@@ -59178,22 +59178,22 @@ for ($i = 1; $i <= 1221; $i++) {
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
 materipelatihan::create([
-    'id'    => 3,
-    'agendapelatihan_id'            => 1,
+    'id'    => 1,
+    'agendapelatihan_id'            => 3,
     'judulmateripelatihan'          => 'Pelatihan',
     'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 
 materipelatihan::create([
-    'id'    => 3,
-    'agendapelatihan_id'            => 1,
+    'id'    => 2,
+    'agendapelatihan_id'            => 3,
     'judulmateripelatihan'          => 'Konstruksi',
     'materipelatihan'          => null,
 ]);
 
 materipelatihan::create([
     'id'    => 3,
-    'agendapelatihan_id'            => 1,
+    'agendapelatihan_id'            => 3,
     'judulmateripelatihan'          => 'Pelatihan',
     'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
