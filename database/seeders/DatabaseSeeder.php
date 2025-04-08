@@ -37,6 +37,10 @@ use App\Models\surattertibjakonusaha1;
 use App\Models\surattertibjakonusaha2;
 use App\Models\surattertibjakonusaha3;
 use App\Models\surattertibjakonusaha4;
+use App\Models\surattertibjakonpemanfaatan1;
+use App\Models\surattertibjakonpemanfaatan2;
+use App\Models\surattertibjakonpemanfaatan3;
+use App\Models\surattertibjakonpemanfaatan4;
 // -perubahan
 
 // use App\Models\sertifikasiagenda;
