@@ -268,7 +268,9 @@ h5 {
                                 <tr>
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
-                                    <td style="text-transform: capitalize;">{{ asset('storage/' . $item->materipelatihan) }}</td>
+                                    <div style="border: 2px solid #000; padding: 10px; text-transform: capitalize;">
+                                        {{ asset('storage/' . $item->materipelatihan) }}
+                                    </div>
                                     {{-- <td>
                                         @if(!empty($item->materipelatihan) && Storage::exists('public/' . $item->materipelatihan))
                                             <!-- Jika ada file materi yang valid, tampilkan tombol untuk download -->
