@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('materipelatihanskks', function (Blueprint $table) {
             $table->id();
             $table->foreignId('agendaskk_id')->nullable()->index();
+            $table->string('judulskk')->nullable()->index();
             $table->string('materipelatihanskk')->nullable()->index();
             $table->softDeletes();
             $table->timestamps();

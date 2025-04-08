@@ -59202,15 +59202,15 @@ materipelatihan::create([
 materipelatihanskk::create([
     'id'    => 1,
     'agendaskk_id'            => 1,
-    'judulmateripelatihan'          => 'Pelatihan',
-    'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
+    'judulskk'          => 'Pelatihan',
+    'materipelatihanskk'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 
 materipelatihanskk::create([
     'id'    => 2,
     'agendaskk_id'            => 2,
-    'judulmateripelatihan'          => 'Pelatihan',
-    'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
+    'judulskk'          => 'Pelatihan',
+    'materipelatihanskk'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
