@@ -538,7 +538,7 @@ class AndroidVersionController extends Controller
                  }
 
                  // Menggunakan paginate() untuk pagination
-                 $subdata = materipelatihanskk::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
+                 $subdata = materipelatihan::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
 
                    // Menghitung nomor urut mulai
                      $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
@@ -604,7 +604,7 @@ class AndroidVersionController extends Controller
                  }
 
                  // Menggunakan paginate() untuk pagination
-                 $subdata = materipelatihan::where('agendaskk_id', $dataagendaskk->id)->paginate(50);
+                 $subdata = materipelatihanskk::where('agendaskk_id', $dataagendaskk->id)->paginate(50);
 
                    // Menghitung nomor urut mulai
                      $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
