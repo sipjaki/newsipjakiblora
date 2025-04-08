@@ -60276,7 +60276,7 @@ tertibjasakonstruksi::create([
 
 tertibjasakonstruksi::create([
     'id' => 24,
-    'penyediastutertibjakon_id' => 1,
+    'penyediastatustertibjakon_id' => 1,
     'surattertibjakonusaha1_id' => 24,
     'surattertibjakonusaha2_id' => 24,
     'surattertibjakonusaha3_id' => 24,
