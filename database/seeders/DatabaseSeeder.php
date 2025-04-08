@@ -32,6 +32,7 @@ use App\Models\sbulampiran3;
 use App\Models\asosiasimasjaki;
 use App\Models\bulanrekap;
 use App\Models\sppbj;
+use App\Models\materipelatihanskk;
 // -perubahan
 
 // use App\Models\sertifikasiagenda;
