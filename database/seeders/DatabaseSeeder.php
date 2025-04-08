@@ -59508,6 +59508,23 @@ agendapelatihan::create([
     'materi' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
 ]);
 
+agendapelatihan::create([
+    'id' => 3,
+    'user_id' => 7,
+    'kategoripelatihan_id' => '2',
+    'namakegiatan' => 'Pelatihan Ahli K3 Konstruksi',
+    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
+    // 'jenjang_id' => '5',
+    'penutupan' => '2025-08-08',
+    'waktupelaksanaan' => '2025-02-10',
+    'jumlahpeserta' => 30,
+    'lokasi' => 'Balai Latihan Kerja Blora',
+    'Keterangan' => 'Pelatihan sertifikasi ahli K3 di bidang konstruksi.',
+    'isiagenda' => 'Pelatihan ini ditujukan bagi tenaga kerja konstruksi yang ingin mendapatkan sertifikasi Ahli K3. Materi meliputi identifikasi risiko kerja, prosedur keselamatan, serta penerapan standar K3 dalam proyek konstruksi. Dengan mengikuti pelatihan ini, peserta diharapkan mampu meningkatkan keselamatan dan kesehatan kerja di lingkungan konstruksi.',
+    'foto' => '01_agendapelatihan/agendapelatihans.jpg',
+    'materi' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
+]);
+
 // 'foto' => '00_dokmasjaki/03_datajakon/agendapelatihan.jpg',
 // iqlima
 // profilpaketkonsultasi::create([
