@@ -529,7 +529,7 @@ class AndroidVersionController extends Controller
 
              public function menuresagendapelatihandetails($namakegiatan)
              {
-                 $dataagendapelatihan = materipelatihan::where('namakegiatan', $namakegiatan)->first();
+                 $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
 
                  if (!$dataagendapelatihan) {
                      // Tangani jika kegiatan tidak ditemukan
