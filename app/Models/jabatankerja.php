@@ -18,9 +18,9 @@ class jabatankerja extends Model
         return $this->hasMany(skktenagakerjablora::class);
     }
 
-    public function skktenagakerjabloralist()
+    public function allskktenagakerjablora()
     {
-        return $this->hasMany(skktenagakerjabloralist::class);
+        return $this->hasMany(allskktenagakerjablora::class);
     }
 
 }

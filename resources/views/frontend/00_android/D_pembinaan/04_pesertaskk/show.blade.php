@@ -219,12 +219,12 @@ h5 {
                                         <thead>
                                             <tr>
                                                 <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Nama Lengkap </th>
+                                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:600px;"> Nama Lengkap </th>
                                                 <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Gender </th>
                                                 <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Jabatan Kerja </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendidikan </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Email</th>
                                                 {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
                                             </tr>
                                         </thead>
@@ -238,7 +238,7 @@ h5 {
                                                 </td>
                                                 <td style="text-align: center;">{{$item->jeniskelamin}}</td>
                                                 <td>{{$item->nik}}</td>
-                                                <td>{{$item->nik}}</td>
+                                                <td>{{$item->jabatankerja}}</td>
                                                 <td>{{$item->nik}}</td>
                                                 <td>{{$item->nik}}</td>
                                             </tr>

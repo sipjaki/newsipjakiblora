@@ -44,5 +44,10 @@ class allskktenagakerjablora extends Model
             return $this->hasMany(asosiasimasjaki::class);
         }
 
+        public function jabatankerja()
+        {
+            return $this->belongsTo(jabatankerja::class);
+        }
+
 
 }

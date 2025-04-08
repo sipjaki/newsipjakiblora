@@ -13012,7 +13012,7 @@ sumberdana::create([
 allskktenagakerjablora::create([
     'agendaskk_id'            => 1,
     'user_id'                       => 1,
-    'jabatankerja' => 'Personil Keselamatan dan Kesehatan Kerja Jenjang 4',
+    'jabatankerja_id' => '1',
     'tempatlahir' => 'Bojonegoro',
     'ttl' => '1989-04-14',
     'jeniskelamin' => 'Laki-laki',
@@ -13041,7 +13041,7 @@ allskktenagakerjablora::create([
 allskktenagakerjablora::create([
     'agendaskk_id'            => 1,
     'user_id'                       => 2,
-    'jabatankerja' => 'Personil Keselamatan dan Kesehatan Kerja Jenjang 4',
+    'jabatankerja_id' => 1,
     'tempatlahir' => 'Bojonegoro',
     'ttl' => '1989-04-14',
     'jeniskelamin' => 'Laki-laki',
@@ -13070,7 +13070,7 @@ allskktenagakerjablora::create([
 allskktenagakerjablora::create([
     'agendaskk_id'            => 1,
     'user_id'                       => 3,
-    'jabatankerja' => 'Personil Keselamatan dan Kesehatan Kerja Jenjang 4',
+    'jabatankerja_id' => 1,
     'tempatlahir' => 'Bojonegoro',
     'ttl' => '1989-04-14',
     'jeniskelamin' => 'Laki-laki',
