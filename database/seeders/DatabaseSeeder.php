@@ -59192,24 +59192,17 @@ materipelatihan::create([
     'materipelatihan'          => null,
 ]);
 
-materipelatihan::create([
-    'id'    => 3,
-    'agendapelatihan_id'            => 2,
-    'judulmateripelatihan'          => 'Pelatihan',
-    'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
-]);
-
 materipelatihanskk::create([
     'id'    => 1,
     'agendaskk_id'            => 1,
-    'judulskk'          => 'Pelatihan',
+    'judulskk'          => 'Pelatihan 1',
     'materipelatihanskk'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 
 materipelatihanskk::create([
     'id'    => 2,
     'agendaskk_id'            => 2,
-    'judulskk'          => 'Pelatihan',
+    'judulskk'          => 'Pelatihan 2',
     'materipelatihanskk'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 //==========================================================================================================
