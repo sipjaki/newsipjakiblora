@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('surattertibjakonpemanfaatan2_id')->nullable()->index();
             $table->foreignId('surattertibjakonpemanfaatan3_id')->nullable()->index();
             $table->foreignId('surattertibjakonpemanfaatan4_id')->nullable()->index();
+            // -----------------------------------------------------------------
             $table->string('namapekerjaan')->nullable()->index();
             $table->string('namabangunan')->nullable()->index();
             $table->string('nomorkontrak')->nullable()->index();
