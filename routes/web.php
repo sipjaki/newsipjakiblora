@@ -146,6 +146,8 @@ Route::get('/respelatihanpeserta/{namakegiatan}', [AndroidVersionController::cla
 Route::get('/resagendatkk', [AndroidVersionController::class, 'menuresagendatkk']);
 Route::get('/resagendatkk/{namakegiatan}', [AndroidVersionController::class, 'menuresagendatkkdetails']);
 Route::get('/respelatihanskk/{namakegiatan}', [AndroidVersionController::class, 'menurespelatihanskk']);
+Route::get('/respesertaskk', [AndroidVersionController::class, 'menurespesertaskk']);
+Route::get('/resskkpeserta/{namakegiatan}', [AndroidVersionController::class, 'menuresskkpeserta']);
 
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);

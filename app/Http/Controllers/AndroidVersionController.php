@@ -725,6 +725,104 @@ class AndroidVersionController extends Controller
              ]);
              }
 
+             public function menurespesertaskk(Request $request)
+             {
+                 $perPage = $request->input('perPage', 10);
+                 $search = $request->input('search');
+
+                 $query = agendaskk::query();
+
+                 if ($search) {
+                     $query->where('namakegiatan', 'LIKE', "%{$search}%")
+                           ->orWhere('penyelenggara', 'LIKE', "%{$search}%")
+                           ->orWhere('lokasi', 'LIKE', "%{$search}%")
+                           ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                           ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                               $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+                           });
+
+                 }
+
+                 $data = $query->paginate($perPage);
+
+                 if ($request->ajax()) {
+                     return response()->json([
+                         'html' => view('frontend.00_android.D_pembinaan.04_pesertaskk.table', compact('data'))->render()
+                     ]);
+                 }
+
+                 $user = Auth::user();
+                //  $datasub = jenjang::all();
+                //  $datasubkategori = kategoripelatihan::all();
+
+
+                 return view('frontend.00_android.D_pembinaan.04_pesertaskk.index', [
+                     'title' => 'Agenda Sertifikasi Tenaga Kerja Konstruksi Kabupaten Blora',
+                     'data' => $data,
+                     'perPage' => $perPage,
+                     'search' => $search,
+                    //  'datasub' => $datasub,
+                    //  'datasubkategori' => $datasubkategori,
+                     'user' => $user
+                 ]);
+             }
+
+                     //  MENU PESERTA AGENDA PERLATIHAN ===================================================
+
+                     public function menuresskkpeserta(Request $request, $namakegiatan)
+             {
+                 $perPage = $request->input('perPage', 50);
+                 $search = $request->input('search');
+
+                 $query = allskktenagakerjablora::query();
+
+                 if ($search) {
+                     $query->where('namalengkap', 'LIKE', "%{$search}%")
+                           ->orWhere('jabatankerja', 'LIKE', "%{$search}%")
+                           ->orWhereHas('user', function ($q) use ($search) {
+                               $q->where('user', 'LIKE', "%{$search}%");
+                           });
+
+                 }
+
+                 $datapesertapelatihan = $query->paginate($perPage);
+
+                 if ($request->ajax()) {
+                     return response()->json([
+                         'html' => view('frontend.00_android.D_pembinaan.04_pesertaskk.partials.table', compact('data'))->render()
+                     ]);
+                 }
+
+                 $agendaskk = agendaskk::where('namakegiatan', $namakegiatan)->first();
+
+                 // Jika asosiasi tidak ditemukan, tampilkan 404
+                 if (!$agendaskk) {
+                     return abort(404, 'Asosiasi tidak ditemukan');
+                 }
+
+                 $user = Auth::user();
+
+                     $datapeserta = allskktenagakerjablora::where('agendaskk_id', $agendaskk->id)
+                                 ->select(['id', 'user_id', 'jabatankerja', 'tempatlahir', 'ttl', 'jeniskelamin', 'nik' ])
+                                 ->paginate(25);
+
+                 // Ambil data user saat ini
+                 $user = Auth::user();
+
+
+                 return view('frontend.00_android.D_pembinaan.04_pesertaskk.show', [
+                     'title' => 'Daftar Peserta Sertifikasi ',
+                     'data' => $agendaskk,
+                     'datapeserta' => $datapeserta,
+                     'perPage' => $perPage,
+                     'search' => $search,
+                     'user' => $user,
+                     // 'datapeserta' => $datauser
+                 ]);
+             }
+
+
+
         // MENU PENGAWASAN JASA KONSTRUKSI
         // -==============================================================================================================
         public function menurespengawasan()
