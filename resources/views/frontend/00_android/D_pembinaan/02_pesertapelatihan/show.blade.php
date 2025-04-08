@@ -233,7 +233,7 @@ h5 {
                                                 {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
 
                                             </td>
-                                            <td>{{$item->jeniskelamin}}</td>
+                                            <td style="text-align: center;">{{$item->jeniskelamin}}</td>
                                             <td>{{$item->instansi}}</td>
 
                                         </tr>
