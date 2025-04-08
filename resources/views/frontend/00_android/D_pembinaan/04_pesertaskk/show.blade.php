@@ -222,6 +222,9 @@ h5 {
                                                 <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Nama Lengkap </th>
                                                 <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Gender </th>
                                                 <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
                                                 {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
                                             </tr>
                                         </thead>
@@ -234,6 +237,9 @@ h5 {
                                                     {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
                                                 </td>
                                                 <td style="text-align: center;">{{$item->jeniskelamin}}</td>
+                                                <td>{{$item->nik}}</td>
+                                                <td>{{$item->nik}}</td>
+                                                <td>{{$item->nik}}</td>
                                                 <td>{{$item->nik}}</td>
                                             </tr>
                                             @endforeach
