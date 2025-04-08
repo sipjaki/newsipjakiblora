@@ -192,13 +192,6 @@ h5 {
 
                               {{-- <br><p style="font-size: 16px; color:black;">Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora</p> --}}
                               <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-top: 20px;">
-                                  <!-- Tombol di kiri -->
-                                  <a href="#" style="background: white;">
-                                      <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer;">
-                                        <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy">
-                                        <i class="fas fa-edit mr-2" style="margin-right: 10px; color:#ffd100;"></i> <span style="text-transform: uppercase; color:black; font-size:20px;">{{$title}}</span>
-                                    </button>
-                                </a>
 
                                 <!-- Tombol dan kolom pencarian di kanan -->
                                 <div style="display: flex; align-items: center;">
@@ -346,16 +339,22 @@ h5 {
                                     Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
                                 </div>
                             </div>
-
-                            <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
+                            <p style="color: black; font-weight:bold;">Keterangan : {{$title}} DPUPR Kab Blora Tahun 2025</p>
+                            <div class="pagination-info-box" style="margin: 20px 0; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px; width: 100%; text-align: center;">
+                                <div class="pagination-info" style="color: black; font-weight: 500; font-size: 14px; display: inline-block;">
+                                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
+                                </div>
+                            </div>
+                            <!-- Pagination Section -->
+                            <div class="pagination-container" style="display: flex; flex-direction: column; align-items: center;">
                                 <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
                                     <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
-                                        <a class="page-link" href="{{ $data->previousPageUrl() }}">
+                                        <a class="page-link" href="{{ $data->previousPageUrl() }}" style="padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; color: black; font-size: 14px;">
                                             <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>Previous
                                         </a>
                                     </li>
                                     <li class="page-item {{ $data->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
-                                        <a class="page-link" href="{{ $data->nextPageUrl() }}">
+                                        <a class="page-link" href="{{ $data->nextPageUrl() }}" style="padding: 10px 20px; border: 1px solid #ccc; border-radius: 5px; text-decoration: none; color: black; font-size: 14px;">
                                             Next <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
                                         </a>
                                     </li>
