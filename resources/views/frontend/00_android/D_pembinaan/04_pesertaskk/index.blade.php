@@ -224,10 +224,10 @@ h5 {
                                         @foreach ($data as $item )
                                         <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td>{{$item->namakegiatan}}</td>
-                                            <td>{{$item->jumlahpeserta}} Peserta</td>
-                                            <td>{{$item->keterangan}}</td>
-                                            <td style="text-align: center">
+                                            <td style="padding: 10px;">{{$item->namakegiatan}}</td>
+                                            <td style="padding: 10px;">{{$item->jumlahpeserta}} Peserta</td>
+                                            <td style="padding: 10px;">{{$item->keterangan}}</td>
+                                            <td style="text-align: center" style="padding: 10px;">
                                                 <div style="
                                                     display: inline-block;
                                                     font-size:14px;
