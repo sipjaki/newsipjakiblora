@@ -152,18 +152,13 @@
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:1500px;"> Dinas </th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:1000px;"> Jenis Pekerjaan </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:500px;"> Paket Pekerjaan  </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:1500px;"> Nama Pekerjaan</th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rekap</th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:250px;"> Progress</th>
-                                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Details</th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:250px;"> Pekerjaan</th>
-                                            <th onclick="sortTable(9)" style="cursor:pointer; text-align:center; width:250px;"> SPPBJ</th>
-                                            <th onclick="sortTable(10)" style="cursor:pointer; text-align:center; width:250px;"> SPK</th>
-                                            <th onclick="sortTable(11)" style="cursor:pointer; text-align:center; width:250px;"> SSKK</th>
-                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:250px;"> Perjanjian Harga Satuan</th> --}}
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Penyelenggaran</th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Nama Badan Usaha </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:600px;"> PJBU  </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;"> Kesesuaian Kegiatan Konstruksi</th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Segmentasi Pasar Konstruksi </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:300px;"> Pemenuhan Syarat Usaha</th>
+                                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:300px;"> Pengembangan Usaha</th>
                                             <th onclick="sortTable(12)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
                                         </tr>
                                     </thead>
@@ -172,62 +167,14 @@
                                         @foreach ($data as $item )
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize;" style="width:1500px;">{{$item->user->name}}</td>
-                                            <td style="text-align: left;" style="width:1000px;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
-                                            <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
-                                            <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan}}</td>
-                                            {{-- <td style="text-align: left;">Selesai</td> --}}
-                                            <td style="text-align: left;">{{$item->bulan?->bulanrekap}}</td>
-                                            <td style="text-align: left;">
-                                                @php
-                                                    // Mendapatkan progress dalam bentuk persentase
-                                                    $progress = $item->progress;
-                                                    // Membatasi nilai progress agar tidak lebih dari 100
-                                                    $progress = min($progress, 100);
-
-                                                    // Menentukan warna berdasarkan interval
-                                                    if ($progress <= 10) {
-                                                        $color = '#ff0000'; // Merah untuk 0-10%
-                                                    } elseif ($progress <= 20) {
-                                                        $color = '#ff1a1a'; // Merah terang untuk 10-20%
-                                                    } elseif ($progress <= 30) {
-                                                        $color = '#ff3333'; // Merah muda untuk 20-30%
-                                                    } elseif ($progress <= 40) {
-                                                        $color = '#ff4d4d'; // Merah marun untuk 30-40%
-                                                    } elseif ($progress <= 50) {
-                                                        $color = '#ff6666'; // Pink muda untuk 40-50%
-                                                    } elseif ($progress <= 60) {
-                                                        $color = '#ff8080'; // Pink untuk 50-60%
-                                                    } elseif ($progress <= 70) {
-                                                        $color = '#ff9999'; // Merah muda cerah untuk 60-70%
-                                                    } elseif ($progress <= 80) {
-                                                        $color = '#ffb3b3'; // Pink pucat untuk 70-80%
-                                                    } elseif ($progress <= 90) {
-                                                        $color = '#ffcccc'; // Pucat untuk 80-90%
-                                                    } else {
-                                                        $color = '#117235'; // Hijau untuk 90-100%
-                                                    }
-                                                @endphp
-
-                                                <!-- Membuat progress bar dengan warna dinamis -->
-                                                <div style="position: relative; width: 100%; height: 20px; background-color: #e0e0e0; border-radius: 10px;">
-                                                    <!-- Bar progress dengan warna sesuai dengan interval -->
-                                                    <div style="height: 100%; width: {{ $progress }}%; background-color: {{ $color }}; border-radius: 10px;">
-                                                    </div>
-
-                                                    <!-- Menampilkan angka progress di tengah bar -->
-                                                    <span style="position: absolute; width: 100%; text-align: center; line-height: 20px; color: black; font-weight: bold;">
-                                                        {{ $progress }}%
-                                                    </span>
-                                                </div>
-                                            </td>
-
-
+                                            <td style="text-align: left;">{{$item->penyediastatustertibjakon->penyedia}}</td>
+                                            <td style="text-align: left;">{{$item->namabadanusaha}}</td>
+                                            <td style="text-align: left;">{{$item->pjbu}}</td>
                                             <td class="text-center" style="text-align: center;">
                                                 @php
-                                                    $buttonText = !empty($item->detailspaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->surattertibjakonusaha1) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = !empty($item->detailspaketpekerjaan) ? route('detailspaketpekerjaan.show', $item->detailspaketpekerjaan->id) : '#';
+                                                    $route = !empty($item->surattertibjakonusaha1) ? route('surattertibjakonusaha1.show', $item->surattertibjakonusaha1->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
                                                         $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
                                                     } else {
@@ -242,105 +189,58 @@
                                             </td>
                                             <td class="text-center" style="text-align: center;">
                                                 @php
-                                                    $buttonText = !empty($item->detailsnamapaketpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->surattertibjakonusaha2) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = !empty($item->detailsnamapaketpekerjaan) ? route('detailsnamapaketpekerjaan.show', $item->detailsnamapaketpekerjaan->id) : '#';
+                                                    $route = !empty($item->surattertibjakonusaha2) ? route('surattertibjakonusaha2.show', $item->surattertibjakonusaha2->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
-                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
                                                     } else {
-                                                        // 'TIDAK ADA DATA' button in red
-                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
-                                                    <button style="{{ $style }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
                                             </td>
-
                                             <td class="text-center" style="text-align: center;">
                                                 @php
-                                                    $buttonText = !empty($item->sppbj) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->surattertibjakonusaha3) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = !empty($item->sppbj) ? route('sppbj.show', $item->sppbj->id) : '#';
+                                                    $route = !empty($item->surattertibjakonusaha3) ? route('surattertibjakonusaha3.show', $item->surattertibjakonusaha3->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
-                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
                                                     } else {
-                                                        // 'TIDAK ADA DATA' button in red
-                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
-                                                    <button style="{{ $style }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
                                             </td>
-
                                             <td class="text-center" style="text-align: center;">
                                                 @php
-                                                    $buttonText = !empty($item->spk) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $buttonText = !empty($item->surattertibjakonusaha4) ? 'LIHAT' : 'TIDAK ADA DATA';
                                                     $style = '';
-                                                    $route = !empty($item->spk) ? route('spk.show', $item->spk->id) : '#';
+                                                    $route = !empty($item->surattertibjakonusaha4) ? route('surattertibjakonusaha4.show', $item->surattertibjakonusaha4->id) : '#';
                                                     if ($buttonText == 'LIHAT') {
-                                                        // Light blue color for 'LIHAT' button
-                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
                                                     } else {
-                                                        // 'TIDAK ADA DATA' button in red
-                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
                                                     }
                                                 @endphp
                                                 <a href="{{ $route }}">
-                                                    <button style="{{ $style }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
                                                         {{ $buttonText }}
                                                     </button>
                                                 </a>
                                             </td>
-
-                                            <td class="text-center" style="text-align: center;">
-                                                @php
-                                                    $buttonText = !empty($item->sskk) ? 'LIHAT' : 'TIDAK ADA DATA';
-                                                    $style = '';
-                                                    $route = !empty($item->sskk) ? route('sskk.show', $item->sskk->id) : '#';
-                                                    if ($buttonText == 'LIHAT') {
-                                                        // Light green color for 'LIHAT' button
-                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
-                                                    } else {
-                                                        // 'TIDAK ADA DATA' button in red
-                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
-                                                    }
-                                                @endphp
-                                                <a href="{{ $route }}">
-                                                    <button style="{{ $style }}">
-                                                        {{ $buttonText }}
-                                                    </button>
-                                                </a>
-                                            </td>
-
-                                            {{-- <td class="text-center" style="text-align: center;">
-                                                @php
-                                                    $buttonText = !empty($item->suratperjanjianpekerjaan) ? 'LIHAT' : 'TIDAK ADA DATA';
-                                                    $style = '';
-                                                    $route = !empty($item->suratperjanjianpekerjaan) ? route('suratperjanjianpekerjaan.show', $item->suratperjanjianpekerjaan->id) : '#';
-                                                    if ($buttonText == 'LIHAT') {
-                                                        // Fuchsia color for 'LIHAT' button
-                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
-                                                    } else {
-                                                        // 'TIDAK ADA DATA' button in red
-                                                        $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
-                                                    }
-                                                @endphp
-                                                <a href="{{ $route }}">
-                                                    <button style="{{ $style }}">
-                                                        {{ $buttonText }}
-                                                    </button>
-                                                </a>
-                                            </td> --}}
-
-
                                             <td style="text-align: center" style="text-align: center;">
-                                                <a href="/resprofilpaketpekerjaan/{{$item->id}}">
+                                                <a href="/404">
+                                                {{-- <a href="/resprofilpaketpekerjaan/{{$item->id}}"> --}}
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>
