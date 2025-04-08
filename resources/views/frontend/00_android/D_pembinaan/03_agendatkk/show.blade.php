@@ -1,4 +1,57 @@
 <style>
+
+    /* Styling untuk div kontainer */
+    div {
+        margin: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+    }
+
+    /* Styling untuk tabel */
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    .custom-fl-table th, .custom-fl-table td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .custom-fl-table th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+    }
+
+    .custom-fl-table td {
+        background-color: #f9f9f9;
+    }
+
+    /* Styling untuk baris yang tidak memiliki materi */
+    .no-materi-message {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        background-color: #ffcccc;
+        display: block;
+        margin: 10px 0;
+        padding: 5px;
+    }
+
+    /* Styling untuk pesan 'MATERI BELUM DI UPLOAD' di luar tabel */
+    .no-data-message {
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+
     .header-surat {
     display: flex;
     justify-content: center;
@@ -205,58 +258,59 @@ h5 {
 
                     <h4 style="font-weight:bold;">II. DOWNLOAD MATERI PELATIHAN </h4>
 
-                    <table class="custom-fl-table" id="sortableTable">
-                        <thead>
-                            <tr>
-                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Judul </th>
-                                <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Materi </th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                            @php
-                                $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
-                                $materiFound = false; // Variabel untuk mengecek apakah ada materi
-                                $dataAvailable = false; // Variabel untuk mengecek apakah ada data
-                            @endphp
+                    <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+                        <table class="custom-fl-table" id="sortableTable">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable(0)" style="cursor:pointer; width:100px;"> No </th>
+                                    <th onclick="sortTable(1)" style="cursor:pointer; width:500px;"> Judul </th>
+                                    <th onclick="sortTable(2)" style="cursor:pointer; width:800px;"> Materi </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                @php
+                                    $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
+                                    $materiFound = false; // Variabel untuk mengecek apakah ada materi
+                                    $dataAvailable = false; // Variabel untuk mengecek apakah ada data
+                                @endphp
 
-                            @foreach ($datamateripelatihan as $item)
-                            <tr>
-                                <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
-                                <td>
-                                    @if(!empty($item->materipelatihan) && Storage::exists('public/' . $item->materipelatihan))
-                                        <!-- Jika ada file materi yang valid, tampilkan tombol untuk download -->
-                                        <button id="sertifikat-btn-{{ $loop->iteration }}" class="btn btn-primary">Download Materi</button>
-                                        <script>
-                                            document.getElementById('sertifikat-btn-{{ $loop->iteration }}').addEventListener('click', function() {
-                                                const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}"; // URL file yang ingin diunduh
-                                                const a = document.createElement('a');
-                                                a.href = fileUrl;
-                                                a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                                                document.body.appendChild(a);
-                                                a.click();
-                                                document.body.removeChild(a);
-                                            });
-                                        </script>
-                                        @php $materiFound = true; @endphp <!-- Set variabel jadi true jika ada materi -->
-                                    @else
-                                        <!-- Jika tidak ada file materi, tampilkan pesan -->
-                                        <span style="color: red; font-weight: bold;">MATERI BELUM DI UPLOAD</span>
-                                    @endif
-                                </td>
-                            </tr>
-                            @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
-                            @endforeach
+                                @foreach ($datamateripelatihan as $item)
+                                <tr>
+                                    <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                    <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
+                                    <td>
+                                        @if(!empty($item->materipelatihan) && Storage::exists('public/' . $item->materipelatihan))
+                                            <!-- Jika ada file materi yang valid, tampilkan tombol untuk download -->
+                                            <button id="sertifikat-btn-{{ $loop->iteration }}" class="btn btn-primary">Download Materi</button>
+                                            <script>
+                                                document.getElementById('sertifikat-btn-{{ $loop->iteration }}').addEventListener('click', function() {
+                                                    const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}"; // URL file yang ingin diunduh
+                                                    const a = document.createElement('a');
+                                                    a.href = fileUrl;
+                                                    a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
+                                                    document.body.appendChild(a);
+                                                    a.click();
+                                                    document.body.removeChild(a);
+                                                });
+                                            </script>
+                                            @php $materiFound = true; @endphp <!-- Set variabel jadi true jika ada materi -->
+                                        @else
+                                            <!-- Jika tidak ada file materi, tampilkan pesan -->
+                                            <span class="no-materi-message">MATERI BELUM DI UPLOAD</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
+                                @endforeach
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
 
-                    <!-- Jika tidak ada data sama sekali, tampilkan pesan di luar tabel -->
-                    @if(!$dataAvailable)
-                        <p style="color: red; font-weight: bold; text-align: center;">MATERI BELUM DI UPLOAD</p>
-                    @endif
-
+                        <!-- Jika tidak ada data sama sekali, tampilkan pesan di luar tabel -->
+                        @if(!$dataAvailable)
+                            <p class="no-data-message">MATERI BELUM DI UPLOAD</p>
+                        @endif
+                    </div>
 
                     <br>
                     </div>
