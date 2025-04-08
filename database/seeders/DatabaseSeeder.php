@@ -59207,71 +59207,71 @@ materipelatihanskk::create([
 ]);
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 1,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                           => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                     => '081321455855',
-    'instansi'                      => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 2,
-    'user_id'                       => 2,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 3,
-    'user_id'                       => 3,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 2,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 3,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => 'LOLOS',
-]);
+// pesertapelatihan::create([
+//     'agendapelatihan_id'            => 1,
+//     'user_id'                       => 1,
+//     'jenjangpendidikan_id'          => 2,
+//     'nik'                           => '3205270107200023',
+//     'jeniskelamin'                 => 'Laki-laki',
+//     'tanggallahir'                 => '2000-07-01',
+//     'notelepon'                     => '081321455855',
+//     'instansi'                      => 'DPUPR Kabupaten Bandung Barat',
+//     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     'sertifikat'                 => null,
+//     'verifikasi'                 => 'LOLOS',
+// ]);
+// pesertapelatihan::create([
+//     'agendapelatihan_id'            => 2,
+//     'user_id'                       => 2,
+//     'jenjangpendidikan_id'          => 2,
+//     'nik'                 => '3205270107200023',
+//     'jeniskelamin'                 => 'Laki-laki',
+//     'tanggallahir'                 => '2000-07-01',
+//     'notelepon'                 => '081321455855',
+//     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     'sertifikat'                 => null,
+//     'verifikasi'                 => 'LOLOS',
+// ]);
+// pesertapelatihan::create([
+//     'agendapelatihan_id'            => 3,
+//     'user_id'                       => 3,
+//     'jenjangpendidikan_id'          => 2,
+//     'nik'                 => '3205270107200023',
+//     'jeniskelamin'                 => 'Laki-laki',
+//     'tanggallahir'                 => '2000-07-01',
+//     'notelepon'                 => '081321455855',
+//     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     'sertifikat'                 => null,
+//     'verifikasi'                 => 'LOLOS',
+// ]);
+// pesertapelatihan::create([
+//     'agendapelatihan_id'            => 1,
+//     'user_id'                       => 2,
+//     'jenjangpendidikan_id'          => 2,
+//     'nik'                 => '3205270107200023',
+//     'jeniskelamin'                 => 'Laki-laki',
+//     'tanggallahir'                 => '2000-07-01',
+//     'notelepon'                 => '081321455855',
+//     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     'sertifikat'                 => null,
+//     'verifikasi'                 => 'LOLOS',
+// ]);
+// pesertapelatihan::create([
+//     'agendapelatihan_id'            => 1,
+//     'user_id'                       => 3,
+//     'jenjangpendidikan_id'          => 2,
+//     'nik'                 => '3205270107200023',
+//     'jeniskelamin'                 => 'Laki-laki',
+//     'tanggallahir'                 => '2000-07-01',
+//     'notelepon'                 => '081321455855',
+//     'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
+//     'sertifikat'                 => null,
+//     'verifikasi'                 => 'LOLOS',
+// ]);
 
 
 
