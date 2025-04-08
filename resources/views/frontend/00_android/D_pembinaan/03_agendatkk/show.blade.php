@@ -248,7 +248,6 @@ h5 {
                     <br>
 
                     <h4 style="font-weight:bold;">II. DOWNLOAD MATERI PELATIHAN </h4>
-
                     <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
                         <table class="custom-fl-table" id="sortableTable">
                             <thead>
