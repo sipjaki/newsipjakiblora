@@ -306,17 +306,17 @@ h5 {
                                 </div><!-- row -->
                             </div><!-- container -->
                             {{-- @include('frontend.00_approve.01_cssterpisah.paginator') --}}
+
+                            @include('frontend.00_android.00_fiturmenu.keterangan')
+
+                            <br><br><br><br><br>
+
+                                    @include('frontend.00_android.00_fiturmenu.android')
                         </section><!-- donate-section -->
+
 
             </div>
         </div>
-
-        @include('frontend.00_android.00_fiturmenu.keterangan')
-
-        <br><br><br><br><br>
-
-                @include('frontend.00_android.00_fiturmenu.android')
-
     </section>
 
     @include('frontend.00_android.00_fiturmenu.footer')
