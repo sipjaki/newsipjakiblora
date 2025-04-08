@@ -265,33 +265,38 @@ h5 {
                                 </ul>
                             </div>
                         </div>
-                   <script>
-                        function updateEntries() {
-                            let selectedValue = document.getElementById("entries").value;
-                            let url = new URL(window.location.href);
-                            url.searchParams.set("perPage", selectedValue);
-                            window.location.href = url.toString();
-                        }
+                        <script>
+                            // Fungsi untuk mengupdate jumlah entri per halaman
+                            function updateEntries() {
+                                let selectedValue = document.getElementById("entries").value;
+                                let url = new URL(window.location.href);
+                                url.searchParams.set("perPage", selectedValue);  // Update parameter perPage
+                                window.location.href = url.toString();  // Mengarahkan ke URL yang baru
+                            }
 
+                            // Fungsi untuk melakukan pencarian tabel
+                            function searchTable() {
+                                let input = document.getElementById("searchInput").value;
 
-                        function searchTable() {
-                        let input = document.getElementById("searchInput").value;
+                                // Pastikan namakegiatan di-encode dengan benar jika diperlukan
+                                const namakegiatan = encodeURIComponent("{{$data->namakegiatan}}");
 
-                        fetch(`/respelatihanpeserta/${encodeURIComponent($data->namakegiatan)}?search=${input}`)
+                                // Melakukan fetch dengan search query
+                                fetch(`/respelatihanpeserta/${namakegiatan}?search=${encodeURIComponent(input)}`)
+                                    .then(response => response.text())
+                                    .then(html => {
+                                        // Menggunakan DOMParser untuk mengambil isi baru tabel
+                                        let parser = new DOMParser();
+                                        let doc = parser.parseFromString(html, "text/html");
+                                        let newTableBody = doc.querySelector("#tableBody").innerHTML;
 
-                        // fetch(`/respelatihanpeserta/{{$data->namakegiatan}}?search=${input}`)
-                            .then(response => response.text())
-                            .then(html => {
-                                let parser = new DOMParser();
-                                let doc = parser.parseFromString(html, "text/html");
-                                let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                document.querySelector("#tableBody").innerHTML = newTableBody;
-                            })
-                            .catch(error => console.error("Error fetching search results:", error));
-                    }
-
-                            </script>
-                                    </div><!-- donate-box-inner -->
+                                        // Update bagian tabel dengan data baru
+                                        document.querySelector("#tableBody").innerHTML = newTableBody;
+                                    })
+                                    .catch(error => console.error("Error fetching search results:", error));  // Menangani error jika ada
+                            }
+                        </script>
+                                                            </div><!-- donate-box-inner -->
                                     </div><!-- col-xl-8 col-lg-12 -->
                                 </div><!-- row -->
                             </div><!-- container -->
