@@ -209,9 +209,9 @@ h5 {
                                 </div>
 
                             </div>
-
+<br>
                             <div>
-                                <span><p>Judul : {{$data->namakegiatan}}</p></span>
+                                <span style="font-weight:bold;"><p>Judul : {{$data->namakegiatan}}</p></span>
                             </div>
                             <div style="overflow-x: auto; margin-top: 15px;">
                                 <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse;">
