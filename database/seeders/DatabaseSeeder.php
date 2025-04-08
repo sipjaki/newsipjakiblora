@@ -59181,28 +59181,28 @@ for ($i = 1; $i <= 1221; $i++) {
 materipelatihan::create([
     'id'    => 1,
     'agendapelatihan_id'            => 1,
-    'judulmateripelatihan'          => 'Pelatihan',
+    'judulmateripelatihan'          => 'Agenda Pelatihan 1',
     'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 
 materipelatihan::create([
     'id'    => 2,
     'agendapelatihan_id'            => 1,
-    'judulmateripelatihan'          => 'Konstruksi',
+    'judulmateripelatihan'          => 'Agenda Pelatihan 2',
     'materipelatihan'          => null,
 ]);
 
 materipelatihanskk::create([
     'id'    => 1,
     'agendaskk_id'            => 1,
-    'judulskk'          => 'Pelatihan 1',
+    'judulskk'          => 'Agenda Sertifikasi 1',
     'materipelatihanskk'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 
 materipelatihanskk::create([
     'id'    => 2,
     'agendaskk_id'            => 2,
-    'judulskk'          => 'Pelatihan 2',
+    'judulskk'          => 'Agenda Sertifikasi 2',
     'materipelatihanskk'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
 ]);
 //==========================================================================================================
