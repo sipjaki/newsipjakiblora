@@ -779,6 +779,7 @@ class AndroidVersionController extends Controller
                  if ($search) {
                      $query->where('namalengkap', 'LIKE', "%{$search}%")
                            ->orWhere('jabatankerja', 'LIKE', "%{$search}%")
+                           ->orWhere('email', 'LIKE', "%{$search}%")
                            ->orWhereHas('user', function ($q) use ($search) {
                                $q->where('user', 'LIKE', "%{$search}%");
                            })
@@ -809,7 +810,7 @@ class AndroidVersionController extends Controller
                  $user = Auth::user();
 
                      $datapeserta = allskktenagakerjablora::where('agendaskk_id', $agendaskk->id)
-                                 ->select(['id', 'user_id', 'jabatankerja_id', 'tempatlahir', 'ttl', 'jeniskelamin', 'nik', 'jenjangpendidikan_id' ])
+                                 ->select(['id', 'user_id', 'jabatankerja_id', 'tempatlahir', 'ttl', 'jeniskelamin', 'nik', 'jenjangpendidikan_id', 'email' ])
                                  ->paginate(25);
 
                  // Ambil data user saat ini
