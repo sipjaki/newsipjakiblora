@@ -13,20 +13,24 @@ return new class extends Migration
     {
         Schema::create('tertibjakonpemanfaatans', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('penyediastatustertibjakon_id')->nullable();
-            $table->string('namapekerjaan')->nullable();
-            $table->string('namabangunan')->nullable();
-            $table->string('nomorkontrak')->nullable();
-            $table->string('lokasi')->nullable();
-            $table->date('tanggalpembangunan')->nullable();
-            $table->date('tanggalpemanfaatan')->nullable();
-            $table->integer('umurkonstruksi')->nullable();
-            $table->string('peruntukan_fungsi')->nullable();
-            $table->string('peruntukan_lokasi')->nullable();
-            $table->string('rencanaumur')->nullable();
-            $table->string('kapasitasdanbeban')->nullable();
-            $table->string('pemeliharaan_konstruksi')->nullable();
-            $table->string('pemeliharaan_struktur')->nullable(); // Diperbaiki dari pemeliharaan_pemeliharaan
+            $table->foreignId('penyediastatustertibjakon_id')->nullable()->index();
+            $table->foreignId('surattertibjakonpemanfaatan1_id')->nullable()->index();
+            $table->foreignId('surattertibjakonpemanfaatan2_id')->nullable()->index();
+            $table->foreignId('surattertibjakonpemanfaatan3_id')->nullable()->index();
+            $table->foreignId('surattertibjakonpemanfaatan4_id')->nullable()->index();
+            $table->string('namapekerjaan')->nullable()->index();
+            $table->string('namabangunan')->nullable()->index();
+            $table->string('nomorkontrak')->nullable()->index();
+            $table->string('lokasi')->nullable()->index();
+            $table->date('tanggalpembangunan')->nullable()->index();
+            $table->date('tanggalpemanfaatan')->nullable()->index();
+            $table->integer('umurkonstruksi')->nullable()->index();
+            $table->string('peruntukan_fungsi')->nullable()->index();
+            $table->string('peruntukan_lokasi')->nullable()->index();
+            $table->string('rencanaumur')->nullable()->index();
+            $table->string('kapasitasdanbeban')->nullable()->index();
+            $table->string('pemeliharaan_konstruksi')->nullable()->index();
+            $table->string('pemeliharaan_struktur')->nullable()->index(); // Diperbaiki dari pemeliharaan_pemeliharaan
             $table->softDeletes();
             $table->timestamps();
         });

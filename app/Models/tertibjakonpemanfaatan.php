@@ -18,4 +18,11 @@ class tertibjakonpemanfaatan extends Model
         return $this->belongsTo(penyediastatustertibjakon::class);
     }
 
+    public function penyediastatustertibjakon()
+    {
+        return $this->belongsTo(surattertibjakopemanfaatan1::class);
+    }
+
 }
+
+
