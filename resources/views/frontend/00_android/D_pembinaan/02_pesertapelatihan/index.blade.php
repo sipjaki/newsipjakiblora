@@ -226,11 +226,6 @@ h5 {
 
                         <div class="table-wrapper" style="margin-top:-130px; position: relative;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
-                                <div class="pagination-info-box" style="margin-right:0px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
-                                    <div class="pagination-info" style="color: black; font-weight: 500; font-size:20px;">
-                                        Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
-                                    </div>
-                                </div>
                                 <div>
                                     <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
                                     <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
@@ -242,12 +237,6 @@ h5 {
                                         <option value="150">150</option>
                                         <option value="200">200</option>
                                     </select>
-                                </div>
-
-                                <div style="position: relative; display: inline-block; margin-right:10px;">
-                                    <label>Masukan NIK</label>
-                                    <input type="search" id="searchsertifikat" placeholder="Download Sertifikat" onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                                    {{-- <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i> --}}
                                 </div>
 
                                 <div style="position: relative; display: inline-block; margin-right:10px;">
@@ -351,6 +340,12 @@ h5 {
                                     @endforeach
                                 </tbody>
                             </table>
+
+                            <div class="pagination-info-box" style="margin-right:0px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
+                                <div class="pagination-info" style="color: black; font-weight: 500; font-size:20px;">
+                                    Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
+                                </div>
+                            </div>
 
                             <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
                                 <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
