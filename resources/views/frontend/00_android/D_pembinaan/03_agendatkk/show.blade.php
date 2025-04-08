@@ -1,14 +1,5 @@
 <style>
 
-    /* Styling untuk div kontainer */
-    div {
-        margin: 20px;
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-    }
-
     /* Styling untuk tabel */
     .custom-fl-table {
         width: 100%;
