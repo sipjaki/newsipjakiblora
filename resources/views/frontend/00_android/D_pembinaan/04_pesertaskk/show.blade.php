@@ -221,10 +221,10 @@ h5 {
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:400px;"> Nama Lengkap </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Gender </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> NIK </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> Jabatan Kerja </th>
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:800px;"> Jabatan Kerja </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> Pendidikan  </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;"> Email </th>
-                                            <th style="text-align:center; width:100px;"> View Peserta </th>
+                                            {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
