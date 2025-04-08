@@ -160,6 +160,18 @@ Route::get('/respengawasan', [AndroidVersionController::class, 'menurespengawasa
 
 // MENU TERTIB JAKON USAHA JASA KONSTRUKSI  ------------------------------------------------
 Route::get('/resjakonusaha', [AndroidVersionController::class, 'menuresjakonusaha']);
+
+// Route untuk surat tertib jakon usaha 1
+Route::get('surattertibjakonusaha1/{id}', [AndroidVersionController::class, 'show1'])->name('surattertibjakonusaha1.show');
+
+// Route untuk surat tertib jakon usaha 2
+Route::get('surattertibjakonusaha2/{id}', [AndroidVersionController::class, 'show2'])->name('surattertibjakonusaha2.show');
+
+// Route untuk surat tertib jakon usaha 3
+Route::get('surattertibjakonusaha3/{id}', [AndroidVersionController::class, 'show3'])->name('surattertibjakonusaha3.show');
+
+// Route untuk surat tertib jakon usaha 4
+Route::get('surattertibjakonusaha4/{id}', [AndroidVersionController::class, 'show4'])->name('surattertibjakonusaha4.show');
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
