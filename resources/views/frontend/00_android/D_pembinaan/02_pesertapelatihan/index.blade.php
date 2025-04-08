@@ -184,7 +184,7 @@ h5 {
 
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
-                <div class="container-surat" style="margin-bottom: -100px;">
+                <div class="container-surat">
 
                     <body>
 
