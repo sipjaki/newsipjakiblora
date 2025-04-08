@@ -205,7 +205,6 @@ h5 {
 
                     <h4 style="font-weight:bold;">II. DOWNLOAD MATERI PELATIHAN </h4>
 
-                    {{-- <h5 style="font-weight:bold;">A. KEPALA DINAS</h5> --}}
                     <table class="custom-fl-table" id="sortableTable">
                         <thead>
                             <tr>
@@ -217,6 +216,7 @@ h5 {
                         <tbody id="tableBody">
                             @php
                                 $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
+                                $materiFound = false; // Variabel untuk mengecek apakah ada materi
                             @endphp
 
                             @foreach ($datamateripelatihan as $item)
@@ -238,9 +238,7 @@ h5 {
                                                 document.body.removeChild(a);
                                             });
                                         </script>
-                                    @else
-                                        <!-- Jika tidak ada file materi atau file tidak ditemukan, tampilkan teks -->
-                                        MATERI BELUM DI UPLOAD
+                                        @php $materiFound = true; @endphp <!-- Set variabel jadi true jika ada materi -->
                                     @endif
                                 </td>
                             </tr>
@@ -248,6 +246,11 @@ h5 {
 
                         </tbody>
                     </table>
+
+                    @if(!$materiFound)
+                        <p>Materi Belum Di Upload</p> <!-- Pesan ini hanya muncul jika tidak ada materi yang ditemukan -->
+                    @endif
+
 
                     <br>
                     </div>
