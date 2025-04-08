@@ -17,6 +17,4 @@ class materipelatihan extends Model
     {
         return $this->hasMany(agendapelatihan::class);
     }
-
-
 }

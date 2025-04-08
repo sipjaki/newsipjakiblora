@@ -491,71 +491,6 @@ class AndroidVersionController extends Controller
             ]);
         }
 
-        // MENU AGENDA SERTIFIKASI TKK JASA KONSTRUKSI KAB BLORA  ------------------
-
-        public function menuresagendatkk(Request $request)
-        {
-            $perPage = $request->input('perPage', 5);
-            $search = $request->input('search');
-
-            $query = agendaskk::query();
-
-            if ($search) {
-                $query->where('namakegiatan', 'LIKE', "%{$search}%")
-                ->orWhere('keterangan', 'LIKE', "%{$search}%")
-                ->orWhere('penutupan', 'LIKE', "%{$search}%")
-                ->orWhere('foto', 'LIKE', "%{$search}%");
-                // ->orWhere('no_telepon', 'LIKE', "%{$search}%");
-            }
-
-            $data = $query->paginate($perPage);
-
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('frontend.00_android.D_pembinaan.03_agendatkk.partials.table', compact('data'))->render()
-                ]);
-            }
-            $user = Auth::user();
-
-            return view('frontend.00_android.D_pembinaan.03_agendatkk.index', [
-                'title' => 'Agenda Pelatihan Jasa Konstruksi Kabupaten Blora',
-                'data' => $data,
-                'perPage' => $perPage,
-                'search' => $search,
-                'user' => $user, // Mengirimkan data paginasi ke view
-            ]);
-        }
-
-             // MENU DETAILS AGENDA TKK SERTIFIKASI JASA KONSTRKSI KABUPATEN BLORA
-
-             public function menuresagendatkkdetails($namakegiatan)
-             {
-                 $dataagendaskk = agendaskk::where('namakegiatan', $namakegiatan)->first();
-
-                 if (!$dataagendaskk) {
-                     // Tangani jika kegiatan tidak ditemukan
-                     return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
-                 }
-
-                 // Menggunakan paginate() untuk pagination
-                 $subdata = materipelatihanskk::where('agendaskk_id', $dataagendaskk->id)->paginate(50);
-
-                   // Menghitung nomor urut mulai
-                     $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
-
-             $user = Auth::user();
-
-
-             return view('frontend.00_android.D_pembinaan.03_agendatkk.show', [
-                 'title' => 'Agenda Pelatihan  Tenaga Kerja Konstruksi Kabupaten Blora',
-                 'data' => $dataagendaskk,
-                 'datamateripelatihanskk' => $subdata,
-                 // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
-                 'user' => $user,
-                 // 'start' => $start,
-             ]);
-             }
-
         // MENU AGENDA PELATIHAN ------------------
 
         public function menuresagendapelatihan(Request $request)
@@ -615,6 +550,72 @@ class AndroidVersionController extends Controller
                  'title' => 'Agenda Pelatihan  Tenaga Kerja Konstruksi Kabupaten Blora',
                  'data' => $dataagendapelatihan,
                  'datamateripelatihan' => $subdata,
+                 // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+                 'user' => $user,
+                 // 'start' => $start,
+             ]);
+             }
+
+
+        // MENU AGENDA SERTIFIKASI TKK JASA KONSTRUKSI KAB BLORA  ------------------
+
+        public function menuresagendatkk(Request $request)
+        {
+            $perPage = $request->input('perPage', 5);
+            $search = $request->input('search');
+
+            $query = agendaskk::query();
+
+            if ($search) {
+                $query->where('namakegiatan', 'LIKE', "%{$search}%")
+                ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                ->orWhere('penutupan', 'LIKE', "%{$search}%")
+                ->orWhere('foto', 'LIKE', "%{$search}%");
+                // ->orWhere('no_telepon', 'LIKE', "%{$search}%");
+            }
+
+            $data = $query->paginate($perPage);
+
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.D_pembinaan.03_agendatkk.partials.table', compact('data'))->render()
+                ]);
+            }
+            $user = Auth::user();
+
+            return view('frontend.00_android.D_pembinaan.03_agendatkk.index', [
+                'title' => 'Agenda Pelatihan Jasa Konstruksi Kabupaten Blora',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search,
+                'user' => $user, // Mengirimkan data paginasi ke view
+            ]);
+        }
+
+             // MENU DETAILS AGENDA TKK SERTIFIKASI JASA KONSTRKSI KABUPATEN BLORA
+
+             public function menuresagendatkkdetails($namakegiatan)
+             {
+                 $dataagendaskk = agendaskk::where('namakegiatan', $namakegiatan)->first();
+
+                 if (!$dataagendaskk) {
+                     // Tangani jika kegiatan tidak ditemukan
+                     return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+                 }
+
+                 // Menggunakan paginate() untuk pagination
+                 $subdata = materipelatihanskk::where('agendaskk_id', $dataagendaskk->id)->paginate(50);
+
+                   // Menghitung nomor urut mulai
+                     $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
+
+             $user = Auth::user();
+
+
+             return view('frontend.00_android.D_pembinaan.03_agendatkk.show', [
+                 'title' => 'Agenda Sertifikasi Tenaga Kerja Konstruksi Kabupaten Blora',
+                 'data' => $dataagendaskk,
+                 'datamateripelatihanskk' => $subdata,
                  // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
                  'user' => $user,
                  // 'start' => $start,
