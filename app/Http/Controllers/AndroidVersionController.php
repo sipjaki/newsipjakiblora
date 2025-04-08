@@ -888,7 +888,7 @@ class AndroidVersionController extends Controller
 
             // Mengirimkan data ke view
             return view('frontend.00_android.E_pengawasan.01_tertibjakonusaha.index', [
-                'title' => 'Profil Jakon DPUPR Kabupaten Blora',
+                'title' => 'Daftar Tertib Usaha Jasa Konstruksi Kabupaten Blora',
                 'data' => $data,  // Mengirimkan data paginasi ke view
                 'user' => $user,  // Mengirimkan data user ke view
                 'datasurat1' => $satasurat1,  // Mengirimkan data surat1 ke view
