@@ -636,6 +636,35 @@ class AndroidVersionController extends Controller
         }
 
 
+             // MENU DETAILS AGENDA PELATIHAN JASA KONSTRKSI KABUPATEN BLORA
+
+             public function menuresagendatkkdetails($namakegiatan)
+             {
+                 $dataagendapelatihan = agendaskk::where('namakegiatan', $namakegiatan)->first();
+
+                 if (!$dataagendapelatihan) {
+                     // Tangani jika kegiatan tidak ditemukan
+                     return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+                 }
+
+                 // Menggunakan paginate() untuk pagination
+                 $subdata = materipelatihan::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
+
+                   // Menghitung nomor urut mulai
+                     $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
+
+             $user = Auth::user();
+
+
+             return view('frontend.00_android.D_pembinaan.01_agendapelatihan.show', [
+                 'title' => 'Agenda Pelatihan  Tenaga Kerja Konstruksi Kabupaten Blora',
+                 'data' => $dataagendapelatihan,
+                 'datamateripelatihan' => $subdata,
+                 // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+                 'user' => $user,
+                 // 'start' => $start,
+             ]);
+             }
 
 
 }
