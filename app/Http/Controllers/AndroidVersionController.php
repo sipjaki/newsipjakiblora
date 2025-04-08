@@ -10,6 +10,11 @@ use App\Models\pesertapelatihan;
 use App\Models\materipelatihanskk;
 use App\Models\jenjang;
 use App\Models\kategoripelatihan;
+use App\Models\tertibjasakonstruksi;
+use App\Models\surattertibjakonusaha1;
+use App\Models\surattertibjakonusaha2;
+use App\Models\surattertibjakonusaha3;
+use App\Models\surattertibjakonusaha4;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -841,6 +846,29 @@ class AndroidVersionController extends Controller
             'user' => $user,
         ]);
         }
+
+        public function menuresjakonusaha()
+    {
+        $data = tertibjasakonstruksi::all(); // Menggunakan paginate() untuk pagination
+        $satasurat1 = surattertibjakonusaha1::all(); // Menggunakan paginate() untuk pagination
+        $satasurat2 = surattertibjakonusaha2::all(); // Menggunakan paginate() untuk pagination
+        $satasurat3 = surattertibjakonusaha3::all(); // Menggunakan paginate() untuk pagination
+        $satasurat4 = surattertibjakonusaha4::all(); // Menggunakan paginate() untuk pagination
+
+        $user = Auth::user();
+
+        return view('frontend.00_android.E_pengawasan.01_tertibjakonusaha.index', [
+            'title' => 'Profil Jakon DPUPR Kabupaten Blora',
+            'data' => $data, // Mengirimkan data paginasi ke view
+            'user' => $user, // Mengirimkan data paginasi ke view
+            'datasurat1' => $satasurat1, // Mengirimkan data paginasi ke view
+            'datasurat2' => $satasurat3, // Mengirimkan data paginasi ke view
+            'datasurat3' => $satasurat3, // Mengirimkan data paginasi ke view
+            'datasurat4' => $satasurat4, // Mengirimkan data paginasi ke view
+
+        ]);
+    }
+
 
         // MENU AHSP JASA KONSTRUKSI
         // -==============================================================================================================

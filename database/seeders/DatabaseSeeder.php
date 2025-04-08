@@ -59669,6 +59669,10 @@ penyediastatustertibjakon::create([
 // TERTIB JAKON BIDAN USAHA MAS JAKI BLORA
 tertibjasakonstruksi::create([
     'penyediastatustertibjakon_id' => '1',
+    'surattertibjakonusaha1_id' => '1',
+    'surattertibjakonusaha2_id' => '1',
+    'surattertibjakonusaha3_id' => '1',
+    'surattertibjakonusaha4_id' => '1',
     'nib' => '0208220001109',
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV MANDRA KANTA UNGGUL',
@@ -59686,6 +59690,10 @@ tertibjasakonstruksi::create([
 
 tertibjasakonstruksi::create([
     'penyediastatustertibjakon_id' => '2',
+    'surattertibjakonusaha1_id' => '2',
+    'surattertibjakonusaha2_id' => '2',
+    'surattertibjakonusaha3_id' => '2',
+    'surattertibjakonusaha4_id' => '2',
     'nib' => '0911220321514',
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADITIYA JAYA PERKASA',
@@ -59703,6 +59711,10 @@ tertibjasakonstruksi::create([
 
 tertibjasakonstruksi::create([
     'penyediastatustertibjakon_id' => '3',
+    'surattertibjakonusaha1_id' => '3',
+    'surattertibjakonusaha2_id' => '3',
+    'surattertibjakonusaha3_id' => '3',
+    'surattertibjakonusaha4_id' => '3',
     'nib' => '1261000381957',
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADHI KARYA MANDIRI',

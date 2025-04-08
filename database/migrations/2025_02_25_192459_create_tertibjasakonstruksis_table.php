@@ -13,23 +13,32 @@ return new class extends Migration
     {
         Schema::create('tertibjasakonstruksis', function (Blueprint $table) {
             $table->id();
-            $table->string('penyediastatustertibjakon_id')->nullable()->index();
-            $table->string('nib')->nullable();
-            $table->string('namapekerjaan')->nullable();
-            $table->string('namabadanusaha')->nullable();
-            $table->string('pjbu')->nullable();
-            $table->string('sesuai_jenis')->nullable();
-            $table->string('sesuai_sifat')->nullable();
-            $table->string('sesuai_klasifikasi')->nullable();
-            $table->string('sesuai_layanan')->nullable();
-            $table->string('segmentasipasar_bentuk')->nullable();
-            $table->string('segmentasipasar_kualifikasi')->nullable();
-            $table->string('syarat_SBU')->nullable();
-            $table->string('syarat_NIB')->nullable();
-            $table->string('pelaksanaanpengembangan')->nullable();
+            // Kolom relasi
+            $table->foreignId('penyediastatustertibjakon_id')->nullable()->index();
+            $table->foreignId('surattertibjakonusaha1_id')->nullable()->index();
+            $table->foreignId('surattertibjakonusaha2_id')->nullable()->index();
+            $table->foreignId('surattertibjakonusaha3_id')->nullable()->index();
+            $table->foreignId('surattertibjakonusaha4_id')->nullable()->index();
+// -------------------------------------------------------------------------
+            $table->string('nib', 50)->nullable()->index(); // Set panjang karakter yang lebih sesuai
+            $table->string('namapekerjaan', 255)->nullable()->index();
+            $table->string('namabadanusaha', 255)->nullable()->index();
+            $table->string('pjbu', 100)->nullable()->index();
+            $table->string('sesuai_jenis', 100)->nullable()->index();
+            $table->string('sesuai_sifat', 100)->nullable()->index();
+            $table->string('sesuai_klasifikasi', 100)->nullable()->index();
+            $table->string('sesuai_layanan', 100)->nullable()->index();
+            $table->string('segmentasipasar_bentuk', 100)->nullable()->index();
+            $table->string('segmentasipasar_kualifikasi', 100)->nullable()->index();
+            $table->string('syarat_SBU', 100)->nullable()->index();
+            $table->string('syarat_NIB', 100)->nullable()->index();
+            $table->string('pelaksanaanpengembangan', 255)->nullable()->index();
+
             $table->softDeletes();
             $table->timestamps();
+
         });
+
     }
 
     /**

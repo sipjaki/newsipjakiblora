@@ -157,6 +157,9 @@ Route::get('/resskkpeserta/{namakegiatan}', [AndroidVersionController::class, 'm
 // ================================================ MENU E. PENGAWASAN
 // MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
 Route::get('/respengawasan', [AndroidVersionController::class, 'menurespengawasan']);
+
+// MENU TERTIB JAKON USAHA JASA KONSTRUKSI  ------------------------------------------------
+Route::get('/resjakonusaha', [AndroidVersionController::class, 'menuresjakonusaha']);
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 

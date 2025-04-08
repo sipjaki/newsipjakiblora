@@ -18,4 +18,24 @@ class tertibjasakonstruksi extends Model
         return $this->belongsTo(penyediastatustertibjakon::class);
     }
 
+    public function surattertibjakonusaha1()
+    {
+        return $this->belongsTo(surattertibjakonusaha1::class);
+    }
+
+    public function surattertibjakonusaha2()
+    {
+        return $this->belongsTo(surattertibjakonusaha2::class);
+    }
+
+    public function surattertibjakonusaha3()
+    {
+        return $this->belongsTo(surattertibjakonusaha3::class);
+    }
+
+    public function surattertibjakonusaha4()
+    {
+        return $this->belongsTo(surattertibjakonusaha4::class);
+    }
+
 }
