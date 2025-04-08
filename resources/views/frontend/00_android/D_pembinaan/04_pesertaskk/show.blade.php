@@ -233,16 +233,19 @@ h5 {
                                             @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
                                             @foreach ($datapeserta as $item )
                                             <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
-                                                <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                                <td style="text-transform: capitalize;">
+                                                <td style="text-align: center; padding: 10px;">{{ $loop->iteration + $start - 1 }}</td>
+                                                <td style="text-transform: capitalize; padding: 10px;">
                                                     {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }}
                                                 </td>
-                                                <td style="text-align: center;">{{$item->jeniskelamin}}</td>
-                                                <td>{{$item->nik}}</td>
-                                                <td>{{$item->jabatankerja->jabatankerja}}</td>
-                                                <td>{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-                                                <td>{{$item->email}}</td>
+                                                <td style="text-align: center; padding: 10px;">{{$item->jeniskelamin}}</td>
+                                                <td style="padding: 10px;">
+                                                    {{ substr($item->nik, 0, 4) . 'XXXXXX' }}
+                                                </td>
+                                                   <td style="padding: 10px;">{{$item->jabatankerja->jabatankerja}}</td>
+                                                <td style="padding: 10px;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
+                                                <td style="padding: 10px;">{{$item->email}}</td>
                                             </tr>
+
                                             @endforeach
                                         </tbody>
                                     </table>
