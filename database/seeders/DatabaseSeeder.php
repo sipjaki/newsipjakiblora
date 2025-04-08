@@ -59555,7 +59555,7 @@ agendaskk::create([
     'lokasi' => 'Jln Blora No. 10',
     'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja konstruksi bangunan gedung.',
     'isiagenda' => 'Peserta akan diberikan pemahaman mendalam tentang konstruksi bangunan gedung...',
-    'foto' => '01_agendapelatihan/sertifikasi.jpg',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
 ]);
 
 agendaskk::create([
@@ -59569,7 +59569,7 @@ agendaskk::create([
     'lokasi' => 'Jln Raya Semarang No. 22',
     'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja di bidang tukang bangunan sipil.',
     'isiagenda' => 'Materi meliputi teknik pemasangan struktur beton dan perawatan bangunan...',
-    'foto' => '01_agendapelatihan/sertifikasi.jpg',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
 ]);
 
 
