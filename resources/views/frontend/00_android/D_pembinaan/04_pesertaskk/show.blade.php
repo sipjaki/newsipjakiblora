@@ -238,7 +238,7 @@ h5 {
                                                 </td>
                                                 <td style="text-align: center;">{{$item->jeniskelamin}}</td>
                                                 <td>{{$item->nik}}</td>
-                                                <td>{{$item->jabatankerja}}</td>
+                                                <td>{{$item->jabatankerja->jabatankerja}}</td>
                                                 <td>{{$item->nik}}</td>
                                                 <td>{{$item->nik}}</td>
                                             </tr>

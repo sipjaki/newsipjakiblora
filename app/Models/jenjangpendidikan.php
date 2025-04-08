@@ -18,11 +18,6 @@ class jenjangpendidikan extends Model
         return $this->hasMany(skktenagakerjablora::class);
     }
 
-    public function skktenagakerjabloralist()
-    {
-        return $this->hasMany(skktenagakerjabloralist::class);
-    }
-
     public function allskktenagakerjablora()
     {
         return $this->hasMany(allskktenagakerjablora::class);
