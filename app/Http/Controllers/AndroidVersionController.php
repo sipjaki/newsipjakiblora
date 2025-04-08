@@ -592,7 +592,7 @@ class AndroidVersionController extends Controller
 
 
         return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.index', [
-            'title' => 'Agenda Pelatihan Konstruksi Kab Blora',
+            'title' => 'Agenda Pelatihan Jasa Konstruksi Kab Blora',
             'data' => $data,
             'perPage' => $perPage,
             'search' => $search,
