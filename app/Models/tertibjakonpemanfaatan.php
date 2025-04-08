@@ -13,10 +13,10 @@ class tertibjakonpemanfaatan extends Model
     protected $guarded = ['id'];
 
     // Relasi dengan penyediastatustertibjakon
-    public function penyediastatustertibjakon()
-    {
-        return $this->belongsTo(penyediastatustertibjakon::class); // Relasi yang benar
-    }
+    // public function penyediastatustertibjakon()
+    // {
+    //     return $this->belongsTo(penyediastatustertibjakon::class); // Relasi yang benar
+    // }
 
     // Relasi dengan surattertibjakonpemanfaatan1
     public function surattertibjakonmanfaat1()
