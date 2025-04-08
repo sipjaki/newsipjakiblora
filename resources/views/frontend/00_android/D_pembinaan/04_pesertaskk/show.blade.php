@@ -221,8 +221,8 @@ h5 {
                                                 <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                                 <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:600px;"> Nama Lengkap </th>
                                                 <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Gender </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> NIK </th>
-                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Jabatan Kerja </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:500px;"> NIK </th>
+                                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:800px;"> Jabatan Kerja </th>
                                                 <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendidikan </th>
                                                 <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Email</th>
                                                 {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
@@ -239,8 +239,8 @@ h5 {
                                                 <td style="text-align: center;">{{$item->jeniskelamin}}</td>
                                                 <td>{{$item->nik}}</td>
                                                 <td>{{$item->jabatankerja->jabatankerja}}</td>
-                                                <td>{{$item->nik}}</td>
-                                                <td>{{$item->nik}}</td>
+                                                <td>{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
+                                                <td>{{$item->email}}</td>
                                             </tr>
                                             @endforeach
                                         </tbody>
