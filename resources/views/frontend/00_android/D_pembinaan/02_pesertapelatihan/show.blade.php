@@ -277,7 +277,7 @@ h5 {
                         function searchTable() {
                         let input = document.getElementById("searchInput").value;
 
-                        fetch(`/respelatihanpeserta?search=${input}`)
+                        fetch(`/respelatihanpeserta/{{$data->namakegiatan}}?search=${input}`)
                             .then(response => response.text())
                             .then(html => {
                                 let parser = new DOMParser();
