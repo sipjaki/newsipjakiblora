@@ -203,7 +203,7 @@ h5 {
 
                     <br>
 
-                    <h4 style="font-weight:bold;">II. DAFTAR MATERI PELATIHAN </h4>
+                    <h4 style="font-weight:bold;">II. DOWNLOAD MATERI PELATIHAN </h4>
 
                     {{-- <h5 style="font-weight:bold;">A. KEPALA DINAS</h5> --}}
                     <table class="custom-fl-table" id="sortableTable">
