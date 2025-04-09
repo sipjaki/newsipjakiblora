@@ -592,6 +592,26 @@ headerberanda::create([
             'password' => bcrypt('adminadmin123$$')
         ]);
 
+        User::create([
+            'id'  => 98,
+            'name'  => 'Chaerul Umam',
+            'username' => 'Chaerul Umam',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/sigit.jpg',
+            'email' => 'chaerulumam@gmail.com',
+            'password' => bcrypt('umamadnmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 99,
+            'name'  => 'Maryana Indah',
+            'username' => 'maryanaindah',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/sigit.jpg',
+            'email' => 'maryananindah@gmail.com',
+            'password' => bcrypt('indahadnmin123$$')
+        ]);
+
 
 
 
