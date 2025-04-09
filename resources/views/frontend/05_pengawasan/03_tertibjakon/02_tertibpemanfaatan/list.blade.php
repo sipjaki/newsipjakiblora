@@ -257,7 +257,7 @@ color: #45a049;
 
                                                 <tr>
                                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                                    <td style="text-align: center;">{{$item->penyediastatustertibjakon->penyedia}}</td>
+                                                    <td style="text-align: center;">{{$item->penyediastatustertibjakon?->penyedia}}</td>
                                                     <td>{{$item->namabangunan}}</td>
                                                     {{-- <td>{{$item->nomorkontrak}}</td> --}}
                                                     <td>{{$item->lokasi}}</td>
