@@ -61625,26 +61625,6 @@ tertibjasakonstruksi::create([
 
 
 // =========================================================
-tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 1,
-    'surattertibjakonpemanfaatan1_id' => 1,
-    'surattertibjakonpemanfaatan2_id' => 1,
-    'surattertibjakonpemanfaatan3_id' => 1,
-    'surattertibjakonpemanfaatan4_id' => 1,
-    'namapekerjaann' => null,
-    'namabangunan' => 'Kawasan Taman Budaya Cepu',
-    'nomorkontrak' => '640/BG.080/2023',
-    'lokasi' => 'Kec. Cepu Kab. Blora',
-    'tanggalpembangunan' => '2023-07-06',
-    'tanggalpemanfaatan' => '2023-11-02',
-    'umurkonstruksi' => '5 Tahun',
-    'peruntukan_fungsi' => 'TERTIB',
-    'peruntukan_lokasi' => 'TERTIB',
-    'rencanaumur' => 'TERTIB',
-    'kapasitasdanbeban' => 'BELUM TERTIB',
-    'pemeliharaan_konstruksi' => 'BELUM TERTIB',
-    'pemeliharaan_struktur' => 'BELUM TERTIB',
-]);
 
 tertibjakonpemanfaatan::create([
     'penyediastatustertibjakon_id' => 2,
