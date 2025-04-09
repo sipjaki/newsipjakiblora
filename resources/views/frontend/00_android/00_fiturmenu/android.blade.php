@@ -19,7 +19,7 @@
             </div>
         </a>
 
-        <a href="/login">
+        <a href="/404">
             <div class="w-[48px] h-[48px] flex shrink-0">
                 <img src="/assets/00_android/menuhape/home.png" alt="icon" loading="lazy">
             </div>
@@ -35,7 +35,7 @@
         </a>
 
         <!-- Ikon Login (tampil jika belum login) -->
-        <a href="/404" id="login-icon" style="display:none;">
+        <a href="/login" id="login-icon" style="display:none;">
             <div class="flex flex-col gap-1 items-center">
                 <div class="w-6 h-6 flex shrink-0">
                     <img src="/assets/00_android/menuhape/6.png" alt="icon" loading="lazy">
