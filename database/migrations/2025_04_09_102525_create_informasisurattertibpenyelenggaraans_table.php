@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('informasisurattertibpenyelenggaraans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
