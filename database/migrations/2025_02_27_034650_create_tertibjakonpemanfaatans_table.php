@@ -27,12 +27,12 @@ return new class extends Migration
             $table->date('tanggalpembangunan')->nullable()->index();
             $table->date('tanggalpemanfaatan')->nullable()->index();
             $table->string('umurbangunan')->nullable()->index();
-            $table->string('peruntukan_fungsi')->nullable()->index();
-            $table->string('peruntukan_lokasi')->nullable()->index();
-            $table->string('rencanaumur')->nullable()->index();
-            $table->string('kapasitasdanbeban')->nullable()->index();
-            $table->string('pemeliharaan_konstruksi')->nullable()->index();
-            $table->string('pemeliharaan_struktur')->nullable()->index(); // Diperbaiki dari pemeliharaan_pemeliharaan
+            $table->string('peruntukan_fungsi', 50)->nullable()->index();
+            $table->string('peruntukan_lokasi', 50)->nullable()->index();
+            $table->string('rencanaumur', 50)->nullable()->index();
+            $table->string('kapasitasdanbeban', 50)->nullable()->index();
+            $table->string('pemeliharaan_konstruksi', 50)->nullable()->index();
+            $table->string('pemeliharaan_struktur', 50)->nullable()->index(); // Diperbaiki dari pemeliharaan_pemeliharaan
             $table->softDeletes();
             $table->timestamps();
         });
