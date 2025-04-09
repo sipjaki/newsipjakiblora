@@ -35,6 +35,12 @@ use App\Models\bujkkonsultansub;
 use App\Models\materipelatihan;
 use App\Models\skktenagakerjablora;
 use App\Models\paketpekerjaanmasjaki;
+use App\Models\surattertibjakonpemanfaatan1;
+use App\Models\surattertibjakonpemanfaatan2;
+use App\Models\surattertibjakonpemanfaatan3;
+use App\Models\surattertibjakonpemanfaatan4;
+use App\Models\surattertibjakonpemanfaatan5;
+use App\Models\tertibjakonpemanfaatan;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -895,6 +901,62 @@ class AndroidVersionController extends Controller
                 'datasurat2' => $satasurat2,  // Mengirimkan data surat2 ke view
                 'datasurat3' => $satasurat3,  // Mengirimkan data surat3 ke view
                 'datasurat4' => $satasurat4,  // Mengirimkan data surat4 ke view
+                'search' => $search,  // Mengirimkan parameter pencarian ke view
+                'perPage' => $perPage,  // Mengirimkan parameter perPage ke view
+            ]);
+        }
+
+        public function menuresjakonpemanfataan(Request $request)
+        {
+            // Ambil parameter perPage dan search dari request
+            $perPage = $request->input('perPage', 15);  // Default 15 per halaman
+            $search = $request->input('search');
+
+            // Membuat query untuk model tertibjasakonstruksi
+            $query = tertibjakonpemanfaatan::query();
+
+            // Tambahkan kondisi pencarian jika ada keyword pencarian
+            if ($search) {
+                $query->where('namabadanusaha', 'LIKE', "%{$search}%")
+                      ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                    //   ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                      // Menggunakan whereHas untuk relasi penyedia
+                      ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
+                          $q->where('penyedia', 'LIKE', "%{$search}%"); // Ganti penyedia_column_name dengan nama kolom yang relevan di relasi 'penyedia'
+                      });
+            }
+
+            // Lakukan pagination dengan hasil pencarian
+            $data = $query->paginate($perPage);
+
+            // Jika request adalah AJAX, kembalikan hasil dalam bentuk HTML
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.E_pengawasan.02_tertibpemanfaatan.partials.table', compact('data'))->render()
+                ]);
+            }
+
+            // Ambil data untuk surat-surat terkait
+            $satasurat1 = surattertibjakonpemanfaatan1::all();
+            $satasurat2 = surattertibjakonpemanfaatan2::all();
+            $satasurat3 = surattertibjakonpemanfaatan3::all();
+            $satasurat4 = surattertibjakonpemanfaatan4::all();
+            $satasurat5 = surattertibjakonpemanfaatan5::all();
+
+
+            // Ambil data user yang sedang login
+            $user = Auth::user();
+
+            // Mengirimkan data ke view
+            return view('frontend.00_android.E_pengawasan.02_tertibpemanfaatan.index', [
+                'title' => 'Daftar Tertib Pemanfaatan Jasa Konstruksi Kabupaten Blora',
+                'data' => $data,  // Mengirimkan data paginasi ke view
+                'user' => $user,  // Mengirimkan data user ke view
+                'datasurat1' => $satasurat1,  // Mengirimkan data surat1 ke view
+                'datasurat2' => $satasurat2,  // Mengirimkan data surat2 ke view
+                'datasurat3' => $satasurat3,  // Mengirimkan data surat3 ke view
+                'datasurat4' => $satasurat4,  // Mengirimkan data surat4 ke view
+                'datasurat5' => $satasurat5,  // Mengirimkan data surat4 ke view
                 'search' => $search,  // Mengirimkan parameter pencarian ke view
                 'perPage' => $perPage,  // Mengirimkan parameter perPage ke view
             ]);
