@@ -63755,17 +63755,6 @@ for ($i = 1; $i <= 93; $i++) {
     ]);
 }
 
-for ($i = 1; $i <= 93; $i++) {
-    surattertibjakonpemanfaatan4::create([
-        'tertibjakonpemanfaatan_id' => $i, // ID secara otomatis dari 1 sampai 93
-        'lingkuppengawasan' => 'Pengawasan terhadap kapasitas dan beban',
-        'indikator' => 'Terjaminnya Bangunan Konstruksi dari kelebihan kapasitas dan beban yang dibuktikan dengan tersediannya surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik pengelolaan bangunan atau konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan ', // Indikator dengan angka
-        'dokumendiperiksa' => 'Surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan ', // Dokumen yang diperiksa
-        'carapemeriksaan' => 'Memeriksa ketersediaan surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau melakukan konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan ', // Cara pemeriksaan
-        'kesimpulanpemeriksaan' => 'TIDAK', // Kesimpulan pemeriksaan dengan angka
-        'catatan' => 'TIDAK', // Catatan dengan angka
-    ]);
-}
 
 for ($i = 1; $i <= 93; $i++) {
     surattertibjakonpemanfaatan5::create([
