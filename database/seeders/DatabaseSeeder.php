@@ -63706,10 +63706,86 @@ tertibjakonpemanfaatan::create([
     'pemeliharaan_struktur' => 'BELUM TERTIB',
 ]);
 
+for ($i = 1; $i <= 93; $i++) {
+    surattertibjakonpemanfaatan1::create([
+        'tertibjakonpemanfaatan_id' => $i, // ID secara otomatis dari 1 sampai 93
+        'lingkuppengawasan' => 'Kesesuaian pemanfataan bangunan konstruksi dengan fungsi yang di rencanakan, 1. Bangunan Gedung sesuai dengan perijinan, 1. Bangunan Sipil sesuai dengan perijinan',
+        'indikator' => 'Pemanfaatan bangunan konstruksi sesuai dengan perizinannya', // Indikator dengan angka
+        'dokumendiperiksa' => 'Dokumen perizinan', // Dokumen yang diperiksa
+        'carapemeriksaan' => 'Membandingkan izin pembangunan dengan fakta di lapangan', // Cara pemeriksaan
+        'kesimpulanpemeriksaan' => 'SESUAI', // Kesimpulan pemeriksaan dengan angka
+        'catatan' => 'SESUAI', // Catatan dengan angka
+    ]);
+}
+
+for ($i = 1; $i <= 93; $i++) {
+    surattertibjakonpemanfaatan2::create([
+        'tertibjakonpemanfaatan_id' => $i, // ID secara otomatis dari 1 sampai 93
+        'lingkuppengawasan' => 'Kesesuaian Lokasi Bangunan Konstruksi dengan peruntukan yang diatur dalam rencana detail tata ruang atau kesesuaian kegiatan Pemanfaatan Ruang (KKPR) ',
+        'indikator' => 'Lokasi bangunan konstruksi sesuai peruntukan tata ruang dibuktikan dengan surat pernyataan dari instansi berwenang', // Indikator dengan angka
+        'dokumendiperiksa' => 'Dokumen resmi dari instansi berwenang', // Dokumen yang diperiksa
+        'carapemeriksaan' => 'Memeriksa ketersediaan Dokumen resmi dari instansi berwenang', // Cara pemeriksaan
+        'kesimpulanpemeriksaan' => 'TERSEDIA', // Kesimpulan pemeriksaan dengan angka
+        'catatan' => 'TERSEDIA', // Catatan dengan angka
+    ]);
+}
+
+for ($i = 1; $i <= 93; $i++) {
+    surattertibjakonpemanfaatan3::create([
+        'tertibjakonpemanfaatan_id' => $i, // ID secara otomatis dari 1 sampai 93
+        'lingkuppengawasan' => 'Pengawasan terhadap rencana umur konstruksi',
+        'indikator' => 'Terjaminnya Bangunan Konstruksi tetap laik fungsi sepanjang umur konstruksi yang dibuktikan dengan tersediannya dokumen laik fungsi atau dokumen sejenis lainnya', // Indikator dengan angka
+        'dokumendiperiksa' => 'Dokumen laik fungsi atau dokumen sejenis yang diterbitkan oleh instansi berwenang', // Dokumen yang diperiksa
+        'carapemeriksaan' => 'Memeriksa ketersediaan Dokumen resmi dari instansi berwenang', // Cara pemeriksaan
+        'kesimpulanpemeriksaan' => 'TERSEDIA', // Kesimpulan pemeriksaan dengan angka
+        'catatan' => 'TERSEDIA', // Catatan dengan angka
+    ]);
+}
+
+for ($i = 1; $i <= 93; $i++) {
+    surattertibjakonpemanfaatan4::create([
+        'tertibjakonpemanfaatan_id' => $i, // ID secara otomatis dari 1 sampai 93
+        'lingkuppengawasan' => 'Pengawasan terhadap kapasitas dan beban',
+        'indikator' => 'Terjaminnya Bangunan Konstruksi dari kelebihan kapasitas dan beban yang dibuktikan dengan tersediannya surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik pengelolaan bangunan atau konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan ', // Indikator dengan angka
+        'dokumendiperiksa' => 'Surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan ', // Dokumen yang diperiksa
+        'carapemeriksaan' => 'Memeriksa ketersediaan surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau melakukan konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan ', // Cara pemeriksaan
+        'kesimpulanpemeriksaan' => 'TIDAK', // Kesimpulan pemeriksaan dengan angka
+        'catatan' => 'TIDAK', // Catatan dengan angka
+    ]);
+}
+
+for ($i = 1; $i <= 93; $i++) {
+    surattertibjakonpemanfaatan4::create([
+        'tertibjakonpemanfaatan_id' => $i, // ID secara otomatis dari 1 sampai 93
+        'lingkuppengawasan' => 'Pengawasan terhadap kapasitas dan beban',
+        'indikator' => 'Terjaminnya Bangunan Konstruksi dari kelebihan kapasitas dan beban yang dibuktikan dengan tersediannya surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik pengelolaan bangunan atau konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan ', // Indikator dengan angka
+        'dokumendiperiksa' => 'Surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan ', // Dokumen yang diperiksa
+        'carapemeriksaan' => 'Memeriksa ketersediaan surat keterangan dari instansi yang memiliki kewenangan atau laporan dari pemilik/pengelola bangunan atau melakukan konfirmasi instansi yang memiliki kewenangan atau pemilik/pengelola bangunan ', // Cara pemeriksaan
+        'kesimpulanpemeriksaan' => 'TIDAK', // Kesimpulan pemeriksaan dengan angka
+        'catatan' => 'TIDAK', // Catatan dengan angka
+    ]);
+}
+
+for ($i = 1; $i <= 93; $i++) {
+    surattertibjakonpemanfaatan5::create([
+        'tertibjakonpemanfaatan_id' => $i, // ID secara otomatis dari 1 sampai 93
+        'lingkuppengawasan' => 'Pengawasan terhadap pemeliharaan produk jasa konstruksi',
+        'indikator' => 'Terlaksananya pemeliharaan bangunan konstruksi yang dibuktikan dengan ketersediaan surat pernyataan pemilik/pengelola bangunan dengan lampiran a. Dokumen Program pemeliharaan dan perawatan bangunan sesuai dengan ketentuan peraturan perundang-undangan tentang standar pemliharaan dan perawatan ', // Indikator dengan angka
+        'indikator2' => 'Laporan pelaksanaan program pemeliharaan/perawatan bangunan', // Indikator dengan angka
+        'dokumendiperiksa' => 'Dokumen program pemeliharaan/perawatan bangunan ', // Dokumen yang diperiksa
+        'dokumendiperiksa2' => 'Laporan pelaksanaan program pemeliharaan/perawatan bangunan', // Dokumen yang diperiksa
+        'carapemeriksaan' => 'Memeriksa ketersediaan dokumen program pemeliharaan/ perawatan bangunan', // Cara pemeriksaan
+        'carapemeriksaan2' => 'Memeriksa ketersediaan laporan pelaksanaan program pemeliharaan/ perawatan bangunan dibandingkan dengan pelaksanaannya ', // Cara pemeriksaan
+        'kesimpulanpemeriksaan' => 'TIDAK', // Kesimpulan pemeriksaan dengan angka
+        'kesimpulanpemeriksaan2' => 'TIDAK', // Kesimpulan pemeriksaan dengan angka
+        'catatan' => 'TIDAK', // Catatan dengan angka
+        'catatan2' => 'TIDAK', // Catatan dengan angka
+    ]);
+}
 
 
-  // makanyu
 
+// <!-- MAKANYU -->
 
 //======================== ===================================================================================
 // TERTIB JAKON PEMANFAATAN MAS JAKI

@@ -39,4 +39,9 @@ class tertibjakonpemanfaatan extends Model
     {
         return $this->belongsTo(surattertibjakonpemanfaatan4::class);
     }
+
+    public function surattertibjakonpemanfaatan5()
+    {
+        return $this->belongsTo(surattertibjakonpemanfaatan5::class);
+    }
 }
