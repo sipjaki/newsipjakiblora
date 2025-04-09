@@ -153,8 +153,8 @@
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Penyelenggaran</th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Nama Bangunan Gedung </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:600px;"> PJBU  </th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Kegiatan Konstruksi </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:600px;"> PJBU</th>
                                             <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;"> Kesesuaian Fungsi Peruntukan </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rencana Umur Konstruksi </th>
                                             <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:300px;"> Kapasitas & Beban</th>

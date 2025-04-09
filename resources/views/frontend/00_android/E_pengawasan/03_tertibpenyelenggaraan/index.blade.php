@@ -153,12 +153,12 @@
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Kegiatan Konstruksi</th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> BUJK </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:600px;"> PJBU  </th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Badan Usaha</th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:600px;"> Nomor Kontrak   </th>
                                             <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;"> Proses Pemilihan Penyedia Jasa </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Pengawasan Terhadap Kontrak Kerja Konstruksi </th>
                                             <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:300px;"> Pengawasan Terhadap Penerapan Standar Keamanan, Keselamatan, Kesehatan</th>
-                                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:300px;"> Pemeliharaan Produk Konstruksi</th>
+                                            {{-- <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:300px;"> Pemeliharaan Produk Konstruksi</th> --}}
                                             <th onclick="sortTable(12)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
                                         </tr>
                                     </thead>
@@ -170,6 +170,7 @@
                                             <td style="text-align: left;">{{$item->penyediastatustertibjakon->penyedia}}</td>
                                             <td style="text-align: left;">{{$item->kegiatankonstruksi}}</td>
                                             <td style="text-align: left;">{{$item->bujk}}</td>
+                                            <td style="text-align: left;">{{$item->nomorkontrak}}</td>
                                             <td class="text-center" style="text-align: center;">
                                                 @php
                                                     $buttonText = !empty($item->surattertibjakonpenyelenggaraan1) ? 'LIHAT' : 'TIDAK ADA DATA';

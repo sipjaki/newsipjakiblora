@@ -63794,6 +63794,14 @@ for ($i = 1; $i <= 93; $i++) {
 }
 
 
+
+
+//======================== ===================================================================================
+// TERTIB JAKON PEMANFAATAN MAS JAKI
+
+
+// DATA TERTIB JASA KONSTRUKSI PENYELENGGARAAN MAS JAKI BLORA
+// ========================================================================
 tertibjakonpenyelenggaraan::create([
     'id' => 1,
     'penyediastatustertibjakon_id' => 1,
@@ -63817,21 +63825,42 @@ tertibjakonpenyelenggaraan::create([
     'pengawasan_kecelakaankerja' => 'TERTIB',
 ]);
 
-
-
-// <!-- MAKANYU -->
-
-//======================== ===================================================================================
-// TERTIB JAKON PEMANFAATAN MAS JAKI
-
-
-// DATA TERTIB JASA KONSTRUKSI PENYELENGGARAAN MAS JAKI BLORA
-// ================================================================================================
 tertibjakonpenyelenggaraan::create([
-    'penyediastatustertibjakon_id' => '1',
+    'id' => 2,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 2,
+    'surattertibjakonpenyelenggaraan1_id' => 2,
+    'surattertibjakonpenyelenggaraan2_id' => 2,
+    'surattertibjakonpenyelenggaraan3_id' => 2,
+    'surattertibjakonpenyelenggaraan4_id' => 2,
+    'surattertibjakonpenyelenggaraan5_id' => 2,
+    'surattertibjakonpenyelenggaraan6_id' => 2,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Badong - Kenduruhan',
     'namapekerjaan' => null,
-    'kegiatankonstruksi' => 'Peningkatan Jalan Adirejo - Sembungin - Karangtalun',
-    'nomorkontrak' => '620/BM.827/2024',
+    'nomorkontrak' => '620/BM.1224/2024',
+    'bujk' => 'CV. PUTRA JAYA MANDIRI',
+    'prosespemilihan' => 'TERTIB',
+    'pengawasan_standarkontrak' => 'TERTIB',
+    'pengawasan_tenagakerja' => 'TERTIB',
+    'pengawasan_penunjang' => 'TERTIB',
+    'pengawasan_dokumenk4' => 'TERTIB',
+    'pengawasan_smkk' => 'TERTIB',
+    'pengawasan_kecelakaankerja' => 'TERTIB',
+]);
+
+tertibjakonpenyelenggaraan::create([
+    'id' => 3,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 3,
+    'surattertibjakonpenyelenggaraan1_id' => 3,
+    'surattertibjakonpenyelenggaraan2_id' => 3,
+    'surattertibjakonpenyelenggaraan3_id' => 3,
+    'surattertibjakonpenyelenggaraan4_id' => 3,
+    'surattertibjakonpenyelenggaraan5_id' => 3,
+    'surattertibjakonpenyelenggaraan6_id' => 3,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Bajo - Sugihwaras - Cabean',
+    'namapekerjaan' => null,
+    'nomorkontrak' => '620/BM.1047/2024',
     'bujk' => 'CV. TRIBHAKTI',
     'prosespemilihan' => 'TERTIB',
     'pengawasan_standarkontrak' => 'TERTIB',
@@ -63840,16 +63869,22 @@ tertibjakonpenyelenggaraan::create([
     'pengawasan_dokumenk4' => 'TERTIB',
     'pengawasan_smkk' => 'TERTIB',
     'pengawasan_kecelakaankerja' => 'TERTIB',
-
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 tertibjakonpenyelenggaraan::create([
-    'penyediastatustertibjakon_id' => '2',
+    'id' => 4,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 4,
+    'surattertibjakonpenyelenggaraan1_id' => 4,
+    'surattertibjakonpenyelenggaraan2_id' => 4,
+    'surattertibjakonpenyelenggaraan3_id' => 4,
+    'surattertibjakonpenyelenggaraan4_id' => 4,
+    'surattertibjakonpenyelenggaraan5_id' => 4,
+    'surattertibjakonpenyelenggaraan6_id' => 4,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Banjarejo - Balongsari - Mojowetan',
     'namapekerjaan' => null,
-    'kegiatankonstruksi' => 'Rehabilitasi Ruang Kelas SMPN 2 BLORA',
-    'nomorkontrak' => '12894257/SPK/02.0014/DAU/2024',
-    'bujk' => 'CV. ANUGERAH ABADI',
+    'nomorkontrak' => '620/BM.841/2024',
+    'bujk' => 'CV. LIMA KARSA',
     'prosespemilihan' => 'TERTIB',
     'pengawasan_standarkontrak' => 'TERTIB',
     'pengawasan_tenagakerja' => 'TERTIB',
@@ -63857,27 +63892,152 @@ tertibjakonpenyelenggaraan::create([
     'pengawasan_dokumenk4' => 'TERTIB',
     'pengawasan_smkk' => 'TERTIB',
     'pengawasan_kecelakaankerja' => 'TERTIB',
-
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
 ]);
 
 tertibjakonpenyelenggaraan::create([
-    'penyediastatustertibjakon_id' => '3',
+    'id' => 5,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 5,
+    'surattertibjakonpenyelenggaraan1_id' => 5,
+    'surattertibjakonpenyelenggaraan2_id' => 5,
+    'surattertibjakonpenyelenggaraan3_id' => 5,
+    'surattertibjakonpenyelenggaraan4_id' => 5,
+    'surattertibjakonpenyelenggaraan5_id' => 5,
+    'surattertibjakonpenyelenggaraan6_id' => 5,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Bogem - Sumberejo - Ngiyono',
     'namapekerjaan' => null,
-    'kegiatankonstruksi' => 'KANTOR PT POS PROPERTI INDONESIA',
-    'nomorkontrak' => '-',
-    'bujk' => 'CV. CRYSTAL DESIGN',
-    'prosespemilihan' => 'BELUM TERTIB',
-    'pengawasan_standarkontrak' => 'BELUM TERTIB',
-    'pengawasan_tenagakerja' => 'BELUM TERTIB',
-    'pengawasan_penunjang' => 'BELUM TERTIB',
+    'nomorkontrak' => '620/BM.1353/2024',
+    'bujk' => 'CV. NICON JAYA KONSTRUKSI',
+    'prosespemilihan' => 'TERTIB',
+    'pengawasan_standarkontrak' => 'TERTIB',
+    'pengawasan_tenagakerja' => 'TERTIB',
+    'pengawasan_penunjang' => 'TERTIB',
     'pengawasan_dokumenk4' => 'TERTIB',
-    'pengawasan_smkk' => 'BELUM',
-    'pengawasan_kecelakaankerja' => 'BELUM TERTIB',
-
-    // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
+    'pengawasan_smkk' => 'TERTIB',
+    'pengawasan_kecelakaankerja' => 'TERTIB',
 ]);
 
+
+tertibjakonpenyelenggaraan::create([
+    'id' => 6,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 6,
+    'surattertibjakonpenyelenggaraan1_id' => 6,
+    'surattertibjakonpenyelenggaraan2_id' => 6,
+    'surattertibjakonpenyelenggaraan3_id' => 6,
+    'surattertibjakonpenyelenggaraan4_id' => 6,
+    'surattertibjakonpenyelenggaraan5_id' => 6,
+    'surattertibjakonpenyelenggaraan6_id' => 6,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Dalangan - Bedingin - Kedungbacin',
+    'namapekerjaan' => null,
+    'nomorkontrak' => '620/BM.1230/2024',
+    'bujk' => 'CV. QURATA JAYA',
+    'prosespemilihan' => 'TERTIB',
+    'pengawasan_standarkontrak' => 'TERTIB',
+    'pengawasan_tenagakerja' => 'TERTIB',
+    'pengawasan_penunjang' => 'TERTIB',
+    'pengawasan_dokumenk4' => 'TERTIB',
+    'pengawasan_smkk' => 'TERTIB',
+    'pengawasan_kecelakaankerja' => 'TERTIB',
+]);
+
+tertibjakonpenyelenggaraan::create([
+    'id' => 7,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 7,
+    'surattertibjakonpenyelenggaraan1_id' => 7,
+    'surattertibjakonpenyelenggaraan2_id' => 7,
+    'surattertibjakonpenyelenggaraan3_id' => 7,
+    'surattertibjakonpenyelenggaraan4_id' => 7,
+    'surattertibjakonpenyelenggaraan5_id' => 7,
+    'surattertibjakonpenyelenggaraan6_id' => 7,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Dologan - Bedingin',
+    'namapekerjaan' => null,
+    'nomorkontrak' => '620/BM.1236/2024',
+    'bujk' => 'CV. GADA PERKASA',
+    'prosespemilihan' => 'TERTIB',
+    'pengawasan_standarkontrak' => 'TERTIB',
+    'pengawasan_tenagakerja' => 'TERTIB',
+    'pengawasan_penunjang' => 'TERTIB',
+    'pengawasan_dokumenk4' => 'TERTIB',
+    'pengawasan_smkk' => 'TERTIB',
+    'pengawasan_kecelakaankerja' => 'TERTIB',
+]);
+
+tertibjakonpenyelenggaraan::create([
+    'id' => 8,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 8,
+    'surattertibjakonpenyelenggaraan1_id' => 8,
+    'surattertibjakonpenyelenggaraan2_id' => 8,
+    'surattertibjakonpenyelenggaraan3_id' => 8,
+    'surattertibjakonpenyelenggaraan4_id' => 8,
+    'surattertibjakonpenyelenggaraan5_id' => 8,
+    'surattertibjakonpenyelenggaraan6_id' => 8,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Galuk - Temengeng',
+    'namapekerjaan' => null,
+    'nomorkontrak' => '620/BM.1061/2024',
+    'bujk' => 'CV. ADITIYA JAYA PERKASA',
+    'prosespemilihan' => 'TERTIB',
+    'pengawasan_standarkontrak' => 'TERTIB',
+    'pengawasan_tenagakerja' => 'TERTIB',
+    'pengawasan_penunjang' => 'TERTIB',
+    'pengawasan_dokumenk4' => 'TERTIB',
+    'pengawasan_smkk' => 'TERTIB',
+    'pengawasan_kecelakaankerja' => 'TERTIB',
+]);
+
+tertibjakonpenyelenggaraan::create([
+    'id' => 9,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 9,
+    'surattertibjakonpenyelenggaraan1_id' => 9,
+    'surattertibjakonpenyelenggaraan2_id' => 9,
+    'surattertibjakonpenyelenggaraan3_id' => 9,
+    'surattertibjakonpenyelenggaraan4_id' => 9,
+    'surattertibjakonpenyelenggaraan5_id' => 9,
+    'surattertibjakonpenyelenggaraan6_id' => 9,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Japah - Bradag',
+    'namapekerjaan' => null,
+    'nomorkontrak' => '620/BM.1025/2024',
+    'bujk' => 'CV. LIMA KARSA',
+    'prosespemilihan' => 'TERTIB',
+    'pengawasan_standarkontrak' => 'TERTIB',
+    'pengawasan_tenagakerja' => 'TERTIB',
+    'pengawasan_penunjang' => 'TERTIB',
+    'pengawasan_dokumenk4' => 'TERTIB',
+    'pengawasan_smkk' => 'TERTIB',
+    'pengawasan_kecelakaankerja' => 'TERTIB',
+]);
+
+tertibjakonpenyelenggaraan::create([
+    'id' => 10,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 10,
+    'surattertibjakonpenyelenggaraan1_id' => 10,
+    'surattertibjakonpenyelenggaraan2_id' => 10,
+    'surattertibjakonpenyelenggaraan3_id' => 10,
+    'surattertibjakonpenyelenggaraan4_id' => 10,
+    'surattertibjakonpenyelenggaraan5_id' => 10,
+    'surattertibjakonpenyelenggaraan6_id' => 10,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Jati - Singget',
+    'namapekerjaan' => null,
+    'nomorkontrak' => '620/BM.1067/2024',
+    'bujk' => 'CV. GREMA JAYA USAHA',
+    'prosespemilihan' => 'TERTIB',
+    'pengawasan_standarkontrak' => 'TERTIB',
+    'pengawasan_tenagakerja' => 'TERTIB',
+    'pengawasan_penunjang' => 'TERTIB',
+    'pengawasan_dokumenk4' => 'TERTIB',
+    'pengawasan_smkk' => 'TERTIB',
+    'pengawasan_kecelakaankerja' => 'TERTIB',
+]);
+
+
+
+
+// makanyu
+// ================================================================================================
 
 // DATA RANTAI PASOK MATERIL BANGUNAN MAS JAKI
 rantaipasokblora::create([

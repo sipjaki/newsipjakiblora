@@ -193,6 +193,12 @@ Route::get('surattertibjakonpemanfaatan4/{id}', [AndroidVersionController::class
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
+// MENU TERTIB JAKON PENYELENGGARAAN JASA KONSTRUKSI  ------------------------------------------------
+Route::get('/resjakonpenyelenggaraan', [AndroidVersionController::class, 'menuresjakonpenyelenggaraan']);
+
+// Route untuk surat tertib jakon usaha 1
+Route::get('surattertibjakonpenyelenggaraan1/{id}', [AndroidVersionController::class, 'showpenyelenggaraan'])->name('surattertibjakonpenyelenggaraan1.show');
+
 // ================================================ MENU F. AHSP
 // MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
 Route::get('/resahsp', [AndroidVersionController::class, 'menuresahsp']);

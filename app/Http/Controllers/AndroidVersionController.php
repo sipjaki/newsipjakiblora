@@ -32,6 +32,7 @@ use App\Models\bujkkontraktor;
 use App\Models\bujkkontraktorsub;
 use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
+use App\Models\informasisurattertibpenyelenggaraan;
 use App\Models\materipelatihan;
 use App\Models\skktenagakerjablora;
 use App\Models\paketpekerjaanmasjaki;
@@ -40,6 +41,12 @@ use App\Models\surattertibjakonpemanfaatan2;
 use App\Models\surattertibjakonpemanfaatan3;
 use App\Models\surattertibjakonpemanfaatan4;
 use App\Models\surattertibjakonpemanfaatan5;
+use App\Models\surattertibjakonpenyelenggaraan1;
+use App\Models\surattertibjakonpenyelenggaraan2;
+use App\Models\surattertibjakonpenyelenggaraan3;
+use App\Models\surattertibjakonpenyelenggaraan4;
+use App\Models\surattertibjakonpenyelenggaraan5;
+use App\Models\surattertibjakonpenyelenggaraan6;
 use App\Models\tertibjakonpemanfaatan;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -957,6 +964,68 @@ class AndroidVersionController extends Controller
                 'datasurat3' => $satasurat3,  // Mengirimkan data surat3 ke view
                 'datasurat4' => $satasurat4,  // Mengirimkan data surat4 ke view
                 'datasurat5' => $satasurat5,  // Mengirimkan data surat4 ke view
+                'search' => $search,  // Mengirimkan parameter pencarian ke view
+                'perPage' => $perPage,  // Mengirimkan parameter perPage ke view
+            ]);
+        }
+
+        public function menuresjakonpenyelenggaraan(Request $request)
+        {
+            // Ambil parameter perPage dan search dari request
+            $perPage = $request->input('perPage', 15);  // Default 15 per halaman
+            $search = $request->input('search');
+
+            // Membuat query untuk model tertibjasakonstruksi
+            $query = tertibjakonpemanfaatan::query();
+
+            // Tambahkan kondisi pencarian jika ada keyword pencarian
+            if ($search) {
+                $query->where('kegiatankonstruksi', 'LIKE', "%{$search}%")
+                      ->orWhere('bujk', 'LIKE', "%{$search}%")
+                      ->orWhere('nomorkontrak', 'LIKE', "%{$search}%")
+                    //   ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                      // Menggunakan whereHas untuk relasi penyedia
+                      ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
+                          $q->where('penyedia', 'LIKE', "%{$search}%"); // Ganti penyedia_column_name dengan nama kolom yang relevan di relasi 'penyedia'
+                      });
+            }
+
+            // Lakukan pagination dengan hasil pencarian
+            $data = $query->paginate($perPage);
+
+            // Jika request adalah AJAX, kembalikan hasil dalam bentuk HTML
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('frontend.00_android.E_pengawasan.03_tertibpenyelenggaraan.partials.table', compact('data'))->render()
+                ]);
+            }
+
+            // Ambil data untuk surat-surat terkait
+            $informasidetails = informasisurattertibpenyelenggaraan::all();
+            $satasurat1 = surattertibjakonpenyelenggaraan1::all();
+            $satasurat2 = surattertibjakonpenyelenggaraan2::all();
+            $satasurat3 = surattertibjakonpenyelenggaraan3::all();
+            $satasurat4 = surattertibjakonpenyelenggaraan4::all();
+            $satasurat5 = surattertibjakonpenyelenggaraan5::all();
+            $satasurat6 = surattertibjakonpenyelenggaraan6::all();
+            // $satasurat1 = surattertibjakonpenyelenggaraan1::all();
+
+
+            // Ambil data user yang sedang login
+            $user = Auth::user();
+
+            // Mengirimkan data ke view
+            return view('frontend.00_android.E_pengawasan.03_tertibpenyelenggaraan.index', [
+                'title' => 'Daftar Tertib Penyelenggaraan Jasa Konstruksi Kabupaten Blora',
+                'data' => $data,  // Mengirimkan data paginasi ke view
+                'user' => $user,  // Mengirimkan data user ke view
+                'informasi' => $informasidetails,  // Mengirimkan data surat1 ke view
+                'datasurat1' => $satasurat1,  // Mengirimkan data surat2 ke view
+                'datasurat2' => $satasurat2,  // Mengirimkan data surat2 ke view
+                'datasurat3' => $satasurat3, // Mengirimkan data surat2 ke view
+                'datasurat4' => $satasurat4,  // Mengirimkan data surat2 ke view
+                'datasurat5' => $satasurat5,  // Mengirimkan data surat2 ke view
+                'datasurat6' => $satasurat6,  // Mengirimkan data surat2 ke view
                 'search' => $search,  // Mengirimkan parameter pencarian ke view
                 'perPage' => $perPage,  // Mengirimkan parameter perPage ke view
             ]);
