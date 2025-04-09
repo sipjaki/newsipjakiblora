@@ -87,7 +87,7 @@
                             <div style="display: flex; justify-content: space-between; align-items: center;">
                                 <!-- Left: Search Input -->
                                 <div style="position: relative; display: inline-block; margin-right: 5px;">
-                                    <input type="search" id="searchInput" placeholder="Cari Badan Usaha ...." onkeyup="searchTable()"
+                                    <input type="search" id="searchInput" placeholder="Cari Bangunan Gedung ...." onkeyup="searchTable()"
                                            style="border: 1px solid #ccc; padding: 10px 40px 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                                     <i class="fas fa-search" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                                 </div>
@@ -153,7 +153,7 @@
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Penyelenggaran</th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Nama Badan Usaha </th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Nama Bangunan Gedung </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:600px;"> PJBU  </th>
                                             <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;"> Kesesuaian Fungsi Peruntukan </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;"> Rencana Umur Konstruksi </th>
