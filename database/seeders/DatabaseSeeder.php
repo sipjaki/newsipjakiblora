@@ -61626,6 +61626,7 @@ tertibjasakonstruksi::create([
 
 // =========================================================
 tertibjakonpemanfaatan::create([
+    'id' => 1,
     'penyediastatustertibjakon_id' => 1,
     'surattertibjakonpemanfaatan1_id' => 1,
     'surattertibjakonpemanfaatan2_id' => 1,
@@ -61647,8 +61648,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 2,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 2,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 2,
     'surattertibjakonpemanfaatan2_id' => 2,
     'surattertibjakonpemanfaatan3_id' => 2,
     'surattertibjakonpemanfaatan4_id' => 2,
@@ -61668,8 +61670,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 3,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 3,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 3,
     'surattertibjakonpemanfaatan2_id' => 3,
     'surattertibjakonpemanfaatan3_id' => 3,
     'surattertibjakonpemanfaatan4_id' => 3,
@@ -61689,8 +61692,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 4,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 4,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 4,
     'surattertibjakonpemanfaatan2_id' => 4,
     'surattertibjakonpemanfaatan3_id' => 4,
     'surattertibjakonpemanfaatan4_id' => 4,
@@ -61710,8 +61714,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 5,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 5,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 5,
     'surattertibjakonpemanfaatan2_id' => 5,
     'surattertibjakonpemanfaatan3_id' => 5,
     'surattertibjakonpemanfaatan4_id' => 5,
@@ -61731,8 +61736,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 6,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 6,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 6,
     'surattertibjakonpemanfaatan2_id' => 6,
     'surattertibjakonpemanfaatan3_id' => 6,
     'surattertibjakonpemanfaatan4_id' => 6,
@@ -61752,8 +61758,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 7,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 7,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 7,
     'surattertibjakonpemanfaatan2_id' => 7,
     'surattertibjakonpemanfaatan3_id' => 7,
     'surattertibjakonpemanfaatan4_id' => 7,
@@ -61773,8 +61780,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 8,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 8,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 8,
     'surattertibjakonpemanfaatan2_id' => 8,
     'surattertibjakonpemanfaatan3_id' => 8,
     'surattertibjakonpemanfaatan4_id' => 8,
@@ -61794,8 +61802,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 9,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 9,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 9,
     'surattertibjakonpemanfaatan2_id' => 9,
     'surattertibjakonpemanfaatan3_id' => 9,
     'surattertibjakonpemanfaatan4_id' => 9,
@@ -61815,8 +61824,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 10,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 10,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 10,
     'surattertibjakonpemanfaatan2_id' => 10,
     'surattertibjakonpemanfaatan3_id' => 10,
     'surattertibjakonpemanfaatan4_id' => 10,
@@ -61837,8 +61847,9 @@ tertibjakonpemanfaatan::create([
 
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 11,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 11,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 11,
     'surattertibjakonpemanfaatan2_id' => 11,
     'surattertibjakonpemanfaatan3_id' => 11,
     'surattertibjakonpemanfaatan4_id' => 11,
@@ -61858,8 +61869,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 12,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 12,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 12,
     'surattertibjakonpemanfaatan2_id' => 12,
     'surattertibjakonpemanfaatan3_id' => 12,
     'surattertibjakonpemanfaatan4_id' => 12,
@@ -61879,8 +61891,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 13,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 13,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 13,
     'surattertibjakonpemanfaatan2_id' => 13,
     'surattertibjakonpemanfaatan3_id' => 13,
     'surattertibjakonpemanfaatan4_id' => 13,
@@ -61900,8 +61913,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 14,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 14,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 14,
     'surattertibjakonpemanfaatan2_id' => 14,
     'surattertibjakonpemanfaatan3_id' => 14,
     'surattertibjakonpemanfaatan4_id' => 14,
@@ -61921,8 +61935,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 15,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 15,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 15,
     'surattertibjakonpemanfaatan2_id' => 15,
     'surattertibjakonpemanfaatan3_id' => 15,
     'surattertibjakonpemanfaatan4_id' => 15,
@@ -61943,8 +61958,9 @@ tertibjakonpemanfaatan::create([
 
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 16,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 16,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 16,
     'surattertibjakonpemanfaatan2_id' => 16,
     'surattertibjakonpemanfaatan3_id' => 16,
     'surattertibjakonpemanfaatan4_id' => 16,
@@ -61964,8 +61980,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 17,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 17,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 17,
     'surattertibjakonpemanfaatan2_id' => 17,
     'surattertibjakonpemanfaatan3_id' => 17,
     'surattertibjakonpemanfaatan4_id' => 17,
@@ -61985,8 +62002,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 18,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 18,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 18,
     'surattertibjakonpemanfaatan2_id' => 18,
     'surattertibjakonpemanfaatan3_id' => 18,
     'surattertibjakonpemanfaatan4_id' => 18,
@@ -62006,8 +62024,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 19,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 19,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 19,
     'surattertibjakonpemanfaatan2_id' => 19,
     'surattertibjakonpemanfaatan3_id' => 19,
     'surattertibjakonpemanfaatan4_id' => 19,
@@ -62027,8 +62046,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 20,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 20,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 20,
     'surattertibjakonpemanfaatan2_id' => 20,
     'surattertibjakonpemanfaatan3_id' => 20,
     'surattertibjakonpemanfaatan4_id' => 20,
@@ -62049,8 +62069,9 @@ tertibjakonpemanfaatan::create([
 
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 21,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 21,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 21,
     'surattertibjakonpemanfaatan2_id' => 21,
     'surattertibjakonpemanfaatan3_id' => 21,
     'surattertibjakonpemanfaatan4_id' => 21,
@@ -62070,8 +62091,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 22,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 22,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 22,
     'surattertibjakonpemanfaatan2_id' => 22,
     'surattertibjakonpemanfaatan3_id' => 22,
     'surattertibjakonpemanfaatan4_id' => 22,
@@ -62091,8 +62113,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 23,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 23,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 23,
     'surattertibjakonpemanfaatan2_id' => 23,
     'surattertibjakonpemanfaatan3_id' => 23,
     'surattertibjakonpemanfaatan4_id' => 23,
@@ -62112,8 +62135,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 24,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 24,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 24,
     'surattertibjakonpemanfaatan2_id' => 24,
     'surattertibjakonpemanfaatan3_id' => 24,
     'surattertibjakonpemanfaatan4_id' => 24,
@@ -62133,8 +62157,9 @@ tertibjakonpemanfaatan::create([
 ]);
 
 tertibjakonpemanfaatan::create([
-    'penyediastatustertibjakon_id' => 25,
-    'surattertibjakonpemanfaatan1_id' => 1,
+    'id' => 25,
+    'penyediastatustertibjakon_id' => 1,
+    'surattertibjakonpemanfaatan1_id' => 25,
     'surattertibjakonpemanfaatan2_id' => 25,
     'surattertibjakonpemanfaatan3_id' => 25,
     'surattertibjakonpemanfaatan4_id' => 25,
@@ -62152,7 +62177,6 @@ tertibjakonpemanfaatan::create([
     'pemeliharaan_konstruksi' => 'BELUM TERTIB',
     'pemeliharaan_struktur' => 'BELUM TERTIB',
 ]);
-
 
 
 
