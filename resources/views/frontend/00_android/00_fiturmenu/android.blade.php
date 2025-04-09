@@ -19,7 +19,7 @@
             </div>
         </a>
 
-        <a href="/">
+        <a href="/login">
             <div class="w-[48px] h-[48px] flex shrink-0">
                 <img src="/assets/00_android/menuhape/home.png" alt="icon" loading="lazy">
             </div>
