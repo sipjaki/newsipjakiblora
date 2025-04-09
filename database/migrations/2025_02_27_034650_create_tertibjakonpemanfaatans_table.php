@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('lokasi')->nullable()->index();
             $table->date('tanggalpembangunan')->nullable()->index();
             $table->date('tanggalpemanfaatan')->nullable()->index();
-            $table->integer('umurbangunan')->nullable()->index();
+            $table->string('umurbangunan')->nullable()->index();
             $table->string('peruntukan_fungsi')->nullable()->index();
             $table->string('peruntukan_lokasi')->nullable()->index();
             $table->string('rencanaumur')->nullable()->index();
