@@ -14,6 +14,13 @@ return new class extends Migration
         Schema::create('tertibjakonpenyelenggaraans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('penyediastatustertibjakon_id')->nullable();
+            $table->foreignId('informasisurattertibpenyelenggaraan_id')->nullable();
+            $table->foreignId('surattertibjakonpenyelenggaraan1_id')->nullable();
+            $table->foreignId('surattertibjakonpenyelenggaraan2_id')->nullable();
+            $table->foreignId('surattertibjakonpenyelenggaraan3_id')->nullable();
+            $table->foreignId('surattertibjakonpenyelenggaraan4_id')->nullable();
+            $table->foreignId('surattertibjakonpenyelenggaraan5_id')->nullable();
+            $table->foreignId('surattertibjakonpenyelenggaraan6_id')->nullable();
             $table->string('kegiatankonstruksi')->nullable();
             $table->string('namapekerjaan')->nullable();
             $table->string('nomorkontrak')->nullable();
