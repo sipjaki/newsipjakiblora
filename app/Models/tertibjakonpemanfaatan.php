@@ -17,7 +17,7 @@ class tertibjakonpemanfaatan extends Model
         return $this->belongsTo(penyediastatustertibjakon::class); // Relasi yang benar
     }
 
-    public function surattertibjakonmanfaat1()
+    public function surattertibjakonpemanfaatan1()
     {
         return $this->belongsTo(surattertibjakonpemanfaatan1::class); // Ganti dengan kelas yang sesuai
     }
