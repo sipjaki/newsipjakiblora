@@ -14,9 +14,14 @@ return new class extends Migration
         Schema::create('surattertibjakonpemanfaatan3s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tertibjakonpemanfaatan_id')->nullable()->index();
-            $table->string('nama');
-
-            $table->timestamps();
+            $table->text('lingkuppengawasan')->nullable()->index();
+            $table->text('indikator')->nullable()->index();
+            $table->text('dokumendiperiksa')->nullable()->index();
+            $table->text('carapemeriksaan')->nullable()->index();
+            $table->text('kesimpulanpemeriksaan')->nullable()->index();
+            $table->text('catatan')->nullable()->index();
+                      $table->softDeletes();
+                      $table->timestamps();
         });
     }
 

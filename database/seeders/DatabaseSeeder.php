@@ -61625,26 +61625,25 @@ tertibjasakonstruksi::create([
 
 
 // =========================================================
-
-  tertibjakonpemanfaatan::create([
+tertibjakonpemanfaatan::create([
     'penyediastatustertibjakon_id' => 1,
-    'surattertibjakonpemanfaatan1_id' => 8,
-    'surattertibjakonpemanfaatan2_id' => 8,
-    'surattertibjakonpemanfaatan3_id' => 8,
-    'surattertibjakonpemanfaatan4_id' => 8,
-    'namapekerjaan' => 'Pembangunan Gedung Serbaguna', // contoh, bisa disesuaikan
-    'namabangunan' => 'Gedung Serbaguna Parahyangan',
-    'nomorkontrak' => 'SPK/01/AB/2025',
-    'lokasi' => 'Kota Baru Parahyangan',
-    'tanggalpembangunan' => '2024-01-15',
-    'tanggalpemanfaatan' => '2025-01-15',
-    'umurkonstruksi' => 50,
+    'surattertibjakonpemanfaatan1_id' => 1,
+    'surattertibjakonpemanfaatan2_id' => 1,
+    'surattertibjakonpemanfaatan3_id' => 1,
+    'surattertibjakonpemanfaatan4_id' => 1,
+    'namapekerjaan' => 'Kawasan Taman Budaya Cepu',
+    'namabangunan' => null,
+    'nomorkontrak' => '640/BG.080/2023',
+    'lokasi' => 'Kec. Cepu Kab. Blora',
+    'tanggalpembangunan' => '2023-07-06',
+    'tanggalpemanfaatan' => '2023-11-02',
+    'umurkonstruksi' => null,
+    'rencanaumur' => '5 Tahun',
     'peruntukan_fungsi' => 'TERTIB',
     'peruntukan_lokasi' => 'TERTIB',
-    'rencanaumur' => 'TERTIB',
     'kapasitasdanbeban' => 'TERTIB',
-    'pemeliharaan_konstruksi' => 'TERTIB',
-    'pemeliharaan_struktur' => 'TERTIB',
+    'pemeliharaan_konstruksi' => 'BELUM TERTIB',
+    'pemeliharaan_struktur' => 'BELUM TERTIB',
 ]);
 
   // makanyu
