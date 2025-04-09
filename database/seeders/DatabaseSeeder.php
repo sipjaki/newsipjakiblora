@@ -63774,6 +63774,29 @@ for ($i = 1; $i <= 93; $i++) {
 }
 
 
+tertibjakonpenyelenggaraan::create([
+    'id' => 1,
+    'penyediastatustertibjakon_id' => 1,
+    'informasisurattertibpenyelenggaraan_id' => 1,
+    'surattertibjakonpenyelenggaraan1_id' => 1,
+    'surattertibjakonpenyelenggaraan2_id' => 1,
+    'surattertibjakonpenyelenggaraan3_id' => 1,
+    'surattertibjakonpenyelenggaraan4_id' => 1,
+    'surattertibjakonpenyelenggaraan5_id' => 1,
+    'surattertibjakonpenyelenggaraan6_id' => 1,
+    'kegiatankonstruksi' => 'Peningkatan Jalan Adirejo - Sembungin - Karangtalun',
+    'namapekerjaan' => null,
+    'nomorkontrak' => '620/BM.827/2024',
+    'bujk' => 'CV. TRIBHAKTI',
+    'prosespemilihan' => 'TERTIB',
+    'pengawasan_standarkontrak' => 'TERTIB',
+    'pengawasan_tenagakerja' => 'TERTIB',
+    'pengawasan_penunjang' => 'TERTIB',
+    'pengawasan_dokumenk4' => 'TERTIB',
+    'pengawasan_smkk' => 'TERTIB',
+    'pengawasan_kecelakaankerja' => 'TERTIB',
+]);
+
 
 // <!-- MAKANYU -->
 
