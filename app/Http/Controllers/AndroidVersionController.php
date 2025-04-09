@@ -917,8 +917,8 @@ class AndroidVersionController extends Controller
 
             // Tambahkan kondisi pencarian jika ada keyword pencarian
             if ($search) {
-                $query->where('namabadanusaha', 'LIKE', "%{$search}%")
-                      ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                $query->where('namabangunan', 'LIKE', "%{$search}%")
+                      ->orWhere('lokasi', 'LIKE', "%{$search}%")
                     //   ->orWhere('pjbu', 'LIKE', "%{$search}%")
                       // Menggunakan whereHas untuk relasi penyedia
                       ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
