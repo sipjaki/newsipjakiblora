@@ -175,6 +175,24 @@ Route::get('surattertibjakonusaha4/{id}', [AndroidVersionController::class, 'sho
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
+
+// MENU TERTIB JAKON PEMANFAATAN USAHA JASA KONSTRUKSI  ------------------------------------------------
+Route::get('/resjakonpemanfataan', [AndroidVersionController::class, 'menuresjakonpemanfataan']);
+
+// Route untuk surat tertib jakon usaha 1
+Route::get('surattertibjakonpemanfaatan1/{id}', [AndroidVersionController::class, 'showpemanfaatan1'])->name('surattertibjakonpemanfaatan1.show');
+
+// Route untuk surat tertib jakon usaha 2
+Route::get('surattertibjakonpemanfaatan2/{id}', [AndroidVersionController::class, 'showpemanfaatan2'])->name('surattertibjakonpemanfaatan2.show');
+
+// Route untuk surat tertib jakon usaha 3
+Route::get('surattertibjakonpemanfaatan3/{id}', [AndroidVersionController::class, 'showpemanfaatan3'])->name('surattertibjakonpemanfaatan3.show');
+
+// Route untuk surat tertib jakon usaha 4
+Route::get('surattertibjakonpemanfaatan4/{id}', [AndroidVersionController::class, 'showpemanfaatan4'])->name('surattertibjakonpemanfaatan4.show');
+// Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
+// Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
+
 // ================================================ MENU F. AHSP
 // MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
 Route::get('/resahsp', [AndroidVersionController::class, 'menuresahsp']);
