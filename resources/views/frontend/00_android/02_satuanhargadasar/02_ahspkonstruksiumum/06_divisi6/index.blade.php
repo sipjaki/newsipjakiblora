@@ -1,37 +1,43 @@
 <style>
-    /* Gaya untuk tabel */
     .fl-table {
         margin-top: 15px;
         width: 100%;
         border-collapse: collapse;
         border-radius: 10px;
+        table-layout: fixed;
     }
 
     .fl-table th, .fl-table td {
         text-align: center;
-        /* border-radius: 10px; */
-        /* padding: 10px; */
+        padding: 12px 10px;
+        vertical-align: middle;
+        white-space: normal;
+        word-break: break-word;
     }
 
-    /* Gaya untuk kepala tabel */
+    /* Spesifik lebar kolom */
+    .fl-table th:nth-child(1), .fl-table td:nth-child(1) { width: 50px; }   /* No */
+    .fl-table th:nth-child(2), .fl-table td:nth-child(2) { width: 140px; }  /* Kode */
+    .fl-table th:nth-child(3), .fl-table td:nth-child(3) { width: 350px; text-align: left; }  /* Pekerjaan */
+    .fl-table th:nth-child(4), .fl-table td:nth-child(4) { width: 80px; }   /* Satuan */
+    .fl-table th:nth-child(5), .fl-table td:nth-child(5) { width: 60px; }   /* Rp */
+    .fl-table th:nth-child(6), .fl-table td:nth-child(6) { width: 150px; text-align: right; } /* Besaran */
+
     .fl-table thead {
-        background-color: #374151; /* Warna latar belakang untuk header tabel */
+        background-color: #374151;
         color: white;
-        padding: 5px;
     }
 
-    /* Gaya belang-belang */
     .fl-table tbody tr:nth-child(odd) {
-        background-color: #f1f1f1; /* Abu-abu muda untuk baris ganjil */
+        background-color: #f9f9f9;
     }
 
     .fl-table tbody tr:nth-child(even) {
-        background-color: #e0e0e0; /* Abu-abu lebih gelap untuk baris genap */
+        background-color: #e6e6e6;
     }
 
-    /* Gaya hover pada baris tabel */
     .fl-table tbody tr:hover {
-        background-color: #d3d3d3; /* Efek hover dengan warna abu lebih gelap */
+        background-color: #d0d0d0;
     }
 </style>
 
@@ -140,12 +146,12 @@
                                 <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden;">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px; padding: 5px;"> Kode </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:400px; padding: 5px;"> Pekerjaan </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Satuan </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> Rp </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Besaran </th>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; padding: 5px;"> No </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; padding: 5px;"> Kode </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; padding: 5px;"> Pekerjaan </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; padding: 5px;"> Satuan </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; padding: 5px;"> Rp </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; padding: 5px;"> Besaran </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
