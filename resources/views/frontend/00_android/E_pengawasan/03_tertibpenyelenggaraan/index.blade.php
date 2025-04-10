@@ -152,6 +152,7 @@
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Penyelenggaraan</th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:400px;"> Kegiatan Konstruksi</th>
                                             <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:800px;"> Badan Usaha</th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:600px;"> Nomor Kontrak   </th>
