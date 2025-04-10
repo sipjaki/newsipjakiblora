@@ -13,7 +13,17 @@ return new class extends Migration
     {
         Schema::create('surattertibjakonpenyelenggaraan3s', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->nullable()->index();
+            $table->text('lingkuppengawasan')->nullable()->index();
+            $table->text('indikator1')->nullable()->index();
+            $table->text('indikator2')->nullable()->index();
+            $table->text('indikator3')->nullable()->index();
+            $table->text('dokumenperiksa')->nullable()->index();
+            $table->text('carapemerksaan1')->nullable()->index();
+            $table->text('carapemerksaan2')->nullable()->index();
+            $table->text('kesimpulan1')->nullable()->index();
+            $table->text('kesimpulan2')->nullable()->index();
+            $table->text('catatan1')->nullable()->index();
+            $table->text('catatan2')->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -67368,6 +67368,27 @@ for ($i = 1; $i <= 151; $i++) {
     ]);
 }
 
+for ($i = 1; $i <= 151; $i++) {
+    // Pilih random antara "SESUAI" dan "TIDAK SESUAI"
+    $carapemeriksaan1 = rand(0, 1) ? 'TERSEDIA' : 'TIDAK TERSEDIA';
+    $carapemeriksaan2 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
+
+    surattertibjakonpenyelenggaraan3::create([
+        'id' => $i,
+        'lingkuppengawasan' => "Pengawasan terhadap penerapan Standar keamanan Keselamatan kesehatan dan keberlangsungan konstruksi",
+        'indikator1' => 'Ketersediaan Dokumen penerapan standar K4',
+        'indikator2' => 'Ketersediaan penerapan smkk',
+        'indikator3' => 'Ketersediaan dokumen bukti antisipasi kecelakaan konstruksi',
+        'dokumenperiksa' => 'Surat pernyataan dari kuasa pengguna anggaran atau pejabat pembuat komitmen bahwa sudah memenuhi ketentuan dalam standar K4',
+        'carapemerksaan1' => 'Memeriksa ketersediaan surat pernyataan',
+        'carapemerksaan2' => 'Memeriksa isi surat pernyataan',
+        'kesimpulan1' => $carapemeriksaan1,
+        'kesimpulan2' => $carapemeriksaan2,
+        'catatan1' => null,
+        'catatan2' => null,
+    ]);
+}
+
 
 
 
