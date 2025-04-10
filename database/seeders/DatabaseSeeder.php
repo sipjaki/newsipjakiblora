@@ -44,12 +44,12 @@ use App\Models\surattertibjakonpemanfaatan4;
 use App\Models\surattertibjakonpemanfaatan5;
 use App\Models\informasisurattertibpenyelenggaraan;
 // -perubahan
-use App\Models\standarbiayaumumsurattertibjakonpenyelenggaraan1;
-use App\Models\standarbiayaumumsurattertibjakonpenyelenggaraan2;
-use App\Models\standarbiayaumumsurattertibjakonpenyelenggaraan3;
-use App\Models\standarbiayaumumsurattertibjakonpenyelenggaraan4;
-use App\Models\standarbiayaumumsurattertibjakonpenyelenggaraan5;
-use App\Models\standarbiayaumumsurattertibjakonpenyelenggaraan6;
+use App\Models\surattertibjakonpenyelenggaraan1;
+use App\Models\surattertibjakonpenyelenggaraan2;
+use App\Models\surattertibjakonpenyelenggaraan3;
+use App\Models\surattertibjakonpenyelenggaraan4;
+use App\Models\surattertibjakonpenyelenggaraan5;
+use App\Models\surattertibjakonpenyelenggaraan6;
 
 // use App\Models\sertifikasiagenda;
 use App\Models\standarbiayaumum;
