@@ -51,7 +51,7 @@
                                 </div>
 
                             <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Dasar Upah Tenaga Kerja</p>
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Dasar <br> Upah Tenaga Kerja</p>
                         </p>
 
                             </div>
