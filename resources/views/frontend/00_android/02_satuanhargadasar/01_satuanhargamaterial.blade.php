@@ -52,7 +52,7 @@
 
                 <!-- Judul bagian tengah -->
                 <div class="flex flex-col items-center justify-center text-center">
-                    <p class="font-semibold text-xl text-white" style="-webkit-text-stroke: 0.2px black;">
+                    <p class="font-semibold text-xl text-white" style="-webkit-text-stroke: 0.25px black;">
                         Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora
                       </p>
                                           <br>
