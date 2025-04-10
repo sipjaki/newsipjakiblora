@@ -1,28 +1,26 @@
 <style>
-    /* Gaya untuk tabel */
     .fl-table {
         margin-top: 15px;
         width: 100%;
         border-collapse: collapse;
         border-radius: 10px;
-        table-layout: auto; /* KUNCI: biar kolom menyesuaikan isi */
-        word-wrap: break-word;
+        table-layout: auto; /* Kunci agar kolom menyesuaikan isi */
     }
 
-    .fl-table th, .fl-table td {
+    .fl-table th,
+    .fl-table td {
         text-align: center;
-        padding: 8px 12px;
-        vertical-align: middle;
-        white-space: normal; /* Biar teks bisa wrap ke bawah */
+        padding: 10px;
+        vertical-align: top; /* Biar isi ikut tinggi teks, bukan ketengah */
+        white-space: normal; /* Biar teks bisa pindah baris */
+        word-break: break-word; /* Biar teks panjang tetap wrap */
     }
 
-    /* Gaya untuk kepala tabel */
     .fl-table thead {
-        background-color: #374151; /* Warna latar belakang untuk header tabel */
+        background-color: #374151;
         color: white;
     }
 
-    /* Gaya belang-belang */
     .fl-table tbody tr:nth-child(odd) {
         background-color: #f1f1f1;
     }
@@ -31,12 +29,10 @@
         background-color: #e0e0e0;
     }
 
-    /* Gaya hover pada baris tabel */
     .fl-table tbody tr:hover {
         background-color: #d3d3d3;
     }
 </style>
-
 
 @include('frontend.00_android.00_fiturmenu.header')
 
