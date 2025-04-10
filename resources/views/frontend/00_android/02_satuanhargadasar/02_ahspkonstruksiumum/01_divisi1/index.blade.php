@@ -1,43 +1,39 @@
 <style>
+    /* Gaya untuk tabel */
     .fl-table {
+        margin-top: 15px;
         width: 100%;
         border-collapse: collapse;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
+        border-radius: 10px;
+        table-layout: auto; /* KUNCI: biar kolom menyesuaikan isi */
+        word-wrap: break-word;
     }
 
-    .fl-table thead tr {
-        background-color: #f2f2f2;
-    }
-
-    .fl-table th,
-    .fl-table td {
-        padding: 10px;
-        text-align: left;
+    .fl-table th, .fl-table td {
+        text-align: center;
+        padding: 8px 12px;
         vertical-align: middle;
-        border-bottom: 1px solid #ddd;
-        height: 45px; /* Biar tinggi row konsisten */
+        white-space: normal; /* Biar teks bisa wrap ke bawah */
+    }
+
+    /* Gaya untuk kepala tabel */
+    .fl-table thead {
+        background-color: #374151; /* Warna latar belakang untuk header tabel */
+        color: white;
+    }
+
+    /* Gaya belang-belang */
+    .fl-table tbody tr:nth-child(odd) {
+        background-color: #f1f1f1;
     }
 
     .fl-table tbody tr:nth-child(even) {
-        background-color: #f9f9f9;
+        background-color: #e0e0e0;
     }
 
-    .fl-table tbody tr:nth-child(odd) {
-        background-color: #ffffff;
-    }
-
+    /* Gaya hover pada baris tabel */
     .fl-table tbody tr:hover {
-        background-color: #e6f7ff;
-    }
-
-    .fl-table td a {
-        color: blue;
-        text-decoration: none;
-    }
-
-    .fl-table td a:hover {
-        text-decoration: underline;
+        background-color: #d3d3d3;
     }
 </style>
 
@@ -145,12 +141,12 @@
                                 <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden;">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:800px; padding: 5px; margin-right:200px;"> Kode </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:1200px; padding: 5px;"> Pekerjaan </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Satuan </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> Rp </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:400px; padding: 5px;"> Besaran </th>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; padding: 5px;"> No </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; padding: 5px; margin-right:200px;"> Kode </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; padding: 5px;"> Pekerjaan </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; padding: 5px;"> Satuan </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; padding: 5px;"> Rp </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; padding: 5px;"> Besaran </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
