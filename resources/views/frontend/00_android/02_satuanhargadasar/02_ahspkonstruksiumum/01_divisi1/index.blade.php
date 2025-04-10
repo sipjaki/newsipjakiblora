@@ -5,33 +5,35 @@
         width: 100%;
         border-collapse: collapse;
         border-radius: 10px;
+        table-layout: auto; /* KUNCI: biar kolom menyesuaikan isi */
+        word-wrap: break-word;
     }
 
     .fl-table th, .fl-table td {
         text-align: center;
-        /* border-radius: 10px; */
-        /* padding: 10px; */
+        padding: 8px 12px;
+        vertical-align: middle;
+        white-space: normal; /* Biar teks bisa wrap ke bawah */
     }
 
     /* Gaya untuk kepala tabel */
     .fl-table thead {
         background-color: #374151; /* Warna latar belakang untuk header tabel */
         color: white;
-        padding: 5px;
     }
 
     /* Gaya belang-belang */
     .fl-table tbody tr:nth-child(odd) {
-        background-color: #f1f1f1; /* Abu-abu muda untuk baris ganjil */
+        background-color: #f1f1f1;
     }
 
     .fl-table tbody tr:nth-child(even) {
-        background-color: #e0e0e0; /* Abu-abu lebih gelap untuk baris genap */
+        background-color: #e0e0e0;
     }
 
     /* Gaya hover pada baris tabel */
     .fl-table tbody tr:hover {
-        background-color: #d3d3d3; /* Efek hover dengan warna abu lebih gelap */
+        background-color: #d3d3d3;
     }
 </style>
 
