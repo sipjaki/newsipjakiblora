@@ -1038,7 +1038,7 @@ class AndroidVersionController extends Controller
 // MENU PENGAWASAN BUJK JASA KONSTRUKSI
 
 
-        public function respengawasanbujk(Request $request)
+        public function menurespengawasanbujk(Request $request)
 {
     $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
