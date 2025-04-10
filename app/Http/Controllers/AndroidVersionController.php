@@ -49,6 +49,7 @@ use App\Models\surattertibjakonpenyelenggaraan4;
 use App\Models\surattertibjakonpenyelenggaraan5;
 use App\Models\surattertibjakonpenyelenggaraan6;
 use App\Models\tertibjakonpemanfaatan;
+use App\Models\tertibjakonpenyelenggaraan;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -977,7 +978,7 @@ class AndroidVersionController extends Controller
             $search = $request->input('search');
 
             // Membuat query untuk model tertibjasakonstruksi
-            $query = tertibjakonpemanfaatan::query();
+            $query = tertibjakonpenyelenggaraan::query();
 
             // Tambahkan kondisi pencarian jika ada keyword pencarian
             if ($search) {
@@ -1002,14 +1003,14 @@ class AndroidVersionController extends Controller
             }
 
             // Ambil data untuk surat-surat terkait
-            // $informasidetails = informasisurattertibpenyelenggaraan::all();
-            // $satasurat1 = surattertibjakonpenyelenggaraan1::all();
-            // $satasurat2 = surattertibjakonpenyelenggaraan2::all();
-            // $satasurat3 = surattertibjakonpenyelenggaraan3::all();
-            // $satasurat4 = surattertibjakonpenyelenggaraan4::all();
-            // $satasurat5 = surattertibjakonpenyelenggaraan5::all();
-            // $satasurat6 = surattertibjakonpenyelenggaraan6::all();
-            // $satasurat1 = surattertibjakonpenyelenggaraan1::all();
+            $informasidetails = informasisurattertibpenyelenggaraan::all();
+            $satasurat1 = surattertibjakonpenyelenggaraan1::all();
+            $satasurat2 = surattertibjakonpenyelenggaraan2::all();
+            $satasurat3 = surattertibjakonpenyelenggaraan3::all();
+            $satasurat4 = surattertibjakonpenyelenggaraan4::all();
+            $satasurat5 = surattertibjakonpenyelenggaraan5::all();
+            $satasurat6 = surattertibjakonpenyelenggaraan6::all();
+            $satasurat1 = surattertibjakonpenyelenggaraan1::all();
 
 
             // Ambil data user yang sedang login
@@ -1020,13 +1021,13 @@ class AndroidVersionController extends Controller
                 'title' => 'Daftar Tertib Penyelenggaraan Jasa Konstruksi Kabupaten Blora',
                 'data' => $data,  // Mengirimkan data paginasi ke view
                 'user' => $user,  // Mengirimkan data user ke view
-                // 'informasi' => $informasidetails,  // Mengirimkan data surat1 ke view
-                // 'datasurat1' => $satasurat1,  // Mengirimkan data surat2 ke view
-                // 'datasurat2' => $satasurat2,  // Mengirimkan data surat2 ke view
-                // 'datasurat3' => $satasurat3, // Mengirimkan data surat2 ke view
-                // 'datasurat4' => $satasurat4,  // Mengirimkan data surat2 ke view
-                // 'datasurat5' => $satasurat5,  // Mengirimkan data surat2 ke view
-                // 'datasurat6' => $satasurat6,  // Mengirimkan data surat2 ke view
+                'informasi' => $informasidetails,  // Mengirimkan data surat1 ke view
+                'datasurat1' => $satasurat1,  // Mengirimkan data surat2 ke view
+                'datasurat2' => $satasurat2,  // Mengirimkan data surat2 ke view
+                'datasurat3' => $satasurat3, // Mengirimkan data surat2 ke view
+                'datasurat4' => $satasurat4,  // Mengirimkan data surat2 ke view
+                'datasurat5' => $satasurat5,  // Mengirimkan data surat2 ke view
+                'datasurat6' => $satasurat6,  // Mengirimkan data surat2 ke view
                 'search' => $search,  // Mengirimkan parameter pencarian ke view
                 'perPage' => $perPage,  // Mengirimkan parameter perPage ke view
             ]);
