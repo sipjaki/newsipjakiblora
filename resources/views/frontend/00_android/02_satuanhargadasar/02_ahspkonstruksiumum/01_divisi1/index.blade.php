@@ -1,24 +1,27 @@
 <style>
-    /* Gaya untuk tabel */
     .fl-table {
         margin-top: 15px;
         width: 100%;
         border-collapse: collapse;
         border-radius: 10px;
-        table-layout: fixed; /* Kunci: biar semua kolom punya lebar proporsional */
-        word-wrap: break-word;
-        overflow: hidden;
+        table-layout: fixed;
     }
 
-    .fl-table th,
-    .fl-table td {
+    .fl-table th, .fl-table td {
         text-align: center;
         padding: 12px 10px;
         vertical-align: middle;
-        white-space: normal; /* Biar teks bisa turun ke bawah */
-        word-break: break-word; /* Tambahan: supaya kata panjang juga bisa dipotong */
-        height: auto; /* Penting: biar tinggi row mengikuti isi */
+        white-space: normal;
+        word-break: break-word;
     }
+
+    /* Spesifik lebar kolom */
+    .fl-table th:nth-child(1), .fl-table td:nth-child(1) { width: 50px; }   /* No */
+    .fl-table th:nth-child(2), .fl-table td:nth-child(2) { width: 140px; }  /* Kode */
+    .fl-table th:nth-child(3), .fl-table td:nth-child(3) { width: 350px; text-align: left; }  /* Pekerjaan */
+    .fl-table th:nth-child(4), .fl-table td:nth-child(4) { width: 80px; }   /* Satuan */
+    .fl-table th:nth-child(5), .fl-table td:nth-child(5) { width: 60px; }   /* Rp */
+    .fl-table th:nth-child(6), .fl-table td:nth-child(6) { width: 150px; text-align: right; } /* Besaran */
 
     .fl-table thead {
         background-color: #374151;
