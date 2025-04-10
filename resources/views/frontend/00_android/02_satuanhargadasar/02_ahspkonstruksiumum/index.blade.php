@@ -27,13 +27,13 @@
                 </nav>
             </div>
 
-                    <div class="flex flex-col gap-4 px-4">
+                    <div class="flex flex-col gap-4 px-4" style="margin-top: -100px; ">
                         <br><br>
 
                         <a href="/resahspdiv1" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
-                                    <img src="/assets/00_android/00_iconmenuutama/01_menuberita/divisipekerjaan.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                    <img src="/assets/00_android/00_iconmenuutama/divisipekerjaan.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                                 </div>
 
                             <div class="flex flex-col gap-1">
