@@ -30,7 +30,7 @@
 
                     <div class="flex flex-col gap-4 px-4" style="margin-top: -100px;">
 
-                        <a href="/404" class="card">
+                        <a href="/ressatuanhargamaterial" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/00_android/00_iconmenuutama/01_menuutam/satuanharga.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -44,7 +44,7 @@
                             </div>
                             </a>
 
-                        <a href="/404" class="card">
+                        <a href="/ressatuanhargaupah" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/00_android/00_iconmenuutama/01_menuutam/satuanharga.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
@@ -58,7 +58,7 @@
                             </div>
                             </a>
 
-                        <a href="/404" class="card">
+                        <a href="/ressatuanhargaperalatan" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/00_android/00_iconmenuutama/01_menuutam/satuanharga.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
