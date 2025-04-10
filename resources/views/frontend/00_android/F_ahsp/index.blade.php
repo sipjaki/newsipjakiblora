@@ -37,7 +37,35 @@
                                 </div>
 
                             <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Dasar</p>
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Dasar Material</p>
+                        </p>
+
+                            </div>
+                            </div>
+                            </a>
+
+                        <a href="/404" class="card">
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
+                                    <img src="/assets/00_android/00_iconmenuutama/01_menuutam/satuanharga.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                </div>
+
+                            <div class="flex flex-col gap-1">
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Dasar Upah Tenaga Kerja</p>
+                        </p>
+
+                            </div>
+                            </div>
+                            </a>
+
+                        <a href="/404" class="card">
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
+                                    <img src="/assets/00_android/00_iconmenuutama/01_menuutam/satuanharga.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                </div>
+
+                            <div class="flex flex-col gap-1">
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Satuan Harga Dasar Peralatan</p>
                         </p>
 
                             </div>
