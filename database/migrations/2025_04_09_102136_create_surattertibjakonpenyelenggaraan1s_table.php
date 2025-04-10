@@ -14,21 +14,12 @@ return new class extends Migration
         Schema::create('surattertibjakonpenyelenggaraan1s', function (Blueprint $table) {
             $table->id();
             $table->text('lingkuppengawasan')->nullable()->index();
-            $table->text('indikator1')->nullable()->index();
-            $table->text('indikator2')->nullable()->index();
-            $table->text('indikator3')->nullable()->index();
-            $table->text('indikator4')->nullable()->index();
-            $table->text('indikator5')->nullable()->index();
-            $table->text('indikator6')->nullable()->index();
-            $table->text('indikator7')->nullable()->index();
+            $table->text('indikator')->nullable()->index();
             $table->text('dokumenperiksa')->nullable()->index();
             $table->text('carapemerksaan1')->nullable()->index();
             $table->text('carapemerksaan2')->nullable()->index();
-            $table->text('carapemerksaan3')->nullable()->index();
-            $table->text('carapemerksaan4')->nullable()->index();
-            $table->text('carapemerksaan5')->nullable()->index();
-            $table->text('carapemerksaan6')->nullable()->index();
-            $table->text('carapemerksaan7')->nullable()->index();
+            $table->text('kesimpulan1')->nullable()->index();
+            $table->text('kesimpulan2')->nullable()->index();
             $table->text('catatan1')->nullable()->index();
             $table->text('catatan2')->nullable()->index();
             $table->softDeletes();
