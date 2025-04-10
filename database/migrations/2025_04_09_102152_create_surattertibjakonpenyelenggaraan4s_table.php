@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('surattertibjakonpenyelenggaraan4s', function (Blueprint $table) {
             $table->id();
+            $table->string('nama')->nullable()->index();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
