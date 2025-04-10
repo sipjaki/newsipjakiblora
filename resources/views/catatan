@@ -48,3 +48,14 @@ Warna Latar: #dc3545 (Merah)
 Warna Teks: #FFFFFF (Putih)
 
 Border: #dc3545 (Merah)
+
+
+<div class="flex flex-col items-center justify-center text-center">
+    <p class="font-semibold text-xl text-white" style="-webkit-text-stroke: 0.25px black;">
+        Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora
+    </p>
+    <br>
+    <p class="font-semibold text-xl text-white" style="-webkit-text-stroke: 0.25px black;">
+        {{$title}}
+    </p>
+</div>
