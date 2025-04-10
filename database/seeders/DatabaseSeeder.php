@@ -67303,9 +67303,18 @@ tertibjakonpenyelenggaraan::create([
 ]);
 
 
-
-
-
+for ($i = 1; $i <= 151; $i++) {
+    informasisurattertibpenyelenggaraan::create([
+        'id' => $i,
+        'namaproyekkonstruksi' => $i == 151 ? 'GUDANG LPG' : "Proyek Konstruksi $i",
+        'nilaiproyek' => $i == 151 ? null : rand(10000000, 100000000),
+        'nomorkontrak' => $i == 151 ? '-' : "KONTRAK-" . str_pad($i, 3, '0', STR_PAD_LEFT),
+        'waktupelaksanaan' => $i == 151 ? null : '2025-01-01 s.d. 2025-06-01',
+        'penyediajasa' => $i == 151 ? null : "PT Jasa Konstruksi $i",
+        'satuanopd' => $i == 151 ? null : "Dinas PU $i",
+        'waktupengawasan' => $i == 151 ? null : '2025-01-01 s.d. 2025-06-01',
+    ]);
+}
 
 
 

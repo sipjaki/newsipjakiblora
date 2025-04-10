@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('informasisurattertibpenyelenggaraans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->text('namaproyekkonstruksi')->nullable()->index();
+            $table->text('nilaiproyek')->nullable()->index();
+            $table->text('nomorkontrak')->nullable()->index();
+            $table->text('waktupelaksanaan')->nullable()->index();
+            $table->text('penyediajasa')->nullable()->index();
+            $table->text('satuanopd')->nullable()->index();
+            $table->text('waktupengawasan')->nullable()->index();
             $table->softDeletes();
             $table->timestamps();
         });
