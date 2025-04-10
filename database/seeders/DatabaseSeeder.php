@@ -67408,6 +67408,27 @@ for ($i = 1; $i <= 151; $i++) {
     ]);
 }
 
+for ($i = 1; $i <= 151; $i++) {
+    // Pilih random antara "SESUAI" dan "TIDAK SESUAI"
+    $carapemeriksaan1 = rand(0, 1) ? 'TERSEDIA' : 'TIDAK TERSEDIA';
+    $carapemeriksaan2 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
+
+    surattertibjakonpenyelenggaraan5::create([
+        'id' => $i,
+        'lingkuppengawasan' => "Pengawasan terhadap penggunaan material peralatan dan teknologi konstruksi",
+        'indikator1' => 'Pemenuhan penyediaan material, peralatan dan teknologi dalam pelaksanaan proyek konstruksi',
+        'indikator1' => 'Penggunaan material peralatan dan teknologi konstruksi sesuai dengan standar nasional indonesia atau standar lain yang berlaku dan teknologi konstruksi tepat guna yang mengutamakan penerapan teknologi dengan platform digital',
+        'indikator1' => 'Penggunaan produk dalam negeri untuk material peralatan dan teknologi konstruksi sesuai dengan ketentuan perundang-undangan tentang pemberdayaan industri nasional',
+        'dokumenperiksa' => 'Surat pernyataan kuasa pengguna anggaran atau pejabat pembuat komitmen bahwa sudah memenuhi ketentuan dalam pengelolaan dan penggunaan material, peralatan dan teknologi berdasarkan surat pernyataan dari pimpinan badan usaha jasa konstruksi ',
+        'carapemerksaan1' => 'Memeriksa ketersediaan surat pernyataan',
+        'carapemerksaan2' => 'Memeriksa isi surat pernyataan',
+        'kesimpulan1' => $carapemeriksaan1,
+        'kesimpulan2' => $carapemeriksaan2,
+        'catatan1' => null,
+        'catatan2' => null,
+    ]);
+}
+
 
 
 
