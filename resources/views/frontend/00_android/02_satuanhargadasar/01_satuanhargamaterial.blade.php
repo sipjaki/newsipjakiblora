@@ -56,7 +56,7 @@
                         Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora
                       </p>
                                           <br>
-                    <p class="font-semibold text-xl text-white">{{$title}}</p>
+                    <p class="font-semibold text-xl text-white" style="-webkit-text-stroke: 0.25px black;">{{$title}}</p>
                 </div>
 
                 <!-- Ikon bagian kanan -->
