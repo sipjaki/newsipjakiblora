@@ -67325,16 +67325,18 @@ for ($i = 1; $i <= 151; $i++) {
 
 for ($i = 1; $i <= 151; $i++) {
     // Pilih random antara "SESUAI" dan "TIDAK SESUAI"
-    $carapemeriksaan1 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
+    $carapemeriksaan1 = rand(0, 1) ? 'TERSEDIA' : 'TIDAK TERSEDIA';
     $carapemeriksaan2 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
 
     surattertibjakonpenyelenggaraan1::create([
         'id' => $i,
-        'lingkuppengawasan' => "Lingkup Pengawasan $i",
-        'indikator' => "Indikator $i",
-        'dokumenperiksa' => "Dokumen Periksa $i",
-        'carapemerksaan1' => $carapemeriksaan1,
-        'carapemerksaan2' => $carapemeriksaan2,
+        'lingkuppengawasan' => "Pengawasan terhadap proses pemilihan penyedia jasa",
+        'indikator' => "Terlaksananya pemilihan Penyedia Jasa Konstruksi dilakukan sesuai dengan ketentuan peraturan perundang-undangan ",
+        'dokumenperiksa' => 'Surat pernyataan kuasa pengguna anggaran atau pejabat pembuat komitmen bahwa proses pemilihan penyedia jasa konstruksi sesuai dengan ketentuan peraturan perundang-undangan',
+        'carapemerksaan1' => 'Memeriksa ketersediaan surat pernyataan',
+        'carapemerksaan2' => 'Memeriksa isi surat pernyataan',
+        'kesimpulan1' => $carapemeriksaan1,
+        'kesimpulan2' => $carapemeriksaan2,
         'catatan1' => null,
         'catatan2' => null,
     ]);
