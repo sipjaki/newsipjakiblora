@@ -1,39 +1,43 @@
 <style>
-    /* Gaya untuk tabel */
     .fl-table {
-        margin-top: 15px;
         width: 100%;
         border-collapse: collapse;
-        border-radius: 10px;
-        table-layout: auto; /* KUNCI: biar kolom menyesuaikan isi */
-        word-wrap: break-word;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
     }
 
-    .fl-table th, .fl-table td {
-        text-align: center;
-        padding: 8px 12px;
+    .fl-table thead tr {
+        background-color: #f2f2f2;
+    }
+
+    .fl-table th,
+    .fl-table td {
+        padding: 10px;
+        text-align: left;
         vertical-align: middle;
-        white-space: normal; /* Biar teks bisa wrap ke bawah */
-    }
-
-    /* Gaya untuk kepala tabel */
-    .fl-table thead {
-        background-color: #374151; /* Warna latar belakang untuk header tabel */
-        color: white;
-    }
-
-    /* Gaya belang-belang */
-    .fl-table tbody tr:nth-child(odd) {
-        background-color: #f1f1f1;
+        border-bottom: 1px solid #ddd;
+        height: 45px; /* Biar tinggi row konsisten */
     }
 
     .fl-table tbody tr:nth-child(even) {
-        background-color: #e0e0e0;
+        background-color: #f9f9f9;
     }
 
-    /* Gaya hover pada baris tabel */
+    .fl-table tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
     .fl-table tbody tr:hover {
-        background-color: #d3d3d3;
+        background-color: #e6f7ff;
+    }
+
+    .fl-table td a {
+        color: blue;
+        text-decoration: none;
+    }
+
+    .fl-table td a:hover {
+        text-decoration: underline;
     }
 </style>
 
