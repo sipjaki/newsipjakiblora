@@ -226,6 +226,16 @@ Route::get('/resrantaipasok', [AndroidVersionController::class, 'menuresrantaipa
 // Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
 // Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
 
+// MENU PENGAWASAN BUJK  ------------------------------------------------
+Route::get('/respengawasanbujk', [AndroidVersionController::class, 'menurespengawasanbujk']);
+Route::get('/respengawasanbujk/{namaperusahaan}', [AndroidVersionController::class, 'menurespengawasanbujkdetails']);
+
+
+
+
+
+
+
 // ==========================================================================================================================================
 // ---------------------- BAGIAN 01 BERANDA HALAMAN DEPAN -----------------------//
 // ==========================================================================================================================================
