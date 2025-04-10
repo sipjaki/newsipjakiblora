@@ -3,7 +3,7 @@
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
     <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#FCF7F1] overflow-x-hidden pb-4">
         {{-- <div class="header flex flex-col" style="background: linear-gradient(to bottom, #28A745, #FFD100); border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;"> --}}
-            <div class="header flex flex-col bg-[#56BBC5] rounded-b-[50px] overflow-hidden h-[320px] -mb-[181px]" style="background: linear-gradient(to bottom, #28A745, #FFD100);">
+            <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama1.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden; height: 350px;">
                 <nav class="pt-5 px-3 flex justify-between items-center">
                     <!-- Logo bagian kiri -->
                     <div class="flex items-center gap-[10px]">
@@ -33,7 +33,7 @@
                         <a href="/resahspdiv1" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
-                                    <img src="/assets/icon/pupr.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+                                    <img src="/assets/00_android/00_iconmenuutama/01_menuberita/divisipekerjaan.jpg" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
                                 </div>
 
                             <div class="flex flex-col gap-1">
