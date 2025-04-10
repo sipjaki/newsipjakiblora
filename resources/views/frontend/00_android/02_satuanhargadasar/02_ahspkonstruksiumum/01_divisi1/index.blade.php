@@ -1,27 +1,28 @@
 <style>
+    /* Gaya untuk tabel */
     .fl-table {
         margin-top: 15px;
         width: 100%;
         border-collapse: collapse;
-        border-radius: 15px;
-        overflow: hidden;
-        table-layout: auto;
+        border-radius: 10px;
+        table-layout: auto; /* KUNCI: biar kolom menyesuaikan isi */
+        word-wrap: break-word;
     }
 
-    .fl-table th,
-    .fl-table td {
-        padding: 10px;
+    .fl-table th, .fl-table td {
         text-align: center;
-        vertical-align: top;
-        white-space: normal !important;
-        word-break: break-word;
+        padding: 8px 12px;
+        vertical-align: middle;
+        white-space: normal; /* Biar teks bisa wrap ke bawah */
     }
 
+    /* Gaya untuk kepala tabel */
     .fl-table thead {
-        background-color: #374151;
+        background-color: #374151; /* Warna latar belakang untuk header tabel */
         color: white;
     }
 
+    /* Gaya belang-belang */
     .fl-table tbody tr:nth-child(odd) {
         background-color: #f1f1f1;
     }
@@ -30,14 +31,12 @@
         background-color: #e0e0e0;
     }
 
+    /* Gaya hover pada baris tabel */
     .fl-table tbody tr:hover {
         background-color: #d3d3d3;
     }
-
-    .fl-table th {
-        cursor: pointer;
-    }
 </style>
+
 
 @include('frontend.00_android.00_fiturmenu.header')
 
@@ -139,60 +138,55 @@
 
                             <!-- Table Section -->
                             <div style="overflow-x: auto; margin-top: 15px; border-radius: 15px; border: 1px solid #ccc;">
-                                <table class="fl-table" id="sortableTable">
+                                <table class="fl-table" id="sortableTable" style="width: 100%; border-collapse: collapse; border-radius: 15px; overflow: hidden;">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="width:100px;">No</th>
-                                            <th onclick="sortTable(1)" style="width:500px;">Kode</th>
-                                            <th onclick="sortTable(2)" style="width:400px;">Pekerjaan</th>
-                                            <th onclick="sortTable(3)" style="width:200px;">Satuan</th>
-                                            <th onclick="sortTable(4)" style="width:100px;">Rp</th>
-                                            <th onclick="sortTable(5)" style="width:200px;">Besaran</th>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> No </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px; padding: 5px;"> Kode </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:1000px; padding: 5px;"> Pekerjaan </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px; padding: 5px;"> Satuan </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:100px; padding: 5px;"> Rp </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:400px; padding: 5px;"> Besaran </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
                                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
                                         @foreach ($data as $item)
-                                            <tr>
-                                                <td>{{ $loop->iteration + $start - 1 }}</td>
-                                                <td style="text-align: left;">
-                                                    {{ optional($item->hspdivisi)->id }}.
-                                                    {{ optional($item->hsppaket)->id }}.
-                                                    {{ optional($item->hspkodepekerjaan)->kodepekerjaan }}.
-                                                    {{$item->kode}}
-                                                </td>
-                                                <td style="text-align: left;">
-                                                    @if(isset($item->id) && !empty($item->id))
-                                                        <a href="javascript:void(0);"
-                                                           style="color: blue; text-decoration: none;"
-                                                           onclick="redirectToPage('{{ $item->id }}')">
-                                                            {{ $item->jenispekerjaan }}
-                                                        </a>
-                                                    @else
-                                                        <span style="color: red;">ID Tidak Ditemukan</span>
-                                                    @endif
-                                                </td>
-                                                <td style="color:red;">{{$item->satuanmaterial}}</td>
-                                                <td>Rp</td>
-                                                <td style="text-align: right;">
-                                                    {{ number_format((float) $item->hargasatuan, 0, ',', '.') }},-
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td style="text-align: center; padding: 5px;">{{ $loop->iteration + $start - 1 }}</td>
+                                            <td style="text-align: left; padding: 5px;">
+                                                {{ optional($item->hspdivisi)->id }}.
+                                                {{ optional($item->hsppaket)->id }}.
+                                                {{ optional($item->hspkodepekerjaan)->kodepekerjaan }}.
+                                                {{$item->kode}}
+                                            </td>
+                                            <td style="text-align: left; padding: 5px;">
+                                                @if(isset($item->id) && !empty($item->id))
+                                                    <a href="javascript:void(0);"
+                                                       style="color: blue; text-decoration: none;"
+                                                       onclick="redirectToPage('{{ $item->id }}')">
+                                                        {{ $item->jenispekerjaan }}
+                                                    </a>
+                                                @else
+                                                    <span style="color: red;">ID Tidak Ditemukan</span>
+                                                @endif
+                                            </td>
+                                            <script>
+                                                function redirectToPage(id) {
+                                                    if (!id) { // Pastikan ID tidak kosong
+                                                        alert("ID tidak valid!");
+                                                        return;
+                                                    }
+                                                    window.location.href = "/satuanhargadivisi1/" + encodeURIComponent(id);
+                                                }
+                                            </script>
+                                            <td style="text-align: center; color:red; padding: 5px;" >{{$item->satuanmaterial}}</td>
+                                            <td style="text-align: center; padding: 5px;">Rp</td>
+                                            <td style="text-align: right; padding: 5px;">{{ number_format((float) $item->hargasatuan, 0, ',', '.') }},-</td>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-
-                                <script>
-                                    function redirectToPage(id) {
-                                        if (!id) {
-                                            alert("ID tidak valid!");
-                                            return;
-                                        }
-                                        window.location.href = "/satuanhargadivisi1/" + encodeURIComponent(id);
-                                    }
-                                </script>
-
-                            </div>
                             </div>
 
                             <!-- Description Section -->
