@@ -87,7 +87,7 @@
                             </div>
                             </a>
 
-                            <a href="/404" class="card">
+                            <a href="/reskecelakaankerja" class="card">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                 <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
                                     <img src="/assets/00_android/00_iconmenuutama/01_menuutam/kecelakaan.png" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
