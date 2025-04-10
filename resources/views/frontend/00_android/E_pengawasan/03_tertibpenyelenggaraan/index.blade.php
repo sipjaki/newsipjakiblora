@@ -189,6 +189,96 @@
                                                 </a>
                                             </td>
 
+                                            <td class="text-center" style="text-align: center;">
+                                                @php
+                                                    $buttonText = !empty($item->surattertibjakonpenyelenggaraan2) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $style = '';
+                                                    $route = !empty($item->surattertibjakonpenyelenggaraan2) ? route('surattertibjakonpenyelenggaraan2.show', $item->surattertibjakonpenyelenggaraan2->id) : '#';
+                                                    if ($buttonText == 'LIHAT') {
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
+                                                    } else {
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
+                                                    }
+                                                @endphp
+                                                <a href="{{ $route }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
+                                                        {{ $buttonText }}
+                                                    </button>
+                                                </a>
+                                            </td>
+
+                                            <td class="text-center" style="text-align: center;">
+                                                @php
+                                                    $buttonText = !empty($item->surattertibjakonpenyelenggaraan3) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $style = '';
+                                                    $route = !empty($item->surattertibjakonpenyelenggaraan3) ? route('surattertibjakonpenyelenggaraan3.show', $item->surattertibjakonpenyelenggaraan3->id) : '#';
+                                                    if ($buttonText == 'LIHAT') {
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
+                                                    } else {
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
+                                                    }
+                                                @endphp
+                                                <a href="{{ $route }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
+                                                        {{ $buttonText }}
+                                                    </button>
+                                                </a>
+                                            </td>
+
+                                            <td class="text-center" style="text-align: center;">
+                                                @php
+                                                    $buttonText = !empty($item->surattertibjakonpenyelenggaraan4) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $style = '';
+                                                    $route = !empty($item->surattertibjakonpenyelenggaraan4) ? route('surattertibjakonpenyelenggaraan4.show', $item->surattertibjakonpenyelenggaraan4->id) : '#';
+                                                    if ($buttonText == 'LIHAT') {
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
+                                                    } else {
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
+                                                    }
+                                                @endphp
+                                                <a href="{{ $route }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
+                                                        {{ $buttonText }}
+                                                    </button>
+                                                </a>
+                                            </td>
+
+                                            <td class="text-center" style="text-align: center;">
+                                                @php
+                                                    $buttonText = !empty($item->surattertibjakonpenyelenggaraan5) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $style = '';
+                                                    $route = !empty($item->surattertibjakonpenyelenggaraan5) ? route('surattertibjakonpenyelenggaraan5.show', $item->surattertibjakonpenyelenggaraan5->id) : '#';
+                                                    if ($buttonText == 'LIHAT') {
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
+                                                    } else {
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
+                                                    }
+                                                @endphp
+                                                <a href="{{ $route }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
+                                                        {{ $buttonText }}
+                                                    </button>
+                                                </a>
+                                            </td>
+
+                                            <td class="text-center" style="text-align: center;">
+                                                @php
+                                                    $buttonText = !empty($item->surattertibjakonpenyelenggaraan6) ? 'LIHAT' : 'TIDAK ADA DATA';
+                                                    $style = '';
+                                                    $route = !empty($item->surattertibjakonpenyelenggaraan6) ? route('surattertibjakonpenyelenggaraan6.show', $item->surattertibjakonpenyelenggaraan6->id) : '#';
+                                                    if ($buttonText == 'LIHAT') {
+                                                        $style = 'background-color: #808080; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; transition: background-color 0.3s;';
+                                                    } else {
+                                                        $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
+                                                    }
+                                                @endphp
+                                                <a href="{{ $route }}">
+                                                    <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
+                                                        {{ $buttonText }}
+                                                    </button>
+                                                </a>
+                                            </td>
+
                                             <td style="text-align: center" style="text-align: center;">
                                                 <a href="/404">
                                                 {{-- <a href="/resprofilpaketpekerjaan/{{$item->id}}"> --}}

@@ -67317,6 +67317,24 @@ for ($i = 1; $i <= 151; $i++) {
     ]);
 }
 
+for ($i = 1; $i <= 151; $i++) {
+    // Pilih random antara "SESUAI" dan "TIDAK SESUAI"
+    $carapemeriksaan1 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
+    $carapemeriksaan2 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
+
+    surattertibjakonpenyelenggaraan1::create([
+        'id' => $i,
+        'lingkuppengawasan' => "Lingkup Pengawasan $i",
+        'indikator' => "Indikator $i",
+        'dokumenperiksa' => "Dokumen Periksa $i",
+        'carapemerksaan1' => $carapemeriksaan1,
+        'carapemerksaan2' => $carapemeriksaan2,
+        'catatan1' => null,
+        'catatan2' => null,
+    ]);
+}
+
+
 
 
 
