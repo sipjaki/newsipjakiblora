@@ -67389,6 +67389,25 @@ for ($i = 1; $i <= 151; $i++) {
     ]);
 }
 
+for ($i = 1; $i <= 151; $i++) {
+    // Pilih random antara "SESUAI" dan "TIDAK SESUAI"
+    $carapemeriksaan1 = rand(0, 1) ? 'TERSEDIA' : 'TIDAK TERSEDIA';
+    $carapemeriksaan2 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
+
+    surattertibjakonpenyelenggaraan4::create([
+        'id' => $i,
+        'lingkuppengawasan' => "Pengawasan terhadap penerapan manajemen mutu konstruksi",
+        'indikator1' => 'Sistem manajemen mutu konstruksi sesuai ketentuan peraturan perundang-undangan tentang sistem manajemen mutu',
+        'dokumenperiksa' => 'Surat pernyataan dari kuasa pengguna anggaran atau pejabat pembuat komitmen bahwa sudah memenuhi ketentuan dalam penerapan sistem manajemen mutu',
+        'carapemerksaan1' => 'Memeriksa ketersediaan surat pernyataan',
+        'carapemerksaan2' => 'Memeriksa isi surat pernyataan',
+        'kesimpulan1' => $carapemeriksaan1,
+        'kesimpulan2' => $carapemeriksaan2,
+        'catatan1' => null,
+        'catatan2' => null,
+    ]);
+}
+
 
 
 
