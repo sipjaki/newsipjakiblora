@@ -15,6 +15,7 @@ use App\Models\surattertibjakonusaha1;
 use App\Models\surattertibjakonusaha2;
 use App\Models\surattertibjakonusaha3;
 use App\Models\surattertibjakonusaha4;
+use App\Models\pengawasanbujk;
 // use App\Models\informasisurattertibpenyelenggaraan;
 
 use Illuminate\Support\Facades\Cache;
@@ -1033,6 +1034,45 @@ class AndroidVersionController extends Controller
             ]);
         }
 
+
+// MENU PENGAWASAN BUJK JASA KONSTRUKSI
+
+
+        public function respengawasanbujk(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
+
+    $query = pengawasanbujk::query();
+
+    if ($search) {
+        $query->where('kodeproyek', 'LIKE', "%{$search}%")
+              ->orWhere('kodeproyek', 'LIKE', "%{$search}%")
+              ->orWhere('namaperusahaan', 'LIKE', "%{$search}%")
+              ->orWhere('statusmodal', 'LIKE', "%{$search}%")
+              ->orWhere('nib', 'LIKE', "%{$search}%")
+              ->orWhere('jenisperusahaan', 'LIKE', "%{$search}%");
+    }
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.E_pengawasan.04_pengawasanbujk.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.E_pengawasan.04_pengawasanbujk.index', [
+        'title' => 'Pengawasan Badan Usaha Jasa Konstruksi',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+
+
+
         // MENU AHSP JASA KONSTRUKSI
         // -==============================================================================================================
         public function menuresahsp()
@@ -1056,7 +1096,5 @@ class AndroidVersionController extends Controller
             'user' => $user,
         ]);
         }
-
-
 
 }
