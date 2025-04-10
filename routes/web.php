@@ -199,6 +199,21 @@ Route::get('/resjakonpenyelenggaraan', [AndroidVersionController::class, 'menure
 // Route untuk surat tertib jakon usaha 1
 Route::get('surattertibjakonpenyelenggaraan1/{id}', [AndroidVersionController::class, 'showpenyelenggaraan'])->name('surattertibjakonpenyelenggaraan1.show');
 
+// Route untuk surat tertib jakon usaha 1
+Route::get('surattertibjakonpenyelenggaraan2/{id}', [AndroidVersionController::class, 'showpenyelenggaraan'])->name('surattertibjakonpenyelenggaraan2.show');
+
+// Route untuk surat tertib jakon usaha 1
+Route::get('surattertibjakonpenyelenggaraan3/{id}', [AndroidVersionController::class, 'showpenyelenggaraan'])->name('surattertibjakonpenyelenggaraan3.show');
+
+// Route untuk surat tertib jakon usaha 1
+Route::get('surattertibjakonpenyelenggaraan4/{id}', [AndroidVersionController::class, 'showpenyelenggaraan'])->name('surattertibjakonpenyelenggaraan4.show');
+
+// Route untuk surat tertib jakon usaha 1
+Route::get('surattertibjakonpenyelenggaraan5/{id}', [AndroidVersionController::class, 'showpenyelenggaraan'])->name('surattertibjakonpenyelenggaraan5.show');
+
+// Route untuk surat tertib jakon usaha 1
+Route::get('surattertibjakonpenyelenggaraan6/{id}', [AndroidVersionController::class, 'showpenyelenggaraan'])->name('surattertibjakonpenyelenggaraan6.show');
+
 // ================================================ MENU F. AHSP
 // MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
 Route::get('/resahsp', [AndroidVersionController::class, 'menuresahsp']);

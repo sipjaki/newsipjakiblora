@@ -67342,6 +67342,50 @@ for ($i = 1; $i <= 151; $i++) {
     ]);
 }
 
+for ($i = 1; $i <= 151; $i++) {
+    // Pilih random antara "SESUAI" dan "TIDAK SESUAI"
+    $carapemeriksaan1 = rand(0, 1) ? 'TERSEDIA' : 'TIDAK TERSEDIA';
+    $carapemeriksaan2 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
+
+    surattertibjakonpenyelenggaraan1::create([
+        'id' => $i,
+        'lingkuppengawasan' => "Pengawasan terhadap proses pemilihan penyedia jasa",
+        'indikator' => "Terlaksananya pemilihan Penyedia Jasa Konstruksi dilakukan sesuai dengan ketentuan peraturan perundang-undangan ",
+        'dokumenperiksa' => 'Surat pernyataan kuasa pengguna anggaran atau pejabat pembuat komitmen bahwa proses pemilihan penyedia jasa konstruksi sesuai dengan ketentuan peraturan perundang-undangan',
+        'carapemerksaan1' => 'Memeriksa ketersediaan surat pernyataan',
+        'carapemerksaan2' => 'Memeriksa isi surat pernyataan',
+        'kesimpulan1' => $carapemeriksaan1,
+        'kesimpulan2' => $carapemeriksaan2,
+        'catatan1' => null,
+        'catatan2' => null,
+    ]);
+}
+
+for ($i = 1; $i <= 151; $i++) {
+    // Pilih random antara "SESUAI" dan "TIDAK SESUAI"
+    $carapemeriksaan1 = rand(0, 1) ? 'TERSEDIA' : 'TIDAK TERSEDIA';
+    $carapemeriksaan2 = rand(0, 1) ? 'SESUAI' : 'TIDAK SESUAI';
+
+    surattertibjakonpenyelenggaraan2::create([
+        'id' => $i,
+        'lingkuppengawasan' => "Pengawasan terhadap penyusunan dan pelaksanaan kontrak kerja konstruksi",
+        'indikator1' => 'Penggunaan standar kontrak',
+        'indikator2' => 'Penggunaan tenaga kerja konstruksi bersertifikat',
+        'indikator3' => 'Pemberian pekerjaan utama dan/atau penunjang kepada sub penyedia jasa',
+        'indikator4' => 'Hak kekayaan intelektual (Untuk jasa Konsultasi Konstruksi)',
+        'indikator5' => 'Kewajiban alih teknologi untuk kontrak dengan pihak asing',
+        'indikator6' => 'Penggunaan Produk dalam negeri',
+        'indikator7' => 'Kewajiban pembayaran asuransi tenaga kerja konstruksi',
+        'dokumenperiksa' => 'Surat pernyataan kuasa pengguna anggaran atau pejabat pembuat komitmen bahwa penyusunan dan pelaksanaan kontrak kerja konstruksi telah sesuai dengan ketentuan peraturan perundang-undangan',
+        'carapemerksaan1' => 'Memeriksa ketersediaan surat pernyataan',
+        'carapemerksaan2' => 'Memeriksa isi surat pernyataan',
+        'kesimpulan1' => $carapemeriksaan1,
+        'kesimpulan2' => $carapemeriksaan2,
+        'catatan1' => null,
+        'catatan2' => null,
+    ]);
+}
+
 
 
 

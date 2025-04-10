@@ -14,7 +14,14 @@ return new class extends Migration
         Schema::create('surattertibjakonpenyelenggaraan2s', function (Blueprint $table) {
             $table->id();
             $table->text('lingkuppengawasan')->nullable()->index();
-            $table->text('indikator')->nullable()->index();
+            $table->text('indikator1')->nullable()->index();
+            $table->text('indikator2')->nullable()->index();
+            $table->text('indikator3')->nullable()->index();
+            $table->text('indikator4')->nullable()->index();
+            $table->text('indikator5')->nullable()->index();
+            $table->text('indikator6')->nullable()->index();
+            $table->text('indikator7')->nullable()->index();
+            // $table->text('indikator1')->nullable()->index();
             $table->text('dokumenperiksa')->nullable()->index();
             $table->text('carapemerksaan1')->nullable()->index();
             $table->text('carapemerksaan2')->nullable()->index();
