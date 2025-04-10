@@ -219,6 +219,10 @@ Route::get('surattertibjakonpenyelenggaraan6/{id}', [AndroidVersionController::c
 Route::get('/respengawasanbujk', [AndroidVersionController::class, 'menurespengawasanbujk']);
 Route::get('/respengawasanbujk/{namaperusahaan}', [AndroidVersionController::class, 'menurespengawasanbujkdetails']);
 
+// MENU PENGAWASAN BUJK  ------------------------------------------------
+Route::get('/reskecelakaankerja', [AndroidVersionController::class, 'menureskecelakaankerja']);
+Route::get('/reskecelakaankerja/{id}', [AndroidVersionController::class, 'menureskecelakaankerjadetails']);
+
 // ================================================ MENU F. AHSP
 // MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
 Route::get('/resahsp', [AndroidVersionController::class, 'menuresahsp']);

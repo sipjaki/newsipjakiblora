@@ -16,6 +16,7 @@ use App\Models\surattertibjakonusaha2;
 use App\Models\surattertibjakonusaha3;
 use App\Models\surattertibjakonusaha4;
 use App\Models\pengawasanbujk;
+use App\Models\kecelakaankerjamasjaki;
 // use App\Models\informasisurattertibpenyelenggaraan;
 
 use Illuminate\Support\Facades\Cache;
@@ -1070,6 +1071,39 @@ class AndroidVersionController extends Controller
     ]);
 }
 
+// MENU KECELAKAAN KERJA JASA KONSTRUKSI
+
+public function menureskecelakaankerja(Request $request)
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
+
+    $query = kecelakaankerjamasjaki::query();
+
+    if ($search) {
+        $query->where('namapaketpekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('tahun', 'LIKE', "%{$search}%")
+              ->orWhere('namaperusahaan', 'LIKE', "%{$search}%")
+              ->orWhere('namatenagakerja', 'LIKE', "%{$search}%")
+              ->orWhere('lokasikecelakaan', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%");
+    }
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.E_pengawasan.05_kecelakaankerja.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('frontend.00_android.E_pengawasan.05_kecelakaankerja.index', [
+        'title' => 'Daftar Kecelakaan Kerja Konstruksi Kabupaten Blora',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
 
 
 
