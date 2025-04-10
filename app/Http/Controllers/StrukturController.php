@@ -76,12 +76,9 @@ class StrukturController extends Controller
 
     // Upload file peraturan jika ada
     if ($request->hasFile('peraturan')) {
-        // Hapus file lama jika ada
         if ($filePath && Storage::disk('public')->exists($filePath)) {
             Storage::disk('public')->delete($filePath);  // Menghapus file lama
         }
-
-        // Simpan file baru ke direktori yang ditentukan
         $filePath = $request->file('peraturan')->store('01_kelembagaan/01_dinas', 'public');
     }
 
