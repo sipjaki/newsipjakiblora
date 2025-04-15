@@ -271,56 +271,57 @@ return redirect()->back()->with('error', 'Item not found');
 
     // =============================================================================
 
+
+
     public function datalistskktenagakerjablora(Request $request)
     {
-        $user = Auth::user();
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search', '');
+        $page = $request->input('page', 1);
 
-        // $data = skktenagakerjablora::paginate(10);
-        $datanamasekolah = namasekolah::all();
-        $datajenjangpendidikan = jenjangpendidikan::all();
-        $datajurusan = jurusan::all();
-        $datajabatankerja = jabatankerja::all();
-        $datajenjang = jenjang::all();
-        $datalpspenerbit = lpspenerbit::all();
-        $dataasosiasimasjaki = asosiasimasjaki::all();
+        // Cache key yang konsisten dan jelas
+        $cacheKey = "blora_tkk_" . md5("page_{$page}_search_{$search}");
 
-        $perPage = $request->input('perPage', 10);
-            $search = $request->input('search');
+        if ($page == 1) {
+            Cache::forget($cacheKey);
+        }
 
-            $query = skktenagakerjabloralist::query();
+        $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+            $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
+                // HANYA tampilkan data yang TIDAK 99 atau NULL
+                ->where(function ($q) {
+                    $q->where('asosiasimasjaki_id', '!=', 99)
+                      ->orWhereNull('asosiasimasjaki_id');
+                });
 
-            if ($search) {
-                $query->where('nama', 'LIKE', "%{$search}%")
-                      ->orWhere('alamat', 'LIKE', "%{$search}%")
-                      ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
-                      ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                          $q->where('jabatankerja', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
-                      })
-                      ->orWhereHas('jenjang', function ($q) use ($search) {
-                          $q->where('jenjang', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
-                      });
+            // Cek kalau ada pencarian
+            if (!empty($search)) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('nama', 'LIKE', "%{$search}%");
+                });
             }
 
-            $data = $query->paginate($perPage);
+            return $query->get();
+        });
 
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('frontend.03_masjaki_jakon.03_tenagakerjakonstruksi.partials.table', compact('data'))->render()
-                ]);
-            }
+        $total = count($allData);
+        $items = collect($allData)->forPage($page, $perPage)->values();
+        $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+            'path' => request()->url(),
+            'query' => request()->query()
+        ]);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.03_masjaki_jakon.03_tenagakerjakonstruksi.partials.table', compact('data'))->render()
+            ]);
+        }
 
         return view('frontend.03_masjaki_jakon.03_tenagakerjakonstruksi.listtenagakerjakonstruksi', [
-            'title' => 'SKK Tenaga Konstruksi Seluruh Kab Blora',
-            'user' => $user, // Mengirimkan data paginasi ke view
-
-            'data' => $data, // Mengirimkan data paginasi ke view
-            'datanamasekolah' => $datanamasekolah, // Mengirimkan data paginasi ke view
-            'datajenjangpendidikan' => $datajenjangpendidikan, // Mengirimkan data paginasi ke view
-            'datajurusan' => $datajurusan, // Mengirimkan data paginasi ke view
-            'datajabatankerja' => $datajabatankerja, // Mengirimkan data paginasi ke view
-            'datajenjang' => $datajenjang, // Mengirimkan data paginasi ke view
-            'datalpspenerbit' => $datalpspenerbit, // Mengirimkan data paginasi ke view
-            'dataasosiasimasjaki' => $dataasosiasimasjaki, // Mengirimkan data paginasi ke view
+            'title' => 'TKK Kabupaten Blora',
+            'data' => $data,
+            'perPage' => $perPage,
+            'search' => $search
         ]);
     }
 
