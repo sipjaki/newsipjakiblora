@@ -99,7 +99,7 @@ table.zebra-table {
     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
 
-    <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 160px;" >
+    <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 50px;" >
         <div class="flex items-center gap-[20px]">
             <!-- Gambar di kiri -->
             <img src="/assets/abgblora/logo/iconabgblora.png" alt="Logo" class="w-[60px] -my-[15px]" width="10%" style="margin-right: 20px; margin-bottom:10px;" >
