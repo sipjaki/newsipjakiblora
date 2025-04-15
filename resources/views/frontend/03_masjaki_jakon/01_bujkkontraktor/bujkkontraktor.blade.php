@@ -104,7 +104,7 @@ table.zebra-table {
         <div class="flex items-center gap-[20px]">
             <!-- Gambar di kiri -->
             <br><br>
-            <img src="/assets/icon/info.png" alt="Logo" class="w-[60px] -my-[15px]" style="margin-right: 20px; margin-bottom:10px;" >
+            <img src="/assets/icon/info.png" alt="Logo" class="w-[60px] -my-[15px]" style="margin-right: 20px; margin-bottom:10px;" width="50%">
 
             <!-- Breadcrumb di kanan -->
             <div class="flex gap-[30px] items-center flex-wrap">
