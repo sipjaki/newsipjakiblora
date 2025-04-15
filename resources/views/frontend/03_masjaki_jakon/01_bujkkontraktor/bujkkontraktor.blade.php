@@ -124,66 +124,40 @@ table.zebra-table {
                 </button>
             </div>
 
-            <div class="table-wrapper -mt-6">
+            <div class="table-wrapper">
                 <table class="zebra-table">
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Institusi Kepemilikan</th>
-                            <th>Nama Bangunan</th>
-                            <th>Luas Tanah</th>
-                            <th>Fungsi Bangunan</th>
-                            <th>Status Tanah</th>
-                            <th>Klasifikasi Bangunan</th>
-                            <th>View</th>
+                            <th>Badan Usaha</th>
+                            <th>No Telepon</th>
+                            <th>Email</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
                         @foreach ($data as $item)
                         <tr>
                             <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
-                            <td class="uppercase">{{ optional($item->kepemilikanbangunangedung)->datainstitusibangunangedung->institusi ?? 'Data Tidak Di Temukan' }}</td>
-                            <td>{{ $item->namabangunan }}</td>
-                            <td style="text-align: right">
-                                @php
-                                    $luas = (float) preg_replace('/[^0-9.]/', '', $item->luastanah);
-                                @endphp
-                                @if($luas > 0)
-                                    {{ number_format($luas, 0, ',', '.') }} m&sup2;
+                            <td>{{ $item->namalengkap ?? 'Data Tidak Ditemukan' }}</td>
+                            <td>
+                                @if(!empty($item->no_telepon))
+                                    {{ $item->no_telepon }}
                                 @else
-                                    <button class="btn-navy">Data Belum Di Update</button>
+                                    <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
                             <td>
-                                @if($item->fungsibangunan && $item->fungsibangunan->fungsibangunan)
-                                    {{ $item->fungsibangunan->fungsibangunan }}
+                                @if(!empty($item->email))
+                                    {{ $item->email }}
                                 @else
-                                    <button class="btn-navy">Data Belum Di Update</button>
+                                    <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
-                            </td>
-                            <td>
-                                @if(isset($item->profiltanahbangunangedung->statushaktanahbangunangedung->status))
-                                    {{ $item->profiltanahbangunangedung->statushaktanahbangunangedung->status }}
-                                @else
-                                    <button class="btn-navy">Data Belum Di Update</button>
-                                @endif
-                            </td>
-                            <td>
-                                @if(isset($item->klasifikasibangunangedung->tingkatpermanen))
-                                    {{ $item->klasifikasibangunangedung->tingkatpermanen }}
-                                @else
-                                    <button class="btn-navy">Data Belum Di Update</button>
-                                @endif
-                            </td>
-                            <td style="text-align: center">
-                                <a href="/databangunangedung/{{$item->namabangunan}}">
-                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
-                                </a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+
             </div>
 
             @include('frontend.00_approve.01_cssterpisah.paginations')
