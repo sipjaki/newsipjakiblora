@@ -241,7 +241,7 @@ table.zebra-table {
         function searchTable() {
           let input = document.getElementById("searchInput").value;
 
-          fetch(`/datajakon/skktenagakerjablora?search=${input}`)
+          fetch(`/datajakon/skktenagakerjabloralist?search=${input}`)
             .then(response => response.text())
             .then(html => {
               let parser = new DOMParser();
