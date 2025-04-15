@@ -156,9 +156,8 @@ table.zebra-table {
                         <tr>
                             <th style="text-align: center;">No</th>
                             <th style="text-align: center;">Nama Lengkap</th>
-                            <th style="text-align: center;">Alamat</th>
                             <th style="text-align: center;">Jabatan Kerja</th>
-                            <th style="text-align: center;">Jenjang</th>
+                            <th style="text-align: center;">Penyelenggara</th>
                             <th style="text-align: center;">View</th>
                         </tr>
                     </thead>
@@ -168,13 +167,7 @@ table.zebra-table {
                         <tr>
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                             <td>{{ ucwords(strtolower($item->nama ?? 'Data Tidak Ditemukan')) }}</td>
-                            <td>
-                                @if(!empty($item->alamat))
-                                    {{ $item->alamat }}
-                                @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
-                                @endif
-                            </td>
+
                             <td>
                                 @if(!empty($item->jabatankerja))
                                     {{ $item->jabatankerja->jabatankerja ?? 'Data Tidak Ditemukan' }}
@@ -182,13 +175,23 @@ table.zebra-table {
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
-                            <td style="text-align: center;">
-                                @if(!empty($item->jenjang))
-                                    {{ $item->jenjang->jenjang ?? 'Data Tidak Ditemukan' }}
+
+                            <td>
+                                @if(!empty($item->asosiasimasjaki))
+                                    {{ $item->asosiasimasjaki->namaasosiasi ?? 'Data Tidak Ditemukan' }}
                                 @else
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
+
+                            <td>
+                                @if(!empty($item->statusterbit))
+                                    {{ $item->statusterbit?? 'Data Tidak Ditemukan' }}
+                                @else
+                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                @endif
+                            </td>
+
                             <td style="text-align: center;">
                                 <a href="/datajakon/skktenagakerjablora/{{$item->nama}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
