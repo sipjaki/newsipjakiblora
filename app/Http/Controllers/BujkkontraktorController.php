@@ -154,7 +154,7 @@ class BujkkontraktorController extends Controller
 // HALAMAN FRONTEND MENU BUJK KONTRAKTOR
     public function bujkkontraktor(Request $request)
 {
-    $perPage = $request->input('perPage', 10);
+    $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
     $query = bujkkontraktor::query();
