@@ -13,6 +13,9 @@ use App\Models\lpspenerbit;
 use App\Models\skktenagakerjabloralist;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -30,54 +33,101 @@ class SkktenagakerjabloraController extends Controller
         ]);
     }
 
+    // public function listskktenagakerjablora(Request $request)
+    // {
+    //     $user = Auth::user();
+
+    //     // $data = skktenagakerjablora::paginate(10);
+    //     $datanamasekolah = namasekolah::all();
+    //     $datajenjangpendidikan = jenjangpendidikan::all();
+    //     $datajurusan = jurusan::all();
+    //     $datajabatankerja = jabatankerja::all();
+    //     $datajenjang = jenjang::all();
+    //     $datalpspenerbit = lpspenerbit::all();
+
+    //     $perPage = $request->input('perPage', 10);
+    //         $search = $request->input('search');
+
+    //         $query = skktenagakerjablora::query();
+
+    //         if ($search) {
+    //             $query->where('nama', 'LIKE', "%{$search}%")
+    //                   ->orWhere('alamat', 'LIKE', "%{$search}%")
+    //                   ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
+    //                   ->orWhereHas('jabatankerja', function ($q) use ($search) {
+    //                       $q->where('jabatankerja', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+    //                   })
+    //                   ->orWhereHas('jenjang', function ($q) use ($search) {
+    //                       $q->where('jenjang', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
+    //                   });
+    //         }
+
+    //         $data = $query->paginate($perPage);
+
+    //         if ($request->ajax()) {
+    //             return response()->json([
+    //                 'html' => view('frontend.03_masjaki_jakon.03_tenagakerjakonstruksi.partials.table', compact('data'))->render()
+    //             ]);
+    //         }
+
+    //     return view('frontend.03_masjaki_jakon.03_tenagakerjakonstruksi.tenagakerjakonstruksi', [
+    //         'title' => 'SKK Tenaga Konstruksi Di Selenggarakan DPUPR Kab Blora',
+    //         'user' => $user, // Mengirimkan data paginasi ke view
+
+    //         'data' => $data, // Mengirimkan data paginasi ke view
+    //         'datanamasekolah' => $datanamasekolah, // Mengirimkan data paginasi ke view
+    //         'datajenjangpendidikan' => $datajenjangpendidikan, // Mengirimkan data paginasi ke view
+    //         'datajurusan' => $datajurusan, // Mengirimkan data paginasi ke view
+    //         'datajabatankerja' => $datajabatankerja, // Mengirimkan data paginasi ke view
+    //         'datajenjang' => $datajenjang, // Mengirimkan data paginasi ke view
+    //         'datalpspenerbit' => $datalpspenerbit, // Mengirimkan data paginasi ke view
+    //     ]);
+    // }
+
     public function listskktenagakerjablora(Request $request)
     {
-        $user = Auth::user();
+        $perPage = $request->input('perPage', 25);
+        $search = $request->input('search', '');
+        $page = $request->input('page', 1);
 
-        // $data = skktenagakerjablora::paginate(10);
-        $datanamasekolah = namasekolah::all();
-        $datajenjangpendidikan = jenjangpendidikan::all();
-        $datajurusan = jurusan::all();
-        $datajabatankerja = jabatankerja::all();
-        $datajenjang = jenjang::all();
-        $datalpspenerbit = lpspenerbit::all();
+        // Cache key unik berdasarkan search + filter asosiasi
+        $cacheKey = "search_" . md5($search . '_asosiasi_99');
 
-        $perPage = $request->input('perPage', 10);
-            $search = $request->input('search');
+        // Hapus cache jika ada search baru di halaman 1
+        if ($page == 1) {
+            Cache::forget($cacheKey);
+        }
 
-            $query = skktenagakerjablora::query();
+        $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+            $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
+                ->where('asosiasimasjaki_id', 99); // hanya ambil data asosiasi ID 99
 
-            if ($search) {
-                $query->where('nama', 'LIKE', "%{$search}%")
-                      ->orWhere('alamat', 'LIKE', "%{$search}%")
-                      ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
-                      ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                          $q->where('jabatankerja', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
-                      })
-                      ->orWhereHas('jenjang', function ($q) use ($search) {
-                          $q->where('jenjang', 'LIKE', "%{$search}%"); // 'jenjang' = nama kolom di tabel jenjang
-                      });
+            if (!empty($search)) {
+                $query->where('nama', 'LIKE', "%{$search}%");
             }
 
-            $data = $query->paginate($perPage);
+            return $query->get(); // Ambil semua hasil, untuk keperluan pagination
+        });
 
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('frontend.03_masjaki_jakon.03_tenagakerjakonstruksi.partials.table', compact('data'))->render()
-                ]);
-            }
+        // Manual paginate
+        $total = count($allData);
+        $items = collect($allData)->forPage($page, $perPage)->values();
+        $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+            'path' => request()->url(),
+            'query' => request()->query()
+        ]);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('frontend.03_masjaki_jakon.03_tenagakerjakonstruksi.partials.table', compact('data'))->render()
+            ]);
+        }
 
         return view('frontend.03_masjaki_jakon.03_tenagakerjakonstruksi.tenagakerjakonstruksi', [
-            'title' => 'SKK Tenaga Konstruksi Di Selenggarakan DPUPR Kab Blora',
-            'user' => $user, // Mengirimkan data paginasi ke view
-
-            'data' => $data, // Mengirimkan data paginasi ke view
-            'datanamasekolah' => $datanamasekolah, // Mengirimkan data paginasi ke view
-            'datajenjangpendidikan' => $datajenjangpendidikan, // Mengirimkan data paginasi ke view
-            'datajurusan' => $datajurusan, // Mengirimkan data paginasi ke view
-            'datajabatankerja' => $datajabatankerja, // Mengirimkan data paginasi ke view
-            'datajenjang' => $datajenjang, // Mengirimkan data paginasi ke view
-            'datalpspenerbit' => $datalpspenerbit, // Mengirimkan data paginasi ke view
+            'title' => 'TKK Di Selenggarakan DPUPR',
+            'data' => $data,
+            'perPage' => $perPage,
+            'search' => $search
         ]);
     }
 
@@ -214,6 +264,8 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
+
+// HAPUS DATA YANG LAMA
 
 // BATAS MENU TKK DPUPR BLORA
 
