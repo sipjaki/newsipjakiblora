@@ -136,13 +136,6 @@ table.zebra-table {
 
     <section id="details" class="container full-width-container mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
-
-            <div class="flex items-center gap-3 -mt-6">
-                <button class="p-[14px_20px] bg-white rounded-full font-semibold">
-                    📦 {{$title}}
-                </button>
-            </div>
-
             <div class="table-wrapper">
                 <table class="zebra-table">
                     <thead>
