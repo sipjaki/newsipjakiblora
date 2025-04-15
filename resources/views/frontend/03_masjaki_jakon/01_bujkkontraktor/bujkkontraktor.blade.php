@@ -33,19 +33,7 @@
   cursor: pointer;
 }
 
-</style>
-{{-- ================================ --}}
-
-@include('frontend.00_approve.01_cssterpisah.header')
-
-
-<body>
-
-    {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
-    @include('frontend.00_approve.01_cssterpisah.header1')
-
-    <style>
-        table.zebra-table {
+table.zebra-table {
             border-collapse: collapse;
             width: 100%;
             font-family: 'Poppins', sans-serif;
@@ -76,14 +64,21 @@
         .zebra-table tbody tr:hover {
             background-color: #0fb825;
         }
-    </style>
 
-
-      <style>
         body {
           font-family: 'Poppins', sans-serif;
         }
-      </style>
+
+</style>
+{{-- ================================ --}}
+
+@include('frontend.00_approve.01_cssterpisah.header')
+
+
+<body>
+
+    {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
+    @include('frontend.00_approve.01_cssterpisah.header1')
 
     <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 160px;" >
         <div class="flex items-center gap-[20px]">
