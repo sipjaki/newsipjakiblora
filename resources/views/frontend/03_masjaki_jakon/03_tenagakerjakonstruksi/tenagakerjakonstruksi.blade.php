@@ -185,13 +185,14 @@ table.zebra-table {
                                 @endif
                             </td>
 
-                            <td>
+                            <td style="text-align: center;">
                                 @if(!empty($item->statusterbit))
-                                    {{ $item->statusterbit?? 'Data Tidak Ditemukan' }}
+                                    <button class="btn btn-warning">{{ $item->statusterbit ?? 'Data Tidak Ditemukan' }}</button>
                                 @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                    <button class="btn btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
+
 
                             <td style="text-align: center;">
                                 <a href="/datajakon/skktenagakerjablora/{{$item->nama}}">
