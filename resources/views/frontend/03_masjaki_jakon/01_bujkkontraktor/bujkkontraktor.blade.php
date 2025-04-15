@@ -1,9 +1,4 @@
 <style>
-
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-
     /* file: resources/css/custom.css atau langsung di style tag */
 .full-width-container {
   max-width: 80% !important;
@@ -70,6 +65,10 @@ table.zebra-table {
             background-color: #ffd100;
         }
 
+        body {
+          font-family: 'Poppins', sans-serif;
+        }
+
 
         .btn-navy {
         background-color: #001f3f;
@@ -100,42 +99,43 @@ table.zebra-table {
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
-    <!-- Breadcrumb -->
-    <div class="max-w-[1130px] mx-auto pt-[50px] px-4">
-        <br><br>
-        <div class="flex items-center gap-[20px]">
-            <!-- Gambar di kiri -->
-            <img src="/assets/icon/info.png" alt="Logo" class="w-[60px] -my-[15px]" style="margin-right: 20px; margin-bottom:10px;" width="10%">
+<!-- Breadcrumb + Search Bar -->
+<div class="max-w-[1130px] mx-auto pt-[50px] px-4 font-poppins">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 
-            <!-- Breadcrumb di kanan -->
-            <div class="flex gap-[30px] items-center flex-wrap">
-                <span>/</span>
-                <a href="/" class="font-medium text-blue-600">
-                    {{$title}}
-                </a>
-                <span>/</span>
-                <a href="/statistikbg" class="font-medium text-black">
-                    Data Statistik
-                </a>
-            </div>
-        </div>
+      <!-- KIRI: Gambar + Breadcrumb -->
+      <div class="flex items-center gap-4">
+        <img src="/assets/icon/info.png" alt="Logo" class="w-[60px]" style="margin-bottom: 4px;" />
 
-        <!-- Search Bar Section -->
-        <div class="flex justify-end w-full sm:w-auto mb-4 mt-4">
-            <div class="flex items-center gap-1.5 px-3 py-1 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Cari data..."
-                    oninput="searchTable()"
-                    class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent"
-                />
-                <button onclick="searchTable()" class="flex items-center justify-center w-7 h-7 shrink-0 ml-2">
-                    <img src="/assets/new/icons/search.svg" alt="icon" class="w-4 h-4" />
-                </button>
-            </div>
+        <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
+          <span>/</span>
+          <a href="/" class="font-medium text-blue-600">
+            {{$title}}
+          </a>
+          <span>/</span>
+          <a href="/statistikbg" class="font-medium text-black">
+            Data Statistik
+          </a>
         </div>
+      </div>
+
+      <!-- KANAN: Search Bar -->
+      <div class="w-full sm:w-auto">
+        <div class="flex items-center gap-1.5 px-3 py-1 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari data..."
+            oninput="searchTable()"
+            class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent"
+          />
+          <button onclick="searchTable()" class="flex items-center justify-center w-7 h-7 shrink-0 ml-2">
+            <img src="/assets/new/icons/search.svg" alt="icon" class="w-4 h-4" />
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
