@@ -142,6 +142,7 @@ table.zebra-table {
                         <tr>
                             <th>No</th>
                             <th>Badan Usaha</th>
+                            <th>Alamat</th>
                             <th>No Telepon</th>
                             <th>Email</th>
                         </tr>
@@ -151,6 +152,13 @@ table.zebra-table {
                         <tr>
                             <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
                             <td>{{ $item->namalengkap ?? 'Data Tidak Ditemukan' }}</td>
+                            <td>
+                                @if(!empty($item->alamat))
+                                    {{ $item->alamat }}
+                                @else
+                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                @endif
+                            </td>
                             <td>
                                 @if(!empty($item->no_telepon))
                                     {{ $item->no_telepon }}
