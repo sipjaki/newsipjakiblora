@@ -69,6 +69,25 @@ table.zebra-table {
           font-family: 'Poppins', sans-serif;
         }
 
+
+        .btn-navy {
+        background-color: #001f3f;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        cursor: default;
+        transition: all 0.3s ease;
+    }
+
+    .btn-navy:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid #001f3f;
+    }
+
 </style>
 {{-- ================================ --}}
 
