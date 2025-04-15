@@ -129,11 +129,11 @@ table.zebra-table {
             class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent"
           />
           <button onclick="searchTable()" class="flex items-center justify-center w-7 h-7 shrink-0 ml-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#545768" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#545768]" viewBox="0 0 24 24" fill="none">
+              <path d="M11 19a8 8 0 1 1 5.292-14.042 8 8 0 0 1-5.292 14.042Zm9.707 1.293-5.387-5.387a10 10 0 1 0-1.414 1.414l5.387 5.387a1 1 0 0 0 1.414-1.414Z" fill="#545768"/>
             </svg>
           </button>
+
 
         </div>
       </div>
