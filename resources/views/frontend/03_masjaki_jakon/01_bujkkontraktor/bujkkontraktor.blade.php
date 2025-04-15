@@ -1,8 +1,8 @@
 <style>
     /* file: resources/css/custom.css atau langsung di style tag */
 .full-width-container {
-  max-width: 100% !important;
-  width: 100%;
+  max-width: 80% !important;
+  width: 80%;
   margin-top: 10px;
 }
 
