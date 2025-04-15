@@ -1,111 +1,3 @@
-<style>
-    /* Import font Poppins */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-/* Wrapper untuk tabel */
-.table-wrapper {
-overflow-x: auto;
-max-width: 100%;
-padding: 10px;
-}
-
-/* Style dasar tabel */
-.fl-table {
-width: 100%;
-border-collapse: collapse;
-font-family: 'Poppins', sans-serif; /* Font modern pemerintah */
-font-size: 14px;
-background: #fff; /* Tetap netral */
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-border-radius: 8px;
-overflow: hidden;
-}
-
-/* Header styling */
-.fl-table thead {
-background: #ffd100;
-text-transform: uppercase;
-font-weight: 600;
-letter-spacing: 0.5px;
-color: black;
-}
-
-.fl-table th,
-.fl-table td {
-padding: 12px 15px;
-text-align: left;
-border-bottom: 1px solid #ddd;
-font-size: 18px;
-}
-
-/* Hover effect */
-.fl-table tbody tr:hover {
-background: rgba(0, 0, 0, 0.05);
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-.fl-table thead {
-display: none; /* Sembunyikan header di tampilan kecil */
-}
-
-.fl-table tr {
-display: block;
-margin-bottom: 10px;
-border: 1px solid #ddd;
-border-radius: 5px;
-overflow: hidden;
-}
-
-.fl-table td {
-display: block;
-text-align: right;
-font-size: 14px;
-border-bottom: 1px solid #eee;
-position: relative;
-padding-left: 50%;
-}
-
-.fl-table td::before {
-content: attr(data-label);
-position: absolute;
-left: 10px;
-width: 45%;
-font-weight: 600;
-text-align: left;
-}
-}
-
-/* Style untuk ikon view */
-.view-icon {
-color: #4CAF50;
-cursor: pointer;
-font-size: 18px;
-}
-
-.view-icon:hover {
-color: #45a049;
-}
-
-
-            .badgekembali {
-                background: linear-gradient(to right, white, green);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                text-align: center;
-                font-size: 12px;
-                cursor: pointer;
-                transition: background-color 0.3s, color 0.3s;
-            }
-            .badgekembali:hover {
-                background-color: white;
-                color: black;
-                background: white;
-            }
-</style>
 
 {{-- ================================ --}}
 
@@ -117,278 +9,233 @@ color: #45a049;
     @include('frontend.00_approve.01_cssterpisah.loader')
     @include('frontend.00_approve.01_cssterpisah.header1')
 
-    <div class="page-wrapper">
+    <style>
+        table.zebra-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
 
-	<section class="page-banner">
-		<div class="container">
-			<div class="page-banner-title">
-				<h3 style="color: black; font-size:30px;">{{$title}}</h3>
-			</div><!-- page-banner-title -->
-		</div><!-- container -->
-	</section><!--page-banner-->
+        .zebra-table thead {
+            background-color: #2E82FE;
+            color: white;
+        }
 
-    {{-- <section class="service-two-section" > --}}
-        {{-- <section class="service-two-section" style="background-image: url('/assets/00_dokmasjaki/03_datajakon/banner1.jpg');">
-        <div class="container"
-                style="
-                background: #FFD100;
-                max-width: 95%;
-                margin: 30px auto;
-                padding: 20px;
-                height: auto;
-                border-radius: 20px;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-                position: relative;
-                z-index: 10;">
-            <div class="row row-gutter-y-40">
-                <div class="col-12 col-lg-12 col-xl-12">
-                    <div class="service-two-card">
-                        <div class="service-two-imgbox">
-                             --}}
-                             <section class="donate-section" style="background-image: url(/assets/00_dokmasjaki/03_datajakon/bannerbetter.jpg);">
-                                <div class="container" style="
-                                background: white;
-                                max-width: 95%;
-                                margin: 30px auto;
-                                padding: 20px;
-                                height: auto;
-                                border-radius: 20px;
-                                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-                                position: relative;
-                                z-index: 10;">
-                                    <div class="row row-gutter-30">
+        .zebra-table th,
+        .zebra-table td {
+            padding: 6px 12px;
+            text-align: left;
+        }
 
-                                        <div class="col-xxl-12 col-lg-12">
-                                            <div class="donate-box-inner">
+        .zebra-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: #dfdddd;
+        }
+
+        .zebra-table tbody tr:hover {
+            background-color: #0fb825;
+        }
+    </style>
 
 
-                                                {{-- TABLE DATA  --}}
+      <style>
+        body {
+          font-family: 'Poppins', sans-serif;
+        }
+      </style>
 
-                        </head>
+    <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 160px;" >
+        <div class="flex items-center gap-[20px]">
+            <!-- Gambar di kiri -->
+            <img src="/assets/abgblora/logo/iconabgblora.png" alt="Logo" class="w-[60px] -my-[15px]" width="10%" style="margin-right: 20px; margin-bottom:10px;" >
 
-                        <section class="document-section" style="margin-top: -100px;">
-                            <div class="container" style="max-width: 95%">
-                              <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                                  {{-- <img src="/assets/icon/logopupr.png" class="img-fluid" alt="img-25" width="50" style="margin-right: 20px;" loading="lazy"> --}}
+            <!-- Breadcrumb di kanan -->
+            <div class="flex gap-[30px] items-center flex-wrap">
+                <span>/</span>
+                <a href="/" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: blue;">
+                    {{$title}}
+                </a>
+                <span>/</span>
+                <a href="/statistikbg" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: black;">
+                    Data Statistik
+                </a>
+            </div>
+        </div>
 
-                                  {{-- <br><p style="font-size: 16px; color:black;">Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora</p> --}}
-                                  <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-top: 20px;">
-                                      <!-- Tombol di kiri -->
-                                      <a href="#" style="background: white;">
-                                          <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer;">
-                                            <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy">
-                                            <i class="fas fa-edit mr-2" style="margin-right: 10px; color:#ffd100;"></i> <span style="text-transform: uppercase; color:black; font-size:16px;">{{$title}}</span>
-                                        </button>
-                                    </a>
+        <!-- Search Bar Section -->
+        <div class="flex justify-end w-full sm:w-auto mb-2">
+            <div class="flex items-center gap-1.5 px-3 py-1 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari data..."
+                    oninput="searchTable()"
+                    class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent"
+                />
+                <button onclick="searchTable()" class="flex items-center justify-center w-7 h-7 shrink-0 ml-2">
+                    <img src="/assets/new/icons/search.svg" alt="icon" class="w-4 h-4" />
+                </button>
+            </div>
+        </div>
+    </section>
 
-                                    <!-- Tombol dan kolom pencarian di kanan -->
-                                    <div style="display: flex; align-items: center;">
-{{--
-                                        <div style="position: relative; display: inline-block; margin-right:10px;">
-                                            <input type="search" placeholder="Pencarian...." style="border: 1px solid #ccc; padding: 5px 10px; font-size: 14px; border-radius: 5px; width: 200px;">
-                                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                                        </div> --}}
+    <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5" style="margin-top: 10px;">
+        <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
 
-                                        {{-- <a href="/datajakon/bujk" style="background: white;">
-                                            <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer; margin-right: 10px;">
-                                                <i class="fas fa-arrow-circle-left mr-2" style="margin-right: 20px; color:red;"></i><span style="color: black; font-size:20px;">KEMBALI</span>
-                                            </button>
-                                        </a> --}}
+            <!-- Tabel dimulai -->
 
-                                    </div>
-                                </div>
+            <div class="flex items-center gap-3" style="margin-top: -30px;">
+                <button class="p-[14px_20px] bg-white rounded-full font-semibold">
+                  📦 {{$title}}
+                </button>
+              </div>
 
-                                </ul>
-                            </div>
-                        </section>
+            <div class="w-full overflow-x-auto rounded-[15px]" style="margin-top: -25px;">
+                <table class="zebra-table min-w-max border border-gray-200" style="border-radius: 15px;">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Institusi Kepemilikan</th>
+                            <th>Nama Bangunan</th>
+                            <th>Luas Tanah</th>
+                            {{-- baru sampia siiini  --}}
+                            <th>Fungsi Bangunan</th>
+                            <th>Status Tanah</th>
+                            <th>Klasifikasi Bangunan </th>
+                            <th>View</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        @foreach ($data as $item)
+                        <tr>
+                            <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
+                            <td class="uppercase" style="text-transform: uppercase;">
+                                {{ optional($item->kepemilikanbangunangedung)->datainstitusibangunangedung->institusi?? 'Data Tidak Di Temukan' }}
+                            </td>
+                            <td>{{ $item->namabangunan }}</td>
 
+                            <td style="text-align: right">
+                                @php
+                                    $luas = (float) preg_replace('/[^0-9.]/', '', $item->luastanah); // hilangkan karakter non-numeric
+                                @endphp
 
-                        <body>
+                                @if($luas > 0)
+                                    {{ number_format($luas, 0, ',', '.') }} m&sup2;
+                                @else
+                                    <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
+                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                        Data Belum Di Update
+                                    </button>
+                                @endif
+                            </td>
 
-                            <div class="table-wrapper" style="margin-top:-130px; position: relative;">
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
-                                    <div class="pagination-info-box" style="margin-right:700px; padding: 10px; border: 1px solid black; background-color: #f9f9f9; border-radius: 5px;">
-                                        <div class="pagination-info" style="color: black; font-weight: 500; font-size:18px;">
-                                            Data Ke {{ $data->firstItem() }} Sampai {{ $data->lastItem() }} Dari {{ $data->total() }} Jumlah {{$title}}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
-                                        <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                            <option value="75">75</option>
-                                            <option value="100">100</option>
-                                            <option value="150">150</option>
-                                            <option value="200">200</option>
-                                        </select>
-                                    </div>
-{{--
-                                    <div>
-                                        <label for="yearFilter" style="margin-right: 5px; font-weight: bold;">Filter Tahun:</label>
-                                        <select id="yearFilter" onchange="filterByYear()" style="padding: 5px; border: 1px solid black; background-color: white;">
-                                            <option value="">Pilih Tahun</option>
-                                            @foreach ($data->pluck('tahunpilihan.tahunpilihan')->unique() as $tahun)
-                                                <option value="{{ $tahun }}">{{ $tahun }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div> --}}
+                            <td>
+                                @if($item->fungsibangunan && $item->fungsibangunan->fungsibangunan)
+                                    {{ $item->fungsibangunan->fungsibangunan }}
+                                @else
+                                    <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
+                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                        Data Belum Di Update
+                                    </button>
+                                @endif
+                            </td>
+                            <td>
+                                @if(isset($item->profiltanahbangunangedung->statushaktanahbangunangedung->status))
+                                    {{ $item->profiltanahbangunangedung->statushaktanahbangunangedung->status }}
+                                @else
+                                    <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
+                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                        Data Belum Di Update
+                                    </button>
+                                @endif
+                            </td>
 
-                                    <div style="position: relative; display: inline-block; margin-right:10px;">
-                                        <input type="search" id="searchInput" placeholder="Cari Badan Usaha ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                                        <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
-                                    </div>
+                            <td>
+                                @if(isset($item->klasifikasibangunangedung->tingkatpermanen))
+                                    {{ $item->klasifikasibangunangedung->tingkatpermanen }}
+                                @else
+                                    <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
+                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                        Data Belum Di Update
+                                    </button>
+                                @endif
+                            </td>
 
-                                </div>
+                            <td style="text-align: center">
+                                <a href="/databangunangedung/{{$item->namabangunan}}">
+                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
 
-                                <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
-                                    <thead>
-                                        <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Nama Badan Usaha <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:400px;"> Alamat <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> No Telepon <span class="sort-icon">⇅</span></th>
-                                            {{-- <th onclick="sortTable(4)" style="cursor:pointer; text-align:center"> Email <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center"> NIB <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center"> PJU <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center"> Akte <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center"> Tanggal <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(9)" style="cursor:pointer; text-align:center"> Notaris <span class="sort-icon">⇅</span></th>
-                                            <th onclick="sortTable(10)" style="cursor:pointer; text-align:center"> Pengesahan <span class="sort-icon">⇅</span></th> --}}
-                                            {{-- <th style="text-align:center; width:100px;"> Tahun </th> --}}
-                                            <th style="text-align:center; width:100px;"> View </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableBody">
-                                        @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
-                                        @foreach ($data as $item )
-                                        <tr>
-                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->namalengkap)) }}</td>
-                                            <td>{{$item->alamat}}</td>
-                                            <td style="text-align: center;">{{$item->no_telepon}}</td>
-                                            {{-- <td>{{$item->email}}</td>
-                                            <td>{{$item->nib}}</td>
-                                            <td>{{$item->pju}}</td>
-                                            <td>{{$item->no_akte}}</td>
-                                            <td>{{ \Carbon\Carbon::parse($item->tanggal)->isoFormat('D MMMM YYYY') }}</td>
-                                            <td>{{$item->nama_notaris}}</td>
-                                            <td>{{$item->no_pengesahan}}</td> --}}
-                                            {{-- <td style="text-align: center;">{{$item->tahunpilihan->tahunpilihan}}</td> --}}
-                                            <td style="text-align: center">
-                                                <a href="/datajakon/bujkkontraktor/{{$item->namalengkap}}">
-                                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                    </tbody>
+                </table>
+            </div>
 
-                                <div class="pagination-container" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center;">
-                                    <ul class="pagination-paginate" style="display: flex; padding-left: 0; list-style: none; margin-top: 10px;">
-                                        <li class="page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="margin-right: 5px;">
-                                            <a class="page-link" href="{{ $data->previousPageUrl() }}">
-                                                <i class="fas fa-arrow-left" style="margin-right: 10px;"></i>Previous
-                                            </a>
-                                        </li>
-                                        <li class="page-item {{ $data->hasMorePages() ? '' : 'disabled' }}" style="margin-right: 5px;">
-                                            <a class="page-link" href="{{ $data->nextPageUrl() }}">
-                                                Next <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+            @include('frontend.00_approve.01_cssterpisah.paginations')
 
-                            <style>
-                                .sort-icon {
-                                    font-size: 16px;
-                                    color: gray;
-                                    margin-left: 5px;
-                                }
-                                th {
-                                    padding: 10px;
-                                    border-bottom: 2px solid black;
-                                }
-                                th:hover {
-                                    background-color: #f2f2f2;
-                                }
-                            </style>
+        </div>
+    </section>
 
-                            <script>
-                            function updateEntries() {
-                                let selectedValue = document.getElementById("entries").value;
-                                let url = new URL(window.location.href);
-                                url.searchParams.set("perPage", selectedValue);
-                                window.location.href = url.toString();
-                            }
-//                             function filterByYear() {
-//     let selectedYear = document.getElementById("yearFilter").value;
+      <div class="progress-wrap">
+          <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+              <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+          </svg>
+      </div>
+      <!-- back to top end -->
 
-//     fetch(`/datajakon/bujkkontraktor?year=${selectedYear}`)
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! Status: ${response.status}`);
-//             }
-//             return response.text();
-//         })
-//         .then(html => {
-//             let parser = new DOMParser();
-//             let doc = parser.parseFromString(html, "text/html");
-//             let newTableBody = doc.querySelector("#tableBody");
-//             let currentTableBody = document.querySelector("#tableBody");
+    </div>
 
-//             if (newTableBody && currentTableBody) {
-//                 currentTableBody.innerHTML = newTableBody.innerHTML;
-//             } else {
-//                 console.error("Element #tableBody not found in response or current document.");
-//             }
-//         })
-//         .catch(error => console.error("Error fetching filtered results:", error));
-// }
+    <script>
+        function toggleDropdown(event) {
+          event.preventDefault();
+          const dropdown = event.target.closest('.dropdown');
+          dropdown.classList.toggle('show');
+        }
+
+        // Optional: Tutup dropdown jika klik di luar
+        window.addEventListener('click', function(e) {
+          document.querySelectorAll('.dropdown').forEach(drop => {
+            if (!drop.contains(e.target)) {
+              drop.classList.remove('show');
+            }
+          });
+        });
 
 
-                            function searchTable() {
-                            let input = document.getElementById("searchInput").value;
+        function updateEntries() {
+          let selectedValue = document.getElementById("entries").value;
+          let url = new URL(window.location.href);
+          url.searchParams.set("perPage", selectedValue);
+          window.location.href = url.toString();
+        }
 
-                            fetch(`/datajakon/bujkkontraktor?search=${input}`)
-                                .then(response => response.text())
-                                .then(html => {
-                                    let parser = new DOMParser();
-                                    let doc = parser.parseFromString(html, "text/html");
-                                    let newTableBody = doc.querySelector("#tableBody").innerHTML;
-                                    document.querySelector("#tableBody").innerHTML = newTableBody;
-                                })
-                                .catch(error => console.error("Error fetching search results:", error));
-                        }
+        function searchTable() {
+          let input = document.getElementById("searchInput").value;
 
-                                </script>
-
-
-
-                        </div><!-- donate-box-inner -->
-                                        </div><!-- col-xl-8 col-lg-12 -->
-                                    </div><!-- row -->
-                                </div><!-- container -->
-                                {{-- @include('frontend.00_approve.01_cssterpisah.paginator') --}}
-                            </section><!-- donate-section -->
+          fetch(`/datajakon/bujkkontraktor?search=${input}`)
+            .then(response => response.text())
+            .then(html => {
+              let parser = new DOMParser();
+              let doc = parser.parseFromString(html, "text/html");
+              let newTableBody = doc.querySelector("#tableBody").innerHTML;
+              document.querySelector("#tableBody").innerHTML = newTableBody;
+            })
+            .catch(error => console.error("Error fetching search results:", error));
+        }
+      </script>
 
 
-
-                        {{-- </div><!-- service-two-imgbox -->
-                    </div><!--service-two-card-->
-                </div><!--col-12 col-lg-4 col-xl-4-->
-
-            </div><!-- row -->
-        </div><!-- container -->
-    </section><!-- service-two-section --> --}}
-
-
-
-
-
-</div><!--page-wrapper-->
 @include('frontend.00_approve.01_cssterpisah.footer1')
 @include('frontend.00_approve.01_cssterpisah.footer')

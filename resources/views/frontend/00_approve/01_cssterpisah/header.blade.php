@@ -39,4 +39,20 @@
 
     <link rel="icon" href="/assets/icon/logokabupatenblora.png" type="image/x-icon">
 
+            <!-- Icon Font CSS -->
+            <link rel="stylesheet" href="/assets/00_masjaki/css/plugins/all.min.css">
+            <link rel="stylesheet" href="/assets/00_masjaki/css/plugins/flaticon.css">
+
+            <!-- Plugins CSS -->
+            <link rel="stylesheet" href="/assets/00_masjaki/css/plugins/bootstrap.min.css">
+            <link rel="stylesheet" href="/assets/00_masjaki/css/plugins/swiper-bundle.min.css">
+            <link rel="stylesheet" href="/assets/00_masjaki/css/plugins/aos.css">
+            <link rel="stylesheet" href="/assets/00_masjaki/css/plugins/magnific-popup.css">
+
+            <!-- Main Style CSS -->
+            <link rel="stylesheet" href="/assets/00_masjaki/css/style.css">
+            <link href="/assets/00_masjaki/output.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
 </head>
