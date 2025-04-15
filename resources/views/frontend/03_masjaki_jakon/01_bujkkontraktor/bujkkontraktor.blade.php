@@ -43,7 +43,7 @@ table.zebra-table {
         }
 
         .zebra-table thead {
-            background-color: #2E82FE;
+            background-color: #28a745;
             color: white;
         }
 
@@ -62,7 +62,7 @@ table.zebra-table {
         }
 
         .zebra-table tbody tr:hover {
-            background-color: #0fb825;
+            background-color: #ffd100;
         }
 
         body {
