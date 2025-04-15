@@ -177,13 +177,16 @@ table.zebra-table {
                                 @endif
                             </td>
 
-                            <td>
+                            <td style="text-align: center; vertical-align: middle;">
                                 @if(!empty($item->asosiasimasjaki))
                                     {{ $item->asosiasimasjaki->namaasosiasi ?? 'Data Tidak Ditemukan' }}
                                 @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                    <button class="btn btn-navy" style="padding: 2px 12px; font-size: 12px; display: inline-block;">
+                                        Data Belum Diupdate
+                                    </button>
                                 @endif
                             </td>
+
                             <td style="text-align: center;">
                                 @if(!empty($item->statusterbit))
                                     <button class="btn-success" style="padding: 6px 16px; font-size: 11px; border-radius: 4px; line-height: 1;">
