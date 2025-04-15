@@ -49,7 +49,7 @@
             border-collapse: collapse;
             width: 100%;
             font-family: 'Poppins', sans-serif;
-            font-size: 14px;
+            font-size: 8px;
             border-radius: 15px;
             overflow: hidden;
         }
