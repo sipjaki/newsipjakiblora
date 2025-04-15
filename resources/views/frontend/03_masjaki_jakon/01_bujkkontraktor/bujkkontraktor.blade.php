@@ -134,46 +134,69 @@ table.zebra-table {
             </div>
         </div>
     </div>
-
-    <!-- Konten Data -->
-    <div class="w-[50%] mx-auto pb-10">
+    <section id="details" class="w-full sm:w-[90%] md:w-[85%] lg:w-[75%] mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5 mt-2">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
-            <div class="table-wrapper">
-                <table class="zebra-table w-full">
-                    <thead>
+            <div class="flex items-center gap-3 -mt-6">
+                <button class="p-[14px_20px] bg-white rounded-full font-semibold">
+                    📦 {{$title}}
+                </button>
+            </div>
+
+            <div class="w-full overflow-x-auto rounded-[15px] -mt-6">
+                <table class="zebra-table w-full min-w-max border border-gray-200 rounded-[15px]">
+                    <thead class="bg-gray-50">
                         <tr>
                             <th>No</th>
-                            <th>Badan Usaha</th>
-                            <th>Alamat</th>
-                            <th>No Telepon</th>
-                            <th>Email</th>
+                            <th>Institusi Kepemilikan</th>
+                            <th>Nama Bangunan</th>
+                            <th>Luas Tanah</th>
+                            <th>Fungsi Bangunan</th>
+                            <th>Status Tanah</th>
+                            <th>Klasifikasi Bangunan</th>
+                            <th>View</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
                         @foreach ($data as $item)
                         <tr>
                             <td class="text-center">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
-                            <td>{{ $item->namalengkap ?? 'Data Tidak Ditemukan' }}</td>
-                            <td>
-                                @if(!empty($item->alamat))
-                                    {{ $item->alamat }}
+                            <td class="uppercase">{{ optional($item->kepemilikanbangunangedung)->datainstitusibangunangedung->institusi ?? 'Data Tidak Di Temukan' }}</td>
+                            <td>{{ $item->namabangunan }}</td>
+                            <td class="text-right">
+                                @php
+                                    $luas = (float) preg_replace('/[^0-9.]/', '', $item->luastanah);
+                                @endphp
+                                @if($luas > 0)
+                                    {{ number_format($luas, 0, ',', '.') }} m&sup2;
                                 @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                    <button class="btn-navy">Data Belum Di Update</button>
                                 @endif
                             </td>
                             <td>
-                                @if(!empty($item->no_telepon))
-                                    {{ $item->no_telepon }}
+                                @if($item->fungsibangunan && $item->fungsibangunan->fungsibangunan)
+                                    {{ $item->fungsibangunan->fungsibangunan }}
                                 @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                    <button class="btn-navy">Data Belum Di Update</button>
                                 @endif
                             </td>
                             <td>
-                                @if(!empty($item->email))
-                                    {{ $item->email }}
+                                @if(isset($item->profiltanahbangunangedung->statushaktanahbangunangedung->status))
+                                    {{ $item->profiltanahbangunangedung->statushaktanahbangunangedung->status }}
                                 @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                    <button class="btn-navy">Data Belum Di Update</button>
                                 @endif
+                            </td>
+                            <td>
+                                @if(isset($item->klasifikasibangunangedung->tingkatpermanen))
+                                    {{ $item->klasifikasibangunangedung->tingkatpermanen }}
+                                @else
+                                    <button class="btn-navy">Data Belum Di Update</button>
+                                @endif
+                            </td>
+                            <td class="text-center">
+                                <a href="/databangunangedung/{{$item->namabangunan}}">
+                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+                                </a>
                             </td>
                         </tr>
                         @endforeach
@@ -183,7 +206,7 @@ table.zebra-table {
 
             @include('frontend.00_approve.01_cssterpisah.paginations')
         </div>
-    </div>
+    </section>
 
 </section>
 
