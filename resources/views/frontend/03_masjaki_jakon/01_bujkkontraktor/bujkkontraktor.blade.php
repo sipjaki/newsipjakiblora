@@ -166,7 +166,8 @@ table.zebra-table {
                         @foreach ($data as $item)
                         <tr>
                             <td class="text-center">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
-                            <td>{{ ucwords($item->namalengkap ?? 'Data Tidak Ditemukan') }}</td>
+                            <td>{{ ucfirst(strtolower($item->namalengkap ?? 'Data Tidak Ditemukan')) }}</td>
+
                             <td>
                                 @if(!empty($item->alamat))
                                     {{ $item->alamat }}
