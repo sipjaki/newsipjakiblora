@@ -158,6 +158,7 @@ table.zebra-table {
                             <th style="text-align: center;">Nama Lengkap</th>
                             <th style="text-align: center;">Jabatan Kerja</th>
                             <th style="text-align: center;">Penyelenggara</th>
+                            <th style="text-align: center;">Sertifikat</th>
                             <th style="text-align: center;">View</th>
                         </tr>
                     </thead>
