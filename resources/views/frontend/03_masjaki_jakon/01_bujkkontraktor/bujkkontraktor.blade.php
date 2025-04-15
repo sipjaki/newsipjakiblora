@@ -98,40 +98,40 @@ table.zebra-table {
 
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
-    <div class="flex items-center justify-between max-w-[1130px] mx-auto pt-[50px] px-4">
-        <!-- Gambar di kiri -->
-        <img src="/assets/icon/info.png" alt="Logo" class="w-[60px] -my-[15px]" width="10%">
+<!-- Breadcrumb + Search Bar Section -->
+<div class="max-w-[1130px] mx-auto pt-[50px] px-4">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <!-- Kiri: Gambar dan Breadcrumb -->
+        <div class="flex items-center gap-4 flex-wrap">
+            <!-- Gambar -->
+            <img src="/assets/icon/info.png" alt="Logo" class="w-[50px] sm:w-[60px] -my-[15px]" />
 
-        <!-- Breadcrumb dan Search Bar di kanan -->
-        <div class="flex items-center gap-[20px]">
-            <div class="flex gap-[30px] items-center">
+            <!-- Breadcrumb -->
+            <div class="flex gap-3 items-center flex-wrap text-sm sm:text-base">
                 <span>/</span>
-                <a href="/" class="font-medium text-blue-600">
-                    {{$title}}
-                </a>
+                <a href="/" class="font-medium text-blue-600">{{ $title }}</a>
                 <span>/</span>
-                <a href="/statistikbg" class="font-medium text-black">
-                    Data Statistik
-                </a>
+                <a href="/statistikbg" class="font-medium text-black">Data Statistik</a>
             </div>
+        </div>
 
-            <!-- Search Bar Section -->
-            <div class="flex justify-end w-auto">
-                <div class="flex items-center gap-1.5 px-3 py-1 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Cari data..."
-                        oninput="searchTable()"
-                        class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent"
-                    />
-                    <button onclick="searchTable()" class="flex items-center justify-center w-7 h-7 shrink-0 ml-2">
-                        <img src="/assets/new/icons/search.svg" alt="icon" class="w-4 h-4" />
-                    </button>
-                </div>
+        <!-- Kanan: Search Bar -->
+        <div class="w-full sm:w-auto">
+            <div class="flex items-center gap-1.5 px-3 py-1 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari data..."
+                    oninput="searchTable()"
+                    class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent"
+                />
+                <button onclick="searchTable()" class="flex items-center justify-center w-7 h-7 shrink-0 ml-2">
+                    <img src="/assets/new/icons/search.svg" alt="icon" class="w-4 h-4" />
+                </button>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
