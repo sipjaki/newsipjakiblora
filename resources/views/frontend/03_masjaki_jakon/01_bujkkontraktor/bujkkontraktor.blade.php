@@ -109,11 +109,11 @@ table.zebra-table {
 
         <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
           <span>/</span>
-          <a href="/" class="font-medium text-blue-600">
+          <a href="/" class="font-medium text-blue-600" style="font-size: 14px;">
             {{$title}}
           </a>
           <span>/</span>
-          <a href="/statistikbg" class="font-medium text-black">
+          <a href="/statistikbg" class="font-medium text-black" style="font-size: 14px;">
             Data Statistik
           </a>
         </div>
