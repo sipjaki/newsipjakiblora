@@ -93,9 +93,6 @@ table.zebra-table {
 
 @include('frontend.00_approve.01_cssterpisah.header')
 
-
-<body>
-
     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
 
@@ -134,7 +131,8 @@ table.zebra-table {
         </div>
     </section>
 
-    <section id="details" class="container full-width-container mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5"
+    <section id="details"
+    class="w-full flex flex-col sm:flex-row sm:flex-nowrap gap-5"
     style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
 
     <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
