@@ -193,22 +193,6 @@ table.zebra-table {
     </div>
 
     <script>
-        function toggleDropdown(event) {
-          event.preventDefault();
-          const dropdown = event.target.closest('.dropdown');
-          dropdown.classList.toggle('show');
-        }
-
-        // Optional: Tutup dropdown jika klik di luar
-        window.addEventListener('click', function(e) {
-          document.querySelectorAll('.dropdown').forEach(drop => {
-            if (!drop.contains(e.target)) {
-              drop.classList.remove('show');
-            }
-          });
-        });
-
-
         function updateEntries() {
           let selectedValue = document.getElementById("entries").value;
           let url = new URL(window.location.href);
