@@ -1,4 +1,39 @@
+<style>
+    /* file: resources/css/custom.css atau langsung di style tag */
+.full-width-container {
+  max-width: 100% !important;
+  width: 100%;
+  margin-top: 10px;
+}
 
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 15px;
+}
+
+.zebra-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+}
+
+.zebra-table th,
+.zebra-table td {
+  padding: 12px 15px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.zebra-table thead {
+  background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+.view-icon {
+  color: #374151; /* Tailwind gray-700 */
+  cursor: pointer;
+}
+
+</style>
 {{-- ================================ --}}
 
 @include('frontend.00_approve.01_cssterpisah.header')
@@ -6,7 +41,7 @@
 
 <body>
 
-    @include('frontend.00_approve.01_cssterpisah.loader')
+    {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
 
     <style>
@@ -85,29 +120,26 @@
         </div>
     </section>
 
-    <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5" style="margin-top: 10px;">
+    <section id="details" class="container full-width-container mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
 
-            <!-- Tabel dimulai -->
-
-            <div class="flex items-center gap-3" style="margin-top: -30px;">
+            <div class="flex items-center gap-3 -mt-6">
                 <button class="p-[14px_20px] bg-white rounded-full font-semibold">
-                  📦 {{$title}}
+                    📦 {{$title}}
                 </button>
-              </div>
+            </div>
 
-            <div class="w-full overflow-x-auto rounded-[15px]" style="margin-top: -25px;">
-                <table class="zebra-table min-w-max border border-gray-200" style="border-radius: 15px;">
+            <div class="table-wrapper -mt-6">
+                <table class="zebra-table">
                     <thead>
                         <tr>
                             <th>No</th>
                             <th>Institusi Kepemilikan</th>
                             <th>Nama Bangunan</th>
                             <th>Luas Tanah</th>
-                            {{-- baru sampia siiini  --}}
                             <th>Fungsi Bangunan</th>
                             <th>Status Tanah</th>
-                            <th>Klasifikasi Bangunan </th>
+                            <th>Klasifikasi Bangunan</th>
                             <th>View</th>
                         </tr>
                     </thead>
@@ -115,76 +147,51 @@
                         @foreach ($data as $item)
                         <tr>
                             <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
-                            <td class="uppercase" style="text-transform: uppercase;">
-                                {{ optional($item->kepemilikanbangunangedung)->datainstitusibangunangedung->institusi?? 'Data Tidak Di Temukan' }}
-                            </td>
+                            <td class="uppercase">{{ optional($item->kepemilikanbangunangedung)->datainstitusibangunangedung->institusi ?? 'Data Tidak Di Temukan' }}</td>
                             <td>{{ $item->namabangunan }}</td>
-
                             <td style="text-align: right">
                                 @php
-                                    $luas = (float) preg_replace('/[^0-9.]/', '', $item->luastanah); // hilangkan karakter non-numeric
+                                    $luas = (float) preg_replace('/[^0-9.]/', '', $item->luastanah);
                                 @endphp
-
                                 @if($luas > 0)
                                     {{ number_format($luas, 0, ',', '.') }} m&sup2;
                                 @else
-                                    <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                        Data Belum Di Update
-                                    </button>
+                                    <button class="btn-navy">Data Belum Di Update</button>
                                 @endif
                             </td>
-
                             <td>
                                 @if($item->fungsibangunan && $item->fungsibangunan->fungsibangunan)
                                     {{ $item->fungsibangunan->fungsibangunan }}
                                 @else
-                                    <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                        Data Belum Di Update
-                                    </button>
+                                    <button class="btn-navy">Data Belum Di Update</button>
                                 @endif
                             </td>
                             <td>
                                 @if(isset($item->profiltanahbangunangedung->statushaktanahbangunangedung->status))
                                     {{ $item->profiltanahbangunangedung->statushaktanahbangunangedung->status }}
                                 @else
-                                    <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                        Data Belum Di Update
-                                    </button>
+                                    <button class="btn-navy">Data Belum Di Update</button>
                                 @endif
                             </td>
-
                             <td>
                                 @if(isset($item->klasifikasibangunangedung->tingkatpermanen))
                                     {{ $item->klasifikasibangunangedung->tingkatpermanen }}
                                 @else
-                                    <button style="background-color: navy; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
-                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                        Data Belum Di Update
-                                    </button>
+                                    <button class="btn-navy">Data Belum Di Update</button>
                                 @endif
                             </td>
-
                             <td style="text-align: center">
                                 <a href="/databangunangedung/{{$item->namabangunan}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                 </a>
                             </td>
                         </tr>
-                    @endforeach
-
+                        @endforeach
                     </tbody>
                 </table>
             </div>
 
             @include('frontend.00_approve.01_cssterpisah.paginations')
-
         </div>
     </section>
 
