@@ -136,7 +136,7 @@ table.zebra-table {
     </div>
 
     <!-- Konten Data -->
-    <div class="w-[75%] mx-auto pb-10">
+    <div class="w-[50%] mx-auto pb-10">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
             <div class="table-wrapper">
                 <table class="zebra-table w-full">
