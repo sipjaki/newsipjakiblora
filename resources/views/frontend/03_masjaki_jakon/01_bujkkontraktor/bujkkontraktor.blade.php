@@ -98,16 +98,13 @@ table.zebra-table {
 
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
+    <div class="flex items-center justify-between max-w-[1130px] mx-auto pt-[50px] px-4">
+        <!-- Gambar di kiri -->
+        <img src="/assets/icon/info.png" alt="Logo" class="w-[60px] -my-[15px]" width="10%">
 
-    <!-- Breadcrumb -->
-    <div class="max-w-[1130px] mx-auto pt-[50px] px-4">
-        <br><br>
+        <!-- Breadcrumb dan Search Bar di kanan -->
         <div class="flex items-center gap-[20px]">
-            <!-- Gambar di kiri -->
-            <img src="/assets/icon/info.png" alt="Logo" class="w-[60px] -my-[15px]" style="margin-right: 20px; margin-bottom:10px;" width="10%">
-
-            <!-- Breadcrumb di kanan -->
-            <div class="flex gap-[30px] items-center flex-wrap">
+            <div class="flex gap-[30px] items-center">
                 <span>/</span>
                 <a href="/" class="font-medium text-blue-600">
                     {{$title}}
@@ -117,21 +114,21 @@ table.zebra-table {
                     Data Statistik
                 </a>
             </div>
-        </div>
 
-        <!-- Search Bar Section -->
-        <div class="flex justify-end w-full sm:w-auto mb-4 mt-4">
-            <div class="flex items-center gap-1.5 px-3 py-1 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Cari data..."
-                    oninput="searchTable()"
-                    class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent"
-                />
-                <button onclick="searchTable()" class="flex items-center justify-center w-7 h-7 shrink-0 ml-2">
-                    <img src="/assets/new/icons/search.svg" alt="icon" class="w-4 h-4" />
-                </button>
+            <!-- Search Bar Section -->
+            <div class="flex justify-end w-auto">
+                <div class="flex items-center gap-1.5 px-3 py-1 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Cari data..."
+                        oninput="searchTable()"
+                        class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent"
+                    />
+                    <button onclick="searchTable()" class="flex items-center justify-center w-7 h-7 shrink-0 ml-2">
+                        <img src="/assets/new/icons/search.svg" alt="icon" class="w-4 h-4" />
+                    </button>
+                </div>
             </div>
         </div>
     </div>
