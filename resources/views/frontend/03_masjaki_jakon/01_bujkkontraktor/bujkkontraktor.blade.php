@@ -96,26 +96,30 @@ table.zebra-table {
     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
 
-    <section id="breadcrumb" class="container max-w-[1130px] mx-auto" style="margin-top: 50px;" >
+<!-- Wrapper Background Section -->
+<section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
+
+    <!-- Breadcrumb -->
+    <div class="max-w-[1130px] mx-auto pt-[50px] px-4">
         <div class="flex items-center gap-[20px]">
             <!-- Gambar di kiri -->
-            <img src="/assets/abgblora/logo/iconabgblora.png" alt="Logo" class="w-[60px] -my-[15px]" width="10%" style="margin-right: 20px; margin-bottom:10px;" >
+            <img src="/assets/abgblora/logo/iconabgblora.png" alt="Logo" class="w-[60px] -my-[15px]" style="margin-right: 20px; margin-bottom:10px;" >
 
             <!-- Breadcrumb di kanan -->
             <div class="flex gap-[30px] items-center flex-wrap">
                 <span>/</span>
-                <a href="/" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: blue;">
+                <a href="/" class="font-medium text-blue-600">
                     {{$title}}
                 </a>
                 <span>/</span>
-                <a href="/statistikbg" class="last-of-type:font-bold transition-all duration-300 text-blue-600" style="color: black;">
+                <a href="/statistikbg" class="font-medium text-black">
                     Data Statistik
                 </a>
             </div>
         </div>
 
         <!-- Search Bar Section -->
-        <div class="flex justify-end w-full sm:w-auto mb-2">
+        <div class="flex justify-end w-full sm:w-auto mb-4 mt-4">
             <div class="flex items-center gap-1.5 px-3 py-1 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
                 <input
                     type="text"
@@ -129,14 +133,13 @@ table.zebra-table {
                 </button>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="details" class="container full-width-container mx-auto flex flex-col sm:flex-row sm:flex-nowrap gap-5"
-    style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-
-    <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
+    <!-- Konten Data -->
+    <div class="max-w-[1130px] mx-auto px-4 pb-10">
+        <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
             <div class="table-wrapper">
-                <table class="zebra-table">
+                <table class="zebra-table w-full">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -149,7 +152,7 @@ table.zebra-table {
                     <tbody id="tableBody">
                         @foreach ($data as $item)
                         <tr>
-                            <td style="text-align: center;">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
+                            <td class="text-center">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
                             <td>{{ $item->namalengkap ?? 'Data Tidak Ditemukan' }}</td>
                             <td>
                                 @if(!empty($item->alamat))
@@ -176,14 +179,14 @@ table.zebra-table {
                         @endforeach
                     </tbody>
                 </table>
-
             </div>
 
             @include('frontend.00_approve.01_cssterpisah.paginations')
         </div>
-    </section>
+    </div>
+</section>
 
-      <div class="progress-wrap">
+<div class="progress-wrap">
           <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
               <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
           </svg>
