@@ -143,11 +143,12 @@ table.zebra-table {
                 <table class="zebra-table w-full">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Badan Usaha</th>
-                            <th>Alamat</th>
-                            <th>No Telepon</th>
-                            <th>Email</th>
+                            <th style="text-align: center;">No</th>
+                            <th style="text-align: center;">Badan Usaha</th>
+                            <th style="text-align: center;">Alamat</th>
+                            <th style="text-align: center;">No Telepon</th>
+                            <th style="text-align: center;">Email</th>
+                            <th style="text-align: center;">View</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
