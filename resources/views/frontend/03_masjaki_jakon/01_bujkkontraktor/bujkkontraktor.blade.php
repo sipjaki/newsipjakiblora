@@ -106,14 +106,13 @@ table.zebra-table {
       <!-- KIRI: Gambar + Breadcrumb -->
       <div class="flex items-center gap-4">
         <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
-
         <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
           <span>/</span>
-          <a href="/" class="font-medium text-blue-600" style="font-size: 14px;">
+          <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 14px;">
             {{$title}}
           </a>
           <span>/</span>
-          <a href="/statistikbg" class="font-medium text-black" style="font-size: 14px;">
+          <a href="/datajakon/statistikabujkblora" class="font-medium text-black" style="font-size: 14px;">
             Data Statistik
           </a>
         </div>
