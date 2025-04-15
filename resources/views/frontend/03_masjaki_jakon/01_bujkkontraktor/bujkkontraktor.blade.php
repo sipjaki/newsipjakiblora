@@ -19,7 +19,7 @@
 
 .zebra-table th,
 .zebra-table td {
-  padding: 12px 15px;
+  padding: 12px 16px;
   border: 1px solid #e5e7eb;
   text-align: left;
 }
