@@ -186,11 +186,11 @@ table.zebra-table {
                             </td>
                             <td style="text-align: center;">
                                 @if(!empty($item->statusterbit))
-                                    <button class="btn-warning" style="padding: 2px 16px; font-size: 11px; border-radius: 4px; line-height: 1;">
+                                    <button class="btn-success" style="padding: 6px 16px; font-size: 11px; border-radius: 4px; line-height: 1;">
                                         {{ $item->statusterbit ?? 'Data Tidak Ditemukan' }}
                                     </button>
                                 @else
-                                    <button class="btn-navy" style="padding: 2px 16px; font-size: 11px; border-radius: 4px; line-height: 1;">
+                                    <button class="btn-navy" style="padding: 6px 16px; font-size: 11px; border-radius: 4px; line-height: 1;">
                                         Data Belum Diupdate
                                     </button>
                                 @endif
