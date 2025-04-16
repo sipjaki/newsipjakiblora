@@ -155,10 +155,13 @@ table.zebra-table {
                     <thead>
                         <tr>
                             <th style="text-align: center;">No</th>
-                            <th style="text-align: center;">Nama Lengkap</th>
-                            <th style="text-align: center;">Jabatan Kerja</th>
-                            <th style="text-align: center;">Penyelenggara</th>
-                            <th style="text-align: center;">Sertifikat</th>
+                            <th style="text-align: center;">Nama Pekerjaan</th>
+                            <th style="text-align: center;">Satuan Kerja</th>
+                            <th style="text-align: center;">Jenis Pekerjaan</th>
+                            <th style="text-align: center;">Badan Usaha</th>
+                            <th style="text-align: center;">Badan Usaha</th>
+                            <th style="text-align: center;">Tahun </th>
+                            <th style="text-align: center;">Sumber Dana</th>
                             <th style="text-align: center;">View</th>
                         </tr>
                     </thead>
@@ -168,13 +171,19 @@ table.zebra-table {
                         <tr>
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                             <td>{{ ucwords(strtolower($item->namapekerjaan ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>{{ ucwords(strtolower($item->dinas ?? 'Data Tidak Ditemukan')) }}</td>
 
                             <td style="text-align: center;">
-                                {{ $item->tahunpilihan->tahunpilihan ?? 'Data Tidak Ditemukan' }}
+                                {{ $item->profiljenispekerjaan->jenispekerjaan ?? 'Data Tidak Ditemukan' }}
                             </td>
+
 
                             <td style="text-align: center;">
                                 {{ $item->cvptpenyedia ?? 'Data Tidak Ditemukan' }}
+                            </td>
+
+                            <td style="text-align: center;">
+                                {{ $item->tahunpilihan->tahunpilihan ?? 'Data Tidak Ditemukan' }}
                             </td>
 
                             <td style="text-align: center;">
