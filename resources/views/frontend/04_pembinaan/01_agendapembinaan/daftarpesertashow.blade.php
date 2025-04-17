@@ -212,7 +212,7 @@ table.zebra-table {
 
             </div>
 
-            @include('frontend.00_approve.01_cssterpisah.paginations')
+            {{-- @include('frontend.00_approve.01_cssterpisah.paginations') --}}
         </div>
     </div>
     <br><br><br>
