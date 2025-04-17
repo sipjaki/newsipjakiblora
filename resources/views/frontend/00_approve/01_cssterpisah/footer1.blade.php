@@ -16,12 +16,11 @@
                     <div class="footer-widget-text">
                         <a href="/"><img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="Logo Blora" width="70" style="margin-right: 5px;" loading="lazy"></a>
                         <a href="/"><img src="/assets/icon/pupr.png" class="img-fluid" alt="Logo PUPR" width="70" loading="lazy"></a>
-                        <h1 style="display: flex; align-items: center; gap: 5px; margin: 0;">
+                        <h1 style="display: flex; align-items: center; gap: 5px; margin: 0; font-family: 'Poppins', sans-serif;">
                             <span style="color: white; font-style: italic;">MASJAKI</span>
                             <span style="color: green; font-style: italic;">BLORA</span>
                         </h1>
-                        <p>Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora</p>
-                    </div>
+                        <p style="font-family: 'Poppins', sans-serif;">Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora</p>
 
                     <div class="footer-widget-socials" style="margin-bottom: 20px;">
                         <a href="mailto:example@email.com"><i class="fa-solid fa-envelope"></i></a>
