@@ -18,7 +18,8 @@
 
                     </div>
                     <p style="margin-bottom: 20px; color: white; font-size: 20px; font-family: 'Poppins', sans-serif;">
-                        Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora
+                        Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora <br>
+                        Provinsi Jawa Tengah 58214, Indonesia
                     </p>
 
                     <!-- Sosial Media -->
