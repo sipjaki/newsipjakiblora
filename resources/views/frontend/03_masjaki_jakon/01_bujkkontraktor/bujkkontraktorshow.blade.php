@@ -340,24 +340,33 @@ table.zebra-table {
 
 @include('frontend.00_approve.01_cssterpisah.footer1')
 @include('frontend.00_approve.01_cssterpisah.footer')
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const today = new Date(); // Dapatkan tanggal hari ini
         const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td yang memiliki kelas masa-berlaku
 
         masaBerlakuElements.forEach(function (element) {
-            const masaBerlaku = new Date(element.getAttribute('data-masaberlaku')); // Ambil data masa berlaku
+            const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil data masa berlaku
 
             const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
 
-            if (masaBerlaku < today) {  // Cek jika masa berlaku sudah lewat
-                button.classList.add('bg-red-600', 'text-white');
-                button.textContent = 'TIDAK BERLAKU';
+            // Cek jika masa berlaku kosong
+            if (!masaBerlaku) {
+                button.classList.add('bg-orange-600', 'text-white'); // Warna oranye untuk suspend
+                button.textContent = 'SUSPEND';
             } else {
-                button.classList.add('bg-green-600', 'text-white');
-                button.textContent = 'BERLAKU';
+                const masaBerlakuDate = new Date(masaBerlaku); // Jika ada, ubah menjadi tanggal
+
+                // Cek jika masa berlaku sudah lewat
+                if (masaBerlakuDate < today) {
+                    button.classList.add('bg-red-600', 'text-white');
+                    button.textContent = 'TIDAK BERLAKU';
+                } else {
+                    button.classList.add('bg-green-600', 'text-white');
+                    button.textContent = 'BERLAKU';
+                }
             }
         });
     });
 </script>
+
