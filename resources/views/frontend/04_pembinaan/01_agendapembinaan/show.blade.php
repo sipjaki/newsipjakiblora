@@ -217,7 +217,7 @@
                                                 <button style="padding: 12px 24px; font-size: 16px; border-radius: 8px; background-color: navy; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                                         onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                                        <i class="fas fa-file-alt" style="margin-right: 8px;"></i><span style="font-family: Poppins;">Kembali</span>
+                                                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i><span style="font-family: Poppins;">Kembali</span>
 
                                                 </button>
                                             </a>
