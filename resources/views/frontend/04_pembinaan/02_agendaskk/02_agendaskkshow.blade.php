@@ -213,7 +213,7 @@
                                 <div class="sidebar-form-content">
                                     <div class="sidebar__item sidebar__item--search">
                                         <div style="display: flex; justify-content: center; gap: 20px; padding: 20px;">
-                                            <a href="/agendapembinaan">
+                                            <a href="javascript:history.back()">
                                                 <button style="padding: 12px 24px; font-size: 16px; border-radius: 8px; background-color: navy; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                                         onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">

@@ -160,8 +160,6 @@ color: #45a049;
 
                                         <div class="col-xxl-12 col-lg-12">
                                             <div class="donate-box-inner">
-
-
                                                 {{-- TABLE DATA  --}}
 
                         </head>
