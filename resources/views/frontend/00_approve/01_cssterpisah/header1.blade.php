@@ -217,7 +217,7 @@
                                 KELEMBAGAAN
                                 <span style="margin-left: 10px; font-size: 14px; vertical-align: middle;">&#x2193;</span> <!-- Tanda panah yang sejajar dengan teks -->
                             </a>
-                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
+                            <ul>
                                 <li>
                                     <a href="/profil/struktur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
                                         Struktur DPUPR Blora
