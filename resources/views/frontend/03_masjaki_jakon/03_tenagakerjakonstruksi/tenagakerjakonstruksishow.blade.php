@@ -1,284 +1,385 @@
+
+
 <style>
-    /* Import font Poppins */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    .btn-suspend {
+         background-color: orange;
+         color: white;
+         padding: 5px 10px;
+         border-radius: 5px;
+         font-size: 14px;
+     }
 
-/* Wrapper untuk tabel */
-.table-wrapper {
-overflow-x: auto;
-max-width: 100%;
-padding: 10px;
-}
+     .btn-expired {
+         background-color: red;
+         color: white;
+         padding: 5px 10px;
+         border-radius: 5px;
+         font-size: 14px;
+     }
 
-/* Style dasar tabel */
-.fl-table {
-width: 100%;
-border-collapse: collapse;
-font-family: 'Poppins', sans-serif; /* Font modern pemerintah */
-font-size: 14px;
-background: #fff; /* Tetap netral */
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-border-radius: 8px;
-overflow: hidden;
-}
+     .btn-active {
+         background-color: green;
+         color: white;
+         padding: 5px 10px;
+         border-radius: 5px;
+         font-size: 14px;
+     }
 
-/* Header styling */
-.fl-table thead {
-background: #ffd100;
-text-transform: uppercase;
-font-weight: 600;
-letter-spacing: 0.5px;
-color: black;
-}
+     /* file: resources/css/custom.css atau langsung di style tag */
+ .full-width-container {
+   max-width: 80% !important;
+   width: 80%;
+   margin-top: 10px;
+ }
 
-.fl-table th,
-.fl-table td {
-padding: 12px 15px;
-text-align: left;
-border-bottom: 1px solid #ddd;
-}
+ .table-wrapper {
+   overflow-x: auto;
+   border-radius: 15px;
+ }
 
-/* Hover effect */
-.fl-table tbody tr:hover {
-background: rgba(0, 0, 0, 0.05);
-}
+ .zebra-table {
+   width: 100%;
+   border-collapse: collapse;
+   border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+ }
 
-/* Responsive styling */
-@media (max-width: 768px) {
-.fl-table thead {
-display: none; /* Sembunyikan header di tampilan kecil */
-}
+ .zebra-table th,
+ .zebra-table td {
+   padding: 12px 16px;
+   border: 1px solid #e5e7eb;
+   text-align: left;
+ }
 
-.fl-table tr {
-display: block;
-margin-bottom: 10px;
-border: 1px solid #ddd;
-border-radius: 5px;
-overflow: hidden;
-}
+ .zebra-table thead {
+   background-color: #f9fafb; /* Tailwind gray-50 */
+ }
 
-.fl-table td {
-display: block;
-text-align: right;
-font-size: 14px;
-border-bottom: 1px solid #eee;
-position: relative;
-padding-left: 50%;
-}
+ .view-icon {
+   color: #374151; /* Tailwind gray-700 */
+   cursor: pointer;
+ }
 
-.fl-table td::before {
-content: attr(data-label);
-position: absolute;
-left: 10px;
-width: 45%;
-font-weight: 600;
-text-align: left;
-}
-}
+ table.zebra-table {
+             border-collapse: collapse;
+             width: 100%;
+             font-family: 'Poppins', sans-serif;
+             font-size: 15px;
+             border-radius: 15px;
+             overflow: hidden;
+         }
 
-/* Style untuk ikon view */
-.view-icon {
-color: #4CAF50;
-cursor: pointer;
-font-size: 18px;
-}
+         .zebra-table thead {
+             background-color: #28a745;
+             color: white;
+         }
 
-.view-icon:hover {
-color: #45a049;
-}
+         .zebra-table th,
+         .zebra-table td {
+             padding: 6px 12px;
+             text-align: left;
+         }
 
+         .zebra-table tbody tr:nth-child(odd) {
+             background-color: #ffffff;
+         }
 
-            .badgekembali {
-                background: linear-gradient(to right, green, green);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                text-align: center;
-                font-size: 12px;
-                cursor: pointer;
-                transition: background-color 0.3s, color 0.3s;
-            }
-            .badgekembali:hover {
-                background-color: white;
-                color: black;
-                background: white;
-            }
+         .zebra-table tbody tr:nth-child(even) {
+             background-color: #dfdddd;
+         }
 
-            .green-button {
-                background: linear-gradient(to right, navy, navy);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                text-align: center;
-                font-size: 12px;
-                cursor: pointer;
-                transition: background-color 0.3s, color 0.3s;
-            }
-            .green-button:hover {
-                background-color: white;
-                color: black;
-                background: white;
-            }
-</style>
+         .zebra-table tbody tr:hover {
+             background-color: #ffd100;
+         }
+
+         body {
+           font-family: 'Poppins', sans-serif;
+         }
 
 
-{{-- =========================================================== --}}
+         .btn-navy {
+         background-color: #001f3f;
+         color: white;
+         border: none;
+         padding: 5px 10px;
+         border-radius: 5px;
+         font-size: 12px;
+         font-family: 'Poppins', sans-serif;
+         cursor: default;
+         transition: all 0.3s ease;
+     }
 
-@include('frontend.00_approve.01_cssterpisah.header')
+     .btn-navy:hover {
+         background-color: white;
+         color: black;
+         border: 1px solid #001f3f;
+     }
+
+ </style>
+ {{-- ================================ --}}
+
+ @include('frontend.00_approve.01_cssterpisah.header')
+
+     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
+     @include('frontend.00_approve.01_cssterpisah.header1')
+
+ <!-- Wrapper Background Section -->
+ <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
+
+ <!-- Breadcrumb + Search Bar -->
+ <div class="max-w-[1130px] mx-auto pt-[50px] px-4 font-poppins">
+     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+
+       <!-- KIRI: Gambar + Breadcrumb -->
+       <div class="flex items-center gap-4">
+         <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
+         <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
+           <span>/</span>
+           <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px;">
+             {{$title}}
+           </a>
+           <span>/</span>
+           <a href="/datajakon/statistikabujkblora" class="font-medium" style="font-size: 16px; color:blue;">
+             Data Details BUJK Konstruksi
+           </a>
+         </div>
+       </div>
 
 
-<body>
+       <!-- KANAN: Search Bar -->
+    <!-- Search Bar Wrapper -->
 
-    @include('frontend.00_approve.01_cssterpisah.loader')
-    @include('frontend.00_approve.01_cssterpisah.header1')
+     </div>
+   </div>
 
-<div class="page-wrapper">
-	<section class="page-banner" style="background-image: url('/assets/approve/image/bg/page-banner.png')">
-		<div class="container">
-			<div class="page-breadcrumbs">
-				<ul class="list-unstyled">
-					{{-- <li><a href="index.html">Home</a></li> --}}
-					{{-- <li>Document-details</li> --}}
-				</ul><!-- list-unstyled -->
-			</div><!-- page-breadcrumbs -->
-			<div class="page-banner-title">
-				<h3 style="color: black; font-size:30px;">{{ $title }}</h3>
-			</div><!-- page-banner-title -->
-		</div><!-- container -->
-	</section><!--page-banner-->
-
-{{-- -------------------------- --}}
-
-
-<section class="service-two-section" style="background-image: url('/assets/00_dokmasjaki/03_datajakon/banner1.jpg');">
-    <div class="container" style="background: #FFD100; border-radius:20px;">
-        <div class="row row-gutter-y-40">
-            <div class="col-12 col-lg-12 col-xl-12">
-                <div class="service-two-card">
-                    <div class="service-two-imgbox" >
-
-                        <section class="donate-section" style="background: linear-gradient(to bottom, green, #FFD100, white);">
-                            <div class="container">
-                                <div class="row row-gutter-30">
-                                    <div class="col-lg-12">
-                                                                            </div><!-- col-lg-12 -->
-                                    <div class="col-xxl-12 col-lg-12">
-                                        <div class="donate-box-inner" style="margin-top: -120px;">
-                                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                                                {{-- <img src="/assets/icon/logopupr.png" class="img-fluid" alt="img-25" width="50" style="margin-right: 20px;" loading="lazy"> --}}
-                                                <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-top: 20px;">
-                                                    <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy">
-                                                    <!-- Tombol dan kolom pencarian di kanan -->
-                                                    <div style="display: flex; align-items: center;">
-
-                                                        <a href="/datajakon/skktenagakerjablora" style="background: white;">
-                                                            <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer; margin-right: 10px;">
-                                                                <i class="fas fa-arrow-circle-left mr-2" style="margin-right: 15px;"></i> KEMBALI
-                                                            </button>
-                                                        </a>
-
-                                                    </div>
-                                                </div>
-
-                                                </ul>
-
-                                            <div class="centered-button" style="margin-top: -15px;">
-                                                <button class="green-button" style="margin-bottom:10px; text-transform:uppercase">
-                                                    <i class="fas fa-file mr-2" style="margin-right:5px;"></i> INFORMASI {{$title}} : {{$data->nama}}
-                                                </button>
-
-                                            </div>
-                                            <form action="#" class="contact-form donation" method="post">
-                                                <div class="row row-gutter-10">
-                                                    <div class="col-lg-12">
-                                                        <h6><i class="fas fa-user mr-2" style="margin-right: 5px;"></i>Nama Lengkap</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->nama}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-12">
-                                                        <h6><i class="fas fa-map-marker-alt mr-2" style="margin-right: 5px;"></i>Alamat</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->alamat}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-3 -->
-
-                                                    <div class="col-lg-6">
-                                                        <h6><i class="fas fa-school mr-2" style="margin-right: 5px;"></i>Sekolah/Universitas</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->namasekolah->namasekolah}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-3 -->
-
-                                                    <div class="col-lg-3">
-                                                        <h6><i class="fas fa-graduation-cap mr-2" style="margin-right: 5px;"></i>Jenjang Pendidikan</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->jenjangpendidikan->jenjangpendidikan}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-12 -->
-
-                                                    <div class="col-lg-3">
-                                                        <h6><i class="fas fa-book mr-2" style="margin-right: 5px;"></i>Jurusan</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->jurusan->jurusan}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-3">
-                                                        <h6><i class="fas fa-calendar-alt mr-2" style="margin-right: 5px;"></i>Tahun Lulus</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->tahunlulus}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-6">
-                                                        <h6><i class="fas fa-briefcase mr-2" style="margin-right: 5px;"></i>Jabatan Kerja</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->jabatankerja->jabatankerja}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-3">
-                                                        <h6><i class="fas fa-cogs mr-2" style="margin-right: 5px;"></i>Jenjang</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->jenjang->jenjang}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-12">
-                                                        <h6><i class="fas fa-pencil-alt mr-2" style="margin-right: 5px;"></i>LPS Penerbit</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->lpspenerbit->lpspenerbit}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-4">
-                                                        <h6><i class="fas fa-calendar-check mr-2" style="margin-right: 5px;"></i>Tanggal Terbit</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->tanggalterbit}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-4">
-                                                        <h6><i class="fas fa-calendar-times mr-2" style="margin-right: 5px;"></i>Tanggal Habis</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->tanggalhabis}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-4">
-                                                        <h6><i class="fas fa-circle mr-2" style="margin-right: 5px;"></i>Status</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->statusterbit}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                                                </div><!-- row row-gutter-10 -->
-                                            </form><!-- contact-form -->
-                                        </div><!-- donate-box-inner -->
-                                    </div><!-- col-xl-8 col-lg-12 -->
-
-                                </div><!-- row -->
-                            </div><!-- container -->
-                        </section><!-- donate-section -->
+     <!-- Konten Data -->
+     <div class="full-width-container mx-auto px-4 pb-10">
+         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
+             <div style="display: flex; justify-content: center; margin-bottom: -20px;">
+                 <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
+                     <button type="button" style="
+                         display: inline-flex;
+                         align-items: center;
+                         justify-content: center;
+                         gap: 10px;
+                         padding: 12px 20px;
+                         font-size: 16px;
+                         font-family: 'Poppins', sans-serif;
+                         border: 1px solid #28a745;
+                         background-color: #28a745;
+                         color: white;
+                         border-radius: 6px;
+                         cursor: pointer;
+                         transition: all 0.3s ease;
+                         width: 100%;
+                     "
+                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                     onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+                     >
+                         <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
+                         {{ $title }}
+                     </button>
+                 </div>
+             </div>
 
 
 
-                    </div><!--service-two-card-content-->
-                </div><!--service-two-card-->
-            </div><!--col-12 col-lg-4 col-xl-4-->
+   <section id="details" class="container mx-auto flex flex-col sm:flex-row gap-5" style="margin-top:20px;">
+     <div class="flex flex-col gap-5 w-full" style="margin-top: -50px;">
+         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
+             <div class="flex justify-center">
+                 <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
+             </div>
 
-
-        </div><!-- row -->
-    </div><!-- container -->
-</section><!-- service-two-section -->
-
-
-{{-- -------------------------- --}}
+             <div class="w-full flex items-center gap-[10px] p-[10px_14px] rounded-xl" style="margin-top:-40px; background: #189200;">
+                 <div class="w-5 h-5 flex shrink-0">
+                     <img src="/assets/new/icons/story.svg" alt="icon">
+                 </div>
+                 <p class="text-white font-normal text-sm" style="font-family: Poppins;">
+                     <span class="font-bold">Informasi Data: {{$data->nama}}</span>
+                 </p>
+             </div>
 
 
 
 
+             <form action="" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
 
-                    @include('frontend.00_approve.01_cssterpisah.footer1')
-                    @include('frontend.00_approve.01_cssterpisah.footer')
+                    <!-- Badan Usaha -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Icon Office Building -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M9 8h6M9 12h6M9 16h6" />
+                            </svg>
+                            Nama Lengkap
+                        </label>
+                        <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
+                            placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;" value="{{$data->nama}}" readonly>
+                    </div>
+
+
+                </div>
+
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
+                    <!-- Alamat Badan Usaha -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Alamat
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->alamat ?? '-' }}"
+                        >
+                    </div>
+                </div>
+
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
+                    <!-- Alamat Badan Usaha -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Sekolah/Universitas/Instansi
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->namasekolah ?? '-' }}"
+                        >
+                    </div>
+
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Jurusan
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->jurusan ?? '-' }}"
+                        >
+                    </div>
+
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Tahun Lulus
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->tahunlulus ?? '-' }}"
+                        >
+                    </div>
+
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Jabatan Kerja
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->jabatankerja->jabatankerja ?? '-' }}"
+                        >
+                    </div>
+                </div>
+
+
+            </form>
+         </div>
+     </div>
+ </section>
+
+
+
+         </div>
+     </div>
+     <br><br><br>
+     <td class="masa-berlaku" data-masaberlaku="{{ $item->masa_berlaku ?? '' }}">
+        <button class="btn-masa-berlaku">Status</button>
+    </td>
+
+ </section>
+
+
+ <div class="progress-wrap">
+           <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+               <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+           </svg>
+       </div>
+       <!-- back to top end -->
+
+     </div>
+
+
+ @include('frontend.00_approve.01_cssterpisah.footer1')
+ @include('frontend.00_approve.01_cssterpisah.footer')
+ <script>
+     document.addEventListener('DOMContentLoaded', function () {
+         const today = new Date(); // Dapatkan tanggal hari ini
+         const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td yang memiliki kelas masa-berlaku
+
+         masaBerlakuElements.forEach(function (element) {
+             const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil data masa berlaku
+             const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
+
+             // Cek jika masa berlaku kosong
+             if (!masaBerlaku || masaBerlaku === '') {
+                 button.classList.add('btn-suspend'); // Tambahkan class untuk suspend
+                 button.textContent = 'SUSPEND';
+             } else {
+                 const masaBerlakuDate = new Date(masaBerlaku); // Jika ada, ubah menjadi tanggal
+
+                 // Cek jika masa berlaku sudah lewat
+                 if (masaBerlakuDate < today) {
+                     button.classList.add('btn-expired'); // Warna merah jika tidak berlaku
+                     button.textContent = 'TIDAK BERLAKU';
+                 } else {
+                     button.classList.add('btn-active'); // Warna hijau jika masih berlaku
+                     button.textContent = 'BERLAKU';
+                 }
+             }
+         });
+     });
+ </script>
