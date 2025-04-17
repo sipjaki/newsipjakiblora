@@ -171,7 +171,7 @@ table.zebra-table {
                         <tr>
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                             <td>{{ ucwords(strtolower($item->namapekerjaan ?? 'Data Tidak Ditemukan')) }}</td>
-                            <td>{{ ucwords(strtolower($item->dinas ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>{{ ucwords(strtolower($item->user->name ?? 'Data Tidak Ditemukan')) }}</td>
 
                             <td style="text-align: center;">
                                 {{ $item->profiljenispekerjaan->jenispekerjaan ?? 'Data Tidak Ditemukan' }}
