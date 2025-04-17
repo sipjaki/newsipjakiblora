@@ -18,7 +18,7 @@ class BujkkonsultanController extends Controller
     // public function bujkkonsultan(Request $request)
     // {
 
-    //     $perPage = $request->input('perPage', 200); // Ambil jumlah data dari request, default 10
+    //     $perPage = $request->input('perPage', 200); // Ambil jumlah data dari request, default 15
     //     $data = bujkkonsultan::paginate($perPage);
     //     $datasub = bujkkonsultansub::all();
     //     $user = Auth::user();
@@ -37,7 +37,7 @@ class BujkkonsultanController extends Controller
 
     public function bujkkonsultan(Request $request)
 {
-    $perPage = $request->input('perPage', 10);
+    $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
     $query = bujkkonsultan::query();
@@ -78,7 +78,7 @@ class BujkkonsultanController extends Controller
         }
 
         // Menggunakan paginate() untuk pagination
-        $subdata = bujkkonsultansub::where('bujkkonsultan_id', $databujkkonsultan->id)->paginate(10);
+        $subdata = bujkkonsultansub::where('bujkkonsultan_id', $databujkkonsultan->id)->paginate(15);
 
           // Menghitung nomor urut mulai
             $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;

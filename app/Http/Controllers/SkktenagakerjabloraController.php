@@ -86,7 +86,7 @@ class SkktenagakerjabloraController extends Controller
 
     public function listskktenagakerjablora(Request $request)
     {
-        $perPage = $request->input('perPage', 25);
+        $perPage = $request->input('perPage', 15);
         $search = $request->input('search', '');
         $page = $request->input('page', 1);
 
@@ -275,7 +275,7 @@ return redirect()->back()->with('error', 'Item not found');
 
     public function datalistskktenagakerjablora(Request $request)
     {
-        $perPage = $request->input('perPage', 25);
+        $perPage = $request->input('perPage', 15);
         $search = $request->input('search', '');
         $page = $request->input('page', 1);
 

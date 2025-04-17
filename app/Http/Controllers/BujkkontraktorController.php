@@ -43,14 +43,14 @@ class BujkkontraktorController extends Controller
         ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
         ->get();
 
-        $perPage = $request->input('perPage', 10);
+        $perPage = $request->input('perPage', 15);
         $search = $request->input('search');
 
         $user = Auth::user();
         // $data = asosiasimasjaki::paginate(15);
 
-        $databujkkontraktorpaginate = bujkkontraktor::paginate(10);
-        $databujkkonsultanpaginate = bujkkonsultan::paginate(10);
+        $databujkkontraktorpaginate = bujkkontraktor::paginate(15);
+        $databujkkonsultanpaginate = bujkkonsultan::paginate(15);
 
         $query = bujkkonsultan::query();
         $query = bujkkontraktor::query();
@@ -154,7 +154,7 @@ class BujkkontraktorController extends Controller
 // HALAMAN FRONTEND MENU BUJK KONTRAKTOR
     public function bujkkontraktor(Request $request)
 {
-    $perPage = $request->input('perPage', 10);
+    $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
     $query = bujkkontraktor::query();
@@ -225,7 +225,7 @@ public function asosiasikonstruksishow($namaasosiasi)
     $user = Auth::user();
         // Ambil semua data dari tabel bujkkontraktor berdasarkan asosiasi_id
         $databujkkontraktor = bujkkontraktor::where('asosiasimasjaki_id', $asosiasi->id)->get(['id', 'namalengkap', 'no_telepon']);
-        // $databujkkontraktorpaginate = bu::where('asosiasimasjaki_id', $asosiasi->id)->paginate(10);
+        // $databujkkontraktorpaginate = bu::where('asosiasimasjaki_id', $asosiasi->id)->paginate(15);
 
 
         // Return ke view dengan format yang diminta
@@ -250,7 +250,7 @@ public function asosiasikonsultanshow($namaasosiasi)
     $user = Auth::user();
         // Ambil semua data dari tabel bujkkontraktor berdasarkan asosiasi_id
         $databujkkonsultan = bujkkonsultan::where('asosiasimasjaki_id', $asosiasi->id)->get(['id', 'namalengkap', 'no_telepon']);
-        // $databujkkontraktorpaginate = bu::where('asosiasimasjaki_id', $asosiasi->id)->paginate(10);
+        // $databujkkontraktorpaginate = bu::where('asosiasimasjaki_id', $asosiasi->id)->paginate(15);
 
 
         // Return ke view dengan format yang diminta
