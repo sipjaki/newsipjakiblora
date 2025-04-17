@@ -204,23 +204,28 @@ table.zebra-table {
                         @foreach ($data as $item )
                         <tr>
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                            <td>{{$item->kategoripelatihan->kategoripelatihan}}</td>
-                            <td>{{$item->namakegiatan}}</td>
-                            <td>{{$item->penyelenggara}}</td>
+
+                            <td>{{ ucwords(strtolower($item->kategoripelatihan->kategoripelatihan ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>{{ ucwords(strtolower($item->namakegiatan ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>{{ ucwords(strtolower($item->penyelenggara ?? 'Data Tidak Ditemukan')) }}</td>
+
                             {{-- <td style="text-align: center;">{{$item->jenjang->jenjang}}</td> --}}
                             {{-- <td style="text-align: center;">{{$item->penutupan}}</td> --}}
-                            <td>{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') }}</td>
-                            <td>{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') }}</td>
-                            <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
-                            <td>{{$item->lokasi}}</td>
-                            <td>{{$item->keterangan}}</td>
+
+                            <td>{{ $item->penutupan ? \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') : 'Data Tidak Ditemukan' }}</td>
+                            <td>{{ $item->waktupelaksanaan ? \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') : 'Data Tidak Ditemukan' }}</td>
+
+                            <td style="text-align: center;">{{ $item->jumlahpeserta ?? '0' }}</td>
+                            <td>{{ ucwords(strtolower($item->lokasi ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>{{ $item->keterangan ?? 'Data Tidak Ditemukan' }}</td>
 
                             <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
                                 @php
-                                $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
-                                $today = \Carbon\Carbon::now();
-                                $isClosed = $today->greaterThanOrEqualTo($eventDate);
+                                    $eventDate = $item->penutupan ? \Carbon\Carbon::parse($item->penutupan)->subDays(0) : null;
+                                    $today = \Carbon\Carbon::now();
+                                    $isClosed = $eventDate ? $today->greaterThanOrEqualTo($eventDate) : true;
                                 @endphp
+
                                 @if ($isClosed)
                                     <button style="
                                         background-color: #FF0000;
@@ -240,7 +245,7 @@ table.zebra-table {
                                         <i class="fas fa-times-circle"></i> Ditutup
                                     </button>
                                 @else
-                                    <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
+                                    <a href="/agendapembinaan/{{ $item->namakegiatan }}" style="text-decoration: none;">
                                         <button style="
                                             background-color: #001f3f;
                                             color: white;
@@ -264,6 +269,7 @@ table.zebra-table {
                             </td>
                         </tr>
                         @endforeach
+
                     </tbody>
                 </table>
 
