@@ -155,36 +155,9 @@ table.zebra-table {
                     </button>
                 </div>
             </div>
+
             <section class="portfolio-details">
-                <div class="container" style="margin-top: -150px;">
-                    {{-- <img src="assets/image/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="img-109"> --}}
-                    {{-- @foreach ($data as $item )
-                    <iframe src="{{ asset('storage/' . $item->peraturan) }}" width="100%" height="750" style="border: none;"></iframe>
-                    @endforeach --}}
-                    {{-- <div class="portfolio-details-info">
-                        <div class="portfolio-details-info-item">
-                            <span>Category:</span>
-                            <p>Business</p>
-                        </div><!-- portfolio-details-info-item -->
-                        <div class="portfolio-details-info-item">
-                            <span>Department:</span>
-                            <p>Finance and Economy</p>
-                        </div><!-- portfolio-details-info-item -->
-                        <div class="portfolio-details-info-item">
-                            <span>Date:</span>
-                            <p>20 October, 2022</p>
-                        </div><!-- portfolio-details-info-item -->
-                        <div class="portfolio-details-info-item">
-                            <span>Location:</span>
-                            <p>New York City</p>
-                        </div><!-- portfolio-details-info-item -->
-                        <div class="portfolio-details-info-item portfolio-details-info-socials">
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        </div><!-- portfolio-details-info-socials -->
-                    </div><!--/.portfolio-details-info--> --}}
+                <div class="container" style="margin-top: -200px;">
                     <div class="portfolio-details-content">
                         {{-- <div class="portfolio-details-content-title">
                             <h3>Tupoksi DPUPR Pemerintah Kabupaten Blora</h3>
