@@ -263,7 +263,7 @@ ul.list-unstyled {
         <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
     </ul>
 </li>
-<li class="has-dropdown" style="position: relative;">
+<li class="has-dropdown" style="position: relative;" style="margin-left: -100px;">
     <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
         DATA JAKON
     </a>
