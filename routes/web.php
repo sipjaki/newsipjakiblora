@@ -420,7 +420,7 @@ Route::get('/datajakon/statistikdatajenjang9', [DatastatistikajakonbloraControll
 
 // ---------------------- MENU 1 PROFIL PAKET PEKERJAAN   -----------------------------------------------------
 Route::get('/datajakon/profilpaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanmasjaki']);
-Route::get('/datajakon/profilpaketpekerjaan/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanshow']);
+Route::get('/datajakon/profilpaketpekerjaan/{id}', [PaketpekerjaanmasjakiController::class, 'paketpekerjaanshow']);
 // ___________________________________________________________________________________________________________________________________
 
 

@@ -54,10 +54,10 @@ class PaketpekerjaanmasjakiController extends Controller
         ]);
     }
 
-    public function paketpekerjaanshow($namapekerjaan)
+    public function paketpekerjaanshow($id)
     {
         // Pastikan model dan nama tabel sudah benar
-        $datapaketpekerjaan = paketpekerjaanmasjaki::where('namapekerjaan', $namapekerjaan)->first();
+        $datapaketpekerjaan = paketpekerjaanmasjaki::where('id', $id)->first();
         // $datasub = prosespaket::all();
         // if (!$datapaketpekerjaan) {
         //     // Jika data tidak ditemukan, arahkan kembali dengan pesan error

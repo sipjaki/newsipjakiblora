@@ -228,7 +228,7 @@ table.zebra-table {
                             </td>
 
                             <td style="text-align: center;">
-                                <a href="/datajakon/profilpaketpekerjaan/{{$item->namapekerjaan}}">
+                                <a href="/datajakon/profilpaketpekerjaan/{{$item->id}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                 </a>
                             </td>
