@@ -88,6 +88,35 @@ table.zebra-table {
         border: 1px solid #001f3f;
     }
 
+    .has-dropdown:hover > ul {
+        display: block !important;
+    }
+
+    .has-dropdown ul li:hover > ul {
+        display: block !important;
+    }
+
+    .has-dropdown ul li {
+        position: relative;
+    }
+
+    .has-dropdown ul ul {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        display: none;
+        background-color: #444;
+        border-radius: 5px;
+        width: 250px;
+        z-index: 999;
+    }
+
+    .has-dropdown ul li a {
+        font-size: 15px;
+        font-family: 'Poppins', sans-serif;
+        color: white !important;
+    }
+
 </style>
 
 {{-- ================================ --}}
