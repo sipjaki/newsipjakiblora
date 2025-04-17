@@ -298,7 +298,7 @@ table.zebra-table {
         function searchTable() {
           let input = document.getElementById("searchInput").value;
 
-          fetch(`/datajakon/bujkkonsultan?search=${input}`)
+          fetch(`/agendapembinaan?search=${input}`)
             .then(response => response.text())
             .then(html => {
               let parser = new DOMParser();
