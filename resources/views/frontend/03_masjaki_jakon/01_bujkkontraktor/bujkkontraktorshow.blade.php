@@ -311,15 +311,9 @@ table.zebra-table {
                             <td>{{ $item->penerbit ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>{{ $item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>{{ $item->masaberlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
-                            <td>
-                                @if ($item->masaberlaku->lt($today)) <!-- Cek apakah masa berlaku sudah lewat -->
-                                    <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">TIDAK BERLAKU</button>
-                                @else
-                                    <button class="bg-green-600 text-white px-3 py-1 rounded text-sm">BERLAKU</button>
-                                @endif
+                            <td class="masa-berlaku" data-masaberlaku="{{ $item->masaberlaku }}">
+                                <button class="btn-masa-berlaku px-3 py-1 rounded text-sm"></button>
                             </td>
-
-
                         </tr>
                         @endforeach
 
@@ -346,3 +340,24 @@ table.zebra-table {
 
 @include('frontend.00_approve.01_cssterpisah.footer1')
 @include('frontend.00_approve.01_cssterpisah.footer')
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const today = new Date(); // Dapatkan tanggal hari ini
+        const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td yang memiliki kelas masa-berlaku
+
+        masaBerlakuElements.forEach(function (element) {
+            const masaBerlaku = new Date(element.getAttribute('data-masaberlaku')); // Ambil data masa berlaku
+
+            const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
+
+            if (masaBerlaku < today) {  // Cek jika masa berlaku sudah lewat
+                button.classList.add('bg-red-600', 'text-white');
+                button.textContent = 'TIDAK BERLAKU';
+            } else {
+                button.classList.add('bg-green-600', 'text-white');
+                button.textContent = 'BERLAKU';
+            }
+        });
+    });
+</script>
