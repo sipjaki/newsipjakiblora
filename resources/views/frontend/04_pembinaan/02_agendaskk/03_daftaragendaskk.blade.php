@@ -181,13 +181,13 @@ table.zebra-table {
 
                 <table class="zebra-table fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
-                            <tr>
-                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
-                                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:500px;"> Nama Kegiatan <span class="sort-icon">⇅</span></th>
-                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:500px;"> Keterangan <span class="sort-icon">⇅</span></th>
-                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Penyelenggara <span class="sort-icon">⇅</span></th>
-                                <th style="text-align:center; width:100px;"> View Peserta </th>
-                            </tr>
+                        <tr>
+                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
+                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:500px;"> Nama Kegiatan </th>
+                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:500px;"> Keterangan </th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Penyelenggara </th>
+                            <th style="text-align:center; width:100px;"> View Peserta </th>
+                        </tr>
 
                     </thead>
 
