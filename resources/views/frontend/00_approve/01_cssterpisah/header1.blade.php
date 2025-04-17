@@ -11,109 +11,45 @@ ul.list-unstyled {
 </style>
 
 <header class="header">
-	<div class="topbar" style="background: #2ECC71;">
-		<div class="topbar-inner;" style="background: #2ECC71;" >
-			<div class="topbar-left" style="background: #2ECC71 ">
-				<div class="topbar-socials">
+    <div class="topbar" style="background: #2ECC71;">
+        <div class="topbar-inner" style="background: #2ECC71;">
+            <div class="topbar-left" style="background: #2ECC71;">
+                <!-- Sosial Media -->
+                <div class="topbar-socials">
                     <a href="#"><i class="fa-brands fa-tiktok" style="font-size: 24px;"></i></a>
-                    {{-- <a href="#"><i class="fa-solid fa-envelope" style="font-size: 25px;"></i></a> --}}
-                    <a href="#"><i class="fa-brands fa-instagram" style="font-size: 24px; "></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp" style="font-size: 24px; "></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook" style="font-size: 24px; "></i></a>
-				</div><!--topbar-socials-->
-				<div class="topbar-info">
-					<ul>
-						<li>
-							{{-- <div class="topbar-a">
-								<i class="fa-solid fa-database"></i>
-							</div><!-- topbar-icon --> --}}
-							<div class="topbar-text" style="margin-right: 20px;
-                            border-radius: 20px;
-                            background-color: white;
-                            color: green;
-                            padding: 8px;
-                            overflow: hidden;
-                            font-size:25px;
-                            white-space: nowrap;
-                            display: inline-block;
-                            animation: scrolling-text 3s linear infinite;
-                            width: 100%;">
+                    <a href="#"><i class="fa-brands fa-instagram" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook" style="font-size: 24px;"></i></a>
+                </div>
 
-                            <marquee behavior="scroll" direction="left" style="width: 950px; margin-top:-10px;">
-                                <a href="#" style="color: navy; text-decoration: none;">
-                                Selamat Datang di Mas Jaki DPUPR Kab Blora Sistem Informasi Pembina Jasa Konstruksi Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
-                                </a>
-                            </marquee>
-
+                <!-- Info Berjalan -->
+                <div class="topbar-info">
+                    <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+                        <li>
+                            <div class="topbar-text" style="
+                                margin-right: 20px;
+                                border-radius: 20px;
+                                background-color: white;
+                                color: green;
+                                padding: 8px;
+                                overflow: hidden;
+                                font-size: 25px;
+                                white-space: nowrap;
+                                display: inline-block;
+                                width: 100%;">
+                                <marquee behavior="scroll" direction="left" style="width: 100%; margin-top: -10px;">
+                                    <a href="#" style="color: navy; text-decoration: none;">
+                                        Selamat Datang di Mas Jaki DPUPR Kab Blora - Sistem Informasi Pembina Jasa Konstruksi
+                                        Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
+                                    </a>
+                                </marquee>
                             </div>
-
-                            {{-- <div class="btn d-flex align-items-center" style="background: white; border: none; padding: 5px; border-radius:20px;">
-                                <div class="topbar-icon" style="background: white; padding: 5px; border-radius: 5px;">
-                                    <i class="fa-solid fa-envelope" style="color: black;"></i>
-                                </div>
-                                <div class="topbar-text" style="background: white; padding: 5px; border-radius: 5px;">
-                                    <a href="#" style="color: black; text-decoration: none;">konstruksi@masjakidpuprblora.co.id</a>
-                                </div>
-                            </div> --}}
-
-                            </li><!-- li -->
-						<li>
-							{{-- <div class="btn d-flex align-items-center" style="background: white; border: none; padding: 5px; border-radius:20px;">
-                                <div class="topbar-icon" style="background: white; padding: 5px; border-radius: 5px;">
-                                    <i class="fa-solid fa-clock" style="color: black;"></i>
-                                </div>
-                                <div class="topbar-text" style="background: white; padding: 5px; border-radius: 5px;">
-                                    <a href="#" style="color: black; text-decoration: none;">Senin - Jum`at 09.00 - 15.00 </a>
-                                </div>
-                            </div> --}}
-
-						</li><!-- li -->
-						<li>
-
-                            {{-- <div class="container" style="margin-top:20px;">
-                                <div id="clock-container" style="
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                height: 6vh;
-                                font-family: Arial, sans-serif;">
-                                <p id="jam" style="
-                                    font-size: 14px;
-                                    background: black;
-                                    color: #fff;
-                                    padding: 10px 10px;
-                                    border-radius: 15px;
-                                    text-align: center;"></p>
-
-                                        </div>
-
-                            <script>
-                                function updateClock() {
-                                    const now = new Date();
-                                    const hours = now.getHours().toString().padStart(2, '0');
-                                    const minutes = now.getMinutes().toString().padStart(2, '0');
-                                    const seconds = now.getSeconds().toString().padStart(2, '0');
-                                    const day = now.getDate().toString().padStart(2, '0');
-                                    const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
-                                    const year = now.getFullYear();
-
-                                    const timeString = `${hours}:${minutes}:${seconds}`;
-                                    const dateString = `${day}/${month}/${year}`;
-                                    document.getElementById('jam').textContent = `${dateString} ${timeString}`;
-                                }
-
-                                setInterval(updateClock, 1000); // Update every second
-                                updateClock(); // Initial call to set the time immediately
-                            </script>
- --}}
-
-                                                </li><!-- li -->
-
-					</ul><!-- ul -->
-				</div><!--topbar-info-->
-			</div><!-- topbar-left -->
-		</div><!-- topbar-inner -->
-	</div><!--topbar-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<div class="main-menu sticky-header" style="background: #1d1d1b">
     <br>
