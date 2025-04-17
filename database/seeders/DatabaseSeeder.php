@@ -840,7 +840,7 @@ profiljakonpersonil::create([
 // makan
 //======================== ===================================================================================
 tupoksi::create([
-    'judul' => 'Tupoksi Program Dan Jasa Konstruksi Dinas Pekerjan Umum dan Penataan Ruang Kabupaten Blora',
+    'judul' => 'Tupoksi Dan Program Jasa Konstruksi',
     'keterangan' => 'Dinas Pekerjaan Umum dan Penataan Ruang (DPUPR) Kabupaten Blora memiliki peran strategis dalam pembinaan jasa konstruksi guna mendukung pembangunan infrastruktur yang berkualitas. DPUPR bertugas menyusun kebijakan teknis, mengembangkan sistem informasi konstruksi, serta meningkatkan kapasitas badan usaha konstruksi agar lebih kompetitif dan profesional. Selain itu, DPUPR juga berperan dalam pengawasan dan penjaminan mutu konstruksi, penyuluhan serta bimtek kepada para pelaku jasa konstruksi, serta pengembangan pasar dan kerja sama konstruksi. Dengan pendekatan berbasis regulasi dan inovasi, DPUPR terus berupaya menciptakan ekosistem konstruksi yang tertib, berdaya saing, dan mendukung pertumbuhan ekonomi Kabupaten Blora',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
