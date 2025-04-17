@@ -17,7 +17,6 @@ ul.list-unstyled {
             <!-- Info Berjalan (Pembungkus Border Radius) -->
             <div class="topbar-info" style="flex: 1; margin-left: 20px; background-color: white; border-radius: 15px; padding: 5px;">
                 <div class="topbar-text" style="
-                    border-radius: 15px;
                     background-color: white;
                     color: green;
                     padding: 10px 15px;
