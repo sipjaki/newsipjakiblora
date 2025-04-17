@@ -306,7 +306,7 @@ table.zebra-table {
 </section>
 
 
-            <div class="table-wrapper">
+            <div class="table-wrapper" style="margin-top: -100px;">
 
                 <table class="zebra-table fl-table">
                     <thead>
