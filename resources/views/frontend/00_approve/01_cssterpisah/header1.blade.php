@@ -211,12 +211,12 @@
                                 BERANDA
                             </a>
                         </li>
+
                         <li class="has-dropdown" style="position: relative;">
-                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease; position: relative;">
+                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 KELEMBAGAAN
-                                <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 14px;">&#x2193;</span> <!-- Tanda panah yang sejajar dengan teks -->
                             </a>
-                            <ul>
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
                                 <li>
                                     <a href="/profil/struktur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
                                         Struktur DPUPR Blora
