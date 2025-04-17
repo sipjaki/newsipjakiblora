@@ -228,29 +228,31 @@
                             <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 BERITA
                             </a>
-                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 220px;">
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
                                 <li style="position: relative;">
-                                    <a href="#" style="padding: 10px 20px; display: block;">Peraturan</a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/standarbiayaumummasjaki">Standar Biaya Umum</a></li>
-                                        <li><a href="/peraturan/undangundang">Undang - Undang</a></li>
-                                        <li><a href="/peraturan/pemerintah">Peraturan Pemerintah</a></li>
-                                        <li><a href="/peraturan/presiden">Peraturan Presiden</a></li>
-                                        <li><a href="/peraturan/menteri">Peraturan Menteri</a></li>
-                                        <li><a href="/peraturan/keputusanmenteri">Keputusan Menteri</a></li>
-                                        <li><a href="/peraturan/suratedaranmenteri">Surat Edaran Menteri</a></li>
-                                        <li><a href="/peraturan/referensi">Referensi</a></li>
-                                        <li><a href="/peraturan/daerah">Peraturan Daerah</a></li>
-                                        <li><a href="/peraturan/peraturangubernur">Peraturan Gubernur</a></li>
-                                        <li><a href="/peraturan/walikotadanbupati">Peraturan Walikota/Bupati</a></li>
-                                        <li><a href="/peraturan/suratkeputusan">Surat Keputusan</a></li>
+                                    <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                                        Peraturan
+                                    </a>
+                                    <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0;">
+                                        <li><a href="/standarbiayaumummasjaki" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Standar Biaya Umum</a></li>
+                                        <li><a href="/peraturan/undangundang" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Undang - Undang</a></li>
+                                        <li><a href="/peraturan/pemerintah" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Peraturan Pemerintah</a></li>
+                                        <li><a href="/peraturan/presiden" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Peraturan Presiden</a></li>
+                                        <li><a href="/peraturan/menteri" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Peraturan Menteri</a></li>
+                                        <li><a href="/peraturan/keputusanmenteri" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Keputusan Menteri</a></li>
+                                        <li><a href="/peraturan/suratedaranmenteri" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Surat Edaran Menteri</a></li>
+                                        <li><a href="/peraturan/referensi" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Referensi</a></li>
+                                        <li><a href="/peraturan/daerah" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Peraturan Daerah</a></li>
+                                        <li><a href="/peraturan/peraturangubernur" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Peraturan Gubernur</a></li>
+                                        <li><a href="/peraturan/walikotadanbupati" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Peraturan Walikota/Bupati</a></li>
+                                        <li><a href="/peraturan/suratkeputusan" style="color: white; padding: 10px 20px; display: block; font-family: 'Poppins', sans-serif;">Surat Keputusan</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/beritajakon" style="padding: 10px 20px; display: block;">Berita Jakon</a></li>
-                                <li><a href="/artikeljakon" style="padding: 10px 20px; display: block;">Artikel Jakon</a></li>
+                                <li><a href="/beritajakon" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
+                                <li><a href="/artikeljakon" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
                             </ul>
                         </li>
-                        <li class="has-dropdown" style="position: relative;">
+                                                <li class="has-dropdown" style="position: relative;">
                             <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 DATA JAKON
                             </a>
