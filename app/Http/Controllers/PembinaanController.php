@@ -9,6 +9,7 @@ use App\Models\jenjang;
 use App\Models\kategoripelatihan;
 use App\Models\pembinaan;
 use App\Models\pesertapelatihan;
+use App\Models\materipelatihan;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -91,6 +92,8 @@ class PembinaanController extends Controller
 
         //   // Menghitung nomor urut mulai
         //     $start = ($subdata->currentPage() - 1) * $subdata->perPage() + 1;
+     // Menggunakan paginate() untuk pagination
+     $subdata = materipelatihan::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
 
 
     // Ambil data user saat ini
@@ -99,6 +102,7 @@ class PembinaanController extends Controller
     return view('frontend.04_pembinaan.01_agendapembinaan.show', [
         'title' => 'Agenda Pelatihan',
         'data' => $dataagendapelatihan,
+        'datamateripelatihan' => $subdata,
         // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
         'user' => $user,
         // 'start' => $start,
