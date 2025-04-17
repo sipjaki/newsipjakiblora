@@ -345,7 +345,7 @@
                             </ul>
                         </li>
                         <li class="has-dropdown" style="position: relative;">
-                            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block;">
+                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block;">
                                 AHSP
                             </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
