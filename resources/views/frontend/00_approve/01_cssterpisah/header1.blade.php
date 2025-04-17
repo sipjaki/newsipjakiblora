@@ -316,10 +316,11 @@ ul.list-unstyled {
                             </ul>
                         </li>
 
-                        <li class="has-dropdown" style="position: relative;">
-                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
-                                PENGAWASAN
-                            </a>
+
+<li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        PENGAWASAN
+    </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
                                 <!-- <li><a href="/tertibjasakonstruksi" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Tertib Jasa Konstruksi</a></li> -->
                                 <li style="position: relative;">
@@ -346,10 +347,11 @@ ul.list-unstyled {
                             </ul>
                         </li>
 
-                        <li class="has-dropdown" style="position: relative;">
-                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
-                                AHSP
-                            </a>
+
+<li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        AHSP
+    </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
                                 <li style="position: relative;">
                                     <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
@@ -391,10 +393,11 @@ ul.list-unstyled {
                         </li>
 
 
-                        <li class="has-dropdown" style="position: relative;">
-                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
-                                RANTAI PASOK
-                            </a>
+
+<li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        RANTAI PASOK
+    </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 250px;">
                                 <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Asuransi Konstruksi</a></li>
                                 <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Material Bangunan/ Distributor/ Supplier Bangunan</a></li>
