@@ -108,7 +108,7 @@ table.zebra-table {
         <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
         <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
           <span>/</span>
-          <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px;" style="color: blue">
+          <a href="/datajakon/profilpaketpekerjaan/" class="font-medium text-blue-600" style="font-size: 16px;" style="color: blue">
             {{$title}}
           </a>
           <span>/</span>
