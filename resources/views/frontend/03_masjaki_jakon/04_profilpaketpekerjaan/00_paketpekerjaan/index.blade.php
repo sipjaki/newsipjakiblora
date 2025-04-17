@@ -189,6 +189,8 @@ table.zebra-table {
                             <th style="text-align: center;">Badan Usaha</th>
                             <th style="text-align: center;">Tahun </th>
                             <th style="text-align: center;">Sumber Dana</th>
+                            <th style="text-align: center;">Rekap</th>
+                            <th style="text-align: center;">Progress</th>
                             <th style="text-align: center;">View</th>
                         </tr>
                     </thead>
@@ -215,6 +217,14 @@ table.zebra-table {
 
                             <td style="text-align: center;">
                                 {{ $item->sumberdana->sumberdana ?? 'Data Tidak Ditemukan' }}
+                            </td>
+
+                            <td style="text-align: center;">
+                                {{ $item->bulanrekap->bulanrekap ?? 'Data Tidak Ditemukan' }}
+                            </td>
+
+                            <td style="text-align: center;">
+                                {{ $item->progress ?? 'Data Tidak Ditemukan' }}
                             </td>
 
                             <td style="text-align: center;">
