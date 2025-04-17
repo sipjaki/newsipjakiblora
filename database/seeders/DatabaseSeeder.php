@@ -59682,7 +59682,7 @@ agendaskk::create([
     'user_id' => 7,
     'namakegiatan' => 'Sertifikasi Keahlian Tenaga Kerja Konstruksi Bangunan Gedung - Jenjang 4',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
-    'penutupan' => '2025-01-16',
+    'penutupan' => '2025-12-16',
     'waktupelaksanaan' => '2025-05-15',
     'jumlahpeserta' => 40,
     'lokasi' => 'Jln Blora No. 10',
