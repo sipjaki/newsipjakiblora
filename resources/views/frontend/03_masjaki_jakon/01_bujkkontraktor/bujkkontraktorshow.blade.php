@@ -189,15 +189,17 @@ table.zebra-table {
             <div class="flex justify-center">
                 <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
             </div>
-
             <div class="w-full flex items-center gap-[10px] p-[10px_14px] rounded-xl" style="margin-top:-40px; background: #189200;">
                 <div class="w-5 h-5 flex shrink-0">
-                    <img src="/assets/new/icons/story.svg" alt="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="20" height="20">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.75 15h-1.5v-6h1.5v6zm0-8h-1.5V7h1.5v2z"/>
+                    </svg>
                 </div>
                 <p class="text-white font-normal text-sm" style="font-family: Poppins;">
                     <span class="font-bold">Informasi Data: {{$data->namalengkap}}</span>
                 </p>
             </div>
+
 
 
             <form action="" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
