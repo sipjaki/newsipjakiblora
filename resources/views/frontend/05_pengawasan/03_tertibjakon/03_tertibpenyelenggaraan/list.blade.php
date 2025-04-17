@@ -183,6 +183,7 @@ table.zebra-table {
                         <tr>
                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:80px;"> No </th>
                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:100px;"> Penyelenggara </th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:100px;"> Nama Pekerjaan</th>
                             <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:400px;"> Kegiatan Konstruksi </th>
                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Badan Usaha </th>
                             <th style="text-align:center; width:100px;"> View </th>
@@ -205,6 +206,13 @@ table.zebra-table {
                                         <button class="btn" style="background-color: navy; color: white;">
                                             Data Belum Diupdate
                                         </button>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if(!empty($item->namapekerjaan))
+                                        {{ $item->namapekerjaan }}
+                                    @else
+                                        <button class="btn-navy">Data Belum Diupdate</button>
                                     @endif
                                 </td>
                                 <td>

@@ -210,19 +210,20 @@ table.zebra-table {
                                 @endif
                             </td>
                             <td>
-                                @if(!empty($item->namabangunan))
-                                    {{ $item->namabangunan }}
-                                @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
-                                @endif
-                            </td>
-                            <td>
                                 @if(!empty($item->namapekerjaan))
                                     {{ $item->namapekerjaan }}
                                 @else
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
+                            <td>
+                                @if(!empty($item->namabangunan))
+                                    {{ $item->namabangunan }}
+                                @else
+                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                @endif
+                            </td>
+
                             <td>
                                 @if(!empty($item->lokasi))
                                     {{ $item->lokasi }}
