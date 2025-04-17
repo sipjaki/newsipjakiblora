@@ -263,80 +263,84 @@ ul.list-unstyled {
         <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
     </ul>
 </li>
-<ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 10px;">
-    <!-- DATA JAKON -->
-    <li class="has-dropdown" style="position: relative;">
-      <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 12px; display: inline-block;">
+<li class="has-dropdown" style="position: relative;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
         DATA JAKON
-      </a>
-      <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; width: 250px;">
+    </a>
+    <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
         <li>
-          <a href="#" style="color: black; padding: 10px 20px; display: block;">Badan Usaha Jasa Konstruksi</a>
-          <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
-            <li><a href="/datajakon/bujkkontraktor" style="color: black; padding: 10px 20px; display: block;">BUJK Konstruksi</a></li>
-            <li><a href="/datajakon/bujkkonsultan" style="color: black; padding: 10px 20px; display: block;">BUJK Konsultan</a></li>
-            <li><a href="/404" style="color: black; padding: 10px 20px; display: block;">Asosiasi Konstruksi</a></li>
-            <li><a href="/datajakon/statistikabujkblora" style="color: black; padding: 10px 20px; display: block;">Data Statistik BUJK</a></li>
-          </ul>
+            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                Badan Usaha Jasa Konstruksi
+            </a>
+            <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                <li><a href="/datajakon/bujkkontraktor" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">BUJK Konstruksi</a></li>
+                <li><a href="/datajakon/bujkkonsultan" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">BUJK Konsultan</a></li>
+                <li><a href="/404" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Asosiasi Konstruksi</a></li>
+                <li><a href="/datajakon/statistikabujkblora" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Data Statistik BUJK</a></li>
+            </ul>
         </li>
         <li>
-          <a href="#" style="color: black; padding: 10px 20px; display: block;">Tenaga Kerja Konstruksi</a>
-          <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
-            <li><a href="/datajakon/skktenagakerjablora" style="color: black; padding: 10px 20px; display: block;">TKK Diselenggarakan DPUPR</a></li>
-            <li><a href="/datajakon/skktenagakerjabloralist" style="color: black; padding: 10px 20px; display: block;">TKK Kabupaten Blora</a></li>
-            <li><a href="/datajakon/statistikaskktenagakerjabloralist" style="color: black; padding: 10px 20px; display: block;">Data Statistik TKK</a></li>
-          </ul>
+            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                Tenaga Kerja Konstruksi
+            </a>
+            <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                <li><a href="/datajakon/skktenagakerjablora" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">TKK Diselenggarakan DPUPR</a></li>
+                <li><a href="/datajakon/skktenagakerjabloralist" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">TKK Kabupaten Blora</a></li>
+                <li><a href="/datajakon/statistikaskktenagakerjabloralist" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Data Statistik TKK</a></li>
+            </ul>
         </li>
         <li>
-          <a href="#" style="color: black; padding: 10px 20px; display: block;">Profil Paket Pekerjaan Konstruksi & Konsultasi</a>
-          <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
-            <li><a href="/datajakon/profilpaketpekerjaan" style="color: black; padding: 10px 20px; display: block;">Profil Paket Pekerjaan</a></li>
-            <li><a href="/404" style="color: black; padding: 10px 20px; display: block;">Data Statistik</a></li>
-          </ul>
+            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                Profil Paket Pekerjaan Konstruksi & Konsultasi
+            </a>
+            <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                <li><a href="/datajakon/profilpaketpekerjaan" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Profil Paket Pekerjaan</a></li>
+                <li><a href="/404" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Data Statistik</a></li>
+            </ul>
         </li>
-      </ul>
-    </li>
+    </ul>
+</li>
 
-    <!-- PEMBINAAN -->
-    <li class="has-dropdown" style="position: relative;">
-      <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 12px; display: inline-block;">
+<li class="has-dropdown" style="position: relative;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
         PEMBINAAN
-      </a>
-      <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; width: 250px;">
-        <li><a href="/agendapembinaan" style="color: black; padding: 10px 20px; display: block;">Agenda Pelatihan</a></li>
-        <li><a href="/daftarpesertapelatihan" style="color: black; padding: 10px 20px; display: block;">Daftar Peserta Pelatihan</a></li>
-        <li><a href="/agendaskk" style="color: black; padding: 10px 20px; display: block;">Agenda Sertifikasi TKK</a></li>
-        <li><a href="/daftarpesertaskk" style="color: black; padding: 10px 20px; display: block;">Daftar Peserta SKK</a></li>
-      </ul>
-    </li>
+    </a>
+    <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
+        <li><a href="/agendapembinaan" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Agenda Pelatihan</a></li>
+        <li><a href="/daftarpesertapelatihan" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Daftar Peserta Pelatihan</a></li>
+        <li><a href="/agendaskk" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Agenda Sertifikasi TKK</a></li>
+        <li><a href="/daftarpesertaskk" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Daftar Peserta SKK</a></li>
+    </ul>
+</li>
 
-    <!-- PENGAWASAN -->
-    <li class="has-dropdown" style="position: relative;">
-      <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 12px; display: inline-block;">
+<li class="has-dropdown" style="position: relative;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
         PENGAWASAN
-      </a>
-      <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; width: 250px;">
+    </a>
+    <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
         <li>
-          <a href="#" style="color: black; padding: 10px 20px; display: block;">Tertib Jasa Konstruksi</a>
-          <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
-            <li><a href="/tertibjasakonstruksilist" style="color: black; padding: 10px 20px; display: block;">Tertib Usaha Jakon</a></li>
-            <li><a href="/tertibjasakonstruksipemanfaatan" style="color: black; padding: 10px 20px; display: block;">Tertib Pemanfaatan Jakon</a></li>
-            <li><a href="/tertibjasakonstruksipenyelenggaraan" style="color: black; padding: 10px 20px; display: block;">Tertib Penyelenggaraan Jakon</a></li>
-            <li><a href="/statistiktertibjakonblora" style="color: black; padding: 10px 20px; display: block;">Data Statistik Tertib Jakon</a></li>
-          </ul>
+            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                Tertib Jasa Konstruksi
+            </a>
+            <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                <li><a href="/tertibjasakonstruksilist" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Tertib Usaha Jakon</a></li>
+                <li><a href="/tertibjasakonstruksipemanfaatan" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Tertib Pemanfaatan Jakon</a></li>
+                <li><a href="/tertibjasakonstruksipenyelenggaraan" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Tertib Penyelenggaraan Jakon</a></li>
+                <li><a href="/statistiktertibjakonblora" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Data Statistik Tertib Jakon</a></li>
+            </ul>
         </li>
-        <li><a href="/pengawasanbujk" style="color: black; padding: 10px 20px; display: block;">Pengawasan BUJK</a></li>
+        <li><a href="/pengawasanbujk" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Pengawasan BUJK</a></li>
         <li>
-          <a href="#" style="color: black; padding: 10px 20px; display: block;">Kecelakaan Kerja</a>
-          <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
-            <li><a href="/kecelakaankerjalist" style="color: black; padding: 10px 20px; display: block;">Data Kecelakaan</a></li>
-            <li><a href="/404" style="color: black; padding: 10px 20px; display: block;">Data Statistik Kecelakaan</a></li>
-          </ul>
+            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                Kecelakaan Kerja
+            </a>
+            <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                <li><a href="/kecelakaankerjalist" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Data Kecelakaan</a></li>
+                <li><a href="/404" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Data Statistik Kecelakaan</a></li>
+            </ul>
         </li>
-      </ul>
-    </li>
-  </ul>
-
+    </ul>
+</li>
 
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
