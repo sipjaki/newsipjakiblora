@@ -170,8 +170,262 @@
     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
 
+
+    <!-- Main News Slider Start -->
+    <div class="container-fluid" style="margin-top: 165px;">
+        <div class="row">
+            <div class="col-lg-7 px-0">
+                <div class="owl-carousel main-carousel position-relative">
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Tansformasi Digital Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/petakbb.jpg" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Tansformasi Digital Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Tansformasi Digital Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat">Tansformasi Digital Sistem Informasi Pembina Jasa Konstruksi Pemerintah Kabupaten Bandung Barat</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Selamat Datang di Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita1.jpg" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Selamat Datang di Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Selamat Datang di Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat">Selamat Datang di Sistem Informasi Jasa Konstruksi Pemerintah Kabupaten Bandung Barat</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Kabupaten Bandung Barat Gelar Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/cisomangbarat.jpg" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Kabupaten Bandung Barat Gelar Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Kabupaten Bandung Barat Gelar Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat">Kabupaten Bandung Barat Gelar Pelatihan Jasa Konstruksi di Kecamatan Cisomang Barat</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Kunjungan Provinsi Jawa Barat : Implementasi Sipjaki Terhadap Dunia Konstruksi">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita8.jpeg" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Kunjungan Provinsi Jawa Barat : Implementasi Sipjaki Terhadap Dunia Konstruksi">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Kunjungan Provinsi Jawa Barat : Implementasi Sipjaki Terhadap Dunia Konstruksi">Kunjungan Provinsi Jawa Barat : Implementasi Sipjaki Terhadap Dunia Konstruksi</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Pemerintah Kabupaten Bandung Barat Luncurkan Sistem Informasi Pembina Jasa Konstruksi untuk Meningkatkan Transparansi dan Efisiensi">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita2.jpg" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Pemerintah Kabupaten Bandung Barat Luncurkan Sistem Informasi Pembina Jasa Konstruksi untuk Meningkatkan Transparansi dan Efisiensi">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Pemerintah Kabupaten Bandung Barat Luncurkan Sistem Informasi Pembina Jasa Konstruksi untuk Meningkatkan Transparansi dan Efisiensi">Pemerintah Kabupaten Bandung Barat Luncurkan Sistem Informasi Pembina Jasa Konstruksi untuk Meningkatkan Transparansi dan Efisiensi</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Bimbingan Teknis : Pelatihan dan Bimbingan Teknis Tenaga Tukang Terampil oleh Gatensi Provinsi Jawa Barat">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita4.jpg" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Bimbingan Teknis : Pelatihan dan Bimbingan Teknis Tenaga Tukang Terampil oleh Gatensi Provinsi Jawa Barat">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Bimbingan Teknis : Pelatihan dan Bimbingan Teknis Tenaga Tukang Terampil oleh Gatensi Provinsi Jawa Barat">Bimbingan Teknis : Pelatihan dan Bimbingan Teknis Tenaga Tukang Terampil oleh Gatensi Provinsi Jawa Barat</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Pemerintah Kabupaten Bandung Barat Laksanakan Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/D9djtioF4Vg0YygcdtpP1XrnCNaGCQfuTlzCne5I.png" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Pemerintah Kabupaten Bandung Barat Laksanakan Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Pemerintah Kabupaten Bandung Barat Laksanakan Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat">Pemerintah Kabupaten Bandung Barat Laksanakan Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat</a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil ">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita6.jpg" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil ">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil ">Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil </a>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="position-relative overflow-hidden" style="height: 500px;">
+                        <a href="/portalberita/Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi">
+                            <img class="img-fluid h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita5.jpg" style="object-fit: cover;">
+
+                        </a>
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="/portalberita/Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi">News</a>
+
+                            </div>
+                            <a class="h2 m-0 text-white text-uppercase font-weight-bold" style="font-size: 24px;" href="/portalberita/Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi">Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi</a>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+            <div class="col-lg-5 px-0">
+                <div class="row mx-0">
+
+
+                        <div class="col-md-6 px-0">
+                            <a href="/portalberita/Bimbingan Teknis : Pelatihan dan Bimbingan Teknis Tenaga Tukang Terampil oleh Gatensi Provinsi Jawa Barat">
+
+                                <div class="position-relative overflow-hidden" style="height: 250px;">
+                                    <img class="img-fluid w-100 h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita4.jpg" style="object-fit: cover;">
+                                    <div class="overlay">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="/portalberita/Bimbingan Teknis : Pelatihan dan Bimbingan Teknis Tenaga Tukang Terampil oleh Gatensi Provinsi Jawa Barat">News</a>
+
+                                    </div>
+                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="/portalberita/Bimbingan Teknis : Pelatihan dan Bimbingan Teknis Tenaga Tukang Terampil oleh Gatensi Provinsi Jawa Barat">Bimbingan Teknis : Pelatihan dan Bimbingan Teknis Tenaga Tukang Terampil oleh Gatensi Provinsi Jawa Barat</a>
+                                </div>
+                            </a>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 px-0">
+                            <a href="/portalberita/Pemerintah Kabupaten Bandung Barat Laksanakan Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat">
+
+                                <div class="position-relative overflow-hidden" style="height: 250px;">
+                                    <img class="img-fluid w-100 h-100" src="https://sipjakikbb.com/storage/berita/databerita/D9djtioF4Vg0YygcdtpP1XrnCNaGCQfuTlzCne5I.png" style="object-fit: cover;">
+                                    <div class="overlay">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="/portalberita/Pemerintah Kabupaten Bandung Barat Laksanakan Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat">News</a>
+
+                                    </div>
+                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="/portalberita/Pemerintah Kabupaten Bandung Barat Laksanakan Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat">Pemerintah Kabupaten Bandung Barat Laksanakan Sertifikasi Jasa Konstruksi di Kecamatan Cisomang Barat</a>
+                                </div>
+                            </a>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 px-0">
+                            <a href="/portalberita/Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil ">
+
+                                <div class="position-relative overflow-hidden" style="height: 250px;">
+                                    <img class="img-fluid w-100 h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita6.jpg" style="object-fit: cover;">
+                                    <div class="overlay">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="/portalberita/Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil ">News</a>
+
+                                    </div>
+                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="/portalberita/Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil ">Pemerintah Kabupaten Bandung Barat Berkolaborasi dengan PT. Cisangkan dalam bimbingan teknis untuk para tukang terampil </a>
+                                </div>
+                            </a>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 px-0">
+                            <a href="/portalberita/Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi">
+
+                                <div class="position-relative overflow-hidden" style="height: 250px;">
+                                    <img class="img-fluid w-100 h-100" src="https://sipjakikbb.com/storage/berita/databerita/berita5.jpg" style="object-fit: cover;">
+                                    <div class="overlay">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2" href="/portalberita/Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi">News</a>
+
+                                    </div>
+                                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="/portalberita/Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi">Transformasi Digital di Kabupaten Bandung Barat: Sistem Informasi Pembina Jasa Konstruksi Hadir untuk Memperbaiki Pengelolaan Konstruksi</a>
+                                </div>
+                            </a>
+
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main News Slider End -->
+
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
+
+
 
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
