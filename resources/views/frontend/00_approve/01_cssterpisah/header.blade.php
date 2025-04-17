@@ -30,8 +30,6 @@
 <!-- Import Font Poppins -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
 	<!-- favicons Icons -->
 	{{-- <link rel="apple-touch-icon" sizes="180x180" href="/assets/approve/image/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/assets/approve/image/favicon/favicon-32x32.png">
