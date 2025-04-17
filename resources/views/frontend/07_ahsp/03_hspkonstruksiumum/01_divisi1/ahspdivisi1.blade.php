@@ -112,25 +112,27 @@ table.zebra-table {
 
                     <div class="col-lg-12" style="background: #f3f2ed; border-radius:15px;">
                         <div style="display: flex; gap: 20px; margin-top: 20px;">
-                            <!-- Tombol Tutup dengan warna hijau -->
+                            <!-- Tombol Tutup -->
                             <button onclick="window.history.back()"
-                                    style="padding: 10px 40px; width: 200px; height: 60px; font-size: 16px;
-                                           background-color: black; color: white; border: none; border-radius: 10px;
-                                           cursor: pointer; transition: 0.3s;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+                                style="padding: 10px 40px; width: 200px; height: 60px; font-size: 16px;
+                                       background-color: black; color: white; border: none; border-radius: 10px;
+                                       cursor: pointer; transition: 0.3s;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
                                 ❌ Tutup
                             </button>
 
-                            <!-- Tombol Download Berkas -->
-                            {{-- <button style="padding: 15px 40px; width: 150px; height: 60px; font-size: 16px;
-                                          background-color: navy; color: white; border: none; border-radius: 10px;
-                                          cursor: pointer; transition: 0.3s;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                <i class="fas fa-download" style="margin-right: 10px;"></i> Download
-                            </button> --}}
+                            <!-- Tombol Download PDF -->
+                            <button onclick="downloadRABPDF()"
+                                style="padding: 10px 40px; width: 200px; height: 60px; font-size: 16px;
+                                       background-color: darkgreen; color: white; border: none; border-radius: 10px;
+                                       cursor: pointer; transition: 0.3s;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='darkgreen';"
+                                onmouseout="this.style.backgroundColor='darkgreen'; this.style.color='white';">
+                                📥 Download PDF
+                            </button>
                         </div>
+
                                <br>
                             <h4>Analisa Harga Satuan Pekerjaan</h4>
                     <hr>
@@ -150,6 +152,9 @@ table.zebra-table {
                     <hr>
 
                         <div class="table-responsive">
+                            <div id="rabTable">
+                                <!-- TABEL YANG KAMU PUNYA DI SINI -->
+
                             <table class="zebra-table table-bordered table-striped">
                                 <thead style="background-color: #0bb928; color: white;">
                                     <tr>
@@ -248,6 +253,7 @@ table.zebra-table {
                                         <td class="text-end"><strong style="color:red;">{{ number_format($totalkeuntungan, 2, ',', '.') }}</strong></td>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -260,3 +266,20 @@ table.zebra-table {
 
 
 @include('frontend.00_approve.01_cssterpisah.footer2')
+
+
+<script>
+    function downloadRABPDF() {
+        const element = document.getElementById('rabTable');
+
+        const opt = {
+            margin:       0.2,
+            filename:     '{{ Str::slug($data->namapekerjaan ?? "rab_pekerjaan", "_") }}.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    }
+</script>
