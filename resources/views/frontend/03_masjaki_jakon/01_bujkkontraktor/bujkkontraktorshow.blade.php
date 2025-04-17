@@ -312,7 +312,7 @@ table.zebra-table {
                             <td>{{ $item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>{{ $item->masaberlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td class="masa-berlaku" data-masaberlaku="{{ $item->masaberlaku ?? '' }}">
-                                <button class="btn-masa-berlaku px-3 py-1 rounded text-sm"></button>
+                                <button class="btn-masa-berlaku">Status</button>
                             </td>
                         </tr>
                         @endforeach
@@ -351,7 +351,7 @@ table.zebra-table {
             const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
 
             // Cek jika masa berlaku kosong
-            if (!masaBerlaku) {
+            if (!masaBerlaku || masaBerlaku === '') {
                 button.classList.add('bg-orange-600', 'text-white'); // Warna oranye untuk suspend
                 button.textContent = 'SUSPEND';
             } else {
@@ -369,4 +369,3 @@ table.zebra-table {
         });
     });
 </script>
-
