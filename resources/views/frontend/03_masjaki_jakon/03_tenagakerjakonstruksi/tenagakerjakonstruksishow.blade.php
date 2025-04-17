@@ -281,7 +281,7 @@
                             type="text"
                             readonly
                             class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;"
+                            style="margin-top: -15px; font-family: Poppins; width:400px;"
                             value="{{ $data->jurusan->jurusan ?? '-' }}"
                         >
                     </div>
@@ -300,7 +300,7 @@
                             type="text"
                             readonly
                             class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;"
+                            style="margin-top: -15px; font-family: Poppins; width:400px;"
                             value="{{ $data->tahunlulus ?? '-' }}"
                         >
                     </div>
