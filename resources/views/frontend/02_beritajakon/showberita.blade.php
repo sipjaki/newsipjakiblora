@@ -187,19 +187,8 @@ table.zebra-table {
 
                         <div class="col-lg-4">
                             <div class="sidebar">
-                                <div class="sidebar-form-content">
-                                    <div class="sidebar__item sidebar__item--search">
-                                        <form action="#" class="sidebar__search">
-                                            <label for="search" class="sr-only">Cari Berita</label><!-- sr-only -->
-                                            <input type="text" placeholder="Cari Berita">
-                                            <button type="submit" aria-label="search submit" class="thm-btn">
-                                                <i class="flaticon-search-interface-symbol"></i>
-                                            </button><!-- thm-btn -->
-                                        </form><!-- sidebar__search -->
-                                    </div><!-- sidebar__item -->
-                                </div><!-- sidebar-form-content -->
-                                <div class="sidebar-widget sidebar-widget-recent-post">
-                                    <h4>Daftar Berita</h4>
+                            <div class="sidebar-widget sidebar-widget-recent-post">
+                                    <h4 style="font-family: 'Poppins', sans-serif;">Daftar Berita</h4>
 
                                     @foreach ($databerita->skip(1)->take(7) as $item)
 
@@ -211,13 +200,13 @@ table.zebra-table {
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <span class="author">
+                                                        <span class="author" style="font-family: 'Poppins', sans-serif;">
                                                             Penulis : <a href="news-details.html">Mas Zaki</a>
                                                         </span><!-- author -->
                                                     </div><!-- sidebar-meta-icon -->
                                                 </div><!-- sidebar-meta-item -->
                                                 <div class="sidebar-post-title">
-                                                    <h5><a href="/beritajakon/{{$item->judulberita}}">{{$item->judulberita}}</a></h5>
+                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/beritajakon/{{$item->judulberita}}">{{$item->judulberita}}</a></h5>
                                                 </div><!-- sidebar-post-title -->
                                             </div><!-- sidebar-meta -->
                                         </div><!-- sidebar-recent-post-content -->
