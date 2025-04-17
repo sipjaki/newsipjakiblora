@@ -192,6 +192,11 @@ table.zebra-table {
                     </thead>
                     <tbody id="tableBody">
                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                        @if($data->isEmpty())
+                        <tr>
+                            <td colspan="5" style="text-align: center; color: red;">Data Tidak Ditemukan !</td>
+                        </tr>
+                    @else
                         @foreach ($data as $item)
                         <tr>
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
@@ -199,11 +204,11 @@ table.zebra-table {
                                 @if ($item->penyediastatustertibjakon && $item->penyediastatustertibjakon->penyedia)
                                     {{$item->penyediastatustertibjakon->penyedia}}
                                 @else
-                                    <span class="text-danger">Data Tidak Tersedia</span>
+                                    <span class="text-danger">Data Belum Diupdate</span>
                                 @endif
                             </td>
-                            <td>{{ $item->namabadanusaha ?? 'Tidak Tersedia' }}</td>
-                            <td>{{ $item->pjbu ?? 'Tidak Tersedia' }}</td>
+                            <td>{{ $item->namabadanusaha ?? 'Data Belum Diupdate' }}</td>
+                            <td>{{ $item->namapekerjaan ?? 'Data Belum Diupdate' }}</td>
                             <td style="text-align: center">
                                 <a href="/tertibjasakonstruksilist/{{$item->namabadanusaha}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
@@ -211,6 +216,8 @@ table.zebra-table {
                             </td>
                         </tr>
                         @endforeach
+                    @endif
+
                     </tbody>
                 </table>
 
