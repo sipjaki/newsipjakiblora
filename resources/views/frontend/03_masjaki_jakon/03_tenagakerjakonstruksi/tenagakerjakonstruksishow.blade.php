@@ -445,13 +445,16 @@
 
             </form>
 
-            <button onclick="window.history.back();" class="px-3 py-2 text-white rounded-[15px] border border-slate-700 flex items-center gap-2" style="background-color: #64748b; width: auto; position: absolute; right: 10px;">
-                <!-- SVG Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7l-7-7 7-7"/>
-                </svg>
-                Kembali
-            </button>
+            <div style="position: relative;">
+                <button onclick="window.history.back();" class="px-3 py-2 text-white rounded-[15px] border border-slate-700 flex items-center gap-2" style="background-color: #64748b; width: auto; position: absolute; right: 10px;">
+                    <!-- SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7l-7-7 7-7"/>
+                    </svg>
+                    Kembali
+                </button>
+            </div>
+
 
 
          </div>
