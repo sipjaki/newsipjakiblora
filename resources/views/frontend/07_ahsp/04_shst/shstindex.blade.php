@@ -280,9 +280,6 @@ table.zebra-table {
             </div>
 
             {{-- ========================================================================== --}}
-
-
-            @include('frontend.00_approve.01_cssterpisah.paginations')
         </div>
 
         </div>
