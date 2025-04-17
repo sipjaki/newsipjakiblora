@@ -178,36 +178,60 @@ table.zebra-table {
             </div>
 
             <div class="table-wrapper">
-
-                <table class="zebra-table fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+                <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr>
                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:80px;"> No <span class="sort-icon">⇅</span></th>
                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:100px;"> Penyelenggara <span class="sort-icon">⇅</span></th>
                             <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:400px;"> Kegiatan Konstruksi <span class="sort-icon">⇅</span></th>
                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Badan Usaha <span class="sort-icon">⇅</span></th>
-                          <th style="text-align:center; width:100px;"> View </th>
+                            <th style="text-align:center; width:100px;"> View </th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
-                        @foreach ($data as $item )
-                        <tr>
-                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                            <td>{{$item->penyediastatustertibjakon->penyedia}}</td>
-                            <td>{{$item->kegiatankonstruksi}}</td>
-                            {{-- <td>{{$item->nomorkontrak}}</td> --}}
-                            <td>{{$item->bujk}}</td>
-                            <td style="text-align: center">
-                                <a href="/tertibjasakonstruksipenyelenggaraan/{{$item->kegiatankonstruksi}}">
-                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        @endforeach
+                        @if($data->isEmpty())
+                            <tr>
+                                <td colspan="5" style="text-align: center; color: red;">Data Tidak Ditemukan !</td>
+                            </tr>
+                        @else
+                            @foreach ($data as $item)
+                            <tr>
+                                <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                <td style="text-align: center;">
+                                    @if ($item->penyediastatustertibjakon && $item->penyediastatustertibjakon->penyedia)
+                                        {{$item->penyediastatustertibjakon->penyedia}}
+                                    @else
+                                        <button class="btn" style="background-color: navy; color: white;">
+                                            Data Belum Diupdate
+                                        </button>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if(!empty($item->kegiatankonstruksi))
+                                        {{ $item->kegiatankonstruksi }}
+                                    @else
+                                        <button class="btn-navy">Data Belum Diupdate</button>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if(!empty($item->bujk))
+                                        {{ $item->bujk }}
+                                    @else
+                                        <button class="btn-navy">Data Belum Diupdate</button>
+                                    @endif
+                                </td>
+                                <td style="text-align: center">
+                                    <a href="/tertibjasakonstruksipenyelenggaraan/{{$item->kegiatankonstruksi}}">
+                                        <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        @endif
                     </tbody>
                 </table>
+
 
 
             </div>
