@@ -190,61 +190,116 @@ table.zebra-table {
                 </div>
 
                 <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
-                <table class="zebra-table fl-table">
-                    <thead>
-                        <tr>
-                            <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
-                            <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Gedung Negara Per M1 (Meter Lari)</th>
-                        </tr>
-                        <tr>
-                            <th>Pagar Depan M1 (Meter Lari) Rupiah</th>
-                            <th>Pagar Belakang M1 (Meter Lari) Rupiah</th>
-                            <th>Pagar Samping M1 (Meter Lari) Rupiah</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                    <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
 
-                        @foreach ($data as $item )
-                        <tr>
-                            <td style="width:100px;"></td>
-                            <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahdepan, 0, ',', '.') }},00</td>
-                            <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahbelakang, 0, ',', '.') }},00</td>
-                            <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahsamping, 0, ',', '.') }},00</td>
-                        </tr>
+                        <table class="zebra-table fl-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center; width:100px;" rowspan="2"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
+                                <th style="text-align:center" colspan="2"> Harga Satuan Pembangunan Gedung Negara Per M2 (Meter Persegi)</th>
+                                {{-- <th style="text-align:center" >View</th> --}}
+                            </tr>
+                            <tr>
+                                <th style="text-align: center">Bangunan Tidak Sederhana</th>
+                                <th style="text-align: center">Bangunan Sederhana</th>
+                            </tr>
+                        </thead>
+                        <tbody style="background: white">
 
-                        @endforeach
-                    </tbody>
-                </table>
-                </div>
+                            @foreach ($data as $item )
+                            <tr>
+                                <td style="width:100px;"></td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->bangunankantortidaksederhana, 0, ',', '.') }},00</td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->bangunankantorsederhana, 0, ',', '.') }},00</td>
+                            </tr>
 
-                <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
-                <table class="zebra-table fl-table">
-                    <thead>
-                        <tr>
-                            <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
-                            <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Rumah Negara Per M1 (Meter Lari) </th>
-                        </tr>
-                        <tr>
-                            <th style="text-align: center">Pagar Depan Rumah Negara M1 (Meter Lari) Rupiah</th>
-                            <th style="text-align: center">Pagar Samping Rumah Negara M1 (Meter Lari) Rupiah</th>
-                            <th style="text-align: center">Pagar Belakang Rumah Negara M1 (Meter Lari) Rupiah</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    </div>
 
-                        @foreach ($data as $item )
-                        <tr>
-                            <td style="width:100px;"></td>
-                            <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegaradepan, 0, ',', '.') }},00</td>
-                            <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegarabelakang, 0, ',', '.') }},00</td>
-                            <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegarasamping, 0, ',', '.') }},00</td>
-                        </tr>
+                    <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
+                    <table class="zebra-table fl-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center: width:100px;" rowspan="3" ><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
+                                <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Rumah Negara Per M2 (Meter Persegi)</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center;">Rumah Negara Tipe A</th>
+                                <th style="text-align: center;">Rumah Negara Tipe B</th>
+                                <th style="text-align: center;">Rumah Negara Tipe C, D, E</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $item )
+                            <tr>
+                                <td style="width:100px;"></td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->rumahnegaratipea, 0, ',', '.') }},00</td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->rumahnegaratipeb, 0, ',', '.') }},00</td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->rumahnegaratipecde, 0, ',', '.') }},00</td>
+                            </tr>
 
-                        @endforeach
-                    </tbody>
-                </table>
-                </div>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    </div>
 
+                    <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
+                    <table class="fl-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
+                                <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Gedung Negara Per M1 (Meter Lari)</th>
+                            </tr>
+                            <tr>
+                                <th>Pagar Depan M1 (Meter Lari) Rupiah</th>
+                                <th>Pagar Belakang M1 (Meter Lari) Rupiah</th>
+                                <th>Pagar Samping M1 (Meter Lari) Rupiah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach ($data as $item )
+                            <tr>
+                                <td style="width:100px;"></td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahdepan, 0, ',', '.') }},00</td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahbelakang, 0, ',', '.') }},00</td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahsamping, 0, ',', '.') }},00</td>
+                            </tr>
+
+                            @endforeach
+                        </tbody>
+                    </table>
+                    </div>
+
+                    <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
+                    <table class="zebra-table fl-table">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
+                                <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Rumah Negara Per M1 (Meter Lari) </th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center">Pagar Depan Rumah Negara M1 (Meter Lari) Rupiah</th>
+                                <th style="text-align: center">Pagar Samping Rumah Negara M1 (Meter Lari) Rupiah</th>
+                                <th style="text-align: center">Pagar Belakang Rumah Negara M1 (Meter Lari) Rupiah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach ($data as $item )
+                            <tr>
+                                <td style="width:100px;"></td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegaradepan, 0, ',', '.') }},00</td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegarabelakang, 0, ',', '.') }},00</td>
+                                <td style="text-align: center; font-weight:bold; font-size:18px;">{{ 'Rp ' . number_format($item->pagarrumahnegarasamping, 0, ',', '.') }},00</td>
+                            </tr>
+
+                            @endforeach
+                        </tbody>
+                    </table>
+                    </div>
             </div>
 
             @include('frontend.00_approve.01_cssterpisah.paginations')
