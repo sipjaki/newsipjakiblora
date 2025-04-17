@@ -170,27 +170,24 @@
     {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
 
-
     <section class="main-slider">
         <div class="main-slider-swiper owl-carousel owl-theme">
             @foreach ($dataheaderberanda as $item)
             <div class="item">
-                <!-- Slider Background with Overlay -->
-                <div class="item-slider-bg" style="background-image: url('{{ asset('storage/' . $item->header) }}');">
-                    <div class="slider-overlay"></div>
-                </div>
+                <!-- Bright Background Image -->
+                <div class="item-slider-bg" style="background-image: url('{{ asset('storage/' . $item->header) }}');"></div>
 
-                <!-- Slider Content -->
+                <!-- Vibrant Text Content -->
                 <div class="container h-100">
                     <div class="row align-items-center h-100">
-                        <div class="col-md-8 mx-auto text-center">
+                        <div class="col-lg-8 col-md-10 mx-auto text-center">
                             <div class="slider-content">
                                 <h4 class="slider-title animated fadeInDown">
                                     {!! $item->judul !!}
                                 </h4>
-                                <!-- Optional Button -->
-                                <!-- <a href="#" class="btn btn-primary btn-lg mt-3 animated fadeInUp">
-                                    Discover More
+                                <!-- Optional Bright Button -->
+                                <!-- <a href="#" class="btn btn-vibrant btn-lg mt-4 animated fadeInUp">
+                                    Selengkapnya
                                 </a> -->
                             </div>
                         </div>
@@ -218,37 +215,46 @@
             background-size: cover;
             background-position: center;
             z-index: 1;
-        }
-
-        .slider-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 2;
+            /* Brighten the image */
+            filter: brightness(1.1);
         }
 
         .slider-content {
             position: relative;
-            z-index: 3;
-            color: #fff;
-            padding: 20px;
+            z-index: 2;
         }
 
         .slider-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.3),
+                0 0 20px rgba(255,255,255,0.2),
+                0 0 5px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .btn-vibrant {
+            background: linear-gradient(45deg, #FF9A8B, #FF6B95, #FF8E53);
+            border: none;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255,105,149,0.4);
+        }
+
+        @media (max-width: 992px) {
+            .slider-title {
+                font-size: 2.5rem;
+            }
         }
 
         @media (max-width: 768px) {
             .slider-title {
                 font-size: 2rem;
+                padding: 0 15px;
             }
-
             .main-slider {
                 height: 70vh;
             }
