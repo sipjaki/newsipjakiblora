@@ -11,23 +11,39 @@ ul.list-unstyled {
 </style>
 
 <header class="header">
-    <div class="topbar" style="background: #2ECC71; padding: 10px 0; border-radius: 15px; margin: 10px 20px;">
+    <div class="topbar" style="background: #2ECC71; padding: 10px 0; border-radius: 15px;">
         <div class="topbar-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 20px;">
 
+            <!-- Sosial Media (Background Putih dan Border Radius) -->
+            <div class="topbar-socials" style="display: flex; gap: 15px; background-color: white; border-radius: 15px; padding: 8px;">
+                <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
+                    <i class="fa-brands fa-tiktok" style="font-size: 24px; color: #2ECC71;"></i>
+                </a>
+                <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
+                    <i class="fa-brands fa-instagram" style="font-size: 24px; color: #2ECC71;"></i>
+                </a>
+                <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 24px; color: #2ECC71;"></i>
+                </a>
+                <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
+                    <i class="fa-brands fa-facebook" style="font-size: 24px; color: #2ECC71;"></i>
+                </a>
+            </div>
+
             <!-- Info Berjalan (Background Hijau Tua dan Border Radius) -->
-            <div class="topbar-info" style="flex: 1; margin-left: 20px; background-color: #1e7e34; border-radius: 15px; padding: 10px;">
+            <div class="topbar-info" style="flex: 1; margin-left: 20px;">
                 <div class="topbar-text" style="
                     border-radius: 15px;
-                    background-color: white;
-                    color: green;
+                    background-color: #1e7e34;
+                    color: white;
                     padding: 10px 15px;
                     overflow: hidden;
-                    font-size: 18px;
+                    font-size: 20px;
                     white-space: nowrap;
                     font-family: 'Poppins', sans-serif;
                     width: 100%;">
-                    <marquee behavior="scroll" direction="left" scrollamount="5">
-                        <a href="#" style="color: navy; text-decoration: none;">
+                    <marquee behavior="scroll" direction="left" scrollamount="6">
+                        <a href="#" style="color: white; text-decoration: none;">
                             Selamat Datang di Mas Jaki DPUPR Kab Blora - Sistem Informasi Pembina Jasa Konstruksi
                             Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
                         </a>
@@ -35,21 +51,6 @@ ul.list-unstyled {
                 </div>
             </div>
 
-            <!-- Sosial Media (White Background, Border Radius) -->
-            <div class="topbar-socials" style="display: flex; gap: 12px; background-color: white; border-radius: 15px; padding: 8px;">
-                <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
-                    <i class="fa-brands fa-tiktok" style="font-size: 20px; color: #2ECC71;"></i>
-                </a>
-                <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
-                    <i class="fa-brands fa-instagram" style="font-size: 20px; color: #2ECC71;"></i>
-                </a>
-                <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
-                    <i class="fa-brands fa-whatsapp" style="font-size: 20px; color: #2ECC71;"></i>
-                </a>
-                <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
-                    <i class="fa-brands fa-facebook" style="font-size: 20px; color: #2ECC71;"></i>
-                </a>
-            </div>
         </div>
     </div>
 
