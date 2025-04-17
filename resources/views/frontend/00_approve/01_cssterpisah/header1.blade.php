@@ -282,7 +282,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
+                                    <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
                                         Tenaga Kerja Konstruksi
                                     </a>
                                     <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
@@ -292,7 +292,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
+                                    <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
                                         Profil Paket Pekerjaan Konstruksi & Konsultasi
                                     </a>
                                     <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
