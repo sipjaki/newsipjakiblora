@@ -186,15 +186,15 @@ table.zebra-table {
                 <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
             </div>
 
-            <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl" style="margin-top:-40px;">
+            <div class="w-full bg-[#000080] flex items-center gap-[10px] p-[10px_14px] rounded-xl" style="margin-top:-40px;">
                 <div class="w-5 h-5 flex shrink-0">
                     <img src="/assets/new/icons/story.svg" alt="icon">
                 </div>
                 <p class="text-white font-normal text-sm" style="font-family: Poppins;">
                     <span class="font-bold">Informasi Data: {{$data->namalengkap}}</span>
                 </p>
-
             </div>
+
 
             <form action="" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
                 <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
