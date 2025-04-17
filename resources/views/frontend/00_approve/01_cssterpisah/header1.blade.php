@@ -223,30 +223,32 @@
                             </ul><!-- list-unstyled -->
                         </li><!--has-dropdown-->
 
-
                         <li class="has-dropdown" style="position: relative;">
-                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 BERITA
                             </a>
-                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 200px;">
-                                <li><a href="#" style="color: white; padding: 8px 20px; display: block;">Peraturan</a>
-                                    <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
-                                        <li><a href="/standarbiayaumummasjaki" style="color: white; padding: 8px 20px; display: block;">Standar Biaya Umum</a></li>
-                                        <li><a href="/peraturan/undangundang" style="color: white; padding: 8px 20px; display: block;">Undang - Undang</a></li>
-                                        <li><a href="/peraturan/pemerintah" style="color: white; padding: 8px 20px; display: block;">Peraturan Pemerintah</a></li>
-                                        <li><a href="/peraturan/presiden" style="color: white; padding: 8px 20px; display: block;">Peraturan Presiden</a></li>
-                                        <li><a href="/peraturan/menteri" style="color: white; padding: 8px 20px; display: block;">Peraturan Menteri</a></li>
-                                        <li><a href="/peraturan/keputusanmenteri" style="color: white; padding: 8px 20px; display: block;">Keputusan Menteri</a></li>
-                                        <li><a href="/peraturan/suratedaranmenteri" style="color: white; padding: 8px 20px; display: block;">Surat Edaran Menteri</a></li>
-                                        <li><a href="/peraturan/referensi" style="color: white; padding: 8px 20px; display: block;">Referensi</a></li>
-                                        <li><a href="/peraturan/daerah" style="color: white; padding: 8px 20px; display: block;">Peraturan Daerah</a></li>
-                                        <li><a href="/peraturan/peraturangubernur" style="color: white; padding: 8px 20px; display: block;">Peraturan Gubernur</a></li>
-                                        <li><a href="/peraturan/walikotadanbupati" style="color: white; padding: 8px 20px; display: block;">Peraturan Walikota/Bupati</a></li>
-                                        <li><a href="/peraturan/suratkeputusan" style="color: white; padding: 8px 20px; display: block;">Surat Keputusan</a></li>
-                                    </ul><!-- list-unstyled -->
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 220px;">
+                                <li style="position: relative;">
+                                    <a href="#" style="color: white; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
+                                        Peraturan
+                                    </a>
+                                    <ul class="list-unstyled" style="position: absolute; left: 100%; top: 0; background-color: #444; padding: 10px 0; border-radius: 5px; display: none; width: 250px;">
+                                        <li><a href="/standarbiayaumummasjaki" style="color: white; padding: 10px 20px; display: block; font-size: 15px; font-family: 'Poppins', sans-serif;">Standar Biaya Umum</a></li>
+                                        <li><a href="/peraturan/undangundang" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Undang - Undang</a></li>
+                                        <li><a href="/peraturan/pemerintah" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Peraturan Pemerintah</a></li>
+                                        <li><a href="/peraturan/presiden" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Peraturan Presiden</a></li>
+                                        <li><a href="/peraturan/menteri" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Peraturan Menteri</a></li>
+                                        <li><a href="/peraturan/keputusanmenteri" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Keputusan Menteri</a></li>
+                                        <li><a href="/peraturan/suratedaranmenteri" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Surat Edaran Menteri</a></li>
+                                        <li><a href="/peraturan/referensi" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Referensi</a></li>
+                                        <li><a href="/peraturan/daerah" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Peraturan Daerah</a></li>
+                                        <li><a href="/peraturan/peraturangubernur" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Peraturan Gubernur</a></li>
+                                        <li><a href="/peraturan/walikotadanbupati" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Peraturan Walikota/Bupati</a></li>
+                                        <li><a href="/peraturan/suratkeputusan" style="color: white; padding: 10px 20px; display: block; font-size: 15px;">Surat Keputusan</a></li>
+                                    </ul>
                                 </li>
-                                <li><a href="/beritajakon" style="color: white; padding: 8px 20px; display: block;">Berita Jakon</a></li>
-                                <li><a href="/artikeljakon" style="color: white; padding: 8px 20px; display: block;">Artikel Jakon</a></li>
+                                <li><a href="/beritajakon" style="color: white; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Berita Jakon</a></li>
+                                <li><a href="/artikeljakon" style="color: white; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Artikel Jakon</a></li>
                             </ul><!-- list-unstyled -->
                         </li><!--has-dropdown-->
 
@@ -455,4 +457,11 @@
             }
         });
     });
+        .has-dropdown:hover > ul {
+        display: block !important;
+    }
+    .has-dropdown ul li:hover > ul {
+        display: block !important;
+    }
+
 </script>
