@@ -135,7 +135,7 @@ class PembinaanController extends Controller
         $user = Auth::user();
 
         return view('frontend.04_pembinaan.01_agendapembinaan.daftaragenda', [
-            'title' => 'Daftar Agenda Pelatihan Jakon Blora',
+            'title' => 'Daftar Peserta Pelatihan Jakon Blora',
             'data' => $data,
             'perPage' => $perPage,
             'search' => $search,
