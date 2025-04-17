@@ -159,7 +159,6 @@ table.zebra-table {
                             <th style="text-align: center;">Satuan Kerja</th>
                             <th style="text-align: center;">Jenis Pekerjaan</th>
                             <th style="text-align: center;">Badan Usaha</th>
-                            <th style="text-align: center;">Badan Usaha</th>
                             <th style="text-align: center;">Tahun </th>
                             <th style="text-align: center;">Sumber Dana</th>
                             <th style="text-align: center;">View</th>

@@ -22,9 +22,11 @@ class PaketpekerjaanmasjakiController extends Controller
         if ($search) {
             $query->where('namapekerjaan', 'LIKE', "%{$search}%")
                   ->orWhere('cvptpenyedia', 'LIKE', "%{$search}%")
-                  ->orWhere('dinas', 'LIKE', "%{$search}%")
                   ->orWhereHas('profiljenispekerjaan', function ($q) use ($search) {
                       $q->where('jenispekerjaan', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                  })
+                  ->orWhereHas('user', function ($q) use ($search) {
+                      $q->where('name', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                   })
                   ->orWhereHas('tahunpilihan', function ($q) use ($search) {
                       $q->where('tahunpilihan', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
