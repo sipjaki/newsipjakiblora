@@ -186,10 +186,10 @@ table.zebra-table {
                     <thead>
                         <tr>
                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Nama Lengkap <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:100;"> Gender <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:400px;"> Instansi/Asosiasi <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:200;"> Tahun Sertifikasi <span class="sort-icon">⇅</span></th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center;"> Nama Lengkap</th>
+                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center;"> Gender </th>
+                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;"> Instansi/Asosiasi </th>
+                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center;"> Tahun Sertifikasi </th>
                             <th style="text-align:center; width:100px;"> View </th>
                         </tr>
                     </thead>
