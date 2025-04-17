@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\agendaskk;
-use App\Models\allskktenagakerjablora;
+use App\Models\pesertapelatihan;
 use App\Models\materipelatihanskk;
+use App\Models\agendapelatihan;
+use App\Models\allskktenagakerjablora;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -64,15 +66,16 @@ class AgendaskkController extends Controller
 
         // Menggunakan paginate() untuk pagination
         $subdata = materipelatihanskk::where('agendaskk_id', $dataagendaskk->id)->paginate(50);
+
     // Ambil data user saat ini
     $user = Auth::user();
 
     return view('frontend.04_pembinaan.02_agendaskk.02_agendaskkshow', [
-        'title' => 'Agenda Sertifikasi Tenaga Kerja Konstruksi Kabupaten Blora',
+        'title' => 'Agenda Sertifikasi Tenaga Kerja Konstruksi',
         'data' => $dataagendaskk,
-        'datamateripelatihanskk' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+        'datamatertipelatihan' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
         'user' => $user,
-        // 'start' => $start,s
+        // 'start' => $start,
     ]);
     }
 
