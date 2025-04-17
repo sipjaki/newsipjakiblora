@@ -184,7 +184,7 @@ table.zebra-table {
                         <tr>
                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:80px;"> No</th>
                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:250px;"> Kode Proyek</th>
-                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:400px;"> Nama Perusahaan</th>
+                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:400px;"> Nama Pemilik Perusahaan</th>
                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;"> Status Modal</th>
                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:100px;"> Sektor</th>
                           <th style="text-align:center; width:100px;"> View </th>
@@ -196,7 +196,7 @@ table.zebra-table {
                         <tr>
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                             <td class="namalengkap">{{ $item->kodeproyek ?? 'Data Belum Diupdate' }}</td>
-                            <td>{{ $item->namaperusahaan ?? 'Data Belum Diupdate' }}</td>
+                            <td style="text-transform: capitalize">{{ $item->namaperusahaan ?? 'Data Belum Diupdate' }}</td>
                             <td>{{ $item->statusmodal ?? 'Data Belum Diupdate' }}</td>
                             <td style="text-align: center;">{{ $item->sektor ?? 'Data Belum Diupdate' }}</td>
                             <td style="text-align: center">
