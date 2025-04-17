@@ -206,7 +206,11 @@
 			<div class="main-menu-left">
 				<div class="navigation" style="margin-left: 100px;">
 					<ul class="main-menu-list list-unstyled">
-                        <li><a href="/" style="color: white;">BERANDA</a>
+                        <li>
+                            <a href="/" style="color: white; font-family: 'Poppins', sans-serif; text-decoration: none; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+                                BERANDA
+                            </a>
+                        </li>
 
 						<li class="has-dropdown">
 							<a href="#" style="color: white;" >KELEMBAGAAN</a>
