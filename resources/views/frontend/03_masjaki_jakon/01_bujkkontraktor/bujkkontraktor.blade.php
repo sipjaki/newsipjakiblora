@@ -149,6 +149,7 @@ table.zebra-table {
 
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
+        <p>{{$title}}</p>
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
             <div class="table-wrapper">
                 <table class="zebra-table w-full">
