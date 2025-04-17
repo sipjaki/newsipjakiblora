@@ -304,8 +304,11 @@
 
 
 
-                                <h4 style="font-weight:bold;">II. DOWNLOAD MATERI PELATIHAN</h4>
-                    <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
+                                <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                                    <h4 style="font-weight: bold;">DOWNLOAD MATERI PELATIHAN</h4>
+                                </div>
+
+                                <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
                         <table class="zebra-table custom-fl-table" id="sortableTable">
                             <thead>
                                 <tr>
