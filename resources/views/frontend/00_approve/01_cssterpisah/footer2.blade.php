@@ -1,9 +1,9 @@
-
-<div class="bottom-footer" style="background: #1d1d1b">
-    <div class="conatiner">
-        <img src="/assets/icon/logokabupatenblora.png" width="40" height="40" alt="26" style="margin-right: 5px; margin-bottom:5px;" loading="lazy">
-        <img src="/assets/icon/pupr.png" width="40" height="40" alt="26" loading="lazy" style="margin-bottom:5px;">
-        <br>
-    </div><!-- container -->
-    <p style="color: white">© Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah | 2025 </p>
-</div><!--bottom-footer-->
+<div class="bottom-footer" style="background: #1d1d1b; padding: 20px 0;">
+    <div class="container" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px;">
+        <img src="/assets/icon/logokabupatenblora.png" width="40" height="40" alt="Blora" loading="lazy" style="margin-bottom: 5px;">
+        <img src="/assets/icon/pupr.png" width="40" height="40" alt="PUPR" loading="lazy" style="margin-bottom: 5px;">
+        <p style="color: white; margin: 0; font-size: 14px;">
+            © Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah | 2025
+        </p>
+    </div>
+</div>
