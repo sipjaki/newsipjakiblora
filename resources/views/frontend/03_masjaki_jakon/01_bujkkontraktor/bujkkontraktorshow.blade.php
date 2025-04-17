@@ -336,9 +336,8 @@ table.zebra-table {
                             <td>{{ $item->kualifikasi ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>{{ $item->penerbit ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>{{ $item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan' }}</td>
-                            <td>{{ $item->masaberlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
-                            <td>{{ $item->masaberlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
-                            <td class="masa-berlaku" data-masaberlaku="{{ $item->masaberlaku ?? '' }}">
+                            <td>{{ $item->masa_berlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
+                            <td class="masa-berlaku" data-masaberlaku="{{ $item->masa_berlaku ?? '' }}">
                                 <button class="btn-masa-berlaku">Status</button>
                             </td>
                         </tr>
