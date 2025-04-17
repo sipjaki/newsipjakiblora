@@ -139,13 +139,13 @@ table.zebra-table {
 
                                     <!-- Konten dengan Font Poppins dan Ukuran Font 18px -->
                                     <div style="font-family: 'Poppins', sans-serif; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                                        <h4 style="font-size: 18px; color: #2c3e50; font-weight: 600; text-align: center; margin-bottom: 20px; text-transform: uppercase;">
+                                        <h4 style="font-size: 18px; color: #2c3e50; font-weight: 600; text-align: center; margin-bottom: 20px; text-transform: uppercase; font-family: 'Poppins';">
                                             Analisa Harga Satuan Pekerjaan
                                         </h4>
 
                                         <hr style="border: 1px solid #ddd; margin: 20px 0;">
 
-                                        <h4 style="font-size: 18px; color: #34495e; margin-bottom: 10px; font-weight: 500;">
+                                        <h4 style="font-size: 18px; color: #34495e; margin-bottom: 10px; font-weight: 500; font-family: 'Poppins';">
                                             <span style="font-weight: 700;">Kode AHSP :</span>
                                             {{ optional($data->hspdivisi)->id }}.
                                             {{ optional($data->hsppaket)->id }}.
@@ -155,7 +155,7 @@ table.zebra-table {
 
                                         <hr style="border: 1px solid #ddd; margin: 20px 0;">
 
-                                        <h4 style="font-size: 18px; color: #34495e; font-weight: 500;">
+                                        <h4 style="font-size: 18px; color: #34495e; font-weight: 500; font-family: 'Poppins';">
                                             <span style="font-weight: 700;">Jenis Pekerjaan :</span> {{$data->jenispekerjaan}}
                                         </h4>
 
