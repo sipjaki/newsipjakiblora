@@ -167,15 +167,15 @@ table.zebra-table {
                                 <div class="news-details-box-image-inner">
                                     <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid" alt="img-193">
 
-                                    <a href="#" class="news-details-box-date">{{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('l, d F Y') }}</a>
+                                    <a href="#" class="news-details-box-date" style="font-family: 'Poppins', sans-serif;">{{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('l, d F Y') }}</a>
                                 </div><!-- news-details-box-image-inner -->
                             </div><!-- news-details-box-image -->
 
                             <br><br>
                             <div class="news-details-content-box" style="margin-left: 25px;">
-                                <h4>{{$data->judulberita}}</h4>
+                                <h4 style="font-family: 'Poppins', sans-serif;">{{$data->judulberita}}</h4>
                                 <br>
-                                <p style="text-align: justify;">{{$data->keterangan}}
+                                <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$data->keterangan}}
 
                                 </p>
 
