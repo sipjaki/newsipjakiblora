@@ -1,5 +1,5 @@
-<section class="footer" style="background-color: #1d1d1b; color: white;">
-    <div class="footer-inner">
+<section class="footer" style="background-color: #1d1d1b; color: white; padding-bottom: 0; margin-bottom: 0;">
+    <div class="footer-inner" style="padding-bottom: 0; margin-bottom: 0;">
         <div class="container" style="
             max-width: 85%;
             margin: 0 auto;
@@ -8,6 +8,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 10;
+            height: auto;
         ">
             <div class="row">
                 <!-- Kiri -->
@@ -15,21 +16,11 @@
                     <div class="d-flex align-items-center mb-3" style="gap: 10px;">
                         <a href="/"><img src="/assets/icon/logokabupatenblora.png" alt="Logo Blora" width="60" loading="lazy"></a>
                         <a href="/"><img src="/assets/icon/pupr.png" alt="Logo PUPR" width="60" loading="lazy"></a>
-
                     </div>
                     <p style="margin-bottom: 20px; color: white; font-size: 20px; font-family: 'Poppins', sans-serif;">
                         Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora <br>
                         Provinsi Jawa Tengah 58214, Indonesia
                     </p>
-
-                    <!-- Sosial Media -->
-                    {{-- <div class="footer-widget-socials" style="display: flex; gap: 15px; font-size: 20px;">
-                        <a href="mailto:example@email.com" style="color: white;"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="#" style="color: white;"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="https://wa.me/6281234567890" style="color: white;"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" style="color: white;"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#" style="color: white;"><i class="fa-brands fa-youtube"></i></a>
-                    </div> --}}
                 </div>
 
                 <!-- Kanan -->
