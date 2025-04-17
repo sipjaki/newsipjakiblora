@@ -240,6 +240,7 @@ table.zebra-table {
                     border-color: black; /* Change border color on hover */
                 }
             </style>
+            <br><br>
             {{-- @include('frontend.00_approve.01_cssterpisah.paginations') --}}
         </div>
     </div>
