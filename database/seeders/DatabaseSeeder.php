@@ -59637,7 +59637,6 @@ agendapelatihan::create([
     'Keterangan' => 'Pelatihan untuk meningkatkan kualitas tenaga kerja konstruksi.',
     'isiagenda' => 'Pelatihan ini bertujuan untuk meningkatkan kemampuan manajemen konstruksi bagi tenaga kerja di bidang konstruksi. Materi yang diberikan mencakup perencanaan proyek, pengendalian biaya, dan strategi pengawasan yang efektif. Dengan pelatihan ini, diharapkan para peserta dapat lebih profesional dalam mengelola proyek konstruksi secara efisien.',
     'foto' => '01_agendapelatihan/pelatihan.jpg',
-    'materi' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
 ]);
 
 agendapelatihan::create([
@@ -59655,7 +59654,6 @@ agendapelatihan::create([
     'Keterangan' => 'Pelatihan sertifikasi ahli K3 di bidang konstruksi.',
     'isiagenda' => 'Pelatihan ini ditujukan bagi tenaga kerja konstruksi yang ingin mendapatkan sertifikasi Ahli K3. Materi meliputi identifikasi risiko kerja, prosedur keselamatan, serta penerapan standar K3 dalam proyek konstruksi. Dengan mengikuti pelatihan ini, peserta diharapkan mampu meningkatkan keselamatan dan kesehatan kerja di lingkungan konstruksi.',
     'foto' => '01_agendapelatihan/pelatihan.jpg',
-    'materi' => '00_beranda/02_artikeljakon/artikeljakon.pdf',
 ]);
 
 
