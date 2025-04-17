@@ -211,9 +211,8 @@
                                 BERANDA
                             </a>
                         </li>
-
                         <li class="has-dropdown" style="position: relative;">
-                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 KELEMBAGAAN
                             </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 200px;">
@@ -222,6 +221,7 @@
                                 <li><a href="/profil/tupoksi" style="color: white; padding: 8px 20px; display: block;">Tupoksi Jakon DPUPR Blora</a></li>
                             </ul><!-- list-unstyled -->
                         </li><!--has-dropdown-->
+
 
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
@@ -433,3 +433,25 @@
 		</div><!--main-menu-inner-->
 	</div><!--main-menu-->
 </header><!--header-->
+
+<script>
+    // Pilih semua elemen yang memiliki class 'has-dropdown'
+    const dropdowns = document.querySelectorAll('.has-dropdown');
+
+    dropdowns.forEach(dropdown => {
+        // Tangani klik pada elemen <a> yang membuka dropdown
+        dropdown.querySelector('.dropdown-toggle').addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah link melakukan navigasi
+
+            // Cari menu <ul> terkait
+            const menu = dropdown.querySelector('ul');
+
+            // Toggle visibilitas dropdown menu
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        });
+    });
+</script>
