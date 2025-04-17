@@ -280,7 +280,7 @@ table.zebra-table {
             filename:     '{{ Str::slug($data->jenispekerjaan ?? "RAB_PEKERJAAN", "_") }}.pdf',  // nama file berdasarkan pekerjaan
             image:        { type: 'jpeg', quality: 0.98 },
             html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' } // Orientasi PDF landscape
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' } // Format halaman A4, landscape
         };
 
         html2pdf().set(opt).from(element).save(); // Convert ke PDF dan save
