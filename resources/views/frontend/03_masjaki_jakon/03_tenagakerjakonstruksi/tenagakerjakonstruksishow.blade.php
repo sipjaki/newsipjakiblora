@@ -208,11 +208,11 @@
                     <!-- Badan Usaha -->
                     <div class="flex flex-col gap-2 w-full">
                         <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Icon Office Building -->
+                            <!-- Icon User -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 21h18M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16M9 8h6M9 12h6M9 16h6" />
+                                    d="M5.121 17.804A9 9 0 1112 21a9.003 9.003 0 01-6.879-3.196zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
                             Nama Lengkap
                         </label>
@@ -228,10 +228,10 @@
                     <!-- Alamat Badan Usaha -->
                     <div class="flex flex-col gap-2 w-full">
                         <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
+                            <!-- Location Icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                                    d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10s8-4.5 8-10a8 8 0 10-16 0c0 5.5 8 10 8 10z" />
                             </svg>
                             Alamat
                         </label>
@@ -244,224 +244,200 @@
                             value="{{ $data->alamat ?? '-' }}"
                         >
                     </div>
+
                 </div>
 
                 <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
                     <!-- Alamat Badan Usaha -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Sekolah/Universitas/Instansi
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins; width:400px;"
-                            value="{{ $data->namasekolah->namasekolah ?? '-' }}"
-                        >
-                    </div>
+<!-- Sekolah/Universitas/Instansi -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- School Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H6m6 0h6" />
+        </svg>
+        Sekolah/Universitas/Instansi
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins; width:400px;"
+        value="{{ $data->namasekolah->namasekolah ?? '-' }}">
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Jurusan
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins; width:200px;"
-                            value="{{ $data->jurusan->jurusan ?? '-' }}"
-                        >
-                    </div>
+<!-- Jurusan -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Book Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 20h9M12 4h9M3 6h6M3 10h6M3 14h6M3 18h6" />
+        </svg>
+        Jurusan
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins; width:200px;"
+        value="{{ $data->jurusan->jurusan ?? '-' }}">
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Tahun Lulus
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins; width:200px;"
-                            value="{{ $data->tahunlulus ?? '-' }}"
-                        >
-                    </div>
+<!-- Tahun Lulus -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Calendar Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3M5 11h14M5 19h14M5 5h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" />
+        </svg>
+        Tahun Lulus
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins; width:200px;"
+        value="{{ $data->tahunlulus ?? '-' }}">
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Jabatan Kerja
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins; width:400px;"
-                            value="{{ $data->jabatankerja->jabatankerja ?? '-' }}"
-                        >
-                    </div>
+<!-- Jabatan Kerja -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Briefcase Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M16 7V5a2 2 0 00-2-2H10a2 2 0 00-2 2v2m-4 4h16M4 11v8a2 2 0 002 2h12a2 2 0 002-2v-8" />
+        </svg>
+        Jabatan Kerja
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins; width:400px;"
+        value="{{ $data->jabatankerja->jabatankerja ?? '-' }}">
+</div>
                 </div>
 
 
                 <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
                     <!-- Alamat Badan Usaha -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Jenjang Pendidikan
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins; width:375px;"
-                            value="{{ $data->jenjangpendidikan->jenjangpendidikan ?? '-' }}"
-                        >
-                    </div>
+<!-- Jenjang Pendidikan -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Graduation Hat Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6V2m0 4l-8 4v4l8 4 8-4V10l-8-4z" />
+        </svg>
+        Jenjang Pendidikan
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins; width:375px;"
+        value="{{ $data->jenjangpendidikan->jenjangpendidikan ?? '-' }}">
+</div>
 
-                    <!-- Alamat Badan Usaha -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Jenjang
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins; width:375px;"
-                            value="{{ $data->jenjang->jenjang ?? '-' }}"
-                        >
-                    </div>
+<!-- Jenjang -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- School Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H6m6 0h6" />
+        </svg>
+        Jenjang
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins; width:375px;"
+        value="{{ $data->jenjang->jenjang ?? '-' }}">
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            LSP Penerbit
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins; width:450px;"
-                            value="{{ $data->lpspenerbit->lpspenerbit ?? '-' }}"
-                        >
-                    </div>
+<!-- LSP Penerbit -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Certificate Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3M5 11h14M5 19h14M5 5h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" />
+        </svg>
+        LSP Penerbit
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins; width:450px;"
+        value="{{ $data->lpspenerbit->lpspenerbit ?? '-' }}">
+</div>
                 </div>
 
 
                 <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
                     <!-- Alamat Badan Usaha -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Tanggal Terbit
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;"
-                            value="{{ $data->tanggalterbit ?? '-' }}"
-                        >
-                    </div>
+<!-- Tanggal Terbit -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Calendar Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 4h18M3 10h18M3 16h18M3 20h18" />
+        </svg>
+        Tanggal Terbit
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins;"
+        value="{{ $data->tanggalterbit ?? '-' }}">
+</div>
 
-                    <!-- Alamat Badan Usaha -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Tanggal Habis
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;"
-                            value="{{ $data->tanggalhabis ?? '-' }}"
-                        >
-                    </div>
+<!-- Tanggal Habis -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Calendar Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 4h18M3 10h18M3 16h18M3 20h18" />
+        </svg>
+        Tanggal Habis
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins;"
+        value="{{ $data->tanggalhabis ?? '-' }}">
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Building Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Status Terbit
-                        </label>
-                        <input
-                            id="alamat"
-                            type="text"
-                            readonly
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;"
-                            value="{{ $data->statusterbit ?? '-' }}"
-                        >
-                    </div>
+<!-- Status Terbit -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Status Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 3v18h18V3H3z" />
+        </svg>
+        Status Terbit
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins;"
+        value="{{ $data->statusterbit ?? '-' }}">
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label for="status-terbit" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
-                            </svg>
-                            Masa Berlaku
-                        </label>
+<!-- Masa Berlaku -->
+<div class="flex flex-col gap-2 w-full">
+    <label for="status-terbit" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Clock Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6V12L15 15M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+        </svg>
+        Masa Berlaku
+    </label>
 
-                        <div class="masa-berlaku" data-masaberlaku="{{ $data->tanggalhabis ?? '' }}">
-                            <button class="btn-masa-berlaku px-4 py-2 rounded-md font-semibold w-full" disabled>Status</button>
-                        </div>
-                    </div>
+    <div class="masa-berlaku" data-masaberlaku="{{ $data->tanggalhabis ?? '' }}">
+        <button class="btn-masa-berlaku px-4 py-2 rounded-md font-semibold w-full" disabled>Status</button>
+    </div>
+</div>
 
                 </div>
 
