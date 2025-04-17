@@ -264,6 +264,24 @@ ul.list-unstyled {
     </ul>
 </li>
 
+<li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        BERITA 2
+    </a>
+    <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
+        <li style="position: relative;">
+            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                Peraturan
+            </a>
+            <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0;">
+                <!-- Nested items go here -->
+            </ul>
+        </li>
+        <li><a href="/beritajakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
+        <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
+    </ul>
+</li>
+
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" class="dropdown-toggle" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 DATA JAKON
