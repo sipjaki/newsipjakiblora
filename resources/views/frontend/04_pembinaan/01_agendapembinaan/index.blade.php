@@ -108,11 +108,11 @@ table.zebra-table {
         <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
         <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
           <span>/</span>
-          <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px;" style="color: blue">
+          <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px;">
             {{$title}}
           </a>
           <span>/</span>
-          <a href="/404" class="font-medium text-black" style="font-size: 16px;">
+          <a href="/datajakon/statistikabujkblora" class="font-medium text-black" style="font-size: 16px;">
             Data Statistik
           </a>
         </div>
@@ -128,7 +128,7 @@ table.zebra-table {
       <input
         type="text"
         id="searchInput"
-        placeholder="Cari Paket Pekerjaan ..."
+        placeholder="Cari Data ..."
         oninput="searchTable()"
         class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent font-[Poppins]"
       />
@@ -150,56 +150,122 @@ table.zebra-table {
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
-
+            <div style="display: flex; justify-content: center; margin-bottom: -20px;">
+                <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
+                    <button type="button" style="
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        padding: 12px 20px;
+                        font-size: 16px;
+                        font-family: 'Poppins', sans-serif;
+                        border: 1px solid #28a745;
+                        background-color: #28a745;
+                        color: white;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        width: 100%;
+                    "
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+                    >
+                        <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
+                        {{ $title }}
+                    </button>
+                </div>
+            </div>
 
             <div class="table-wrapper">
-                <table class="zebra-table w-full">
+
+                <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
-                        <tr>
-                            <th style="text-align: center;">No</th>
-                            <th style="text-align: center;">Nama Pekerjaan</th>
-                            <th style="text-align: center;">Satuan Kerja</th>
-                            <th style="text-align: center;">Jenis Pekerjaan</th>
-                            <th style="text-align: center;">Badan Usaha</th>
-                            <th style="text-align: center;">Tahun </th>
-                            <th style="text-align: center;">Sumber Dana</th>
-                            <th style="text-align: center;">View</th>
-                        </tr>
+                            <tr>
+                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
+                                <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kategori Pelatihan <span class="sort-icon">⇅</span></th>
+                                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Nama Kegiatan <span class="sort-icon">⇅</span></th>
+                                <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:250px;"> Penyelenggara <span class="sort-icon">⇅</span></th>
+                                {{-- <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;"> Jenjang <span class="sort-icon">⇅</span></th> --}}
+                                <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Penutupan <span class="sort-icon">⇅</span></th>
+                                <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Waktu Pelaksanaan <span class="sort-icon">⇅</span></th>
+                                <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;"> Jumlah Peserta <span class="sort-icon">⇅</span></th>
+                                <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Lokasi <span class="sort-icon">⇅</span></th>
+                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan <span class="sort-icon">⇅</span></th>
+                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendaftaran <span class="sort-icon">⇅</span></th>
+                                {{-- <th style="text-align:center; width:100px;"> Daftar </th> --}}
+                            </tr>
+
                     </thead>
+
                     <tbody id="tableBody">
                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
-                        @foreach ($data as $item)
+                        @foreach ($data as $item )
                         <tr>
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                            <td>{{ ucwords(strtolower($item->namapekerjaan ?? 'Data Tidak Ditemukan')) }}</td>
-                            <td>{{ ucwords(strtolower($item->user->name ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>{{$item->kategoripelatihan->kategoripelatihan}}</td>
+                            <td>{{$item->namakegiatan}}</td>
+                            <td>{{$item->penyelenggara}}</td>
+                            {{-- <td style="text-align: center;">{{$item->jenjang->jenjang}}</td> --}}
+                            {{-- <td style="text-align: center;">{{$item->penutupan}}</td> --}}
+                            <td>{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') }}</td>
+                            <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
+                            <td>{{$item->lokasi}}</td>
+                            <td>{{$item->keterangan}}</td>
 
-                            <td style="text-align: center;">
-                                {{ $item->profiljenispekerjaan->jenispekerjaan ?? 'Data Tidak Ditemukan' }}
-                            </td>
-
-
-                            <td style="text-align: center;">
-                                {{ $item->cvptpenyedia ?? 'Data Tidak Ditemukan' }}
-                            </td>
-
-                            <td style="text-align: center;">
-                                {{ $item->tahunpilihan->tahunpilihan ?? 'Data Tidak Ditemukan' }}
-                            </td>
-
-                            <td style="text-align: center;">
-                                {{ $item->sumberdana->sumberdana ?? 'Data Tidak Ditemukan' }}
-                            </td>
-
-                            <td style="text-align: center;">
-                                <a href="/datajakon/profilpaketpekerjaan/{{$item->namapekerjaan}}">
-                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
-                                </a>
+                            <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
+                                @php
+                                $eventDate = \Carbon\Carbon::parse($item->penutupan)->subDays(0);
+                                $today = \Carbon\Carbon::now();
+                                $isClosed = $today->greaterThanOrEqualTo($eventDate);
+                                @endphp
+                                @if ($isClosed)
+                                    <button style="
+                                        background-color: #FF0000;
+                                        color: white;
+                                        border: 2px solid #FF0000;
+                                        padding: 8px 12px;
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                        border-radius: 6px;
+                                        cursor: not-allowed;
+                                        opacity: 0.6;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        gap: 6px;
+                                    " disabled>
+                                        <i class="fas fa-times-circle"></i> Ditutup
+                                    </button>
+                                @else
+                                    <a href="/agendapembinaan/{{$item->namakegiatan}}" style="text-decoration: none;">
+                                        <button style="
+                                            background-color: #001f3f;
+                                            color: white;
+                                            border: 2px solid #001f3f;
+                                            padding: 8px 12px;
+                                            font-size: 14px;
+                                            font-weight: bold;
+                                            border-radius: 6px;
+                                            cursor: pointer;
+                                            transition: all 0.3s ease;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            gap: 6px;
+                                        " onmouseover="this.style.backgroundColor='white'; this.style.color='#001f3f';"
+                                           onmouseout="this.style.backgroundColor='#001f3f'; this.style.color='white';">
+                                            <i class="fas fa-user-check"></i> Daftar
+                                        </button>
+                                    </a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
+
 
             </div>
 
@@ -231,7 +297,7 @@ table.zebra-table {
         function searchTable() {
           let input = document.getElementById("searchInput").value;
 
-          fetch(`/datajakon/profilpaketpekerjaan?search=${input}`)
+          fetch(`/datajakon/bujkkonsultan?search=${input}`)
             .then(response => response.text())
             .then(html => {
               let parser = new DOMParser();
