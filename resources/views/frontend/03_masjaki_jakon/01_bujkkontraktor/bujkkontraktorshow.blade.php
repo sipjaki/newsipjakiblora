@@ -205,13 +205,13 @@ table.zebra-table {
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
                         </svg>
-                        Nama Bangunan
+                        Badan Usaha
                     </label>
                     <input
                         style="margin-top: -15px;"
                         type="text"
                         class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                        value="Gedung Kantor"
+                        value="{{$data->namalengkap}}"
                         readonly
                     >
                 </div>
