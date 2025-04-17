@@ -1,4 +1,18 @@
+<style>
+    /* Adjust margin between the menu items */
+li.has-dropdown {
+    margin-bottom: 5px;  /* Decreases the gap between the dropdowns */
+}
 
+ul.list-unstyled {
+    margin-top: 0;  /* Reduces the space between the dropdown menu and the next item */
+}
+
+ul.list-unstyled > li {
+    margin-bottom: 5px;  /* Decreases the gap between items inside the dropdown */
+}
+
+</style>
 
 <header class="header">
 	<div class="topbar" style="background: #2ECC71;>
@@ -207,52 +221,53 @@
 				<div class="navigation" style="margin-left: 100px;">
 					<ul class="main-menu-list list-unstyled">
 
-                        <li>
-                            <a href="/" style="color: white; font-family: 'Poppins', sans-serif; text-decoration: none; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
-                                BERANDA
-                            </a>
-                        </li>
+<li>
+    <a href="/" style="color: white; font-family: 'Poppins', sans-serif; text-decoration: none; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        BERANDA
+    </a>
+</li>
 
-                        <li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
-                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
-                                KELEMBAGAAN
-                            </a>
-                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
-                                <li>
-                                    <a href="/profil/struktur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
-                                        Struktur DPUPR Blora
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/profil/rencanastrategis" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
-                                        Profil Jakon DPUPR Blora
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/profil/tupoksi" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
-                                        Tupoksi Jakon DPUPR Blora
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+<li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        KELEMBAGAAN
+    </a>
+    <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
+        <li>
+            <a href="/profil/struktur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
+                Struktur DPUPR Blora
+            </a>
+        </li>
+        <li>
+            <a href="/profil/rencanastrategis" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
+                Profil Jakon DPUPR Blora
+            </a>
+        </li>
+        <li>
+            <a href="/profil/tupoksi" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
+                Tupoksi Jakon DPUPR Blora
+            </a>
+        </li>
+    </ul>
+</li>
 
-                        <li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
-                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
-                                BERITA
-                            </a>
-                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
-                                <li style="position: relative;">
-                                    <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
-                                        Peraturan
-                                    </a>
-                                    <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0;">
-                                        <!-- Nested items go here -->
-                                    </ul>
-                                </li>
-                                <li><a href="/beritajakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
-                                <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
-                            </ul>
-                        </li>
+<li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        BERITA
+    </a>
+    <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
+        <li style="position: relative;">
+            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                Peraturan
+            </a>
+            <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0;">
+                <!-- Nested items go here -->
+            </ul>
+        </li>
+        <li><a href="/beritajakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
+        <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
+    </ul>
+</li>
+
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 DATA JAKON
@@ -308,6 +323,7 @@
                                 PENGAWASAN
                             </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
+                                <!-- <li><a href="/tertibjasakonstruksi" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Tertib Jasa Konstruksi</a></li> -->
                                 <li style="position: relative;">
                                     <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
                                         Tertib Jasa Konstruksi
@@ -376,6 +392,7 @@
                             </ul>
                         </li>
 
+
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 RANTAI PASOK
@@ -388,7 +405,7 @@
                             </ul>
                         </li>
 
-                    </ul><!-- main-menu-list -->
+					</ul><!-- main-menu-list -->
 				</div><!--navigation-->
 			</div><!--main-menu-left-->
 
