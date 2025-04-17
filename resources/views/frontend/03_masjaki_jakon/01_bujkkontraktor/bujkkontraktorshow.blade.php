@@ -1,350 +1,592 @@
 <style>
-    /* Import font Poppins */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    /* file: resources/css/custom.css atau langsung di style tag */
+.full-width-container {
+  max-width: 80% !important;
+  width: 80%;
+  margin-top: 10px;
+}
 
-/* Wrapper untuk tabel */
 .table-wrapper {
-overflow-x: auto;
-max-width: 100%;
-padding: 10px;
+  overflow-x: auto;
+  border-radius: 15px;
 }
 
-/* Style dasar tabel */
-.fl-table {
-width: 100%;
-border-collapse: collapse;
-font-family: 'Poppins', sans-serif; /* Font modern pemerintah */
-font-size: 14px;
-background: #fff; /* Tetap netral */
-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-border-radius: 8px;
-overflow: hidden;
+.zebra-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
 }
 
-/* Header styling */
-.fl-table thead {
-background: #ffd100;
-text-transform: uppercase;
-font-weight: 600;
-letter-spacing: 0.5px;
-color: black;
+.zebra-table th,
+.zebra-table td {
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
 }
 
-.fl-table th,
-.fl-table td {
-padding: 12px 15px;
-text-align: left;
-border-bottom: 1px solid #ddd;
+.zebra-table thead {
+  background-color: #f9fafb; /* Tailwind gray-50 */
 }
 
-/* Hover effect */
-.fl-table tbody tr:hover {
-background: rgba(0, 0, 0, 0.05);
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-.fl-table thead {
-display: none; /* Sembunyikan header di tampilan kecil */
-}
-
-.fl-table tr {
-display: block;
-margin-bottom: 10px;
-border: 1px solid #ddd;
-border-radius: 5px;
-overflow: hidden;
-}
-
-.fl-table td {
-display: block;
-text-align: right;
-font-size: 14px;
-border-bottom: 1px solid #eee;
-position: relative;
-padding-left: 50%;
-}
-
-.fl-table td::before {
-content: attr(data-label);
-position: absolute;
-left: 10px;
-width: 45%;
-font-weight: 600;
-text-align: left;
-}
-}
-
-/* Style untuk ikon view */
 .view-icon {
-color: #4CAF50;
-cursor: pointer;
-font-size: 18px;
+  color: #374151; /* Tailwind gray-700 */
+  cursor: pointer;
 }
 
-.view-icon:hover {
-color: #45a049;
-}
+table.zebra-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .zebra-table thead {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .zebra-table th,
+        .zebra-table td {
+            padding: 6px 12px;
+            text-align: left;
+        }
+
+        .zebra-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: #dfdddd;
+        }
+
+        .zebra-table tbody tr:hover {
+            background-color: #ffd100;
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+        }
 
 
-            .badgekembali {
-                background: linear-gradient(to right, white, green);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                text-align: center;
-                font-size: 12px;
-                cursor: pointer;
-                transition: background-color 0.3s, color 0.3s;
-            }
-            .badgekembali:hover {
-                background-color: white;
-                color: black;
-                background: white;
-            }
+        .btn-navy {
+        background-color: #001f3f;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        cursor: default;
+        transition: all 0.3s ease;
+    }
 
-            .green-button {
-                background: linear-gradient(to right, white, green);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                text-align: center;
-                font-size: 12px;
-                cursor: pointer;
-                transition: background-color 0.3s, color 0.3s;
-            }
-            .green-button:hover {
-                background-color: white;
-                color: black;
-                background: white;
-            }
+    .btn-navy:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid #001f3f;
+    }
 
-            .menusub-button {
-                background: linear-gradient(to right, #ffd100, #FFD100);
-                color: white;
-                padding: 10px 20px;
-                border-radius: 10px;
-                display: inline-block;
-                font-size: 1rem;
-                text-align: center;
-                font-size: 12px;
-                cursor: pointer;
-                transition: background-color 0.3s, color 0.3s;
-            }
-            .menusub-button:hover {
-                background-color: white;
-                color: black;
-                background: white;
-            }
 </style>
-
-
-{{-- =========================================================== --}}
+{{-- ================================ --}}
 
 @include('frontend.00_approve.01_cssterpisah.header')
 
-
-<body>
-
-    @include('frontend.00_approve.01_cssterpisah.loader')
+    {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
 
-<div class="page-wrapper">
-	<section class="page-banner" style="background-image: url('/assets/approve/image/bg/page-banner.png')">
-		<div class="container">
-			<div class="page-breadcrumbs">
-				<ul class="list-unstyled">
-					{{-- <li><a href="index.html">Home</a></li> --}}
-					{{-- <li>Document-details</li> --}}
-				</ul><!-- list-unstyled -->
-			</div><!-- page-breadcrumbs -->
-			<div class="page-banner-title">
-				<h3 style="color: black; font-size:30px;">{{ $title }}</h3>
-			</div><!-- page-banner-title -->
-		</div><!-- container -->
-	</section><!--page-banner-->
+<!-- Wrapper Background Section -->
+<section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
-{{-- -------------------------- --}}
+<!-- Breadcrumb + Search Bar -->
+<div class="max-w-[1130px] mx-auto pt-[50px] px-4 font-poppins">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 
-
-<section class="service-two-section" style="background-image: url('/assets/00_dokmasjaki/03_datajakon/banner1.jpg');">
-    <div class="container" style="background: #FFD100; border-radius:20px;">
-        <div class="row row-gutter-y-40">
-            <div class="col-12 col-lg-12 col-xl-12">
-                <div class="service-two-card">
-                    <div class="service-two-imgbox" >
-
-                        <section class="donate-section" style="background: linear-gradient(to bottom, green, #FFD100, white);">
-                            <div class="container">
-                                <div class="row row-gutter-30">
-                                    <div class="col-lg-12">
-                                                                            </div><!-- col-lg-12 -->
-                                    <div class="col-xxl-12 col-lg-12">
-                                        <div class="donate-box-inner" style="margin-top: -85px;">
-                                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                                                {{-- <img src="/assets/icon/logopupr.png" class="img-fluid" alt="img-25" width="50" style="margin-right: 20px;" loading="lazy"> --}}
-                                                <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin-top: 20px;">
-                                                    {{-- <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"> --}}
-                                                    <!-- Tombol dan kolom pencarian di kanan -->
-                                                        <button class="green-button" style="margin-bottom:10px; text-transform:uppercase">
-                                                            <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy">
-                                                            <i class="fas fa-file mr-2" style="margin-right:5px;"></i> <span style="color: black;">INFORMASI BUJK KONSTRUKSI : {{$data->namalengkap}}</span>
-                                                        </button>
-                                                        <a href="/datajakon/bujkkontraktor" style="background: white;">
-                                                            <button class="badgekembali" style="border: none; font-size: 12px; cursor: pointer; margin-right: 10px;">
-                                                                <i class="fas fa-arrow-circle-left mr-2" style="margin-right: 15px; color:red;"></i> <span style="color: black;">KEMBALI</span>
-                                                            </button>
-                                                        </a>
+      <!-- KIRI: Gambar + Breadcrumb -->
+      <div class="flex items-center gap-4">
+        <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
+        <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
+          <span>/</span>
+          <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px;">
+            {{$title}}
+          </a>
+          <span>/</span>
+          <a href="/datajakon/statistikabujkblora" class="font-medium text-black" style="font-size: 16px;">
+            Data Statistik
+          </a>
+        </div>
+      </div>
 
 
-                                                </div>
+      <!-- KANAN: Search Bar -->
+   <!-- Search Bar Wrapper -->
+<div class="w-full sm:w-auto">
+    <div class="flex items-center gap-2 px-3 py-2 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
 
-                                                </ul>
+      <!-- Input -->
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Cari Data ..."
+        oninput="searchTable()"
+        class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent font-[Poppins]"
+      />
 
-                                            <div class="centered-button" style="margin-top: -15px;">
+      <!-- Button with SVG Icon -->
+      <button onclick="searchTable()" class="flex items-center justify-center w-6 h-6 shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#545768" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+      </button>
 
-                                            </div>
-
-                                            <form action="#" class="contact-form donation" method="post">
-                                                <div class="row row-gutter-10">
-                                                    <div class="col-lg-8">
-                                                        <h6><i class="fas fa-user mr-2" style="margin-right: 5px;"></i>Nama Pemilik </h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->namalengkap}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-4">
-                                                        <h6><i class="fas fa-phone-alt mr-2" style="margin-right: 5px;"></i>No Telepon</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->no_telepon}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-3 -->
+    </div>
+  </div>
 
 
-                                                    <div class="col-lg-12">
-                                                        <h6><i class="fas fa-map-marker-alt mr-2" style="margin-right: 5px;"></i>Alamat</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->alamat}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-12 -->
+    </div>
+  </div>
 
-                                                    <div class="col-lg-6">
-                                                        <h6><i class="fas fa-envelope mr-2" style="margin-right: 5px;"></i>Email</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->email}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-6 -->
-
-                                                    <div class="col-lg-6">
-                                                        <h6><i class="fas fa-id-card mr-2" style="margin-right: 5px;"></i>Nomor Induk Berusaha</h6>
-                                                        <input type="text" id="fname" class="input-text" placeholder="{{$data->nib}}" name="fname" aria-required="true" readonly>
-                                                    </div><!-- col-lg-3 -->
-
-                                                </div><!-- row row-gutter-10 -->
-                                            </form><!-- contact-form -->
-                                        </div><!-- donate-box-inner -->
-                                    </div><!-- col-xl-8 col-lg-12 -->
-
-                                </div><!-- row -->
-                            </div><!-- container -->
-                        </section><!-- donate-section -->
+    <!-- Konten Data -->
+    <div class="full-width-container mx-auto px-4 pb-10">
+        <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
+            <div style="display: flex; justify-content: center; margin-bottom: -20px;">
+                <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
+                    <button type="button" style="
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        padding: 12px 20px;
+                        font-size: 16px;
+                        font-family: 'Poppins', sans-serif;
+                        border: 1px solid #28a745;
+                        background-color: #28a745;
+                        color: white;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        width: 100%;
+                    "
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+                    >
+                        <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
+                        {{ $title }}
+                    </button>
+                </div>
+            </div>
 
 
 
-	<section class="department-details-section" style="margin-top: -200px;">
-		<div class="container">
-			<div class="row">
-                {{-- ------------------------------------------------------------------------------------------ --}}
-                <div class="col-lg-12">
+  <section id="details" class="container max-w-[1130px] mx-auto flex flex-col sm:flex-row gap-5">
+    <div class="flex flex-col gap-5 w-full">
+        <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
+            <div class="flex justify-center">
+                <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
+            </div>
 
-
-                        <div class="document-details">
-							<div class="document-details-list">
-                                <div class="centered-button" style="margin-top: -15px">
-                                    <button class="menusub-button" style="margin-bottom:10px; text-transform:uppercase">
-                                        <i class="fas fa-building mr-2" style="margin-right:5px;"></i><span style="color: black;">SUB KLASIFIKASI LAYANAN : {{$data->namalengkap}}</span>
-                                    </button>
-
-                                </div>
-
-
-                                                        {{-- TABLE DATA  --}}
-                                        </head>
-
-                    <body>
-                    <div class="table-wrapper">
-                    <table class="fl-table">
-                        <thead>
-                            <tr>
-                                {{-- <th style="text-align:center" >No</th> --}}
-                                <th style="text-align:center" style="color: black" >No</th>
-                                {{-- <th style="text-align:center" style="color: black">Nama Pengurus</th> --}}
-                                <th style="text-align:center" style="color: black" >Sub Klasifikasi Layanan</th>
-                                <th style="text-align:center" style="color: black" >Kode</th>
-                                <th style="text-align:center" style="color: black" >Kualifikasi</th>
-                                <th style="text-align:center" style="color: black">Penerbit</th>
-                                <th style="text-align:center" style="color: black">Tanggal Terbit</th>
-                                <th style="text-align:center" style="color: black">Masa Berlaku</th>
-                                {{-- <th style="text-align:center" style="color: black">Nama PSJK</th> --}}
-                                {{-- <th style="text-align:center" style="color: black">Sub Kualifikasi Badan Usaha</th> --}}
-                                </tr>
-                        </thead>
-                        <tbody>
-
-                        {{-- @php
-                            // Pastikan $data tidak null atau tidak terdefinisi
-                            $start = ($data && $data->currentPage()) ? ($data->currentPage() - 1) * $data->perPage() + 1 : 1;
-                        @endphp --}}
-
-                        @foreach ($subData as $item)
-                        <tr>
-                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                            {{-- <td>{{$item->nama_pengurus}}</td> --}}
-                            <td>{{$item->sub_klasifikasi_layanan}}</td>
-                            <td>{{$item->kode}}</td>
-                            <td>{{$item->kualifikasi}}</td>
-                            <td>{{$item->penerbit}}</td>
-                            <td>{{$item->tanggal_terbit}}</td>
-                            <td>{{$item->masa_berlaku}}</td>
-                            {{-- <td>{{$item->nama_psjk}}</td> --}}
-                            {{-- <td>{{$item->sub_kualifikasi_bu}}</td> --}}
-                        </tr>
-                        @endforeach
-
-                        </tbody>
-                    </table>
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                <!-- CARD 1 -->
+                <a href="#" class="card" style="border-radius: 20px;">
+                  <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
+                    <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
+                      <img onclick="openModal(this.src)" src="/assets/android/iconmenu/bangunan1.jpg" class="w-full h-full object-cover cursor-pointer" alt="thumbnail">
                     </div>
-                                                </div><!-- document-details-list -->
+                    <div class="flex flex-col">
+                      <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">
+                        Tampak Depan
+                      </p>
+                    </div>
+                  </div>
+                </a>
 
-                                            </div><!-- document-details -->
-                                        </div><!-- document-details-inner -->
+                <!-- CARD 2 -->
+                <a href="#" class="card" style="border-radius: 20px;">
+                  <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
+                    <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
+                      <img onclick="openModal(this.src)" src="/assets/android/iconmenu/bangunan1.jpg" class="w-full h-full object-cover cursor-pointer" alt="thumbnail">
+                    </div>
+                    <div class="flex flex-col">
+                      <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">
+                        Tampak Samping 1
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- CARD 3 -->
+                <a href="#" class="card" style="border-radius: 20px;">
+                  <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
+                    <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
+                      <img onclick="openModal(this.src)" src="/assets/android/iconmenu/bangunan1.jpg" class="w-full h-full object-cover cursor-pointer" alt="thumbnail">
+                    </div>
+                    <div class="flex flex-col">
+                      <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">
+                        Tampak Samping 2
+                      </p>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- CARD 4 -->
+                <a href="#" class="card" style="border-radius: 20px;">
+                  <div class="p-4 rounded-[20px] bg-white flex flex-col gap-4 hover:ring-2 hover:ring-[#6635F1] transition-all duration-300">
+                      <div class="w-full h-[140px] rounded-[20px] overflow-hidden relative">
+                          <img onclick="openModal(this.src)" src="/assets/android/iconmenu/bangunan1.jpg" class="w-full h-full object-cover cursor-pointer" alt="thumbnail">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="title font-semibold text-sm line-clamp-2 hover:line-clamp-none">
+                                Tampak Belakang
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
+                <div class="w-5 h-5 flex shrink-0">
+                    <img src="/assets/new/icons/story.svg" alt="icon">
+                </div>
+                <p class="text-white font-normal text-sm">
+                    <span class="font-bold">Informasi Bangunan Gedung </span>
+                </p>
+            </div>
+
+            <form action="" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
+                 <!-- Nama Bangunan -->
+                 <div class="flex flex-col gap-2 w-full">
+                    <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2">
+                        <!-- Building Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
+                        </svg>
+                        Nama Bangunan
+                    </label>
+                    <input
+                        style="margin-top: -15px;"
+                        type="text"
+                        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                        value="Gedung Kantor"
+                        readonly
+                    >
+                </div>
+
+                    <!-- Luas Tanah -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label class="font-semibold text-[#030303] flex items-center gap-2">
+                            <!-- Ruler icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4V4zm4 4h8v8H8V8z" />
+                            </svg>
+                            <span class="text-sm">Luas Tanah (m²)</span>
+                        </label>
+                        <input
+                            style="margin-top: -15px;"
+                            type="text"
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            value="2.350 m²"
+                            readonly
+                        >
+                    </div>
+
+                    <!-- Jumlah Lantai -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label class="font-semibold text-[#030303] flex items-center gap-2">
+                            <!-- Layers (floor) icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l9 5-9 5-9-5 9-5zm0 10l9 5-9 5-9-5 9-5z" />
+                            </svg>
+                            <span class="text-sm">Jumlah Lantai</span>
+                        </label>
+                        <input
+                            style="margin-top: -15px;"
+                            type="text"
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            value="2 Lantai"
+                            readonly
+                        >
+                    </div>
 
 
-                                    </div><!-- col-lg-8 -->
-                                </div><!-- row -->
-                            </div><!-- container -->
-                        </div><!--page-wrapper-->
-                    </div><!--page-wrapper-->
-                </div><!--page-wrapper-->
-            </div><!--page-wrapper-->
-        </div><!--page-wrapper-->
-    </section><!-- department-details-section -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label class="font-semibold text-[#030303] flex items-center gap-2">
+                            <!-- Icon: Office Building -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 21h18M9 8h6m-3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="text-sm">Fungsi Bangunan</span>
+                        </label>
+                        <input
+                            style="margin-top: -15px;"
+                            type="text"
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            value="Fungsi Sosial Dan Budaya"
+                            readonly
+                        >
+                    </div>
+
+                </div>
 
 
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -40px;">
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamatbangunan" class="font-semibold text-[#030303] flex items-center gap-2">
+                            <!-- Map Pin Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11.5c1.656 0 3-1.344 3-3s-1.344-3-3-3-3 1.344-3 3 1.344 3 3 3zM12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7z" />
+                            </svg>
+                            <span class="text-sm">Lokasi Bangunan</span>
+                        </label>
+                        <input
+                            style="margin-top: -15px;"
+                            type="text"
+                            name="alamatbangunan"
+                            id="alamatbangunan"
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            placeholder="Masukkan lokasi bangunan"
+                            value="Jl. Reksodiputro No. 24, Ds. Mlangsa, Kec. Blora, Kab. Blora, Jawa Tengah"
+                            readonly
+                        >
+                    </div>
+
+                </div>
+
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -40px;">
+                   <!-- Luas Lantai Dasar -->
+<div class="flex flex-col gap-2 w-full">
+    <label for="luaslantaidasar" class="font-semibold text-[#030303] flex items-center gap-2">
+        <!-- Icon: Ruler -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 16l6-6m2-2l6-6M14 10l6 6M10 14l6 6" />
+        </svg>
+        <span class="text-sm">Luas Lantai Dasar</span>
+    </label>
+    <input
+        style="margin-top: -15px;"
+        type="text"
+        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        value="456 M²"
+        >
+</div>
+
+<!-- Luas Total Lantai Dasar -->
+<div class="flex flex-col gap-2 w-full">
+    <label for="luastotallantaidasargedung" class="font-semibold text-[#030303] flex items-center gap-2">
+        <!-- Icon: Document Search (Total Area) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 4v16m8-8H4" />
+        </svg>
+        <span class="text-sm">Luas Total Lantai Dasar</span>
+    </label>
+    <input
+        style="margin-top: -15px;"
+        type="text"
+        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        value="912 M²"
+    >
+</div>
+
+<!-- Ketinggian Bangunan -->
+<div class="flex flex-col gap-2 w-full">
+    <label for="ketinggianbangunan" class="font-semibold text-[#030303] flex items-center gap-2">
+        <!-- Icon: Arrow Up Down (Height) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 4v16m4-4l-4 4m0 0l-4-4m4-12l4 4m-4-4l-4 4" />
+        </svg>
+        <span class="text-sm">Ketinggian Bangunan</span>
+    </label>
+    <input
+        style="margin-top: -15px;"
+        type="text"
+        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        value="9 M"
+    >
+</div>
+
+<!-- Basement -->
+<div class="flex flex-col gap-2 w-full">
+    <label for="luasbasement" class="font-semibold text-[#030303] flex items-center gap-2">
+        <!-- Icon: Cube (Basement) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0v10l-8 4-8-4V7m16 0L12 11 4 7" />
+        </svg>
+        <span class="text-sm">Basement</span>
+    </label>
+    <input
+        style="margin-top: -15px;"
+        type="text"
+        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        value="0 M²"
+        >
+</div>
+
+                </div>
+
+               <!-- Koordinat Bangunan Sumbu X -->
+<div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -40px;">
+    <div class="flex flex-col gap-2 w-full">
+        <label for="koordinatX" class="font-semibold text-[#030303] flex items-center gap-2">
+            <!-- X Axis Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16" />
+            </svg>
+            <span class="text-sm">Koordinat Bangunan Sumbu X</span>
+        </label>
+        <input
+            style="margin-top: -15px;"
+            type="text"
+            name="koordinatX"
+            id="koordinatX"
+            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+            placeholder="Masukkan koordinat sumbu X"
+            value="-6.974108"
+            readonly
+        >
+    </div>
+</div>
+
+<!-- Koordinat Bangunan Sumbu Y -->
+<div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -40px;">
+    <div class="flex flex-col gap-2 w-full">
+        <label for="koordinatY" class="font-semibold text-[#030303] flex items-center gap-2">
+            <!-- Y Axis Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16" />
+            </svg>
+            <span class="text-sm">Koordinat Bangunan Sumbu Y</span>
+        </label>
+        <input
+            style="margin-top: -15px;"
+            type="text"
+            name="koordinatY"
+            id="koordinatY"
+            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+            placeholder="Masukkan koordinat sumbu Y"
+            value="111.415106"
+            readonly
+        >
+    </div>
+</div>
+
+<!-- Tanggal Mulai Konstruksi -->
+<div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -40px;">
+    <div class="flex flex-col gap-2 w-full">
+        <label for="tanggalmulaikonstruksi" class="font-semibold text-[#030303] flex items-center gap-2">
+            <!-- Calendar Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span class="text-sm">Tanggal Mulai Konstruksi</span>
+        </label>
+        <input
+            style="margin-top: -15px;"
+            type="text"
+            name="tanggalmulaikonstruksi"
+            id="tanggalmulaikonstruksi"
+            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+            placeholder="Tanggal Mulai Konstruksi"
+            value="17 April 2025"
+            readonly
+        >
+    </div>
+</div>
+
+            </form>
+        </div>
+    </div>
+</section>
 
 
-                    </div><!--service-two-card-content-->
-                </div><!--service-two-card-->
-            </div><!--col-12 col-lg-4 col-xl-4-->
+            <div class="table-wrapper">
+
+                <table class="zebra-table fl-table">
+                    <thead>
+                        <tr>
+                            {{-- <th style="text-align:center" >No</th> --}}
+                            <th style="text-align:center" style="color: black" >No</th>
+                            <th style="text-align:center" style="color: black" >Sub Klasifikasi Layanan</th>
+                            <th style="text-align:center" style="color: black" >Kode</th>
+                            <th style="text-align:center" style="color: black" >Kualifikasi</th>
+                            <th style="text-align:center" style="color: black">Penerbit</th>
+                            <th style="text-align:center" style="color: black">Tanggal Terbit</th>
+                            <th style="text-align:center" style="color: black">Masa Berlaku</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+
+                    @foreach ($subData as $item)
+                    <tr>
+                        <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                        {{-- <td>{{$item->nama_pengurus}}</td> --}}
+                        <td>{{$item->sub_klasifikasi_layanan}}</td>
+                        <td>{{$item->kode}}</td>
+                        <td>{{$item->kualifikasi}}</td>
+                        <td>{{$item->penerbit}}</td>
+                        <td>{{$item->tanggal_terbit}}</td>
+                        <td>{{$item->masa_berlaku}}</td>
+                        {{-- <td>{{$item->nama_psjk}}</td> --}}
+                        {{-- <td>{{$item->sub_kualifikasi_bu}}</td> --}}
+                    </tr>
+                    @endforeach
+
+                    </tbody>
+                </table>
+            </div>
+
+            @include('frontend.00_approve.01_cssterpisah.paginations')
+        </div>
+    </div>
+    <br><br><br>
+
+</section>
 
 
-        </div><!-- row -->
-    </div><!-- container -->
-</section><!-- service-two-section -->
+<div class="progress-wrap">
+          <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+              <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+          </svg>
+      </div>
+      <!-- back to top end -->
+
+    </div>
+
+    <script>
+        function updateEntries() {
+          let selectedValue = document.getElementById("entries").value;
+          let url = new URL(window.location.href);
+          url.searchParams.set("perPage", selectedValue);
+          window.location.href = url.toString();
+        }
+
+        function searchTable() {
+          let input = document.getElementById("searchInput").value;
+
+          fetch(`/datajakon/bujkkontraktor?search=${input}`)
+            .then(response => response.text())
+            .then(html => {
+              let parser = new DOMParser();
+              let doc = parser.parseFromString(html, "text/html");
+              let newTableBody = doc.querySelector("#tableBody").innerHTML;
+              document.querySelector("#tableBody").innerHTML = newTableBody;
+            })
+            .catch(error => console.error("Error fetching search results:", error));
+        }
+      </script>
 
 
-{{-- -------------------------- --}}
-
-
-
-
-
-                    @include('frontend.00_approve.01_cssterpisah.footer1')
-                    @include('frontend.00_approve.01_cssterpisah.footer')
+@include('frontend.00_approve.01_cssterpisah.footer1')
+@include('frontend.00_approve.01_cssterpisah.footer')
