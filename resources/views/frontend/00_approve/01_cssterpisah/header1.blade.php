@@ -1,31 +1,3 @@
-<style>
-    .dropdown-link {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    padding: 10px 20px;
-    display: inline-block;
-    position: relative;
-    transition: background-color 0.3s ease;
-}
-
-.dropdown-arrow {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-}
-
-.dropdown-item {
-    color: black;
-    padding: 10px 20px;
-    display: block;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-}
-
-</style>
 
 <header class="header">
 	<div class="topbar" style="background: #2ECC71;>
