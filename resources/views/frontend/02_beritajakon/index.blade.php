@@ -167,15 +167,15 @@ table.zebra-table {
                                 <div class="news-details-box-image-inner">
                                     <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="img-193">
 
-                                    <a href="#" class="news-details-box-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</a>
+                                    <a href="#" class="news-details-box-date"><span style="font-family: 'Poppins', sans-serif;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</span></a>
                                 </div><!-- news-details-box-image-inner -->
                             </div><!-- news-details-box-image -->
 
                             <br><br>
                             <div class="news-details-content-box" style="margin-left: 25px;">
-                                <h4>{{$item->judulberita}}</h4>
+                                <h4 style="font-family: 'Poppins', sans-serif;">{{$item->judulberita}}</h4>
                                 <br>
-                                <p style="text-align: justify;">{{$item->keterangan}}
+                                <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$item->keterangan}}
 
                                 </p>
 
@@ -189,7 +189,7 @@ table.zebra-table {
                             <div class="sidebar">
 
                                 <div class="sidebar-widget sidebar-widget-recent-post">
-                                    <h4>Daftar Berita</h4>
+                                    <h4 style="font-family: 'Poppins', sans-serif;">Daftar Berita</h4>
 
                                     @foreach ($data->skip(1)->take(7) as $item)
 
@@ -201,13 +201,13 @@ table.zebra-table {
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <span class="author">
+                                                        <span class="author" style="font-family: 'Poppins', sans-serif;">
                                                             Penulis : <a href="news-details.html">{{$item->user->name}}</a>
                                                         </span><!-- author -->
                                                     </div><!-- sidebar-meta-icon -->
                                                 </div><!-- sidebar-meta-item -->
                                                 <div class="sidebar-post-title">
-                                                    <h5><a href="/beritajakon/{{$item->judulberita}}">{{$item->judulberita}}</a></h5>
+                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/beritajakon/{{$item->judulberita}}">{{$item->judulberita}}</a></h5>
                                                 </div><!-- sidebar-post-title -->
                                             </div><!-- sidebar-meta -->
                                         </div><!-- sidebar-recent-post-content -->
