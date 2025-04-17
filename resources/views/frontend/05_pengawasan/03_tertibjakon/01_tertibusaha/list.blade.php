@@ -204,7 +204,9 @@ table.zebra-table {
                                 @if ($item->penyediastatustertibjakon && $item->penyediastatustertibjakon->penyedia)
                                     {{$item->penyediastatustertibjakon->penyedia}}
                                 @else
+                                <button class="btn" style="background-color: navy; color: white;">
                                     <span class="text-danger">Data Belum Diupdate</span>
+                                </button>
                                 @endif
                             </td>
                             <td>{{ $item->namabadanusaha ?? 'Data Belum Diupdate' }}</td>
