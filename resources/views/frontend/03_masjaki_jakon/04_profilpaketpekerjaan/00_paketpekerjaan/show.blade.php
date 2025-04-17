@@ -223,7 +223,7 @@
 
                 </div>
 
-                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -100px;">
 
                     <!-- Badan Usaha -->
                     <div class="flex flex-col gap-2 w-full">
