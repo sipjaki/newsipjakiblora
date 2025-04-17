@@ -319,7 +319,7 @@
                             </thead>
                             <tbody id="tableBody">
                                 @php
-                                    $start = ($datamateripelatihan->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
+                                    $start = ($datamateripelatihanskk->currentPage() - 1) * $datamateripelatihan->perPage() + 1;
                                     $materiFound = false; // Variabel untuk mengecek apakah ada materi
                                     $dataAvailable = false; // Variabel untuk mengecek apakah ada data
                                 @endphp
