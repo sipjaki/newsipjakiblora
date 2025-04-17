@@ -149,8 +149,31 @@ table.zebra-table {
 
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
-        <p>{{$title}}</p>
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
+            <button type="button" style="
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            border: 1px solid #28a745;
+            background-color: #28a745;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        "
+        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+        onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+        >
+            <!-- SVG Icon Menu -->
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
+                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+            </svg>
+            {{ $title }}
+        </button>
+
             <div class="table-wrapper">
                 <table class="zebra-table w-full">
                     <thead>
