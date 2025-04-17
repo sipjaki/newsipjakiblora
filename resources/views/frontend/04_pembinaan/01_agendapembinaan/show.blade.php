@@ -304,7 +304,7 @@
 
 
 
-                                <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                                <div style="display: flex; justify-content: center; align-items: center;">
                                     <h4 style="font-weight: bold;">DOWNLOAD MATERI PELATIHAN</h4>
                                 </div>
 
