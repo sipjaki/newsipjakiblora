@@ -336,29 +336,6 @@ table.zebra-table {
 
     </div>
 
-    <script>
-        function updateEntries() {
-          let selectedValue = document.getElementById("entries").value;
-          let url = new URL(window.location.href);
-          url.searchParams.set("perPage", selectedValue);
-          window.location.href = url.toString();
-        }
-
-        function searchTable() {
-          let input = document.getElementById("searchInput").value;
-
-          fetch(`/datajakon/bujkkontraktor?search=${input}`)
-            .then(response => response.text())
-            .then(html => {
-              let parser = new DOMParser();
-              let doc = parser.parseFromString(html, "text/html");
-              let newTableBody = doc.querySelector("#tableBody").innerHTML;
-              document.querySelector("#tableBody").innerHTML = newTableBody;
-            })
-            .catch(error => console.error("Error fetching search results:", error));
-        }
-      </script>
-
 
 @include('frontend.00_approve.01_cssterpisah.footer1')
 @include('frontend.00_approve.01_cssterpisah.footer')
