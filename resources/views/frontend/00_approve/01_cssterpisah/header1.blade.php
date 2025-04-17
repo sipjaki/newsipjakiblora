@@ -213,7 +213,7 @@
                         </li>
 
                         <li class="has-dropdown" style="position: relative;">
-                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 KELEMBAGAAN
                                 <span style="margin-left: 10px; font-size: 14px; vertical-align: middle;">&#x2193;</span> <!-- Tanda panah yang sejajar dengan teks -->
                             </a>
