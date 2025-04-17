@@ -416,15 +416,16 @@ table.zebra-table {
                 @endforeach
             </table>
 
-            <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;">SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
-<table>
-    @foreach ($datasubkoordinator as $item)
-    <tr>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1.</td>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Lengkap</td>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->namalengkap}}</td>
-    </tr>
+            <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >SUB KOORDINATOR BINA JASA KONSTRUKSI</span></h5>
+            {{-- <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;">SUBKOORDINATOR BINA JASA KONSTRUKSI</h5> --}}
+            <table>
+                @foreach ($datasubkoordinator as $item)
+                <tr>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Lengkap</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->namalengkap}}</td>
+                </tr>
     <tr>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">2.</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">NIP</td>
@@ -459,7 +460,8 @@ table.zebra-table {
 </table>
 <br>
 
-<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">III. OPD Jakon</h4>
+{{-- <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">III. OPD Jakon</h4> --}}
+<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >III. OPD Jasa Konstruksi</span></h4>
 <table>
     @foreach ($datainformasi as $item)
     <tr>
@@ -501,7 +503,8 @@ table.zebra-table {
 </table>
 <br>
 
-<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">V. SK SIPJAKI</h4>
+{{-- <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">V. SK SIPJAKI</h4> --}}
+<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >V. SK SIPJAKI</span></h4>
 <table>
     @foreach ($datasipjaki as $item)
     <tr>
