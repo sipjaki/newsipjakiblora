@@ -311,7 +311,7 @@ table.zebra-table {
         function searchTable() {
           let input = document.getElementById("searchInput").value;
 
-          fetch(`/agendapembinaan?search=${input}`)
+          fetch(`/agendaskk?search=${input}`)
             .then(response => response.text())
             .then(html => {
               let parser = new DOMParser();
