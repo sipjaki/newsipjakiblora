@@ -150,30 +150,31 @@ table.zebra-table {
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
-            <div style="display: flex; justify-content: center; margin-bottom:-20px;" >
-                <button type="button" style="
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 8px;
-                    padding: 10px 18px;
-                    font-size: 16px;
-                    font-family: 'Poppins', sans-serif;
-                    border: 1px solid #28a745;
-                    background-color: #28a745;
-                    color: white;
-                    border-radius: 6px;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    width: fit-content;
-                "
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
-                >
-                    <!-- Icon Menu Baru (Stylish Hamburger Icon) -->
-                  <img src="/assets/icon/pupr.png" alt="" width="3%">
-
-                    {{ $title }}
-                </button>
+            <div style="display: flex; justify-content: center; margin-bottom: -20px;">
+                <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
+                    <button type="button" style="
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        padding: 12px 20px;
+                        font-size: 16px;
+                        font-family: 'Poppins', sans-serif;
+                        border: 1px solid #28a745;
+                        background-color: #28a745;
+                        color: white;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        width: 100%;
+                    "
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+                    >
+                        <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
+                        {{ $title }}
+                    </button>
+                </div>
             </div>
 
             <div class="table-wrapper">
