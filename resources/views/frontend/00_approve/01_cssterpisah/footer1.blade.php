@@ -2,53 +2,58 @@
     <div class="footer-inner">
         <div class="container" style="
             max-width: 85%;
-            margin: 0 auto;
+            margin: 0px auto;
             padding: 20px;
             height: auto;
             border-radius: 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 10;
-        ">
+            ">
             <div class="row">
-                <!-- Left Side -->
+                <!-- Sisi Kiri -->
                 <div class="col-lg-6">
                     <div class="footer-widget-text">
                         <a href="/"><img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="Logo Blora" width="70" style="margin-right: 5px;" loading="lazy"></a>
                         <a href="/"><img src="/assets/icon/pupr.png" class="img-fluid" alt="Logo PUPR" width="70" loading="lazy"></a>
-                        <h1 style="display: flex; align-items: center; gap: 5px; margin: 0; font-family: 'Poppins', sans-serif;">
+                        <h1 style="display: flex; align-items: center; gap: 5px; margin: 0;">
                             <span style="color: white; font-style: italic;">MASJAKI</span>
                             <span style="color: green; font-style: italic;">BLORA</span>
                         </h1>
-                        <p style="font-family: 'Poppins', sans-serif;">Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora</p>
-
+                        <p>Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora</p>
+                    </div>
+                    {{-- <div class="footer-widget-text">
+                        <p style="text-align: justify; font-size:18px;">
+                            Mas Jaki DPUPR Blora adalah Sistem Informasi Pembina Jasa Konstruksi Kabupaten Blora yang mendigitalisasi pendataan SKK Tenaga Kerja Konstruksi, serta pengawasan Badan Usaha Jasa Konstruksi (BUJK) Konstruksi dan Konsultasi. Sistem ini memastikan kepatuhan regulasi, memantau progres proyek secara real-time, dan menilai kinerja kontraktor serta tenaga ahli.
+                        </p>
+                    </div> --}}
                     <div class="footer-widget-socials" style="margin-bottom: 20px;">
                         <a href="mailto:example@email.com"><i class="fa-solid fa-envelope"></i></a>
                         <a href="#"><i class="fa-brands fa-tiktok"></i></a>
                         <a href="https://wa.me/6281234567890"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        {{-- <a href="#"><i class="fa-brands fa-instagram"></i></a> --}}
                         <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        {{-- <a href="tel:+621234567890"><i class="fa-solid fa-phone"></i></a> --}}
                     </div>
                 </div>
 
-                <!-- Right Side -->
+                <!-- Sisi Kanan -->
                 <div class="col-lg-6">
-                    <div class="footer-widget" style="margin-top: 20px;">
+                    <div class="footer-widget" style="margin-top:20px;">
                         <div class="footer-widget-contact">
                             <h4 class="footer-widget-title">
                                 <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> Kontak Kami
                             </h4>
                             <p>Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora Kabupaten Blora 58214 Provinsi Jawa Tengah</p>
                         </div>
-
                         <div class="footer-widget-contact-list">
                             <i class="fa-solid fa-envelope"></i>
                             <div class="footer-widget-contact-item">
                                 <a href="mailto:kontraktor@masjakidpuprblora.co.id">kontraktor@masjakidpuprblora.co.id</a>
                             </div>
                         </div>
-
-                        <div class="footer-widget" style="margin-top: 0;">
+                        <div class="footer-widget" style="margin-top: 0px;">
                             <div class="footer-widget-contact">
                                 <h4 class="footer-widget-title">
                                     <i class="fas fa-map-marker-alt" style="margin-right: 5px;"></i> Lokasi Kami
