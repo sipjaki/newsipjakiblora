@@ -178,61 +178,9 @@ ul.list-unstyled {
             <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
                 Peraturan
             </a>
-            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
+            <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
                 <li>
-                    <a href="/peraturan/undangundang" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> UNDANG UNDANG
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/pemerintah" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN PEMERINTAH
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/presiden" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN PRESIDEN
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/menteri" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN MENTERI
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/keputusanmenteri" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> KEPUTUSAN MENTERI
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/suratedaranmenteri" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> SURAT EDARAN MENTERI
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/referensi" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> REFERENSI
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/daerah" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN DAERAH
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/gubernur" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN GUBERNUR
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/walikotadanbupati" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN WALIKOTA/ BUPATI
-                    </a>
-                </li>
-                <li>
-                    <a href="/peraturan/suratkeputusan" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block; text-decoration: none;">
-                        <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> SURAT KEPUTUSAN
-                    </a>
+                    <a href="/peraturan/undangundang" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Undang Undang</a>
                 </li>
             </ul>
         </li>
