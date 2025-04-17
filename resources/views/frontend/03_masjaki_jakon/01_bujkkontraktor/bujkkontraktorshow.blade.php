@@ -356,6 +356,13 @@ table.zebra-table {
                 button.style.color = 'black'; // Tulisan hitam
             } else {
                 const masaBerlakuDate = new Date(masaBerlaku);  // Convert string to Date
+                if (isNaN(masaBerlakuDate)) {
+                    button.textContent = 'Invalid Date';
+                    button.style.backgroundColor = '#dc3545'; // Merah
+                    button.style.color = 'black'; // Tulisan hitam
+                    return;  // Stop further checks if the date is invalid
+                }
+
                 if (masaBerlakuDate < today) {  // Cek jika masa berlaku sudah lewat
                     button.style.backgroundColor = '#dc3545'; // Merah
                     button.style.color = 'black'; // Tulisan hitam
@@ -369,4 +376,3 @@ table.zebra-table {
         });
     });
 </script>
-
