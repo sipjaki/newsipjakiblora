@@ -208,98 +208,89 @@
                     <!-- Badan Usaha -->
                     <div class="flex flex-col gap-2 w-full">
                         <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Icon User -->
+                            <!-- Icon Clipboard List -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A9 9 0 1112 21a9.003 9.003 0 01-6.879-3.196zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    d="M9 5h6m-6 0a2 2 0 00-2 2v1h10V7a2 2 0 00-2-2m-6 0a2 2 0 012-2h2a2 2 0 012 2m4 4H5v10a2 2 0 002 2h10a2 2 0 002-2V9zM9 13h2m-2 4h2" />
                             </svg>
                             Nama Pekerjaan
                         </label>
                         <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
-                            placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;" value="{{$data->namapekerjaan}}" readonly>
+                            placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->namapekerjaan }}" readonly>
                     </div>
+
 
                 </div>
 
                 <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
 
                     <!-- Badan Usaha -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Icon User -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A9 9 0 1112 21a9.003 9.003 0 01-6.879-3.196zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            Jenis Pekerjaan
-                        </label>
-                        <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
-                            placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;" value="{{$data->profiljenispekerjaan->jenispekerjaan}}" readonly>
-                    </div>
+               <!-- Jenis Pekerjaan -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Icon Briefcase -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 7V5a2 2 0 012-2h8a2 2 0 012 2v2m-2 0h4a2 2 0 012 2v2H2V9a2 2 0 012-2h4m0 0V5a2 2 0 012-2h4a2 2 0 012 2v2" />
+        </svg>
+        Jenis Pekerjaan
+    </label>
+    <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins;" value="{{$data->profiljenispekerjaan->jenispekerjaan}}" readonly>
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Icon User -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A9 9 0 1112 21a9.003 9.003 0 01-6.879-3.196zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            Tahun Pelaksanaan
-                        </label>
-                        <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
-                            placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;" value="{{$data->tahunpilihan->tahunpilihan}}" readonly>
-                    </div>
+<!-- Tahun Pelaksanaan -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Icon Calendar -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        Tahun Pelaksanaan
+    </label>
+    <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins;" value="{{$data->tahunpilihan->tahunpilihan}}" readonly>
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Icon User -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A9 9 0 1112 21a9.003 9.003 0 01-6.879-3.196zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            Tahun Pelaksanaan
-                        </label>
-                        <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
-                            placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;" value="{{$data->tahunpilihan->tahunpilihan}}" readonly>
-                    </div>
+<!-- Penyedia -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Icon Office Building -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 21h18M9 10h.01M15 10h.01M9 14h.01M15 14h.01M4 17V5a1 1 0 011-1h14a1 1 0 011 1v12" />
+        </svg>
+        Penyedia
+    </label>
+    <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins;" value="{{$data->cvptpenyedia}}" readonly>
+</div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Icon User -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A9 9 0 1112 21a9.003 9.003 0 01-6.879-3.196zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            Penyedia
-                        </label>
-                        <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
-                            placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;" value="{{$data->cvptpenyedia}}" readonly>
-                    </div>
-
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-                            <!-- Icon User -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A9 9 0 1112 21a9.003 9.003 0 01-6.879-3.196zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            Nomor Induk Berusaha
-                        </label>
-                        <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
-                            placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            style="margin-top: -15px; font-family: Poppins;" value="{{$data->nib}}" readonly>
-                    </div>
+<!-- Nomor Induk Berusaha -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Icon Document Text -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6M7 8h10M4 6a2 2 0 012-2h12a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" />
+        </svg>
+        Nomor Induk Berusaha
+    </label>
+    <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+        style="margin-top: -15px; font-family: Poppins;" value="{{$data->nib}}" readonly>
+</div>
 
                 </div>
 
