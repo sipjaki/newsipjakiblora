@@ -15,7 +15,7 @@ class ShstbloraController extends Controller
         $user = Auth::user();
 
         return view('frontend.07_ahsp.04_shst.shstindex', [
-            'title' => 'Standar Harga Satuan Tertinggi Tahun 2025 Kabupaten Blora',
+            'title' => 'SHST Tahun 2025 Kabupaten Blora',
             'user' => $user, // Mengirimkan data paginasi ke view
             'data' => $data, // Mengirimkan data paginasi ke view
         ]);
