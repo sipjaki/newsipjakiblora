@@ -186,7 +186,7 @@
 
 
              <section class="news-details-section" style="background-image: url(assets/00_dokmasjaki/03_datajakon/bannerbetter.jpg);">
-                <div class="container" style="margin-top: -50px;">
+                <div class="container" style="margin-top: -150px;">
                     <div class="row">
                         <!-- Kolom Konten Utama -->
                         <div class="col-lg-8">
