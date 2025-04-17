@@ -47,7 +47,7 @@ class PaketpekerjaanmasjakiController extends Controller
 
 
         return view('frontend.03_masjaki_jakon.04_profilpaketpekerjaan.00_paketpekerjaan.index', [
-            'title' => 'Profil Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
+            'title' => 'Profil Paket Pekerjaan',
             'data' => $data,
             'perPage' => $perPage,
             'search' => $search
