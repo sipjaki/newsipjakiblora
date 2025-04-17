@@ -172,7 +172,7 @@ table.zebra-table {
                     onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
                     >
                         <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
-                        {{ $title }}
+                        {{ $title }} : {{$data->namakegiatan}}
                     </button>
                 </div>
             </div>
