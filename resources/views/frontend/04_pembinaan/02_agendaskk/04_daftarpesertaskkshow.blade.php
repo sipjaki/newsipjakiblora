@@ -128,7 +128,7 @@ table.zebra-table {
       <input
         type="text"
         id="searchInput"
-        placeholder="Cari Data ..."
+        placeholder="Cari Sertifikasi ..."
         oninput="searchTable()"
         class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent font-[Poppins]"
       />
