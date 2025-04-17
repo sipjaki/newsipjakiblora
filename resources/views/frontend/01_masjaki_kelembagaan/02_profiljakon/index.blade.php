@@ -472,29 +472,31 @@ table.zebra-table {
 </table>
 <br>
 
-<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">IV. Kontak OPD</h4>
+{{-- <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">IV. Kontak OPD</h4> --}}
+<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >IV. Kontak OPD</span></h4>
+
 <table>
     @foreach ($datainformasi as $item)
     <tr>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">1</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nomor Telepon</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->notelepon}}</td>
     </tr>
     <tr>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">2</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">2</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Instagram</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">@{{$item->instagram}}</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">@ {{$item->instagram}}</td>
     </tr>
     <tr>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">3</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Tiktok</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->tiktok}}</td>
     </tr>
     <tr>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">4</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Email</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
         <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->email}}</td>
@@ -546,11 +548,12 @@ table.zebra-table {
 
         <div class="portfolio-details-content">
             <div class="portfolio-details-content-title">
-                <h4>{{$item->judul}}</h3>
+                <h4 style="font-family: 'Poppins', sans-serif;">{{$item->judul}}</h3>
             </div><!-- portfolio-details-content-title -->
             <div class="portfolio-details-content-text">
-                <p style="text-align: justify" >
+                <p style="text-align: justify" ><span style="font-family: 'Poppins', sans-serif;">
                     {{$item->keterangan}}
+                </span>
                 </p>
             </div><!-- portfolio-details-content-text -->
         </div><!-- portfolio-details-content -->
