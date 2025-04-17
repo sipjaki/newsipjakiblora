@@ -220,7 +220,7 @@ table.zebra-table {
                             </td>
 
                             <td style="text-align: center;">
-                                {{ $item->bulanrekap->bulanrekap ?? 'Data Tidak Ditemukan' }}
+                                {{ $item->bulanrekap->bulanrekap }}
                             </td>
 
                             <td style="text-align: center;">
