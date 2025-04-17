@@ -100,7 +100,7 @@ table.zebra-table {
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
 <!-- Breadcrumb + Search Bar -->
-<div class="max-w-[1130px] mx-auto pt-[50px] px-4 font-poppins">
+<div class="max-w-[1130px] mx-auto pt-[50px] px-4 font-poppins" sty>
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 
       <!-- KIRI: Gambar + Breadcrumb -->
@@ -111,10 +111,10 @@ table.zebra-table {
           <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px; color:blue;">
             {{$title}}
           </a>
-          <span>/</span>
+          {{-- <span>/</span>
           <a href="/datajakon/statistikabujkblora" class="font-medium" style="font-size: 16px;">
             Data Statistik
-          </a>
+          </a> --}}
         </div>
       </div>
 
@@ -179,7 +179,7 @@ table.zebra-table {
 
 
 
-            <section class="portfolio-details">
+            <section class="portfolio-details" style="margin-top: -200px;">
                 <div class="container" style="background-image: url(assets/00_dokmasjaki/03_datajakon/putihbaru.jpg);">
                     {{-- <img src="assets/image/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="img-109"> --}}
 
@@ -215,28 +215,6 @@ table.zebra-table {
 
     </div>
 
-    <script>
-        function updateEntries() {
-          let selectedValue = document.getElementById("entries").value;
-          let url = new URL(window.location.href);
-          url.searchParams.set("perPage", selectedValue);
-          window.location.href = url.toString();
-        }
-
-        function searchTable() {
-          let input = document.getElementById("searchInput").value;
-
-          fetch(`/datajakon/bujkkontraktor?search=${input}`)
-            .then(response => response.text())
-            .then(html => {
-              let parser = new DOMParser();
-              let doc = parser.parseFromString(html, "text/html");
-              let newTableBody = doc.querySelector("#tableBody").innerHTML;
-              document.querySelector("#tableBody").innerHTML = newTableBody;
-            })
-            .catch(error => console.error("Error fetching search results:", error));
-        }
-      </script>
 
 
 @include('frontend.00_approve.01_cssterpisah.footer1')
