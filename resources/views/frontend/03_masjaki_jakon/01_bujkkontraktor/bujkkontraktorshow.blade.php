@@ -311,23 +311,15 @@ table.zebra-table {
                             <td>{{ $item->penerbit ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>{{ $item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>{{ $item->masaberlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
-
                             <td>
-                                <?php
-                                    use Carbon\Carbon;
-
-                                    $statusMasaBerlaku = 'Belum Memenuhi Persyaratan';
-                                    $today = Carbon::now();
-
-                                    if (!empty($item->masaberlaku)) {
-                                        $masaBerlaku = Carbon::parse($item->masaberlaku);
-                                        $statusMasaBerlaku = $masaBerlaku->lt($today)
-                                            ? '<button class="bg-red-600 text-white px-3 py-1 rounded text-sm">TIDAK BERLAKU</button>'
-                                            : '<button class="bg-green-600 text-white px-3 py-1 rounded text-sm">BERLAKU</button>';
-                                    }
-                                    echo $statusMasaBerlaku;
-                                ?>
+                                @if ($masaBerlaku->lt($today)) <!-- Cek apakah masa berlaku sudah lewat -->
+                                    <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">TIDAK BERLAKU</button>
+                                @else
+                                    <button class="bg-green-600 text-white px-3 py-1 rounded text-sm">BERLAKU</button>
+                                @endif
                             </td>
+
+
                         </tr>
                         @endforeach
 
