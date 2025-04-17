@@ -382,20 +382,22 @@ style="margin-top: -15px; font-family: Poppins;">
 <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
 
                <!-- Dinas -->
-<div class="flex flex-col gap-2 w-full">
-    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
-            viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 8c1.656 0 3 1.343 3 3 0 1.656-1.344 3-3 3s-3-1.344-3-3c0-1.657 1.344-3 3-3zm0 9c-3.866 0-7-1.79-7-4V9l7-4 7 4v4c0 2.21-3.134 4-7 4z" />
-        </svg>
-        Dinas
-    </label>
-    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
-        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
-        style="margin-top: -15px; font-family: Poppins;"
-        value="{{ $data->user->name}}">
-</div>
+               <div class="flex flex-col gap-2 w-full">
+                <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                    <!-- SVG Gedung / Dinas -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 21h18M9 21V9a1 1 0 011-1h4a1 1 0 011 1v12M9 6h6M10 11h4m-4 4h4" />
+                    </svg>
+                    Dinas
+                </label>
+                <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+                    placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
+                    style="margin-top: -15px; font-family: Poppins;"
+                    value="{{ $data->user->name }}">
+            </div>
+
 </div>
 
 
