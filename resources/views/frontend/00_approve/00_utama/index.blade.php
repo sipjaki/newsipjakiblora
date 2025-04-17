@@ -1,39 +1,113 @@
 <style>
-    /* file: resources/css/custom.css atau langsung di style tag */
-.full-width-container {
-  max-width: 80% !important;
-  width: 80%;
-  margin-top: 10px;
-}
+    .pricing-section {
+        padding: 20px;
+        text-align: center;
+    }
+    .pricing-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .pricing-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .pricing-card {
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 220px;
+    }
+    .pricing-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .pricing-card h4 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .pricing-card a {
+        text-decoration: none;
+        color: #007bff;
+    }
+    .pricing-card a:hover {
+        text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+        .pricing-title {
+            font-size: 24px;
+        }
+        .pricing-card {
+            max-width: 180px;
+            padding: 10px;
+        }
+        .pricing-card h4 {
+            font-size: 14px;
+        }
+    }
 
-.table-wrapper {
-  overflow-x: auto;
-  border-radius: 15px;
-}
+    .modal-alert-pertanyaan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed; /* Mengubah menjadi fixed agar tetap di atas */
+    top: 0; /* Atur jarak dari atas */
+    left: 0; /* Atur jarak dari kiri */
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    z-index: 9999; /* Pastikan z-index lebih tinggi dari elemen lain */
+    }
 
-.zebra-table {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
-}
+    .modal-content-pertanyaan {
+    background-color: white; /* Warna latar konten modal */
+    padding: 20px;
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+    max-width: 400px; /* Lebar maksimal modal */
+    width: 90%;
+    z-index: 9999;/* Lebar responsif */
+    }
 
-.zebra-table th,
-.zebra-table td {
-  padding: 12px 16px;
-  border: 1px solid #e5e7eb;
-  text-align: left;
-}
+            /* file: resources/css/custom.css atau langsung di style tag */
+        .full-width-container {
+        max-width: 80% !important;
+        width: 80%;
+        margin-top: 10px;
+        }
 
-.zebra-table thead {
-  background-color: #f9fafb; /* Tailwind gray-50 */
-}
+        .table-wrapper {
+        overflow-x: auto;
+        border-radius: 15px;
+        }
 
-.view-icon {
-  color: #374151; /* Tailwind gray-700 */
-  cursor: pointer;
-}
+        .zebra-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+        }
 
-table.zebra-table {
+        .zebra-table th,
+        .zebra-table td {
+        padding: 12px 16px;
+        border: 1px solid #e5e7eb;
+        text-align: left;
+        }
+
+        .zebra-table thead {
+        background-color: #f9fafb; /* Tailwind gray-50 */
+        }
+
+        .view-icon {
+        color: #374151; /* Tailwind gray-700 */
+        cursor: pointer;
+        }
+
+        table.zebra-table {
             border-collapse: collapse;
             width: 100%;
             font-family: 'Poppins', sans-serif;
@@ -99,33 +173,6 @@ table.zebra-table {
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
-<!-- Breadcrumb + Search Bar -->
-<div class="max-w-[1130px] mx-auto pt-[50px] px-4 font-poppins" sty>
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-
-      <!-- KIRI: Gambar + Breadcrumb -->
-      <div class="flex items-center gap-4">
-        <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
-        <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
-          <span>/</span>
-          <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px; color:blue;">
-            {{$title}}
-          </a>
-          {{-- <span>/</span>
-          <a href="/datajakon/statistikabujkblora" class="font-medium" style="font-size: 16px;">
-            Data Statistik
-          </a> --}}
-        </div>
-      </div>
-
-
-      <!-- KANAN: Search Bar -->
-   <!-- Search Bar Wrapper -->
-
-
-    </div>
-  </div>
-
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
@@ -184,86 +231,6 @@ table.zebra-table {
 
             </section><!--main-slider-->
 
-            <style>
-                .pricing-section {
-                    padding: 20px;
-                    text-align: center;
-                }
-                .pricing-title {
-                    font-size: 32px;
-                    margin-bottom: 20px;
-                }
-                .pricing-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    gap: 15px;
-                }
-                .pricing-card {
-                    background: white;
-                    padding: 15px;
-                    border-radius: 8px;
-                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                    text-align: center;
-                    max-width: 220px;
-                }
-                .pricing-card img {
-                    width: 100%;
-                    height: auto;
-                    border-radius: 8px;
-                }
-                .pricing-card h4 {
-                    font-size: 16px;
-                    margin-top: 10px;
-                }
-                .pricing-card a {
-                    text-decoration: none;
-                    color: #007bff;
-                }
-                .pricing-card a:hover {
-                    text-decoration: underline;
-                }
-                @media (max-width: 768px) {
-                    .pricing-title {
-                        font-size: 24px;
-                    }
-                    .pricing-card {
-                        max-width: 180px;
-                        padding: 10px;
-                    }
-                    .pricing-card h4 {
-                        font-size: 14px;
-                    }
-                }
-            </style>
-
-
-
-        <style>
-            .modal-alert-pertanyaan {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: fixed; /* Mengubah menjadi fixed agar tetap di atas */
-            top: 0; /* Atur jarak dari atas */
-            left: 0; /* Atur jarak dari kiri */
-            width: 100%; /* Lebar penuh */
-            height: 100%; /* Tinggi penuh */
-            background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
-            z-index: 9999; /* Pastikan z-index lebih tinggi dari elemen lain */
-        }
-
-        .modal-content-pertanyaan {
-            background-color: white; /* Warna latar konten modal */
-            padding: 20px;
-            border-radius: 8px; /* Sudut melengkung */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
-            max-width: 400px; /* Lebar maksimal modal */
-            width: 90%;
-            z-index: 9999;/* Lebar responsif */
-        }
-
-        </style>
 
 
         @if (session('logout'))
@@ -423,9 +390,6 @@ table.zebra-table {
                                             <img src="{{ asset('storage/' . $item->foto1) }}" class="img-fluid" alt="Gambar" width="200px;">
                                         </a>
 
-                                        {{-- <a href="#">
-                                            <img src="{{ asset('storage/' . $item->foto1) }}" class="img-fluid" alt="Gambar" width="200px;">
-                                        </a> --}}
 
                                         <div class="event-card-meta">
                                             <div class="event-meta-number">
@@ -478,71 +442,6 @@ table.zebra-table {
                     </div> <!-- container -->
                 </div> <!-- event-section-outer -->
             </section> <!-- event-three-section -->
-
-
-        {{--
-            <section class="client-section" style="background: #2ECC71">
-                <h5 class="client-text" style="font-weight: 800; color:black; font-size:18px; text-transform:capitalize; font-size:12px;" >Dokumentasi Video</h5>
-                <div class="container">
-                    <div class="client-carousel owl-carousel owl-theme">
-                        <div class="item">
-                            <video class="img-fluid" controls>
-                                <source src="/assets/00_dokmasjaki/00_video/video1.mp4" type="video/mp4">
-                                Browser Anda tidak mendukung tag video.
-                            </video>
-                        </div><!--item-->
-                        <div class="item">
-                            <video class="img-fluid" controls>
-                                <source src="/assets/00_dokmasjaki/00_video/video4.mp4" type="video/mp4">
-                                Browser Anda tidak mendukung tag video.
-                            </video>
-                        </div><!--item-->
-                        <div class="item">
-                            <video class="img-fluid" controls>
-                                <source src="/assets/00_dokmasjaki/00_video/video5.mp4" type="video/mp4">
-                                Browser Anda tidak mendukung tag video.
-                            </video>
-                        </div><!--item-->
-                        <div class="item">
-                            <video class="img-fluid" controls>
-                                <source src="/assets/00_dokmasjaki/00_video/video6.mp4" type="video/mp4">
-                                Browser Anda tidak mendukung tag video.
-                            </video>
-                        </div><!--item-->
-                        <div class="item">
-                            <video class="img-fluid" controls>
-                                <source src="/assets/00_dokmasjaki/00_video/video7.mp4" type="video/mp4">
-                                Browser Anda tidak mendukung tag video.
-                            </video>
-                        </div><!--item-->
-                    </div><!--client-carousel owl-carousel owl-theme-->
-                </div><!--container-->
-            </section><!--client-section--> --}}
-
-
-            {{-- REKOMENDASI BERITA HIGHLIGHT --}}
-
-        {{--
-            <section class="cta-five-section">
-                <div class="container">
-                    <div class="cta-five-card">
-                        <div class="cta-five-card-icon">
-                            <i class="flaticon-file"></i>
-                        </div><!-- cta-five-card-icon -->
-                        <div class="cta-five-content">
-                            <h4>Download Persyaratan Pelatihan, Bimbingan Teknis, dan Workshop</h4>
-                            <p>
-                                Brosur ini berisi persyaratan untuk pelatihan, bimbingan teknis, dan workshop yang ditujukan untuk meningkatkan kompetensi tenaga ahli dalam bidang konstruksi, sebagai bagian dari upaya pengembangan sistem informasi pembina jasa konstruksi. </p>
-                        </div><!-- cta-five-content -->
-                        <div class="cta-five-button">
-                            <a href="#" class="btn btn-primary">Download Files</a>
-                        </div><!-- cta-five-button -->
-                        <div class="cta-five-img">
-                            <i class="flaticon-file"></i>
-                        </div><!-- cta-five-img -->
-                    </div><!--cta-five-card-->
-                </div><!-- container -->
-            </section><!--cta-five-section--> --}}
 
         <br><br>
 
