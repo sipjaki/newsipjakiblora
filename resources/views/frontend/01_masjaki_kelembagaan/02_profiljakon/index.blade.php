@@ -228,16 +228,15 @@ table.zebra-table {
             <div class="header-surat">
                 <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
                 <br>
-                <div class="header-text" style="font-family: 'Poppins', sans-serif; text-align: center; padding: 20px;">
-                    <h3 style="font-size: 28px; font-weight: 600; margin-bottom: 10px;">PEMERINTAH KABUPATEN BLORA</h3>
-                    <h3 style="font-size: 28px; font-weight: 600; margin-bottom: 10px;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-                    <p style="font-size: 18px; margin-bottom: 10px;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-                    <h3 style="font-size: 28px; font-weight: 600; margin-bottom: 10px;">BLORA 58214</h3>
-                    <p style="border-top: 2px solid #000; margin-top: 20px; padding-top: 10px;"></p>
-                    <h3 style="font-size: 28px; font-weight: 600; margin-top: 20px;">PROFIL OPD JASA KONSTRUKSI</h3>
-                    <h4 style="font-size: 24px; font-weight: 500; margin-top: 10px;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h4>
+                <div class="header-text" style="font-family: 'Poppins', sans-serif;">
+                    <h3 style="font-family: 'Poppins', sans-serif;">PEMERINTAH KABUPATEN BLORA</h3>
+                    <h3 style="font-family: 'Poppins', sans-serif;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+                    <p style="font-family: 'Poppins', sans-serif;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+                    <h3 style="font-family: 'Poppins', sans-serif;">BLORA 58214</h3>
+                    <p>_____________________________________________________________</p>
+                    <h3 style="font-family: 'Poppins', sans-serif;">PROFIL OPD JASA KONSTRUKSI</h3>
+                    <h4 style="font-family: 'Poppins', sans-serif;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h4>
                 </div>
-
             </div>
             <br>
 
