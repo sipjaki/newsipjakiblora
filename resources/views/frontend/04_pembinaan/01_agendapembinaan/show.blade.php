@@ -235,13 +235,7 @@
 
 
                                 <div class="sidebar-widget sidebar-widget-recent-post" style="font-family: Poppins;">
-                                    <h4>
-                                        <!-- Icon SVG for Penyelenggara -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3C8.69 3 6 5.69 6 9c0 3.27 1.77 5.99 4.26 7.44l1.73 4.57c.06.17.18.33.35.43l1.13.85c.13.1.28.17.44.17s.31-.07.44-.17l1.13-.85c.17-.1.29-.26.35-.43l1.73-4.57C16.23 14.99 18 12.27 18 9c0-3.31-2.69-6-6-6z"/>
-                                        </svg>
-                                        Penyelenggara
-                                    </h4>
+                                    <h4>Penyelenggara</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
@@ -254,13 +248,7 @@
                                         </div>
                                     </div>
 
-                                    <h4>
-                                        <!-- Icon SVG for Waktu Pelaksanaan -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.656 0 3 1.343 3 3 0 1.656-1.344 3-3 3s-3-1.344-3-3c0-1.657 1.344-3 3-3zm0 9c-3.866 0-7-1.79-7-4V9l7-4 7 4v4c0 2.21-3.134 4-7 4z"/>
-                                        </svg>
-                                        Waktu Pelaksanaan
-                                    </h4>
+                                    <h4>Waktu Pelaksanaan</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
@@ -273,13 +261,7 @@
                                         </div>
                                     </div>
 
-                                    <h4>
-                                        <!-- Icon SVG for Lokasi -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C8.14 2 5 5.14 5 9c0 2.28 1.13 4.34 2.86 5.57l4.14 5.12a1 1 0 001.6 0l4.14-5.12C17.87 13.34 19 11.28 19 9c0-3.86-3.14-7-7-7z"/>
-                                        </svg>
-                                        Lokasi
-                                    </h4>
+                                    <h4>Lokasi</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
@@ -292,13 +274,7 @@
                                         </div>
                                     </div>
 
-                                    <h4>
-                                        <!-- Icon SVG for Jumlah Peserta -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C7.03 2 3.12 4.83 2.14 8.9C2.47 9.29 2.91 9.68 3.5 10c.99 1.1 2.38 2.04 3.88 2.79C8.49 13.4 10.23 14 12 14s3.51-.6 4.62-1.21C18.62 12.04 19.99 11.1 20.5 10c.59-.32 1.03-.71 1.36-1.1C20.88 4.83 16.97 2 12 2z"/>
-                                        </svg>
-                                        Jumlah Peserta
-                                    </h4>
+                                    <h4>Jumlah Peserta</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
@@ -311,13 +287,7 @@
                                         </div>
                                     </div>
 
-                                    <h4>
-                                        <!-- Icon SVG for Keterangan -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/>
-                                        </svg>
-                                        Keterangan
-                                    </h4>
+                                    <h4>Keterangan</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
