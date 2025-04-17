@@ -179,7 +179,7 @@ table.zebra-table {
 
 
 
-  <section id="details" class="container mx-auto flex flex-col sm:flex-row gap-5" style="margin-top: -200px;">
+  <section id="details" class="container mx-auto flex flex-col sm:flex-row gap-5" style="margin-top: -100px;">
     <div class="flex flex-col gap-5 w-full">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
             <div class="flex justify-center">
