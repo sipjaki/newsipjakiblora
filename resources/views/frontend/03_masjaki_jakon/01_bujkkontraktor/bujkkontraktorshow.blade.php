@@ -327,12 +327,12 @@ table.zebra-table {
                     <tr>
                         <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                         {{-- <td>{{$item->nama_pengurus}}</td> --}}
-                        <td>{{$item->sub_klasifikasi_layanan}}</td>
-                        <td>{{$item->kode}}</td>
-                        <td>{{$item->kualifikasi}}</td>
-                        <td>{{$item->penerbit}}</td>
-                        <td>{{$item->tanggal_terbit}}</td>
-                        <td>{{$item->masa_berlaku}}</td>
+                        <td>{{$item->sub_klasifikasi_layanan ?? 'Belum Memenuhi Persyaratan'}}</td>
+                        <td>{{$item->kode ?? 'Belum Memenuhi Persyaratan'}}</td>
+                        <td>{{$item->kualifikasi ?? 'Belum Memenuhi Persyaratan'}}</td>
+                        <td>{{$item->penerbit ?? 'Belum Memenuhi Persyaratan'}}</td>
+                        <td>{{$item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan'}}</td>
+                        <td>{{$item->masa_berlaku ?? 'Belum Memenuhi Persyaratan'}}</td>
                         {{-- <td>{{$item->nama_psjk}}</td> --}}
                         {{-- <td>{{$item->sub_kualifikasi_bu}}</td> --}}
                     </tr>
