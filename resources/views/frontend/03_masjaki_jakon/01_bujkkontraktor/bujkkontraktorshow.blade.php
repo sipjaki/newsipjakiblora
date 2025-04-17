@@ -217,60 +217,85 @@ table.zebra-table {
                     >
                 </div>
 
+                <div class="flex flex-col gap-2 w-full">
+                    <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                        <!-- Building Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
+                        </svg>
+                        No Telepon
+                    </label>
+                    <input
+                        style="margin-top: -15px; font-family: Poppins;"
+                        type="text"
+                        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                        value="{{$data->no_telepon}}"
+                        readonly
+                    >
+                </div>
+
+                <div class="flex flex-col gap-2 w-full">
+                    <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                        <!-- Building Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
+                        </svg>
+                        Email
+                    </label>
+                    <input
+                        style="margin-top: -15px; font-family: Poppins;"
+                        type="text"
+                        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                        value="{{$data->email}}"
+                        readonly
+                    >
+                </div>
+
+                <div class="flex flex-col gap-2 w-full">
+                    <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                        <!-- Building Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
+                        </svg>
+                        Nomor Induk Berusaha
+                    </label>
+                    <input
+                        style="margin-top: -15px; font-family: Poppins;"
+                        type="text"
+                        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                        value="{{$data->nib}}"
+                        readonly
+                    >
+                </div>
+
                     <!-- Luas Tanah -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2">
-                            <!-- Ruler icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4V4zm4 4h8v8H8V8z" />
-                            </svg>
-                            <span class="text-sm">Luas Tanah (m²)</span>
-                        </label>
-                        <input
-                            style="margin-top: -15px;"
-                            type="text"
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            value="2.350 m²"
-                            readonly
-                        >
-                    </div>
 
-                    <!-- Jumlah Lantai -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2">
-                            <!-- Layers (floor) icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l9 5-9 5-9-5 9-5zm0 10l9 5-9 5-9-5 9-5z" />
-                            </svg>
-                            <span class="text-sm">Jumlah Lantai</span>
-                        </label>
-                        <input
-                            style="margin-top: -15px;"
-                            type="text"
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            value="2 Lantai"
-                            readonly
-                        >
-                    </div>
+                </div>
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2">
-                            <!-- Icon: Office Building -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 21h18M9 8h6m-3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="text-sm">Fungsi Bangunan</span>
-                        </label>
-                        <input
-                            style="margin-top: -15px;"
-                            type="text"
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            value="Fungsi Sosial Dan Budaya"
-                            readonly
-                        >
-                    </div>
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
+                 <!-- Nama Bangunan -->
+                 <div class="flex flex-col gap-2 w-full">
+                    <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                        <!-- Building Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
+                        </svg>
+                        Alamat Badan Usaha
+                    </label>
+                    <input
+                        style="margin-top: -15px; font-family: Poppins;"
+                        type="text"
+                        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                        value="{{$data->alamat}}"
+                        readonly
+                    >
+                </div>
+
+                    <!-- Luas Tanah -->
 
                 </div>
 
