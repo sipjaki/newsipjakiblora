@@ -211,14 +211,15 @@
                                 BERANDA
                             </a>
                         </li>
+
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 KELEMBAGAAN
                             </a>
-                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 200px;">
-                                <li><a href="/profil/struktur" style="color: black; padding: 8px 20px; display: block;">Struktur DPUPR Blora</a></li>
-                                <li><a href="/profil/rencanastrategis" style="color: black; padding: 8px 20px; display: block;">Profil Jakon DPUPR BLora</a></li>
-                                <li><a href="/profil/tupoksi" style="color: black; padding: 8px 20px; display: block;">Tupoksi Jakon DPUPR Blora</a></li>
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 220px;">
+                                <li><a href="/profil/struktur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Struktur DPUPR Blora</a></li>
+                                <li><a href="/profil/rencanastrategis" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Profil Jakon DPUPR BLora</a></li>
+                                <li><a href="/profil/tupoksi" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tupoksi Jakon DPUPR Blora</a></li>
                             </ul><!-- list-unstyled -->
                         </li><!--has-dropdown-->
 
