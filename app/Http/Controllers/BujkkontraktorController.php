@@ -176,7 +176,7 @@ class BujkkontraktorController extends Controller
 
 
     return view('frontend.03_masjaki_jakon.01_bujkkontraktor.bujkkontraktor', [
-        'title' => 'BUJK Konstruksi',
+        'title' => 'BUJK | Konstruksi',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search
