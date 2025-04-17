@@ -1,4 +1,30 @@
+
+
 <style>
+   .btn-suspend {
+        background-color: orange;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .btn-expired {
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .btn-active {
+        background-color: green;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
     /* file: resources/css/custom.css atau langsung di style tag */
 .full-width-container {
   max-width: 80% !important;
@@ -347,22 +373,21 @@ table.zebra-table {
 
         masaBerlakuElements.forEach(function (element) {
             const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil data masa berlaku
-
             const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
 
             // Cek jika masa berlaku kosong
             if (!masaBerlaku || masaBerlaku === '') {
-                button.classList.add('bg-orange-600', 'text-white'); // Warna oranye untuk suspend
+                button.classList.add('btn-suspend'); // Tambahkan class untuk suspend
                 button.textContent = 'SUSPEND';
             } else {
                 const masaBerlakuDate = new Date(masaBerlaku); // Jika ada, ubah menjadi tanggal
 
                 // Cek jika masa berlaku sudah lewat
                 if (masaBerlakuDate < today) {
-                    button.classList.add('bg-red-600', 'text-white');
+                    button.classList.add('btn-expired'); // Warna merah jika tidak berlaku
                     button.textContent = 'TIDAK BERLAKU';
                 } else {
-                    button.classList.add('bg-green-600', 'text-white');
+                    button.classList.add('btn-active'); // Warna hijau jika masih berlaku
                     button.textContent = 'BERLAKU';
                 }
             }
