@@ -195,10 +195,10 @@ table.zebra-table {
                         @forelse ($data as $item)
                         <tr>
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                            <td class="namalengkap">{{ $item->kodeproyek ?? 'Data Belum Diupdate' }}</td>
-                            <td style="text-transform: capitalize">{{ $item->namaperusahaan ?? 'Data Belum Diupdate' }}</td>
-                            <td>{{ $item->statusmodal ?? 'Data Belum Diupdate' }}</td>
-                            <td style="text-align: center;">{{ $item->sektor ?? 'Data Belum Diupdate' }}</td>
+                            <td class="namalengkap">{{ $item->kodeproyek ?? 'Data Tidak Ditemukan!' }}</td>
+                            <td style="text-transform: capitalize">{{ $item->namaperusahaan ?? 'Data Tidak Ditemukan!' }}</td>
+                            <td>{{ $item->statusmodal ?? 'Data Tidak Ditemukan!' }}</td>
+                            <td style="text-align: center;">{{ $item->sektor ?? 'Data Tidak Ditemukan!' }}</td>
                             <td style="text-align: center">
                                 <a href="/pengawasanbujkshow/{{ $item->namaperusahaan }}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
@@ -207,7 +207,7 @@ table.zebra-table {
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" style="text-align: center; font-weight: bold; color: red;">Data Belum Diupdate</td>
+                            <td colspan="6" style="text-align: center; font-weight: bold; color: red;">Data Tidak Ditemukan!</td>
                         </tr>
                     @endforelse
 
