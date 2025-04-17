@@ -386,7 +386,7 @@
     <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
         placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
         style="margin-top: -15px; font-family: Poppins;"
-        value="{{ $data->dinas }}">
+        value="{{ $data->user->name}}">
 </div>
 
 
