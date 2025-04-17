@@ -179,7 +179,7 @@ table.zebra-table {
 
 
 
-            <section class="portfolio-details" style="margin-top: -200px;">
+            <section class="portfolio-details" style="margin-top: -125px;">
                 <div class="container" style="background-image: url(assets/00_dokmasjaki/03_datajakon/putihbaru.jpg);">
                     {{-- <img src="assets/image/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="img-109"> --}}
 
