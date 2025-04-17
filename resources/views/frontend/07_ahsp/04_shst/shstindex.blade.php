@@ -229,9 +229,9 @@ table.zebra-table {
                                 <th style="text-align:center" colspan="3">Harga Satuan Pembangunan Pagar Gedung Negara Per M1 (Meter Lari)</th>
                             </tr>
                             <tr>
-                                <th>Pagar Depan M1 (Meter Lari) Rupiah</th>
-                                <th>Pagar Belakang M1 (Meter Lari) Rupiah</th>
-                                <th>Pagar Samping M1 (Meter Lari) Rupiah</th>
+                                <th style="text-align: center;">Pagar Depan M1 (Meter Lari) Rupiah</th>
+                                <th style="text-align: center;">Pagar Belakang M1 (Meter Lari) Rupiah</th>
+                                <th style="text-align: center;">Pagar Samping M1 (Meter Lari) Rupiah</th>
                             </tr>
                         </thead>
                         <tbody>
