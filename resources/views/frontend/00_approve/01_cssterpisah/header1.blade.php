@@ -15,7 +15,7 @@ ul.list-unstyled {
         <div class="topbar-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 20px; border-radius: 15px;">
 
             <!-- Info Berjalan (Pembungkus Border Radius) -->
-            <div class="topbar-info" style="flex: 1; margin-left: 20px; background-color: white; border-radius: 15px; padding: 5px;">
+            <div class="topbar-info" style="flex: 1; background-color: white; border-radius: 15px; padding: 5px; display: flex; align-items: center;">
                 <div class="topbar-text" style="
                     background-color: white;
                     color: green;
