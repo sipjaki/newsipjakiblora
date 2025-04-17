@@ -73,7 +73,7 @@ class AgendaskkController extends Controller
     return view('frontend.04_pembinaan.02_agendaskk.02_agendaskkshow', [
         'title' => 'Agenda Sertifikasi Tenaga Kerja Konstruksi',
         'data' => $dataagendaskk,
-        'datamatertipelatihan' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+        'datamatertipelatihanskk' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
         'user' => $user,
         // 'start' => $start,
     ]);
