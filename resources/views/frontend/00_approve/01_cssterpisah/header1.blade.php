@@ -11,8 +11,8 @@ ul.list-unstyled {
 </style>
 
 <header class="header">
-	<div class="topbar" style="background: #2ECC71;>
-		<div class="topbar-inner" style="background: #2ECC71 " >
+	<div class="topbar" style="background: #2ECC71;">
+		<div class="topbar-inner;" style="background: #2ECC71;" >
 			<div class="topbar-left" style="background: #2ECC71 ">
 				<div class="topbar-socials">
                     <a href="#"><i class="fa-brands fa-tiktok" style="font-size: 24px;"></i></a>
