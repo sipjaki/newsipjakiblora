@@ -11,47 +11,41 @@ ul.list-unstyled {
 </style>
 
 <header class="header">
-    <div class="topbar" style="background: #2ECC71;">
-        <div class="topbar-inner" style="background: #2ECC71;">
-            <div class="topbar-left" style="background: #2ECC71;">
-                <!-- Sosial Media -->
+    <div class="topbar" style="background: #2ECC71; padding: 10px 0;">
+        <div class="topbar-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 20px;">
 
+            <!-- Sosial Media -->
+            <div class="topbar-socials" style="display: flex; gap: 15px;">
+                <a href="#"><i class="fa-brands fa-tiktok" style="font-size: 24px; color: white;"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram" style="font-size: 24px; color: white;"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp" style="font-size: 24px; color: white;"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook" style="font-size: 24px; color: white;"></i></a>
+            </div>
 
-                <!-- Info Berjalan -->
-                <div class="topbar-info">
-                    <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
-                        <li>
-                            <div class="topbar-text" style="
-                                margin-right: 20px;
-                                border-radius: 20px;
-                                background-color: white;
-                                color: green;
-                                padding: 8px;
-                                overflow: hidden;
-                                font-size: 25px;
-                                white-space: nowrap;
-                                display: inline-block;
-                                width: 100%;">
-                                <marquee behavior="scroll" direction="left" style="width: 100%; margin-top: -10px;">
-                                    <a href="#" style="color: navy; text-decoration: none; font-family: 'Poppins'">
-                                        Selamat Datang di Mas Jaki DPUPR Kab Blora - Sistem Informasi Pembina Jasa Konstruksi
-                                        Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
-                                    </a>
-                                </marquee>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="topbar-socials">
-                    <a href="#"><i class="fa-brands fa-tiktok" style="font-size: 24px;"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram" style="font-size: 24px;"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook" style="font-size: 24px;"></i></a>
+            <!-- Info Berjalan -->
+            <div class="topbar-info" style="flex: 1; margin-left: 20px;">
+                <div class="topbar-text" style="
+                    border-radius: 20px;
+                    background-color: white;
+                    color: green;
+                    padding: 8px 15px;
+                    overflow: hidden;
+                    font-size: 20px;
+                    white-space: nowrap;
+                    font-family: 'Poppins', sans-serif;
+                    width: 100%;">
+                    <marquee behavior="scroll" direction="left" scrollamount="6">
+                        <a href="#" style="color: navy; text-decoration: none;">
+                            Selamat Datang di Mas Jaki DPUPR Kab Blora - Sistem Informasi Pembina Jasa Konstruksi
+                            Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
+                        </a>
+                    </marquee>
                 </div>
             </div>
+
         </div>
     </div>
+
 
 	<div class="main-menu sticky-header" style="background: #1d1d1b">
     <br>
