@@ -216,9 +216,9 @@
                                 KELEMBAGAAN
                             </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 200px;">
-                                <li><a href="/profil/struktur" style="color: white; padding: 8px 20px; display: block;">Struktur DPUPR Blora</a></li>
-                                <li><a href="/profil/rencanastrategis" style="color: white; padding: 8px 20px; display: block;">Profil Jakon DPUPR BLora</a></li>
-                                <li><a href="/profil/tupoksi" style="color: white; padding: 8px 20px; display: block;">Tupoksi Jakon DPUPR Blora</a></li>
+                                <li><a href="/profil/struktur" style="color: black; padding: 8px 20px; display: block;">Struktur DPUPR Blora</a></li>
+                                <li><a href="/profil/rencanastrategis" style="color: black; padding: 8px 20px; display: block;">Profil Jakon DPUPR BLora</a></li>
+                                <li><a href="/profil/tupoksi" style="color: black; padding: 8px 20px; display: block;">Tupoksi Jakon DPUPR Blora</a></li>
                             </ul><!-- list-unstyled -->
                         </li><!--has-dropdown-->
 
