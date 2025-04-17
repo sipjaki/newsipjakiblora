@@ -254,7 +254,7 @@
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -267,7 +267,7 @@
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ $data->lokasi }}</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->lokasi }}</span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -280,7 +280,7 @@
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ $data->jumlahpeserta }} Peserta</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->jumlahpeserta }} Peserta </span> </p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -293,7 +293,7 @@
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ $data->keterangan }}</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->keterangan }}</span></p>
                                                     </div>
                                                 </div>
                                             </div>
