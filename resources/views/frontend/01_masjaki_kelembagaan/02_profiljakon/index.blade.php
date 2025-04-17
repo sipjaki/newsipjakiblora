@@ -560,16 +560,8 @@ table.zebra-table {
         @endforeach
     </div><!-- container -->
 </section><!-- portfolio-details -->
-
-
-
-
-
-
 </div>
 </div>
-<br><br><br>
-
 </section>
 
 
