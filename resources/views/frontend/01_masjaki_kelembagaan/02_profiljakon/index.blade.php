@@ -240,230 +240,181 @@ table.zebra-table {
             </div>
             <br>
 
-            <h4 style="font-family: 'Poppins', sans-serif;">I. IDENTITAS OPD</h4>
+            <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">I. IDENTITAS OPD</h4>
             <table>
                 @foreach ($dataidentitasopd as $item)
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">1.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Nama OPD</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->namaopd}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama OPD</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->namaopd}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">2.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Alamat OPD</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->alamatopd}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">2.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Alamat OPD</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->alamatopd}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;"></td>
-                    <td style="font-family: 'Poppins', sans-serif;">RT / RW</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->rtrw}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">RT / RW</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->rtrw}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;"></td>
-                    <td style="font-family: 'Poppins', sans-serif;">Kode Pos</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->kodepos}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Kode Pos</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->kodepos}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;"></td>
-                    <td style="font-family: 'Poppins', sans-serif;">Kelurahan</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->kelurahan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Kelurahan</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->kelurahan}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;"></td>
-                    <td style="font-family: 'Poppins', sans-serif;">Kecamatan</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->kecamatan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Kecamatan</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->kecamatan}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;"></td>
-                    <td style="font-family: 'Poppins', sans-serif;">Kota</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->kota}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Kota</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->kota}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;"></td>
-                    <td style="font-family: 'Poppins', sans-serif;">Provinsi</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->provinsi}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Provinsi</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->provinsi}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;"></td>
-                    <td style="font-family: 'Poppins', sans-serif;">Negara</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->negara}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Negara</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->negara}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">3.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Posisi Geografis</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->posisigeografis}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Posisi Geografis</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->posisigeografis}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">4.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Tipe Dinas</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->tipedinas}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">4.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Tipe Dinas</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->tipedinas}}</td>
                 </tr>
                 @endforeach
             </table>
 
             <br>
 
-            <h4 style="font-family: 'Poppins', sans-serif;">II. PROFIL PIMPINAN OPD</h4>
+            <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">II. PROFIL PIMPINAN OPD</h4>
 
-            <h5 style="font-family: 'Poppins', sans-serif;">KEPALA DINAS</h5>
+            <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;">KEPALA DINAS</h5>
             <table>
                 @foreach ($datakepaladinas as $item)
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">1.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Nama Lengkap</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->namalengkap}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Lengkap</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->namalengkap}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">2.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">NIP</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->nip}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">2.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">NIP</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->nip}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">3.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Tempat, Tanggal Lahir</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->ttl}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Tempat, Tanggal Lahir</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->ttl}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">4.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Pangkat / Golongan</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pangkatgolongan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">4.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Pangkat / Golongan</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->pangkatgolongan}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">5.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Jabatan</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->jabatan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">5.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Jabatan</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->jabatan}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">6.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Perangkat Daerah</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->perangkatdaerah}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">6.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Perangkat Daerah</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->perangkatdaerah}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">7.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Pendidikan Terakhir</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pendidikanterakhir}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">7.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Pendidikan Terakhir</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->pendidikanterakhir}}</td>
                 </tr>
                 @endforeach
             </table>
 
             <br>
 
-            <h5 style="font-family: 'Poppins', sans-serif;">KEPALA BIDANG BANGUNAN GEDUNG</h5>
+            <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;">KEPALA BIDANG BANGUNAN GEDUNG</h5>
             <table>
                 @foreach ($datakabid as $item)
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">1.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Nama Lengkap</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->namalengkap}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Lengkap</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->namalengkap}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">2.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">NIP</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->nip}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">2.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">NIP</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->nip}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">3.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Tempat, Tanggal Lahir</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->ttl}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Tempat, Tanggal Lahir</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->ttl}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">4.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Pangkat / Golongan</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pangkatgolongan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">4.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Pangkat / Golongan</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->pangkatgolongan}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">5.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Jabatan</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->jabatan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">5.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Jabatan</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->jabatan}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">6.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Perangkat Daerah</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->perangkatdaerah}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">6.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Perangkat Daerah</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->perangkatdaerah}}</td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">7.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Pendidikan Terakhir</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pendidikanterakhir}}</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">7.</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Pendidikan Terakhir</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->pendidikanterakhir}}</td>
                 </tr>
                 @endforeach
             </table>
 
-            <br>
-
-            <h5 style="font-family: 'Poppins', sans-serif;">SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
-            <table>
-                @foreach ($datasubkoordinator as $item)
-                <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">1.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Nama Lengkap</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->namalengkap}}</td>
-                </tr>
-                <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">2.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">NIP</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->nip}}</td>
-                </tr>
-                <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">3.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Tempat, Tanggal Lahir</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->ttl}}</td>
-                </tr>
-                <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">4.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Pangkat / Golongan</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pangkatgolongan}}</td>
-                </tr>
-                <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">5.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Jabatan</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->jabatan}}</td>
-                </tr>
-                <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">6.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Perangkat Daerah</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->perangkatdaerah}}</td>
-                </tr>
-                <tr>
-                    <td style="font-family: 'Poppins', sans-serif;">7.</td>
-                    <td style="font-family: 'Poppins', sans-serif;">Pendidikan Terakhir</td>
-                    <td style="font-family: 'Poppins', sans-serif;">:</td>
-                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pendidikanterakhir}}</td>
-                </tr>
-                @endforeach
-            </table>
-                   </div><!-- container -->
+        </div><!-- container -->
             </section><!-- portfolio-details -->
 
 
