@@ -241,7 +241,7 @@
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ $data->penyelenggara }}</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->penyelenggara }}</span></p>
                                                     </div>
                                                 </div>
                                             </div>
