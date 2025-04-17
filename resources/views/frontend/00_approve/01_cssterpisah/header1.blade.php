@@ -174,72 +174,15 @@ ul.list-unstyled {
         BERITA
     </a>
     <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
-        <li>
-            <a href="/peraturan/undangundang" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> UNDANG UNDANG
+        <li style="position: relative;">
+            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
+                Peraturan
             </a>
-        </li>
+            <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0;">
+                <a href="">Undang-Undang</a>
 
-        <li>
-            <a href="/peraturan/pemerintah" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN PEMERINTAH
-            </a>
+            </ul>
         </li>
-
-        <li>
-            <a href="/peraturan/presiden" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN PRESIDEN
-            </a>
-        </li>
-
-        <li>
-            <a href="/peraturan/menteri" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN MENTERI
-            </a>
-        </li>
-
-        <li>
-            <a href="/peraturan/keputusanmenteri" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> KEPUTUSAN MENTERI
-            </a>
-        </li>
-
-        <li>
-            <a href="/peraturan/suratedaranmenteri" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> SURAT EDARAN MENTERI
-            </a>
-        </li>
-
-        <li>
-            <a href="/peraturan/referensi" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> REFERENSI
-            </a>
-        </li>
-
-        <li>
-            <a href="/peraturan/daerah" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN DAERAH
-            </a>
-        </li>
-
-        <li>
-            <a href="/peraturan/gubernur" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN GUBERNUR
-            </a>
-        </li>
-
-        <li>
-            <a href="/peraturan/walikotadanbupati" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN WALIKOTA/ BUPATI
-            </a>
-        </li>
-
-        <li>
-            <a href="/peraturan/suratkeputusan" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
-                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> SURAT KEPUTUSAN
-            </a>
-        </li>
-
         <li><a href="/beritajakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
         <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
     </ul>
