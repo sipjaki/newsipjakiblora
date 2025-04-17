@@ -346,58 +346,58 @@
                         </li>
 
                         <li class="has-dropdown" style="position: relative;">
-                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block;">
+                            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block;">
                                 AHSP
                             </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
                                 <li style="position: relative;">
-                                    <a href="#" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
+                                    <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
                                         AHSP Keciptakaryaan, Bangunan Gedung dan Perumahan
                                     </a>
                                     <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
                                         <li style="position: relative;">
-                                            <a href="#" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
+                                            <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
                                                 Satuan Harga Dasar
                                             </a>
                                             <ul class="list-unstyled" style="background-color: #555; padding: 0; margin: 0;">
-                                                <li><a href="/satuanhargamaterial" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Material</a></li>
-                                                <li><a href="/satuanhargaupahtenaga" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Upah Tenaga Kerja</a></li>
-                                                <li><a href="/satuanhargaperalatan" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Peralatan</a></li>
+                                                <li><a href="/satuanhargamaterial" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Material</a></li>
+                                                <li><a href="/satuanhargaupahtenaga" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Upah Tenaga Kerja</a></li>
+                                                <li><a href="/satuanhargaperalatan" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Peralatan</a></li>
                                             </ul>
                                         </li>
                                         <li style="position: relative;">
-                                            <a href="#" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
+                                            <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
                                                 HSP Konstruksi Umum
                                             </a>
                                             <ul class="list-unstyled" style="background-color: #555; padding: 0; margin: 0;">
-                                                <li><a href="/hspdivisi1" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi I Persiapan Pekerjaan</a></li>
-                                                <li><a href="/hspdivisi2" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi II Pekerjaan Struktur</a></li>
-                                                <li><a href="/hspdivisi3" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi III Pekerjaan Arsitektur</a></li>
-                                                <li><a href="/hspdivisi4" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi IV Pekerjaan Lansekap</a></li>
-                                                <li><a href="/hspdivisi5" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi V Pekerjaan Mekanikal & Elektrikal</a></li>
-                                                <li><a href="/hspdivisi6" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi VI Pekerjaan Plambing</a></li>
-                                                <li><a href="/hspdivisi7" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi VII Jalan Pada Permukiman</a></li>
-                                                <li><a href="/hspdivisi8" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi VIII Drainase Jalan</a></li>
-                                                <li><a href="/hspdivisi9" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi IX Pekerjaan Jaringan Pipa Di Luar Gedung</a></li>
+                                                <li><a href="/hspdivisi1" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi I Persiapan Pekerjaan</a></li>
+                                                <li><a href="/hspdivisi2" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi II Pekerjaan Struktur</a></li>
+                                                <li><a href="/hspdivisi3" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi III Pekerjaan Arsitektur</a></li>
+                                                <li><a href="/hspdivisi4" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi IV Pekerjaan Lansekap</a></li>
+                                                <li><a href="/hspdivisi5" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi V Pekerjaan Mekanikal & Elektrikal</a></li>
+                                                <li><a href="/hspdivisi6" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi VI Pekerjaan Plambing</a></li>
+                                                <li><a href="/hspdivisi7" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi VII Jalan Pada Permukiman</a></li>
+                                                <li><a href="/hspdivisi8" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi VIII Drainase Jalan</a></li>
+                                                <li><a href="/hspdivisi9" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi IX Pekerjaan Jaringan Pipa Di Luar Gedung</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="/shstblora" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">SHST 2025</a></li>
+                                        <li><a href="/shstblora" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">SHST 2025</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/404" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">AHSP Bina Marga</a></li>
-                                <li><a href="/404" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">AHSP Sumber Daya Air</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">AHSP Bina Marga</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">AHSP Sumber Daya Air</a></li>
                             </ul>
                         </li>
 
                         <li class="has-dropdown" style="position: relative;">
-                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block;">
+                            <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block;">
                                 RANTAI PASOK
                             </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 250px;">
-                                <li><a href="/404" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Asuransi Konstruksi</a></li>
-                                <li><a href="/404" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Material Bangunan/ Distributor/ Supplier Bangunan</a></li>
-                                <li><a href="/404" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Peralatan Konstruksi</a></li>
-                                <li><a href="/404" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Toko Bangunan Kab Blora</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Asuransi Konstruksi</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Material Bangunan/ Distributor/ Supplier Bangunan</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Peralatan Konstruksi</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Toko Bangunan Kab Blora</a></li>
                             </ul>
                         </li>
 
