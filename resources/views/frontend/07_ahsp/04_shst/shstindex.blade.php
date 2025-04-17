@@ -189,7 +189,6 @@ table.zebra-table {
                 </table>
                 </div>
 
-                <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
                     <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
 
                         <table class="zebra-table fl-table">
@@ -246,7 +245,7 @@ table.zebra-table {
                     </div>
 
                     <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
-                    <table class="fl-table">
+                    <table class="zebra-table fl-table">
                         <thead>
                             <tr>
                                 <th style="text-align:center; width:100px;" rowspan="3"><img src="/assets/icon/pupr.png" class="img-fluid" alt="img-25" width="50" height="50" style="margin-right: 20px;" loading="lazy"></th>
