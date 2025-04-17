@@ -326,6 +326,131 @@
                 </div>
 
 
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
+                    <!-- Alamat Badan Usaha -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Jenjang Pendidikan
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->jenjangpendidikan->jenjangpendidikan ?? '-' }}"
+                        >
+                    </div>
+
+                    <!-- Alamat Badan Usaha -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Jenjang
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->jenjang->jenjang ?? '-' }}"
+                        >
+                    </div>
+
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            LSP Penerbit
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->lpspenerbit->lpspenerbit ?? '-' }}"
+                        >
+                    </div>
+                </div>
+
+
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
+                    <!-- Alamat Badan Usaha -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Tanggal Terbit
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->tanggalterbit ?? '-' }}"
+                        >
+                    </div>
+
+                    <!-- Alamat Badan Usaha -->
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Tanggal Habis
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->tanggalhabis ?? '-' }}"
+                        >
+                    </div>
+
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="alamat" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Building Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Status Terbit
+                        </label>
+                        <input
+                            id="alamat"
+                            type="text"
+                            readonly
+                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
+                            style="margin-top: -15px; font-family: Poppins;"
+                            value="{{ $data->statusterbit ?? '-' }}"
+                        >
+                    </div>
+                </div>
+
+
+
             </form>
          </div>
      </div>
