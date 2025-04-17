@@ -191,15 +191,42 @@ table.zebra-table {
                     </thead>
                     <tbody id="tableBody">
                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
-                        @foreach ($data as $item )
-                        <tr>
-                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                            <td style="text-align: left;">{{$item->uraian}}</td>
-                            <td style="text-align: center; color:red;">{{$item->satuan}}</td>
-                            <td style="text-align: center;">Rp.</td>
-                            <td style="text-align: right; color:black;">{{ number_format((float) $item->besaran, 0, ',', '.') }},-</td>
-                        </tr>
-                        @endforeach
+                        @if($data->isEmpty())
+                            <tr>
+                                <td colspan="5" style="text-align: center; color: red;">Data Tidak Ditemukan !</td>
+                            </tr>
+                        @else
+                            @foreach ($data as $item)
+                            <tr>
+                                <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                <td style="text-align: left;">
+                                    @if(!empty($item->uraian))
+                                        {{ $item->uraian }}
+                                    @else
+                                        <button class="btn-navy">Data Belum Diupdate</button>
+                                    @endif
+                                </td>
+                                <td style="text-align: center; color:red;">
+                                    @if(!empty($item->satuan))
+                                        {{ $item->satuan }}
+                                    @else
+                                        <button class="btn-navy">Data Belum Diupdate</button>
+                                    @endif
+                                </td>
+                                <td style="text-align: center;">
+                                    Rp.
+                                </td>
+                                <td style="text-align: right; color:black;">
+                                    @if(!empty($item->besaran))
+                                        {{ number_format((float) $item->besaran, 0, ',', '.') }},-
+                                    @else
+                                        <button class="btn-navy">Data Belum Diupdate</button>
+                                    @endif
+                                </td>
+                            </tr>
+                            @endforeach
+                        @endif
+
                     </tbody>
                 </table>
 
