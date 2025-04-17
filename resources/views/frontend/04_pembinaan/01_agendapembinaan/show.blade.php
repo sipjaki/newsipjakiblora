@@ -139,7 +139,7 @@
            </a>
            <span>/</span>
            <a href="/404" class="font-medium" style="font-size: 16px; color:blue;">
-             Daftar Peserta Agenda Pelatihan
+             Informasi Agenda Pelatihan TKK Kabupaten Blora
            </a>
          </div>
        </div>
@@ -186,7 +186,7 @@
 
 
              <section class="news-details-section" style="background-image: url(assets/00_dokmasjaki/03_datajakon/bannerbetter.jpg);">
-                <div class="container">
+                <div class="container" style="margin-top: -200px;">
                     <div class="row">
                         <!-- Kolom Konten Utama -->
                         <div class="col-lg-8">
