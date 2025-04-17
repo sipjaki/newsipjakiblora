@@ -229,13 +229,13 @@ table.zebra-table {
                 <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
                 <br>
                 <div class="header-text" style="font-family: 'Poppins', sans-serif;">
-                    <h3 style="font-family: 'Poppins', sans-serif;">PEMERINTAH KABUPATEN BLORA</h3>
-                    <h3 style="font-family: 'Poppins', sans-serif;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-                    <p style="font-family: 'Poppins', sans-serif;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-                    <h3 style="font-family: 'Poppins', sans-serif;">BLORA 58214</h3>
+                    <h3 style="font-family: 'Poppins';">PEMERINTAH KABUPATEN BLORA</h3>
+                    <h3 style="font-family: 'Poppins';">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+                    <p style="font-family: 'Poppins';">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+                    <h3 style="font-family: 'Poppins';">BLORA 58214</h3>
                     <p>_____________________________________________________________</p>
-                    <h3 style="font-family: 'Poppins', sans-serif;">PROFIL OPD JASA KONSTRUKSI</h3>
-                    <h4 style="font-family: 'Poppins', sans-serif;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h4>
+                    <h3 style="font-family: 'Poppins';">PROFIL OPD JASA KONSTRUKSI</h3>
+                    <h4 style="font-family: 'Poppins';">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h4>
                 </div>
             </div>
             <br>
