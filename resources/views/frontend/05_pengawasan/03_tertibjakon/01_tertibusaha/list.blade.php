@@ -216,7 +216,7 @@ table.zebra-table {
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
-                            <td>
+                            <td style="text-align: center;">
                                 @if(!empty($item->namapekerjaan))
                                     {{ $item->namapekerjaan }}
                                 @else
