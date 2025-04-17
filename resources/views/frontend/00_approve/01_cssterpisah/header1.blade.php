@@ -206,13 +206,14 @@
 			<div class="main-menu-left">
 				<div class="navigation" style="margin-left: 100px;">
 					<ul class="main-menu-list list-unstyled">
+
                         <li>
                             <a href="/" style="color: white; font-family: 'Poppins', sans-serif; text-decoration: none; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 BERANDA
                             </a>
                         </li>
 
-                        <li class="has-dropdown" style="position: relative;">
+                        <li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 KELEMBAGAAN
                             </a>
@@ -235,8 +236,7 @@
                             </ul>
                         </li>
 
-
-                        <li class="has-dropdown" style="position: relative;">
+                        <li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 BERITA
                             </a>
@@ -246,18 +246,7 @@
                                         Peraturan
                                     </a>
                                     <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0;">
-                                        <li><a href="/standarbiayaumummasjaki" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Standar Biaya Umum</a></li>
-                                        <li><a href="/peraturan/undangundang" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Undang - Undang</a></li>
-                                        <li><a href="/peraturan/pemerintah" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Pemerintah</a></li>
-                                        <li><a href="/peraturan/presiden" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Presiden</a></li>
-                                        <li><a href="/peraturan/menteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Menteri</a></li>
-                                        <li><a href="/peraturan/keputusanmenteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Keputusan Menteri</a></li>
-                                        <li><a href="/peraturan/suratedaranmenteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Surat Edaran Menteri</a></li>
-                                        <li><a href="/peraturan/referensi" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Referensi</a></li>
-                                        <li><a href="/peraturan/daerah" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Daerah</a></li>
-                                        <li><a href="/peraturan/peraturangubernur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Gubernur</a></li>
-                                        <li><a href="/peraturan/walikotadanbupati" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Walikota/Bupati</a></li>
-                                        <li><a href="/peraturan/suratkeputusan" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Surat Keputusan</a></li>
+                                        <!-- Nested items go here -->
                                     </ul>
                                 </li>
                                 <li><a href="/beritajakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
@@ -405,6 +394,7 @@
 					</ul><!-- main-menu-list -->
 				</div><!--navigation-->
 			</div><!--main-menu-left-->
+
 			<div class="main-menu-right">
 				<div class="mobile-menu-button mobile-nav-toggler">
 					<span></span>
