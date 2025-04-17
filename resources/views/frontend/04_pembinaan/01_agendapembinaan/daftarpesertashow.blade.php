@@ -213,35 +213,37 @@ table.zebra-table {
 
             </div>
 
+
+            <div style="position: relative;">
+                <button onclick="window.history.back();" class="px-3 py-2 text-white rounded-[15px] border border-slate-700 flex items-center gap-2"
+                        style="background-color: #64748b; width: auto; position: absolute; right: 10px; font-family: 'Poppins', sans-serif; transition: all 0.3s ease;">
+                    <!-- SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7l-7-7 7-7"/>
+                    </svg>
+                    Kembali
+                </button>
+            </div>
+
+            <style>
+                button {
+                    border-radius: 15px; /* Ensure border radius */
+                    background-color: #64748b; /* Initial background */
+                    color: white; /* Initial text color */
+                    border: 2px solid #64748b; /* Initial border color */
+                    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+                }
+
+                button:hover {
+                    background-color: white; /* Change background on hover */
+                    color: black; /* Change text color on hover */
+                    border-color: black; /* Change border color on hover */
+                }
+            </style>
             {{-- @include('frontend.00_approve.01_cssterpisah.paginations') --}}
         </div>
     </div>
-    <div style="position: relative;">
-        <button onclick="window.history.back();" class="px-3 py-2 text-white rounded-[15px] border border-slate-700 flex items-center gap-2"
-                style="background-color: #64748b; width: auto; position: absolute; right: 10px; font-family: 'Poppins', sans-serif; transition: all 0.3s ease;">
-            <!-- SVG Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7l-7-7 7-7"/>
-            </svg>
-            Kembali
-        </button>
-    </div>
 
-    <style>
-        button {
-            border-radius: 15px; /* Ensure border radius */
-            background-color: #64748b; /* Initial background */
-            color: white; /* Initial text color */
-            border: 2px solid #64748b; /* Initial border color */
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
-        }
-
-        button:hover {
-            background-color: white; /* Change background on hover */
-            color: black; /* Change text color on hover */
-            border-color: black; /* Change border color on hover */
-        }
-    </style>
     <br><br><br>
 
 </section>
