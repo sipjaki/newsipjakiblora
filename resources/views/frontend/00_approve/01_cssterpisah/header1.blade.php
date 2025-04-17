@@ -344,7 +344,6 @@
                                 </li>
                             </ul>
                         </li>
-
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block;">
                                 AHSP
@@ -354,12 +353,12 @@
                                     <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
                                         AHSP Keciptakaryaan, Bangunan Gedung dan Perumahan
                                     </a>
-                                    <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                                    <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0; position: absolute; right: 0; top: 0;">
                                         <li style="position: relative;">
                                             <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
                                                 Satuan Harga Dasar
                                             </a>
-                                            <ul class="list-unstyled" style="background-color: #555; padding: 0; margin: 0;">
+                                            <ul class="list-unstyled" style="background-color: #555; padding: 0; margin: 0; position: absolute; right: 0; top: 0;">
                                                 <li><a href="/satuanhargamaterial" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Material</a></li>
                                                 <li><a href="/satuanhargaupahtenaga" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Upah Tenaga Kerja</a></li>
                                                 <li><a href="/satuanhargaperalatan" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Harga Satuan Peralatan</a></li>
@@ -369,7 +368,7 @@
                                             <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">
                                                 HSP Konstruksi Umum
                                             </a>
-                                            <ul class="list-unstyled" style="background-color: #555; padding: 0; margin: 0;">
+                                            <ul class="list-unstyled" style="background-color: #555; padding: 0; margin: 0; position: absolute; right: 0; top: 0;">
                                                 <li><a href="/hspdivisi1" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi I Persiapan Pekerjaan</a></li>
                                                 <li><a href="/hspdivisi2" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi II Pekerjaan Struktur</a></li>
                                                 <li><a href="/hspdivisi3" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Divisi III Pekerjaan Arsitektur</a></li>
@@ -388,6 +387,7 @@
                                 <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">AHSP Sumber Daya Air</a></li>
                             </ul>
                         </li>
+
 
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block;">
