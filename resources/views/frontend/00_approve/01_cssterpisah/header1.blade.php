@@ -384,7 +384,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">AHSP Bina Marga</a></li>
-                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 168px; font-family: 'Poppins', sans-serif;">AHSP Sumber Daya Air</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">AHSP Sumber Daya Air</a></li>
                             </ul>
                         </li>
 
