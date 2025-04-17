@@ -212,80 +212,83 @@
                             </a>
                         </li>
 
-						<li class="has-dropdown">
-							<a href="#" style="color: white;" >KELEMBAGAAN</a>
-							<ul class="list-unstyled">
-								<li><a href="/profil/struktur">Struktur DPUPR Blora</a></li>
-								<li><a href="/profil/rencanastrategis">Profil Jakon DPUPR BLora</a></li>
-								<li><a href="/profil/tupoksi">Tupoksi Jakon DPUPR Blora</a></li>
-							</ul><!-- list-unstyled -->
-						</li><!--has-dropdown-->
+                        <li class="has-dropdown" style="position: relative;">
+                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+                                KELEMBAGAAN
+                            </a>
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 200px;">
+                                <li><a href="/profil/struktur" style="color: white; padding: 8px 20px; display: block;">Struktur DPUPR Blora</a></li>
+                                <li><a href="/profil/rencanastrategis" style="color: white; padding: 8px 20px; display: block;">Profil Jakon DPUPR BLora</a></li>
+                                <li><a href="/profil/tupoksi" style="color: white; padding: 8px 20px; display: block;">Tupoksi Jakon DPUPR Blora</a></li>
+                            </ul><!-- list-unstyled -->
+                        </li><!--has-dropdown-->
 
-						<li class="has-dropdown">
-							<a href="#" style="color: white;">BERITA</a>
-							<ul class="list-unstyled">
-								<li><a href="#">Peraturan</a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/standarbiayaumummasjaki">Standar Biaya Umum </a></li>
-                                        <li><a href="/peraturan/undangundang">Undang - Undang </a></li>
-                                        <li><a href="/peraturan/pemerintah">Peraturan Pemerintah</a></li>
-                                        <li><a href="/peraturan/presiden">Peraturan Presiden</a></li>
-                                        <li><a href="/peraturan/menteri">Peraturan Menteri</a></li>
-                                        <li><a href="/peraturan/keputusanmenteri">Keputusan Menteri</a></li>
-                                        <li><a href="/peraturan/suratedaranmenteri">Surat Edaran Menteri</a></li>
-                                        <li><a href="/peraturan/referensi">Referensi</a></li>
-                                        <li><a href="/peraturan/daerah">Peraturan Daerah</a></li>
-                                        <li><a href="/peraturan/peraturangubernur">Peraturan Gubernur</a></li>
-                                        <li><a href="/peraturan/walikotadanbupati">Peraturan Walikota/Bupati</a></li>
-                                        <li><a href="/peraturan/suratkeputusan">Surat Keputusan</a></li>
+                        <li class="has-dropdown" style="position: relative;">
+                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+                                BERITA
+                            </a>
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 200px;">
+                                <li><a href="#" style="color: white; padding: 8px 20px; display: block;">Peraturan</a>
+                                    <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                                        <li><a href="/standarbiayaumummasjaki" style="color: white; padding: 8px 20px; display: block;">Standar Biaya Umum</a></li>
+                                        <li><a href="/peraturan/undangundang" style="color: white; padding: 8px 20px; display: block;">Undang - Undang</a></li>
+                                        <li><a href="/peraturan/pemerintah" style="color: white; padding: 8px 20px; display: block;">Peraturan Pemerintah</a></li>
+                                        <li><a href="/peraturan/presiden" style="color: white; padding: 8px 20px; display: block;">Peraturan Presiden</a></li>
+                                        <li><a href="/peraturan/menteri" style="color: white; padding: 8px 20px; display: block;">Peraturan Menteri</a></li>
+                                        <li><a href="/peraturan/keputusanmenteri" style="color: white; padding: 8px 20px; display: block;">Keputusan Menteri</a></li>
+                                        <li><a href="/peraturan/suratedaranmenteri" style="color: white; padding: 8px 20px; display: block;">Surat Edaran Menteri</a></li>
+                                        <li><a href="/peraturan/referensi" style="color: white; padding: 8px 20px; display: block;">Referensi</a></li>
+                                        <li><a href="/peraturan/daerah" style="color: white; padding: 8px 20px; display: block;">Peraturan Daerah</a></li>
+                                        <li><a href="/peraturan/peraturangubernur" style="color: white; padding: 8px 20px; display: block;">Peraturan Gubernur</a></li>
+                                        <li><a href="/peraturan/walikotadanbupati" style="color: white; padding: 8px 20px; display: block;">Peraturan Walikota/Bupati</a></li>
+                                        <li><a href="/peraturan/suratkeputusan" style="color: white; padding: 8px 20px; display: block;">Surat Keputusan</a></li>
                                     </ul><!-- list-unstyled -->
                                 </li>
-                                <li><a href="/beritajakon">Berita Jakon</a></li>
-								<li><a href="/artikeljakon">Artikel Jakon</a></li>
+                                <li><a href="/beritajakon" style="color: white; padding: 8px 20px; display: block;">Berita Jakon</a></li>
+                                <li><a href="/artikeljakon" style="color: white; padding: 8px 20px; display: block;">Artikel Jakon</a></li>
+                            </ul><!-- list-unstyled -->
+                        </li><!--has-dropdown-->
 
-
-								{{-- <li><a href="/404">Agenda Sertifikasi</a></li> --}}
-							</ul><!-- list-unstyled -->
-
-						</li><!--has-dropdown-->
-
-                        <li class="has-dropdown">
-							<a href="#" style="color: white;">DATA JAKON</a>
-							<ul class="list-unstyled">
-								<li><a href="#">Badan Usaha Jasa Konstruksi</a>
-                                    <ul class="list-unstyled">
-                                        <li><a href="/datajakon/bujkkontraktor">BUJK Konstruksi</a></li>
-                                        <li><a href="/datajakon/bujkkonsultan">BUJK Konsultan</a></li>
-                                        <li><a href="/404">Asosiasi Konstruksi</a></li>
-                                        <li><a href="/datajakon/statistikabujkblora">Data Statistik BUJK</a></li>
-                                    </ul>
+                        <li class="has-dropdown" style="position: relative;">
+                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+                                DATA JAKON
+                            </a>
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 250px;">
+                                <li><a href="#" style="color: white; padding: 8px 20px; display: block;">Badan Usaha Jasa Konstruksi</a>
+                                    <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                                        <li><a href="/datajakon/bujkkontraktor" style="color: white; padding: 8px 20px; display: block;">BUJK Konstruksi</a></li>
+                                        <li><a href="/datajakon/bujkkonsultan" style="color: white; padding: 8px 20px; display: block;">BUJK Konsultan</a></li>
+                                        <li><a href="/404" style="color: white; padding: 8px 20px; display: block;">Asosiasi Konstruksi</a></li>
+                                        <li><a href="/datajakon/statistikabujkblora" style="color: white; padding: 8px 20px; display: block;">Data Statistik BUJK</a></li>
+                                    </ul><!-- list-unstyled -->
                                 </li>
-								<li><a href="#">Tenaga Kerja Konstruksi</a>
-                                    <ul class="list-unstyled">
-                                    <li><a href="/datajakon/skktenagakerjablora">TKK Diselenggarakan DPUPR</a></li>
-                                    <li><a href="/datajakon/skktenagakerjabloralist">TKK Kabupaten Blora</a></li>
-                                    <li><a href="/datajakon/statistikaskktenagakerjabloralist">Data Statistik TKK</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Profil Paket Pekerjaan Konstruksi & Konsultasi</a>
-                                <ul class="list-unstyled">
-                                        <li><a href="/datajakon/profilpaketpekerjaan">Profil Paket Pekerjaan</a></li>
-                                        <li><a href="/404">Data Statistik</a></li>
-                                    </ul>
+                                <li><a href="#" style="color: white; padding: 8px 20px; display: block;">Tenaga Kerja Konstruksi</a>
+                                    <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                                        <li><a href="/datajakon/skktenagakerjablora" style="color: white; padding: 8px 20px; display: block;">TKK Diselenggarakan DPUPR</a></li>
+                                        <li><a href="/datajakon/skktenagakerjabloralist" style="color: white; padding: 8px 20px; display: block;">TKK Kabupaten Blora</a></li>
+                                        <li><a href="/datajakon/statistikaskktenagakerjabloralist" style="color: white; padding: 8px 20px; display: block;">Data Statistik TKK</a></li>
+                                    </ul><!-- list-unstyled -->
                                 </li>
-							</ul><!-- list-unstyled -->
-						</li><!--has-dropdown-->
+                                <li><a href="#" style="color: white; padding: 8px 20px; display: block;">Profil Paket Pekerjaan Konstruksi & Konsultasi</a>
+                                    <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
+                                        <li><a href="/datajakon/profilpaketpekerjaan" style="color: white; padding: 8px 20px; display: block;">Profil Paket Pekerjaan</a></li>
+                                        <li><a href="/404" style="color: white; padding: 8px 20px; display: block;">Data Statistik</a></li>
+                                    </ul><!-- list-unstyled -->
+                                </li>
+                            </ul><!-- list-unstyled -->
+                        </li><!--has-dropdown-->
 
-                        <li class="has-dropdown">
-							<a href="#" style="color: white;">PEMBINAAN</a>
-							<ul class="list-unstyled">
-								<li><a href="/agendapembinaan">Agenda Pelatihan</a></li>
-								<li><a href="/daftarpesertapelatihan">Daftar Peserta Pelatihan</a></li>
-								<li><a href="/agendaskk">Agenda Sertifikasi TKK</a></li>
-								<li><a href="/daftarpesertaskk">Daftar Peserta SKK </a></li>
-								{{-- <li><a href="/skktenagakerjablora">SKK Tenaga Kerja Konstruksi</a></li> --}}
-							</ul><!-- list-unstyled -->
-						</li><!--has-dropdown-->
+                        <li class="has-dropdown" style="position: relative;">
+                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 18px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+                                PEMBINAAN
+                            </a>
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 250px;">
+                                <li><a href="/agendapembinaan" style="color: white; padding: 8px 20px; display: block;">Agenda Pelatihan</a></li>
+                                <li><a href="/daftarpesertapelatihan" style="color: white; padding: 8px 20px; display: block;">Daftar Peserta Pelatihan</a></li>
+                                <li><a href="/agendaskk" style="color: white; padding: 8px 20px; display: block;">Agenda Sertifikasi TKK</a></li>
+                                <li><a href="/daftarpesertaskk" style="color: white; padding: 8px 20px; display: block;">Daftar Peserta SKK</a></li>
+                            </ul><!-- list-unstyled -->
+                        </li><!--has-dropdown-->
 
                         <li class="has-dropdown">
 							<a href="#" style="color: white;">PENGAWASAN</a>
