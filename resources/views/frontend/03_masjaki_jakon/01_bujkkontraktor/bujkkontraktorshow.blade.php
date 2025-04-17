@@ -178,107 +178,76 @@ table.zebra-table {
             </div>
 
 
-
-  <section id="details" class="container mx-auto flex flex-col sm:flex-row gap-5" style="margin-top:20px;">
-    <div class="flex flex-col gap-5 w-full" style="margin-top: -50px;">
-        <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
-            <div class="flex justify-center">
-                <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
-            </div>
-
-            <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl" style="margin-top:-40px;">
-                <div class="w-5 h-5 flex shrink-0">
-                    <img src="/assets/new/icons/story.svg" alt="icon">
-                </div>
-                <p class="text-white font-normal text-sm">
-                    <span class="font-bold">Informasi Bangunan Gedung </span>
-                </p>
-            </div>
-
-            <form action="" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
-                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
-                 <!-- Nama Bangunan -->
-                 <div class="flex flex-col gap-2 w-full">
-                    <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2">
-                        <!-- Building Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" />
-                        </svg>
-                        Nama Bangunan
-                    </label>
-                    <input
-                        style="margin-top: -15px;"
-                        type="text"
-                        class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                        value="Gedung Kantor"
-                        readonly
-                    >
-                </div>
-
-                    <!-- Luas Tanah -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2">
-                            <!-- Ruler icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4V4zm4 4h8v8H8V8z" />
-                            </svg>
-                            <span class="text-sm">Luas Tanah (m²)</span>
-                        </label>
-                        <input
-                            style="margin-top: -15px;"
-                            type="text"
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            value="2.350 m²"
-                            readonly
-                        >
+            <section id="details" class="container mx-auto flex flex-col sm:flex-row gap-5" style="margin-top:20px;">
+                <div class="flex flex-col gap-5 w-full" style="margin-top: -50px;">
+                  <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
+                    <div class="flex justify-center">
+                      <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
                     </div>
 
-                    <!-- Jumlah Lantai -->
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2">
-                            <!-- Layers (floor) icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2l9 5-9 5-9-5 9-5zm0 10l9 5-9 5-9-5 9-5z" />
-                            </svg>
-                            <span class="text-sm">Jumlah Lantai</span>
-                        </label>
-                        <input
-                            style="margin-top: -15px;"
-                            type="text"
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            value="2 Lantai"
-                            readonly
-                        >
+                    <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl" style="margin-top:-40px;">
+                      <div class="w-5 h-5 flex shrink-0">
+                        <img src="/assets/new/icons/story.svg" alt="icon">
+                      </div>
+                      <p class="text-white font-normal text-sm">
+                        <span class="font-bold">Informasi Pemilik Bangunan</span>
+                      </p>
                     </div>
 
+                    <form action="" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
+                      <div class="flex flex-wrap p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
 
-                    <div class="flex flex-col gap-2 w-full">
-                        <label class="font-semibold text-[#030303] flex items-center gap-2">
-                            <!-- Icon: Office Building -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M3 21h18M9 8h6m-3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="text-sm">Fungsi Bangunan</span>
-                        </label>
-                        <input
-                            style="margin-top: -15px;"
-                            type="text"
-                            class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                            value="Fungsi Sosial Dan Budaya"
-                            readonly
-                        >
-                    </div>
+                        <!-- Nama Pemilik -->
+                        <div class="flex flex-col gap-2 w-full sm:w-2/3">
+                          <label class="font-semibold text-[#030303] flex items-center gap-2">
+                            <i class="fas fa-user text-gray-600"></i> Nama Pemilik
+                          </label>
+                          <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full p-3 border border-[#ccc] rounded-md"
+                            placeholder="{{$data->namalengkap}}" readonly>
+                        </div>
 
+                        <!-- No Telepon -->
+                        <div class="flex flex-col gap-2 w-full sm:w-1/3">
+                          <label class="font-semibold text-[#030303] flex items-center gap-2">
+                            <i class="fas fa-phone-alt text-gray-600"></i> No Telepon
+                          </label>
+                          <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full p-3 border border-[#ccc] rounded-md"
+                            placeholder="{{$data->no_telepon}}" readonly>
+                        </div>
+
+                        <!-- Alamat -->
+                        <div class="flex flex-col gap-2 w-full">
+                          <label class="font-semibold text-[#030303] flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-gray-600"></i> Alamat
+                          </label>
+                          <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full p-3 border border-[#ccc] rounded-md"
+                            placeholder="{{$data->alamat}}" readonly>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex flex-col gap-2 w-full sm:w-1/2">
+                          <label class="font-semibold text-[#030303] flex items-center gap-2">
+                            <i class="fas fa-envelope text-gray-600"></i> Email
+                          </label>
+                          <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full p-3 border border-[#ccc] rounded-md"
+                            placeholder="{{$data->email}}" readonly>
+                        </div>
+
+                        <!-- NIB -->
+                        <div class="flex flex-col gap-2 w-full sm:w-1/2">
+                          <label class="font-semibold text-[#030303] flex items-center gap-2">
+                            <i class="fas fa-id-card text-gray-600"></i> Nomor Induk Berusaha
+                          </label>
+                          <input type="text" class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full p-3 border border-[#ccc] rounded-md"
+                            placeholder="{{$data->nib}}" readonly>
+                        </div>
+
+                      </div>
+                    </form>
+                  </div>
                 </div>
+              </section>
 
-
-            </form>
-        </div>
-    </div>
-</section>
 
 
             <div class="table-wrapper">
