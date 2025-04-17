@@ -282,8 +282,18 @@ table.zebra-table {
             })
             .catch(error => console.error("Error fetching search results:", error));
         }
-      </script>
+
+        function redirectToPage(id) {
+            if (!id) { // Pastikan ID tidak kosong
+                alert("ID tidak valid!");
+                return;
+            }
+            window.location.href = "/satuanhargadivisi1/" + encodeURIComponent(id);
+        }
+    </script>
+
 
 
 @include('frontend.00_approve.01_cssterpisah.footer1')
 @include('frontend.00_approve.01_cssterpisah.footer')
+
