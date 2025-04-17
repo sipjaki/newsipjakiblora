@@ -348,9 +348,9 @@
 							<a href="#" style="color: white;">RANTAI PASOK</a>
 							<ul class="list-unstyled">
 								<li><a href="/404">Asuransi Konstruksi </a></li>
-								<li><a href="/rantaipasokmaterial">Material Bangunan/ Distributor/ Supplier Bangunan </a></li>
-								<li><a href="/peralatankonstruksi">Peralatan Konstruksi</a></li>
-								<li><a href="/tokobangunanblora">Toko Bangunan Kab Blora</a></li>
+								<li><a href="/404">Material Bangunan/ Distributor/ Supplier Bangunan </a></li>
+								<li><a href="/404">Peralatan Konstruksi</a></li>
+								<li><a href="/404">Toko Bangunan Kab Blora</a></li>
 							</ul><!-- list-unstyled -->
 						</li><!--has-dropdown-->
 
@@ -413,10 +413,10 @@
                 </style>
 
                 <div class="masuk-admin">
-                    <a href="/404" class="btn btn-primary">
+                    <a href="/404" class="btn-primary">
                         <i class="fas fa-user-plus"></i> Daftar
                     </a>
-                    <a href="/login" class="btn btn-primary">
+                    <a href="/login" class="btn-primary">
                         <i class="fas fa-sign-in-alt"></i> Masuk
                     </a>
                 </div>
