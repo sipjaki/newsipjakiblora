@@ -225,12 +225,8 @@ table.zebra-table {
                                 @endif
                             </td>
 
-
-
-
-
                             <td style="text-align: center;">
-                                <a href="/datajakon/skktenagakerjablora/{{$item->nama}}">
+                                <a href="/datajakon/skktenagakerjabloralist/{{$item->nama}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                 </a>
                             </td>
