@@ -178,7 +178,7 @@ table.zebra-table {
             </div>
 
             <div class="table-wrapper">
-                <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+                <table class="zebra-table fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr>
                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:80px;"> No <span class="sort-icon">⇅</span></th>
