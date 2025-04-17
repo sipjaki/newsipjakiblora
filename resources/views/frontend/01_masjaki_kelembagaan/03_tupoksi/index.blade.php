@@ -167,33 +167,33 @@ table.zebra-table {
         <div style="background-color: #f9f9f9; padding: 30px; border-radius: 10px; max-width: 90%; margin: auto; font-family: 'Poppins', sans-serif;">
             <!-- Header -->
             <div style="background-color: #FFD100; padding: 15px; border-radius: 10px 10px 0 0; text-align: center; font-weight: 600; font-size: 22px;">
-                DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH
+               <span style="font-family: 'Poppins', sans-serif;"> DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</span>
             </div>
 
             <!-- Konten Tupoksi -->
             <div style="background-color: white; padding: 20px; border-radius: 0 0 10px 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);">
                 @foreach ($data as $item)
-                <h3 style="color: #2E7D32; text-align: center; font-weight: 600; font-size: 24px; margin-bottom: 20px;">{{$item->judul}}</h3>
+                <h3 style="color: #2E7D32; text-align: center; font-weight: 600; font-size: 24px; margin-bottom: 20px;"><span style="font-family: 'Poppins', sans-serif;">{{$item->judul}}</span></h3>
                 @endforeach
 
                 <ul style="padding-left: 20px; list-style-type: none; font-size: 16px;">
                     <li style="background-color: #E8F5E9; margin: 10px 0; padding: 12px; border-radius: 5px;">
-                        <strong>📌 Penyusunan Program:</strong> Rencana kerja dan kegiatan bina jasa konstruksi sebagai pedoman kerja tahunan.
+                        <strong style="font-family: 'Poppins', sans-serif;">📌 Penyusunan Program:</strong> Rencana kerja dan kegiatan bina jasa konstruksi sebagai pedoman kerja tahunan.
                     </li>
                     <li style="background-color: #E8F5E9; margin: 10px 0; padding: 12px; border-radius: 5px;">
-                        <strong>📌 Kebijakan Teknis:</strong> Menyusun bahan kebijakan sesuai peraturan perundang-undangan sebagai kajian pimpinan.
+                        <strong style="font-family: 'Poppins', sans-serif;">📌 Kebijakan Teknis:</strong> Menyusun bahan kebijakan sesuai peraturan perundang-undangan sebagai kajian pimpinan.
                     </li>
                     <li style="background-color: #E8F5E9; margin: 10px 0; padding: 12px; border-radius: 5px;">
-                        <strong>📌 Sistem Informasi:</strong> Pelaksanaan sistem informasi jasa konstruksi untuk efisiensi.
+                        <strong style="font-family: 'Poppins', sans-serif;">📌 Sistem Informasi:</strong> Pelaksanaan sistem informasi jasa konstruksi untuk efisiensi.
                     </li>
                     <li style="background-color: #E8F5E9; margin: 10px 0; padding: 12px; border-radius: 5px;">
-                        <strong>📌 Pengawasan & Pembinaan:</strong> Pengembangan badan usaha, pasar jasa konstruksi, dan evaluasi penyelenggaraan.
+                        <strong style="font-family: 'Poppins', sans-serif;">📌 Pengawasan & Pembinaan:</strong> Pengembangan badan usaha, pasar jasa konstruksi, dan evaluasi penyelenggaraan.
                     </li>
                     <li style="background-color: #E8F5E9; margin: 10px 0; padding: 12px; border-radius: 5px;">
-                        <strong>📌 Penyuluhan & Bimtek:</strong> Melakukan pelatihan, penyuluhan, dan bimtek terkait jasa konstruksi.
+                        <strong style="font-family: 'Poppins', sans-serif;">📌 Penyuluhan & Bimtek:</strong> Melakukan pelatihan, penyuluhan, dan bimtek terkait jasa konstruksi.
                     </li>
                     <li style="background-color: #E8F5E9; margin: 10px 0; padding: 12px; border-radius: 5px;">
-                        <strong>📌 Laporan & Evaluasi:</strong> Monitoring dan evaluasi kegiatan pembinaan sebagai wujud transparansi.
+                        <strong style="font-family: 'Poppins', sans-serif;">📌 Laporan & Evaluasi:</strong> Monitoring dan evaluasi kegiatan pembinaan sebagai wujud transparansi.
                     </li>
                 </ul>
             </div>
@@ -203,7 +203,7 @@ table.zebra-table {
 
             @foreach ($data as $item)
 
-            <p style="text-align: justify;">
+            <p style="text-align: justify; font-family: 'Poppins', sans-serif;" >
                 {!!$item->keterangan!!}
             </p>
 
