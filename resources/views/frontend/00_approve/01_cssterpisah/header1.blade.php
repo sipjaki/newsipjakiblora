@@ -457,11 +457,4 @@
             }
         });
     });
-        .has-dropdown:hover > ul {
-        display: block !important;
-    }
-    .has-dropdown ul li:hover > ul {
-        display: block !important;
-    }
-
 </script>
