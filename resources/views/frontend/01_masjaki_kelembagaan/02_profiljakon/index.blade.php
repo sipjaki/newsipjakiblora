@@ -416,6 +416,128 @@ table.zebra-table {
                 @endforeach
             </table>
 
+            <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;">SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
+<table>
+    @foreach ($datasubkoordinator as $item)
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1.</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Lengkap</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->namalengkap}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">2.</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">NIP</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->nip}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3.</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Tempat, Tanggal Lahir</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->ttl}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">4.</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Pangkat/Golongan</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->pangkatgolongan}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">5.</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Jabatan</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->jabatan}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">6.</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Pendidikan Terakhir</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->pendidikanterakhir}}</td>
+    </tr>
+    @endforeach
+</table>
+<br>
+
+<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">III. OPD Jakon</h4>
+<table>
+    @foreach ($datainformasi as $item)
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{!!$item->informasiopd!!}</td>
+    </tr>
+    @endforeach
+</table>
+<br>
+
+<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">IV. Kontak OPD</h4>
+<table>
+    @foreach ($datainformasi as $item)
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nomor Telepon</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->notelepon}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">2</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Instagram</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">@{{$item->instagram}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Tiktok</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->tiktok}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Email</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->email}}</td>
+    </tr>
+    @endforeach
+</table>
+<br>
+
+<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">V. SK SIPJAKI</h4>
+<table>
+    @foreach ($datasipjaki as $item)
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nomor</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->nomor}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Operator SIPJAKI</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->operator1}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Operator SIPJAKI</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->operator2}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Operator SIPJAKI</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->operator3}}</td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Operator SIPJAKI</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->operator4}}</td>
+    </tr>
+    @endforeach
+</table>
+
+
         @foreach ($data as $item)
 
 
