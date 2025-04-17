@@ -266,7 +266,7 @@ table.zebra-table {
                         style="margin-top: -15px; font-family: Poppins;"
                         type="text"
                         class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
-                        value="{{$data->nib}}"
+                        value="{{$data->nomorindukberusaha}}"
                         readonly
                     >
                 </div>
@@ -275,7 +275,7 @@ table.zebra-table {
 
                 </div>
 
-                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
                  <!-- Nama Bangunan -->
                  <div class="flex flex-col gap-2 w-full">
                     <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
