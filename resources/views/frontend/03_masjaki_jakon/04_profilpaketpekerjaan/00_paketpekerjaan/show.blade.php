@@ -305,6 +305,95 @@
 
 
 
+                <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full" style="margin-top: -50px;">
+
+                    <!-- Badan Usaha -->
+                <!-- Nilai Kontrak -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3zm0 9c-3.866 0-7-1.79-7-4V9l7-4 7 4v4c0 2.21-3.134 4-7 4z" />
+        </svg>
+        Nilai Kontrak
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
+        style="margin-top: -15px; font-family: Poppins;"
+        value="Rp. {{ number_format($data->nilaikontrak, 0, ',', '.') }}">
+</div>
+
+<!-- Karakteristik Kontrak -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6m4 0V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10" />
+        </svg>
+        Karakteristik Kontrak
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
+        style="margin-top: -15px; font-family: Poppins;"
+        value="{{ $data->karakteristikkontrak }}">
+</div>
+
+<!-- Bulan Mulai -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8v4l3 3m6-9a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Mulai
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
+        style="margin-top: -15px; font-family: Poppins;"
+        value="{{ $data->bulanmulai }}">
+</div>
+
+<!-- Bulan Selesai -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        Selesai
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
+        style="margin-top: -15px; font-family: Poppins;"
+        value="{{ $data->bulanselesai }}">
+</div>
+
+<!-- Dinas -->
+<div class="flex flex-col gap-2 w-full">
+    <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8c1.656 0 3 1.343 3 3 0 1.656-1.344 3-3 3s-3-1.344-3-3c0-1.657 1.344-3 3-3zm0 9c-3.866 0-7-1.79-7-4V9l7-4 7 4v4c0 2.21-3.134 4-7 4z" />
+        </svg>
+        Dinas
+    </label>
+    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+        placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
+        style="margin-top: -15px; font-family: Poppins;"
+        value="{{ $data->dinas }}">
+</div>
+
+
+               </div>
+
+
+
 
 
             </form>
