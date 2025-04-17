@@ -183,37 +183,34 @@ ul.list-unstyled {
                     <a href="/peraturan/undangundang" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Undang Undang</a>
                 </li>
                 <li>
-                    <a href="/peraturan/undangundang" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">UNDANG UNDANG</a>
+                    <a href="/peraturan/pemerintah" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Pemerintah</a>
                 </li>
                 <li>
-                    <a href="/peraturan/pemerintah" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">PERATURAN PEMERINTAH</a>
+                    <a href="/peraturan/presiden" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Presiden</a>
                 </li>
                 <li>
-                    <a href="/peraturan/presiden" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">PERATURAN PRESIDEN</a>
+                    <a href="/peraturan/menteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Menteri</a>
                 </li>
                 <li>
-                    <a href="/peraturan/menteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">PERATURAN MENTERI</a>
+                    <a href="/peraturan/keputusanmenteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Keputusan Menteri</a>
                 </li>
                 <li>
-                    <a href="/peraturan/keputusanmenteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">KEPUTUSAN MENTERI</a>
+                    <a href="/peraturan/suratedaranmenteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Surat Edaran Menteri</a>
                 </li>
                 <li>
-                    <a href="/peraturan/suratedaranmenteri" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">SURAT EDARAN MENTERI</a>
+                    <a href="/peraturan/referensi" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Referensi</a>
                 </li>
                 <li>
-                    <a href="/peraturan/referensi" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">REFERENSI</a>
+                    <a href="/peraturan/daerah" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Daerah</a>
                 </li>
                 <li>
-                    <a href="/peraturan/daerah" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">PERATURAN DAERAH</a>
+                    <a href="/peraturan/gubernur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Gubernur</a>
                 </li>
                 <li>
-                    <a href="/peraturan/gubernur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">PERATURAN GUBERNUR</a>
+                    <a href="/peraturan/walikotadanbupati" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Walikota/ Bupati</a>
                 </li>
                 <li>
-                    <a href="/peraturan/walikotadanbupati" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">PERATURAN WALIKOTA/ BUPATI</a>
-                </li>
-                <li>
-                    <a href="/peraturan/suratkeputusan" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">SURAT KEPUTUSAN</a>
+                    <a href="/peraturan/suratkeputusan" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Surat Keputusan</a>
                 </li>
             </ul>
         </li>
