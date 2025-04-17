@@ -98,7 +98,7 @@ public function daftarpesertaskk(Request $request)
     $user = Auth::user();
 
     return view('frontend.04_pembinaan.02_agendaskk.03_daftaragendaskk', [
-        'title' => 'Daftar Agenda SKK Tenaga Kerja Konstruksi',
+        'title' => 'Daftar Peserta SKK Tenaga Kerja Konstruksi',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search,
