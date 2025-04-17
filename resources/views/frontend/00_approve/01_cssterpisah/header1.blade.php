@@ -1,4 +1,31 @@
+<style>
+    .dropdown-link {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
 
+.dropdown-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+
+.dropdown-item {
+    color: black;
+    padding: 10px 20px;
+    display: block;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+</style>
 
 <header class="header">
 	<div class="topbar" style="background: #2ECC71;>
@@ -212,23 +239,23 @@
                             </a>
                         </li>
                         <li class="has-dropdown" style="position: relative;">
-                            <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease; position: relative;">
+                            <a href="#" class="dropdown-link">
                                 KELEMBAGAAN
-                                <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 14px;">&#x2193;</span> <!-- Tanda panah yang sejajar dengan teks -->
+                                <span class="dropdown-arrow">&#x2193;</span> <!-- Tanda panah yang sejajar dengan teks -->
                             </a>
                             <ul>
                                 <li>
-                                    <a href="/profil/struktur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
+                                    <a href="/profil/struktur" class="dropdown-item">
                                         Struktur DPUPR Blora
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/profil/rencanastrategis" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
+                                    <a href="/profil/rencanastrategis" class="dropdown-item">
                                         Profil Jakon DPUPR Blora
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/profil/tupoksi" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
+                                    <a href="/profil/tupoksi" class="dropdown-item">
                                         Tupoksi Jakon DPUPR Blora
                                     </a>
                                 </li>
