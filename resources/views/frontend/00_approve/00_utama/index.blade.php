@@ -171,6 +171,89 @@
     @include('frontend.00_approve.01_cssterpisah.header1')
 
 
+    <section class="main-slider">
+        <div class="main-slider-swiper owl-carousel owl-theme">
+            @foreach ($dataheaderberanda as $item)
+            <div class="item">
+                <!-- Slider Background with Overlay -->
+                <div class="item-slider-bg" style="background-image: url('{{ asset('storage/' . $item->header) }}');">
+                    <div class="slider-overlay"></div>
+                </div>
+
+                <!-- Slider Content -->
+                <div class="container h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-md-8 mx-auto text-center">
+                            <div class="slider-content">
+                                <h4 class="slider-title animated fadeInDown">
+                                    {!! $item->judul !!}
+                                </h4>
+                                <!-- Optional Button -->
+                                <!-- <a href="#" class="btn btn-primary btn-lg mt-3 animated fadeInUp">
+                                    Discover More
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </section>
+
+    <style>
+        .main-slider {
+            position: relative;
+            height: 100vh;
+            max-height: 800px;
+            overflow: hidden;
+        }
+
+        .item-slider-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .slider-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .slider-content {
+            position: relative;
+            z-index: 3;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .slider-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .slider-title {
+                font-size: 2rem;
+            }
+
+            .main-slider {
+                height: 70vh;
+            }
+        }
+    </style>
 
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
@@ -207,89 +290,6 @@
                 </div>
             </div>
 
-            <section class="main-slider">
-                <div class="main-slider-swiper owl-carousel owl-theme">
-                    @foreach ($dataheaderberanda as $item)
-                    <div class="item">
-                        <!-- Slider Background with Overlay -->
-                        <div class="item-slider-bg" style="background-image: url('{{ asset('storage/' . $item->header) }}');">
-                            <div class="slider-overlay"></div>
-                        </div>
-
-                        <!-- Slider Content -->
-                        <div class="container h-100">
-                            <div class="row align-items-center h-100">
-                                <div class="col-md-8 mx-auto text-center">
-                                    <div class="slider-content">
-                                        <h4 class="slider-title animated fadeInDown">
-                                            {!! $item->judul !!}
-                                        </h4>
-                                        <!-- Optional Button -->
-                                        <!-- <a href="#" class="btn btn-primary btn-lg mt-3 animated fadeInUp">
-                                            Discover More
-                                        </a> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </section>
-
-            <style>
-                .main-slider {
-                    position: relative;
-                    height: 100vh;
-                    max-height: 800px;
-                    overflow: hidden;
-                }
-
-                .item-slider-bg {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-size: cover;
-                    background-position: center;
-                    z-index: 1;
-                }
-
-                .slider-overlay {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.4);
-                    z-index: 2;
-                }
-
-                .slider-content {
-                    position: relative;
-                    z-index: 3;
-                    color: #fff;
-                    padding: 20px;
-                }
-
-                .slider-title {
-                    font-size: 2.5rem;
-                    font-weight: 700;
-                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-                    margin-bottom: 20px;
-                }
-
-                @media (max-width: 768px) {
-                    .slider-title {
-                        font-size: 2rem;
-                    }
-
-                    .main-slider {
-                        height: 70vh;
-                    }
-                }
-            </style>
 
 
         @if (session('logout'))
