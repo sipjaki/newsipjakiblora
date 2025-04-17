@@ -277,7 +277,7 @@ table.zebra-table {
 
         const opt = {
             margin:       0.2,  // margin PDF
-            filename:     '{{ Str::slug($data->namapekerjaan ?? "rab_pekerjaan", "_") }}.pdf',  // nama file berdasarkan pekerjaan
+            filename:     '{{ Str::slug($data->jenispekerjaan ?? "RAB_PEKERJAAN", "_") }}.pdf',  // nama file berdasarkan pekerjaan
             image:        { type: 'jpeg', quality: 0.98 },
             html2canvas:  { scale: 2 },
             jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' } // Orientasi PDF landscape
