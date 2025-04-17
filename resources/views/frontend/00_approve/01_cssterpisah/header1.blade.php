@@ -215,6 +215,7 @@
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 KELEMBAGAAN
+                                <span style="margin-left: 10px; font-size: 14px; vertical-align: middle;">&#x2193;</span> <!-- Tanda panah yang sejajar dengan teks -->
                             </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
                                 <li>
@@ -235,30 +236,6 @@
                             </ul>
                         </li>
 
-
-                        <li class="has-dropdown" style="position: relative;">
-                            <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
-                                KELEMBAGAAN
-                                <span style="margin-left: 10px; font-size: 14px;">&#x2193;</span> <!-- Ikon dropdown hanya di menu utama -->
-                            </a>
-                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
-                                <li>
-                                    <a href="/profil/struktur" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
-                                        Struktur DPUPR Blora
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/profil/rencanastrategis" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
-                                        Profil Jakon DPUPR Blora
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/profil/tupoksi" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
-                                        Tupoksi Jakon DPUPR Blora
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
 
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
@@ -269,7 +246,7 @@
                                     <a href="#" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">
                                         Peraturan
                                     </a>
-                                    <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0; position: absolute; right: 100%; top: 0;">
+                                    <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0;">
                                         <li><a href="/standarbiayaumummasjaki" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Standar Biaya Umum</a></li>
                                         <li><a href="/peraturan/undangundang" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Undang - Undang</a></li>
                                         <li><a href="/peraturan/pemerintah" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Peraturan Pemerintah</a></li>
