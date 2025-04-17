@@ -150,7 +150,7 @@ table.zebra-table {
     <!-- Konten Data -->
     <div class="full-width-container mx-auto px-4 pb-10">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
-            <div style="display: flex; justify-content: center; margin-top: 20px;">
+            <div style="display: flex; justify-content: center; margin-bottom:-20px;" >
                 <button type="button" style="
                     display: inline-flex;
                     align-items: center;
@@ -170,9 +170,7 @@ table.zebra-table {
                 onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
                 >
                     <!-- Icon Menu Baru (Stylish Hamburger Icon) -->
-                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2.5 5h15a.5.5 0 0 1 0 1h-15a.5.5 0 0 1 0-1zm0 4h15a.5.5 0 0 1 0 1h-15a.5.5 0 0 1 0-1zm0 4h15a.5.5 0 0 1 0 1h-15a.5.5 0 0 1 0-1z"/>
-                    </svg>
+                  <img src="/assets/icon/pupr.png" alt="" width="5%">
 
                     {{ $title }}
                 </button>
