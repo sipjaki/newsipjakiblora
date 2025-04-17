@@ -447,6 +447,22 @@
                             value="{{ $data->statusterbit ?? '-' }}"
                         >
                     </div>
+
+                    <div class="flex flex-col gap-2 w-full">
+                        <label for="status-terbit" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+                            <!-- Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 21h18M9 8h6M9 12h6M9 16h6M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16"/>
+                            </svg>
+                            Masa Berlaku
+                        </label>
+
+                        <div class="masa-berlaku" data-masaberlaku="{{ $data->tanggalhabis ?? '' }}">
+                            <button class="btn-masa-berlaku px-4 py-2 rounded-md font-semibold w-full" disabled>Status</button>
+                        </div>
+                    </div>
+
                 </div>
 
 
@@ -461,9 +477,6 @@
          </div>
      </div>
      <br><br><br>
-     <td class="masa-berlaku" data-masaberlaku="{{ $item->masa_berlaku ?? '' }}">
-        <button class="btn-masa-berlaku">Status</button>
-    </td>
 
  </section>
 
