@@ -61,7 +61,7 @@ class BujkkonsultanController extends Controller
     }
 
     return view('frontend.03_masjaki_jakon.02_bujkkonsultan.bujkkonsultan', [
-        'title' => 'BUJK Konsultasi Konstruksi',
+        'title' => 'BUJK | Konsultasi Konstruksi',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search
