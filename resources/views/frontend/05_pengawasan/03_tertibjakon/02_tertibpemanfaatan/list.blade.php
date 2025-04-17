@@ -179,13 +179,13 @@ table.zebra-table {
 
             <div class="table-wrapper">
 
-                <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+                <table class="zebra-table fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr>
-                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:80px;"> No <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:100px;"> Penyelenggara <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:400px;"> Nama Bangunan <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Lokasi <span class="sort-icon">⇅</span></th>
+                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:80px;"> No</th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:100px;"> Penyelenggara</th>
+                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:400px;"> Nama Bangunan</th>
+                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Lokasi</th>
                             <th style="text-align:center; width:100px;"> View </th>
                         </tr>
                     </thead>
