@@ -209,9 +209,17 @@ table.zebra-table {
                                 </button>
                                 @endif
                             </td>
-                            <td>{{ $item->namabadanusaha ?? 'Data Belum Diupdate' }}</td>
-                            <td>{{ $item->namapekerjaan ?? 'Data Belum Diupdate' }}</td>
-                            <td style="text-align: center">
+                            <td>
+                                <button class="bg-blue-800 text-white px-4 py-2 rounded">
+                                    {{ $item->namabadanusaha ?? 'Data Belum Diupdate' }}
+                                </button>
+                            </td>
+                            <td>
+                                <button class="bg-blue-800 text-white px-4 py-2 rounded">
+                                    {{ $item->namapekerjaan ?? 'Data Belum Diupdate' }}
+                                </button>
+                            </td>
+                                <td style="text-align: center">
                                 <a href="/tertibjasakonstruksilist/{{$item->namabadanusaha}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                 </a>
