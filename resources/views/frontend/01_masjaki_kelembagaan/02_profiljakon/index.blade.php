@@ -414,7 +414,21 @@ table.zebra-table {
                 @endforeach
             </table>
 
-        </div><!-- container -->
+        @foreach ($data as $item)
+
+
+        <div class="portfolio-details-content">
+            <div class="portfolio-details-content-title">
+                <h4>{{$item->judul}}</h3>
+            </div><!-- portfolio-details-content-title -->
+            <div class="portfolio-details-content-text">
+                <p style="text-align: justify" >
+                    {{$item->keterangan}}
+                </p>
+            </div><!-- portfolio-details-content-text -->
+        </div><!-- portfolio-details-content -->
+        @endforeach
+                </div><!-- container -->
             </section><!-- portfolio-details -->
 
 
