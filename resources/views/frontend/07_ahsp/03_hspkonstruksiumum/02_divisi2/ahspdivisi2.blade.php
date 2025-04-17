@@ -1,17 +1,99 @@
+
 <style>
-    /* Menambahkan warna hijau muda pada baris tabel secara selang-seling */
-    .table-striped tbody tr:nth-child(odd) {
-        background-color: #d4edda; /* Warna hijau muda */
+    /* file: resources/css/custom.css atau langsung di style tag */
+.full-width-container {
+  max-width: 80% !important;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 15px;
+}
+
+.zebra-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+}
+
+.zebra-table th,
+.zebra-table td {
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.zebra-table thead {
+  background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+.view-icon {
+  color: #374151; /* Tailwind gray-700 */
+  cursor: pointer;
+}
+
+table.zebra-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .zebra-table thead {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .zebra-table th,
+        .zebra-table td {
+            padding: 6px 12px;
+            text-align: left;
+        }
+
+        .zebra-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: #dfdddd;
+        }
+
+        .zebra-table tbody tr:hover {
+            background-color: #ffd100;
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+        }
+
+
+        .btn-navy {
+        background-color: #001f3f;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        cursor: default;
+        transition: all 0.3s ease;
     }
 
-    .table-striped tbody tr:nth-child(even) {
-        background-color: #ffffff; /* Warna putih untuk baris genap */
+    .btn-navy:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid #001f3f;
     }
+
 </style>
 
 @include('frontend.00_approve.01_cssterpisah.header')
 
-<body>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     {{-- @include('frontend.00_approve.01_cssterpisah.loader')
     @include('frontend.00_approve.01_cssterpisah.header1') --}}
 
@@ -30,45 +112,58 @@
 
                     <div class="col-lg-12" style="background: #f3f2ed; border-radius:15px;">
                         <div style="display: flex; gap: 20px; margin-top: 20px;">
-                            <!-- Tombol Tutup dengan warna hijau -->
+                            <!-- Tombol Tutup -->
                             <button onclick="window.history.back()"
-                                    style="padding: 10px 40px; width: 200px; height: 60px; font-size: 16px;
-                                           background-color: black; color: white; border: none; border-radius: 10px;
-                                           cursor: pointer; transition: 0.3s;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
+                                style="padding: 10px 40px; width: 200px; height: 60px; font-size: 16px;
+                                       background-color: black; color: white; border: none; border-radius: 10px;
+                                       cursor: pointer; transition: 0.3s;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                onmouseout="this.style.backgroundColor='black'; this.style.color='white';">
                                 ❌ Tutup
                             </button>
 
-                            <!-- Tombol Download Berkas -->
-                            {{-- <button style="padding: 15px 40px; width: 150px; height: 60px; font-size: 16px;
-                                          background-color: navy; color: white; border: none; border-radius: 10px;
-                                          cursor: pointer; transition: 0.3s;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                <i class="fas fa-download" style="margin-right: 10px;"></i> Download
-                            </button> --}}
-                        </div>
-                               <br>
-                            <h4>Analisa Harga Satuan Pekerjaan</h4>
-                    <hr>
-                    <h4 style="font-family: 'Poppins', sans-serif;">
-                        Kode AHSP :
-                        {{ optional($data->hspdivisi)->id }}.
-                        {{ optional($data->hsppaket)->id }}.
-                        {{ optional($data->hspkodepekerjaan)->kodepekerjaan }}.
-                        {{$data->kode}}
-                    </h4>
-                    <hr>
+                            <!-- Tombol Download PDF -->
+                            <button onclick="downloadRABPDF()"
+                                    style="padding: 10px 40px; width: 200px; height: 60px; font-size: 16px;
+                                        background-color: darkgreen; color: white; border: none; border-radius: 10px;
+                                        cursor: pointer; transition: 0.3s;"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='darkgreen';"
+                                    onmouseout="this.style.backgroundColor='darkgreen'; this.style.color='white';">
+                                📥 Download
+                            </button>
 
-                    <h4 style="font-family: 'Poppins', sans-serif;">
-                        Jenis Pekerjaan :
-                        {{$data->jenispekerjaan}}
-                    </h4>
-                    <hr>
+                        </div>
 
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped">
+                            <div id="rabTable">
+
+                                    <!-- Konten dengan Font Poppins dan Ukuran Font 18px -->
+                                    <div style="font-family: 'Poppins', sans-serif; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                        <h4 style="font-size: 18px; color: #2c3e50; font-weight: 600; text-align: center; margin-bottom: 20px; text-transform: uppercase; font-family: 'Poppins';">
+                                            Analisa Harga Satuan Pekerjaan
+                                        </h4>
+
+                                        <hr style="border: 1px solid #ddd; margin: 20px 0;">
+
+                                        <h4 style="font-size: 18px; color: #34495e; margin-bottom: 10px; font-weight: 500; font-family: 'Poppins';">
+                                            <span style="font-weight: 700;">Kode AHSP :</span>
+                                            {{ optional($data->hspdivisi)->id }}.
+                                            {{ optional($data->hsppaket)->id }}.
+                                            {{ optional($data->hspkodepekerjaan)->kodepekerjaan }}.
+                                            {{$data->kode}}
+                                        </h4>
+
+                                        <hr style="border: 1px solid #ddd; margin: 20px 0;">
+
+                                        <h4 style="font-size: 18px; color: #34495e; font-weight: 500; font-family: 'Poppins';">
+                                            <span style="font-weight: 700;">Jenis Pekerjaan :</span> {{$data->jenispekerjaan}}
+                                        </h4>
+
+                                        <hr style="border: 1px solid #ddd; margin-top: 20px;">
+                                    </div>
+                                <!-- TABEL YANG KAMU PUNYA DI SINI -->
+
+                            <table class="zebra-table table-bordered table-striped">
                                 <thead style="background-color: #0bb928; color: white;">
                                     <tr>
                                         <th style="text-align: center;">No</th>
@@ -166,6 +261,7 @@
                                         <td class="text-end"><strong style="color:red;">{{ number_format($totalkeuntungan, 2, ',', '.') }}</strong></td>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,3 +274,31 @@
 
 
 @include('frontend.00_approve.01_cssterpisah.footer2')
+
+
+@php use Illuminate\Support\Str; @endphp
+<script>
+    function downloadRABPDF() {
+        const element = document.getElementById('rabTable'); // Ambil tabel berdasarkan ID
+
+        const opt = {
+            margin:       [0.5, 0.5],  // Margin kecil untuk lebih banyak ruang
+            filename:     '{{ Str::slug($data->jenispekerjaan ?? "RAB_PEKERJAAN", "_") }}.pdf',  // Nama file berdasarkan pekerjaan
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },  // Meningkatkan kualitas gambar untuk halaman yang lebih padat
+            jsPDF:        {
+                unit: 'in',
+                format: 'a4',
+                orientation: 'landscape',
+                compressPdf: true,
+                pageSize: 'A4', // Pastikan menggunakan ukuran A4
+                autoPaging: true // Menghindari pemisahan ke halaman lain
+            }
+        };
+
+        html2pdf().set(opt).from(element).save(); // Convert ke PDF dan simpan
+    }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
