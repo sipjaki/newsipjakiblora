@@ -1,67 +1,5 @@
+
 <style>
-    /* Import font Poppins dari Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-    /* Styling umum untuk seluruh body */
-    .rab-section {
-        font-family: 'Poppins', sans-serif;
-        background-color: #f5f5f5;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Styling untuk judul utama */
-    .rab-section .rab-title {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #0bb928;
-        text-align: center;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-    }
-
-    /* Styling untuk h4 */
-    .rab-section h4 {
-        font-size: 1.4rem;
-        color: #333;
-        font-weight: 500;
-        margin: 10px 0;
-        line-height: 1.6;
-    }
-
-    /* Styling untuk kode AHSP dan jenis pekerjaan */
-    .rab-section .rab-kode-ahsp,
-    .rab-section .rab-jenis-pekerjaan {
-        font-size: 1.2rem;
-        color: #444;
-        font-weight: 400;
-        margin-bottom: 10px;
-        line-height: 1.6;
-    }
-
-    /* Styling untuk nilai dari kode AHSP dan jenis pekerjaan */
-    .rab-section .rab-kode-ahsp span,
-    .rab-section .rab-jenis-pekerjaan span {
-        font-weight: 600;
-        color: #333;
-    }
-
-    /* Styling untuk garis pemisah hr */
-    .rab-section hr {
-        border-top: 2px solid #ddd;
-        margin: 20px 0;
-    }
-
-    /* Container untuk konten */
-    .rab-section .rab-content-container {
-        max-width: 960px;
-        margin: 0 auto;
-        padding: 30px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
     /* file: resources/css/custom.css atau langsung di style tag */
 .full-width-container {
   max-width: 80% !important;
@@ -195,28 +133,31 @@ table.zebra-table {
                             </button>
 
                         </div>
+                        <div style="font-family: 'Poppins', sans-serif; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                            <h4 style="font-size: 2rem; color: #2c3e50; font-weight: 600; text-align: center; margin-bottom: 20px; text-transform: uppercase;">
+                                Analisa Harga Satuan Pekerjaan
+                            </h4>
+
+                            <hr style="border: 1px solid #ddd; margin: 20px 0;">
+
+                            <h4 style="font-size: 1.2rem; color: #34495e; margin-bottom: 10px; font-weight: 500;">
+                                <span style="font-weight: 700;">Kode AHSP :</span>
+                                {{ optional($data->hspdivisi)->id }}.
+                                {{ optional($data->hsppaket)->id }}.
+                                {{ optional($data->hspkodepekerjaan)->kodepekerjaan }}.
+                                {{$data->kode}}
+                            </h4>
+
+                            <hr style="border: 1px solid #ddd; margin: 20px 0;">
+
+                            <h4 style="font-size: 1.2rem; color: #34495e; font-weight: 500;">
+                                <span style="font-weight: 700;">Jenis Pekerjaan :</span> {{$data->jenispekerjaan}}
+                            </h4>
+
+                            <hr style="border: 1px solid #ddd; margin-top: 20px;">
+                        </div>
 
 
-<div class="rab-section">
-    <!-- Title Section -->
-    <div class="rab-title">Analisa Harga Satuan Pekerjaan</div>
-
-    <!-- Kode AHSP Section -->
-    <div class="rab-kode-ahsp">
-        <span>Kode AHSP :</span>
-        {{ optional($data->hspdivisi)->id }}.
-        {{ optional($data->hsppaket)->id }}.
-        {{ optional($data->hspkodepekerjaan)->kodepekerjaan }}.
-        {{$data->kode}}
-    </div>
-    <hr>
-
-    <!-- Jenis Pekerjaan Section -->
-    <div class="rab-jenis-pekerjaan">
-        <span>Jenis Pekerjaan :</span> {{$data->jenispekerjaan}}
-    </div>
-    <hr>
-</div>
                         <div class="table-responsive">
                             <div id="rabTable">
                                 <!-- TABEL YANG KAMU PUNYA DI SINI -->
