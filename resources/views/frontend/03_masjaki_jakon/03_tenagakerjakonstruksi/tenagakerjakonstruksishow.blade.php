@@ -139,7 +139,7 @@
            </a>
            <span>/</span>
            <a href="/datajakon/statistikabujkblora" class="font-medium" style="font-size: 16px; color:blue;">
-             Data Details BUJK Konstruksi
+             Data Details TKK
            </a>
          </div>
        </div>
