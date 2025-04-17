@@ -302,34 +302,34 @@ table.zebra-table {
                     </thead>
                     <tbody>
 
-                    @foreach ($subData as $item)
-                    <tr>
-                        <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                        <td>{{ $item->sub_klasifikasi_layanan ?? 'Belum Memenuhi Persyaratan' }}</td>
-                        <td>{{ $item->kode ?? 'Belum Memenuhi Persyaratan' }}</td>
-                        <td>{{ $item->kualifikasi ?? 'Belum Memenuhi Persyaratan' }}</td>
-                        <td>{{ $item->penerbit ?? 'Belum Memenuhi Persyaratan' }}</td>
-                        <td>{{ $item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan' }}</td>
-                        <td>{{ $item->masaberlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
+                        @foreach ($subData as $item)
+                        <tr>
+                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                            <td>{{ $item->sub_klasifikasi_layanan ?? 'Belum Memenuhi Persyaratan' }}</td>
+                            <td>{{ $item->kode ?? 'Belum Memenuhi Persyaratan' }}</td>
+                            <td>{{ $item->kualifikasi ?? 'Belum Memenuhi Persyaratan' }}</td>
+                            <td>{{ $item->penerbit ?? 'Belum Memenuhi Persyaratan' }}</td>
+                            <td>{{ $item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan' }}</td>
+                            <td>{{ $item->masaberlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
 
-                        @php
-                            use Carbon\Carbon;
+                            <td>
+                                <?php
+                                    use Carbon\Carbon;
 
-                            $statusMasaBerlaku = 'Belum Memenuhi Persyaratan';
-                            $today = Carbon::now();
+                                    $statusMasaBerlaku = 'Belum Memenuhi Persyaratan';
+                                    $today = Carbon::now();
 
-                            if ($item->masa_berlaku) {
-                                $masaBerlaku = Carbon::parse($item->masa_berlaku);
-                                $statusMasaBerlaku = $masaBerlaku->lt($today)
-                                    ? '<button class="bg-red-600 text-white px-3 py-1 rounded text-sm">TIDAK BERLAKU</button>'
-                                    : '<button class="bg-green-600 text-white px-3 py-1 rounded text-sm">BERLAKU</button>';
-                            }
-                        @endphp
-
-                        <td>{!! $statusMasaBerlaku !!}</td>
-                    </tr>
-
-                    @endforeach
+                                    if (!empty($item->masaberlaku)) {
+                                        $masaBerlaku = Carbon::parse($item->masaberlaku);
+                                        $statusMasaBerlaku = $masaBerlaku->lt($today)
+                                            ? '<button class="bg-red-600 text-white px-3 py-1 rounded text-sm">TIDAK BERLAKU</button>'
+                                            : '<button class="bg-green-600 text-white px-3 py-1 rounded text-sm">BERLAKU</button>';
+                                    }
+                                    echo $statusMasaBerlaku;
+                                ?>
+                            </td>
+                        </tr>
+                        @endforeach
 
                     </tbody>
                 </table>
