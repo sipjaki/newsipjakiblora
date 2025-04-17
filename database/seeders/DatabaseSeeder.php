@@ -59629,7 +59629,7 @@ agendapelatihan::create([
     'namakegiatan' => 'Pelatihan Manajemen Konstruksi',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
     // 'jenjang_id' => '4',
-    'penutupan' => '2025-01-13',
+    'penutupan' => '2025-12-13',
     'waktupelaksanaan' => '2025-12-15',
     'jumlahpeserta' => 40,
     'lokasi' => 'Jln Blora No. 10',
