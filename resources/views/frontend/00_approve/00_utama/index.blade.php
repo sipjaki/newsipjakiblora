@@ -427,6 +427,299 @@
     }
 </style>
 
+<section class="news-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Berita Jakon</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="row">
+            <!-- Main News Article -->
+            <div class="col-lg-7">
+                @foreach ($data->skip(0)->take(1) as $item)
+                <article class="featured-article">
+                    <div class="article-image">
+                        <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="{{ $item->judulberita }}" loading="lazy">
+                        <span class="article-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</span>
+                    </div>
+
+                    <div class="article-content">
+                        <h3 class="article-title">{{ $item->judulberita }}</h3>
+
+                        @php
+                            $wordLimit = 50;
+                            $text = strip_tags($item->keterangan);
+                            $excerpt = \Illuminate\Support\Str::words($text, $wordLimit, '...');
+                        @endphp
+
+                        <p class="article-excerpt">
+                            {!! $excerpt !!}
+                        </p>
+
+                        @if(\Illuminate\Support\Str::wordCount($text) > $wordLimit)
+                        <a href="{{ url('/beritajakon') }}" class="read-more">
+                            Selengkapnya <i class="fas fa-arrow-right"></i>
+                        </a>
+                        @endif
+                    </div>
+                </article>
+                @endforeach
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-5">
+                <aside class="news-sidebar">
+                    <!-- Search Form -->
+                    <div class="sidebar-widget search-widget">
+                        <form class="search-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Cari Berita..." class="form-control">
+                                <button type="submit" class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Recent News List -->
+                    <div class="sidebar-widget recent-news">
+                        <h4 class="widget-title">Daftar Berita Jakon</h4>
+
+                        @foreach ($data->skip(1)->take(3) as $item)
+                        <div class="news-item">
+                            <div class="news-thumbnail">
+                                <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->judulberita }}" loading="lazy">
+                            </div>
+                            <div class="news-info">
+                                <span class="news-author">Penulis: Anam</span>
+                                <h5 class="news-title">
+                                    <a href="/beritajakon/{{ $item->judulberita }}">{{ $item->judulberita }}</a>
+                                </h5>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .news-section {
+        padding: 60px 0;
+        background-color: white;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .section-divider {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #4a90e2, #6a5acd);
+        margin: 0 auto;
+    }
+
+    /* Featured Article */
+    .featured-article {
+        margin-bottom: 40px;
+    }
+
+    .article-image {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .article-image img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s ease;
+    }
+
+    .article-image:hover img {
+        transform: scale(1.03);
+    }
+
+    .article-date {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+    .article-content {
+        padding: 25px 15px 0;
+    }
+
+    .article-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #333;
+        line-height: 1.3;
+    }
+
+    .article-excerpt {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .read-more {
+        color: #4a90e2;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+        color: #2a70c2;
+    }
+
+    .read-more i {
+        margin-left: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .read-more:hover i {
+        transform: translateX(3px);
+    }
+
+    /* Sidebar Styles */
+    .news-sidebar {
+        padding-left: 30px;
+    }
+
+    .search-form {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .search-form .form-control {
+        width: 100%;
+        padding: 12px 20px;
+        border: 1px solid #ddd;
+        border-radius: 30px;
+        font-size: 14px;
+    }
+
+    .search-btn {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: linear-gradient(to right, #4a90e2, #6a5acd);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .widget-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        color: #333;
+    }
+
+    /* Recent News Items */
+    .news-item {
+        display: flex;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .news-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .news-thumbnail {
+        flex: 0 0 100px;
+        margin-right: 15px;
+    }
+
+    .news-thumbnail img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .news-info {
+        flex: 1;
+    }
+
+    .news-author {
+        font-size: 12px;
+        color: #777;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .news-title {
+        font-size: 16px;
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .news-title a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .news-title a:hover {
+        color: #4a90e2;
+    }
+
+    @media (max-width: 991px) {
+        .news-sidebar {
+            padding-left: 0;
+            margin-top: 40px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .section-title {
+            font-size: 26px;
+        }
+
+        .article-title {
+            font-size: 20px;
+        }
+
+        .news-item {
+            flex-direction: column;
+        }
+
+        .news-thumbnail {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+    }
+</style>
+
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
@@ -482,103 +775,6 @@
         @endif
 
 
-
-            {{-- <section class="news-details-section" style="background-image: url(assets/00_dokmasjaki/03_datajakon/bannerbetter.jpg);"> --}}
-            <section class="news-details-section" style="background:white">
-                <div class="container"  style="margin-top:-100px;">
-
-                    <h3 class="pricing-title" style="text-align: center;">Berita Jakon</h3>
-        <br>
-                    <div class="row">
-                        <div class="col-lg-7">
-
-                            @foreach ($data->skip(0)->take(1) as $item)
-
-                            <div class="news-details-box-image">
-                                <div class="news-details-box-image-inner">
-                                    <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="img-193">
-
-                                    <a href="#" class="news-details-box-date">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</a>
-                                </div><!-- news-details-box-image-inner -->
-                            </div><!-- news-details-box-image -->
-
-                            <br><br>
-                            <div class="news-details-content-box" style="margin-left: 25px;">
-                                <h4>{{$item->judulberita}}</h4>
-
-                                @php
-                                $wordLimit = 50;
-                                $text = strip_tags($item->keterangan);
-                                $excerpt = \Illuminate\Support\Str::words($text, $wordLimit, '...');
-                            @endphp
-
-                            <p style="text-align: justify">
-                                {!! $excerpt !!}
-                                @if(\Illuminate\Support\Str::wordCount($text) > $wordLimit)
-                                {{-- <a href="{{ url('/beritajakon/' . \Illuminate\Support\Str::slug($item->judulberita)) }}" --}}
-                                    <a href="{{ url('/beritajakon') }}"
-                                    style="color: blue; text-decoration: none;">
-                                    Selengkapnya &rarr;
-                                    </a>
-
-                                @endif
-                            </p>
-
-
-                            </div><!-- /.news-details-content-box -->
-
-                            @endforeach
-
-                        </div><!-- col-lg-8 -->
-
-                        <div class="col-lg-5">
-                            <div class="sidebar">
-                                <div class="sidebar-form-content">
-                                    <div class="sidebar__item sidebar__item--search">
-                                        <form action="#" class="sidebar__search">
-                                            <label for="search" class="sr-only">Cari Berita</label><!-- sr-only -->
-                                            <input type="text" placeholder="Cari Berita">
-                                            <button type="submit" aria-label="search submit" class="thm-btn">
-                                                <i class="flaticon-search-interface-symbol"></i>
-                                            </button><!-- thm-btn -->
-                                        </form><!-- sidebar__search -->
-                                    </div><!-- sidebar__item -->
-                                </div><!-- sidebar-form-content -->
-                                <div class="sidebar-widget sidebar-widget-recent-post">
-                                    <h4 class="pricing-title">Daftar Berita Jakon</h4>
-
-                                    @foreach ($data->skip(1)->take(3) as $item)
-
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-img">
-                                            <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Pelatihan SKK Blora" width="200px" loading="lazy">
-                                        </div><!-- sidebar-recent-post-img -->
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <span class="author" style="color: black;">
-                                                            Penulis : <a href="news-details.html">Anam</a>
-                                                        </span><!-- author -->
-                                                    </div><!-- sidebar-meta-icon -->
-                                                </div><!-- sidebar-meta-item -->
-                                                <div class="sidebar-post-title">
-                                                    <h6><a href="/beritajakon/{{$item->judulberita}}">{{$item->judulberita}}</a></h6>
-                                                </div><!-- sidebar-post-title -->
-                                            </div><!-- sidebar-meta -->
-                                        </div><!-- sidebar-recent-post-content -->
-                                    </div><!-- sidebar-recent-post -->
-
-
-                                    @endforeach
-
-
-                                </div><!-- sidebar-widget sidebar-widget-recent-post -->
-                            </div><!-- sidebar -->
-                        </div><!-- col-lg-4 -->
-                    </div><!-- row -->
-                </div><!-- container -->
-            </section><!--causes-one-section-->
 
 
             <section class="event-three-section" >
