@@ -15,12 +15,7 @@ ul.list-unstyled {
         <div class="topbar-inner" style="background: #2ECC71;">
             <div class="topbar-left" style="background: #2ECC71;">
                 <!-- Sosial Media -->
-                <div class="topbar-socials">
-                    <a href="#"><i class="fa-brands fa-tiktok" style="font-size: 24px;"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram" style="font-size: 24px;"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook" style="font-size: 24px;"></i></a>
-                </div>
+
 
                 <!-- Info Berjalan -->
                 <div class="topbar-info">
@@ -38,7 +33,7 @@ ul.list-unstyled {
                                 display: inline-block;
                                 width: 100%;">
                                 <marquee behavior="scroll" direction="left" style="width: 100%; margin-top: -10px;">
-                                    <a href="#" style="color: navy; text-decoration: none;">
+                                    <a href="#" style="color: navy; text-decoration: none; font-family: 'Poppins'">
                                         Selamat Datang di Mas Jaki DPUPR Kab Blora - Sistem Informasi Pembina Jasa Konstruksi
                                         Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
                                     </a>
@@ -46,6 +41,13 @@ ul.list-unstyled {
                             </div>
                         </li>
                     </ul>
+                </div>
+
+                <div class="topbar-socials">
+                    <a href="#"><i class="fa-brands fa-tiktok" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook" style="font-size: 24px;"></i></a>
                 </div>
             </div>
         </div>
