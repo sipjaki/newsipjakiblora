@@ -51,7 +51,7 @@ class PengawasanbujkController extends Controller
     }
 
     return view('frontend.05_pengawasan.01_bujk.01_bujk', [
-        'title' => 'PENGAWASAN BUJK',
+        'title' => 'Pengawasan BUJK',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search
