@@ -202,7 +202,7 @@ table.zebra-table {
                             @foreach ($data as $item)
                             <tr>
                                 <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                <td style="text-align: center;">
+                                <td style="text-align: left;">
                                     @if(optional($item->hspdivisi)->id || optional($item->hsppaket5)->id || optional($item->hspkodepekerjaan5)->kodepekerjaan || $item->kode)
                                         {{ optional($item->hspdivisi)->id }}.
                                         {{ optional($item->hsppaket5)->id }}.
