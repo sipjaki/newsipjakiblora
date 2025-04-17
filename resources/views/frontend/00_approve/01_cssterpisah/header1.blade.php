@@ -212,7 +212,7 @@ ul.list-unstyled {
                 </style>
 
 
-		<div class="main-menu-inner" style="margin-bottom:-20px;">
+		<div class="main-menu-inner" style="margin-bottom:-15px;">
 			<div class="main-menu-left">
 				<div class="navigation" style="margin-left: 200px;">
 					<ul class="main-menu-list list-unstyled">
