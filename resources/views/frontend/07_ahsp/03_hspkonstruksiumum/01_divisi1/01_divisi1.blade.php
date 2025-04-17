@@ -180,58 +180,24 @@ table.zebra-table {
             <div class="table-wrapper">
 
 
-                <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+                <table class="zebra-table fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr>
-                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:150px;"> Kode AHSP <span class="sort-icon">⇅</span></th>
-                            {{-- <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:250px;"> Kode Paket <span class="sort-icon">⇅</span></th> --}}
-                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:600px;"> Jenis Pekerjaan <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:100px;"> Satuan <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:80px;"> Rp <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:200px;"> Harga Satuan <span class="sort-icon">⇅</span></th>
+                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:80px;"> No </th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; "> Kode AHSP </th>
+                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; "> Jenis Pekerjaan </th>
+                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; "> Satuan </th>
+                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; "> Rp </th>
+                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; "> Harga Satuan </th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
                         @foreach ($data as $item)
                         <tr>
-                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                            <td style="text-align: center;">
-                                {{ optional($item->hspdivisi)->id }}.
-                                {{ optional($item->hsppaket)->id }}.
-                                {{ optional($item->hspkodepekerjaan)->kodepekerjaan }}.
-                                {{$item->kode}}
-                                {{-- {{ optional($item->kode->id) }} --}}
-                            </td>
-                            {{-- <td style="text-align: center;">{{$item->hspkodepekerjaan->namapekerjaan}}</td> --}}
-                            <td style="text-align: left">
-                                @if(isset($item->id) && !empty($item->id))
-                                    <a href="javascript:void(0);"
-                                       style="color: blue; text-decoration: none;"
-                                       onclick="redirectToPage('{{ $item->id }}')">
-                                        {{ $item->jenispekerjaan }}
-                                    </a>
-                                @else
-                                    <span style="color: red;">ID Tidak Ditemukan</span>
-                                @endif
-                            </td>
-
-                            <script>
-                                function redirectToPage(id) {
-                                    if (!id) { // Pastikan ID tidak kosong
-                                        alert("ID tidak valid!");
-                                        return;
-                                    }
-                                    window.location.href = "/satuanhargadivisi1/" + encodeURIComponent(id);
-                                }
-                            </script>
-
-                            <td style="text-align: center; color:red;" >{{$item->satuanmaterial}}</td>
-                            <td style="text-align: center;">Rp</td>
-                            <td style="text-align: right;">{{ number_format((float) $item->hargasatuan, 0, ',', '.') }},-</td>
+                            ...
                         </tr>
                         @endforeach
+
                     </tbody>
                 </table>
 
