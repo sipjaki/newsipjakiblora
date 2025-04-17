@@ -15,7 +15,7 @@ ul.list-unstyled {
         <div class="topbar-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 20px; border-radius: 15px;">
 
             <!-- Sosial Media (Pembungkus lebih kecil dan Border Radius) -->
-            <div class="topbar-socials" style="display: flex; gap: 15px; background-color: white; border-radius: 15px; padding: 5px 10px; align-items: center;">
+            {{-- <div class="topbar-socials" style="display: flex; gap: 15px; background-color: white; border-radius: 15px; padding: 5px 10px; align-items: center;">
                 <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
                     <i class="fa-brands fa-tiktok" style="font-size: 24px; color: #2ECC71;"></i>
                 </a>
@@ -28,7 +28,7 @@ ul.list-unstyled {
                 <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
                     <i class="fa-brands fa-facebook" style="font-size: 24px; color: #2ECC71;"></i>
                 </a>
-            </div>
+            </div> --}}
 
             <!-- Info Berjalan (Pembungkus Border Radius dengan Media Sosial) -->
             <div class="topbar-info" style="flex: 1; margin-left: 20px; background-color: white; border-radius: 15px; padding: 5px;">
