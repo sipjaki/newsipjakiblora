@@ -270,21 +270,28 @@ table.zebra-table {
 
 
 @php use Illuminate\Support\Str; @endphp
-
 <script>
     function downloadRABPDF() {
         const element = document.getElementById('rabTable'); // Ambil tabel berdasarkan ID
 
         const opt = {
-            margin:       0.2,  // margin PDF
-            filename:     '{{ Str::slug($data->jenispekerjaan ?? "RAB_PEKERJAAN", "_") }}.pdf',  // nama file berdasarkan pekerjaan
+            margin:       [0.5, 0.5],  // Margin kecil untuk lebih banyak ruang
+            filename:     '{{ Str::slug($data->jenispekerjaan ?? "RAB_PEKERJAAN", "_") }}.pdf',  // Nama file berdasarkan pekerjaan
             image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' } // Format halaman A4, landscape
+            html2canvas:  { scale: 2 },  // Meningkatkan kualitas gambar untuk halaman yang lebih padat
+            jsPDF:        {
+                unit: 'in',
+                format: 'a4',
+                orientation: 'landscape',
+                compressPdf: true,
+                pageSize: 'A4', // Pastikan menggunakan ukuran A4
+                autoPaging: true // Menghindari pemisahan ke halaman lain
+            }
         };
 
-        html2pdf().set(opt).from(element).save(); // Convert ke PDF dan save
+        html2pdf().set(opt).from(element).save(); // Convert ke PDF dan simpan
     }
 </script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
