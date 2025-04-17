@@ -97,7 +97,7 @@ table.zebra-table {
     @include('frontend.00_approve.01_cssterpisah.header1')
 
 <!-- Wrapper Background Section -->
-<section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; margin-top:-125px;" >
+<section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; " >
 
 <!-- Breadcrumb + Search Bar -->
 <div class="max-w-[1130px] mx-auto pt-[50px] px-4 font-poppins" sty>
@@ -156,7 +156,7 @@ table.zebra-table {
                 </div>
             </div>
 
-            <section class="portfolio-details">
+            <section class="portfolio-details" style="margin-top: -125px;">
                 <div class="container">
 
 
