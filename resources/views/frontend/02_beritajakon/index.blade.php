@@ -157,7 +157,7 @@ table.zebra-table {
             </div>
 
 
-            <section class="news-details-section" style="margin-top: -150px; margin-bottom:-180px;">
+            <section class="news-details-section" style="margin-top: -150px; margin-bottom:-100px;">
                     <div class="row">
                         <div class="col-lg-8">
 
