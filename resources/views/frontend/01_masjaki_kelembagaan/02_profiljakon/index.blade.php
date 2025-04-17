@@ -548,7 +548,7 @@ table.zebra-table {
 
         <div class="portfolio-details-content">
             <div class="portfolio-details-content-title">
-                <h4 style="font-family: 'Poppins', sans-serif;">{{$item->judul}}</h3>
+                <h4 style="font-family: 'Poppins', sans-serif;" class="font-bold">{{$item->judul}}</h4>
             </div><!-- portfolio-details-content-title -->
             <div class="portfolio-details-content-text">
                 <p style="text-align: justify" ><span style="font-family: 'Poppins', sans-serif;">
