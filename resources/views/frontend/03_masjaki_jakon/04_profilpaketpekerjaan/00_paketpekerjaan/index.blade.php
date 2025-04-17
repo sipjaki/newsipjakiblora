@@ -224,7 +224,7 @@ table.zebra-table {
                             </td>
 
                             <td style="text-align: center;">
-                                {{ $item->progress ?? 'Data Tidak Ditemukan' }}
+                                {{ isset($item->progress) ? number_format($item->progress, 1) . '%' : 'Data Tidak Ditemukan' }}
                             </td>
 
                             <td style="text-align: center;">
