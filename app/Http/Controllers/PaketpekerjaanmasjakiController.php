@@ -14,7 +14,7 @@ class PaketpekerjaanmasjakiController extends Controller
 
     public function paketpekerjaanmasjaki(Request $request)
     {
-        $perPage = $request->input('perPage', 10);
+        $perPage = $request->input('perPage', 15);
         $search = $request->input('search');
 
         $query = paketpekerjaanmasjaki::query();
