@@ -216,13 +216,14 @@ table.zebra-table {
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
-                            <td style="text-align: center;">
+                            <td style="text-align: {{ !empty($item->namapekerjaan) ? 'left' : 'center' }};">
                                 @if(!empty($item->namapekerjaan))
                                     {{ $item->namapekerjaan }}
                                 @else
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
+
                                   <td style="text-align: center">
                                 <a href="/tertibjasakonstruksilist/{{$item->namabadanusaha}}">
                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>

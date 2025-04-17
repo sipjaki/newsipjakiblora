@@ -209,13 +209,14 @@ table.zebra-table {
                                     </button>
                                 @endif
                             </td>
-                            <td>
+                            <td style="text-align: {{ !empty($item->namapekerjaan) ? 'left' : 'center' }};">
                                 @if(!empty($item->namapekerjaan))
                                     {{ $item->namapekerjaan }}
                                 @else
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
+
                             <td>
                                 @if(!empty($item->namabangunan))
                                     {{ $item->namabangunan }}
