@@ -27,19 +27,19 @@
                 <div class="col-lg-6">
                     <div class="footer-widget mb-3">
                         <h4 style="margin-bottom: 10px;">
-                            <i class="fas fa-phone-alt" style="margin-right: 5px;"></i> Kontak Kami
+                            <i class="fas fa-phone-alt" style="margin-right: 5px; color:white; font-family: 'Poppins'" ></i> Kontak Kami
                         </h4>
-                        <p style="margin: 0 0 10px;">Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</p>
+                        <p style="margin: 0 0 10px; color:white; font-family: 'Poppins'">Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah</p>
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:kontraktor@masjakidpuprblora.co.id" style="color: white;">kontraktor@masjakidpuprblora.co.id</a>
+                            <a href="mailto:kontraktor@masjakidpuprblora.co.id" style="color: white; font-family: 'Poppins'">kontraktor@masjakidpuprblora.co.id</a>
                         </div>
                     </div>
 
                     <!-- Google Maps -->
                     <div class="footer-widget">
                         <h4 style="margin-bottom: 10px;">
-                            <i class="fas fa-map-marker-alt" style="margin-right: 5px;"></i> Lokasi Kami
+                            <i class="fas fa-map-marker-alt" style="margin-right: 5px; color:white; font-family: 'Poppins';"></i> Lokasi Kami
                         </h4>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.523764685145!2d111.4188524747965!3d-7.179069792829058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7712b6c5e5f9d7%3A0x98b939fa9f2c6b88!2sJl.%20Nusantara%20No.62%2C%20Jetis%2C%20Kauman%2C%20Kec.%20Blora%2C%20Kabupaten%20Blora%2C%20Jawa%20Tengah%2058214!5e0!3m2!1sen!2sid!4v1710000000000"
