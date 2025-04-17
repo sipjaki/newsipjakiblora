@@ -49,8 +49,8 @@ class BujkkontraktorController extends Controller
         $user = Auth::user();
         // $data = asosiasimasjaki::paginate(15);
 
-        $databujkkontraktorpaginate = bujkkontraktor::paginate(15);
-        $databujkkonsultanpaginate = bujkkonsultan::paginate(15);
+        $databujkkontraktorpaginate = bujkkontraktor::paginate(10);
+        $databujkkonsultanpaginate = bujkkonsultan::paginate(10);
 
         $query = bujkkonsultan::query();
         $query = bujkkontraktor::query();
@@ -154,7 +154,7 @@ class BujkkontraktorController extends Controller
 // HALAMAN FRONTEND MENU BUJK KONTRAKTOR
     public function bujkkontraktor(Request $request)
 {
-    $perPage = $request->input('perPage', 15);
+    $perPage = $request->input('perPage', 10);
     $search = $request->input('search');
 
     $query = bujkkontraktor::query();
