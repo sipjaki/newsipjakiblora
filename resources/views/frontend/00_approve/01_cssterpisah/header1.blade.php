@@ -174,66 +174,72 @@ ul.list-unstyled {
         BERITA
     </a>
     <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 220px;">
-        <li style="position: relative;">
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/undangundang" style="color: black; text-decoration: none; text-align: left;">UNDANG UNDANG</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/pemerintah" style="color: black; text-decoration: none; text-align: left;">PERATURAN PEMERINTAH</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/presiden" style="color: black; text-decoration: none; text-align: left;">PERATURAN PRESIDEN</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/menteri" style="color: black; text-decoration: none; text-align: left;">PERATURAN MENTERI</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/keputusanmenteri" style="color: black; text-decoration: none; text-align: left;">KEPUTUSAN MENTERI</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/suratedaranmenteri" style="color: black; text-decoration: none; text-align: left;">SURAT EDARAN MENTERI</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/referensi" style="color: black; text-decoration: none; text-align: left;">REFERENSI</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/daerah" style="color: black; text-decoration: none; text-align: left;">PERATURAN DAERAH</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/gubernur" style="color: black; text-decoration: none; text-align: left;">PERATURAN GUBERNUR</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/walikotadanbupati" style="color: black; text-decoration: none; text-align: left;">PERATURAN WALIKOTA/ BUPATI</a>
-            </li>
-
-            <li style="display: inline-flex; align-items: center; color: black; text-decoration: none;">
-                <i class="fas fa-file" style="margin-left: 3px; margin-right: 0px; background: linear-gradient(90deg, black, yellow);"></i>
-                <a href="/peraturan/suratkeputusan" style="color: black; text-decoration: none; text-align: left;">SURAT KEPUTUSAN</a>
-            </li>
-
-            <ul class="list-unstyled" style="background-color: #000; padding: 0; margin: 0;">
-                <!-- Nested items go here -->
-            </ul>
+        <li>
+            <a href="/peraturan/undangundang" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> UNDANG UNDANG
+            </a>
         </li>
+
+        <li>
+            <a href="/peraturan/pemerintah" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN PEMERINTAH
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/presiden" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN PRESIDEN
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/menteri" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN MENTERI
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/keputusanmenteri" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> KEPUTUSAN MENTERI
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/suratedaranmenteri" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> SURAT EDARAN MENTERI
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/referensi" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> REFERENSI
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/daerah" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN DAERAH
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/gubernur" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN GUBERNUR
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/walikotadanbupati" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> PERATURAN WALIKOTA/ BUPATI
+            </a>
+        </li>
+
+        <li>
+            <a href="/peraturan/suratkeputusan" style="color: black; text-decoration: none; padding: 5px 10px; display: block;">
+                <i class="fas fa-file" style="margin-right: 10px; background: linear-gradient(90deg, black, yellow);"></i> SURAT KEPUTUSAN
+            </a>
+        </li>
+
         <li><a href="/beritajakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
         <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
     </ul>
