@@ -235,65 +235,65 @@
 
 
                                 <div class="sidebar-widget sidebar-widget-recent-post" style="font-family: Poppins;">
-                                    <h4>Penyelenggara</h4>
+                                    <h4 style="font-family: Poppins;">Penyelenggara</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;">{{ $data->penyelenggara }}</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ $data->penyelenggara }}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <h4>Waktu Pelaksanaan</h4>
+                                    <h4 style="font-family: Poppins;">Waktu Pelaksanaan</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;">{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <h4>Lokasi</h4>
+                                    <h4 style="font-family: Poppins;">Lokasi</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;">{{ $data->lokasi }}</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ $data->lokasi }}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <h4>Jumlah Peserta</h4>
+                                    <h4 style="font-family: Poppins;">Jumlah Peserta</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;">{{ $data->jumlahpeserta }} Peserta</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ $data->jumlahpeserta }} Peserta</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <h4>Keterangan</h4>
+                                    <h4 style="font-family: Poppins;">Keterangan</h4>
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;">{{ $data->keterangan }}</p>
+                                                        <p style="font-size:18px;" style="font-family: Poppins;">{{ $data->keterangan }}</p>
                                                     </div>
                                                 </div>
                                             </div>
