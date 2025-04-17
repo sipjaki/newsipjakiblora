@@ -15,21 +15,20 @@
                     <div class="d-flex align-items-center mb-3" style="gap: 10px;">
                         <a href="/"><img src="/assets/icon/logokabupatenblora.png" alt="Logo Blora" width="60" loading="lazy"></a>
                         <a href="/"><img src="/assets/icon/pupr.png" alt="Logo PUPR" width="60" loading="lazy"></a>
-                        <h2 style="margin: 0; font-style: italic;">
-                            <span style="color: white;">MASJAKI</span>
-                            <span style="color: green;">BLORA</span>
-                        </h2>
+
                     </div>
-                    <p style="margin-bottom: 20px;">Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora</p>
+                    <p style="margin-bottom: 20px; color: white; font-size: 20px; font-family: 'Poppins', sans-serif;">
+                        Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora
+                    </p>
 
                     <!-- Sosial Media -->
-                    <div class="footer-widget-socials" style="display: flex; gap: 15px; font-size: 20px;">
+                    {{-- <div class="footer-widget-socials" style="display: flex; gap: 15px; font-size: 20px;">
                         <a href="mailto:example@email.com" style="color: white;"><i class="fa-solid fa-envelope"></i></a>
                         <a href="#" style="color: white;"><i class="fa-brands fa-tiktok"></i></a>
                         <a href="https://wa.me/6281234567890" style="color: white;"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href="#" style="color: white;"><i class="fa-brands fa-facebook"></i></a>
                         <a href="#" style="color: white;"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <!-- Kanan -->
