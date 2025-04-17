@@ -157,7 +157,7 @@ table.zebra-table {
             </div>
 
 
-            <section class="news-details-section" style="background-image: url(assets/00_dokmasjaki/03_datajakon/bannerbetter.jpg);">
+            <section class="news-details-section" style="margin-top: -150px;">
                 <div class="container"
                 style="
                 background: white;
