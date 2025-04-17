@@ -240,347 +240,230 @@ table.zebra-table {
             </div>
             <br>
 
-            <h4>I. IDENTITAS OPD</h4>
+            <h4 style="font-family: 'Poppins', sans-serif;">I. IDENTITAS OPD</h4>
             <table>
                 @foreach ($dataidentitasopd as $item)
-
                 <tr>
-                    <td>1.</td>
-                    <td>Nama OPD</td>
-                    <td>:</td>
-                    <td>{{$item->namaopd}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">1.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Nama OPD</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->namaopd}}</td>
                 </tr>
                 <tr>
-                    <td>2.</td>
-                    <td>Alamat OPD</td>
-                    <td>:</td>
-                    <td>{{$item->alamatopd}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">2.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Alamat OPD</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->alamatopd}}</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>RT / RW</td>
-                    <td>:</td>
-                    <td>{{$item->rtrw}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;"></td>
+                    <td style="font-family: 'Poppins', sans-serif;">RT / RW</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->rtrw}}</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Kode Pos</td>
-                    <td>:</td>
-                    <td>{{$item->kodepos}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;"></td>
+                    <td style="font-family: 'Poppins', sans-serif;">Kode Pos</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->kodepos}}</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Kelurahan</td>
-                    <td>:</td>
-                    <td>{{$item->kelurahan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;"></td>
+                    <td style="font-family: 'Poppins', sans-serif;">Kelurahan</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->kelurahan}}</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Kecamatan</td>
-                    <td>:</td>
-                    <td>{{$item->kecamatan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;"></td>
+                    <td style="font-family: 'Poppins', sans-serif;">Kecamatan</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->kecamatan}}</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Kota</td>
-                    <td>:</td>
-                    <td>{{$item->kota}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;"></td>
+                    <td style="font-family: 'Poppins', sans-serif;">Kota</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->kota}}</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Provinsi</td>
-                    <td>:</td>
-                    <td>{{$item->provinsi}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;"></td>
+                    <td style="font-family: 'Poppins', sans-serif;">Provinsi</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->provinsi}}</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td>Negara</td>
-                    <td>:</td>
-                    <td>{{$item->negara}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;"></td>
+                    <td style="font-family: 'Poppins', sans-serif;">Negara</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->negara}}</td>
                 </tr>
                 <tr>
-                    <td>3.</td>
-                    <td>Posisi Geografis</td>
-                    <td>:</td>
-                    <td>{{$item->posisigeografis}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">3.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Posisi Geografis</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->posisigeografis}}</td>
                 </tr>
                 <tr>
-                    <td>4.</td>
-                    <td>Tipe Dinas</td>
-                    <td>:</td>
-                    <td>{{$item->tipedinas}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">4.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Tipe Dinas</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->tipedinas}}</td>
                 </tr>
-
                 @endforeach
             </table>
 
             <br>
 
-            <h4>II. PROFIL PIMPINAN OPD</h4>
+            <h4 style="font-family: 'Poppins', sans-serif;">II. PROFIL PIMPINAN OPD</h4>
 
-            <h5>KEPALA DINAS</h5>
+            <h5 style="font-family: 'Poppins', sans-serif;">KEPALA DINAS</h5>
             <table>
                 @foreach ($datakepaladinas as $item)
-
                 <tr>
-                    <td>1.</td>
-                    <td>Nama Lengkap</td>
-                    <td>:</td>
-                    <td>{{$item->namalengkap}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">1.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Nama Lengkap</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->namalengkap}}</td>
                 </tr>
                 <tr>
-                    <td>2.</td>
-                    <td>NIP</td>
-                    <td>:</td>
-                    <td>{{$item->nip}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">2.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">NIP</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->nip}}</td>
                 </tr>
                 <tr>
-                    <td>3.</td>
-                    <td>Tempat, Tanggal Lahir</td>
-                    <td>:</td>
-                    <td>{{$item->ttl}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">3.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Tempat, Tanggal Lahir</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->ttl}}</td>
                 </tr>
                 <tr>
-                    <td>4.</td>
-                    <td>Pangkat / Golongan</td>
-                    <td>:</td>
-                    <td>{{$item->pangkatgolongan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">4.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Pangkat / Golongan</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pangkatgolongan}}</td>
                 </tr>
                 <tr>
-                    <td>5.</td>
-                    <td>Jabatan</td>
-                    <td>:</td>
-                    <td>{{$item->jabatan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">5.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Jabatan</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->jabatan}}</td>
                 </tr>
                 <tr>
-                    <td>6.</td>
-                    <td>Perangkat Daerah</td>
-                    <td>:</td>
-                    <td>{{$item->perangkatdaerah}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">6.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Perangkat Daerah</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->perangkatdaerah}}</td>
                 </tr>
                 <tr>
-                    <td>7.</td>
-                    <td>Pendidikan Terakhir</td>
-                    <td>:</td>
-                    <td>{{$item->pendidikanterakhir}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">7.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Pendidikan Terakhir</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pendidikanterakhir}}</td>
                 </tr>
-
                 @endforeach
             </table>
 
             <br>
 
-            <h5>KEPALA BIDANG BANGUNAN GEDUNG</h5>
+            <h5 style="font-family: 'Poppins', sans-serif;">KEPALA BIDANG BANGUNAN GEDUNG</h5>
             <table>
-
                 @foreach ($datakabid as $item)
-
                 <tr>
-                    <td>1.</td>
-                    <td>Nama Lengkap</td>
-                    <td>:</td>
-                    <td>{{$item->namalengkap}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">1.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Nama Lengkap</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->namalengkap}}</td>
                 </tr>
                 <tr>
-                    <td>2.</td>
-                    <td>NIP</td>
-                    <td>:</td>
-                    <td>{{$item->nip}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">2.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">NIP</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->nip}}</td>
                 </tr>
                 <tr>
-                    <td>3.</td>
-                    <td>Tempat, Tanggal Lahir</td>
-                    <td>:</td>
-                    <td>{{$item->ttl}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">3.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Tempat, Tanggal Lahir</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->ttl}}</td>
                 </tr>
                 <tr>
-                    <td>4.</td>
-                    <td>Pangkat / Golongan</td>
-                    <td>:</td>
-                    <td>{{$item->pangkatgolongan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">4.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Pangkat / Golongan</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pangkatgolongan}}</td>
                 </tr>
                 <tr>
-                    <td>5.</td>
-                    <td>Jabatan</td>
-                    <td>:</td>
-                    <td>{{$item->pangkatgolongan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">5.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Jabatan</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->jabatan}}</td>
                 </tr>
                 <tr>
-                    <td>6.</td>
-                    <td>Perangkat Daerah</td>
-                    <td>:</td>
-                    <td>{{$item->perangkatdaerah}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">6.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Perangkat Daerah</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->perangkatdaerah}}</td>
                 </tr>
                 <tr>
-                    <td>7.</td>
-                    <td>Pendidikan Terakhir</td>
-                    <td>:</td>
-                    <td>{{$item->pendidikanterakhir}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">7.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Pendidikan Terakhir</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pendidikanterakhir}}</td>
                 </tr>
                 @endforeach
             </table>
 
             <br>
 
-            <h5>SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
+            <h5 style="font-family: 'Poppins', sans-serif;">SUBKOORDINATOR BINA JASA KONSTRUKSI</h5>
             <table>
                 @foreach ($datasubkoordinator as $item)
-
                 <tr>
-                    <td>1.</td>
-                    <td>Nama Lengkap</td>
-                    <td>:</td>
-                    <td>{{$item->namalengkap}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">1.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Nama Lengkap</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->namalengkap}}</td>
                 </tr>
                 <tr>
-                    <td>2.</td>
-                    <td>NIP</td>
-                    <td>:</td>
-                    <td>{{$item->nip}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">2.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">NIP</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->nip}}</td>
                 </tr>
                 <tr>
-                    <td>3.</td>
-                    <td>Tempat, Tanggal Lahir</td>
-                    <td>:</td>
-                    <td>{{$item->ttl}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">3.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Tempat, Tanggal Lahir</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->ttl}}</td>
                 </tr>
                 <tr>
-                    <td>4.</td>
-                    <td>Pangkat/Golongan</td>
-                    <td>:</td>
-                    <td>{{$item->pangkatgolongan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">4.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Pangkat / Golongan</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pangkatgolongan}}</td>
                 </tr>
                 <tr>
-                    <td>5.</td>
-                    <td>Jabatan</td>
-                    <td>:</td>
-                    <td>{{$item->jabatan}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">5.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Jabatan</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->jabatan}}</td>
                 </tr>
                 <tr>
-                    <td>6.</td>
-                    <td>Pendidikan Terakhir</td>
-                    <td>:</td>
-                    <td>{{$item->pendidikanterakhir}}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">6.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Perangkat Daerah</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->perangkatdaerah}}</td>
                 </tr>
-                @endforeach
-            </table>
-            <br>
-
-            <h4>III. OPD Jakon</h4>
-            <table>
-                @foreach ($datainformasi as $item)
-
                 <tr>
-                    <td></td>
-                    <td>{!!$item->informasiopd!!}</td>
+                    <td style="font-family: 'Poppins', sans-serif;">7.</td>
+                    <td style="font-family: 'Poppins', sans-serif;">Pendidikan Terakhir</td>
+                    <td style="font-family: 'Poppins', sans-serif;">:</td>
+                    <td style="font-family: 'Poppins', sans-serif;">{{$item->pendidikanterakhir}}</td>
                 </tr>
                 @endforeach
             </table>
-            <br>
-
-            <h4>IV. Kontak OPD</h4>
-            <table>
-                @foreach ($datainformasi as $item)
-
-                <tr>
-                    <td>1</td>
-                    <td>Nomor Telepon</td>
-                    <td>:</td>
-                    <td>{{$item->notelepon}}</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Instagram</td>
-                    <td>:</td>
-                    <td>@{{$item->instagram}}</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Tiktok</td>
-                    <td>:</td>
-                    <td>{{$item->tiktok}}</td>
-                    {{-- <td>'@bangunan.gedung.dpupr'</td> --}}
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Tiktok</td>
-                    <td>:</td>
-                    <td>{{$item->email}}</td>
-                    {{-- <td>'@bangunan.gedung.dpupr'</td> --}}
-                </tr>
-                @endforeach
-            </table>
-
-            <br>
-            <h4>V. SK SIPJAKI</h4>
-            <table>
-                @foreach ($datasipjaki as $item)
-                <tr>
-                    <td></td>
-                    <td>Nomor</td>
-                    <td>:</td>
-                    <td>{{$item->nomor}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Nama Operator SIPJAKI</td>
-                    <td>:</td>
-                    <td>{{$item->operator1}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Nama Operator SIPJAKI</td>
-                    <td>:</td>
-                    <td>{{$item->operator2}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Nama Operator SIPJAKI</td>
-                    <td>:</td>
-                    <td>{{$item->operator3}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Nama Operator SIPJAKI</td>
-                    <td>:</td>
-                    <td>{{$item->operator4}}</td>
-                </tr>
-                @endforeach
-            </table>
-
-            <br>
-            <h4>VI. SK PERSONIL JABATAN FUNGSIONAL JASA KONSTRUKSI</h4>
-            <table>
-                @foreach ($datapersonil as $item)
-
-                <tr>
-                    <td>{{$loop->iteration}}</td>
-                    <td>{{$item->jabatan}}</td>
-                    <td>:</td>
-                    <td>{{$item->namalengkap}}</td>
-                </tr>
-
-                @endforeach
-            </table>
-
-        </div>
-
-
-        @foreach ($data as $item)
-
-
-        <div class="portfolio-details-content">
-            <div class="portfolio-details-content-title">
-                <h4>{{$item->judul}}</h3>
-            </div><!-- portfolio-details-content-title -->
-            <div class="portfolio-details-content-text">
-                <p style="text-align: justify" >
-                    {{$item->keterangan}}
-                </p>
-            </div><!-- portfolio-details-content-text -->
-        </div><!-- portfolio-details-content -->
-        @endforeach
-                </div><!-- container -->
+                   </div><!-- container -->
             </section><!-- portfolio-details -->
 
 
