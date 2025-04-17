@@ -182,10 +182,10 @@ table.zebra-table {
                 <table class="zebra-table fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr>
-                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center"> No <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center"> Nama Paket Pekerjaan <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center"> Tahun <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center"> Nama Perusahaan <span class="sort-icon">⇅</span></th>
+                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center"> No</th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center"> Nama Paket Pekerjaan</th>
+                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center"> Tahun</th>
+                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center"> Nama Perusahaan</th>
                             <th style="text-align:center"> View </th>
                         </tr>
                     </thead>
