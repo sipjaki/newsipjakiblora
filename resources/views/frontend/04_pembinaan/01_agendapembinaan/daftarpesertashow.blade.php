@@ -111,10 +111,10 @@ table.zebra-table {
           <a href="/datajakon/bujkkontraktor" class="font-medium text-blue-600" style="font-size: 16px; color:blue;">
             {{$title}}
           </a>
-          <span>/</span>
+          {{-- <span>/</span>
           <a href="/datajakon/statistikabujkblora" class="font-medium" style="font-size: 16px;">
             Data Statistik
-          </a>
+          </a> --}}
         </div>
       </div>
 
