@@ -190,16 +190,17 @@ table.zebra-table {
                 <div class="w-5 h-5 flex shrink-0">
                     <img src="/assets/new/icons/story.svg" alt="icon">
                 </div>
-                <p class="text-white font-normal text-sm">
-                    <span class="font-bold">Informasi Data : {{$data->namalengkap}} </span>
+                <p class="text-white font-normal text-sm" style="font-family: Poppins;">
+                    <span class="font-bold">Informasi Data: {{$data->namalengkap}}</span>
                 </p>
+
             </div>
 
             <form action="" class="flex flex-col gap-5 w-full" style="margin-top:-35px;">
                 <div class="flex p-[14px_20px] border border-[#030303] rounded-[20px] gap-[10px] w-full">
                  <!-- Nama Bangunan -->
                  <div class="flex flex-col gap-2 w-full">
-                    <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2">
+                    <label for="namabangunan" class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
                         <!-- Building Icon -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -208,7 +209,7 @@ table.zebra-table {
                         Badan Usaha
                     </label>
                     <input
-                        style="margin-top: -15px;"
+                        style="margin-top: -15px; font-family: Poppins;"
                         type="text"
                         class="focus:outline-none appearance-none font-medium leading-[30px] placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-md"
                         value="{{$data->namalengkap}}"
