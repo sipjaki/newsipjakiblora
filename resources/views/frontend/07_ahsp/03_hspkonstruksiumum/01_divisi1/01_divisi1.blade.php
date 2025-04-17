@@ -89,6 +89,7 @@ table.zebra-table {
     }
 
 </style>
+
 {{-- ================================ --}}
 
 @include('frontend.00_approve.01_cssterpisah.header')

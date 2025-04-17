@@ -1,12 +1,94 @@
+
 <style>
-    /* Menambahkan warna hijau muda pada baris tabel secara selang-seling */
-    .table-striped tbody tr:nth-child(odd) {
-        background-color: #d4edda; /* Warna hijau muda */
+    /* file: resources/css/custom.css atau langsung di style tag */
+.full-width-container {
+  max-width: 80% !important;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 15px;
+}
+
+.zebra-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+}
+
+.zebra-table th,
+.zebra-table td {
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.zebra-table thead {
+  background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+.view-icon {
+  color: #374151; /* Tailwind gray-700 */
+  cursor: pointer;
+}
+
+table.zebra-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .zebra-table thead {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .zebra-table th,
+        .zebra-table td {
+            padding: 6px 12px;
+            text-align: left;
+        }
+
+        .zebra-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: #dfdddd;
+        }
+
+        .zebra-table tbody tr:hover {
+            background-color: #ffd100;
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+        }
+
+
+        .btn-navy {
+        background-color: #001f3f;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        cursor: default;
+        transition: all 0.3s ease;
     }
 
-    .table-striped tbody tr:nth-child(even) {
-        background-color: #ffffff; /* Warna putih untuk baris genap */
+    .btn-navy:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid #001f3f;
     }
+
 </style>
 
 @include('frontend.00_approve.01_cssterpisah.header')
@@ -68,7 +150,7 @@
                     <hr>
 
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped">
+                            <table class="zebra-table table-bordered table-striped">
                                 <thead style="background-color: #0bb928; color: white;">
                                     <tr>
                                         <th style="text-align: center;">No</th>
