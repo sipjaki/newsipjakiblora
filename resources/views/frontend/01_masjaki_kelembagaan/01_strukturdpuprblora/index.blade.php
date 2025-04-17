@@ -171,7 +171,7 @@ table.zebra-table {
                             </h3>
                         </div><!-- portfolio-details-content-title -->
                         <div class="portfolio-details-content-text">
-                            <p style="text-align: justify" >
+                            <p style="text-align: justify; font-family: 'Poppins'" >
                         {!! $item->keterangan !!}
                             </p>
                         </div><!-- portfolio-details-content-text -->
