@@ -18,8 +18,8 @@ ul.list-unstyled {
             <div class="topbar-info" style="flex: 1; margin-left: 20px; background-color: white; border-radius: 15px; padding: 5px;">
                 <div class="topbar-text" style="
                     border-radius: 15px;
-                    background-color: #1e7e34;
-                    color: white;
+                    background-color: white;
+                    color: green;
                     padding: 10px 15px;
                     overflow: hidden;
                     font-size: 20px;
@@ -27,7 +27,7 @@ ul.list-unstyled {
                     font-family: 'Poppins', sans-serif;
                     width: 100%;">
                     <marquee behavior="scroll" direction="left" scrollamount="6">
-                        <a href="#" style="color: white; text-decoration: none;">
+                        <a href="#" style="color: navy; text-decoration: none;">
                             Selamat Datang di Mas Jaki DPUPR Kab Blora - Sistem Informasi Pembina Jasa Konstruksi
                             Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
                         </a>
