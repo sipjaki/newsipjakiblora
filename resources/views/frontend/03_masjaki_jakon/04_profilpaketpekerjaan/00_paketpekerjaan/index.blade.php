@@ -220,7 +220,7 @@ table.zebra-table {
                             </td>
 
                             <td style="text-align: center;">
-                                {{ $item->bulanrekap->bulanrekap }}
+                                {{ $item->bulan?->bulanrekap }}
                             </td>
 
                             <td style="text-align: center;">
