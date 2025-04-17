@@ -312,7 +312,7 @@ table.zebra-table {
                             <td>{{ $item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>{{ $item->masaberlaku ?? 'Belum Memenuhi Persyaratan' }}</td>
                             <td>
-                                @if ($masaBerlaku->lt($today)) <!-- Cek apakah masa berlaku sudah lewat -->
+                                @if ($item->masaberlaku->lt($today)) <!-- Cek apakah masa berlaku sudah lewat -->
                                     <button class="bg-red-600 text-white px-3 py-1 rounded text-sm">TIDAK BERLAKU</button>
                                 @else
                                     <button class="bg-green-600 text-white px-3 py-1 rounded text-sm">BERLAKU</button>
