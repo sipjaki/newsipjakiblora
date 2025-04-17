@@ -133,33 +133,33 @@ table.zebra-table {
                             </button>
 
                         </div>
-                        <div style="font-family: 'Poppins', sans-serif; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                            <h4 style="font-size: 2rem; color: #2c3e50; font-weight: 600; text-align: center; margin-bottom: 20px; text-transform: uppercase;">
-                                Analisa Harga Satuan Pekerjaan
-                            </h4>
-
-                            <hr style="border: 1px solid #ddd; margin: 20px 0;">
-
-                            <h4 style="font-size: 1.2rem; color: #34495e; margin-bottom: 10px; font-weight: 500;">
-                                <span style="font-weight: 700;">Kode AHSP :</span>
-                                {{ optional($data->hspdivisi)->id }}.
-                                {{ optional($data->hsppaket)->id }}.
-                                {{ optional($data->hspkodepekerjaan)->kodepekerjaan }}.
-                                {{$data->kode}}
-                            </h4>
-
-                            <hr style="border: 1px solid #ddd; margin: 20px 0;">
-
-                            <h4 style="font-size: 1.2rem; color: #34495e; font-weight: 500;">
-                                <span style="font-weight: 700;">Jenis Pekerjaan :</span> {{$data->jenispekerjaan}}
-                            </h4>
-
-                            <hr style="border: 1px solid #ddd; margin-top: 20px;">
-                        </div>
-
 
                         <div class="table-responsive">
                             <div id="rabTable">
+                                <div style="font-family: 'Poppins', sans-serif; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                                    <h4 style="font-size: 18px; color: #2c3e50; font-weight: 600; text-align: center; margin-bottom: 20px; text-transform: uppercase;">
+                                        Analisa Harga Satuan Pekerjaan
+                                    </h4>
+
+                                    <hr style="border: 1px solid #ddd; margin: 20px 0;">
+
+                                    <h4 style="font-size: 18px; color: #34495e; margin-bottom: 10px; font-weight: 500;">
+                                        <span style="font-weight: 700;">Kode AHSP :</span>
+                                        {{ optional($data->hspdivisi)->id }}.
+                                        {{ optional($data->hsppaket)->id }}.
+                                        {{ optional($data->hspkodepekerjaan)->kodepekerjaan }}.
+                                        {{$data->kode}}
+                                    </h4>
+
+                                    <hr style="border: 1px solid #ddd; margin: 20px 0;">
+
+                                    <h4 style="font-size: 18px; color: #34495e; font-weight: 500;">
+                                        <span style="font-weight: 700;">Jenis Pekerjaan :</span> {{$data->jenispekerjaan}}
+                                    </h4>
+
+                                    <hr style="border: 1px solid #ddd; margin-top: 20px;">
+                                </div>
+
                                 <!-- TABEL YANG KAMU PUNYA DI SINI -->
 
                             <table class="zebra-table table-bordered table-striped">
