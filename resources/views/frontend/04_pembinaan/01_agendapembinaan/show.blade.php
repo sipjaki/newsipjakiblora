@@ -214,18 +214,23 @@
                                     <div class="sidebar__item sidebar__item--search">
                                         <div style="display: flex; justify-content: center; gap: 20px; padding: 20px;">
                                             <a href="/agendapembinaan">
-                                                <button class="download-btn" style="padding: 12px 24px; font-size: 16px; border-radius: 8px;">
+                                                <button style="padding: 12px 24px; font-size: 16px; border-radius: 8px; background-color: navy; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
                                                     <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Kembali
                                                 </button>
                                             </a>
                                             <a href="/404">
-                                                <button class="download-btn" style="padding: 12px 24px; font-size: 16px; border-radius: 8px;">
+                                                <button style="padding: 12px 24px; font-size: 16px; border-radius: 8px; background-color: navy; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
                                                     <i class="fas fa-file-alt" style="margin-right: 8px;"></i> Daftar
                                                 </button>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
+
 
                                 <div class="sidebar-widget sidebar-widget-recent-post">
                                     <h4><i class="fas fa-building"></i> Penyelenggara</h4>
