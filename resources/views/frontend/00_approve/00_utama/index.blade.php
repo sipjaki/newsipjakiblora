@@ -261,6 +261,172 @@
         }
     </style>
 
+<section class="pricing-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Analisa Harga Satuan Pekerjaan Kab Blora 2025</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="pricing-container">
+            <!-- Card 1 -->
+            <div class="pricing-card">
+                <div class="card-image">
+                    <img src="/assets/00_dokmasjaki/03_datajakon/analisisharga.png" alt="AHSP Konstruksi Umum" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="/hspkonstruksiumum">AHSP Konstruksi Umum</a>
+                    </h3>
+                    <a href="/hspkonstruksiumum" class="card-button">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="pricing-card">
+                <div class="card-image">
+                    <img src="/assets/00_dokmasjaki/03_datajakon/analisisharga.png" alt="Satuan Harga Dasar" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="/satuanhargamaterial">Satuan Harga Dasar</a>
+                    </h3>
+                    <a href="/satuanhargamaterial" class="card-button">Lihat Detail</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="pricing-card">
+                <div class="card-image">
+                    <img src="/assets/00_dokmasjaki/03_datajakon/analisisharga.png" alt="SHST Kab Blora 2025" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <a href="/shstblora">SHST Kab Blora Tahun 2025</a>
+                    </h3>
+                    <a href="/shstblora" class="card-button">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pricing-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .section-divider {
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(to right, #4a90e2, #6a5acd);
+        margin: 0 auto;
+    }
+
+    .pricing-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .pricing-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-image {
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .pricing-card:hover .card-image img {
+        transform: scale(1.05);
+    }
+
+    .card-body {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .card-title a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .card-title a:hover {
+        color: #4a90e2;
+    }
+
+    .card-button {
+        display: inline-block;
+        padding: 8px 20px;
+        background: linear-gradient(to right, #4a90e2, #6a5acd);
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .card-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .pricing-container {
+            grid-template-columns: 1fr;
+        }
+
+        .section-title {
+            font-size: 24px;
+        }
+    }
+</style>
+
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
@@ -315,24 +481,6 @@
             </div>
         @endif
 
-            <section class="pricing-section">
-                <br><br>
-                <h3 class="pricing-title">Analisa Harga Satuan Pekerjaan Kab Blora 2025</h3>
-                <div class="pricing-container">
-                    <div class="pricing-card">
-                        <img src="/assets/00_dokmasjaki/03_datajakon/analisisharga.png" alt="AHSP Konstruksi Umum">
-                        <h4><a href="/hspkonstruksiumum">AHSP Konstruksi Umum</a></h4>
-                    </div>
-                    <div class="pricing-card">
-                        <img src="/assets/00_dokmasjaki/03_datajakon/analisisharga.png" alt="Satuan Harga Dasar">
-                        <h4><a href="/satuanhargamaterial">Satuan Harga Dasar</a></h4>
-                    </div>
-                    <div class="pricing-card">
-                        <img src="/assets/00_dokmasjaki/03_datajakon/analisisharga.png" alt="SHST Kab Blora 2025">
-                        <h4><a href="/shstblora">SHST Kab Blora Tahun 2025</a></h4>
-                    </div>
-                </div>
-            </section>
 
 
             {{-- <section class="news-details-section" style="background-image: url(assets/00_dokmasjaki/03_datajakon/bannerbetter.jpg);"> --}}
