@@ -162,7 +162,7 @@ table.zebra-table {
             </button>
         </div>
     </div>
-    <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
+    <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px; margin-top:100px;">
         <table class="zebra-table fl-table">
             <thead>
                 <tr>
@@ -252,7 +252,7 @@ table.zebra-table {
 
 
             {{-- ========================================================================== --}}
-            <div class="table-wrapper" style="margin-top:-130px; margin-bottom:150px;">
+            <div class="table-wrapper" style="margin-top:-130px; margin-bottom:50px;">
                 <table class="zebra-table fl-table">
                     <thead>
                         <tr>
