@@ -12,10 +12,10 @@ ul.list-unstyled {
 
 <header class="header">
     <div class="topbar" style="background: #2ECC71; padding: 10px 0; border-radius: 15px;">
-        <div class="topbar-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 20px;">
+        <div class="topbar-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 20px; border-radius: 15px;">
 
-            <!-- Sosial Media (Background Putih dan Border Radius) -->
-            <div class="topbar-socials" style="display: flex; gap: 15px; background-color: white; border-radius: 15px; padding: 8px;">
+            <!-- Sosial Media (Pembungkus lebih kecil dan Border Radius) -->
+            <div class="topbar-socials" style="display: flex; gap: 15px; background-color: white; border-radius: 15px; padding: 5px 10px; align-items: center;">
                 <a href="#" style="background: white; border-radius: 50%; padding: 8px;">
                     <i class="fa-brands fa-tiktok" style="font-size: 24px; color: #2ECC71;"></i>
                 </a>
@@ -30,8 +30,8 @@ ul.list-unstyled {
                 </a>
             </div>
 
-            <!-- Info Berjalan (Background Hijau Tua dan Border Radius) -->
-            <div class="topbar-info" style="flex: 1; margin-left: 20px;">
+            <!-- Info Berjalan (Pembungkus Border Radius dengan Media Sosial) -->
+            <div class="topbar-info" style="flex: 1; margin-left: 20px; background-color: white; border-radius: 15px; padding: 5px;">
                 <div class="topbar-text" style="
                     border-radius: 15px;
                     background-color: #1e7e34;
