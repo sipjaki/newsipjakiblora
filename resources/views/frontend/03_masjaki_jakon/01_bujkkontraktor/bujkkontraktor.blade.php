@@ -170,7 +170,7 @@ table.zebra-table {
                 onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
                 >
                     <!-- Icon Menu Baru (Stylish Hamburger Icon) -->
-                  <img src="/assets/icon/pupr.png" alt="" width="5%">
+                  <img src="/assets/icon/pupr.png" alt="" width="3%">
 
                     {{ $title }}
                 </button>
