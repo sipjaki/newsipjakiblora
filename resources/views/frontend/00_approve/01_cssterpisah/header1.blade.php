@@ -235,7 +235,6 @@
                             </ul>
                         </li>
 
-
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 BERITA
