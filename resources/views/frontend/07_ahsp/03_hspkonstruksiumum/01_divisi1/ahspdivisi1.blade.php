@@ -124,13 +124,14 @@ table.zebra-table {
 
                             <!-- Tombol Download PDF -->
                             <button onclick="downloadRABPDF()"
-                                style="padding: 10px 40px; width: 200px; height: 60px; font-size: 16px;
-                                       background-color: darkgreen; color: white; border: none; border-radius: 10px;
-                                       cursor: pointer; transition: 0.3s;"
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='darkgreen';"
-                                onmouseout="this.style.backgroundColor='darkgreen'; this.style.color='white';">
-                                📥 Download PDF
+                                    style="padding: 10px 40px; width: 200px; height: 60px; font-size: 16px;
+                                        background-color: darkgreen; color: white; border: none; border-radius: 10px;
+                                        cursor: pointer; transition: 0.3s;"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='darkgreen';"
+                                    onmouseout="this.style.backgroundColor='darkgreen'; this.style.color='white';">
+                                📥 Download
                             </button>
+
                         </div>
 
                                <br>
@@ -268,18 +269,22 @@ table.zebra-table {
 @include('frontend.00_approve.01_cssterpisah.footer2')
 
 
+@php use Illuminate\Support\Str; @endphp
+
 <script>
     function downloadRABPDF() {
-        const element = document.getElementById('rabTable');
+        const element = document.getElementById('rabTable'); // Ambil tabel berdasarkan ID
 
         const opt = {
-            margin:       0.2,
-            filename:     '{{ Str::slug($data->namapekerjaan ?? "rab_pekerjaan", "_") }}.pdf',
+            margin:       0.2,  // margin PDF
+            filename:     '{{ Str::slug($data->namapekerjaan ?? "rab_pekerjaan", "_") }}.pdf',  // nama file berdasarkan pekerjaan
             image:        { type: 'jpeg', quality: 0.98 },
             html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' }
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' } // Orientasi PDF landscape
         };
 
-        html2pdf().set(opt).from(element).save();
+        html2pdf().set(opt).from(element).save(); // Convert ke PDF dan save
     }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
