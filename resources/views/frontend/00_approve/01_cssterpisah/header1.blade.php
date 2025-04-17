@@ -253,7 +253,6 @@
                                 <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
                             </ul>
                         </li>
-
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 DATA JAKON
@@ -309,7 +308,6 @@
                                 PENGAWASAN
                             </a>
                             <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: block; width: 250px;">
-                                <!-- <li><a href="/tertibjasakonstruksi" style="color: white; padding: 10px 20px; display: block; font-size: 18px; font-family: 'Poppins', sans-serif;">Tertib Jasa Konstruksi</a></li> -->
                                 <li style="position: relative;">
                                     <a href="#" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">
                                         Tertib Jasa Konstruksi
@@ -378,7 +376,6 @@
                             </ul>
                         </li>
 
-
                         <li class="has-dropdown" style="position: relative;">
                             <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
                                 RANTAI PASOK
@@ -391,7 +388,7 @@
                             </ul>
                         </li>
 
-					</ul><!-- main-menu-list -->
+                    </ul><!-- main-menu-list -->
 				</div><!--navigation-->
 			</div><!--main-menu-left-->
 
