@@ -342,37 +342,25 @@ table.zebra-table {
 @include('frontend.00_approve.01_cssterpisah.footer')
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const today = new Date(); // Ambil tanggal hari ini
-        const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td dengan kelas masa-berlaku
+        const today = new Date(); // Dapatkan tanggal hari ini
+        const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td yang memiliki kelas masa-berlaku
 
         masaBerlakuElements.forEach(function (element) {
-            const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil nilai tanggal dari data-masaberlaku
-
+            const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil data masa berlaku
             const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
 
-            // Jika masa berlaku kosong
             if (!masaBerlaku || masaBerlaku === 'Belum Memenuhi Persyaratan') {
+                // Jika masaBerlaku kosong atau 'Belum Memenuhi Persyaratan'
+                button.classList.add('bg-gray-600', 'text-white');
                 button.textContent = 'Belum Memenuhi Persyaratan';
-                button.style.backgroundColor = '#6c757d'; // Warna abu-abu
-                button.style.color = 'black'; // Tulisan hitam
             } else {
-                const masaBerlakuDate = new Date(masaBerlaku);  // Konversi string ke objek Date
-
-                if (isNaN(masaBerlakuDate)) {
-                    // Jika format tanggal tidak valid
-                    button.textContent = 'Tanggal Tidak Valid';
-                    button.style.backgroundColor = '#dc3545'; // Merah
-                    button.style.color = 'black'; // Tulisan hitam
-                    return;  // Berhenti jika tanggal tidak valid
-                }
-
-                if (masaBerlakuDate < today) {  // Jika tanggal masa berlaku sudah lewat
-                    button.style.backgroundColor = '#dc3545'; // Merah
-                    button.style.color = 'black'; // Tulisan hitam
+                // Jika ada masa berlaku
+                const masaBerlakuDate = new Date(masaBerlaku); // Ubah string menjadi objek Date
+                if (masaBerlakuDate < today) {  // Cek jika masa berlaku sudah lewat
+                    button.classList.add('bg-red-600', 'text-white');
                     button.textContent = 'TIDAK BERLAKU';
                 } else {
-                    button.style.backgroundColor = '#28a745'; // Hijau
-                    button.style.color = 'black'; // Tulisan hitam
+                    button.classList.add('bg-green-600', 'text-white');
                     button.textContent = 'BERLAKU';
                 }
             }
