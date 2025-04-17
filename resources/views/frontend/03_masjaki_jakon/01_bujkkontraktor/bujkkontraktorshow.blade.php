@@ -179,14 +179,14 @@ table.zebra-table {
 
 
 
-  <section id="details" class="container mx-auto flex flex-col sm:flex-row gap-5" style="margin-top: -10px;">
+  <section id="details" class="container mx-auto flex flex-col sm:flex-row gap-5">
     <div class="flex flex-col gap-5 w-full" style="margin-top: -50px;">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] w-full">
             <div class="flex justify-center">
                 <img src="/assets/abgblora/logo/iconabgblora.png" alt="" width="15%" style="margin-top: -25px; margin-bottom:-25px;">
             </div>
 
-            <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl">
+            <div class="w-full bg-[#030303] flex items-center gap-[10px] p-[10px_14px] rounded-xl" style="margin-top:-100px;">
                 <div class="w-5 h-5 flex shrink-0">
                     <img src="/assets/new/icons/story.svg" alt="icon">
                 </div>
