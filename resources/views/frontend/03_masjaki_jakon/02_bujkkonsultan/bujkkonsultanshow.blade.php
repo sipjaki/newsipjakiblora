@@ -297,6 +297,7 @@ table.zebra-table {
                             <th style="text-align:center" style="color: black">Penerbit</th>
                             <th style="text-align:center" style="color: black">Tanggal Terbit</th>
                             <th style="text-align:center" style="color: black">Masa Berlaku</th>
+                            <th style="text-align:center" style="color: black">Status</th>
                             </tr>
                     </thead>
                     <tbody>
@@ -311,8 +312,9 @@ table.zebra-table {
                         <td>{{$item->penerbit ?? 'Belum Memenuhi Persyaratan'}}</td>
                         <td>{{$item->tanggal_terbit ?? 'Belum Memenuhi Persyaratan'}}</td>
                         <td>{{$item->masa_berlaku ?? 'Belum Memenuhi Persyaratan'}}</td>
-                        {{-- <td>{{$item->nama_psjk}}</td> --}}
-                        {{-- <td>{{$item->sub_kualifikasi_bu}}</td> --}}
+                        <td class="masa-berlaku" data-masaberlaku="{{ $item->masa_berlaku ?? '' }}">
+                            <button class="btn-masa-berlaku">Status</button>
+                        </td>
                     </tr>
                     @endforeach
 
@@ -339,3 +341,33 @@ table.zebra-table {
 
 @include('frontend.00_approve.01_cssterpisah.footer1')
 @include('frontend.00_approve.01_cssterpisah.footer')
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const today = new Date(); // Dapatkan tanggal hari ini
+        const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td yang memiliki kelas masa-berlaku
+
+        masaBerlakuElements.forEach(function (element) {
+            const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil data masa berlaku
+            const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
+
+            // Cek jika masa berlaku kosong
+            if (!masaBerlaku || masaBerlaku === '') {
+                button.classList.add('btn-suspend'); // Tambahkan class untuk suspend
+                button.textContent = 'SUSPEND';
+            } else {
+                const masaBerlakuDate = new Date(masaBerlaku); // Jika ada, ubah menjadi tanggal
+
+                // Cek jika masa berlaku sudah lewat
+                if (masaBerlakuDate < today) {
+                    button.classList.add('btn-expired'); // Warna merah jika tidak berlaku
+                    button.textContent = 'TIDAK BERLAKU';
+                } else {
+                    button.classList.add('btn-active'); // Warna hijau jika masih berlaku
+                    button.textContent = 'BERLAKU';
+                }
+            }
+        });
+    });
+</script>
