@@ -202,11 +202,11 @@ table.zebra-table {
                             @foreach ($data as $item)
                             <tr>
                                 <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                <td style="text-align: center;">
-                                    @if(optional($item->hspdivisi)->id || optional($item->hsppaket)->id || optional($item->hspkodepekerjaan)->kodepekerjaan || $item->kode)
+                                <td style="text-align: left;">
+                                    @if(optional($item->hspdivisi)->id || optional($item->hsppaket3)->id || optional($item->hspkodepekerjaan3)->kodepekerjaan || $item->kode)
                                         {{ optional($item->hspdivisi)->id }}.
-                                        {{ optional($item->hsppaket)->id }}.
-                                        {{ optional($item->hspkodepekerjaan)->kodepekerjaan }}.
+                                        {{ optional($item->hsppaket3)->id }}.
+                                        {{ optional($item->hspkodepekerjaan3)->kodepekerjaan }}.
                                         {{ $item->kode }}
                                     @else
                                         <button class="btn-navy">Data Belum Diupdate</button>

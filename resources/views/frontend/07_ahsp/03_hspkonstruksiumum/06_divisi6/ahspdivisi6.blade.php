@@ -148,8 +148,8 @@ table.zebra-table {
                                         <h4 style="font-size: 18px; color: #34495e; margin-bottom: 10px; font-weight: 500; font-family: 'Poppins';">
                                             <span style="font-weight: 700;">Kode AHSP :</span>
                                             {{ optional($data->hspdivisi)->id }}.
-                                            {{ optional($data->hsppaket)->id }}.
-                                            {{ optional($data->hspkodepekerjaan)->kodepekerjaan }}.
+                                            {{ optional($data->hsppaket6)->id }}.
+                                            {{ optional($data->hspkodepekerjaan6)->kodepekerjaan }}.
                                             {{$data->kode}}
                                         </h4>
 

@@ -203,10 +203,10 @@ table.zebra-table {
                             <tr>
                                 <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                 <td style="text-align: center;">
-                                    @if(optional($item->hspdivisi)->id || optional($item->hsppaket)->id || optional($item->hspkodepekerjaan)->kodepekerjaan || $item->kode)
+                                    @if(optional($item->hspdivisi)->id || optional($item->hsppaket5)->id || optional($item->hspkodepekerjaan5)->kodepekerjaan || $item->kode)
                                         {{ optional($item->hspdivisi)->id }}.
-                                        {{ optional($item->hsppaket)->id }}.
-                                        {{ optional($item->hspkodepekerjaan)->kodepekerjaan }}.
+                                        {{ optional($item->hsppaket5)->id }}.
+                                        {{ optional($item->hspkodepekerjaan5)->kodepekerjaan }}.
                                         {{ $item->kode }}
                                     @else
                                         <button class="btn-navy">Data Belum Diupdate</button>
