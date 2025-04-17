@@ -240,7 +240,8 @@ table.zebra-table {
             </div>
             <br>
 
-            <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">I. IDENTITAS OPD</h4>
+            <h4 style="font-family: 'Poppins', sans-serif; font-size: 18px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >I. IDENTITAS OPD</span></h4>
+
             <table>
                 @foreach ($dataidentitasopd as $item)
                 <tr>
@@ -314,9 +315,9 @@ table.zebra-table {
 
             <br>
 
-            <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">II. PROFIL PIMPINAN OPD</h4>
+            {{-- <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;">II. PROFIL PIMPINAN OPD</h4> --}}
+            <h4 style="font-family: 'Poppins', sans-serif; font-size: 18px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >II. PROFIL PIMPINAN OPD</span></h4>
 
-            <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;">KEPALA DINAS</h5>
             <table>
                 @foreach ($datakepaladinas as $item)
                 <tr>
@@ -366,7 +367,8 @@ table.zebra-table {
 
             <br>
 
-            <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;">KEPALA BIDANG BANGUNAN GEDUNG</h5>
+            {{-- <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;">KEPALA BIDANG BANGUNAN GEDUNG</h5> --}}
+            <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >KEPALA BIDANG BANGUNAN GEDUNG</span></h5>
             <table>
                 @foreach ($datakabid as $item)
                 <tr>
@@ -428,17 +430,17 @@ table.zebra-table {
             </div><!-- portfolio-details-content-text -->
         </div><!-- portfolio-details-content -->
         @endforeach
-                </div><!-- container -->
-            </section><!-- portfolio-details -->
+    </div><!-- container -->
+</section><!-- portfolio-details -->
 
 
 
 
 
 
-        </div>
-    </div>
-    <br><br><br>
+</div>
+</div>
+<br><br><br>
 
 </section>
 
@@ -446,7 +448,7 @@ table.zebra-table {
 <div class="progress-wrap">
           <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
               <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-          </svg>
+            </svg>
       </div>
       <!-- back to top end -->
 
@@ -454,5 +456,7 @@ table.zebra-table {
 
 
 
-@include('frontend.00_approve.01_cssterpisah.footer1')
-@include('frontend.00_approve.01_cssterpisah.footer')
+    @include('frontend.00_approve.01_cssterpisah.footer1')
+    @include('frontend.00_approve.01_cssterpisah.footer')
+
+    {{-- <h5 style="font-family: 'Poppins', sans-serif; font-size: 15px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >KEPALA BIDANG BANGUNAN GEDUNG</span></h5> --}}
