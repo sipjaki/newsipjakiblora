@@ -117,7 +117,7 @@ ul.list-unstyled {
 
 	<div class="main-menu sticky-header" style="background: #1d1d1b">
     <br>
-                <div class="header-container" style="margin-bottom:-25px; margin-top:-25px;">
+                <div class="header-container" style="margin-bottom:-25px; margin-top:-20px;">
                     <img src="/assets/icon/logokabupatenblora.png" alt="Logo PUPR" class="header-logo" width="20%" loading="lazy">
                     <img src="/assets/icon/pupr.png" alt="Logo PUPR" class="header-logo" width="20%" loading="lazy">
                     <div class="header-text">
@@ -212,7 +212,7 @@ ul.list-unstyled {
                 </style>
 
 
-		<div class="main-menu-inner">
+		<div class="main-menu-inner" style="margin-bottom:-20px;">
 			<div class="main-menu-left">
 				<div class="navigation" style="margin-left: 100px;">
 					<ul class="main-menu-list list-unstyled">
