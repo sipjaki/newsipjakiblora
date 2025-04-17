@@ -340,38 +340,41 @@
         style="margin-top: -15px; font-family: Poppins;"
         value="{{ $data->karakteristikkontrak }}">
 </div>
-
 <!-- Bulan Mulai -->
 <div class="flex flex-col gap-2 w-full">
     <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- SVG Kalender -->
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 8v4l3 3m6-9a9 9 0 11-18 0 9 9 0 0118 0z" />
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
         Mulai
     </label>
-    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+    <input type="text" id="bulanMulai" data-bulan="{{ $data->bulanmulai }}" readonly
+        class="focus:outline-none appearance-none font-medium leading-[30px]
         placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
-        style="margin-top: -15px; font-family: Poppins;"
-        value="{{ $data->bulanmulai }}">
+        style="margin-top: -15px; font-family: Poppins;">
 </div>
 
 <!-- Bulan Selesai -->
 <div class="flex flex-col gap-2 w-full">
     <label class="font-semibold text-[#030303] flex items-center gap-2" style="font-family: Poppins;">
+        <!-- SVG Kalender -->
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-600" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M6 18L18 6M6 6l12 12" />
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
         Selesai
     </label>
-    <input type="text" readonly class="focus:outline-none appearance-none font-medium leading-[30px]
+    <input type="text" id="bulanSelesai" data-bulan="{{ $data->bulanselesai }}" readonly
+        class="focus:outline-none appearance-none font-medium leading-[30px]
         placeholder:font-normal placeholder:text-[#545768] w-full resize-none p-3 border border-[#ccc] rounded-[15px]"
-        style="margin-top: -15px; font-family: Poppins;"
-        value="{{ $data->bulanselesai }}">
+        style="margin-top: -15px; font-family: Poppins;">
 </div>
+
+
 
 <!-- Dinas -->
 <div class="flex flex-col gap-2 w-full">
@@ -451,3 +454,21 @@
 
  @include('frontend.00_approve.01_cssterpisah.footer1')
  @include('frontend.00_approve.01_cssterpisah.footer')
+
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const bulanIndo = [
+            '', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+            'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+        ];
+
+        function convertBulan(id) {
+            const el = document.getElementById(id);
+            const bulan = parseInt(el.dataset.bulan);
+            el.value = bulanIndo[bulan] || 'Tidak Diketahui';
+        }
+
+        convertBulan('bulanMulai');
+        convertBulan('bulanSelesai');
+    });
+</script>
