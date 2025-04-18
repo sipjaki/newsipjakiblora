@@ -9,7 +9,6 @@ use App\Models\bujkkontraktorsub;
 use App\Models\bujkkonsultansub;
 
 use App\Models\skktenagakerjablora;
-use App\Models\skktenagakerjabloralist;
 use App\Models\namasekolah;
 use App\Models\jenjangpendidikan;
 use App\Models\jurusan;
@@ -97,12 +96,12 @@ class DatastatistikajakonbloraController extends Controller
 
     public function datastatistikaskktenagakerjablora()
 {
-    $dataskklist = skktenagakerjabloralist::all();
-    $datacount = skktenagakerjabloralist::count();
+    $dataskklist = skktenagakerjablora::all();
+    $datacount = skktenagakerjablora::count();
     $totalData = $dataskklist->count();
 
     // Statistik Jenjang
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -115,7 +114,7 @@ class DatastatistikajakonbloraController extends Controller
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -127,7 +126,7 @@ class DatastatistikajakonbloraController extends Controller
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -151,7 +150,7 @@ class DatastatistikajakonbloraController extends Controller
 
 public function datajenjang1()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 1)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 1)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -176,7 +175,7 @@ public function datajenjang1()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -189,7 +188,7 @@ public function datajenjang1()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -201,7 +200,7 @@ public function datajenjang1()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -226,7 +225,7 @@ public function datajenjang1()
 
 public function datajenjang2()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 2)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 2)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -251,7 +250,7 @@ public function datajenjang2()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -264,7 +263,7 @@ public function datajenjang2()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -276,7 +275,7 @@ public function datajenjang2()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -303,7 +302,7 @@ public function datajenjang2()
 // ========== DATA JENJANG 3 =================================
 public function datajenjang3()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 3)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 3)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -328,7 +327,7 @@ public function datajenjang3()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -341,7 +340,7 @@ public function datajenjang3()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -353,7 +352,7 @@ public function datajenjang3()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -380,7 +379,7 @@ public function datajenjang3()
 // ========== DATA JENJANG 4 =================================
 public function datajenjang4()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 4)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 4)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -405,7 +404,7 @@ public function datajenjang4()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -418,7 +417,7 @@ public function datajenjang4()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -430,7 +429,7 @@ public function datajenjang4()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -456,7 +455,7 @@ public function datajenjang4()
 // ========== DATA JENJANG 5 =================================
 public function datajenjang5()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 5)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 5)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -481,7 +480,7 @@ public function datajenjang5()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -494,7 +493,7 @@ public function datajenjang5()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -506,7 +505,7 @@ public function datajenjang5()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -532,7 +531,7 @@ public function datajenjang5()
 // ========== DATA JENJANG 6 =================================
 public function datajenjang6()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 6)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 6)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -557,7 +556,7 @@ public function datajenjang6()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -570,7 +569,7 @@ public function datajenjang6()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -582,7 +581,7 @@ public function datajenjang6()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -609,7 +608,7 @@ public function datajenjang6()
 // ========== DATA JENJANG 7 =================================
 public function datajenjang7()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 7)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 7)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -634,7 +633,7 @@ public function datajenjang7()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -647,7 +646,7 @@ public function datajenjang7()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -659,7 +658,7 @@ public function datajenjang7()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -687,7 +686,7 @@ public function datajenjang7()
 // ========== DATA JENJANG 8 =================================
 public function datajenjang8()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 7)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 7)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -712,7 +711,7 @@ public function datajenjang8()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -725,7 +724,7 @@ public function datajenjang8()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -737,7 +736,7 @@ public function datajenjang8()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -765,7 +764,7 @@ public function datajenjang8()
 // ========== DATA JENJANG 9 =================================
 public function datajenjang9()
 {
-    $dataskklist = skktenagakerjabloralist::where('jenjang_id', 7)->get();
+    $dataskklist = skktenagakerjablora::where('jenjang_id', 7)->get();
     $datacount = $dataskklist->count();
     $totalData = $datacount;  // The total data after filtering
 
@@ -790,7 +789,7 @@ public function datajenjang9()
     })->values();  // Reindex the array after map
 
     //STATISTIKA JENJANG
-    $statistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
@@ -803,7 +802,7 @@ public function datajenjang9()
         });
 
     // Statistik Jabatan Kerja
-    $statistikJabatanKerja = skktenagakerjabloralist::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
+    $statistikJabatanKerja = skktenagakerjablora::select('jabatankerja_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jabatankerja_id')
         ->with('jabatankerja')
         ->get()
@@ -815,7 +814,7 @@ public function datajenjang9()
             ];
         });
 
-        $jumlahstatistikJenjang = skktenagakerjabloralist::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
+        $jumlahstatistikJenjang = skktenagakerjablora::select('jenjang_id', DB::raw('COUNT(*) as jumlah'))
         ->groupBy('jenjang_id')
         ->with('jenjang')
         ->get()
