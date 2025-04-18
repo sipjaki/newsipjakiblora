@@ -719,6 +719,51 @@
     }
 </style>
 
+<section class="event-three-section">
+    <div class="event-section-outer">
+        <div class="container" style="margin-top:-200px;">
+            <h3 class="pricing-title" style="text-align: center;">Daftar Artikel Jakon</h3>
+            <br><br>
+
+            <div class="row row-gutter-y-30">
+                @foreach ($dataartikel->take(4) as $item)
+                <div class="col-6 col-lg-6 col-xl-6">
+                    <div class="event-card">
+                        <div class="event-card-image">
+                            <div class="event-card-image-inner">
+                                <a href="{{ url('/artikeljakon') }}">
+                                    <img src="{{ asset('storage/' . $item->foto1) }}" class="img-fluid" alt="Gambar" width="200px">
+                                </a>
+
+                                <div class="event-card-meta">
+                                    <div class="event-meta-number">
+                                        <a href="/404">
+                                            <span><i class="fas fa-download"></i></span>
+                                        </a>
+                                    </div><!-- event-meta-number -->
+
+                                    <div class="event-meta-date">
+                                        <span>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</span>
+                                    </div><!-- event-meta-date -->
+                                </div><!-- event-card-meta -->
+                            </div><!-- event-card-image-inner -->
+                        </div><!-- event-card-image -->
+
+                        <div class="event-card-content">
+                            <div class="event-card-title">
+                                <a href="{{ url('/artikeljakon') }}" style="color: blue; text-decoration: none;">
+                                    <h4>{{ $item->judul }}</h4>
+                                </a>
+                            </div><!-- event-card-title -->
+                        </div><!-- event-card-content -->
+                    </div><!-- event-card -->
+                </div><!-- col-6 col-lg-6 col-xl-6 -->
+                @endforeach
+            </div><!-- row -->
+        </div><!-- container -->
+    </div><!-- event-section-outer -->
+</section><!-- event-three-section -->
+
 <!-- Wrapper Background Section -->
 <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
@@ -774,50 +819,6 @@
 
 
 
-        <section class="event-three-section">
-            <div class="event-section-outer">
-                <div class="container" style="margin-top:-200px;">
-                    <h3 class="pricing-title" style="text-align: center;">Daftar Artikel Jakon</h3>
-                    <br><br>
-
-                    <div class="row row-gutter-y-30">
-                        @foreach ($dataartikel->take(4) as $item)
-                        <div class="col-6 col-lg-6 col-xl-6">
-                            <div class="event-card">
-                                <div class="event-card-image">
-                                    <div class="event-card-image-inner">
-                                        <a href="{{ url('/artikeljakon') }}">
-                                            <img src="{{ asset('storage/' . $item->foto1) }}" class="img-fluid" alt="Gambar" width="200px">
-                                        </a>
-
-                                        <div class="event-card-meta">
-                                            <div class="event-meta-number">
-                                                <a href="/404">
-                                                    <span><i class="fas fa-download"></i></span>
-                                                </a>
-                                            </div><!-- event-meta-number -->
-
-                                            <div class="event-meta-date">
-                                                <span>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</span>
-                                            </div><!-- event-meta-date -->
-                                        </div><!-- event-card-meta -->
-                                    </div><!-- event-card-image-inner -->
-                                </div><!-- event-card-image -->
-
-                                <div class="event-card-content">
-                                    <div class="event-card-title">
-                                        <a href="{{ url('/artikeljakon') }}" style="color: blue; text-decoration: none;">
-                                            <h4>{{ $item->judul }}</h4>
-                                        </a>
-                                    </div><!-- event-card-title -->
-                                </div><!-- event-card-content -->
-                            </div><!-- event-card -->
-                        </div><!-- col-6 col-lg-6 col-xl-6 -->
-                        @endforeach
-                    </div><!-- row -->
-                </div><!-- container -->
-            </div><!-- event-section-outer -->
-        </section><!-- event-three-section -->
 
             <section class="event-three-section" style="margin-top: -200px;">
                 <div class="event-section-outer">
