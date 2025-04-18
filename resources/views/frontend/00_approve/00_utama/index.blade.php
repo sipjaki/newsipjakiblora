@@ -483,7 +483,7 @@
 
                     <!-- Recent News List -->
                     <div class="sidebar-widget recent-news">
-                        <h4 class="widget-title" style="font-family: 'Poppins', sans-serif;">Daftar Berita Jakon</h4>
+                        <h4 class="widget-title" style="font-family: 'Poppins', sans-serif;"><span style="font-family: 'Poppins', sans-serif;">Daftar Berita Jakon</span></h4>
 
                         @foreach ($data->skip(1)->take(3) as $item)
                         <div class="news-item">
@@ -493,7 +493,7 @@
                             <div class="news-info">
                                 <span class="news-author" style="font-family: 'Poppins', sans-serif;">Penulis: Anam</span>
                                 <h5 class="news-title" style="font-family: 'Poppins', sans-serif;">
-                                    <a href="/beritajakon/{{ $item->judulberita }}">{{ $item->judulberita }}</a>
+                                    <a href="/beritajakon/{{ $item->judulberita }}"><span style="font-family: 'Poppins', sans-serif;">{{ $item->judulberita }}</span></a>
                                 </h5>
                             </div>
                         </div>
