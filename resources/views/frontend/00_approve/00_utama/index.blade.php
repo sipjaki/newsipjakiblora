@@ -429,7 +429,7 @@
 
 <section class="news-section" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">    <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Berita Jakon</h2>
+            <h2 class="section-title" style="font-family: 'Poppins', sans-serif;">Berita Jakon</h2>
             <div class="section-divider"></div>
         </div>
 
@@ -475,7 +475,7 @@
                     <div class="sidebar-widget recent-news">
                         <h4 class="widget-title" style="font-family: 'Poppins', sans-serif;"><span style="font-family: 'Poppins', sans-serif;">Daftar Berita Jakon</span></h4>
 
-                        @foreach ($data->skip(1)->take(3) as $item)
+                        @foreach ($data->skip(1)->take(5) as $item)
                         <div class="news-item">
                             <div class="news-thumbnail">
                                 <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->judulberita }}" loading="lazy">
