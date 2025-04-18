@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\asosiasimasjaki;
-use App\Models\skktenagakerjablora;
 use App\Models\namasekolah;
 use App\Models\jenjangpendidikan;
 use App\Models\jurusan;
 use App\Models\jabatankerja;
 use App\Models\jenjang;
 use App\Models\lpspenerbit;
-use App\Models\skktenagakerjabloralist;
+use App\Models\skktenagakerjablora;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Cache;
@@ -334,7 +332,7 @@ return redirect()->back()->with('error', 'Item not found');
             $perPage = $request->input('perPage', 15);
             $search = $request->input('search');
 
-            $query = skktenagakerjabloralist::query();
+            $query = skktenagakerjablora::query();
 
             if ($search) {
                 $query->where('nama', 'LIKE', "%{$search}%")
@@ -393,7 +391,7 @@ return redirect()->back()->with('error', 'Item not found');
 
     public function beskkallshow($nama)
     {
-            $dataallskkblora = skktenagakerjabloralist::where('nama', $nama)->first();
+            $dataallskkblora = skktenagakerjablora::where('nama', $nama)->first();
         // Ambil data user saat ini
             $user = Auth::user();
 
@@ -407,7 +405,7 @@ return redirect()->back()->with('error', 'Item not found');
         public function beskkalldelete($nama)
         {
         // Cari item berdasarkan judul
-            $entry = skktenagakerjabloralist::where('nama', $nama)->first();
+            $entry = skktenagakerjablora::where('nama', $nama)->first();
 
             if ($entry) {
             // Jika ada file header yang terdaftar, hapus dari storage
