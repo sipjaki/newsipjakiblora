@@ -452,7 +452,7 @@
                             $excerpt = \Illuminate\Support\Str::words($text, $wordLimit, '...');
                         @endphp
 
-                        <p class="article-excerpt">
+                        <p class="article-excerpt" style="font-family: 'Poppins', sans-serif;">
                             {!! $excerpt !!}
                         </p>
 
@@ -470,16 +470,6 @@
             <div class="col-lg-5">
                 <aside class="news-sidebar">
                     <!-- Search Form -->
-                    <div class="sidebar-widget search-widget">
-                        <form class="search-form">
-                            <div class="form-group">
-                                <input type="text" placeholder="Cari Berita..." class="form-control">
-                                <button type="submit" class="search-btn">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
 
                     <!-- Recent News List -->
                     <div class="sidebar-widget recent-news">
@@ -722,7 +712,7 @@
 <section class="event-three-section">
     <div class="event-section-outer">
         <div class="container" style="margin-top:-200px;">
-            <h3 class="pricing-title" style="text-align: center;">Daftar Artikel Jakon</h3>
+            <h3 class="pricing-title" style="text-align: center; font-family: 'Poppins', sans-serif;">Daftar Artikel Jakon</h3>
             <br><br>
 
             <div class="row row-gutter-y-30">
@@ -752,7 +742,7 @@
                         <div class="event-card-content">
                             <div class="event-card-title">
                                 <a href="{{ url('/artikeljakon') }}" style="color: blue; text-decoration: none;">
-                                    <h4>{{ $item->judul }}</h4>
+                                    <h4 style="font-family: 'Poppins', sans-serif;">{{ $item->judul }}</h4>
                                 </a>
                             </div><!-- event-card-title -->
                         </div><!-- event-card-content -->
