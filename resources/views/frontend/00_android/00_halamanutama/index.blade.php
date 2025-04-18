@@ -131,7 +131,7 @@
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
-                            <a href="/404" class="font-bold line-clamp-2 hover:line-clamp-none text-sm" style="color: #28A745;">Satuan Harga Dasar</a>
+                            <a href="/resahsp" class="font-bold line-clamp-2 hover:line-clamp-none text-sm" style="color: #28A745;">Satuan Harga Dasar</a>
                             {{-- <p class="text-xs leading-[18px]">Target <span class="font-bold text-[#FF7815]">Rp 800.000.000</span></p> --}}
                         </div>
                         {{-- <progress id="fund" value="32" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress> --}}
