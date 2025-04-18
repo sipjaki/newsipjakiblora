@@ -779,10 +779,7 @@
             </div>
         @endif
 
-
-
-
-            <section class="event-three-section" style="margin-top: -200px;">
+            <section class="event-three-section" style="margin-top: -150px;">
                 <div class="event-section-outer">
                     <div class="container d-flex justify-content-center">
                         <div style="position: relative; width: 100%; max-width: 1280px; padding-bottom: 56.25%;">
@@ -801,47 +798,66 @@
 
         <br><br>
 
-        <section class="cta-two-section">
-            <div class="container">
-                <div class="cta-two-section-inner">
-                    <div class="row align-items-center">
-                        <div class="col-xl-5">
-                            <div class="cta-two-title d-flex align-items-center">
-                                <div class="cta-two-card-content">
-                                    <h3 class="cta-title">Klik Kami</h3>
-                                </div>
-                                <a href="/kritikdansaran">
-                                    <div class="cta-two-card-icon" style="transition: color 0.3s ease, transform 0.3s ease;">
-                                        <i class="flaticon-envelope-2" style="color: inherit;"></i>
-                                    </div>
-                                </a>
-
-                                <style>
-                                    a:hover .cta-two-card-icon {
-                                        color: #ffd100;
-                                        transform: scale(1.1);
-                                    }
-                                </style>
-                                <div class="cta-two-card-content">
-                                    <h3 class="cta-title">Untuk Kritik dan Saran</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 text-end">
-                            <a href="form-kritik-saran.html" class="btn btn-primary btn-lg" role="button" aria-label="Buka Form Kritik dan Saran">
-                                Form Saran
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         </div>
     </div>
     <br><br><br>
 
 </section>
+
+<section class="cta-two-section bg-light py-5">
+    <div class="container">
+        <div class="cta-two-section-inner bg-white p-4 rounded-3 shadow-sm">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div class="cta-two-title d-flex align-items-center flex-wrap">
+                        <div class="d-flex align-items-center me-3 mb-2 mb-sm-0">
+                            <div class="cta-two-card-content">
+                                <h3 class="cta-title mb-0 text-primary fw-bold">Klik Kami</h3>
+                            </div>
+                            <a href="/kritikdansaran" class="text-decoration-none mx-3">
+                                <div class="cta-two-card-icon bg-primary bg-opacity-10 p-3 rounded-circle"
+                                     style="transition: all 0.3s ease;">
+                                    <i class="flaticon-envelope-2 text-primary fs-4"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="cta-two-card-content">
+                            <h3 class="cta-title mb-0 text-dark fw-bold">Untuk Kritik dan Saran</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-lg-end">
+                    <a href="form-kritik-saran.html"
+                       class="btn btn-primary btn-lg px-4 py-3 rounded-pill fw-bold shadow-sm"
+                       role="button"
+                       aria-label="Buka Form Kritik dan Saran">
+                        <i class="fas fa-pen-fancy me-2"></i> Form Saran
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .cta-two-card-icon:hover {
+            background-color: #0d6efd !important;
+            color: white !important;
+            transform: scale(1.1) rotate(10deg);
+        }
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3) !important;
+        }
+    </style>
+</section>
+
 
 
 <div class="progress-wrap">
