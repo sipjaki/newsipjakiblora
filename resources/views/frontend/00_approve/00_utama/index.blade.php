@@ -795,6 +795,63 @@
                     </div> <!-- container -->
                 </div> <!-- event-section-outer -->
             </section> <!-- event-three-section -->
+            <section class="cta-two-section bg-light py-5">
+                <div class="container">
+                    <div class="cta-two-section-inner bg-white p-4 rounded-3 shadow-sm">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 mb-4 mb-lg-0">
+                                <div class="cta-two-title d-flex align-items-center flex-wrap">
+                                    <div class="d-flex align-items-center me-3 mb-2 mb-sm-0">
+                                        <div class="cta-two-card-content">
+                                            <h3 class="cta-title mb-0 text-primary fw-bold">Klik Kami</h3>
+                                        </div>
+                                        <a href="/kritikdansaran" class="text-decoration-none mx-3 hover-effect">
+                                            <div class="cta-two-card-icon bg-primary bg-opacity-10 p-3 rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="fa-solid fa-comment-dots fa-lg text-primary"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="cta-two-card-content">
+                                        <h3 class="cta-title mb-0 text-dark fw-bold">Untuk Kritik dan Saran</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 text-lg-end">
+                                <a href="form-kritik-saran.html"
+                                   class="btn btn-primary btn-lg px-4 py-3 rounded-pill fw-bold shadow-sm"
+                                   role="button"
+                                   aria-label="Buka Form Kritik dan Saran">
+                                    <i class="fa-solid fa-pen-to-square me-2"></i> Form Saran
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .hover-effect:hover .cta-two-card-icon {
+                        background-color: #0d6efd !important;
+                        color: white !important;
+                        transform: scale(1.1) rotate(10deg);
+                        box-shadow: 0 0 15px rgba(13, 110, 253, 0.3);
+                    }
+                    .btn-primary {
+                        background-color: #0d6efd;
+                        border-color: #0d6efd;
+                        transition: all 0.3s ease;
+                    }
+                    .btn-primary:hover {
+                        background-color: #0b5ed7;
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3) !important;
+                    }
+                    .cta-two-card-icon {
+                        width: 56px;
+                        height: 56px;
+                        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                    }
+                </style>
+            </section>
 
         <br><br>
 
@@ -805,58 +862,7 @@
 
 </section>
 
-<section class="cta-two-section bg-light py-5">
-    <div class="container">
-        <div class="cta-two-section-inner bg-white p-4 rounded-3 shadow-sm">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-4 mb-lg-0">
-                    <div class="cta-two-title d-flex align-items-center flex-wrap">
-                        <div class="d-flex align-items-center me-3 mb-2 mb-sm-0">
-                            <div class="cta-two-card-content">
-                                <h3 class="cta-title mb-0 text-primary fw-bold">Klik Kami</h3>
-                            </div>
-                            <a href="/kritikdansaran" class="text-decoration-none mx-3">
-                                <div class="cta-two-card-icon bg-primary bg-opacity-10 p-3 rounded-circle"
-                                     style="transition: all 0.3s ease;">
-                                    <i class="flaticon-envelope-2 text-primary fs-4"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="cta-two-card-content">
-                            <h3 class="cta-title mb-0 text-dark fw-bold">Untuk Kritik dan Saran</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 text-lg-end">
-                    <a href="form-kritik-saran.html"
-                       class="btn btn-primary btn-lg px-4 py-3 rounded-pill fw-bold shadow-sm"
-                       role="button"
-                       aria-label="Buka Form Kritik dan Saran">
-                        <i class="fas fa-pen-fancy me-2"></i> Form Saran
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <style>
-        .cta-two-card-icon:hover {
-            background-color: #0d6efd !important;
-            color: white !important;
-            transform: scale(1.1) rotate(10deg);
-        }
-        .btn-primary {
-            background-color: #0d6efd;
-            border-color: #0d6efd;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #0b5ed7;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3) !important;
-        }
-    </style>
-</section>
 
 
 
