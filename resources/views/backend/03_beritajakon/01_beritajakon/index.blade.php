@@ -89,7 +89,7 @@
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table class="table table-striped">
+<table class="zebra-table table-striped">
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
