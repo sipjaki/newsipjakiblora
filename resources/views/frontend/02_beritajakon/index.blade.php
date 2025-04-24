@@ -185,6 +185,34 @@ table.zebra-table {
                             <div class="news-details-content-box" style="margin-left: 25px;">
                                 <h4 style="font-family: 'Poppins', sans-serif;">{{$item->judulberita}}</h4>
                                 <br>
+
+                                <div style="margin-top: 10px;">
+                                    @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
+                                        <!-- Menampilkan gambar dari storage -->
+                                        <img src="{{ asset('storage/' . $item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @elseif($item->foto1)
+                                        <!-- Menampilkan gambar dari path luar storage -->
+                                        <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @else
+                                        <!-- Placeholder jika tidak ada data -->
+                                        <p>Data belum diupdate</p>
+                                    @endif
+                                </div>
+
+                                <div style="margin-top: 10px;">
+                                    @if($item->foto2 && file_exists(public_path('storage/' . $item->foto2)))
+                                        <!-- Menampilkan gambar dari storage -->
+                                        <img src="{{ asset('storage/' . $item->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @elseif($item->foto2)
+                                        <!-- Menampilkan gambar dari path luar storage -->
+                                        <img src="{{ asset($item->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @else
+                                        <!-- Placeholder jika tidak ada data -->
+                                        <p>Data belum diupdate</p>
+                                    @endif
+                                </div>
+
+
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$item->keterangan}}
 
                                 </p>
