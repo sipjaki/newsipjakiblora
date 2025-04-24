@@ -1,4 +1,14 @@
 <style>
+    /* Hover putih & tulisan hitam untuk tombol edit */
+    .btn-warning:hover {
+        background-color: white !important;
+        color: black !important;
+        border-color: #ffc107 !important;
+    }
+
+    .btn-warning:hover i {
+        color: black !important;
+    }
 
 .table-wrapper {
   overflow-x: auto;
