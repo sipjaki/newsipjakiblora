@@ -142,8 +142,7 @@
                                                         <!-- Placeholder jika tidak ada data -->
                                                         <p>Data belum diupdate</p>
                                                     @endif
-                                                @endif
-                                                </div>
+                                             </div>
 
                                             </div>
                                         </div>
