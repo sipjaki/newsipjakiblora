@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\artikeljakon;
+
+use Illuminate\Support\Facades\File;
+
 use App\Models\artikeljakonmasjaki;
 use App\Models\beritajakon;
 use App\Models\User;
@@ -158,62 +160,73 @@ public function beberitajakonupdate($id)
 }
 
 // -------------------- UPDATE DATA MENU JABATAN FUNGSIONAL  ----------------------
-            public function beberitajakoncreateupdate(Request $request, $id)
-            {
-                // Validasi input dengan pesan kustom
-               // Validasi input dengan pesan kustom
-                    $validatedData = $request->validate([
-                        'user_id' => 'required|exists:users,id',  // Pastikan user_id harus ada
-                        'judulberita' => 'required|string|max:255',  // Judul wajib diisi
-                        'tanggal' => 'required|date',  // Tanggal wajib diisi
-                        'keterangan' => 'required|string',  // Keterangan wajib diisi
-                        'foto' => 'nullable|image|max:7168', // Foto tetap bisa null tapi jika ada harus image
-                        'foto1' => 'nullable|image|max:7168',
-                        'foto2' => 'nullable|image|max:7168',
-                    ], [
-                        'user_id.required' => 'Penulis harus dipilih!',
-                        'user_id.exists' => 'Penulis tidak ditemukan!',
-                        'judulberita.required' => 'Judul berita wajib diisi!',
-                        'tanggal.required' => 'Tanggal harus diisi!',
-                        'keterangan.required' => 'Keterangan wajib diisi!',
-                        'foto.image' => 'Foto harus berupa gambar!',
-                        'foto1.image' => 'Foto 1 harus berupa gambar!',
-                        'foto2.image' => 'Foto 2 harus berupa gambar!',
-                    ]);
 
-                // Cari data berdasarkan ID
-                $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
+public function beberitajakoncreateupdate(Request $request, $id)
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'user_id' => 'required|exists:users,id',
+        'judulberita' => 'required|string|max:255',
+        'tanggal' => 'required|date',
+        'keterangan' => 'required|string',
+        'foto' => 'nullable|image|max:7168',
+        'foto1' => 'nullable|image|max:7168',
+        'foto2' => 'nullable|image|max:7168',
+    ], [
+        'user_id.required' => 'Penulis harus dipilih!',
+        'user_id.exists' => 'Penulis tidak ditemukan!',
+        'judulberita.required' => 'Judul berita wajib diisi!',
+        'tanggal.required' => 'Tanggal harus diisi!',
+        'keterangan.required' => 'Keterangan wajib diisi!',
+        'foto.image' => 'Foto harus berupa gambar!',
+        'foto1.image' => 'Foto 1 harus berupa gambar!',
+        'foto2.image' => 'Foto 2 harus berupa gambar!',
+    ]);
 
-                // Persiapkan data update
-                $updateData = [
-                    'user_id' => $validatedData['user_id'] ?? $databeritajakon->user_id, // Jika user_id tidak ada, gunakan data sebelumnya
-                    'judulberita' => $validatedData['judulberita'] ?? $databeritajakon->judulberita, // Jika judulberita tidak ada, gunakan data sebelumnya
-                    'tanggal' => $validatedData['tanggal'] ?? $databeritajakon->tanggal, // Jika tanggal tidak ada, gunakan data sebelumnya
-                    'keterangan' => $validatedData['keterangan'] ?? $databeritajakon->keterangan, // Jika keterangan tidak ada, gunakan data sebelumnya
-                ];
+    // Cari data berdasarkan ID
+    $databeritajakon = beritajakon::where('id', $id)->firstOrFail();
 
-                // Memeriksa apakah foto, foto1, dan foto2 ada dalam request dan jika ada di-upload
-                if ($request->hasFile('foto')) {
-                    $updateData['foto'] = $request->file('foto')->store('02_beritajakon/berita', 'public'); // Menyimpan foto dan mengambil path-nya
-                }
+    // Persiapkan data update
+    $updateData = [
+        'user_id' => $validatedData['user_id'] ?? $databeritajakon->user_id,
+        'judulberita' => $validatedData['judulberita'] ?? $databeritajakon->judulberita,
+        'tanggal' => $validatedData['tanggal'] ?? $databeritajakon->tanggal,
+        'keterangan' => $validatedData['keterangan'] ?? $databeritajakon->keterangan,
+    ];
 
-                if ($request->hasFile('foto1')) {
-                    $updateData['foto1'] = $request->file('foto1')->store('02_beritajakon/berita', 'public'); // Menyimpan foto1 dan mengambil path-nya
-                }
+    // Fungsi untuk menyimpan file langsung ke folder public
+    $saveToPublic = function ($file, $pathFolder) {
+        $path = public_path($pathFolder);
+        if (!File::exists($path)) {
+            File::makeDirectory($path, 0777, true, true);
+        }
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $file->move($path, $filename);
+        return $pathFolder . '/' . $filename;
+    };
 
-                if ($request->hasFile('foto2')) {
-                    $updateData['foto2'] = $request->file('foto2')->store('02_beritajakon/berita', 'public'); // Menyimpan foto2 dan mengambil path-nya
-                }
+    // Simpan foto jika ada
+    if ($request->hasFile('foto')) {
+        $updateData['foto'] = $saveToPublic($request->file('foto'), '02_berita/01_berita/01_foto1');
+    }
 
-                // Update data berita berdasarkan data yang sudah tervalidasi
-                $databeritajakon->update($updateData);
+    if ($request->hasFile('foto1')) {
+        $updateData['foto1'] = $saveToPublic($request->file('foto1'), '02_berita/01_berita/02_foto2');
+    }
 
-                // Flash session untuk menampilkan pesan sukses
-                session()->flash('update', 'Data Berhasil Diupdate!');
+    if ($request->hasFile('foto2')) {
+        $updateData['foto2'] = $saveToPublic($request->file('foto2'), '02_berita/01_berita/03_foto2');
+    }
 
-                // Redirect ke halaman yang sesuai
-                return redirect('/beberitajakon');
-            }
+    // Update data ke database
+    $databeritajakon->update($updateData);
+
+    // Pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    return redirect('/beberitajakon');
+}
+
 
 // MENU CREATE BERITA JAKON      ----------------------------------------------------------------------------
 
