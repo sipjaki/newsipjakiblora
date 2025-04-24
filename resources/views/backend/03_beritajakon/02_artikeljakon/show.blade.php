@@ -133,14 +133,21 @@
                                                 <i class="fa fa-file-pdf" style="margin-right: 8px; color: red;"></i> Berkas
                                             </label>
                                             <div class="form-control" style="border: none;">
-                                                @if ($data->berkas)
-                                                    <!-- Tombol untuk membuka modal -->
-                                                    <button type="button" class="btn btn-primary" id="btnBerkas">
-                                                        Lihat Berkas
-                                                    </button>
-                                                @else
-                                                    <p>No Berkas available</p>
-                                                @endif
+
+                                                    <div style="margin-top: 10px;">
+                                                        @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
+                                                            <!-- Menampilkan gambar dari storage -->
+                                                            <img src="{{ asset('storage/' . $data->berkas) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                                        @elseif($data->berkas)
+                                                            <!-- Menampilkan gambar dari path luar storage -->
+                                                            <img src="{{ asset($data->berkas) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                                        @else
+                                                            <!-- Placeholder jika tidak ada data -->
+                                                            <p>Data belum diupdate</p>
+                                                        @endif
+                                                    </div>
+
+
                                             </div>
                                         </div>
 
