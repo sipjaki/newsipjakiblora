@@ -33,11 +33,6 @@
         <!-- Menampilkan pesan sukses -->
 
         {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
 
             <!-- Menyertakan FontAwesome untuk ikon -->
 
