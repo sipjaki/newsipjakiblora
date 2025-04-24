@@ -150,7 +150,7 @@
                                 <img src="/assets/icon/pupr.png" alt="" width="40">
                             </span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Informasi Sub Koord <br> Bangunan Gedung</span>
+                                <span class="info-box-text">Informasi Sub Koordinator <br> Bangunan Gedung</span>
                                 <div class="progress">
                                     <div class="progress-bar" style="width: 70%"></div>
                                 </div>
