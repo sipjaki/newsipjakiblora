@@ -160,18 +160,24 @@
                                     <button id="confirmSubmitBtn"
                                     onclick="submitForm()"
                                     style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
-                                <i class="fab fa-telegram-plane" style="color: white;"></i> Ya, Update
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 496 512" fill="white">
+                                    <path d="M248,8C111,8,0,119.03,0,256c0,110.28,70.98,203.88,169.52,236.84,12.4,2.28,16.96-5.38,16.96-11.96,0-5.9-.22-21.55-.34-42.32-69,15.02-83.56-33.27-83.56-33.27-11.28-28.65-27.56-36.28-27.56-36.28-22.54-15.4,1.7-15.08,1.7-15.08,24.94,1.74,38.06,25.6,38.06,25.6,22.16,37.98,58.14,27,72.32,20.63,2.26-16.05,8.67-27.02,15.78-33.24-55.12-6.28-113.06-27.56-113.06-122.65,0-27.1,9.66-49.27,25.6-66.62-2.58-6.3-11.1-31.62,2.46-65.98,0,0,20.88-6.7,68.4,25.5,19.82-5.5,41.06-8.24,62.2-8.34,21.1.1,42.38,2.84,62.24,8.34,47.46-32.2,68.3-25.5,68.3-25.5,13.6,34.36,5.08,59.68,2.5,65.98,15.96,17.35,25.54,39.52,25.54,66.62,0,95.38-58.06,116.26-113.34,122.36,8.92,7.72,16.86,22.94,16.86,46.26,0,33.4-.3,60.28-.3,68.48,0,6.64,4.5,14.34,17.1,11.9C425,459.84,496,366.28,496,256,496,119.03,385,8,248,8Z"/>
+                                </svg>
+                                Ya, Update
                             </button>
 
-                            <!-- Tombol Batal dengan ikon X -->
+                            <!-- Tombol Batal dengan ikon X (SVG) -->
                             <button type="button"
                                     onclick="closeModal()"
                                     style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
-                                <i class="fas fa-times" style="color: white;"></i> Batal
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                    onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                    <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                </svg>
+                                Batal
                             </button>
 
                                   </div>
