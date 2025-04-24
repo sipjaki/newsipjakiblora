@@ -22,6 +22,7 @@
 
                 @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
                 @include('backend.00_administrator.00_baganterpisah.11_alert')
+                @include('backend.00_administrator.00_baganterpisah.13_animasimasjaki')
 
             </div>
             <!--end::Row-->
