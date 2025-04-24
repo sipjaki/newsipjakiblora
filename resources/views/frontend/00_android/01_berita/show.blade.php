@@ -45,7 +45,20 @@
                     <div class="flex items-center gap-2">
                         <div class="w-9 h-9 flex shrink-0 rounded-full overflow-hidden">
                             {{-- <img src="assets/images/photos/photo.png" class="w-full h-full object-cover" alt="photo"> --}}
-                            <img src="{{asset('storage/' . $data->user->avatar)}}" class="w-full h-full object-cover" alt="photo">
+                            {{-- <img src="{{asset('storage/' . $data->user->avatar)}}" class="w-full h-full object-cover" alt="photo"> --}}
+
+                            <div style="margin-top: 10px;">
+                                @if($data->user->avatar && file_exists(public_path('storage/' . $data->user->avatar)))
+                                    <!-- Menampilkan gambar dari storage -->
+                                    <img src="{{ asset('storage/' . $data->user->avatar) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                @elseif($data->user->avatar)
+                                    <!-- Menampilkan gambar dari path luar storage -->
+                                    <img src="{{ asset($data->user->avatar) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                @else
+                                    <!-- Placeholder jika tidak ada data -->
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
 
                         </div>
                         <div class="flex gap-1 items-center">
