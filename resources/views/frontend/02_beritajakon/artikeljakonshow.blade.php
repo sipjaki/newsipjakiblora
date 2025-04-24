@@ -209,7 +209,7 @@ table.zebra-table {
                                 </div>
                                 <br>
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$data->keterangan}}
-
+<br><br>
 
                                     <div class="flex flex-col gap-[2px] mt-2">
                                         @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
