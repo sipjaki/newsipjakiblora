@@ -166,12 +166,12 @@ table.zebra-table {
                             <div class="news-details-box-image">
                                 <div class="news-details-box-image-inner">
                                     <div style="margin-top: 10px;">
-                                        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                        @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
                                             <!-- Menampilkan gambar dari storage -->
-                                            <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
-                                        @elseif($data->foto)
+                                            <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                        @elseif($item->foto)
                                             <!-- Menampilkan gambar dari path luar storage -->
-                                            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                            <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
                                         @else
                                             <!-- Placeholder jika tidak ada data -->
                                             <p>Data belum diupdate</p>
