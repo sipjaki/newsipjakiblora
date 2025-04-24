@@ -16,6 +16,20 @@
       <main class="app-main">
         <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;">        <div class="app-content-header">
 
+            <div class="app-content-header">
+                <!--begin::Container-->
+                <div class="container-fluid">
+                    <!--begin::Row-->
+                    <div class="row">
+
+                        @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+
+                      </div>
+              <!--end::Row-->
+            </div>
+            <!--end::Container-->
+          </div>
+
             <div class="card-header">
 
           <!--begin::Container-->
