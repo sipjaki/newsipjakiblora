@@ -136,7 +136,7 @@
 
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-speedometer text-success"></i>
+                  <i class="nav-icon bi bi-speedometer" style="color: white"></i>
                   <p style="color: white">
                     Dashboard
                     <i class="nav-arrow bi bi-chevron-right"></i>
@@ -254,7 +254,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <!-- Ikon untuk Berita Jakon (Newspaper) -->
-                            <i class="nav-icon bi bi-newspaper text-success"></i>
+                            <i class="nav-icon bi bi-newspaper" style="color: white"></i>
                             <p style="color: white">
                               Berita Jakon
                               <!-- Ikon panah kanan (Chevron) -->
@@ -289,7 +289,7 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <!-- Ikon untuk Data Jakon -->
-                    <i class="nav-icon bi bi-bar-chart text-success"></i>
+                    <i class="nav-icon bi bi-bar-chart" style="color: white"></i>
                     <p style="color: white">
                       Data Jakon
                       <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
@@ -349,7 +349,7 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                   <!-- Ikon untuk Pembinaan -->
-                  <i class="nav-icon bi bi-person-check text-success"></i>
+                  <i class="nav-icon bi bi-person-check" style="color: white"></i>
                   <p style="color: white">
                     Pembinaan
                     <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
@@ -399,7 +399,7 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                   <!-- Ikon untuk Pengawasan -->
-                  <i class="nav-icon bi bi-eye text-success"></i> <!-- Ikon untuk pengawasan -->
+                  <i class="nav-icon bi bi-eye" style="color: white"></i> <!-- Ikon untuk pengawasan -->
                   <p style="color: white">
                     Pengawasan
                     <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
@@ -440,9 +440,9 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                   <!-- Ikon untuk AHSP Keciptakaryaan -->
-                  <i class="nav-icon bi bi-clipboard-check text-success"></i> <!-- Ikon untuk AHSP Keciptakaryaan -->
+                  <i class="nav-icon bi bi-clipboard-check" style="color: white"></i> <!-- Ikon untuk AHSP Keciptakaryaan -->
                   <p style="color: white">
-                    AHSP Keciptakaryaan
+                    Satuan Harga Dasar
                     <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
@@ -481,9 +481,9 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                   <!-- Ikon untuk HSP Konstruksi Umum -->
-                  <i class="nav-icon bi bi-building text-success"></i> <!-- Ikon untuk Konstruksi Umum -->
+                  <i class="nav-icon bi bi-building" style="color: white"></i> <!-- Ikon untuk Konstruksi Umum -->
                   <p style="color: white">
-                    HSP Konstruksi Umum
+                    HSP Konstruksi
                     <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
                     <i class="nav-arrow bi bi-chevron-right"></i>
                   </p>
@@ -571,7 +571,7 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <!-- Ikon untuk SHST Kab Blora -->
-                    <i class="nav-icon bi bi-file-earmark-text text-success"></i> <!-- Ikon untuk SHST Kab Blora -->
+                    <i class="nav-icon bi bi-file-earmark-text" style="color: white"></i> <!-- Ikon untuk SHST Kab Blora -->
                     <p style="color: white">
                       SHST Kab Blora
                       <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
@@ -599,7 +599,7 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <!-- Ikon untuk AHSP Bina Marga -->
-                    <i class="nav-icon bi bi-archive text-success"></i> <!-- Ikon alternatif untuk AHSP Bina Marga -->
+                    <i class="nav-icon bi bi-archive" style="color: white;"></i> <!-- Ikon alternatif untuk AHSP Bina Marga -->
                     <p style="color: white">
                       AHSP Bina Marga
                       <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
