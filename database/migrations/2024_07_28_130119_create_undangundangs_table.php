@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('undangundangs', function (Blueprint $table) {
             $table->id();
+            $table->string('judul')->nullable()->index();
+            $table->string('peraturan')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

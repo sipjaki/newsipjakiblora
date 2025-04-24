@@ -721,7 +721,7 @@ headerberanda::create([
 
         statusadmin::create([
             'id'  => '7',
-            'statusadmin'  => 'lpspenerbit',
+            'statusadmin'  => 'lsppenerbit',
         ]);
 
         statusadmin::create([

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->text('judul')->nullable();
             $table->string('peraturan', 255)->nullable();
             $table->text('keterangan')->nullable();
-
             $table->fullText(['judul', 'keterangan']);
             $table->softDeletes();
             $table->timestamps();
