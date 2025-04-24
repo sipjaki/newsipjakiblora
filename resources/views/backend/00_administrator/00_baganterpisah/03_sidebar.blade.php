@@ -68,7 +68,11 @@
 <!-- Struktur HTML untuk sidebar -->
 <div class="sidebar-container">
     <div class="sidebar-crane"></div>
-
+    <div class="sidebar-content">
+        <!-- Konten menu sidebar Anda yang sudah ada -->
+        <!-- Pastikan struktur menu Anda ada di sini -->
+    </div>
+</div>
 
       <!--begin::Sidebar-->
       <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
@@ -900,11 +904,8 @@
           </nav>
         </div>
         <!--end::Sidebar Wrapper-->
-
-    </aside>
-    <!--end::Sidebar-->
-</div>
-</div>
+      </aside>
+      <!--end::Sidebar-->
 
       <script>
         // Toggle sub-menu saat item Dashboard diklik
