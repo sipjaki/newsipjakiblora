@@ -351,7 +351,7 @@ public function beberitajakoncreatenew(Request $request)
                     if ($search) {
                         $query->where('judul', 'LIKE', "%{$search}%")
                             ->orWhere('tanggal', 'LIKE', "%{$search}%")
-                            ->orWhere('keterangan', 'LIKE', "%{$search}%")
+                            // ->orWhere('keterangan', 'LIKE', "%{$search}%")
                             ->orWhereHas('user', function ($q) use ($search) {
                                 $q->where('name', 'LIKE', "%{$search}%");
                             });
