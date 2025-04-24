@@ -183,15 +183,6 @@
         const modal = document.getElementById("confirmModal");
         if (modal) modal.style.display = "none";
     }
-
-    function submitForm() {
-        const form = document.getElementById("formKRK");
-        if (form) {
-            form.submit();
-        } else {
-            alert("Form tidak ditemukan. Pastikan ID-nya benar!");
-        }
-    }
     </script>
 
 
