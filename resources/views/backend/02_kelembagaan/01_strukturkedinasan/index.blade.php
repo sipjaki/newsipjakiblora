@@ -51,7 +51,7 @@
                                         <th style="width: 300px; text-align:center;">Judul</th>
                                         <th style="width: 500px; text-align:center;">Berkas</th>
                                         <th style="width: 600px; text-align: center;">Keterangan</th>
-                                        <th style="width: 100px; text-align: center;">Aksi</th>
+                                        <th style="width: 100px; text-align: center;">Perbarui Data</th>
                                     </tr>
                                 </thead>
                                 <tbody>
