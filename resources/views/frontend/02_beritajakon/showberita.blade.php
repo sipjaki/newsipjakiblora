@@ -175,6 +175,29 @@ table.zebra-table {
                             <div class="news-details-content-box" style="margin-left: 25px;">
                                 <h4 style="font-family: 'Poppins', sans-serif;">{{$data->judulberita}}</h4>
                                 <br>
+
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <div style="width: 50%;">
+                                        @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
+                                            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->foto1)
+                                            <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
+
+                                    <div style="width: 50%;">
+                                        @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
+                                            <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->foto2)
+                                            <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
+                                </div>
+
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$data->keterangan}}
 
                                 </p>
