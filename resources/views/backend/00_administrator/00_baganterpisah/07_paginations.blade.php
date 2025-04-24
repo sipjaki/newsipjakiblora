@@ -5,11 +5,11 @@
     <!-- Info Box -->
     <div class="custom-pagination-info-box"
         style="padding: 12px 20px; border-radius: 8px; margin-bottom: 15px;
-               background-color: #166534; border: 1px solid #166534; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+               background-color: #04b347; border: 1px solid #04b347; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                display: flex; align-items: center; justify-content: center;
                transition: all 0.3s ease-in-out;"
         onmouseover="this.style.backgroundColor='white'; this.style.color='#166534';
-                     this.querySelector('.custom-pagination-info').style.color='#166534';"
+                     this.querySelector('.custom-pagination-info').style.color='#04b347';"
         onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';
                      this.querySelector('.custom-pagination-info').style.color='white';">
 
@@ -28,8 +28,8 @@
         <!-- Previous Button -->
         <li class="custom-page-item {{ $data->onFirstPage() ? 'disabled' : '' }}" style="display: flex; align-items: center;">
             <a class="custom-page-link" href="{{ $data->previousPageUrl() }}"
-                style="background-color: #14532D; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
-                display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #14532D;
+                style="background-color: #04b347; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
+                display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #04b347;
                 position: relative; overflow: hidden;"
                 onmouseover="this.style.color='black';"
                 onmouseout="this.style.color='white';">
@@ -60,8 +60,8 @@
         <!-- Next Button -->
         <li class="custom-page-item {{ $data->hasMorePages() ? '' : 'disabled' }}" style="display: flex; align-items: center;">
             <a class="custom-page-link" href="{{ $data->nextPageUrl() }}"
-                style="background-color: #14532D; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
-                display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #14532D;
+                style="background-color: #04b347; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none;
+                display: flex; align-items: center; transition: all 0.3s ease; border: 1px solid #04b347;
                 position: relative; overflow: hidden;"
                 onmouseover="this.style.color='black';"
                 onmouseout="this.style.color='white';">
