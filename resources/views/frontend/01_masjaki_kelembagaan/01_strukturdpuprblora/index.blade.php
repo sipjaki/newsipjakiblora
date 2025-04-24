@@ -163,7 +163,21 @@ table.zebra-table {
                     {{-- <img src="assets/image/portfolio/portfolio-details-1.jpg" class="img-fluid" alt="img-109"> --}}
 
                     @foreach ($data as $item )
-                    <iframe src="{{ asset('storage/' . $item->peraturan) }}" width="100%" height="750" style="border: none; margin-bottom:25px;"></iframe>
+                    <div style="margin-top: 10px;">
+                        @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
+                        <!-- Display the default iframe when the file exists in the storage -->
+                        <iframe src="{{ asset('storage/' . $data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    @elseif($data->peraturan)
+                        <!-- Display the iframe with the updated file -->
+                        <iframe src="{{ asset($data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                    @else
+                        <!-- Optional: Show a placeholder if there's no file available -->
+                        <p>Data belum diupdate</p>
+                    @endif
+
+                    </div>
+
+
                     <div class="portfolio-details-content">
                         <div class="portfolio-details-content-title">
                             <h3 style="font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 10px;">
