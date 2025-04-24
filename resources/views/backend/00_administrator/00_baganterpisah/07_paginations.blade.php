@@ -1,25 +1,25 @@
 <div class="custom-pagination-container"
-    style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+    style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 15px;">
 
     <!-- Box Informasi Pagination -->
     <div class="custom-pagination-info-box"
-    style="padding: 12px 20px; border-radius: 8px; margin-bottom: 15px;
-           background-color: #166534; border: 1px solid #166534; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-           display: flex; align-items: center; justify-content: center;
-           transition: all 0.3s ease-in-out;"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='#166534';
-                 this.querySelector('.custom-pagination-info').style.color='#166534';"
-    onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';
-                 this.querySelector('.custom-pagination-info').style.color='white';">
+        style="padding: 12px 20px; border-radius: 8px; margin-bottom: 15px;
+               background-color: #166534; border: 1px solid #166534; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+               display: flex; align-items: center; justify-content: center;
+               transition: all 0.3s ease-in-out;"
+        onmouseover="this.style.backgroundColor='white'; this.style.color='#166534';
+                     this.querySelector('.custom-pagination-info').style.color='#166534';"
+        onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';
+                     this.querySelector('.custom-pagination-info').style.color='white';">
 
-    <div class="custom-pagination-info"
-        style="color: white; font-weight: 600; font-size: 18px; text-align: center;">
-        📊 Data Ke <span style="color: #ffffff;">{{ $data->firstItem() }}</span>
-        Sampai <span style="color: #ffffff;">{{ $data->lastItem() }}</span>
-        Dari <span style="color: #ffffff;">{{ $data->total() }}</span> Jumlah
-        <span style="color: #ffffff;">{{$title}}</span>
+        <div class="custom-pagination-info"
+            style="color: white; font-weight: 600; text-align: center;">
+            📊 Data Ke <span style="color: #ffffff;">{{ $data->firstItem() }}</span>
+            Sampai <span style="color: #ffffff;">{{ $data->lastItem() }}</span>
+            Dari <span style="color: #ffffff;">{{ $data->total() }}</span> Jumlah
+            <span style="color: #ffffff;">{{$title}}</span>
+        </div>
     </div>
-</div>
 
     <!-- Navigasi Pagination -->
     <ul class="custom-pagination-paginate"
@@ -39,7 +39,8 @@
 
         <!-- Tombol Halaman -->
         @foreach ($data->links()->elements[0] as $page => $url)
-        <li class="custom-page-item {{ $data->currentPage() == $page ? 'active' : '' }}" style="display: flex; align-items: center;">
+        <li class="custom-page-item {{ $data->currentPage() == $page ? 'active' : '' }}"
+            style="display: flex; align-items: center;">
             <a class="custom-page-link" href="{{ $url }}"
                 style="background-color: {{ $data->currentPage() == $page ? '#16A34A' : '#374151' }};
                 color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;
@@ -73,5 +74,10 @@
         color: white !important;
         border-color: #9CA3AF !important;
         pointer-events: none;
+    }
+
+    /* Tambahan agar semua elemen dalam container pakai font-size 15px */
+    .custom-pagination-container * {
+        font-size: 15px !important;
     }
 </style>
