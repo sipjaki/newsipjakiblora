@@ -14,6 +14,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+<section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height:
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
             <div class="card-header">
@@ -223,7 +225,8 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+        </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>
