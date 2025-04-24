@@ -1,71 +1,33 @@
 <style>
-    /* Efek hover dan aktif (dipertahankan) */
-    .nav-item > .nav-link:hover {
-        background-color: #ffd100 !important;
-        color: black !important;
-        transition: background-color 0.3s ease-in-out;
-    }
+    /* Efek hover saat menu utama di-hover */
+/* Efek hover saat menu utama di-hover */
+.nav-item > .nav-link:hover {
+    background-color: #ffd100 !important; /* Warna latar belakang hover */
+    color: black !important; /* Warna teks saat hover */
+    transition: background-color 0.3s ease-in-out;
+}
 
-    .nav-item > .nav-link:hover i,
-    .nav-item > .nav-link:hover p {
-        color: black !important;
-    }
+/* Mengubah warna ikon dan teks saat di-hover */
+.nav-item > .nav-link:hover i,
+.nav-item > .nav-link:hover p {
+    color: black !important; /* Warna ikon dan teks berubah menjadi hitam */
+}
 
-    .nav-item > .nav-link.active {
-        background-color: #ffd100 !important;
-        color: black !important;
-    }
+/* Efek saat menu utama aktif (dipilih/diklik) */
+.nav-item > .nav-link.active {
+    background-color: #ffd100 !important;
+    color: black !important;
+}
 
-    .nav-item > .nav-link.active i,
-    .nav-item > .nav-link.active p {
-        color: black !important;
-    }
+/* Mengubah warna ikon dan teks saat menu aktif */
+.nav-item > .nav-link.active i,
+.nav-item > .nav-link.active p {
+    color: black !important;
+}
 
-    /* Animasi Crane untuk Sidebar */
-    .app-sidebar {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .app-sidebar::before {
-        content: "";
-        position: absolute;
-        bottom: -50px;
-        left: -100px;
-        width: 300px;
-        height: 300px;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ffd100" d="M50 10L15 90h70z"/><rect x="45" y="85" width="10" height="15" fill="%23757575"/></svg>');
-        opacity: 0.05;
-        animation: moveCrane 25s linear infinite;
-        transform: scaleX(-1);
-    }
-
-    @keyframes moveCrane {
-        0% { transform: translateX(-100%) scaleX(-1); }
-        100% { transform: translateX(150%) scaleX(-1); }
-    }
-
-    /* Overlay untuk kontras teks */
-    .app-sidebar::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
-        z-index: 0;
-    }
-
-    /* Penyesuaian konten sidebar */
-    .sidebar-brand,
-    .nav-header,
-    .nav-link p,
-    .nav-link i {
-        position: relative;
-        z-index: 1;
-    }
 </style>
+
+
 
 
       <!--begin::Sidebar-->
