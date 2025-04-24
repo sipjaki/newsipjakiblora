@@ -34,6 +34,8 @@
 <br>
      {{-- ======================================================= --}}
 
+     <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
+
      <div class="container-fluid">
          <!--begin::Row-->
          <div class="row" style="margin-right: 10px; margin-left:10px;">
@@ -186,6 +188,8 @@
      <!--end::App Content Header-->
      <!--begin::App Content-->
        <!--end::App Content-->
+</section>
+
    </main>
    <!--end::App Main-->
  </div>
