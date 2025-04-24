@@ -112,7 +112,7 @@
 
                             <br>
 
-                                <div style="display: flex; justify-content: flex-end; margin-top:10px;">
+                                <div style="display: flex; justify-content: flex-end; margin-top:10px; margin-bottom:10px; ">
                                     <a href="/beprofiljakon">
                                         <button
                                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
