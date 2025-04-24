@@ -186,30 +186,26 @@ table.zebra-table {
                                 <h4 style="font-family: 'Poppins', sans-serif;">{{$item->judulberita}}</h4>
                                 <br>
                                 <div style="display: flex; gap: 10px; margin-top: 10px;">
-                                    <!-- Foto 1 -->
-                                    <div style="flex: 1;">
-                                        @if($item->foto1 && file_exists(public_path($item->foto1)))
-                                            <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan 1" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    <div style="width: 50%;">
+                                        @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
+                                            <img src="{{ asset('storage/' . $item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @elseif($item->foto1)
-                                            <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan 1" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                            <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @else
                                             <p>Data belum diupdate</p>
                                         @endif
                                     </div>
 
-                                    <!-- Foto 2 -->
-                                    <div style="flex: 1;">
-                                        @if($item->foto2 && file_exists(public_path($item->foto2)))
-                                            <img src="{{ asset($item->foto2) }}" alt="Gambar Peraturan 2" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    <div style="width: 50%;">
+                                        @if($item->foto2 && file_exists(public_path('storage/' . $item->foto2)))
+                                            <img src="{{ asset('storage/' . $item->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @elseif($item->foto2)
-                                            <img src="{{ asset($item->foto2) }}" alt="Gambar Peraturan 2" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                            <img src="{{ asset($item->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @else
                                             <p>Data belum diupdate</p>
                                         @endif
                                     </div>
                                 </div>
-
-
 
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$item->keterangan}}
 
