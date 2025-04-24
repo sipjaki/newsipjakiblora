@@ -192,9 +192,9 @@
 </section>
    </main>
    <!--end::App Main-->
- </div>
- </div>
-
-
    @include('backend.00_administrator.00_baganterpisah.02_footer')
+ </div>
+ </div>
+
+
 
