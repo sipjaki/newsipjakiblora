@@ -546,16 +546,16 @@ table.zebra-table {
 <h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >VI. Data Personil Jabatan Fungsional </span></h4>
 <table>
     <tr>
-        <th style="font-family: 'Poppins', sans-serif; font-size: 15px;">No</th>
-        <th style="font-family: 'Poppins', sans-serif; font-size: 15px;">Jabatan</th>
-        <th style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Lengkap</th>
+        <th style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">No</th>
+        <th style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">Jabatan</th>
+        <th style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">Nama Lengkap</th>
     </tr>
     <tbody>
     @foreach ($datapersonil as $item)
     <tr>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$loop->iteration}}</td>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->jabatan}}</td>
-        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->namalengkap}}</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">{{$loop->iteration}}</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">{{$item->jabatan}}</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px; text-align:center;">{{$item->namalengkap}}</td>
     </tr>
     @endforeach
 </tbody>
