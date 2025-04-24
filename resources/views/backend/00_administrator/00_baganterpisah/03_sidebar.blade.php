@@ -1,4 +1,13 @@
 <style>
+    /* Import Font Poppins */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    /* Terapkan Poppins ke seluruh sidebar */
+    .app-sidebar,
+    .app-sidebar *:not(.bi):not(.nav-arrow) {
+        font-family: 'Poppins', sans-serif !important;
+    }
+
     /* Efek hover menu (dipertahankan sesuai permintaan) */
     .nav-item > .nav-link:hover {
         background-color: #ffd100 !important;
@@ -19,19 +28,24 @@
     }
 
     /* Style khusus untuk sidebar */
-    .sidebar-container {
+    .app-sidebar {
         position: relative;
         overflow: hidden;
-        background: linear-gradient(-45deg, #2ecc71, #27ae60, #1abc9c, #16a085);
-        background-size: 400% 400%;
-        animation: gradientBG 15s ease infinite;
-        min-height: 100vh; /* Pastikan sidebar penuh tinggi */
+        background: linear-gradient(135deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
+        min-height: 100vh;
     }
 
-    @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+    /* Overlay untuk efek modern */
+    .sidebar-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        z-index: 0;
     }
 
     /* Animasi Crane untuk Sidebar */
@@ -45,7 +59,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         animation: sidebarCraneMove 25s linear infinite;
-        opacity: 0.7;
+        opacity: 0.15;
         filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
         z-index: 0;
     }
@@ -58,12 +72,27 @@
         100% { transform: translateX(-200%) translateY(0); }
     }
 
-    /* Pastikan konten menu di atas crane */
-    .sidebar-content {
+    /* Pastikan konten menu di atas crane dan overlay */
+    .sidebar-brand,
+    .sidebar-wrapper {
         position: relative;
         z-index: 1;
     }
+
+    /* Perbaikan warna teks untuk kontras */
+    .brand-text,
+    .nav-header,
+    .nav-link p {
+        color: white !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    /* Efek hover yang lebih halus */
+    .nav-link {
+        transition: all 0.2s ease;
+    }
 </style>
+
 
       <!--begin::Sidebar-->
       <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
