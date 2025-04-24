@@ -65,5 +65,12 @@
 
     <link rel="icon" href="/assets/icon/logokabupatenblora.png" type="image/x-icon">
 
+    <style>
+        * {
+          font-family: 'Poppins', sans-serif !important;
+        }
+      </style>
+
+
   </head>
   <!--end::Head-->

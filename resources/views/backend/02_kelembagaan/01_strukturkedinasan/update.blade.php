@@ -1,9 +1,3 @@
-<style>
-    * {
-      font-family: 'Poppins', sans-serif !important;
-    }
-  </style>
-
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
