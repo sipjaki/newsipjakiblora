@@ -168,10 +168,10 @@ table.zebra-table {
                                     <div style="margin-top: 10px;">
                                         @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
                                             <!-- Menampilkan gambar dari storage -->
-                                            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
+                                            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar berkas" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
                                         @elseif($data->foto1)
                                             <!-- Menampilkan gambar dari path luar storage -->
-                                            <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
+                                            <img src="{{ asset($data->foto1) }}" alt="Gambar berkas" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
                                         @else
                                             <!-- Placeholder jika tidak ada data -->
                                             <p>Data belum diupdate</p>
@@ -189,9 +189,9 @@ table.zebra-table {
                                 <div style="display: flex; gap: 10px; margin-top: 10px;">
                                     <div style="width: 50%;">
                                         @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
-                                            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar berkas" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @elseif($data->foto1)
-                                            <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                            <img src="{{ asset($data->foto1) }}" alt="Gambar berkas" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @else
                                             <p>Data belum diupdate</p>
                                         @endif
@@ -199,9 +199,9 @@ table.zebra-table {
 
                                     <div style="width: 50%;">
                                         @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
-                                            <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                            <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar berkas" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @elseif($data->foto2)
-                                            <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                            <img src="{{ asset($data->foto2) }}" alt="Gambar berkas" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                         @else
                                             <p>Data belum diupdate</p>
                                         @endif
@@ -230,10 +230,10 @@ table.zebra-table {
                                             <div style="margin-top: 10px;">
                                                 @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
                                                     <!-- Menampilkan gambar dari storage -->
-                                                    <img src="{{ asset('storage/' . $item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    <img src="{{ asset('storage/' . $item->foto1) }}" alt="Gambar berkas" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                 @elseif($item->foto1)
                                                     <!-- Menampilkan gambar dari path luar storage -->
-                                                    <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    <img src="{{ asset($item->foto1) }}" alt="Gambar berkas" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                 @else
                                                     <!-- Placeholder jika tidak ada data -->
                                                     <p>Data belum diupdate</p>
@@ -262,29 +262,63 @@ table.zebra-table {
 
                                 </div><!-- sidebar-widget sidebar-widget-recent-post -->
 
-                                <div class="flex flex-col gap-[2px]">
-                                    <br>
-                                    <div class="ml-auto">
-                                        <button id="sertifikat-btn" class="badge"
-                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                            <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                        </button>
-                                    </div>
-                                </div>
+                                <div class="flex flex-col gap-[2px] mt-2">
+                                    @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
+                                        <!-- Tombol aktif dengan file dari storage -->
+                                        <div class="ml-auto">
+                                            <button id="sertifikat-btn" class="badge"
+                                                style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                            </button>
+                                        </div>
 
-                                <script>
-                                    document.getElementById('sertifikat-btn').addEventListener('click', function () {
-                                        const fileUrl = "{{ asset($data->berkas) }}"; // Ambil URL file dari Laravel
-                                        const a = document.createElement('a');
-                                        a.href = fileUrl;
-                                        a.download = ''; // Kosongkan nama file agar browser pakai nama asli
-                                        document.body.appendChild(a);
-                                        a.click();
-                                        document.body.removeChild(a);
-                                    });
-                                </script>
+                                        <script>
+                                            document.getElementById('sertifikat-btn').addEventListener('click', function () {
+                                                const fileUrl = "{{ asset('storage/' . $data->berkas) }}";
+                                                const a = document.createElement('a');
+                                                a.href = fileUrl;
+                                                a.download = '';
+                                                document.body.appendChild(a);
+                                                a.click();
+                                                document.body.removeChild(a);
+                                            });
+                                        </script>
+
+                                    @elseif($data->berkas)
+                                        <!-- Tombol aktif dengan file dari path publik -->
+                                        <div class="ml-auto">
+                                            <button id="sertifikat-btn" class="badge"
+                                                style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                            </button>
+                                        </div>
+
+                                        <script>
+                                            document.getElementById('sertifikat-btn').addEventListener('click', function () {
+                                                const fileUrl = "{{ asset($data->berkas) }}";
+                                                const a = document.createElement('a');
+                                                a.href = fileUrl;
+                                                a.download = '';
+                                                document.body.appendChild(a);
+                                                a.click();
+                                                document.body.removeChild(a);
+                                            });
+                                        </script>
+
+                                    @else
+                                        <!-- Tombol disable jika tidak ada file -->
+                                        <div class="ml-auto">
+                                            <button class="badge" disabled
+                                                style="background-color: gray; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; cursor: not-allowed;">
+                                                <i class="fas fa-download" style="margin-right:5px;"></i> File belum tersedia
+                                            </button>
+                                        </div>
+                                    @endif
+                                </div>
 
                                 {{-- <div class="sidebar-widget sidebar-widget-recent-category">
                                     <div class="sidebar-widget-recent-category-box">
