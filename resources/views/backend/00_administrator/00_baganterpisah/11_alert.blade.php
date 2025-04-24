@@ -195,7 +195,7 @@
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
         <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 300px !important; height: auto;"
+        style="width: 150px !important; height: auto;"
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil !</div>
@@ -212,7 +212,7 @@
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
         <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 300px !important; height: auto;"
+        style="width: 150px !important; height: auto;"
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
@@ -227,7 +227,7 @@
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
         <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 300px !important; height: auto;"
+        style="width: 150px !important; height: auto;"
         class="logo-animate-bounce">
        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
@@ -242,7 +242,7 @@
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
         <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 300px !important; height: auto;"
+        style="width: 150px !important; height: auto;"
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-textupdate">Update Berhasil !</div>
@@ -257,7 +257,7 @@
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
         <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 300px !important; height: auto;"
+        style="width: 150px !important; height: auto;"
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div style="font-size: 36px; color: red; font-weight: bold; margin: 20px 0;">Delete Berhasil !</div>
@@ -272,7 +272,7 @@
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-question-alert').style.display='none';">&times;</button>
         <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
-        style="width: 300px !important; height: auto;"
+        style="width: 150px !important; height: auto;"
         class="logo-animate-bounce">
            <p style="color: black;">Pemerintah Kabupaten Blora</p>
         <div class="success-text" style="font-size: 18px;">Admin Kami Akan Menghubungi Saudara, Harap Menunggu!</div>
