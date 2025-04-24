@@ -134,9 +134,9 @@
 
     /* Animations */
     @keyframes pulse-glow {
-        0% { box-shadow: 0 0 10px rgba(9, 194, 77, 0.3); }
-        50% { box-shadow: 0 0 20px rgba(9, 194, 77, 0.3); }
-        100% { box-shadow: 0 0 10px rgba(9, 194, 77, 0.3); }
+        0% { box-shadow: 0 0 10px rgba(0, 255, 94, 0.3); }
+        50% { box-shadow: 0 0 20px rgba(0, 255, 94, 0.3); }
+        100% { box-shadow: 0 0 10px rgba(0, 255, 94, 0.3); }
     }
 
     /* Smooth Transitions */
