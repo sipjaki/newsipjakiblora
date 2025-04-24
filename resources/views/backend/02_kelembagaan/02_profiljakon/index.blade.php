@@ -13,13 +13,16 @@
 
       <!--begin::App Main-->
       <main class="app-main">
-          <!--begin::App Content Header-->
-          <div class="app-content-header">
-              <!--begin::Container-->
+        <!--begin::App Content Header-->
+        <div class="app-content-header">
+          <!--begin::Container-->
+          <div class="container-fluid">
+            <!--begin::Row-->
 
-              @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
 
-        </div>
+            <!--end::Row-->
+          </div>
           <!--end::Container-->
         </div>
         <br>
