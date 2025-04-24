@@ -223,19 +223,19 @@ table.zebra-table {
                             <div class="sidebar">
 
                                 <div class="sidebar-widget sidebar-widget-recent-post">
-                                    <h4 style="font-family: 'Poppins', sans-serif;">Daftar Berita</h4>
+                                    <h4 style="font-family: 'Poppins', sans-serif;">Daftar Artikel Jakon</h4>
 
                                     @foreach ($data->skip(1)->take(7) as $item)
 
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-img">
                                             <div style="margin-top: 10px;">
-                                                @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                                @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
                                                     <!-- Menampilkan gambar dari storage -->
-                                                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                                @elseif($item->foto)
+                                                    <img src="{{ asset('storage/' . $item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @elseif($item->foto1)
                                                     <!-- Menampilkan gambar dari path luar storage -->
-                                                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                 @else
                                                     <!-- Placeholder jika tidak ada data -->
                                                     <p>Data belum diupdate</p>
