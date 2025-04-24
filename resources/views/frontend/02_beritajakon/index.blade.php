@@ -165,8 +165,18 @@ table.zebra-table {
 
                             <div class="news-details-box-image">
                                 <div class="news-details-box-image-inner">
-                                    <img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" alt="img-193">
-
+                                    <div style="margin-top: 10px;">
+                                        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                            <!-- Menampilkan gambar dari storage -->
+                                            <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                        @elseif($data->foto)
+                                            <!-- Menampilkan gambar dari path luar storage -->
+                                            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                        @else
+                                            <!-- Placeholder jika tidak ada data -->
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
                                     <a href="#" class="news-details-box-date"><span style="font-family: 'Poppins', sans-serif;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</span></a>
                                 </div><!-- news-details-box-image-inner -->
                             </div><!-- news-details-box-image -->
