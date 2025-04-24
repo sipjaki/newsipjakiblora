@@ -221,7 +221,7 @@ table.zebra-table {
                         <div class="col-lg-4">
                             <div class="sidebar">
                             <div class="sidebar-widget sidebar-widget-recent-post">
-                                    <h4 style="font-family: 'Poppins', sans-serif;">Daftar Berita</h4>
+                                    <h4 style="font-family: 'Poppins', sans-serif;">Daftar Artikel Jakon</h4>
 
                                     @foreach ($dataartikel->skip(1)->take(7) as $item)
 
@@ -250,7 +250,7 @@ table.zebra-table {
                                                     </div><!-- sidebar-meta-icon -->
                                                 </div><!-- sidebar-meta-item -->
                                                 <div class="sidebar-post-title">
-                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/beritajakon/{{$item->judul}}">{{$item->judul}}</a></h5>
+                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/artikeljakon/{{$item->judul}}">{{$item->judul}}</a></h5>
                                                 </div><!-- sidebar-post-title -->
                                             </div><!-- sidebar-meta -->
                                         </div><!-- sidebar-recent-post-content -->
