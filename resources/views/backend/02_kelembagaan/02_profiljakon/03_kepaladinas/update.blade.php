@@ -50,8 +50,6 @@
         {{-- ALERT --}}
 
 
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
