@@ -83,7 +83,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        </div>
                     </div>
                     <!-- /.card-body -->
                 </div>
