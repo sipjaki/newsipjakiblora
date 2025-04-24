@@ -215,7 +215,7 @@ ul.list-unstyled {
             </ul>
         </li>
         <li><a href="/beritajakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Berita Jakon</a></li>
-        <li><a href="/404" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
+        <li><a href="/artikeljakon" style="color: black; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: block;">Artikel Jakon</a></li>
     </ul>
 </li>
 
