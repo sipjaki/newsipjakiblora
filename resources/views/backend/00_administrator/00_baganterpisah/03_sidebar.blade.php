@@ -31,7 +31,7 @@
     .app-sidebar {
         position: relative;
         overflow: hidden;
-        background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 50%, #66bb6a 100%);
+        background: linear-gradient(135deg, #6bd173 0%, #a5d6a7 50%, #66bb6a 100%);
         min-height: 100vh;
     }
 
