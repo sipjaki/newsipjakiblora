@@ -225,12 +225,16 @@
                                             <label class="form-label" for="foto1">
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 2
                                             </label>
-                                            <div class="form-control" style="border: none;">
-                                                @if ($data->foto2)
-                                                    <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 1" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
+                                            <div style="margin-top: 10px;">
+                                                @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
+                                                    <!-- Menampilkan gambar dari storage -->
+                                                    <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @elseif($data->foto2)
+                                                    <!-- Menampilkan gambar dari path luar storage -->
+                                                    <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                 @else
-                                                    <p>No Photo</p>
+                                                    <!-- Placeholder jika tidak ada data -->
+                                                    <p>Data belum diupdate</p>
                                                 @endif
                                             </div>
                                         </div>
@@ -241,12 +245,18 @@
                                                 <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto/Gambar/Brosur 3
                                             </label>
                                             <div class="form-control" style="border: none;">
-                                                @if ($data->foto3)
-                                                    <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->foto3) }}" alt="Foto 2" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
-                                                @else
-                                                    <p>No Photo</p>
-                                                @endif
+                                                <div style="margin-top: 10px;">
+                                                    @if($data->foto3 && file_exists(public_path('storage/' . $data->foto3)))
+                                                        <!-- Menampilkan gambar dari storage -->
+                                                        <img src="{{ asset('storage/' . $data->foto3) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    @elseif($data->foto3)
+                                                        <!-- Menampilkan gambar dari path luar storage -->
+                                                        <img src="{{ asset($data->foto3) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    @else
+                                                        <!-- Placeholder jika tidak ada data -->
+                                                        <p>Data belum diupdate</p>
+                                                    @endif
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
