@@ -1,48 +1,37 @@
 <style>
-    /* Efek hover saat menu utama di-hover */
+    /* Efek hover menu (dipertahankan sesuai permintaan) */
     .nav-item > .nav-link:hover {
         background-color: #ffd100 !important;
         color: black !important;
         transition: background-color 0.3s ease-in-out;
     }
-
-    /* Mengubah warna ikon dan teks saat di-hover */
     .nav-item > .nav-link:hover i,
     .nav-item > .nav-link:hover p {
         color: black !important;
     }
-
-    /* Efek saat menu utama aktif (dipilih/diklik) */
     .nav-item > .nav-link.active {
         background-color: #ffd100 !important;
         color: black !important;
     }
-
-    /* Mengubah warna ikon dan teks saat menu aktif */
     .nav-item > .nav-link.active i,
     .nav-item > .nav-link.active p {
         color: black !important;
     }
 
-    /* Style khusus untuk sidebar dengan animasi */
-    .sidebar-custom {
+    /* Style khusus untuk sidebar */
+    .sidebar-container {
         position: relative;
         overflow: hidden;
         background: linear-gradient(-45deg, #2ecc71, #27ae60, #1abc9c, #16a085);
         background-size: 400% 400%;
         animation: gradientBG 15s ease infinite;
+        min-height: 100vh; /* Pastikan sidebar penuh tinggi */
     }
 
     @keyframes gradientBG {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 
     /* Animasi Crane untuk Sidebar */
@@ -52,35 +41,37 @@
         right: -100px;
         width: 150px;
         height: 120px;
-        background-image: url('https://www.svgrepo.com/show/530643/crane.svg');
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M21 6h-4v2h4V6zm-5 0h-4v2h4V6zm-5 0H7v2h4V6zM6 6H2v2h4V6zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2z"/></svg>');
         background-size: contain;
         background-repeat: no-repeat;
         animation: sidebarCraneMove 25s linear infinite;
         opacity: 0.7;
         filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
+        z-index: 0;
     }
 
     @keyframes sidebarCraneMove {
-        0% {
-            transform: translateX(0) translateY(0);
-        }
-        25% {
-            transform: translateX(-50%) translateY(-10px);
-        }
-        50% {
-            transform: translateX(-100%) translateY(0);
-        }
-        75% {
-            transform: translateX(-150%) translateY(-10px);
-        }
-        100% {
-            transform: translateX(-200%) translateY(0);
-        }
+        0% { transform: translateX(0) translateY(0); }
+        25% { transform: translateX(-50%) translateY(-10px); }
+        50% { transform: translateX(-100%) translateY(0); }
+        75% { transform: translateX(-150%) translateY(-10px); }
+        100% { transform: translateX(-200%) translateY(0); }
+    }
+
+    /* Pastikan konten menu di atas crane */
+    .sidebar-content {
+        position: relative;
+        z-index: 1;
     }
 </style>
 
-<!-- Tambahkan div crane di dalam sidebar Anda -->
-<div class="sidebar-crane"></div>
+<!-- Struktur HTML untuk sidebar -->
+<div class="sidebar-container">
+    <div class="sidebar-crane"></div>
+    <div class="sidebar-content">
+        <!-- Konten menu sidebar Anda yang sudah ada -->
+        <!-- Pastikan struktur menu Anda ada di sini -->
+
 
       <!--begin::Sidebar-->
       <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
@@ -914,6 +905,9 @@
         <!--end::Sidebar Wrapper-->
       </aside>
       <!--end::Sidebar-->
+
+    </div>
+</div>
 
       <script>
         // Toggle sub-menu saat item Dashboard diklik
