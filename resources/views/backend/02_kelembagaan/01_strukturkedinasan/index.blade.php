@@ -28,13 +28,6 @@
         <br>
         <!-- Menampilkan pesan sukses -->
 
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
         <div class="container-fluid">
             <!--begin::Row-->
             <div class="row" style="margin-right: 10px; margin-left:10px;">
