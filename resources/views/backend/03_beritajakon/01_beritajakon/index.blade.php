@@ -190,9 +190,9 @@
     <!--end::App Content-->
 
 </section>
+@include('backend.00_administrator.00_baganterpisah.02_footer')
    </main>
    <!--end::App Main-->
-   @include('backend.00_administrator.00_baganterpisah.02_footer')
  </div>
  </div>
 
