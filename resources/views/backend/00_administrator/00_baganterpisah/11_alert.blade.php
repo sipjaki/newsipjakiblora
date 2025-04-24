@@ -199,7 +199,7 @@
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil !</div>
-        <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a>
+        {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
         <br>
         <button class="button-text">{{ session('create') }}</button>
     </div>
