@@ -1,15 +1,15 @@
 <style>
     /* Efek hover saat menu utama di-hover */
     .nav-item > .nav-link:hover {
-        background-color: #ffd100 !important; /* Warna latar belakang hover */
-        color: black !important; /* Warna teks saat hover */
+        background-color: #ffd100 !important;
+        color: black !important;
         transition: background-color 0.3s ease-in-out;
     }
 
     /* Mengubah warna ikon dan teks saat di-hover */
     .nav-item > .nav-link:hover i,
     .nav-item > .nav-link:hover p {
-        color: black !important; /* Warna ikon dan teks berubah menjadi hitam */
+        color: black !important;
     }
 
     /* Efek saat menu utama aktif (dipilih/diklik) */
@@ -24,13 +24,13 @@
         color: black !important;
     }
 
-    /* Animasi Crane dan Background Modern Hijau */
-    body {
+    /* Style khusus untuk sidebar dengan animasi */
+    .sidebar-custom {
+        position: relative;
+        overflow: hidden;
         background: linear-gradient(-45deg, #2ecc71, #27ae60, #1abc9c, #16a085);
         background-size: 400% 400%;
         animation: gradientBG 15s ease infinite;
-        position: relative;
-        overflow-x: hidden;
     }
 
     @keyframes gradientBG {
@@ -45,44 +45,42 @@
         }
     }
 
-    /* Animasi Crane */
-    .crane-animation {
-        position: fixed;
+    /* Animasi Crane untuk Sidebar */
+    .sidebar-crane {
+        position: absolute;
         bottom: 20px;
-        right: -200px;
-        width: 200px;
-        height: 150px;
+        right: -100px;
+        width: 150px;
+        height: 120px;
         background-image: url('https://www.svgrepo.com/show/530643/crane.svg');
         background-size: contain;
         background-repeat: no-repeat;
-        animation: craneMove 20s linear infinite;
-        z-index: -1;
-        opacity: 0.8;
-        filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+        animation: sidebarCraneMove 25s linear infinite;
+        opacity: 0.7;
+        filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
     }
 
-    @keyframes craneMove {
+    @keyframes sidebarCraneMove {
         0% {
             transform: translateX(0) translateY(0);
         }
         25% {
-            transform: translateX(-50vw) translateY(-20px);
+            transform: translateX(-50%) translateY(-10px);
         }
         50% {
-            transform: translateX(-100vw) translateY(0);
+            transform: translateX(-100%) translateY(0);
         }
         75% {
-            transform: translateX(-150vw) translateY(-20px);
+            transform: translateX(-150%) translateY(-10px);
         }
         100% {
-            transform: translateX(-200vw) translateY(0);
+            transform: translateX(-200%) translateY(0);
         }
     }
 </style>
 
-<!-- Tambahkan elemen crane di body Anda -->
-<div class="crane-animation"></div>
-
+<!-- Tambahkan div crane di dalam sidebar Anda -->
+<div class="sidebar-crane"></div>
 
       <!--begin::Sidebar-->
       <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
