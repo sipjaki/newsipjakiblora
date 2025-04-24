@@ -213,7 +213,7 @@
                     <li class="nav-item">
                     <a href="#" class="nav-link">
                     <!-- Ikon untuk Beranda -->
-                    <i class="nav-icon bi bi-house-door text-success"></i>
+                    <i class="nav-icon bi bi-house-door" style="color: white;"></i>
                     <p style="color: white">
                       Kelembagaan
                       <!-- Ikon panah kanan (Chevron) -->
