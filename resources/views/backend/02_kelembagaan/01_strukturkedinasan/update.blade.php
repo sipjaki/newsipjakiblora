@@ -149,7 +149,7 @@
 
 <!-- Modal Konfirmasi -->
 <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="confirmModalLabel">Konfirmasi</h5>
@@ -168,7 +168,7 @@
           Batal
         </button>
         <!-- Tombol Update -->
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="updateData()">
           <!-- Ikon SVG Check -->
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
             <path d="M13.854 3.146a.5.5 0 0 0-.708 0L6 10.293 3.854 8.146a.5.5 0 0 0-.708.708L6 11.707l8-8a.5.5 0 0 0 0-.708z"/>
@@ -179,6 +179,15 @@
     </div>
   </div>
 </div>
+
+<script>
+  // Fungsi untuk menangani tombol Update
+  function updateData() {
+    // Aksi yang dilakukan ketika tombol Update diklik (misalnya, mengirim data)
+    alert('Data berhasil diperbarui!');
+    // Bisa diganti dengan logika untuk mengirim formulir atau melakukan pembaruan
+  }
+</script>
 
                         </form>
 
