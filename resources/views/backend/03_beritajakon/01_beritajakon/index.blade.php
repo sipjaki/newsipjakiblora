@@ -1,22 +1,3 @@
-<style>
-    table {
-     table-layout: fixed;
-     width: 100%;
- }
-
- td {
-     padding: 10px;
-     vertical-align: top;
-     word-wrap: break-word;
- }
-
- .isi-berita {
-     max-width: 600px;
-     word-wrap: break-word;
-     white-space: normal;
-     overflow-wrap: break-word;
- }
-</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
