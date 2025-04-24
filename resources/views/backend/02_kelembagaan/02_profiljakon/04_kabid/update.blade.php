@@ -96,7 +96,7 @@
                                             <label class="form-label" for="nip">
                                                 <i class="bi bi-credit-card" style="margin-right: 8px; color: navy;"></i> NIP
                                             </label>
-                                            <input type="text" id="nip" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $data->nip) }}" />
+                                            <input type="number" id="nip" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $data->nip) }}" />
                                             @error('nip')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
