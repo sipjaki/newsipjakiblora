@@ -24,10 +24,10 @@
                 <div style="margin-top: 10px;">
                     @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
                         <!-- Menampilkan gambar dari storage -->
-                        <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                        <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;">
                     @elseif($data->foto)
                         <!-- Menampilkan gambar dari path luar storage -->
-                        <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                        <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;">
                     @else
                         <!-- Placeholder jika tidak ada data -->
                         <p>Data belum diupdate</p>
@@ -64,10 +64,10 @@
                         <div style="margin-top: 10px;">
                             @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
                                 <!-- Menampilkan gambar dari storage -->
-                                <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;">
                             @elseif($data->foto1)
                                 <!-- Menampilkan gambar dari path luar storage -->
-                                <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;">
                             @else
                                 <!-- Placeholder jika tidak ada data -->
                                 <p>Data belum diupdate</p>
@@ -78,10 +78,10 @@
                         <div style="margin-top: 10px;">
                             @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
                                 <!-- Menampilkan gambar dari storage -->
-                                <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;">
                             @elseif($data->foto2)
                                 <!-- Menampilkan gambar dari path luar storage -->
-                                <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 500px; object-fit: contain;">
                             @else
                                 <!-- Placeholder jika tidak ada data -->
                                 <p>Data belum diupdate</p>
