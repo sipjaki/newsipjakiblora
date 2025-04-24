@@ -228,12 +228,12 @@ table.zebra-table {
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-img">
                                             <div style="margin-top: 10px;">
-                                                @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                                @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
                                                     <!-- Menampilkan gambar dari storage -->
-                                                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                                @elseif($item->foto)
+                                                    <img src="{{ asset('storage/' . $item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @elseif($item->foto1)
                                                     <!-- Menampilkan gambar dari path luar storage -->
-                                                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                 @else
                                                     <!-- Placeholder jika tidak ada data -->
                                                     <p>Data belum diupdate</p>
@@ -245,7 +245,7 @@ table.zebra-table {
                                                 <div class="sidebar-meta-item">
                                                     <div class="sidebar-meta-icon">
                                                         <span class="author" style="font-family: 'Poppins', sans-serif;">
-                                                            Penulis : <a href="news-details.html">Mas Zaki</a>
+                                                            Penulis : <a href="news-details.html">{{$data->user->name}}</a>
                                                         </span><!-- author -->
                                                     </div><!-- sidebar-meta-icon -->
                                                 </div><!-- sidebar-meta-item -->
