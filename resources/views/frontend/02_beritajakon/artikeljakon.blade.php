@@ -183,7 +183,7 @@ table.zebra-table {
 
                             <br><br>
                             <div class="news-details-content-box" style="margin-left: 25px;">
-                                <h4 style="font-family: 'Poppins', sans-serif;">{{$item->judulberita}}</h4>
+                                <h4 style="font-family: 'Poppins', sans-serif;">{{$item->judul}}</h4>
                                 <br>
                                 <div style="display: flex; gap: 10px; margin-top: 10px;">
                                     <div style="width: 50%;">
@@ -252,7 +252,7 @@ table.zebra-table {
                                                     </div><!-- sidebar-meta-icon -->
                                                 </div><!-- sidebar-meta-item -->
                                                 <div class="sidebar-post-title">
-                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/beritajakon/{{$item->judulberita}}">{{$item->judulberita}}</a></h5>
+                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/beritajakon/{{$item->judul}}">{{$item->judul}}</a></h5>
                                                 </div><!-- sidebar-post-title -->
                                             </div><!-- sidebar-meta -->
                                         </div><!-- sidebar-recent-post-content -->
