@@ -21,6 +21,7 @@
             <div class="row">
 
                 @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
 
             </div>
             <!--end::Row-->
@@ -30,13 +31,6 @@
 
         <br>
         <!-- Menampilkan pesan sukses -->
-
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
 
             <!-- Menyertakan FontAwesome untuk ikon -->
 
