@@ -181,10 +181,10 @@
              <!-- /.card -->
          </div>
          <!-- /.col -->
+         @include('backend.00_administrator.00_baganterpisah.02_footer')
         </div>
         <!--end::Row-->
     </div>
-    @include('backend.00_administrator.00_baganterpisah.02_footer')
     <!--end::Container-->
     <!--end::App Content Header-->
     <!--begin::App Content-->
