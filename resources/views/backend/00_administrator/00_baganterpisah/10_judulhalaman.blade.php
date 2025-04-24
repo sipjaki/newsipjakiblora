@@ -30,7 +30,7 @@
         display: inline-block;
         width: 100%;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-        background: linear-gradient(135deg, #19531b, #b4c6d6, #19531b);
+        background: linear-gradient(135deg, #06af0c, #b4c6d6, #06af0c);
         background-size: 300% 300%;
         animation: gradientShift 6s ease infinite;
         font-family: 'Poppins', sans-serif;
