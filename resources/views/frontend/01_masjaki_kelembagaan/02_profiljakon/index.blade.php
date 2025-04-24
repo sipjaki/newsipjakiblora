@@ -543,6 +543,25 @@ table.zebra-table {
 </table>
 
 
+<h4 style="font-family: 'Poppins', sans-serif; font-size: 15px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >VI. Data Personil Jabatan Fungsional </span></h4>
+<table>
+    @foreach ($datapersonil as $item)
+    <tr>
+        <th style="font-family: 'Poppins', sans-serif; font-size: 15px;">No</th>
+        <th style="font-family: 'Poppins', sans-serif; font-size: 15px;">Jabatan</th>
+        <th style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama Lengkap</th>
+    </tr>
+<tbody>
+    <tr>
+        <td>{{$loop->iteration}}</td>
+        <td>{{$item->jabatan}}</td>
+        <td>{{$item->namalengkap}}</td>
+    </tr>
+</tbody>
+    @endforeach
+</table>
+
+
         @foreach ($data as $item)
 
 
