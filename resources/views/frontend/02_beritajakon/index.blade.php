@@ -185,32 +185,30 @@ table.zebra-table {
                             <div class="news-details-content-box" style="margin-left: 25px;">
                                 <h4 style="font-family: 'Poppins', sans-serif;">{{$item->judulberita}}</h4>
                                 <br>
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <!-- Foto 1 -->
+                                    <div style="flex: 1;">
+                                        @if($item->foto1 && file_exists(public_path($item->foto1)))
+                                            <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan 1" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($item->foto1)
+                                            <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan 1" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
 
-                                <div style="margin-top: 10px;">
-                                    @if($item->foto1 && file_exists(public_path('storage/' . $item->foto1)))
-                                        <!-- Menampilkan gambar dari storage -->
-                                        <img src="{{ asset('storage/' . $item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                    @elseif($item->foto1)
-                                        <!-- Menampilkan gambar dari path luar storage -->
-                                        <img src="{{ asset($item->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                    @else
-                                        <!-- Placeholder jika tidak ada data -->
-                                        <p>Data belum diupdate</p>
-                                    @endif
+                                    <!-- Foto 2 -->
+                                    <div style="flex: 1;">
+                                        @if($item->foto2 && file_exists(public_path($item->foto2)))
+                                            <img src="{{ asset($item->foto2) }}" alt="Gambar Peraturan 2" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($item->foto2)
+                                            <img src="{{ asset($item->foto2) }}" alt="Gambar Peraturan 2" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
                                 </div>
 
-                                <div style="margin-top: 10px;">
-                                    @if($item->foto2 && file_exists(public_path('storage/' . $item->foto2)))
-                                        <!-- Menampilkan gambar dari storage -->
-                                        <img src="{{ asset('storage/' . $item->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                    @elseif($item->foto2)
-                                        <!-- Menampilkan gambar dari path luar storage -->
-                                        <img src="{{ asset($item->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                    @else
-                                        <!-- Placeholder jika tidak ada data -->
-                                        <p>Data belum diupdate</p>
-                                    @endif
-                                </div>
 
 
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$item->keterangan}}
