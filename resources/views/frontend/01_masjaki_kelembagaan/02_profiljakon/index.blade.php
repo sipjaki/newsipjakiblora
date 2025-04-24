@@ -553,9 +553,9 @@ table.zebra-table {
     <tbody>
     @foreach ($datapersonil as $item)
     <tr>
-        <td>{{$loop->iteration}}</td>
-        <td>{{$item->jabatan}}</td>
-        <td>{{$item->namalengkap}}</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$loop->iteration}}</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->jabatan}}</td>
+        <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">{{$item->namalengkap}}</td>
     </tr>
     @endforeach
 </tbody>
