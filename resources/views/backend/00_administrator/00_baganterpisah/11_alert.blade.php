@@ -32,6 +32,7 @@
         align-items: center;
         justify-content: center;
         animation: fadeIn 0.5s ease;
+        overflow: hidden;
     }
 
     .modal-box-question {
@@ -43,6 +44,33 @@
         position: relative;
         text-align: center;
         animation: fadeIn 0.5s ease;
+        overflow: hidden;
+    }
+
+    /* Animasi Crane untuk Modal */
+    .modal-crane {
+        position: absolute;
+        width: 80px;
+        height: 60px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23298d0d"><path d="M21 6h-4v2h4V6zm-5 0h-4v2h4V6zm-5 0H7v2h4V6zM6 6H2v2h4V6zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2z"/></svg>');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+        z-index: 0;
+        animation: craneFly 15s linear infinite;
+    }
+
+    @keyframes craneFly {
+        0% { transform: translateX(-100px) translateY(0); }
+        25% { transform: translateX(25%) translateY(-20px); }
+        50% { transform: translateX(150%) translateY(0); }
+        75% { transform: translateX(25%) translateY(20px); }
+        100% { transform: translateX(-100px) translateY(0); }
+    }
+
+    .modal-content {
+        position: relative;
+        z-index: 1;
     }
 
     .btnalert-view {
@@ -79,6 +107,8 @@
         color: white;
         cursor: pointer;
         transition: 0.3s ease;
+        position: relative;
+        z-index: 1;
     }
 
     .button-text { background: green; }
@@ -95,6 +125,8 @@
         font-size: 18px;
         color: white;
         transition: 0.3s ease;
+        position: relative;
+        z-index: 1;
     }
 
     .button-delete:hover {
@@ -108,6 +140,8 @@
         object-fit: cover;
         margin: 20px;
         animation: bounceZoom 2.5s ease-in-out infinite;
+        position: relative;
+        z-index: 1;
     }
 
     @keyframes bounceZoom {
@@ -134,14 +168,34 @@
             }
         });
     });
+
+    // Tambahkan crane ke setiap modal saat dimuat
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.modal-box, .modal-box-question').forEach(modal => {
+            const crane = document.createElement('div');
+            crane.className = 'modal-crane';
+            modal.prepend(crane);
+
+            // Posisi crane acak
+            const randomTop = Math.random() * 70 + 10; // 10-80%
+            const randomSize = Math.random() * 40 + 60; // 60-100px
+            const randomSpeed = Math.random() * 10 + 10; // 10-20s
+
+            crane.style.top = `${randomTop}%`;
+            crane.style.width = `${randomSize}px`;
+            crane.style.height = `${randomSize * 0.75}px`;
+            crane.style.animationDuration = `${randomSpeed}s`;
+        });
+    });
 </script>
 
 @if (session('create'))
 <div class="modal-verify-alert">
     <div class="modal-box">
+        <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/abgblora/logo/pupr.png" alt="Logo" class="logo-animate-bounce">
-        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil !</div>
         <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a>
         <br>
@@ -153,9 +207,10 @@
 @if (session('info'))
 <div class="modal-verify-alert">
     <div class="modal-box">
+        <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/abgblora/logo/pupr.png" alt="Logo" class="logo-animate-bounce">
-        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
         <button class="button-text">{{ session('info') }}</button>
     </div>
@@ -165,9 +220,10 @@
 @if (session('pengesahankrk'))
 <div class="modal-verify-alert">
     <div class="modal-box">
+        <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/abgblora/logo/pupr.png" alt="Logo" class="logo-animate-bounce">
-        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
         <button class="button-text">{{ session('pengesahankrk') }}</button>
     </div>
@@ -177,9 +233,10 @@
 @if (session('update'))
 <div class="modal-verify-alert">
     <div class="modal-box">
+        <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/abgblora/logo/pupr.png" alt="Logo" class="logo-animate-bounce">
-        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-textupdate">Update Berhasil !</div>
         <button class="button-textupdate">{{ session('update') }}</button>
     </div>
@@ -189,9 +246,10 @@
 @if (session('delete'))
 <div class="modal-verify-alert">
     <div class="modal-box">
+        <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/abgblora/logo/pupr.png" alt="Logo" class="logo-animate-bounce">
-        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div style="font-size: 36px; color: red; font-weight: bold; margin: 20px 0;">Delete Berhasil !</div>
         <button class="button-delete">{{ session('delete') }}</button>
     </div>
@@ -201,8 +259,9 @@
 @if (session('pertanyaan'))
 <div class="modal-question-alert">
     <div class="modal-box-question">
+        <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-question-alert').style.display='none';">&times;</button>
-        <img src="/assets/icon/sipjakikbb.png" alt="Logo" class="logo-animate-bounce">
+        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
         <p style="color: black;">Pemerintah Kabupaten Blora</p>
         <div class="success-text" style="font-size: 18px;">Admin Kami Akan Menghubungi Saudara, Harap Menunggu!</div>
         <button class="button-text">{{ session('pertanyaan') }}</button>
