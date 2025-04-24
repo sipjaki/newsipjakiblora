@@ -145,7 +145,7 @@
                                 </tbody>
                             </table>
 
-                            <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: flex-end; margin-bottom: 20px; margin-top: 20px;">
 
                                 <a href="/beprofiljakon">
                                     <button
