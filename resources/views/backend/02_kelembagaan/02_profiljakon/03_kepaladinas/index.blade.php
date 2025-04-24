@@ -41,6 +41,8 @@
             <div class="row" style="margin-right: 10px; margin-left:10px;">
                 <!-- /.card -->
                 <div class="card mb-4">
+                    <div class="card-header">
+
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
                     <div class="col-md-12">

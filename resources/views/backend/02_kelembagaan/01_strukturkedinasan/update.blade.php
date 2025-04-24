@@ -16,6 +16,8 @@
       <main class="app-main">
         <!--begin::App Content Header-->
         <div class="app-content-header">
+            <div class="card-header">
+
           <!--begin::Container-->
           @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
