@@ -134,18 +134,21 @@
                                             </label>
                                             <div class="form-control" style="border: none;">
 
-                                                    <div style="margin-top: 10px;">
-                                                        @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
-                                                            <!-- Menampilkan gambar dari storage -->
-                                                            <img src="{{ asset('storage/' . $data->berkas) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
-                                                        @elseif($data->berkas)
-                                                            <!-- Menampilkan gambar dari path luar storage -->
-                                                            <img src="{{ asset($data->berkas) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
-                                                        @else
-                                                            <!-- Placeholder jika tidak ada data -->
-                                                            <p>Data belum diupdate</p>
-                                                        @endif
-                                                    </div>
+                                                <div style="margin-top: 10px;">
+                                                    @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
+                                                    <!-- Display the default iframe when the file exists in the storage -->
+                                                    <iframe src="{{ asset('storage/' . $data->berkas) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                @elseif($data->berkas)
+                                                    <!-- Display the iframe with the updated file -->
+                                                    <iframe src="{{ asset($data->berkas) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                @else
+                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                    <p>Data belum diupdate</p>
+                                                @endif
+
+                                                </div>
+
+
 
 
                                             </div>
