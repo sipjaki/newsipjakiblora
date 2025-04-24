@@ -844,7 +844,9 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <!-- Ikon untuk Kelembagaan -->
-                    <i class="nav-icon bi bi-person-workspace;" style="color: white;"></i> <!-- Ikon untuk Kelembagaan -->
+                    {{-- <i class="nav-icon bi bi-person-workspace;" style="color: white;"></i> <!-- Ikon untuk Kelembagaan --> --}}
+                    <i class="nav-icon bi bi-newspaper" style="color: white"></i>
+
                     <p style="color: white">
                         Kelembagaan
                     </p>
