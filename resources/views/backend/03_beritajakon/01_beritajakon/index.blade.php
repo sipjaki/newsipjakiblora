@@ -10,10 +10,11 @@
 @include('backend.00_administrator.00_baganterpisah.04_navbar')
 {{-- ---------------------------------------------------------------------- --}}
 
-   @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+@include('backend.00_administrator.00_baganterpisah.03_sidebar')
 
-   <!--begin::App Main-->
-   <main class="app-main">
+<!--begin::App Main-->
+<main class="app-main">
+       <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
      <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
@@ -34,7 +35,6 @@
 <br>
      {{-- ======================================================= --}}
 
-     <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
      <div class="container-fluid">
          <!--begin::Row-->
@@ -183,13 +183,13 @@
          <!-- /.col -->
         </div>
         <!--end::Row-->
-    </section>
-     </div>
-               <!--end::Container-->
-     <!--end::App Content Header-->
-     <!--begin::App Content-->
-       <!--end::App Content-->
+    </div>
+    <!--end::Container-->
+    <!--end::App Content Header-->
+    <!--begin::App Content-->
+    <!--end::App Content-->
 
+</section>
    </main>
    <!--end::App Main-->
  </div>
