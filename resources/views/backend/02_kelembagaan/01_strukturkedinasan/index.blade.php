@@ -21,7 +21,7 @@
             <div class="row">
             <!-- Kontennya -->
             <div class="col-sm-12">
-                <h3 class="mb-0" style="font-family: 'Poppins', sans-serif; font-size: 16px;">
+                <h3 class="mb-0" style="font-family: 'Poppins', sans-serif; font-size: 18px;">
                 Selamat datang!
                 <span style="color: black; font-weight:800;">{{ Auth::user()->name }}</span>
                 di Dashboard
