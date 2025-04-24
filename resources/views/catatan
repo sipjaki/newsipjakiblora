@@ -241,3 +241,21 @@ font-family: 'Poppins', sans-serif;
 
                <!-- ungu lembut -->
                <!-- #8B5CF6 -->
+
+
+
+
+<!-- storage gambar -->
+
+               <div style="margin-top: 10px;">
+    @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
+        <!-- Menampilkan gambar dari storage -->
+        <img src="{{ asset('storage/' . $data->peraturan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+    @elseif($data->peraturan)
+        <!-- Menampilkan gambar dari path luar storage -->
+        <img src="{{ asset($data->peraturan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>

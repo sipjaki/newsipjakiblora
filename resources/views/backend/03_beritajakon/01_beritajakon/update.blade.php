@@ -155,9 +155,17 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                             @if ($data->foto)
-                                            <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->foto) }}" alt="Foto" width="100" />
-                                            </div>
+                                            <div style="margin-top: 10px;">
+                                                @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                                    <!-- Menampilkan gambar dari storage -->
+                                                    <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                                @elseif($data->foto)
+                                                    <!-- Menampilkan gambar dari path luar storage -->
+                                                    <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;">
+                                                @else
+                                                    <!-- Placeholder jika tidak ada data -->
+                                                    <p>Data belum diupdate</p>
+                                                @endif
                                             @endif
                                         </div>
 
