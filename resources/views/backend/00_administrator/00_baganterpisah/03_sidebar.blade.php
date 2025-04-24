@@ -1,4 +1,33 @@
 <style>
+    /* Efek hover saat menu utama di-hover */
+/* Efek hover saat menu utama di-hover */
+.nav-item > .nav-link:hover {
+    background-color: #ffd100 !important; /* Warna latar belakang hover */
+    color: black !important; /* Warna teks saat hover */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Mengubah warna ikon dan teks saat di-hover */
+.nav-item > .nav-link:hover i,
+.nav-item > .nav-link:hover p {
+    color: black !important; /* Warna ikon dan teks berubah menjadi hitam */
+}
+
+/* Efek saat menu utama aktif (dipilih/diklik) */
+.nav-item > .nav-link.active {
+    background-color: #ffd100 !important;
+    color: black !important;
+}
+
+/* Mengubah warna ikon dan teks saat menu aktif */
+.nav-item > .nav-link.active i,
+.nav-item > .nav-link.active p {
+    color: black !important;
+}
+
+</style>
+
+<style>
     /* Sidebar Modern Hijau dengan Animasi Crane */
 .app-sidebar {
     background: linear-gradient(160deg, #1a4d2e 0%, #2a6f3d 100%) !important;
