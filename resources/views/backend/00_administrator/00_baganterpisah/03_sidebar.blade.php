@@ -927,18 +927,19 @@
       </aside>
       <!--end::Sidebar-->
 
-      <script>
-        // Toggle sub-menu saat item Dashboard diklik
-        $(".nav-item > a").click(function (e) {
-          // Pastikan kita hanya menampilkan sub-menu yang terkait dengan item yang diklik
-          var $this = $(this).next(".nav-treeview");
 
-          // Cek apakah sub-menu sudah terbuka
-          if ($this.is(":visible")) {
-            $this.slideUp(); // Tutup jika terbuka
-          } else {
-            $(".nav-treeview").slideUp(); // Tutup semua sub-menu lainnya
-            $this.slideDown(); // Buka sub-menu yang diklik
-          }
-        });
-      </script>
+<script>
+    // Toggle sub-menu saat item Dashboard diklik
+    $(".nav-item > a").click(function (e) {
+      // Pastikan kita hanya menampilkan sub-menu yang terkait dengan item yang diklik
+      var $this = $(this).next(".nav-treeview");
+
+      // Cek apakah sub-menu sudah terbuka
+      if ($this.is(":visible")) {
+        $this.slideUp(); // Tutup jika terbuka
+      } else {
+        $(".nav-treeview").slideUp(); // Tutup semua sub-menu lainnya
+        $this.slideDown(); // Buka sub-menu yang diklik
+      }
+    });
+</script>
