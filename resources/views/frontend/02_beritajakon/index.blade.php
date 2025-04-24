@@ -206,6 +206,7 @@ table.zebra-table {
                                         @endif
                                     </div>
                                 </div>
+                                <br>
 
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$item->keterangan}}
 
