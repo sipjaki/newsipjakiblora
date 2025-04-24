@@ -928,7 +928,7 @@
       <!--end::Sidebar-->
 
 
-{{-- <script>
+<script>
     // Toggle sub-menu saat item Dashboard diklik
     $(".nav-item > a").click(function (e) {
       // Pastikan kita hanya menampilkan sub-menu yang terkait dengan item yang diklik
@@ -942,4 +942,4 @@
         $this.slideDown(); // Buka sub-menu yang diklik
       }
     });
-</script> --}}
+</script>
