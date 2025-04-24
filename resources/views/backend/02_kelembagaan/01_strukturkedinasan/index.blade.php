@@ -1,4 +1,16 @@
 <style>
+    .custom-hover:hover {
+        background-color: white !important;
+        color: black !important;
+        border-color: #ccc !important;
+    }
+
+    .custom-hover:hover i {
+        color: black !important;
+    }
+</style>
+
+<style>
 
 .table-wrapper {
   overflow-x: auto;
@@ -133,14 +145,18 @@ table.menu-table {
                                         </td>
 
                                         <td style="text-align: justify;">{!! $item->keterangan !!}</td>
+
                                         <td style="text-align: center;">
                                             <a href="/struktur/update/{{$item->judul}}"
-                                               class="btn btn-sm btn-warning me-2"
+                                               class="btn btn-sm btn-warning me-2 custom-hover"
                                                title="Update"
                                                style="position: relative; z-index: 10;">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
                                         </td>
+
+                                        {{-- Tambahkan style di bagian bawah Blade file --}}
+
                                     </tr>
                                     @endforeach
                                 </tbody>
