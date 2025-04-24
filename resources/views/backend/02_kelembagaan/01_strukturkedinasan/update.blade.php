@@ -17,7 +17,7 @@
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
-          @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+          @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
         </div>
 
