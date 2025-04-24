@@ -1,30 +1,94 @@
 <style>
-    /* Efek hover saat menu utama di-hover */
-/* Efek hover saat menu utama di-hover */
+    /* Sidebar Modern Hijau dengan Animasi Crane */
+.app-sidebar {
+    background: linear-gradient(160deg, #1a4d2e 0%, #2a6f3d 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animasi Crane */
+.app-sidebar::before {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%2342b883" d="M50 10L15 90h70z"/><rect x="45" y="85" width="10" height="15" fill="%23757575"/></svg>');
+    opacity: 0.1;
+    animation: moveCrane 20s linear infinite;
+    transform: scaleX(-1);
+}
+
+@keyframes moveCrane {
+    0% { transform: translateX(-100%) scaleX(-1); }
+    100% { transform: translateX(150%) scaleX(-1); }
+}
+
+/* Overlay untuk meningkatkan keterbacaan teks */
+.app-sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+/* Penyesuaian warna teks dan hover */
+.sidebar-brand,
+.nav-header,
+.nav-link p {
+    color: #e8f5e9 !important;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-link i {
+    color: #c8e6c9 !important;
+}
+
+/* Efek hover modern */
 .nav-item > .nav-link:hover {
-    background-color: #ffd100 !important; /* Warna latar belakang hover */
-    color: black !important; /* Warna teks saat hover */
-    transition: background-color 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateX(5px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Mengubah warna ikon dan teks saat di-hover */
-.nav-item > .nav-link:hover i,
-.nav-item > .nav-link:hover p {
-    color: black !important; /* Warna ikon dan teks berubah menjadi hitam */
+.nav-item > .nav-link:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #ffd100;
 }
 
-/* Efek saat menu utama aktif (dipilih/diklik) */
+/* Efek aktif */
 .nav-item > .nav-link.active {
-    background-color: #ffd100 !important;
-    color: black !important;
+    background: linear-gradient(90deg, #ffd100 0%, #ffd100dd 100%) !important;
+    box-shadow: 2px 0 10px rgba(255, 209, 0, 0.3);
 }
 
-/* Mengubah warna ikon dan teks saat menu aktif */
-.nav-item > .nav-link.active i,
-.nav-item > .nav-link.active p {
-    color: black !important;
+.nav-item > .nav-link.active p,
+.nav-item > .nav-link.active i {
+    color: #1a4d2e !important;
+    font-weight: 500;
 }
 
+/* Penyesuaian posisi konten */
+.sidebar-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.brand-link {
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 </style>
 
 
