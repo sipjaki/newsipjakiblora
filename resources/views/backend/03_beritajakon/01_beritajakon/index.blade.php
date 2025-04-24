@@ -181,7 +181,6 @@
              <!-- /.card -->
          </div>
          <!-- /.col -->
-         @include('backend.00_administrator.00_baganterpisah.02_footer')
         </div>
         <!--end::Row-->
     </div>
@@ -196,5 +195,6 @@
  </div>
  </div>
 
+ @include('backend.00_administrator.00_baganterpisah.02_footer')
 
 
