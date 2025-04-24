@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\File;
 
+use App\Models\artikeljakon;
 use App\Models\artikeljakonmasjaki;
 use App\Models\beritajakon;
 use App\Models\User;
@@ -249,17 +250,17 @@ public function beberitajakoncreate()
 // -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
 public function beberitajakoncreatenew(Request $request)
 {
-    // Pastikan user yang sedang login adalah super_admin (id = 1)
+    // Cek apakah user login adalah super_admin (statusadmin_id = 1)
     $user_id = Auth::user()->statusadmin->id == 1 ? Auth::user()->id : null;
 
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
-        'judulberita' => 'required|string|max:255', // judulberita wajib diisi, harus string, dan panjangnya maksimal 255 karakter
-        'tanggal' => 'required|date', // tanggal wajib diisi dan harus dalam format tanggal
-        'keterangan' => 'required|string', // keterangan wajib diisi dan harus berupa string
-        'foto' => 'required|image|max:7168', // foto wajib diisi, harus image dan maksimal 7MB (7168KB)
-        'foto1' => 'required|image|max:7168', // foto1 wajib diisi, harus image dan maksimal 7MB (7168KB)
-        'foto2' => 'required|image|max:7168', // foto2 wajib diisi, harus image dan maksimal 7MB (7168KB)
+        'judulberita' => 'required|string|max:255',
+        'tanggal' => 'required|date',
+        'keterangan' => 'required|string',
+        'foto' => 'required|image|max:7168',
+        'foto1' => 'required|image|max:7168',
+        'foto2' => 'required|image|max:7168',
     ], [
         'judulberita.required' => 'Judul berita wajib diisi!',
         'judulberita.string' => 'Judul berita harus berupa teks!',
@@ -279,14 +280,25 @@ public function beberitajakoncreatenew(Request $request)
         'foto2.max' => 'Foto 2 maksimal 7MB!',
     ]);
 
-    // Menyimpan file gambar jika ada
-    $foto = $request->file('foto')->store('public/02_beritajakon/berita');
-    $foto1 = $request->file('foto1')->store('public/02_beritajakon/berita');
-    $foto2 = $request->file('foto2')->store('public/02_beritajakon/berita');
+    // Fungsi menyimpan file ke public
+    $saveToPublic = function ($file, $folder) {
+        $path = public_path($folder);
+        if (!File::exists($path)) {
+            File::makeDirectory($path, 0777, true, true);
+        }
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $file->move($path, $filename);
+        return $folder . '/' . $filename;
+    };
 
-    // Membuat data baru di tabel beritajakon
+    // Simpan file langsung ke public
+    $foto = $saveToPublic($request->file('foto'), '02_berita/01_berita/01_foto1');
+    $foto1 = $saveToPublic($request->file('foto1'), '02_berita/01_berita/02_foto2');
+    $foto2 = $saveToPublic($request->file('foto2'), '02_berita/01_berita/03_foto2');
+
+    // Simpan ke database
     beritajakon::create([
-        'user_id' => $user_id,  // Menyimpan user_id yang sudah diatur otomatis
+        'user_id' => $user_id,
         'judulberita' => $validatedData['judulberita'],
         'tanggal' => $validatedData['tanggal'],
         'keterangan' => $validatedData['keterangan'],
@@ -295,12 +307,10 @@ public function beberitajakoncreatenew(Request $request)
         'foto2' => $foto2,
     ]);
 
-    // Flash session untuk menampilkan pesan sukses
     session()->flash('create', 'Data Berhasil Dibuat!');
-
-    // Redirect ke halaman yang sesuai
     return redirect('/beberitajakon');
 }
+
 
 
         public function beberitajakondelete($judulberita)
