@@ -217,7 +217,6 @@
                                                 @endif
                                             @endif
                                             </div>
-                                            @endif
                                         </div>
                                     </div>
                                     <!-- End Right Column -->
