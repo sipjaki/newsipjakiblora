@@ -189,8 +189,8 @@
     <!--begin::App Content-->
     <!--end::App Content-->
 
+    @include('backend.00_administrator.00_baganterpisah.02_footer')
 </section>
-@include('backend.00_administrator.00_baganterpisah.02_footer')
    </main>
    <!--end::App Main-->
  </div>
