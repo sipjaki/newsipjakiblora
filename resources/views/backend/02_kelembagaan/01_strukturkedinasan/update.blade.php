@@ -135,21 +135,50 @@
                             </div>
                             <!-- end::Body -->
                             <br><br>
-                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                <button type="submit"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-                                    style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+<!-- Tombol Konfirmasi -->
+<div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+    <button type="button" data-bs-toggle="modal" data-bs-target="#confirmModal"
+        style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+        <!-- Ikon SVG Check -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+            <path d="M13.854 3.146a.5.5 0 0 0-.708 0L6 10.293 3.854 8.146a.5.5 0 0 0-.708.708L6 11.707l8-8a.5.5 0 0 0 0-.708z"/>
+        </svg>
+        <span style="font-family: 'Poppins', sans-serif;">Update</span>
+    </button>
+</div>
 
-                                    <!-- Ikon SVG Pensil -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                         fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                      <path d="M15.502 1.94a1.5 1.5 0 0 1 0 2.12L5.207 14.354a1 1 0 0 1-.39.243l-4 1.5a.5.5 0 0 1-.641-.641l1.5-4a1 1 0 0 1 .243-.39L13.44.44a1.5 1.5 0 0 1 2.12 0zm-2.121 1.415L4.854 11.882l-.708 2.122 2.121-.707L15.5 3.354l-2.12-2.121z"/>
-                                    </svg>
-
-                                    <span style="font-family: 'Poppins', sans-serif;">Update</span>
-                                </button>
-                            </div>
+<!-- Modal Konfirmasi -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmModalLabel">Konfirmasi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Apakah Anda yakin ingin memperbarui data ini?
+      </div>
+      <div class="modal-footer">
+        <!-- Tombol Batal -->
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          <!-- Ikon SVG X -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 6.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 7l2.647 2.646a.5.5 0 0 1-.708.708L8 7.707 5.354 10.354a.5.5 0 0 1-.708-.708L7.293 7 4.646 4.646a.5.5 0 0 1 0-.708z"/>
+          </svg>
+          Batal
+        </button>
+        <!-- Tombol Update -->
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          <!-- Ikon SVG Check -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+            <path d="M13.854 3.146a.5.5 0 0 0-.708 0L6 10.293 3.854 8.146a.5.5 0 0 0-.708.708L6 11.707l8-8a.5.5 0 0 0 0-.708z"/>
+          </svg>
+          Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
                         </form>
 
