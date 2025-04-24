@@ -216,10 +216,10 @@ table.zebra-table {
                                             <!-- Tombol aktif dengan file dari storage -->
                                             <div class="ml-auto">
                                                 <button id="sertifikat-btn" class="badge"
-                                                    style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                                    style="background-color: navy; color: white; border: none; transition: 0.3s; padding:20px 20px; font-size: 13px; border-radius:5px;"
                                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
                                                     onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                                    <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                                    <i class="fas fa-download" style="margin-right:5px;"></i><span style="font-family: 'Poppins', sans-serif;">Download .pdf</span>
                                                 </button>
                                             </div>
 
