@@ -227,7 +227,18 @@ table.zebra-table {
 
                                     <div class="sidebar-recent-post">
                                         <div class="sidebar-recent-post-img">
-                                            <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Pelatihan SKK Blora" width="200px" loading="lazy">
+                                            <div style="margin-top: 10px;">
+                                                @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                                    <!-- Menampilkan gambar dari storage -->
+                                                    <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @elseif($data->foto)
+                                                    <!-- Menampilkan gambar dari path luar storage -->
+                                                    <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @else
+                                                    <!-- Placeholder jika tidak ada data -->
+                                                    <p>Data belum diupdate</p>
+                                                @endif
+                                            </div>
                                         </div><!-- sidebar-recent-post-img -->
                                         <div class="sidebar-recent-post-content">
                                             <div class="sidebar-meta">
