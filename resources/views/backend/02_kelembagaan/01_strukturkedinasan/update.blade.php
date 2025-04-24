@@ -159,22 +159,21 @@
                                   <div style="display: flex; justify-content: center; gap: 12px;">
                                     <button id="confirmSubmitBtn"
                                     onclick="submitForm()"
-                                    class="btn-kirim"
                                     style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
                                     onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
-                                <i class="fab fa-telegram-plane" style="color: white;"></i> Ya, Kirim
+                                <i class="fab fa-telegram-plane" style="color: white;"></i> Ya, Update
                             </button>
 
-                            <!-- Tombol Batal -->
+                            <!-- Tombol Batal dengan ikon X -->
                             <button type="button"
                                     onclick="closeModal()"
-                                    class="btn-cancel-hover"
                                     style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
                                     onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
-                                <i class="fas fa-xmark" style="color: white;"></i> Batal
+                                <i class="fas fa-times" style="color: white;"></i> Batal
                             </button>
+
                                   </div>
                                 </div>
                             </div>
