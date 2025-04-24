@@ -38,7 +38,7 @@
                 <!-- /.card -->
                 <div class="card mb-4">
 
-                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+                    @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
 
                            {{-- ======================================================= --}}
         {{-- ALERT --}}
