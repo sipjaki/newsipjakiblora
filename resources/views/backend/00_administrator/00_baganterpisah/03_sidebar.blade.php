@@ -627,9 +627,9 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <!-- Ikon untuk AHSP Sumber Daya Air -->
-                    <i class="nav-icon bi bi-droplet text-success"></i> <!-- Ikon untuk Sumber Daya Air -->
+                    <i class="nav-icon bi bi-droplet" style="color: white;"></i> <!-- Ikon untuk Sumber Daya Air -->
                     <p style="color: white">
-                      AHSP Sumber Daya Air
+                      AHSP SDA
                       <!-- Ikon panah kanan (Chevron) diganti dengan ikon panah -->
                       {{-- <i class="nav-arrow bi bi-chevron-right"></i> --}}
                     </p>
@@ -654,7 +654,7 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <!-- Ikon untuk Rantai Pasok (Sumber Daya Air) -->
-                    <i class="nav-icon bi bi-droplet text-success"></i> <!-- Ikon untuk Sumber Daya Air -->
+                    <i class="nav-icon bi bi-droplet" style="color: white;"></i> <!-- Ikon untuk Sumber Daya Air -->
                     <p style="color: white">
                         Rantai Pasok
                     </p>
@@ -703,7 +703,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                       <!-- Ikon untuk Peraturan -->
-                      <i class="nav-icon bi bi-file-earmark-text text-success"></i> <!-- Ikon untuk Peraturan -->
+                      <i class="nav-icon bi bi-file-earmark-text" style="color: white;"></i> <!-- Ikon untuk Peraturan -->
                       <p style="color: white">
                         Peraturan
                         <!-- Ikon panah kanan (Chevron) -->
@@ -810,7 +810,7 @@
           <li class="nav-item">
               <a href="#" class="nav-link">
                   <!-- Ikon untuk Beranda -->
-                  <i class="nav-icon bi bi-house-door text-success"></i>
+                  <i class="nav-icon bi bi-house-door" style="color: white;"></i>
                   <p style="color: white">
                     Admin
                     <!-- Ikon panah kanan (Chevron) -->
@@ -844,7 +844,7 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <!-- Ikon untuk Kelembagaan -->
-                    <i class="nav-icon bi bi-person-workspace text-success"></i> <!-- Ikon untuk Kelembagaan -->
+                    <i class="nav-icon bi bi-person-workspace" style="color: white;"></i> <!-- Ikon untuk Kelembagaan -->
                     <p style="color: white">
                         Kelembagaan
                     </p>
