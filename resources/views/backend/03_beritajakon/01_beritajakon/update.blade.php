@@ -192,8 +192,6 @@
                                                 @endif
                                             @endif
                                             </div>
-
-                                            @endif
                                         </div>
 
                                         <!-- Foto 2 -->
