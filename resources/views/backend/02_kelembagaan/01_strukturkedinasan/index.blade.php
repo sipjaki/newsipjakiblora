@@ -136,11 +136,12 @@ table.zebra-table {
 
                                             <iframe src="{{ asset($item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe> --}}
                                             <iframe
-                                            src="{{ asset($item->peraturan && !str_contains($item->peraturan, 'storage') ? $item->peraturan : 'storage/' . $item->peraturan) }}"
+                                            src="{{ asset(str_contains($item->peraturan, 'storage') ? 'storage/' . $item->peraturan : $item->peraturan) }}"
                                             frameborder="0"
                                             width="100%"
                                             height="300px">
                                         </iframe>
+
 
                                         </td>
                                         <td style="text-align: justify;">{!! $item->keterangan !!}</td>
