@@ -5,20 +5,20 @@
   border-radius: 15px;
 }
 
-.zebra-table {
+.menu-table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #e5e7eb; /* Tailwind gray-200 */
 }
 
-.zebra-table th,
-.zebra-table td {
+.menu-table th,
+.menu-table td {
   padding: 12px 16px;
   border: 1px solid #e5e7eb;
   text-align: left;
 }
 
-.zebra-table thead {
+.menu-table thead {
   background-color: #f9fafb; /* Tailwind gray-50 */
 }
 
@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-table.zebra-table {
+table.menu-table {
             border-collapse: collapse;
             width: 100%;
             font-family: 'Poppins', sans-serif;
@@ -36,26 +36,26 @@ table.zebra-table {
             overflow: hidden;
         }
 
-        .zebra-table thead {
+        .menu-table thead {
             background-color: #28a745;
             color: white;
         }
 
-        .zebra-table th,
-        .zebra-table td {
+        .menu-table th,
+        .menu-table td {
             padding: 6px 12px;
             text-align: left;
         }
 
-        .zebra-table tbody tr:nth-child(odd) {
+        .menu-table tbody tr:nth-child(odd) {
             background-color: #ffffff;
         }
 
-        .zebra-table tbody tr:nth-child(even) {
+        .menu-table tbody tr:nth-child(even) {
             background-color: #dfdddd;
         }
 
-        .zebra-table tbody tr:hover {
+        .menu-table tbody tr:hover {
             background-color: #ffd100;
         }
 </style>
@@ -105,7 +105,7 @@ table.zebra-table {
                 <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="menu-table table-striped">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px; text-align:center;">No</th>
