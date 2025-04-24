@@ -210,6 +210,65 @@ table.zebra-table {
                                 <br>
                                 <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$data->keterangan}}
 
+
+                                    <div class="flex flex-col gap-[2px] mt-2">
+                                        @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
+                                            <!-- Tombol aktif dengan file dari storage -->
+                                            <div class="ml-auto">
+                                                <button id="sertifikat-btn" class="badge"
+                                                    style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                                    <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                                </button>
+                                            </div>
+
+                                            <script>
+                                                document.getElementById('sertifikat-btn').addEventListener('click', function () {
+                                                    const fileUrl = "{{ asset('storage/' . $data->berkas) }}";
+                                                    const a = document.createElement('a');
+                                                    a.href = fileUrl;
+                                                    a.download = '';
+                                                    document.body.appendChild(a);
+                                                    a.click();
+                                                    document.body.removeChild(a);
+                                                });
+                                            </script>
+
+                                        @elseif($data->berkas)
+                                            <!-- Tombol aktif dengan file dari path publik -->
+                                            <div class="ml-auto">
+                                                <button id="sertifikat-btn" class="badge"
+                                                    style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                                    <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                                </button>
+                                            </div>
+
+                                            <script>
+                                                document.getElementById('sertifikat-btn').addEventListener('click', function () {
+                                                    const fileUrl = "{{ asset($data->berkas) }}";
+                                                    const a = document.createElement('a');
+                                                    a.href = fileUrl;
+                                                    a.download = '';
+                                                    document.body.appendChild(a);
+                                                    a.click();
+                                                    document.body.removeChild(a);
+                                                });
+                                            </script>
+
+                                        @else
+                                            <!-- Tombol disable jika tidak ada file -->
+                                            <div class="ml-auto">
+                                                <button class="badge" disabled
+                                                    style="background-color: gray; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; cursor: not-allowed;">
+                                                    <i class="fas fa-download" style="margin-right:5px;"></i> File belum tersedia
+                                                </button>
+                                            </div>
+                                        @endif
+                                    </div>
+
                                 </p>
 
                             </div><!-- /.news-details-content-box -->
@@ -262,63 +321,6 @@ table.zebra-table {
 
                                 </div><!-- sidebar-widget sidebar-widget-recent-post -->
 
-                                <div class="flex flex-col gap-[2px] mt-2">
-                                    @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
-                                        <!-- Tombol aktif dengan file dari storage -->
-                                        <div class="ml-auto">
-                                            <button id="sertifikat-btn" class="badge"
-                                                style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                            </button>
-                                        </div>
-
-                                        <script>
-                                            document.getElementById('sertifikat-btn').addEventListener('click', function () {
-                                                const fileUrl = "{{ asset('storage/' . $data->berkas) }}";
-                                                const a = document.createElement('a');
-                                                a.href = fileUrl;
-                                                a.download = '';
-                                                document.body.appendChild(a);
-                                                a.click();
-                                                document.body.removeChild(a);
-                                            });
-                                        </script>
-
-                                    @elseif($data->berkas)
-                                        <!-- Tombol aktif dengan file dari path publik -->
-                                        <div class="ml-auto">
-                                            <button id="sertifikat-btn" class="badge"
-                                                style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                                <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                            </button>
-                                        </div>
-
-                                        <script>
-                                            document.getElementById('sertifikat-btn').addEventListener('click', function () {
-                                                const fileUrl = "{{ asset($data->berkas) }}";
-                                                const a = document.createElement('a');
-                                                a.href = fileUrl;
-                                                a.download = '';
-                                                document.body.appendChild(a);
-                                                a.click();
-                                                document.body.removeChild(a);
-                                            });
-                                        </script>
-
-                                    @else
-                                        <!-- Tombol disable jika tidak ada file -->
-                                        <div class="ml-auto">
-                                            <button class="badge" disabled
-                                                style="background-color: gray; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; cursor: not-allowed;">
-                                                <i class="fas fa-download" style="margin-right:5px;"></i> File belum tersedia
-                                            </button>
-                                        </div>
-                                    @endif
-                                </div>
 
                                 {{-- <div class="sidebar-widget sidebar-widget-recent-category">
                                     <div class="sidebar-widget-recent-category-box">
