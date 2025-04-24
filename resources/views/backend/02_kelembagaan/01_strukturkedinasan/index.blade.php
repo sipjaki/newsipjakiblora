@@ -18,7 +18,7 @@
 
               <!--begin::Container-->
 
-              @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+              {{-- @include('backend.00_administrator.00_baganterpisah.09_selamatdatang') --}}
 
           <!--end::Container-->
         </div>
