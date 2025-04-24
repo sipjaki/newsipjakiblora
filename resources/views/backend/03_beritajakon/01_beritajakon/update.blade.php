@@ -132,7 +132,7 @@
                                             <label class="form-label" for="keterangan">
                                                 <i class="bi bi-file-earmark-text" style="margin-right: 8px; color: navy;"></i> Keterangan
                                             </label>
-                                            <textarea id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" style="height: 150px;">{{ old('keterangan', $data->keterangan) }}</textarea>
+                                            <textarea id="keterangan" name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" style="height: 300px;">{{ old('keterangan', $data->keterangan) }}</textarea>
                                             @error('keterangan')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
