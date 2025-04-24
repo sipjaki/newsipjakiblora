@@ -181,14 +181,14 @@
              <!-- /.card -->
          </div>
          <!-- /.col -->
-     </div>
-     <!--end::Row-->
+        </div>
+        <!--end::Row-->
+    </section>
      </div>
                <!--end::Container-->
      <!--end::App Content Header-->
      <!--begin::App Content-->
        <!--end::App Content-->
-</section>
 
    </main>
    <!--end::App Main-->
