@@ -413,62 +413,73 @@ public function beartikeljakonupdate($id)
 }
 
 // -------------------- UPDATE DATA MENU ARTIKLE JASA KONSTRUKSI  ----------------------
-            public function beartikeljakoncreateupdate(Request $request, $id)
-            {
-                // Validasi input dengan pesan kustom
-               // Validasi input dengan pesan kustom
-                    $validatedData = $request->validate([
-                        'user_id' => 'required|exists:users,id',  // Pastikan user_id harus ada
-                        'judul' => 'required|string|max:255',  // Judul wajib diisi
-                        'tanggal' => 'required|date',  // Tanggal wajib diisi
-                        'keterangan' => 'required|string',  // Keterangan wajib diisi
-                        'foto1' => 'nullable|image|max:7168', // Foto tetap bisa null tapi jika ada harus image
-                        'foto2' => 'nullable|image|max:7168',
-                        'foto3' => 'nullable|image|max:7168',
-                    ], [
-                        'user_id.required' => 'Penulis harus dipilih!',
-                        'user_id.exists' => 'Penulis tidak ditemukan!',
-                        'judul.required' => 'Judul berita wajib diisi!',
-                        'tanggal.required' => 'Tanggal harus diisi!',
-                        'keterangan.required' => 'Keterangan wajib diisi!',
-                        'foto1.image' => 'Foto/Brosur 1 harus berupa gambar!',
-                        'foto2.image' => 'Foto/Brosur 2 harus berupa gambar!',
-                        'foto3.image' => 'Foto/Brosur 3 harus berupa gambar!',
-                    ]);
 
-                // Cari data berdasarkan ID
-                $databeritajakon = artikeljakonmasjaki::where('id', $id)->firstOrFail();
+public function beartikeljakoncreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        'user_id' => 'required|exists:users,id',
+        'judul' => 'required|string|max:255',
+        'tanggal' => 'required|date',
+        'keterangan' => 'required|string',
+        'foto1' => 'nullable|image|max:7168',
+        'foto2' => 'nullable|image|max:7168',
+        'foto3' => 'nullable|image|max:7168',
+    ], [
+        'user_id.required' => 'Penulis harus dipilih!',
+        'user_id.exists' => 'Penulis tidak ditemukan!',
+        'judul.required' => 'Judul berita wajib diisi!',
+        'tanggal.required' => 'Tanggal harus diisi!',
+        'keterangan.required' => 'Keterangan wajib diisi!',
+        'foto1.image' => 'Foto/Brosur 1 harus berupa gambar!',
+        'foto2.image' => 'Foto/Brosur 2 harus berupa gambar!',
+        'foto3.image' => 'Foto/Brosur 3 harus berupa gambar!',
+    ]);
 
-                // Persiapkan data update
-                $updateData = [
-                    'user_id' => $validatedData['user_id'] ?? $databeritajakon->user_id, // Jika user_id tidak ada, gunakan data sebelumnya
-                    'judul' => $validatedData['judul'] ?? $databeritajakon->judulberita, // Jika judulberita tidak ada, gunakan data sebelumnya
-                    'tanggal' => $validatedData['tanggal'] ?? $databeritajakon->tanggal, // Jika tanggal tidak ada, gunakan data sebelumnya
-                    'keterangan' => $validatedData['keterangan'] ?? $databeritajakon->keterangan, // Jika keterangan tidak ada, gunakan data sebelumnya
-                ];
+    // Cari data berdasarkan ID
+    $databeritajakon = artikeljakonmasjaki::where('id', $id)->firstOrFail();
 
-                // Memeriksa apakah foto, foto1, dan foto2 ada dalam request dan jika ada di-upload
-                if ($request->hasFile('foto1')) {
-                    $updateData['foto1'] = $request->file('foto1')->store('02_beritajakon/artikel', 'public'); // Menyimpan foto dan mengambil path-nya
-                }
+    // Persiapkan data update
+    $updateData = [
+        'user_id' => $validatedData['user_id'],
+        'judul' => $validatedData['judul'],
+        'tanggal' => $validatedData['tanggal'],
+        'keterangan' => $validatedData['keterangan'],
+    ];
 
-                if ($request->hasFile('foto2')) {
-                    $updateData['foto2'] = $request->file('foto2')->store('02_beritajakon/artikel', 'public'); // Menyimpan foto1 dan mengambil path-nya
-                }
+    // Fungsi penyimpanan langsung ke folder public
+    $saveToPublic = function ($file, $folderPath) {
+        $destination = public_path($folderPath);
+        if (!File::exists($destination)) {
+            File::makeDirectory($destination, 0777, true, true);
+        }
+        $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
+        $file->move($destination, $fileName);
+        return $folderPath . '/' . $fileName;
+    };
 
-                if ($request->hasFile('foto3')) {
-                    $updateData['foto3'] = $request->file('foto3')->store('02_beritajakon/artikel', 'public'); // Menyimpan foto2 dan mengambil path-nya
-                }
+    // Simpan gambar jika ada
+    if ($request->hasFile('foto1')) {
+        $updateData['foto1'] = $saveToPublic($request->file('foto1'), '02_berita/02_artikel/01_foto1');
+    }
 
-                // Update data berita berdasarkan data yang sudah tervalidasi
-                $databeritajakon->update($updateData);
+    if ($request->hasFile('foto2')) {
+        $updateData['foto2'] = $saveToPublic($request->file('foto2'), '02_berita/02_artikel/02_foto2');
+    }
 
-                // Flash session untuk menampilkan pesan sukses
-                session()->flash('update', 'Data Berhasil Diupdate!');
+    if ($request->hasFile('foto3')) {
+        $updateData['foto3'] = $saveToPublic($request->file('foto3'), '02_berita/02_artikel/03_foto3');
+    }
 
-                // Redirect ke halaman yang sesuai
-                return redirect('/beartikeljakon');
-            }
+    // Simpan perubahan ke database
+    $databeritajakon->update($updateData);
+
+    // Flash message
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect
+    return redirect('/beartikeljakon');
+}
 
 
 // MENU CREATE ARTIKEL JAKON     ----------------------------------------------------------------------------
