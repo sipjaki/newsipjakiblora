@@ -50,7 +50,7 @@
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px; text-align:center;">No</th>
