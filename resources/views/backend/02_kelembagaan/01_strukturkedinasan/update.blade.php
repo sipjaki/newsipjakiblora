@@ -138,35 +138,39 @@
 <!-- Tombol Update dengan Konfirmasi -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
     <button type="button"
-        onclick="openModal()"
-        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-        onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
-        style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+      onclick="openModal()"
+      onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+      onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
+      style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
 
-        <!-- Ikon SVG Pensil -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-            fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-          <path d="M15.502 1.94a1.5 1.5 0 0 1 0 2.12L5.207 14.354a1 1 0 0 1-.39.243l-4 1.5a.5.5 0 0 1-.641-.641l1.5-4a1 1 0 0 1 .243-.39L13.44.44a1.5 1.5 0 0 1 2.12 0zm-2.121 1.415L4.854 11.882l-.708 2.122 2.121-.707L15.5 3.354l-2.12-2.121z"/>
-        </svg>
+      <!-- Ikon SVG Pensil -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+        <path
+          d="M15.502 1.94a1.5 1.5 0 0 1 0 2.12L5.207 14.354a1 1 0 0 1-.39.243l-4 1.5a.5.5 0 0 1-.641-.641l1.5-4a1 1 0 0 1 .243-.39L13.44.44a1.5 1.5 0 0 1 2.12 0zm-2.121 1.415L4.854 11.882l-.708 2.122 2.121-.707L15.5 3.354l-2.12-2.121z" />
+      </svg>
 
-        <span style="font-family: 'Poppins', sans-serif;">Update</span>
+      <span style="font-family: 'Poppins', sans-serif;">Update</span>
     </button>
-</div>
+  </div>
 
-<!-- Modal Konfirmasi -->
-<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+  <!-- Modal Konfirmasi -->
+  <div id="confirmModal"
+    style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; display: none; justify-content: center; align-items: center;">
+
+    <div
+      style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
       <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
         Apakah Anda yakin ingin melakukan update data ini?
       </p>
 
       <div style="display: flex; justify-content: center; gap: 12px;">
         <button type="button" onclick="submitForm()"
-                style="background-color: #f97316; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
+          style="background-color: #f97316; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
           Ya, Update
         </button>
         <button type="button" onclick="closeModal()"
-                style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
+          style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer;">
           Batal
         </button>
       </div>
@@ -175,15 +179,20 @@
 
   <script>
     function openModal() {
-        const modal = document.getElementById("confirmModal");
-        if (modal) modal.style.display = "flex";
+      const modal = document.getElementById("confirmModal");
+      if (modal) modal.style.display = "flex";
     }
 
     function closeModal() {
-        const modal = document.getElementById("confirmModal");
-        if (modal) modal.style.display = "none";
+      const modal = document.getElementById("confirmModal");
+      if (modal) modal.style.display = "none";
     }
-    </script>
+
+    function submitForm() {
+      alert('Data berhasil diupdate!'); // Ganti dengan form submission logic kamu
+      closeModal();
+    }
+  </script>
 
 
                         </form>
