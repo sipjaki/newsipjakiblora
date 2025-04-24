@@ -1,168 +1,312 @@
+<style>
+    /* file: resources/css/custom.css atau langsung di style tag */
+.full-width-container {
+  max-width: 80% !important;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 15px;
+}
+
+.zebra-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+}
+
+.zebra-table th,
+.zebra-table td {
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.zebra-table thead {
+  background-color: #f9fafb; /* Tailwind gray-50 */
+}
+
+.view-icon {
+  color: #374151; /* Tailwind gray-700 */
+  cursor: pointer;
+}
+
+table.zebra-table {
+            border-collapse: collapse;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .zebra-table thead {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .zebra-table th,
+        .zebra-table td {
+            padding: 6px 12px;
+            text-align: left;
+        }
+
+        .zebra-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .zebra-table tbody tr:nth-child(even) {
+            background-color: #dfdddd;
+        }
+
+        .zebra-table tbody tr:hover {
+            background-color: #ffd100;
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+        }
+
+
+        .btn-navy {
+        background-color: #001f3f;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        cursor: default;
+        transition: all 0.3s ease;
+    }
+
+    .btn-navy:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid #001f3f;
+    }
+
+</style>
+{{-- ================================ --}}
+
 @include('frontend.00_approve.01_cssterpisah.header')
 
-
-<body>
-
-    @include('frontend.00_approve.01_cssterpisah.loader')
+    {{-- @include('frontend.00_approve.01_cssterpisah.loader') --}}
     @include('frontend.00_approve.01_cssterpisah.header1')
 
-    <div class="page-wrapper">
-	<section class="page-banner">
-		<div class="container">
-			<div class="page-banner-title">
-				<h3 style="color: black; font-size:30px;">{{$title}}</h3>
-			</div><!-- page-banner-title -->
-		</div><!-- container -->
-	</section><!--page-banner-->
+<!-- Wrapper Background Section -->
+<section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%;">
 
-	<section class="news-details-section" style="background-image: url(assets/00_dokmasjaki/03_datajakon/bannerbetter.jpg);">
-		<div class="container"
-        style="
-        background: white;
-        max-width: 95%;
-        margin: 30px auto;
-        padding: 20px;
-        height: auto;
-        border-radius: 20px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        position: relative;
-        z-index: 10;"
-        >
-			<div class="row">
-				<div class="col-lg-8">
+<!-- Breadcrumb + Search Bar -->
+<div class="max-w-[1130px] mx-auto pt-[50px] px-4 font-poppins" sty>
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 
-                    {{-- @foreach ($data->skip(0)->take(1) as $item) --}}
-                    <div class="news-details-box-image">
-                        <div class="news-details-box-image-inner row">
-                            <div class="col-md-12">
-                                <img src="{{ asset('storage/' . $data->foto1) }}" class="img-fluid" alt="img-193" style="width: 100%; object-fit: cover;">
-                            </div>
-                            <div class="col-md-8 d-flex align-items-center justify-content-center">
-                                <a href="#" class="news-details-box-date">
-                                    {{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('l, d F Y') }}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br><br>
-
-                    <div class="news-details-content-box" style="margin-left: 25px;">
-                        <h4 style="text-align: justify;">{{$data->judul}}</h4>
-                        <br>
-                        <h5 style="text-align: justify;">
-                            {{$data->keterangan}}
-                        </h5>
-
-                        <br>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img src="{{ asset('storage/' . $data->foto2) }}" class="img-fluid" alt="img-193" style="width: 100%; object-fit: cover;">
-                            </div>
-                            <div class="col-md-6">
-                                <img src="{{ asset('storage/' . $data->foto3) }}" class="img-fluid" alt="img-193" style="width: 100%; object-fit: cover;">
-                            </div>
-                        </div>
-
-                        <br>
-
-                    <div style="display: inline-block;">
-                        <button id="sertifikat-btn" class="badge"
-                           style="background-color: navy; color: white; border: none; transition: 0.3s; padding:15px 20px; font-size: 16px; border-radius:5px;"
-                           onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                           onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                            <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                        </button>
-                    </div>
-
-                    </div><!-- /.news-details-content-box -->
+      <!-- KIRI: Gambar + Breadcrumb -->
+      <div class="flex items-center gap-4">
+        <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" loading="lazy" />
+        <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
+          <span>/</span>
+          <a href="#" class="font-medium text-blue-600" style="font-size: 16px; color:blue;">
+            {{$title}}
+          </a>
+          {{-- <span>/</span>
+          <a href="/datajakon/statistikabujkblora" class="font-medium" style="font-size: 16px;">
+            Data Statistik
+          </a> --}}
+        </div>
+      </div>
 
 
-            <script>
-                document.getElementById('sertifikat-btn').addEventListener('click', function() {
-                    const fileUrl = "{{ asset('storage/' . $data->berkas) }}"; // URL file yang ingin diunduh
-                    const a = document.createElement('a');
-                    a.href = fileUrl;
-                    a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                });
-                </script>
+      <!-- KANAN: Search Bar -->
+   <!-- Search Bar Wrapper -->
 
 
+    </div>
+  </div>
+
+    <!-- Konten Data -->
+    <div class="full-width-container mx-auto px-4 pb-10">
+        <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
+            <div style="display: flex; justify-content: center; margin-bottom: -20px;">
+                <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
+                    <button type="button" style="
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        padding: 12px 20px;
+                        font-size: 16px;
+                        font-family: 'Poppins', sans-serif;
+                        border: 1px solid #28a745;
+                        background-color: #28a745;
+                        color: white;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        width: 100%;
+                    "
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+                    >
+                        <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;" loading="lazy">
+                        {{ $title }}
+                    </button>
+                </div>
+            </div>
 
 
+            <section class="news-details-section" style="margin-top:-120px; margin-bottom:-100px;">
+                    <div class="row">
+                        <div class="col-lg-8">
 
-                    {{-- @endforeach --}}
+                            {{-- @foreach ($data->skip(0)->take(1) as $item) --}}
 
-                </div><!-- col-lg-8 -->
+                            <div class="news-details-box-image">
+                                <div class="news-details-box-image-inner">
+                                    <div style="margin-top: 10px;">
+                                        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                            <!-- Menampilkan gambar dari storage -->
+                                            <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->foto)
+                                            <!-- Menampilkan gambar dari path luar storage -->
+                                            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 600px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <!-- Placeholder jika tidak ada data -->
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
+                                    <a href="#" class="news-details-box-date" style="font-family: 'Poppins', sans-serif;">{{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('l, d F Y') }}</a>
+                                </div><!-- news-details-box-image-inner -->
+                            </div><!-- news-details-box-image -->
 
-				<div class="col-lg-4">
-					<div class="sidebar">
-						<div class="sidebar-form-content">
+                            <br><br>
+                            <div class="news-details-content-box" style="margin-left: 25px;">
+                                <h4 style="font-family: 'Poppins', sans-serif;">{{$data->judul}}</h4>
+                                <br>
 
-						</div><!-- sidebar-form-content -->
-						<div class="sidebar-widget sidebar-widget-recent-post">
-							<div style="display: flex; justify-content: center;">
-                                <button class="badge"
-                                   style="background-color: rgb(32, 92, 32); color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 16px; border-radius:10px; margin-bottom:20px;"
-                                   onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                   onmouseout="this.style.backgroundColor='rgb(32, 92, 32)'; this.style.color='white'; this.style.border='none';">
-                                    <i class="fas fa-list" style="margin-right:5px;"></i> Daftar Artikel Jakon
-                                </button>
-                            </div>
+                                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                    <div style="width: 50%;">
+                                        @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
+                                            <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->foto1)
+                                            <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
 
-                            @foreach ($dataartikel->skip(1)->take(7) as $item)
+                                    <div style="width: 50%;">
+                                        @if($data->foto2 && file_exists(public_path('storage/' . $data->foto2)))
+                                            <img src="{{ asset('storage/' . $data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->foto2)
+                                            <img src="{{ asset($data->foto2) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
+                                </div>
+                                <br>
+                                <p style="text-align: justify; font-family: 'Poppins', sans-serif;">{{$data->keterangan}}
 
-                            <div class="sidebar-recent-post">
-								<div class="sidebar-recent-post-img">
-                                    <img src="{{ asset('storage/' . $item->foto1) }}" alt="Gambar Pelatihan SKK Blora" width="200px" loading="lazy">
-                                </div><!-- sidebar-recent-post-img -->
-								<div class="sidebar-recent-post-content">
-                                    <div class="sidebar-meta">
-										<div class="sidebar-post-title">
-											<h5><a href="/artikeljakon/{{$item->judul}}">{{$item->judul}}</a></h5>
-										</div><!-- sidebar-post-title -->
-                                        <p>{{$item->user->name}}</p>
-									</div><!-- sidebar-meta -->
-								</div><!-- sidebar-recent-post-content -->
-							</div><!-- sidebar-recent-post -->
+                                </p>
+
+                            </div><!-- /.news-details-content-box -->
+
+                            {{-- @endforeach --}}
+
+                        </div><!-- col-lg-8 -->
+
+                        <div class="col-lg-4">
+                            <div class="sidebar">
+                            <div class="sidebar-widget sidebar-widget-recent-post">
+                                    <h4 style="font-family: 'Poppins', sans-serif;">Daftar Berita</h4>
+
+                                    @foreach ($databerita->skip(1)->take(7) as $item)
+
+                                    <div class="sidebar-recent-post">
+                                        <div class="sidebar-recent-post-img">
+                                            <div style="margin-top: 10px;">
+                                                @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                                    <!-- Menampilkan gambar dari storage -->
+                                                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @elseif($item->foto)
+                                                    <!-- Menampilkan gambar dari path luar storage -->
+                                                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                @else
+                                                    <!-- Placeholder jika tidak ada data -->
+                                                    <p>Data belum diupdate</p>
+                                                @endif
+                                            </div>
+                                        </div><!-- sidebar-recent-post-img -->
+                                        <div class="sidebar-recent-post-content">
+                                            <div class="sidebar-meta">
+                                                <div class="sidebar-meta-item">
+                                                    <div class="sidebar-meta-icon">
+                                                        <span class="author" style="font-family: 'Poppins', sans-serif;">
+                                                            Penulis : <a href="news-details.html">Mas Zaki</a>
+                                                        </span><!-- author -->
+                                                    </div><!-- sidebar-meta-icon -->
+                                                </div><!-- sidebar-meta-item -->
+                                                <div class="sidebar-post-title">
+                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/beritajakon/{{$item->judul}}">{{$item->judul}}</a></h5>
+                                                </div><!-- sidebar-post-title -->
+                                            </div><!-- sidebar-meta -->
+                                        </div><!-- sidebar-recent-post-content -->
+                                    </div><!-- sidebar-recent-post -->
 
 
-                            @endforeach
+                                    @endforeach
 
 
-                        </div><!-- sidebar-widget sidebar-widget-recent-post -->
+                                </div><!-- sidebar-widget sidebar-widget-recent-post -->
 
-                        {{-- <div class="sidebar-widget sidebar-widget-recent-category">
-							<div class="sidebar-widget-recent-category-box">
-								<h4 class="section-title text-left">Categories</h4>
-								<ul class="list-unstyled">
-									<li><a href="news-details.html">City News<i class="fa-solid fa-chevron-right"></i></a></li>
-									<li><a href="news-details.html">Community<i class="fa-solid fa-chevron-right"></i></a></li>
-									<li><a href="news-details.html">Culture <i class="fa-solid fa-chevron-right"></i></a></li>
-									<li><a href="news-details.html">Devlopement<i class="fa-solid fa-chevron-right"></i></a></li>
-									<li><a href="news-details.html">Government<i class="fa-solid fa-chevron-right"></i></a></li>
-								</ul><!-- list-unstyled -->
-							</div><!-- sidebar-widget-recent-category-box -->
-						</div><!-- sidebar-widget-one sidebar-widget-recent-category --> --}}
-						{{-- <div class="sidebar-widget sidebar-widget-tag">
-							<h4>Tags</h4>
-							<div class="sidebar-widget-tag-inner">
-								<a href="news-details.html">Culture</a>
-								<a href="news-details.html">Government</a>
-								<a href="news-details.html">City</a>
-								<a href="news-details.html">Development</a>
-								<a href="news-details.html">Life</a>
-							</div><!-- sidebar-widget-tag-inner -->
-						</div><!-- sidebar-widget sidebar-widget-tag --> --}}
-					</div><!-- sidebar -->
-				</div><!-- col-lg-4 -->
-			</div><!-- row -->
-		</div><!-- container -->
-	</section><!--causes-one-section-->
-</div><!--page-wrapper-->
+                                {{-- <div class="sidebar-widget sidebar-widget-recent-category">
+                                    <div class="sidebar-widget-recent-category-box">
+                                        <h4 class="section-title text-left">Categories</h4>
+                                        <ul class="list-unstyled">
+                                            <li><a href="news-details.html">City News<i class="fa-solid fa-chevron-right"></i></a></li>
+                                            <li><a href="news-details.html">Community<i class="fa-solid fa-chevron-right"></i></a></li>
+                                            <li><a href="news-details.html">Culture <i class="fa-solid fa-chevron-right"></i></a></li>
+                                            <li><a href="news-details.html">Devlopement<i class="fa-solid fa-chevron-right"></i></a></li>
+                                            <li><a href="news-details.html">Government<i class="fa-solid fa-chevron-right"></i></a></li>
+                                        </ul><!-- list-unstyled -->
+                                    </div><!-- sidebar-widget-recent-category-box -->
+                                </div><!-- sidebar-widget-one sidebar-widget-recent-category --> --}}
+                                {{-- <div class="sidebar-widget sidebar-widget-tag">
+                                    <h4>Tags</h4>
+                                    <div class="sidebar-widget-tag-inner">
+                                        <a href="news-details.html">Culture</a>
+                                        <a href="news-details.html">Government</a>
+                                        <a href="news-details.html">City</a>
+                                        <a href="news-details.html">Development</a>
+                                        <a href="news-details.html">Life</a>
+                                    </div><!-- sidebar-widget-tag-inner -->
+                                </div><!-- sidebar-widget sidebar-widget-tag --> --}}
+                            </div><!-- sidebar -->
+                        </div><!-- col-lg-4 -->
+                    </div><!-- row -->
+            </section><!--causes-one-section-->
+
+
+        </div>
+    </div>
+    <br><br><br>
+
+</section>
+
+
+<div class="progress-wrap">
+          <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+              <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+          </svg>
+      </div>
+      <!-- back to top end -->
+
+    </div>
+
+
 
 @include('frontend.00_approve.01_cssterpisah.footer1')
 @include('frontend.00_approve.01_cssterpisah.footer')
