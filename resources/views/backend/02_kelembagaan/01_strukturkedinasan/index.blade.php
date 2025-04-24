@@ -132,7 +132,7 @@ table.zebra-table {
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{!! $item->judul !!}</td>
                                         <td style="text-align: center;">
-                                            <iframe src="{{ asset('storage/' . $item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            {{-- <iframe src="{{ asset('storage/' . $item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe> --}}
 
                                             {{-- <iframe src="{{ asset($item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe> --}}
                                             {{-- <iframe
@@ -141,6 +141,14 @@ table.zebra-table {
                                             width="100%"
                                             height="300px">
                                         </iframe> --}}
+
+                                        @if(strpos($item->peraturan, 'storage') !== false)
+                                                {{-- If file is still in storage directory (default state) --}}
+                                                <iframe src="{{ asset('storage/' . $item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @else
+                                                {{-- If the file has been updated and is now in the public directory --}}
+                                                <iframe src="{{ asset($item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @endif
 
 
                                         </td>
