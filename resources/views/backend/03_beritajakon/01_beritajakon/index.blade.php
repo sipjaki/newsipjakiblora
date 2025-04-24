@@ -93,7 +93,7 @@
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 200px; text-align:center; background:white; color:black;">Penulis</th>
+         <th style="width: 200px; text-align:center;">Penulis</th>
          <th style="width: 500px; text-align:center;">Judul Berita</th>
          <th style="width: 150px; text-align:center;">Tanggal</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
