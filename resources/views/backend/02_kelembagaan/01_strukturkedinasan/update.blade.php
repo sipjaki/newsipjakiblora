@@ -44,33 +44,18 @@
 
 
         <div class="card card-primary card-outline mb-6">
-            <div style="display: flex; justify-content: flex-end; margin-top: 10px;">
-                <a href="/bestrukturdinas" style="text-decoration: none;">
+            <div style="display: flex; justify-content: flex-end; margin-top:10px;">
+                <a href="/bestrukturdinas">
                     <button
-                        style="
-                            background-color: #374151;
-                            color: white;
-                            border: none;
-                            margin-right: 10px;
-                            padding: 10px 20px;
-                            border-radius: 15px;
-                            font-size: 16px;
-                            font-family: 'Poppins', sans-serif;
-                            cursor: pointer;
-                            display: flex;
-                            align-items: center;
-                            transition: background-color 0.3s, color 0.3s;
-                        "
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                    >
-                        <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
-                        Kembali
-                    </button>
-                </a>
-            </div>
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                    <!-- Ikon Kembali -->
+                    <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
+                    <span style="font-family: 'Poppins', sans-serif; font-size:16px;">Kembali</span>
+                </button>
+            </a>
         </div>
-
         <hr>
 
 
