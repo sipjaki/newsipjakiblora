@@ -262,6 +262,30 @@ table.zebra-table {
 
                                 </div><!-- sidebar-widget sidebar-widget-recent-post -->
 
+                                <div class="flex flex-col gap-[2px]">
+                                    <br>
+                                    <div class="ml-auto">
+                                        <button id="sertifikat-btn" class="badge"
+                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
+                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
+                                            <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <script>
+                                    document.getElementById('sertifikat-btn').addEventListener('click', function () {
+                                        const fileUrl = "{{ asset($data->berkas) }}"; // Ambil URL file dari Laravel
+                                        const a = document.createElement('a');
+                                        a.href = fileUrl;
+                                        a.download = ''; // Kosongkan nama file agar browser pakai nama asli
+                                        document.body.appendChild(a);
+                                        a.click();
+                                        document.body.removeChild(a);
+                                    });
+                                </script>
+
                                 {{-- <div class="sidebar-widget sidebar-widget-recent-category">
                                     <div class="sidebar-widget-recent-category-box">
                                         <h4 class="section-title text-left">Categories</h4>
