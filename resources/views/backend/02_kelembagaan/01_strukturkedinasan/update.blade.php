@@ -140,9 +140,17 @@
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                     onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
                                     style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                    <i class="fa fa-edit" style="margin-right: 8px;"></i><span style="font-family: 'Poppins', sans-serif;">Update</span>
+
+                                    <!-- Ikon SVG Pensil -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                         fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                      <path d="M15.502 1.94a1.5 1.5 0 0 1 0 2.12L5.207 14.354a1 1 0 0 1-.39.243l-4 1.5a.5.5 0 0 1-.641-.641l1.5-4a1 1 0 0 1 .243-.39L13.44.44a1.5 1.5 0 0 1 2.12 0zm-2.121 1.415L4.854 11.882l-.708 2.122 2.121-.707L15.5 3.354l-2.12-2.121z"/>
+                                    </svg>
+
+                                    <span style="font-family: 'Poppins', sans-serif;">Update</span>
                                 </button>
                             </div>
+
                         </form>
 
                              </div>
