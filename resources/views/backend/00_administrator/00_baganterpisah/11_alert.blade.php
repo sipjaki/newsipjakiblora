@@ -194,7 +194,7 @@
     <div class="modal-box">
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo" class="logo-animate-bounce">
         <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil !</div>
         <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a>
@@ -209,7 +209,7 @@
     <div class="modal-box">
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo" class="logo-animate-bounce">
         <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
         <button class="button-text">{{ session('info') }}</button>
@@ -222,7 +222,7 @@
     <div class="modal-box">
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo" class="logo-animate-bounce">
         <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
         <button class="button-text">{{ session('pengesahankrk') }}</button>
@@ -235,7 +235,7 @@
     <div class="modal-box">
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo" class="logo-animate-bounce">
         <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-textupdate">Update Berhasil !</div>
         <button class="button-textupdate">{{ session('update') }}</button>
@@ -248,7 +248,7 @@
     <div class="modal-box">
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo" class="logo-animate-bounce">
         <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div style="font-size: 36px; color: red; font-weight: bold; margin: 20px 0;">Delete Berhasil !</div>
         <button class="button-delete">{{ session('delete') }}</button>
@@ -261,7 +261,7 @@
     <div class="modal-box-question">
         <div class="modal-crane"></div>
         <button type="button" class="btnalert-view" onclick="this.closest('.modal-question-alert').style.display='none';">&times;</button>
-        <img src="/assets/00_masjaki/images/informasi-min.png" alt="Logo" class="logo-animate-bounce">
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo" class="logo-animate-bounce">
         <p style="color: black;">Pemerintah Kabupaten Blora</p>
         <div class="success-text" style="font-size: 18px;">Admin Kami Akan Menghubungi Saudara, Harap Menunggu!</div>
         <button class="button-text">{{ session('pertanyaan') }}</button>
