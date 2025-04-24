@@ -252,7 +252,7 @@ table.zebra-table {
                                                     </div><!-- sidebar-meta-icon -->
                                                 </div><!-- sidebar-meta-item -->
                                                 <div class="sidebar-post-title">
-                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/beritajakon/{{$item->judul}}">{{$item->judul}}</a></h5>
+                                                    <h5 style="font-family: 'Poppins', sans-serif;"><a href="/artikeljakon/{{$item->judul}}">{{$item->judul}}</a></h5>
                                                 </div><!-- sidebar-post-title -->
                                             </div><!-- sidebar-meta -->
                                         </div><!-- sidebar-recent-post-content -->
