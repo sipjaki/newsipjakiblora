@@ -116,28 +116,37 @@ table.menu-table {
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     @foreach ($data as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{!! $item->judul !!}</td>
-                                        <td style="text-align: center;">
-                                            <iframe src="{{ asset('storage/' . $item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+
+                                        {{-- Berkas dengan iframe yang tidak bisa diklik --}}
+                                        <td style="text-align: center; position: relative;">
+                                            <iframe
+                                                src="{{ asset('storage/' . $item->peraturan) }}"
+                                                frameborder="0"
+                                                width="100%"
+                                                height="300px"
+                                                style="pointer-events: none; position: relative; z-index: 0;">
+                                            </iframe>
                                         </td>
+
                                         <td style="text-align: justify;">{!! $item->keterangan !!}</td>
                                         <td style="text-align: center;">
-
-                                            <a href="/struktur/update/{{$item->judul}}" class="btn btn-sm btn-warning me-2" title="Update">
+                                            <a href="/struktur/update/{{$item->judul}}"
+                                               class="btn btn-sm btn-warning me-2"
+                                               title="Update"
+                                               style="position: relative; z-index: 10;">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
-
                                         </td>
-
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
                     <!-- /.card-body -->
                 </div>
