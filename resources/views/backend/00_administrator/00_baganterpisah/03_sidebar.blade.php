@@ -1,33 +1,87 @@
 <style>
     /* Efek hover saat menu utama di-hover */
-/* Efek hover saat menu utama di-hover */
-.nav-item > .nav-link:hover {
-    background-color: #ffd100 !important; /* Warna latar belakang hover */
-    color: black !important; /* Warna teks saat hover */
-    transition: background-color 0.3s ease-in-out;
-}
+    .nav-item > .nav-link:hover {
+        background-color: #ffd100 !important; /* Warna latar belakang hover */
+        color: black !important; /* Warna teks saat hover */
+        transition: background-color 0.3s ease-in-out;
+    }
 
-/* Mengubah warna ikon dan teks saat di-hover */
-.nav-item > .nav-link:hover i,
-.nav-item > .nav-link:hover p {
-    color: black !important; /* Warna ikon dan teks berubah menjadi hitam */
-}
+    /* Mengubah warna ikon dan teks saat di-hover */
+    .nav-item > .nav-link:hover i,
+    .nav-item > .nav-link:hover p {
+        color: black !important; /* Warna ikon dan teks berubah menjadi hitam */
+    }
 
-/* Efek saat menu utama aktif (dipilih/diklik) */
-.nav-item > .nav-link.active {
-    background-color: #ffd100 !important;
-    color: black !important;
-}
+    /* Efek saat menu utama aktif (dipilih/diklik) */
+    .nav-item > .nav-link.active {
+        background-color: #ffd100 !important;
+        color: black !important;
+    }
 
-/* Mengubah warna ikon dan teks saat menu aktif */
-.nav-item > .nav-link.active i,
-.nav-item > .nav-link.active p {
-    color: black !important;
-}
+    /* Mengubah warna ikon dan teks saat menu aktif */
+    .nav-item > .nav-link.active i,
+    .nav-item > .nav-link.active p {
+        color: black !important;
+    }
 
+    /* Animasi Crane dan Background Modern Hijau */
+    body {
+        background: linear-gradient(-45deg, #2ecc71, #27ae60, #1abc9c, #16a085);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    @keyframes gradientBG {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Animasi Crane */
+    .crane-animation {
+        position: fixed;
+        bottom: 20px;
+        right: -200px;
+        width: 200px;
+        height: 150px;
+        background-image: url('https://www.svgrepo.com/show/530643/crane.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: craneMove 20s linear infinite;
+        z-index: -1;
+        opacity: 0.8;
+        filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+    }
+
+    @keyframes craneMove {
+        0% {
+            transform: translateX(0) translateY(0);
+        }
+        25% {
+            transform: translateX(-50vw) translateY(-20px);
+        }
+        50% {
+            transform: translateX(-100vw) translateY(0);
+        }
+        75% {
+            transform: translateX(-150vw) translateY(-20px);
+        }
+        100% {
+            transform: translateX(-200vw) translateY(0);
+        }
+    }
 </style>
 
-
+<!-- Tambahkan elemen crane di body Anda -->
+<div class="crane-animation"></div>
 
 
       <!--begin::Sidebar-->
