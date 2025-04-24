@@ -8,7 +8,7 @@
         font-family: 'Poppins', sans-serif !important;
     }
 
-    /* Efek hover menu (dipertahankan sesuai permintaan) */
+    /* Hover & Active menu */
     .nav-item > .nav-link:hover {
         background-color: #ffd100 !important;
         color: black !important;
@@ -27,28 +27,30 @@
         color: black !important;
     }
 
-    /* Style khusus untuk sidebar */
+    /* Struktur utama sidebar */
     .app-sidebar {
         position: relative;
         overflow: hidden;
         background: linear-gradient(135deg, #50cc5a 0%, #4db150 50%, #66bb6a 100%);
         min-height: 100vh;
+        z-index: 1;
     }
 
-    /* Overlay untuk efek modern */
+    /* Overlay hanya di dalam sidebar, tidak niban halaman */
     .sidebar-overlay {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        right: 0;
+        bottom: 0;
         background: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
         background-size: 20px 20px;
         z-index: 0;
+        pointer-events: none; /* FIX klik */
     }
 
-    /* Animasi Crane untuk Sidebar */
+    /* Animasi crane dalam sidebar */
     .sidebar-crane {
         position: absolute;
         bottom: 20px;
@@ -62,6 +64,7 @@
         opacity: 0.15;
         filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
         z-index: 0;
+        pointer-events: none; /* FIX klik juga */
     }
 
     @keyframes sidebarCraneMove {
@@ -72,14 +75,16 @@
         100% { transform: translateX(-200%) translateY(0); }
     }
 
-    /* Pastikan konten menu di atas crane dan overlay */
+    /* Pastikan isi sidebar selalu di atas overlay/crane */
     .sidebar-brand,
-    .sidebar-wrapper {
+    .sidebar-wrapper,
+    .nav-link,
+    .nav-item {
         position: relative;
-        z-index: 1;
+        z-index: 2;
     }
 
-    /* Perbaikan warna teks untuk kontras */
+    /* Perbaikan teks agar tetap terlihat */
     .brand-text,
     .nav-header,
     .nav-link p {
@@ -87,12 +92,10 @@
         text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
 
-    /* Efek hover yang lebih halus */
     .nav-link {
         transition: all 0.2s ease;
     }
 </style>
-
 
       <!--begin::Sidebar-->
       <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
