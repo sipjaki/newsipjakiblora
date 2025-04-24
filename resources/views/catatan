@@ -121,7 +121,7 @@ font-family: 'Poppins', sans-serif;
 # storage gamna pdf dan lainnya
 
 
-   <div style="margin-top: 10px;">
+                                        <div style="margin-top: 10px;">
                                                 @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
                                                 <!-- Display the default iframe when the file exists in the storage -->
                                                 <iframe src="{{ asset('storage/' . $data->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
