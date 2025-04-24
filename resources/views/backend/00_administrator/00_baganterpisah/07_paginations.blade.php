@@ -1,3 +1,65 @@
+
+<style>
+    /* Style untuk tombol yang dinonaktifkan */
+    .custom-page-item.disabled .custom-page-link {
+        background-color: #9CA3AF !important;
+        color: white !important;
+        border-color: #9CA3AF !important;
+        pointer-events: none;
+    }
+
+    /* Tambahan agar semua elemen dalam container pakai font-size 15px */
+    .custom-pagination-container * {
+        font-size: 15px !important;
+    }
+
+    /* Animasi Modern */
+    .custom-pagination-container .custom-page-link {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .custom-pagination-container .custom-page-link::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 10%,
+            rgba(255, 255, 255, 0.4) 50%,
+            transparent 90%
+        );
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translateX(-100%) rotate(45deg);
+        z-index: 1;
+    }
+
+    .custom-pagination-container .custom-page-link:hover::before {
+        transform: translateX(100%) rotate(45deg);
+    }
+
+    /* Efek tambahan untuk tombol aktif */
+    .custom-page-item.active .custom-page-link {
+        box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+    }
+
+    /* Efek hover yang lebih smooth */
+    .custom-page-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Nonaktifkan animasi untuk tombol disabled */
+    .custom-page-item.disabled .custom-page-link::before {
+        display: none;
+    }
+</style>
+
+
 <div class="custom-pagination-container"
     style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; text-align: center; font-size: 15px;">
 
@@ -68,18 +130,3 @@
         </li>
     </ul>
 </div>
-
-<style>
-    /* Style untuk tombol yang dinonaktifkan */
-    .custom-page-item.disabled .custom-page-link {
-        background-color: #9CA3AF !important;
-        color: white !important;
-        border-color: #9CA3AF !important;
-        pointer-events: none;
-    }
-
-    /* Tambahan agar semua elemen dalam container pakai font-size 15px */
-    .custom-pagination-container * {
-        font-size: 15px !important;
-    }
-</style>
