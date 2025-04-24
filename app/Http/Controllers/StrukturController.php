@@ -54,48 +54,51 @@ class StrukturController extends Controller
 
                 // -------------------- UPDATE DATA CREATE UPDATE UNDANG UNDANG JASA KONSTRUKSI ----------------------
                 public function updatestrukturcreate(Request $request, $judul)
-{
-    // Validasi input dengan pesan kustom
-    $validatedData = $request->validate([
-        'judul' => 'required|string|max:255',
-        'keterangan' => 'required|string',
-        'peraturan' => 'nullable|file|mimes:pdf|max:5120', // Validasi untuk file PDF
-    ], [
-        'judul.required' => 'Judul Wajib Diisi!',
-        'judul.max' => 'Judul tidak boleh lebih dari 255 karakter.',
-        'keterangan.required' => 'Keterangan wajib diisi. Jangan biarkan kosong!',
-        'peraturan.mimes' => 'File yang diunggah harus berformat PDF.',
-        'peraturan.max' => 'Ukuran file PDF terlalu besar, maksimal 5MB.',
-    ]);
+                {
+                    // Validasi input dengan pesan kustom
+                    $validatedData = $request->validate([
+                        'judul' => 'required|string|max:255',
+                        'keterangan' => 'required|string',
+                        'peraturan' => 'nullable|file|mimes:pdf|max:5120',
+                    ], [
+                        'judul.required' => 'Judul Wajib Diisi!',
+                        'judul.max' => 'Judul tidak boleh lebih dari 255 karakter.',
+                        'keterangan.required' => 'Keterangan wajib diisi. Jangan biarkan kosong!',
+                        'peraturan.mimes' => 'File yang diunggah harus berformat PDF.',
+                        'peraturan.max' => 'Ukuran file PDF terlalu besar, maksimal 5MB.',
+                    ]);
 
-    // Cari data strukturdinas berdasarkan 'judul'
-    $strukturdinas = strukturdinas::where('judul', $judul)->firstOrFail();
+                    // Cari data strukturdinas berdasarkan judul
+                    $strukturdinas = strukturdinas::where('judul', $judul)->firstOrFail();
 
-    // Inisialisasi variabel untuk filePath peraturan
-    $filePath = $strukturdinas->peraturan;  // Pertahankan file lama jika tidak ada file baru yang diupload
+                    // Default file path
+                    $filePath = $strukturdinas->peraturan;
 
-    // Upload file peraturan jika ada
-    if ($request->hasFile('peraturan')) {
-        if ($filePath && Storage::disk('public')->exists($filePath)) {
-            Storage::disk('public')->delete($filePath);  // Menghapus file lama
-        }
-        $filePath = $request->file('peraturan')->store('01_kelembagaan/01_dinas', 'public');
-    }
+                    // Upload file jika ada
+                    if ($request->hasFile('peraturan')) {
+                        // Hapus file lama jika ada
+                        if ($filePath && file_exists(public_path($filePath))) {
+                            unlink(public_path($filePath));
+                        }
 
-    // Update data strukturdinas
-    $strukturdinas->update([
-        'judul' => $validatedData['judul'],
-        'keterangan' => $validatedData['keterangan'],
-        'peraturan' => $filePath,  // Menyimpan path file peraturan yang baru
-    ]);
+                        // Simpan file baru
+                        $file = $request->file('peraturan');
+                        $namaFile = time() . '_' . $file->getClientOriginalName();
+                        $tujuanPath = '01_kelembagaan/01_dinas';
+                        $file->move(public_path($tujuanPath), $namaFile);
+                        $filePath = $tujuanPath . '/' . $namaFile;
+                    }
 
-    // Flash session untuk menampilkan pesan sukses
-    session()->flash('update', 'Data Berhasil Diupdate!');
+                    // Update database
+                    $strukturdinas->update([
+                        'judul' => $validatedData['judul'],
+                        'keterangan' => $validatedData['keterangan'],
+                        'peraturan' => $filePath,
+                    ]);
 
-    // Redirect ke halaman yang sesuai
-    return redirect('/bestrukturdinas');
-}
-
+                    session()->flash('update', 'Data Berhasil Diupdate!');
+                    return redirect('/bestrukturdinas');
+                }
     //    ======================================================================
 
     public function renstra()
