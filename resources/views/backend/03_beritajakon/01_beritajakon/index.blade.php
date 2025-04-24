@@ -183,13 +183,13 @@
          <!-- /.col -->
         </div>
         <!--end::Row-->
+        @include('backend.00_administrator.00_baganterpisah.02_footer')
     </div>
     <!--end::Container-->
     <!--end::App Content Header-->
     <!--begin::App Content-->
     <!--end::App Content-->
 
-    @include('backend.00_administrator.00_baganterpisah.02_footer')
 </section>
    </main>
    <!--end::App Main-->
