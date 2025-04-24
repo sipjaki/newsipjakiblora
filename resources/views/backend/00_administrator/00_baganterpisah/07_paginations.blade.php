@@ -113,7 +113,7 @@
 
     /* Active State Glow */
     .custom-page-item.active .custom-page-link {
-        box-shadow: 0 0 15px rgba(22, 163, 74, 0.4);
+        box-shadow: 0 0 15px rgba(7, 182, 71, 0.4);
         animation: pulse-glow 2s infinite;
     }
 
@@ -134,9 +134,9 @@
 
     /* Animations */
     @keyframes pulse-glow {
-        0% { box-shadow: 0 0 10px rgba(22, 163, 74, 0.3); }
-        50% { box-shadow: 0 0 20px rgba(22, 163, 74, 0.5); }
-        100% { box-shadow: 0 0 10px rgba(22, 163, 74, 0.3); }
+        0% { box-shadow: 0 0 10px rgba(9, 194, 77, 0.3); }
+        50% { box-shadow: 0 0 20px rgba(9, 194, 77, 0.3); }
+        100% { box-shadow: 0 0 10px rgba(9, 194, 77, 0.3); }
     }
 
     /* Smooth Transitions */
