@@ -141,15 +141,16 @@ table.zebra-table {
                                             width="100%"
                                             height="300px">
                                         </iframe> --}}
-
-                                        @if(strpos($item->peraturan, 'storage') !== false)
-                                                {{-- If file is still in storage directory (default state) --}}
-                                                <iframe src="{{ asset('storage/' . $item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                            @else
-                                                {{-- If the file has been updated and is now in the public directory --}}
-                                                <iframe src="{{ asset($item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                            @endif
-
+                                        @if($item->peraturan && file_exists(public_path('storage/' . $item->peraturan)))
+                                        <!-- Display the default iframe when the file exists in the storage -->
+                                        <iframe src="{{ asset('storage/' . $item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                    @elseif($item->peraturan)
+                                        <!-- Display the iframe with the updated file -->
+                                        <iframe src="{{ asset($item->peraturan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                    @else
+                                        <!-- Optional: Show a placeholder if there's no file available -->
+                                        <p>Data belum diupdate</p>
+                                    @endif
 
                                         </td>
                                         <td style="text-align: justify;">{!! $item->keterangan !!}</td>
