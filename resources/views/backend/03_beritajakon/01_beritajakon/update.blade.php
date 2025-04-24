@@ -148,7 +148,7 @@
                                         <!-- Foto -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
                                             </label>
                                             <input type="file" id="foto" name="foto" class="form-control @error('foto') is-invalid @enderror" />
                                             @error('foto')
@@ -167,28 +167,39 @@
                                                     <p>Data belum diupdate</p>
                                                 @endif
                                             @endif
-                                        </div>
+                                            </div>
 
                                         <!-- Foto 1 -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto1">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 1
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
                                             </label>
                                             <input type="file" id="foto1" name="foto1" class="form-control @error('foto1') is-invalid @enderror" />
                                             @error('foto1')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                             @if ($data->foto1)
-                                            <div class="mt-2">
-                                                <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto 1" width="100" />
+                                            <div style="margin-top: 10px;">
+                                                @if($data->foto1 && file_exists(public_path('storage/' . $data->foto1)))
+                                                    <!-- Menampilkan gambar dari storage -->
+                                                    <img src="{{ asset('storage/' . $data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 200px; object-fit: contain;">
+                                                @elseif($data->foto1)
+                                                    <!-- Menampilkan gambar dari path luar storage -->
+                                                    <img src="{{ asset($data->foto1) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 200px; object-fit: contain;">
+                                                @else
+                                                    <!-- Placeholder jika tidak ada data -->
+                                                    <p>Data belum diupdate</p>
+                                                @endif
+                                            @endif
                                             </div>
+
                                             @endif
                                         </div>
 
                                         <!-- Foto 2 -->
                                         <div class="mb-3">
                                             <label class="form-label" for="foto2">
-                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 2
+                                                <i class="bi bi-image" style="margin-right: 8px; color: navy;"></i> Foto 3
                                             </label>
                                             <input type="file" id="foto2" name="foto2" class="form-control @error('foto2') is-invalid @enderror" />
                                             @error('foto2')
