@@ -250,11 +250,11 @@ headerberanda::create([
 
         User::create([
             'id'  => 10,
-            'name'  => 'Sigit Admin',
-            'username' => 'Sigit Admin',
-            'statusadmin_id' => '2',
+            'name'  => 'Admin DPUPR Kab Blora',
+            'username' => 'Admin DPUPR Kab Blora',
+            'statusadmin_id' => '1',
             'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitadminadmin@gmail.com',
+            'email' => 'sipjakiblora@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
@@ -850,6 +850,14 @@ tupoksi::create([
 
 // MAS JAKI DATA JASA KONSTRUKSI
 //======================== ===================================================================================
+
+for ($i = 1; $i <= 112; $i++) {
+    bujkkontraktor::create([
+        'id' => $i,
+        'user_id' => 10,
+    ]);
+}
+
 bujkkontraktor::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 1, // Ganti dengan ID yang sesuai

@@ -28,4 +28,9 @@ class bujkkontraktor extends Model
             return $this->belongsTo(tahunpilihan::class);
         }
 
+        public function user()
+        {
+            return $this->belongsTo(User::class);
+        }
+
 }

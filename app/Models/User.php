@@ -87,4 +87,9 @@ class User extends Authenticatable
         return $this->hasMany(paketpekerjaanmasjaki::class);
     }
 
+    public function bujkkontraktor()
+    {
+        return $this->hasMany(bujkkontraktor::class);
+    }
+
 }
