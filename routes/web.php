@@ -706,6 +706,7 @@ Route::get('/bebujkjakon', [BujkkontraktorController::class, 'bebujkjakon'])->mi
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bebujkkonstruksi', [BujkkontraktorController::class, 'bebujkkonstruksi'])->middleware('auth');
 Route::get('/bebujkkonstruksi/show/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksishow'])->middleware('auth');
+Route::get('/bebujkkonstruksi/update/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksiupdate'])->middleware('auth');
 Route::get('/bebujkkonstruksi/showsubklasifikasi/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasi'])->middleware('auth')->name('bebujkkonstruksi.showsubklasifikasi');
 
 Route::get('/bebujkkonstruksi/update/{id}', [BujkkontraktorController::class, 'bebujkkonstruksiupdate'])->middleware('auth')->name('update.bebujkkonstruksiupdate');
