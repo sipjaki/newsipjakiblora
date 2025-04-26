@@ -185,7 +185,9 @@
             @if($item->asosiasimasjaki && $item->asosiasimasjaki->namaasosiasi)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
             @else
-                <button class="bg-[#000080] text-white text-sm px-2 py-1 rounded border border-[#000080] hover:bg-white hover:text-black transition duration-200">
+                <button style="background-color: #000080; color: white; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
                     Data Belum Diupdate
                 </button>
             @endif
