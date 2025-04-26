@@ -181,8 +181,14 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
-         <td style="text-align: left;">{{$item->namalengkap}}</td>
+         <td style="text-align: center;">
+            @if($item->asosiasimasjaki && $item->asosiasimasjaki->namaasosiasi)
+                {{ $item->asosiasimasjaki->namaasosiasi }}
+            @else
+                <button class="text-red-600 text-sm bg-gray-100 px-2 py-1 rounded">Data Belum Diupdate</button>
+            @endif
+        </td>
+        <td style="text-align: left;">{{$item->namalengkap}}</td>
          <td style="text-align: left;">{{$item->alamat}}</td>
          <td style="text-align: center;">{{$item->no_telepon}}</td>
          <td style="text-align: left;">{{$item->email}}</td>
