@@ -154,7 +154,7 @@ public function bebujkkonsultanshow($namalengkap)
     $user = Auth::user();
 
 return view('backend.04_datajakon.02_bujkkonsultan.show', [
-    'title' => 'Data Bujk Konstruksi',
+    'title' => 'Data Bujk Konsultasi Konstruksi',
     'data' => $databujkkonsultan,
 ]);
 }
