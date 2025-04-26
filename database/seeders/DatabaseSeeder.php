@@ -851,7 +851,7 @@ tupoksi::create([
 // MAS JAKI DATA JASA KONSTRUKSI
 //======================== ===================================================================================
 
-for ($i = 1; $i <= 112; $i++) {
+for ($i = 2; $i <= 112; $i++) {
     bujkkontraktor::where('id', $i)->update([
         'user_id' => 10,
     ]);
@@ -861,6 +861,7 @@ bujkkontraktor::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 1, // Ganti dengan ID yang sesuai
     'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
+    'user_id' => 10, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Mandra Kanta Unggul',
     'alamat' => 'Desa Tawangrejo 003/005 Kunduran Kab. Blora Jawa Tengah',
     'no_telepon' => '082324908547',
