@@ -163,7 +163,8 @@ class BujkkontraktorController extends Controller
         $query->where('namalengkap', 'LIKE', "%{$search}%")
               ->orWhere('alamat', 'LIKE', "%{$search}%")
               ->orWhere('email', 'LIKE', "%{$search}%")
-              ->orWhere('no_telepon', 'LIKE', "%{$search}%");
+            //   ->orWhere('no_telepon', 'LIKE', "%{$search}%")
+              ;
     }
 
     $data = $query->paginate($perPage);
