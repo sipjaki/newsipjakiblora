@@ -425,6 +425,7 @@ public function beartikeljakoncreateupdate(Request $request, $id)
         'foto1' => 'nullable|image|max:7168',
         'foto2' => 'nullable|image|max:7168',
         'foto3' => 'nullable|image|max:7168',
+        'berkas' => 'required|string',
     ], [
         'user_id.required' => 'Penulis harus dipilih!',
         'user_id.exists' => 'Penulis tidak ditemukan!',
@@ -434,6 +435,7 @@ public function beartikeljakoncreateupdate(Request $request, $id)
         'foto1.image' => 'Foto/Brosur 1 harus berupa gambar!',
         'foto2.image' => 'Foto/Brosur 2 harus berupa gambar!',
         'foto3.image' => 'Foto/Brosur 3 harus berupa gambar!',
+        'berkas.required' => 'Berkas wajib diisi!',
     ]);
 
     // Cari data berdasarkan ID
@@ -469,6 +471,10 @@ public function beartikeljakoncreateupdate(Request $request, $id)
 
     if ($request->hasFile('foto3')) {
         $updateData['foto3'] = $saveToPublic($request->file('foto3'), '02_berita/02_artikel/03_foto3');
+    }
+
+    if ($request->hasFile('berkas')) {
+        $updateData['berkas'] = $saveToPublic($request->file('berkas'), '02_berita/02_artikel/04_berkas01');
     }
 
     // Simpan perubahan ke database
