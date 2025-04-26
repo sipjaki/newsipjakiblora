@@ -561,13 +561,14 @@ public function bebujkkonstruksiklasifikasidelete($id)
         // Hapus entri dari database
         $entry->delete();
 
-        // Mengarahkan kembali ke halaman 'showsubklasifikasi' dengan parameter 'namalengkap'
+        // Redirect kembali ke halaman 'showsubklasifikasi' dengan parameter 'namalengkap'
         return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['namalengkap' => $parentId])
                          ->with('delete', 'Data Berhasil Dihapus!');
     }
 
     // Jika data tidak ditemukan
-    return redirect()->route('bebujkkonstruksi')->with('error', 'Data tidak ditemukan.');
+    return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['namalengkap' => $id])
+                     ->with('error', 'Data tidak ditemukan.');
 }
 
 
