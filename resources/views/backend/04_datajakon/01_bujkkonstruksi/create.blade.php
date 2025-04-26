@@ -294,11 +294,11 @@
 
 
                         </form>
-                        <br><br>
 
                                                      </div>
                         <!--end::Quick Example-->
 
+                        <br><br>
                     </div>
                     <!-- /.card -->
                     <!-- Button Section -->
