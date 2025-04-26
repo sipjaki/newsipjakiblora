@@ -1,6 +1,6 @@
       <!--begin::Header-->
 
-      <nav class="app-header navbar navbar-expand bg-body fixed-top" style="padding-top: 70px">
+      <nav class="app-header navbar navbar-expand bg-body fixed-top" style="padding-top: 25px">
 
 
         <!--begin::Container-->
