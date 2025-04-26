@@ -106,10 +106,15 @@
 
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Asosiasi
+                                            <label class="form-label" for="asosiasimasjaki">
+                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Asosiasi
                                             </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control" value="{{ $data->asosiasimasjaki->namaasosiasi }}" />
+                                            <input type="text" id="asosiasimasjaki" name="asosiasimasjaki" class="form-control"
+                                            value="{{ $data->asosiasimasjaki->namaasosiasi }}"
+                                            style="background-color: #000080; color: white; border: 1px solid #000080; padding: 6px 10px; font-size: 14px; border-radius: 4px; transition: none;"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                            onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';" />
+
                                         </div>
 
 
