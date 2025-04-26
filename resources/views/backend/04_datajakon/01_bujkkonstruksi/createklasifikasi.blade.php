@@ -160,11 +160,11 @@
 
                                         <!-- Sub Bidang -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="sub_bidang">
-                                                <i class="bi bi-diagram-3" style="margin-right:8px; color:navy;"></i> Sub Bidang
+                                            <label class="form-label" for="sub_kualifikasi_bu">
+                                                <i class="bi bi-diagram-3" style="margin-right:8px; color:navy;"></i> Sub Kualifikasi Badan Usaha
                                             </label>
-                                            <input type="text" id="sub_bidang" name="sub_bidang" class="form-control @error('sub_bidang') is-invalid @enderror" value="{{ old('sub_bidang') }}">
-                                            @error('sub_bidang')
+                                            <input type="text" id="sub_kualifikasi_bu" name="sub_kualifikasi_bu" class="form-control @error('sub_kualifikasi_bu') is-invalid @enderror" value="{{ old('sub_kualifikasi_bu') }}">
+                                            @error('sub_kualifikasi_bu')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
