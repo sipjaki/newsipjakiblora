@@ -624,27 +624,26 @@ return redirect()->back()->with('error', 'Item not found');
 
 public function bebujkkonstruksiklasifikasidelete($id)
 {
-// Cari item berdasarkan judul
-$entry = bujkkontraktorsub::where('id', $id)->first();
+    $entry = bujkkontraktorsub::where('id', $id)->first();
 
-if ($entry) {
-// Jika ada file header yang terdaftar, hapus dari storage
-// if (Storage::disk('public')->exists($entry->header)) {
-    //     Storage::disk('public')->delete($entry->header);
-// }
+    if ($entry) {
+        // Kalau ada file yang mau dihapus, bisa aktifkan bagian ini
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
 
-// Hapus entri dari database
+        $parentId = $entry->bujkkontraktor_id;
+        $entry->delete();
 
-$parentId = $entry->bujkkontraktor_id; // Sesuaikan dengan nama kolom di database
-$entry->delete();
+        // Pakai session()->flash supaya konsisten dengan create
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect('/bebujkkonstruksi');
+    }
 
-return redirect('/bebujkkonstruksi')->with('delete', 'Data Berhasil Dihapus!');
-
+    // Kalau tidak ketemu, flash error
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
 }
-
-return redirect()->back()->with('error', 'Item not found');
-}
-
 
 
 }
