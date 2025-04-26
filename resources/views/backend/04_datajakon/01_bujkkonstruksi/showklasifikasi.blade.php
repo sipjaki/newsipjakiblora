@@ -85,6 +85,7 @@
                                         <th style="width: 100px; text-align:center;"><i class="bi bi-hourglass-split"></i> Masa Berlaku</th>
                                         <th style="width: 200px; text-align:center;"><i class="bi bi-person-badge"></i> Nama PSJK</th>
                                         <th style="width: 300px; text-align:center;"><i class="bi bi-diagram-3"></i> Sub Klasifikasi Badan Usaha</th>
+                                        <th style="width: 300px; text-align:center;"><i class="bi bi-diagram-3"></i> Masa Berlaku</th>
                                         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
                                     </tr>
                                 </thead>
@@ -105,6 +106,9 @@
                                         </td>
                                                <td style="text-align: left;">{{ $item->nama_psjk }}</td>
                                         <td style="text-align: left;">{{ $item->sub_kualifikasi_bu }}</td>
+                                        <td class="masa-berlaku" data-masaberlaku="{{ $item->masa_berlaku ?? '' }}">
+                                            <button class="btn-masa-berlaku">Status</button>
+                                        </td>
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
                                          {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
@@ -202,3 +206,32 @@
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date(); // Dapatkan tanggal hari ini
+            const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td yang memiliki kelas masa-berlaku
+
+            masaBerlakuElements.forEach(function (element) {
+                const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil data masa berlaku
+                const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
+
+                // Cek jika masa berlaku kosong
+                if (!masaBerlaku || masaBerlaku === '') {
+                    button.classList.add('btn-suspend'); // Tambahkan class untuk suspend
+                    button.textContent = 'SUSPEND';
+                } else {
+                    const masaBerlakuDate = new Date(masaBerlaku); // Jika ada, ubah menjadi tanggal
+
+                    // Cek jika masa berlaku sudah lewat
+                    if (masaBerlakuDate < today) {
+                        button.classList.add('btn-expired'); // Warna merah jika tidak berlaku
+                        button.textContent = 'TIDAK BERLAKU';
+                    } else {
+                        button.classList.add('btn-active'); // Warna hijau jika masih berlaku
+                        button.textContent = 'BERLAKU';
+                    }
+                }
+            });
+        });
+    </script>
