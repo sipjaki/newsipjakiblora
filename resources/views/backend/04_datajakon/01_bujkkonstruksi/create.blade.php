@@ -74,18 +74,18 @@
                                     <div class="col-md-6">
                                         <!-- Asosiasi Masjaki -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="daftarasosiasi_id">
+                                            <label class="form-label" for="asosiasimasjaki_id">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Asosiasi Jasa Konstruksi
                                             </label>
-                                            <select id="daftarasosiasi_id" name="daftarasosiasi_id" class="form-control @error('daftarasosiasi_id') is-invalid @enderror">
+                                            <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
                                                 <option value="" disabled selected>Pilih Asosiasi</option>
                                                 @foreach($asosiasimasjaki as $asosiasi)
-                                                    <option value="{{ $asosiasi->id }}" {{ old('daftarasosiasi_id') == $asosiasi->id ? 'selected' : '' }}>
+                                                    <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id') == $asosiasi->id ? 'selected' : '' }}>
                                                         {{ $asosiasi->namaasosiasi }}
                                                     </option>
                                                 @endforeach
                                             </select>
-                                            @error('daftarasosiasi_id')
+                                            @error('asosiasimasjaki_id')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
