@@ -717,7 +717,7 @@ Route::get('/bebujkkonstruksi/create', [BujkkontraktorController::class, 'bebujk
 Route::post('/bebujkkonstruksi/createnew', [BujkkontraktorController::class, 'bebujkkonstruksicreatenew'])->middleware('auth')->name('create.bebujkkonstruksicreatenew');
 
 Route::delete('/bebujkkonstruksi/delete/{namalengkap}', [BujkkontraktorController::class, 'bebujkkonstruksidelete'])->middleware('auth');
-Route::delete('/bebujkkonstruksiklasifikasi/delete/{id}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasidelete'])->middleware('auth');
+Route::delete('/bebujkkonstruksiklasifikasi/delete/{id}', [BujkkontraktorController::class, 'bebujkkonstruksiklasifikasidelete'])->middleware('auth')->name('bebujkkonstruksiklasifikasi.delete');
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 2 BUJK KONSULTASI KONSTRUKSI   -----------------------------------------------------
