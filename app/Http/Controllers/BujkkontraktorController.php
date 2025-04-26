@@ -426,6 +426,25 @@ return view('backend.04_datajakon.01_bujkkonstruksi.show', [
 }
 
 
+// CREATE DATA SUB KLASIFIKASI
+public function bebujkkonstruksicreateklasifikasi()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+    $asosiasimasjaki = asosiasimasjaki::all();  // Ambil semua pengguna
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.04_datajakon.01_bujkkonstruksi.createklasifikasi', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'asosiasimasjaki' => $asosiasimasjaki,
+        'title' => 'Create BUJK Kontruksi'
+    ]);
+}
+
+
+
 // DATA SHOW SUB KLASIFIKASI LAYANAN
 public function bebujkkonstruksiklasifikasi($namalengkap)
 {
@@ -579,5 +598,4 @@ return redirect()->back()->with('error', 'Item not found');
 
 
 }
-
 

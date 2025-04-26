@@ -103,7 +103,7 @@
 
                      </button>
                      </a>
-                     <a href="/404">
+                     <a href="/bebujkkonstruksi/createsubklasifikasi">
                          <button
                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                          onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
