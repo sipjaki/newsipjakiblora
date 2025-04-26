@@ -549,10 +549,10 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
-public function bebujkkonstruksiklasifikasidelete($id)
+public function bebujkkonstruksiklasifikasidelete($namalengkap)
 {
     // Cari item berdasarkan ID
-    $entry = bujkkontraktorsub::where('id', $id)->first();
+    $entry = bujkkontraktorsub::where('namalengkap', $namalengkap)->first();
 
     if ($entry) {
         // Dapatkan parentId atau nilai yang diperlukan untuk 'namalengkap'
