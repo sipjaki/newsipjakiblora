@@ -514,14 +514,13 @@ public function beartikeljakoncreatenew(Request $request)
 
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
-        'judul' => 'required|string|max:255', // judulberita wajib diisi, harus string, dan panjangnya maksimal 255 karakter
-        'tanggal' => 'required|date', // tanggal wajib diisi dan harus dalam format tanggal
-        'keterangan' => 'required|string', // keterangan wajib diisi dan harus berupa string
-        'foto1' => 'required|image|max:7168', // foto wajib diisi, harus image dan maksimal 7MB (7168KB)
-        'foto2' => 'required|image|max:7168', // foto1 wajib diisi, harus image dan maksimal 7MB (7168KB)
-        'foto3' => 'required|image|max:7168', // foto2 wajib diisi, harus image dan maksimal 7MB (7168KB)
+        'judul' => 'required|string|max:255',
+        'tanggal' => 'required|date',
+        'keterangan' => 'required|string',
+        'foto1' => 'required|image|max:7168',
+        'foto2' => 'required|image|max:7168',
+        'foto3' => 'required|image|max:7168',
         'berkas' => 'required|mimes:pdf|max:8192',
-            // keterangan wajib diisi dan harus berupa string
     ], [
         'judul.required' => 'Judul berita wajib diisi!',
         'judul.string' => 'Judul berita harus berupa teks!',
@@ -542,27 +541,32 @@ public function beartikeljakoncreatenew(Request $request)
         'foto3.max' => 'Foto/Brosur 3 maksimal 7MB!',
     ]);
 
-    // Menyimpan file gambar jika ada
-    $foto1 = $request->file('foto1')->store('public/02_beritajakon/artikel');
-    $foto2 = $request->file('foto2')->store('public/02_beritajakon/artikel');
-    $foto3 = $request->file('foto3')->store('public/02_beritajakon/artikel');
+    // Function kecil untuk menyimpan file ke public/
+    $saveToPublic = function($file, $path) {
+        $filename = time() . '_' . $file->getClientOriginalName();
+        $file->move(public_path($path), $filename);
+        return $path . '/' . $filename;
+    };
+
+    // Simpan gambar dan berkas ke public/
+    $foto1 = $saveToPublic($request->file('foto1'), '02_berita/02_artikel/01_foto1');
+    $foto2 = $saveToPublic($request->file('foto2'), '02_berita/02_artikel/02_foto2');
+    $foto3 = $saveToPublic($request->file('foto3'), '02_berita/02_artikel/03_foto3');
+    $berkas = $saveToPublic($request->file('berkas'), '02_berita/02_artikel/04_berkas01');
 
     // Membuat data baru di tabel beritajakon
     artikeljakonmasjaki::create([
-        'user_id' => $user_id,  // Menyimpan user_id yang sudah diatur otomatis
+        'user_id' => $user_id,
         'judul' => $validatedData['judul'],
         'tanggal' => $validatedData['tanggal'],
         'keterangan' => $validatedData['keterangan'],
         'foto1' => $foto1,
         'foto2' => $foto2,
         'foto3' => $foto3,
-        'berkas' => $validatedData['berkas'],
+        'berkas' => $berkas,
     ]);
 
-    // Flash session untuk menampilkan pesan sukses
     session()->flash('create', 'Data Berhasil Dibuat!');
-
-    // Redirect ke halaman yang sesuai
     return redirect('/beartikeljakon');
 }
 
