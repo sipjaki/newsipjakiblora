@@ -1,6 +1,4 @@
 <style>
-
-<style>
    .btn-suspend {
         background-color: orange;
         color: white;
