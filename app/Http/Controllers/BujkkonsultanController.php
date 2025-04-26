@@ -431,7 +431,7 @@ public function bebujkkonsultancreateklasifikasicreate(Request $request)
 
     // Menyimpan data ke tabel BujkKontraktorSub
     $bujkkonsultanSub = bujkkonsultansub::create([
-        'bujkkonsultan_id' => $request->bujkkonsultan_id,
+        'bujkkontraktor_id' => $request->bujkkonsultan_id,
         'nama_pengurus' => $validated['nama_pengurus'],
         'sub_klasifikasi_layanan' => $validated['sub_klasifikasi_layanan'],
         'kode' => $validated['kode'],
