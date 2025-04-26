@@ -20,6 +20,7 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
+
                 @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
                 @include('backend.00_administrator.00_baganterpisah.11_alert')
 
