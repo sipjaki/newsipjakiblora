@@ -357,9 +357,6 @@ public function bebujkkonstruksicreate()
 // -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
 public function bebujkkonstruksicreatenew(Request $request)
 {
-    // Ambil data asosiasi dari database untuk digunakan di form
-    $asosiasimasjaki = asosiasimasjaki::all();
-
     // Validasi input form
     $validatedData = $request->validate([
         'asosiasimasjaki_id' => 'required|integer|exists:asosiasimasjaki,id',
@@ -387,13 +384,13 @@ public function bebujkkonstruksicreatenew(Request $request)
         'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
     ]);
 
-    // Mengambil ID pertama dari BujkkontraktorSub
+    // Ambil ID default dari sub kontraktor (pastikan tidak null di DB!)
     $bujkkontraktorsub_id = bujkkonsultansub::first()->id;
 
-    // Menyimpan data ke dalam tabel bujkkontraktor
+    // Simpan ke DB
     Bujkkontraktor::create([
-        'bujkkontraktorsub_id' => $bujkkontraktorsub_id, // ID dari kontraktor sub
-        'asosiasimasjaki_id' => $asosiasimasjaki, // Asosiasi yang dipilih
+        'bujkkontraktorsub_id' => $bujkkontraktorsub_id,
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'],
         'namalengkap' => $validatedData['namalengkap'],
         'alamat' => $validatedData['alamat'],
         'no_telepon' => $validatedData['no_telepon'],
@@ -406,10 +403,7 @@ public function bebujkkonstruksicreatenew(Request $request)
         'no_pengesahan' => $validatedData['no_pengesahan'],
     ]);
 
-    // Flash session untuk menampilkan pesan sukses
     session()->flash('create', 'Data Berhasil Dibuat!');
-
-    // Redirect ke halaman yang sesuai
     return redirect('/bebujkkonstruksi');
 }
 
