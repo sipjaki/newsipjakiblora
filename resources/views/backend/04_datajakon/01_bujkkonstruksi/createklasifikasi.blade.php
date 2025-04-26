@@ -47,10 +47,16 @@
 
         <div class="card card-primary card-outline mb-6">
 
-            <button>
-                <input  name="bujkkontraktor_id" value="{{ $bujkkontraktor_id }}">
-            </button>
+
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
+                <div style="margin-bottom: 15px; display: flex; align-items: center;">
+                    <input
+                        type="hidden"
+                        name="bujkkontraktor_id"
+                        value="{{ $bujkkontraktor_id }}"
+                        style="padding: 10px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; background-color: #f9f9f9;"
+                    >
+                </div>
                 <a href="/bebujkkonstruksi">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
