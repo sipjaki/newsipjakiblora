@@ -107,9 +107,9 @@
                                                 <i class="bi bi-eye"></i>
                                             </a>
                                             <!-- Update Icon --> --}}
-                                            <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+                                            {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
                                                 <i class="bi bi-pencil-square"></i>
-                                            </a>
+                                            </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"

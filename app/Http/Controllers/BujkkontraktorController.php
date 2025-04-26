@@ -551,25 +551,23 @@ return redirect()->back()->with('error', 'Item not found');
 
 public function bebujkkonstruksiklasifikasidelete($id)
 {
-// Cari item berdasarkan judul
-$entry = bujkkontraktorsub::where('id', $id)->first();
+    // Cari item berdasarkan ID
+    $entry = bujkkontraktorsub::where('id', $id)->first();
 
-if ($entry) {
-// Jika ada file header yang terdaftar, hapus dari storage
-// if (Storage::disk('public')->exists($entry->header)) {
-    //     Storage::disk('public')->delete($entry->header);
-// }
+    if ($entry) {
+        // Dapatkan parentId atau nilai yang diperlukan untuk 'namalengkap'
+        $parentId = $entry->bujkkontraktor_id; // Sesuaikan dengan nama kolom di database
 
-// Hapus entri dari database
+        // Hapus entri dari database
+        $entry->delete();
 
-$parentId = $entry->bujkkontraktor_id; // Sesuaikan dengan nama kolom di database
-$entry->delete();
+        // Mengarahkan kembali ke halaman 'showsubklasifikasi' dengan parameter 'namalengkap'
+        return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['namalengkap' => $parentId])
+                         ->with('delete', 'Data Berhasil Dihapus!');
+    }
 
-return redirect('/bebujkkonstruksi')->with('delete', 'Data Berhasil Dihapus!');
-
-}
-
-return redirect()->back()->with('error', 'Item not found');
+    // Jika data tidak ditemukan
+    return redirect()->route('bebujkkonstruksi')->with('error', 'Data tidak ditemukan.');
 }
 
 
