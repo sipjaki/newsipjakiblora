@@ -161,20 +161,20 @@
 <table class="zebra-table table-striped">
  <thead>
      <tr>
-        <th style="width: 75px; text-align:center;"><i class="fas fa-list-ol"></i> No</th>
-        <th style="width: 200px; text-align:center;"><i class="fas fa-users"></i> Asosiasi</th>
-        <th style="width: 250px; text-align:center;"><i class="fas fa-building"></i> Badan Usaha</th>
-        <th style="width: 400px; text-align:center;"><i class="fas fa-map-marker-alt"></i> Alamat</th>
-        <th style="width: 200px; text-align:center;"><i class="fas fa-phone"></i> No Telepon</th>
-        <th style="width: 250px; text-align:center;"><i class="fas fa-envelope"></i> Email</th>
-        <th style="width: 150px; text-align:center;"><i class="fas fa-id-badge"></i> NIB</th>
-        <th style="width: 200px; text-align:center;"><i class="fas fa-user-tie"></i> PJU</th>
-        <th style="width: 150px; text-align:center;"><i class="fas fa-file-alt"></i> No Akte</th>
-        <th style="width: 250px; text-align:center;"><i class="fas fa-calendar-alt"></i> Tanggal</th>
-        <th style="width: 300px; text-align:center;"><i class="fas fa-gavel"></i> Notaris</th>
-        <th style="width: 300px; text-align:center;"><i class="fas fa-check-circle"></i> Pengesahan</th>
-        <th style="width: 120px; text-align:center;"><i class="fas fa-layer-group"></i> Sub Klasifikasi</th>
-        <th style="width: 200px; text-align:center;"><i class="fas fa-cogs"></i> Aksi</th>
+        <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
+        <th style="width: 250px; text-align:center;"><i class="bi bi-building"></i> Badan Usaha</th>
+        <th style="width: 400px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-telephone-fill"></i> No Telepon</th>
+        <th style="width: 250px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
+        <th style="width: 150px; text-align:center;"><i class="bi bi-credit-card-2-front"></i> NIB</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-person-badge-fill"></i> PJU</th>
+        <th style="width: 150px; text-align:center;"><i class="bi bi-file-earmark-text"></i> No Akte</th>
+        <th style="width: 250px; text-align:center;"><i class="bi bi-calendar-date"></i> Tanggal</th>
+        <th style="width: 300px; text-align:center;"><i class="bi bi-person-lines-fill"></i> Notaris</th>
+        <th style="width: 300px; text-align:center;"><i class="bi bi-patch-check-fill"></i> Pengesahan</th>
+        <th style="width: 120px; text-align:center;"><i class="bi bi-tags-fill"></i> Sub Klasifikasi</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
