@@ -105,7 +105,7 @@
                                         <!-- Nama Asosiasi -->
 
                                         <!-- Nama Lengkap -->
-                                        <div class="mb-3">
+                                        {{-- <div class="mb-3">
                                             <label class="form-label" for="asosiasimasjaki">
                                                 <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Asosiasi
                                             </label>
@@ -115,7 +115,7 @@
                                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                             onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';" />
 
-                                        </div>
+                                        </div> --}}
 
 
                                         <!-- Nama Lengkap -->
