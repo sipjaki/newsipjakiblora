@@ -312,7 +312,7 @@
                     </td>
 
 
-                    <td style="text-align: left;">
+                    <td style="text-align: center;">
                         @if($item->user?->name)
                             {{ $item->user?->name }}
                         @else
