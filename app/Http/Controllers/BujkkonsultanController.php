@@ -386,4 +386,20 @@ public function bebujkkonsultancreatenew(Request $request)
 }
 
 
+public function bebujkkonsultancreateklasifikasi($namalengkap)
+{
+    $bujkkonsultan = bujkkonsultan::findOrFail($namalengkap); // Cari 1 data sesuai ID
+    $user = Auth::user();
+    $asosiasimasjaki = asosiasimasjaki::all();
+
+    return view('backend.04_datajakon.02_bujkkonsultan.createklasifikasi', [
+        'bujkkontraktornamalengkap' => $bujkkonsultan->namalengkap, // Ini dikirim ke form
+        'bujkkontraktor_id' => $bujkkonsultan->id, // Ini dikirim ke form
+        'user' => $user,
+        'asosiasimasjaki' => $asosiasimasjaki,
+        'title' => 'Create BUJK Sub Klasifikasi'
+    ]);
+}
+
+
 }
