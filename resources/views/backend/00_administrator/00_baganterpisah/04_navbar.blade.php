@@ -1,5 +1,7 @@
       <!--begin::Header-->
-      <nav class="app-header navbar navbar-expand bg-body">
+
+      <nav class="app-header navbar navbar-expand bg-body fixed-top" style="padding-top: 70px">
+
 
         <!--begin::Container-->
         <div class="container-fluid">
