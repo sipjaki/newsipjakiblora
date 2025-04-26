@@ -56,7 +56,7 @@
                                         viewBox="0 0 16 16" style="margin-right: 8px;">
                                         <path d="M4 0h5.5L14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM9.5 1v3a1 1 0 0 0 1 1h3l-4-4z"/>
                                     </svg>
-                                    Badan Usaha : {{ $bujkkontraktor_id }}
+                                    Badan Usaha : {{ $bujkkontraktornamalengkap }}
                                 </button>
 
                                 <!-- Tombol Kanan -->

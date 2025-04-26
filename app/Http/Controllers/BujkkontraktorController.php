@@ -434,7 +434,8 @@ public function bebujkkonstruksicreateklasifikasi($namalengkap)
     $asosiasimasjaki = asosiasimasjaki::all();
 
     return view('backend.04_datajakon.01_bujkkonstruksi.createklasifikasi', [
-        'bujkkontraktor_id' => $bujkkontraktor->namalengkap, // Ini dikirim ke form
+        'bujkkontraktornamalengkap' => $bujkkontraktor->namalengkap, // Ini dikirim ke form
+        'bujkkontraktor_id' => $bujkkontraktor->id, // Ini dikirim ke form
         'user' => $user,
         'asosiasimasjaki' => $asosiasimasjaki,
         'title' => 'Create BUJK Sub Klasifikasi'
