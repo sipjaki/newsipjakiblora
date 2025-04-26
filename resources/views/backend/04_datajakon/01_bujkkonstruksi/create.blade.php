@@ -139,7 +139,7 @@
                                             <label class="form-label" for="nomorindukberusaha">
                                                 <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> Nomor Induk Berusaha
                                             </label>
-                                            <input type="text" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha') }}" />
+                                            <input type="number" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha') }}" />
                                             @error('nomorindukberusaha')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
