@@ -158,19 +158,19 @@
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 200px; text-align:center; background:white; color:black;">Asosiasi</th>
-         <th style="width: 250px; text-align:center;">Badan Usaha</th>
-         <th style="width: 250px; text-align:center;">Alamat</th>
-         <th style="width: 200px; text-align:center;">No Telepon</th>
-         <th style="width: 250px; text-align:center;">Email</th>
-         <th style="width: 150px; text-align:center;">NIB</th>
-         <th style="width: 200px; text-align:center;">PJU</th>
-         <th style="width: 150px; text-align:center;">No Akte</th>
-         <th style="width: 250px; text-align:center;">Tanggal</th>
-         <th style="width: 300px; text-align:center;">Notaris</th>
-         <th style="width: 300px; text-align:center;">Pengesahan</th>
-         <th style="width: 120px; text-align:center;">Sub Klasifikasi</th>
-         <th style="width: 200px; text-align:center;">Aksi</th>
+         <th style="text-align:center; background:white; color:black;">Asosiasi</th>
+         <th style="text-align:center;">Badan Usaha</th>
+         <th style="text-align:center;">Alamat</th>
+         <th style="text-align:center;">No Telepon</th>
+         <th style="text-align:center;">Email</th>
+         <th style="text-align:center;">NIB</th>
+         <th style="text-align:center;">PJU</th>
+         <th style="text-align:center;">No Akte</th>
+         <th style="text-align:center;">Tanggal</th>
+         <th style="text-align:center;">Notaris</th>
+         <th style="text-align:center;">Pengesahan</th>
+         <th style="text-align:center;">Sub Klasifikasi</th>
+         <th style="text-align:center;">Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
