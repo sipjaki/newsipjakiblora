@@ -73,8 +73,7 @@
                                     <div class="col-md-6">
 
                                         <!-- ID BUJK Kontraktor (Hidden atau Select jika mau pilih) -->
-                                        <input  name="bujkkontraktor_id" value="{{ $bujkkontraktor_id ?? '' }}">
-
+                                        <input  name="bujkkontraktor_id" value="{{ $bujkkontraktor_id }}">
                                         <!-- Nama Pengurus -->
                                         <div class="mb-3">
                                             <label class="form-label" for="nama_pengurus">
