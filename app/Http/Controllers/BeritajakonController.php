@@ -425,8 +425,8 @@ public function beartikeljakoncreateupdate(Request $request, $id)
         'foto1' => 'nullable|image|max:7168',
         'foto2' => 'nullable|image|max:7168',
         'foto3' => 'nullable|image|max:7168',
-        'berkas' => 'required|string',
-    ], [
+   'berkas' => 'required|file|mimes:pdf',
+ ], [
         'user_id.required' => 'Penulis harus dipilih!',
         'user_id.exists' => 'Penulis tidak ditemukan!',
         'judul.required' => 'Judul berita wajib diisi!',
