@@ -246,7 +246,7 @@ public function bebujkkonsultanupdate($id)
         'data' => $jakonkonsultan,
         'user' => $user,
         'asosiasimasjakiList' => $asosiasimasjakiList,
-        'title' => 'Update BUJK Kontraktor'
+        'title' => 'Update BUJK Konsultasi Konstruksi'
     ]);
 }
 
