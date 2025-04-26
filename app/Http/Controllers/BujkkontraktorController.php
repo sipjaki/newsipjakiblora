@@ -485,8 +485,9 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
     // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
     session()->flash('success', 'Data berhasil disimpan.');
 
-    // Redirect ke route 'bebujkkonstruksi.showsubklasifikasi' dengan parameter bujkkontraktor_id
-    return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['namalengkap' => $bujkkontraktorId]);
+    return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['bujkkontraktor_id' => $bujkkontraktorId])
+    ->with('success', 'Data berhasil disimpan.');
+
 }
 
 
