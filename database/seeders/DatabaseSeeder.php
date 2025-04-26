@@ -853,7 +853,7 @@ tupoksi::create([
 bujkkontraktor::create([
     'id' => 1, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 1, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Mandra Kanta Unggul',
     'alamat' => 'Desa Tawangrejo 003/005 Kunduran Kab. Blora Jawa Tengah',
     'no_telepon' => '082324908547',
@@ -951,7 +951,7 @@ bujkkontraktorsub::create([
 bujkkontraktor::create([
     'id' => 2, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 2, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'Ramai Jaya Bumi',
     'alamat' => 'Jl. Gajah Mada No. 24A 000/000 Cepu Kab. Blora Jawa Tengah',
     'no_telepon' => '02965104662',
@@ -1310,7 +1310,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 3, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 3, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TRIBAKTI BINTANG SEJAHTERA',
     'alamat' => 'BERAN 001/003 Blora Kab. Blora Jawa Tengah',
     'no_telepon' => null,
@@ -1408,7 +1408,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 4, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 4, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'DIZA PERMATA HATI',
     'alamat' => 'DESA BANDUNGROJO RT. 001 RW. 001, Ngawen,Kab. Blora',
     'no_telepon' => '082138576435',
@@ -1582,7 +1582,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 5, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 5, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TUNGGAL GUNA KARYA',
     'alamat' => 'DESA GENENG 003/001 Jepon Kab. Blora Jawa Tengah',
     'no_telepon' => '082314931935',
@@ -1744,7 +1744,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 6, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 6, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'TRI GRAHA MEGAH JAYA',
     'alamat' => 'DESA PATALAN 003/005 Kab. Blora Jawa Tengah',
     'no_telepon' => '081325225577',
@@ -1905,7 +1905,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 7, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 7, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'BERKAH HPL MANDIRI',
     'alamat' => 'DESA PENGKOLREJO 001/004 Japah Kab. Blora Jawa Tengah',
     'no_telepon' => '08122607371',
@@ -1988,7 +1988,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 8, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 8, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'KARYA DWI PUTRI',
     'alamat' => 'DESA TODANAN, Desa/Kelurahan Todanan, Kec. Todanan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085212848598',
@@ -2123,7 +2123,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 9, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 9, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'CV. DHA YASA MULIA',
     'alamat' => 'DUKUH KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '81326704319',
@@ -2180,7 +2180,7 @@ bujkkontraktorsub ::create([
 bujkkontraktor::create([
     'id' => 10, // Ganti dengan ID yang sesuai
     'bujkkontraktorsub_id' => 10, // Ganti dengan ID yang sesuai
-    'asosiasimasjaki_id' => 1, // Ganti dengan ID yang sesuai
+    'asosiasimasjaki_id' => null, // Ganti dengan ID yang sesuai
     'namalengkap' => 'RASI SINAR RAYA',
     'alamat' => 'DK. KALISANGKU, Desa/Kelurahan Gempolrejo, Kec. Tunjungan, Kab. Blora, Provinsi Jawa Tengah',
     'no_telepon' => '085218340935',
