@@ -73,6 +73,17 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Asosiasi Masjaki -->
+                                     <!-- User ID (Hidden) -->
+                                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+
+                                                <!-- Tampilkan Nama Admin -->
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="user_id_display">
+                                                        <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Administrator
+                                                    </label>
+                                                    <input type="text" id="user_id_display" class="form-control" value="{{ $user->name }}" disabled>
+                                                </div>
+
                                         <div class="mb-3">
                                             <label class="form-label" for="asosiasimasjaki_id">
                                                 <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Asosiasi Jasa Konstruksi
@@ -93,7 +104,7 @@
                                         <!-- Nama Lengkap -->
                                         <div class="mb-3">
                                             <label class="form-label" for="namalengkap">
-                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Lengkap
+                                                <i class="bi bi-person" style="margin-right: 8px; color: navy;"></i> Nama Badan Usaha
                                             </label>
                                             <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}" />
                                             @error('namalengkap')
