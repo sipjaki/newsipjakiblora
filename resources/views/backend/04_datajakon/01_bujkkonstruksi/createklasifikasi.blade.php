@@ -104,6 +104,17 @@
 
                                         <!-- Sub Klasifikasi Layanan -->
                                         <div class="mb-3">
+                                            <label class="form-label" for="nama_pengurus">
+                                                <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Nama PSJK
+                                            </label>
+                                            <input type="text" id="nama_psjk" name="nama_psjk" class="form-control @error('nama_psjk') is-invalid @enderror" value="{{ old('nama_psjk') }}">
+                                            @error('nama_psjk')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <!-- Sub Klasifikasi Layanan -->
+                                        <div class="mb-3">
                                             <label class="form-label" for="sub_klasifikasi_layanan">
                                                 <i class="bi bi-clipboard-data" style="margin-right:8px; color:navy;"></i> Sub Klasifikasi Layanan
                                             </label>
@@ -115,11 +126,11 @@
 
                                         <!-- Kode Sub Klasifikasi -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="kode_sub_klasifikasi">
+                                            <label class="form-label" for="kode">
                                                 <i class="bi bi-code" style="margin-right:8px; color:navy;"></i> Kode Sub Klasifikasi
                                             </label>
-                                            <input type="text" id="kode_sub_klasifikasi" name="kode_sub_klasifikasi" class="form-control @error('kode_sub_klasifikasi') is-invalid @enderror" value="{{ old('kode_sub_klasifikasi') }}">
-                                            @error('kode_sub_klasifikasi')
+                                            <input type="text" id="kode" name="kode" class="form-control @error('kode') is-invalid @enderror" value="{{ old('kode') }}">
+                                            @error('kode')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -129,11 +140,17 @@
                                             <label class="form-label" for="kualifikasi">
                                                 <i class="bi bi-award" style="margin-right:8px; color:navy;"></i> Kualifikasi
                                             </label>
-                                            <input type="text" id="kualifikasi" name="kualifikasi" class="form-control @error('kualifikasi') is-invalid @enderror" value="{{ old('kualifikasi') }}">
+                                            <select id="kualifikasi" name="kualifikasi" class="form-control @error('kualifikasi') is-invalid @enderror">
+                                                <option value="" disabled selected>Pilih Kualifikasi</option>
+                                                <option value="Kecil" {{ old('kualifikasi') == 'Kecil' ? 'selected' : '' }}>Kecil</option>
+                                                <option value="Menengah" {{ old('kualifikasi') == 'Menengah' ? 'selected' : '' }}>Menengah</option>
+                                                <option value="Besar" {{ old('kualifikasi') == 'Besar' ? 'selected' : '' }}>Besar</option>
+                                            </select>
                                             @error('kualifikasi')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
 
                                     </div>
                                     <!-- End Left Column -->
@@ -154,11 +171,11 @@
 
                                         <!-- Sertifikat Klasifikasi -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="sertifikat_klasifikasi">
-                                                <i class="bi bi-file-earmark-text" style="margin-right:8px; color:navy;"></i> Sertifikat Klasifikasi
+                                            <label class="form-label" for="penerbit">
+                                                <i class="bi bi-file-earmark-text" style="margin-right:8px; color:navy;"></i> Penerbit
                                             </label>
-                                            <input type="text" id="sertifikat_klasifikasi" name="sertifikat_klasifikasi" class="form-control @error('sertifikat_klasifikasi') is-invalid @enderror" value="{{ old('sertifikat_klasifikasi') }}">
-                                            @error('sertifikat_klasifikasi')
+                                            <input type="text" id="penerbit" name="penerbit" class="form-control @error('penerbit') is-invalid @enderror" value="{{ old('penerbit') }}">
+                                            @error('penerbit')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

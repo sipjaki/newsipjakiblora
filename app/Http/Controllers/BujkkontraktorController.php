@@ -448,7 +448,7 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
     $validated = $request->validate([
         'nama_pengurus' => 'required|string|max:255',
         'sub_klasifikasi_layanan' => 'required|string|max:255',
-        'kode_sub_klasifikasi' => 'required|string|max:50',
+        'kode' => 'required|string|max:50',
         'kualifikasi' => 'required|string|max:255',
         'sub_bidang' => 'required|string|max:255',
         'sertifikat_klasifikasi' => 'required|string|max:255',
@@ -458,7 +458,7 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
         // Pesan kesalahan custom
         'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
         'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
-        'kode_sub_klasifikasi.required' => 'Kode Sub Klasifikasi harus diisi.',
+        'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
         'kualifikasi.required' => 'Kualifikasi harus diisi.',
         'sub_bidang.required' => 'Sub Bidang harus diisi.',
         'sertifikat_klasifikasi.required' => 'Sertifikat Klasifikasi harus diisi.',
@@ -471,7 +471,7 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
         'bujkkontraktor_id' => $request->bujkkontraktor_id,
         'nama_pengurus' => $validated['nama_pengurus'],
         'sub_klasifikasi_layanan' => $validated['sub_klasifikasi_layanan'],
-        'kode_sub_klasifikasi' => $validated['kode_sub_klasifikasi'],
+        'kode' => $validated['kode'],
         'kualifikasi' => $validated['kualifikasi'],
         'sub_bidang' => $validated['sub_bidang'],
         'sertifikat_klasifikasi' => $validated['sertifikat_klasifikasi'],
