@@ -67460,6 +67460,12 @@ for ($i = 1; $i <= 112; $i++) {
     ]);
 }
 
+for ($i = 1; $i <= 17; $i++) {
+    bujkkonsultan::where('id', $i)->update([
+        'user_id' => 10,
+    ]);
+}
+
 
 
 
