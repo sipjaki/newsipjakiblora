@@ -312,4 +312,21 @@ public function bebujkkonsultancreateupdate(Request $request, $id)
 }
 
 
+public function bebujkkonsultancreate()
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    // $jakonjabatanfungsional = profiljakonpersonil::where('id', $id)->firstOrFail();
+    $user = Auth::user();
+    $asosiasimasjaki = asosiasimasjaki::all();  // Ambil semua pengguna
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.04_datajakon.02_bujkkonsultan.create', [
+        // 'data' => $jakonjabatanfungsional,
+        'user' => $user,
+        'asosiasimasjaki' => $asosiasimasjaki,
+        'title' => 'Create BUJK Konsultasi Konstruksi'
+    ]);
+}
+
+
 }
