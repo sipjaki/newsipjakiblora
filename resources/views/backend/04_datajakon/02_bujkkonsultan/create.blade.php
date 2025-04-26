@@ -65,7 +65,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('create.bebujkkonsultancreate') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('create.bebujkkonsultancreatenew') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <!-- begin::Body -->
                             <div class="card-body">

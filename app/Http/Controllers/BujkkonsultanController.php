@@ -328,5 +328,62 @@ public function bebujkkonsultancreate()
     ]);
 }
 
+// CREATE DATA BUJK KONSULTAN
+public function bebujkkonsultancreatenew(Request $request)
+{
+    // Validasi input form
+    $validatedData = $request->validate([
+        'asosiasimasjaki_id' => 'required|integer',
+        'namalengkap' => 'required|string|max:255',
+        'alamat' => 'required|string',
+        'no_telepon' => 'required|string|max:255',
+        'email' => 'required|email',
+        'nomorindukberusaha' => 'required|string|max:255',
+        'pju' => 'required|string|max:255',
+        'no_akte' => 'required|string|max:255',
+        'tanggal' => 'required|date',
+        'nama_notaris' => 'required|string|max:255',
+        'no_pengesahan' => 'required|string|max:255',
+    ], [
+        'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+        'alamat.required' => 'Alamat wajib diisi!',
+        'no_telepon.required' => 'Nomor Telepon wajib diisi!',
+        'email.required' => 'Email wajib diisi!',
+        'nomorindukberusaha.required' => 'Nomor Induk Berusaha wajib diisi!',
+        'pju.required' => 'PJU wajib diisi!',
+        'no_akte.required' => 'No Akte wajib diisi!',
+        'tanggal.required' => 'Tanggal wajib diisi!',
+        'nama_notaris.required' => 'Nama Notaris wajib diisi!',
+        'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
+    ]);
+
+    // Ambil ID default dari sub kontraktor (pastikan tidak null di DB!)
+    $bujkkontraktorsub_id = bujkkonsultansub::first()->id;
+
+    // Ambil ID user yang sedang login
+    $user_id = Auth::user()->id;
+
+    // Simpan ke DB
+    bujkkonsultan::create([
+        'user_id' => $user_id, // Menyimpan user_id berdasarkan login
+        'bujkkontraktorsub_id' => $bujkkontraktorsub_id,
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'],
+        'namalengkap' => $validatedData['namalengkap'],
+        'alamat' => $validatedData['alamat'],
+        'no_telepon' => $validatedData['no_telepon'],
+        'email' => $validatedData['email'],
+        'nomorindukberusaha' => $validatedData['nomorindukberusaha'],
+        'pju' => $validatedData['pju'],
+        'no_akte' => $validatedData['no_akte'],
+        'tanggal' => $validatedData['tanggal'],
+        'nama_notaris' => $validatedData['nama_notaris'],
+        'no_pengesahan' => $validatedData['no_pengesahan'],
+    ]);
+
+    session()->flash('create', 'Data Berhasil Dibuat!');
+    return redirect('/bebujkkonsultan');
+}
+
 
 }
