@@ -475,7 +475,6 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
         'sub_kualifikasi_bu' => $validated['sub_kualifikasi_bu'],
         'kode' => $validated['kode'],
         'kualifikasi' => $validated['kualifikasi'],
-        'sub_bidang' => $validated['sub_bidang'],
         'penerbit' => $validated['penerbit'],
         'nama_psjk' => $validated['nama_psjk'],
         'tanggal_terbit' => $validated['tanggal_terbit'],
