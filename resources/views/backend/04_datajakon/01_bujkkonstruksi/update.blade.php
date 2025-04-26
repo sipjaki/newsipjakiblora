@@ -306,6 +306,8 @@
                         <!--end::Quick Example-->
 
                     </div>
+
+                    <br><br>
                     <!-- /.card -->
                     <!-- Button Section -->
 
