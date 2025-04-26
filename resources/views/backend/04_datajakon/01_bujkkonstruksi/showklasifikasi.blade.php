@@ -103,7 +103,7 @@
 
                      </button>
                      </a>
-                     <a href="/bebujkkonstruksi/createsubklasifikasi">
+                     <a href="/bebujkkonstruksi/createsubklasifikasi/{{$data->id}}">
                          <button
                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                          onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
