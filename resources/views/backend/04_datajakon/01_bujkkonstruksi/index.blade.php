@@ -185,11 +185,12 @@
             @if($item->asosiasimasjaki && $item->asosiasimasjaki->namaasosiasi)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
             @else
-                <button class="bg-[#001f3f] text-white text-sm px-2 py-1 rounded hover:bg-white hover:text-black border border-[#001f3f] transition duration-200">
+                <button class="bg-[#000080] text-white text-sm px-2 py-1 rounded border border-[#000080] hover:bg-white hover:text-black transition duration-200">
                     Data Belum Diupdate
                 </button>
             @endif
         </td>
+
          <td style="text-align: left;">{{$item->namalengkap}}</td>
          <td style="text-align: left;">{{$item->alamat}}</td>
          <td style="text-align: center;">{{$item->no_telepon}}</td>
