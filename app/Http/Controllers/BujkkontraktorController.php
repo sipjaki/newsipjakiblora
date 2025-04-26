@@ -450,6 +450,8 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
         'sub_klasifikasi_layanan' => 'required|string|max:255',
         'kode' => 'required|string|max:50',
         'kualifikasi' => 'required|string|max:255',
+        'penerbit' => 'required|string|max:255',
+        'nama_psjk' => 'required|string|max:255',
         'sub_bidang' => 'required|string|max:255',
         'sertifikat_klasifikasi' => 'required|string|max:255',
         'tanggal_terbit' => 'required|date',
@@ -462,6 +464,8 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
         'kualifikasi.required' => 'Kualifikasi harus diisi.',
         'sub_bidang.required' => 'Sub Bidang harus diisi.',
         'sertifikat_klasifikasi.required' => 'Sertifikat Klasifikasi harus diisi.',
+        'kualifikasi.required' => 'Sertifikat Klasifikasi harus diisi.',
+        'nama_psjk.required' => 'Sertifikat Klasifikasi harus diisi.',
         'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
         'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
     ]);
