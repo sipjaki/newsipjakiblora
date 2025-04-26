@@ -178,6 +178,7 @@
                                         @endforeach
 
                                 </tbody>
+                                <br><br><br>
                             </table>
 
                         </div>
