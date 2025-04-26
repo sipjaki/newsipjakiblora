@@ -1,3 +1,50 @@
+<style>
+    .btn-suspend {
+        background-color: orange;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-suspend:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid orange;
+    }
+
+    .btn-expired {
+        background-color: red;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-expired:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid red;
+    }
+
+    .btn-active {
+        background-color: green;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-active:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid green;
+    }
+</style>
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -13,6 +60,8 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -20,7 +69,8 @@
             <!--begin::Row-->
             <div class="row">
 
-              <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
 
             </div>
             <!--end::Row-->
@@ -30,37 +80,13 @@
 
         <br>
         <!-- Menampilkan pesan sukses -->
-
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
         <div class="container-fluid">
             <!--begin::Row-->
             <div class="row" style="margin-right: 10px; margin-left:10px;">
                 <!-- /.card -->
                 <div class="card mb-4">
                     <div class="card-header">
-                        <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #166534, #22C55E);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                    📌 View Sub Data Klasifikasi Layanan : {{$data->namalengkap}}
-                </div>
-
-
+                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
                     <a href="/bebujkkonsultan">
@@ -69,12 +95,16 @@
                          onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
                          style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                          <!-- Ikon Kembali -->
-                         <i class="fa fa-arrow-left" style="margin-right: 8px;"></i> Kembali
+                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16" style="margin-right: 8px;">
+                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+               </svg>
+                         Kembali
 
                      </button>
                      </a>
-                     <a href="/404">
-                         <button
+                     <a href="/bebujkkonstruksi/createsubklasifikasi/{{$data->id}}">
+                        <button
                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                          onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
                          style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
@@ -89,20 +119,21 @@
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                            <table class="table table-striped">
+                            <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px; text-align:center;">No</th>
-                                        <th style="width: 300px; text-align:center;">Nama Pengurus</th>
-                                        <th style="width: 300px; text-align:center;">Sub Klasifikasi Layanan</th>
-                                        <th style="width: 100px; text-align:center;">Kode</th>
-                                        <th style="width: 200px; text-align:center;">Kualifikasi</th>
-                                        <th style="width: 200px; text-align:center;">Penerbit</th>
-                                        <th style="width: 100px; text-align:center;">Tanggal Terbit</th>
-                                        <th style="width: 100px; text-align:center;">Masa Berlaku</th>
-                                        <th style="width: 200px; text-align:center;">Nama PSJK</th>
-                                        <th style="width: 300px; text-align:center;">Sub Klasifikasi Badan Usaha</th>
-                                        <th style="width: 200px; text-align: center;">Aksi</th>
+                                        <th style="width: 75px; text-align:center;"><i class="bi bi-hash"></i> No</th>
+                                        <th style="width: 250px; text-align:center;"><i class="bi bi-person-fill"></i> Nama Pengurus</th>
+                                        <th style="width: 350px; text-align:center;"><i class="bi bi-diagram-3-fill"></i> Sub Klasifikasi Layanan</th>
+                                        <th style="width: 250px; text-align:center;"><i class="bi bi-upc"></i> Kode</th>
+                                        <th style="width: 250px; text-align:center;"><i class="bi bi-award-fill"></i> Kualifikasi</th>
+                                        <th style="width: 400px; text-align:center;"><i class="bi bi-building"></i> Penerbit</th>
+                                        <th style="width: 300px; text-align:center;"><i class="bi bi-calendar-event"></i> Tanggal Terbit</th>
+                                        <th style="width: 300px; text-align:center;"><i class="bi bi-hourglass-split"></i> Masa Berlaku</th>
+                                        <th style="width: 350px; text-align:center;"><i class="bi bi-person-badge"></i> Nama PSJK</th>
+                                        <th style="width: 350px; text-align:center;"><i class="bi bi-diagram-3"></i> Sub Klasifikasi Badan Usaha</th>
+                                        <th style="width: 300px; text-align:center;"><i class="bi bi-diagram-3"></i> Masa Berlaku</th>
+                                        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -122,15 +153,18 @@
                                         </td>
                                                <td style="text-align: left;">{{ $item->nama_psjk }}</td>
                                         <td style="text-align: left;">{{ $item->sub_kualifikasi_bu }}</td>
+                                        <td style="text-align: center;" class="masa-berlaku" data-masaberlaku="{{ $item->masa_berlaku ?? '' }}">
+                                            <button class="btn-masa-berlaku">Status</button>
+                                        </td>
                                         <td style="text-align: center;">
                                             <!-- Show Icon -->
                                          {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                                                 <i class="bi bi-eye"></i>
                                             </a>
                                             <!-- Update Icon --> --}}
-                                            <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+                                            {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
                                                 <i class="bi bi-pencil-square"></i>
-                                            </a>
+                                            </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
@@ -147,7 +181,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
+                                                        <p>Apakah Anda Ingin Menghapus Data ?</p>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -196,7 +230,7 @@
 
                                 </tbody>
                             </table>
-
+                            <br><br><br>
                         </div>
                     </div>
                     <!-- /.card-body -->
@@ -211,10 +245,40 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+        </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date(); // Dapatkan tanggal hari ini
+            const masaBerlakuElements = document.querySelectorAll('.masa-berlaku'); // Pilih semua td yang memiliki kelas masa-berlaku
+
+            masaBerlakuElements.forEach(function (element) {
+                const masaBerlaku = element.getAttribute('data-masaberlaku'); // Ambil data masa berlaku
+                const button = element.querySelector('.btn-masa-berlaku'); // Ambil tombol di dalam td
+
+                // Cek jika masa berlaku kosong
+                if (!masaBerlaku || masaBerlaku === '') {
+                    button.classList.add('btn-suspend'); // Tambahkan class untuk suspend
+                    button.textContent = 'SUSPEND';
+                } else {
+                    const masaBerlakuDate = new Date(masaBerlaku); // Jika ada, ubah menjadi tanggal
+
+                    // Cek jika masa berlaku sudah lewat
+                    if (masaBerlakuDate < today) {
+                        button.classList.add('btn-expired'); // Warna merah jika tidak berlaku
+                        button.textContent = 'TIDAK BERLAKU';
+                    } else {
+                        button.classList.add('btn-active'); // Warna hijau jika masih berlaku
+                        button.textContent = 'BERLAKU';
+                    }
+                }
+            });
+        });
+    </script>
