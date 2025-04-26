@@ -427,14 +427,14 @@ return view('backend.04_datajakon.01_bujkkonstruksi.show', [
 
 
 // CREATE DATA SUB KLASIFIKASI
-public function bebujkkonstruksicreateklasifikasi($id)
+public function bebujkkonstruksicreateklasifikasi($namalengkap)
 {
-    $bujkkontraktor = bujkkontraktor::findOrFail($id); // Cari 1 data sesuai ID
+    $bujkkontraktor = bujkkontraktor::findOrFail($namalengkap); // Cari 1 data sesuai ID
     $user = Auth::user();
     $asosiasimasjaki = asosiasimasjaki::all();
 
     return view('backend.04_datajakon.01_bujkkonstruksi.createklasifikasi', [
-        'bujkkontraktor_id' => $bujkkontraktor->id, // Ini dikirim ke form
+        'bujkkontraktor_id' => $bujkkontraktor->namalengkap, // Ini dikirim ke form
         'user' => $user,
         'asosiasimasjaki' => $asosiasimasjaki,
         'title' => 'Create BUJK Sub Klasifikasi'
