@@ -71,8 +71,8 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
-                        <div class="zebra-table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                            <table class="table table-striped">
+                        <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+                            <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px; text-align:center;">No</th>
