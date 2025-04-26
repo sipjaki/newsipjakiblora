@@ -173,7 +173,7 @@
         <th style="width: 250px; text-align:center;"><i class="bi bi-calendar-date"></i> Tanggal</th>
         <th style="width: 300px; text-align:center;"><i class="bi bi-person-lines-fill"></i> Notaris</th>
         <th style="width: 300px; text-align:center;"><i class="bi bi-patch-check-fill"></i> Pengesahan</th>
-        <th style="width: 120px; text-align:center;"><i class="bi bi-tags-fill"></i> Sub Klasifikasi</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Sub Klasifikasi</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
@@ -294,19 +294,20 @@
                         @endif
                     </td>
 
-             <td style="text-align: center; vertical-align: middle; width: 100%; align-items:center;">
-                <a href="{{ url('/bebujkkonstruksi/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='	#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           display: flex; align-items: center; justify-content: center;
-                           transition: background-color 0.3s, color 0.3s;">
-                    Lihat
-                </button>
-            </a>
-        </td>
+                    <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
+                        <a href="{{ url('/bebujkkonstruksi/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
+                            <button
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+                                style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                                       border-radius: 15px; font-size: 14px; cursor: pointer;
+                                       display: flex; align-items: center; justify-content: center;
+                                       transition: background-color 0.3s, color 0.3s;">
+                                Lihat
+                            </button>
+                        </a>
+                    </td>
+
 
         <td style="text-align: center; vertical-align: middle;">
             <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
