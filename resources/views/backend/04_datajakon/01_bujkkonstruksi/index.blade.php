@@ -65,27 +65,34 @@
                     text-align: center;
                     background: linear-gradient(135deg, #00378a, #00378a);
                     color: white;
-                    padding: 8px 10px;
+                    padding: 8px 16px;
                     border-radius: 10px;
                     display: inline-block;
                     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                ">
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                "
+                onmouseover="this.style.background='white'; this.style.color='black';"
+                onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
                     ⚙️ Setting Database
                 </div>
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                         <a href="/404">
-                             <button
-                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                             onmouseout="this.style.backgroundColor='#00378a'; this.style.color='white';"
-                             style="background-color: #00378a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                             <!-- Ikon Kembali -->
-                             <i class="fa fa-database" style="margin-right: 8px;"></i>
-                             Asosiasi
-                         </button>
-                         </a>
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                            onmouseout="this.style.backgroundColor='#00378a'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
+                            style="background-color: #00378a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
 
-                     </div>
+                            <!-- Ikon Database SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24" style="margin-right: 8px;">
+                                <path d="M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4zm0 2c5.05 0 8 .97 8 2s-2.95 2-8 2-8-.97-8-2 2.95-2 8-2zm0 16c-5.05 0-8-.97-8-2v-1.09c1.87 1.01 5.03 1.59 8 1.59s6.13-.58 8-1.59V18c0 1.03-2.95 2-8 2zm0-4c-5.05 0-8-.97-8-2v-1.09c1.87 1.01 5.03 1.59 8 1.59s6.13-.58 8-1.59V14c0 1.03-2.95 2-8 2zm0-4c-5.05 0-8-.97-8-2V8.91c1.87 1.01 5.03 1.59 8 1.59s6.13-.58 8-1.59V10c0 1.03-2.95 2-8 2z"/>
+                            </svg>
+                            Asosiasi
+                        </button>
+                    </a>
+                </div>
+
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
