@@ -297,9 +297,11 @@
 
                                                      </div>
                         <!--end::Quick Example-->
-
-                        <br><br>
                     </div>
+
+
+                    <br><br>
+
                     <!-- /.card -->
                     <!-- Button Section -->
 
