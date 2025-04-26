@@ -447,21 +447,21 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
     // Validasi input
     $validated = $request->validate([
         'nama_pengurus' => 'required|string|max:255',
-        'sub_kualifikasi_bu' => 'required|string|max:255',
+        'sub_klasifikasi_layanan' => 'required|string|max:255',
         'kode' => 'required|string|max:50',
         'kualifikasi' => 'required|string|max:255',
         'penerbit' => 'required|string|max:255',
         'nama_psjk' => 'required|string|max:255',
-        'sub_bidang' => 'required|string|max:255',
+        'sub_kualifikasi_bu' => 'required|string|max:255',
         'tanggal_terbit' => 'required|date',
         'tanggal_berlaku' => 'required|date',
     ], [
         // Pesan kesalahan custom
         'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
-        'sub_kualifikasi_bu.required' => 'Sub Klasifikasi Badan Usaha harus diisi.',
+        'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
         'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
         'kualifikasi.required' => 'Kualifikasi harus diisi.',
-        'sub_bidang.required' => 'Sub Bidang harus diisi.',
+        'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
         'penerbit.required' => 'Penerbit harus diisi.',
         'nama_psjk.required' => 'Nama PSJK harus diisi.',
         'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
@@ -472,9 +472,10 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
     $bujkkontraktorSub = bujkkontraktorsub::create([
         'bujkkontraktor_id' => $request->bujkkontraktor_id,
         'nama_pengurus' => $validated['nama_pengurus'],
-        'sub_kualifikasi_bu' => $validated['sub_kualifikasi_bu'],
+        'sub_klasifikasi_layanan' => $validated['sub_klasifikasi_layanan'],
         'kode' => $validated['kode'],
         'kualifikasi' => $validated['kualifikasi'],
+        'sub_kualifikasi_bu' => $validated['sub_kualifikasi_bu'],
         'penerbit' => $validated['penerbit'],
         'nama_psjk' => $validated['nama_psjk'],
         'tanggal_terbit' => $validated['tanggal_terbit'],
