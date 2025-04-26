@@ -851,11 +851,7 @@ tupoksi::create([
 // MAS JAKI DATA JASA KONSTRUKSI
 //======================== ===================================================================================
 
-for ($i = 2; $i <= 112; $i++) {
-    bujkkontraktor::where('id', $i)->update([
-        'user_id' => 10,
-    ]);
-}
+
 
 bujkkontraktor::create([
     'id' => 1, // Ganti dengan ID yang sesuai
@@ -67455,6 +67451,13 @@ for ($i = 1; $i <= 151; $i++) {
         'kesimpulan2' => $carapemeriksaan2,
         'catatan1' => null,
         'catatan2' => null,
+    ]);
+}
+
+
+for ($i = 1; $i <= 112; $i++) {
+    bujkkontraktor::where('id', $i)->update([
+        'user_id' => 10,
     ]);
 }
 
