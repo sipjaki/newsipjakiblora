@@ -110,7 +110,7 @@
                                                 <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Nama Asosiasi
                                             </label>
                                             <input type="text" id="asosiasimasjaki" name="asosiasimasjaki" class="form-control"
-                                            value="{{ $data->asosiasimasjaki->namaasosiasi }}"
+                                            value="{{ $data->asosiasimasjaki->namaasosiasi ?? 'Data Belum Di Update' }}"
                                             style="background-color: #000080; color: white; border: 1px solid #000080; padding: 6px 10px; font-size: 14px; border-radius: 4px; transition: none;"
                                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                             onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';" />
