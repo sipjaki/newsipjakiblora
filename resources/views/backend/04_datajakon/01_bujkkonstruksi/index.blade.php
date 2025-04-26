@@ -165,11 +165,11 @@
         <th style="width: 200px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
         <th style="width: 250px; text-align:center;"><i class="bi bi-building"></i> Badan Usaha</th>
         <th style="width: 400px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-telephone-fill"></i> No Telepon</th>
+        <th style="width: 350px; text-align:center;"><i class="bi bi-telephone-fill"></i> No Telepon</th>
         <th style="width: 350px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
         <th style="width: 150px; text-align:center;"><i class="bi bi-credit-card-2-front"></i> NIB</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-person-badge-fill"></i> PJU</th>
-        <th style="width: 350px; text-align:center;"><i class="bi bi-file-earmark-text"></i> No Akte</th>
+        <th style="width: 300px; text-align:center;"><i class="bi bi-file-earmark-text"></i> No Akte</th>
         <th style="width: 250px; text-align:center;"><i class="bi bi-calendar-date"></i> Tanggal</th>
         <th style="width: 300px; text-align:center;"><i class="bi bi-person-lines-fill"></i> Notaris</th>
         <th style="width: 300px; text-align:center;"><i class="bi bi-patch-check-fill"></i> Pengesahan</th>
