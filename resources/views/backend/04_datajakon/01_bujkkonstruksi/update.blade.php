@@ -102,6 +102,16 @@
                                     <div class="col-md-6">
                                         <!-- Nama Badan Usaha -->
                                         <div class="mb-3">
+                                            <label class="form-label" for="user_id">
+                                                <i class="bi bi-building" style="margin-right: 10px; color: navy;"></i> Administrator
+                                            </label>
+                                            <input type="text" id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id', $data->user->name) }}" />
+                                            @error('user_id')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3">
                                             <label class="form-label" for="namalengkap">
                                                 <i class="bi bi-building" style="margin-right: 10px; color: navy;"></i> Nama Badan Usaha
                                             </label>

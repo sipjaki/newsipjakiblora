@@ -473,7 +473,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
     // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
         // 'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
-        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id', // Validasi untuk ID asosiasi
+        'asosiasimasjaki_id' => 'required|integer', // Validasi untuk ID asosiasi
         'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
         'alamat' => 'required|string', // Validasi untuk Alamat
         'no_telepon' => 'required|string|max:255', // Validasi untuk No Telepon
