@@ -464,7 +464,7 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
         'kualifikasi.required' => 'Kualifikasi harus diisi.',
         'sub_bidang.required' => 'Sub Bidang harus diisi.',
         'sertifikat_klasifikasi.required' => 'Sertifikat Klasifikasi harus diisi.',
-        'kualifikasi.required' => 'Sertifikat Klasifikasi harus diisi.',
+        'penerbit.required' => 'Sertifikat Klasifikasi harus diisi.',
         'nama_psjk.required' => 'Sertifikat Klasifikasi harus diisi.',
         'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
         'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
