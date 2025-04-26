@@ -34,13 +34,6 @@
         <br>
         <!-- Menampilkan pesan sukses -->
 
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
             <!-- Menyertakan FontAwesome untuk ikon -->
 
         <div class="container-fluid">
@@ -54,9 +47,6 @@
 
                            {{-- ======================================================= --}}
         {{-- ALERT --}}
-
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
 
 
         <div class="card card-primary card-outline mb-6">
