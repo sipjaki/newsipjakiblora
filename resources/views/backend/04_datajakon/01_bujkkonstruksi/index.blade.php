@@ -160,7 +160,7 @@
          <th style="width: 75px; text-align:center;">No</th>
          <th style="text-align:center; background:white; color:black;">Asosiasi</th>
          <th style="text-align:center;">Badan Usaha</th>
-         <th style="text-align:center;">Alamat</th>
+         <th style="text-align:center; width:600px;">Alamat</th>
          <th style="text-align:center;">No Telepon</th>
          <th style="text-align:center;">Email</th>
          <th style="text-align:center;">NIB</th>
