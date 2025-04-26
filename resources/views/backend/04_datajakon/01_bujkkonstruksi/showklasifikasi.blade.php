@@ -1,10 +1,17 @@
 <style>
-   .btn-suspend {
+    .btn-suspend {
         background-color: orange;
         color: white;
         padding: 5px 10px;
         border-radius: 5px;
         font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-suspend:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid orange;
     }
 
     .btn-expired {
@@ -13,6 +20,13 @@
         padding: 5px 10px;
         border-radius: 5px;
         font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-expired:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid red;
     }
 
     .btn-active {
@@ -21,6 +35,13 @@
         padding: 5px 10px;
         border-radius: 5px;
         font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-active:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid green;
     }
 </style>
 
