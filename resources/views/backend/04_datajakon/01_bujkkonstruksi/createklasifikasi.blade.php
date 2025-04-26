@@ -169,7 +169,7 @@
                                             @enderror
                                         </div>
 
-                                        <!-- Sertifikat Klasifikasi -->
+                                        <!-- Penerbit -->
                                         <div class="mb-3">
                                             <label class="form-label" for="penerbit">
                                                 <i class="bi bi-file-earmark-text" style="margin-right:8px; color:navy;"></i> Penerbit
