@@ -221,12 +221,20 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
 
-                                            @if ($data->berkas)
-                                            <div class="mt-2">
-                                                <!-- Menampilkan PDF jika berkas ada -->
-                                                <iframe src="{{ asset('storage/' . $data->berkas) }}" width="100%" height="400px"></iframe>
-                                            </div>
+                                            <div style="margin-top: 10px;">
+                                                @if($data->berkas && file_exists(public_path('storage/' . $data->berkas)))
+                                                <!-- Display the default iframe when the file exists in the storage -->
+                                                <iframe src="{{ asset('storage/' . $data->berkas) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @elseif($data->berkas)
+                                                <!-- Display the iframe with the updated file -->
+                                                <iframe src="{{ asset($data->berkas) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @else
+                                                <!-- Optional: Show a placeholder if there's no file available -->
+                                                <p>Data belum diupdate</p>
                                             @endif
+
+                                            </div>
+
                                         </div>
 
                                     </div>
