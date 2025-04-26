@@ -294,6 +294,7 @@
 
 
                         </form>
+                        <br><br>
 
                                                      </div>
                         <!--end::Quick Example-->
