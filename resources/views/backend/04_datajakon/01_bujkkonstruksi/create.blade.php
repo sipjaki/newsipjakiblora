@@ -117,7 +117,7 @@
                                             <label class="form-label" for="no_telepon">
                                                 <i class="bi bi-telephone" style="margin-right: 8px; color: navy;"></i> Nomor Telepon
                                             </label>
-                                            <input type="text" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}" />
+                                            <input type="number" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon') }}" />
                                             @error('no_telepon')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
