@@ -180,54 +180,185 @@
      </tr>
  </thead>
  <tbody id="tableBody">
-     @foreach ($data as $item )
-     <tr class="align-middle">
-         <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
-         <td style="text-align: left;">{{$item->namalengkap}}</td>
-         <td style="text-align: left;">{{$item->alamat}}</td>
-         <td style="text-align: center;">{{$item->no_telepon}}</td>
-         <td style="text-align: left;">{{$item->email}}</td>
-         <td style="text-align: center;">{{$item->nomorindukberusaha}}</td>
-         <td style="text-align: left;">{{$item->pju}}</td>
-         <td style="text-align: center;">{{$item->no_akte}}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</td>
-         <td style="text-align: left;">{{$item->nama_notaris}}</td>
-         <td style="text-align: left;">{{$item->no_pengesahan}}</td>
+    @foreach ($data as $item )
+    <tr class="align-middle">
+        <td style="text-align: center;">{{ $loop->iteration }}</td>
+        <td style="text-align: center;">
+           @if($item->asosiasimasjaki && $item->asosiasimasjaki->namaasosiasi)
+               {{ $item->asosiasimasjaki->namaasosiasi }}
+           @else
+               <button style="background-color: #000080; color: white; font-size: 14px; padding: 4px 8px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                       onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                       onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                   Data Belum Diupdate
+               </button>
+           @endif
+       </td>
 
-             <td style="text-align: center; vertical-align: middle; width: 100%; align-items:center;">
-                <a href="{{ url('/bebujkkonsultan/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
-                <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='	#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                           border-radius: 15px; font-size: 14px; cursor: pointer;
-                           display: flex; align-items: center; justify-content: center;
-                           transition: background-color 0.3s, color 0.3s;">
-                    Lihat
-                </button>
-            </a>
-        </td>
+       <td style="text-align: left;">
+           @if($item->namalengkap)
+               {{ $item->namalengkap }}
+           @else
+               <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                       onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                       onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                   Data Belum Di Update
+               </button>
+           @endif
+       </td>
+           <td style="text-align: left;">
+               @if($item->alamat)
+                   {{ $item->alamat }}
+               @else
+                   <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                           onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                       Data Belum Di Update
+                   </button>
+               @endif
+           </td>
+           <td style="text-align: center;">
+               @if($item->no_telepon)
+                   {{ $item->no_telepon }}
+               @else
+                   <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                           onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                       Data Belum Di Update
+                   </button>
+               @endif
+           </td>
+           <td style="text-align: left;">
+               @if($item->email)
+                   {{ $item->email }}
+               @else
+                   <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                           onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                       Data Belum Di Update
+                   </button>
+               @endif
+           </td>
+           <td style="text-align: center;">
+               @if($item->nomorindukberusaha)
+                   {{ $item->nomorindukberusaha }}
+               @else
+                   <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                           onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                       Data Belum Di Update
+                   </button>
+               @endif
+           </td>
+           <td style="text-align: left;">
+               @if($item->pju)
+                   {{ $item->pju }}
+               @else
+                   <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                           onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                       Data Belum Di Update
+                   </button>
+               @endif
+           </td>
+           <td style="text-align: center;">
+               @if($item->no_akte)
+                   {{ $item->no_akte }}
+               @else
+                   <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                           onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                       Data Belum Di Update
+                   </button>
+               @endif
+           </td>
+                <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</td>
+                   <td style="text-align: left;">
+                       @if($item->nama_notaris)
+                           {{ $item->nama_notaris }}
+                       @else
+                           <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                   onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                               Data Belum Di Update
+                           </button>
+                       @endif
+                   </td>
 
-         <td style="text-align: center; vertical-align: middle;">
-             <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
-                 <i class="bi bi-eye"></i>
-             </a>
-             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
-                 <i class="bi bi-pencil-square"></i>
-             </a>
-             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
-                   data-bs-toggle="modal" data-bs-target="#deleteModal"
-                   data-judul="{{ $item->namalengkap }}"
-                   onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>
-            </a>
-         </td>
+                   <td style="text-align: left;">
+                       @if($item->no_pengesahan)
+                           {{ $item->no_pengesahan }}
+                       @else
+                           <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                   onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                               Data Belum Di Update
+                           </button>
+                       @endif
+                   </td>
 
-        </tr>
 
-     @endforeach
- </tbody>
+                   <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
+                       <a href="{{ url('/bebujkkonstruksi/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
+                           <button
+                               onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                               onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+                               style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                                      border-radius: 15px; font-size: 14px; cursor: pointer;
+                                      display: flex; align-items: center; justify-content: center;
+                                      transition: background-color 0.3s, color 0.3s;">
+                               Lihat
+                           </button>
+                       </a>
+                   </td>
+
+
+                   <td style="text-align: center;">
+                       @if($item->user?->name)
+                           {{ $item->user?->name }}
+                       @else
+                           <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                   onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                               Admin Tidak Ada
+                           </button>
+                       @endif
+                   </td>
+
+
+       <td style="text-align: center; vertical-align: middle;">
+           <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
+               <i class="bi bi-eye"></i>
+           </a>
+           <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
+               <i class="bi bi-pencil-square"></i>
+           </a>
+           <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+              data-bs-toggle="modal" data-bs-target="#deleteModal"
+              data-judul="{{ $item->namalengkap }}"
+              onclick="setDeleteUrl(this)">
+               <i class="bi bi-trash"></i>
+           </a>
+       </td>
+
+       <!-- CSS untuk Hover -->
+       <style>
+           .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
+               background-color: white !important; /* Ganti background menjadi putih */
+               color: white !important; /* Ganti warna teks menjadi putih */
+               border-color: transparent !important; /* Menyembunyikan border saat hover */
+           }
+
+           /* Ganti warna ikon untuk tombol hover agar tetap terlihat */
+           .btn-info:hover i, .btn-warning:hover i, .btn-danger:hover i {
+               color: navy !important; /* Ganti ikon menjadi navy atau warna lain yang diinginkan */
+           }
+       </style>
+
+       </tr>
+
+    @endforeach
+</tbody>
 </table>
                      </div>
                  </div>
