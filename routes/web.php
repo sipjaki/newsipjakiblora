@@ -725,6 +725,12 @@ Route::get('/bebujkkonsultan', [BujkkonsultanController::class, 'bebujkkonsultan
 Route::get('/bebujkkonsultan/show/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshow'])->middleware('auth');
 Route::get('/bebujkkonsultan/showsubklasifikasi/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasi'])->middleware('auth');
 
+
+Route::get('/bebujkkonsultan/update/{id}', [BujkkontraktorController::class, 'bebujkkonsultanupdate'])->middleware('auth')->name('update.bebujkkonsultanupdate');
+// Route::post('/bebujkkonstruksi/updatecreate/{id}', [BujkkontraktorController::class, 'bebujkkonstruksicreateupdate'])->middleware('auth')->name('update.bebujkkonstruksicreateupdate');
+// Route::get('/bebujkkonstruksi/create', [BujkkontraktorController::class, 'bebujkkonstruksicreate'])->middleware('auth')->name('create.bebujkkonstruksicreate');
+// Route::post('/bebujkkonstruksi/createnew', [BujkkontraktorController::class, 'bebujkkonstruksicreatenew'])->middleware('auth')->name('create.bebujkkonstruksicreatenew');
+
 Route::delete('/bebujkkonsultan/delete/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshowdelete'])->middleware('auth');
 Route::delete('/bebujkkonsultanklasifikasi/delete/{id}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasidelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________

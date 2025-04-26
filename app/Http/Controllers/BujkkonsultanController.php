@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\asosiasimasjaki;
 use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
 use App\Models\bujkkontraktor;
@@ -226,6 +227,29 @@ return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['id' => $parent
 
 return redirect()->back()->with('error', 'Item not found');
 }
+
+
+
+
+// UPDATE BUJKKONSULTAN
+
+public function bebujkkonsultanupdate($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $jakonkonsultan = bujkkonsultan::where('id', $id)->firstOrFail();
+    $asosiasimasjakiList = asosiasimasjaki::all(); // Ambil semua asosiasi
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.04_datajakon.02_bujkkonsultan.update', [
+        'data' => $jakonkonsultan,
+        'user' => $user,
+        'asosiasimasjakiList' => $asosiasimasjakiList,
+        'title' => 'Update BUJK Kontraktor'
+    ]);
+}
+
 
 
 }
