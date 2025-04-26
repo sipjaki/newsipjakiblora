@@ -319,7 +319,7 @@ public function bebujkkonstruksi(Request $request)
             });
     }
 
-    $data = $query->paginate($perPage);
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
     if ($request->ajax()) {
         return response()->json([
@@ -359,7 +359,7 @@ public function bebujkkonstruksicreatenew(Request $request)
 {
     // Validasi input form
     $validatedData = $request->validate([
-        'asosiasimasjaki_id' => 'required|integer|exists:asosiasimasjaki,id',
+        'asosiasimasjaki_id' => 'required|integer',
         'namalengkap' => 'required|string|max:255',
         'alamat' => 'required|string',
         'no_telepon' => 'required|string|max:255',
