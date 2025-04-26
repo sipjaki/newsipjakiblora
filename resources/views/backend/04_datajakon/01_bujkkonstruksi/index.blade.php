@@ -161,20 +161,20 @@
 <table class="zebra-table table-striped">
  <thead>
      <tr>
-         <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 200px; text-align:center;">Asosiasi</th>
-         <th style="width: 250px; text-align:center;">Badan Usaha</th>
-         <th style="width: 400px; text-align:center;">Alamat</th>
-         <th style="width: 200px; text-align:center;">No Telepon</th>
-         <th style="width: 250px; text-align:center;">Email</th>
-         <th style="width: 150px; text-align:center;">NIB</th>
-         <th style="width: 200px; text-align:center;">PJU</th>
-         <th style="width: 150px; text-align:center;">No Akte</th>
-         <th style="width: 250px; text-align:center;">Tanggal</th>
-         <th style="width: 300px; text-align:center;">Notaris</th>
-         <th style="width: 300px; text-align:center;">Pengesahan</th>
-         <th style="width: 120px; text-align:center;">Sub Klasifikasi</th>
-         <th style="width: 200px; text-align:center;">Aksi</th>
+        <th style="width: 75px; text-align:center;"><i class="fas fa-list-ol"></i> No</th>
+        <th style="width: 200px; text-align:center;"><i class="fas fa-users"></i> Asosiasi</th>
+        <th style="width: 250px; text-align:center;"><i class="fas fa-building"></i> Badan Usaha</th>
+        <th style="width: 400px; text-align:center;"><i class="fas fa-map-marker-alt"></i> Alamat</th>
+        <th style="width: 200px; text-align:center;"><i class="fas fa-phone"></i> No Telepon</th>
+        <th style="width: 250px; text-align:center;"><i class="fas fa-envelope"></i> Email</th>
+        <th style="width: 150px; text-align:center;"><i class="fas fa-id-badge"></i> NIB</th>
+        <th style="width: 200px; text-align:center;"><i class="fas fa-user-tie"></i> PJU</th>
+        <th style="width: 150px; text-align:center;"><i class="fas fa-file-alt"></i> No Akte</th>
+        <th style="width: 250px; text-align:center;"><i class="fas fa-calendar-alt"></i> Tanggal</th>
+        <th style="width: 300px; text-align:center;"><i class="fas fa-gavel"></i> Notaris</th>
+        <th style="width: 300px; text-align:center;"><i class="fas fa-check-circle"></i> Pengesahan</th>
+        <th style="width: 120px; text-align:center;"><i class="fas fa-layer-group"></i> Sub Klasifikasi</th>
+        <th style="width: 200px; text-align:center;"><i class="fas fa-cogs"></i> Aksi</th>
      </tr>
  </thead>
  <tbody id="tableBody">
