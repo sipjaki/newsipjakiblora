@@ -178,9 +178,8 @@
                                         @endforeach
 
                                 </tbody>
-                                <br><br><br>
                             </table>
-
+                            <br><br><br>
                         </div>
                     </div>
                     <!-- /.card-body -->
