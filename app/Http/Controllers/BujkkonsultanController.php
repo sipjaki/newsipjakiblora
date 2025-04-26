@@ -252,4 +252,64 @@ public function bebujkkonsultanupdate($id)
 
 
 
+public function bebujkkonsultancreateupdate(Request $request, $id)
+{
+    // Validasi input dengan pesan kustom
+    $validatedData = $request->validate([
+        // 'bujkkontraktorsub_id' => 'required|string|max:255', // Validasi untuk ID kontraktor
+        'asosiasimasjaki_id' => 'required|integer', // Validasi untuk ID asosiasi
+        'namalengkap' => 'required|string|max:255', // Validasi untuk Nama Lengkap
+        'alamat' => 'required|string', // Validasi untuk Alamat
+        'no_telepon' => 'required|string|max:255', // Validasi untuk No Telepon
+        'email' => 'required|email', // Validasi untuk Email
+        'nomorindukberusaha' => 'required|string|max:255', // Validasi untuk Nomor Induk Berusaha
+        'pju' => 'required|string|max:255', // Validasi untuk PJU
+        'no_akte' => 'required|string|max:255', // Validasi untuk No Akte
+        'tanggal' => 'required|date', // Validasi untuk Tanggal
+        'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
+        'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
+    ], [
+
+        'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+        'alamat.required' => 'Alamat wajib diisi!',
+        'no_telepon.required' => 'Nomor Telepon wajib diisi!',
+        'email.required' => 'Email wajib diisi!',
+        'email.email' => 'Format email tidak valid!',
+        'nomorindukberusaha.required' => 'Nomor Induk Berusaha wajib diisi!',
+        'pju.required' => 'PJU wajib diisi!',
+        'no_akte.required' => 'No Akte wajib diisi!',
+        'tanggal.required' => 'Tanggal wajib diisi!',
+        'tanggal.date' => 'Format Tanggal tidak valid!',
+        'nama_notaris.required' => 'Nama Notaris wajib diisi!',
+        'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
+    ]);
+
+    // Cari data strukturdinas berdasarkan nilai 'judul'
+    $jakonkontraktor = bujkkontraktor::where('id', $id)->firstOrFail();
+
+    // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
+
+    // Proses update setelah data tervalidasi
+    $jakonkontraktor->update([
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'] ?? $jakonkontraktor->asosiasimasjaki_id, // Jika asosiasimasjaki_id tidak ada, gunakan data sebelumnya
+        'namalengkap' => $validatedData['namalengkap'] ?? $jakonkontraktor->namalengkap, // Jika namalengkap tidak ada, gunakan data sebelumnya
+        'alamat' => $validatedData['alamat'] ?? $jakonkontraktor->alamat, // Jika alamat tidak ada, gunakan data sebelumnya
+        'no_telepon' => $validatedData['no_telepon'] ?? $jakonkontraktor->no_telepon, // Jika no_telepon tidak ada, gunakan data sebelumnya
+        'email' => $validatedData['email'] ?? $jakonkontraktor->email, // Jika email tidak ada, gunakan data sebelumnya
+        'nomorindukberusaha' => $validatedData['nomorindukberusaha'] ?? $jakonkontraktor->nomorindukberusaha, // Jika nomorindukberusaha tidak ada, gunakan data sebelumnya
+        'pju' => $validatedData['pju'] ?? $jakonkontraktor->pju, // Jika pju tidak ada, gunakan data sebelumnya
+        'no_akte' => $validatedData['no_akte'] ?? $jakonkontraktor->no_akte, // Jika no_akte tidak ada, gunakan data sebelumnya
+        'tanggal' => $validatedData['tanggal'] ?? $jakonkontraktor->tanggal, // Jika tanggal tidak ada, gunakan data sebelumnya
+        'nama_notaris' => $validatedData['nama_notaris'] ?? $jakonkontraktor->nama_notaris, // Jika nama_notaris tidak ada, gunakan data sebelumnya
+        'no_pengesahan' => $validatedData['no_pengesahan'] ?? $jakonkontraktor->no_pengesahan, // Jika no_pengesahan tidak ada, gunakan data sebelumnya
+    ]);
+    // Flash session untuk menampilkan pesan sukses
+    session()->flash('update', 'Data Berhasil Diupdate!');
+
+    // Redirect ke halaman yang sesuai
+    return redirect('/bebujkkonstruksi');
+}
+
+
 }
