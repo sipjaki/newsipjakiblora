@@ -735,7 +735,7 @@ Route::get('/bebujkkonsultan/create', [BujkkonsultanController::class, 'bebujkko
 Route::post('/bebujkkonsultan/createnew', [BujkkonsultanController::class, 'bebujkkonsultancreatenew'])->middleware('auth')->name('create.bebujkkonsultancreatenew');
 
 Route::delete('/bebujkkonsultan/delete/{namalengkap}', [BujkkonsultanController::class, 'bebujkkonsultanshowdelete'])->middleware('auth');
-Route::delete('/bebujkkonsultanklasifikasi/delete/{id}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasidelete'])->middleware('auth');
+Route::delete('/bebujkkonsultanklasifikasi/delete/{id}', [BujkkonsultanController::class, 'bebujkkonsultanshowklasifikasidelete'])->middleware('auth')->name('bebujkkonsultanklasifikasi.delete');
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 3 DATA ASOSIASI JASA KONSTRUKSI   -----------------------------------------------------

@@ -168,49 +168,44 @@
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                            data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash"></i>
-                                        </a>
+                                            data-id="{{ $item->id }}" onclick="setDeleteUrl(this)">
+                                             <i class="bi bi-trash"></i>
+                                         </a>
 
-                                        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
-                                                        <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Apakah Anda Ingin Menghapus Data ?</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                        <form id="deleteForm" method="POST" action="">
-                                                            @csrf
-                                                            @method('DELETE') <!-- Menetapkan metode DELETE untuk penghapusan -->
-                                                            <button type="submit" class="btn btn-danger">Hapus</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                         <!-- Modal -->
+                                         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                             <div class="modal-dialog">
+                                                 <div class="modal-content">
+                                                     <div class="modal-header">
+                                                         <img src="/assets/icon/pupr.png" alt="" width="30" style="margin-right: 10px;">
+                                                         <h5 class="modal-title" id="deleteModalLabel">DPUPR Kabupaten Blora</h5>
+                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                     </div>
+                                                     <div class="modal-body">
+                                                         <p>Apakah Anda yakin ingin menghapus data ini?</p>
+                                                     </div>
+                                                     <div class="modal-footer">
+                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                                         <form id="deleteForm" method="POST" action="">
+                                                             @csrf
+                                                             @method('DELETE')
+                                                             <button type="submit" class="btn btn-danger">Hapus</button>
+                                                         </form>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                         </div>
 
+                                         <!-- Script untuk set action form -->
+                                         <script>
+                                         function setDeleteUrl(button) {
+                                             var id = button.getAttribute('data-id');
+                                             var deleteUrl = "{{ route('bebujkkonsultanklasifikasi.delete', ':id') }}";
+                                             deleteUrl = deleteUrl.replace(':id', encodeURIComponent(id));
 
-                                        <script>
-                                        function setDeleteUrl(button) {
-                                            // Ambil data judul dari elemen yang diklik
-                                            var id = button.getAttribute('data-judul');
-
-                                            // Perbarui teks di dalam modal dengan nama item
-                                            document.getElementById('itemName').innerText = id;
-
-                                            // Atur URL penghapusan
-                                            var deleteUrl = "/bebujkkonstruksiklasifikasi/delete/" + encodeURIComponent(id);
-                                            document.getElementById('deleteForm').action = deleteUrl;
-                                        }
-
-
-                                        </script>
+                                             document.getElementById('deleteForm').action = deleteUrl;
+                                         }
+                                         </script>
 
                                             <style>
                                                 /* Hover effect */

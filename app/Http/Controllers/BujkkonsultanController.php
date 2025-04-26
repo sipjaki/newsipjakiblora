@@ -204,29 +204,6 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
-public function bebujkkonsultanshowklasifikasidelete($id)
-{
-// Cari item berdasarkan judul
-$entry = bujkkonsultansub::where('id', $id)->first();
-
-if ($entry) {
-// Jika ada file header yang terdaftar, hapus dari storage
-// if (Storage::disk('public')->exists($entry->header)) {
-    //     Storage::disk('public')->delete($entry->header);
-// }
-
-// Hapus entri dari database
-
-$parentId = $entry->bujkkonsultan_id; // Sesuaikan dengan nama kolom di database
-$entry->delete();
-
-return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['id' => $parentId])
-    ->with('delete', 'Data Berhasil Dihapus!');
-
-}
-
-return redirect()->back()->with('error', 'Item not found');
-}
 
 
 
@@ -452,5 +429,31 @@ public function bebujkkonsultancreateklasifikasicreate(Request $request)
     // Redirect ke route 'bebujkkonstruksi.showsubklasifikasi' dengan parameter bujkkontraktor_id
     return redirect('bebujkkonsultan');
 }
+
+
+public function bebujkkonsultanshowklasifikasidelete($id)
+{
+    $entry = bujkkonsultansub::where('id', $id)->first();
+
+    if ($entry) {
+        // Kalau ada file yang mau dihapus, bisa aktifkan bagian ini
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        $parentId = $entry->bujkkonsultan_id;
+        $entry->delete();
+
+        // Pakai session()->flash supaya konsisten dengan create
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect('/bebujkkonsultan');
+    }
+
+    // Kalau tidak ketemu, flash error
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
+
 
 }
