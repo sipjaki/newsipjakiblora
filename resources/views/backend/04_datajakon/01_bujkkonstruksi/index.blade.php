@@ -174,6 +174,7 @@
         <th style="width: 300px; text-align:center;"><i class="bi bi-person-lines-fill"></i> Notaris</th>
         <th style="width: 300px; text-align:center;"><i class="bi bi-patch-check-fill"></i> Pengesahan</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Sub Klasifikasi</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Di Buat Oleh</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
  </thead>
@@ -282,6 +283,7 @@
                             </button>
                         @endif
                     </td>
+
                     <td style="text-align: left;">
                         @if($item->no_pengesahan)
                             {{ $item->no_pengesahan }}
@@ -290,6 +292,18 @@
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                     onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
                                 Data Belum Di Update
+                            </button>
+                        @endif
+                    </td>
+
+                    <td style="text-align: left;">
+                        @if($item->user->name)
+                            {{ $item->user->name }}
+                        @else
+                            <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                    onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                                Admin Tidak Ada
                             </button>
                         @endif
                     </td>
