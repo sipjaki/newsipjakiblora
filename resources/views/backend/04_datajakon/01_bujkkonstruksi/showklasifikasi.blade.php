@@ -75,17 +75,17 @@
                             <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px; text-align:center;">No</th>
-                                        <th style="width: 300px; text-align:center;">Nama Pengurus</th>
-                                        <th style="width: 300px; text-align:center;">Sub Klasifikasi Layanan</th>
-                                        <th style="width: 100px; text-align:center;">Kode</th>
-                                        <th style="width: 200px; text-align:center;">Kualifikasi</th>
-                                        <th style="width: 200px; text-align:center;">Penerbit</th>
-                                        <th style="width: 100px; text-align:center;">Tanggal Terbit</th>
-                                        <th style="width: 100px; text-align:center;">Masa Berlaku</th>
-                                        <th style="width: 200px; text-align:center;">Nama PSJK</th>
-                                        <th style="width: 300px; text-align:center;">Sub Klasifikasi Badan Usaha</th>
-                                        <th style="width: 200px; text-align: center;">Aksi</th>
+                                        <th style="width: 10px; text-align:center;"><i class="bi bi-hash"></i> No</th>
+                                        <th style="width: 300px; text-align:center;"><i class="bi bi-person-fill"></i> Nama Pengurus</th>
+                                        <th style="width: 300px; text-align:center;"><i class="bi bi-diagram-3-fill"></i> Sub Klasifikasi Layanan</th>
+                                        <th style="width: 100px; text-align:center;"><i class="bi bi-upc"></i> Kode</th>
+                                        <th style="width: 200px; text-align:center;"><i class="bi bi-award-fill"></i> Kualifikasi</th>
+                                        <th style="width: 200px; text-align:center;"><i class="bi bi-building"></i> Penerbit</th>
+                                        <th style="width: 100px; text-align:center;"><i class="bi bi-calendar-event"></i> Tanggal Terbit</th>
+                                        <th style="width: 100px; text-align:center;"><i class="bi bi-hourglass-split"></i> Masa Berlaku</th>
+                                        <th style="width: 200px; text-align:center;"><i class="bi bi-person-badge"></i> Nama PSJK</th>
+                                        <th style="width: 300px; text-align:center;"><i class="bi bi-diagram-3"></i> Sub Klasifikasi Badan Usaha</th>
+                                        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
