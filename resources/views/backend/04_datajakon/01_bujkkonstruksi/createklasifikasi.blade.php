@@ -50,7 +50,7 @@
                                 <button
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                    style="background-color: #374151; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                    style="background-color: #374151; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none; margin-left: 15px; margin-right: 15px; margin-bottom: 15px;">
                                     <!-- Ikon File -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         viewBox="0 0 16 16" style="margin-right: 8px;">
@@ -64,7 +64,7 @@
                                     <button
                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                         onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                        style="background-color: #374151; color: white; border: none; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none; margin-left: 15px; margin-right: 15px; margin-bottom: 15px;">
                                         <!-- Ikon Kembali -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                             viewBox="0 0 16 16" style="margin-right: 8px;">
