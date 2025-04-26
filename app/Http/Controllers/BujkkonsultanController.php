@@ -217,7 +217,7 @@ if ($entry) {
 
 // Hapus entri dari database
 
-$parentId = $entry->bujkkontraktor_id; // Sesuaikan dengan nama kolom di database
+$parentId = $entry->bujkkonsultan_id; // Sesuaikan dengan nama kolom di database
 $entry->delete();
 
 return redirect()->route('bebujkkonstruksi.showsubklasifikasi', ['id' => $parentId])
@@ -359,7 +359,7 @@ public function bebujkkonsultancreatenew(Request $request)
     ]);
 
     // Ambil ID default dari sub kontraktor (pastikan tidak null di DB!)
-    $bujkkontraktorsub_id = bujkkonsultansub::first()->id;
+    $bujkkonsultansub_id = bujkkonsultansub::first()->id;
 
     // Ambil ID user yang sedang login
     $user_id = Auth::user()->id;
@@ -367,7 +367,7 @@ public function bebujkkonsultancreatenew(Request $request)
     // Simpan ke DB
     bujkkonsultan::create([
         'user_id' => $user_id, // Menyimpan user_id berdasarkan login
-        'bujkkontraktorsub_id' => $bujkkontraktorsub_id,
+        'bujkkonsultansub_id' => $bujkkonsultansub_id,
         'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'],
         'namalengkap' => $validatedData['namalengkap'],
         'alamat' => $validatedData['alamat'],
@@ -401,5 +401,56 @@ public function bebujkkonsultancreateklasifikasi($namalengkap)
     ]);
 }
 
+
+
+public function bebujkkonsultancreateklasifikasicreate(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'nama_pengurus' => 'required|string|max:255',
+        'sub_klasifikasi_layanan' => 'required|string|max:255',
+        'kode' => 'required|string|max:50',
+        'kualifikasi' => 'required|string|max:255',
+        'penerbit' => 'required|string|max:255',
+        'nama_psjk' => 'required|string|max:255',
+        'sub_kualifikasi_bu' => 'required|string|max:255',
+        'tanggal_terbit' => 'required|date',
+        'tanggal_berlaku' => 'required|date',
+    ], [
+        // Pesan kesalahan custom
+        'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
+        'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
+        'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
+        'kualifikasi.required' => 'Kualifikasi harus diisi.',
+        'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
+        'penerbit.required' => 'Penerbit harus diisi.',
+        'nama_psjk.required' => 'Nama PSJK harus diisi.',
+        'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
+        'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
+    ]);
+
+    // Menyimpan data ke tabel BujkKontraktorSub
+    $bujkkonsultanSub = bujkkonsultansub::create([
+        'bujkkonsultan_id' => $request->bujkkonsultan_id,
+        'nama_pengurus' => $validated['nama_pengurus'],
+        'sub_klasifikasi_layanan' => $validated['sub_klasifikasi_layanan'],
+        'kode' => $validated['kode'],
+        'kualifikasi' => $validated['kualifikasi'],
+        'sub_kualifikasi_bu' => $validated['sub_kualifikasi_bu'],
+        'penerbit' => $validated['penerbit'],
+        'nama_psjk' => $validated['nama_psjk'],
+        'tanggal_terbit' => $validated['tanggal_terbit'],
+        'tanggal_berlaku' => $validated['tanggal_berlaku'],
+    ]);
+
+    // Ambil bujkkontraktor_id yang baru saja disimpan
+    $bujkkonsultanId = $bujkkonsultanSub->bujkkonsultan_id;
+
+    // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
+    session()->flash('create', 'Data Sub Klasifikasi Layanan berhasil di buat.');
+
+    // Redirect ke route 'bebujkkonstruksi.showsubklasifikasi' dengan parameter bujkkontraktor_id
+    return redirect('bebujkkonsultan');
+}
 
 }
