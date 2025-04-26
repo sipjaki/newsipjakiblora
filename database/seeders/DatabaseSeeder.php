@@ -525,7 +525,7 @@ headerberanda::create([
             'username' => 'Anex',
             'statusadmin_id' => '1',
             'avatar' => 'user/avatar/foto4.png',
-            'email' => 'sipjakiblora@gmail.com',
+            'email' => 'sipjakiblora1@gmail.com',
             'password' => bcrypt('adminadmin321')
         ]);
 
