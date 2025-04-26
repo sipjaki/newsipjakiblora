@@ -387,8 +387,12 @@ public function bebujkkonstruksicreatenew(Request $request)
     // Ambil ID default dari sub kontraktor (pastikan tidak null di DB!)
     $bujkkontraktorsub_id = bujkkonsultansub::first()->id;
 
+    // Ambil ID user yang sedang login
+    $user_id = Auth::user()->id;
+
     // Simpan ke DB
     Bujkkontraktor::create([
+        'user_id' => $user_id, // Menyimpan user_id berdasarkan login
         'bujkkontraktorsub_id' => $bujkkontraktorsub_id,
         'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'],
         'namalengkap' => $validatedData['namalengkap'],
