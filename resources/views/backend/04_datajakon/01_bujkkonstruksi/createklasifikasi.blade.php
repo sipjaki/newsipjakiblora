@@ -41,9 +41,15 @@
                         @include('backend.00_administrator.00_baganterpisah.13_judulcreate')
                     </div>
 
+
+
                            {{-- ======================================================= --}}
 
         <div class="card card-primary card-outline mb-6">
+
+            <button>
+                <input  name="bujkkontraktor_id" value="{{ $bujkkontraktor_id }}">
+            </button>
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
                 <a href="/bebujkkonstruksi">
                     <button
