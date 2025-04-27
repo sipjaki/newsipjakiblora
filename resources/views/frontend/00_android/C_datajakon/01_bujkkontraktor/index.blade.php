@@ -152,10 +152,10 @@
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center;"> Nama Badan Usaha </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;"> Alamat </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center;"> No Telepon </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center;"> View </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Nama Badan Usaha </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;"> Alamat </th>
+                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> No Telepon </th> --}}
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -165,7 +165,7 @@
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->namalengkap)) }}</td>
                                             <td>{{$item->alamat}}</td>
-                                            <td style="text-align: center;">{{$item->no_telepon}}</td>
+                                            {{-- <td style="text-align: center;">{{$item->no_telepon}}</td> --}}
                                             <td style="text-align: center">
                                                 <a href="/resbujkkontraktor/{{$item->namalengkap}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
