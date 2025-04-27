@@ -230,7 +230,7 @@ ul.list-unstyled {
             </a>
             <ul class="list-unstyled" style="background-color: #444; padding: 0; margin: 0;">
                 <li><a href="/datajakon/bujkkontraktor" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">BUJK Konstruksi</a></li>
-                <li><a href="/datajakon/bujkkonsultan" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">BUJK Konsultan</a></li>
+                <li><a href="/datajakon/bujkkonsultan" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">BUJK Konsultasi Konstruksi</a></li>
                 <li><a href="/datajakon/asosiasimasjaki" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Asosiasi Konstruksi</a></li>
                 <li><a href="/datajakon/statistikabujkblora" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Data Statistik BUJK</a></li>
             </ul>
