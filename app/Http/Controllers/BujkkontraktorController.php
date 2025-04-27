@@ -110,7 +110,7 @@ class BujkkontraktorController extends Controller
 
             // Menyimpan data ke dalam database asosiasimasjaki setelah divalidasi
             asosiasimasjaki::create([
-                'nama_asosiasi' => $validated['namaasosiasi'], // Menggunakan hasil validasi untuk menyimpan
+                'namaasosiasi' => $validated['namaasosiasi'], // Menggunakan hasil validasi untuk menyimpan
             ]);
 
             // Mengarahkan pengguna ke halaman setelah data berhasil disimpan
