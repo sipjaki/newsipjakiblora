@@ -235,3 +235,5 @@ table.zebra-table {
 
 @include('frontend.00_approve.01_cssterpisah.footer1')
 @include('frontend.00_approve.01_cssterpisah.footer')
+
+
