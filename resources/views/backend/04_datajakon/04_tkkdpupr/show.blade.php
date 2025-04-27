@@ -168,7 +168,7 @@
                     <!-- Button Section -->
                     <br><br>
                     <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-                        <a href="/404">
+                        <a href="//beskkdpupr/update/{{$data->nama}}">
                             <button
                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                             onmouseout="this.style.backgroundColor='#22C55E'; this.style.color='white';"
