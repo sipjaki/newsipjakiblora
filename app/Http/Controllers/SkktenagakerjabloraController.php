@@ -33,6 +33,7 @@ class SkktenagakerjabloraController extends Controller
     }
 
     // public function listskktenagakerjablora(Request $request)
+
     // {
     //     $user = Auth::user();
 
