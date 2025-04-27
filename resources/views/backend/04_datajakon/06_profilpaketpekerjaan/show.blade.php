@@ -262,7 +262,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-file-earmark-ruled" style="margin-right: 8px; color: navy;"></i>Nilai Kontrak
                                                 </label>
-                                                <input class="form-control" value="{{$data->nilaikontrak}}" readonly/>
+                                                <input class="form-control" value="Rp {{ number_format($data->nilaikontrak, 0, ',', '.') }}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
@@ -294,9 +294,13 @@
                                             </div> --}}
 
                                             <div class="mb-3">
+                                                <label class="form-label">
+                                                    <i class="bi bi-bar-chart-fill" style="margin-right: 8px; color: navy;"></i>Progress Pekerjaan
+                                                </label>
                                                 <!-- Input with readonly to show the value -->
-                                                <input class="form-control mt-2" value="{{$data->progress}}%" readonly/>
+                                                <input class="form-control mt-2" value="{{ $data->progress }}%" readonly/>
                                             </div>
+
 
                                             <div class="mb-3">
                                                 <label class="form-label">
