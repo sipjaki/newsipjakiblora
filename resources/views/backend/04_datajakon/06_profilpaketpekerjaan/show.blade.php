@@ -148,7 +148,7 @@
                         </h2>
                         <button id="status-{{ $data->id }}" class="btn btn-sm"></button>
 
-                        <script>
+                        {{-- <script>
                             function updateStatus() {
                                 const now = new Date().getTime();
                                 const tanggalSelesai = new Date("{{ \Carbon\Carbon::parse($data->bulanselesai)->format('Y-m-d H:i:s') }}").getTime();
@@ -193,7 +193,7 @@
 
                             updateStatus();
                             setInterval(updateStatus, 1000);
-                        </script>
+                        </script> --}}
 
                     </div>
 
