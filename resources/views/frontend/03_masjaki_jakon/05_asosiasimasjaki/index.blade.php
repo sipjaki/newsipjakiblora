@@ -183,7 +183,8 @@ table.zebra-table {
                         <tr>
                             <th style="text-align: center;">No</th>
                             <th style="text-align: center;">Nama Asoiasi</th>
-                            <th style="text-align: center;">View</th>
+                            <th style="text-align: center;">BUJK Konstruksi/th>
+                            <th style="text-align: center;">BUJK Konsultasi Konstruksi/th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -197,25 +198,45 @@ table.zebra-table {
                                 @if (!empty($item['nama_asosiasi']))
                                     {{ strtoupper($item['nama_asosiasi']) }}
                                 @else
-                                    0
+                                    <button style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px;">0</button>
                                 @endif
                             </td>
 
                             {{-- Jumlah Penggunaan 1 --}}
                             <td class="text-center">
                                 @if (!empty($item['jumlah_penggunaan1']))
-                                    {{ $item['jumlah_penggunaan1'] }}
+                                    <a href="#"
+                                       style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
+                                       onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                       onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                       {{ $item['jumlah_penggunaan1'] }}
+                                    </a>
                                 @else
-                                    0
+                                    <a href="#"
+                                       style="background-color: red; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
+                                       onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                       onmouseout="this.style.backgroundColor='red'; this.style.color='white';">
+                                       0
+                                    </a>
                                 @endif
                             </td>
 
                             {{-- Jumlah Penggunaan 2 --}}
                             <td class="text-center">
                                 @if (!empty($item['jumlah_penggunaan2']))
-                                    {{ $item['jumlah_penggunaan2'] }}
+                                    <a href="#"
+                                       style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
+                                       onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                       onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                       {{ $item['jumlah_penggunaan2'] }}
+                                    </a>
                                 @else
-                                    0
+                                    <a href="#"
+                                       style="background-color: red; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
+                                       onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                       onmouseout="this.style.backgroundColor='red'; this.style.color='white';">
+                                       0
+                                    </a>
                                 @endif
                             </td>
 
@@ -227,7 +248,6 @@ table.zebra-table {
                             </td>
                         </tr>
                     @endforeach
-
 
                     </tbody>
                 </table>
