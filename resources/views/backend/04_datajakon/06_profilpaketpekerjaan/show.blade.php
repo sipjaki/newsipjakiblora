@@ -135,7 +135,7 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
 
                         <h2 class="card-title" style="color: black;">
-                            Data Details :
+                            Profil Paket Pekerjaan :
                             <button class="btn btn-success"
                                     style="background-color: #1d643b; border-color: #1d643b; font-weight: bold; padding: 10px 20px;
                                            border-radius: 5px; font-size: 16px; margin-right: 10px;"
