@@ -48,6 +48,8 @@
             <div class="row" style="margin-right: 10px; margin-left:10px;">
                 <!-- /.card -->
                 <div class="card mb-4">
+                    @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+
                     <div class="card-header">
                         <h2 class="card-title" style="color: black;">
                             Data Details :
