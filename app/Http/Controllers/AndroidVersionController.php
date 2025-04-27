@@ -197,6 +197,56 @@ public function menuasosiasimasjaki(Request $request)
 }
 
 
+
+public function reasasosiasimasjakikontraktor($namaasosiasi)
+{
+    // Cari asosiasi berdasarkan namaasosiasi
+    $asosiasi = asosiasimasjaki::where('namaasosiasi', $namaasosiasi)->first();
+
+    // Jika asosiasi tidak ditemukan, tampilkan 404
+    if (!$asosiasi) {
+        return abort(404, 'Asosiasi tidak ditemukan');
+    }
+
+    $user = Auth::user();
+        // Ambil semua data dari tabel bujkkontraktor berdasarkan asosiasi_id
+        $databujkkontraktor = bujkkontraktor::where('asosiasimasjaki_id', $asosiasi->id)->get(['id', 'namalengkap', 'no_telepon']);
+        // $databujkkontraktorpaginate = bu::where('asosiasimasjaki_id', $asosiasi->id)->paginate(15);
+
+
+        // Return ke view dengan format yang diminta
+        return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.konstruksishow', [
+            'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+            'user' => $user,
+            'data' => $databujkkontraktor,
+       ]);
+    }
+
+    public function reasasosiasimasjakikonsultan($namaasosiasi)
+{
+    // Cari asosiasi berdasarkan namaasosiasi
+    $asosiasi = asosiasimasjaki::where('namaasosiasi', $namaasosiasi)->first();
+
+    // Jika asosiasi tidak ditemukan, tampilkan 404
+    if (!$asosiasi) {
+        return abort(404, 'Asosiasi tidak ditemukan');
+    }
+
+    $user = Auth::user();
+        // Ambil semua data dari tabel bujkkontraktor berdasarkan asosiasi_id
+        $databujkkontraktor = bujkkonsultan::where('asosiasimasjaki_id', $asosiasi->id)->get(['id', 'namalengkap', 'no_telepon']);
+        // $databujkkontraktorpaginate = bu::where('asosiasimasjaki_id', $asosiasi->id)->paginate(15);
+
+
+        // Return ke view dengan format yang diminta
+        return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.konsultanshow', [
+            'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+            'user' => $user,
+            'data' => $databujkkontraktor,
+       ]);
+    }
+
+
         public function menubujkkontraktor(Request $request)
         {
             $perPage = $request->input('perPage', 10);
@@ -1178,5 +1228,9 @@ public function menureskecelakaankerja(Request $request)
             'user' => $user,
         ]);
         }
+
+
+
+
 
 }
