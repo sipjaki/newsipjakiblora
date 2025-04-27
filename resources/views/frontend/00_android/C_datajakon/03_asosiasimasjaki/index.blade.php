@@ -173,7 +173,6 @@
                                                     @endif
                                                 </td>
 
-                                                {-- Jumlah Penggunaan 1 --}}
                                                 <td class="text-center d-flex justify-content-center align-items-center">
                                                     @if (!empty($item['jumlah_penggunaan1']) && $item['jumlah_penggunaan1'] != 0)
                                                         <a href="/datajakon/asosiasikonstruksi/{{ urlencode($item['nama_asosiasi']) }}"
