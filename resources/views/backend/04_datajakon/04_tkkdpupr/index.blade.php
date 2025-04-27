@@ -120,7 +120,7 @@
          <th style="width: 150px; text-align:center;">Pendidikan</th>
          <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
          <th style="width: 100px; text-align:center;">Jenjang</th>
-         <th style="width: 400px; text-align:center;">LPS Penerbit</th>
+         <th style="width: 400px; text-align:center;">LSP Penerbit</th>
          <th style="width: 200px; text-align:center;">Jurusan</th>
          <th style="width: 200px; text-align:center;">Tanggal Terbit</th>
          <th style="width: 200px; text-align:center;">Tanggal Habis</th>
