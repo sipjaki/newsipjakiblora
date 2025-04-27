@@ -558,3 +558,21 @@ font-family: 'Poppins', sans-serif;
     }
 </style>
 
+
+
+
+
+                                                <td style="text-align: center">
+                                                <a href="/datajakon/asosiasikonstruksi/{{$item->daftarasosiasi}}">
+                                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+                                                </a>
+                                            </td>
+
+
+
+
+                                            <td style="text-align: center">
+                                                <a href="/datajakon/asosiasikonsultan/{{$item->asosiasimasjaki->namaasosiasi}}">
+                                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+                                                </a>
+                                            </td>
