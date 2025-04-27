@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
                 $this->registerPolicies();
 
                 // Gate untuk memeriksa apakah pengguna adalah super_admin
-                Gate::define('super_admin', function ($user) {
+                Gate::define('superadmin', function ($user) {
                     return $user->statusadmin === 'super_admin'; // Cek apakah statusnya super_admin
                 });
 
