@@ -150,7 +150,7 @@
                             <div class="custom-table-container">
 
 
-                                <table class="f1-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+                                <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:75px;"> No</th>
