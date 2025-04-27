@@ -669,6 +669,7 @@ public function beskkallbloracreate()
     $datajabatankerja = jabatankerja::all();
     $datajenjang = jenjang::all();
     $datalpspenerbit = lpspenerbit::all();
+    $dataasosiasi = asosiasimasjaki::all();
 
 
     // Ambil data user saat ini
@@ -684,6 +685,7 @@ public function beskkallbloracreate()
         'jabatankerjaList' => $datajabatankerja, // Mengirimkan data paginasi ke view
         'jenjangList' => $datajenjang, // Mengirimkan data paginasi ke view
         'lpspenerbitList' => $datalpspenerbit, // Mengirimkan data paginasi ke view
+        'asosiasimasjakiList' => $dataasosiasi, // Mengirimkan data paginasi ke view
         'user' => $user, // Mengirimkan data paginasi ke view
 
 ]);
