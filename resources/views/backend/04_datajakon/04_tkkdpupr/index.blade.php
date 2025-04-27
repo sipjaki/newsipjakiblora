@@ -114,6 +114,7 @@
          <th style="width: 400px; text-align:center;">Nama Lengkap</th>
          <th style="width: 400px; text-align:center;">Alamat </th>
          <th style="width: 100px; text-align:center;">Tahun Lulus</th>
+         <th style="width: 100px; text-align:center;">Tahun Bimtek</th>
          <th style="width: 300px; text-align:center;">Asosiasi</th>
          <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
          <th style="width: 100px; text-align:center;">Pendidikan</th>
@@ -132,10 +133,44 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->nama}}</td>
-         <td style="text-align: left;">{{$item->alamat}}</td>
-         <td style="text-align: center;">{{$item->tahunlulus}}</td>
-         <td style="text-align: center;">
+         <td style="text-align: left;">
+            @if($item->nama)
+                {{$item->nama}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: left;">
+            @if($item->alamat)
+                {{$item->alamat}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if($item->tahunlulus)
+                {{$item->tahunlulus}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if($item->tahunbimtek)
+                {{$item->tahunbimtek}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
             @else
