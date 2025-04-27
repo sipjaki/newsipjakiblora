@@ -302,7 +302,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-house-door-fill" style="margin-right: 8px; color: navy;"></i>Dinas
                                                 </label>
-                                                <input class="form-control" value="{{$data->dinas}}" readonly/>
+                                                <input class="form-control" value="{{$data->user->name}}" readonly/>
                                             </div>
                                         </div>
 
