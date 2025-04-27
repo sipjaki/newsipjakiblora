@@ -255,13 +255,61 @@
                 <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
             @endif
         </td>
-        <td style="text-align: left;">{{$item->namasekolah->namasekolah}}</td>
-         <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-         <td style="text-align: center;">{{$item->jenjang->jenjang}}</td>
-         <td style="text-align: left;">{{$item->lpspenerbit->lpspenerbit}}</td>
-         <td style="text-align: left;">{{$item->jurusan->jurusan}}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalterbit)->translatedFormat('l, d F Y') }}</td>
+        <td style="text-align: left;">
+            @if(empty($item->namasekolah->namasekolah))
+                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                    Data Belum Di Update
+                </button>
+            @else
+                {{$item->namasekolah->namasekolah}}
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if(empty($item->jenjangpendidikan->jenjangpendidikan))
+                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                    Data Belum Di Update
+                </button>
+            @else
+                {{$item->jenjangpendidikan->jenjangpendidikan}}
+            @endif
+        </td>
+        <td style="text-align: left;">
+            @if(empty($item->jabatankerja->jabatankerja))
+                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                    Data Belum Di Update
+                </button>
+            @else
+                {{$item->jabatankerja->jabatankerja}}
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if(empty($item->jenjang->jenjang))
+                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                    Data Belum Di Update
+                </button>
+            @else
+                {{$item->jenjang->jenjang}}
+            @endif
+        </td>
+        <td style="text-align: left;">
+            @if(empty($item->lpspenerbit->lpspenerbit))
+                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                    Data Belum Di Update
+                </button>
+            @else
+                {{$item->lpspenerbit->lpspenerbit}}
+            @endif
+        </td>
+        <td style="text-align: left;">
+            @if(empty($item->jurusan->jurusan))
+                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                    Data Belum Di Update
+                </button>
+            @else
+                {{$item->jurusan->jurusan}}
+            @endif
+        </td>
+                 <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalterbit)->translatedFormat('l, d F Y') }}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalhabis)->translatedFormat('l, d F Y') }}</td>
 
          <td style="text-align: center;">
