@@ -269,7 +269,7 @@
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
             @else
-                <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
+                <button class="btn btn-danger btn-sm" style="font-size: 15px;">Data Asosiasi Belum  Di Update</button>
             @endif
         </td>
         <td style="text-align: left;">
