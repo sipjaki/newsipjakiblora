@@ -102,11 +102,11 @@
                                             <td>{{$data->namalengkap}}</td>
                                         </tr>
 
-                                        <tr>
+                                        {{-- <tr>
                                             <td>2</td>
                                             <td>No Telepon</td>
                                             <td>{{$data->no_telepon}}</td>
-                                        </tr>
+                                        </tr> --}}
 
                                         <tr>
                                             <td>3</td>
@@ -120,11 +120,11 @@
                                             <td>{{$data->email}}</td>
                                         </tr>
 
-                                        <tr>
+                                        {{-- <tr>
                                             <td>5</td>
                                             <td>Nomor Induk Berusaha</td>
                                             <td>{{$data->nomorindukberusaha}}</td>
-                                        </tr>
+                                        </tr> --}}
 
                                         {{-- @endforeach --}}
 
