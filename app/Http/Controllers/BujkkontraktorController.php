@@ -83,6 +83,19 @@ class BujkkontraktorController extends Controller
             ]);
         }
 
+        public function beasosiasicreate(Request $request)
+        {
+            $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
+            $data = asosiasimasjaki::all();
+
+            return view('backend.04_datajakon.03_asosiasimasjaki.create', [
+                'title' => 'Asosiasi Mas Jaki Blora',
+                'data' => $data,
+                'user' => $user,
+                // 'search' => $search
+            ]);
+        }
+
         // BACKEND ASOSIASI SHOW
 
         public function beasosiasishow($namaasosiasi)
@@ -615,6 +628,7 @@ public function bebujkkonstruksiklasifikasidelete($id)
     session()->flash('error', 'Item tidak ditemukan');
     return redirect()->back();
 }
+
 
 
 }
