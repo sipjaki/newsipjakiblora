@@ -277,7 +277,14 @@
             setInterval(updateStatus, 1000);
         </script>
 
-         <td style="text-align: center;">{{$item->statusterbit}}</td>
+<td style="text-align: center;">
+    {{$item->statusterbit}}
+    @if($item->statusterbit != 'TERBIT')
+        <button style="background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer;">
+            Button
+        </button>
+    @endif
+</td>
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/beskkdpupr/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">
