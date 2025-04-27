@@ -485,7 +485,7 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
         'lpspenerbit_id' => 'required|integer',
         'tanggalterbit' => 'required|date',
         'tanggalhabis' => 'required|date',
-        'statusterbit' => 'required|date',
+        'statusterbit' => 'required|string',
     ], [
         'nama.required' => 'Nama wajib diisi!',
         'nama.string' => 'Nama harus berupa teks!',
@@ -531,7 +531,7 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
         'tanggalhabis.after_or_equal' => 'Tanggal habis tidak boleh lebih awal dari tanggal terbit!',
 
         'statusterbit.required' => 'Status terbit wajib diisi!',
-        'statusterbit.in' => 'Status terbit harus salah satu dari "Terbit" atau "Belum Terbit"!',
+        // 'statusterbit.in' => 'Status terbit harus salah satu dari "Terbit" atau "Belum Terbit"!',
     ]);
         // Cari datanya berdasarkan 'nama'
     $data = skktenagakerjablora::where('nama', $nama)->firstOrFail();
