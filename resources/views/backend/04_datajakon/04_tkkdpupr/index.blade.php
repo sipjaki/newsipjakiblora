@@ -281,7 +281,7 @@
     {{$item->statusterbit}}
     @if($item->statusterbit != 'TERBIT')
         <button style="background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer;">
-            Button
+            {{$item->statusterbit}}
         </button>
     @endif
 </td>
