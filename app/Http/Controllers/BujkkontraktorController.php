@@ -72,10 +72,10 @@ class BujkkontraktorController extends Controller
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search,
-        'databujkkontraktor' => $databujkkontraktor,
-        'databujkkontraktorpaginate' => $databujkkontraktorpaginate,
-        'databujkkonsultanpaginate' => $databujkkonsultanpaginate,
-        'databujkkonsultan' => $databujkkonsultan,
+        // 'databujkkontraktor' => $databujkkontraktor,
+        // 'databujkkontraktorpaginate' => $databujkkontraktorpaginate,
+        // 'databujkkonsultanpaginate' => $databujkkonsultanpaginate,
+        // 'databujkkonsultan' => $databujkkonsultan,
     ]);
 }
 
