@@ -35,8 +35,8 @@
    <main class="app-main">
 
        <!--begin::App Content Header-->
+       <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
        <div class="app-content-header">
-         <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
        <!--begin::Container-->
        <div class="container-fluid">
          <!--begin::Row-->
@@ -274,8 +274,8 @@
          <!-- /.col -->
      </div>
      <!--end::Row-->
-    </section>
-     </div>
+    </div>
+</section>
                <!--end::Container-->
      <!--end::App Content Header-->
      <!--begin::App Content-->
