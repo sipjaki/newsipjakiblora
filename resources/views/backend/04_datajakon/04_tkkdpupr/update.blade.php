@@ -291,18 +291,21 @@
                 </div>
 
                 <!-- Status Terbit -->
-                <div class="mb-3">
-                    <label class="form-label" for="statusterbit">
-                        <i class="bi bi-check-circle" style="margin-right: 10px; color: navy;"></i> Status Terbit
-                    </label>
-                    <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror">
-                        <option value="Terbit" {{ old('statusterbit', $data->statusterbit) == 'Terbit' ? 'selected' : '' }}>Terbit</option>
-                        <option value="Belum Terbit" {{ old('statusterbit', $data->statusterbit) == 'Belum Terbit' ? 'selected' : '' }}>Belum Terbit</option>
-                    </select>
-                    @error('statusterbit')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
+             <!-- Status Terbit -->
+<div class="mb-3">
+    <label class="form-label" for="statusterbit">
+        <i class="bi bi-check-circle" style="margin-right: 10px; color: navy;"></i> Status Terbit
+    </label>
+    <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror" required>
+        <option value="" disabled selected>Pilih Status Terbit</option>
+        <option value="Terbit" {{ old('statusterbit', $data->statusterbit ?? '') == 'Terbit' ? 'selected' : '' }}>Terbit</option>
+        <option value="Belum Terbit" {{ old('statusterbit', $data->statusterbit ?? '') == 'Belum Terbit' ? 'selected' : '' }}>Belum Terbit</option>
+    </select>
+    @error('statusterbit')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
             </div>
         </div>
     </div>
