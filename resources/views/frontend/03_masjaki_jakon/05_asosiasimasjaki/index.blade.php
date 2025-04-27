@@ -182,9 +182,9 @@ table.zebra-table {
                     <thead>
                         <tr>
                             <th style="text-align: center;">No</th>
-                            <th style="text-align: center;">Nama Asoiasi</th>
-                            <th style="text-align: center;">BUJK Konstruksi</th>
-                            <th style="text-align: center;">BUJK Konsultasi Konstruksi</th>
+                            <th style="text-align: center; width:400px">Nama Asoiasi</th>
+                            <th style="text-align: center; width:200px">BUJK Konstruksi</th>
+                            <th style="text-align: center; width:200px">BUJK Konsultasi Konstruksi</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
