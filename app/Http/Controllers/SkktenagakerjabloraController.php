@@ -579,7 +579,7 @@ public function beskkallbloraupdate($nama)
 
 
 
-    public function beskkallbloracreateupdate(Request $request, $nama)
+    public function beskkallbloracreateupdate(Request $request, $id)
 {
     // Validasi inputan
     $validatedData = $request->validate([
@@ -645,7 +645,7 @@ public function beskkallbloraupdate($nama)
         // 'statusterbit.in' => 'Status terbit harus salah satu dari "Terbit" atau "Belum Terbit"!',
     ]);
         // Cari datanya berdasarkan 'nama'
-    $data = skktenagakerjablora::where('nama', $nama)->firstOrFail();
+    $data = skktenagakerjablora::where('id', $id)->firstOrFail();
 
     // Update data
     $data->update($validatedData);

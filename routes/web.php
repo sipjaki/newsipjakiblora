@@ -768,7 +768,7 @@ Route::get('/beskkallblora', [SkktenagakerjabloraController::class, 'beskkall'])
 Route::get('/beskkallblora/show/{nama}', [SkktenagakerjabloraController::class, 'beskkallshow'])->middleware('auth');
 Route::delete('/beskkallblora/delete/{nama}', [SkktenagakerjabloraController::class, 'beskkalldelete'])->middleware('auth');
 Route::get('/beskkallblora/update/{nama}', [SkktenagakerjabloraController::class, 'beskkallbloraupdate'])->middleware('auth');
-Route::post('/beskkallblora/updatecreate/{nama}', [SkktenagakerjabloraController::class, 'beskkallbloracreateupdate'])->middleware('auth')->name('update.beallskkupdate');
+Route::post('/beskkallblora/updatecreate/{id}', [SkktenagakerjabloraController::class, 'beskkallbloracreateupdate'])->middleware('auth')->name('update.beallskkupdate');
 Route::get('/beskkallblora/create', [SkktenagakerjabloraController::class, 'beskkallbloracreate'])->middleware('auth');
 Route::post('/beskkallblora/createnew', [SkktenagakerjabloraController::class, 'beskkallbloracreatenew'])->middleware('auth')->name('create.beallskkcreate');
 // ___________________________________________________________________________________________________________________________________
