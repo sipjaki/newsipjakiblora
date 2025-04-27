@@ -281,7 +281,12 @@
     {{$item->statusterbit}}
     @if($item->statusterbit != 'TERBIT')
         <button style="background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer;">
-            {{-- {{$item->statusterbit}} --}}
+            Button Merah
+        </button>
+    @else
+        <!-- Optional: You can display something here if the status is 'TERBIT' -->
+        <button style="background-color: green; color: white; border: none; padding: 5px 10px; cursor: pointer;">
+            Status Terbit
         </button>
     @endif
 </td>
