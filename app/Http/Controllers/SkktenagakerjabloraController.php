@@ -487,14 +487,53 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
         'tanggalhabis' => 'required|date|after_or_equal:tanggalterbit',
         'statusterbit' => 'required|in:Terbit,Belum Terbit',
     ], [
-        'required' => ':attribute wajib diisi!',
-        'exists' => ':attribute tidak ditemukan di sistem!',
-        'in' => ':attribute tidak sesuai pilihan yang tersedia!',
-        'date' => ':attribute harus berupa tanggal!',
-        'after_or_equal' => 'Tanggal habis tidak boleh lebih awal dari tanggal terbit!',
-    ]);
+        'nama.required' => 'Nama wajib diisi!',
+        'nama.string' => 'Nama harus berupa teks!',
+        'nama.max' => 'Nama tidak boleh lebih dari 255 karakter!',
 
-    // Cari datanya berdasarkan 'nama'
+        'alamat.required' => 'Alamat wajib diisi!',
+        'alamat.string' => 'Alamat harus berupa teks!',
+
+        'tahunlulus.required' => 'Tahun lulus wajib diisi!',
+        'tahunlulus.integer' => 'Tahun lulus harus berupa angka!',
+        'tahunlulus.min' => 'Tahun lulus tidak boleh kurang dari 1900!',
+        'tahunlulus.max' => 'Tahun lulus tidak boleh lebih dari tahun ini!',
+
+        'tahunbimtek.required' => 'Tahun bimtek wajib diisi!',
+        'tahunbimtek.in' => 'Tahun bimtek harus salah satu dari 2024, 2025, atau 2026!',
+
+        'namasekolah_id.required' => 'Nama sekolah wajib diisi!',
+        'namasekolah_id.exists' => 'Nama sekolah tidak ditemukan di sistem!',
+
+        'jenjangpendidikan_id.required' => 'Jenjang pendidikan wajib diisi!',
+        'jenjangpendidikan_id.exists' => 'Jenjang pendidikan tidak ditemukan di sistem!',
+
+        'jurusan_id.required' => 'Jurusan wajib diisi!',
+        'jurusan_id.exists' => 'Jurusan tidak ditemukan di sistem!',
+
+        'jabatankerja_id.required' => 'Jabatan kerja wajib diisi!',
+        'jabatankerja_id.exists' => 'Jabatan kerja tidak ditemukan di sistem!',
+
+        'jenjang_id.required' => 'Jenjang wajib diisi!',
+        'jenjang_id.exists' => 'Jenjang tidak ditemukan di sistem!',
+
+        'asosiasimasjaki_id.required' => 'Asosiasi Masjaki wajib diisi!',
+        'asosiasimasjaki_id.exists' => 'Asosiasi Masjaki tidak ditemukan di sistem!',
+
+        'lpspenerbit_id.required' => 'LPS Penerbit wajib diisi!',
+        'lpspenerbit_id.exists' => 'LPS Penerbit tidak ditemukan di sistem!',
+
+        'tanggalterbit.required' => 'Tanggal terbit wajib diisi!',
+        'tanggalterbit.date' => 'Tanggal terbit harus berupa tanggal yang valid!',
+
+        'tanggalhabis.required' => 'Tanggal habis wajib diisi!',
+        'tanggalhabis.date' => 'Tanggal habis harus berupa tanggal yang valid!',
+        'tanggalhabis.after_or_equal' => 'Tanggal habis tidak boleh lebih awal dari tanggal terbit!',
+
+        'statusterbit.required' => 'Status terbit wajib diisi!',
+        'statusterbit.in' => 'Status terbit harus salah satu dari "Terbit" atau "Belum Terbit"!',
+    ]);
+        // Cari datanya berdasarkan 'nama'
     $data = skktenagakerjablora::where('nama', $nama)->firstOrFail();
 
     // Update data
