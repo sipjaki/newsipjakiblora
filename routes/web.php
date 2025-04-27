@@ -95,8 +95,8 @@ Route::get('/resbujkkonsultan/{namalengkap}', [AndroidVersionController::class, 
 
 // MENU DATA ASOSIASI MAS JAKI ------------------------------------------------
 Route::get('/reasasosiasimasjaki', [AndroidVersionController::class, 'menuasosiasimasjaki']);
-Route::get('/reasasosiasimasjaki/asosiasikonstruksi/{namaasosiasi}', [BujkkontraktorController::class, 'reasasosiasimasjakikontraktor']);
-Route::get('/reasasosiasimasjaki/asosiasikonsultan/{namaasosiasi}', [BujkkontraktorController::class, 'reasasosiasimasjakikonsultan']);
+Route::get('/reasasosiasimasjaki/asosiasikonstruksi/{namaasosiasi}', [AndroidVersionController::class, 'reasasosiasimasjakikontraktor']);
+Route::get('/reasasosiasimasjaki/asosiasikonsultan/{namaasosiasi}', [AndroidVersionController::class, 'reasasosiasimasjakikonsultan']);
 
 
 // MENU DATA TKK DPUPR BLORA
