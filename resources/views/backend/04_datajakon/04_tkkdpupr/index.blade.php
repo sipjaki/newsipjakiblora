@@ -117,7 +117,7 @@
          <th style="width: 250px; text-align:center;">Tahun Bimtek</th>
          <th style="width: 300px; text-align:center;">Penyelenggara</th>
          <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
-         <th style="width: 100px; text-align:center;">Pendidikan</th>
+         <th style="width: 150px; text-align:center;">Pendidikan</th>
          <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
          <th style="width: 100px; text-align:center;">Jenjang</th>
          <th style="width: 400px; text-align:center;">LPS Penerbit</th>
