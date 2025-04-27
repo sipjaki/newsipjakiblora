@@ -147,7 +147,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
                                 <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
                             </svg>
-                            LPS Penerbit
+                            LSP Penerbit
                         </button>
                     </a>
 
@@ -243,7 +243,7 @@
          <th style="width: 100px; text-align:center;">Pendidikan</th>
          <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
          <th style="width: 100px; text-align:center;">Jenjang</th>
-         <th style="width: 400px; text-align:center;">LPS Penerbit</th>
+         <th style="width: 400px; text-align:center;">LSP Penerbit</th>
          <th style="width: 200px; text-align:center;">Jurusan</th>
          <th style="width: 200px; text-align:center;">Tanggal Terbit</th>
          <th style="width: 200px; text-align:center;">Tanggal Habis</th>
