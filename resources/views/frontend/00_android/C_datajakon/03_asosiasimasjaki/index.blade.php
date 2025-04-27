@@ -153,7 +153,7 @@
                                         <thead>
                                             <tr>
                                                 <th style="text-align: center; width:75px">No</th>
-                                                <th style="text-align: center; width:400px">Nama Asoiasi</th>
+                                                <th style="text-align: center; width:300px">Nama Asoiasi</th>
                                                 <th style="text-align: center; width:200px">BUJK Konstruksi</th>
                                                 <th style="text-align: center; width:200px">BUJK Konsultasi Konstruksi</th>
                                             </tr>
