@@ -31,57 +31,54 @@ class BujkkontraktorController extends Controller
     }
 
     public function asosiasimasjaki(Request $request)
-    {
+{
+    $user = Auth::user();
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
 
-        $databujkkontraktor = bujkkontraktor::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
+    // Hitung jumlah per asosiasi
+    $databujkkontraktor = bujkkontraktor::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
+        ->with('namaasosiasi')
         ->groupBy('asosiasimasjaki_id')
-        ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
         ->get();
 
-        $databujkkonsultan = bujkkonsultan::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
+    $databujkkonsultan = bujkkonsultan::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
+        ->with('namaasosiasi')
         ->groupBy('asosiasimasjaki_id')
-        ->with('namaasosiasi') // Pastikan ada relasi ke tabel asosiasi
         ->get();
 
-        $perPage = $request->input('perPage', 15);
-        $search = $request->input('search');
+    // Data untuk paginasi
+    $databujkkontraktorpaginate = bujkkontraktor::with('namaasosiasi')->paginate(15);
+    $databujkkonsultanpaginate = bujkkonsultan::with('namaasosiasi')->paginate(15);
 
-        $user = Auth::user();
-        // $data = asosiasimasjaki::paginate(15);
+    // Query utama untuk table asosiasi
+    $query = asosiasimasjaki::query();
 
-        $databujkkontraktorpaginate = bujkkontraktor::paginate(15);
-        $databujkkonsultanpaginate = bujkkonsultan::paginate(15);
+    if ($search) {
+        $query->where('namaasosiasi', 'LIKE', "%{$search}%");
+    }
 
-        $query = bujkkonsultan::query();
-        $query = bujkkontraktor::query();
+    $data = $query->paginate($perPage);
 
-        if ($search) {
-            $query->where('namaasosiasi', 'LIKE', "%{$search}%");
-                //   ->orWhere('alamat', 'LIKE', "%{$search}%")
-                //   ->orWhere('email', 'LIKE', "%{$search}%")
-                //   ->orWhere('nib', 'LIKE', "%{$search}%");
-        }
-
-        $data = $query->paginate($perPage);
-
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('frontend.03_masjaki_jakon.05_asosiasimasjaki.partials.table', compact('data'))->render()
-            ]);
-        }
-
-        return view('frontend.03_masjaki_jakon.05_asosiasimasjaki.index', [
-            'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
-            'user' => $user, // Mengirimkan data paginasi ke view
-            'data' => $data, // Mengirimkan data paginasi ke view
-            'perPage' => $perPage,
-            'search' => $search,
-            'databujkkontraktor' => $databujkkontraktor,
-            'databujkkontraktorpaginate' => $databujkkontraktorpaginate,
-            'databujkkonsultanpaginate' => $databujkkonsultanpaginate,
-            'databujkkonsultan' => $databujkkonsultan,
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.03_masjaki_jakon.05_asosiasimasjaki.partials.table', compact('data'))->render()
         ]);
     }
+
+    return view('frontend.03_masjaki_jakon.05_asosiasimasjaki.index', [
+        'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+        'user' => $user,
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search,
+        'databujkkontraktor' => $databujkkontraktor,
+        'databujkkontraktorpaginate' => $databujkkontraktorpaginate,
+        'databujkkonsultanpaginate' => $databujkkonsultanpaginate,
+        'databujkkonsultan' => $databujkkonsultan,
+    ]);
+}
+
 
     // MENU BACKEND JASA KONSTRUKSI
     // ------------------------------------------------------------------------------------------------
