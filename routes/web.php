@@ -742,7 +742,7 @@ Route::delete('/bebujkkonsultanklasifikasi/delete/{id}', [BujkkonsultanControlle
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beasosiasi', [BujkkontraktorController::class, 'beasosiasi'])->middleware('auth');
 Route::get('/beasosiasi/create', [BujkkontraktorController::class, 'beasosiasicreate'])->middleware('auth');
-Route::get('/beasosiasi/createnew', [BujkkontraktorController::class, 'beasosiasicreatenew'])->middleware('auth')->name('create.asosiasimasjakicreatenew');
+Route::post('/beasosiasi/createnew', [BujkkontraktorController::class, 'beasosiasicreatenew'])->middleware('auth')->name('create.asosiasimasjakicreatenew');
 Route::get('/beasosiasi/show/{namaasosiasi}', [BujkkontraktorController::class, 'beasosiasishow'])->middleware('auth');
 Route::delete('/beasosiasi/delete/{id}', [BujkkontraktorController::class, 'beasosiasidelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________

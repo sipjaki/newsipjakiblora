@@ -73,8 +73,8 @@
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
                                         <div class="mb-3 position-relative">
-                                            <label class="form-label" for="pju">
-                                                <i class="bi bi-lightbulb" style="position: absolute; top: 50%; left: 12px; transform: translateY(-50%); color: navy;"></i>
+                                            <label class="form-label" for="pju" style="position: relative; padding-left: 30px;">
+                                                <i class="bi bi-lightbulb" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
                                                 Nama Asosiasi
                                             </label>
                                             <input type="text" id="namaasosiasi" name="namaasosiasi" class="form-control @error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}" style="padding-left: 30px;" />
