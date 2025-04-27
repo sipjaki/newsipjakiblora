@@ -138,7 +138,7 @@
                         <option value="">Pilih Sekolah</option>
                         @foreach($namasekolahList as $sekolah)
                             <option value="{{ $sekolah->id }}" {{ old('namasekolah_id', $data->namasekolah_id) == $sekolah->id ? 'selected' : '' }}>
-                                {{ $sekolah->nama }}
+                                {{ $sekolah->namasekolah }}
                             </option>
                         @endforeach
                     </select>
@@ -156,7 +156,7 @@
                         <option value="">Pilih Jenjang Pendidikan</option>
                         @foreach($jenjangpendidikanList as $jenjang)
                             <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id', $data->jenjangpendidikan_id) == $jenjang->id ? 'selected' : '' }}>
-                                {{ $jenjang->nama }}
+                                {{ $jenjang->jenjangpendidikan }}
                             </option>
                         @endforeach
                     </select>
@@ -174,7 +174,7 @@
                         <option value="">Pilih Jurusan</option>
                         @foreach($jurusanList as $jurusan)
                             <option value="{{ $jurusan->id }}" {{ old('jurusan_id', $data->jurusan_id) == $jurusan->id ? 'selected' : '' }}>
-                                {{ $jurusan->nama }}
+                                {{ $jurusan->jurusan }}
                             </option>
                         @endforeach
                     </select>
@@ -196,7 +196,7 @@
                         <option value="">Pilih Jabatan Kerja</option>
                         @foreach($jabatankerjaList as $jabatan)
                             <option value="{{ $jabatan->id }}" {{ old('jabatankerja_id', $data->jabatankerja_id) == $jabatan->id ? 'selected' : '' }}>
-                                {{ $jabatan->nama }}
+                                {{ $jabatan->jabatankerja }}
                             </option>
                         @endforeach
                     </select>
@@ -214,7 +214,7 @@
                         <option value="">Pilih Jenjang</option>
                         @foreach($jenjangList as $jenjang)
                             <option value="{{ $jenjang->id }}" {{ old('jenjang_id', $data->jenjang_id) == $jenjang->id ? 'selected' : '' }}>
-                                {{ $jenjang->nama }}
+                                {{ $jenjang->jenjang }}
                             </option>
                         @endforeach
                     </select>
@@ -250,7 +250,7 @@
                         <option value="">Pilih Lembaga Penerbit</option>
                         @foreach($lpspenerbitList as $penerbit)
                             <option value="{{ $penerbit->id }}" {{ old('lpspenerbit_id', $data->lpspenerbit_id) == $penerbit->id ? 'selected' : '' }}>
-                                {{ $penerbit->nama }}
+                                {{ $penerbit->lpspenerbit }}
                             </option>
                         @endforeach
                     </select>
