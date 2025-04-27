@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\agendapelatihan;
 use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
+use App\Models\asosiasimasjaki;
 use App\Models\strukturdinas;
 use App\Models\pesertapelatihan;
 use App\Models\materipelatihanskk;
@@ -149,6 +150,30 @@ class AndroidVersionController extends Controller
             'user' => $user,
         ]);
         }
+
+
+// DATA ASOSIASI JASA KONSTRUKSI
+        public function menuasosiasimasjaki()
+    {
+        $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
+
+        $data = asosiasimasjaki::withCount(['bujkkontraktor', 'bujkkonsultan'])
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'nama_asosiasi' => $item->namaasosiasi,
+                    'jumlah_penggunaan1' => $item->bujkkontraktor_count,
+                    'jumlah_penggunaan2' => $item->bujkkonsultan_count,
+                ];
+            });
+
+        return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.index', [
+            'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+            'user' => $user,
+            'data' => $data,
+        ]);
+    }
+
 
 
         public function menubujkkontraktor(Request $request)
