@@ -235,7 +235,7 @@
                 <!-- Asosiasi -->
                 <div class="mb-3">
                     <label class="form-label" for="asosiasimasjaki_id">
-                        <i class="bi bi-people" style="margin-right: 10px; color: navy;"></i> Asosiasi
+                        <i class="bi bi-people" style="margin-right: 10px; color: navy;"></i> Penyelengara
                     </label>
                     <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
                         <option value="">Pilih Asosiasi</option>
