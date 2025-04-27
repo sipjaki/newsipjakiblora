@@ -109,13 +109,13 @@
                                         </tr> --}}
 
                                         <tr>
-                                            <td>3</td>
+                                            <td>2</td>
                                             <td>Alamat</td>
                                             <td>{{$data->alamat}}</td>
                                         </tr>
 
                                         <tr>
-                                            <td>4</td>
+                                            <td>3</td>
                                             <td>Email</td>
                                             <td>{{$data->email}}</td>
                                         </tr>
