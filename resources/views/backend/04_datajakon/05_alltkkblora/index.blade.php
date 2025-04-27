@@ -360,7 +360,7 @@
              <a href="/beskkallblora/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
-             <a href="/beskkallblora/update/{{$item->nama}}" class="btn btn-sm btn-warning me-2" title="Update">
+             <a href="/beskkallblora/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                  <i class="bi bi-pencil-square"></i>
              </a>
              <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
