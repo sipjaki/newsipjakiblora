@@ -183,8 +183,8 @@ table.zebra-table {
                         <tr>
                             <th style="text-align: center;">No</th>
                             <th style="text-align: center;">Nama Asoiasi</th>
-                            <th style="text-align: center;">BUJK Konstruksi/th>
-                            <th style="text-align: center;">BUJK Konsultasi Konstruksi/th>
+                            <th style="text-align: center;">BUJK Konstruksi</th>
+                            <th style="text-align: center;">BUJK Konsultasi Konstruksi</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -240,12 +240,6 @@ table.zebra-table {
                                 @endif
                             </td>
 
-                            {{-- Tombol View Detail --}}
-                            <td class="text-center">
-                                <a href="/asosiasi-usage/detail/{{ urlencode($item['nama_asosiasi']) }}">
-                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
-                                </a>
-                            </td>
                         </tr>
                     @endforeach
 
