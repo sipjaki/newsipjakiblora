@@ -303,7 +303,7 @@
 
 
 
-<td style="text-align: left;">{{ ucfirst(strtolower($item->user->name)) }}</td>
+<td style="text-align: left;">{{ ucwords(strtolower($item->user->name)) }}</td>
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/bepaketpekerjaan/show/{{$item->namapekerjaan}}" class="btn btn-sm btn-info me-2" title="Show">
