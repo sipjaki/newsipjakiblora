@@ -108,7 +108,7 @@ table.zebra-table {
         <img src="/assets/icon/info.png" alt="Logo" style="margin-bottom: 4px;" width="15%" />
         <div class="flex gap-[30px] items-center flex-wrap text-sm sm:text-base">
           <span>/</span>
-          <a href="/datajakon/bujkkontraktor" class="font-medium" style="font-size: 16px; color:blue;">
+          <a href="/datajakon/asosiasimasjaki" class="font-medium" style="font-size: 16px; color:blue;">
             {{$title}}
           </a>
           <span>/</span>
@@ -125,13 +125,13 @@ table.zebra-table {
     <div class="flex items-center gap-2 px-3 py-2 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
 
       <!-- Input -->
-      <input
+      {{-- <input
         type="text"
         id="searchInput"
         placeholder="Cari Data ..."
         oninput="searchTable()"
         class="w-full appearance-none outline-none text-sm font-medium placeholder:font-normal placeholder:text-[#545768] bg-transparent font-[Poppins]"
-      />
+      /> --}}
 
       <!-- Button with SVG Icon -->
       <button onclick="searchTable()" class="flex items-center justify-center w-6 h-6 shrink-0">
