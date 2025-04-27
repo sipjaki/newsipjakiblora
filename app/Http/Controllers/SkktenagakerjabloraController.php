@@ -468,5 +468,44 @@ return redirect()->back()->with('error', 'Item not found');
 
 // BATAS MENU TKK DPUPR BLORA
 
+public function beskkdpuprupdatecreate(Request $request, $nama)
+{
+    // Validasi inputan
+    $validatedData = $request->validate([
+        'nama' => 'required|string|max:255',
+        'alamat' => 'required|string',
+        'tahunlulus' => 'required|integer|min:1900|max:' . date('Y'),
+        'tahunbimtek' => 'required|in:2024,2025,2026',
+        'namasekolah_id' => 'required|exists:namasekolah,id',
+        'jenjangpendidikan_id' => 'required|exists:jenjangpendidikan,id',
+        'jurusan_id' => 'required|exists:jurusan,id',
+        'jabatankerja_id' => 'required|exists:jabatankerja,id',
+        'jenjang_id' => 'required|exists:jenjang,id',
+        'asosiasimasjaki_id' => 'required|exists:asosiasimasjaki,id',
+        'lpspenerbit_id' => 'required|exists:lpspenerbit,id',
+        'tanggalterbit' => 'required|date',
+        'tanggalhabis' => 'required|date|after_or_equal:tanggalterbit',
+        'statusterbit' => 'required|in:Terbit,Belum Terbit',
+    ], [
+        'required' => ':attribute wajib diisi!',
+        'exists' => ':attribute tidak ditemukan di sistem!',
+        'in' => ':attribute tidak sesuai pilihan yang tersedia!',
+        'date' => ':attribute harus berupa tanggal!',
+        'after_or_equal' => 'Tanggal habis tidak boleh lebih awal dari tanggal terbit!',
+    ]);
+
+    // Cari datanya berdasarkan 'nama'
+    $data = skktenagakerjablora::where('nama', $nama)->firstOrFail();
+
+    // Update data
+    $data->update($validatedData);
+
+    // Flash success
+    session()->flash('update', 'Data berhasil diperbarui!');
+
+    return redirect()->back();
+}
+
+
 }
 
