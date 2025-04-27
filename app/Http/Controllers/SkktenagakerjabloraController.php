@@ -474,8 +474,8 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
     $validatedData = $request->validate([
         'nama' => 'required|string|max:255',
         'alamat' => 'required|string',
-        'tahunlulus' => 'required|string|min:4|max:4',
-        'tahunbimtek' => 'required|in:2024,2025,2026',
+        'tahunlulus' => 'required|string',
+        'tahunbimtek' => 'required|string',
         'namasekolah_id' => 'required|integer',
         'jenjangpendidikan_id' => 'required|intege',
         'jurusan_id' => 'required|intege',
