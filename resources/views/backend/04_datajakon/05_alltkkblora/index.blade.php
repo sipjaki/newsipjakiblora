@@ -78,13 +78,12 @@
                     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
                     transition: all 0.3s ease;
                     cursor: pointer;
+                    margin-bottom:25px;
                 "
                 onmouseover="this.style.background='white'; this.style.color='black';"
                 onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
                     ⚙️ Setting Database
                 </div>
-
-                <br>
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                     <a href="/404">
