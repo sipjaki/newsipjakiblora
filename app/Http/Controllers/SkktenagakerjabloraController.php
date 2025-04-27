@@ -347,7 +347,7 @@ public function beskkall(Request $request)
         $page = $request->input('page', 1);
 
         // Cache key yang konsisten dan jelas
-        $cacheKey = "blora_tkk_" . md5("page_{$page}_search_{$search}");
+        $cacheKey = "blora_tkk_baru" . md5("page_{$page}_search_{$search}");
 
         if ($page == 1) {
             Cache::forget($cacheKey);
