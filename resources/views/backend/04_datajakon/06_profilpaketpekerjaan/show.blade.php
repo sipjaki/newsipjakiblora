@@ -262,7 +262,7 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-file-earmark-ruled" style="margin-right: 8px; color: navy;"></i>Nilai Kontrak
                                                 </label>
-                                                <input class="form-control" value="Rp {{ number_format($data->nilaikontrak, 0, ',', '.') }}" readonly/>
+                                                <input class="form-control" value="Rp {{ number_format($data->nilaikontrak, 0, ',', '.') }},00" readonly/>
                                             </div>
 
                                             <div class="mb-3">
