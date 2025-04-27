@@ -224,9 +224,9 @@
          <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
          <th style="width: 100px; text-align:center;">Jenjang</th>
          <th style="width: 400px; text-align:center;">LPS Penerbit</th>
-         <th style="width: 200px; text-align:center;">Jurusan</th>
-         <th style="width: 200px; text-align:center;">Tanggal Terbit</th>
-         <th style="width: 200px; text-align:center;">Tanggal Habis</th>
+         <th style="width: 300px; text-align:center;">Jurusan</th>
+         <th style="width: 300px; text-align:center;">Tanggal Terbit</th>
+         <th style="width: 300px; text-align:center;">Tanggal Habis</th>
          <th style="width: 200px; text-align:center;">Masa Berlaku</th>
          <th style="width: 200px; text-align:center;">Status Terbit</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
