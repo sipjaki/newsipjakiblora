@@ -80,6 +80,7 @@
                             @csrf
                             @method('POST')
     <!-- begin::Body -->
+
     <div class="card-body">
         <div class="row">
             <!-- Left Column (6/12) -->
@@ -89,7 +90,7 @@
                     <label class="form-label" for="nama">
                         <i class="bi bi-person" style="margin-right: 10px; color: navy;"></i> Nama
                     </label>
-                    <input type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ old('nama', $data->nama) }}" />
+                    <input type="text" id="nama" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ old('nama') }}" />
                     @error('nama')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -100,7 +101,7 @@
                     <label class="form-label" for="alamat">
                         <i class="bi bi-house-door" style="margin-right: 10px; color: navy;"></i> Alamat
                     </label>
-                    <textarea id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror">{{ old('alamat', $data->alamat) }}</textarea>
+                    <textarea id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
                     @error('alamat')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -111,7 +112,7 @@
                     <label class="form-label" for="tahunlulus">
                         <i class="bi bi-calendar-check" style="margin-right: 10px; color: navy;"></i> Tahun Lulus
                     </label>
-                    <input type="number" id="tahunlulus" name="tahunlulus" class="form-control @error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus', $data->tahunlulus) }}" />
+                    <input type="number" id="tahunlulus" name="tahunlulus" class="form-control @error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus') }}" />
                     @error('tahunlulus')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -123,14 +124,10 @@
                         <i class="bi bi-calendar-event" style="margin-right: 10px; color: navy;"></i> Tahun Bimtek
                     </label>
                     <select id="tahunbimtek" name="tahunbimtek" class="form-control @error('tahunbimtek') is-invalid @enderror">
-                        @if($data->tahunbimtek)
-                            <option value="{{ $data->tahunbimtek }}" selected>{{ $data->tahunbimtek }}</option>
-                        @else
-                            <option value="" disabled selected>Data Belum Di Update</option>
-                        @endif
-                        <option value="2024" {{ old('tahunbimtek', $data->tahunbimtek) == '2024' ? 'selected' : '' }}>2024</option>
-                        <option value="2025" {{ old('tahunbimtek', $data->tahunbimtek) == '2025' ? 'selected' : '' }}>2025</option>
-                        <option value="2026" {{ old('tahunbimtek', $data->tahunbimtek) == '2026' ? 'selected' : '' }}>2026</option>
+                        <option value="" disabled selected>Data Belum Di Update</option>
+                        <option value="2024" {{ old('tahunbimtek') == '2024' ? 'selected' : '' }}>2024</option>
+                        <option value="2025" {{ old('tahunbimtek') == '2025' ? 'selected' : '' }}>2025</option>
+                        <option value="2026" {{ old('tahunbimtek') == '2026' ? 'selected' : '' }}>2026</option>
                     </select>
                     @error('tahunbimtek')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -145,7 +142,7 @@
                     <select id="namasekolah_id" name="namasekolah_id" class="form-control @error('namasekolah_id') is-invalid @enderror">
                         <option value="">Pilih Sekolah</option>
                         @foreach($namasekolahList as $sekolah)
-                            <option value="{{ $sekolah->id }}" {{ old('namasekolah_id', $data->namasekolah_id) == $sekolah->id ? 'selected' : '' }}>
+                            <option value="{{ $sekolah->id }}" {{ old('namasekolah_id') == $sekolah->id ? 'selected' : '' }}>
                                 {{ $sekolah->namasekolah }}
                             </option>
                         @endforeach
@@ -163,7 +160,7 @@
                     <select id="jenjangpendidikan_id" name="jenjangpendidikan_id" class="form-control @error('jenjangpendidikan_id') is-invalid @enderror">
                         <option value="">Pilih Jenjang Pendidikan</option>
                         @foreach($jenjangpendidikanList as $jenjang)
-                            <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id', $data->jenjangpendidikan_id) == $jenjang->id ? 'selected' : '' }}>
+                            <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id') == $jenjang->id ? 'selected' : '' }}>
                                 {{ $jenjang->jenjangpendidikan }}
                             </option>
                         @endforeach
@@ -181,7 +178,7 @@
                     <select id="jurusan_id" name="jurusan_id" class="form-control @error('jurusan_id') is-invalid @enderror">
                         <option value="">Pilih Jurusan</option>
                         @foreach($jurusanList as $jurusan)
-                            <option value="{{ $jurusan->id }}" {{ old('jurusan_id', $data->jurusan_id) == $jurusan->id ? 'selected' : '' }}>
+                            <option value="{{ $jurusan->id }}" {{ old('jurusan_id') == $jurusan->id ? 'selected' : '' }}>
                                 {{ $jurusan->jurusan }}
                             </option>
                         @endforeach
@@ -203,7 +200,7 @@
                     <select id="jabatankerja_id" name="jabatankerja_id" class="form-control @error('jabatankerja_id') is-invalid @enderror">
                         <option value="">Pilih Jabatan Kerja</option>
                         @foreach($jabatankerjaList as $jabatan)
-                            <option value="{{ $jabatan->id }}" {{ old('jabatankerja_id', $data->jabatankerja_id) == $jabatan->id ? 'selected' : '' }}>
+                            <option value="{{ $jabatan->id }}" {{ old('jabatankerja_id') == $jabatan->id ? 'selected' : '' }}>
                                 {{ $jabatan->jabatankerja }}
                             </option>
                         @endforeach
@@ -221,7 +218,7 @@
                     <select id="jenjang_id" name="jenjang_id" class="form-control @error('jenjang_id') is-invalid @enderror">
                         <option value="">Pilih Jenjang</option>
                         @foreach($jenjangList as $jenjang)
-                            <option value="{{ $jenjang->id }}" {{ old('jenjang_id', $data->jenjang_id) == $jenjang->id ? 'selected' : '' }}>
+                            <option value="{{ $jenjang->id }}" {{ old('jenjang_id') == $jenjang->id ? 'selected' : '' }}>
                                 {{ $jenjang->jenjang }}
                             </option>
                         @endforeach
@@ -239,7 +236,7 @@
                     <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
                         <option value="">Pilih Asosiasi</option>
                         @foreach($asosiasimasjakiList as $asosiasi)
-                            <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id', $data->asosiasimasjaki_id) == $asosiasi->id ? 'selected' : '' }}>
+                            <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id') == $asosiasi->id ? 'selected' : '' }}>
                                 {{ $asosiasi->namaasosiasi }}
                             </option>
                         @endforeach
@@ -257,7 +254,7 @@
                     <select id="lpspenerbit_id" name="lpspenerbit_id" class="form-control @error('lpspenerbit_id') is-invalid @enderror">
                         <option value="">Pilih Lembaga Penerbit</option>
                         @foreach($lpspenerbitList as $penerbit)
-                            <option value="{{ $penerbit->id }}" {{ old('lpspenerbit_id', $data->lpspenerbit_id) == $penerbit->id ? 'selected' : '' }}>
+                            <option value="{{ $penerbit->id }}" {{ old('lpspenerbit_id') == $penerbit->id ? 'selected' : '' }}>
                                 {{ $penerbit->lpspenerbit }}
                             </option>
                         @endforeach
@@ -272,7 +269,7 @@
                     <label class="form-label" for="tanggalterbit">
                         <i class="bi bi-calendar-check" style="margin-right: 10px; color: navy;"></i> Tanggal Terbit
                     </label>
-                    <input type="date" id="tanggalterbit" name="tanggalterbit" class="form-control @error('tanggalterbit') is-invalid @enderror" value="{{ old('tanggalterbit', $data->tanggalterbit) }}" />
+                    <input type="date" id="tanggalterbit" name="tanggalterbit" class="form-control @error('tanggalterbit') is-invalid @enderror" value="{{ old('tanggalterbit') }}" />
                     @error('tanggalterbit')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -283,30 +280,30 @@
                     <label class="form-label" for="tanggalhabis">
                         <i class="bi bi-calendar-x" style="margin-right: 10px; color: navy;"></i> Tanggal Habis
                     </label>
-                    <input type="date" id="tanggalhabis" name="tanggalhabis" class="form-control @error('tanggalhabis') is-invalid @enderror" value="{{ old('tanggalhabis', $data->tanggalhabis) }}" />
+                    <input type="date" id="tanggalhabis" name="tanggalhabis" class="form-control @error('tanggalhabis') is-invalid @enderror" value="{{ old('tanggalhabis') }}" />
                     @error('tanggalhabis')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <!-- Status Terbit -->
-             <!-- Status Terbit -->
-<div class="mb-3">
-    <label class="form-label" for="statusterbit">
-        <i class="bi bi-check-circle" style="margin-right: 10px; color: navy;"></i> Status Terbit
-    </label>
-    <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror" required>
-        <option value="" disabled selected>Pilih Status Terbit</option>
-        <option value="Terbit" {{ old('statusterbit', $data->statusterbit ?? '') == 'Terbit' ? 'selected' : '' }}>Terbit</option>
-        <option value="Belum Terbit" {{ old('statusterbit', $data->statusterbit ?? '') == 'Belum Terbit' ? 'selected' : '' }}>Belum Terbit</option>
-    </select>
-    @error('statusterbit')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
-
+                <div class="mb-3">
+                    <label class="form-label" for="statusterbit">
+                        <i class="bi bi-check-circle" style="margin-right: 10px; color: navy;"></i> Status Terbit
+                    </label>
+                    <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror" required>
+                        <option value="" disabled selected>Pilih Status Terbit</option>
+                        <option value="Terbit" {{ old('statusterbit') == 'Terbit' ? 'selected' : '' }}>Terbit</option>
+                        <option value="Belum Terbit" {{ old('statusterbit') == 'Belum Terbit' ? 'selected' : '' }}>Belum Terbit</option>
+                    </select>
+                    @error('statusterbit')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
         </div>
+{{--
+        <button type="submit" class="btn btn-primary">Submit</button> --}}
     </div>
     <!-- end::Body -->
 
