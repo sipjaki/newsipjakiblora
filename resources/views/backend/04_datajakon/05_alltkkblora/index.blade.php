@@ -217,7 +217,7 @@
          <th style="width: 400px; text-align:center;">Nama Lengkap</th>
          <th style="width: 400px; text-align:center;">Alamat </th>
          <th style="width: 100px; text-align:center;">Tahun Lulus</th>
-         <th style="width: 300px; text-align:center;">Asosiasi</th>
+         <th style="width: 300px; text-align:center;">Penyelenggara</th>
          <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
          <th style="width: 100px; text-align:center;">Pendidikan</th>
          <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
