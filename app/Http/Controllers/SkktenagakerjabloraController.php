@@ -167,48 +167,61 @@ class SkktenagakerjabloraController extends Controller
 public function beskkdpupr(Request $request)
 {
     $perPage = $request->input('perPage', 15);
-    $search = $request->input('search');
+    $search = $request->input('search', '');
+    $page = $request->input('page', 1);
 
-    $query = skktenagakerjablora::query();
+    // Cache key yang konsisten
+    $cacheKey = "blora_dpupr_tkk_" . md5("page_{$page}_search_{$search}");
 
-    if ($search) {
-        $query->where('nama', 'LIKE', "%{$search}%")
-              ->orWhere('alamat', 'LIKE', "%{$search}%")
-              ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
-              ->orWhere('tanggalterbit', 'LIKE', "%{$search}%")
-              ->orWhere('tanggalhabis', 'LIKE', "%{$search}%")
-              ->orWhere('statusterbit', 'LIKE', "%{$search}%")
-// -------------------------------------------------------------------------------
-              ->orWhereHas('namasekolah', function ($q) use ($search) {
-                $q->where('namasekolah', 'LIKE', "%{$search}%");
-            })
-
-              ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
-                $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
-            })
-
-              ->orWhereHas('jabatankerja', function ($q) use ($search) {
-                $q->where('jabatankerja', 'LIKE', "%{$search}%");
-            })
-
-              ->orWhereHas('jenjang', function ($q) use ($search) {
-                $q->where('jenjang', 'LIKE', "%{$search}%");
-            })
-
-              ->orWhereHas('lpspenerbit', function ($q) use ($search) {
-                $q->where('lpspenerbit', 'LIKE', "%{$search}%");
-            })
-
-            // ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-            //     $q->where('namaasosiasi', 'LIKE', "%{$search}%");
-            // })
-
-              ->orWhereHas('jurusan', function ($q) use ($search) {
-                $q->where('jurusan', 'LIKE', "%{$search}%");
-            });
+    if ($page == 1) {
+        Cache::forget($cacheKey);
     }
 
-    $data = $query->paginate($perPage);
+    $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+        $query = skktenagakerjablora::query()
+            ->where(function ($q) {
+                $q->where('asosiasimasjaki_id', '!=', 99)
+                  ->orWhereNull('asosiasimasjaki_id');
+            });
+
+        if (!empty($search)) {
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'LIKE', "%{$search}%")
+                  ->orWhere('alamat', 'LIKE', "%{$search}%")
+                  ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
+                  ->orWhere('tanggalterbit', 'LIKE', "%{$search}%")
+                  ->orWhere('tanggalhabis', 'LIKE', "%{$search}%")
+                  ->orWhere('statusterbit', 'LIKE', "%{$search}%")
+                  ->orWhereHas('namasekolah', function ($q) use ($search) {
+                      $q->where('namasekolah', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
+                      $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                      $q->where('jabatankerja', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('jenjang', function ($q) use ($search) {
+                      $q->where('jenjang', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('lpspenerbit', function ($q) use ($search) {
+                      $q->where('lpspenerbit', 'LIKE', "%{$search}%");
+                  })
+                  ->orWhereHas('jurusan', function ($q) use ($search) {
+                      $q->where('jurusan', 'LIKE', "%{$search}%");
+                  });
+            });
+        }
+
+        return $query->get();
+    });
+
+    $total = count($allData);
+    $items = collect($allData)->forPage($page, $perPage)->values();
+    $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+        'path' => request()->url(),
+        'query' => request()->query()
+    ]);
 
     if ($request->ajax()) {
         return response()->json([
@@ -223,6 +236,7 @@ public function beskkdpupr(Request $request)
         'search' => $search
     ]);
 }
+
 
 // TKK DPUPR BLORA SHOW
 
