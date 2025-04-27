@@ -124,6 +124,11 @@
                         <i class="bi bi-calendar-event" style="margin-right: 10px; color: navy;"></i> Tahun Bimtek
                     </label>
                     <select id="tahunbimtek" name="tahunbimtek" class="form-control @error('tahunbimtek') is-invalid @enderror">
+                        @if($data->tahunbimtek)
+                            <option value="{{ $data->tahunbimtek }}" selected>{{ $data->tahunbimtek }}</option>
+                        @else
+                            <option value="" disabled selected>Data Belum Di Update</option>
+                        @endif
                         <option value="2024" {{ old('tahunbimtek', $data->tahunbimtek) == '2024' ? 'selected' : '' }}>2024</option>
                         <option value="2025" {{ old('tahunbimtek', $data->tahunbimtek) == '2025' ? 'selected' : '' }}>2025</option>
                         <option value="2026" {{ old('tahunbimtek', $data->tahunbimtek) == '2026' ? 'selected' : '' }}>2026</option>
