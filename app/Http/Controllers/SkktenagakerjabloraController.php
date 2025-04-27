@@ -417,8 +417,9 @@ return redirect()->back()->with('error', 'Item not found');
 
 
         return view('backend.04_datajakon.04_tkkdpupr.update', [
-            'title' => 'Data TKK Di Selenggarakan DPUPR Kab Blora',
+            'title' => 'Data Update TKK Di Selenggarakan DPUPR Kab Blora',
             'data' => $dataallskkblora,
+            'user' => $user,
             'namasekolahList' => $datanamasekolah,
             'jenjangpendidikanList' => $datajenjangpendidikan,
             'jurusanList' => $datajurusan,
@@ -547,9 +548,34 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
 }
 
 
+public function beskkallbloraupdate($nama)
+    {
+            $dataallskkblora = skktenagakerjablora::where('nama', $nama)->first();
+        // Ambil data user saat ini
+            $user = Auth::user();
+
+        $datanamasekolah = namasekolah::all();
+        $datajenjangpendidikan = jenjangpendidikan::all();
+        $datajurusan = jurusan::all();
+        $datajabatankerja = jabatankerja::all();
+        $datajenjang = jenjang::all();
+        $dataasosiasi = asosiasimasjaki::all();
+        $datalpspenerbit = lpspenerbit::all();
 
 
+        return view('backend.04_datajakon.05_alltkkblora.update', [
+            'title' => 'Data Update TKK Kabupaten Blora',
+            'data' => $dataallskkblora,
+            'namasekolahList' => $datanamasekolah,
+            'jenjangpendidikanList' => $datajenjangpendidikan,
+            'jurusanList' => $datajurusan,
+            'jabatankerjaList' => $datajabatankerja,
+            'jenjangList' => $datajenjang,
+            'asosiasimasjakiList' => $dataasosiasi,
+            'lpspenerbitList' => $datalpspenerbit,
 
+        ]);
+    }
 
 
 }
