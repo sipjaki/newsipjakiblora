@@ -126,7 +126,6 @@
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
-
  <tbody id="tableBody">
      @foreach ($data as $item )
      <tr class="align-middle">
