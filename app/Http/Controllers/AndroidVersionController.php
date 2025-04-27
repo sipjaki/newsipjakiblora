@@ -153,27 +153,48 @@ class AndroidVersionController extends Controller
 
 
 // DATA ASOSIASI JASA KONSTRUKSI
-        public function menuasosiasimasjaki()
-    {
-        $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
+public function menuasosiasimasjaki(Request $request)
+{
+    $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
 
-        $data = asosiasimasjaki::withCount(['bujkkontraktor', 'bujkkonsultan'])
-            ->get()
-            ->map(function ($item) {
-                return [
-                    'nama_asosiasi' => $item->namaasosiasi,
-                    'jumlah_penggunaan1' => $item->bujkkontraktor_count,
-                    'jumlah_penggunaan2' => $item->bujkkonsultan_count,
-                ];
-            });
+    // Mendapatkan kata kunci pencarian dari input pengguna
+    $search = $request->input('search');
+    $perPage = 10; // Menentukan jumlah data per halaman, sesuaikan dengan kebutuhan
 
-        return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.index', [
-            'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
-            'user' => $user,
-            'data' => $data,
+    // Query untuk asosiasimasjaki dengan jumlah penggunaan bujkkontraktor dan bujkkonsultan
+    $queryAsosiasi = asosiasimasjaki::withCount(['bujkkontraktor', 'bujkkonsultan']);
+
+    // Jika ada input pencarian, filter berdasarkan namaasosiasi
+    if ($search) {
+        $queryAsosiasi->where('namaasosiasi', 'like', '%' . $search . '%');
+    }
+
+    // Ambil data asosiasimasjaki dengan pencarian yang diterapkan
+    $dataAsosiasi = $queryAsosiasi->get()
+        ->map(function ($item) {
+            return [
+                'nama_asosiasi' => $item->namaasosiasi,
+                'jumlah_penggunaan1' => $item->bujkkontraktor_count,
+                'jumlah_penggunaan2' => $item->bujkkonsultan_count,
+            ];
+        });
+
+
+    // Jika permintaan adalah Ajax, kembalikan hanya bagian tabel dalam format JSON
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.00_android.C_datajakon.03_asosiasimasjaki.partials.table', compact('dataKontraktor'))->render()
         ]);
     }
 
+    // Kembalikan view dengan data asosiasi dan kontraktor yang telah difilter
+    return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.index', [
+        'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+        'user' => $user,
+        'data' => $dataAsosiasi,
+        'search' => $search, // Menyertakan nilai pencarian untuk digunakan di view
+    ]);
+}
 
 
         public function menubujkkontraktor(Request $request)
