@@ -92,7 +92,7 @@
                             <!-- Table Section -->
 
                             <div class="custom-table-container">
-                                <table class="fl-table" id="sortableTable">
+                                <table class="costum-fl-table" id="sortableTable">
                                     <tbody id="tableBody">
                                         {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp --}}
                                         {{-- @foreach ($subData as $item) --}}
