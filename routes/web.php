@@ -757,6 +757,7 @@ Route::delete('/beasosiasi/delete/{namaasosiasi}', [BujkkontraktorController::cl
 Route::get('/beskkdpupr', [SkktenagakerjabloraController::class, 'beskkdpupr'])->middleware('auth');
 Route::get('/beskkdpupr/show/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprshow'])->middleware('auth');
 Route::delete('/beskkdpupr/delete/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprdelete'])->middleware('auth');
+Route::get('/beskkdpupr/update/{nama}', [SkktenagakerjabloraController::class, 'beskkdpuprupdate'])->middleware('auth')->name('update.beskkdpuprupdate');
 // ___________________________________________________________________________________________________________________________________
 
 // ________________________________________________________________________________________________________________
