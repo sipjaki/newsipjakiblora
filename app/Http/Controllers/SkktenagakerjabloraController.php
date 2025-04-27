@@ -540,9 +540,9 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
     $data->update($validatedData);
 
     // Flash success
-    session()->flash('update', 'Data berhasil diperbarui!');
-
-    return redirect('/beskkdpupr')->back();
+    session()->flash('create', 'Data Berhasil Dibuat!');
+    return redirect('/beskkdpupr');
+    // return redirect('/beskkdpupr')->back();
 }
 
 
