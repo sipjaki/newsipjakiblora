@@ -208,6 +208,8 @@
 
               <li class="nav-header" style="color: white;">MAIN MENU</li>
 
+              @can('super_admin')
+
               <li class="nav-item">
 
                     <li class="nav-item">
@@ -803,6 +805,9 @@
 
                     </ul>
                   </li>
+
+
+              @endcan
             <li class="nav-header" style="color: white;" >ADMINISTRATOR DATABASE</li>
 
             <li class="nav-item">
