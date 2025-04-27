@@ -149,7 +149,7 @@
 
                             <div class="custom-table-container">
                                 <div class="table-wrapper">
-                                    <table class="custom-fl-table w-full">
+                                    <table class="fl-table w-full">
                                         <thead>
                                             <tr>
                                                 <th style="text-align: center; width:75px">No</th>
