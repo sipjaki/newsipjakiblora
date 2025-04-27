@@ -195,9 +195,9 @@ table.zebra-table {
                             {{-- Nama Asosiasi --}}
                             <td class="text-center">
                                 @if (!empty($item['nama_asosiasi']))
-                                    {{ ucwords(strtolower($item['nama_asosiasi'])) }}
+                                    {{ strtoupper($item['nama_asosiasi']) }}
                                 @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                    0
                                 @endif
                             </td>
 
@@ -206,7 +206,7 @@ table.zebra-table {
                                 @if (!empty($item['jumlah_penggunaan1']))
                                     {{ $item['jumlah_penggunaan1'] }}
                                 @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                    0
                                 @endif
                             </td>
 
@@ -215,7 +215,7 @@ table.zebra-table {
                                 @if (!empty($item['jumlah_penggunaan2']))
                                     {{ $item['jumlah_penggunaan2'] }}
                                 @else
-                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                    0
                                 @endif
                             </td>
 
@@ -233,7 +233,7 @@ table.zebra-table {
                 </table>
             </div>
 
-            {{-- @include('frontend.00_approve.01_cssterpisah.paginations') --}}
+            @include('frontend.00_approve.01_cssterpisah.paginations')
         </div>
     </div>
     <br><br><br>
