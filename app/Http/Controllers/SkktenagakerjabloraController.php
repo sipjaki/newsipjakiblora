@@ -339,57 +339,64 @@ return redirect()->back()->with('error', 'Item not found');
     // MENU BACKEND DATA ALL SKK TENAGA KERJA SELURUH KABUPATEN BLORA JAWA TENGAH
 // --------------------------------------------------------------------------------------------------------------------
 
-
     public function beskkall(Request $request)
     {
-        $perPage = $request->input('perPage', 15);
-        $search = $request->input('search', '');
-        $page = $request->input('page', 1);
+            $perPage = $request->input('perPage', 15);
+            $search = $request->input('search');
 
-        // Cache key yang konsisten dan jelas
-        $cacheKey = "blora_tkk_baru" . md5("page_{$page}_search_{$search}");
+            $query = skktenagakerjablora::query();
 
-        if ($page == 1) {
-            Cache::forget($cacheKey);
-        }
+            if ($search) {
+                $query->where('nama', 'LIKE', "%{$search}%")
+                    ->orWhere('alamat', 'LIKE', "%{$search}%")
+                    ->orWhere('tahunlulus', 'LIKE', "%{$search}%")
+                    ->orWhere('tanggalterbit', 'LIKE', "%{$search}%")
+                    ->orWhere('tanggalhabis', 'LIKE', "%{$search}%")
+                    ->orWhere('statusterbit', 'LIKE', "%{$search}%")
+        // -------------------------------------------------------------------------------
+                    ->orWhereHas('namasekolah', function ($q) use ($search) {
+                        $q->where('namasekolah', 'LIKE', "%{$search}%");
+                    })
 
-        $allData = Cache::remember($cacheKey, 300, function () use ($search) {
-            $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
-                // HANYA tampilkan data yang TIDAK 99 atau NULL
-                ->where(function ($q) {
-                    $q->where('asosiasimasjaki_id', '!=', 99)
-                      ->orWhereNull('asosiasimasjaki_id');
-                });
+                    ->orWhereHas('jenjangpendidikan', function ($q) use ($search) {
+                        $q->where('jenjangpendidikan', 'LIKE', "%{$search}%");
+                    })
 
-            // Cek kalau ada pencarian
-            if (!empty($search)) {
-                $query->where(function ($q) use ($search) {
-                    $q->where('nama', 'LIKE', "%{$search}%");
-                });
+                    ->orWhereHas('jabatankerja', function ($q) use ($search) {
+                        $q->where('jabatankerja', 'LIKE', "%{$search}%");
+                    })
+
+                    ->orWhereHas('jenjang', function ($q) use ($search) {
+                        $q->where('jenjang', 'LIKE', "%{$search}%");
+                    })
+
+                    ->orWhereHas('lpspenerbit', function ($q) use ($search) {
+                        $q->where('lpspenerbit', 'LIKE', "%{$search}%");
+                    })
+
+                    // ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                    //     $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+                    // })
+
+                    ->orWhereHas('jurusan', function ($q) use ($search) {
+                        $q->where('jurusan', 'LIKE', "%{$search}%");
+                    });
             }
 
-            return $query->get();
-        });
+            $data = $query->paginate($perPage);
 
-        $total = count($allData);
-        $items = collect($allData)->forPage($page, $perPage)->values();
-        $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
-            'path' => request()->url(),
-            'query' => request()->query()
-        ]);
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('backend.04_datajakon.05_alltkkblora.partials.table', compact('data'))->render()
+                ]);
+            }
 
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('backend.04_datajakon.05_alltkkblora.partials.table', compact('data'))->render()
+            return view('backend.04_datajakon.05_alltkkblora.index', [
+                'title' => 'Semua TKK Kabupaten Blora',
+                'data' => $data,
+                'perPage' => $perPage,
+                'search' => $search
             ]);
-        }
-
-        return view('backend.04_datajakon.05_alltkkblora.index', [
-            'title' => 'TKK Kabupaten Blora',
-            'data' => $data,
-            'perPage' => $perPage,
-            'search' => $search
-        ]);
     }
 
     // TKK DPUPR BLORA SHOW
@@ -538,6 +545,7 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
     return redirect('/beskkdpupr');
     // return redirect('/beskkdpupr')->back();
 }
+
 
 
 
