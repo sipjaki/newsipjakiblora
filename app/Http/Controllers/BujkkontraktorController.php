@@ -37,19 +37,19 @@ class BujkkontraktorController extends Controller
     $search = $request->input('search');
 
     // Hitung jumlah per asosiasi
-    $databujkkontraktor = bujkkontraktor::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
-        ->with('namaasosiasi')
-        ->groupBy('asosiasimasjaki_id')
-        ->get();
+    // $databujkkontraktor = bujkkontraktor::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
+    //     ->with('namaasosiasi')
+    //     ->groupBy('asosiasimasjaki_id')
+    //     ->get();
 
-    $databujkkonsultan = bujkkonsultan::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
-        ->with('namaasosiasi')
-        ->groupBy('asosiasimasjaki_id')
-        ->get();
+    // $databujkkonsultan = bujkkonsultan::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
+    //     ->with('namaasosiasi')
+    //     ->groupBy('asosiasimasjaki_id')
+    //     ->get();
 
-    // Data untuk paginasi
-    $databujkkontraktorpaginate = bujkkontraktor::with('namaasosiasi')->paginate(15);
-    $databujkkonsultanpaginate = bujkkonsultan::with('namaasosiasi')->paginate(15);
+    // // Data untuk paginasi
+    // $databujkkontraktorpaginate = bujkkontraktor::with('namaasosiasi')->paginate(15);
+    // $databujkkonsultanpaginate = bujkkonsultan::with('namaasosiasi')->paginate(15);
 
     // Query utama untuk table asosiasi
     $query = asosiasimasjaki::query();
