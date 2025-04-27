@@ -383,7 +383,7 @@ return redirect()->back()->with('error', 'Item not found');
                     });
             }
 
-            $data = $query->paginate($perPage);
+            $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
             if ($request->ajax()) {
                 return response()->json([
