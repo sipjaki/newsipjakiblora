@@ -186,23 +186,58 @@
 <table class="zebra-table table-striped">
  <thead>
      <tr>
-         <th style="width: 75px; text-align:center;">No</th>
-         <th style="width: 175px; text-align:center;">Jenis Pekerjaan</th>
-         <th style="width: 400px; text-align:center;">Nama Pekerjaan</th>
-         <th style="width: 400px; text-align:center;">Paket Status Pekerjaan</th>
-         <th style="width: 200px; text-align:center;">Sumber Dana</th>
-         <th style="width: 200px; text-align:center;">Pelaksanaan</th>
-         <th style="width: 300px; text-align:center;">CV/PT</th>
-         <th style="width: 300px; text-align:center;">NIB</th>
-         <th style="width: 200px; text-align:center;">Nilai Kontrak</th>
-         <th style="width: 225px; text-align:center;">Jenis Kontrak</th>
-         <th style="width: 200px; text-align:center;">Karakteristik</th>
-         <th style="width: 200px; text-align:center;">Mulai</th>
-         <th style="width: 200px; text-align:center;">Selesai</th>
-         <th style="width: 200px; text-align:center;">Status</th>
-         <th style="width: 200px; text-align:center;">Progress</th>
-         <th style="width: 400px; text-align:center;">Satuan Kerja</th>
-         <th style="width: 200px; text-align:center;">Aksi</th>
+        <th style="width: 75px; text-align:center;">
+            <i class="bi bi-hash" style="margin-right: 5px;"></i>No
+        </th>
+        <th style="width: 175px; text-align:center;">
+            <i class="bi bi-briefcase" style="margin-right: 5px;"></i>Jenis Pekerjaan
+        </th>
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-card-text" style="margin-right: 5px;"></i>Nama Pekerjaan
+        </th>
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-list-check" style="margin-right: 5px;"></i>Paket Status Pekerjaan
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-cash-stack" style="margin-right: 5px;"></i>Sumber Dana
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-calendar-week" style="margin-right: 5px;"></i>Pelaksanaan
+        </th>
+        <th style="width: 300px; text-align:center;">
+            <i class="bi bi-building" style="margin-right: 5px;"></i>CV/PT
+        </th>
+        <th style="width: 300px; text-align:center;">
+            <i class="bi bi-123" style="margin-right: 5px;"></i>NIB
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-currency-dollar" style="margin-right: 5px;"></i>Nilai Kontrak
+        </th>
+        <th style="width: 225px; text-align:center;">
+            <i class="bi bi-file-earmark-text" style="margin-right: 5px;"></i>Jenis Kontrak
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-bar-chart" style="margin-right: 5px;"></i>Karakteristik
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Mulai
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-calendar-check" style="margin-right: 5px;"></i>Selesai
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Status
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-graph-up-arrow" style="margin-right: 5px;"></i>Progress
+        </th>
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-diagram-3" style="margin-right: 5px;"></i>Satuan Kerja
+        </th>
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-gear" style="margin-right: 5px;"></i>Aksi
+        </th>
+
      </tr>
  </thead>
  <tbody id="tableBody">
