@@ -201,7 +201,7 @@
          <th style="width: 200px; text-align:center;">Selesai</th>
          <th style="width: 200px; text-align:center;">Status</th>
          <th style="width: 200px; text-align:center;">Progress</th>
-         <th style="width: 400px; text-align:center;">Dinas</th>
+         <th style="width: 400px; text-align:center;">Satuan Kerja</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
