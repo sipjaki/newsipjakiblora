@@ -383,7 +383,7 @@ return redirect()->back()->with('error', 'Item not found');
                     });
             }
 
-            $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+$data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
             if ($request->ajax()) {
                 return response()->json([
@@ -579,7 +579,7 @@ public function beskkallbloraupdate($nama)
 
 
 
-    public function beskkallbloracreateupdate(Request $request, $id)
+    public function beskkallbloracreateupdate(Request $request, $nama)
 {
     // Validasi inputan
     $validatedData = $request->validate([
@@ -645,7 +645,7 @@ public function beskkallbloraupdate($nama)
         // 'statusterbit.in' => 'Status terbit harus salah satu dari "Terbit" atau "Belum Terbit"!',
     ]);
         // Cari datanya berdasarkan 'nama'
-    $data = skktenagakerjablora::where('id', $id)->firstOrFail();
+    $data = skktenagakerjablora::where('nama', $nama)->firstOrFail();
 
     // Update data
     $data->update($validatedData);
