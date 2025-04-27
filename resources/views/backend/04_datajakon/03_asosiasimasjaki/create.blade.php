@@ -72,17 +72,16 @@
                                 <div class="row">
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
-
-                                        <div class="mb-3">
+                                        <div class="mb-3 position-relative">
                                             <label class="form-label" for="pju">
-                                                <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> PJU
+                                                <i class="bi bi-lightbulb" style="position: absolute; top: 50%; left: 12px; transform: translateY(-50%); color: navy;"></i>
+                                                Nama Asosiasi
                                             </label>
-                                            <input type="text" id="namaasosiasi" name="namaasosiasi" class="form-control @error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}" />
+                                            <input type="text" id="namaasosiasi" name="namaasosiasi" class="form-control @error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}" style="padding-left: 30px;" />
                                             @error('namaasosiasi')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        <!-- No Akte -->
                                     </div>
                                     <!-- End Right Column -->
                                 </div>

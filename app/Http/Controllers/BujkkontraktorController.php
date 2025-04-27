@@ -96,6 +96,29 @@ class BujkkontraktorController extends Controller
             ]);
         }
 
+
+        public function beasosiasicreatenew(Request $request)
+        {
+            // Validasi input form
+            $validated = $request->validate([
+                'namaasosiasi' => 'required|string|max:255',
+            ], [
+                'namaasosiasi.required' => 'Nama asosiasi tidak boleh kosong.',
+                'namaasosiasi.string' => 'Nama asosiasi harus berupa teks.',
+                'namaasosiasi.max' => 'Nama asosiasi tidak boleh lebih dari 255 karakter.',
+            ]);
+
+            // Menyimpan data ke dalam database asosiasimasjaki setelah divalidasi
+            asosiasimasjaki::create([
+                'nama_asosiasi' => $validated['namaasosiasi'], // Menggunakan hasil validasi untuk menyimpan
+            ]);
+
+            // Mengarahkan pengguna ke halaman setelah data berhasil disimpan
+            return redirect('/beasosiasi')->with('success', 'Data Asosiasi Berhasil Di Tambahkan !');
+        }
+
+
+
         // BACKEND ASOSIASI SHOW
 
         public function beasosiasishow($namaasosiasi)
