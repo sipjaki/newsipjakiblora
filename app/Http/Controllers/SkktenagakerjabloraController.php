@@ -399,6 +399,18 @@ return redirect()->back()->with('error', 'Item not found');
 
     // TKK DPUPR BLORA SHOW
 
+    public function beskkdpuprupdate($nama)
+    {
+            $dataallskkblora = skktenagakerjablora::where('nama', $nama)->first();
+        // Ambil data user saat ini
+            $user = Auth::user();
+
+        return view('backend.04_datajakon.04_tkkdpupr.update', [
+            'title' => 'Data TKK Di Selenggarakan DPUPR Kab Blora',
+            'data' => $dataallskkblora,
+        ]);
+    }
+
     public function beskkallshow($nama)
     {
             $dataallskkblora = skktenagakerjablora::where('nama', $nama)->first();
