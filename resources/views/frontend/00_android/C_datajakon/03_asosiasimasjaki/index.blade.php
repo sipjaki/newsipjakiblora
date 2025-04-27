@@ -173,7 +173,7 @@
                                                     @endif
                                                 </td>
 
-                                                <td class="text-center d-flex justify-content-center align-items-center" style="margin-left: 25px;">
+                                                <td class="text-center" style="text-align: center;">
                                                     @if (!empty($item['jumlah_penggunaan1']) && $item['jumlah_penggunaan1'] != 0)
                                                         <a href="/reasasosiasimasjaki/asosiasikonstruksi/{{ urlencode($item['nama_asosiasi']) }}"
                                                            style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
