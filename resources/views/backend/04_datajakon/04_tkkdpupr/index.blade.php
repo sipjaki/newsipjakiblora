@@ -33,14 +33,17 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-     <!--begin::App Content Header-->
+    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
+    <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
        <div class="container-fluid">
          <!--begin::Row-->
          <div class="row">
 
-           <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+            @include('backend.00_administrator.00_baganterpisah.11_alert')
 
          </div>
          <!--end::Row-->
@@ -61,109 +64,11 @@
          <!--begin::Row-->
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
-             <div class="card mb-4">
-                <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #0010a3, #0010a3);
-                    color: white;
-                    padding: 8px 10px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                ">
-                    ⚙️ Setting Database
-                </div>
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Database -->
-                                <i class="fa fa-database" style="margin-right: 8px;"></i>
-                                Universitas/Sekolah/Instansi
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Pendidikan -->
-                                <i class="fa fa-graduation-cap" style="margin-right: 8px;"></i>
-                                Jenjang Pendidikan
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Pekerjaan -->
-                                <i class="fa fa-briefcase" style="margin-right: 8px;"></i>
-                                Jabatan Kerja
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Level -->
-                                <i class="fa fa-level-up" style="margin-right: 8px;"></i>
-                                Jenjang
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon LPS -->
-                                <i class="fa fa-university" style="margin-right: 8px;"></i>
-                                LPS Penerbit
-                            </button>
-                        </a>
-
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Jurusan -->
-                                <i class="fa fa-bookmark" style="margin-right: 8px;"></i>
-                                Jurusan
-                            </button>
-                        </a>
-
-                     </div>
-                 </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #166534, #166534);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                    📌 Halaman : {{$title}}
-                </div>
+                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
+
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
@@ -361,7 +266,8 @@
      <!--end::App Content Header-->
      <!--begin::App Content-->
        <!--end::App Content-->
-   </main>
+        </section>
+    </main>
    <!--end::App Main-->
  </div>
  </div>
