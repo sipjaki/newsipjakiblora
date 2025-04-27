@@ -252,7 +252,12 @@
         <script>
             function updateStatus() {
                 let now = new Date().getTime();
-                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->bulanselesai)->format('Y-m-d H:i:s') }}").getTime();
+
+                // Ubah bulan ke tanggal lengkap: asumsikan tanggal 1 dan tahun sekarang
+                let tahunSekarang = new Date().getFullYear();
+                let bulanSelesai = {{ $item->bulanselesai }}; // ini angka, misalnya 8
+                let tanggalHabis = new Date(`${tahunSekarang}-${String(bulanSelesai).padStart(2, '0')}-01`).getTime();
+
                 let statusButton = document.getElementById("status-{{ $item->id }}");
 
                 if (now > tanggalHabis) {
@@ -264,10 +269,7 @@
                 }
             }
 
-            // Jalankan pertama kali saat halaman dimuat
             updateStatus();
-
-            // Update setiap 1 detik untuk realtime
             setInterval(updateStatus, 1000);
         </script>
 
