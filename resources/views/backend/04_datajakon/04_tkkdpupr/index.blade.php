@@ -91,7 +91,7 @@
 
                                 </script>
 
-                         <a href="/404">
+                         {{-- <a href="/404">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
@@ -100,7 +100,7 @@
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
                              Create
                          </button>
-                         </a>
+                         </a> --}}
                      </div>
                  </div>
                  <!-- /.card-header -->
