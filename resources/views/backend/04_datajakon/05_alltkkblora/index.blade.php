@@ -58,24 +58,26 @@
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card-header">
-                <div style="
-                font-weight: 900;
-                font-size: 16px;
-                text-align: center;
-                background: linear-gradient(135deg, #00378a, #00378a);
-                color: white;
-                padding: 8px 16px;
-                border-radius: 10px;
-                display: inline-block;
-                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                transition: all 0.3s ease;
-                cursor: pointer;
-                margin-bottom:25px;
-            "
-            onmouseover="this.style.background='white'; this.style.color='black';"
-            onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
-                ⚙️ Setting Database
-            </div>
+                <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                    <div style="
+                        font-weight: 900;
+                        font-size: 16px;
+                        text-align: center;
+                        background: linear-gradient(135deg, #00378a, #00378a);
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 10px;
+                        display: inline-block;
+                        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                        margin-bottom: 25px;
+                    "
+                    onmouseover="this.style.background='white'; this.style.color='black';"
+                    onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
+                        ⚙️ Setting Database
+                    </div>
+                </div>
 
             <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                 <a href="/404">
