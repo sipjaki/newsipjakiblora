@@ -163,12 +163,77 @@
                 <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
             @endif
         </td>
-        <td style="text-align: left;">{{$item->namasekolah->namasekolah}}</td>
-         <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-         <td style="text-align: center;">{{$item->jenjang->jenjang}}</td>
-         <td style="text-align: left;">{{$item->lpspenerbit->lpspenerbit}}</td>
-         <td style="text-align: left;">{{$item->jurusan->jurusan}}</td>
+        <td style="text-align: left;">
+            @if (!empty($item->namasekolah?->namasekolah))
+                {{ $item->namasekolah->namasekolah }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if (!empty($item->jenjangpendidikan?->jenjangpendidikan))
+                {{ $item->jenjangpendidikan->jenjangpendidikan }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->jabatankerja?->jabatankerja))
+                {{ $item->jabatankerja->jabatankerja }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if (!empty($item->jenjang?->jenjang))
+                {{ $item->jenjang->jenjang }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->lpspenerbit?->lpspenerbit))
+                {{ $item->lpspenerbit->lpspenerbit }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->jurusan?->jurusan))
+                {{ $item->jurusan->jurusan }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalterbit)->translatedFormat('l, d F Y') }}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalhabis)->translatedFormat('l, d F Y') }}</td>
 
