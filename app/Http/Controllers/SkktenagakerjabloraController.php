@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\asosiasimasjaki;
 use App\Models\namasekolah;
 use App\Models\jenjangpendidikan;
 use App\Models\jurusan;
@@ -405,9 +406,26 @@ return redirect()->back()->with('error', 'Item not found');
         // Ambil data user saat ini
             $user = Auth::user();
 
+        $datanamasekolah = namasekolah::all();
+        $datajenjangpendidikan = jenjangpendidikan::all();
+        $datajurusan = jurusan::all();
+        $datajabatankerja = jabatankerja::all();
+        $datajenjang = jenjang::all();
+        $dataasosiasi = asosiasimasjaki::all();
+        $datalpspenerbit = lpspenerbit::all();
+
+
         return view('backend.04_datajakon.04_tkkdpupr.update', [
             'title' => 'Data TKK Di Selenggarakan DPUPR Kab Blora',
             'data' => $dataallskkblora,
+            'namasekolahList' => $datanamasekolah,
+            'jenjangpendidikanList' => $datajenjangpendidikan,
+            'jurusanList' => $datajurusan,
+            'jabatankerjaList' => $datajabatankerja,
+            'jenjangList' => $datajenjang,
+            'asosiasimasjakiList' => $dataasosiasi,
+            'lpspenerbitList' => $datalpspenerbit,
+
         ]);
     }
 
