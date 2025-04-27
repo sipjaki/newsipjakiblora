@@ -437,7 +437,7 @@ return redirect()->back()->with('error', 'Item not found');
             $user = Auth::user();
 
         return view('backend.04_datajakon.05_alltkkblora.show', [
-            'title' => 'Data TKK Di Selenggarakan DPUPR Kab Blora',
+            'title' => 'Data Detaiils TKK Kabupaten Blora',
             'data' => $dataallskkblora,
         ]);
     }
