@@ -92,7 +92,7 @@
                             <!-- Table Section -->
 
                             <div class="custom-table-container">
-                                <table class="costum-fl-table" id="sortableTable">
+                                <table class="custom-fl-table" id="sortableTable">
                                     <tbody id="tableBody">
                                         {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp --}}
                                         {{-- @foreach ($subData as $item) --}}
@@ -102,11 +102,11 @@
                                             <td>{{$data->namalengkap}}</td>
                                         </tr>
 
-                                        {{-- <tr>
+                                        <tr>
                                             <td>2</td>
                                             <td>No Telepon</td>
                                             <td>{{$data->no_telepon}}</td>
-                                        </tr> --}}
+                                        </tr>
 
                                         <tr>
                                             <td>3</td>
@@ -120,11 +120,11 @@
                                             <td>{{$data->email}}</td>
                                         </tr>
 
-                                        {{-- <tr>
+                                        <tr>
                                             <td>5</td>
                                             <td>Nomor Induk Berusaha</td>
                                             <td>{{$data->nomorindukberusaha}}</td>
-                                        </tr> --}}
+                                        </tr>
 
                                         {{-- @endforeach --}}
 
@@ -133,17 +133,17 @@
                                 <br>
                                 <p style="font-weight: bold;">Sub Klasifikasi Layanan </p>
                                 <br>
-                                <table class="fl-table" id="sortableTable">
+                                <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Sub Klasifikasi Layanan  </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Sub Klasifikasi Layanan  </th>
                                             <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;"> Kode </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> Kualifikasi </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;"> Penerbit </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:150px;"> Tanggal Terbit </th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;"> Masa Berlaku </th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;"> Status </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:400px;"> Penerbit </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:350px;"> Tanggal Terbit </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:350px;"> Masa Berlaku </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:350px;"> Status </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
