@@ -197,64 +197,8 @@
 
                     </div>
 
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-item" id="item-1" class="{{ $data->prosespaket->persiapan === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Persiapan</div>
-                            </div>
-                            <div class="timeline-item" id="item-2" class="{{ $data->prosespaket->pengadaan === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Pengadaan</div>
-                            </div>
-                            <div class="timeline-item" id="item-3" class="{{ $data->prosespaket->pelaksanaan === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Pelaksanaan</div>
-                            </div>
-                            <div class="timeline-item" id="item-4" class="{{ $data->prosespaket->pemeliharaan === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Pemeliharaan</div>
-                            </div>
-                            <div class="timeline-item" id="item-5" class="{{ $data->prosespaket->paketselesai === 'SELESAI' ? 'active' : '' }}">
-                                <div class="timeline-circle"></div>
-                                <div class="timeline-label">Paket Selesai</div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-    // Ambil semua item timeline
-    const items = document.querySelectorAll('.timeline-item');
 
-    // Fungsi untuk menambahkan kelas active pada item tertentu
-    function activateItem(index) {
-        items[index].classList.add('active');
-    }
-
-    // Simulasi keluaran data atau event yang mengaktifkan item
-    setTimeout(function() {
-        activateItem(0); // Mengaktifkan item pertama
-    }, 1000);
-
-    setTimeout(function() {
-        activateItem(1); // Mengaktifkan item kedua
-    }, 2000);
-
-    setTimeout(function() {
-        activateItem(2); // Mengaktifkan item ketiga
-    }, 3000);
-
-    setTimeout(function() {
-        activateItem(3); // Mengaktifkan item keempat
-    }, 4000);
-
-    setTimeout(function() {
-        activateItem(4); // Mengaktifkan item kelima
-    }, 5000);
-});
-
-                    </script>
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
                         <div class="card card-primary card-outline mb-6">
