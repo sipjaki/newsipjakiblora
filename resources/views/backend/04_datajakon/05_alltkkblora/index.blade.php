@@ -176,7 +176,6 @@
                             Penyelenggara
                         </button>
                     </a>
-                </div>
 
 
                      </div>
@@ -376,8 +375,8 @@
          <!-- /.col -->
      </div>
      <!--end::Row-->
-    </section>
-     </div>
+    </div>
+</section>
                <!--end::Container-->
      <!--end::App Content Header-->
      <!--begin::App Content-->
