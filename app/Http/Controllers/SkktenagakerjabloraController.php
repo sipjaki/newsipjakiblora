@@ -341,52 +341,56 @@ return redirect()->back()->with('error', 'Item not found');
 
 
 public function beskkall(Request $request)
-{
-    $perPage = $request->input('perPage', 15);
-    $search = $request->input('search', '');
-    $page = $request->input('page', 1);
+    {
+        $perPage = $request->input('perPage', 15);
+        $search = $request->input('search', '');
+        $page = $request->input('page', 1);
 
-    // Cache key unik berdasarkan search + filter asosiasi
-    $cacheKey = "search_" . md5($search . '_asosiasi_99');
+        // Cache key yang konsisten dan jelas
+        $cacheKey = "blora_tkk_" . md5("page_{$page}_search_{$search}");
 
-    // Hapus cache jika ada search baru di halaman 1
-    if ($page == 1) {
-        Cache::forget($cacheKey);
-    }
-
-    $allData = Cache::remember($cacheKey, 300, function () use ($search) {
-        $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
-            ->where('asosiasimasjaki_id', '!=', 99); // Mengambil semua data kecuali yang asosiasi ID-nya 99
-
-        if (!empty($search)) {
-            $query->where('nama', 'LIKE', "%{$search}%");
+        if ($page == 1) {
+            Cache::forget($cacheKey);
         }
 
-        return $query->get(); // Ambil semua hasil, untuk keperluan pagination
-    });
+        $allData = Cache::remember($cacheKey, 300, function () use ($search) {
+            $query = skktenagakerjablora::select('id', 'nama', 'statusterbit', 'jabatankerja_id', 'asosiasimasjaki_id')
+                // HANYA tampilkan data yang TIDAK 99 atau NULL
+                ->where(function ($q) {
+                    $q->where('asosiasimasjaki_id', '!=', 99)
+                      ->orWhereNull('asosiasimasjaki_id');
+                });
 
-    // Manual paginate
-    $total = count($allData);
-    $items = collect($allData)->forPage($page, $perPage)->values();
-    $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
-        'path' => request()->url(),
-        'query' => request()->query()
-    ]);
+            // Cek kalau ada pencarian
+            if (!empty($search)) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('nama', 'LIKE', "%{$search}%");
+                });
+            }
 
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('backend.04_datajakon.05_alltkkblora.partials.table', compact('data'))->render()
+            return $query->get();
+        });
+
+        $total = count($allData);
+        $items = collect($allData)->forPage($page, $perPage)->values();
+        $data = new LengthAwarePaginator($items, $total, $perPage, $page, [
+            'path' => request()->url(),
+            'query' => request()->query()
+        ]);
+
+        if ($request->ajax()) {
+            return response()->json([
+                'html' => view('backend.04_datajakon.05_alltkkblora.partials.table', compact('data'))->render()
+            ]);
+        }
+
+        return view('backend.04_datajakon.05_alltkkblora.index', [
+            'title' => 'TKK Kabupaten Blora',
+            'data' => $data,
+            'perPage' => $perPage,
+            'search' => $search
         ]);
     }
-
-    return view('backend.04_datajakon.05_alltkkblora.index', [
-        'title' => 'TKK Seluruh Kabupaten Blora',
-        'data' => $data,
-        'perPage' => $perPage,
-        'search' => $search
-    ]);
-}
-
 
     // TKK DPUPR BLORA SHOW
 
