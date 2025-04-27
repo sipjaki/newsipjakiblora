@@ -114,7 +114,7 @@
 
                 </div>
                 <!-- /.col -->
-
+{{--
                 <div class="col-md-3 col-sm-6 col-12">
                     <a href="/404">
                         <div class="info-box"
@@ -134,7 +134,7 @@
                         </div>
                     </a>
 
-                </div>
+                </div> --}}
                 <!-- /.col -->
 
             </div>
