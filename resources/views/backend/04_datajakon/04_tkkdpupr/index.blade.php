@@ -277,7 +277,7 @@
             setInterval(updateStatus, 1000);
         </script>
 
-         <td style="text-align: center;">{{$item->statusterbit}}</td>
+<td style="text-align: center; text-transform: uppercase;">{{$item->statusterbit}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/beskkdpupr/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">
