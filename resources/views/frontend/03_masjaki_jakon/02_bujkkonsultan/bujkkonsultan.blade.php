@@ -184,7 +184,7 @@ table.zebra-table {
                             <th style="text-align: center;">No</th>
                             <th style="text-align: center;">Badan Usaha</th>
                             <th style="text-align: center;">Alamat</th>
-                            <th style="text-align: center;">No Telepon</th>
+                            {{-- <th style="text-align: center;">No Telepon</th> --}}
                             <th style="text-align: center;">Email</th>
                             <th style="text-align: center;">View</th>
                         </tr>
@@ -202,13 +202,13 @@ table.zebra-table {
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
                             </td>
-                            <td>
+                            {{-- <td>
                                 @if(!empty($item->no_telepon))
                                     {{ $item->no_telepon }}
                                 @else
                                     <button class="btn-navy">Data Belum Diupdate</button>
                                 @endif
-                            </td>
+                            </td> --}}
                             <td>
                                 @if(!empty($item->email))
                                     {{ $item->email }}
