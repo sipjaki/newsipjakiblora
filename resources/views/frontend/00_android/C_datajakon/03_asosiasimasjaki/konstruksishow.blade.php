@@ -154,7 +154,7 @@
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:75px;"> No</th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Nama Badan Usaha</th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Nama Badan Usaha</th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> No Telepon</th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:100px;"> Hubungi</th>
                                         </tr>
