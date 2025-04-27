@@ -173,9 +173,11 @@
                                                     @endif
                                                 </td>
 
+
+                                                {{-- Jumlah Penggunaan 2 --}}
                                                 <td class="text-center d-flex justify-content-center align-items-center">
                                                     @if (!empty($item['jumlah_penggunaan1']) && $item['jumlah_penggunaan1'] != 0)
-                                                        <a href="/datajakon/asosiasikonstruksi/{{ urlencode($item['nama_asosiasi']) }}"
+                                                        <a href="/datajakon/asosiasikontraktor/{{ urlencode($item['nama_asosiasi']) }}"
                                                            style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
