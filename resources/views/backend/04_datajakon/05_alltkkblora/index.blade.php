@@ -58,7 +58,7 @@
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
              <div class="card-header">
-                <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
                     <div style="
                         font-weight: 900;
                         font-size: 16px;
