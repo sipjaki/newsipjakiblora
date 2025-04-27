@@ -150,52 +150,48 @@
 
                         <script>
                             function updateStatus() {
-                                let now = new Date().getTime();
-                                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($data->bulanselesai)->format('Y-m-d H:i:s') }}").getTime();
-                                let statusButton = document.getElementById("status-{{ $data->id }}");
+                                const now = new Date().getTime();
+                                const tanggalSelesai = new Date("{{ \Carbon\Carbon::parse($data->bulanselesai)->format('Y-m-d H:i:s') }}").getTime();
+                                const statusButton = document.getElementById("status-{{ $data->id }}");
 
-                                // CSS yang digunakan pada tombol
-                                let buttonStyle = "font-weight: bold; padding: 10px 20px; border-radius: 5px; font-size: 16px; margin-right: 10px;";
+                                const buttonStyle = "font-weight: bold; padding: 10px 20px; border-radius: 5px; font-size: 16px; margin-right: 10px;";
 
-                                if (now > tanggalHabis) {
-                                    statusButton.innerText = "ON PROGRESS";
-                                    statusButton.setAttribute("style", buttonStyle + " background-color: blue; border-color: blue; color: white;"); // Set to red for "TIDAK BERLAKU"
-                                    statusButton.className = "btn btn-primary btn-sm"; // Update class for 'danger' status
+                                if (now < tanggalSelesai) {
+                                    // Masih ON PROGRESS
+                                    statusButton.innerHTML = `<i class="bi bi-hourglass-split" style="margin-right: 5px;"></i>ON PROGRESS`;
+                                    statusButton.setAttribute("style", buttonStyle + " background-color: navy; border-color: navy; color: white;");
+                                    statusButton.className = "btn btn-primary btn-sm";
 
-                                    // Hover effect: keep background white on hover
-                                    statusButton.onmouseover = function() {
+                                    statusButton.onmouseover = function () {
                                         statusButton.style.backgroundColor = '#ffffff';
-                                        statusButton.style.color = '#000000'; // Color becomes black when hovered
-                                        statusButton.style.borderColor = 'blue'; // Keep red border
+                                        statusButton.style.color = '#000000';
+                                        statusButton.style.borderColor = 'navy';
                                     };
-                                    statusButton.onmouseout = function() {
-                                        statusButton.style.backgroundColor = 'blue';
-                                        statusButton.style.color = 'white'; // Keep white text when mouse out
-                                        statusButton.style.borderColor = 'blue'; // Keep red border
+                                    statusButton.onmouseout = function () {
+                                        statusButton.style.backgroundColor = 'navy';
+                                        statusButton.style.color = 'white';
+                                        statusButton.style.borderColor = 'navy';
                                     };
                                 } else {
-                                    statusButton.innerText = "SELESAI";
+                                    // Sudah SELESAI
+                                    statusButton.innerHTML = `<i class="bi bi-check-circle-fill" style="margin-right: 5px;"></i>SELESAI`;
                                     statusButton.setAttribute("style", buttonStyle + " background-color: #1d643b; border-color: #1d643b; color: white;");
-                                    statusButton.className = "btn btn-success btn-sm"; // Update class for 'success' status
+                                    statusButton.className = "btn btn-success btn-sm";
 
-                                    // Hover effect: keep background white on hover
-                                    statusButton.onmouseover = function() {
+                                    statusButton.onmouseover = function () {
                                         statusButton.style.backgroundColor = '#ffffff';
-                                        statusButton.style.color = '#000000'; // Color becomes black when hovered
-                                        statusButton.style.borderColor = '#1d643b'; // Keep original border color
+                                        statusButton.style.color = '#000000';
+                                        statusButton.style.borderColor = '#1d643b';
                                     };
-                                    statusButton.onmouseout = function() {
+                                    statusButton.onmouseout = function () {
                                         statusButton.style.backgroundColor = '#1d643b';
-                                        statusButton.style.color = 'white'; // Keep white text when mouse out
-                                        statusButton.style.borderColor = '#1d643b'; // Keep original border color
+                                        statusButton.style.color = 'white';
+                                        statusButton.style.borderColor = '#1d643b';
                                     };
                                 }
                             }
 
-                            // Jalankan pertama kali saat halaman dimuat
                             updateStatus();
-
-                            // Update setiap 1 detik untuk realtime
                             setInterval(updateStatus, 1000);
                         </script>
 
