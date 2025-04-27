@@ -76,7 +76,7 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
 
-                     <form action="{{ route('update.beallskkupdate', $data->nama) }}" method="POST" enctype="multipart/form-data">
+                     <form action="{{ route('update.beallskkupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('POST')
 
