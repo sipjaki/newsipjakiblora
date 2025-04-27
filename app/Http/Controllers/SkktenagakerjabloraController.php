@@ -690,7 +690,68 @@ public function beskkallbloracreate()
 
 ]);
 
+}
 
+public function beskkallbloracreatenew(Request $request)
+{
+    // Validasi inputan
+    $validatedData = $request->validate([
+        'nama' => 'required|string|max:255',
+        'alamat' => 'required|string',
+        'tahunlulus' => 'required|string',
+        'tahunbimtek' => 'required|string',
+        'namasekolah_id' => 'required|integer',
+        'jenjangpendidikan_id' => 'required|integer',
+        'jurusan_id' => 'required|integer',
+        'jabatankerja_id' => 'required|integer',
+        'jenjang_id' => 'required|integer',
+        'asosiasimasjaki_id' => 'required|integer',
+        'lpspenerbit_id' => 'required|integer',
+        'tanggalterbit' => 'required|date',
+        'tanggalhabis' => 'required|date',
+        'statusterbit' => 'required|string',
+    ], [
+        'nama.required' => 'Nama wajib diisi!',
+        'nama.string' => 'Nama harus berupa teks!',
+        'nama.max' => 'Nama tidak boleh lebih dari 255 karakter!',
+        'alamat.required' => 'Alamat wajib diisi!',
+        'alamat.string' => 'Alamat harus berupa teks!',
+        'tahunlulus.required' => 'Tahun lulus wajib diisi!',
+        'tahunlulus.integer' => 'Tahun lulus harus berupa angka!',
+        'tahunlulus.min' => 'Tahun lulus tidak boleh kurang dari 1900!',
+        'tahunlulus.max' => 'Tahun lulus tidak boleh lebih dari tahun ini!',
+        'tahunbimtek.required' => 'Tahun bimtek wajib diisi!',
+        'tahunbimtek.in' => 'Tahun bimtek harus salah satu dari 2024, 2025, atau 2026!',
+        'namasekolah_id.required' => 'Nama sekolah wajib diisi!',
+        'namasekolah_id.exists' => 'Nama sekolah tidak ditemukan di sistem!',
+        'jenjangpendidikan_id.required' => 'Jenjang pendidikan wajib diisi!',
+        'jenjangpendidikan_id.exists' => 'Jenjang pendidikan tidak ditemukan di sistem!',
+        'jurusan_id.required' => 'Jurusan wajib diisi!',
+        'jurusan_id.exists' => 'Jurusan tidak ditemukan di sistem!',
+        'jabatankerja_id.required' => 'Jabatan kerja wajib diisi!',
+        'jabatankerja_id.exists' => 'Jabatan kerja tidak ditemukan di sistem!',
+        'jenjang_id.required' => 'Jenjang wajib diisi!',
+        'jenjang_id.exists' => 'Jenjang tidak ditemukan di sistem!',
+        'asosiasimasjaki_id.required' => 'Asosiasi Masjaki wajib diisi!',
+        'asosiasimasjaki_id.exists' => 'Asosiasi Masjaki tidak ditemukan di sistem!',
+        'lpspenerbit_id.required' => 'LPS Penerbit wajib diisi!',
+        'lpspenerbit_id.exists' => 'LPS Penerbit tidak ditemukan di sistem!',
+        'tanggalterbit.required' => 'Tanggal terbit wajib diisi!',
+        'tanggalterbit.date' => 'Tanggal terbit harus berupa tanggal yang valid!',
+        'tanggalhabis.required' => 'Tanggal habis wajib diisi!',
+        'tanggalhabis.date' => 'Tanggal habis harus berupa tanggal yang valid!',
+        'tanggalhabis.after_or_equal' => 'Tanggal habis tidak boleh lebih awal dari tanggal terbit!',
+        'statusterbit.required' => 'Status terbit wajib diisi!',
+    ]);
+
+    // Create new data entry
+    skktenagakerjablora::create($validatedData);
+
+    // Flash success message
+    session()->flash('create', 'Data Berhasil Dibuat!');
+
+    // Redirect ke halaman daftar (sesuaikan dengan route yang benar)
+    return redirect('/beskkallblora');
 }
 
 }
