@@ -340,7 +340,7 @@ return redirect()->back()->with('error', 'Item not found');
 // --------------------------------------------------------------------------------------------------------------------
 
 
-public function beskkall(Request $request)
+    public function beskkall(Request $request)
     {
         $perPage = $request->input('perPage', 15);
         $search = $request->input('search', '');
