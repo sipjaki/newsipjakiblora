@@ -158,13 +158,13 @@ table.zebra-table {
             <div class="table-wrapper">
 
 
-                <table class="fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
+                <table class="zebra-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
                         <tr>
-                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:75px;"> No <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Nama Badan Usaha <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> No Telepon <span class="sort-icon">⇅</span></th>
-                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:100px;"> Hubungi <span class="sort-icon">⇅</span></th>
+                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:75px;"> No</th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Nama Badan Usaha</th>
+                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> No Telepon</th>
+                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:100px;"> Hubungi</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
