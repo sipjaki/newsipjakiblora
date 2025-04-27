@@ -148,46 +148,75 @@
                             <!-- Table Section -->
 
                             <div class="custom-table-container">
+                                <div class="table-wrapper">
+                                    <table class="zebra-table w-full">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center; width:75px">No</th>
+                                                <th style="text-align: center; width:400px">Nama Asoiasi</th>
+                                                <th style="text-align: center; width:200px">BUJK Konstruksi</th>
+                                                <th style="text-align: center; width:200px">BUJK Konsultasi Konstruksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                            @foreach ($data as $item)
+                                            <tr>
+                                                {{-- Nomor Urut --}}
+                                                <td class="text-center">{{ $loop->iteration }}</td>
 
+                                                {{-- Nama Asosiasi --}}
+                                                <td class="text-center">
+                                                    @if (!empty($item['nama_asosiasi']))
+                                                        {{ strtoupper($item['nama_asosiasi']) }}
+                                                    @else
+                                                        <button style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px;">0</button>
+                                                    @endif
+                                                </td>
 
-                                <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+                    {{-- Jumlah Penggunaan 1 --}}
+                    <td class="text-center">
+                        @if (!empty($item['jumlah_penggunaan1']) && $item['jumlah_penggunaan1'] != 0)
+                            <a href="/datajakon/asosiasikonstruksi/{{ urlencode($item['nama_asosiasi']) }}"
+                               style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
+                               onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                               onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                               {{ $item['jumlah_penggunaan1'] }}
+                            </a>
+                        @else
+                            <button
+                                style="background-color: red; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none; cursor: not-allowed;"
+                                disabled
+                                title="Data Belum Tersedia">
+                                0
+                            </button>
+                        @endif
+                    </td>
 
-                                    <table class="table table-striped">
-                                     <thead>
-                                         <tr>
-                                             <th style="width: 75px; text-align:center;">No</th>
-                                             <th style="width: 600px; text-align:center; background:white; color:black;">Nama Asosiasi</th>
-                                             <th style="width: 200px; text-align:center;">Aksi</th>
-                                         </tr>
-                                     </thead>
-                                     <tbody id="tableBody">
-                                         @foreach ($data as $item )
-                                         <tr class="align-middle">
-                                             <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                             <td style="text-align: center;">{{$item->namaasosiasi}}</td>
-                                             <td style="text-align: center; vertical-align: middle;">
-                                                 {{-- <a href="/beasosiasi/show/{{$item->namaasosiasi}}" class="btn btn-sm btn-info me-2" title="Show">
-                                                     <i class="bi bi-eye"></i>
-                                                 </a> --}}
-                                                 {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
-                                                     <i class="bi bi-pencil-square"></i>
-                                                 </a> --}}
-                                                 <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
-                                                       data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                                       data-judul="{{ $item->namaasosiasi }}"
-                                                       onclick="setDeleteUrl(this)">
-                                                        <i class="bi bi-trash"></i>
-                                                </a>
-                                             </td>
+                    {{-- Jumlah Penggunaan 2 --}}
+                    <td class="text-center">
+                        @if (!empty($item['jumlah_penggunaan2']) && $item['jumlah_penggunaan2'] != 0)
+                            <a href="/datajakon/asosiasikonsultan/{{ urlencode($item['nama_asosiasi']) }}"
+                               style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
+                               onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                               onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                               {{ $item['jumlah_penggunaan2'] }}
+                            </a>
+                        @else
+                            <button
+                                style="background-color: red; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none; cursor: not-allowed;"
+                                disabled
+                                title="Data Belum Tersedia">
+                                0
+                            </button>
+                        @endif
+                    </td>
 
                                             </tr>
+                                        @endforeach
 
-                                         @endforeach
-                                     </tbody>
+                                        </tbody>
                                     </table>
-                                                         </div>
-
-
+                                </div>
 
                             </div>
                                  <!-- Description Section -->
