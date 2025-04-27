@@ -657,5 +657,39 @@ public function beskkallbloraupdate($nama)
 }
 
 
+
+
+public function beskkallbloracreate()
+{
+    // $dataskk = skktenagakerjablora::where('nama', $nama)->first();
+
+    $datanamasekolah = namasekolah::all();
+    $datajenjangpendidikan = jenjangpendidikan::all();
+    $datajurusan = jurusan::all();
+    $datajabatankerja = jabatankerja::all();
+    $datajenjang = jenjang::all();
+    $datalpspenerbit = lpspenerbit::all();
+
+
+    // Ambil data user saat ini
+    $user = Auth::user();
+
+    return view('backend.04_datajakon.05_alltkkblora.create', [
+        'title' => 'Create Tenaga Kerja Konstruksi',
+
+        // 'data' => $dataskk, // Mengirimkan data paginasi ke view
+        'datanamasekolah' => $datanamasekolah, // Mengirimkan data paginasi ke view
+        'datajenjangpendidikan' => $datajenjangpendidikan, // Mengirimkan data paginasi ke view
+        'datajurusan' => $datajurusan, // Mengirimkan data paginasi ke view
+        'datajabatankerja' => $datajabatankerja, // Mengirimkan data paginasi ke view
+        'datajenjang' => $datajenjang, // Mengirimkan data paginasi ke view
+        'datalpspenerbit' => $datalpspenerbit, // Mengirimkan data paginasi ke view
+        'user' => $user, // Mengirimkan data paginasi ke view
+
+]);
+
+
+}
+
 }
 

@@ -194,7 +194,7 @@
 
                                 </script>
 
-                         <a href="/404">
+                         <a href="/beskkallblora/create">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
