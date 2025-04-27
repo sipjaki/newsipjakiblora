@@ -183,21 +183,7 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #166534, #166534);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                    📌 Halaman : {{$title}}
-                </div>
+                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
@@ -244,7 +230,7 @@
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table class="table table-striped">
+<table class="zebra-table table-striped">
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
