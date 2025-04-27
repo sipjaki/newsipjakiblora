@@ -281,7 +281,7 @@
                                                 <input class="form-control" value="{{$data->karakteristikkontrak}}" readonly/>
                                             </div>
 
-                                            <div class="mb-3">
+                                            {{-- <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-event-fill" style="margin-right: 8px; color: navy;"></i>Mulai
                                                 </label>
@@ -293,7 +293,7 @@
                                                     <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Selesai
                                                 </label>
                                                 <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanselesai)->format('d/m/Y') }}" readonly/>
-                                            </div>
+                                            </div> --}}
 
                                             <div class="mb-3">
                                                 <!-- Input with readonly to show the value -->
