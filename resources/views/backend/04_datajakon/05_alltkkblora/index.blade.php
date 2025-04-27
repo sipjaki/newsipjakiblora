@@ -274,7 +274,7 @@
         </td>
         <td style="text-align: left;">
             @if(empty($item->namasekolah->namasekolah))
-                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; font-size: 15px; padding: 5px 10px; border: none;">
                     Data Belum Di Update
                 </button>
             @else
@@ -283,7 +283,7 @@
         </td>
         <td style="text-align: center;">
             @if(empty($item->jenjangpendidikan->jenjangpendidikan))
-                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; font-size: 15px; padding: 5px 10px; border: none;">
                     Data Belum Di Update
                 </button>
             @else
@@ -292,7 +292,7 @@
         </td>
         <td style="text-align: left;">
             @if(empty($item->jabatankerja->jabatankerja))
-                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; font-size: 15px; padding: 5px 10px; border: none;">
                     Data Belum Di Update
                 </button>
             @else
@@ -301,7 +301,7 @@
         </td>
         <td style="text-align: center;">
             @if(empty($item->jenjang->jenjang))
-                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; font-size: 15px; padding: 5px 10px; border: none;">
                     Data Belum Di Update
                 </button>
             @else
@@ -310,7 +310,7 @@
         </td>
         <td style="text-align: left;">
             @if(empty($item->lpspenerbit->lpspenerbit))
-                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; font-size: 15px; padding: 5px 10px; border: none;">
                     Data Belum Di Update
                 </button>
             @else
@@ -319,7 +319,7 @@
         </td>
         <td style="text-align: left;">
             @if(empty($item->jurusan->jurusan))
-                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; font-size: 15px; padding: 5px 10px; border: none;">
                     Data Belum Di Update
                 </button>
             @else
