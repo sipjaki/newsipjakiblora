@@ -205,14 +205,14 @@ table.zebra-table {
                             {{-- Jumlah Penggunaan 1 --}}
                             <td class="text-center">
                                 @if (!empty($item['jumlah_penggunaan1']))
-                                    <a href="#"
+                                    <a href="/datajakon/asosiasikonstruksi/{{$item->namaasosiasi}}"
                                        style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
                                        {{ $item['jumlah_penggunaan1'] }}
                                     </a>
                                 @else
-                                    <a href="#"
+                                    <a href="/datajakon/asosiasikonsultan/{{$item->namaasosiasi}}"
                                        style="background-color: red; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                        onmouseout="this.style.backgroundColor='red'; this.style.color='white';">
