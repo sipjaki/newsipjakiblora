@@ -239,7 +239,7 @@
          <td style="text-align: left;">{{$item->nama}}</td>
          <td style="text-align: left;">
             @if(empty($item->alamat))
-                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; font-size: 15px; padding: 5px 10px; border: none;">
                     Data Belum Di Update
                 </button>
             @else
@@ -248,7 +248,7 @@
         </td>
         <td style="text-align: center;">
             @if(empty($item->tahunlulus))
-                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border-radius: 5px; font-size: 15px; padding: 5px 10px; border: none;">
                     Data Belum Di Update
                 </button>
             @else
