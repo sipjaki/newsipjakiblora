@@ -345,47 +345,17 @@
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-event-fill" style="margin-right: 8px; color: navy;"></i>Mulai
                                                 </label>
-                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanmulai)->translatedFormat('d F Y') }}" readonly/>
+                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanmulai)->format('d/m/Y') }}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-x-fill" style="margin-right: 8px; color: navy;"></i>Selesai
                                                 </label>
-                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanselesai)->translatedFormat('d F Y') }}" readonly/>
+                                                <input class="form-control" value="{{ \Carbon\Carbon::parse($data->bulanselesai)->format('d/m/Y') }}" readonly/>
                                             </div>
 
                                             <div class="mb-3">
-                                                <label class="form-label">
-                                                    <i class="bi bi-pie-chart-fill" style="margin-right: 8px; color: navy;"></i>Progress Pekerjaan
-                                                </label>
-
-                                                <!-- Progress bar -->
-                                                <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px; position: relative;">
-                                                    <!-- Teks persentase yang ditimpa di atas progress bar -->
-                                                    <div style="position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; color: black; font-weight: bold;">
-                                                        {{$data->progress}}%
-                                                    </div>
-                                                    <!-- Progress bar yang berubah warna berdasarkan persentase -->
-                                                    <div
-                                                        style="width: {{$data->progress}}%;
-                                                               background-color:
-                                                               @if($data->progress < 25)
-                                                                   red;
-                                                               @elseif($data->progress < 50)
-                                                                   orange;
-                                                               @elseif($data->progress < 75)
-                                                                   lightblue;
-                                                               @elseif($data->progress < 100)
-                                                                   lightgreen;
-                                                               @else
-                                                                   green;
-                                                               @endif
-                                                               height: 100%;
-                                                               border-radius: 10px;">
-                                                    </div>
-                                                </div>
-
                                                 <!-- Input with readonly to show the value -->
                                                 <input class="form-control mt-2" value="{{$data->progress}}%" readonly/>
                                             </div>
