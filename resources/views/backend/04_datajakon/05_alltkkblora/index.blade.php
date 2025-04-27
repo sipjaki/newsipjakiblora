@@ -74,74 +74,86 @@
                     ⚙️ Setting Database
                 </div>
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Database -->
-                                <i class="fa fa-database" style="margin-right: 8px;"></i>
-                                Universitas/Sekolah/Instansi
-                            </button>
-                        </a>
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Database (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
+                                <path fill="white" d="M12 2C6.48 2 2 5.58 2 10s4.48 8 10 8 10-3.58 10-8-4.48-8-10-8zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-8c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8 3.58-8 8-8z"/>
+                            </svg>
+                            Universitas/Sekolah/Instansi
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Pendidikan -->
-                                <i class="fa fa-graduation-cap" style="margin-right: 8px;"></i>
-                                Jenjang Pendidikan
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Pendidikan (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
+                                <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
+                            </svg>
+                            Jenjang Pendidikan
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Pekerjaan -->
-                                <i class="fa fa-briefcase" style="margin-right: 8px;"></i>
-                                Jabatan Kerja
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Pekerjaan (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
+                                <path fill="white" d="M12 2C7.03 2 3 5.58 3 10s4.03 8 9 8 9-3.58 9-8-4.03-8-9-8zm0 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                            </svg>
+                            Jabatan Kerja
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Level -->
-                                <i class="fa fa-level-up" style="margin-right: 8px;"></i>
-                                Jenjang
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Level (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
+                                <path fill="white" d="M19 3h-2V2h-2v1h-4V2H9v1H7V2H5v1H4v18h16V3h-1zm-1 16H6v-8h12v8z"/>
+                            </svg>
+                            Jenjang
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon LPS -->
-                                <i class="fa fa-university" style="margin-right: 8px;"></i>
-                                LPS Penerbit
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon LPS (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
+                                <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
+                            </svg>
+                            LPS Penerbit
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Jurusan -->
-                                <i class="fa fa-bookmark" style="margin-right: 8px;"></i>
-                                Jurusan
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Jurusan (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
+                                <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
+                            </svg>
+                            Jurusan
+                        </button>
+                    </a>
+                </div>
 
-                     </div>
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
