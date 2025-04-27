@@ -237,9 +237,26 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{$item->nama}}</td>
-         <td style="text-align: left;">{{$item->alamat}}</td>
-         <td style="text-align: center;">{{$item->tahunlulus}}</td>
-         <td style="text-align: center;">
+         <td style="text-align: left;">
+            @if(empty($item->alamat))
+                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                    Data Belum Di Update
+                </button>
+            @else
+                {{$item->alamat}}
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if(empty($item->tahunlulus))
+                <button class="btn btn-navy" style="background-color: #00378a; color: white; border-radius: 5px; padding: 5px 10px; border: none;">
+                    Data Belum Di Update
+                </button>
+            @else
+                {{$item->tahunlulus}}
+            @endif
+        </td>
+
+        <td style="text-align: center;">
             @if($item->tahunbimtek)
                 {{$item->tahunbimtek}}
             @else
