@@ -28,47 +28,47 @@ class AuthServiceProvider extends ServiceProvider
 
                 // Gate untuk memeriksa apakah pengguna adalah super_admin
                 Gate::define('superadmin', function ($user) {
-                    return $user->statusadmin === 'super_admin'; // Cek apakah statusnya super_admin
+                    return $user->statusadmin->statusadmin === 'super_admin'; // Cek apakah statusnya super_admin
                 });
 
                 // Gate untuk memeriksa apakah pengguna adalah pekerja
                 Gate::define('admin', function ($user) {
-                    return $user->statusadmin === 'admin'; // Cek apakah statusnya pekerja
+                    return $user->statusadmin->statusadmin === 'admin'; // Cek apakah statusnya pekerja
                 });
 
                 // Gate untuk memeriksa apakah pengguna adalah pekerja
                 Gate::define('pekerja', function ($user) {
-                    return $user->statusadmin === 'pekerja'; // Cek apakah statusnya pekerja
+                    return $user->statusadmin->statusadmin === 'pekerja'; // Cek apakah statusnya pekerja
                 });
 
                 // Gate untuk memeriksa apakah pengguna adalah pekerja
                 Gate::define('supp_pabrik', function ($user) {
-                    return $user->statusadmin === 'supp_pabrik'; // Cek apakah statusnya pekerja
+                    return $user->statusadmin->statusadmin === 'supp_pabrik'; // Cek apakah statusnya pekerja
                 });
 
                 // Gate untuk memeriksa apakah pengguna adalah pekerja
                 Gate::define('supp_peralatan', function ($user) {
-                    return $user->statusadmin === 'supp_peralatan'; // Cek apakah statusnya pekerja
+                    return $user->statusadmin->statusadmin === 'supp_peralatan'; // Cek apakah statusnya pekerja
                 });
 
                 // Gate untuk memeriksa apakah pengguna adalah pekerja
                 Gate::define('supp_tokobangunan', function ($user) {
-                    return $user->statusadmin === 'supp_tokobangunan'; // Cek apakah statusnya pekerja
+                    return $user->statusadmin->statusadmin === 'supp_tokobangunan'; // Cek apakah statusnya pekerja
                 });
 
                 // Gate untuk memeriksa apakah pengguna adalah pekerja
                 Gate::define('lsppenerbit', function ($user) {
-                    return $user->statusadmin === 'lsppenerbit'; // Cek apakah statusnya pekerja
+                    return $user->statusadmin->statusadmin === 'lsppenerbit'; // Cek apakah statusnya pekerja
                 });
 
                 // Gate untuk memeriksa apakah pengguna adalah pekerja
                 Gate::define('operator', function ($user) {
-                    return $user->statusadmin === 'operator'; // Cek apakah statusnya pekerja
+                    return $user->statusadmin->statusadmin === 'operator'; // Cek apakah statusnya pekerja
                 });
 
                 // Gate untuk memeriksa apakah pengguna adalah pekerja
                 Gate::define('dinas', function ($user) {
-                    return $user->statusadmin === 'dinas'; // Cek apakah statusnya pekerja
+                    return $user->statusadmin->statusadmin === 'dinas'; // Cek apakah statusnya pekerja
                 });
             }
 
