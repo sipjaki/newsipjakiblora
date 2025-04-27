@@ -678,12 +678,12 @@ public function beskkallbloracreate()
         'title' => 'Create Tenaga Kerja Konstruksi',
 
         // 'data' => $dataskk, // Mengirimkan data paginasi ke view
-        'datanamasekolah' => $datanamasekolah, // Mengirimkan data paginasi ke view
-        'datajenjangpendidikan' => $datajenjangpendidikan, // Mengirimkan data paginasi ke view
-        'datajurusan' => $datajurusan, // Mengirimkan data paginasi ke view
-        'datajabatankerja' => $datajabatankerja, // Mengirimkan data paginasi ke view
-        'datajenjang' => $datajenjang, // Mengirimkan data paginasi ke view
-        'datalpspenerbit' => $datalpspenerbit, // Mengirimkan data paginasi ke view
+        'namasekolahList' => $datanamasekolah, // Mengirimkan data paginasi ke view
+        'jenjangpendidikanList' => $datajenjangpendidikan, // Mengirimkan data paginasi ke view
+        'jurusanList' => $datajurusan, // Mengirimkan data paginasi ke view
+        'jabatankerjaList' => $datajabatankerja, // Mengirimkan data paginasi ke view
+        'jenjangList' => $datajenjang, // Mengirimkan data paginasi ke view
+        'lpspenerbitList' => $datalpspenerbit, // Mengirimkan data paginasi ke view
         'user' => $user, // Mengirimkan data paginasi ke view
 
 ]);
