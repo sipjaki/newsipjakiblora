@@ -188,42 +188,46 @@ table.zebra-table {
                     </thead>
                     <tbody id="tableBody">
                         @foreach ($data as $item)
-    <tr>
-        <td class="text-center">{{ $data->firstItem() + $loop->iteration - 1 }}</td>
+                        <tr>
+                            {{-- Nomor Urut --}}
+                            <td class="text-center">{{ $loop->iteration }}</td>
 
-        {{-- Nama Asosiasi --}}
-        <td>
-            @if(!empty($item['nama_asosiasi']))
-                {{ ucwords(strtolower($item['nama_asosiasi'])) }}
-            @else
-                <button class="btn-navy">Data Belum Diupdate</button>
-            @endif
-        </td>
+                            {{-- Nama Asosiasi --}}
+                            <td class="text-center">
+                                @if (!empty($item['nama_asosiasi']))
+                                    {{ ucwords(strtolower($item['nama_asosiasi'])) }}
+                                @else
+                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                @endif
+                            </td>
 
-        {{-- Jumlah Penggunaan --}}
-        <td class="text-center">
-            @if(!empty($item['jumlah_penggunaan1']))
-                {{ $item['jumlah_penggunaan1'] }}
-            @else
-                <button class="btn-navy">Data Belum Diupdate</button>
-            @endif
-        </td>
-        <td class="text-center">
-            @if(!empty($item['jumlah_penggunaan2']))
-                {{ $item['jumlah_penggunaan2'] }}
-            @else
-                <button class="btn-navy">Data Belum Diupdate</button>
-            @endif
-        </td>
+                            {{-- Jumlah Penggunaan 1 --}}
+                            <td class="text-center">
+                                @if (!empty($item['jumlah_penggunaan1']))
+                                    {{ $item['jumlah_penggunaan1'] }}
+                                @else
+                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                @endif
+                            </td>
 
-        {{-- Tombol View Detail --}}
-        <td style="text-align: center">
-            <a href="/asosiasi-usage/detail/{{ urlencode($item['nama_asosiasi']) }}">
-                <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
-            </a>
-        </td>
-    </tr>
-@endforeach
+                            {{-- Jumlah Penggunaan 2 --}}
+                            <td class="text-center">
+                                @if (!empty($item['jumlah_penggunaan2']))
+                                    {{ $item['jumlah_penggunaan2'] }}
+                                @else
+                                    <button class="btn-navy">Data Belum Diupdate</button>
+                                @endif
+                            </td>
+
+                            {{-- Tombol View Detail --}}
+                            <td class="text-center">
+                                <a href="/asosiasi-usage/detail/{{ urlencode($item['nama_asosiasi']) }}">
+                                    <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+
 
                     </tbody>
                 </table>
