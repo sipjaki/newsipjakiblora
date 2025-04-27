@@ -137,7 +137,7 @@
             @if($item->nama)
                 {{$item->nama}}
             @else
-                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
                     Data Belum Di Update
                 </button>
             @endif
@@ -146,7 +146,7 @@
             @if($item->alamat)
                 {{$item->alamat}}
             @else
-                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
                     Data Belum Di Update
                 </button>
             @endif
@@ -155,7 +155,7 @@
             @if($item->tahunlulus)
                 {{$item->tahunlulus}}
             @else
-                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
                     Data Belum Di Update
                 </button>
             @endif
@@ -164,7 +164,7 @@
             @if($item->tahunbimtek)
                 {{$item->tahunbimtek}}
             @else
-                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
                     Data Belum Di Update
                 </button>
             @endif
