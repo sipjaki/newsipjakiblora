@@ -1,3 +1,49 @@
+<style>
+    /* Gaya untuk tabel */
+    .custom-table-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    border-radius: 15px; /* Round the corners of the container */
+    border: 1px solid #ddd; /* Optional: Adds a border around the container */
+}
+
+.custom-fl-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px; /* Prevents the table from shrinking too much */
+}
+
+.custom-fl-table th, .custom-fl-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.custom-fl-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.custom-fl-table td {
+    text-transform: capitalize;
+}
+
+/* Optional: Add some styles to make the scrollbar appear nicer */
+.custom-table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.custom-table-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.custom-table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+</style>
 
 
 @include('frontend.00_android.00_fiturmenu.header')
@@ -108,7 +154,7 @@
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Nama Badan Usaha </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;"> Alamat </th>
-                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> No Telepon </th> --}}
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> No Telepon </th>
                                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
                                         </tr>
                                     </thead>
@@ -119,7 +165,7 @@
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->namalengkap)) }}</td>
                                             <td>{{$item->alamat}}</td>
-                                            {{-- <td style="text-align: center;">{{$item->no_telepon}}</td> --}}
+                                            <td style="text-align: center;">{{$item->no_telepon}}</td>
                                             <td style="text-align: center">
                                                 <a href="/resbujkkonsultan/{{$item->namalengkap}}">
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
