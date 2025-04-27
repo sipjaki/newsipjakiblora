@@ -22,10 +22,10 @@ return new class extends Migration
             $table->foreignId('suratperjanjianpekerjaan_id');
             // $table->foreignId('detailsnamapaketpekerjaan_id')->nullable()->constrained('detailsnamapaketpekerjaans')->cascadeOnDelete();
             // ----------------------------------------------------------------
-            $table->foreignId('profiljenispekerjaan_id')->nullable();
-            $table->foreignId('paketstatuspekerjaan_id')->nullable();
-            $table->foreignId('sumberdana_id')->nullable();
-            $table->foreignId('tahunpilihan_id')->nullable();
+            $table->foreignId('profiljenispekerjaan_id')->nullable(); // ADA
+            $table->foreignId('paketstatuspekerjaan_id')->nullable(); // ADA
+            $table->foreignId('sumberdana_id')->nullable(); // ADA
+            $table->foreignId('tahunpilihan_id')->nullable(); // ADA
             $table->foreignId('user_id')->nullable();
             $table->foreignId('bulanrekap_id')->nullable();
             // ----------------------------------------------------------------
