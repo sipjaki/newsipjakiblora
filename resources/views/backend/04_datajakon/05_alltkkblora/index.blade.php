@@ -163,6 +163,19 @@
                             Jurusan
                         </button>
                     </a>
+
+                    <a href="/beasosiasi">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Jurusan (SVG) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
+                                <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
+                            </svg>
+                            Penyelenggara
+                        </button>
+                    </a>
                 </div>
 
 
