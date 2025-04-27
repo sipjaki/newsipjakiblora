@@ -84,6 +84,7 @@
                     ⚙️ Setting Database
                 </div>
 
+                <br>
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                     <a href="/404">
