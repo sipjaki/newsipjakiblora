@@ -208,7 +208,7 @@
 
               <li class="nav-header" style="color: white;">MAIN MENU</li>
 
-              @can('superadmin')
+              @can('super_admin')
 
               <li class="nav-item">
 
