@@ -180,7 +180,7 @@ public function beskkdpupr(Request $request)
     $allData = Cache::remember($cacheKey, 300, function () use ($search) {
         $query = skktenagakerjablora::query()
             ->where(function ($q) {
-                $q->where('asosiasimasjaki_id', '!=', 99)
+                $q->where('asosiasimasjaki_id', '=', 99)
                   ->orWhereNull('asosiasimasjaki_id');
             });
 
