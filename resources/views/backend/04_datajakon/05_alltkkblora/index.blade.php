@@ -33,17 +33,17 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
 
-
-    <!--begin::App Content Header-->
-     <div class="app-content-header">
+       <!--begin::App Content Header-->
+       <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+       <div class="app-content-header">
        <!--begin::Container-->
        <div class="container-fluid">
          <!--begin::Row-->
          <div class="row">
 
-           <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+            @include('backend.00_administrator.00_baganterpisah.11_alert')
 
          </div>
          <!--end::Row-->
@@ -53,133 +53,11 @@
 
      <!-- Menampilkan pesan sukses -->
 <br>
-     {{-- ======================================================= --}}
-     {{-- ALERT --}}
-
-     @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-     {{-- ======================================================= --}}
-
      <div class="container-fluid">
          <!--begin::Row-->
          <div class="row" style="margin-right: 10px; margin-left:10px;">
              <!-- /.card -->
-             <div class="card mb-4">
-                 <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #00378a, #00378a);
-                    color: white;
-                    padding: 8px 16px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                    margin-bottom:25px;
-                "
-                onmouseover="this.style.background='white'; this.style.color='black';"
-                onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
-                    ⚙️ Setting Database
-                </div>
 
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Database (SVG) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
-                                <path fill="white" d="M12 2C6.48 2 2 5.58 2 10s4.48 8 10 8 10-3.58 10-8-4.48-8-10-8zm0 14c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-8c4.42 0 8 3.58 8 8s-3.58 8-8 8-8-3.58-8-8 3.58-8 8-8z"/>
-                            </svg>
-                            Universitas/Sekolah/Instansi
-                        </button>
-                    </a>
-
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Pendidikan (SVG) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
-                                <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
-                            </svg>
-                            Jenjang Pendidikan
-                        </button>
-                    </a>
-
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Pekerjaan (SVG) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
-                                <path fill="white" d="M12 2C7.03 2 3 5.58 3 10s4.03 8 9 8 9-3.58 9-8-4.03-8-9-8zm0 14c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-                            </svg>
-                            Jabatan Kerja
-                        </button>
-                    </a>
-
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Level (SVG) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
-                                <path fill="white" d="M19 3h-2V2h-2v1h-4V2H9v1H7V2H5v1H4v18h16V3h-1zm-1 16H6v-8h12v8z"/>
-                            </svg>
-                            Jenjang
-                        </button>
-                    </a>
-
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon LPS (SVG) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
-                                <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
-                            </svg>
-                            LSP Penerbit
-                        </button>
-                    </a>
-
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Jurusan (SVG) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
-                                <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
-                            </svg>
-                            Jurusan
-                        </button>
-                    </a>
-
-                    <a href="/beasosiasi">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Jurusan (SVG) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
-                                <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
-                            </svg>
-                            Penyelenggara
-                        </button>
-                    </a>
-
-
-                     </div>
-                 </div>
                  <!-- /.card-header -->
                  <div class="card-header">
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
@@ -213,7 +91,7 @@
 
                                 </script>
 
-                         <a href="/404">
+                         {{-- <a href="/404">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
@@ -222,7 +100,7 @@
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
                              Create
                          </button>
-                         </a>
+                         </a> --}}
                      </div>
                  </div>
                  <!-- /.card-header -->
@@ -235,10 +113,11 @@
          <th style="width: 75px; text-align:center;">No</th>
          <th style="width: 400px; text-align:center;">Nama Lengkap</th>
          <th style="width: 400px; text-align:center;">Alamat </th>
-         <th style="width: 100px; text-align:center;">Tahun Lulus</th>
-         <th style="width: 300px; text-align:center;">Asosiasi</th>
+         <th style="width: 250px; text-align:center;">Tahun Lulus</th>
+         <th style="width: 250px; text-align:center;">Tahun Bimtek</th>
+         <th style="width: 300px; text-align:center;">Penyelenggara</th>
          <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
-         <th style="width: 100px; text-align:center;">Pendidikan</th>
+         <th style="width: 150px; text-align:center;">Pendidikan</th>
          <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
          <th style="width: 100px; text-align:center;">Jenjang</th>
          <th style="width: 400px; text-align:center;">LSP Penerbit</th>
@@ -254,22 +133,121 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: left;">{{$item->nama}}</td>
-         <td style="text-align: left;">{{$item->alamat}}</td>
-         <td style="text-align: center;">{{$item->tahunlulus}}</td>
-         <td style="text-align: center;">
+         <td style="text-align: left;">
+            @if($item->nama)
+                {{$item->nama}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: left;">
+            @if($item->alamat)
+                {{$item->alamat}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if($item->tahunlulus)
+                {{$item->tahunlulus}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+        <td style="text-align: center;">
+            @if($item->tahunbimtek)
+                {{$item->tahunbimtek}}
+            @else
+                <button class="btn btn-navy" style="background-color: navy; color: white; border: none; padding: 5px 10px; font-size: 15px;" onmouseover="this.style.backgroundColor='white'; this.style.color='black'" onmouseout="this.style.backgroundColor='navy'; this.style.color='white'">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
             @else
                 <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
             @endif
         </td>
-        <td style="text-align: left;">{{$item->namasekolah->namasekolah}}</td>
-         <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
-         <td style="text-align: center;">{{$item->jenjang->jenjang}}</td>
-         <td style="text-align: left;">{{$item->lpspenerbit->lpspenerbit}}</td>
-         <td style="text-align: left;">{{$item->jurusan->jurusan}}</td>
+        <td style="text-align: left;">
+            @if (!empty($item->namasekolah?->namasekolah))
+                {{ $item->namasekolah->namasekolah }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if (!empty($item->jenjangpendidikan?->jenjangpendidikan))
+                {{ $item->jenjangpendidikan->jenjangpendidikan }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->jabatankerja?->jabatankerja))
+                {{ $item->jabatankerja->jabatankerja }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if (!empty($item->jenjang?->jenjang))
+                {{ $item->jenjang->jenjang }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->lpspenerbit?->lpspenerbit))
+                {{ $item->lpspenerbit->lpspenerbit }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if (!empty($item->jurusan?->jurusan))
+                {{ $item->jurusan->jurusan }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Diupdate
+                </button>
+            @endif
+        </td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalterbit)->translatedFormat('l, d F Y') }}</td>
          <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggalhabis)->translatedFormat('l, d F Y') }}</td>
 
@@ -302,10 +280,10 @@
          <td style="text-align: center;">{{$item->statusterbit}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beskkallblora/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">
+             <a href="/beskkdpupr/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
-             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+             <a href="/beskkdpupr/update/{{$item->nama}}" class="btn btn-sm btn-warning me-2" title="Update">
                  <i class="bi bi-pencil-square"></i>
              </a>
              <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
@@ -326,6 +304,7 @@
 
                  @include('backend.00_administrator.00_baganterpisah.07_paginations')
 
+                 <br><br>
                  <br><br>
 
 
@@ -357,7 +336,7 @@
                  function setDeleteUrl(button) {
                      var nama = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = nama;
-                     var deleteUrl = "/beskkallblora/delete/" + encodeURIComponent(nama);
+                     var deleteUrl = "/beskkdpupr/delete/" + encodeURIComponent(nama);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
