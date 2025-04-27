@@ -238,8 +238,12 @@
            <td style="text-align: center;">{{$item->jeniskontrak}}</td>
          <td style="text-align: center;">{{$item->karakteristikkontrak}}</td>
 
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->bulanmulai)->translatedFormat('l, d F Y') }}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->bulanselesai)->translatedFormat('l, d F Y') }}</td>
+         <td style="text-align: center;">
+            {{ \Carbon\Carbon::createFromDate(null, $item->bulanmulai, 1)->translatedFormat('F Y') }}
+        </td>
+        <td style="text-align: center;">
+            {{ \Carbon\Carbon::createFromDate(null, $item->bulanselesai, 1)->translatedFormat('F Y') }}
+        </td>
 
          <td style="text-align: center;">
             <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
