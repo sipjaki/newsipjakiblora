@@ -30,54 +30,27 @@ class BujkkontraktorController extends Controller
         ]);
     }
 
-    public function asosiasimasjaki(Request $request)
-{
-    $user = Auth::user();
-    $perPage = $request->input('perPage', 15);
-    $search = $request->input('search');
+    public function asosiasimasjaki()
+    {
+        $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
 
-    // Hitung jumlah per asosiasi
-    // $databujkkontraktor = bujkkontraktor::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
-    //     ->with('namaasosiasi')
-    //     ->groupBy('asosiasimasjaki_id')
-    //     ->get();
+        $data = asosiasimasjaki::withCount(['bujkkontraktor', 'bujkkonsultan'])
+            ->get()
+            ->map(function ($item) {
+                return [
+                    'nama_asosiasi' => $item->namaasosiasi,
+                    'jumlah_penggunaan1' => $item->bujkkontraktor_count,
+                    'jumlah_penggunaan2' => $item->bujkkonsultan_count,
+                ];
+            });
 
-    // $databujkkonsultan = bujkkonsultan::select('asosiasimasjaki_id', DB::raw('count(*) as jumlah'))
-    //     ->with('namaasosiasi')
-    //     ->groupBy('asosiasimasjaki_id')
-    //     ->get();
-
-    // // Data untuk paginasi
-    // $databujkkontraktorpaginate = bujkkontraktor::with('namaasosiasi')->paginate(15);
-    // $databujkkonsultanpaginate = bujkkonsultan::with('namaasosiasi')->paginate(15);
-
-    // Query utama untuk table asosiasi
-    $query = asosiasimasjaki::query();
-
-    if ($search) {
-        $query->where('namaasosiasi', 'LIKE', "%{$search}%");
-    }
-
-    $data = $query->paginate($perPage);
-
-    if ($request->ajax()) {
-        return response()->json([
-            'html' => view('frontend.03_masjaki_jakon.05_asosiasimasjaki.partials.table', compact('data'))->render()
+        return view('frontend.03_masjaki_jakon.05_asosiasimasjaki.index', [
+            'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
+            'user' => $user,
+            'data' => $data,
         ]);
     }
 
-    return view('frontend.03_masjaki_jakon.05_asosiasimasjaki.index', [
-        'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
-        'user' => $user,
-        'data' => $data,
-        'perPage' => $perPage,
-        'search' => $search,
-        // 'databujkkontraktor' => $databujkkontraktor,
-        // 'databujkkontraktorpaginate' => $databujkkontraktorpaginate,
-        // 'databujkkonsultanpaginate' => $databujkkonsultanpaginate,
-        // 'databujkkonsultan' => $databujkkonsultan,
-    ]);
-}
 
 
     // MENU BACKEND JASA KONSTRUKSI
