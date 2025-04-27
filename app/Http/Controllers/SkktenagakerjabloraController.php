@@ -652,7 +652,7 @@ public function beskkallbloraupdate($nama)
 
     // Flash success
     session()->flash('create', 'Data Berhasil Dibuat!');
-    return redirect('/beallskk');
+    return redirect('/beskkallblora');
     // return redirect('/beskkdpupr')->back();
 }
 
