@@ -327,7 +327,7 @@
                                         <img src="{{ asset($data->uploadtandatangan) }}" alt="Tanda Tangan" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
                                     @else
                                         <!-- Placeholder jika tidak ada data -->
-                                        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Placeholder Image" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
+                                        <img src="/assets/00_masjaki/images/tandatangan.png" alt="Placeholder Image" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
                                     @endif
                                 </div>
 
