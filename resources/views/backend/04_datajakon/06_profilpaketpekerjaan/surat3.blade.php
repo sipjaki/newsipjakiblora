@@ -313,7 +313,7 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: bold; border: 1px solid black;">NAMA PPK</td>
-                                <td style="border: 1px solid black;">
+                                <td style="border: 1px solid black; text-align:justify;" >
                                     Nama: {{ $data->spk->namalengkapspk }}<br>
                                     NIP: {{ $data->spk->nipspk }}<br>
                                     Jabatan: Pejabat Pembuat Komitmen {{ $data->spk->spkppk }}<br>
