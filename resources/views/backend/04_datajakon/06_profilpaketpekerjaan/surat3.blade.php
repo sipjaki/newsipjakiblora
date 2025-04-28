@@ -298,7 +298,7 @@
 
                         <table style="width: 100%; border: 1px solid black; border-collapse: collapse; font-size: 14px;">
                             <tr>
-                                <td style="width: 25%; font-weight: bold; border: 1px solid black;">SURAT PERINTAH KERJA (SPK)</td>
+                                <td style="width: 40%; font-weight: bold; border: 1px solid black;">SURAT PERINTAH KERJA (SPK)</td>
                                 <td style="border: 1px solid black;">
                                     SATUAN KERJA:<br> {{ $data->satuankerja }}
                                 </td>
