@@ -348,14 +348,14 @@
                                 <td style="font-weight: bold; border: 1px solid black;">PAKET PEKERJAAN <br> {{$data->spk->paketpekerjaan1}} </td>
                                 <td style="border: 1px solid black;">
                                     NOMOR BERITA ACARA HASIL PENGADAAN LANGSUNG:
-                                    Nomor:  {{$data->nomorpaketpekerjaan}}
+                                    Nomor:  {{$data->spk->nomorpaketpekerjaan}}
                                     TANGGAL BERITA ACARA HASIL PENGADAAN LANGSUNG:
-                                    Tanggal: {{$data->hasilpaketpekerjaan}}
-<hr>
-NOMOR BERITA ACARA PENETAPAN PEMENANG :
-Nomor:  {{$data->bapekerjaan}}
-TANGGAL BERITA ACARA PENETAPAN PEMENANG:
-Tanggal:  {{$data->penetapanpemenangpekerjaan}}
+                                    Tanggal: {{$data->spk->hasilpaketpekerjaan}}
+                                        <hr>
+                                        NOMOR BERITA ACARA PENETAPAN PEMENANG :
+                                        Nomor:  {{$data->spk->bapekerjaan}}
+                                        TANGGAL BERITA ACARA PENETAPAN PEMENANG:
+                                        Tanggal:  {{$data->spk->penetapanpemenangpekerjaan}}
 
                                 </td>
                             </tr>
