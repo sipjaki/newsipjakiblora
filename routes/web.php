@@ -784,6 +784,9 @@ Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [Paketpekerjaanmasjaki
 Route::get('/bepekerjaandetails/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaandetails'])->middleware('auth');
 
 Route::get('/bedetailspekerjaan/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaansurat2'])->middleware('auth');
+
+Route::get('/bedetailsspk/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaansurat3'])->middleware('auth');
+
 // ___________________________________________________________________________________________________________________________________
 
 
