@@ -377,24 +377,24 @@
 
                  <br><br>
 <!-- Tombol Download -->
-<!-- Tambah Library html2pdf -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <script>
     document.getElementById('downloadButton').addEventListener('click', function() {
-    // Prepare the content to be printed
-    var content = document.body.innerHTML;
-    var originalContent = content;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
 
-    // Open a new window for downloading
-    var printWindow = window.open('', '', 'height=800,width=600');
-    printWindow.document.write('<html><head><title>SPPBJ </title>');
-    printWindow.document.write('<link rel="stylesheet" href="styles.css">');
-    printWindow.document.write('</head><body>');
-    printWindow.document.write(content);
-    printWindow.document.write('</body></html>');
-    printWindow.document.close();
-    printWindow.print(); // Automatically trigger the print dialog
+    // Mengambil konten surat dan mengonversi ke dalam PDF
+    doc.html(document.querySelector('.container-surat'), {
+        callback: function (doc) {
+            // Setelah konten di-render, simpan PDF dengan nama file
+            doc.save('surat-penunjukan.pdf');
+        },
+        x: 10, // Margin kiri
+        y: 10, // Margin atas
+    });
 });
-
 </script>
              </div>
              <!-- /.card -->
