@@ -67,16 +67,30 @@
     }
 
     .table-info {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 20px;
-    }
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
 
-    .table-info td {
-        vertical-align: top;
-        padding: 4px;
-    }
+.table-info td {
+    padding: 4px 8px;
+    vertical-align: top;
+}
 
+.table-info .label {
+    width: 20%;
+}
+
+.table-info .value {
+    width: 50%;
+}
+
+.table-info .right {
+    width: 30%;
+    text-align: right;
+}
     h4 {
         margin-top: 20px;
         font-size: 16px;
@@ -259,33 +273,34 @@
 
                         <div class="body-surat">
                             <table class="table-info">
-                                <tr>
-                                    <td style="width: 20%;">Nomor</td>
-                                    <td style="width: 2%;">:</td>
-                                    <td>{{ $data->sppbj->nomor }}</td>
-                                    <td style="text-align: right;">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Lampiran</td>
-                                    <td>:</td>
-                                    <td colspan="2">- {{ $data->sppbj->lampiran }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Kepada Yth.</td>
-                                    <td>:</td>
-                                    <td colspan="2">{{ $data->sppbj->kepadayth }}</td>
-                                </tr>
-                                <tr>
-                                    <td>di</td>
-                                    <td>:</td>
-                                    <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
-                                </tr>
-
-                                <tr>
-                                    <td>Perihal</td>
-                                    <td>:</td>
-                                    <td colspan="2">{{ $data->sppbj->perihal1 }}</td>
-                                </tr>
+                                <table class="table-info">
+                                    <tr>
+                                        <td class="label">Nomor</td>
+                                        <td>:</td>
+                                        <td class="value">{{ $data->sppbj->nomor }}</td>
+                                        <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Lampiran</td>
+                                        <td>:</td>
+                                        <td colspan="2">- {{ $data->sppbj->lampiran }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Kepada Yth.</td>
+                                        <td>:</td>
+                                        <td colspan="2">{{ $data->sppbj->kepadayth }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">di</td>
+                                        <td>:</td>
+                                        <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Perihal</td>
+                                        <td>:</td>
+                                        <td colspan="2">{{ $data->sppbj->perihal1 }}</td>
+                                    </tr>
+                                </table>
 
                             </table>
 
