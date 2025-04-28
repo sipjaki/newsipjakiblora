@@ -243,7 +243,7 @@
 
                         <div class="line-separator"></div>
 
-                        <h5 style="text-align:center; margin-bottom: 10px;">INFORMASI PROFIL PAKET PEKERJAAN</h5>
+                        <h5 style="text-align:center; margin-bottom: 10px;"><span style="font-size: 14px;">INFORMASI PROFIL PAKET PEKERJAAN</span></h5>
 
                         <table>
                             <tr>
