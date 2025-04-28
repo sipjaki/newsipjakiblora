@@ -343,6 +343,7 @@
 
 
 <td style="text-align: left;">{{ ucwords(strtolower($item->user->name)) }}</td>
+
 <td style="text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center;">
         <a href="/bepekerjaandetails/{{$item->id}}"
@@ -354,21 +355,17 @@
     </div>
 </td>
 
+<td style="text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <a href="/bedetailspekerjaan/{{$item->id}}"
+           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
+           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
+            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+        </a>
+    </div>
+</td>
 
-         <td style="text-align: center; vertical-align: middle;">
-             <a href="/bepaketpekerjaan/show/{{$item->namapekerjaan}}" class="btn btn-sm btn-info me-2" title="Show">
-                 <i class="bi bi-eye"></i>
-             </a>
-             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
-                 <i class="bi bi-pencil-square"></i>
-             </a>
-             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
-                   data-bs-toggle="modal" data-bs-target="#deleteModal"
-                   data-judul="{{ $item->namapekerjaan }}"
-                   onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>
-            </a>
-         </td>
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/bepaketpekerjaan/show/{{$item->namapekerjaan}}" class="btn btn-sm btn-info me-2" title="Show">
