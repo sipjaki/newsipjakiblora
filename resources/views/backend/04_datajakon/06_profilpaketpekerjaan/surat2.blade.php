@@ -90,10 +90,14 @@
     }
 
     .tanda-tangan {
-        width: 300px;
-        text-align: left;
-        float: right;
-        margin-top: 40px;
+        text-align: center;  /* Memastikan teks tanda tangan di tengah */
+        float: right;        /* Memindahkan tanda tangan ke kanan */
+        margin-top: 50px;    /* Memberikan jarak dari isi surat sebelumnya */
+        width: 40%;          /* Mengatur lebar tanda tangan agar tidak terlalu lebar */
+    }
+
+    .tanda-tangan p {
+        margin: 5px 0;
     }
     </style>
 
