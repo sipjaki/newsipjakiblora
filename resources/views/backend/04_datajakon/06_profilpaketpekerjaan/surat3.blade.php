@@ -376,6 +376,7 @@
                                         {{ $data->waktupelaksanaan }} ({{ $data->terbilangpelaksanaan }}) hari kalender dihitung sejak Tanggal Mulai Kerja yang tercantum dalam SPMK sampai dengan Tanggal Penyerahan Pertama Pekerjaan.
                                     </td>
                                 </tr>
+                                <hr>
                                 <tr>
                                     <td style="border: 1px solid black; padding: 8px;">
                                         <b>WAKTU PEMELIHARAAN</b><br>
