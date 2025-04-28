@@ -93,7 +93,7 @@
         width: 300px;
         text-align: left;
         float: right;
-        margin-top: 40px;
+        margin-top: 30px;
     }
     </style>
 
@@ -308,7 +308,7 @@
                                 Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
                             </p>
 
-                            <div class="tanda-tangan">
+                            <div class="table-info">
                                 <p>Pejabat Penandatangan Kontrak</p>
                                 <br><br><br>
                                 <p><b>{{ $data->sppbj->namalengkap }}</b></p>
