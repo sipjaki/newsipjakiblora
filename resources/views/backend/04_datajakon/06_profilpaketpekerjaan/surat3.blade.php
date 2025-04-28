@@ -283,13 +283,15 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-                    <div style="width: 100%; font-family: Arial, sans-serif; font-size: 14px;">
-                        <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Blora" style="height: 80px;">
-                            <h2 style="margin: 5px 0;">PEMERINTAH KABUPATEN BLORA</h2>
-                            <h3 style="margin: 5px 0; text-transform: uppercase;">{{ $data->user->name }}</h3>
-                            <p style="margin: 2px 0;">Alamat Otomatis</p>
-                            <p style="margin: 2px 0;">BLORA 58214</p>
+                    <div class="container-surat">
+                        <div class="header-surat">
+                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
+                            <div class="header-text">
+                                <h3>PEMERINTAH KABUPATEN BLORA</h3>
+                                <h3 style="text-transform: uppercase;">{{ $data->user->name }}</h3>
+                                <p>Alamat Otomatis</p>
+                                <h3>BLORA 58214</h3>
+                            </div>
                         </div>
 
                         <hr style="border: 1px solid black; margin-bottom: 20px;">
