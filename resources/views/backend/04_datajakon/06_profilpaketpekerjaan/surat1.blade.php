@@ -19,46 +19,58 @@
 </style>
 
 <style>
-    .container-surat {
-        width: 80%;
-        margin: auto;
-        padding: 20px;
-        border: 1px solid black;
+    body {
+        font-family: 'Poppins', 'Times New Roman', serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 0;
     }
 
-    /* Styling untuk kop surat */
+    .container-surat {
+        width: 800px;
+        margin: 30px auto;
+        padding: 40px;
+        border: 1px solid black;
+        background-color: #fff;
+    }
+
     .header-surat {
         display: flex;
         align-items: center;
         justify-content: center;
-        text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .header-surat img {
-        width: 100px; /* Perbesar sedikit agar lebih proporsional */
-        height: 100px;
-        margin-right: 50px; /* Jarak antara logo dan teks */
-        margin-bottom: 100px; /* Jarak antara logo dan teks */
+        width: 90px;
+        height: 90px;
+        margin-right: 20px;
     }
 
-    .header-surat-text {
-        flex: 1; /* Supaya teks mengisi sisa ruang */
+    .header-text {
+        text-align: center;
+        flex: 1;
     }
 
-    .header-surat h3, .header-surat h4, .header-surat p {
-        margin: 2px 0; /* Supaya tidak ada jarak berlebihan */
-        font-size: 20px; /* Sesuaikan ukuran font */
+    .header-text h3 {
+        margin: 3px 0;
+        font-size: 18px;
     }
 
-    .header-surat h4 {
+    .header-text p {
+        margin: 2px 0;
         font-size: 14px;
-        font-weight: normal;
     }
 
-    /* Tambahkan font Poppins ke seluruh halaman */
-    .container-surat {
-        font-family: 'times new roman', sans-serif;
+    .line-separator {
+        border-top: 3px solid black;
+        margin: 10px 0 20px 0;
+    }
+
+    h4 {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
     }
 
     table {
@@ -67,16 +79,21 @@
         margin-top: 10px;
     }
 
-    th, td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: left;
-        font-size: 20px; /* Sesuaikan ukuran teks */
+    table td {
+        padding: 6px 4px;
+        vertical-align: top;
+        font-size: 15px;
+        border-bottom: 1px solid #ccc;
     }
 
-    th {
-        background-color: #ddd;
-        font-weight: 600; /* Lebih tebal agar judul tabel lebih jelas */
+    table td:nth-child(1),
+    table td:nth-child(2),
+    table td:nth-child(3) {
+        width: 5%;
+    }
+
+    table td:nth-child(4) {
+        width: 80%;
     }
 </style>
 
@@ -215,94 +232,58 @@
 
                     <div class="container-surat">
                         <div class="header-surat">
-                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora" width="100px;">
-                            <br>
-                            <div class="header-text" style="font-family: 'Poppins', sans-serif;">
-                                <h3 style="font-family: 'Poppins';">PEMERINTAH KABUPATEN BLORA</h3>
-                                <h3 style="font-family: 'Poppins';">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-                                <p style="font-family: 'Poppins';">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-                                <h3 style="font-family: 'Poppins';">BLORA 58214</h3>
-                                <p>_____________________________________________________________</p>
-                                <h3 style="font-family: 'Poppins';">PROFIL OPD JASA KONSTRUKSI</h3>
-                                <h4 style="font-family: 'Poppins';">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h4>
+                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
+                            <div class="header-text">
+                                <h3>PEMERINTAH KABUPATEN BLORA</h3>
+                                <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+                                <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+                                <h3>BLORA 58214</h3>
                             </div>
                         </div>
-                        <br>
 
-                        <h4 style="font-family: 'Poppins', sans-serif; font-size: 18px;"><span style="font-family: 'Poppins', sans-serif; font-size: 18px; color:black;" >I. IDENTITAS OPD</span></h4>
+                        <div class="line-separator"></div>
+
+                        <h3 style="text-align:center; margin-bottom: 10px;">INFORMASI PROFIL PAKET PEKERJAAN</h3>
+
+                        <h4>I. IDENTITAS OPD</h4>
 
                         <table>
-                                            <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">1.</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Nama OPD</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</td>
+                            <tr>
+                                <td>1.</td><td>Nama OPD</td><td>:</td><td>Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">2.</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Alamat OPD</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Jl. Nusantara No. 62</td>
+                                <td>2.</td><td>Alamat OPD</td><td>:</td><td>Jl. Nusantara No. 62</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">RT / RW</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
+                                <td></td><td>RT / RW</td><td>:</td><td></td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Kode Pos</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">58214</td>
+                                <td></td><td>Kode Pos</td><td>:</td><td>58214</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Kelurahan</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Jetis</td>
+                                <td></td><td>Kelurahan</td><td>:</td><td>Jetis</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Kecamatan</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Blora</td>
+                                <td></td><td>Kecamatan</td><td>:</td><td>Blora</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Kota</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Blora</td>
+                                <td></td><td>Kota</td><td>:</td><td>Blora</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Provinsi</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Jawa Tengah</td>
+                                <td></td><td>Provinsi</td><td>:</td><td>Jawa Tengah</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;"></td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Negara</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Indonesia</td>
+                                <td></td><td>Negara</td><td>:</td><td>Indonesia</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">3.</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Posisi Geografis</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">-6.976853 Lintang, 111.410894 Bujur</td>
+                                <td>3.</td><td>Posisi Geografis</td><td>:</td><td>-6.976853 Lintang, 111.410894 Bujur</td>
                             </tr>
                             <tr>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">4.</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">Tipe Dinas</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">:</td>
-                                <td style="font-family: 'Poppins', sans-serif; font-size: 15px;">B</td>
+                                <td>4.</td><td>Tipe Dinas</td><td>:</td><td>B</td>
                             </tr>
-                                        </table>
-
-                        <br>
-
+                        </table>
                     </div>
+
 
                  <br><br>
 
