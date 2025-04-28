@@ -96,6 +96,9 @@
     text-align: left;
     font-family: 'Times New Roman', Times, serif;
 
+    margin: 0;
+    padding: 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertikal tengah dalam flexbox */
