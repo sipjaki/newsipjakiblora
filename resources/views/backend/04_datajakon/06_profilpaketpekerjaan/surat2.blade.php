@@ -18,39 +18,31 @@
  }
 </style>
 
+
 <style>
-    /* Style Tombol Download */
-    #downloadBtn {
-        background-color: red;
+
+.download-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #dc3545;
         color: white;
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 12px 24px;
         border: none;
-        cursor: pointer;
         border-radius: 5px;
-        transition: 0.3s;
-        margin: 20px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 2px solid #dc3545;
     }
 
-    #downloadBtn:hover {
+    .download-btn:hover {
         background-color: white;
         color: black;
-        border: 1px solid red;
     }
 
-    /* Style Container Surat */
-    #container-surat {
-        width: 210mm;   /* Lebar A4 */
-        min-height: 297mm; /* Tinggi A4 */
-        padding: 20mm;
-        background: white;
-        font-family: Arial, sans-serif;
-        color: black;
-        box-sizing: border-box;
-    }
-    </style>
-
-<style>
     .container-surat {
         width: 800px;
         margin: 30px auto;
@@ -378,25 +370,51 @@
                  <br><br>
 <!-- Tombol Download -->
 
+<!-- Tambahkan di bagian head -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<script>
-    document.getElementById('downloadButton').addEventListener('click', function() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+<!-- Tombol Download -->
+<button onclick="generatePDF()" class="download-btn">
+    <i class="bi bi-file-pdf"></i> Download PDF
+</button>
 
-    // Mengambil konten surat dan mengonversi ke dalam PDF
-    doc.html(document.querySelector('.container-surat'), {
-        callback: function (doc) {
-            // Setelah konten di-render, simpan PDF dengan nama file
-            doc.save('surat-penunjukan.pdf');
-        },
-        x: 10, // Margin kiri
-        y: 10, // Margin atas
-    });
-});
-</script>
-             </div>
+
+<script>
+    function generatePDF() {
+        // Ambil element container
+        const element = document.querySelector('.container-surat');
+
+        html2canvas(element, {
+            scale: 2, // Tingkat kualitas gambar
+            logging: true,
+            useCORS: true
+        }).then(canvas => {
+            // Konfigurasi PDF
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jspdf.jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            // Hitung dimensi halaman A4
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+
+            // Tambahkan gambar ke PDF
+            pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, pageHeight);
+
+            // Download PDF
+            pdf.save('surat-sppbj.pdf');
+        }).catch(error => {
+            console.error('Error generating PDF:', error);
+        });
+    }
+    </script>
+
+</div>
              <!-- /.card -->
          </div>
          <!-- /.col -->
