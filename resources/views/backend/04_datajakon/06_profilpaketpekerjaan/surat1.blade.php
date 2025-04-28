@@ -262,12 +262,12 @@
 
                             <tr>
                                 <td></td><td>Terbilang </td><td>:</td>
-                                <td>{{ terbilang($data->detailsnamapaketpekerjaan->waktupelaksanaan) }} Hari Kalender</td>
+                                <td>{{$data->detailsnamapaketpekerjaan->waktupelaksanaan }} Hari Kalender</td>
                             </tr>
 
                             <tr>
                                 <td></td><td>Terbilang </td><td>:</td>
-                                <td>{{ terbilang($data->detailsnamapaketpekerjaan->terbilanghari) }}</td>
+                                <td>{{ $data->detailsnamapaketpekerjaan->terbilanghari }}</td>
                             </tr>
 
                             <tr>
