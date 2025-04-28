@@ -236,7 +236,7 @@
                             <div class="header-text">
                                 <h3>PEMERINTAH KABUPATEN BLORA</h3>
                                 <h3 style="text-transform: uppercase;">{{$data->user->name}}</h3>
-                                <p>{{$data->alamat}}</p>
+                                <p>{{$data->user->alamat}}</p>
                                 {{-- <h3>BLORA 58214</h3> --}}
                             </div>
                         </div>
