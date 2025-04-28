@@ -93,7 +93,7 @@
         width: 300px;
         text-align: left;
         float: right;
-        margin-top: 30px;
+        margin-top: 40px;
     }
     </style>
 
@@ -259,35 +259,32 @@
 
                         <div class="body-surat">
                             <table class="table-info">
-                                <table class="table-info">
-                                    <tr>
-                                        <td class="label" style="width: 150px;">Nomor</td>
-                                        <td style="width: 10px;">:</td>
-                                        <td class="value">{{ $data->sppbj->nomor }}</td>
-                                        <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Lampiran</td>
-                                        <td>:</td>
-                                        <td colb="2">- {{ $data->sppbj->lampiran }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Kepada Yth.</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->kepadayth }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">di</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->alamatdi }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Perihal</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->perihal1 }}</td>
-                                    </tr>
-                                </table>
-
+                                <tr>
+                                    <td class="label">Nomor</td>
+                                    <td>:</td>
+                                    <td class="value">{{ $data->sppbj->nomor }}</td>
+                                    <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Lampiran</td>
+                                    <td>:</td>
+                                    <td colspan="2">- {{ $data->sppbj->lampiran }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Kepada Yth.</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->sppbj->kepadayth }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">di</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Perihal</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->sppbj->perihal1 }}</td>
+                                </tr>
                             </table>
 
                             <p>
@@ -308,15 +305,18 @@
                                 Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
                             </p>
 
-                            <div class="table-info">
+                            <!-- Tanda tangan dimasukkan ke dalam container-surat -->
+                            <div class="tanda-tangan">
                                 <p>Pejabat Penandatangan Kontrak</p>
                                 <br><br><br>
                                 <p><b>{{ $data->sppbj->namalengkap }}</b></p>
                                 <p>{{ $data->sppbj->jabatan }}</p>
                                 <p>NIP. {{ $data->sppbj->nip }}</p>
                             </div>
+
                         </div>
                     </div>
+
 
                  <br><br>
 
