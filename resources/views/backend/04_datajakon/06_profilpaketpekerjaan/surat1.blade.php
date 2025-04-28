@@ -18,6 +18,68 @@
  }
 </style>
 
+<style>
+    .container-surat {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid black;
+    }
+
+    /* Styling untuk kop surat */
+    .header-surat {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .header-surat img {
+        width: 100px; /* Perbesar sedikit agar lebih proporsional */
+        height: 100px;
+        margin-right: 50px; /* Jarak antara logo dan teks */
+        margin-bottom: 100px; /* Jarak antara logo dan teks */
+    }
+
+    .header-surat-text {
+        flex: 1; /* Supaya teks mengisi sisa ruang */
+    }
+
+    .header-surat h3, .header-surat h4, .header-surat p {
+        margin: 2px 0; /* Supaya tidak ada jarak berlebihan */
+        font-size: 20px; /* Sesuaikan ukuran font */
+    }
+
+    .header-surat h4 {
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    /* Tambahkan font Poppins ke seluruh halaman */
+    .container-surat {
+        font-family: 'times new roman', sans-serif;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+        font-size: 20px; /* Sesuaikan ukuran teks */
+    }
+
+    th {
+        background-color: #ddd;
+        font-weight: 600; /* Lebih tebal agar judul tabel lebih jelas */
+    }
+</style>
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
