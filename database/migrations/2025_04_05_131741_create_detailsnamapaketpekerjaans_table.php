@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('waktupelaksanaan')->nullable();
             $table->string('terbilanghari')->nullable();
             $table->date('tanggalmulai')->nullable();
+            $table->date('tanggalselesai')->nullable();
             $table->string('konsultanpengawas')->nullable();
             $table->string('penyediajasa')->nullable();
             // Soft deletes (optional)

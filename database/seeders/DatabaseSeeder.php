@@ -58845,6 +58845,9 @@ for ($i = 1; $i <= 1221; $i++) {
 // GARIS PAKET PEKERJAAN
 
 for ($i = 1; $i <= 1221; $i++) {
+    $tanggalMulai = now()->addDays(rand(1, 30)); // Menghasilkan tanggal mulai acak antara 1 hingga 30 hari setelah hari ini
+    $tanggalSelesai = $tanggalMulai->addDays(rand(30, 180)); // Menghasilkan tanggal selesai acak antara 30 hingga 180 hari setelah tanggal mulai
+
     detailsnamapaketpekerjaan::create([
         'id' => $i,
         'kecamatanblora_id' => null, // Menjaga _id tetap kosong
@@ -58854,12 +58857,12 @@ for ($i = 1; $i <= 1221; $i++) {
         'tanggalkontrak' => now(), // Tanggal kontrak menggunakan tanggal saat ini
         'waktupelaksanaan' => rand(100, 320),
         'terbilanghari' => 'Hari ' . $i, // Menggunakan angka untuk terbilang hari
-        'tanggalmulai' => now(), // Tanggal mulai menggunakan tanggal saat ini
+        'tanggalmulai' => $tanggalMulai, // Tanggal mulai acak
+        'tanggalselesai' => $tanggalSelesai, // Tanggal selesai acak
         'konsultanpengawas' => 'Konsultan Pengawas ' . $i, // Nama konsultan pengawas dengan angka
         'penyediajasa' => 'Penyedia Jasa ' . $i, // Nama penyedia jasa dengan angka
     ]);
 }
-
 // DATA KOSONGAN SAJA
 // for ($i = 2; $i <= 1221; $i++) {
 //     sppbj::create([
