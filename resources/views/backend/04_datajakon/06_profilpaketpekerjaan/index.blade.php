@@ -344,6 +344,16 @@
 
 <td style="text-align: left;">{{ ucwords(strtolower($item->user->name)) }}</td>
 
+<td style="text-align: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <span style="margin-bottom: 5px; font-weight: bold;">LIHAT</span>
+        <a href="your-link-here"
+           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s;">
+            Lihat
+        </a>
+    </div>
+</td>
+
          <td style="text-align: center; vertical-align: middle;">
              <a href="/bepaketpekerjaan/show/{{$item->namapekerjaan}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
