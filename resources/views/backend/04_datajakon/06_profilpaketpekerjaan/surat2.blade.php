@@ -24,8 +24,6 @@
         border: 1px solid black; /* Membuat kotak di sekitar surat */
         padding: 20px; /* Memberikan ruang di dalam kotak */
         font-family: 'Times New Roman', Times, serif;
-        display: flex;
-        flex-direction: column;
     }
 
     /* Header surat tetap berada di dalam kotak */
@@ -43,8 +41,6 @@
     /* Memastikan bahwa teks di body surat rapi */
     .body-surat {
         margin-top: 20px;
-        display: flex;
-        flex-direction: column;
     }
 
     /* Memberikan border dan padding pada tabel */
@@ -68,12 +64,10 @@
         margin: 20px 0;
     }
 
-    /* Mengatur posisi tanda tangan dalam kotak dan di kanan */
+    /* Bagian tanda tangan diletakkan di luar kotak */
     .tanda-tangan {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end; /* Posisi tanda tangan di kanan */
-        margin-top: 30px;
+        margin-top: 50px; /* Memberikan jarak setelah bagian surat */
+        text-align: center;
     }
 
     .tanda-tangan p {
@@ -288,19 +282,17 @@
                             <p>
                                 Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
                             </p>
-
-                            <!-- Tanda tangan dimasukkan ke dalam container-surat dan diposisikan di kanan dan dalam kotak -->
-                            <div class="tanda-tangan">
-                                <p>Pejabat Penandatangan Kontrak</p>
-                                <br><br><br>
-                                <p><b>{{ $data->sppbj->namalengkap }}</b></p>
-                                <p>{{ $data->sppbj->jabatan }}</p>
-                                <p>NIP. {{ $data->sppbj->nip }}</p>
-                            </div>
-
                         </div>
                     </div>
 
+                    <!-- Bagian Tanda Tangan di luar kotak -->
+                    <div class="tanda-tangan">
+                        <p>Pejabat Penandatangan Kontrak</p>
+                        <br><br><br>
+                        <p><b>{{ $data->sppbj->namalengkap }}</b></p>
+                        <p>{{ $data->sppbj->jabatan }}</p>
+                        <p>NIP. {{ $data->sppbj->nip }}</p>
+                    </div>
                  <br><br>
 
              </div>
