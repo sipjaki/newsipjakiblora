@@ -247,7 +247,7 @@
 
                         <table>
                             <tr>
-                                <td>1.</td><td>Nama OPD</td><td>:</td><td>Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</td>
+                                <td style="width: 100px;">1.</td><td style="width: 300px;">Nama Paket Pekerjaan</td><td>:</td><td>Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</td>
                             </tr>
                             <tr>
                                 <td>2.</td><td>Alamat OPD</td><td>:</td><td>Jl. Nusantara No. 62</td>
