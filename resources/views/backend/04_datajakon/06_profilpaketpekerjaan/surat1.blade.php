@@ -261,7 +261,7 @@
                             </tr>
 
                             <tr>
-                                <td></td><td>Terbilang </td><td>:</td>
+                                <td>5.</td><td>Lama Pelaksanaan </td><td>:</td>
                                 <td>{{$data->detailsnamapaketpekerjaan->waktupelaksanaan }} Hari Kalender</td>
                             </tr>
 
@@ -271,7 +271,8 @@
                             </tr>
 
                             <tr>
-                                <td></td><td>Kecamatan</td><td>:</td><td>Blora</td>
+                                <td>6.</td><td>Tanggal Mulai </td><td>:</td>
+                                <td>{{ $data->detailsnamapaketpekerjaan->tanggalmulai }}</td>
                             </tr>
                             <tr>
                                 <td></td><td>Kota</td><td>:</td><td>Blora</td>
