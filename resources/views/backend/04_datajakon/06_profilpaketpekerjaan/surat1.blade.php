@@ -251,7 +251,7 @@
                                 <td style="width: 25px;">1.</td><td style="width: 300px;">Nama Paket Pekerjaan</td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->namapaket}}</td>
                             </tr>
                             <tr>
-                                <td>2.</td><td>Lokasi </td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->kecamatanblora->kecamatanblora}}</td>
+                                <td>2.</td><td>Lokasi </td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->kecamatanblora->kecamatanblora ?? ' Belum Di Update'}}</td>
                             </tr>
                             <tr>
                                 <td></td><td>RT / RW</td><td>:</td><td></td>
