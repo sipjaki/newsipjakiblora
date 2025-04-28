@@ -252,8 +252,13 @@
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                        <button id="downloadBtn">Download Surat PDF</button>
-                            <a href="/bepekerjaandetailsupdate/{id}">
+                                            <!-- Button to Download -->
+                            <button id="downloadButton" class="download-btn">
+                                <img src="/assets/icon/download-icon.png" alt="Download Icon" class="download-icon">
+                                Download Surat
+                            </button>
+
+                        <a href="/bepekerjaandetailsupdate/{id}">
                                 <button
                                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                 onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -373,25 +378,24 @@
                  <br><br>
 <!-- Tombol Download -->
 <!-- Tambah Library html2pdf -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<!-- Script Download -->
 <script>
-    document.getElementById('downloadBtn').addEventListener('click', function () {
-        var element = document.getElementById('container-surat');
+    document.getElementById('downloadButton').addEventListener('click', function() {
+    // Prepare the content to be printed
+    var content = document.body.innerHTML;
+    var originalContent = content;
 
-        var opt = {
-            margin:       [10, 10, 10, 10],  // mm
-            filename:     'Surat_SPPBJ.pdf',
-            image:        { type: 'jpeg', quality: 1 },
-            html2canvas:  { scale: 4, useCORS: true },
-            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        };
+    // Open a new window for downloading
+    var printWindow = window.open('', '', 'height=800,width=600');
+    printWindow.document.write('<html><head><title>Surat Penunjukan</title>');
+    printWindow.document.write('<link rel="stylesheet" href="styles.css">');
+    printWindow.document.write('</head><body>');
+    printWindow.document.write(content);
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+    printWindow.print(); // Automatically trigger the print dialog
+});
 
-        html2pdf().from(element).set(opt).save();
-    });
 </script>
-
              </div>
              <!-- /.card -->
          </div>
