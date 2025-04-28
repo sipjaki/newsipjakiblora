@@ -19,69 +19,83 @@
 </style>
 
 <style>
-    /* Container utama surat */
     .container-surat {
+        width: 800px;
+        margin: 30px auto;
+        padding: 40px;
         border: 1px solid black;
-        padding: 20px;
+        background-color: #fff;
         font-family: 'Times New Roman', Times, serif;
-        display: flex;
-        flex-direction: column;
-        height: auto;
+        font-size: 15px;
     }
 
-    /* Header surat */
     .header-surat {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .header-surat img {
+        width: 90px;
+        height: 90px;
+        margin-right: 20px;
+    }
+
+    .header-text {
+        text-align: center;
+        flex: 1;
     }
 
     .header-text h3 {
-        margin: 5px 0;
+        margin: 3px 0;
+        font-size: 18px;
     }
 
-    /* Separator garis */
+    .header-text p {
+        margin: 2px 0;
+        font-size: 14px;
+    }
+
     .line-separator {
-        border-top: 1px solid black;
-        margin: 20px 0;
+        border-top: 3px solid black;
+        margin: 10px 0 20px 0;
     }
 
-    /* Bagian tubuh surat */
     .body-surat {
         margin-top: 20px;
-        display: flex;
-        flex-direction: column;
     }
 
-    /* Table info */
     .table-info {
         width: 100%;
         border-collapse: collapse;
+        margin-bottom: 10px;
     }
 
     .table-info td {
-        padding: 5px 10px;
         vertical-align: top;
+        padding: 4px;
     }
 
-    .table-info .label {
-        width: 150px;
+    h4 {
+        margin-top: 20px;
+        font-size: 16px;
         font-weight: bold;
+        text-decoration: underline;
     }
 
-    /* Tanda tangan di kanan dalam kotak */
+    .body-surat p {
+        text-align: justify;
+        margin-bottom: 10px;
+    }
+
     .tanda-tangan {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end; /* Posisi kanan */
-        margin-top: 30px;
-        padding-left: 20px; /* Agar tidak terlalu rapat */
+        width: 300px;
+        text-align: left;
+        /* float: right; */
+        margin-top: 40px;
     }
-
-    .tanda-tangan p {
-        margin: 5px 0;
-    }
-</style>
+    </style>
 
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
@@ -293,6 +307,7 @@
                             <p>
                                 Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
                             </p>
+
                             <div class="tanda-tangan">
                                 <p>Pejabat Penandatangan Kontrak</p>
                                 <br><br><br>
@@ -301,7 +316,6 @@
                                 <p>NIP. {{ $data->sppbj->nip }}</p>
                             </div>
                         </div>
-
                     </div>
 
                  <br><br>
