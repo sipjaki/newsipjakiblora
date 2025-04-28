@@ -261,35 +261,6 @@
             <button class="btn btn-sm">{{$item->bulanrekap->bulanrekap}}</button>
         </td>
 
-         <td style="text-align: center;">
-            <button id="status-{{ $item->bulanrekap->bulanrekap }}" class="btn btn-sm"></button>
-        </td>
-
-        <script>
-            function updateStatus() {
-                let now = new Date().getTime();
-
-                // Ubah bulan ke tanggal lengkap: asumsikan tanggal 1 dan tahun sekarang
-                let tahunSekarang = new Date().getFullYear();
-                let bulanSelesai = {{ $item->bulanselesai }}; // ini angka, misalnya 8
-                let tanggalHabis = new Date(`${tahunSekarang}-${String(bulanSelesai).padStart(2, '0')}-01`).getTime();
-
-                let statusButton = document.getElementById("status-{{ $item->id }}");
-
-                if (now > tanggalHabis) {
-                    statusButton.innerText = "ON PROGRESS";
-                    statusButton.className = "btn btn-primary btn-sm";
-                } else {
-                    statusButton.innerText = "SELESAI";
-                    statusButton.className = "btn btn-success btn-sm";
-                }
-            }
-
-            updateStatus();
-            setInterval(updateStatus, 1000);
-        </script>
-
-
 <td style="text-align: left;">
     <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px; position: relative;">
         <!-- Progress bar -->
