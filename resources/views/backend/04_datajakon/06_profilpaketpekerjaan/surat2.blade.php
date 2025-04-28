@@ -22,26 +22,23 @@
 <style>
 
 .download-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #dc3545;
-        color: white;
-        padding: 12px 24px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        border: 2px solid #dc3545;
-    }
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid #dc3545;
+}
 
-    .download-btn:hover {
-        background-color: white;
-        color: black;
-    }
+.download-btn:hover {
+    background-color: white;
+    color: black;
+}
 
     .container-surat {
         width: 800px;
