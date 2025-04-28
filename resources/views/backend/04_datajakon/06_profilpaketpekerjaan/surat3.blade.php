@@ -366,17 +366,33 @@
                             <table style="width: 100%; border: 1px solid black; border-collapse: collapse; font-size: 14px; margin-top: 10px;">
                                 <tr>
                                     <td style="border: 1px solid black; padding: 8px;">
-                                        SUMBER DANA: {{ $data->sumberdana_id }} DPA nomor: {{ $data->nomordpa }} Tahun Anggaran {{ $data->tahunpilihan_id }} untuk mata anggaran {{ $data->anggaran }}
-                                        <br><br>
-                                        WAKTU PELAKSANAAN: {{ $data->waktupelaksanaan }} ({{ $data->terbilangpelaksanaan }}) hari kalender dihitung sejak Tanggal Mulai Kerja yang tercantum dalam SPMK sampai dengan Tanggal Penyerahan Pertama Pekerjaan.
-                                        <br><br>
-                                        WAKTU PEMELIHARAAN: {{ $data->waktupemeliharaan }} ({{ $data->terbilangpemeliharaan }}) hari kalender dihitung sejak Tanggal Penyerahan Pertama Pekerjaan sampai dengan Tanggal Penyerahan Akhir Pekerjaan.
-                                        <br><br>
-                                        JENIS KONTRAK: HARGA SATUAN
-                                        <br><br>
+                                        <b>SUMBER DANA</b><br>
+                                        {{ $data->sumberdana_id }} DPA nomor: {{ $data->nomordpa }} Tahun Anggaran {{ $data->tahunpilihan_id }} untuk mata anggaran {{ $data->anggaran }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding: 8px;">
+                                        <b>WAKTU PELAKSANAAN</b><br>
+                                        {{ $data->waktupelaksanaan }} ({{ $data->terbilangpelaksanaan }}) hari kalender dihitung sejak Tanggal Mulai Kerja yang tercantum dalam SPMK sampai dengan Tanggal Penyerahan Pertama Pekerjaan.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding: 8px;">
+                                        <b>WAKTU PEMELIHARAAN</b><br>
+                                        {{ $data->waktupemeliharaan }} ({{ $data->terbilangpemeliharaan }}) hari kalender dihitung sejak Tanggal Penyerahan Pertama Pekerjaan sampai dengan Tanggal Penyerahan Akhir Pekerjaan.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding: 8px;">
+                                        <b>JENIS KONTRAK</b><br>
+                                        HARGA SATUAN
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding: 8px;">
                                         <b>DOKUMEN KONTRAK</b><br>
                                         Dokumen-dokumen berikut merupakan satu kesatuan dan jika terjadi pertentangan antara ketentuan dalam suatu dokumen dengan ketentuan dalam dokumen yang lain maka yang berlaku adalah ketentuan dalam dokumen yang lebih tinggi berdasarkan urutan hierarki sebagai berikut:
-                                        <br>
+                                        <br><br>
                                         a. adendum Surat Perintah Kerja/SPK (apabila ada);<br>
                                         b. Surat Perintah Kerja;<br>
                                         c. Daftar Kuantitas dan Harga hasil negosiasi dan koreksi aritmatik;<br>
@@ -385,7 +401,10 @@
                                         f. spesifikasi teknis;<br>
                                         g. gambar-gambar; dan<br>
                                         h. dokumen lainnya seperti: Surat Penunjukan Penyedia Barang/Jasa, Jadwal Pelaksanaan Pekerjaan, jaminan-jaminan, Berita Acara Rapat Persiapan Pelaksanaan Kontrak.
-                                        <br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding: 8px;">
                                         <b>HARGA KONTRAK</b><br>
                                         Harga Kontrak termasuk Pajak Pertambahan Nilai (PPN) adalah sebesar Rp. {{ $data->hargakontrak }} ({{ $data->hargaterbilang }}) yang diperoleh berdasarkan total harga penawaran terkoreksi aritmatik sebagaimana tercantum dalam Daftar Kuantitas dan Harga Penawaran. (Melalui koreksi aritmatik).
                                     </td>
