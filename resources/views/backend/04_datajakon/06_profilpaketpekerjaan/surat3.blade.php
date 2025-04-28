@@ -300,48 +300,48 @@
                             <tr>
                                 <td style="width: 40%; font-weight: bold; border: 1px solid black;">SURAT PERINTAH KERJA (SPK)</td>
                                 <td style="border: 1px solid black;">
-                                    SATUAN KERJA:<br> {{ $data->spk->satuankerja }}
+                                    SATUAN KERJA:<br> <b> {{ $data->spk->satuankerja }} </b>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="border: 1px solid black;"></td>
                                 <td style="border: 1px solid black;">
                                     NOMOR DAN TANGGAL SPK:<br>
-                                    Nomor: {{ $data->spk->nomorspk }}<br>
-                                    Tanggal: {{ $data->spk->tanggalspk }}
+                                    Nomor: <b> {{ $data->spk->nomorspk }} </b> <br>
+                                    Tanggal: <b> {{ $data->spk->tanggalspk }} </b>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold; border: 1px solid black;">NAMA PPK</td>
                                 <td style="border: 1px solid black; text-align:justify;" >
-                                    Nama: {{ $data->spk->namalengkapspk }}<br>
-                                    NIP: {{ $data->spk->nipspk }}<br>
-                                    Jabatan: Pejabat Pembuat Komitmen {{ $data->spk->spkppk }}<br>
-                                    Berkedudukan di: {{ $data->spk->berkedudukanspk }}<br>
-                                    Bertindak untuk dan atas nama Pemerintah {{ $data->spk->spkpemerintah }} Satuan Kerja {{ $data->spk->satuankerjaspk }}<br>
-                                    Berdasarkan Surat Keputusan {{ $data->spk->spkkeputusan }} Nomor {{ $data->spk->spknomorkeputusan }} Tanggal {{ $data->spk->spktanggalkeputusan }} Tentang Penunjukan Pejabat Pembuat Komitmen {{ $data->spk->spktanggalppk }} APBD-P Tahun {{ $data->spk->tahunanggaran1 }}
+                                    Nama: <b> {{ $data->spk->namalengkapspk }} </b><br>
+                                    NIP: <b> {{ $data->spk->nipspk }} </b><br>
+                                    Jabatan: Pejabat Pembuat Komitmen <b> {{ $data->spk->spkppk }} </b><br>
+                                    Berkedudukan di: <b> {{ $data->spk->berkedudukanspk }} </b><br>
+                                    Bertindak untuk dan atas nama Pemerintah <b> {{ $data->spk->spkpemerintah }} </b> Satuan Kerja <b> {{ $data->spk->satuankerjaspk }} </b><br>
+                                    Berdasarkan Surat Keputusan <b> {{ $data->spk->spkkeputusan }} </b> Nomor <b> {{ $data->spk->spknomorkeputusan }} </b> Tanggal <b> {{ $data->spk->spktanggalkeputusan }} </b> Tentang Penunjukan Pejabat Pembuat Komitmen <b> {{ $data->spk->spktanggalppk }} </b> APBD-P Tahun <b> {{ $data->spk->tahunanggaran1 }} </b>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold; border: 1px solid black;">NAMA PENYEDIA</td>
                                 <td style="border: 1px solid black;">
-                                    Nama: {{ $data->spk->namapenyedia }}<br>
-                                    Jabatan: {{ $data->spk->jabatanpenyedia }}<br>
-                                    Berkedudukan di: {{ $data->spk->berkedudukanpenyedia }}<br>
+                                    Nama: <b> {{ $data->spk->namapenyedia }} </b><br>
+                                    Jabatan: <b> {{ $data->spk->jabatanpenyedia }} </b><br>
+                                    Berkedudukan di: <b> {{ $data->spk->berkedudukanpenyedia }} </b><br>
                                     Akta Notaris:<br>
-                                    Nomor: {{ $data->spk->nomorpenyedia }}<br>
-                                    Tanggal: {{ $data->spk->tanggalpenyedia }}<br>
-                                    Notaris: {{ $data->spk->notarispenyedia }}<br>
-                                    Bertindak untuk dan atas nama: {{ $data->spk->atasnamapenyedia }}
+                                    Nomor: <b> {{ $data->spk->nomorpenyedia }} </b> <br>
+                                    Tanggal: <b> {{ $data->spk->tanggalpenyedia }} </b> <br>
+                                    Notaris: <b> {{ $data->spk->notarispenyedia }} </b> <br>
+                                    Bertindak untuk dan atas nama : <b> {{ $data->spk->atasnamapenyedia }} </b>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold; border: 1px solid black;">WAKIL SAH PPK</td>
                                 <td style="border: 1px solid black;">
                                     Wakil Sah Para Pihak sebagai berikut:<br>
-                                    Untuk PPK: {{ $data->spk->ppk1 }} - {{ $data->spk->ppk2 }}<br>
+                                    Untuk PPK : <b> {{ $data->spk->ppk1 }} - {{ $data->spk->ppk2 }} </b> <br>
                                     (Pejabat Pelaksana Teknis Kegiatan (PPTK), Tim Teknis, Konsultan Pengawas)<br>
-                                    Untuk Penyedia: {{ $data->spk->spkuntukpenyedia }} (Pelaksana Lapangan)
+                                    Untuk Penyedia: <b> {{ $data->spk->spkuntukpenyedia }} </b> (Pelaksana Lapangan)
                                 </td>
                             </tr>
                             <tr>
