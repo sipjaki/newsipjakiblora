@@ -289,7 +289,7 @@
                             </p>
 
                             <p>
-                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar Rp. {{ number_format($data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
+                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar Rp. {{ number_format((float)$data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
                             </p>
 
                             <p>
