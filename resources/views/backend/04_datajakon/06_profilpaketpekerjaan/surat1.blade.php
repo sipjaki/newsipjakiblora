@@ -153,7 +153,7 @@
 
                     <div class="container-surat">
                         <div class="header-surat">
-                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
+                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora" width="100px;">
                             <br>
                             <div class="header-text" style="font-family: 'Poppins', sans-serif;">
                                 <h3 style="font-family: 'Poppins';">PEMERINTAH KABUPATEN BLORA</h3>
