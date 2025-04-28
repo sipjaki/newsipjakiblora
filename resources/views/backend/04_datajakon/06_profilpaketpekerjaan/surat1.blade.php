@@ -272,12 +272,12 @@
 
                             <tr>
                                 <td>6.</td><td>Tanggal Mulai </td><td>:</td>
-                                <td>{{ $data->detailsnamapaketpekerjaan->tanggalmulai }}</td>
+                                <td>{{ \Carbon\Carbon::parse($data->detailsnamapaketpekerjaan->tanggalmulai)->translatedFormat('d F Y') }}</td>
                             </tr>
 
                             <tr>
                                 <td>7.</td><td>Tanggal Selesai </td><td>:</td>
-                                <td>{{ $data->detailsnamapaketpekerjaan->tanggalselesai }}</td>
+                                <td>{{ \Carbon\Carbon::parse($data->detailsnamapaketpekerjaan->tanggalselesai)->translatedFormat('d F Y') }}</td>
                             </tr>
 
                             <tr>
