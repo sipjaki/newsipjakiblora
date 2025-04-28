@@ -254,13 +254,16 @@
                                 <td>2.</td><td>Lokasi </td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->kecamatanblora->kecamatanblora ?? ' Belum Di Update'}}</td>
                             </tr>
                             <tr>
-                                <td></td><td>RT / RW</td><td>:</td><td></td>
+                                <td>3.</td><td>Nilai Kontrak</td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->nilaikontrak}}</td>
                             </tr>
                             <tr>
-                                <td></td><td>Kode Pos</td><td>:</td><td>58214</td>
+                                <td>4.</td><td>Nomor/Tanggal Kontrak</td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->tanggalkontrak}}</td>
                             </tr>
                             <tr>
-                                <td></td><td>Kelurahan</td><td>:</td><td>Jetis</td>
+                                <td>5.</td><td>Waktu Pelaksanaan </td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->waktupelaksanaan}}</td>
+                            </tr>
+                            <tr>
+                                <td></td><td>Terbilang </td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->waktupelaksanaan}}</td>
                             </tr>
                             <tr>
                                 <td></td><td>Kecamatan</td><td>:</td><td>Blora</td>
