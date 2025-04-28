@@ -386,7 +386,7 @@
 
     // Open a new window for downloading
     var printWindow = window.open('', '', 'height=800,width=600');
-    printWindow.document.write('<html><head><title>Surat Penunjukan</title>');
+    printWindow.document.write('<html><head><title>SPPBJ </title>');
     printWindow.document.write('<link rel="stylesheet" href="styles.css">');
     printWindow.document.write('</head><body>');
     printWindow.document.write(content);
