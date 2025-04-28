@@ -261,7 +261,7 @@
                             <table class="table-info">
                                 <table class="table-info">
                                     <tr>
-                                        <td class="label" style="width: 40px;">Nomor</td>
+                                        <td class="label" style="width: 200px;">Nomor</td>
                                         <td style="width: 10px;">:</td>
                                         <td class="value">{{ $data->sppbj->nomor }}</td>
                                         <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
