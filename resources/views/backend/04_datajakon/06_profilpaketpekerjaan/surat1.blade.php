@@ -266,43 +266,9 @@
                             </tr>
 
                             <tr>
-                                <td></td>
-                                <td>Terbilang</td>
-                                <td>:</td>
-                                <td id="terbilang">...</td>
+                                <td></td><td>Terbilang </td><td>:</td>
+                                <td>{{ terbilang($data->detailsnamapaketpekerjaan->terbilanghari) }}</td>
                             </tr>
-
-                            <script>
-                                function terbilang(angka) {
-                                    var bilangan = [
-                                        '', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan',
-                                        'sepuluh', 'sebelas'
-                                    ];
-                                    var hasil = '';
-                                    if (angka < 12) {
-                                        hasil = bilangan[angka];
-                                    } else if (angka < 20) {
-                                        hasil = 'se' + bilangan[angka - 10];
-                                    } else if (angka < 100) {
-                                        hasil = bilangan[Math.floor(angka / 10)] + ' puluh ' + bilangan[angka % 10];
-                                    } else if (angka < 200) {
-                                        hasil = 'seratus ' + terbilang(angka - 100);
-                                    } else if (angka < 1000) {
-                                        hasil = bilangan[Math.floor(angka / 100)] + ' ratus ' + terbilang(angka % 100);
-                                    } else if (angka < 1000000) {
-                                        hasil = terbilang(Math.floor(angka / 1000)) + ' ribu ' + terbilang(angka % 1000);
-                                    } else if (angka < 1000000000) {
-                                        hasil = terbilang(Math.floor(angka / 1000000)) + ' juta ' + terbilang(angka % 1000000);
-                                    }
-                                    return hasil.trim();
-                                }
-
-                                // Pastikan angka yang diambil dari Laravel dimasukkan dengan benar ke dalam JavaScript
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    var angka = {{ $data->detailsnamapaketpekerjaan->waktupelaksanaan }}; // Laravel value (number)
-                                    document.getElementById('terbilang').innerHTML = terbilang(angka) + " Hari Kalender";
-                                });
-                            </script>
 
                             <tr>
                                 <td></td><td>Kecamatan</td><td>:</td><td>Blora</td>
