@@ -58847,7 +58847,7 @@ for ($i = 1; $i <= 1221; $i++) {
 for ($i = 1; $i <= 1221; $i++) {
     detailsnamapaketpekerjaan::create([
         'id' => $i,
-        'kecamatanblora_id' => 1, // Menjaga _id tetap kosong
+        'kecamatanblora_id' => null, // Menjaga _id tetap kosong
         'sumberdana_id' => 2, // Nilai statis untuk sumberdana_id
         'namapaket' => 'Nama Paket ' . $i, // Menggunakan format angka untuk nama paket
         'nilaikontrak' => rand(100000, 1000000), // Nilai kontrak acak antara 100000 dan 1000000
