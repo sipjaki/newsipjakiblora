@@ -321,7 +321,7 @@
                                 <div style="margin-top: 10px;">
                                     @if($data->uploadtandatangan && file_exists(public_path('storage/' . $data->uploadtandatangan)))
                                         <!-- Menampilkan gambar dari storage -->
-                                        <img src="{{ asset('storage/' . $data->uploadtandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        <img src="{{ asset('storage/' . $data->uploadtandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 200px; object-fit: contain;" loading="lazy">
                                     @elseif($data->uploadtandatangan)
                                         <!-- Menampilkan gambar dari path luar storage -->
                                         <img src="{{ asset($data->uploadtandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
