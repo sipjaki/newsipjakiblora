@@ -344,6 +344,15 @@
                                     Untuk Penyedia: {{ $data->spkuntukpenyedia }} (Pelaksana Lapangan)
                                 </td>
                             </tr>
+                            <tr>
+                                <td style="font-weight: bold; border: 1px solid black;">PAKET PEKERJAAN </td>
+                                <td style="border: 1px solid black;">
+                                    NOMOR BERITA ACARA HASIL PENGADAAN LANGSUNG::<br>
+                                    nOMOR BERITA <br>
+                                    TANGGAL BERITA ACARA HASIL PENGADAAN LANGSUNG: <br>
+                                    TANGGAL BERITA ACARA
+                                </td>
+                            </tr>
                         </table>
 
                     </div>
