@@ -280,9 +280,14 @@
                                     <td>:</td>
                                     <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
                                 </tr>
-                            </table>
 
-                            <h4>Perihal: Penunjukan Penyedia untuk Pelaksanaan Paket Pekerjaan {{ $data->sppbj->perihal1 }}</h4>
+                                <tr>
+                                    <td>Perihal</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->sppbj->perihal1 }}</td>
+                                </tr>
+
+                            </table>
 
                             <p>
                                 Dengan ini kami beritahukan bahwa penawaran Saudara nomor {{ $data->sppbj->nomorkontrak }} tanggal {{ \Carbon\Carbon::parse($data->sppbj->tanggal)->translatedFormat('d F Y') }} perihal Nomor : {{ $data->sppbj->perihalnomor }} Penawaran Pekerjaan {{ $data->sppbj->penawaran }} dengan [nilai penawaran/penawaran terkoreksi] sebesar Rp. {{ number_format((float)$data->sppbj->hargaterkoreksi, 0, ',', '.') }} ({{ $data->sppbj->hargaterbilang }}) kami nyatakan diterima/disetujui.
