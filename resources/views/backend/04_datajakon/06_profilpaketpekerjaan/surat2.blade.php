@@ -96,9 +96,6 @@
     text-align: left;
     font-family: 'Times New Roman', Times, serif;
 
-    margin: 0;
-    padding: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertikal tengah dalam flexbox */
@@ -322,9 +319,9 @@
                             <div class="tanda-tangan">
                                 <p>Pejabat Penandatangan Kontrak</p>
                                 <br><br><br>
-                                <p><b>{{ $data->sppbj->namalengkap }}</b></p>
-                                <p>{{ $data->sppbj->jabatan }}</p>
-                                <p>NIP. {{ $data->sppbj->nip }}</p>
+                                <p style="margin: 0; padding: 0;"><b>{{ $data->sppbj->namalengkap }}</b></p>
+                                <p style="margin: 0; padding: 0;">{{ $data->sppbj->jabatan }}</p>
+                                <p style="margin: 0; padding: 0;">NIP. {{ $data->sppbj->nip }}</p>
                             </div>
                         </div>
                     </div>
