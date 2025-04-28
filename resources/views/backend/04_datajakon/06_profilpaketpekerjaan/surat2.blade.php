@@ -244,8 +244,13 @@
                                             <!-- Button to Download -->
 
                                     <!-- Tombol Download -->
-                                    <button onclick="generatePDF()" class="download-btn">
-                                        <i class="bi bi-file-pdf"></i> Download PDF
+                                    <button onclick="generatePDF()"  onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                                    style="background-color: #e49e07; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-pdf" viewBox="0 0 16 16">
+                                        <path d="M5.5 0h5A1.5 1.5 0 0 1 12 1.5v13A1.5 1.5 0 0 1 10.5 16h-5A1.5 1.5 0 0 1 4 14.5V1.5A1.5 1.5 0 0 1 5.5 0zM10 1v14H6V1h4z"/>
+                                    </svg>
+                                    Download PDF
                                     </button>
 
                         <a href="/bepekerjaandetailsupdate/{id}">
