@@ -15,6 +15,6 @@ class materipelatihan extends Model
 
     public function agendapelatihan()
     {
-        return $this->hasMany(agendapelatihan::class);
+        return $this->hasMany(agendapelatihan::class, 'agendapelatihan_id');
     }
 }

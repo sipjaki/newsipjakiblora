@@ -40,7 +40,7 @@ ul.list-unstyled {
 
 	<div class="main-menu sticky-header" style="background: #1d1d1b">
     <br>
-                <div class="header-container" style="margin-bottom:-25px; margin-top:-20px;">
+                <div class="header-container" style="margin-bottom:-25px; margin-top:-10px;">
                     <img src="/assets/icon/logokabupatenblora.png" alt="Logo PUPR" class="header-logo" width="20%" loading="lazy">
                     <img src="/assets/icon/pupr.png" alt="Logo PUPR" class="header-logo" width="20%" loading="lazy">
                     <div class="header-text">

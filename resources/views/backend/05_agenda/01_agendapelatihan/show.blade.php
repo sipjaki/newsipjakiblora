@@ -14,6 +14,9 @@
 
       <!--begin::App Main-->
       <main class="app-main">
+        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
+
         <!--begin::App Content Header-->
         <div class="app-content-header">
           <!--begin::Container-->
@@ -21,7 +24,8 @@
             <!--begin::Row-->
             <div class="row">
 
-              <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+                @include('backend.00_administrator.00_baganterpisah.11_alert')
 
             </div>
             <!--end::Row-->
@@ -31,13 +35,6 @@
 
         <br>
         <!-- Menampilkan pesan sukses -->
-
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
-
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
 
             <!-- Menyertakan FontAwesome untuk ikon -->
 
@@ -124,6 +121,8 @@
                                 <!--begin::Body-->
                                 <div class="card-body">
                                     <div class="row">
+                                        @include('backend.00_administrator.00_baganterpisah.14_judulshow')
+
                                         <!-- Left Column (6/12) -->
                                         <div class="col-md-6">
                                             <div class="mb-3">
@@ -192,15 +191,23 @@
                                                 <input class="form-control" value="{{$data->isiagenda}}" readonly/>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid rounded" alt="Foto" width="250">
-                                            </div>
 
                                             <div class="mb-3">
-                                                <a href="{{ asset('storage/' . $data->materi) }}" class="btn btn-primary" target="_blank">
-                                                    <i class="bi bi-file-earmark-text"></i> Lihat Materi
-                                                </a>
+                                                <div style="margin-top: 10px;">
+                                                    @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                                        <!-- Menampilkan gambar dari storage -->
+                                                        <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    @elseif($data->foto)
+                                                        <!-- Menampilkan gambar dari path luar storage -->
+                                                        <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                    @else
+                                                        <!-- Placeholder jika tidak ada data -->
+                                                        <p>Data belum diupdate</p>
+                                                    @endif
+                                                </div>
                                             </div>
+
+
                                         </div>
                                                                             </div> <!-- end row -->
                                 </div>
@@ -220,20 +227,28 @@
                             onmouseout="this.style.backgroundColor='#22C55E'; this.style.color='white';"
                             style="background-color: #22C55E; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                             <!-- Ikon Kembali -->
-                            <i class="fa fa-file" style="margin-right: 8px;"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 384 512" fill="white" style="margin-right: 8px;">
+                                <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM384 121.9V128H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/>
+                            </svg>
                             Update
                         </button>
                         </a>
-                        <a href="/beagendapelatihan">
-                            <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                            style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Kembali -->
-                            <i class="fa fa-arrow-left" style="margin-right: 8px;"></i>
-                            Kembali
-                        </button>
-                    </a>
+                        <button
+                        onclick="window.history.back();"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                               transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                            </svg>
+                        Kembali
+
+
+                    </button>
+
                 </div>
 
                     </div>
@@ -247,7 +262,8 @@
         <!--end::App Content Header-->
         <!--begin::App Content-->
           <!--end::App Content-->
-      </main>
+    </section>
+        </main>
       <!--end::App Main-->
     </div>
     </div>

@@ -810,6 +810,10 @@ Route::get('/beagendapelatihanpeserta/show/{namakegiatan}', [PembinaanController
 Route::get('/beagendapelatihan/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshow'])->middleware('auth');
 Route::delete('/beagendapelatihanpeserta/delete/{id}', [PembinaanController::class, 'beagendapelatihanpesertadelete'])->middleware('auth');
 Route::delete('/beagendapelatihan/delete/{namakegiatan}', [PembinaanController::class, 'beagendapelatihandelete'])->middleware('auth');
+
+Route::get('/beagendapelatihanmateri', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth');
+
+
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 02 PESERTA PELATIHAN   -----------------------------------------------------

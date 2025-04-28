@@ -244,7 +244,7 @@ headerberanda::create([
             'username' => 'Sigit',
             'statusadmin_id' => '1',
             'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sigitseptiadi1@gmail.com',
+            'email' => 'sigitseptiadi99@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
@@ -551,7 +551,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 5,
-            'name'  => 'Sigit Septiadi',
+            'name'  => 'Sigit Supplier Peralatan',
             'username' => 'Sup Peralatan ',
             'statusadmin_id' => '4',
             'avatar' => 'user/avatar/sigit.jpg',
@@ -561,7 +561,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 6,
-            'name'  => 'Sigit Septiadi',
+            'name'  => 'Sigit Supp Bangunan',
             'username' => 'Sup Bangunan',
             'statusadmin_id' => '5',
             'avatar' => 'user/avatar/sigit.jpg',
@@ -571,7 +571,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 7,
-            'name'  => 'Sigit Septiadi',
+            'name'  => 'Sigit LSP Penerbit',
             'username' => 'LSP Penerbit',
             'statusadmin_id' => '6',
             'avatar' => 'user/avatar/sigit.jpg',
@@ -618,8 +618,6 @@ headerberanda::create([
             'email' => 'maryananindah@gmail.com',
             'password' => bcrypt('indahadnmin123$$')
         ]);
-
-
 
 
         // =================================================================
