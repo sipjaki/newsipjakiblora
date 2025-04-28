@@ -185,7 +185,7 @@ class PaketpekerjaanmasjakiController extends Controller
             $user = Auth::user();
 
             // Kirim variabel ke view
-            return view('backend.04_datajakon.06_profilpaketpekerjaan.index', [
+            return view('backend.04_datajakon.06_profilpaketpekerjaan.surat1', [
                 'title' => 'Details Paket Pekerjaan',
                 'data' => $datapaketpekerjaan,
                 'user' => $user,
