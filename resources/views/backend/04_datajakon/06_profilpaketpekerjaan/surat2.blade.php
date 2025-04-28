@@ -25,6 +25,8 @@
         padding: 40px;
         border: 1px solid black;
         background-color: #fff;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
     }
 
     .header-surat {
@@ -60,35 +62,41 @@
         margin: 10px 0 20px 0;
     }
 
+    .body-surat {
+        margin-top: 20px;
+    }
+
+    .table-info {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .table-info td {
+        vertical-align: top;
+        padding: 4px;
+    }
+
     h4 {
         margin-top: 20px;
         font-size: 16px;
         font-weight: bold;
+        text-decoration: underline;
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
+    .body-surat p {
+        text-align: justify;
+        margin-bottom: 10px;
     }
 
-    table td {
-        padding: 6px 4px;
-        vertical-align: top;
-        font-size: 15px;
-        border-bottom: 1px solid #ccc;
+    .tanda-tangan {
+        width: 300px;
+        text-align: left;
+        float: right;
+        margin-top: 40px;
     }
+    </style>
 
-    table td:nth-child(1),
-    table td:nth-child(2),
-    table td:nth-child(3) {
-        width: 5%;
-    }
-
-    table td:nth-child(4) {
-        width: 80%;
-    }
-</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -241,8 +249,7 @@
                             <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
                             <div class="header-text">
                                 <h3>PEMERINTAH KABUPATEN BLORA</h3>
-                                <h3 style="text-transform: uppercase;">{{$data->user->name}}</h3>
-                                {{-- <p>{{$data->user->alamat}}</p> --}}
+                                <h3 style="text-transform: uppercase;">{{ $data->user->name }}</h3>
                                 <p>Alamat Otomatis</p>
                                 <h3>BLORA 58214</h3>
                             </div>
@@ -250,60 +257,60 @@
 
                         <div class="line-separator"></div>
 
-                        <h5 style="text-align:center; margin-bottom: 10px;"><span style="font-size: 14px;">INFORMASI PROFIL PAKET PEKERJAAN</span></h5>
+                        <div class="body-surat">
+                            <table class="table-info">
+                                <tr>
+                                    <td style="width: 20%;">Nomor</td>
+                                    <td style="width: 2%;">:</td>
+                                    <td>{{ $data->nomor }}</td>
+                                    <td style="text-align: right;">Blora, {{ \Carbon\Carbon::parse($data->koptanggal)->translatedFormat('d F Y') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Lampiran</td>
+                                    <td>:</td>
+                                    <td colspan="2">- {{ $data->lampiran }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Kepada Yth.</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->kepadayth }}</td>
+                                </tr>
+                                <tr>
+                                    <td>di</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->alamatdi }}</td>
+                                </tr>
+                            </table>
 
-                        <table>
-                            <tr>
-                                <td style="width: 25px;">1.</td><td style="width: 300px;">Nama Paket Pekerjaan</td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->namapaket}}</td>
-                            </tr>
-                            <tr>
-                                <td>2.</td><td>Lokasi </td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->kecamatanblora->kecamatanblora ?? ' Belum Di Update'}}</td>
-                            </tr>
-                            <tr>
-                                <td>3.</td><td>Nilai Kontrak</td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->nilaikontrak}}</td>
-                            </tr>
-                            <tr>
-                                <td>4.</td><td>Nomor/Tanggal Kontrak</td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->tanggalkontrak}}</td>
-                            </tr>
+                            <h4>Perihal: Penunjukan Penyedia untuk Pelaksanaan Paket Pekerjaan {{ $data->perihal1 }}</h4>
 
-                            <tr>
-                                <td>5.</td><td>Lama Pelaksanaan </td><td>:</td>
-                                <td>{{$data->detailsnamapaketpekerjaan->waktupelaksanaan }} Hari Kalender</td>
-                            </tr>
+                            <p>
+                                Dengan ini kami beritahukan bahwa penawaran Saudara nomor {{ $data->nomorkontrak }} tanggal {{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('d F Y') }} perihal Nomor : {{ $data->perihalnomor }} Penawaran Pekerjaan {{ $data->penawaran }} dengan [nilai penawaran/penawaran terkoreksi] sebesar Rp. {{ number_format($data->hargaterkoreksi, 0, ',', '.') }} ({{ $data->hargaterbilang }}) kami nyatakan diterima/disetujui.
+                            </p>
 
-                            <tr>
-                                <td></td><td>Terbilang </td><td>:</td>
-                                <td>{{ $data->detailsnamapaketpekerjaan->terbilanghari }}</td>
-                            </tr>
+                            <p>
+                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar Rp. {{ number_format($data->dp, 0, ',', '.') }} ({{ $data->terbilang }}) [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama {{ $data->berlaku }} ({{ $data->terbilangberlaku }}) hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
+                            </p>
 
-                            <tr>
-                                <td>6.</td><td>Tanggal Mulai </td><td>:</td>
-                                <td>{{ \Carbon\Carbon::parse($data->detailsnamapaketpekerjaan->tanggalmulai)->translatedFormat('d F Y') }}</td>
-                            </tr>
+                            <p>
+                                Kegagalan Saudara untuk menerima penunjukan ini yang disusun berdasarkan evaluasi terhadap penawaran Saudara, akan dikenakan sanksi sesuai ketentuan dalam Peraturan Perundangan terkait tentang Pengadaan Barang/Jasa Pemerintah beserta petunjuk teknisnya.
+                            </p>
 
-                            <tr>
-                                <td>7.</td><td>Tanggal Selesai </td><td>:</td>
-                                <td>{{ \Carbon\Carbon::parse($data->detailsnamapaketpekerjaan->tanggalselesai)->translatedFormat('d F Y') }}</td>
-                            </tr>
+                            <br>
 
-                            <tr>
-                                <td>7.</td><td>Penyedia Jasa </td><td>:</td>
-                                <td>{{ $data->detailsnamapaketpekerjaan->penyediajasa }}</td>
-                            </tr>
+                            <p>
+                                Kegiatan/Satuan Kerja: <b>{{ $data->kegiatansatuan }}</b>
+                            </p>
 
-                            <tr>
-                                <td>7.</td><td>Penyedia Jasa </td><td>:</td>
-                                <td>{{ $data->detailsnamapaketpekerjaan->sumberdana->sumberdana }}</td>
-                            </tr>
-
-                            <tr>
-                                <td>8.</td><td>Konsultan Pengawas</td><td>:</td>
-                                <td>{{ $data->detailsnamapaketpekerjaan->konsultanpengawas }}</td>
-                            </tr>
-
-                        </table>
+                            <div class="tanda-tangan">
+                                <p>Pejabat Penandatangan Kontrak</p>
+                                <br><br><br>
+                                <p><b>{{ $data->namalengkap }}</b></p>
+                                <p>{{ $data->jabatan }}</p>
+                                <p>NIP. {{ $data->nip }}</p>
+                            </div>
+                        </div>
                     </div>
-
 
                  <br><br>
 
