@@ -235,7 +235,7 @@
                             <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
                             <div class="header-text">
                                 <h3>PEMERINTAH KABUPATEN BLORA</h3>
-                                <h3>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+                                <h3 style="text-transform: uppercase;">{{$data->user->name}}</h3>
                                 <p>Jl. Nusantara No. 62 Telp. (0296) 531004</p>
                                 <h3>BLORA 58214</h3>
                             </div>
