@@ -19,87 +19,67 @@
 </style>
 
 <style>
+    /* Menambahkan border di sekitar seluruh surat */
     .container-surat {
-        width: 800px;
-        margin: 30px auto;
-        padding: 40px;
-        border: 1px solid black;
-        background-color: #fff;
+        border: 1px solid black; /* Membuat kotak di sekitar surat */
+        padding: 20px; /* Memberikan ruang di dalam kotak */
         font-family: 'Times New Roman', Times, serif;
-        font-size: 15px;
+        display: flex;
+        flex-direction: column;
     }
 
+    /* Header surat tetap berada di dalam kotak */
     .header-surat {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 10px;
+        justify-content: space-between;
+        margin-bottom: 20px;
     }
 
-    .header-surat img {
-        width: 90px;
-        height: 90px;
-        margin-right: 20px;
-    }
-
-    .header-text {
-        text-align: center;
-        flex: 1;
-    }
-
+    /* Memberikan jarak antara elemen header */
     .header-text h3 {
-        margin: 3px 0;
-        font-size: 18px;
+        margin: 5px 0;
     }
 
-    .header-text p {
-        margin: 2px 0;
-        font-size: 14px;
-    }
-
-    .line-separator {
-        border-top: 3px solid black;
-        margin: 10px 0 20px 0;
-    }
-
+    /* Memastikan bahwa teks di body surat rapi */
     .body-surat {
         margin-top: 20px;
+        display: flex;
+        flex-direction: column;
     }
 
+    /* Memberikan border dan padding pada tabel */
     .table-info {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 10px;
     }
 
     .table-info td {
+        padding: 5px 10px;
         vertical-align: top;
-        padding: 4px;
     }
 
-    h4 {
-        margin-top: 20px;
-        font-size: 16px;
+    .table-info .label {
+        width: 150px;
         font-weight: bold;
-        text-decoration: underline;
     }
 
-    .body-surat p {
-        text-align: justify;
-        margin-bottom: 10px;
+    .line-separator {
+        border-top: 1px solid black;
+        margin: 20px 0;
     }
 
+    /* Mengatur posisi tanda tangan dalam kotak dan di kanan */
     .tanda-tangan {
-        text-align: center;  /* Memastikan teks tanda tangan di tengah */
-        float: right;        /* Memindahkan tanda tangan ke kanan */
-        margin-top: 50px;    /* Memberikan jarak dari isi surat sebelumnya */
-        width: 40%;          /* Mengatur lebar tanda tangan agar tidak terlalu lebar */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Posisi tanda tangan di kanan */
+        margin-top: 30px;
     }
 
     .tanda-tangan p {
         margin: 5px 0;
     }
-    </style>
+</style>
 
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
@@ -263,35 +243,32 @@
 
                         <div class="body-surat">
                             <table class="table-info">
-                                <table class="table-info">
-                                    <tr>
-                                        <td class="label" style="width: 150px;">Nomor</td>
-                                        <td style="width: 10px;">:</td>
-                                        <td class="value">{{ $data->sppbj->nomor }}</td>
-                                        <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Lampiran</td>
-                                        <td>:</td>
-                                        <td colb="2">- {{ $data->sppbj->lampiran }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Kepada Yth.</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->kepadayth }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">di</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->alamatdi }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Perihal</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->perihal1 }}</td>
-                                    </tr>
-                                </table>
-
+                                <tr>
+                                    <td class="label">Nomor</td>
+                                    <td>:</td>
+                                    <td class="value">{{ $data->sppbj->nomor }}</td>
+                                    <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Lampiran</td>
+                                    <td>:</td>
+                                    <td colspan="2">- {{ $data->sppbj->lampiran }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Kepada Yth.</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->sppbj->kepadayth }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">di</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Perihal</td>
+                                    <td>:</td>
+                                    <td colspan="2">{{ $data->sppbj->perihal1 }}</td>
+                                </tr>
                             </table>
 
                             <p>
@@ -312,6 +289,7 @@
                                 Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
                             </p>
 
+                            <!-- Tanda tangan dimasukkan ke dalam container-surat dan diposisikan di kanan dan dalam kotak -->
                             <div class="tanda-tangan">
                                 <p>Pejabat Penandatangan Kontrak</p>
                                 <br><br><br>
@@ -319,6 +297,7 @@
                                 <p>{{ $data->sppbj->jabatan }}</p>
                                 <p>NIP. {{ $data->sppbj->nip }}</p>
                             </div>
+
                         </div>
                     </div>
 
