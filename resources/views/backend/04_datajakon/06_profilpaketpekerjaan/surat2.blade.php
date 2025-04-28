@@ -245,10 +245,11 @@
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                                             <!-- Button to Download -->
-                            <button id="downloadButton" class="download-btn">
-                                <img src="/assets/icon/download-icon.png" alt="Download Icon" class="download-icon">
-                                Download Surat
-                            </button>
+
+                                    <!-- Tombol Download -->
+                                    <button onclick="generatePDF()" class="download-btn">
+                                        <i class="bi bi-file-pdf"></i> Download PDF
+                                    </button>
 
                         <a href="/bepekerjaandetailsupdate/{id}">
                                 <button
@@ -375,10 +376,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<!-- Tombol Download -->
-<button onclick="generatePDF()" class="download-btn">
-    <i class="bi bi-file-pdf"></i> Download PDF
-</button>
 
 
 <script>
