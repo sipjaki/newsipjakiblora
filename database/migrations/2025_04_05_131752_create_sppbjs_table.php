@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('sppbjs', function (Blueprint $table) {
             $table->id();
 
-            $table->string('nomor')->nullable();
-            $table->date('koptanggal')->nullable();
-            $table->string('lampiran')->nullable();
-            $table->string('kepadayth')->nullable();
-            $table->string('alamatdi')->nullable();
-            $table->string('perihal1')->nullable();
-            $table->string('nomorkontrak')->nullable();
+            $table->string('nomor')->nullable(); // ada
+            $table->date('koptanggal')->nullable(); // ada
+            $table->string('lampiran')->nullable(); // ada
+            $table->string('kepadayth')->nullable(); // ada
+            $table->string('alamatdi')->nullable(); // ada
+            $table->string('perihal1')->nullable(); // ada
+            $table->string('nomorkontrak')->nullable(); // ada
             $table->date('tanggal')->nullable();
             $table->string('perihalnomor')->nullable();
             $table->string('penawaran')->nullable();
