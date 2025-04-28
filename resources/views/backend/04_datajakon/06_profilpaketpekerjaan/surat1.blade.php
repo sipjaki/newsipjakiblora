@@ -247,7 +247,7 @@
 
                         <table>
                             <tr>
-                                <td style="width: 25px;">1.</td><td style="width: 300px;">Nama Paket Pekerjaan</td><td>:</td><td>{{$data->user->name}}</td>
+                                <td style="width: 25px;">1.</td><td style="width: 300px;">Nama Paket Pekerjaan</td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->namapaket}}</td>
                             </tr>
                             <tr>
                                 <td>2.</td><td>Alamat OPD</td><td>:</td><td>Jl. Nusantara No. 62</td>
