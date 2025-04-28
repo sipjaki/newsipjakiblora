@@ -69,7 +69,7 @@
     .table-info {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .table-info td {
@@ -262,7 +262,7 @@
                                 <table class="table-info">
                                     <tr>
                                         <td class="label">Nomor</td>
-                                        <td>:</td>
+                                        <td style="width: 10px;">:</td>
                                         <td class="value">{{ $data->sppbj->nomor }}</td>
                                         <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
                                     </tr>
