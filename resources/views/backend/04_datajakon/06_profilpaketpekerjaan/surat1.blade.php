@@ -274,21 +274,27 @@
                                 <td>6.</td><td>Tanggal Mulai </td><td>:</td>
                                 <td>{{ $data->detailsnamapaketpekerjaan->tanggalmulai }}</td>
                             </tr>
+
                             <tr>
-                                <td></td><td>Kota</td><td>:</td><td>Blora</td>
+                                <td>7.</td><td>Tanggal Selesai </td><td>:</td>
+                                <td>{{ $data->detailsnamapaketpekerjaan->tanggalselesai }}</td>
                             </tr>
+
                             <tr>
-                                <td></td><td>Provinsi</td><td>:</td><td>Jawa Tengah</td>
+                                <td>7.</td><td>Penyedia Jasa </td><td>:</td>
+                                <td>{{ $data->detailsnamapaketpekerjaan->penyediajasa }}</td>
                             </tr>
+
                             <tr>
-                                <td></td><td>Negara</td><td>:</td><td>Indonesia</td>
+                                <td>7.</td><td>Penyedia Jasa </td><td>:</td>
+                                <td>{{ $data->detailsnamapaketpekerjaan->sumberdana->sumberdana }}</td>
                             </tr>
+
                             <tr>
-                                <td>3.</td><td>Posisi Geografis</td><td>:</td><td>-6.976853 Lintang, 111.410894 Bujur</td>
+                                <td>8.</td><td>Konsultan Pengawas</td><td>:</td>
+                                <td>{{ $data->detailsnamapaketpekerjaan->konsultanpengawas }}</td>
                             </tr>
-                            <tr>
-                                <td>4.</td><td>Tipe Dinas</td><td>:</td><td>B</td>
-                            </tr>
+
                         </table>
                     </div>
 
