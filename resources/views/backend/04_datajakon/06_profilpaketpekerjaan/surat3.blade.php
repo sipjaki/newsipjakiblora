@@ -394,7 +394,7 @@
             pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, pageHeight);
 
             // Download PDF
-            pdf.save('surat-sppbj.pdf');
+            pdf.save('surat-spk.pdf');
         }).catch(error => {
             console.error('Error generating PDF:', error);
         });
