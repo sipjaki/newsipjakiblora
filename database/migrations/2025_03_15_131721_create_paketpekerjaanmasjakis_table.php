@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('paketpekerjaanmasjakis', function (Blueprint $table) {
             $table->id();
             // ----------------------------------------------------------------
-            $table->foreignId('detailspaketpekerjaan_id')->nullable();
             $table->foreignId('detailsnamapaketpekerjaan_id')->nullable();
+            $table->foreignId('detailspaketpekerjaan_id')->nullable();
             $table->foreignId('sppbj_id')->nullable();
             $table->foreignId('spk_id')->nullable();
             $table->foreignId('sskk_id')->nullable();

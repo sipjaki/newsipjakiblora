@@ -243,9 +243,7 @@
 
                         <div class="line-separator"></div>
 
-                        <h3 style="text-align:center; margin-bottom: 10px;">INFORMASI PROFIL PAKET PEKERJAAN</h3>
-
-                        <h4>I. IDENTITAS OPD</h4>
+                        <h5 style="text-align:center; margin-bottom: 10px;">INFORMASI PROFIL PAKET PEKERJAAN</h5>
 
                         <table>
                             <tr>
