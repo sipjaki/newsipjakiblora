@@ -83,7 +83,7 @@
                             onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
                             style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                             <!-- Ikon Jenis Pekerjaan -->
-                            <i class="fa fa-briefcase" style="margin-right: 8px;"></i>
+                            <i class="bi bi-briefcase" style="margin-right: 8px;"></i>
                             Jenis Pekerjaan
                         </button>
                     </a>
@@ -94,7 +94,7 @@
                             onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
                             style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                             <!-- Ikon Status Pekerjaan -->
-                            <i class="fa fa-tasks" style="margin-right: 8px;"></i>
+                            <i class="bi bi-kanban" style="margin-right: 8px;"></i>
                             Status Pekerjaan
                         </button>
                     </a>
@@ -105,7 +105,7 @@
                             onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
                             style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                             <!-- Ikon Sumber Dana -->
-                            <i class="fa fa-wallet" style="margin-right: 8px;"></i>
+                            <i class="bi bi-cash-stack" style="margin-right: 8px;"></i>
                             Sumber Dana
                         </button>
                     </a>
@@ -116,7 +116,7 @@
                             onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
                             style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                             <!-- Ikon Tahun Pelaksanaan -->
-                            <i class="fa fa-calendar-alt" style="margin-right: 8px;"></i>
+                            <i class="bi bi-calendar-event" style="margin-right: 8px;"></i>
                             Tahun Pelaksanaan
                         </button>
                     </a>
