@@ -19,6 +19,38 @@
 </style>
 
 <style>
+    /* Style Tombol Download */
+    #downloadBtn {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: 0.3s;
+        margin: 20px 0;
+    }
+
+    #downloadBtn:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid red;
+    }
+
+    /* Style Container Surat */
+    #container-surat {
+        width: 210mm;   /* Lebar A4 */
+        min-height: 297mm; /* Tinggi A4 */
+        padding: 20mm;
+        background: white;
+        font-family: Arial, sans-serif;
+        color: black;
+        box-sizing: border-box;
+    }
+    </style>
+
+<style>
     .container-surat {
         width: 800px;
         margin: 30px auto;
@@ -220,7 +252,7 @@
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
+                        <button id="downloadBtn">Download Surat PDF</button>
                             <a href="/bepekerjaandetailsupdate/{id}">
                                 <button
                                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -340,43 +372,20 @@
 
                  <br><br>
 <!-- Tombol Download -->
-<button id="downloadBtn" style="
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-">
-    Download Surat (PDF)
-</button>
-
-<!-- Script html2pdf.js (CDN) -->
+<!-- Tambah Library html2pdf -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+<!-- Script Download -->
 <script>
-    // Ganti style button saat hover
-    const downloadBtn = document.getElementById('downloadBtn');
-    downloadBtn.addEventListener('mouseover', function() {
-        downloadBtn.style.backgroundColor = 'white';
-        downloadBtn.style.color = 'black';
-    });
-    downloadBtn.addEventListener('mouseout', function() {
-        downloadBtn.style.backgroundColor = 'red';
-        downloadBtn.style.color = 'white';
-    });
-
-    // Fungsi download
-    downloadBtn.addEventListener('click', function() {
-        var element = document.querySelector('.container-surat'); // Pilih div yang mau didownload
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+        var element = document.getElementById('container-surat');
 
         var opt = {
-            margin:       0.5, // Margin (dalam inch)
-            filename:     'Surat_SPPBJ.pdf', // Nama file download
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' } // Ukuran A4
+            margin:       [10, 10, 10, 10],  // mm
+            filename:     'Surat_SPPBJ.pdf',
+            image:        { type: 'jpeg', quality: 1 },
+            html2canvas:  { scale: 4, useCORS: true },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
         html2pdf().from(element).set(opt).save();
