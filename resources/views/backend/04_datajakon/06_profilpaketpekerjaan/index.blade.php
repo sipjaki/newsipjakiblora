@@ -257,9 +257,36 @@
             {{ \Carbon\Carbon::createFromDate(null, $item->bulanselesai, 1)->translatedFormat('F Y') }}
         </td>
 
-         <td style="text-align: center;">
-            <button class="btn btn-sm">{{$item->bulanrekap->bulanrekap}}</button>
-        </td>
+        @php
+        $bulanColors = [
+            1 => '#FF6B6B',   // Januari
+            2 => '#FFA94D',   // Februari
+            3 => '#FFD43B',   // Maret
+            4 => '#69DB7C',   // April
+            5 => '#38D9A9',   // Mei
+            6 => '#4DABF7',   // Juni
+            7 => '#5C7CFA',   // Juli
+            8 => '#9775FA',   // Agustus
+            9 => '#DA77F2',   // September
+            10 => '#F783AC',  // Oktober
+            11 => '#FF922B',  // November
+            12 => '#74C0FC',  // Desember
+            13 => '#20C997',  // Selesai
+        ];
+
+        $id = $item->bulanrekap->id; // Pastikan ambil ID yang benar
+        $bgColor = $bulanColors[$id] ?? '#6c757d'; // fallback warna abu
+    @endphp
+
+    <td style="text-align: center;">
+        <button class="btn btn-sm"
+            style="background-color: {{ $bgColor }}; color: white; border: none; transition: 0.3s;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='{{ $bgColor }}'; this.style.color='white';">
+            {{ $item->bulanrekap->bulanrekap }}
+        </button>
+    </td>
+
 
 <td style="text-align: left;">
     <div style="width: 100%; background-color: #ddd; border-radius: 10px; height: 20px; position: relative;">
