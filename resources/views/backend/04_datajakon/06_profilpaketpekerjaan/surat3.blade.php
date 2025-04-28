@@ -367,7 +367,7 @@
                                 <tr>
                                     <td style="border: 1px solid black; padding: 8px;">
                                         <b>SUMBER DANA</b><br>
-                                        {{ $data->sumberdana_id }} DPA nomor: {{ $data->spk->nomordpa }} Tahun Anggaran {{ $data->spk->tahunpilihan_id }} untuk mata anggaran {{ $data->spk->anggaran }}
+                                        {{ $data->sumberdana_id }} DPA nomor: {{ $data->nomordpa }} Tahun Anggaran {{ $data->tahunpilihan_id }} untuk mata anggaran {{ $data->anggaran }}
                                     </td>
                                 </tr>
                                 <tr>
