@@ -347,25 +347,19 @@
                             <tr>
                                 <td style="font-weight: bold; border: 1px solid black;">PAKET PEKERJAAN <br> {{$data->spk->paketpekerjaan1}} </td>
                                 <td style="border: 1px solid black;">
-                                    NOMOR BERITA ACARA HASIL PENGADAAN LANGSUNG::<br>
-                                    nOMOR BERITA <br>
-                                    TANGGAL BERITA ACARA HASIL PENGADAAN LANGSUNG: <br>
-                                    TANGGAL BERITA ACARA
+                                    NOMOR BERITA ACARA HASIL PENGADAAN LANGSUNG:
+                                    Nomor:  {{$data->nomorpaketpekerjaan}}
+                                    TANGGAL BERITA ACARA HASIL PENGADAAN LANGSUNG:
+                                    Tanggal: {{$data->hasilpaketpekerjaan}}
+<hr>
+NOMOR BERITA ACARA PENETAPAN PEMENANG :
+Nomor:  {{$data->bapekerjaan}}
+TANGGAL BERITA ACARA PENETAPAN PEMENANG:
+Tanggal:  {{$data->penetapanpemenangpekerjaan}}
+
                                 </td>
                             </tr>
-                            <tr>
-                                <td style="font-weight: bold; border: 1px solid black;">PAKET PEKERJAAN </td>
-                                <td style="border: 1px solid black;">
-                                    NOMOR BERITA ACARA HASIL PENGADAAN LANGSUNG:<br>
-                                    nOMOR BERITA <br>
-                                    TANGGAL BERITA ACARA HASIL PENGADAAN LANGSUNG: <br>
-                                    TANGGAL BERITA ACARA <br>
-                                    NOMOR BERITA ACARA HASIL PENGADAAN LANGSUNG:<br>
-                                    nOMOR BERITA <br>
-                                    TANGGAL BERITA ACARA HASIL PENGADAAN LANGSUNG: <br>
-                                    TANGGAL BERITA ACARA
-                                </td>
-                            </tr>
+
                         </table>
 
                     </div>
