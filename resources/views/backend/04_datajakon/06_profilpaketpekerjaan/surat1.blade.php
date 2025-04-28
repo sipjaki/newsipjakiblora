@@ -259,11 +259,47 @@
                             <tr>
                                 <td>4.</td><td>Nomor/Tanggal Kontrak</td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->tanggalkontrak}}</td>
                             </tr>
+
                             <tr>
-                                <td>5.</td><td>Waktu Pelaksanaan </td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->waktupelaksanaan}}</td>
+                                <td></td><td>Terbilang </td><td>:</td>
+                                <td>{{ terbilang($data->detailsnamapaketpekerjaan->waktupelaksanaan) }} Hari Kalender</td>
                             </tr>
+
+                            <script>
+                                // app/Helpers/Helper.php
+
+                        if (!function_exists('terbilang')) {
+                            function terbilang($angka)
+                            {
+                                $angka = (int) $angka;
+                                $huruf = [
+                                    '', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan',
+                                    'sepuluh', 'sebelas'
+                                ];
+
+                                if ($angka < 12) {
+                                    return $huruf[$angka];
+                                } elseif ($angka < 20) {
+                                    return 'se' . $huruf[$angka - 10];
+                                } elseif ($angka < 100) {
+                                    return $huruf[(int)($angka / 10)] . ' puluh ' . $huruf[$angka % 10];
+                                } elseif ($angka < 200) {
+                                    return 'seratus ' . terbilang($angka - 100);
+                                } elseif ($angka < 1000) {
+                                    return $huruf[(int)($angka / 100)] . ' ratus ' . terbilang($angka % 100);
+                                } elseif ($angka < 1000000) {
+                                    return terbilang($angka / 1000) . ' ribu ' . terbilang($angka % 1000);
+                                } elseif ($angka < 1000000000) {
+                                    return terbilang($angka / 1000000) . ' juta ' . terbilang($angka % 1000000);
+                                }
+                                return $angka;
+                            }
+                        }
+
+                            </script>
+
                             <tr>
-                                <td></td><td>Terbilang </td><td>:</td><td>{{$data->detailsnamapaketpekerjaan->waktupelaksanaan}}</td>
+                                <td></td><td>Terbilang </td><td>:</td><td>... isian data otomatis ... Hari Kalender </td>
                             </tr>
                             <tr>
                                 <td></td><td>Kecamatan</td><td>:</td><td>Blora</td>
