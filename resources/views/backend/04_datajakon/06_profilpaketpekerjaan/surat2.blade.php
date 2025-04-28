@@ -339,6 +339,49 @@
                     </div>
 
                  <br><br>
+<!-- Tombol Download -->
+<button id="downloadBtn" style="
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+">
+    Download Surat (PDF)
+</button>
+
+<!-- Script html2pdf.js (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+    // Ganti style button saat hover
+    const downloadBtn = document.getElementById('downloadBtn');
+    downloadBtn.addEventListener('mouseover', function() {
+        downloadBtn.style.backgroundColor = 'white';
+        downloadBtn.style.color = 'black';
+    });
+    downloadBtn.addEventListener('mouseout', function() {
+        downloadBtn.style.backgroundColor = 'red';
+        downloadBtn.style.color = 'white';
+    });
+
+    // Fungsi download
+    downloadBtn.addEventListener('click', function() {
+        var element = document.querySelector('.container-surat'); // Pilih div yang mau didownload
+
+        var opt = {
+            margin:       0.5, // Margin (dalam inch)
+            filename:     'Surat_SPPBJ.pdf', // Nama file download
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' } // Ukuran A4
+        };
+
+        html2pdf().from(element).set(opt).save();
+    });
+</script>
 
              </div>
              <!-- /.card -->
