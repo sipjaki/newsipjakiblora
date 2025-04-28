@@ -224,9 +224,34 @@
         <th style="width: 200px; text-align:center;">
             <i class="bi bi-graph-up-arrow" style="margin-right: 5px;"></i>Progress
         </th>
+
         <th style="width: 400px; text-align:center;">
             <i class="bi bi-diagram-3" style="margin-right: 5px;"></i>Satuan Kerja
         </th>
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-info-circle" style="margin-right: 5px;"></i>Details Pekerjaan
+        </th>
+
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-briefcase" style="margin-right: 5px;"></i>Paket Pekerjaan
+        </th>
+
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i>SPPBJ
+        </th>
+
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-journal-text" style="margin-right: 5px;"></i>SPK
+        </th>
+
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-card-checklist" style="margin-right: 5px;"></i>SSKK
+        </th>
+
+        <th style="width: 400px; text-align:center;">
+            <i class="bi bi-receipt" style="margin-right: 5px;"></i>SPP
+        </th>
+
         <th style="width: 200px; text-align:center;">
             <i class="bi bi-gear" style="margin-right: 5px;"></i>Aksi
         </th>
