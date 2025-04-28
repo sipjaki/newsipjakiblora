@@ -88,20 +88,18 @@
         text-align: justify;
         margin-bottom: 10px;
     }
-
     .tanda-tangan {
     width: 300px;
-    text-align: left;
     margin-top: 40px;
+    margin-left: auto; /* Ini kunci biar div "nempel" ke kanan */
 
-    /* Flexbox untuk posisikan tanda tangan */
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertikal tengah */
-    align-items: flex-end; /* Ujung kanan secara horizontal */
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    justify-content: center; /* Vertikal tengah dalam flexbox */
+    align-items: flex-start; /* Teks di kiri dalam box */
 }
 
 
