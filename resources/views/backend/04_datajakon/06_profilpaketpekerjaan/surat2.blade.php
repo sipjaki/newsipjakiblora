@@ -19,89 +19,69 @@
 </style>
 
 <style>
+    /* Menambahkan border di sekitar seluruh surat */
     .container-surat {
-        width: 800px;
-        margin: 30px auto;
-        padding: 40px;
-        border: 1px solid black;
-        background-color: #fff;
+        border: 1px solid black; /* Membuat kotak di sekitar surat */
+        padding: 20px; /* Memberikan ruang di dalam kotak */
         font-family: 'Times New Roman', Times, serif;
-        font-size: 15px;
+        display: flex;
+        flex-direction: column;
     }
 
+    /* Header surat tetap berada di dalam kotak */
     .header-surat {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 10px;
+        justify-content: space-between;
+        margin-bottom: 20px;
     }
 
-    .header-surat img {
-        width: 90px;
-        height: 90px;
-        margin-right: 20px;
-    }
-
-    .header-text {
-        text-align: center;
-        flex: 1;
-    }
-
+    /* Memberikan jarak antara elemen header */
     .header-text h3 {
-        margin: 3px 0;
-        font-size: 18px;
+        margin: 5px 0;
     }
 
-    .header-text p {
-        margin: 2px 0;
-        font-size: 14px;
-    }
-
-    .line-separator {
-        border-top: 3px solid black;
-        margin: 10px 0 20px 0;
-    }
-
+    /* Memastikan bahwa teks di body surat rapi */
     .body-surat {
         margin-top: 20px;
+        display: flex;
+        flex-direction: column;
     }
 
+    /* Memberikan border dan padding pada tabel */
     .table-info {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 10px;
     }
 
     .table-info td {
+        padding: 5px 10px;
         vertical-align: top;
-        padding: 4px;
     }
 
-    h4 {
-        margin-top: 20px;
-        font-size: 16px;
+    .table-info .label {
+        width: 150px;
         font-weight: bold;
-        text-decoration: underline;
     }
 
-    .body-surat p {
-        text-align: justify;
-        margin-bottom: 10px;
+    .line-separator {
+        border-top: 1px solid black;
+        margin: 20px 0;
     }
 
-     /* Tanda tangan di kanan dan tengah */
+    /* Tanda tangan di kanan dan tengah, menggunakan flexbox */
     .tanda-tangan {
-        text-align: center;  /* Memastikan teks tanda tangan di tengah */
-        float: right;        /* Memindahkan tanda tangan ke kanan */
-        margin-top: 50px;    /* Memberikan jarak dari isi surat sebelumnya */
-        width: 40%;          /* Mengatur lebar tanda tangan agar tidak terlalu lebar */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Membuat tanda tangan berada di tengah secara vertikal */
+        align-items: flex-end; /* Mengatur posisi tanda tangan ke kanan */
+        margin-top: 50px; /* Memberikan jarak dari isi surat sebelumnya */
+        width: 100%; /* Memastikan tanda tangan tetap dalam lebar kotak */
     }
 
     .tanda-tangan p {
         margin: 5px 0;
     }
-    </style>
-
+</style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
