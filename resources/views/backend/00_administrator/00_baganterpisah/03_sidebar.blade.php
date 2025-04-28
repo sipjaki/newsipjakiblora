@@ -162,36 +162,30 @@
               @can('dinas')
 
               <li class="nav-header" style="color: white;">PAKET PEKERJAAN </li>
+<!-- Menu Paket Pekerjaan -->
+<li class="nav-item">
+    <a href="#" class="nav-link">
+      <!-- Ikon untuk Paket Pekerjaan -->
+      <i class="nav-icon bi bi-briefcase" style="color: white;"></i>
+      <p style="color: white">
+        Paket Pekerjaan
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li>
 
-              <li class="nav-item">
+  <!-- Menu Profil Anda -->
+  <li class="nav-item">
+    <a href="#" class="nav-link">
+      <!-- Ikon untuk Profil Anda -->
+      <i class="nav-icon bi bi-person-circle" style="color: white;"></i>
+      <p style="color: white">
+        Profil Anda
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li>
 
-                  <li class="nav-item">
-                      <a href="#" class="nav-link">
-                <!-- Ikon untuk Beranda -->
-                <i class="nav-icon bi bi-house-door" style="color: white;"></i>
-                <p style="color: white">
-                    Paket Pekerjaan
-                    <!-- Ikon panah kanan (Chevron) -->
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                </p>
-              </a>
-
-                </li>
-
-                <li class="nav-item">
-
-                  <li class="nav-item">
-                      <a href="#" class="nav-link">
-                <!-- Ikon untuk Beranda -->
-                <i class="nav-icon bi bi-house-door" style="color: white;"></i>
-                <p style="color: white">
-                    Profil Anda
-                    <!-- Ikon panah kanan (Chevron) -->
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                </p>
-              </a>
-
-                </li>
         @endcan
 
 
