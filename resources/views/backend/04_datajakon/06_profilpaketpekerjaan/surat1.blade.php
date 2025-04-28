@@ -247,7 +247,7 @@
 
                         <table>
                             <tr>
-                                <td style="width: 25px;">1.</td><td style="width: 300px;">Nama Paket Pekerjaan</td><td>:</td><td>Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</td>
+                                <td style="width: 25px;">1.</td><td style="width: 300px;">Nama Paket Pekerjaan</td><td>:</td><td>{{$data->user->name}}</td>
                             </tr>
                             <tr>
                                 <td>2.</td><td>Alamat OPD</td><td>:</td><td>Jl. Nusantara No. 62</td>
