@@ -34,6 +34,7 @@ return new class extends Migration
             $table->string('namalengkap')->nullable();
             $table->string('jabatan')->nullable();
             $table->string('nip')->nullable();
+            $table->string('uploadtandatangan')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -318,7 +318,19 @@
 
                             <div class="tanda-tangan">
                                 <p>Pejabat Penandatangan Kontrak</p>
-                                <br><br><br>
+                                <div style="margin-top: 10px;">
+                                    @if($data->uploadtandatangan && file_exists(public_path('storage/' . $data->uploadtandatangan)))
+                                        <!-- Menampilkan gambar dari storage -->
+                                        <img src="{{ asset('storage/' . $data->uploadtandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @elseif($data->uploadtandatangan)
+                                        <!-- Menampilkan gambar dari path luar storage -->
+                                        <img src="{{ asset($data->uploadtandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @else
+                                        <!-- Placeholder jika tidak ada data -->
+                                        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Placeholder Image" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @endif
+                                </div>
+
                                 <p style="margin: 0; padding: 0;"><b>{{ $data->sppbj->namalengkap }}</b></p>
                                 <p style="margin: 0; padding: 0;">{{ $data->sppbj->jabatan }}</p>
                                 <p style="margin: 0; padding: 0;">NIP. {{ $data->sppbj->nip }}</p>
