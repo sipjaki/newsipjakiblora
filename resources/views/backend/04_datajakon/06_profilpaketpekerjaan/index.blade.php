@@ -75,65 +75,54 @@
                     ⚙️ Setting Database
                 </div>
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Database -->
-                                <i class="fa fa-database" style="margin-right: 8px;"></i>
-                                Proses Pelaksanaan
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Jenis Pekerjaan -->
+                            <i class="fa fa-briefcase" style="margin-right: 8px;"></i>
+                            Jenis Pekerjaan
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Pendidikan -->
-                                <i class="fa fa-book" style="margin-right: 8px;"></i>
-                                Jenis Pekerjaan
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Status Pekerjaan -->
+                            <i class="fa fa-tasks" style="margin-right: 8px;"></i>
+                            Status Pekerjaan
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Pekerjaan -->
-                                <i class="fa fa-cogs" style="margin-right: 8px;"></i>
-                                Status Pekerjaan
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Sumber Dana -->
+                            <i class="fa fa-wallet" style="margin-right: 8px;"></i>
+                            Sumber Dana
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Level -->
-                                <i class="fa fa-level-up" style="margin-right: 8px;"></i>
-                                Sumber Dana
-                            </button>
-                        </a>
+                    <a href="/404">
+                        <button
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
+                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                            <!-- Ikon Tahun Pelaksanaan -->
+                            <i class="fa fa-calendar-alt" style="margin-right: 8px;"></i>
+                            Tahun Pelaksanaan
+                        </button>
+                    </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon LPS -->
-                                <i class="fa fa-calendar" style="margin-right: 8px;"></i>
-                                Tahun Pelaksanaan
-                            </button>
-                        </a>
-
-                     </div>
-                 </div>
+                </div>
+                                 </div>
                  <!-- /.card-header -->
                  <div class="card-header">
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
