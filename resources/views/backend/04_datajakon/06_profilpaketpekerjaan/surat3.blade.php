@@ -367,19 +367,19 @@
                                 <tr>
                                     <td style="border: 1px solid black; padding: 8px;">
                                         <b>SUMBER DANA</b><br>
-                                        {{ $data->spk->sumberdana_id }} DPA nomor: {{ $data->spk->nomordpa }} Tahun Anggaran {{ $data->spk->tahunpilihan_id }} untuk mata anggaran {{ $data->spk->anggaran }}
+                                        {{ $data->sumberdana_id }} DPA nomor: {{ $data->spk->nomordpa }} Tahun Anggaran {{ $data->spk->tahunpilihan_id }} untuk mata anggaran {{ $data->spk->anggaran }}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="border: 1px solid black; padding: 8px;">
                                         <b>WAKTU PELAKSANAAN</b><br>
-                                        {{ $data->spk->waktupelaksanaan }} ({{ $data->spk->terbilangpelaksanaan }}) hari kalender dihitung sejak Tanggal Mulai Kerja yang tercantum dalam SPMK sampai dengan Tanggal Penyerahan Pertama Pekerjaan.
+                                        {{ $data->waktupelaksanaan }} ({{ $data->terbilangpelaksanaan }}) hari kalender dihitung sejak Tanggal Mulai Kerja yang tercantum dalam SPMK sampai dengan Tanggal Penyerahan Pertama Pekerjaan.
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="border: 1px solid black; padding: 8px;">
                                         <b>WAKTU PEMELIHARAAN</b><br>
-                                        {{ $data->spk->waktupemeliharaan }} ({{ $data->spk->terbilangpemeliharaan }}) hari kalender dihitung sejak Tanggal Penyerahan Pertama Pekerjaan sampai dengan Tanggal Penyerahan Akhir Pekerjaan.
+                                        {{ $data->waktupemeliharaan }} ({{ $data->terbilangpemeliharaan }}) hari kalender dihitung sejak Tanggal Penyerahan Pertama Pekerjaan sampai dengan Tanggal Penyerahan Akhir Pekerjaan.
                                     </td>
                                 </tr>
                                 <tr>
@@ -406,7 +406,7 @@
                                 <tr>
                                     <td style="border: 1px solid black; padding: 8px;">
                                         <b>HARGA KONTRAK</b><br>
-                                        Harga Kontrak termasuk Pajak Pertambahan Nilai (PPN) adalah sebesar Rp. {{ $data->spk->hargakontrak }} ({{ $data->spk->hargaterbilang }}) yang diperoleh berdasarkan total harga penawaran terkoreksi aritmatik sebagaimana tercantum dalam Daftar Kuantitas dan Harga Penawaran. (Melalui koreksi aritmatik).
+                                        Harga Kontrak termasuk Pajak Pertambahan Nilai (PPN) adalah sebesar Rp. {{ $data->hargakontrak }} ({{ $data->hargaterbilang }}) yang diperoleh berdasarkan total harga penawaran terkoreksi aritmatik sebagaimana tercantum dalam Daftar Kuantitas dan Harga Penawaran. (Melalui koreksi aritmatik).
                                     </td>
                                 </tr>
                             </table>
