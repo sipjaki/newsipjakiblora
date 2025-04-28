@@ -352,10 +352,10 @@
                                     TANGGAL BERITA ACARA HASIL PENGADAAN LANGSUNG: <br>
                                     Tanggal: <b> {{$data->spk->hasilpaketpekerjaan}} </b> <br>
                                         <hr>
-                                        NOMOR BERITA ACARA PENETAPAN PEMENANG :
-                                        Nomor : <b>  {{$data->spk->bapekerjaan}} </b>
-                                        TANGGAL BERITA ACARA PENETAPAN PEMENANG:
-                                        Tanggal : <b>  {{$data->spk->penetapanpemenangpekerjaan}} </b>
+                                        NOMOR BERITA ACARA PENETAPAN PEMENANG : <br>
+                                        Nomor : <b>  {{$data->spk->bapekerjaan}} </b> <br>
+                                        TANGGAL BERITA ACARA PENETAPAN PEMENANG: <br>
+                                        Tanggal : <b>  {{$data->spk->penetapanpemenangpekerjaan}} </b> <br>
 
                                 </td>
                             </tr>
