@@ -233,10 +233,6 @@
         </th>
 
         <th style="width: 150px; text-align:center;">
-            <i class="bi bi-briefcase" style="margin-right: 5px;"></i>Paket Pekerjaan
-        </th>
-
-        <th style="width: 150px; text-align:center;">
             <i class="bi bi-file-earmark-check" style="margin-right: 5px;"></i>SPPBJ
         </th>
 
