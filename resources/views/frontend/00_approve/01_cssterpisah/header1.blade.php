@@ -11,7 +11,7 @@ ul.list-unstyled {
 </style>
 
 <header class="header">
-    <div class="topbar" style="background: #2ECC71; padding: 5px 0; border-radius: 15px;">
+    {{-- <div class="topbar" style="background: #2ECC71; padding: 5px 0; border-radius: 15px;">
         <div class="topbar-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 0 20px; border-radius: 15px;">
 
             <!-- Info Berjalan (Pembungkus Border Radius) -->
@@ -35,7 +35,7 @@ ul.list-unstyled {
             </div>
 
         </div>
-    </div>
+    </div> --}}
 
 
 	<div class="main-menu sticky-header" style="background: #1d1d1b">
