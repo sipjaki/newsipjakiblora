@@ -28048,7 +28048,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => 13,
+    'bulanrekap_id' => 12,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28073,7 +28073,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => 13,
+    'bulanrekap_id' => 11,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28098,7 +28098,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 10,
     'bulanselesai' => 12,
-    'bulanrekap_id' => 13,
+    'bulanrekap_id' => 10,
     'progress' => 100,
     'user_id' => 12,
 ]);
