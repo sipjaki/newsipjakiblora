@@ -238,7 +238,7 @@
                                 <h3 style="text-transform: uppercase;">{{$data->user->name}}</h3>
                                 {{-- <p>{{$data->user->alamat}}</p> --}}
                                 <p>Alamat Otomatis</p>
-                                {{-- <h3>BLORA 58214</h3> --}}
+                                <h3>BLORA 58214</h3>
                             </div>
                         </div>
 
