@@ -206,6 +206,43 @@
                 </ul>
               </li>
 
+              @can('dinas')
+
+              <li class="nav-header" style="color: white;">PAKET PEKERJAAN </li>
+
+              <li class="nav-item">
+
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
+                <!-- Ikon untuk Beranda -->
+                <i class="nav-icon bi bi-house-door" style="color: white;"></i>
+                <p style="color: white">
+                    Kelembagaan
+                    <!-- Ikon panah kanan (Chevron) -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+              </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
+                <!-- Ikon untuk Beranda -->
+                <i class="nav-icon bi bi-house-door" style="color: white;"></i>
+                <p style="color: white">
+                    Profil Anda
+                    <!-- Ikon panah kanan (Chevron) -->
+                    <i class="nav-arrow bi bi-chevron-right"></i>
+                </p>
+              </a>
+
+                </li>
+        @endcan
+
+
+        {{-- DASHBOARD SUPER ADMIN --}}
               <li class="nav-header" style="color: white;">MAIN MENU</li>
 
               @can('super_admin')
