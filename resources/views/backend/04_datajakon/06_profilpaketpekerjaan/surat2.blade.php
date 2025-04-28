@@ -269,33 +269,33 @@
                                     <tr>
                                         <td class="label">Lampiran</td>
                                         <td>:</td>
-                                        <td colspan="2">- {{ $data->sppbj->lampiran }}</td>
+                                        <td colb="2">- {{ $data->sppbj->lampiran }}</td>
                                     </tr>
                                     <tr>
                                         <td class="label">Kepada Yth.</td>
                                         <td>:</td>
-                                        <td colspan="2">{{ $data->sppbj->kepadayth }}</td>
+                                        <td colb="2">{{ $data->sppbj->kepadayth }}</td>
                                     </tr>
                                     <tr>
                                         <td class="label">di</td>
                                         <td>:</td>
-                                        <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
+                                        <td colb="2">{{ $data->sppbj->alamatdi }}</td>
                                     </tr>
                                     <tr>
                                         <td class="label">Perihal</td>
                                         <td>:</td>
-                                        <td colspan="2">{{ $data->sppbj->perihal1 }}</td>
+                                        <td colb="2">{{ $data->sppbj->perihal1 }}</td>
                                     </tr>
                                 </table>
 
                             </table>
 
                             <p>
-                                Dengan ini kami beritahukan bahwa penawaran Saudara nomor <span style="color: black">{{ $data->sppbj->nomorkontrak }}</span> tanggal <span style="color: black"> {{ \Carbon\Carbon::parse($data->sppbj->tanggal)->translatedFormat('d F Y') }} </span> perihal Nomor : <span style="color: black;"> {{ $data->sppbj->perihalnomor }} </span> Penawaran Pekerjaan <span style="color: black;">{{ $data->sppbj->penawaran }} </span> dengan [nilai penawaran/penawaran terkoreksi] sebesar <span style="color: black;"> Rp. {{ number_format((float)$data->sppbj->hargaterkoreksi, 0, ',', '.') }} ({{ $data->sppbj->hargaterbilang }}) </span> kami nyatakan diterima/disetujui.
+                                Dengan ini kami beritahukan bahwa penawaran Saudara nomor <b style="color: black">{{ $data->sppbj->nomorkontrak }}</b> tanggal <b style="color: black"> {{ \Carbon\Carbon::parse($data->sppbj->tanggal)->translatedFormat('d F Y') }} </b> perihal Nomor : <b style="color: black;"> {{ $data->sppbj->perihalnomor }} </b> Penawaran Pekerjaan <b style="color: black;">{{ $data->sppbj->penawaran }} </b> dengan [nilai penawaran/penawaran terkoreksi] sebesar <b style="color: black;"> Rp. {{ number_format((float)$data->sppbj->hargaterkoreksi, 0, ',', '.') }} ({{ $data->sppbj->hargaterbilang }}) </b> kami nyatakan diterima/disetujui.
                             </p>
 
                             <p>
-                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar <span style="color: black"> Rp. {{ number_format((float)$data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) </span> [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama <span style="color: black;"> {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) </span> hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
+                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar <b style="color: black"> Rp. {{ number_format((float)$data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) </b> [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama <b style="color: black;"> {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) </b> hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
                             </p>
 
                             <p>
@@ -331,7 +331,7 @@
                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                              </div>
                              <div class="modal-body">
-                                 <p>Apakah Anda Ingin Menghapus Data : <span id="itemName"></span>?</p>
+                                 <p>Apakah Anda Ingin Menghapus Data : <b id="itemName"></b>?</p>
                              </div>
                              <div class="modal-footer">
                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
