@@ -307,14 +307,13 @@
                             <p>
                                 Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
                             </p>
-
-                            <div class="tanda-tangan">
-                                <p>Pejabat Penandatangan Kontrak</p>
-                                <br><br><br>
-                                <p><b>{{ $data->sppbj->namalengkap }}</b></p>
-                                <p>{{ $data->sppbj->jabatan }}</p>
-                                <p>NIP. {{ $data->sppbj->nip }}</p>
-                            </div>
+                        </div>
+                        <div class="tanda-tangan">
+                            <p>Pejabat Penandatangan Kontrak</p>
+                            <br><br><br>
+                            <p><b>{{ $data->sppbj->namalengkap }}</b></p>
+                            <p>{{ $data->sppbj->jabatan }}</p>
+                            <p>NIP. {{ $data->sppbj->nip }}</p>
                         </div>
                     </div>
 
