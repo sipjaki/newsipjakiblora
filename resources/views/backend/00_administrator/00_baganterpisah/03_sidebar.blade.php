@@ -164,47 +164,6 @@
 
 
 
-              <li class="nav-header" style="color: white;">BERANDA WEB</li>
-
-              <li class="nav-item">
-
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <!-- Ikon untuk Beranda -->
-                    <i class="nav-icon bi bi-house-door" style="color: white"></i>
-                    <p style="color: white">
-                      Beranda
-                      <!-- Ikon panah kanan (Chevron) -->
-                      <i class="nav-arrow bi bi-chevron-right"></i>
-                    </p>
-                  </a>
-
-                <ul class="nav nav-treeview">
-
-                    <li class="nav-item">
-                        <a href="/header" class="nav-link">
-                          <!-- Ikon untuk Header -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white">Header</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                          <!-- Ikon untuk Informasi Kantor -->
-                          <i class="nav-icon bi bi-building text-warning"></i>
-                          <p style="color: white">Informasi Kantor</p>
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="/404" class="nav-link">
-                          <!-- Ikon untuk Sosial Media -->
-                          <i class="nav-icon bi bi-facebook text-warning"></i> <!-- Bisa diganti dengan bi-twitter atau bi-instagram sesuai kebutuhan -->
-                          <p style="color: white">Sosial Media</p>
-                        </a>
-                      </li>
-
-                </ul>
-              </li>
 
               @can('dinas')
 
@@ -217,7 +176,7 @@
                 <!-- Ikon untuk Beranda -->
                 <i class="nav-icon bi bi-house-door" style="color: white;"></i>
                 <p style="color: white">
-                    Kelembagaan
+                    Paket Pekerjaan
                     <!-- Ikon panah kanan (Chevron) -->
                     <i class="nav-arrow bi bi-chevron-right"></i>
                 </p>
@@ -243,9 +202,54 @@
 
 
         {{-- DASHBOARD SUPER ADMIN --}}
-              <li class="nav-header" style="color: white;">MAIN MENU</li>
 
-              @can('super_admin')
+
+        @can('super_admin')
+
+                <li class="nav-header" style="color: white;">BERANDA WEB</li>
+
+                <li class="nav-item">
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <!-- Ikon untuk Beranda -->
+                    <i class="nav-icon bi bi-house-door" style="color: white"></i>
+                    <p style="color: white">
+                        Beranda
+                        <!-- Ikon panah kanan (Chevron) -->
+                        <i class="nav-arrow bi bi-chevron-right"></i>
+                    </p>
+                    </a>
+
+                <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                  <a href="/header" class="nav-link">
+                    <!-- Ikon untuk Header -->
+                    <i class="nav-icon bi bi-house-door text-warning"></i>
+                    <p style="color: white">Header</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/404" class="nav-link">
+                    <!-- Ikon untuk Informasi Kantor -->
+                    <i class="nav-icon bi bi-building text-warning"></i>
+                    <p style="color: white">Informasi Kantor</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/404" class="nav-link">
+                    <!-- Ikon untuk Sosial Media -->
+                    <i class="nav-icon bi bi-facebook text-warning"></i> <!-- Bisa diganti dengan bi-twitter atau bi-instagram sesuai kebutuhan -->
+                    <p style="color: white">Sosial Media</p>
+                  </a>
+                </li>
+
+          </ul>
+        </li>
+
+
+                <li class="nav-header" style="color: white;">MAIN MENU</li>
 
               <li class="nav-item">
 
