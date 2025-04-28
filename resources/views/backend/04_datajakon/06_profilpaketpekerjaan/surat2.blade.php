@@ -90,11 +90,17 @@
     }
 
     .tanda-tangan {
-        width: 300px;
-        text-align: left;
-        /* float: right; */
-        margin-top: 40px;
-    }
+    width: 300px;
+    text-align: left;
+    margin-top: 40px;
+
+    /* Menambahkan Flexbox untuk posisikan tanda tangan */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertikal tengah */
+    align-items: flex-end; /* Horizontal kanan */
+}
+
     </style>
 
 
