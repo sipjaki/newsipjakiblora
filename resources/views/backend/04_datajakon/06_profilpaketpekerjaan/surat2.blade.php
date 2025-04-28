@@ -298,41 +298,76 @@
                         <div class="line-separator"></div>
 
                         <div class="body-surat">
-                            <h3 style="text-align: center; text-decoration: underline;">SURAT PERINTAH KERJA (SPK)</h3>
+                            <table class="table-info">
+                                <table class="table-info">
+                                    <tr>
+                                        <td class="label" style="width: 150px;">Nomor</td>
+                                        <td style="width: 10px;">:</td>
+                                        <td class="value">{{ $data->sppbj->nomor }}</td>
+                                        <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Lampiran</td>
+                                        <td>:</td>
+                                        <td colb="2">- {{ $data->sppbj->lampiran }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Kepada Yth.</td>
+                                        <td>:</td>
+                                        <td colb="2">{{ $data->sppbj->kepadayth }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">di</td>
+                                        <td>:</td>
+                                        <td colb="2">{{ $data->sppbj->alamatdi }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="label">Perihal</td>
+                                        <td>:</td>
+                                        <td colb="2">{{ $data->sppbj->perihal1 }}</td>
+                                    </tr>
+                                </table>
+
+                            </table>
+
+                            <p>
+                                Dengan ini kami beritahukan bahwa penawaran Saudara nomor <b style="color: black">{{ $data->sppbj->nomorkontrak }}</b> tanggal <b style="color: black"> {{ \Carbon\Carbon::parse($data->sppbj->tanggal)->translatedFormat('d F Y') }} </b> perihal Nomor : <b style="color: black;"> {{ $data->sppbj->perihalnomor }} </b> Penawaran Pekerjaan <b style="color: black;">{{ $data->sppbj->penawaran }} </b> dengan [nilai penawaran/penawaran terkoreksi] sebesar <b style="color: black;"> Rp. {{ number_format((float)$data->sppbj->hargaterkoreksi, 0, ',', '.') }} ({{ $data->sppbj->hargaterbilang }}) </b> kami nyatakan diterima/disetujui.
+                            </p>
+
+                            <p>
+                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar <b style="color: black"> Rp. {{ number_format((float)$data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) </b> [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama <b style="color: black;"> {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) </b> hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
+                            </p>
+
+                            <p>
+                                Kegagalan Saudara untuk menerima penunjukan ini yang disusun berdasarkan evaluasi terhadap penawaran Saudara, akan dikenakan sanksi sesuai ketentuan dalam Peraturan Perundangan terkait tentang Pengadaan Barang/Jasa Pemerintah beserta petunjuk teknisnya.
+                            </p>
+
                             <br>
-                            <p><strong>SATUAN KERJA :</strong><br>
-                            …………{{ $data->satuankerja }}……………………………..</p>
 
-                            <p><strong>NOMOR DAN TANGGAL SPK :</strong><br>
-                            Nomor : {{ $data->nomorspk }}<br>
-                            Tanggal : {{ $data->tanggalspk }}</p>
+                            <p>
+                                Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
+                            </p>
 
-                            <p><strong>NAMA PPK</strong><br>
-                            Nama : {{ $data->namalengkapspk }}<br>
-                            NIP : {{ $data->nipspk }}<br>
-                            Jabatan : Pejabat Pembuat Komitmen {{ $data->spkppk }}<br>
-                            Berkedudukan Di : {{ $data->berkedudukanspk }}</p>
+                            <div class="tanda-tangan">
+                                <p>Pejabat Penandatangan Kontrak</p>
+                                <div style="margin-top: 10px;">
+                                    @if($data->uploadtandatangan && file_exists(public_path('storage/' . $data->uploadtandatangan)))
+                                        <!-- Menampilkan gambar dari storage -->
+                                        <img src="{{ asset('storage/' . $data->uploadtandatangan) }}" alt="Tanda Tangan" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
+                                    @elseif($data->uploadtandatangan)
+                                        <!-- Menampilkan gambar dari path luar storage -->
+                                        <img src="{{ asset($data->uploadtandatangan) }}" alt="Tanda Tangan" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
+                                    @else
+                                        <!-- Placeholder jika tidak ada data -->
+                                        <img src="/assets/00_masjaki/images/tandatangan.png" alt="Placeholder Image" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
+                                    @endif
+                                </div>
 
-                            <p>Yang bertindak untuk dan atas nama Pemerintah {{ $data->spkpemerintah }}, Satuan Kerja {{ $data->satuankerjaspk }} berdasarkan Surat Keputusan {{ $data->spkkeputusan }} Nomor {{ $data->spknomorkeputusan }} tanggal {{ $data->spktanggalkeputusan }} tentang Penunjukan Pejabat Pembuat Komitmen {{ $data->spktanggalppk }} Anggaran Pendapatan Dan Belanja Daerah Perubahan Tahun Anggaran {{ $data->tahunanggaran1 }}, selanjutnya disebut “Pejabat Penandatangan Kontrak”, dengan:</p>
-
-                            <p><strong>NAMA PENYEDIA</strong><br>
-                            Nama : {{ $data->namapenyedia }}<br>
-                            Jabatan : {{ $data->jabatanpenyedia }}<br>
-                            Berkedudukan Di : {{ $data->berkedudukanpenyedia }}<br>
-                            Akta Notaris<br>
-                            Nomor : {{ $data->nomorpenyedia }}<br>
-                            Tanggal : {{ $data->tanggalpenyedia }}<br>
-                            Notaris : {{ $data->notarispenyedia }}<br>
-                            Yang bertindak untuk dan atas nama {{ $data->atasnamapenyedia }} (selanjutnya disebut “Penyedia Jasa”).</p>
-
-                            <p><strong>WAKIL SAH PPK</strong><br>
-                            Wakil Sah Para Pihak sebagai berikut:<br>
-                            Untuk PPK : {{ $data->ppk1 }} : {{ $data->ppk2 }}<br>
-                            Pejabat Pelaksana Teknis Kegiatan (PPTK), Tim Teknis, Konsultan Pengawas<br>
-                            Untuk Penyedia : {{ $data->spkuntukpenyedia }}<br>
-                            Pelaksana Lapangan</p>
+                                <p style="margin: 0; padding: 0;"><b>{{ $data->sppbj->namalengkap }}</b></p>
+                                <p style="margin: 0; padding: 0;">{{ $data->sppbj->jabatan }}</p>
+                                <p style="margin: 0; padding: 0;">NIP. {{ $data->sppbj->nip }}</p>
+                            </div>
                         </div>
-
                     </div>
 
                  <br><br>
