@@ -94,12 +94,16 @@
     text-align: left;
     margin-top: 40px;
 
-    /* Menambahkan Flexbox untuk posisikan tanda tangan */
+    /* Flexbox untuk posisikan tanda tangan */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertikal tengah */
-    align-items: flex-end; /* Horizontal kanan */
+    align-items: flex-end; /* Ujung kanan secara horizontal */
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
+
 
     </style>
 
