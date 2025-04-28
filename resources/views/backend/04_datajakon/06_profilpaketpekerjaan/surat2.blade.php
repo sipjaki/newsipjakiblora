@@ -67,30 +67,16 @@
     }
 
     .table-info {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
-    margin-bottom: 20px;
-}
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
 
-.table-info td {
-    padding: 4px 8px;
-    vertical-align: top;
-}
+    .table-info td {
+        vertical-align: top;
+        padding: 4px;
+    }
 
-.table-info .label {
-    width: 20%;
-}
-
-.table-info .value {
-    width: 50%;
-}
-
-.table-info .right {
-    width: 30%;
-    text-align: right;
-}
     h4 {
         margin-top: 20px;
         font-size: 16px;
