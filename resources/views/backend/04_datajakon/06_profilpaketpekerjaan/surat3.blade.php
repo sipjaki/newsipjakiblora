@@ -296,24 +296,24 @@
 
                         <hr style="border: 1px solid black; margin-bottom: 20px;">
 
-                        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                        <table style="width: 100%; border: 1px solid black; border-collapse: collapse; font-size: 14px;">
                             <tr>
-                                <td style="width: 25%; font-weight: bold;">SURAT PERINTAH KERJA (SPK)</td>
-                                <td>
-                                    SATUAN KERJA: {{ $data->satuankerja }}
+                                <td style="width: 25%; font-weight: bold; border: 1px solid black;">SURAT PERINTAH KERJA (SPK)</td>
+                                <td style="border: 1px solid black;">
+                                    SATUAN KERJA:<br> {{ $data->satuankerja }}
                                 </td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td>
+                                <td style="border: 1px solid black;"></td>
+                                <td style="border: 1px solid black;">
                                     NOMOR DAN TANGGAL SPK:<br>
                                     Nomor: {{ $data->nomorspk }}<br>
                                     Tanggal: {{ $data->tanggalspk }}
                                 </td>
                             </tr>
                             <tr>
-                                <td style="font-weight: bold;">NAMA PPK</td>
-                                <td>
+                                <td style="font-weight: bold; border: 1px solid black;">NAMA PPK</td>
+                                <td style="border: 1px solid black;">
                                     Nama: {{ $data->namalengkapspk }}<br>
                                     NIP: {{ $data->nipspk }}<br>
                                     Jabatan: Pejabat Pembuat Komitmen {{ $data->spkppk }}<br>
@@ -323,8 +323,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="font-weight: bold;">NAMA PENYEDIA</td>
-                                <td>
+                                <td style="font-weight: bold; border: 1px solid black;">NAMA PENYEDIA</td>
+                                <td style="border: 1px solid black;">
                                     Nama: {{ $data->namapenyedia }}<br>
                                     Jabatan: {{ $data->jabatanpenyedia }}<br>
                                     Berkedudukan di: {{ $data->berkedudukanpenyedia }}<br>
@@ -336,8 +336,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="font-weight: bold;">WAKIL SAH PPK</td>
-                                <td>
+                                <td style="font-weight: bold; border: 1px solid black;">WAKIL SAH PPK</td>
+                                <td style="border: 1px solid black;">
                                     Wakil Sah Para Pihak sebagai berikut:<br>
                                     Untuk PPK: {{ $data->ppk1 }} - {{ $data->ppk2 }}<br>
                                     (Pejabat Pelaksana Teknis Kegiatan (PPTK), Tim Teknis, Konsultan Pengawas)<br>
@@ -345,6 +345,7 @@
                                 </td>
                             </tr>
                         </table>
+
                     </div>
 
 
