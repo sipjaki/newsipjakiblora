@@ -24,8 +24,6 @@
         border: 1px solid black; /* Membuat kotak di sekitar surat */
         padding: 20px; /* Memberikan ruang di dalam kotak */
         font-family: 'Times New Roman', Times, serif;
-        display: flex;
-        flex-direction: column;
     }
 
     /* Header surat tetap berada di dalam kotak */
@@ -43,8 +41,6 @@
     /* Memastikan bahwa teks di body surat rapi */
     .body-surat {
         margin-top: 20px;
-        display: flex;
-        flex-direction: column;
     }
 
     /* Memberikan border dan padding pada tabel */
@@ -68,20 +64,19 @@
         margin: 20px 0;
     }
 
-    /* Tanda tangan di kanan dan tengah, menggunakan flexbox */
+    /* Tanda tangan di kanan dan tengah */
     .tanda-tangan {
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Membuat tanda tangan berada di tengah secara vertikal */
-        align-items: flex-end; /* Mengatur posisi tanda tangan ke kanan */
-        margin-top: 50px; /* Memberikan jarak dari isi surat sebelumnya */
-        width: 100%; /* Memastikan tanda tangan tetap dalam lebar kotak */
+        text-align: center;  /* Memastikan teks tanda tangan di tengah */
+        float: right;        /* Memindahkan tanda tangan ke kanan */
+        margin-top: 50px;    /* Memberikan jarak dari isi surat sebelumnya */
+        width: 40%;          /* Mengatur lebar tanda tangan agar tidak terlalu lebar */
     }
 
     .tanda-tangan p {
         margin: 5px 0;
     }
 </style>
+
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -229,80 +224,79 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
 
-                    <div class="container-surat">
-                        <div class="header-surat">
-                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
-                            <div class="header-text">
-                                <h3>PEMERINTAH KABUPATEN BLORA</h3>
-                                <h3 style="text-transform: uppercase;">{{ $data->user->name }}</h3>
-                                <p>Alamat Otomatis</p>
-                                <h3>BLORA 58214</h3>
-                            </div>
-                        </div>
 
-                        <div class="line-separator"></div>
+<div class="container-surat">
+    <div class="header-surat">
+        <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
+        <div class="header-text">
+            <h3>PEMERINTAH KABUPATEN BLORA</h3>
+            <h3 style="text-transform: uppercase;">{{ $data->user->name }}</h3>
+            <p>Alamat Otomatis</p>
+            <h3>BLORA 58214</h3>
+        </div>
+    </div>
 
-                        <div class="body-surat">
-                            <table class="table-info">
-                                <tr>
-                                    <td class="label">Nomor</td>
-                                    <td>:</td>
-                                    <td class="value">{{ $data->sppbj->nomor }}</td>
-                                    <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="label">Lampiran</td>
-                                    <td>:</td>
-                                    <td colspan="2">- {{ $data->sppbj->lampiran }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="label">Kepada Yth.</td>
-                                    <td>:</td>
-                                    <td colspan="2">{{ $data->sppbj->kepadayth }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="label">di</td>
-                                    <td>:</td>
-                                    <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="label">Perihal</td>
-                                    <td>:</td>
-                                    <td colspan="2">{{ $data->sppbj->perihal1 }}</td>
-                                </tr>
-                            </table>
+    <div class="line-separator"></div>
 
-                            <p>
-                                Dengan ini kami beritahukan bahwa penawaran Saudara nomor <b style="color: black">{{ $data->sppbj->nomorkontrak }}</b> tanggal <b style="color: black"> {{ \Carbon\Carbon::parse($data->sppbj->tanggal)->translatedFormat('d F Y') }} </b> perihal Nomor : <b style="color: black;"> {{ $data->sppbj->perihalnomor }} </b> Penawaran Pekerjaan <b style="color: black;">{{ $data->sppbj->penawaran }} </b> dengan [nilai penawaran/penawaran terkoreksi] sebesar <b style="color: black;"> Rp. {{ number_format((float)$data->sppbj->hargaterkoreksi, 0, ',', '.') }} ({{ $data->sppbj->hargaterbilang }}) </b> kami nyatakan diterima/disetujui.
-                            </p>
+    <div class="body-surat">
+        <table class="table-info">
+            <tr>
+                <td class="label">Nomor</td>
+                <td>:</td>
+                <td class="value">{{ $data->sppbj->nomor }}</td>
+                <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
+            </tr>
+            <tr>
+                <td class="label">Lampiran</td>
+                <td>:</td>
+                <td colspan="2">- {{ $data->sppbj->lampiran }}</td>
+            </tr>
+            <tr>
+                <td class="label">Kepada Yth.</td>
+                <td>:</td>
+                <td colspan="2">{{ $data->sppbj->kepadayth }}</td>
+            </tr>
+            <tr>
+                <td class="label">di</td>
+                <td>:</td>
+                <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
+            </tr>
+            <tr>
+                <td class="label">Perihal</td>
+                <td>:</td>
+                <td colspan="2">{{ $data->sppbj->perihal1 }}</td>
+            </tr>
+        </table>
 
-                            <p>
-                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar <b style="color: black"> Rp. {{ number_format((float)$data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) </b> [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama <b style="color: black;"> {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) </b> hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
-                            </p>
+        <p>
+            Dengan ini kami beritahukan bahwa penawaran Saudara nomor <b style="color: black">{{ $data->sppbj->nomorkontrak }}</b> tanggal <b style="color: black"> {{ \Carbon\Carbon::parse($data->sppbj->tanggal)->translatedFormat('d F Y') }} </b> perihal Nomor : <b style="color: black;"> {{ $data->sppbj->perihalnomor }} </b> Penawaran Pekerjaan <b style="color: black;">{{ $data->sppbj->penawaran }} </b> dengan [nilai penawaran/penawaran terkoreksi] sebesar <b style="color: black;"> Rp. {{ number_format((float)$data->sppbj->hargaterkoreksi, 0, ',', '.') }} ({{ $data->sppbj->hargaterbilang }}) </b> kami nyatakan diterima/disetujui.
+        </p>
 
-                            <p>
-                                Kegagalan Saudara untuk menerima penunjukan ini yang disusun berdasarkan evaluasi terhadap penawaran Saudara, akan dikenakan sanksi sesuai ketentuan dalam Peraturan Perundangan terkait tentang Pengadaan Barang/Jasa Pemerintah beserta petunjuk teknisnya.
-                            </p>
+        <p>
+            Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar <b style="color: black"> Rp. {{ number_format((float)$data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) </b> [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama <b style="color: black;"> {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) </b> hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
+        </p>
 
-                            <br>
+        <p>
+            Kegagalan Saudara untuk menerima penunjukan ini yang disusun berdasarkan evaluasi terhadap penawaran Saudara, akan dikenakan sanksi sesuai ketentuan dalam Peraturan Perundangan terkait tentang Pengadaan Barang/Jasa Pemerintah beserta petunjuk teknisnya.
+        </p>
 
-                            <p>
-                                Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
-                            </p>
+        <br>
 
-                            <!-- Tanda tangan dimasukkan ke dalam container-surat -->
-                            <div class="tanda-tangan">
-                                <p>Pejabat Penandatangan Kontrak</p>
-                                <br><br><br>
-                                <p><b>{{ $data->sppbj->namalengkap }}</b></p>
-                                <p>{{ $data->sppbj->jabatan }}</p>
-                                <p>NIP. {{ $data->sppbj->nip }}</p>
-                            </div>
+        <p>
+            Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
+        </p>
 
-                        </div>
-                    </div>
+        <!-- Tanda tangan dimasukkan ke dalam container-surat dan diposisikan di kanan dan tengah -->
+        <div class="tanda-tangan">
+            <p>Pejabat Penandatangan Kontrak</p>
+            <br><br><br>
+            <p><b>{{ $data->sppbj->namalengkap }}</b></p>
+            <p>{{ $data->sppbj->jabatan }}</p>
+            <p>NIP. {{ $data->sppbj->nip }}</p>
+        </div>
 
-
+    </div>
+</div>
                  <br><br>
 
              </div>
