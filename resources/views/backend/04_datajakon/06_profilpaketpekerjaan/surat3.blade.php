@@ -283,73 +283,68 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-                    <div class="container-surat">
-                        <div class="header-surat">
-                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora">
-                            <div class="header-text">
-                                <h3>PEMERINTAH KABUPATEN BLORA</h3>
-                                <h3 style="text-transform: uppercase;">{{ $data->user->name }}</h3>
-                                <p>Alamat Otomatis</p>
-                                <h3>BLORA 58214</h3>
-                            </div>
+                    <div style="width: 100%; font-family: Arial, sans-serif; font-size: 14px;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo Blora" style="height: 80px;">
+                            <h2 style="margin: 5px 0;">PEMERINTAH KABUPATEN BLORA</h2>
+                            <h3 style="margin: 5px 0; text-transform: uppercase;">{{ $data->user->name }}</h3>
+                            <p style="margin: 2px 0;">Alamat Otomatis</p>
+                            <p style="margin: 2px 0;">BLORA 58214</p>
                         </div>
 
-                        <div class="line-separator"></div>
+                        <hr style="border: 1px solid black; margin-bottom: 20px;">
 
-                        <div class="body-surat">
-                            <table class="table-info" style="width: 100%; border-collapse: collapse;">
-                                <tr>
-                                    <td style="width: 200px; vertical-align: top;"><b>SURAT PERINTAH KERJA (SPK)</b></td>
-                                    <td style="vertical-align: top;">
-                                        SATUAN KERJA :<br>
-                                        {{ $data->satuankerja }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        NOMOR DAN TANGGAL SPK :<br>
-                                        Nomor : {{ $data->nomorspk }}<br>
-                                        Tanggal : {{ $data->tanggalspk }}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>NAMA PPK</b></td>
-                                    <td>
-                                        Nama : {{ $data->namalengkapspk }}<br>
-                                        NIP : {{ $data->nipspk }}<br>
-                                        Jabatan : Pejabat Pembuat Komitmen {{ $data->spkppk }}<br>
-                                        Berkedudukan di : {{ $data->berkedudukanspk }}<br>
-                                        yang bertindak untuk dan atas nama Pemerintah {{ $data->spkpemerintah }} Satuan Kerja {{ $data->satuankerjaspk }}, berdasarkan Surat Keputusan {{ $data->spkkeputusan }} Nomor {{ $data->spknomorkeputusan }} tanggal {{ $data->spktanggalkeputusan }} tentang Penunjukan Pejabat Pembuat Komitmen {{ $data->spktanggalppk }} Anggaran Pendapatan Dan Belanja Daerah Perubahan Tahun Anggaran {{ $data->tahunanggaran1 }}, selanjutnya disebut "Pejabat Penandatangan Kontrak", dengan:
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>NAMA PENYEDIA</b></td>
-                                    <td>
-                                        Nama : {{ $data->namapenyedia }}<br>
-                                        Jabatan : {{ $data->jabatanpenyedia }}<br>
-                                        Berkedudukan di : {{ $data->berkedudukanpenyedia }}<br>
-                                        Akta Notaris<br>
-                                        Nomor : {{ $data->nomorpenyedia }}<br>
-                                        Tanggal : {{ $data->tanggalpenyedia }}<br>
-                                        Notaris : {{ $data->notarispenyedia }}<br>
-                                        Yang bertindak untuk dan atas nama {{ $data->atasnamapenyedia }} (selanjutnya disebut “Penyedia Jasa”).
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><b>WAKIL SAH PPK</b></td>
-                                    <td>
-                                        Wakil Sah Para Pihak sebagai berikut:<br>
-                                        Untuk PPK : {{ $data->ppk1 }} : {{ $data->ppk2 }}<br>
-                                        (Pejabat Pelaksana Teknis Kegiatan (PPTK), Tim Teknis, Konsultan Pengawas)<br>
-                                        Untuk Penyedia : {{ $data->spkuntukpenyedia }} (Pelaksana Lapangan)
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                            <tr>
+                                <td style="width: 25%; font-weight: bold;">SURAT PERINTAH KERJA (SPK)</td>
+                                <td>
+                                    SATUAN KERJA: {{ $data->satuankerja }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    NOMOR DAN TANGGAL SPK:<br>
+                                    Nomor: {{ $data->nomorspk }}<br>
+                                    Tanggal: {{ $data->tanggalspk }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">NAMA PPK</td>
+                                <td>
+                                    Nama: {{ $data->namalengkapspk }}<br>
+                                    NIP: {{ $data->nipspk }}<br>
+                                    Jabatan: Pejabat Pembuat Komitmen {{ $data->spkppk }}<br>
+                                    Berkedudukan di: {{ $data->berkedudukanspk }}<br>
+                                    Bertindak untuk dan atas nama Pemerintah {{ $data->spkpemerintah }} Satuan Kerja {{ $data->satuankerjaspk }}<br>
+                                    Berdasarkan Surat Keputusan {{ $data->spkkeputusan }} Nomor {{ $data->spknomorkeputusan }} Tanggal {{ $data->spktanggalkeputusan }} Tentang Penunjukan Pejabat Pembuat Komitmen {{ $data->spktanggalppk }} APBD-P Tahun {{ $data->tahunanggaran1 }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">NAMA PENYEDIA</td>
+                                <td>
+                                    Nama: {{ $data->namapenyedia }}<br>
+                                    Jabatan: {{ $data->jabatanpenyedia }}<br>
+                                    Berkedudukan di: {{ $data->berkedudukanpenyedia }}<br>
+                                    Akta Notaris:<br>
+                                    Nomor: {{ $data->nomorpenyedia }}<br>
+                                    Tanggal: {{ $data->tanggalpenyedia }}<br>
+                                    Notaris: {{ $data->notarispenyedia }}<br>
+                                    Bertindak untuk dan atas nama: {{ $data->atasnamapenyedia }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">WAKIL SAH PPK</td>
+                                <td>
+                                    Wakil Sah Para Pihak sebagai berikut:<br>
+                                    Untuk PPK: {{ $data->ppk1 }} - {{ $data->ppk2 }}<br>
+                                    (Pejabat Pelaksana Teknis Kegiatan (PPTK), Tim Teknis, Konsultan Pengawas)<br>
+                                    Untuk Penyedia: {{ $data->spkuntukpenyedia }} (Pelaksana Lapangan)
+                                </td>
+                            </tr>
+                        </table>
                     </div>
 
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis natus esse ullam. Nesciunt quae delectus ex, voluptatem ullam sint cumque, fugiat commodi at blanditiis quasi ipsam doloribus ab nulla corrupti alias aspernatur mollitia velit quos voluptate quod. Commodi, vero explicabo excepturi hic sed laborum facilis iusto, cum ab eum fugit. Libero consequatur, dignissimos non sunt possimus, molestiae error et in reiciendis labore vero repellendus voluptatibus porro pariatur nisi impedit vitae totam officia ea ullam. Laboriosam, voluptate reprehenderit provident repellendus quasi quia quidem error. Aspernatur alias deserunt dolores dolorem ducimus fuga ea dolorum sint vero reiciendis odit voluptatum assumenda minima, numquam rerum maiores quasi mollitia, maxime error fugit. Eveniet nihil dignissimos cupiditate officia alias consequatur voluptatum soluta facilis, neque fuga perspiciatis ipsam earum itaque non nobis velit dolor rerum repellat, doloribus qui! Doloribus odio animi, perferendis praesentium non, ipsam repellendus ducimus est nisi ad id excepturi numquam minus vel quod facilis necessitatibus nemo. Eius inventore assumenda officiis aspernatur aperiam, unde voluptatem similique deleniti, quasi molestias, illum porro? Explicabo eos harum numquam cum possimus culpa at repellendus. Cumque ducimus labore quidem et dolorem tempore provident voluptatibus unde? Ipsam incidunt doloribus voluptatibus recusandae dolores odio tempore dolorum vitae ipsa ad, excepturi perferendis, at dolore iure repudiandae porro odit quae provident mollitia deserunt quidem. Quas dignissimos at, voluptas ullam rerum in! Tenetur cupiditate praesentium modi aperiam fugiat, dolorem autem quisquam neque commodi corporis porro voluptates odio cumque magnam blanditiis rem! Quibusdam, numquam iste explicabo facere praesentium voluptates expedita quam eum nam amet! Cumque earum, deleniti dolor blanditiis in iste officia pariatur quos eligendi rerum deserunt voluptatem expedita aut laborum excepturi. Ad cum quia praesentium aliquam nihil, necessitatibus neque natus cupiditate totam. Et iste repudiandae assumenda ipsam quia quidem architecto quibusdam, itaque eius ipsum provident deserunt sequi suscipit recusandae qui debitis! Ab, perferendis cupiditate officia incidunt iste reiciendis inventore quia. Aliquid fugit adipisci, voluptatem quis officia blanditiis exercitationem, dolore autem maxime magni sunt ex unde laudantium. Tenetur facere cupiditate sapiente nulla dolorem, labore quasi necessitatibus eius nesciunt quas accusamus temporibus dolore voluptatum totam sit enim. Doloremque dolor odit corrupti repellendus obcaecati? Atque rem aperiam inventore vero. Ad odit optio non ipsa! Dolore ut omnis asperiores. Aspernatur ipsam at nesciunt, neque minima illo provident natus deleniti! Tempore esse commodi magni tempora. Voluptatum ratione consequatur iusto maxime repellendus laboriosam? Minima, omnis! Nostrum accusamus, repellat vero consectetur non consequatur voluptatem necessitatibus iure dolorem exercitationem harum modi. Eaque fugiat voluptatibus molestiae dolores doloremque distinctio maiores perspiciatis, vero minima exercitationem impedit quibusdam necessitatibus, error magnam iure dignissimos ratione dolorem voluptatem doloribus quidem officiis sequi fugit dolore! Ullam animi rerum soluta quisquam hic aut. Molestias molestiae voluptatem facere praesentium aut. Recusandae fugit consectetur, tempore, ratione ea eligendi consequuntur voluptatem magni ullam atque at, odio sed. Veniam ipsam obcaecati tenetur sequi possimus labore officia. Odit iusto provident delectus eaque numquam officia reiciendis tenetur, eveniet architecto libero ex aperiam quasi ut accusamus vitae nobis, labore ipsam illum. Placeat impedit quasi voluptas similique tempora? Ea eligendi consequuntur, voluptate reiciendis quo consequatur inventore. Sequi sapiente impedit temporibus animi odio eos at eius deserunt laudantium asperiores. Voluptatum explicabo voluptatem necessitatibus eaque architecto exercitationem saepe dignissimos laboriosam nisi quis fuga ad assumenda iusto minus possimus cupiditate a laborum culpa tempore tempora, veritatis sequi fugit. Fugiat sunt unde harum libero accusamus doloribus in? Laboriosam rem deserunt architecto, facilis voluptate debitis amet qui perspiciatis hic perferendis sint quae corrupti placeat rerum animi ab reprehenderit aliquid. Ab minus velit dignissimos animi recusandae nemo ad, sed dolorem et rerum libero veritatis totam facilis perferendis laboriosam perspiciatis error excepturi ullam quae eveniet neque qui nisi quidem accusantium. Possimus dolorum eius excepturi commodi fugiat ratione itaque illum, cum amet velit optio neque sed laborum minima adipisci aperiam, sint, cumque quaerat voluptatem non pariatur cupiditate? Nisi, nesciunt? Enim assumenda possimus animi ad alias quam blanditiis ex deserunt dolor nostrum explicabo vel atque accusantium itaque commodi, quas dolorum unde recusandae. Earum, nihil molestiae? Earum quasi error deserunt numquam quas at libero expedita repudiandae ut fugit minus voluptate, accusamus facilis ex? Nulla numquam aliquid rem, quam aperiam expedita modi laudantium. Facere, cupiditate quos quo eveniet doloribus blanditiis ipsam ut perspiciatis cumque pariatur saepe maiores, doloremque ab quaerat cum! Officiis repellendus tenetur, itaque eveniet libero cupiditate ducimus corrupti enim facere veniam et praesentium nobis nesciunt maiores optio quidem. Sequi, eaque. Nulla placeat recusandae aliquam perferendis molestias a qui unde modi repellat dicta porro explicabo id expedita, ut sit, fuga quidem. Non repudiandae nesciunt, ratione nam nemo quas odio temporibus porro odit incidunt exercitationem! Quis, perspiciatis? Similique, voluptatibus animi alias eum eius distinctio et quos molestiae dolorum reprehenderit. Excepturi nam distinctio assumenda debitis. Illum reprehenderit libero quis omnis magnam tempore aliquam ea incidunt optio tempora perferendis minus architecto iusto saepe, excepturi iste distinctio, itaque, mollitia maxime dolorem! Ratione possimus quisquam accusantium ducimus cumque, accusamus esse. Totam repellat accusamus unde! Vitae molestias natus suscipit explicabo odit ab voluptatem quaerat tempore, animi incidunt doloribus necessitatibus doloremque, itaque amet facilis modi ducimus optio in, ullam aspernatur architecto totam neque earum ad! Dolore nemo itaque soluta quidem. Pariatur nesciunt inventore iure possimus libero reprehenderit optio impedit voluptas voluptate! Fugiat eaque reiciendis aut vero expedita, molestias nulla illo tempore! Maxime quis alias dolores accusamus, fugiat quos aspernatur harum, debitis cum architecto porro eum non ducimus facere quibusdam. Veritatis reprehenderit sed, unde ex et nesciunt dolores. Porro, temporibus adipisci praesentium minus molestiae ratione fuga sapiente dolorem, modi reprehenderit neque iusto eligendi eos voluptates maxime incidunt recusandae vel deserunt iste cumque! Modi qui, facere dignissimos eligendi cupiditate velit aut maxime iure! Iste dolore distinctio suscipit placeat, earum optio amet fugiat ad illo ex ipsum blanditiis voluptas deleniti, dolores facere sed corrupti alias. Rerum aliquid autem magnam, quia fuga, aliquam sequi debitis necessitatibus iure quod alias reiciendis minima odio ut aspernatur pariatur sed error porro natus praesentium excepturi tenetur dolor. Quam quos ut similique eaque voluptas. Quasi ex debitis provident sint. Natus fuga ex repudiandae, optio omnis sit quidem eligendi, repellat cumque voluptates quasi temporibus quis laborum id, quos minima est. Libero possimus hic architecto suscipit.</p>
 
                  <br><br>
 <!-- Tombol Download -->
