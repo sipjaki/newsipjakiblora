@@ -370,6 +370,21 @@
             </a>
          </td>
 
+         <td style="text-align: center; vertical-align: middle;">
+             <a href="/bepaketpekerjaan/show/{{$item->namapekerjaan}}" class="btn btn-sm btn-info me-2" title="Show">
+                 <i class="bi bi-eye"></i>
+             </a>
+             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+                 <i class="bi bi-pencil-square"></i>
+             </a>
+             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
+                   data-bs-toggle="modal" data-bs-target="#deleteModal"
+                   data-judul="{{ $item->namapekerjaan }}"
+                   onclick="setDeleteUrl(this)">
+                    <i class="bi bi-trash"></i>
+            </a>
+         </td>
+
         </tr>
 
      @endforeach

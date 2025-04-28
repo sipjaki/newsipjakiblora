@@ -195,5 +195,21 @@ class PaketpekerjaanmasjakiController extends Controller
             ]);
         }
 
+        public function bepekerjaansurat2($id)
+        {
+            $datapaketpekerjaan = paketpekerjaanmasjaki::where('id', $id)->first();
+            $user = Auth::user();
+
+            // Kirim variabel ke view
+            return view('backend.04_datajakon.06_profilpaketpekerjaan.surat2', [
+                'title' => 'Details Paket Pekerjaan',
+                'data' => $datapaketpekerjaan,
+                'user' => $user,
+                // 'datasub' => $datasub,
+                // 'datasub' => $subdata,
+                // 'start' => $start,  // Pastikan start diteruskan jika dibutuhkan di view
+            ]);
+        }
+
 
 }
