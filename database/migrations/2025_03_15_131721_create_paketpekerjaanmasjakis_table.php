@@ -24,20 +24,20 @@ return new class extends Migration
             // ----------------------------------------------------------------
             $table->foreignId('profiljenispekerjaan_id')->nullable(); // ADA
             $table->foreignId('paketstatuspekerjaan_id')->nullable(); // ADA
-            $table->foreignId('sumberdana_id')->nullable(); // ADA
+            $table->foreignId('sumberdana_id')->nullable();  // ADA
             $table->foreignId('tahunpilihan_id')->nullable(); // ADA
-            $table->foreignId('user_id')->nullable();
-            $table->foreignId('bulanrekap_id')->nullable();
+            $table->foreignId('user_id')->nullable(); // ADA
+            $table->foreignId('bulanrekap_id')->nullable(); // ADA
             // ----------------------------------------------------------------
-            $table->text('namapekerjaan')->nullable();
-            $table->string('cvptpenyedia')->nullable();
-            $table->string('nib')->nullable();
-            $table->decimal('nilaikontrak', 15, 2)->nullable(); // Menggunakan tipe decimal untuk nilai kontrak
-            $table->string('jeniskontrak')->nullable();
-            $table->string('karakteristikkontrak')->nullable();
-            $table->string('bulanmulai')->nullable(); // Menyimpan tanggal mulai
-            $table->string('bulanselesai')->nullable(); // Menyimpan tanggal selesai
-            $table->integer('progress')->default(0);
+            $table->text('namapekerjaan')->nullable(); // ADA
+            $table->string('cvptpenyedia')->nullable(); // ADA
+            $table->string('nib')->nullable(); // ADA
+            $table->decimal('nilaikontrak', 15, 2)->nullable();  // ADA // Menggunakan tipe decimal untuk nilai kontrak
+            $table->string('jeniskontrak')->nullable(); // ADA
+            $table->string('karakteristikkontrak')->nullable(); // ADA
+            $table->string('bulanmulai')->nullable(); // ADA // Menyimpan tanggal mulai
+            $table->string('bulanselesai')->nullable();  // ADA // Menyimpan tanggal selesai
+            $table->integer('progress')->default(0); // ADA
             $table->softDeletes();
             $table->timestamps();
         });

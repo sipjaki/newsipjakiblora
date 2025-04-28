@@ -258,7 +258,7 @@
         </td>
 
          <td style="text-align: center;">
-            <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
+            <button id="status-{{ $item->bulan->bulanrekap }}" class="btn btn-sm"></button>
         </td>
 
         <script>
