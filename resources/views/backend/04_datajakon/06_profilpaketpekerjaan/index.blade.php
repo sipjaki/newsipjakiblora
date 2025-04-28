@@ -345,7 +345,7 @@
 <td style="text-align: left;">{{ ucwords(strtolower($item->user->name)) }}</td>
 <td style="text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="your-link-here"
+        <a href="/bepekerjaandetails/{{$item->id}}"
            style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">

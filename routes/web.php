@@ -779,6 +779,9 @@ Route::post('/beskkallblora/createnew', [SkktenagakerjabloraController::class, '
 Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->middleware('auth');
 Route::get('/bepaketpekerjaan/show/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanshow'])->middleware('auth');
 Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandelete'])->middleware('auth');
+
+// SURAT SURAT PROFIL PAKET PEKERJAAN
+Route::get('/bepekerjaandetails/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaandetails'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 
 
