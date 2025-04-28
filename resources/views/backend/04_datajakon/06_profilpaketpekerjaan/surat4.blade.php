@@ -279,7 +279,6 @@
                                         </button>
                                     </a>
 
-
                                     <button
                                     onclick="history.back();"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -313,77 +312,199 @@
 
                         <div class="line-separator"></div>
 
-                        <div class="body-surat">
-                            <table class="table-info">
-                                <table class="table-info">
-                                    <tr>
-                                        <td class="label" style="width: 150px;">Nomor</td>
-                                        <td style="width: 10px;">:</td>
-                                        <td class="value">{{ $data->sppbj->nomor }}</td>
-                                        <td class="right">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Lampiran</td>
-                                        <td>:</td>
-                                        <td colb="2">- {{ $data->sppbj->lampiran }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Kepada Yth.</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->kepadayth }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">di</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->alamatdi }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="label">Perihal</td>
-                                        <td>:</td>
-                                        <td colb="2">{{ $data->sppbj->perihal1 }}</td>
-                                    </tr>
-                                </table>
+                        <div class="sskk">
+                            <h5 style="text-align: center;">BAB XI. SYARAT-SYARAT KHUSUS KONTRAK (SSKK)</h5>
 
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style="width: 20%;">Pasal dalam SSUK</th>
+                                        <th style="width: 20%;">Ketentuan</th>
+                                        <th>Data</th>
+                                    </tr>
+                                </thead>
+                                <br>
+                                <tbody>
+                                    <tr>
+                                        <td>4.1 & 4.2</td>
+                                        <td>Korespondensi</td>
+                                        <td>
+                                            Alamat Para Pihak sebagai berikut:<br>
+                                            <strong>Satuan Kerja Pejabat Pembuat Komitmen</strong> {{$data->satuankerja}}<br>
+                                            Nama: {{$data->nama1}}<br>
+                                            Alamat: {{$data->alamat1}}<br>
+                                            Telepon: {{$data->telepon1}}<br>
+                                            Website: {{$data->website1}}<br>
+                                            e-mail: {{$data->email1}}<br><br>
+                                            <strong>Penyedia</strong> {{$data->penyedia}}<br>
+                                            Nama: {{$data->nama2}}<br>
+                                            Alamat: {{$data->alamat2}}<br>
+                                            Telepon: {{$data->telepon2}}<br>
+                                            e-mail: {{$data->email2}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>4.2 & 5.1</td>
+                                        <td>Wakil Sah Para Pihak</td>
+                                        <td>
+                                            Wakil Sah Para Pihak sebagai berikut:<br>
+                                            Untuk PPK: Pejabat Pelaksana Teknis Kegiatan (PPTK), Tim Teknis, dan Konsultan Pengawas<br>
+                                            Untuk Penyedia: Pelaksana Lapangan
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>6.3.b & 6.3.c 44.4 & 44.6</td>
+                                        <td>Pencairan Jaminan</td>
+                                        <td>Jaminan dicairkan dan disetorkan pada Kas Daerah.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>27.1</td>
+                                        <td>Masa Pelaksanaan</td>
+                                        <td>
+                                            Masa Pelaksanaan selama: {{$data->pelaksanaan1}} ({{$data->haripelaksanaan1}}) hari kalender<br>
+                                            terhitung sejak tanggal mulai kerja yang tercantum dalam SPMK.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>33.8</td>
+                                        <td>Masa Pemeliharaan</td>
+                                        <td>
+                                            Masa Pemeliharaan berlaku selama: {{$data->pelaksanaan2}} ({{$data->haripelaksanaan2}}) hari kalender<br>
+                                            terhitung sejak tanggal penyerahan pertama (PHO).
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>35.1</td>
+                                        <td>Gambar As Built dan Pedoman Pengoperasian dan Perawatan/Pemeliharaan</td>
+                                        <td>
+                                            Gambar "As built" diserahkan paling lambat 7 (tujuh) hari kalender dan/atau pedoman pengoperasian<br>
+                                            dan perawatan/pemeliharaan harus diserahkan paling lambat 7 (tujuh) hari kalender setelah Tanggal<br>
+                                            Penyerahan Pertama Pekerjaan.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>45.b</td>
+                                        <td>Pembayaran Tagihan</td>
+                                        <td>
+                                            Batas akhir waktu yang disepakati untuk penerbitan SPP oleh Pejabat yang berwenang untuk menandatangani<br>
+                                            Kontrak untuk pembayaran tagihan angsuran adalah 7 (tujuh) hari kerja terhitung sejak tagihan dan kelengkapan<br>
+                                            dokumen penunjang yang tidak diperselisihkan diterima oleh Pejabat yang berwenang untuk menandatangani Kontrak.
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>49.(i)</td>
+                                        <td>Hak dan Kewajiban Penyedia</td>
+                                        <td>
+                                            Penyedia jasa bertanggung jawab atas pelaksanaan kontrak, kesesuaian kualitas barang/jasa, ketepatan perhitungan jumlah atau volume, ketepatan waktu penyerahan, ketepatan tempat penyerahan dan penerapan keselamatan konstruksi.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>56.3</td>
+                                        <td>Tindakan Penyedia yang Mensyaratkan Persetujuan Pejabat yang berwenang untuk menandatangani Kontrak</td>
+                                        <td>
+                                            Tindakan lain oleh Penyedia yang memerlukan persetujuan PPK adalah:<br>
+                                            - Perpanjangan waktu kontrak pekerjaan<br>
+                                            - Pencairan Jaminan<br>
+                                            - Perintah perubahan, yang menyangkut :<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;- Penambahan atau pengurangan pekerjaan dan perubahan atau penambahan atau pengurangan spesifikasi.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>56.3</td>
+                                        <td>Tindakan Penyedia yang Mensyaratkan Persetujuan Pengawas Pekerjaan</td>
+                                        <td>
+                                            Tindakan Penyedia yang memerlukan persetujuan Pengawas Pekerjaan adalah: Tentang Pelaksanaan Teknis Pekerjaan dilapangan.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>58</td>
+                                        <td>Kepemilikan Dokumen</td>
+                                        <td>
+                                            Penyedia diperbolehkan menggunakan salinan dokumen dan piranti lunak yang dihasilkan dari Pekerjaan Konstruksi ini dengan pembatasan sebagai berikut:<br>
+                                            Sampai dengan jangka waktu pelaksanaan dan jangka waktu pemeliharaan berakhir.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>65</td>
+                                        <td>Fasilitas</td>
+                                        <td>
+                                            Pejabat Pembuat Komitmen akan memberikan fasilitas berupa:<br>
+                                            1. Tim Pendukung/Tim Teknis;<br>
+                                            2. Penyusun dan Peneliti Kontrak;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>66.1.(h)</td>
+                                        <td>Peristiwa Kompensasi</td>
+                                        <td>
+                                            Ketentuan selain yang diatur dalam SSUK mengenai pemberian peristiwa kompensasi adalah:<br>
+                                            1) PPK mengubah jadwal yang dapat mempengaruhi pelaksanaan pekerjaan;<br>
+                                            2) Keterlambatan pembayaran kepada penyedia;<br>
+                                            3) PPK tidak memberikan gambar-gambar, spesifikasi dan/atau instruksi sesuai jadwal yang dibutuhkan;<br>
+                                            4) Penyedia belum bisa masuk ke lokasi sesuai jadwal;<br>
+                                            5) PPK menginstruksikan kepada pihak penyedia untuk melakukan pengujian tambahan yang setelah dilaksanakan pengujian ternyata tidak ditemukan kerusakan/kegagalan/penyimpangan;<br>
+                                            6) PPK memerintahkan penundaan pelaksanaan pekerjaan;<br>
+                                            7) PPK memerintahkan untuk mengatasi kondisi tertentu yang tidak dapat diduga sebelumnya dan disebabkan oleh PPK;<br>
+                                            8) Ketentuan lain dalam SPK.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>70.1.(e)</td>
+                                        <td>Besaran Uang Muka</td>
+                                        <td>
+                                            Pekerjaan Konstruksi ini dapat diberikan uang muka sebesar {{$data->pelaksanaan3}} ({{$data->haripelaksanaan3}}) dari Nilai Kontrak.
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>70.2.(d)</td>
+                                        <td>Pembayaran Prestasi Pekerjaan</td>
+                                        <td>
+                                            Pembayaran prestasi pekerjaan dilakukan dengan cara: Sertifikat Bulanan (MC), Pembayaran berdasarkan cara tersebut di atas dilakukan dengan ketentuan sebagai berikut: setelah dilakukan pengukuran bersama oleh Tim Teknis atas volume pekerjaan yang benar-benar telah dilaksanakan, yang dinyatakan dengan Berita Acara.<br>
+                                            Tim Teknis dapat meminta bantuan pihak ketiga untuk melakukan pemeriksaan atas biaya penyedia jasa. Untuk pekerjaan yang tidak memenuhi spesifikasi teknis dan tidak dibayar akan menjadi milik pemerintah Kabupaten Blora.<br>
+                                            <strong>Dokumen penunjang yang disyaratkan untuk mengajukan tagihan pembayaran prestasi pekerjaan:</strong><br>
+                                            - Berita acara hasil pengukuran prestasi pekerjaan;<br>
+                                            - Surat pengajuan tagihan pembayaran;<br>
+                                            - Bukti pembayaran bulanan sebelumnya.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>70.4.(c)</td>
+                                        <td>Denda akibat Keterlambatan</td>
+                                        <td>
+                                            Untuk pekerjaan ini besar denda keterlambatan untuk setiap hari keterlambatan adalah 1/1000 dari total nilai kontrak. (sebelum PPN).
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>78</td>
+                                        <td>Umur Konstruksi dan Pertanggungan terhadap Kegagalan Bangunan</td>
+                                        <td>
+                                            a. Bangunan Hasil Pekerjaan memiliki umur konstruksi selama 10 (Sepuluh) tahun sejak tanggal penyerahan akhir pekerjaan;<br>
+                                            b. Pertanggungan terhadap kegagalan bangunan ditetapkan selama 10 (Sepuluh) tahun sejak tanggal penyerahan akhir pekerjaan;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>78.2</td>
+                                        <td>Sanksi</td>
+                                        <td>
+                                            Pelanggaran terhadap ketentuan Pengalihan dan/atau SubSPK dikenakan sanksi Pemutusan SPK dimasukkan dalam Daftar Hitam.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>79</td>
+                                        <td>Penyelesaian Perselisihan</td>
+                                        <td>
+                                            Dalam hal terjadi perselisihan/sengketa diantara para pihak, para pihak terlebih dahulu menyelesaikan perselisihan tersebut melalui musyawarah untuk mufakat.<br>
+                                            Dalam hal musyawarah untuk mufakat tidak tercapai, maka para pihak sepakat menyelesaikan perselisihan/sengketa melalui Layanan Penyelesaian Sengketa Pengadaan LKPP-RI.
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
-
-                            <p>
-                                Dengan ini kami beritahukan bahwa penawaran Saudara nomor <b style="color: black">{{ $data->sppbj->nomorkontrak }}</b> tanggal <b style="color: black"> {{ \Carbon\Carbon::parse($data->sppbj->tanggal)->translatedFormat('d F Y') }} </b> perihal Nomor : <b style="color: black;"> {{ $data->sppbj->perihalnomor }} </b> Penawaran Pekerjaan <b style="color: black;">{{ $data->sppbj->penawaran }} </b> dengan [nilai penawaran/penawaran terkoreksi] sebesar <b style="color: black;"> Rp. {{ number_format((float)$data->sppbj->hargaterkoreksi, 0, ',', '.') }} ({{ $data->sppbj->hargaterbilang }}) </b> kami nyatakan diterima/disetujui.
-                            </p>
-
-                            <p>
-                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar <b style="color: black"> Rp. {{ number_format((float)$data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) </b> [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama <b style="color: black;"> {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) </b> hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
-                            </p>
-
-                            <p>
-                                Kegagalan Saudara untuk menerima penunjukan ini yang disusun berdasarkan evaluasi terhadap penawaran Saudara, akan dikenakan sanksi sesuai ketentuan dalam Peraturan Perundangan terkait tentang Pengadaan Barang/Jasa Pemerintah beserta petunjuk teknisnya.
-                            </p>
-
-                            <br>
-
-                            <p>
-                                Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
-                            </p>
-
-                            <div class="tanda-tangan">
-                                <p>Pejabat Penandatangan Kontrak</p>
-                                <div style="margin-top: 10px;">
-                                    @if($data->uploadtandatangan && file_exists(public_path('storage/' . $data->uploadtandatangan)))
-                                        <!-- Menampilkan gambar dari storage -->
-                                        <img src="{{ asset('storage/' . $data->uploadtandatangan) }}" alt="Tanda Tangan" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
-                                    @elseif($data->uploadtandatangan)
-                                        <!-- Menampilkan gambar dari path luar storage -->
-                                        <img src="{{ asset($data->uploadtandatangan) }}" alt="Tanda Tangan" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
-                                    @else
-                                        <!-- Placeholder jika tidak ada data -->
-                                        <img src="/assets/00_masjaki/images/tandatangan.png" alt="Placeholder Image" style="width: auto; height: 150px; object-fit: contain;" loading="lazy">
-                                    @endif
-                                </div>
-
-                                <p style="margin: 0; padding: 0;"><b>{{ $data->sppbj->namalengkap }}</b></p>
-                                <p style="margin: 0; padding: 0;">{{ $data->sppbj->jabatan }}</p>
-                                <p style="margin: 0; padding: 0;">NIP. {{ $data->sppbj->nip }}</p>
-                            </div>
                         </div>
+
+
+
                     </div>
 
                  <br><br>

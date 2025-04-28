@@ -61,69 +61,9 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #00378a, #00378a);
-                    color: white;
-                    padding: 8px 16px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    transition: all 0.3s ease;
-                    cursor: pointer;
-                "
-                onmouseover="this.style.background='white'; this.style.color='black';"
-                onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
-                    ⚙️ Setting Database
-                </div>
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Jenis Pekerjaan -->
-                            <i class="bi bi-briefcase" style="margin-right: 8px;"></i>
-                            Jenis Pekerjaan
-                        </button>
-                    </a>
-
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Status Pekerjaan -->
-                            <i class="bi bi-kanban" style="margin-right: 8px;"></i>
-                            Status Pekerjaan
-                        </button>
-                    </a>
-
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Sumber Dana -->
-                            <i class="bi bi-cash-stack" style="margin-right: 8px;"></i>
-                            Sumber Dana
-                        </button>
-                    </a>
-
-                    <a href="/404">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                            style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                            <!-- Ikon Tahun Pelaksanaan -->
-                            <i class="bi bi-calendar-event" style="margin-right: 8px;"></i>
-                            Tahun Pelaksanaan
-                        </button>
-                    </a>
 
                 </div>
                                  </div>

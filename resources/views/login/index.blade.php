@@ -1,177 +1,305 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Silahkan Login !</title>
-  <!-- MDB icon -->
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-  <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
-  <!-- MDB -->
-  <link rel="stylesheet" href="/assets/login/css/bootstrap-login-form.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABG Blora - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary: #064420;
+            --accent: #8EBE6B;
+            --safety: #FFD700;
+            --matrix: #00FF00;
+        }
 
-  <link rel="icon" href="/assets/icon/logokabupatenblora.png"  type="image/x-icon">
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #022B1A, #064420);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        /* Matrix Animation */
+        .matrix-bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background:
+                linear-gradient(90deg, rgba(0,255,0,0.05) 1px, transparent 1px),
+                linear-gradient(180deg, rgba(0,255,0,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: gridMove 40s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 1000px; }
+        }
+
+        .construction-animation {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-element {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100%) rotate(360deg); }
+        }
+
+        .crane-icon {
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%238EBE6B" d="M21 6h-5V4h1a1 1 0 0 0 0-2H7a1 1 0 0 0 0 2h1v2H3a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1zm-1 10H4V8h16z"/></svg>');
+        }
+
+        /* Login Container */
+        .login-container {
+            position: relative;
+            width: 90%;
+            max-width: 450px;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            backdrop-filter: blur(15px);
+            border: 2px solid var(--accent);
+            z-index: 2;
+            margin: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 1rem 1rem 1rem 3.5rem; /* Tambah padding kiri */
+        border: 2px solid #D7E4D3;
+        border-radius: 10px;
+        font-size: 1rem;
+        background: rgba(255,255,255,0.9);
+        transition: all 0.3s ease;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box; /* Pastikan padding tidak nambah width */
+    }
+
+    .input-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--primary);
+        z-index: 2;
+        font-size: 1.2rem;
+    }
+
+    .footer-links {
+        margin-top: 1.5rem;
+        text-align: right;
+    }
+
+    .footer-links a {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 480px) {
+        .input-field {
+            padding: 0.8rem 0.8rem 0.8rem 3rem;
+        }
+
+        .input-icon {
+            left: 0.8rem;
+            font-size: 1rem;
+        }
+    }
 
 
+
+
+        .btn-login {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-login:hover {
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            box-shadow: 0 5px 20px rgba(142,190,107,0.4);
+        }
+
+        /* Footer Section */
+        .institutional-footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logos img {
+            height: 40px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                width: 100px;
+            }
+
+            .footer-logos img {
+                height: 35px;
+            }
+        }
+
+        /* Construction Elements */
+        .safety-barrier {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--safety),
+                var(--safety) 20px,
+                #000 20px,
+                #000 40px
+            );
+            animation: barrierGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes barrierGlow {
+            50% { opacity: 0.8; }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Start your project here-->
+    <div class="matrix-bg"></div>
 
-  <style>
-    .divider:after,
-    .divider:before {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: #eee;
-    }
-    .h-custom {
-      height: calc(100% - 73px);
-    }
-    @media (max-width: 450px) {
-      .h-custom {
-        height: 100%;
-      }
-    }
-  </style>
-  <section class="vh-100">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5 d-flex justify-content-center align-items-center"
-        style="gap: 15px;">
-       <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="Logo Kabupaten Blora" width="125" loading="lazy">
-       <img src="/assets/icon/pupr.png" class="img-fluid" alt="Logo PUPR" width="125" loading="lazy">
+    <div class="construction-animation">
+        <div class="floating-element crane-icon" style="left: 10%; animation-delay: 0s"></div>
+    </div>
 
-       <div class="header-text" style="text-align: left; margin-bottom: 20px;">
-        <h1 class="header-title" style="font-family:  'Montserrat', sans-serif; font-size: 2.5rem; font-weight: bold;">
-            <span class="header-title-white" style="font-weight: bold; font-style: italic; color: black; text-align:left;">MASJAKI</span>
-            <span class="header-title-green" style="font-weight: bold; font-style: italic; color: #064420; text-align:left;">BLORA</span>
-        </h1>
-        <p class="header-description" style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: black; font-weight: bold;">
-            Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-        </p>
+    <div class="login-container">
+        <div class="header-section">
+            <img src="/assets/00_masjaki/images/maskotjakon.png" class="logo" alt="ABG Blora">
+            <h1>Sign in to Mas Jaki Blora</h1>
         </div>
+<form action="/login" method="POST">
+    @csrf
+    <div class="input-group">
+        <i class="fas fa-envelope input-icon"></i>
+        <input type="email" class="input-field" name="email" placeholder="Email" required>
 
-        {{-- <h4>Dinas Pekerjaan Umum dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah</h4> --}}
-       </div>
-       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form action="/login" method="post">
-            @csrf
-
-            <!-- Email input -->
-            <div class="mb-4">
-                <input
-                    type="text"
-                    style="width: 300px; text-align:left; padding: 10px 15px;"
-                    name="email"
-                    class="form-control rounded-full @error('email') is-invalid @enderror"
-                    id="email"
-                    placeholder="Email"
-                    value="{{ old('email') }}"
-                />
-                <label class="form-label" for="email">Email address</label>
-
-                @error('email')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <!-- Password input -->
-            <div class="mb-3">
-                <input
-                    type="password"
-                    name="password"
-                    class="form-control rounded-full @error('password') is-invalid @enderror"
-                    id="password"
-                    placeholder="Password"
-                    style="width: 300px; text-align:left; padding: 10px 15px;"
-                />
-                <label class="form-label" for="password">Password</label>
-
-                @error('password')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-
-            <!-- General login error message (if authentication failed) -->
-            @if($errors->has('pesanlogin'))
-                <div class="alert alert-danger mb-2">
-                    {{ $errors->first('pesanlogin') }}  <!-- Display the custom error message -->
-                </div>
-            @endif
-
-            <!-- Remember me and Forgot password -->
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="form-check mb-0">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                    <label class="form-check-label" for="form2Example3">
-                        Remember me
-                    </label>
-                </div>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="text-center text-lg-start mt-4 pt-2">
-                <button
-                    type="submit"
-                    class="btn btn-dark btn-lg"
-                    style="background-color: #064420; color: white; padding-left: 2.5rem; padding-right: 2.5rem; border: none;"
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#064420'; this.style.color='white';"
-                >
-                    Login
-                </button>
-
-                <p class="small fw-bold mt-2 pt-1 mb-0">
-                    Don't have an account?
-                    <a href="/404" class="link-danger">Register</a>
-                </p>
-            </div>
-        </form>
-
+        @error('email')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+    @enderror
 
     </div>
 
+    <div class="input-group">
+        <i class="fas fa-lock input-icon"></i>
+        <input type="password" class="input-field" name="password" placeholder="Password" required>
+
+        @error('password')
+        <div class="invalid-feedback">
+            {{ $message }}
         </div>
-      </div>
+    @enderror
+
     </div>
 
-    <div class="d-flex flex-column text-center justify-content-center py-4 px-4 px-xl-5"
-    style="background: rgb(3, 69, 3); display: flex; align-items: center;">
+    <button type="submit" class="btn-login">Login</button>
 
-   <!-- Logo -->
-   <div class="d-flex justify-content-center align-items-center" style="gap: 15px; margin-bottom: 10px;">
-       <img src="/assets/icon/logokabupatenblora.png" class="img-fluid" alt="Logo Kabupaten Blora" width="20" loading="lazy">
-       <img src="/assets/icon/pupr.png" class="img-fluid" alt="Logo PUPR" width="20" loading="lazy">
-   </div>
+    <div class="footer-links">
+        <a href="/daftar">
+            Belum punya akun? <strong>Daftar</strong>
+        </a>
+    </div>
+</form>
 
-   <!-- Copyright -->
-   <div class="text-white" style="font-size: 14px; font-weight: 400;">
-       © Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora Provinsi Jawa Tengah
-   </div>
+        <div class="institutional-footer">
+            <div class="footer-logos">
+                <img src="/assets/icon/logokabupatenblora.png" alt="Kabupaten Blora">
+                <img src="/assets/icon/pupr.png" alt="PUPR">
+            </div>
+            <p style="color: var(--primary); margin:0; font-size:0.9rem;">
+                Dinas Pekerjaan Umum Dan Penataan Ruang<br>
+                Kabupaten Blora Provinsi Jawa Tengah
+            </p>
+        </div>
+    </div>
 
-</div>
-
-</section>
-  <!-- End your project here-->
-
-  <!-- MDB -->
-  <script type="text/javascript" src="/assets/login/js/mdb.min.js"></script>
-  <!-- Custom scripts -->
-  <script type="text/javascript"></script>
+    <div class="safety-barrier"></div>
 </body>
-
 </html>

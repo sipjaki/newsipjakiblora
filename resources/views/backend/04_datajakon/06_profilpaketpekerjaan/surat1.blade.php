@@ -204,33 +204,59 @@
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-
-                            <a href="/bepekerjaandetailsupdate/{id}">
-                                <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                style="background-color: #27c93c; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Kembali -->
-                                <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 384 512" fill="white" style="margin-right: 8px;">
-                                    <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM384 121.9V128H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/>
+                        <a href="#">
+                            <button
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                onmouseout="this.style.backgroundColor='#ff0000'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
+                                style="background-color: #ff0000; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                <!-- New Icon (Back Arrow) -->
+                                <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 512 512" fill="white" style="margin-right: 8px;">
+                                    <path d="M177.4 85.1L41.4 221.1C34.2 228.4 32 238.9 35.5 247.1C39.1 256.1 45.7 263.8 54.8 267.4C63.9 271 74.4 268.7 81.7 261.5L188.7 149.9V376c0 13.3 10.7 24 24 24H304c13.3 0 24-10.7 24-24V149.9L430.3 261.5c7.3 7.2 17.8 9.5 26.9 5.9C466.3 263.8 472.9 256.1 476.5 247.1C480 238.9 477.8 228.4 470.6 221.1L334.6 85.1C327.4 77.8 318.9 75.6 310.6 78.2C302.4 80.8 294.8 89.5 288 98.8V24C288 10.7 277.3 0 264 0H248C234.7 0 224 10.7 224 24V98.8L177.4 85.1z"/>
                                 </svg>
-                                Update
+                                Pengesahan
                             </button>
-                            </a>
+                        </a>
 
-                            <a href="/bepaketpekerjaan">
-                                <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                                style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon Kembali -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                viewBox="0 0 16 16" style="margin-right: 8px;">
-                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-                            </svg>
-                                Kembali
-                            </button>
-                            </a>
+
+                <!-- Tombol Download -->
+                <button onclick="generatePDF()"  onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#e49e07'; this.style.color='white';"
+                style="background-color: #e49e07; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-pdf" viewBox="0 0 16 16">
+                    <path d="M5.5 0h5A1.5 1.5 0 0 1 12 1.5v13A1.5 1.5 0 0 1 10.5 16h-5A1.5 1.5 0 0 1 4 14.5V1.5A1.5 1.5 0 0 1 5.5 0zM10 1v14H6V1h4z"/>
+                </svg>
+                Download PDF
+                </button>
+
+                <a href="#">
+                    <button
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                        onmouseout="this.style.backgroundColor='#27c93c'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
+                        style="background-color: #27c93c; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <!-- Ikon Kembali -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 384 512" fill="white" style="margin-right: 8px;">
+                            <path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zM384 121.9V128H256V0h6.1c6.4 0 12.5 2.5 17 7l97.9 98c4.5 4.5 7 10.6 7 16.9z"/>
+                        </svg>
+                        Update
+                    </button>
+                </a>
+
+
+                <button
+                onclick="history.back();"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                <!-- Ikon Kembali -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16" style="margin-right: 8px;">
+                    <path fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
+                </svg>
+                Kembali
+            </button>
+
+
                      </div>
                  </div>
                  <!-- /.card-header -->

@@ -777,6 +777,13 @@ Route::post('/beskkallblora/createnew', [SkktenagakerjabloraController::class, '
 // ---------------------- MENU 3 PROFIL PAKET PEKERJAAN -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/bepaketpekerjaan', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaan'])->middleware('auth');
+
+// HAK AKSES PRIBADI ATAU DINAS
+Route::get('/bepaketpekerjaandinas', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandinas'])->middleware('auth');
+
+
+
+
 Route::get('/bepaketpekerjaan/show/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaanshow'])->middleware('auth');
 Route::delete('/bepaketpekerjaan/delete/{namapekerjaan}', [PaketpekerjaanmasjakiController::class, 'bepaketpekerjaandelete'])->middleware('auth');
 
@@ -786,6 +793,11 @@ Route::get('/bepekerjaandetails/{id}', [PaketpekerjaanmasjakiController::class, 
 Route::get('/bedetailspekerjaan/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaansurat2'])->middleware('auth');
 
 Route::get('/bedetailsspk/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaansurat3'])->middleware('auth');
+
+Route::get('/bedetailsskk/{id}', [PaketpekerjaanmasjakiController::class, 'bepekerjaansurat4'])->middleware('auth');
+
+Route::get('/bedetailsuratperjanjianpekerjaan/{id}', [PaketpekerjaanmasjakiController::class, 'besuratperjanjianpekerjaansurat5'])->middleware('auth');
+
 
 // ___________________________________________________________________________________________________________________________________
 
@@ -1008,7 +1020,7 @@ Route::post('/settingstatusadmin/{id}', [SettingmenuController::class, 'deletest
 ->name('delete.statusadmin');
 
 
-Route::get('/masuk', [LoginController::class, 'loginmasuk'])->name('login')->middleware('guest');
+Route::get('/login', [LoginController::class, 'loginmasuk'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 

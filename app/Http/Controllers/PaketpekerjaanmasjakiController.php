@@ -137,6 +137,64 @@ class PaketpekerjaanmasjakiController extends Controller
             ]);
     }
 
+// HAK AKSES DINAS
+public function bepaketpekerjaandinas(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = paketpekerjaanmasjaki::query();
+
+    // Ambil user yang sedang login
+    $user = Auth::user();
+
+    // Filter data berdasarkan user_id
+    if ($user) {
+        $query->where('user_id', $user->id);
+    }
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namapekerjaan', 'LIKE', "%{$search}%")
+                ->orWhere('cvptpenyedia', 'LIKE', "%{$search}%")
+                ->orWhere('nib', 'LIKE', "%{$search}%")
+                ->orWhere('nilaikontrak', 'LIKE', "%{$search}%")
+                ->orWhere('jeniskontrak', 'LIKE', "%{$search}%")
+                ->orWhere('karakteristikkontrak', 'LIKE', "%{$search}%")
+                ->orWhere('bulanmulai', 'LIKE', "%{$search}%")
+                ->orWhere('bulanselesai', 'LIKE', "%{$search}%")
+                ->orWhere('dinas', 'LIKE', "%{$search}%")
+                ->orWhereHas('profiljenispekerjaan', function ($q) use ($search) {
+                    $q->where('jenispekerjaan', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('paketstatuspekerjaan', function ($q) use ($search) {
+                    $q->where('paketstatuspekerjaan', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('sumberdana', function ($q) use ($search) {
+                    $q->where('sumberdana', 'LIKE', "%{$search}%");
+                })
+                ->orWhereHas('tahunpilihan', function ($q) use ($search) {
+                    $q->where('tahunpilihan', 'LIKE', "%{$search}%");
+                });
+        });
+    }
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.04_datajakon.06_profilpaketpekerjaan.01_hakakses.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.04_datajakon.06_profilpaketpekerjaan.01_hakakses.index', [
+        'title' => 'Profil Paket Pekerjaan Konstruksi dan Konsultasi Konstruksi',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
     // TKK DPUPR BLORA SHOW
 
     public function bepaketpekerjaanshow($namapekerjaan)
@@ -219,6 +277,38 @@ class PaketpekerjaanmasjakiController extends Controller
             // Kirim variabel ke view
             return view('backend.04_datajakon.06_profilpaketpekerjaan.surat3', [
                 'title' => 'Surat Perintah Kerja',
+                'data' => $datapaketpekerjaan,
+                'user' => $user,
+                // 'datasub' => $datasub,
+                // 'datasub' => $subdata,
+                // 'start' => $start,  // Pastikan start diteruskan jika dibutuhkan di view
+            ]);
+        }
+
+        public function bepekerjaansurat4($id)
+        {
+            $datapaketpekerjaan = paketpekerjaanmasjaki::where('id', $id)->first();
+            $user = Auth::user();
+
+            // Kirim variabel ke view
+            return view('backend.04_datajakon.06_profilpaketpekerjaan.surat4', [
+                'title' => 'SSKK',
+                'data' => $datapaketpekerjaan,
+                'user' => $user,
+                // 'datasub' => $datasub,
+                // 'datasub' => $subdata,
+                // 'start' => $start,  // Pastikan start diteruskan jika dibutuhkan di view
+            ]);
+        }
+
+        public function bepekerjaansurat5($id)
+        {
+            $datapaketpekerjaan = paketpekerjaanmasjaki::where('id', $id)->first();
+            $user = Auth::user();
+
+            // Kirim variabel ke view
+            return view('backend.04_datajakon.06_profilpaketpekerjaan.surat5', [
+                'title' => 'Surat Perjanjian Pekerjaan',
                 'data' => $datapaketpekerjaan,
                 'user' => $user,
                 // 'datasub' => $datasub,
