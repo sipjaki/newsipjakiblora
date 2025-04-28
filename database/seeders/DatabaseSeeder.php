@@ -58852,7 +58852,7 @@ for ($i = 1; $i <= 1221; $i++) {
         'namapaket' => 'Nama Paket ' . $i, // Menggunakan format angka untuk nama paket
         'nilaikontrak' => rand(100000, 1000000), // Nilai kontrak acak antara 100000 dan 1000000
         'tanggalkontrak' => now(), // Tanggal kontrak menggunakan tanggal saat ini
-        'waktupelaksanaan' => now(), // Waktu pelaksanaan menggunakan tanggal saat ini
+        'waktupelaksanaan' => rand(100, 320),
         'terbilanghari' => 'Hari ' . $i, // Menggunakan angka untuk terbilang hari
         'tanggalmulai' => now(), // Tanggal mulai menggunakan tanggal saat ini
         'konsultanpengawas' => 'Konsultan Pengawas ' . $i, // Nama konsultan pengawas dengan angka

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('namapaket')->nullable();
             $table->string('nilaikontrak')->nullable();
             $table->date('tanggalkontrak')->nullable();
-            $table->date('waktupelaksanaan')->nullable();
+            $table->string('waktupelaksanaan')->nullable();
             $table->string('terbilanghari')->nullable();
             $table->date('tanggalmulai')->nullable();
             $table->string('konsultanpengawas')->nullable();
