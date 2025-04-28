@@ -258,6 +258,10 @@
         </td>
 
          <td style="text-align: center;">
+            <button class="btn btn-sm">{{$item->bulanrekap->bulanrekap}}</button>
+        </td>
+
+         <td style="text-align: center;">
             <button id="status-{{ $item->bulanrekap->bulanrekap }}" class="btn btn-sm"></button>
         </td>
 
