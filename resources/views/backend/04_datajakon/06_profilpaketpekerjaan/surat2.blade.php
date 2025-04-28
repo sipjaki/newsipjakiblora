@@ -306,8 +306,8 @@
 
                             <p>
                                 Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
-                            </p>
 
+<br>
                             <div class="tanda-tangan">
                                 <p>Pejabat Penandatangan Kontrak</p>
                                 <br><br><br>
@@ -315,6 +315,8 @@
                                 <p>{{ $data->sppbj->jabatan }}</p>
                                 <p>NIP. {{ $data->sppbj->nip }}</p>
                             </div>
+                            </p>
+
                         </div>
                     </div>
 
