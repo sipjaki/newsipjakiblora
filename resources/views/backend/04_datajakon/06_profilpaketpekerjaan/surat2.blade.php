@@ -262,34 +262,34 @@
                                 <tr>
                                     <td style="width: 20%;">Nomor</td>
                                     <td style="width: 2%;">:</td>
-                                    <td>{{ $data->nomor }}</td>
-                                    <td style="text-align: right;">Blora, {{ \Carbon\Carbon::parse($data->koptanggal)->translatedFormat('d F Y') }}</td>
+                                    <td>{{ $data->sppbj->nomor }}</td>
+                                    <td style="text-align: right;">Blora, {{ \Carbon\Carbon::parse($data->sppbj->koptanggal)->translatedFormat('d F Y') }}</td>
                                 </tr>
                                 <tr>
                                     <td>Lampiran</td>
                                     <td>:</td>
-                                    <td colspan="2">- {{ $data->lampiran }}</td>
+                                    <td colspan="2">- {{ $data->sppbj->lampiran }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kepada Yth.</td>
                                     <td>:</td>
-                                    <td colspan="2">{{ $data->kepadayth }}</td>
+                                    <td colspan="2">{{ $data->sppbj->kepadayth }}</td>
                                 </tr>
                                 <tr>
                                     <td>di</td>
                                     <td>:</td>
-                                    <td colspan="2">{{ $data->alamatdi }}</td>
+                                    <td colspan="2">{{ $data->sppbj->alamatdi }}</td>
                                 </tr>
                             </table>
 
-                            <h4>Perihal: Penunjukan Penyedia untuk Pelaksanaan Paket Pekerjaan {{ $data->perihal1 }}</h4>
+                            <h4>Perihal: Penunjukan Penyedia untuk Pelaksanaan Paket Pekerjaan {{ $data->sppbj->perihal1 }}</h4>
 
                             <p>
-                                Dengan ini kami beritahukan bahwa penawaran Saudara nomor {{ $data->nomorkontrak }} tanggal {{ \Carbon\Carbon::parse($data->tanggal)->translatedFormat('d F Y') }} perihal Nomor : {{ $data->perihalnomor }} Penawaran Pekerjaan {{ $data->penawaran }} dengan [nilai penawaran/penawaran terkoreksi] sebesar Rp. {{ number_format($data->hargaterkoreksi, 0, ',', '.') }} ({{ $data->hargaterbilang }}) kami nyatakan diterima/disetujui.
+                                Dengan ini kami beritahukan bahwa penawaran Saudara nomor {{ $data->sppbj->nomorkontrak }} tanggal {{ \Carbon\Carbon::parse($data->sppbj->tanggal)->translatedFormat('d F Y') }} perihal Nomor : {{ $data->sppbj->perihalnomor }} Penawaran Pekerjaan {{ $data->sppbj->penawaran }} dengan [nilai penawaran/penawaran terkoreksi] sebesar Rp. {{ number_format($data->sppbj->hargaterkoreksi, 0, ',', '.') }} ({{ $data->sppbj->hargaterbilang }}) kami nyatakan diterima/disetujui.
                             </p>
 
                             <p>
-                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar Rp. {{ number_format($data->dp, 0, ',', '.') }} ({{ $data->terbilang }}) [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama {{ $data->berlaku }} ({{ $data->terbilangberlaku }}) hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
+                                Sebagai tindak lanjut dari Surat Penunjukan Penyedia Barang/Jasa (SPPBJ) ini Saudara diharuskan untuk menyerahkan Jaminan Pelaksanaan sebesar Rp. {{ number_format($data->sppbj->dp, 0, ',', '.') }} ({{ $data->sppbj->terbilang }}) [5% dari nilai kontrak untuk nilai penawaran/terkoreksi antara 80% sampai dengan 100% HPS atau 5% dari nilai total HPS untuk nilai penawaran/terkoreksi di bawah 80% HPS] dengan masa berlaku selama {{ $data->sppbj->berlaku }} ({{ $data->sppbj->terbilangberlaku }}) hari kalender [sekurang-kurangnya sama dengan jangka waktu pelaksanaan] dan menandatangani Surat Perjanjian paling lambat 14 (empat belas) hari kerja setelah diterbitkannya SPPBJ.
                             </p>
 
                             <p>
@@ -299,15 +299,15 @@
                             <br>
 
                             <p>
-                                Kegiatan/Satuan Kerja: <b>{{ $data->kegiatansatuan }}</b>
+                                Kegiatan/Satuan Kerja: <b>{{ $data->sppbj->kegiatansatuan }}</b>
                             </p>
 
                             <div class="tanda-tangan">
                                 <p>Pejabat Penandatangan Kontrak</p>
                                 <br><br><br>
-                                <p><b>{{ $data->namalengkap }}</b></p>
-                                <p>{{ $data->jabatan }}</p>
-                                <p>NIP. {{ $data->nip }}</p>
+                                <p><b>{{ $data->sppbj->namalengkap }}</b></p>
+                                <p>{{ $data->sppbj->jabatan }}</p>
+                                <p>NIP. {{ $data->sppbj->nip }}</p>
                             </div>
                         </div>
                     </div>
