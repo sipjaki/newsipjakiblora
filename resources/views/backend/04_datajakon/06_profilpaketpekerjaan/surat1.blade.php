@@ -269,9 +269,8 @@
                                 <td></td>
                                 <td>Terbilang</td>
                                 <td>:</td>
-                                <td id="terbilang"> Hari Kalender</td>
+                                <td id="terbilang">...</td>
                             </tr>
-
 
                             <script>
                                 function terbilang(angka) {
@@ -298,9 +297,9 @@
                                     return hasil.trim();
                                 }
 
-                                // Contoh penggunaan
+                                // Pastikan angka yang diambil dari Laravel dimasukkan dengan benar ke dalam JavaScript
                                 document.addEventListener('DOMContentLoaded', function() {
-                                    var angka = 123; // Ganti dengan data yang diinginkan
+                                    var angka = {{ $data->detailsnamapaketpekerjaan->waktupelaksanaan }}; // Laravel value (number)
                                     document.getElementById('terbilang').innerHTML = terbilang(angka) + " Hari Kalender";
                                 });
                             </script>
