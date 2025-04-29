@@ -183,6 +183,7 @@
         <th style="width: 300px; text-align:center;"><i class="bi bi-person-lines-fill"></i> Notaris</th>
         <th style="width: 300px; text-align:center;"><i class="bi bi-patch-check-fill"></i> Pengesahan</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Sub Klasifikasi</th>
+        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Berkas</th>
         <th style="width: 300px; text-align:center;"><i class="bi bi-tags-fill"></i> Di Buat Oleh</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
      </tr>
@@ -315,11 +316,54 @@
                                        border-radius: 15px; font-size: 14px; cursor: pointer;
                                        display: flex; align-items: center; justify-content: center;
                                        transition: background-color 0.3s, color 0.3s;">
-                                Lihat
+                                <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
                             </button>
                         </a>
                     </td>
 
+
+                                    <!-- Tombol KTP -->
+                <td style="text-align: center;">
+                    <button class="btn btn-secondary btn-sm"
+                        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                        data-bs-toggle="modal" data-bs-target="#modalKtp3">
+                        <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+                    </button>
+
+                    <!-- Modal KTP -->
+                    <div class="modal fade" id="modalKtp3" tabindex="-1" aria-labelledby="modalKtpLabel3" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                                    <a href="#"><img src="/assets/icon/logopupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                                    <span>:</span>
+                                    <h5 class="modal-title" id="modalKtpLabel3">Berkas Sertifikasi</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <div style="margin-top: 10px;">
+                                        @if($item->uploadberkas && file_exists(public_path('storage/' . $item->uploadberkas)))
+                                        <!-- Display the default iframe when the file exists in the storage -->
+                                        <iframe src="{{ asset('storage/' . $item->uploadberkas) }}" frameborder="0" width="100%" height="600px"></iframe>
+                                    @elseif($item->uploadberkas)
+                                        <!-- Display the iframe with the updated file -->
+                                        <iframe src="{{ asset($item->uploadberkas) }}" frameborder="0" width="100%" height="600px"></iframe>
+                                    @else
+                                        <!-- Optional: Show a placeholder if there's no file available -->
+                                        <p>Data belum diupdate</p>
+                                    @endif
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
 
                     <td style="text-align: center;">
                         @if($item->user?->name)

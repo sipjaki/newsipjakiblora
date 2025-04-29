@@ -834,8 +834,6 @@ profiljakonpersonil::create([
 ]);
 
 
-
-// makan
 //======================== ===================================================================================
 tupoksi::create([
     'judul' => 'Tupoksi Dan Program Jasa Konstruksi',
@@ -67509,14 +67507,18 @@ for ($i = 1; $i <= 151; $i++) {
 for ($i = 1; $i <= 112; $i++) {
     bujkkontraktor::where('id', $i)->update([
         'user_id' => 10,
+        'uploadberkas' => '/assets/03_datajakon/sertifikasi.pdf',
     ]);
 }
 
 for ($i = 1; $i <= 17; $i++) {
     bujkkonsultan::where('id', $i)->update([
         'user_id' => 10,
+        'uploadberkas' => '/assets/03_datajakon/sertifikasi.pdf',
     ]);
 }
+
+
 
 
 

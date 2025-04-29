@@ -1,0 +1,37 @@
+<!-- Tombol KTP -->
+<td style="text-align: center;">
+    <button class="btn btn-secondary btn-sm"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        data-bs-toggle="modal" data-bs-target="#modalKtp3">
+        <i class="fas fa-eye"></i> Lihat
+    </button>
+
+    <!-- Modal KTP -->
+    <div class="modal fade" id="modalKtp3" tabindex="-1" aria-labelledby="modalKtpLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                    <a href="#"><img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                    <span>:</span>
+                    <h5 class="modal-title" id="modalKtpLabel3">Berkas KTP</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                                            <img src="https://abgdpuprblora.com/06_krk/01_krkusaha/01_ktp/1745393042_istockphoto-91197392-1024x1024.jpg" alt="KTP" class="img-fluid">
+                                    </div>
+            </div>
+        </div>
+    </div>
+</td>
+
+
+
+
+for ($i = 1; $i <= 17; $i++) {
+    bujkkonsultan::where('id', $i)->update([
+        'user_id' => 10,
+    ]);
+}

@@ -574,7 +574,7 @@ public function bebujkkonstruksiupdate($id)
         'data' => $jakonkonstruksi,
         'user' => $user,
         'asosiasimasjakiList' => $asosiasimasjakiList,
-        'title' => 'Update BUJK Kontraktor'
+        'title' => 'Update BUJK Konstruksi'
     ]);
 }
 
@@ -597,6 +597,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'tanggal' => 'required|date', // Validasi untuk Tanggal
         'nama_notaris' => 'required|string|max:255', // Validasi untuk Nama Notaris
         'no_pengesahan' => 'required|string|max:255', // Validasi untuk No Pengesahan
+        'uploadberkas' => 'required|mimes:pdf',
     ], [
 
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
@@ -612,6 +613,9 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'tanggal.date' => 'Format Tanggal tidak valid!',
         'nama_notaris.required' => 'Nama Notaris wajib diisi!',
         'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
+        'uploadberkas.required' => 'Berkas wajib diunggah!',
+        'uploadberkas.mimes' => 'Berkas harus berupa file PDF!',
+
     ]);
 
     // Cari data strukturdinas berdasarkan nilai 'judul'
@@ -619,6 +623,22 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
 
     // Gunakan $validatedData untuk update, agar lebih jelas dan rapi
 
+
+    if ($request->hasFile('uploadberkas')) {
+        $file = $request->file('uploadberkas');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/01_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['uploadberkas'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }
     // Proses update setelah data tervalidasi
     $jakonkontraktor->update([
         'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'] ?? $jakonkontraktor->asosiasimasjaki_id, // Jika asosiasimasjaki_id tidak ada, gunakan data sebelumnya
@@ -632,6 +652,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
         'tanggal' => $validatedData['tanggal'] ?? $jakonkontraktor->tanggal, // Jika tanggal tidak ada, gunakan data sebelumnya
         'nama_notaris' => $validatedData['nama_notaris'] ?? $jakonkontraktor->nama_notaris, // Jika nama_notaris tidak ada, gunakan data sebelumnya
         'no_pengesahan' => $validatedData['no_pengesahan'] ?? $jakonkontraktor->no_pengesahan, // Jika no_pengesahan tidak ada, gunakan data sebelumnya
+        'uploadberkas' => $validatedData['uploadberkas'] ?? $jakonkontraktor->uploadberkas, // Jika no_pengesahan tidak ada, gunakan data sebelumnya
     ]);
     // Flash session untuk menampilkan pesan sukses
     session()->flash('update', 'Data Berhasil Diupdate!');

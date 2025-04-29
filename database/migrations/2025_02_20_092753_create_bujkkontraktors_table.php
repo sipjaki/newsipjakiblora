@@ -26,6 +26,7 @@ return new class extends Migration
             $table->date('tanggal')->nullable();
             $table->string('nama_notaris', 255)->nullable();
             $table->string('no_pengesahan', 255)->nullable();
+            $table->string('uploadberkas', 255)->nullable();
 
             $table->fullText(['alamat']);
             $table->softDeletes();

@@ -224,6 +224,33 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label" for="uploadberkas">
+                                                    <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> File Berkas Sertifikasi (PDF)
+                                                </label>
+
+                                                <!-- Preview PDF -->
+                                                <div style="margin-top: 10px;">
+                                                    @if($data->uploadberkas && file_exists(public_path('storage/' . $data->uploadberkas)))
+                                                    <!-- Display the default iframe when the file exists in the storage -->
+                                                    <iframe src="{{ asset('storage/' . $data->uploadberkas) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                @elseif($data->uploadberkas)
+                                                    <!-- Display the iframe with the updated file -->
+                                                    <iframe src="{{ asset($data->uploadberkas) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                @else
+                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                    <p>Data belum diupdate</p>
+                                                @endif
+
+                                                </div>
+
+                                                <!-- Input File untuk Mengunggah PDF -->
+                                                <input type="file" name="uploadberkas" class="form-control @error('uploadberkas') is-invalid @enderror" id="uploadberkas" />
+                                                @error('uploadberkas')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
+                                            </div>
                                     </div>
                                 </div>
                             </div>
