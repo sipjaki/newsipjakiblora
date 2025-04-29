@@ -28,6 +28,7 @@ use App\Http\Controllers\PaketpekerjaanmasjakiController;
 use App\Http\Controllers\PesertapelatihanController;
 use App\Http\Controllers\AndroidVersionController;
 use App\Http\Controllers\DownloadExcelController;
+use App\Http\Controllers\VerifikasiController;
 // MAS JAKI
 
 // atas
@@ -820,7 +821,12 @@ Route::get('/beagendapelatihan/show/{namakegiatan}', [PembinaanController::class
 Route::delete('/beagendapelatihanpeserta/delete/{id}', [PembinaanController::class, 'beagendapelatihanpesertadelete'])->middleware('auth');
 Route::delete('/beagendapelatihan/delete/{namakegiatan}', [PembinaanController::class, 'beagendapelatihandelete'])->middleware('auth');
 
-Route::get('/beagendapelatihanmateri', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth');
+
+Route::get('/beagendapelatihanmateri/{id}', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth');
+Route::delete('/beagendapelatihanmateri/delete/{id}', [PembinaanController::class, 'beagendapelatihanmateridelete'])->middleware('auth')->name('beagendapelatihanmateridelete');
+
+
+// Route::get('/beagendapelatihanmateri', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth');
 
 
 // ___________________________________________________________________________________________________________________________________
@@ -843,6 +849,8 @@ Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class,
 // ___________________________________________________________________________________________________________________________________
 
 
+// ROUTE UNTUK VERIFIKASI BOOLEADN
+Route::put('/verifikasipesertapelatihan/{id}', [VerifikasiController::class, 'verifikasipesertapelatihan'])->name('verifikasi.updatepesertapelatihan');
 
 
 

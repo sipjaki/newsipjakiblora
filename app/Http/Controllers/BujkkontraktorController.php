@@ -414,6 +414,7 @@ public function bebujkkonstruksicreatenew(Request $request)
         'tanggal' => 'required|date',
         'nama_notaris' => 'required|string|max:255',
         'no_pengesahan' => 'required|string|max:255',
+        'uploadberkas' => 'required|mimes:pdf',
     ], [
         'asosiasimasjaki_id.required' => 'Asosiasi harus dipilih!',
         'namalengkap.required' => 'Nama Lengkap wajib diisi!',
@@ -426,6 +427,8 @@ public function bebujkkonstruksicreatenew(Request $request)
         'tanggal.required' => 'Tanggal wajib diisi!',
         'nama_notaris.required' => 'Nama Notaris wajib diisi!',
         'no_pengesahan.required' => 'No Pengesahan wajib diisi!',
+        'uploadberkas.required' => 'Berkas wajib diunggah!',
+        'uploadberkas.mimes' => 'Berkas harus berupa file PDF!',
     ]);
 
     // Ambil ID default dari sub kontraktor (pastikan tidak null di DB!)
@@ -433,6 +436,22 @@ public function bebujkkonstruksicreatenew(Request $request)
 
     // Ambil ID user yang sedang login
     $user_id = Auth::user()->id;
+
+    if ($request->hasFile('uploadberkas')) {
+        $file = $request->file('uploadberkas');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['uploadberkas'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }
 
     // Simpan ke DB
     Bujkkontraktor::create([
@@ -449,6 +468,7 @@ public function bebujkkonstruksicreatenew(Request $request)
         'tanggal' => $validatedData['tanggal'],
         'nama_notaris' => $validatedData['nama_notaris'],
         'no_pengesahan' => $validatedData['no_pengesahan'],
+        'uploadberkas' => $validatedData['uploadberkas'],
     ]);
 
     session()->flash('create', 'Data Berhasil Dibuat!');

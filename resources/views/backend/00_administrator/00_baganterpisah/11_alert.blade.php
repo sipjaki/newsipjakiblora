@@ -111,6 +111,21 @@
         z-index: 1;
     }
 
+    .button-verifikasi, .button-verifikasi {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .button-verifikasi { background: orangered; }
+    .button-text:hover { background: white; color: black; }
+
     .button-text { background: green; }
     .button-text:hover { background: white; color: black; }
 
@@ -217,6 +232,21 @@
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
         <button class="button-text">{{ session('info') }}</button>
+    </div>
+</div>
+@endif
+
+@if (session('verifikasipesertapelatihan'))
+<div class="modal-verify-alert">
+    <div class="modal-box">
+        <div class="modal-crane"></div>
+        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
+        style="width: 150px !important; height: auto;"
+        class="logo-animate-bounce">
+           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+        <div class="success-text">Berhasil</div>
+        <button class="button-verifikasi">{{ session('verifikasipesertapelatihan') }}</button>
     </div>
 </div>
 @endif

@@ -308,7 +308,7 @@ class PembinaanController extends Controller
 
 
         return view('backend.05_agenda.01_agendapelatihan.showpeserta', [
-            'title' => 'Daftar Peserta Agenda',
+            'title' => 'Daftar Peserta Agenda Pelatihan ',
             'data' => $dataagendapelatihan,
             'datapeserta' => $datapesertapelatihan,
             'perPage' => $perPage,
@@ -362,6 +362,59 @@ class PembinaanController extends Controller
 
         return redirect()->back()->with('error', 'Item not found');
         }
+
+
+
+
+        // MATERI PELATIHAN
+
+        public function beagendapelatihanmateri($id)
+        {
+                $dataagendapelatihan = agendapelatihan::where('id', $id)->first();
+                // Ambil data user saat ini
+                $user = Auth::user();
+
+                if (!$dataagendapelatihan) {
+                    // Tangani jika kegiatan tidak ditemukan
+                    return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+                }
+
+                // Menggunakan paginate() untuk pagination
+                $subdata = materipelatihan::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
+
+            // Ambil data user saat ini
+            $user = Auth::user();
+            return view('backend.05_agenda.01_agendapelatihan.01_daftarmateri.index', [
+                'title' => 'Daftar Materi Agenda Pelatihan',
+                'data' => $dataagendapelatihan,
+                'subdata' => $subdata,
+                'user' => $user,
+            ]);
+        }
+
+        public function beagendapelatihanmateridelete($id)
+{
+    $entry = materipelatihan::where('id', $id)->first();
+
+    if ($entry) {
+        // Kalau ada file yang mau dihapus, bisa aktifkan bagian ini
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        $parentId = $entry->bujkkonsultan_id;
+        $entry->delete();
+
+        // Pakai session()->flash supaya konsisten dengan create
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect('/beagendapelatihan');
+    }
+
+    // Kalau tidak ketemu, flash error
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
 
 
 }
