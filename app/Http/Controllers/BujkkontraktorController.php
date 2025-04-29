@@ -627,7 +627,7 @@ public function bebujkkonstruksicreateupdate(Request $request, $id)
     if ($request->hasFile('uploadberkas')) {
         $file = $request->file('uploadberkas');
         $namaFile = time() . '_' . $file->getClientOriginalName();
-        $tujuanPath = public_path('03_datajakon/01_sertifikasi');
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
 
         // Pastikan foldernya ada
         if (!file_exists($tujuanPath)) {
