@@ -98,25 +98,49 @@ class BujkkontraktorController extends Controller
 
 
         public function beasosiasicreatenew(Request $request)
-        {
-            // Validasi input form
-            $validated = $request->validate([
-                'namaasosiasi' => 'required|string|max:255',
-            ], [
-                'namaasosiasi.required' => 'Nama asosiasi tidak boleh kosong.',
-                'namaasosiasi.string' => 'Nama asosiasi harus berupa teks.',
-                'namaasosiasi.max' => 'Nama asosiasi tidak boleh lebih dari 255 karakter.',
-            ]);
+{
+    // Validasi input form
+    $validated = $request->validate([
+        'namaasosiasi' => 'required|string|max:255',
+        'alamat' => 'required|string|max:255',
+        'notelepon' => 'required|string',
+        'pic' => 'required|string|max:255',
+        'jumlahanggota' => 'required|integer|min:1',
+    ], [
+        'namaasosiasi.required' => 'Nama asosiasi tidak boleh kosong.',
+        'namaasosiasi.string' => 'Nama asosiasi harus berupa teks.',
+        'namaasosiasi.max' => 'Nama asosiasi tidak boleh lebih dari 255 karakter.',
 
-            // Menyimpan data ke dalam database asosiasimasjaki setelah divalidasi
-            asosiasimasjaki::create([
-                'namaasosiasi' => $validated['namaasosiasi'], // Menggunakan hasil validasi untuk menyimpan
-            ]);
+        'alamat.required' => 'Alamat tidak boleh kosong.',
+        'alamat.string' => 'Alamat harus berupa teks.',
+        'alamat.max' => 'Alamat tidak boleh lebih dari 255 karakter.',
 
-            // Mengarahkan pengguna ke halaman setelah data berhasil disimpan
-            return redirect('/beasosiasi')->with('success', 'Data Asosiasi Berhasil Di Tambahkan !');
-        }
+        'notelepon.required' => 'Nomor telepon tidak boleh kosong.',
+        'notelepon.string' => 'Nomor telepon harus berupa teks.',
+        'notelepon.regex' => 'Nomor telepon harus berisi angka dan panjang 7-15 digit.',
 
+        'pic.required' => 'PIC tidak boleh kosong.',
+        'pic.string' => 'PIC harus berupa teks.',
+        'pic.max' => 'PIC tidak boleh lebih dari 255 karakter.',
+
+        'jumlahanggota.required' => 'Jumlah anggota tidak boleh kosong.',
+        'jumlahanggota.integer' => 'Jumlah anggota harus berupa angka.',
+        'jumlahanggota.min' => 'Jumlah anggota minimal 1.',
+    ]);
+
+    // Menyimpan data ke dalam database asosiasimasjaki setelah divalidasi
+    asosiasimasjaki::create([
+        'namaasosiasi' => $validated['namaasosiasi'],
+        'alamat' => $validated['alamat'],
+        'notelepon' => $validated['notelepon'],
+        'pic' => $validated['pic'],
+        'jumlahanggota' => $validated['jumlahanggota'],
+    ]);
+
+    session()->flash('create', 'Data Berhasil Dibuat!');
+
+    return redirect('/beasosiasi');
+}
 
 
         // BACKEND ASOSIASI SHOW
@@ -132,6 +156,19 @@ class BujkkontraktorController extends Controller
             'data' => $datasosiasi,
         ]);
         }
+
+        public function beasosiasiupdate($id)
+        {
+            $datasosiasi = asosiasimasjaki::where('id', $id)->first();
+        // Ambil data user saat ini
+            $user = Auth::user();
+
+        return view('backend.04_datajakon.03_asosiasimasjaki.update', [
+            'title' => 'Update Data Asosiasi Mas Jaki',
+            'data' => $datasosiasi,
+        ]);
+        }
+
 
         public function beasosiasidelete($namaasosiasi)
             {
@@ -653,6 +690,56 @@ public function bebujkkonstruksiklasifikasidelete($id)
 }
 
 
+
+public function beasosiasiupdatecreate(Request $request, $id)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'namaasosiasi'   => 'required|string|max:255',
+        'alamat'         => 'required|string|max:255',
+        'notelepon'      => 'required|string|max:20',
+        'pic'            => 'required|string|max:255',
+        'jumlahanggota'  => 'required|integer|min:0',
+    ], [
+        'namaasosiasi.required'   => 'Nama asosiasi wajib diisi.',
+        'namaasosiasi.string'     => 'Nama asosiasi harus berupa teks.',
+        'namaasosiasi.max'        => 'Nama asosiasi tidak boleh lebih dari 255 karakter.',
+
+        'alamat.required'         => 'Alamat wajib diisi.',
+        'alamat.string'           => 'Alamat harus berupa teks.',
+        'alamat.max'              => 'Alamat tidak boleh lebih dari 255 karakter.',
+
+        'notelepon.required'      => 'Nomor telepon wajib diisi.',
+        'notelepon.string'        => 'Nomor telepon harus berupa teks.',
+        'notelepon.max'           => 'Nomor telepon tidak boleh lebih dari 20 karakter.',
+
+        'pic.required'            => 'Nama PIC wajib diisi.',
+        'pic.string'              => 'Nama PIC harus berupa teks.',
+        'pic.max'                 => 'Nama PIC tidak boleh lebih dari 255 karakter.',
+
+        'jumlahanggota.required' => 'Jumlah anggota wajib diisi.',
+        'jumlahanggota.integer'  => 'Jumlah anggota harus berupa angka.',
+        'jumlahanggota.min'      => 'Jumlah anggota tidak boleh kurang dari 0.',
+    ]);
+
+
+    // Ambil data asosiasi berdasarkan ID
+    $asosiasi = asosiasimasjaki::findOrFail($id);
+
+    // Update data
+    $asosiasi->update([
+        'namaasosiasi'   => $validated['namaasosiasi'],
+        'alamat'         => $validated['alamat'],
+        'notelepon'      => $validated['notelepon'],
+        'pic'            => $validated['pic'],
+        'jumlahanggota'  => $validated['jumlahanggota'],
+    ]);
+
+    // Redirect atau response
+    session()->flash('update', 'Data Berhasil Di Update!');
+
+    return redirect('/beasosiasi');
+}
 
 }
 

@@ -14,7 +14,11 @@ return new class extends Migration
         Schema::create('asosiasimasjakis', function (Blueprint $table) {
             $table->id();
             $table->string('namaasosiasi')->nullable()->index();
-        $table->softDeletes();
+            $table->string('alamat')->nullable();
+            $table->string('notelepon')->nullable();
+            $table->string('pic')->nullable();
+            $table->string('jumlahanggota')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->index('deleted_at');

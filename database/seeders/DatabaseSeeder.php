@@ -15677,196 +15677,247 @@ jabatankerja::create([
 //======================== ===================================================================================
 // DATA ASOSIAS KABUPATEN BLORA JAWA TENGAH
 asosiasimasjaki::create([
-    'id' => '1',
-    'namaasosiasi' => 'AK3L',
+    'id' => '99',
+    'namaasosiasi' => 'DPUPR Kabupaten Blora',
+    'alamat' => 'Jl. Nusantara No.62, Jetis, Kauman, Kec. Blora, Kabupaten Blora 58214, Jawa Tengah',
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
+]);
+
+asosiasimasjaki::create([
+    'id' => '1',
+    'namaasosiasi' => 'AKOINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '2',
-    'namaasosiasi' => 'ASDAMKINDO',
+    'namaasosiasi' => 'ANDALAN SERTIFIKASI KONTRAKTOR NASIONAL (ASKONAS)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '3',
-    'namaasosiasi' => 'ASTEKINDO',
+    'namaasosiasi' => 'ASPEKINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '4',
-    'namaasosiasi' => 'ASTTATINDO',
+    'namaasosiasi' => 'ASPEKNAS',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '5',
-    'namaasosiasi' => 'ATAKI',
+    'namaasosiasi' => 'GABPEKNAS',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '6',
-    'namaasosiasi' => 'ATAKNAS',
+    'namaasosiasi' => 'GAPEKNAS',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '7',
-    'namaasosiasi' => 'ATAKSI',
+    'namaasosiasi' => 'GAPEKSINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '8',
-    'namaasosiasi' => 'GATAKI',
+    'namaasosiasi' => 'GAPENSI',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '9',
-    'namaasosiasi' => 'GATENSI',
+    'namaasosiasi' => 'INKINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '10',
-    'namaasosiasi' => 'HATSINDO',
+    'namaasosiasi' => 'Lembaga Sertifikasi INKINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '11',
-    'namaasosiasi' => 'HPJI',
+    'namaasosiasi' => 'LSBU GAPEKNAS INFRASTRUKTUR (GAPEKNAS)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '12',
-    'namaasosiasi' => 'IAKI',
+    'namaasosiasi' => 'LSBU KONSTRUKSI INDONESIA (ASPEKINDO)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '13',
-    'namaasosiasi' => 'LPJK',
+    'namaasosiasi' => 'PERKINDO',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '14',
-    'namaasosiasi' => 'PAKKI',
+    'namaasosiasi' => 'PERKINDO,INKINDO,PERKONINDO KONSULTAN KONSTRUKSI MANDIRI',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '15',
-    'namaasosiasi' => 'PARABI',
+    'namaasosiasi' => 'PERKONINDO KONSULTAN KONSTRUKSI MANDIRI',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '16',
-    'namaasosiasi' => 'PASTALI',
+    'namaasosiasi' => 'PT PANCA SATYA JAYATAMA NUSANTARA (GABPEKNAS)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '17',
-    'namaasosiasi' => 'PASTI',
+    'namaasosiasi' => 'PT PANCA SATYA JAYATAMA NUSANTARA (GABPEKNAS)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '18',
-    'namaasosiasi' => 'PERPAKOM',
+    'namaasosiasi' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '19',
-    'namaasosiasi' => 'PERTAHKINDO',
+    'namaasosiasi' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '20',
-    'namaasosiasi' => 'PERTAMA',
+    'namaasosiasi' => 'PT. SERBU KONSTRUKSI MANDIRI',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
 asosiasimasjaki::create([
     'id' => '21',
-    'namaasosiasi' => 'PERTAPIN',
+    'namaasosiasi' => 'SERTIFIKASI BADAN USAHA GABUNGAN PERUSAHAAN KONSTRUKSI NASIONAL (GAPEKSINDO)',
+    'alamat' => null,
+    'pic' => null,
+    'jumlahanggota' => null,
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+    'deleted_at' => null,
 ]);
 
-asosiasimasjaki::create([
-    'id' => '22',
-    'namaasosiasi' => 'PETAKINDO',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '23',
-    'namaasosiasi' => 'PETAKOM',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
-
-asosiasimasjaki::create([
-    'id' => '99',
-    'namaasosiasi' => 'DPUPR Kab Blora',
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null, // Jika Anda menggunakan soft deletes
-]);
 
 
 //======================== ===================================================================================

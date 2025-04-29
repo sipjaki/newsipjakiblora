@@ -62,6 +62,8 @@
                  <div class="card-header">
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
+
+
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Tenaga Kerja Konstruksi ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
@@ -113,8 +115,8 @@
          <th style="width: 75px; text-align:center;">No</th>
          <th style="width: 400px; text-align:center;">Nama Lengkap</th>
          <th style="width: 400px; text-align:center;">Alamat </th>
-         <th style="width: 250px; text-align:center;">Tahun Lulus</th>
-         <th style="width: 250px; text-align:center;">Tahun Bimtek</th>
+         <th style="width: 250px; text-align:center;">Tahun Lulus Sekolah</th>
+         <th style="width: 250px; text-align:center;">Tahun Anggaran</th>
          <th style="width: 300px; text-align:center;">Penyelenggara</th>
          <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
          <th style="width: 150px; text-align:center;">Pendidikan</th>

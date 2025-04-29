@@ -155,8 +155,8 @@
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:75px;"> No</th>
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Nama Badan Usaha</th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> No Telepon</th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:100px;"> Hubungi</th>
+                                            {{-- <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> No Telepon</th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:100px;"> Hubungi</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
@@ -164,7 +164,7 @@
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration}}</td>
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->namalengkap)) }}</td>
-                                            <td style="text-align: center;">{{$item->no_telepon}}</td>
+                                            {{-- <td style="text-align: center;">{{$item->no_telepon}}</td>
                                             <td style="text-align: center;">
                                                 <div style="display: inline-block; padding: 8px 12px; border-radius: 5px; background-color: #25D366; transition: 0.3s; cursor: pointer;"
                                                     onmouseover="this.style.backgroundColor='white'; this.style.border='1px solid #25D366'; this.children[0].style.color='#25D366'; this.children[0].children[0].style.color='#25D366';"
@@ -175,7 +175,7 @@
                                                         <i class="fab fa-whatsapp" style="font-size: 16px; margin-right: 5px; color: white;"></i>
                                                     </a>
                                                 </div>
-                                            </td>
+                                            </td> --}}
 
                                         </tr>
                                         @endforeach

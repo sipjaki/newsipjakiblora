@@ -628,7 +628,7 @@
 
             {{-- ===================================== MENU DATA AHSP BINA MARGA    --}}
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/404" class="nav-link">
                     <!-- Ikon untuk AHSP Bina Marga -->
                     <i class="nav-icon bi bi-archive" style="color: white;"></i> <!-- Ikon alternatif untuk AHSP Bina Marga -->
                     <p style="color: white">
@@ -656,7 +656,7 @@
 
             {{-- ===================================== MENU DATA AHSP SUMBER DAYA AIR    --}}
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/404" class="nav-link">
                     <!-- Ikon untuk AHSP Sumber Daya Air -->
                     <i class="nav-icon bi bi-droplet" style="color: white;"></i> <!-- Ikon untuk Sumber Daya Air -->
                     <p style="color: white">

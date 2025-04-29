@@ -582,3 +582,56 @@ font-family: 'Poppins', sans-serif;
 
                                             Route::get('/datajakon/asosiasikonstruksi/{namaasosiasi}', [BujkkontraktorController::class, 'asosiasikonstruksishow']);
 Route::get('/datajakon/asosiasikonsultan/{namaasosiasi}', [BujkkontraktorController::class, 'asosiasikonsultanshow']);
+
+
+
+
+
+
+
+menu kembali
+
+
+<button
+                onclick="window.history.back();"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+
+                <!-- Ikon Kembali -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     viewBox="0 0 16 16" style="margin-right: 8px;">
+                    <path fill-rule="evenodd"
+                          d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                </svg>
+                Kembali
+            </button>
+
+
+
+
+
+
+            doenload excel
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+   <script>
+    function exportTableToExcel(tableID, filename = '') {
+        var table = document.getElementById(tableID);
+        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+        return XLSX.writeFile(wb, filename + '.xlsx');
+    }
+    </script>
+
+<button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_bujkkonstruksi')"
+                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                         onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
+                         style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
+                         >
+                            <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
+                        </button>
+
+
+
+
+id="tabelAsosiasi"

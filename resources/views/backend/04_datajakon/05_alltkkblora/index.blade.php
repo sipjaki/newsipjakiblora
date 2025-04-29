@@ -141,7 +141,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" style="margin-right: 8px;">
                                 <path fill="white" d="M12 2L2 6v4l10 4 10-4V6l-10-4zm0 10l-8-3v6l8 3 8-3v-6l-8 3zm-1 4v4h2v-4h-2z"/>
                             </svg>
-                            LPS Penerbit
+                            LSP Penerbit
                         </button>
                     </a>
 
@@ -194,6 +194,17 @@
 
                                 </script>
 
+                                <button
+                                style="margin-right:20px; background-color: #2da010; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: default;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='navy';"
+                                onmouseout="this.style.backgroundColor='#2da010'; this.style.color='white';">
+
+                                    <i class="bi bi-people-fill"></i>
+                                    Data Tenaga Kerja {{ $datajumlah }} Orang
+                                    <i class="bi bi-award-fill ms-3"></i>
+                                    {{ $datajumlahsertifikat }} Buah Sertifikat
+                                </button>
+
                          <a href="/beskkallblora/create">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -216,14 +227,14 @@
          <th style="width: 75px; text-align:center;">No</th>
          <th style="width: 400px; text-align:center;">Nama Lengkap</th>
          <th style="width: 400px; text-align:center;">Alamat </th>
-         <th style="width: 300px; text-align:center;">Tahun Lulus</th>
-         <th style="width: 300px; text-align:center;">Tahun Bimtek</th>
+         <th style="width: 300px; text-align:center;">Tahun Lulus Sekolah</th>
+         <th style="width: 300px; text-align:center;">Tahun Anggaran</th>
          <th style="width: 300px; text-align:center;">Penyelenggara</th>
          <th style="width: 400px; text-align:center;">Universitas/Sekolah/Instansi</th>
          <th style="width: 225px; text-align:center;">Pendidikan</th>
          <th style="width: 400px; text-align:center;">Jabatan Kerja</th>
          <th style="width: 100px; text-align:center;">Jenjang</th>
-         <th style="width: 400px; text-align:center;">LPS Penerbit</th>
+         <th style="width: 400px; text-align:center;">LSP Penerbit</th>
          <th style="width: 300px; text-align:center;">Jurusan</th>
          <th style="width: 300px; text-align:center;">Tanggal Terbit</th>
          <th style="width: 300px; text-align:center;">Tanggal Habis</th>

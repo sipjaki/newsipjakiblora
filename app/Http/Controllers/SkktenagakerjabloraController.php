@@ -228,9 +228,17 @@ public function beskkdpupr(Request $request)
         ]);
     }
 
+
+        $datajumlahorang = skktenagakerjablora::select(DB::raw('LOWER(TRIM(nama)) as nama'))
+        ->distinct()
+        ->count('nama');
+    $datajumlahsertifikat = skktenagakerjablora::count();
+
     return view('backend.04_datajakon.04_tkkdpupr.index', [
         'title' => 'TKK Diselenggarakan DPUPR Kabupaten Blora',
         'data' => $data,
+        'datajumlah' => $datajumlahorang,
+        'datajumlahsertifikat' => $datajumlahsertifikat,
         'perPage' => $perPage,
         'search' => $search
     ]);
@@ -391,9 +399,18 @@ $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
                 ]);
             }
 
+
+                $datajumlahorang = skktenagakerjablora::select(DB::raw('LOWER(TRIM(nama)) as nama'))
+                ->distinct()
+                ->count('nama');
+            $datajumlahsertifikat = skktenagakerjablora::count();
+
+
             return view('backend.04_datajakon.05_alltkkblora.index', [
                 'title' => 'Semua TKK Kabupaten Blora',
                 'data' => $data,
+                'datajumlah' => $datajumlahorang,
+                'datajumlahsertifikat' => $datajumlahsertifikat,
                 'perPage' => $perPage,
                 'search' => $search
             ]);

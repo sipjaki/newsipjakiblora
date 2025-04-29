@@ -45,19 +45,20 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/bebujkkonstruksi">
-                    <button
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                    <!-- Ikon Kembali -->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" style="margin-right: 8px;">
-                 <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-               </svg>
-                    Kembali
-                </button>
-            </a>
+                <button
+                onclick="window.history.back();"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+
+                <!-- Ikon Kembali -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     viewBox="0 0 16 16" style="margin-right: 8px;">
+                    <path fill-rule="evenodd"
+                          d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                </svg>
+                Kembali
+            </button>
         </div>
         <hr>
 
@@ -73,8 +74,8 @@
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
                                         <div class="mb-3 position-relative">
-                                            <label class="form-label" for="pju" style="position: relative; padding-left: 30px;">
-                                                <i class="bi bi-lightbulb" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
+                                            <label class="form-label" for="namaasosiasi" style="position: relative; padding-left: 30px;">
+                                                <i class="bi bi-people-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
                                                 Nama Asosiasi
                                             </label>
                                             <input type="text" id="namaasosiasi" name="namaasosiasi" class="form-control @error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}" style="padding-left: 30px;" />
@@ -82,8 +83,53 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                    </div>
-                                    <!-- End Right Column -->
+
+                                        <div class="mb-3 position-relative">
+                                            <label class="form-label" for="alamat" style="position: relative; padding-left: 30px;">
+                                                <i class="bi bi-geo-alt-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
+                                                Alamat
+                                            </label>
+                                            <input type="text" id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old('alamat') }}" style="padding-left: 30px;" />
+                                            @error('alamat')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3 position-relative">
+                                            <label class="form-label" for="notelepon" style="position: relative; padding-left: 30px;">
+                                                <i class="bi bi-telephone-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
+                                                No Telepon
+                                            </label>
+                                            <input type="text" id="notelepon" name="notelepon" class="form-control @error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}" style="padding-left: 30px;" />
+                                            @error('notelepon')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>                                                                        <!-- End Right Column -->
+
+                                    <div class="col-md-6">
+                                        <div class="mb-3 position-relative">
+                                            <label class="form-label" for="pic" style="position: relative; padding-left: 30px;">
+                                                <i class="bi bi-people-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
+                                                PIC
+                                            </label>
+                                            <input type="text" id="pic" name="pic" class="form-control @error('pic') is-invalid @enderror" value="{{ old('pic') }}" style="padding-left: 30px;" />
+                                            @error('pic')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3 position-relative">
+                                            <label class="form-label" for="jumlahanggota" style="position: relative; padding-left: 30px;">
+                                                <i class="bi bi-geo-alt-fill" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); color: navy;"></i>
+                                                Jumlah Anggota
+                                            </label>
+                                            <input type="number" id="jumlahanggota" name="jumlahanggota" class="form-control @error('jumlahanggota') is-invalid @enderror" value="{{ old('jumlahanggota') }}" style="padding-left: 30px;" />
+                                            @error('jumlahanggota')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>                                                                        <!-- End Right Column -->
                                 </div>
                                 <!-- End row -->
                             </div>

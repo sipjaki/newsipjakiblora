@@ -27,6 +27,7 @@ use App\Http\Controllers\AllskktenagakerjabloraController;
 use App\Http\Controllers\PaketpekerjaanmasjakiController;
 use App\Http\Controllers\PesertapelatihanController;
 use App\Http\Controllers\AndroidVersionController;
+use App\Http\Controllers\DownloadExcelController;
 // MAS JAKI
 
 // atas
@@ -747,6 +748,8 @@ Route::get('/beasosiasi/create', [BujkkontraktorController::class, 'beasosiasicr
 Route::post('/beasosiasi/createnew', [BujkkontraktorController::class, 'beasosiasicreatenew'])->middleware('auth')->name('create.asosiasimasjakicreatenew');
 Route::get('/beasosiasi/show/{namaasosiasi}', [BujkkontraktorController::class, 'beasosiasishow'])->middleware('auth');
 Route::delete('/beasosiasi/delete/{namaasosiasi}', [BujkkontraktorController::class, 'beasosiasidelete'])->middleware('auth');
+Route::get('/beasosiasi/update/{id}', [BujkkontraktorController::class, 'beasosiasiupdate'])->middleware('auth')->name('beasosiasiupdate');
+Route::post('/beasosiasi/updatecreate/{id}', [BujkkontraktorController::class, 'beasosiasiupdatecreate'])->middleware('auth')->name('beasosiasiupdatecreate');
 // ___________________________________________________________________________________________________________________________________
 
 
@@ -1028,6 +1031,11 @@ Route::get('/login', [LoginController::class, 'loginmasuk'])->name('login')->mid
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+
+
+
+// CONTROLLER DOWNLOAD
+Route::get('/asosiasi/export', [DownloadExcelController::class, 'exportasosiasi'])->name('asosiasi.export');
 
 require __DIR__.'/auth.php';
 

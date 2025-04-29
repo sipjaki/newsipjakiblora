@@ -102,6 +102,18 @@
 
                          </button>
                          </a> --}}
+                         <a href="{{ route('asosiasi.export') }}" >
+                             <button onclick="exportTableToExcel('tabelAsosiasi', 'data_asosiasi')"
+                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                             onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
+                             style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
+                             >
+                             <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
+                            </button>
+                        </a>
+
+
+
                          <a href="/beasosiasi/create">
                             <button
                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -118,11 +130,15 @@
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table class="table table-striped">
+<table id="tabelAsosiasi" class="table table-striped">
  <thead>
      <tr>
          <th style="width: 75px; text-align:center;">No</th>
          <th style="width: 600px; text-align:center; background:white; color:black;">Nama Asosiasi</th>
+         <th style="width: 300px; text-align:center; background:white; color:black;">Alamat</th>
+         <th style="width: 300px; text-align:center; background:white; color:black;">No Telepon</th>
+         <th style="width: 300px; text-align:center; background:white; color:black;">PIC</th>
+         <th style="width: 300px; text-align:center; background:white; color:black;">Jumlah</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
@@ -130,14 +146,63 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-         <td style="text-align: center;">{{$item->namaasosiasi}}</td>
-         <td style="text-align: center; vertical-align: middle;">
+         <td style="text-align: left;">
+            @if($item->namaasosiasi)
+                {{ $item->namaasosiasi }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 4px; cursor: default;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+
+        <td style="text-align: center;">
+            @if($item->alamat)
+                {{ $item->alamat }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 4px; cursor: default;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if($item->notelepon)
+                {{ $item->notelepon }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 4px; cursor: default;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if($item->pic)
+                {{ $item->pic }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 4px; cursor: default;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: center;">
+            @if($item->jumlahanggota)
+                {{ $item->jumlahanggota }}
+            @else
+                <button style="background-color: navy; color: white; padding: 4px 8px; border: none; border-radius: 4px; cursor: default;" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+          <td style="text-align: center; vertical-align: middle;">
              {{-- <a href="/beasosiasi/show/{{$item->namaasosiasi}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a> --}}
-             {{-- <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+             <a href="/beasosiasi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                  <i class="bi bi-pencil-square"></i>
-             </a> --}}
+             </a>
              <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
                    data-bs-toggle="modal" data-bs-target="#deleteModal"
                    data-judul="{{ $item->namaasosiasi }}"
@@ -219,3 +284,11 @@
 
    @include('backend.00_administrator.00_baganterpisah.02_footer')
 
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+   <script>
+    function exportTableToExcel(tableID, filename = '') {
+        var table = document.getElementById(tableID);
+        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+        return XLSX.writeFile(wb, filename + '.xlsx');
+    }
+    </script>
