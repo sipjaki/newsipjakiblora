@@ -83,8 +83,6 @@ class PaketpekerjaanmasjakiController extends Controller
 
 
     // MENU BACKEND PROFIL PAKET PEKERJAAN
-
-
     public function bepaketpekerjaan(Request $request)
     {
             $perPage = $request->input('perPage', 15);
@@ -317,5 +315,22 @@ public function bepaketpekerjaandinas(Request $request)
             ]);
         }
 
+
+        // BUAT DRAFT SPK
+        // SHOW FORM
+
+
+        public function bepaketpekerjaanshowsurat($id)
+        {
+                $datapaketpekerjaan = paketpekerjaanmasjaki::where('id', $id)->first();
+            // Ambil data user saat ini
+                $user = Auth::user();
+
+            return view('backend.04_datajakon.06_profilpaketpekerjaan.showsurat', [
+                'title' => 'Pembuatan Draft SPK',
+                'user' => $user,
+                'data' => $datapaketpekerjaan,
+            ]);
+        }
 
 }

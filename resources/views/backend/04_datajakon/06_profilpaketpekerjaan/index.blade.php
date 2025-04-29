@@ -228,6 +228,12 @@
         <th style="width: 400px; text-align:center;">
             <i class="bi bi-diagram-3" style="margin-right: 5px;"></i>Satuan Kerja
         </th>
+
+        <th style="width: 200px; text-align:center;">
+            <i class="bi bi-file-earmark-text-fill" style="margin-right: 5px;"></i>Buat Draft SPK
+        </th>
+
+{{--
         <th style="width: 150px; text-align:center;">
             <i class="bi bi-info-circle" style="margin-right: 5px;"></i>Details Pekerjaan
         </th>
@@ -246,7 +252,7 @@
 
         <th style="width: 150px; text-align:center;">
             <i class="bi bi-receipt" style="margin-right: 5px;"></i>SPP
-        </th>
+        </th> --}}
 
         <th style="width: 200px; text-align:center;">
             <i class="bi bi-gear" style="margin-right: 5px;"></i>Aksi
@@ -342,55 +348,11 @@
 
 <td style="text-align: center;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="/bepekerjaandetails/{{$item->id}}"
+        <a href="/bepaketpekerjaan/showsurat/{{$item->id}}"
            style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
            onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
-            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
-        </a>
-    </div>
-</td>
-
-<td style="text-align: center;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="/bedetailspekerjaan/{{$item->id}}"
-           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
-            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
-        </a>
-    </div>
-</td>
-
-<td style="text-align: center;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="/bedetailsspk/{{$item->id}}"
-           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
-            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
-        </a>
-    </div>
-</td>
-
-<td style="text-align: center;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="/bedetailsskk/{{$item->id}}"
-           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
-            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
-        </a>
-    </div>
-</td>
-
-<td style="text-align: center;">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-        <a href="/bedetailsskk/{{$item->id}}"
-           style="background-color: #0010a3; color: white; padding: 8px 16px; border-radius: 10px; text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center;"
-           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-           onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';">
-            <i class="bi bi-eye" style="margin-right: 6px;"></i> Lihat
+            <i class="bi bi-file-earmark-text-fill" style="margin-right: 6px;"></i> Buat Draft
         </a>
     </div>
 </td>
