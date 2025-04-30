@@ -816,14 +816,24 @@ Route::get('/bedetailsuratperjanjianpekerjaan/{id}', [PaketpekerjaanmasjakiContr
 // ---------------------- MENU 01 AGENDA PELATIHAN   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/beagendapelatihan', [PembinaanController::class, 'beagendapelatihan'])->middleware('auth');
-Route::get('/beagendapelatihanpeserta/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware('auth');
+Route::get('/beagendapelatihanpeserta/show/{id}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware('auth');
+
 Route::get('/beagendapelatihan/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshow'])->middleware('auth');
 Route::delete('/beagendapelatihanpeserta/delete/{id}', [PembinaanController::class, 'beagendapelatihanpesertadelete'])->middleware('auth');
 Route::delete('/beagendapelatihan/delete/{namakegiatan}', [PembinaanController::class, 'beagendapelatihandelete'])->middleware('auth');
 
+Route::get('/beagendapelatihan/update/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanupdate'])->middleware('auth')->name('beagendapelatihanupdate');
+Route::post('/beagendapelatihan/updatecreate/{id}', [PembinaanController::class, 'beagendapelatihanupdatecreate'])->middleware('auth')->name('update.beagendapelatihancreate');
 
-Route::get('/beagendapelatihanmateri/{id}', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth');
+Route::get('/beagendapelatihan/create', [PembinaanController::class, 'beagendapelatihancreate'])->middleware('auth')->name('beagendapelatihancreate');
+Route::post('/beagendapelatihan/createnew', [PembinaanController::class, 'beagendapelatihancreatenew'])->middleware('auth')->name('beagendapelatihancreatenew');
+
+Route::get('/beagendapelatihanmateri/{id}', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth')->name('beagendapelatihanmateri');
 Route::delete('/beagendapelatihanmateri/delete/{id}', [PembinaanController::class, 'beagendapelatihanmateridelete'])->middleware('auth')->name('beagendapelatihanmateridelete');
+
+// ROUTE YANG BELUM DI KERJAKAN
+Route::get('/beagendapelatihanmateri/createmateri/{id}', [PembinaanController::class, 'beagendapelatihanmatericreate'])->middleware('auth')->name('beagendapelatihanmatericreate');
+Route::post('/beagendapelatihanmateri/createmateri/new', [PembinaanController::class, 'beagendapelatihanmatericreatenew'])->middleware('auth')->name('beagendapelatihanmatericreatenew');
 
 
 // Route::get('/beagendapelatihanmateri', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth');
@@ -833,9 +843,18 @@ Route::delete('/beagendapelatihanmateri/delete/{id}', [PembinaanController::clas
 
 // ---------------------- MENU 02 PESERTA PELATIHAN   -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
+Route::get('/bepesertapelatihanindex', [PesertapelatihanController::class, 'bepesertapelatihanindex'])->middleware('auth');
 Route::get('/bepesertapelatihan', [PesertapelatihanController::class, 'bepesertapelatihan'])->middleware('auth');
 Route::get('/bepesertapelatihan/show/{name}', [PesertapelatihanController::class, 'bepesertapelatihanshow'])->middleware('auth');
 Route::delete('/bepesertapelatihan/delete/{id}', [PesertapelatihanController::class, 'bepesertapelatihandelete'])->middleware('auth');
+
+Route::get('/bepesertapelatihansertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertapelatihansertifikat'])->middleware('auth')->name('bepesertauploadsertifikat.show');
+
+Route::get('/bepesertapuploadsertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikat'])->middleware('auth')->name('bepesertauploadsertifikat.show1');
+
+Route::post('/bepesertapuploadsertifikat/create/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatupload'])->middleware('auth')->name('bepesertauploadsertifikatupload');
+
+
 // ___________________________________________________________________________________________________________________________________
 
 

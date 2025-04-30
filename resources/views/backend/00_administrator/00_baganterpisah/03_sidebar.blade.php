@@ -159,6 +159,46 @@
 
 
 
+              @can('lsppenerbit')
+
+              <li class="nav-header" style="color: white;">DAFTAR PESERTA </li>
+<!-- Menu Paket Pekerjaan -->
+<li class="nav-item">
+    <a href="/404" class="nav-link">
+      <!-- Ikon untuk Paket Pekerjaan -->
+      <i class="nav-icon bi bi-briefcase" style="color: white;"></i>
+      <p style="color: white">
+        Peserta Pelatihan
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a href="/404" class="nav-link">
+      <!-- Ikon untuk Paket Pekerjaan -->
+      <i class="nav-icon bi bi-briefcase" style="color: white;"></i>
+      <p style="color: white">
+        Peserta SKK
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li>
+
+  <!-- Menu Profil Anda -->
+  <li class="nav-item">
+    <a href="#" class="nav-link">
+      <!-- Ikon untuk Profil Anda -->
+      <i class="nav-icon bi bi-person-circle" style="color: white;"></i>
+      <p style="color: white">
+        Profil Anda
+        <i class="nav-arrow bi bi-chevron-right"></i>
+      </p>
+    </a>
+  </li>
+
+        @endcan
+
               @can('dinas')
 
               <li class="nav-header" style="color: white;">PAKET PEKERJAAN </li>
@@ -399,7 +439,7 @@
 
                   <!-- Peserta Pelatihan -->
                   <li class="nav-item">
-                    <a href="/bepesertapelatihan" class="nav-link">
+                    <a href="/bepesertapelatihanindex" class="nav-link">
                       <i class="nav-icon bi bi-person-lines-fill text-warning"></i> <!-- Ikon untuk Peserta Pelatihan -->
                       <p style="color: white">Peserta Pelatihan</p>
                     </a>

@@ -89,6 +89,9 @@
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>No Telepon
                                         </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-mortarboard" style="margin-right: 5px;"></i> Jenjang Pendidikan
+                                        </th>
                                         <th style="width: 100px; text-align:center;">
                                             <i class="bi bi-building" style="margin-right: 5px;"></i>Instansi
                                         </th>
@@ -107,7 +110,7 @@
                                 @foreach ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->user->name }}</td>
+                                        <td style="text-align: left;">{{ $item->namalengkap }}</td>
                                         {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
                                         <td style="text-align: center;">{{ $item->nik }}</td>
                                         <td style="text-align: center;">{{ $item->jeniskelamin }}</td>
@@ -115,14 +118,34 @@
                                             {{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('d F Y') }}
                                         </td>
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
+                                        <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td>
                                         <td style="text-align: left;">{{ $item->instansi }}</td>
 
-                                        <td style="text-align: center; gap:10px;">
-                                            <object data="{{ asset('storage/' . $item->sertifikat) }}" type="application/pdf" width="300" height="200">
-                                                <p>Sertifikat Belum Terbit</p>
-                                            </object>
+                                        <td style="text-align: center; gap:10px;" id="status-sertifikat-{{ $item->id }}">
+                                            @if($item->sertifikat)
+                                                <p>Terbit</p>
+                                            @else
+                                                <p>Belum Terbit</p>
+                                            @endif
                                         </td>
-         <!-- Tombol Verifikasi -->
+
+                                        <!-- Script untuk update status sertifikat -->
+                                        <script>
+                                            // Fungsi ini dipanggil setelah proses upload atau update sertifikat
+                                            function updateStatusSertifikat(id, status) {
+                                                var statusElement = document.getElementById('status-sertifikat-' + id);
+                                                if (status === 'terbit') {
+                                                    statusElement.innerHTML = '<p>Terbit</p>';
+                                                } else {
+                                                    statusElement.innerHTML = '<p>Belum Terbit</p>';
+                                                }
+                                            }
+
+                                            // Contoh panggilan JavaScript setelah upload atau update sertifikat berhasil
+                                            // updateStatusSertifikat({{ $item->id }}, 'terbit');
+                                        </script>
+
+
 <td style="text-align: center;">
     @if($item->verifikasi == false)
         <button type="button" onclick="openModal({{ $item->id }})"
@@ -130,9 +153,22 @@
             <i class="bi bi-x-circle"></i> BELUM LOLOS
         </button>
     @else
-        <button type="button" onclick="openModal({{ $item->id }})"
-            class="btn btn-success">
-            <i class="bi bi-check-circle"></i> LOLOS
+        <button type="button" disabled
+            class="btn"
+            style="
+                background-color: rgba(16, 185, 129, 0.85); /* Warna hijau dengan transparansi */
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 8px;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                cursor: not-allowed;
+            ">
+            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
         </button>
     @endif
 </td>
@@ -167,7 +203,7 @@
     </div>
 </div>
 
-<!-- Script -->
+
 <script>
     function openModal(itemId) {
         const form = document.getElementById("verifikasiForm");

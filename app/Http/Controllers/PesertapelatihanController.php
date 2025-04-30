@@ -6,6 +6,7 @@ use Carbon\Carbon;
 
 use App\Models\agendapelatihan;
 use App\Models\jenjang;
+use App\Models\jenjangpendidikan;
 use App\Models\kategoripelatihan;
 use App\Models\pembinaan;
 use App\Models\pesertapelatihan;
@@ -18,6 +19,46 @@ class PesertapelatihanController extends Controller
 {
 
 // MENU BACKEND DAFTAR SELURUH PESERTA PELATIHAN
+
+public function bepesertapelatihanindex(Request $request)
+{
+    $perPage = $request->input('perPage', 5);
+    $search = $request->input('search');
+
+    $query = agendapelatihan::query();
+
+    // Jika ada pencarian
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+            ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+            })
+            ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+            })
+            ->orWhereHas('user', function ($q) use ($search) {
+                $q->where('name', 'LIKE', "%{$search}%");
+            });
+    }
+
+    // Mengurutkan berdasarkan created_at terbaru
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    // Jika request AJAX, kirimkan response dengan data terbaru
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.05_agenda.02_agendapelatihan.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    // Mengembalikan data untuk tampilan
+    return view('backend.05_agenda.02_pesertapelatihan.index', [
+        'title' => 'Daftar Peserta Pelatihan',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
 
     public function bepesertapelatihan(Request $request)
     {
@@ -34,13 +75,15 @@ class PesertapelatihanController extends Controller
                     ->orWhere('instansi', 'LIKE', "%{$search}%")
                     ->orWhere('sertifikat', 'LIKE', "%{$search}%")
                     ->orWhere('verifikasi', 'LIKE', "%{$search}%")
+                    ->orWhere('namalengkap', 'LIKE', "%{$search}%")
         // -------------------------------------------------------------------------------
                     ->orWhereHas('agendapelatihan', function ($q) use ($search) {
                         $q->where('agendapelatihan', 'LIKE', "%{$search}%");
                     })
-                    ->orWhereHas('user', function ($q) use ($search) {
-                        $q->where('name', 'LIKE', "%{$search}%");
-                    });
+                    // ->orWhereHas('user', function ($q) use ($search) {
+                    //     $q->where('name', 'LIKE', "%{$search}%");
+                    // })
+                    ;
 
             }
 
@@ -102,6 +145,135 @@ class PesertapelatihanController extends Controller
         }
 
 
+        public function bepesertapelatihansertifikat(Request $request, $id)
+        {
+            $perPage = $request->input('perPage', 50);
+            $search = $request->input('search');
+
+            // Pastikan agenda pelatihan dengan ID ini ada
+            $agendapelatihan = agendapelatihan::findOrFail($id);
+
+            // Ambil user login saat ini
+            $user = Auth::user();
+
+            // Ambil peserta yang hanya terkait dengan agenda pelatihan ini dan yang sudah diverifikasi
+            $query = pesertapelatihan::where('agendapelatihan_id', $id)
+                        ->where('verifikasi', true) // Filter verifikasi = true
+                        ->select([
+                            'id',
+                            'namalengkap',
+                            'jeniskelamin',
+                            'instansi',
+                            'jenjangpendidikan_id',
+                            'nik',
+                            'tanggallahir',
+                            'notelepon',
+                            'sertifikat',
+                            'verifikasi'
+                        ]);
+
+            // Filter pencarian (jika ada)
+            if ($search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('jeniskelamin', 'LIKE', "%{$search}%")
+                      ->orWhere('instansi', 'LIKE', "%{$search}%")
+                      ->orWhere('namalengkap', 'LIKE', "%{$search}%");
+                });
+            }
+
+            $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+            // Untuk request Ajax (misal filter dinamis via JS)
+            if ($request->ajax()) {
+                return response()->json([
+                    'html' => view('backend.05_agenda.01_agendapelatihan.partials.table', compact('datapesertapelatihan'))->render()
+                ]);
+            }
+
+            return view('backend.05_agenda.02_pesertapelatihan.01_peserta.peserta', [
+                'title' => 'Daftar Peserta Agenda Pelatihan',
+                'data' => $agendapelatihan,
+                'datapeserta' => $datapesertapelatihan,
+                'perPage' => $perPage,
+                'search' => $search,
+                'user' => $user
+            ]);
+        }
+
+
+        public function bepesertauploadsertifikat($id)
+{
+    // Cari data undang-undang berdasarkan nilai 'judul'
+    $datapesertapelatihan = pesertapelatihan::where('id', $id)->firstOrFail();
+    $jenjangpendidikan = jenjangpendidikan::all();
+
+    $user = Auth::user();
+
+    // Tampilkan form update dengan data yang ditemukan
+    return view('backend.05_agenda.02_pesertapelatihan.01_peserta.upload', [
+        'data' => $datapesertapelatihan,
+        'user' => $user,
+        'jenjangpendidikan' => $jenjangpendidikan,
+        'title' => 'Upload Sertifikat Pelatihan'
+    ]);
+}
+
+
+public function bepesertauploadsertifikatupload(Request $request, $id)
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'namalengkap' => 'required|string|max:255',
+        'nik' => 'required|string|max:16',
+        'jeniskelamin' => 'required|string',
+        'tanggallahir' => 'required|date',
+        'notelepon' => 'required|string|max:255',
+        'instansi' => 'required|string|max:255',
+        'jenjangpendidikan_id' => 'required|string',
+        'sertifikat' => 'required|mimes:pdf|max:10240',
+    ], [
+        'namalengkap.required' => 'Nama Lengkap wajib diisi!',
+        'nik.required' => 'NIK wajib diisi!',
+        'jeniskelamin.required' => 'Jenis Kelamin wajib dipilih!',
+        'tanggallahir.required' => 'Tanggal Lahir wajib diisi!',
+        'notelepon.required' => 'Nomor Telepon wajib diisi!',
+        'instansi.required' => 'Instansi wajib diisi!',
+        'jenjangpendidikan_id.required' => 'Jenjang Pendidikan wajib dipilih!',
+        'sertifikat.required' => 'Sertifikat Belum Di Upload!',
+    ]);
+
+    $datapesertapelatihan = pesertapelatihan::findOrFail($id);
+
+    if ($request->hasFile('sertifikat')) {
+        $file = $request->file('sertifikat');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('04_pembinaan/03_sertifikatpelatihan');
+
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+        $validatedData['sertifikat'] = '04_pembinaan/03_sertifikatpelatihan/' . $namaFile;
+    }
+
+    $datapesertapelatihan->update([
+        'namalengkap' => $validatedData['namalengkap'],
+        'nik' => $validatedData['nik'],
+        'jeniskelamin' => $validatedData['jeniskelamin'],
+        'tanggallahir' => $validatedData['tanggallahir'],
+        'notelepon' => $validatedData['notelepon'],
+        'instansi' => $validatedData['instansi'],
+        'jenjangpendidikan_id' => $validatedData['jenjangpendidikan_id'],
+        'sertifikat' => $validatedData['sertifikat'] ?? $datapesertapelatihan->sertifikat,
+    ]);
+
+    session()->flash('update', 'Sertifikat Berhasil Di Terbitkan !');
+
+    // Arahkan ke halaman daftar peserta dalam agenda pelatihan
+    return redirect()->route('bepesertauploadsertifikat.show', ['id' => $datapesertapelatihan->agendapelatihan_id]);
+
+}
 
 }
 

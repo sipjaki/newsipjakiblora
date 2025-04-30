@@ -35,3 +35,76 @@ for ($i = 1; $i <= 17; $i++) {
         'user_id' => 10,
     ]);
 }
+
+
+
+
+
+
+
+public function bebujkkonstruksicreateklasifikasi($namalengkap)
+{
+    $bujkkontraktor = bujkkontraktor::findOrFail($namalengkap); // Cari 1 data sesuai ID
+    $user = Auth::user();
+    $asosiasimasjaki = asosiasimasjaki::all();
+
+    return view('backend.04_datajakon.01_bujkkonstruksi.createklasifikasi', [
+        'bujkkontraktornamalengkap' => $bujkkontraktor->namalengkap, // Ini dikirim ke form
+        'bujkkontraktor_id' => $bujkkontraktor->id, // Ini dikirim ke form
+        'user' => $user,
+        'asosiasimasjaki' => $asosiasimasjaki,
+        'title' => 'Create BUJK Sub Klasifikasi'
+    ]);
+}
+
+public function bebujkkonstruksicreateklasifikasicreate(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'nama_pengurus' => 'required|string|max:255',
+        'sub_klasifikasi_layanan' => 'required|string|max:255',
+        'kode' => 'required|string|max:50',
+        'kualifikasi' => 'required|string|max:255',
+        'penerbit' => 'required|string|max:255',
+        'nama_psjk' => 'required|string|max:255',
+        'sub_kualifikasi_bu' => 'required|string|max:255',
+        'tanggal_terbit' => 'required|date',
+        'tanggal_berlaku' => 'required|date',
+    ], [
+        // Pesan kesalahan custom
+        'nama_pengurus.required' => 'Nama Pengurus harus diisi.',
+        'sub_klasifikasi_layanan.required' => 'Sub Klasifikasi Layanan harus diisi.',
+        'kode.required' => 'Kode Sub Klasifikasi harus diisi.',
+        'kualifikasi.required' => 'Kualifikasi harus diisi.',
+        'sub_kualifikasi_bu.required' => 'Sub Bidang harus diisi.',
+        'penerbit.required' => 'Penerbit harus diisi.',
+        'nama_psjk.required' => 'Nama PSJK harus diisi.',
+        'tanggal_terbit.required' => 'Tanggal Terbit harus diisi.',
+        'tanggal_berlaku.required' => 'Tanggal Berlaku harus diisi.',
+    ]);
+
+    // Menyimpan data ke tabel BujkKontraktorSub
+    $bujkkontraktorSub = bujkkontraktorsub::create([
+        'bujkkontraktor_id' => $request->bujkkontraktor_id,
+        'nama_pengurus' => $validated['nama_pengurus'],
+        'sub_klasifikasi_layanan' => $validated['sub_klasifikasi_layanan'],
+        'kode' => $validated['kode'],
+        'kualifikasi' => $validated['kualifikasi'],
+        'sub_kualifikasi_bu' => $validated['sub_kualifikasi_bu'],
+        'penerbit' => $validated['penerbit'],
+        'nama_psjk' => $validated['nama_psjk'],
+        'tanggal_terbit' => $validated['tanggal_terbit'],
+        'tanggal_berlaku' => $validated['tanggal_berlaku'],
+    ]);
+
+    // Ambil bujkkontraktor_id yang baru saja disimpan
+    $bujkkontraktorId = $bujkkontraktorSub->bujkkontraktor_id;
+
+    // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
+    session()->flash('create', 'Data Sub Klasifikasi Layanan berhasil di buat.');
+
+    // Redirect ke route 'bebujkkonstruksi.showsubklasifikasi' dengan parameter bujkkontraktor_id
+    return redirect('bebujkkonstruksi');
+}
+
+

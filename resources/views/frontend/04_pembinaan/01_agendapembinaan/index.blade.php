@@ -191,7 +191,7 @@ table.zebra-table {
                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Waktu Pelaksanaan </th>
                             <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;"> Jumlah Peserta </th>
                             <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Lokasi </th>
-                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th>
+                            {{-- <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th> --}}
                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendaftaran </th>
                             {{-- <th style="text-align:center; width:100px;"> Daftar </th> --}}
                         </tr>
@@ -207,7 +207,7 @@ table.zebra-table {
 
                             <td>{{ ucwords(strtolower($item->kategoripelatihan->kategoripelatihan ?? 'Data Tidak Ditemukan')) }}</td>
                             <td>{{ ucwords(strtolower($item->namakegiatan ?? 'Data Tidak Ditemukan')) }}</td>
-                            <td>{{ ucwords(strtolower($item->penyelenggara ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>{{ ucwords(strtolower($item->user->name ?? 'Data Tidak Ditemukan')) }}</td>
 
                             {{-- <td style="text-align: center;">{{$item->jenjang->jenjang}}</td> --}}
                             {{-- <td style="text-align: center;">{{$item->penutupan}}</td> --}}
@@ -217,7 +217,7 @@ table.zebra-table {
 
                             <td style="text-align: center;">{{ $item->jumlahpeserta ?? '0' }}</td>
                             <td>{{ ucwords(strtolower($item->lokasi ?? 'Data Tidak Ditemukan')) }}</td>
-                            <td>{{ $item->keterangan ?? 'Data Tidak Ditemukan' }}</td>
+                            {{-- <td>{{ $item->keterangan ?? 'Data Tidak Ditemukan' }}</td> --}}
 
                             <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
                                 @php

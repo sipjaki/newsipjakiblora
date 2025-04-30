@@ -33,14 +33,17 @@
 
    <!--begin::App Main-->
    <main class="app-main">
-     <!--begin::App Content Header-->
+    <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
+
+    <!--begin::App Content Header-->
      <div class="app-content-header">
        <!--begin::Container-->
        <div class="container-fluid">
          <!--begin::Row-->
          <div class="row">
 
-           <div class="col-sm-12"><h3 class="mb-0">Selamat datang ! <span style="color: black; font-weight:800;" > {{ Auth::user()->name }}</span> di Dashboard <span style="color: black; font-weight:800;"> {{ Auth::user()->statusadmin->statusadmin }} </span>  Sistem Informasi Pembina Jasa Konstruksi Kab Blora</h3></div>
+            @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
+            @include('backend.00_administrator.00_baganterpisah.11_alert')
 
          </div>
          <!--end::Row-->
@@ -63,67 +66,17 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-                    <div style="
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #0010a3, #0010a3);
-                    color: white;
-                    padding: 8px 10px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                ">
-                    ⚙️ Setting Database
-                </div>
 
-                     <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon kategori -->
-                                <i class="fa fa-tags" style="margin-right: 8px;"></i>
-                                Kategori Pelatihan
-                            </button>
-                        </a>
 
-                        <a href="/404">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                                <!-- Ikon pelaksana -->
-                                <i class="fa fa-users" style="margin-right: 8px;"></i>
-                                Data LPS Pelaksana
-                            </button>
-                        </a>
-
-                     </div>
                  </div>
                  <!-- /.card-header -->
                  <div class="card-header">
-                    <div style="
-                    margin-bottom:10px;
-                    font-weight: 900;
-                    font-size: 16px;
-                    text-align: center;
-                    background: linear-gradient(135deg, #166534, #166534);
-                    color: white;
-                    padding: 10px 25px;
-                    border-radius: 10px;
-                    display: inline-block;
-                    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-                    width: 100%;
-                ">
-                    📌 Halaman : {{$title}}
-                </div>
+                    @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
-                            <input type="search" id="searchInput" placeholder="Cari Peserta ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
-                            <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
+                            <input type="search" id="searchInput" placeholder="Cari Kegiatan Pelatihan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+                            <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
                         </div>
                         <script>
                             function updateEntries() {
@@ -136,7 +89,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bepesertapelatihan?search=${input}`)
+                            fetch(`/bepesertapelatihanindex?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -149,7 +102,7 @@
 
                                 </script>
 
-                         <a href="/404">
+                         {{-- <a href="/404">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
@@ -158,28 +111,34 @@
                              <i class="fa fa-plus" style="margin-right: 8px;"></i>
                              Create
                          </button>
-                         </a>
+                         </a> --}}
                      </div>
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table class="table table-striped">
+<table class="zebra-table table-striped">
  <thead>
      <tr>
-         <th style="width: 75px; text-align:center; vertical-align: middle;">No</th>
-         {{-- <th style="width: 250px; text-align:center; vertical-align: middle;">Agenda Pelatihan</th> --}}
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Nama Lengkap </th>
-         <th style="width: 200px; text-align:center; vertical-align: middle;">Jenjang Pendidikan</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">NIK</th>
-         <th style="width: 200px; text-align:center; vertical-align: middle;">Jenis Kelamin</th>
-         <th style="width: 200px; text-align:center; vertical-align: middle;">Tanggal Lahir</th>
-         <th style="width: 200px; text-align:center; vertical-align: middle;">No Telepon</th>
-         <th style="width: 400px; text-align:center; vertical-align: middle;">Instansi</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Sertifikat</th>
-         <th style="width: 250px; text-align:center; vertical-align: middle;">Verifikasi</th>
-         <th style="width: 200px; text-align:center; vertical-align: middle;">Aksi</th>
+        <th style="width: 75px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-list-ol"></i> No
+        </th>
+        <th style="width: 250px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-journal-text"></i> Nama Kegiatan
+        </th>
+        <th style="width: 200px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-tags"></i> Kategori
+        </th>
+        <th style="width: 250px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-building"></i> Penyelenggara
+        </th>
+        <th style="width: 200px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-award"></i> LSP Penerbit
+        </th>
+        <th style="width: 200px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-people"></i> View Peserta
+        </th>
      </tr>
  </thead>
  <tbody id="tableBody">
@@ -187,67 +146,23 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          {{-- <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td> --}}
-         <td style="text-align: left;">{{$item->user->name}}</td>
-         <td style="text-align: center;">{{$item->jenjangpendidikan->jenjangpendidikan}}</td>
-         <td style="text-align: center;">{{$item->nik}}</td>
-         <td style="text-align: center;">{{$item->jeniskelamin}}</td>
-         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('l, d F Y') }}</td>
-         <td style="text-align: center;">{{$item->notelepon}}</td>
-         <td style="text-align: left;">{{$item->instansi}}</td>
+         <td style="text-align: left;">{{$item->namakegiatan}}</td>
+         <td style="text-align: center;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
+         <td style="text-align: center;">{{$item->asosiasimasjaki->namaasosiasi}}</td>
+         <td style="text-align: center;">{{$item->user->name}}</td>
 
-         <td style="text-align: center;">
-            @if($item->sertifikat)
-                <object data="{{ asset('storage/' . $item->sertifikat) }}" type="application/pdf" width="300" height="200">
-                    <p>PDF cannot be displayed. <a href="{{ asset('storage/' . $item->sertifikat) }}" target="_blank">Download Sertifikat</a></p>
-                </object>
-            @else
-                <button class="btn btn-danger btn-sm">Sertifikat Belum Terbit</button>
-            @endif
-        </td>
-
-        <td style="text-align: center;">{{$item->verifikasi}}</td>
-{{--
-        <td style="text-align: center;">
-            <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
-        </td>
-
-        <script>
-            function updateStatus() {
-                let now = new Date().getTime();
-                let tanggalHabis = new Date("{{ \Carbon\Carbon::parse($item->penutupan)->format('Y-m-d H:i:s') }}").getTime();
-                let statusButton = document.getElementById("status-{{ $item->id }}");
-
-                if (now > tanggalHabis) {
-                    statusButton.innerText = "DITUTUP";
-                    statusButton.className = "btn btn-danger btn-sm";
-                } else {
-                    statusButton.innerText = "DIBUKA";
-                    statusButton.className = "btn btn-success btn-sm";
-                }
-            }
-
-            // Jalankan pertama kali saat halaman dimuat
-            updateStatus();
-
-            // Update setiap 1 detik untuk realtime
-            setInterval(updateStatus, 1000);
-        </script> --}}
-
-        <td style="text-align: center; vertical-align: middle;">
-             <a href="/bepesertapelatihan/show/{{$item->user->name}}" class="btn btn-sm btn-info me-2" title="Show">
-                 <i class="bi bi-eye"></i>
-             </a>
-             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
-                 <i class="bi bi-pencil-square"></i>
-             </a>
-
-             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
-                   data-bs-toggle="modal" data-bs-target="#deleteModal"
-                   data-judul="{{ $item->id }}"
-                   onclick="setDeleteUrl(this)">
-                    <i class="bi bi-trash"></i>
+         <td style="text-align: center; vertical-align: middle;">
+            <a href="{{ url('/bepesertapelatihansertifikat/show/' . $item->id) }}" style="text-decoration: none;">
+                <button
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#002e8b'; this.style.color='white';"
+                    style="background-color:#002e8b; color: white; border: none; padding: 10px 25px;
+                           border-radius: 15px; font-size: 14px; cursor: pointer;
+                           transition: background-color 0.3s, color 0.3s;">
+                   <i class="bi bi-people-fill"></i> Peserta
+                </button>
             </a>
-         </td>
+        </td>
 
         </tr>
 
@@ -313,7 +228,8 @@
      <!--end::App Content Header-->
      <!--begin::App Content-->
        <!--end::App Content-->
-   </main>
+        </section>
+    </main>
    <!--end::App Main-->
  </div>
  </div>

@@ -113,6 +113,7 @@ use App\Models\subhargadiv1;
 use App\Models\subhargadiv1bahan;
 use App\Models\subhargadiv1peralatan;
 
+
 // hsp harga divisi 2
 use App\Models\hsppaket2;
 use App\Models\hspkodepekerjaan2;
@@ -573,7 +574,7 @@ headerberanda::create([
             'id'  => 7,
             'name'  => 'Sigit LSP Penerbit',
             'username' => 'LSP Penerbit',
-            'statusadmin_id' => '6',
+            'statusadmin_id' => '7',
             'avatar' => 'user/avatar/sigit.jpg',
             'email' => 'sigitsupp_tokobangunan@gmail.com',
             'password' => bcrypt('adminadmin123$$')
@@ -581,12 +582,32 @@ headerberanda::create([
 
         User::create([
             'id'  => 8,
-            'name'  => 'Sigit Septiadi',
-            'username' => 'Operator',
+            'name'  => 'Operator LSP 2',
+            'username' => 'Operator LSP',
             'statusadmin_id' => '7',
             'avatar' => 'user/avatar/sigit.jpg',
             'email' => 'sigitlpspenerbit@gmail.com',
             'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 90,
+            'name'  => 'Operator LSP 3',
+            'username' => 'Operator LSP 3',
+            'statusadmin_id' => '7',
+            'avatar' => 'user/avatar/sigit.jpg',
+            'email' => 'sigitlpspenerbit500@gmail.com',
+            'password' => bcrypt('adminadmin123$$1')
+        ]);
+
+        User::create([
+            'id'  => 97,
+            'name'  => 'Operator LSP 4',
+            'username' => 'Operator LSP 4',
+            'statusadmin_id' => '7',
+            'avatar' => 'user/avatar/sigit.jpg',
+            'email' => 'sigitlpspenerbit2@gmail.com',
+            'password' => bcrypt('adminadmin123$$2')
         ]);
 
         User::create([
@@ -59394,72 +59415,95 @@ materipelatihanskk::create([
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
 pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 1,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                           => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                     => '081321455855',
-    'instansi'                      => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => false,
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 2,
-    'user_id'                       => 2,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => false,
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 3,
-    'user_id'                       => 3,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => false,
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 2,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => false,
-]);
-pesertapelatihan::create([
-    'agendapelatihan_id'            => 1,
-    'user_id'                       => 3,
-    'jenjangpendidikan_id'          => 2,
-    'nik'                 => '3205270107200023',
-    'jeniskelamin'                 => 'Laki-laki',
-    'tanggallahir'                 => '2000-07-01',
-    'notelepon'                 => '081321455855',
-    'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    // 'instansi'                 => 'DPUPR Kabupaten Bandung Barat',
-    'sertifikat'                 => null,
-    'verifikasi'                 => false,
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Budi Santoso',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3205270107200023',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '2000-07-01',
+    'notelepon' => '081321455855',
+    'instansi' => 'DPUPR Kabupaten Bandung Barat',
+    'sertifikat' => null,
+    'verifikasi' => false,
 ]);
 
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Siti Aminah',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3205010202980012',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1998-02-02',
+    'notelepon' => '081222334455',
+    'instansi' => 'Dinas Pendidikan Blora',
+    'sertifikat' => null,
+    'verifikasi' => false,
+]);
 
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Rudi Hartono',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3205031203850005',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1985-03-12',
+    'notelepon' => '081234567890',
+    'instansi' => 'DPUPR Kota Semarang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 2,
+    'namalengkap' => 'Dewi Lestari',
+    'jenjangpendidikan_id' => 5,
+    'nik' => '3205042508910011',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1991-08-25',
+    'notelepon' => '082112223333',
+    'instansi' => 'Bappeda Kabupaten Bogor',
+    'sertifikat' => null,
+    'verifikasi' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 3,
+    'namalengkap' => 'Agus Wibowo',
+    'jenjangpendidikan_id' => 3,
+    'nik' => '3205051707950003',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1995-07-17',
+    'notelepon' => '085678901234',
+    'instansi' => 'Dishub Kota Bekasi',
+    'sertifikat' => null,
+    'verifikasi' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 3,
+    'namalengkap' => 'Yuni Rahmawati',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3205061011900006',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1990-11-10',
+    'notelepon' => '087788899900',
+    'instansi' => 'Dinas Kesehatan Kab. Garut',
+    'sertifikat' => null,
+    'verifikasi' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 3,
+    'namalengkap' => 'Dani Supriyatna',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3205071508830021',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1983-08-15',
+    'notelepon' => '081355512345',
+    'instansi' => 'DPUPR Kabupaten Sumedang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+]);
 
 //==========================================================================================================
 // DATA BERITA
@@ -59681,7 +59725,7 @@ agendapelatihan::create([
     'kategoripelatihan_id' => '1',
     'materipelatihan_id' => '1',
     'namakegiatan' => 'Pelatihan Manajemen Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
+    'asosiasimasjaki_id' => 99,
     // 'jenjang_id' => '4',
     'penutupan' => '2025-12-13',
     'waktupelaksanaan' => '2025-12-15',
@@ -59694,11 +59738,11 @@ agendapelatihan::create([
 
 agendapelatihan::create([
     'id' => 2,
-    'user_id' => 7,
-    'kategoripelatihan_id' => '2',
+    'user_id' => 7, // ada
+    'kategoripelatihan_id' => '2', // ada
     'materipelatihan_id' => '2',
     'namakegiatan' => 'Pelatihan Ahli K3 Konstruksi',
-    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
+    'asosiasimasjaki_id' => 99, // ada
     // 'jenjang_id' => '5',
     'penutupan' => '2025-01-08',
     'waktupelaksanaan' => '2025-02-10',

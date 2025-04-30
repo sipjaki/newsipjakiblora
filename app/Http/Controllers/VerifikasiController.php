@@ -14,18 +14,18 @@ class VerifikasiController extends Controller
         // Temukan data peserta pelatihan berdasarkan ID
         $item = pesertapelatihan::findOrFail($id);
 
-        // Toggle status verifikasi (false <-> true)
+        // Toggle status verifikasi
         $item->verifikasi = !$item->verifikasi;
         $item->save();
 
-        // Ambil 'namakegiatan' atau nilai yang relevan dari model
-        $namakegiatan = $item->namakegiatan; // Pastikan ini sesuai dengan kolom yang benar
+        // Ambil ID agenda pelatihan (pastikan nama kolom benar)
+        $agendaId = $item->agendapelatihan_id;
 
-        // Flash message untuk menunjukkan status update berhasil
-        session()->flash('verifikasipesertapelatihan', 'Selamat Peserta Lolos Seleksi !');
+        // Flash message
+        session()->flash('verifikasipesertapelatihan', 'Selamat Peserta Lolos Seleksi!');
 
-        // Redirect ke halaman yang sesuai setelah update dengan URL dan parameter namakegiatan
-        return redirect('/beagendapelatihan');
+        // Redirect ke halaman peserta sesuai agenda
+        return redirect("/beagendapelatihanpeserta/show/{$agendaId}");
     }
 
 }

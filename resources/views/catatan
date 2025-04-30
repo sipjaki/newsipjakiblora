@@ -791,3 +791,225 @@ if ($request->hasFile('sertifikat')) {
         // Simpan nama file ke database
         $validatedData['sertifikat'] = '03_datajakon/02_sertifikasi/' . $namaFile;
     }
+
+
+
+
+    <div class="mb-3">
+                                            <label class="form-label" for="uploadberkas">
+                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Upload Berkas
+                                            </label>
+                                            <input type="file" id="uploadberkas" name="uploadberkas"
+                                                class="form-control @error('uploadberkas') is-invalid @enderror"
+                                                onchange="previewFile('uploadberkas', 'previewFoto')" />
+
+                                            <div class="mt-2">
+                                                <!-- Preview Image or PDF -->
+                                                <div id="previewContainer">
+                                                    <img id="previewFoto"
+                                                        src="{{ old('uploadberkas') ? asset('03_datajakon/01_sertifikasi/' . old('uploadberkas')) : '' }}"
+                                                        style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
+
+                                                    <canvas id="pdfPreview" style="display: none; max-width: 100%; max-height: 200px; margin-top: 10px;"></canvas>
+                                                </div>
+                                            </div>
+
+                                            @error('uploadberkas')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+                                        <script>
+                                            function previewFile(inputId, previewId) {
+                                                var file = document.getElementById(inputId).files[0];
+                                                var previewContainer = document.getElementById('previewContainer');
+                                                var imgPreview = document.getElementById(previewId);
+                                                var pdfPreview = document.getElementById('pdfPreview');
+
+                                                // Reset previous previews
+                                                imgPreview.style.display = 'none';
+                                                pdfPreview.style.display = 'none';
+
+                                                if (file) {
+                                                    var reader = new FileReader();
+
+                                                    // Check if the file is a PDF
+                                                    if (file.type === 'application/pdf') {
+                                                        // Display PDF preview
+                                                        reader.onload = function(e) {
+                                                            var pdfData = e.target.result;
+                                                            pdfjsLib.getDocument({data: pdfData}).promise.then(function(pdf) {
+                                                                pdf.getPage(1).then(function(page) {
+                                                                    var canvas = document.getElementById('pdfPreview');
+                                                                    var context = canvas.getContext('2d');
+
+                                                                    // Ukuran A4 dalam mm
+                                                                    var a4Width = 210;  // A4 width in mm
+                                                                    var a4Height = 297; // A4 height in mm
+
+                                                                    // Convert A4 size to pixels (1mm = 3.7795275591 pixels)
+                                                                    var a4WidthPx = a4Width * 3.7795275591;
+                                                                    var a4HeightPx = a4Height * 3.7795275591;
+
+                                                                    // Calculate scale to fit PDF to A4 size in pixels
+                                                                    var scale = Math.min(a4WidthPx / page.getViewport({scale: 1}).width, a4HeightPx / page.getViewport({scale: 1}).height);
+
+                                                                    var viewport = page.getViewport({scale: scale});
+                                                                    canvas.height = viewport.height;
+                                                                    canvas.width = viewport.width;
+
+                                                                    // Render the page into the canvas context
+                                                                    page.render({canvasContext: context, viewport: viewport}).promise.then(function() {
+                                                                        pdfPreview.style.display = 'block';
+                                                                    });
+                                                                });
+                                                            });
+                                                        };
+                                                        reader.readAsArrayBuffer(file); // Read the PDF file
+                                                    } else {
+                                                        // Display image preview (if it's not a PDF)
+                                                        reader.onloadend = function() {
+                                                            imgPreview.src = reader.result;
+                                                            imgPreview.style.display = 'block';
+                                                        };
+                                                        reader.readAsDataURL(file); // Read the image file
+                                                    }
+                                                }
+                                            }
+                                        </script>
+
+
+
+
+
+
+<div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <div class="flex justify-end">
+                                    <button type="button" onclick="openModal()"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                    onmouseout="this.style.backgroundColor='#189200'; this.style.color='white';"
+                                    style="background-color: #189200; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+
+                                    <!-- Ikon SVG Pensil -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                               </svg>
+                                    <span style="font-family: 'Poppins', sans-serif;">Create</span>
+                                </button>
+                                </div>
+                                <!-- Modal Konfirmasi -->
+                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                                        Apakah Anda ingin menambahkan data?
+                                    </p>
+
+                                      <!-- Tombol -->
+                                      <div style="display: flex; justify-content: center; gap: 12px;">
+                                        <button id="confirmSubmitBtn"
+                                        onclick="submitForm()"
+                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <!-- Telegram SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                                    </svg>
+                                    Ya
+                                </button>
+
+                                <!-- Tombol Batal dengan ikon X (SVG) -->
+                                <button type="button"
+                                        onclick="closeModal()"
+                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                    </svg>
+                                    Batal
+                                </button>
+
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <!-- Script -->
+                                <script>
+                                function openModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "flex";
+                                }
+
+                                function closeModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "none";
+                                }
+
+                                </script>
+
+
+
+
+
+<!-- / -->
+
+<td style="text-align: center;">
+            <button class="btn btn-secondary btn-sm"
+                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                data-bs-toggle="modal" data-bs-target="#modalKtp3">
+                <i class="fas fa-eye"></i> Lihat
+            </button>
+
+            <!-- Modal KTP -->
+            <div class="modal fade" id="modalKtp3" tabindex="-1" aria-labelledby="modalKtpLabel3" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <a href="#"><img src="/assets/abgblora/logo/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                            <a href="#"><img src="/assets/abgblora/logo/logopupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                            <span>:</span>
+                            <h5 class="modal-title" id="modalKtpLabel3">Sertifikat</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            <div style="margin-top: 10px;">
+                                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
+                                <!-- Display the default iframe when the file exists in the storage -->
+                                <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @elseif($item->sertifikat)
+                                <!-- Display the iframe with the updated file -->
+                                <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+                            @else
+                                <!-- Optional: Show a placeholder if there's no file available -->
+                                <p>Data belum diupdate</p>
+                            @endif
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+
+
+
+                                    <div style="margin-top: 10px;">
+                                                @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
+                                                <!-- Display the default iframe when the file exists in the storage -->
+                                                <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @elseif($item->materipelatihan)
+                                                <!-- Display the iframe with the updated file -->
+                                                <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @else
+                                                <!-- Optional: Show a placeholder if there's no file available -->
+                                                <p>Data belum diupdate</p>
+                                            @endif
+
+                                            </div>

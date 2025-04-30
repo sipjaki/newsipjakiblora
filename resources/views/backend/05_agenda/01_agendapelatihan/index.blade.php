@@ -143,7 +143,7 @@
 
                                 </script>
 
-                         <a href="/404">
+                         <a href="/beagendapelatihan/create">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
@@ -186,7 +186,7 @@
           <th style="width: 100px; text-align:center; vertical-align: middle;">
             <i class="bi bi-check-circle"></i> Status
           </th>
-          <th style="width: 100px; text-align:center; vertical-align: middle;">
+          <th style="width: 150px; text-align:center; vertical-align: middle;">
             <i class="bi bi-person-plus"></i> Jumlah Peserta
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
@@ -220,7 +220,7 @@
          <td style="text-align: left;">{{$item->user->name}}</td>
          <td style="text-align: left;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: left;">{{$item->penyelenggara}}</td>
+         <td style="text-align: left;">{{$item->asosiasimasjaki->namaasosiasi}}</td>
          {{-- <td style="text-align: center;">
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
@@ -267,17 +267,16 @@
             <div style="margin-top: 10px;">
                 @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
                     <!-- Menampilkan gambar dari storage -->
-                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                    <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
                 @elseif($item->foto)
                     <!-- Menampilkan gambar dari path luar storage -->
-                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                    <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
                 @else
                     <!-- Placeholder jika tidak ada data -->
                     <p>Data belum diupdate</p>
                 @endif
             </div>
         </td>
-
 
 
         <td style="text-align: center; vertical-align: middle;">
@@ -288,20 +287,20 @@
                     style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
                            border-radius: 15px; font-size: 14px; cursor: pointer;
                            transition: background-color 0.3s, color 0.3s;">
-                    Lihat
-                </button>
+             <i class="bi bi-eye"></i> Lihat
+            </button>
             </a>
         </td>
 
         <td style="text-align: center; vertical-align: middle;">
-            <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->namakegiatan) }}" style="text-decoration: none;">
+            <a href="{{ url('/beagendapelatihanpeserta/show/' . $item->id) }}" style="text-decoration: none;">
                 <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
                     style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
                            border-radius: 15px; font-size: 14px; cursor: pointer;
                            transition: background-color 0.3s, color 0.3s;">
-                    Lihat
+                         <i class="bi bi-eye"></i> Lihat
                 </button>
             </a>
         </td>
@@ -310,7 +309,7 @@
              <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
-             <a href="/404" class="btn btn-sm btn-warning me-2" title="Update">
+             <a href="/beagendapelatihan/update/{{$item->namakegiatan}}" class="btn btn-sm btn-warning me-2" title="Update">
                  <i class="bi bi-pencil-square"></i>
              </a>
              <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
