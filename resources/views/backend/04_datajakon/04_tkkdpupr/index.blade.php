@@ -128,6 +128,7 @@
          <th style="width: 200px; text-align:center;">Tanggal Habis</th>
          <th style="width: 200px; text-align:center;">Masa Berlaku</th>
          <th style="width: 200px; text-align:center;">Status Terbit</th>
+         <th style="width: 200px; text-align:center;">Sertifikat</th>
          <th style="width: 200px; text-align:center;">Aksi</th>
      </tr>
  </thead>
@@ -280,6 +281,50 @@
         </script>
 
 <td style="text-align: center; text-transform: uppercase;">{{$item->statusterbit}}</td>
+
+
+<td style="text-align: center;">
+    <button class="btn btn-secondary btn-sm"
+        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+        data-bs-toggle="modal" data-bs-target="#modalKtp3">
+        <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+
+    </button>
+
+    <!-- Modal KTP -->
+    <div class="modal fade" id="modalKtp3" tabindex="-1" aria-labelledby="modalKtpLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                    <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                    <span>:</span>
+                    <h5 class="modal-title" id="modalKtpLabel3">Sertifikat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div style="margin-top: 10px;">
+                        @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
+                        <!-- Display the default iframe when the file exists in the storage -->
+                        <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="600px"></iframe>
+                    @elseif($item->sertifikat)
+                        <!-- Display the iframe with the updated file -->
+                        <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="600px"></iframe>
+                    @else
+                        <!-- Optional: Show a placeholder if there's no file available -->
+                        <p>Data belum diupdate</p>
+                    @endif
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</td>
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/beskkdpupr/show/{{$item->nama}}" class="btn btn-sm btn-info me-2" title="Show">

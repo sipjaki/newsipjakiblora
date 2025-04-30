@@ -29,6 +29,7 @@ return new class extends Migration
                 $table->date('tanggalterbit')->nullable();
                 $table->date('tanggalhabis')->nullable();
                 $table->string('statusterbit', 255)->nullable();
+                $table->string('sertifikat')->nullable();
 
                 $table->softDeletes();  // Soft deletes
                 $table->timestamps();

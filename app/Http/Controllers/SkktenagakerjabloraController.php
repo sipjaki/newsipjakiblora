@@ -181,7 +181,8 @@ public function beskkdpupr(Request $request)
 
     $allData = Cache::remember($cacheKey, 300, function () use ($search) {
         $query = skktenagakerjablora::query()
-            ->where('asosiasimasjaki_id', 99); // <--- ini sudah fix
+            ->where('asosiasimasjaki_id', 99)
+            ->orderBy('created_at', 'desc'); // <
 
         if (!empty($search)) {
             $query->where(function ($q) use ($search) {
@@ -505,6 +506,7 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
         'tanggalterbit' => 'required|date',
         'tanggalhabis' => 'required|date',
         'statusterbit' => 'required|string',
+        'sertifikat' => 'required|mimes:pdf',
     ], [
         'nama.required' => 'Nama wajib diisi!',
         'nama.string' => 'Nama harus berupa teks!',
@@ -551,12 +553,47 @@ public function beskkdpuprupdatecreate(Request $request, $nama)
 
         'statusterbit.required' => 'Status terbit wajib diisi!',
         // 'statusterbit.in' => 'Status terbit harus salah satu dari "Terbit" atau "Belum Terbit"!',
+
+        'sertifikat.required' => 'Sertifikat wajib diunggah.',
+        'sertifikat.mimes' => 'Sertifikat harus berupa file berformat PDF.',
     ]);
         // Cari datanya berdasarkan 'nama'
     $data = skktenagakerjablora::where('nama', $nama)->firstOrFail();
 
+    if ($request->hasFile('sertifikat')) {
+        $file = $request->file('sertifikat');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['sertifikat'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }
+
     // Update data
-    $data->update($validatedData);
+    $data->update([
+        'nama' => $validatedData['nama'] ?? $data->nama,
+        'alamat' => $validatedData['alamat'] ?? $data->alamat,
+        'tahunlulus' => $validatedData['tahunlulus'] ?? $data->tahunlulus,
+        'tahunbimtek' => $validatedData['tahunbimtek'] ?? $data->tahunbimtek,
+        'namasekolah_id' => $validatedData['namasekolah_id'] ?? $data->namasekolah_id,
+        'jenjangpendidikan_id' => $validatedData['jenjangpendidikan_id'] ?? $data->jenjangpendidikan_id,
+        'jurusan_id' => $validatedData['jurusan_id'] ?? $data->jurusan_id,
+        'jabatankerja_id' => $validatedData['jabatankerja_id'] ?? $data->jabatankerja_id,
+        'jenjang_id' => $validatedData['jenjang_id'] ?? $data->jenjang_id,
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'] ?? $data->asosiasimasjaki_id,
+        'lpspenerbit_id' => $validatedData['lpspenerbit_id'] ?? $data->lpspenerbit_id,
+        'tanggalterbit' => $validatedData['tanggalterbit'] ?? $data->tanggalterbit,
+        'tanggalhabis' => $validatedData['tanggalhabis'] ?? $data->tanggalhabis,
+        'statusterbit' => $validatedData['statusterbit'] ?? $data->statusterbit,
+        'sertifikat' => $validatedData['sertifikat'] ?? $data->sertifikat,
+    ]);
 
     // Flash success
     session()->flash('create', 'Data Berhasil Dibuat!');
@@ -614,6 +651,7 @@ public function beskkallbloraupdate($nama)
         'tanggalterbit' => 'required|date',
         'tanggalhabis' => 'required|date',
         'statusterbit' => 'required|string',
+        'sertifikat' => 'required|mimes:pdf',
     ], [
         'nama.required' => 'Nama wajib diisi!',
         'nama.string' => 'Nama harus berupa teks!',
@@ -659,13 +697,49 @@ public function beskkallbloraupdate($nama)
         'tanggalhabis.after_or_equal' => 'Tanggal habis tidak boleh lebih awal dari tanggal terbit!',
 
         'statusterbit.required' => 'Status terbit wajib diisi!',
+
+        'sertifikat.required' => 'Sertifikat wajib diunggah.',
+        'sertifikat.mimes' => 'Sertifikat harus berupa file berformat PDF.',
+
         // 'statusterbit.in' => 'Status terbit harus salah satu dari "Terbit" atau "Belum Terbit"!',
     ]);
         // Cari datanya berdasarkan 'nama'
     $data = skktenagakerjablora::where('nama', $nama)->firstOrFail();
 
+    if ($request->hasFile('sertifikat')) {
+        $file = $request->file('sertifikat');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['sertifikat'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }
+
     // Update data
-    $data->update($validatedData);
+    $data->update([
+        'nama' => $validatedData['nama'] ?? $data->nama,
+        'alamat' => $validatedData['alamat'] ?? $data->alamat,
+        'tahunlulus' => $validatedData['tahunlulus'] ?? $data->tahunlulus,
+        'tahunbimtek' => $validatedData['tahunbimtek'] ?? $data->tahunbimtek,
+        'namasekolah_id' => $validatedData['namasekolah_id'] ?? $data->namasekolah_id,
+        'jenjangpendidikan_id' => $validatedData['jenjangpendidikan_id'] ?? $data->jenjangpendidikan_id,
+        'jurusan_id' => $validatedData['jurusan_id'] ?? $data->jurusan_id,
+        'jabatankerja_id' => $validatedData['jabatankerja_id'] ?? $data->jabatankerja_id,
+        'jenjang_id' => $validatedData['jenjang_id'] ?? $data->jenjang_id,
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'] ?? $data->asosiasimasjaki_id,
+        'lpspenerbit_id' => $validatedData['lpspenerbit_id'] ?? $data->lpspenerbit_id,
+        'tanggalterbit' => $validatedData['tanggalterbit'] ?? $data->tanggalterbit,
+        'tanggalhabis' => $validatedData['tanggalhabis'] ?? $data->tanggalhabis,
+        'statusterbit' => $validatedData['statusterbit'] ?? $data->statusterbit,
+        'sertifikat' => $validatedData['sertifikat'] ?? $data->sertifikat,
+    ]);
 
     // Flash success
     session()->flash('create', 'Data Berhasil Dibuat!');
@@ -727,6 +801,7 @@ public function beskkallbloracreatenew(Request $request)
         'tanggalterbit' => 'required|date',
         'tanggalhabis' => 'required|date',
         'statusterbit' => 'required|string',
+        'sertifikat' => 'required|mimes:pdf',
     ], [
         'nama.required' => 'Nama wajib diisi!',
         'nama.string' => 'Nama harus berupa teks!',
@@ -759,10 +834,44 @@ public function beskkallbloracreatenew(Request $request)
         'tanggalhabis.date' => 'Tanggal habis harus berupa tanggal yang valid!',
         'tanggalhabis.after_or_equal' => 'Tanggal habis tidak boleh lebih awal dari tanggal terbit!',
         'statusterbit.required' => 'Status terbit wajib diisi!',
+        'sertifikat.required' => 'Sertifikat wajib diunggah.',
+        'sertifikat.mimes' => 'Sertifikat harus berupa file berformat PDF.',
     ]);
 
+    if ($request->hasFile('sertifikat')) {
+        $file = $request->file('sertifikat');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['sertifikat'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }
+
     // Create new data entry
-    skktenagakerjablora::create($validatedData);
+    skktenagakerjablora::create([
+        'nama' => $validatedData['nama'] ?? null,
+        'alamat' => $validatedData['alamat'] ?? null,
+        'tahunlulus' => $validatedData['tahunlulus'] ?? null,
+        'tahunbimtek' => $validatedData['tahunbimtek'] ?? null,
+        'namasekolah_id' => $validatedData['namasekolah_id'] ?? null,
+        'jenjangpendidikan_id' => $validatedData['jenjangpendidikan_id'] ?? null,
+        'jurusan_id' => $validatedData['jurusan_id'] ?? null,
+        'jabatankerja_id' => $validatedData['jabatankerja_id'] ?? null,
+        'jenjang_id' => $validatedData['jenjang_id'] ?? null,
+        'asosiasimasjaki_id' => $validatedData['asosiasimasjaki_id'] ?? null,
+        'lpspenerbit_id' => $validatedData['lpspenerbit_id'] ?? null,
+        'tanggalterbit' => $validatedData['tanggalterbit'] ?? null,
+        'tanggalhabis' => $validatedData['tanggalhabis'] ?? null,
+        'statusterbit' => $validatedData['statusterbit'] ?? null,
+        'sertifikat' => $validatedData['sertifikat'] ?? null,
+    ]);
 
     // Flash success message
     session()->flash('create', 'Data Berhasil Dibuat!');

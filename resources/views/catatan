@@ -770,3 +770,24 @@ public function bebujkkonstruksicreateklasifikasicreate(Request $request)
     return redirect('bebujkkonstruksi');
 }
 
+
+
+
+
+
+
+if ($request->hasFile('sertifikat')) {
+        $file = $request->file('sertifikat');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('03_datajakon/02_sertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke database
+        $validatedData['sertifikat'] = '03_datajakon/02_sertifikasi/' . $namaFile;
+    }

@@ -291,7 +291,7 @@
                     <label class="form-label" for="statusterbit">
                         <i class="bi bi-check-circle" style="margin-right: 10px; color: navy;"></i> Status Terbit
                     </label>
-                    <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror" required>
+                    <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror">
                         <option value="" disabled selected>Pilih Status Terbit</option>
                         <option value="Terbit" {{ old('statusterbit') == 'Terbit' ? 'selected' : '' }}>Terbit</option>
                         <option value="Belum Terbit" {{ old('statusterbit') == 'Belum Terbit' ? 'selected' : '' }}>Belum Terbit</option>
@@ -300,6 +300,92 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="sertifikat">
+                        <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Upload Berkas
+                    </label>
+                    <input type="file" id="sertifikat" name="sertifikat"
+                        class="form-control @error('sertifikat') is-invalid @enderror"
+                        onchange="previewFile('sertifikat', 'previewFoto')" />
+
+                    <div class="mt-2">
+                        <!-- Preview Image or PDF -->
+                        <div id="previewContainer">
+                            <img id="previewFoto"
+                                src="{{ old('sertifikat') ? asset('03_datajakon/01_sertifikasi/' . old('sertifikat')) : '' }}"
+                                style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
+
+                            <canvas id="pdfPreview" style="display: none; max-width: 100%; max-height: 200px; margin-top: 10px;"></canvas>
+                        </div>
+                    </div>
+
+                    @error('sertifikat')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+                <script>
+                    function previewFile(inputId, previewId) {
+                        var file = document.getElementById(inputId).files[0];
+                        var previewContainer = document.getElementById('previewContainer');
+                        var imgPreview = document.getElementById(previewId);
+                        var pdfPreview = document.getElementById('pdfPreview');
+
+                        // Reset previous previews
+                        imgPreview.style.display = 'none';
+                        pdfPreview.style.display = 'none';
+
+                        if (file) {
+                            var reader = new FileReader();
+
+                            // Check if the file is a PDF
+                            if (file.type === 'application/pdf') {
+                                // Display PDF preview
+                                reader.onload = function(e) {
+                                    var pdfData = e.target.result;
+                                    pdfjsLib.getDocument({data: pdfData}).promise.then(function(pdf) {
+                                        pdf.getPage(1).then(function(page) {
+                                            var canvas = document.getElementById('pdfPreview');
+                                            var context = canvas.getContext('2d');
+
+                                            // Ukuran A4 dalam mm
+                                            var a4Width = 210;  // A4 width in mm
+                                            var a4Height = 297; // A4 height in mm
+
+                                            // Convert A4 size to pixels (1mm = 3.7795275591 pixels)
+                                            var a4WidthPx = a4Width * 3.7795275591;
+                                            var a4HeightPx = a4Height * 3.7795275591;
+
+                                            // Calculate scale to fit PDF to A4 size in pixels
+                                            var scale = Math.min(a4WidthPx / page.getViewport({scale: 1}).width, a4HeightPx / page.getViewport({scale: 1}).height);
+
+                                            var viewport = page.getViewport({scale: scale});
+                                            canvas.height = viewport.height;
+                                            canvas.width = viewport.width;
+
+                                            // Render the page into the canvas context
+                                            page.render({canvasContext: context, viewport: viewport}).promise.then(function() {
+                                                pdfPreview.style.display = 'block';
+                                            });
+                                        });
+                                    });
+                                };
+                                reader.readAsArrayBuffer(file); // Read the PDF file
+                            } else {
+                                // Display image preview (if it's not a PDF)
+                                reader.onloadend = function() {
+                                    imgPreview.src = reader.result;
+                                    imgPreview.style.display = 'block';
+                                };
+                                reader.readAsDataURL(file); // Read the image file
+                            }
+                        }
+                    }
+                </script>
+
             </div>
         </div>
 {{--

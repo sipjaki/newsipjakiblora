@@ -296,12 +296,40 @@
     <label class="form-label" for="statusterbit">
         <i class="bi bi-check-circle" style="margin-right: 10px; color: navy;"></i> Status Terbit
     </label>
-    <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror" required>
+    <select id="statusterbit" name="statusterbit" class="form-control @error('statusterbit') is-invalid @enderror">
         <option value="" disabled selected>Pilih Status Terbit</option>
         <option value="Terbit" {{ old('statusterbit', $data->statusterbit ?? '') == 'Terbit' ? 'selected' : '' }}>Terbit</option>
         <option value="Belum Terbit" {{ old('statusterbit', $data->statusterbit ?? '') == 'Belum Terbit' ? 'selected' : '' }}>Belum Terbit</option>
     </select>
     @error('statusterbit')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
+
+
+<div class="mb-3">
+    <label class="form-label" for="sertifikat">
+        <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> File Berkas Sertifikat (PDF)
+    </label>
+
+    <!-- Preview PDF -->
+    <div style="margin-top: 10px;">
+        @if($data->sertifikat && file_exists(public_path('storage/' . $data->sertifikat)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe src="{{ asset('storage/' . $data->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+    @elseif($data->sertifikat)
+        <!-- Display the iframe with the updated file -->
+        <iframe src="{{ asset($data->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+
+    </div>
+
+    <!-- Input File untuk Mengunggah PDF -->
+    <input type="file" name="sertifikat" class="form-control @error('sertifikat') is-invalid @enderror" id="sertifikat" />
+    @error('sertifikat')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
