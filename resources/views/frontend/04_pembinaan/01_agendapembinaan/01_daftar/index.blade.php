@@ -255,13 +255,20 @@ table.zebra-table {
                                     @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div class="mb-3">
+                                <div class="mb-3" style="display: none;">
                                     <label class="form-label">
                                         <i class="bi bi-upload"></i> Upload Sertifikat (PDF)
                                     </label>
-                                    <input type="file" name="sertifikat" class="form-control @error('sertifikat') is-invalid @enderror" accept=".pdf">
-                                    @error('sertifikat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    <input
+                                        type="file"
+                                        name="sertifikat"
+                                        class="form-control @error('sertifikat') is-invalid @enderror"
+                                        accept=".pdf">
+                                    @error('sertifikat')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
+
 
                                 <button type="submit" class="btn btn-primary">Kirim</button>
                             </div>
