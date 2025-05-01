@@ -266,16 +266,20 @@ table.zebra-table {
                             </div>
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-                                <div style="position: relative;">
-                                    <button onclick="window.history.back();" class="px-3 py-2 text-white rounded-[15px] border border-slate-700 flex items-center gap-2"
-                                            style="background-color: #64748b; width: auto; position: absolute; right: 10px; font-family: 'Poppins', sans-serif; transition: all 0.3s ease;">
-                                        <!-- SVG Icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7l-7-7 7-7"/>
-                                        </svg>
-                                        Kembali
-                                    </button>
+                                <div class="flex justify-end">
+                                    <button onclick="window.history.back();"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                    onmouseout="this.style.backgroundColor='#22b305'; this.style.color='white';"
+                                    style="background-color: #22b305; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+
+                                    <!-- Ikon SVG Pensil -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7l-7-7 7-7"/>
+                                    </svg>
+                                    <span style="font-family: 'Poppins', sans-serif;">Kembali</span>
+                                </button>
                                 </div>
+
                                 <div class="flex justify-end">
                                     <button type="button" onclick="openModal()"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
