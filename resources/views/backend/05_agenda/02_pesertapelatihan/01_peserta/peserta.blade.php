@@ -82,48 +82,51 @@
                     });
 
                     doc.setFontSize(12);
-                    doc.text("Daftar Peserta", 14, 14); // Judul
+                    doc.text("Daftar Peserta", 14, 14);
 
                     const table = document.querySelector(".zebra-table");
 
-                    // Ambil Header
+                    // Header
                     const headers = [...table.querySelectorAll("thead th")].map(th =>
-                        th.textContent.trim()
+                        th.textContent.trim().replace(/\s+/g, " ")
                     );
 
-                    // Ambil Data
+                    // Body
                     const rows = [...table.querySelectorAll("tbody tr")].map(tr => {
-                        return [...tr.querySelectorAll("td")].map(td => td.textContent.trim());
+                        return [...tr.querySelectorAll("td")].map(td =>
+                            td.textContent.trim().replace(/\s+/g, " ")
+                        );
                     });
 
                     doc.autoTable({
                         head: [headers],
                         body: rows,
                         startY: 20,
-                        tableWidth: 'auto',
                         styles: {
                             fontSize: 8,
-                            cellPadding: { top: 1, bottom: 1, left: 1, right: 1 },
-                            lineHeight: 1.1,
-                            overflow: 'linebreak'
+                            cellPadding: 1,
+                            overflow: 'linebreak',     // WRAP text
+                            valign: 'middle'
                         },
                         headStyles: {
-                            fillColor: [55, 65, 81], // slate-700
+                            fillColor: [55, 65, 81],
                             textColor: [255, 255, 255],
+                            fontSize: 8,
                             halign: 'center'
                         },
                         columnStyles: {
-                            0: { cellWidth: 10 },     // No
-                            1: { cellWidth: 40 },     // Nama
-                            2: { cellWidth: 25 },     // NIK
-                            3: { cellWidth: 20 },     // Gender
-                            4: { cellWidth: 30 },     // Tgl Lahir
-                            5: { cellWidth: 30 },     // No Telp
-                            6: { cellWidth: 35 },     // Instansi
-                            7: { cellWidth: 35 },     // Sertifikat
-                            8: { cellWidth: 25 },     // Verifikasi
-                            9: { cellWidth: 35 },     // Upload Sertifikat
-                        }
+                            0: { cellWidth: 10 },   // No
+                            1: { cellWidth: 35 },   // Nama
+                            2: { cellWidth: 25 },   // NIK
+                            3: { cellWidth: 20 },   // Gender
+                            4: { cellWidth: 28 },   // Tgl Lahir
+                            5: { cellWidth: 28 },   // No Telp
+                            6: { cellWidth: 30 },   // Instansi
+                            7: { cellWidth: 30 },   // Sertifikat
+                            8: { cellWidth: 25 },   // Verifikasi
+                            9: { cellWidth: 35 }    // Upload
+                        },
+                        theme: 'grid'
                     });
 
                     doc.save("daftar-peserta.pdf");
