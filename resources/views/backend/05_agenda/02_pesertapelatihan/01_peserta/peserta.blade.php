@@ -66,10 +66,17 @@
                     transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" style="margin-right: 8px;">
-                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5V14a1 1 0 0 0 1 1h12a1
+                             1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V14a2 2 0 0 1-2
+                             2H2a2 2 0 0 1-2-2v-3.6a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0
+                             0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1
+                             0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3
+                             3z"/>
                 </svg>
                 Download PDF
             </button>
+
 
             <script>
                 async function generatePDF() {
