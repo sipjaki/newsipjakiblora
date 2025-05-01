@@ -326,5 +326,22 @@ public function beakseslsppenerbit(Request $request)
     ]);
 }
 
+
+// HAK AKSES DAFTAR PESERTA PELATIHAN SESUAI DENGAN AGENDA PELATIHAN YANG TERSEDIA
+
+public function daftarpesertapelatihan($id)
+{
+    $dataagendapelatihan = agendapelatihan::findOrFail($id); // Cari 1 data sesuai ID
+    $user = Auth::user();
+
+    return view('frontend.04_pembinaan.01_agendapembinaan.01_daftar.index', [
+        'agendapelatihannamakegiatan' => $dataagendapelatihan->namalengkap, // Ini dikirim ke form
+        'agendapelatihan_id' => $dataagendapelatihan->id, // Ini dikirim ke form
+        'user' => $user,
+        'title' => 'Form Daftar Peserta Pelatihan'
+    ]);
+}
+
+
 }
 

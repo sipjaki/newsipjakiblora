@@ -831,7 +831,7 @@ Route::post('/beagendapelatihan/createnew', [PembinaanController::class, 'beagen
 Route::get('/beagendapelatihanmateri/{id}', [PembinaanController::class, 'beagendapelatihanmateri'])->middleware('auth')->name('beagendapelatihanmateri');
 Route::delete('/beagendapelatihanmateri/delete/{id}', [PembinaanController::class, 'beagendapelatihanmateridelete'])->middleware('auth')->name('beagendapelatihanmateridelete');
 
-// ROUTE YANG BELUM DI KERJAKAN
+// ROUTE PENGAMBILAN DATA ID
 Route::get('/beagendapelatihanmateri/createmateri/{id}', [PembinaanController::class, 'beagendapelatihanmatericreate'])->middleware('auth')->name('beagendapelatihanmatericreate');
 Route::post('/beagendapelatihanmateri/createmateri/new', [PembinaanController::class, 'beagendapelatihanmatericreatenew'])->middleware('auth')->name('beagendapelatihanmatericreatenew');
 
@@ -857,6 +857,12 @@ Route::post('/bepesertapuploadsertifikat/create/{id}', [PesertapelatihanControll
 
 // HAK AKSES AKUN LSP PENERBIT UNTUK PELATIHAN DAN SKK
 Route::get('/beakseslsppenerbit', [PesertapelatihanController::class, 'beakseslsppenerbit'])->middleware('auth');
+
+// HAK AKSES PESERTA UNTK DAFTAR
+
+Route::get('/daftarpesertapelatihan/create/{id}', [PesertapelatihanController::class, 'daftarpesertapelatihan'])->middleware('auth')->name('daftarpesertapelatihan');
+// Route::post('/beagendapelatihanmateri/createmateri/new', [PembinaanController::class, 'beagendapelatihanmatericreatenew'])->middleware('auth')->name('beagendapelatihanmatericreatenew');
+
 
 
 
