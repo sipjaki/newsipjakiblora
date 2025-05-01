@@ -95,15 +95,10 @@
                     doc.addImage(logo1, "PNG", 10, 5, 20, 20);   // Logo kiri
                     doc.addImage(logo2, "PNG", 270, 5, 20, 20);  // Logo kanan
 
-                    // Judul
-                    doc.setFontSize(16);
-                    doc.setFont("helvetica", "bold");
-                    doc.text("Daftar Agenda Pelatihan", 148.5, 15, { align: "center" });
-
                     // Subjudul
                     doc.setFontSize(12);
                     doc.setFont("helvetica", "normal");
-                    doc.text("Daftar Peserta", 148.5, 22, { align: "center" });
+                    doc.text("Daftar Peserta Pelatihan", 148.5, 22, { align: "center" });
 
                     const table = document.querySelector(".zebra-table");
 
@@ -148,7 +143,7 @@
                         theme: 'grid'
                     });
 
-                    doc.save("daftar-peserta.pdf");
+                    doc.save("Daftar_Peserta_Pelatihan.pdf");
                 }
 
                 // Fungsi bantu untuk load gambar
