@@ -236,25 +236,37 @@ table.zebra-table {
                             </div>
                             <div class="col-md-6">
 
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-card-list"></i> Jenjang Pendidikan</label>
-                                    <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="@error('jenjangpendidikan_id') is-invalid @enderror">
-                                        <option value="" disabled selected>Pilih Jenjang</option>
-                                        @foreach($jenjangpendidikan as $jenjang)
-                                            <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id') == $jenjang->id ? 'selected' : '' }}>{{ $jenjang->jenjangpendidikan }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div style="{{ $divStyle }}">
+                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                <i class="bi bi-card-list"></i> Jenjang Pendidikan
+                                            </label>
+                                            <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="form-control @error('jenjangpendidikan_id') is-invalid @enderror">
+                                                <option value="" disabled selected>Pilih Jenjang</option>
+                                                @foreach($jenjangpendidikan as $jenjang)
+                                                    <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id') == $jenjang->id ? 'selected' : '' }}>
+                                                        {{ $jenjang->jenjangpendidikan }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        </div>
+                                    </div>
 
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-gender-ambiguous"></i> Jenis Kelamin</label>
-                                    <select name="jeniskelamin" style="{{ $inputStyle }}" class="@error('jeniskelamin') is-invalid @enderror">
-                                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                                        <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                                        <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
-                                    </select>
-                                    @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    <div class="col-md-3">
+                                        <div style="{{ $divStyle }}">
+                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                <i class="bi bi-gender-ambiguous"></i> Jenis Kelamin
+                                            </label>
+                                            <select name="jeniskelamin" style="{{ $inputStyle }}" class="form-control @error('jeniskelamin') is-invalid @enderror">
+                                                <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                                <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                                                <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                            </select>
+                                            @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div style="{{ $divStyle }}">
@@ -270,7 +282,7 @@ table.zebra-table {
                                 <div class="flex justify-end">
                                     <button type="button" onclick="openModal()"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#22b305'; this.style.color='white';"
+                                    onmouseout="this.style.backgroundColor='#002a5a'; this.style.color='white';"
                                     style="background-color: #002a5a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
 
                                     <!-- Ikon SVG Pensil -->
