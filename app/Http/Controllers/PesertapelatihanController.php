@@ -292,11 +292,12 @@ public function beakseslsppenerbit(Request $request)
 
     $userId = Auth::id(); // Ambil ID user yang sedang login
 
-    $query = agendapelatihan::whereHas('user', function ($q) use ($userId) {
-        $q->where('id', $userId);
-    });
+    // Tambahkan withCount('pesertapelatihan') untuk menghitung jumlah peserta
+    $query = agendapelatihan::withCount('pesertapelatihan')
+                ->whereHas('user', function ($q) use ($userId) {
+                    $q->where('id', $userId);
+                });
 
-    // Jika ada pencarian
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->where('namakegiatan', 'LIKE', "%{$search}%")
