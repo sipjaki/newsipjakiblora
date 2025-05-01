@@ -236,7 +236,7 @@ table.zebra-table {
                             </div>
                             <div class="col-md-6">
                                 <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                    <div style="{{ $divStyle }}; flex: 1 1 50%;">
+                                    <div style="{{ $divStyle }}; flex: 1 1 25%;">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-card-list"></i> Jenjang Pendidikan
                                         </label>
@@ -251,7 +251,7 @@ table.zebra-table {
                                         @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                     </div>
 
-                                    <div style="{{ $divStyle }}; flex: 1 1 50%;">
+                                    <div style="{{ $divStyle }}; flex: 1 1 25%;">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-gender-ambiguous"></i> Jenis Kelamin
                                         </label>
