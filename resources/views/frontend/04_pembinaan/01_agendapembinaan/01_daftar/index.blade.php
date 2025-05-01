@@ -111,6 +111,7 @@ table.zebra-table {
           <a href="#" class="font-medium text-blue-600" style="font-size: 16px; color:blue;">
             {{$title}}
           </a>
+          @include('backend.00_administrator.00_baganterpisah.11_alert')
           {{-- <span>/</span>
           <a href="/datajakon/statistikabujkblora" class="font-medium" style="font-size: 16px;">
             Data Statistik
