@@ -350,7 +350,7 @@ public function daftarpesertapelatihancreatenew(Request $request)
     // Validasi input
     $validated = $request->validate([
         'namalengkap' => 'required|string|max:255',
-        'nik' => 'required|string|max:16',
+        'nik' => 'required|regex:/^\d{16}$/|size:16',
         'tanggallahir' => 'required|date',
         'notelepon' => 'required|string|max:15',
         'jenjangpendidikan_id' => 'required|string',
