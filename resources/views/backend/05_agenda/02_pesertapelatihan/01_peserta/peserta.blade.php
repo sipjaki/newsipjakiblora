@@ -61,7 +61,7 @@
                 onclick="generatePDF()"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                style="background-color: #004fce; color: white; border: none; margin-right: 10px; padding: 10px 20px;
                     border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
                     transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -88,17 +88,29 @@
                         format: "a4"
                     });
 
+                    // Tambah logo
+                    const logo1 = await loadImage("/assets/icon/logokabupatenblora.png");
+                    const logo2 = await loadImage("/assets/icon/pupr.png");
+
+                    doc.addImage(logo1, "PNG", 10, 5, 20, 20);   // Logo kiri
+                    doc.addImage(logo2, "PNG", 270, 5, 20, 20);  // Logo kanan
+
+                    // Judul
+                    doc.setFontSize(16);
+                    doc.setFont("helvetica", "bold");
+                    doc.text("Daftar Agenda Pelatihan", 148.5, 15, { align: "center" });
+
+                    // Subjudul
                     doc.setFontSize(12);
-                    doc.text("Daftar Peserta", 14, 14);
+                    doc.setFont("helvetica", "normal");
+                    doc.text("Daftar Peserta", 148.5, 22, { align: "center" });
 
                     const table = document.querySelector(".zebra-table");
 
-                    // Header
                     const headers = [...table.querySelectorAll("thead th")].map(th =>
                         th.textContent.trim().replace(/\s+/g, " ")
                     );
 
-                    // Body
                     const rows = [...table.querySelectorAll("tbody tr")].map(tr => {
                         return [...tr.querySelectorAll("td")].map(td =>
                             td.textContent.trim().replace(/\s+/g, " ")
@@ -108,11 +120,11 @@
                     doc.autoTable({
                         head: [headers],
                         body: rows,
-                        startY: 20,
+                        startY: 30,
                         styles: {
                             fontSize: 8,
                             cellPadding: 1,
-                            overflow: 'linebreak',     // WRAP text
+                            overflow: 'linebreak',
                             valign: 'middle'
                         },
                         headStyles: {
@@ -137,6 +149,23 @@
                     });
 
                     doc.save("daftar-peserta.pdf");
+                }
+
+                // Fungsi bantu untuk load gambar
+                function loadImage(url) {
+                    return new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.crossOrigin = "Anonymous"; // Agar bisa di-load secara aman
+                        img.onload = () => {
+                            const canvas = document.createElement("canvas");
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+                            canvas.getContext("2d").drawImage(img, 0, 0);
+                            resolve(canvas.toDataURL("image/png"));
+                        };
+                        img.onerror = reject;
+                        img.src = url;
+                    });
                 }
             </script>
 
