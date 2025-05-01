@@ -57,56 +57,62 @@
                     {{ $jumlahpeserta }} Jumlah Peserta
                 </button> --}}
 
-                                    <button
-                        onclick="generatePDF()"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px;
-                            border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                            transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            viewBox="0 0 16 16" style="margin-right: 8px;">
-                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
-                        </svg>
-                        Download PDF
-                    </button>
+                <button
+                onclick="generatePDF()"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                    border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                    transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16" style="margin-right: 8px;">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                </svg>
+                Download PDF
+            </button>
 
-                    <script>
-                        async function generatePDF() {
-                            const { jsPDF } = window.jspdf;
+            <script>
+                async function generatePDF() {
+                    const { jsPDF } = window.jspdf;
 
-                            const doc = new jsPDF({
-                                orientation: "landscape",
-                                unit: "mm",
-                                format: "a4"
-                            });
+                    const doc = new jsPDF({
+                        orientation: "landscape",
+                        unit: "mm",
+                        format: "a4"
+                    });
 
-                            doc.text("Daftar Peserta", 14, 10); // Judul PDF
+                    doc.setFontSize(12);
+                    doc.text("Daftar Peserta", 14, 14); // Judul
 
-                            // Ambil data dari tabel (tanpa header ikon)
-                            const table = document.querySelector(".zebra-table");
-                            const headers = Array.from(table.querySelectorAll("thead th")).map(th => th.innerText.trim());
-                            const rows = Array.from(table.querySelectorAll("tbody tr")).map(tr =>
-                                Array.from(tr.querySelectorAll("td")).map(td => td.innerText.trim())
-                            );
+                    const table = document.querySelector(".zebra-table");
 
-                            doc.autoTable({
-                                head: [headers],
-                                body: rows,
-                                startY: 15,
-                                styles: {
-                                    fontSize: 8,
-                                    cellPadding: 2
-                                },
-                                headStyles: {
-                                    fillColor: [55, 65, 81] // dark gray
-                                }
-                            });
+                    // Ambil Header
+                    const headers = [...table.querySelectorAll("thead th")].map(th =>
+                        th.textContent.trim()
+                    );
 
-                            doc.save("daftar-peserta.pdf");
+                    // Ambil Data
+                    const rows = [...table.querySelectorAll("tbody tr")].map(tr => {
+                        return [...tr.querySelectorAll("td")].map(td => td.textContent.trim());
+                    });
+
+                    doc.autoTable({
+                        head: [headers],
+                        body: rows,
+                        startY: 20,
+                        styles: {
+                            fontSize: 8,
+                            cellPadding: 2
+                        },
+                        headStyles: {
+                            fillColor: [55, 65, 81], // Tailwind slate-700
+                            textColor: [255, 255, 255]
                         }
-                    </script>
+                    });
 
+                    doc.save("daftar-peserta.pdf");
+                }
+            </script>
 
                                     <button
                         onclick="history.back()"
@@ -294,3 +300,8 @@
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+
+      <!-- jsPDF & autoTable CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
