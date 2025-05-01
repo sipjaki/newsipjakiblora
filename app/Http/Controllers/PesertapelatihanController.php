@@ -336,7 +336,7 @@ public function daftarpesertapelatihan($id)
     $user = Auth::user();
 
     return view('frontend.04_pembinaan.01_agendapembinaan.01_daftar.index', [
-        'agendapelatihannamakegiatan' => $dataagendapelatihan->namalengkap, // Ini dikirim ke form
+        'agendapelatihannamakegiatan' => $dataagendapelatihan->namakegiatan, // Ini dikirim ke form
         'agendapelatihan_id' => $dataagendapelatihan->id, // Ini dikirim ke form
         'user' => $user,
         'jenjangpendidikan' => $datajenjangpendidikan,
