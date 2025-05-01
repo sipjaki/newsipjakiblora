@@ -216,7 +216,7 @@ table.zebra-table {
                                     <label class="form-label" style="{{ $labelStyle }}">
                                         <i class="bi bi-person-badge" style="{{ $iconStyle }}"></i> NIK
                                     </label>
-                                    <input type="text" name="number" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
+                                    <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
                                     @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
