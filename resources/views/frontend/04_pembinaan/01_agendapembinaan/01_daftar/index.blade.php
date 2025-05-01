@@ -207,31 +207,11 @@ table.zebra-table {
                                     @error('namalengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-card-list"></i> Jenjang Pendidikan</label>
-                                    <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="@error('jenjangpendidikan_id') is-invalid @enderror">
-                                        <option value="" disabled selected>Pilih Jenjang</option>
-                                        @foreach($jenjangpendidikan as $jenjang)
-                                            <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id') == $jenjang->id ? 'selected' : '' }}>{{ $jenjang->jenjangpendidikan }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
 
                                 <div style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-person-badge"></i> NIK</label>
                                     <input type="text" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
                                     @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
-
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-gender-ambiguous"></i> Jenis Kelamin</label>
-                                    <select name="jeniskelamin" style="{{ $inputStyle }}" class="@error('jeniskelamin') is-invalid @enderror">
-                                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                                        <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                                        <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
-                                    </select>
-                                    @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
                                 <div style="{{ $divStyle }}">
@@ -246,34 +226,114 @@ table.zebra-table {
                                     @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-building"></i> Instansi/Universitas/Lembaga/Perseorangan</label>
-                                    <input type="text" name="instansi" style="{{ $inputStyle }}" class="@error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
-                                    @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
+
 
                                 <div style="display: none;">
                                     <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-upload"></i> Upload Sertifikat (PDF)</label>
                                     <input type="file" name="sertifikat" style="{{ $inputStyle }}" class="@error('sertifikat') is-invalid @enderror" accept=".pdf">
                                     @error('sertifikat') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
-
-                                <div style="margin-top: 30px;">
-                                    <button type="submit" style="
-                                        background-color: #007bff;
-                                        color: white;
-                                        padding: 12px 24px;
-                                        border: none;
-                                        border-radius: 8px;
-                                        font-size: 16px;
-                                        cursor: pointer;
-                                        transition: 0.3s;
-                                        width: 100%;
-                                    " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">
-                                        Kirim Formulir Pendaftaran
-                                    </button>
-                                </div>
                             </div>
+                            <div class="col-md-6">
+
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-card-list"></i> Jenjang Pendidikan</label>
+                                    <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="@error('jenjangpendidikan_id') is-invalid @enderror">
+                                        <option value="" disabled selected>Pilih Jenjang</option>
+                                        @foreach($jenjangpendidikan as $jenjang)
+                                            <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id') == $jenjang->id ? 'selected' : '' }}>{{ $jenjang->jenjangpendidikan }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                </div>
+
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-gender-ambiguous"></i> Jenis Kelamin</label>
+                                    <select name="jeniskelamin" style="{{ $inputStyle }}" class="@error('jeniskelamin') is-invalid @enderror">
+                                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                        <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                                        <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                    </select>
+                                    @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                </div>
+
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-building"></i> Instansi/Universitas/Lembaga/Perseorangan</label>
+                                    <input type="text" name="instansi" style="{{ $inputStyle }}" class="@error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
+                                    @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                </div>
+
+                            </div>
+
+                            <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <div class="flex justify-end">
+                                    <button type="button" onclick="openModal()"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                    onmouseout="this.style.backgroundColor='#22b305'; this.style.color='white';"
+                                    style="background-color: #22b305; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+
+                                    <!-- Ikon SVG Pensil -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                               </svg>
+                                    <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran </span>
+                                </button>
+                                </div>
+                                <!-- Modal Konfirmasi -->
+                                <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                                    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                                        Apakah anda ingin kirim formulir ini ?
+                                    </p>
+
+                                      <!-- Tombol -->
+                                      <div style="display: flex; justify-content: center; gap: 12px;">
+                                        <button id="confirmSubmitBtn"
+                                        onclick="submitForm()"
+                                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <!-- Telegram SVG -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                                        <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                                    </svg>
+                                    Ya
+                                </button>
+
+                                <!-- Tombol Batal dengan ikon X (SVG) -->
+                                <button type="button"
+                                        onclick="closeModal()"
+                                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                                    </svg>
+                                    Batal
+                                </button>
+
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <!-- Script -->
+                                <script>
+                                function openModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "flex";
+                                }
+
+                                function closeModal() {
+                                    const modal = document.getElementById("confirmModal");
+                                    if (modal) modal.style.display = "none";
+                                }
+
+                                </script>
+
+                            </div>
+
                         </div>
                     </div>
                 </form>
