@@ -407,7 +407,7 @@ public function daftarpesertapelatihancreatenew(Request $request)
     session()->flash('daftarpelatihan', 'Formulir Berhasil di Kirim ! Silahkan untuk menunggu verifikasi DPUPR.');
 
     // Redirect ke route yang sesuai setelah menyimpan data
-    return redirect('/agendapembinaan');
+    return redirect('/daftarpesertapelatihan');
 }
 
 }

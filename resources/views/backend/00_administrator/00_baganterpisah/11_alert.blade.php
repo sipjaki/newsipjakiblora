@@ -214,9 +214,12 @@
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil !</div>
-        <br>
-        Silahkan kunjungi link ini untuk mengetahui verifikasi anda !
-        <a href="/daftarpelatihan"></a>
+        <p style="margin-bottom: 4px;">
+            Silahkan kunjungi link ini untuk mengetahui verifikasi anda!
+        </p>
+        <p style="margin-top: 0;">
+            <a href="/daftarpesertapelatihan">Peserta</a>
+        </p>
         {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
         <br>
         <button class="button-text">{{ session('daftarpelatihan') }}</button>
