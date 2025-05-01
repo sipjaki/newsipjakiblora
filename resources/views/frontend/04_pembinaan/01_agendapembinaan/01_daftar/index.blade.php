@@ -181,28 +181,35 @@ table.zebra-table {
 
             <div class="table-wrapper">
 
-                <form action="{{ route('daftarpesertapelatihancreatenew') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('daftarpesertapelatihancreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                     @csrf
-
                     <input type="hidden" name="agendapelatihan_id" value="{{ $agendapelatihan_id }}">
 
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
+                                @php
+                                    $inputStyle = "
+                                        width: 100%;
+                                        padding: 10px 14px;
+                                        border-radius: 8px;
+                                        border: 1px solid #ccc;
+                                        transition: 0.3s;
+                                        font-size: 14px;
+                                    ";
+                                    $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block;";
+                                    $divStyle = "margin-bottom: 20px;";
+                                @endphp
 
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-person"></i> Nama Lengkap
-                                    </label>
-                                    <input type="text" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}">
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-person"></i> Nama Lengkap</label>
+                                    <input type="text" name="namalengkap" style="{{ $inputStyle }}" class="@error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}">
                                     @error('namalengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-card-list"></i> Jenjang Pendidikan
-                                    </label>
-                                    <select name="jenjangpendidikan_id" class="form-control @error('jenjangpendidikan_id') is-invalid @enderror">
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-card-list"></i> Jenjang Pendidikan</label>
+                                    <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="@error('jenjangpendidikan_id') is-invalid @enderror">
                                         <option value="" disabled selected>Pilih Jenjang</option>
                                         @foreach($jenjangpendidikan as $jenjang)
                                             <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id') == $jenjang->id ? 'selected' : '' }}>{{ $jenjang->jenjangpendidikan }}</option>
@@ -211,19 +218,15 @@ table.zebra-table {
                                     @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-person-badge"></i> NIK
-                                    </label>
-                                    <input type="text" name="nik" class="form-control @error('nik') is-invalid @enderror" value="{{ old('nik') }}">
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-person-badge"></i> NIK</label>
+                                    <input type="text" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
                                     @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-gender-ambiguous"></i> Jenis Kelamin
-                                    </label>
-                                    <select name="jeniskelamin" class="form-control @error('jeniskelamin') is-invalid @enderror">
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-gender-ambiguous"></i> Jenis Kelamin</label>
+                                    <select name="jeniskelamin" style="{{ $inputStyle }}" class="@error('jeniskelamin') is-invalid @enderror">
                                         <option value="" disabled selected>Pilih Jenis Kelamin</option>
                                         <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                                         <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
@@ -231,53 +234,49 @@ table.zebra-table {
                                     @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-calendar"></i> Tanggal Lahir
-                                    </label>
-                                    <input type="date" name="tanggallahir" class="form-control @error('tanggallahir') is-invalid @enderror" value="{{ old('tanggallahir') }}">
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-calendar"></i> Tanggal Lahir</label>
+                                    <input type="date" name="tanggallahir" style="{{ $inputStyle }}" class="@error('tanggallahir') is-invalid @enderror" value="{{ old('tanggallahir') }}">
                                     @error('tanggallahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-telephone"></i> Nomor Telepon
-                                    </label>
-                                    <input type="text" name="notelepon" class="form-control @error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-telephone"></i> Nomor Telepon</label>
+                                    <input type="text" name="notelepon" style="{{ $inputStyle }}" class="@error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
                                     @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div class="mb-3">
-                                    <label class="form-label">
-                                        <i class="bi bi-building"></i> Instansi
-                                    </label>
-                                    <input type="text" name="instansi" class="form-control @error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
+                                <div style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-building"></i> Instansi/Universitas/Lembaga/Perseorangan</label>
+                                    <input type="text" name="instansi" style="{{ $inputStyle }}" class="@error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
                                     @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <div class="mb-3" style="display: none;">
-                                    <label class="form-label">
-                                        <i class="bi bi-upload"></i> Upload Sertifikat (PDF)
-                                    </label>
-                                    <input
-                                        type="file"
-                                        name="sertifikat"
-                                        class="form-control @error('sertifikat') is-invalid @enderror"
-                                        accept=".pdf">
-                                    @error('sertifikat')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
+                                <div style="display: none;">
+                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-upload"></i> Upload Sertifikat (PDF)</label>
+                                    <input type="file" name="sertifikat" style="{{ $inputStyle }}" class="@error('sertifikat') is-invalid @enderror" accept=".pdf">
+                                    @error('sertifikat') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-
-                                <button type="submit" class="btn btn-primary">Kirim</button>
+                                <div style="margin-top: 30px;">
+                                    <button type="submit" style="
+                                        background-color: #007bff;
+                                        color: white;
+                                        padding: 12px 24px;
+                                        border: none;
+                                        border-radius: 8px;
+                                        font-size: 16px;
+                                        cursor: pointer;
+                                        transition: 0.3s;
+                                        width: 100%;
+                                    " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">
+                                        Kirim Formulir Pendaftaran
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </form>
-
-
-            </div>
 
 
             <div style="position: relative;">
