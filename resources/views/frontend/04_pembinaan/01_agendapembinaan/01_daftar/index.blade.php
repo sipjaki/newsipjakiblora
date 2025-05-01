@@ -266,6 +266,16 @@ table.zebra-table {
                             </div>
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+                                <div style="position: relative;">
+                                    <button onclick="window.history.back();" class="px-3 py-2 text-white rounded-[15px] border border-slate-700 flex items-center gap-2"
+                                            style="background-color: #64748b; width: auto; position: absolute; right: 10px; font-family: 'Poppins', sans-serif; transition: all 0.3s ease;">
+                                        <!-- SVG Icon -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7l-7-7 7-7"/>
+                                        </svg>
+                                        Kembali
+                                    </button>
+                                </div>
                                 <div class="flex justify-end">
                                     <button type="button" onclick="openModal()"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -274,18 +284,18 @@ table.zebra-table {
 
                                     <!-- Ikon SVG Pensil -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
-                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                               </svg>
+                                    viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
+                                </svg>
+
                                     <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran </span>
                                 </button>
                                 </div>
                                 <!-- Modal Konfirmasi -->
                                 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
                                     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                                        Apakah anda ingin kirim formulir ini ?
+                                      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
+                                        Apakah Anda yakin data sudah benar dan ingin mengirim formulir ini?
                                     </p>
 
                                       <!-- Tombol -->
@@ -339,16 +349,7 @@ table.zebra-table {
                 </form>
 
 
-            <div style="position: relative;">
-                <button onclick="window.history.back();" class="px-3 py-2 text-white rounded-[15px] border border-slate-700 flex items-center gap-2"
-                        style="background-color: #64748b; width: auto; position: absolute; right: 10px; font-family: 'Poppins', sans-serif; transition: all 0.3s ease;">
-                    <!-- SVG Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7 7l-7-7 7-7"/>
-                    </svg>
-                    Kembali
-                </button>
-            </div>
+
 
             <style>
                 button {
