@@ -360,7 +360,7 @@ public function daftarpesertapelatihancreatenew(Request $request)
     ], [
         // Pesan kesalahan custom
             'namalengkap.required' => 'Nama Lengkap harus diisi.',
-            'nik.required' => 'NIK harus diisi.',
+            'nik.required' => 'NIK harus terdiri dari 16 digit.',
             'nik.regex' => 'NIK harus terdiri dari 16 digit angka.',
             'nik.size' => 'NIK harus terdiri dari tepat 16 digit.',
             'tanggallahir.required' => 'Tanggal Lahir harus diisi.',
