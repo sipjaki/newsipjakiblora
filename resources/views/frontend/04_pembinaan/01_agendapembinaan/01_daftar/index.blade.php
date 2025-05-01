@@ -235,9 +235,8 @@ table.zebra-table {
                                 </div>
                             </div>
                             <div class="col-md-6">
-
                                 <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                    <div style="{{ $divStyle }}">
+                                    <div style="{{ $divStyle }}; flex: 1 1 50%;">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-card-list"></i> Jenjang Pendidikan
                                         </label>
@@ -252,7 +251,7 @@ table.zebra-table {
                                         @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                     </div>
 
-                                    <div style="{{ $divStyle }}">
+                                    <div style="{{ $divStyle }}; flex: 1 1 50%;">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-gender-ambiguous"></i> Jenis Kelamin
                                         </label>
@@ -266,12 +265,14 @@ table.zebra-table {
                                 </div>
 
                                 <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}"><i class="bi bi-building"></i> Instansi/Universitas/Lembaga/Perseorangan</label>
+                                    <label class="form-label" style="{{ $labelStyle }}">
+                                        <i class="bi bi-building"></i> Instansi/Universitas/Lembaga/Perseorangan
+                                    </label>
                                     <input type="text" name="instansi" style="{{ $inputStyle }}" class="@error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
                                     @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
-
                             </div>
+
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
 
