@@ -404,10 +404,10 @@ public function daftarpesertapelatihancreatenew(Request $request)
     ]);
 
     // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
-    session()->flash('create', 'Pendaftaran peserta pelatihan berhasil dibuat.');
+    session()->flash('daftarpelatihan', 'Formulir Berhasil di Kirim ! Silahkan untuk menunggu verifikasi DPUPR.');
 
     // Redirect ke route yang sesuai setelah menyimpan data
-    return redirect()->route('pesertapelatihan.index');
+    return redirect()->route('/agendapembinaan');
 }
 
 }
