@@ -204,7 +204,7 @@
     });
 </script>
 
-@if (session('create'))
+@if (session('daftarpelatihan'))
 <div class="modal-verify-alert">
     <div class="modal-box">
         <div class="modal-crane"></div>
