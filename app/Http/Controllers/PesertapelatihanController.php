@@ -345,5 +345,70 @@ public function daftarpesertapelatihan($id)
 }
 
 
+public function daftarpesertapelatihancreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'namalengkap' => 'required|string|max:255',
+        'nik' => 'required|string|max:16',
+        'tanggallahir' => 'required|date',
+        'notelepon' => 'required|string|max:15',
+        'jenjangpendidikan_id' => 'required|string',
+        'jeniskelamin' => 'required|string',
+        'instansi' => 'required|string|max:255',
+        'sertifikat' => 'nullable|mimes:pdf|max:10240',
+    ], [
+        // Pesan kesalahan custom
+            'namalengkap.required' => 'Nama Lengkap harus diisi.',
+            'nik.required' => 'NIK harus diisi.',
+            'nik.regex' => 'NIK harus terdiri dari 16 digit angka.',
+            'nik.size' => 'NIK harus terdiri dari tepat 16 digit.',
+            'tanggallahir.required' => 'Tanggal Lahir harus diisi.',
+            'notelepon.required' => 'Nomor Telepon harus diisi.',
+            'jenjangpendidikan_id.required' => 'Jenjang Pendidikan harus dipilih.',
+            'jeniskelamin.required' => 'Jenis Kelamin harus dipilih.',
+            'instansi.required' => 'Instansi/Universitas/Lembaga/Perseorangan harus diisi.',
+            'sertifikat.mimes' => 'File sertifikat harus dalam format PDF.',
+            'sertifikat.max' => 'File sertifikat maksimal 10 MB.',
+    ]);
+
+    // Menyimpan file sertifikat jika ada
+    if ($request->hasFile('sertifikat')) {
+        $file = $request->file('sertifikat');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('04_pembinaan/03_sertifikatpelatihan');
+
+        // Membuat folder tujuan jika belum ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        // Memindahkan file ke folder tujuan
+        $file->move($tujuanPath, $namaFile);
+
+        // Menyimpan path file sertifikat
+        $sertifikatPath = '04_pembinaan/03_sertifikatpelatihan/' . $namaFile;
+    }
+
+    // Menyimpan data ke tabel PesertaPelatihan
+    pesertapelatihan::create([
+        'agendapelatihan_id' => $request->agendapelatihan_id,
+        'namalengkap' => $validated['namalengkap'],
+        'nik' => $validated['nik'],
+        'tanggallahir' => $validated['tanggallahir'],
+        'notelepon' => $validated['notelepon'],
+        'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
+        'jeniskelamin' => $validated['jeniskelamin'],
+        'instansi' => $validated['instansi'],
+        'sertifikat' => $sertifikatPath ?? null,
+    ]);
+
+    // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
+    session()->flash('create', 'Pendaftaran peserta pelatihan berhasil dibuat.');
+
+    // Redirect ke route yang sesuai setelah menyimpan data
+    return redirect()->route('pesertapelatihan.index');
+}
+
 }
 
