@@ -164,7 +164,7 @@
               <li class="nav-header" style="color: white;">DAFTAR PESERTA </li>
 <!-- Menu Paket Pekerjaan -->
 <li class="nav-item">
-    <a href="/404" class="nav-link">
+    <a href="/beakseslsppenerbit" class="nav-link">
       <!-- Ikon untuk Paket Pekerjaan -->
       <i class="nav-icon bi bi-briefcase" style="color: white;"></i>
       <p style="color: white">

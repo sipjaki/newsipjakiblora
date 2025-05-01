@@ -855,6 +855,11 @@ Route::get('/bepesertapuploadsertifikat/show/{id}', [PesertapelatihanController:
 Route::post('/bepesertapuploadsertifikat/create/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatupload'])->middleware('auth')->name('bepesertauploadsertifikatupload');
 
 
+// HAK AKSES AKUN LSP PENERBIT UNTUK PELATIHAN DAN SKK
+Route::get('/beakseslsppenerbit', [PesertapelatihanController::class, 'beakseslsppenerbit'])->middleware('auth');
+
+
+
 // ___________________________________________________________________________________________________________________________________
 
 

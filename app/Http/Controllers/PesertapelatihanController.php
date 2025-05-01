@@ -183,6 +183,8 @@ public function bepesertapelatihanindex(Request $request)
 
             $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
+            // Hitung jumlah peserta pada agenda pelatihan ini
+
             // Untuk request Ajax (misal filter dinamis via JS)
             if ($request->ajax()) {
                 return response()->json([
@@ -190,10 +192,13 @@ public function bepesertapelatihanindex(Request $request)
                 ]);
             }
 
+            $jumlahPeserta = pesertapelatihan::where('agendapelatihan_id', $id)->count();
+
             return view('backend.05_agenda.02_pesertapelatihan.01_peserta.peserta', [
                 'title' => 'Daftar Peserta Agenda Pelatihan',
                 'data' => $agendapelatihan,
                 'datapeserta' => $datapesertapelatihan,
+                'jumlahpeserta' => $jumlahPeserta,
                 'perPage' => $perPage,
                 'search' => $search,
                 'user' => $user
@@ -273,6 +278,54 @@ public function bepesertauploadsertifikatupload(Request $request, $id)
     // Arahkan ke halaman daftar peserta dalam agenda pelatihan
     return redirect()->route('bepesertauploadsertifikat.show', ['id' => $datapesertapelatihan->agendapelatihan_id]);
 
+}
+
+
+
+
+// ====================
+
+public function beakseslsppenerbit(Request $request)
+{
+    $perPage = $request->input('perPage', 5);
+    $search = $request->input('search');
+
+    $userId = Auth::id(); // Ambil ID user yang sedang login
+
+    $query = agendapelatihan::whereHas('user', function ($q) use ($userId) {
+        $q->where('id', $userId);
+    });
+
+    // Jika ada pencarian
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+                  $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+              })
+              ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                  $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+              })
+              ->orWhereHas('user', function ($q) use ($search) {
+                  $q->where('name', 'LIKE', "%{$search}%");
+              });
+        });
+    }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.05_agenda.02_pesertapelatihan.02_hakakseslsp.01_agendapelatihan.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.05_agenda.02_pesertapelatihan.02_hakakseslsp.01_agendapelatihan.index', [
+        'title' => 'Daftar Peserta Pelatihan',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
 }
 
 }

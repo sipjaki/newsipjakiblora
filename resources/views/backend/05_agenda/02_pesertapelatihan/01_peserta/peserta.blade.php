@@ -44,6 +44,19 @@
 
 
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                        {{-- <button
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                           border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                           transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                    </svg>
+                    {{ $jumlahpeserta }} Jumlah Peserta
+                </button> --}}
+
                     <a href="/bepesertapelatihanindex">
                         <button
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -57,7 +70,7 @@
                     </svg>
                     Kembali
                 </button>
-            </a>
+                    </a>
 
                  </div>
 
