@@ -78,91 +78,97 @@
             </button>
 
 
-            <script>
-                async function generatePDF() {
-                    const { jsPDF } = window.jspdf;
+            {{-- Inject variabel Blade ke JavaScript --}}
+<script>
+    const namaKegiatan = @json($data->namakegiatan);
+</script>
 
-                    const doc = new jsPDF({
-                        orientation: "landscape",
-                        unit: "mm",
-                        format: "a4"
-                    });
+<script>
+    async function generatePDF() {
+        const { jsPDF } = window.jspdf;
 
-                    // Tambah logo
-                    const logo1 = await loadImage("/assets/icon/logokabupatenblora.png");
-                    const logo2 = await loadImage("/assets/icon/pupr.png");
+        const doc = new jsPDF({
+            orientation: "landscape",
+            unit: "mm",
+            format: "a4"
+        });
 
-                    doc.addImage(logo1, "PNG", 10, 5, 20, 20);   // Logo kiri
-                    doc.addImage(logo2, "PNG", 270, 5, 20, 20);  // Logo kanan
+        // Tambah logo
+        const logo1 = await loadImage("/assets/icon/logokabupatenblora.png");
+        const logo2 = await loadImage("/assets/icon/pupr.png");
 
-                    // Subjudul
-                    doc.setFontSize(12);
-                    doc.setFont("helvetica", "normal");
-                    doc.text("Daftar Peserta Pelatihan", 148.5, 22, { align: "center" });
+        doc.addImage(logo1, "PNG", 10, 5, 20, 20);    // Kiri
+        doc.addImage(logo2, "PNG", 270, 5, 20, 20);   // Kanan
 
-                    const table = document.querySelector(".zebra-table");
+        // Subjudul di tengah
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "normal");
+        doc.text("Daftar Peserta Pelatihan: " + namaKegiatan, 148.5, 22, { align: "center" });
 
-                    const headers = [...table.querySelectorAll("thead th")].map(th =>
-                        th.textContent.trim().replace(/\s+/g, " ")
-                    );
+        // Ambil data tabel dari DOM
+        const table = document.querySelector(".zebra-table");
 
-                    const rows = [...table.querySelectorAll("tbody tr")].map(tr => {
-                        return [...tr.querySelectorAll("td")].map(td =>
-                            td.textContent.trim().replace(/\s+/g, " ")
-                        );
-                    });
+        const headers = [...table.querySelectorAll("thead th")].map(th =>
+            th.textContent.trim().replace(/\s+/g, " ")
+        );
 
-                    doc.autoTable({
-                        head: [headers],
-                        body: rows,
-                        startY: 30,
-                        styles: {
-                            fontSize: 8,
-                            cellPadding: 1,
-                            overflow: 'linebreak',
-                            valign: 'middle'
-                        },
-                        headStyles: {
-                            fillColor: [55, 65, 81],
-                            textColor: [255, 255, 255],
-                            fontSize: 8,
-                            halign: 'center'
-                        },
-                        columnStyles: {
-                            0: { cellWidth: 10 },   // No
-                            1: { cellWidth: 35 },   // Nama
-                            2: { cellWidth: 30 },   // NIK
-                            3: { cellWidth: 20 },   // Gender
-                            4: { cellWidth: 28 },   // Tgl Lahir
-                            5: { cellWidth: 28 },   // No Telp
-                            6: { cellWidth: 30 },   // Instansi
-                            7: { cellWidth: 30 },   // Sertifikat
-                            8: { cellWidth: 25 },   // Verifikasi
-                            9: { cellWidth: 30 }    // Upload
-                        },
-                        theme: 'grid'
-                    });
+        const rows = [...table.querySelectorAll("tbody tr")].map(tr =>
+            [...tr.querySelectorAll("td")].map(td =>
+                td.textContent.trim().replace(/\s+/g, " ")
+            )
+        );
 
-                    doc.save("Daftar_Peserta_Pelatihan.pdf");
-                }
+        doc.autoTable({
+            head: [headers],
+            body: rows,
+            startY: 30,
+            styles: {
+                fontSize: 8,
+                cellPadding: 1,
+                overflow: 'linebreak',
+                valign: 'middle'
+            },
+            headStyles: {
+                fillColor: [55, 65, 81],
+                textColor: [255, 255, 255],
+                fontSize: 8,
+                halign: 'center'
+            },
+            columnStyles: {
+                0: { cellWidth: 10 },   // No
+                1: { cellWidth: 35 },   // Nama
+                2: { cellWidth: 30 },   // NIK
+                3: { cellWidth: 20 },   // Gender
+                4: { cellWidth: 28 },   // Tgl Lahir
+                5: { cellWidth: 28 },   // No Telp
+                6: { cellWidth: 30 },   // Instansi
+                7: { cellWidth: 30 },   // Sertifikat
+                8: { cellWidth: 25 },   // Verifikasi
+                9: { cellWidth: 30 }    // Upload
+            },
+            theme: 'grid'
+        });
 
-                // Fungsi bantu untuk load gambar
-                function loadImage(url) {
-                    return new Promise((resolve, reject) => {
-                        const img = new Image();
-                        img.crossOrigin = "Anonymous"; // Agar bisa di-load secara aman
-                        img.onload = () => {
-                            const canvas = document.createElement("canvas");
-                            canvas.width = img.width;
-                            canvas.height = img.height;
-                            canvas.getContext("2d").drawImage(img, 0, 0);
-                            resolve(canvas.toDataURL("image/png"));
-                        };
-                        img.onerror = reject;
-                        img.src = url;
-                    });
-                }
-            </script>
+        doc.save("Daftar_Peserta_Pelatihan.pdf");
+    }
+
+    // Fungsi bantu load image
+    function loadImage(url) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            img.onload = () => {
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                canvas.getContext("2d").drawImage(img, 0, 0);
+                resolve(canvas.toDataURL("image/png"));
+            };
+            img.onerror = reject;
+            img.src = url;
+        });
+    }
+</script>
 
 
                                     <button
@@ -228,7 +234,7 @@
                                 @foreach ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $data->namakegiatan }}</td>
+                                        {{-- <td style="text-align: left;">{{ $data->namakegiatan }}</td> --}}
                                         <td style="text-align: left;">{{ $item->namalengkap }}</td>
                                         {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
                                         <td style="text-align: center;">{{ $item->nik }}</td>
