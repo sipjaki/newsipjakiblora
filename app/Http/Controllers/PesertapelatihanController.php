@@ -25,9 +25,9 @@ public function bepesertapelatihanindex(Request $request)
     $perPage = $request->input('perPage', 5);
     $search = $request->input('search');
 
-    $query = agendapelatihan::query();
+    // Tambahkan withCount agar setiap agenda membawa jumlah peserta
+    $query = agendapelatihan::withCount('pesertapelatihan');
 
-    // Jika ada pencarian
     if ($search) {
         $query->where('namakegiatan', 'LIKE', "%{$search}%")
             ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
@@ -41,17 +41,14 @@ public function bepesertapelatihanindex(Request $request)
             });
     }
 
-    // Mengurutkan berdasarkan created_at terbaru
     $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
-    // Jika request AJAX, kirimkan response dengan data terbaru
     if ($request->ajax()) {
         return response()->json([
             'html' => view('backend.05_agenda.02_agendapelatihan.partials.table', compact('data'))->render()
         ]);
     }
 
-    // Mengembalikan data untuk tampilan
     return view('backend.05_agenda.02_pesertapelatihan.index', [
         'title' => 'Daftar Peserta Pelatihan',
         'data' => $data,
