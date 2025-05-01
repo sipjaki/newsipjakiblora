@@ -300,7 +300,8 @@
                     style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
                            border-radius: 15px; font-size: 14px; cursor: pointer;
                            transition: background-color 0.3s, color 0.3s;">
-                         <i class="bi bi-eye"></i> Lihat
+                         <i class="bi bi-eye"></i>
+                    {{ $item->pesertapelatihan_count }} Peserta
                 </button>
             </a>
         </td>

@@ -103,7 +103,7 @@
         // Subjudul di tengah
         doc.setFontSize(12);
         doc.setFont("helvetica", "normal");
-        doc.text("Daftar Peserta Pelatihan: " + namaKegiatan, 148.5, 22, { align: "center" });
+        doc.text("Daftar Peserta Pelatihan : " + namaKegiatan, 148.5, 22, { align: "center" });
 
         // Ambil data tabel dari DOM
         const table = document.querySelector(".zebra-table");

@@ -206,42 +206,40 @@ class PembinaanController extends Controller
     $perPage = $request->input('perPage', 5);
     $search = $request->input('search');
 
-    // Mengurutkan data berdasarkan created_at terbaru
-    $query = agendapelatihan::orderBy('created_at', 'desc'); // Pastikan menggunakan created_at untuk data terbaru
+    // Query awal dengan relasi jumlah peserta
+    $query = agendapelatihan::withCount('pesertapelatihan')
+                ->orderBy('created_at', 'desc'); // Data terbaru
 
     if ($search) {
-        $query->where('namakegiatan', 'LIKE', "%{$search}%")
-            ->orWhere('penutupan', 'LIKE', "%{$search}%")
-            ->orWhere('waktupelaksanaan', 'LIKE', "%{$search}%")
-            ->orWhere('jumlahpeserta', 'LIKE', "%{$search}%")
-            ->orWhere('lokasi', 'LIKE', "%{$search}%")
-            ->orWhere('keterangan', 'LIKE', "%{$search}%")
-            ->orWhere('isiagenda', 'LIKE', "%{$search}%")
-            // ->orWhere('foto', 'LIKE', "%{$search}%")
-            ->orWhere('materi', 'LIKE', "%{$search}%")
-            // -------------------------------------------------------------------------------
-            ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
-                $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
-            })
-            ->orWhereHas('user', function ($q) use ($search) {
-                $q->where('name', 'LIKE', "%{$search}%");
-            })
-            ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
-                $q->where('namaasosiasi', 'LIKE', "%{$search}%");
-            });
+        $query->where(function ($q) use ($search) {
+            $q->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('penutupan', 'LIKE', "%{$search}%")
+              ->orWhere('waktupelaksanaan', 'LIKE', "%{$search}%")
+              ->orWhere('jumlahpeserta', 'LIKE', "%{$search}%")
+              ->orWhere('lokasi', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhere('isiagenda', 'LIKE', "%{$search}%")
+              ->orWhere('materi', 'LIKE', "%{$search}%");
+        })
+        ->orWhereHas('kategoripelatihan', function ($q) use ($search) {
+            $q->where('kategoripelatihan', 'LIKE', "%{$search}%");
+        })
+        ->orWhereHas('user', function ($q) use ($search) {
+            $q->where('name', 'LIKE', "%{$search}%");
+        })
+        ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+            $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+        });
     }
 
-    // Melakukan paginasi dengan data terbaru
     $data = $query->paginate($perPage);
 
-    // Jika request AJAX, kirimkan response dengan data terbaru
     if ($request->ajax()) {
         return response()->json([
             'html' => view('backend.05_agenda.01_agendapelatihan.partials.table', compact('data'))->render()
         ]);
     }
 
-    // Mengembalikan data untuk tampilan
     return view('backend.05_agenda.01_agendapelatihan.index', [
         'title' => 'Agenda Pelatihan',
         'data' => $data,
