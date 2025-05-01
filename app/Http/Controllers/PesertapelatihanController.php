@@ -332,12 +332,14 @@ public function beakseslsppenerbit(Request $request)
 public function daftarpesertapelatihan($id)
 {
     $dataagendapelatihan = agendapelatihan::findOrFail($id); // Cari 1 data sesuai ID
+    $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
     $user = Auth::user();
 
     return view('frontend.04_pembinaan.01_agendapembinaan.01_daftar.index', [
         'agendapelatihannamakegiatan' => $dataagendapelatihan->namalengkap, // Ini dikirim ke form
         'agendapelatihan_id' => $dataagendapelatihan->id, // Ini dikirim ke form
         'user' => $user,
+        'jenjangpendidikan' => $datajenjangpendidikan,
         'title' => 'Form Daftar Peserta Pelatihan'
     ]);
 }
