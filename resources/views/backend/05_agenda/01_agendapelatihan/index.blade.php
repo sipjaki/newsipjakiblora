@@ -303,7 +303,7 @@
                            display: inline-flex; align-items: center;">
                     <span style="display: inline-flex; align-items: center;">
                         <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
-                        {{ $item->pesertapelatihan_count }} Peserta
+                        {{ $item->pesertapelatihan_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota
                     </span>
                 </button>
             </a>
