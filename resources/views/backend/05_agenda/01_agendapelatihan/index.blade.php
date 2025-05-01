@@ -297,14 +297,18 @@
                 <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                    style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                    style="background-color:#6B7280; color: white; border: none; padding: 10px 20px;
                            border-radius: 15px; font-size: 14px; cursor: pointer;
-                           transition: background-color 0.3s, color 0.3s;">
-                         <i class="bi bi-eye"></i>
-                    {{ $item->pesertapelatihan_count }} Peserta
+                           transition: background-color 0.3s, color 0.3s;
+                           display: inline-flex; align-items: center;">
+                    <span style="display: inline-flex; align-items: center;">
+                        <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
+                        {{ $item->pesertapelatihan_count }} Peserta
+                    </span>
                 </button>
             </a>
         </td>
+
 
          <td style="text-align: center; vertical-align: middle;">
              <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
