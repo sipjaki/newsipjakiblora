@@ -572,7 +572,7 @@ headerberanda::create([
 
         User::create([
             'id'  => 7,
-            'name'  => 'Sigit LSP Penerbit',
+            'name'  => 'LSP Penerbit Blora',
             'username' => 'LSP Penerbit',
             'statusadmin_id' => '7',
             'avatar' => 'user/avatar/sigit.jpg',
