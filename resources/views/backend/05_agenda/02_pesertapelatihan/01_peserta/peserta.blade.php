@@ -100,19 +100,36 @@
                         head: [headers],
                         body: rows,
                         startY: 20,
+                        tableWidth: 'auto',
                         styles: {
                             fontSize: 8,
-                            cellPadding: 2
+                            cellPadding: { top: 1, bottom: 1, left: 1, right: 1 },
+                            lineHeight: 1.1,
+                            overflow: 'linebreak'
                         },
                         headStyles: {
-                            fillColor: [55, 65, 81], // Tailwind slate-700
-                            textColor: [255, 255, 255]
+                            fillColor: [55, 65, 81], // slate-700
+                            textColor: [255, 255, 255],
+                            halign: 'center'
+                        },
+                        columnStyles: {
+                            0: { cellWidth: 10 },     // No
+                            1: { cellWidth: 40 },     // Nama
+                            2: { cellWidth: 25 },     // NIK
+                            3: { cellWidth: 20 },     // Gender
+                            4: { cellWidth: 30 },     // Tgl Lahir
+                            5: { cellWidth: 30 },     // No Telp
+                            6: { cellWidth: 35 },     // Instansi
+                            7: { cellWidth: 35 },     // Sertifikat
+                            8: { cellWidth: 25 },     // Verifikasi
+                            9: { cellWidth: 35 },     // Upload Sertifikat
                         }
                     });
 
                     doc.save("daftar-peserta.pdf");
                 }
             </script>
+
 
                                     <button
                         onclick="history.back()"
