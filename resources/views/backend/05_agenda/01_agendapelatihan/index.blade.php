@@ -186,7 +186,7 @@
           <th style="width: 100px; text-align:center; vertical-align: middle;">
             <i class="bi bi-check-circle"></i> Status
           </th>
-          <th style="width: 150px; text-align:center; vertical-align: middle;">
+          <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-person-plus"></i> Jumlah Peserta
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
