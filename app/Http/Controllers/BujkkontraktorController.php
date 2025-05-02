@@ -34,7 +34,8 @@ class BujkkontraktorController extends Controller
     {
         $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
 
-        $data = asosiasimasjaki::withCount(['bujkkontraktor', 'bujkkonsultan'])
+        $data = asosiasimasjaki::where('id', '!=', 99)
+            ->withCount(['bujkkontraktor', 'bujkkonsultan'])
             ->get()
             ->map(function ($item) {
                 return [
@@ -50,6 +51,7 @@ class BujkkontraktorController extends Controller
             'data' => $data,
         ]);
     }
+
 
 
 
