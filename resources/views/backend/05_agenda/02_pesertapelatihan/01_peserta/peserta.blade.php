@@ -315,6 +315,36 @@
             @endif
         </td>
 
+        <td style="text-align: center;">
+            @if(!$item->verifikasikehadiran)
+                <button type="button" onclick="openKehadiranModal_{{ $item->id }}()" class="btn btn-outline-danger btn-sm">
+                    <i class="bi bi-x-circle me-1"></i> Tidak Hadir
+                </button>
+            @else
+                <button type="button" class="btn btn-success btn-sm" disabled>
+                    <i class="bi bi-patch-check-fill me-1"></i> Hadir
+                </button>
+            @endif
+        </td>
+
+        <!-- Modal Kehadiran (UNIK PER ITEM) -->
+        <div id="modal-kehadiran-{{ $item->id }}" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
+            <div style="background: white; padding: 24px; border-radius: 10px; width: 90%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); text-align: center;">
+                <h5 style="margin-bottom: 16px;">Konfirmasi Kehadiran</h5>
+                <p>Apakah peserta ini hadir dalam pelatihan?</p>
+                <form method="POST" action="{{ route('verifikasikehadiran', $item->id) }}" style="margin-top: 20px;">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-success me-2">
+                        <i class="bi bi-check-circle me-1"></i> Ya, Hadir
+                    </button>
+                    <button type="button" onclick="closeKehadiranModal_{{ $item->id }}()" class="btn btn-secondary">
+                        Batal
+                    </button>
+                </form>
+            </div>
+        </div>
+
 
 
 
