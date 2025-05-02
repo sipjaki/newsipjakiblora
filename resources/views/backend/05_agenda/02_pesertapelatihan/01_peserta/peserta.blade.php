@@ -315,56 +315,9 @@
             @endif
         </td>
 
-        <td style="text-align: center;">
-            @if(!$item->verifikasikehadiran)
-                <button type="button" onclick="openKehadiranModal({{ $item->id }})"
-                    class="btn btn-outline-danger btn-sm">
-                    <i class="bi bi-x-circle me-1"></i> Tidak Hadir
-                </button>
-            @else
-                <button type="button" class="btn btn-success btn-sm" disabled>
-                    <i class="bi bi-patch-check-fill me-1"></i> Hadir
-                </button>
-            @endif
-        </td>
-
-        <!-- Modal Kehadiran -->
-        <div id="modalKehadiran-{{ $item->id }}" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Konfirmasi Kehadiran</h5>
-                        <button type="button" class="btn-close" onclick="closeKehadiranModal({{ $item->id }})" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Apakah peserta ini hadir dalam pelatihan?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <form action="{{ route('verifikasikehadiran', $item->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" class="btn btn-success">
-                                <i class="bi bi-check-circle me-1"></i> Ya, Hadir
-                            </button>
-                        </form>
-                        <button type="button" class="btn btn-secondary" onclick="closeKehadiranModal({{ $item->id }})">
-                            Batal
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
-        <script>
-            function openKehadiranModal(id) {
-                document.getElementById('modalKehadiran-' + id).style.display = 'block';
-            }
 
-            function closeKehadiranModal(id) {
-                document.getElementById('modalKehadiran-' + id).style.display = 'none';
-            }
-        </script>
 
                                 <td style="text-align: center;">
                                             <!-- Show Icon -->
