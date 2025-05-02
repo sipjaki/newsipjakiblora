@@ -15872,30 +15872,8 @@ asosiasimasjaki::create([
 ]);
 
 asosiasimasjaki::create([
-    'id' => '16',
-    'namaasosiasi' => 'PT PANCA SATYA JAYATAMA NUSANTARA (GABPEKNAS)',
-    'alamat' => null,
-    'pic' => null,
-    'jumlahanggota' => null,
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null,
-]);
-
-asosiasimasjaki::create([
     'id' => '17',
     'namaasosiasi' => 'PT PANCA SATYA JAYATAMA NUSANTARA (GABPEKNAS)',
-    'alamat' => null,
-    'pic' => null,
-    'jumlahanggota' => null,
-    'created_at' => Carbon::now(),
-    'updated_at' => Carbon::now(),
-    'deleted_at' => null,
-]);
-
-asosiasimasjaki::create([
-    'id' => '18',
-    'namaasosiasi' => 'PT SERTIFIKASI BADAN USAHA JASA KONSULTANSI (PERKINDO)',
     'alamat' => null,
     'pic' => null,
     'jumlahanggota' => null,
