@@ -237,7 +237,7 @@
                                         <h4 style="font-weight: 600; margin-bottom: 10px;">Penyelenggara</h4>
                                         <div style="display: flex; align-items: center; font-size: 16px;">
                                             <i class="bi bi-person-circle" style="margin-right: 10px; font-size: 18px;"></i>
-                                            <p>{{ $data->asosiasimasjaki->namaasosiasi }}</p>
+                                            <p>{{ $data->asosiasimasjaki->namaasosiasi ?? 'data belum di update'}}</p>
                                         </div>
                                     </div>
 
