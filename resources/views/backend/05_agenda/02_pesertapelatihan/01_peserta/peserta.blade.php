@@ -345,9 +345,15 @@
             </div>
         </div>
 
+        <script>
+            function openKehadiranModal_{{ $item->id }}() {
+                document.getElementById("modal-kehadiran-{{ $item->id }}").style.display = "flex";
+            }
 
-
-
+            function closeKehadiranModal_{{ $item->id }}() {
+                document.getElementById("modal-kehadiran-{{ $item->id }}").style.display = "none";
+            }
+        </script>
 
                                 <td style="text-align: center;">
                                             <!-- Show Icon -->
