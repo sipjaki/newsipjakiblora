@@ -250,12 +250,22 @@ headerberanda::create([
         ]);
 
         User::create([
+            'id'  => 2,
+            'name'  => 'Anex Fachrian, ST. MT',
+            'username' => 'Anex',
+            'statusadmin_id' => '1',
+            'avatar' => 'user/avatar/foto4.png',
+            'email' => 'sipjakiblora@gmail.com',
+            'password' => bcrypt('adminadmin321')
+        ]);
+
+        User::create([
             'id'  => 10,
             'name'  => 'Admin DPUPR Kab Blora',
             'username' => 'Admin DPUPR Kab Blora',
             'statusadmin_id' => '1',
             'avatar' => 'user/avatar/sigit.jpg',
-            'email' => 'sipjakiblora@gmail.com',
+            'email' => 'sipjakiblora1@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
 
@@ -519,16 +529,6 @@ headerberanda::create([
             'password' => bcrypt('adminbppdkabblora')
         ]);
 
-
-        User::create([
-            'id'  => 2,
-            'name'  => 'Anex Fachrian, ST. MT',
-            'username' => 'Anex',
-            'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/foto4.png',
-            'email' => 'sipjakiblora1@gmail.com',
-            'password' => bcrypt('adminadmin321')
-        ]);
 
         User::create([
             'id'  => 3,
