@@ -317,7 +317,7 @@
 
         <td style="text-align: center;">
             @if($item->verifikasikehadiran == false)
-                <button type="button" onclick="openModal({{ $item->id }})"
+                <button type="button" onclick="openKehadiranModal({{ $item->id }})"
                     class="btn btn-danger">
                     <i class="bi bi-x-circle"></i> TIDAK HADIR
                 </button>
@@ -342,15 +342,15 @@
             @endif
         </td>
 
-        <!-- Modal Konfirmasi -->
-        <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <!-- Modal Konfirmasi Kehadiran -->
+        <div id="modalKehadiran-{{ $item->id }}" class="modal-kehadiran" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
             <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                 <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                    Apakah Peserta Menghadiri Pelatihan ?
+                    Apakah Peserta Menghadiri Pelatihan?
                 </p>
 
-                <!-- Form Verifikasi -->
-                <form id="verifikasiForm" method="POST" class="d-inline">
+                <!-- Form Verifikasi Kehadiran -->
+                <form id="formKehadiran-{{ $item->id }}" method="POST" action="{{ route('verifikasikehadiran', $item->id) }}" class="d-inline">
                     @csrf
                     @method('PUT')
                     <button type="submit"
@@ -363,7 +363,7 @@
 
                 <!-- Tombol Batal -->
                 <button type="button"
-                    onclick="closeModal()"
+                    onclick="closeKehadiranModal({{ $item->id }})"
                     style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;"
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
                     onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
@@ -373,17 +373,14 @@
         </div>
 
         <script>
-            function openModal(itemId) {
-                const form = document.getElementById("verifikasiForm");
-                form.action = `{{ url('verifikasikehadiran') }}/${itemId}`;
-                document.getElementById("confirmModal").style.display = "flex";
+            function openKehadiranModal(itemId) {
+                document.getElementById("modalKehadiran-" + itemId).style.display = "flex";
             }
 
-            function closeModal() {
-                document.getElementById("confirmModal").style.display = "none";
+            function closeKehadiranModal(itemId) {
+                document.getElementById("modalKehadiran-" + itemId).style.display = "none";
             }
         </script>
-
 
                                 <td style="text-align: center;">
                                             <!-- Show Icon -->
