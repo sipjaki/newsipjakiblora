@@ -29,23 +29,17 @@ class VerifikasiController extends Controller
     }
 
     public function verifikasikehadiran($id)
-    {
-        // Temukan data peserta pelatihan berdasarkan ID
-        $item = pesertapelatihan::findOrFail($id);
+{
+    $item = pesertapelatihan::findOrFail($id);
 
-        // Toggle status verifikasikehadiran
-        $item->verifikasikehadiran = true;
-        $item->save();
+    // Pastikan verifikasikehadiran yang diperbarui
+    $item->verifikasikehadiran = true;
+    $item->save();
 
-        // Ambil ID agenda pelatihan
-        $agendaId = $item->agendapelatihan_id;
+    $agendaId = $item->agendapelatihan_id;
+    session()->flash('verifikasikehadiran', 'Peserta telah diverifikasi hadir.');
 
-        // Flash message
-        session()->flash('verifikasikehadiran', 'Peserta telah diverifikasi hadir.');
-
-        // Redirect ke halaman peserta
-        return redirect("/bepesertapelatihansertifikat/show/{$agendaId}");
-    }
-
+    return redirect("/bepesertapelatihansertifikat/show/{$agendaId}");
+}
 
 }
