@@ -367,7 +367,7 @@
                     style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;"
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
                     onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
-                    <i class="bi bi-x-circle" style="margin-right: 6px; color: white;"></i> Batal
+                    <i class="bi bi-x-circle" style="margin-right: 6px; color: white;"></i> Tidak
                 </button>
             </div>
         </div>
