@@ -59403,6 +59403,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Bandung Barat',
     'sertifikat' => null,
     'verifikasi' => false,
+    'verifikasikehadiran' => false,
 ]);
 
 pesertapelatihan::create([
@@ -59416,6 +59417,7 @@ pesertapelatihan::create([
     'instansi' => 'Dinas Pendidikan Blora',
     'sertifikat' => null,
     'verifikasi' => false,
+    'verifikasikehadiran' => false,
 ]);
 
 pesertapelatihan::create([
@@ -59429,6 +59431,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kota Semarang',
     'sertifikat' => null,
     'verifikasi' => false,
+    'verifikasikehadiran' => false,
 ]);
 
 pesertapelatihan::create([
@@ -59442,6 +59445,7 @@ pesertapelatihan::create([
     'instansi' => 'Bappeda Kabupaten Bogor',
     'sertifikat' => null,
     'verifikasi' => false,
+    'verifikasikehadiran' => false,
 ]);
 
 pesertapelatihan::create([
@@ -59455,6 +59459,7 @@ pesertapelatihan::create([
     'instansi' => 'Dishub Kota Bekasi',
     'sertifikat' => null,
     'verifikasi' => false,
+    'verifikasikehadiran' => false,
 ]);
 
 pesertapelatihan::create([
@@ -59468,6 +59473,7 @@ pesertapelatihan::create([
     'instansi' => 'Dinas Kesehatan Kab. Garut',
     'sertifikat' => null,
     'verifikasi' => false,
+    'verifikasikehadiran' => false,
 ]);
 
 pesertapelatihan::create([
@@ -59481,6 +59487,7 @@ pesertapelatihan::create([
     'instansi' => 'DPUPR Kabupaten Sumedang',
     'sertifikat' => null,
     'verifikasi' => false,
+    'verifikasikehadiran' => false,
 ]);
 
 //==========================================================================================================
