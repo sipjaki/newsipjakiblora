@@ -881,6 +881,7 @@ Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class,
 
 // ROUTE UNTUK VERIFIKASI BOOLEADN
 Route::put('/verifikasipesertapelatihan/{id}', [VerifikasiController::class, 'verifikasipesertapelatihan'])->name('verifikasi.updatepesertapelatihan');
+Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikasikehadiran'])->name('verifikasikehadiran');
 
 
 
