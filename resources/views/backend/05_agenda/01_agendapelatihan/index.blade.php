@@ -220,7 +220,7 @@
          <td style="text-align: left;">{{$item->user->name}}</td>
          <td style="text-align: left;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: left;">{{$item->asosiasimasjaki->namaasosiasi}}</td>
+         <td style="text-align: left;">{{$item->asosiasimasjaki->namaasosiasi ?? ' data Belum di update'}}</td>
          {{-- <td style="text-align: center;">
             @if($item->asosiasimasjaki)
                 {{ $item->asosiasimasjaki->namaasosiasi }}
