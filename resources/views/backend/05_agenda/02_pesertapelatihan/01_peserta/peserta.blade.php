@@ -316,7 +316,7 @@
         </td>
 
         <td style="text-align: center;">
-            @if(!$item->verifikasikehadiran)
+            @if(!$item->verifikasikehadiran == false)
                 <button type="button" onclick="openKehadiranModal_{{ $item->id }}()" class="btn btn-outline-danger btn-sm">
                     <i class="bi bi-x-circle me-1"></i> Tidak Hadir
                 </button>
