@@ -84,11 +84,35 @@
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
 
+                                    <div class="col-md-6">
+                                        <!-- Nomor Induk Berusaha -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="nib">
+                                                <i class="bi bi-credit-card" style="margin-right: 10px; color: navy;"></i> Nomor Induk Berusaha
+                                            </label>
+                                            <input type="text" id="nib" name="nib" class="form-control @error('nib') is-invalid @enderror" value="{{ old('nib', $data->nib ?? '') }}" />
+                                            @error('nib')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <!-- Nama Pekerjaan -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="namapekerjaan">
+                                                <i class="bi bi-briefcase" style="margin-right: 10px; color: navy;"></i> Nama Pekerjaan
+                                            </label>
+                                            <input type="text" id="namapekerjaan" name="namapekerjaan" class="form-control @error('namapekerjaan') is-invalid @enderror" value="{{ old('namapekerjaan', $data->namapekerjaan ?? '') }}" />
+                                            @error('namapekerjaan')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+
 
                                        <!-- Nama Asosiasi -->
                                        <div class="mb-3">
                                         <label class="form-label" for="asosiasimasjaki_id">
-                                            <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Nama Asosiasi
+                                            <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Status Penyedia
                                         </label>
                                         <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
                                             <option value="">Pilih Status Penyedia</option>
@@ -103,148 +127,38 @@
                                         @enderror
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <!-- Nama Badan Usaha -->
-
+                                        <!-- Tahun Pelaksanaan -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="namalengkap">
+                                            <label class="form-label" for="tahunpelaksanaan">
+                                                <i class="bi bi-calendar" style="margin-right: 10px; color: navy;"></i> Tahun Pelaksanaan
+                                            </label>
+                                            <input type="text" id="tahunpelaksanaan" name="tahunpelaksanaan" class="form-control @error('tahunpelaksanaan') is-invalid @enderror" value="{{ old('tahunpelaksanaan', $data->tahunpelaksanaan ?? '') }}" />
+                                            @error('tahunpelaksanaan')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <!-- Nama Badan Usaha -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="namabadanusaha">
                                                 <i class="bi bi-building" style="margin-right: 10px; color: navy;"></i> Nama Badan Usaha
                                             </label>
-                                            <input type="text" id="namalengkap" name="namalengkap" class="form-control @error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap', $data->namalengkap) }}" />
-                                            @error('namalengkap')
+                                            <input type="text" id="namabadanusaha" name="namabadanusaha" class="form-control @error('namabadanusaha') is-invalid @enderror" value="{{ old('namabadanusaha', $data->namabadanusaha ?? '') }}" />
+                                            @error('namabadanusaha')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
-
-                                        <!-- No Telepon -->
+                                        <!-- Penanggung Jawab Badan Usaha -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="no_telepon">
-                                                <i class="bi bi-telephone" style="margin-right: 10px; color: navy;"></i> No Telepon
+                                            <label class="form-label" for="pjbu">
+                                                <i class="bi bi-person-lines-fill" style="margin-right: 10px; color: navy;"></i> Penanggung Jawab Badan Usaha
                                             </label>
-                                            <input type="text" id="no_telepon" name="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" value="{{ old('no_telepon', $data->no_telepon) }}" />
-                                            @error('no_telepon')
+                                            <input type="text" id="pjbu" name="pjbu" class="form-control @error('pjbu') is-invalid @enderror" value="{{ old('pjbu', $data->pjbu ?? '') }}" />
+                                            @error('pjbu')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-
-                                        <!-- Email -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="email">
-                                                <i class="bi bi-envelope" style="margin-right: 10px; color: navy;"></i> Email
-                                            </label>
-                                            <textarea id="email" name="email" class="form-control @error('email') is-invalid @enderror">{{ old('email', $data->email) }}</textarea>
-                                            @error('email')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Alamat -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="alamat">
-                                                <i class="bi bi-house-door" style="margin-right: 10px; color: navy;"></i> Alamat
-                                            </label>
-                                            <textarea id="alamat" name="alamat" class="form-control @error('alamat') is-invalid @enderror">{{ old('alamat', $data->alamat) }}</textarea>
-                                            @error('alamat')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <!-- Right Column (6/12) -->
-                                    <div class="col-md-6">
-                                        <!-- Nomor Induk Berusaha -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nomorindukberusaha">
-                                                <i class="bi bi-credit-card" style="margin-right: 10px; color: navy;"></i> Nomor Induk Berusaha
-                                            </label>
-                                            <input type="number" id="nomorindukberusaha" name="nomorindukberusaha" class="form-control @error('nomorindukberusaha') is-invalid @enderror" value="{{ old('nomorindukberusaha', $data->nomorindukberusaha) }}" />
-                                            @error('nomorindukberusaha')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Penanggung Jawab Umum -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="pju">
-                                                <i class="bi bi-person-lines-fill" style="margin-right: 10px; color: navy;"></i> Penanggung Jawab Umum
-                                            </label>
-                                            <input type="text" id="pju" name="pju" class="form-control @error('pju') is-invalid @enderror" value="{{ old('pju', $data->pju) }}" />
-                                            @error('pju')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- No Akte -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_akte">
-                                                <i class="bi bi-card-checklist" style="margin-right: 10px; color: navy;"></i> No Akte
-                                            </label>
-                                            <input type="text" id="no_akte" name="no_akte" class="form-control @error('no_akte') is-invalid @enderror" value="{{ old('no_akte', $data->no_akte) }}" />
-                                            @error('no_akte')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Tanggal -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal">
-                                                <i class="bi bi-calendar-event" style="margin-right: 10px; color: navy;"></i> Tanggal
-                                            </label>
-                                            <input type="date" id="tanggal" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" value="{{ old('tanggal', $data->tanggal) }}" />
-                                            @error('tanggal')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nama Notaris -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_notaris">
-                                                <i class="bi bi-file-earmark-person" style="margin-right: 10px; color: navy;"></i> Nama Notaris
-                                            </label>
-                                            <input type="text" id="nama_notaris" name="nama_notaris" class="form-control @error('nama_notaris') is-invalid @enderror" value="{{ old('nama_notaris', $data->nama_notaris) }}" />
-                                            @error('nama_notaris')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- No Pengesahan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_pengesahan">
-                                                <i class="bi bi-file-earmark-check" style="margin-right: 10px; color: navy;"></i> No Pengesahan
-                                            </label>
-                                            <input type="text" id="no_pengesahan" name="no_pengesahan" class="form-control @error('no_pengesahan') is-invalid @enderror" value="{{ old('no_pengesahan', $data->no_pengesahan) }}" />
-                                            @error('no_pengesahan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label" for="uploadberkas">
-                                                    <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> File Berkas Sertifikasi (PDF)
-                                                </label>
-
-                                                <!-- Preview PDF -->
-                                                <div style="margin-top: 10px;">
-                                                    @if($data->uploadberkas && file_exists(public_path('storage/' . $data->uploadberkas)))
-                                                    <!-- Display the default iframe when the file exists in the storage -->
-                                                    <iframe src="{{ asset('storage/' . $data->uploadberkas) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                @elseif($data->uploadberkas)
-                                                    <!-- Display the iframe with the updated file -->
-                                                    <iframe src="{{ asset($data->uploadberkas) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                @else
-                                                    <!-- Optional: Show a placeholder if there's no file available -->
-                                                    <p>Data belum diupdate</p>
-                                                @endif
-
-                                                </div>
-
-                                                <!-- Input File untuk Mengunggah PDF -->
-                                                <input type="file" name="uploadberkas" class="form-control @error('uploadberkas') is-invalid @enderror" id="uploadberkas" />
-                                                @error('uploadberkas')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                            </div>
                                     </div>
                                 </div>
                             </div>
