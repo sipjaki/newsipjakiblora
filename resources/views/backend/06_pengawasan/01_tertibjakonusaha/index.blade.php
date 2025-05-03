@@ -247,7 +247,7 @@
                             </thead>
 
                           <tbody>
-                            @foreach ($item as $item)
+                            @foreach ($data as $item)
                             <tr>
                               <td style="text-align: left;">{{ $loop->iteration }}</td>
                               <td>
