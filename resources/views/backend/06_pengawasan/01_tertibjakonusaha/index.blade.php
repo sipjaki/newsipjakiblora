@@ -167,37 +167,74 @@
                  <div class="card-body p-0">
                     <div class="table-responsive" style="width: 100%; overflow-x: auto;">
                         <table id="tabelBujkkonsultan" class="zebra-table table-bordered table-striped" style="min-width: 1800px; white-space: nowrap;">
-                          <thead>
-                            <tr>
-                              <th rowspan="2" style="text-align: center; width:75px;">No</th>
-                              <th rowspan="2" style="text-align: center; width:400px;">Penyedia</th>
-                              <th rowspan="2" style="text-align: center; width:200px;">NIB</th>
-                              <th rowspan="2" style="text-align: center; width:500px;">Nama Pekerjaan</th>
-                              <th rowspan="2" style="text-align: center; width:400px;">Badan Usaha</th>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2" style="text-align: center; width:75px;">
+                                        <i class="bi bi-list-ol"></i> No
+                                    </th>
+                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                        <i class="bi bi-people-fill"></i> Penyedia
+                                    </th>
+                                    <th rowspan="2" style="text-align: center; width:200px;">
+                                        <i class="bi bi-building"></i> NIB
+                                    </th>
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Nama Pekerjaan
+                                    </th>
+                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                        <i class="bi bi-building-fill"></i> Badan Usaha
+                                    </th>
 
-                              <th colspan="4" style="text-align: center; width:1000px;">PJBU</th>
-                              <th colspan="2" style="text-align: center; width:800px;">Segmentasi Pasar</th>
-                              <th colspan="2" style="text-align: center; width:800px;">Pengembangan Usaha</th>
+                                    <th colspan="4" style="text-align: center; width:1000px;">
+                                        <i class="bi bi-person-lines-fill"></i> PJBU
+                                    </th>
+                                    <th colspan="2" style="text-align: center; width:800px;">
+                                        <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
+                                    </th>
+                                    <th colspan="2" style="text-align: center; width:800px;">
+                                        <i class="bi bi-graph-up-arrow"></i> Pengembangan Usaha
+                                    </th>
 
-                              <th rowspan="2" style="text-align: center; width:300px;">Pelaksanaan Pengembangan Usaha</th>
-                              <th rowspan="2" style="text-align: center;">Aksi</th>
-                            </tr>
-                            <tr>
-                              <!-- PJBU Subkolom -->
-                              <th style="text-align: center;">Sesuai Jenis</th>
-                              <th style="text-align: center;">Sesuai Sifat</th>
-                              <th style="text-align: center;">Sesuai Klasifikasi</th>
-                              <th style="text-align: center;">Sesuai Layanan</th>
+                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                        <i class="bi bi-gear-fill"></i> Pelaksanaan Pengembangan Usaha
+                                    </th>
+                                    <th rowspan="2" style="text-align: center;">
+                                        <i class="bi bi-tools"></i> Aksi
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <!-- PJBU Subkolom -->
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-check-circle"></i> Sesuai Jenis
+                                    </th>
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-check-circle"></i> Sesuai Sifat
+                                    </th>
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-check-circle"></i> Sesuai Klasifikasi
+                                    </th>
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-check-circle"></i> Sesuai Layanan
+                                    </th>
 
-                              <!-- Segmentasi Pasar -->
-                              <th style="text-align: center;">Sesuai Bentuk</th>
-                              <th style="text-align: center;">Sesuai Kualifikasi</th>
+                                    <!-- Segmentasi Pasar -->
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-diagram-3-fill"></i> Sesuai Bentuk
+                                    </th>
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-bar-chart-line-fill"></i> Sesuai Kualifikasi
+                                    </th>
 
-                              <!-- Pengembangan Usaha -->
-                              <th style="text-align: center;">Syarat SBU</th>
-                              <th style="text-align: center;">Syarat NIB</th>
-                            </tr>
-                          </thead>
+                                    <!-- Pengembangan Usaha -->
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-file-earmark-check-fill"></i> Syarat SBU
+                                    </th>
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-file-earmark-check-fill"></i> Syarat NIB
+                                    </th>
+                                </tr>
+                            </thead>
+
                           <tbody>
                             @foreach ($data as $item)
                             <tr>
