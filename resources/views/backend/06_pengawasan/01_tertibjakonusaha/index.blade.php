@@ -514,16 +514,20 @@
     $(document).ready(function () {
         $('#customLength').on('change', function () {
             let perPage = $(this).val();
+            let search = $('input[name="search"]').val() || '';
 
             $.ajax({
-                url: "{{ route('bertertibjakonusaha') }}", // ganti ini dengan nama route betertibjakonusaha
+                url: "{{ route('bertertibjakonusaha') }}",
                 type: 'GET',
                 data: {
                     perPage: perPage,
-                    search: $('input[name="search"]').val() // opsional, kalau ada fitur search
+                    search: search
                 },
                 success: function (response) {
                     $('#tabel-container').html(response.html);
+                },
+                error: function () {
+                    alert('Gagal memuat data.');
                 }
             });
         });
