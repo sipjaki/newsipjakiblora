@@ -460,26 +460,26 @@
                                                 </table>
 
                                                 {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
-                                                <div style="overflow-x: auto; font-size: 12px;">
-                                                    <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                                <div style="overflow-x: auto; font-size: 12px; color: #000;">
+                                                    <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
                                                         <thead>
                                                             <tr>
-                                                                <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">No</th>
-                                                                <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Nama Paket Pekerjaan</th>
-                                                                <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Jenis Usaha</th>
-                                                                <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Sifat Usaha</th>
-                                                                <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Subklasifikasi</th>
-                                                                <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Layanan Usaha</th>
+                                                                <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">No</th>
+                                                                <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
+                                                                <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis Usaha</th>
+                                                                <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Sifat Usaha</th>
+                                                                <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
+                                                                <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th>
                                                             </tr>
                                                             <tr>
-                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Yang Dipersyaratkan</th>
-                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
-                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Yang Dipersyaratkan</th>
-                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
-                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Yang Dipersyaratkan</th>
-                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
-                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Yang Dipersyaratkan</th>
-                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
+                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Yang Dipersyaratkan</th>
+                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
+                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Yang Dipersyaratkan</th>
+                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
+                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Yang Dipersyaratkan</th>
+                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
+                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Yang Dipersyaratkan</th>
+                                                                <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
