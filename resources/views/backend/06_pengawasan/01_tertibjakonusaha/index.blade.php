@@ -460,7 +460,7 @@
                                                 </table>
 
                                                 {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
-                                                <div style="overflow-x: auto; font-size: 14px;">
+                                                <div style="overflow-x: auto; font-size: 12px;">
                                                     <table class="table table-sm" style="width: 100%; border-collapse: collapse;">
                                                         <thead>
                                                             <tr>
