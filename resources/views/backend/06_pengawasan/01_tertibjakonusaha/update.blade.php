@@ -111,10 +111,10 @@
 
                                         <!-- Nama Asosiasi -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki_id">
+                                            <label class="form-label" for="penyediastatustertibjakon_id">
                                                 <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Status Penyedia
                                             </label>
-                                        <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
+                                        <select id="penyediastatustertibjakon_id" name="penyediastatustertibjakon_id" class="form-control @error('penyediastatustertibjakon_id') is-invalid @enderror">
                                             <option value="">Pilih Status Penyedia</option>
                                             @foreach($datapenyedia as $penyedia)
                                                 <option value="{{ $penyedia->id }}" {{ old('penyediastatustertibjakon_id', $data->penyediastatustertibjakon_id) == $penyedia->id ? 'selected' : '' }}>
@@ -122,7 +122,7 @@
                                                 </option>
                                                 @endforeach
                                             </select>
-                                            @error('asosiasimasjaki_id')
+                                            @error('penyediastatustertibjakon_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

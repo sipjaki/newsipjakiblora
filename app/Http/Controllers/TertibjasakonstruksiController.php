@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\penyediastatustertibjakon;
+use App\Models\tertibjakon;
 use App\Models\tertibjakonpemanfaatan;
 use App\Models\tertibjakonpenyelenggaraan;
 use App\Models\tertibjasakonstruksi;
@@ -517,6 +518,39 @@ return view('backend.06_pengawasan.01_tertibjakonusaha.update', [
 ]);
 }
 
+public function betertibjakonusahaupdatecreate(Request $request, $id)
+{
+    // Validasi input dengan pesan khusus
+    $validated = $request->validate([
+        'nib' => 'nullable|string|max:50',
+        'namapekerjaan' => 'required|string|max:255',
+        'tahunpelaksanaan' => 'required|in:2024,2025,2026',
+        'namabadanusaha' => 'required|string|max:255',
+        'pjbu' => 'required|string|max:100',
+        'penyediastatustertibjakon_id' => 'required|string',
+    ], [
+        'nib.max' => 'Nomor Induk Berusaha maksimal 50 karakter.',
+        'namapekerjaan.required' => 'Nama Pekerjaan wajib diisi.',
+        'namapekerjaan.max' => 'Nama Pekerjaan maksimal 255 karakter.',
+        'tahunpelaksanaan.required' => 'Tahun Pelaksanaan wajib dipilih.',
+        'tahunpelaksanaan.in' => 'Tahun Pelaksanaan harus antara 2024 hingga 2026.',
+        'namabadanusaha.required' => 'Nama Badan Usaha wajib diisi.',
+        'namabadanusaha.max' => 'Nama Badan Usaha maksimal 255 karakter.',
+        'pjbu.required' => 'Penanggung Jawab Badan Usaha wajib diisi.',
+        'pjbu.max' => 'Penanggung Jawab Badan Usaha maksimal 100 karakter.',
+        'penyediastatustertibjakon_id.required' => 'Status Penyedia wajib dipilih.',
+        'penyediastatustertibjakon_id.integer' => 'Status Penyedia harus berupa angka.',
+        'penyediastatustertibjakon_id.exists' => 'Status Penyedia tidak ditemukan dalam data asosiasi.',
+    ]);
 
+    // Temukan data penyedia berdasarkan ID
+    $datatertibjakonusaha = tertibjasakonstruksi::findOrFail($id);
 
+    // Perbarui data penyedia
+    $datatertibjakonusaha->update($validated);
+
+    // Redirect dengan pesan sukses
+    session()->flash('update', 'Data Berhasil di Update !');
+    return redirect('/betertibjakonusaha');
+}
 }
