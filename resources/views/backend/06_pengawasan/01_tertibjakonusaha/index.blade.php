@@ -331,66 +331,66 @@
                                 @endif
                               </td>
 
-                              <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->sesuai_jenis == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->sesuai_jenis == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->sesuai_jenis }}
+                              <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->sesuai_jenis == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->sesuai_jenis == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->sesuai_jenis == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->sesuai_jenis }}
                                 </button>
                             </td>
 
-                            <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->sesuai_sifat }}
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->sesuai_sifat }}
                                 </button>
                             </td>
 
-                            <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->sesuai_klasifikasi }}
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->sesuai_klasifikasi }}
                                 </button>
                             </td>
 
-                            <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->sesuai_layanan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->sesuai_layanan == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->sesuai_layanan }}
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->sesuai_layanan == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->sesuai_layanan == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->sesuai_layanan == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->sesuai_layanan }}
                                 </button>
                             </td>
 
-                            <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->segmentasipasar_bentuk }}
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->segmentasipasar_bentuk }}
                                 </button>
                             </td>
 
-                            <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->segmentasipasar_kualifikasi }}
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->segmentasipasar_kualifikasi }}
                                 </button>
                             </td>
 
-                            <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->syarat_SBU }}
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->syarat_SBU }}
                                 </button>
                             </td>
 
-                            <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->syarat_NIB }}
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->syarat_NIB }}
                                 </button>
                             </td>
 
-                            <td style="text-align: center">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    <i class="bi {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>{{ $item->pelaksanaanpengembangan }}
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->pelaksanaanpengembangan }}
                                 </button>
                             </td>
 
