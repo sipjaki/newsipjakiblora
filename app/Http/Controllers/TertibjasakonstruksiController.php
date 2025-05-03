@@ -522,14 +522,14 @@ public function betertibjakonusahaupdatecreate(Request $request, $id)
 {
     // Validasi input dengan pesan khusus
     $validated = $request->validate([
-        'nib' => 'nullable|string|max:50',
+        'nib' => 'required|string',
         'namapekerjaan' => 'required|string|max:255',
         'tahunpelaksanaan' => 'required|in:2024,2025,2026',
         'namabadanusaha' => 'required|string|max:255',
         'pjbu' => 'required|string|max:100',
         'penyediastatustertibjakon_id' => 'required|string',
     ], [
-        'nib.max' => 'Nomor Induk Berusaha maksimal 50 karakter.',
+        'nib.required' => 'Nomor Induk Berusaha harus terdiri antara 1 hingga 50 digit.',
         'namapekerjaan.required' => 'Nama Pekerjaan wajib diisi.',
         'namapekerjaan.max' => 'Nama Pekerjaan maksimal 255 karakter.',
         'tahunpelaksanaan.required' => 'Tahun Pelaksanaan wajib dipilih.',
