@@ -401,7 +401,7 @@
                                 <!-- Tombol Aksi -->
                                 <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a>
                                 <a href="/bebujkkonsultan/update/{{$item->id}}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                <a href="javascript:void(0)" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->namalengkap }}" onclick="setDeleteUrl(this)">
+                                <a href="javascript:void(0)" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
                                   <i class="bi bi-trash"></i>
                                 </a>
                               </td>
@@ -442,9 +442,9 @@
 
                  <script>
                  function setDeleteUrl(button) {
-                     var namalengkap = button.getAttribute('data-judul');
-                     document.getElementById('itemName').innerText = namalengkap;
-                     var deleteUrl = "/betertibjakonusaha/delete/" + encodeURIComponent(namalengkap);
+                     var id = button.getAttribute('data-judul');
+                     document.getElementById('itemName').innerText = id;
+                     var deleteUrl = "/betertibjakonusaha/delete/" + encodeURIComponent(id);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
