@@ -438,23 +438,23 @@ class TertibjasakonstruksiController extends Controller
         $query = tertibjasakonstruksi::query();
 
         $query->where('nib', 'LIKE', "%{$search}%")
-                    //   ->orWhere('nib', 'LIKE', "%{$search}%")
+                      ->orWhere('nib', 'LIKE', "%{$search}%")
                       ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
                       ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
                       ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
-                    //   ->orWhere('pjbu', 'LIKE', "%{$search}%")
-                    //   ->orWhere('sesuai_jenis', 'LIKE', "%{$search}%")
-                    //   ->orWhere('sesuai_sifat', 'LIKE', "%{$search}%")
-                    //   ->orWhere('sesuai_klasifikasi', 'LIKE', "%{$search}%")
-                    //   ->orWhere('sesuai_layanan', 'LIKE', "%{$search}%")
-                    //   ->orWhere('segmentasipasar_bentuk', 'LIKE', "%{$search}%")
-                    //   ->orWhere('segmentasipasar_kualifikasi', 'LIKE', "%{$search}%")
-                    //   ->orWhere('syarat_SBU', 'LIKE', "%{$search}%")
-                    //   ->orWhere('syarat_NIB', 'LIKE', "%{$search}%")
-                    //   ->orWhere('pelaksanaanpengembangan', 'LIKE', "%{$search}%")
-                    //   ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
-                    //       $q->where('penyedia', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
-                    //   })
+                      ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                      ->orWhere('sesuai_jenis', 'LIKE', "%{$search}%")
+                      ->orWhere('sesuai_sifat', 'LIKE', "%{$search}%")
+                      ->orWhere('sesuai_klasifikasi', 'LIKE', "%{$search}%")
+                      ->orWhere('sesuai_layanan', 'LIKE', "%{$search}%")
+                      ->orWhere('segmentasipasar_bentuk', 'LIKE', "%{$search}%")
+                      ->orWhere('segmentasipasar_kualifikasi', 'LIKE', "%{$search}%")
+                      ->orWhere('syarat_SBU', 'LIKE', "%{$search}%")
+                      ->orWhere('syarat_NIB', 'LIKE', "%{$search}%")
+                      ->orWhere('pelaksanaanpengembangan', 'LIKE', "%{$search}%")
+                      ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
+                          $q->where('penyedia', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                      })
                       ;
 
     $data = $query->paginate($perPage);
