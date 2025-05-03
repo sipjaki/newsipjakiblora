@@ -528,25 +528,25 @@
                                                                                         <table class="table table-sm">
                                                                                             <thead class="table-secondary">
                                                                                                 <tr>
-                                                                                                    <th style="width: 30px;">No</th>
-                                                                                                    <th style="text-align: center;">Nama Lengkap</th>
-                                                                                                    <th style="width: 150px; text-align: center;">Tanda Tangan</th>
+                                                                                                    <th style="width: 30px; font-size: 12px;" >No</th>
+                                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
+                                                                                                    <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
                                                                                                 </tr>
                                                                                             </thead>
                                                                                             <tbody>
                                                                                                 <tr>
-                                                                                                    <td>1</td>
-                                                                                                    <td>Nama Pemeriksa 1</td>
+                                                                                                    <td style="font-size: 12px;">1</td>
+                                                                                                    <td style="font-size: 12px;">Nama Pemeriksa 1</td>
                                                                                                     <td style="height: 60px;"></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td>2</td>
-                                                                                                    <td>Nama Pemeriksa 2</td>
+                                                                                                    <td style="font-size: 12px;">2</td>
+                                                                                                    <td style="font-size: 12px;">Nama Pemeriksa 2</td>
                                                                                                     <td style="height: 60px;"></td>
                                                                                                 </tr>
                                                                                                 <tr>
-                                                                                                    <td>3</td>
-                                                                                                    <td>Nama Pemeriksa 3</td>
+                                                                                                    <td style="font-size: 12px;">3</td>
+                                                                                                    <td style="font-size: 12px;">Nama Pemeriksa 3</td>
                                                                                                     <td style="height: 60px;"></td>
                                                                                                 </tr>
                                                                                             </tbody>
