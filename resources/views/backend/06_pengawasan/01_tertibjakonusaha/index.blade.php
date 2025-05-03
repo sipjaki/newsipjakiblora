@@ -474,26 +474,41 @@
    @include('backend.00_administrator.00_baganterpisah.02_footer')
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-<script>
+
+   <script>
     function exportTableToExcel(tableID, filename = '') {
         const table = document.getElementById(tableID);
         const worksheet = XLSX.utils.table_to_sheet(table);
 
-        // Tambahkan border ke setiap cell
+        // Tentukan kolom yang berisi NIB (misalnya kolom kedua)
+        const nibColumnIndex = 1; // Indeks dimulai dari 0
+
+        // Iterasi melalui setiap baris dan kolom untuk mengatur format teks
         const range = XLSX.utils.decode_range(worksheet['!ref']);
-        for(let R = range.s.r; R <= range.e.r; ++R) {
-            for(let C = range.s.c; C <= range.e.c; ++C) {
-                const cell_address = {c: C, r: R};
+        for (let R = range.s.r; R <= range.e.r; ++R) {
+            const cell_address = { c: nibColumnIndex, r: R };
+            const cell_ref = XLSX.utils.encode_cell(cell_address);
+            if (!worksheet[cell_ref]) continue;
+            if (!worksheet[cell_ref].s) worksheet[cell_ref].s = {};
+
+            // Set format teks
+            worksheet[cell_ref].s.numFmt = '@';
+        }
+
+        // Tambahkan border ke setiap cell
+        for (let R = range.s.r; R <= range.e.r; ++R) {
+            for (let C = range.s.c; C <= range.e.c; ++C) {
+                const cell_address = { c: C, r: R };
                 const cell_ref = XLSX.utils.encode_cell(cell_address);
-                if(!worksheet[cell_ref]) continue;
-                if(!worksheet[cell_ref].s) worksheet[cell_ref].s = {};
+                if (!worksheet[cell_ref]) continue;
+                if (!worksheet[cell_ref].s) worksheet[cell_ref].s = {};
 
                 // Tambah style border
                 worksheet[cell_ref].s.border = {
-                    top:    {style: "thin", color: {auto: 1}},
-                    right:  {style: "thin", color: {auto: 1}},
-                    bottom: {style: "thin", color: {auto: 1}},
-                    left:   {style: "thin", color: {auto: 1}}
+                    top: { style: "thin", color: { auto: 1 } },
+                    right: { style: "thin", color: { auto: 1 } },
+                    bottom: { style: "thin", color: { auto: 1 } },
+                    left: { style: "thin", color: { auto: 1 } }
                 };
 
                 // Tambah alignment
@@ -510,6 +525,6 @@
         XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
 
         // Gunakan xlsx-style untuk menyimpan dengan style
-        XLSX.writeFile(workbook, filename + ".xlsx", {bookType: "xlsx", type: "binary"});
+        XLSX.writeFile(workbook, filename + ".xlsx", { bookType: "xlsx", type: "binary" });
     }
 </script>
