@@ -516,16 +516,18 @@
                                                     <!-- Modal Card -->
                                                     <div class="card" style="border: 1px solid white;">
                                                         <div class="card-body">
-                                                            <div class="row justify-content-end" style="border: 1px solid white;">
-                                                                <!-- Tabel Tim Pemeriksa di kolom kanan (col-3) tanpa garis-garis -->
-                                                                <div class="col-6">
+                                                            <!-- Konten lain bisa ditambahkan di sini -->
+
+                                                            <!-- Tim Pemeriksa -->
+                                                            <div class="tim-pemeriksa-container">
+                                                                <div class="tim-pemeriksa">
                                                                     <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
-                                                                    <table class="table table-sm" style="font-size: 12px; color: #000;">
+                                                                    <table class="table table-sm">
                                                                         <thead class="table-secondary">
                                                                             <tr>
-                                                                                <th style="width: 50px;"></th>
-                                                                                <th style="text-align: center">Nama Lengkap</th>
-                                                                                <th style="width: 200px; text-align:center;">Tanda Tangan</th>
+                                                                                <th style="width: 30px;">No</th>
+                                                                                <th style="text-align: center;">Nama Lengkap</th>
+                                                                                <th style="width: 150px; text-align: center;">Tanda Tangan</th>
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
@@ -548,6 +550,7 @@
                                                                     </table>
                                                                 </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -714,8 +717,8 @@
                             color: #000;
                         }
                         table {
-                            width: 100%;
                             border-collapse: collapse;
+                            width: 100%;
                             page-break-inside: auto;
                         }
                         th, td {
@@ -729,32 +732,53 @@
                     }
 
                     body {
+                        margin: 20mm;
                         font-family: Arial, sans-serif;
-                        margin: 10px;
+                        font-size: 12px;
                     }
 
                     h5 {
                         font-size: 1rem;
+                        margin-bottom: 10px;
                     }
 
-                    .table {
-                        border-collapse: collapse;
+                    .table-bordered {
+                        border: 1px solid #000;
                         width: 100%;
                         margin-top: 10px;
                     }
 
-                    .table th, .table td {
+                    .table-bordered th, .table-bordered td {
                         border: 1px solid #000;
                         padding: 6px;
                         text-align: left;
                     }
 
-                    .table th {
+                    .table-secondary {
                         background-color: #f8f9fa;
                     }
 
-                    .no-border td {
-                        border: none;
+                    /* Penyesuaian khusus untuk bagian tim pemeriksa */
+                    .tim-pemeriksa-container {
+                        display: flex;
+                        justify-content: flex-end;
+                        margin-top: 30px;
+                    }
+
+                    .tim-pemeriksa {
+                        width: 50%;
+                    }
+
+                    .tim-pemeriksa table {
+                        width: 100%;
+                        border: 1px solid #000;
+                    }
+
+                    .tim-pemeriksa td, .tim-pemeriksa th {
+                        text-align: center;
+                        padding: 5px;
+                        height: 50px;
+                        font-size: 11px;
                     }
                 </style>
             </head>
@@ -772,5 +796,3 @@
         printWindow.document.close();
     }
 </script>
-
-
