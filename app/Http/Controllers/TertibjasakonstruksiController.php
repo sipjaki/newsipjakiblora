@@ -448,13 +448,13 @@ class TertibjasakonstruksiController extends Controller
 
     if ($request->ajax()) {
         return response()->json([
-            'html' => view('backend.05_pengawasan.03_tertibjakon.01_tertibusaha.partials.table', compact('data'))->render()
+            'html' => view('backend.06_pengawasan.01_tertibjakonusaha.partials.table', compact('data'))->render()
         ]);
     }
 
     $datasub = penyediastatustertibjakon::paginate(15);
-    return view('frontend.05_pengawasan.03_tertibjakon.01_tertibusaha.list', [
-        'title' => 'Tertib Usaha Jasa Konstruksi',
+    return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
+        'title' => 'Data Tertib Jakon Usaha',
         'data' => $data,
         'datasub' => $datasub,
         'perPage' => $perPage,
