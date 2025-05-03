@@ -83,17 +83,28 @@
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Left Column (6/12) -->
+
+
+                                       <!-- Nama Asosiasi -->
+                                       <div class="mb-3">
+                                        <label class="form-label" for="asosiasimasjaki_id">
+                                            <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Nama Asosiasi
+                                        </label>
+                                        <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
+                                            <option value="">Pilih Status Penyedia</option>
+                                            @foreach($datapenyedia as $penyedia)
+                                                <option value="{{ $penyedia->id }}" {{ old('penyediastatustertibjakon_id', $data->penyediastatustertibjakon_id) == $penyedia->id ? 'selected' : '' }}>
+                                                    {{ $penyedia->penyedia }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('asosiasimasjaki_id')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+
                                     <div class="col-md-6">
                                         <!-- Nama Badan Usaha -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="user_id">
-                                                <i class="bi bi-building" style="margin-right: 10px; color: navy;"></i> Administrator
-                                            </label>
-                                            <input type="text" id="user_id" name="user_id" class="form-control @error('user_id') is-invalid @enderror bg-light" value="{{ old('user_id', $data->user->name) }}" readonly />
-                                            @error('user_id')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
                                         <div class="mb-3">
                                             <label class="form-label" for="namalengkap">
@@ -105,23 +116,6 @@
                                             @enderror
                                         </div>
 
-                                        <!-- Nama Asosiasi -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="asosiasimasjaki_id">
-                                                <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Nama Asosiasi
-                                            </label>
-                                            <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
-                                                <option value="">Pilih Asosiasi</option>
-                                                @foreach($asosiasimasjakiList as $asosiasi)
-                                                    <option value="{{ $asosiasi->id }}" {{ old('asosiasimasjaki_id', $data->asosiasimasjaki_id) == $asosiasi->id ? 'selected' : '' }}>
-                                                        {{ $asosiasi->namaasosiasi }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            @error('asosiasimasjaki_id')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
                                         <!-- No Telepon -->
                                         <div class="mb-3">
