@@ -258,7 +258,7 @@
                           <tbody>
                             @foreach ($data as $item)
                             <tr>
-                              <td style="text-align: left;">{{ $loop->iteration }}</td>
+                              <td style="text-align: center;">{{ $loop->iteration }}</td>
                               <td>
                                 @if($item->penyediastatustertibjakon->penyedia)
                                   {{ $item->penyediastatustertibjakon->penyedia }}
