@@ -516,7 +516,7 @@
             let perPage = $(this).val();
 
             $.ajax({
-                url: "{{ route('nama_route_lo_disini') }}", // ganti ini dengan nama route betertibjakonusaha
+                url: "{{ route('bertertibjakonusaha') }}", // ganti ini dengan nama route betertibjakonusaha
                 type: 'GET',
                 data: {
                     perPage: perPage,
