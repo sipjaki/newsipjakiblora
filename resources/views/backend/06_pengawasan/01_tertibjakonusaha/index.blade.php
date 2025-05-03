@@ -447,19 +447,19 @@
                                                     </tr>
                                                     <tr>
                                                         <td><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>Sudah Terverifikasi</td>
+                                                        <td>{{ $item->surattertibjakonusaha1->statusperizinan }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td><strong>No NIB</strong></td>
-                                                        <td>-</td>
+                                                        <td>{{ $item->surattertibjakonusaha1->nib }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td><strong>Waktu Pengawasan</strong></td>
-                                                        <td>23 Juni 2023 – 8 September 2023</td>
+                                                        <td>{{ $item->surattertibjakonusaha1->waktupengawasan }} – {{ $item->surattertibjakonusaha1->waktupengawasanselesai }}</td>
                                                     </tr>
                                                 </table>
 
-                                                <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6>
+                                                {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
                                                 <table class="table table-bordered table-sm">
                                                     <thead class="table-secondary">
                                                         <tr>
