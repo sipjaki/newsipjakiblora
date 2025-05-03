@@ -772,7 +772,6 @@
                     .tim-pemeriksa-container {
                         display: flex;
                         justify-content: flex-end;
-                        margin-top: 10px;
                     }
 
                     .tim-pemeriksa {
@@ -786,8 +785,8 @@
 
                     .tim-pemeriksa td, .tim-pemeriksa th {
                         text-align: center;
-                        padding: 5px;
-                        height: 25px;
+                        padding: 3px;
+                        height: 15px;
                         font-size: 11px;
                     }
                 </style>
