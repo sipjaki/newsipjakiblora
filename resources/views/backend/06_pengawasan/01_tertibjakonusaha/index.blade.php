@@ -204,7 +204,7 @@
      @foreach ($data as $item )
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
-{{--
+
         <td style="text-align: left;">
             @if($item->namalengkap)
                 {{ $item->namalengkap }}
@@ -215,9 +215,9 @@
                     Data Belum Di Update
                 </button>
             @endif
-        </td> --}}
+        </td>
 
-{{--
+
                     <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
                         <a href="{{ url('/bebujkkonsultan/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
                             <button
@@ -274,10 +274,9 @@
                             </div>
                         </div>
                     </td>
- --}}
 
 
-        {{-- <td style="text-align: center; vertical-align: middle;">
+        <td style="text-align: center; vertical-align: middle;">
             <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                 <i class="bi bi-eye"></i>
             </a>
@@ -290,7 +289,7 @@
                onclick="setDeleteUrl(this)">
                 <i class="bi bi-trash"></i>
             </a>
-        </td> --}}
+        </td>
 
         <!-- CSS untuk Hover -->
         <style>
