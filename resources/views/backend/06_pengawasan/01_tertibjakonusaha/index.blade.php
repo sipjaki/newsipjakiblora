@@ -169,24 +169,42 @@
 
 <table id="tabelBujkkonsultan" class="zebra-table table-striped">
  <thead>
-     <tr>
-        <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-people-fill"></i> Asosiasi</th>
-        <th style="width: 250px; text-align:center;"><i class="bi bi-building"></i> Badan Usaha</th>
-        <th style="width: 400px; text-align:center;"><i class="bi bi-geo-alt-fill"></i> Alamat</th>
-        <th style="width: 350px; text-align:center;"><i class="bi bi-telephone-fill"></i> No Telepon</th>
-        <th style="width: 350px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
-        <th style="width: 150px; text-align:center;"><i class="bi bi-credit-card-2-front"></i> NIB</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-person-badge-fill"></i> PJU</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-file-earmark-text"></i> No Akte</th>
-        <th style="width: 250px; text-align:center;"><i class="bi bi-calendar-date"></i> Tanggal</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-person-lines-fill"></i> Notaris</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-patch-check-fill"></i> Pengesahan</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Sub Klasifikasi</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tags-fill"></i> Berkas</th>
-        <th style="width: 300px; text-align:center;"><i class="bi bi-tags-fill"></i> Di Buat Oleh</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-tools"></i> Aksi</th>
-     </tr>
+    <tr>
+        <th style="width: 75px; text-align:center;" rowspan="2"><i class="bi bi-list-ol"></i> No</th>
+        <th style="width: 200px; text-align:center;" rowspan="2"><i class="bi bi-people-fill"></i> Penyedia</th>
+        <th style="width: 250px; text-align:center;" rowspan="2"><i class="bi bi-building"></i> NIB</th>
+        <th style="width: 400px; text-align:center;" rowspan="2"><i class="bi bi-geo-alt-fill"></i> Nama Pekerjaan</th>
+        <th style="width: 350px; text-align:center;" rowspan="2"><i class="bi bi-building-fill"></i> Badan Usaha</th>
+
+        <!-- PJBU Group -->
+        <th style="text-align:center;" colspan="4"><i class="bi bi-person-lines-fill"></i> PJBU</th>
+
+        <!-- Segmentasi Pasar Group -->
+        <th style="text-align:center;" colspan="2"><i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar</th>
+
+        <!-- Pengembangan Usaha Group -->
+        <th style="text-align:center;" colspan="2"><i class="bi bi-graph-up-arrow"></i> Pengembangan Usaha</th>
+
+        <!-- Pelaksanaan -->
+        <th style="width: 350px; text-align:center;" rowspan="2"><i class="bi bi-gear-fill"></i> Pelaksanaan Pengembangan Usaha</th>
+
+        <th style="width: 350px; text-align:center;" rowspan="2"><i class="bi bi-tools"></i> Aksi</th>
+      </tr>
+      <tr>
+        <!-- Subcolumns PJBU -->
+        <th style="width: 350px; text-align:center;"><i class="bi bi-ui-checks"></i> Sesuai Jenis</th>
+        <th style="width: 350px; text-align:center;"><i class="bi bi-ui-checks"></i> Sesuai Sifat</th>
+        <th style="width: 350px; text-align:center;"><i class="bi bi-ui-checks"></i> Sesuai Klasifikasi</th>
+        <th style="width: 350px; text-align:center;"><i class="bi bi-ui-checks"></i> Sesuai Layanan</th>
+
+        <!-- Subcolumns Segmentasi Pasar -->
+        <th style="width: 350px; text-align:center;"><i class="bi bi-diagram-3-fill"></i> Sesuai Bentuk</th>
+        <th style="width: 350px; text-align:center;"><i class="bi bi-bar-chart-line-fill"></i> Sesuai Kualifikasi</th>
+
+        <!-- Subcolumns Pengembangan Usaha -->
+        <th style="width: 350px; text-align:center;"><i class="bi bi-file-earmark-check-fill"></i> Syarat SBU</th>
+        <th style="width: 350px; text-align:center;"><i class="bi bi-file-earmark-check-fill"></i> Syarat NIB</th>
+      </tr>
  </thead>
  <tbody id="tableBody">
      @foreach ($data as $item )
