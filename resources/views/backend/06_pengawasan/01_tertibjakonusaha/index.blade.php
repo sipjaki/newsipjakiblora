@@ -709,7 +709,7 @@
                     @media print {
                         @page {
                             size: A4 landscape;
-                            margin: 20mm;
+                            margin: 2mm;
                         }
                         body {
                             font-family: Arial, sans-serif;
