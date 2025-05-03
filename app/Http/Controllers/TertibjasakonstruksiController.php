@@ -50,7 +50,7 @@ class TertibjasakonstruksiController extends Controller
 
         $query->where('nib', 'LIKE', "%{$search}%")
                       ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
-                      ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                    //   ->orWhere('pjbu', 'LIKE', "%{$search}%")
                       ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
                           $q->where('penyedia', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                       });
