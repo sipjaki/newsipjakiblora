@@ -528,7 +528,7 @@
                                                                                         <table class="table table-sm">
                                                                                             <thead class="table-secondary">
                                                                                                 <tr>
-                                                                                                    <th style="width: 30px; font-size: 12px;" >No</th>
+                                                                                                    <th style="width: 50px; font-size: 12px;" >No</th>
                                                                                                     <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
                                                                                                     <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
                                                                                                 </tr>
