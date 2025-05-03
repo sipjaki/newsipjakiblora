@@ -189,7 +189,7 @@
                                     <th rowspan="2" style="text-align: center; width:500px;">
                                         <i class="bi bi-geo-alt-fill"></i> Nama Pekerjaan
                                     </th>
-                                    <th rowspan="2" style="text-align: center; width:150px;">
+                                    <th rowspan="2" style="text-align: center; width:200px; white-space: normal; word-wrap: break-word;">
                                         <i class="bi bi-calendar-event"></i> Tahun Pelaksanaan
                                     </th>
                                     <th rowspan="2" style="text-align: center; width:400px;">
