@@ -186,18 +186,18 @@
         </tr>
         <tr>
           <!-- Subkolom PJBU -->
-          <th style="width: 150px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Jenis</th>
-          <th style="width: 150px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Sifat</th>
-          <th style="width: 150px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Klasifikasi</th>
-          <th style="width: 150px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Layanan</th>
+          <th style="width: 350px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Jenis</th>
+          <th style="width: 350px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Sifat</th>
+          <th style="width: 350px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Klasifikasi</th>
+          <th style="width: 350px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Layanan</th>
 
           <!-- Subkolom Segmentasi Pasar -->
-          <th style="width: 150px; text-align: center;"><i class="bi bi-diagram-3-fill"></i><br>Sesuai Bentuk</th>
-          <th style="width: 150px; text-align: center;"><i class="bi bi-bar-chart-line-fill"></i><br>Sesuai Kualifikasi</th>
+          <th style="width: 350px; text-align: center;"><i class="bi bi-diagram-3-fill"></i><br>Sesuai Bentuk</th>
+          <th style="width: 350px; text-align: center;"><i class="bi bi-bar-chart-line-fill"></i><br>Sesuai Kualifikasi</th>
 
           <!-- Subkolom Pengembangan Usaha -->
-          <th style="width: 150px; text-align: center;"><i class="bi bi-file-earmark-check-fill"></i><br>Syarat SBU</th>
-          <th style="width: 150px; text-align: center;"><i class="bi bi-file-earmark-check-fill"></i><br>Syarat NIB</th>
+          <th style="width: 350px; text-align: center;"><i class="bi bi-file-earmark-check-fill"></i><br>Syarat SBU</th>
+          <th style="width: 350px; text-align: center;"><i class="bi bi-file-earmark-check-fill"></i><br>Syarat NIB</th>
         </tr>
       </thead>
  <tbody id="tableBody">
