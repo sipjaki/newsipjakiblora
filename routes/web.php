@@ -887,7 +887,7 @@ Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikas
 
 // ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
-Route::get('/betertibjakonusaha', [tertibjasakonstruksi::class, 'betertibjakonusaha'])->middleware('auth');
+Route::get('/betertibjakonusaha', [TertibjasakonstruksiController::class, 'betertibjakonusaha'])->middleware('auth');
 
 
 
