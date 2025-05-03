@@ -428,10 +428,10 @@
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem;">
                                             <div class="modal-header d-flex align-items-center">
-                                                <a href="#" class="d-flex align-items-center" style="margin-right: 10px;">
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
                                                     <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
                                                 </a>
-                                                <a href="#" class="d-flex align-items-center" style="margin-right: 10px;">
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
                                                     <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
                                                 </a>
                                                 <span class="mx-2">:</span>
