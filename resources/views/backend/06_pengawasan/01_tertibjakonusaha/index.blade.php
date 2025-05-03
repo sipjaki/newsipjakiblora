@@ -500,7 +500,6 @@
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center;">1</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->namapaketpekerjaan}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->namapaketpekerjaan}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->jenisusaha}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->kesesuaian}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->sifatusaha}}</td>
