@@ -474,14 +474,13 @@
    @include('backend.00_administrator.00_baganterpisah.02_footer')
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-
    <script>
     function exportTableToExcel(tableID, filename = '') {
         const table = document.getElementById(tableID);
         const worksheet = XLSX.utils.table_to_sheet(table);
 
-        // Tentukan kolom yang berisi NIB (misalnya kolom kedua)
-        const nibColumnIndex = 1; // Indeks dimulai dari 0
+        // Tentukan kolom yang berisi NIB (misalnya kolom ketiga)
+        const nibColumnIndex = 2; // Indeks dimulai dari 0
 
         // Iterasi melalui setiap baris dan kolom untuk mengatur format teks
         const range = XLSX.utils.decode_range(worksheet['!ref']);
@@ -528,3 +527,4 @@
         XLSX.writeFile(workbook, filename + ".xlsx", { bookType: "xlsx", type: "binary" });
     }
 </script>
+
