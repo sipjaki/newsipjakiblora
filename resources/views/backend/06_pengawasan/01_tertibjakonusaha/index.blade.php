@@ -514,9 +514,6 @@
 
                                                 <div class="container" style="margin-top: 10px;">
                                                     <!-- Modal Card -->
-                                                    <div class="card" style="border: 1px solid white;">
-                                                        <div class="card-body">
-                                                            <!-- Konten lain bisa ditambahkan di sini -->
 
                                                             <div class="container" style="margin-top: 10px;">
                                                                 <div class="row">
@@ -527,7 +524,7 @@
                                                                                 <!-- Tim Pemeriksa -->
                                                                                 <div class="tim-pemeriksa-container">
                                                                                     <div class="tim-pemeriksa">
-                                                                                        <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
                                                                                         <table class="table table-sm">
                                                                                             <thead class="table-secondary">
                                                                                                 <tr>
@@ -562,8 +559,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
 
                                             </div>
                                         </div>
