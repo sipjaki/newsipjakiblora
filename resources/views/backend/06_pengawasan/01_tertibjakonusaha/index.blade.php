@@ -464,7 +464,7 @@
                                                     <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
                                                         <thead>
                                                             <tr>
-                                                                <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">No</th>
+                                                                <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;" style="width:50px;">No</th>
                                                                 <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
                                                                 <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis Usaha</th>
                                                                 <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Sifat Usaha</th>
