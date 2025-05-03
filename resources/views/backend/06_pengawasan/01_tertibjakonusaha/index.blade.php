@@ -432,8 +432,9 @@
                                                 <p style="margin-left: 10px;">Surat Dukung Kesesuaian Kegiatan Konstruksi</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body d-flex flex-wrap gap-4">
-                                                <!-- Kiri: Data Utama -->
+
+                                            <div class="modal-body d-flex flex-wrap gap-3">
+                                                <!-- Kiri -->
                                                 <div class="flex-grow-1" style="flex-basis: 60%;">
                                                     <h5>Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
                                                     <table class="table table-bordered">
@@ -490,7 +491,7 @@
 
                                                 <!-- Kanan: Tim Pemeriksa -->
                                                 <div style="flex-basis: 38%;">
-                                                    <div class="card shadow-sm">
+                                                    <div class="card shadow-sm h-100">
                                                         <div class="card-header bg-secondary text-white text-center">
                                                             <strong>Tim Pemeriksa</strong>
                                                         </div>
@@ -500,7 +501,7 @@
                                                                     <tr>
                                                                         <th style="width: 40px;">No</th>
                                                                         <th>Nama Lengkap</th>
-                                                                        <th style="width: 120px;">Tanda Tangan</th>
+                                                                        <th style="width: 100px;">Tanda Tangan</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -523,7 +524,7 @@
                                                             </table>
                                                         </div>
                                                     </div>
-                                                </div> <!-- end kanan -->
+                                                </div> <!-- End Tim Pemeriksa -->
                                             </div>
                                         </div>
                                     </div>
