@@ -455,7 +455,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td><strong>Waktu Pengawasan</strong></td>
-                                                        <td>{{ $item->surattertibjakonusaha1->waktupengawasan }} – {{ $item->surattertibjakonusaha1->waktupengawasanselesai }}</td>
+                                                        <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
                                                     </tr>
                                                 </table>
 
