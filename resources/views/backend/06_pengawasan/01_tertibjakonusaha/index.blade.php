@@ -173,7 +173,7 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="width: 100%; overflow-x: auto;">
-                        <table id="tabelBujkkonsultan" class="zebra-table table-bordered table-striped" style="min-width: 1800px; white-space: nowrap;">
+                        <table id="tabelBujkkonsultan" class="zebra-table table-bordered table-striped" style="white-space: nowrap;">
                             <thead>
                                 <tr>
                                     <th rowspan="2" style="text-align: center; width:75px;">
@@ -209,9 +209,11 @@
                                     <th rowspan="2" style="text-align: center; width:300px;">
                                         <i class="bi bi-gear-fill"></i> Pelaksanaan Pengembangan Usaha
                                     </th>
+
                                     <th rowspan="2" style="text-align: center;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
+
                                 </tr>
                                 <tr>
                                     <!-- PJBU Subkolom -->
