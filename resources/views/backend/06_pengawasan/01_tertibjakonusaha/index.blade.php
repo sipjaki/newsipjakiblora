@@ -420,7 +420,7 @@
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
                                     data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
-                                    <i class="bi bi-eye"></i> Lihat
+                                    <i class="bi bi-eye"></i>
                                 </button>
                                 <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
                                     <i class="bi bi-pencil"></i>
