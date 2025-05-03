@@ -442,19 +442,19 @@
                                                 <h5 style="font-size: 1rem;">Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
-                                                        <td><strong>Nama Badan Usaha</strong></td>
+                                                        <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
                                                         <td>{{ $item->surattertibjakonusaha1->namabadanusaha }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><strong>Status Perizinan Berusaha</strong></td>
+                                                        <td style="width: 200px;"><strong>Status Perizinan Berusaha</strong></td>
                                                         <td>{{ $item->surattertibjakonusaha1->statusperizinan }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><strong>No NIB</strong></td>
+                                                        <td style="width: 200px;"><strong>No NIB</strong></td>
                                                         <td>{{ $item->surattertibjakonusaha1->nib }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td><strong>Waktu Pengawasan</strong></td>
+                                                        <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
                                                         <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
                                                     </tr>
                                                 </table>
