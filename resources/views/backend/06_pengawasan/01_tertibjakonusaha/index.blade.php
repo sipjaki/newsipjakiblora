@@ -107,8 +107,8 @@
 
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <label for="entries" style="font-weight: 600; font-size: 14px;">Show:</label>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-right:10px;">
+                            <label for="entries" style="font-weight: 600; font-size: 14px;">Tampilkan data : </label>
                             <select id="entries" onchange="updateEntries()" style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9; font-size: 14px; cursor: pointer;">
                                 <option value="10">10</option>
                                 <option value="25">25</option>
