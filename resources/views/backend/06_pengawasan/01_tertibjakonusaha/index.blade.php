@@ -443,7 +443,7 @@
                                                 <table class="table table-bordered table-sm">
                                                     <tr>
                                                         <td><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $item->surattertibjakon1->namabadanusaha }}</td>
+                                                        <td>{{ $item->surattertibjakonusaha1->namabadanusaha }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td><strong>Status Perizinan Berusaha</strong></td>
