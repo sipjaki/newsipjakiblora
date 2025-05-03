@@ -499,5 +499,24 @@ return redirect()->back()->with('error', 'Item not found');
 
 
 
+public function betertibjakonusahaupdate($id)
+{
+    $datatertibjakonusaha = tertibjasakonstruksi::where('id', $id)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+$datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.01_tertibjakonusaha.update', [
+    'title' => 'Update Agenda Pelatihan ',
+    'data' => $datatertibjakonusaha,
+    'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
+
 
 }
