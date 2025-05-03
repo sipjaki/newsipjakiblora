@@ -185,8 +185,12 @@
                                         <i class="bi bi-building-fill"></i> Badan Usaha
                                     </th>
 
+                                    <th rowspan="2" style="text-align: center; width:400px;">
+                                        <i class="bi bi-building-fill"></i> PJBU
+                                    </th>
+
                                     <th colspan="4" style="text-align: center; width:1000px;">
-                                        <i class="bi bi-person-lines-fill"></i> PJBU
+                                        <i class="bi bi-person-lines-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
                                     <th colspan="2" style="text-align: center; width:800px;">
                                         <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
@@ -248,7 +252,7 @@
                               </td>
                               <td style="text-align: center;">{{ $item->nib }}</td>
                               <td style="text-align: center;">{{ $item->namapekerjaan }}</td>
-                              <td style="text-align: center;">{{ $item->badan_usaha }}</td>
+                              <td style="text-align: center;">{{ $item->namabadanusaha }}</td>
 
                               <!-- PJBU Columns -->
                               <td style="text-align: center;">{{ $item->pjbu_jenis }}</td>
