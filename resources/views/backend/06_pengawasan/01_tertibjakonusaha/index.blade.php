@@ -472,19 +472,43 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>1</td>
-                                                            <td>
-                                                                Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi
-                                                            </td>
+                                                            <td>Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi</td>
                                                             <td>Jasa Pelaksana Konstruksi</td>
                                                             <td>Sesuai</td>
                                                             <td>Umum</td>
                                                             <td>Sesuai</td>
-                                                            <td>
-                                                                Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)
-                                                            </td>
+                                                            <td>Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)</td>
                                                             <td>Sesuai</td>
                                                             <td>Pekerjaan Konstruksi</td>
                                                             <td>Sesuai</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <h6 class="mt-4">Tim Pemeriksa:</h6>
+                                                <table class="table table-bordered table-sm">
+                                                    <thead class="table-secondary">
+                                                        <tr>
+                                                            <th style="width: 50px;">No</th>
+                                                            <th>Nama Lengkap</th>
+                                                            <th style="width: 200px;">Tanda Tangan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Nama Pemeriksa 1</td>
+                                                            <td style="height: 60px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Nama Pemeriksa 2</td>
+                                                            <td style="height: 60px;"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Nama Pemeriksa 3</td>
+                                                            <td style="height: 60px;"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
