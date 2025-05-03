@@ -108,14 +108,14 @@
                     <label for="customLength" style="margin-bottom: 10px; display: block;">
                         Show Data
                         <select id="customLength" style="margin: 0 5px;">
-                          <option value="10">10</option>
-                          <option value="25">25</option>
-                          <option value="50">50</option>
-                          <option value="100">100</option>
-                          <option value="200">200</option>
-                          <option value="500">500</option>
+                            <option value="10" {{ $perPage == 10 ? 'selected' : '' }}>10</option>
+                            <option value="25" {{ $perPage == 25 ? 'selected' : '' }}>25</option>
+                            <option value="50" {{ $perPage == 50 ? 'selected' : '' }}>50</option>
+                            <option value="100" {{ $perPage == 100 ? 'selected' : '' }}>100</option>
+                            <option value="200" {{ $perPage == 200 ? 'selected' : '' }}>200</option>
+                            <option value="500" {{ $perPage == 500 ? 'selected' : '' }}>500</option>
                         </select>
-                      </label>
+                    </label>
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
