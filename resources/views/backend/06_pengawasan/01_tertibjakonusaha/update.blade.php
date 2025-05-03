@@ -130,16 +130,22 @@
 
                                     </div>
                                     <div class="col-md-6">
-                                        <!-- Tahun Pelaksanaan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tahunpelaksanaan">
+                                    <!-- Tahun Pelaksanaan -->
+                                            <div class="mb-3">
+                                                <label class="form-label" for="tahunpelaksanaan">
                                                 <i class="bi bi-calendar" style="margin-right: 10px; color: navy;"></i> Tahun Pelaksanaan
-                                            </label>
-                                            <input type="text" id="tahunpelaksanaan" name="tahunpelaksanaan" class="form-control @error('tahunpelaksanaan') is-invalid @enderror" value="{{ old('tahunpelaksanaan', $data->tahunpelaksanaan ?? '') }}" />
-                                            @error('tahunpelaksanaan')
+                                                </label>
+                                                <select id="tahunpelaksanaan" name="tahunpelaksanaan" class="form-select @error('tahunpelaksanaan') is-invalid @enderror">
+                                                <option value="">-- Pilih Tahun --</option>
+                                                <option value="2024" {{ old('tahunpelaksanaan', $data->tahunpelaksanaan ?? '') == '2024' ? 'selected' : '' }}>2024</option>
+                                                <option value="2025" {{ old('tahunpelaksanaan', $data->tahunpelaksanaan ?? '') == '2025' ? 'selected' : '' }}>2025</option>
+                                                <option value="2026" {{ old('tahunpelaksanaan', $data->tahunpelaksanaan ?? '') == '2026' ? 'selected' : '' }}>2026</option>
+                                                </select>
+                                                @error('tahunpelaksanaan')
                                                 <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                                @enderror
+                                            </div>
+
 
                                         <!-- Nama Badan Usaha -->
                                         <div class="mb-3">
