@@ -413,29 +413,30 @@
                                 </button>
                             </td>
 
+
                             <td style="text-align: center;">
                                 <button class="btn btn-secondary btn-sm"
-                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                    style="border-radius: 15px; padding: 6px 12px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s; font-size: 0.875rem;"
                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
                                     data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
                                     <i class="bi bi-eye"></i> Lihat
                                 </button>
-                                <a href="/404" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;"><i class="bi bi-pencil-square"></i></a>
 
                                 <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
-                                        <div class="modal-content">
+                                        <div class="modal-content" style="font-size: 0.875rem;">
                                             <div class="modal-header">
                                                 <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                 <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                 <span>:</span>
-                                                <p style="margin-left: 10px;">Surat Dukung Kesesuaian Kegiatan Konstruksi</p>
+                                                <p style="margin-left: 10px; font-size: 0.9rem;">Surat Dukung Kesesuaian Kegiatan Konstruksi</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <h5>Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
-                                                <table class="table table-bordered">
+                                                <h5 style="font-size: 1rem;">Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
+                                                <table class="table table-bordered table-sm">
                                                     <tr>
                                                         <td><strong>Nama Badan Usaha</strong></td>
                                                         <td>CV Andes Putra Perkasa</td>
@@ -454,7 +455,7 @@
                                                     </tr>
                                                 </table>
 
-                                                <h6 class="mt-4">Detail Kegiatan:</h6>
+                                                <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6>
                                                 <table class="table table-bordered table-sm">
                                                     <thead class="table-secondary">
                                                         <tr>
@@ -486,7 +487,7 @@
                                                     </tbody>
                                                 </table>
 
-                                                <h6 class="mt-4">Tim Pemeriksa:</h6>
+                                                <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
                                                 <table class="table table-bordered table-sm">
                                                     <thead class="table-secondary">
                                                         <tr>
