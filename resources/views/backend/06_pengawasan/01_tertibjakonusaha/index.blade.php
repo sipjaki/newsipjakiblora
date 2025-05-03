@@ -446,7 +446,7 @@
                                                         <td>{{ $item->surattertibjakonusaha1->namabadanusaha }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 200px;"><strong>Status Perizinan Berusaha</strong></td>
+                                                        <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
                                                         <td>{{ $item->surattertibjakonusaha1->statusperizinan }}</td>
                                                     </tr>
                                                     <tr>
