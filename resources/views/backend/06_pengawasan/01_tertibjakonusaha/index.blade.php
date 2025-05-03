@@ -189,6 +189,9 @@
                                     <th rowspan="2" style="text-align: center; width:500px;">
                                         <i class="bi bi-geo-alt-fill"></i> Nama Pekerjaan
                                     </th>
+                                    <th rowspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-geo-alt-fill"></i> Tahun Pelaksanaan
+                                    </th>
                                     <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> Badan Usaha
                                     </th>
@@ -282,6 +285,18 @@
                               <td style="text-align: left;">
                                 @if($item->namapekerjaan)
                                   {{ $item->namapekerjaan }}
+                                @else
+                                  <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
+                                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                          onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                                    Data Belum Di Update
+                                  </button>
+                                @endif
+                              </td>
+
+                              <td style="text-align: left;">
+                                @if($item->tahunpelaksanaan)
+                                  {{ $item->tahunpelaksanaan }}
                                 @else
                                   <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
                                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
