@@ -512,12 +512,11 @@
                                                     </tbody>
                                                 </table>
 
-                                                <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
                                                 <div class="container mt-4">
                                                     <!-- Modal Card -->
-                                                    <div class="card">
+                                                    <div class="card" style="border: 1px solid white;">
                                                         <div class="card-body">
-                                                            <div class="row justify-content-end">
+                                                            <div class="row justify-content-end" style="border: 1px solid white;">
                                                                 <!-- Tabel Tim Pemeriksa di kolom kanan (col-3) tanpa garis-garis -->
                                                                 <div class="col-6">
                                                                     <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
