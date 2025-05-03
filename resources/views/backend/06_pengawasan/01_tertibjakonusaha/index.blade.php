@@ -310,21 +310,69 @@
                                 @endif
                               </td>
 
-                              <!-- PJBU Columns -->
-                              <td style="text-align: center;">{{ $item->pjbu_jenis }}</td>
-                              <td style="text-align: center;">{{ $item->pjbu_sifat }}</td>
-                              <td style="text-align: center;">{{ $item->pjbu_klasifikasi }}</td>
-                              <td style="text-align: center;">{{ $item->pjbu_layanan }}</td>
+                              <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->sesuai_jenis == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->sesuai_jenis }}
+                                </button>
+                            </td>
 
-                              <!-- Segmentasi Pasar -->
-                              <td style="text-align: center;">{{ $item->segmentasi_bentuk }}</td>
-                              <td style="text-align: center;">{{ $item->segmentasi_kualifikasi }}</td>
+                            <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->sesuai_sifat }}
+                                </button>
+                            </td>
 
-                              <!-- Pengembangan Usaha -->
-                              <td style="text-align: center;">{{ $item->syarat_sbu }}</td>
-                              <td style="text-align: center;">{{ $item->syarat_nib }}</td>
+                            <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->sesuai_klasifikasi }}
+                                </button>
+                            </td>
 
-                              <td style="text-align: center;">{{ $item->pelaksanaan }}</td>
+                            <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->sesuai_layanan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->sesuai_layanan }}
+                                </button>
+                            </td>
+
+                            <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->segmentasipasar_bentuk }}
+                                </button>
+                            </td>
+
+                            <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->segmentasipasar_kualifikasi }}
+                                </button>
+                            </td>
+
+                            <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->syarat_SBU }}
+                                </button>
+                            </td>
+
+                            <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->syarat_NIB }}
+                                </button>
+                            </td>
+
+                            <td>
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
+                                    background-color: {{ $data->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $data->pelaksanaanpengembangan }}
+                                </button>
+                            </td>
+
                               <td style="text-align: center;">
                                 <!-- Tombol Aksi -->
                                 <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a>
