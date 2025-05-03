@@ -436,6 +436,7 @@
                                                 </a>
                                                 <span class="mx-2">:</span>
                                                 <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                                <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">Download A4 Landscape</button>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
@@ -688,4 +689,89 @@
         XLSX.writeFile(workbook, filename + ".xlsx", { bookType: "xlsx", type: "binary" });
     }
 </script>
+
+<script>
+    function printModalContent(id) {
+        const modalContent = document.querySelector(`#modalKtp${id} .modal-content`);
+        if (!modalContent) {
+            alert("Konten tidak ditemukan.");
+            return;
+        }
+
+        const printWindow = window.open('', '', 'width=1200,height=800');
+        printWindow.document.write(`
+            <html>
+            <head>
+                <title>Print A4 Landscape</title>
+                <style>
+                    @media print {
+                        @page {
+                            size: A4 landscape;
+                            margin: 20mm;
+                        }
+                        body {
+                            font-family: Arial, sans-serif;
+                            font-size: 12px;
+                            color: #000;
+                        }
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+                            page-break-inside: auto;
+                        }
+                        th, td {
+                            border: 1px solid #000;
+                            padding: 4px;
+                            vertical-align: top;
+                        }
+                        .no-border td {
+                            border: none;
+                        }
+                    }
+
+                    body {
+                        font-family: Arial, sans-serif;
+                        margin: 10px;
+                    }
+
+                    h5 {
+                        font-size: 1rem;
+                    }
+
+                    .table {
+                        border-collapse: collapse;
+                        width: 100%;
+                        margin-top: 10px;
+                    }
+
+                    .table th, .table td {
+                        border: 1px solid #000;
+                        padding: 6px;
+                        text-align: left;
+                    }
+
+                    .table th {
+                        background-color: #f8f9fa;
+                    }
+
+                    .no-border td {
+                        border: none;
+                    }
+                </style>
+            </head>
+            <body>
+                ${modalContent.innerHTML}
+                <script>
+                    window.onload = function() {
+                        window.print();
+                        window.onafterprint = window.close;
+                    }
+                <\/script>
+            </body>
+            </html>
+        `);
+        printWindow.document.close();
+    }
+</script>
+
 
