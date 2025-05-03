@@ -104,20 +104,22 @@
                  <!-- /.card-header -->
                  <div class="card-header">
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
-                    <div>
-                        <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
-                        <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
-                            <option value="10">10</option>
-                            <option value="25">25</option>
-                            <option value="50">50</option>
-                            <option value="75">75</option>
-                            <option value="100">100</option>
-                            <option value="150">150</option>
-                            <option value="200">200</option>
-                        </select>
-                    </div>
+
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+                        <div>
+                            <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
+                            <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="75">75</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                                <option value="200">200</option>
+                            </select>
+                        </div>
+
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Badan Usaha ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
                             <i class="fas fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
@@ -133,7 +135,7 @@
                             function searchTable() {
                             let input = document.getElementById("searchInput").value;
 
-                            fetch(`/bebujkkonsultan?search=${input}`)
+                            fetch(`/betertibjakonusaha?search=${input}`)
                                 .then(response => response.text())
                                 .then(html => {
                                     let parser = new DOMParser();
@@ -509,27 +511,4 @@
         // Gunakan xlsx-style untuk menyimpan dengan style
         XLSX.writeFile(workbook, filename + ".xlsx", {bookType: "xlsx", type: "binary"});
     }
-</script>
-<script>
-    $(document).ready(function () {
-        $('#customLength').on('change', function () {
-            let perPage = $(this).val();
-            let search = $('input[name="search"]').val() || '';
-
-            $.ajax({
-                url: "{{ route('bertertibjakonusaha') }}",
-                type: 'GET',
-                data: {
-                    perPage: perPage,
-                    search: search
-                },
-                success: function (response) {
-                    $('#tabel-container').html(response.html);
-                },
-                error: function () {
-                    alert('Gagal memuat data.');
-                }
-            });
-        });
-    });
 </script>
