@@ -92,7 +92,7 @@
                                             </label>
                                             <input type="text" id="nib" name="nib" class="form-control @error('nib') is-invalid @enderror" value="{{ old('nib', $data->nib ?? '') }}" />
                                             @error('nib')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
@@ -103,30 +103,33 @@
                                             </label>
                                             <input type="text" id="namapekerjaan" name="namapekerjaan" class="form-control @error('namapekerjaan') is-invalid @enderror" value="{{ old('namapekerjaan', $data->namapekerjaan ?? '') }}" />
                                             @error('namapekerjaan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
 
 
 
-                                       <!-- Nama Asosiasi -->
-                                       <div class="mb-3">
-                                        <label class="form-label" for="asosiasimasjaki_id">
-                                            <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Status Penyedia
-                                        </label>
+                                        <!-- Nama Asosiasi -->
+                                        <div class="mb-3">
+                                            <label class="form-label" for="asosiasimasjaki_id">
+                                                <i class="bi bi-person-check" style="margin-right: 10px; color: navy;"></i> Status Penyedia
+                                            </label>
                                         <select id="asosiasimasjaki_id" name="asosiasimasjaki_id" class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
                                             <option value="">Pilih Status Penyedia</option>
                                             @foreach($datapenyedia as $penyedia)
                                                 <option value="{{ $penyedia->id }}" {{ old('penyediastatustertibjakon_id', $data->penyediastatustertibjakon_id) == $penyedia->id ? 'selected' : '' }}>
                                                     {{ $penyedia->penyedia }}
                                                 </option>
-                                            @endforeach
-                                        </select>
-                                        @error('asosiasimasjaki_id')
+                                                @endforeach
+                                            </select>
+                                            @error('asosiasimasjaki_id')
                                             <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
+                                            @enderror
+                                        </div>
 
+
+                                    </div>
+                                    <div class="col-md-6">
                                         <!-- Tahun Pelaksanaan -->
                                         <div class="mb-3">
                                             <label class="form-label" for="tahunpelaksanaan">
