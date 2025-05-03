@@ -461,47 +461,39 @@
 
                                                 {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
                                                 <div style="overflow-x: auto; font-size: 14px;">
-                                                    <table class="table table-bordered table-sm" style="width: 100%;">
+                                                    <table class="table table-sm" style="width: 100%; border-collapse: collapse;">
                                                         <thead>
                                                             <tr>
-                                                                <th rowspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">No</th>
-                                                                <th rowspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Nama Paket Pekerjaan</th>
-
-                                                                <th colspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Jenis Usaha</th>
-                                                                <th colspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Sifat Usaha</th>
-                                                                <th colspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Subklasifikasi</th>
-                                                                <th colspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Layanan Usaha</th>
+                                                                <th rowspan="2" style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">No</th>
+                                                                <th rowspan="2" style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Nama Paket Pekerjaan</th>
+                                                                <th colspan="2" style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Jenis Usaha</th>
+                                                                <th colspan="2" style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Sifat Usaha</th>
+                                                                <th colspan="2" style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Subklasifikasi</th>
+                                                                <th colspan="2" style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Layanan Usaha</th>
                                                             </tr>
                                                             <tr>
-                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Jenis Usaha yang Dipersyaratkan</th>
-                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
-
-                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Sifat Usaha yang Dipersyaratkan</th>
-                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
-
-                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Subklasifikasi yang Dipersyaratkan</th>
-                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
-
-                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Layanan Usaha yang Dipersyaratkan</th>
-                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
+                                                                <th style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Jenis Usaha yang Dipersyaratkan</th>
+                                                                <th style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
+                                                                <th style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Sifat Usaha yang Dipersyaratkan</th>
+                                                                <th style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
+                                                                <th style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Subklasifikasi yang Dipersyaratkan</th>
+                                                                <th style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
+                                                                <th style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Layanan Usaha yang Dipersyaratkan</th>
+                                                                <th style="border: 1px solid #dee2e6; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
-                                                                <td>1</td>
-                                                                <td>Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi</td>
-
-                                                                <td>Jasa Pelaksana Konstruksi</td>
-                                                                <td>Sesuai</td>
-
-                                                                <td>Umum</td>
-                                                                <td>Sesuai</td>
-
-                                                                <td>Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)</td>
-                                                                <td>Sesuai</td>
-
-                                                                <td>Pekerjaan Konstruksi</td>
-                                                                <td>Sesuai</td>
+                                                                <td style="border: 1px solid #dee2e6;">1</td>
+                                                                <td style="border: 1px solid #dee2e6;">Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi</td>
+                                                                <td style="border: 1px solid #dee2e6;">Jasa Pelaksana Konstruksi</td>
+                                                                <td style="border: 1px solid #dee2e6;">Sesuai</td>
+                                                                <td style="border: 1px solid #dee2e6;">Umum</td>
+                                                                <td style="border: 1px solid #dee2e6;">Sesuai</td>
+                                                                <td style="border: 1px solid #dee2e6;">Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)</td>
+                                                                <td style="border: 1px solid #dee2e6;">Sesuai</td>
+                                                                <td style="border: 1px solid #dee2e6;">Pekerjaan Konstruksi</td>
+                                                                <td style="border: 1px solid #dee2e6;">Sesuai</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
