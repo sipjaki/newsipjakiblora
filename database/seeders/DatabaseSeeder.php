@@ -59264,11 +59264,10 @@ for ($i = 1; $i <= 1221; $i++) {
 
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
   // Definisikan array untuk pilihan acak
-  $jenisUsaha = ['Konstruksi', 'Pertanian', 'Teknologi', 'Transportasi', 'Perdagangan'];
-$kesesuaian = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
-$sifatUsaha = ['Aktif', 'Non-Aktif'];
-$layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
-$statusPerizinan = ['Terdaftar', 'Belum Terdaftar', 'Kadaluarsa'];
+  $jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi',];
+$kesesuaian = ['Sesuai'];
+$sifatUsaha = ['Umum', 'Spesialis'];
+$layananUsaha = ['Tidak Sesuai'];
 $jumlahData = 84;
 
 for ($i = 1; $i <= $jumlahData; $i++) {
@@ -59288,8 +59287,8 @@ for ($i = 1; $i <= $jumlahData; $i++) {
         'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)],
         'subklasifikasi' => 'Subklasifikasi ' . rand(1, 100),
         'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)],
-        'layananusaha' => $layananUsaha[array_rand($layananUsaha)],
-        'kesesuaianlayananusaha' => $kesesuaian[array_rand($kesesuaian)],
+        'layananusaha' => $layananUsaha[array_rand($jenisUsaha)],
+        'kesesuaianlayananusaha' => $kesesuaian[array_rand($layananUsaha)],
     ]);
 }
 
