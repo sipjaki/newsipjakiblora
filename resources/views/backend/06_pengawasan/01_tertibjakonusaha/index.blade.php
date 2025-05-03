@@ -459,10 +459,42 @@
    @include('backend.00_administrator.00_baganterpisah.02_footer')
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-   <script>
+<script>
     function exportTableToExcel(tableID, filename = '') {
-        var table = document.getElementById(tableID);
-        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
-        return XLSX.writeFile(wb, filename + '.xlsx');
+        const table = document.getElementById(tableID);
+        const worksheet = XLSX.utils.table_to_sheet(table);
+
+        // Tambahkan border ke setiap cell
+        const range = XLSX.utils.decode_range(worksheet['!ref']);
+        for(let R = range.s.r; R <= range.e.r; ++R) {
+            for(let C = range.s.c; C <= range.e.c; ++C) {
+                const cell_address = {c: C, r: R};
+                const cell_ref = XLSX.utils.encode_cell(cell_address);
+                if(!worksheet[cell_ref]) continue;
+                if(!worksheet[cell_ref].s) worksheet[cell_ref].s = {};
+
+                // Tambah style border
+                worksheet[cell_ref].s.border = {
+                    top:    {style: "thin", color: {auto: 1}},
+                    right:  {style: "thin", color: {auto: 1}},
+                    bottom: {style: "thin", color: {auto: 1}},
+                    left:   {style: "thin", color: {auto: 1}}
+                };
+
+                // Tambah alignment
+                worksheet[cell_ref].s.alignment = {
+                    vertical: "center",
+                    horizontal: "center",
+                    wrapText: true
+                };
+            }
+        }
+
+        // Workbook dan export
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
+
+        // Gunakan xlsx-style untuk menyimpan dengan style
+        XLSX.writeFile(workbook, filename + ".xlsx", {bookType: "xlsx", type: "binary"});
     }
-    </script>
+</script>
