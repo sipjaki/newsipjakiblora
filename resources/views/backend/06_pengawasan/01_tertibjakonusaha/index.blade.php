@@ -166,7 +166,7 @@
                  <!-- /.card-header -->
                  <div class="card-body p-0">
                     <div class="table-responsive" style="width: 100%; overflow-x: auto;">
-                        <table id="tabelBujkkonsultan" class="table table-bordered table-striped" style="min-width: 1800px; white-space: nowrap;">
+                        <table id="tabelBujkkonsultan" class="zebra-table table-bordered table-striped" style="min-width: 1800px; white-space: nowrap;">
                           <thead>
                             <tr>
                               <th rowspan="2" style="text-align: center;">No</th>
