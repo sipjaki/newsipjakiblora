@@ -432,22 +432,10 @@
                                                 <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                 <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                 <span>:</span>
-                                                <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">
-                                                    Sertifikat : <i class="bi bi-file-earmark-pdf-fill text-danger"></i> {{ $data->namakegiatan }}
-                                                </h5>
+                                                <p>Surat Dukung Kesesuaian Kegiatan Konstruksi</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body text-center">
-                                                <div style="margin-top: 10px;">
-                                                    @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
-                                                        <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                    @elseif($item->materipelatihan)
-                                                        <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                    @else
-                                                        <p>Data belum diupdate</p>
-                                                    @endif
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
