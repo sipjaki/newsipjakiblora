@@ -21,19 +21,19 @@ return new class extends Migration
             $table->foreignId('surattertibjakonusaha4_id')->nullable()->index();
 // -------------------------------------------------------------------------
             $table->string('nib', 50)->nullable()->index(); // Set panjang karakter yang lebih sesuai
-            $table->string('namapekerjaan', 255)->nullable()->index();
-            $table->string('tahunpelaksanaan', 255)->nullable()->index();
-            $table->string('namabadanusaha', 255)->nullable()->index();
-            $table->string('pjbu', 100)->nullable()->index();
-            $table->string('sesuai_jenis', 100)->nullable()->index();
-            $table->string('sesuai_sifat', 100)->nullable()->index();
-            $table->string('sesuai_klasifikasi', 100)->nullable()->index();
-            $table->string('sesuai_layanan', 100)->nullable()->index();
-            $table->string('segmentasipasar_bentuk', 100)->nullable()->index();
-            $table->string('segmentasipasar_kualifikasi', 100)->nullable()->index();
-            $table->string('syarat_SBU', 100)->nullable()->index();
-            $table->string('syarat_NIB', 100)->nullable()->index();
-            $table->string('pelaksanaanpengembangan', 255)->nullable()->index();
+            $table->string('namapekerjaan', 255)->nullable();
+            $table->string('tahunpelaksanaan', 255)->nullable();
+            $table->string('namabadanusaha', 255)->nullable();
+            $table->string('pjbu', 100)->nullable();
+            $table->string('sesuai_jenis', 100)->nullable();
+            $table->string('sesuai_sifat', 100)->nullable();
+            $table->string('sesuai_klasifikasi', 100)->nullable();
+            $table->string('sesuai_layanan', 100)->nullable();
+            $table->string('segmentasipasar_bentuk', 100)->nullable();
+            $table->string('segmentasipasar_kualifikasi', 100)->nullable();
+            $table->string('syarat_SBU', 100)->nullable();
+            $table->string('syarat_NIB', 100)->nullable();
+            $table->string('pelaksanaanpengembangan', 255)->nullable();
 
             $table->softDeletes();
             $table->timestamps();
