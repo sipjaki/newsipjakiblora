@@ -460,7 +460,7 @@
                                                 </table>
 
                                                 {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
-                                                <table class="table table-bordered table-sm">
+                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <thead class="table-secondary">
                                                         <tr>
                                                             <th>No</th>
