@@ -29,6 +29,7 @@ use App\Http\Controllers\PesertapelatihanController;
 use App\Http\Controllers\AndroidVersionController;
 use App\Http\Controllers\DownloadExcelController;
 use App\Http\Controllers\VerifikasiController;
+use App\Models\tertibjasakonstruksi;
 // MAS JAKI
 
 // atas
@@ -884,7 +885,9 @@ Route::put('/verifikasipesertapelatihan/{id}', [VerifikasiController::class, 've
 Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikasikehadiran'])->name('verifikasikehadiran');
 
 
-
+// ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
+// ___________________________________________________________________________________________________________________________________
+Route::get('/betertibjakonusaha', [tertibjasakonstruksi::class, 'betertibjakonusaha'])->middleware('auth');
 
 
 

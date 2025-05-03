@@ -481,7 +481,7 @@
                 <ul class="nav nav-treeview">
                   <!-- Tertib Jasa Konstruksi -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/betertibjakonusaha" class="nav-link">
                       <i class="nav-icon bi bi-check-circle text-warning"></i> <!-- Ikon untuk Tertib Jasa Konstruksi -->
                       <p style="color: white">Tertib Jasa Konstruksi</p>
                     </a>

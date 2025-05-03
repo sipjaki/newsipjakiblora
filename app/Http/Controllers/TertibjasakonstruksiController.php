@@ -428,5 +428,40 @@ class TertibjasakonstruksiController extends Controller
     }
 
 
+    // MENU BACKEND TERTIB JAKON USAHA JASA KONSTRUKSI
+
+    public function betertibjakonusaha(Request $request)
+    {
+        $perPage = $request->input('perPage', 10);
+        $search = $request->input('search');
+
+        $query = tertibjasakonstruksi::query();
+
+        $query->where('nib', 'LIKE', "%{$search}%")
+                      ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+                    //   ->orWhere('pjbu', 'LIKE', "%{$search}%")
+                      ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
+                          $q->where('penyedia', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
+                      });
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('frontend.05_pengawasan.03_tertibjakon.01_tertibusaha.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    $datasub = penyediastatustertibjakon::paginate(15);
+    return view('frontend.05_pengawasan.03_tertibjakon.01_tertibusaha.list', [
+        'title' => 'Tertib Usaha Jasa Konstruksi',
+        'data' => $data,
+        'datasub' => $datasub,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+
 
 }
