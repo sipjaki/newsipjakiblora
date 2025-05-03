@@ -424,92 +424,98 @@
                                         </div>
 
                                         <div class="modal-body">
-                                            <h5>Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
-                                            <table class="table table-bordered">
-                                                <tr>
-                                                    <td><strong>Nama Badan Usaha</strong></td>
-                                                    <td>CV Andes Putra Perkasa</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Status Perizinan Berusaha</strong></td>
-                                                    <td>Sudah Terverifikasi</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>No NIB</strong></td>
-                                                    <td>-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Waktu Pengawasan</strong></td>
-                                                    <td>23 Juni 2023 – 8 September 2023</td>
-                                                </tr>
-                                            </table>
+                                            <div class="row">
+                                                <!-- KIRI: Informasi utama dan tabel kegiatan -->
+                                                <div class="col-9">
+                                                    <h5>Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <td><strong>Nama Badan Usaha</strong></td>
+                                                            <td>CV Andes Putra Perkasa</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Status Perizinan Berusaha</strong></td>
+                                                            <td>Sudah Terverifikasi</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>No NIB</strong></td>
+                                                            <td>-</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Waktu Pengawasan</strong></td>
+                                                            <td>23 Juni 2023 – 8 September 2023</td>
+                                                        </tr>
+                                                    </table>
 
-                                            <h6 class="mt-4">Detail Kegiatan:</h6>
-                                            <table class="table table-bordered table-sm">
-                                                <thead class="table-secondary">
-                                                    <tr>
-                                                        <th>No</th>
-                                                        <th>Nama Paket Pekerjaan</th>
-                                                        <th>Jenis Usaha</th>
-                                                        <th>Kesesuaian</th>
-                                                        <th>Sifat Usaha</th>
-                                                        <th>Kesesuaian</th>
-                                                        <th>Subklasifikasi</th>
-                                                        <th>Kesesuaian</th>
-                                                        <th>Layanan Usaha</th>
-                                                        <th>Kesesuaian</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi</td>
-                                                        <td>Jasa Pelaksana Konstruksi</td>
-                                                        <td>Sesuai</td>
-                                                        <td>Umum</td>
-                                                        <td>Sesuai</td>
-                                                        <td>Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)</td>
-                                                        <td>Sesuai</td>
-                                                        <td>Pekerjaan Konstruksi</td>
-                                                        <td>Sesuai</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                            <!-- Tim Pemeriksa di pojok kanan -->
-                                            <div class="d-flex justify-content-end mt-5">
-                                                <div style="width: 400px;">
-                                                    <h6 class="text-center">Tim Pemeriksa</h6>
+                                                    <h6 class="mt-4">Detail Kegiatan:</h6>
                                                     <table class="table table-bordered table-sm">
-                                                        <thead class="table-light">
+                                                        <thead class="table-secondary">
                                                             <tr>
-                                                                <th style="width: 40px;">No</th>
-                                                                <th>Nama Lengkap</th>
-                                                                <th style="width: 100px;">Tanda Tangan</th>
+                                                                <th>No</th>
+                                                                <th>Nama Paket Pekerjaan</th>
+                                                                <th>Jenis Usaha</th>
+                                                                <th>Kesesuaian</th>
+                                                                <th>Sifat Usaha</th>
+                                                                <th>Kesesuaian</th>
+                                                                <th>Subklasifikasi</th>
+                                                                <th>Kesesuaian</th>
+                                                                <th>Layanan Usaha</th>
+                                                                <th>Kesesuaian</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
                                                             <tr>
                                                                 <td>1</td>
-                                                                <td>Nama Pemeriksa 1</td>
-                                                                <td style="height: 60px;"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Nama Pemeriksa 2</td>
-                                                                <td style="height: 60px;"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Nama Pemeriksa 3</td>
-                                                                <td style="height: 60px;"></td>
+                                                                <td>Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi</td>
+                                                                <td>Jasa Pelaksana Konstruksi</td>
+                                                                <td>Sesuai</td>
+                                                                <td>Umum</td>
+                                                                <td>Sesuai</td>
+                                                                <td>Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)</td>
+                                                                <td>Sesuai</td>
+                                                                <td>Pekerjaan Konstruksi</td>
+                                                                <td>Sesuai</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
-                                            </div>
 
-                                        </div>
+                                                <!-- KANAN: Tabel Tim Pemeriksa -->
+                                                <div class="col-3">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <h6 class="text-center">Tim Pemeriksa</h6>
+                                                            <table class="table table-bordered table-sm">
+                                                                <thead class="table-light">
+                                                                    <tr>
+                                                                        <th style="width: 40px;">No</th>
+                                                                        <th>Nama Lengkap</th>
+                                                                        <th style="width: 100px;">Tanda Tangan</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>Nama Pemeriksa 1</td>
+                                                                        <td style="height: 60px;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>Nama Pemeriksa 2</td>
+                                                                        <td style="height: 60px;"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>Nama Pemeriksa 3</td>
+                                                                        <td style="height: 60px;"></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end row -->
+                                        </div> <!-- end modal-body -->
                                     </div>
                                 </div>
                             </div>
