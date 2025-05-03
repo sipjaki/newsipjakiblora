@@ -203,14 +203,14 @@
                             <tr>
                               <td style="text-align: center;">{{ $loop->iteration }}</td>
                               <td>
-                                @if($item->namalengkap)
-                                  {{ $item->namalengkap }}
+                                @if($item->penyediastatustertibjakon->penyedia)
+                                  {{ $item->penyediastatustertibjakon->penyedia }}
                                 @else
                                   <button class="btn btn-sm btn-dark">Data Belum Di Update</button>
                                 @endif
                               </td>
                               <td style="text-align: center;">{{ $item->nib }}</td>
-                              <td style="text-align: center;">{{ $item->nama_pekerjaan }}</td>
+                              <td style="text-align: center;">{{ $item->namapekerjaan }}</td>
                               <td style="text-align: center;">{{ $item->badan_usaha }}</td>
 
                               <!-- PJBU Columns -->
