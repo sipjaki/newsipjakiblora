@@ -22,6 +22,7 @@ return new class extends Migration
 // -------------------------------------------------------------------------
             $table->string('nib', 50)->nullable()->index(); // Set panjang karakter yang lebih sesuai
             $table->string('namapekerjaan', 255)->nullable()->index();
+            $table->string('tahunpelaksanaan', 255)->nullable()->index();
             $table->string('namabadanusaha', 255)->nullable()->index();
             $table->string('pjbu', 100)->nullable()->index();
             $table->string('sesuai_jenis', 100)->nullable()->index();
