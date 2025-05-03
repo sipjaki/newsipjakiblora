@@ -249,7 +249,7 @@
                           <tbody>
                             @foreach ($data as $item)
                             <tr>
-                              <td style="text-align: center;">{{ $loop->iteration }}</td>
+                              <td style="text-align: left;">{{ $loop->iteration }}</td>
                               <td>
                                 @if($item->penyediastatustertibjakon->penyedia)
                                   {{ $item->penyediastatustertibjakon->penyedia }}
@@ -262,7 +262,7 @@
                                 @endif
                               </td>
 
-                              <td style="text-align: center;">
+                              <td style="text-align: left;">
                                 @if($item->nib)
                                   {{ $item->nib }}
                                 @else
@@ -274,7 +274,7 @@
                                 @endif
                               </td>
 
-                              <td style="text-align: center;">
+                              <td style="text-align: left;">
                                 @if($item->namapekerjaan)
                                   {{ $item->namapekerjaan }}
                                 @else
@@ -286,7 +286,7 @@
                                 @endif
                               </td>
 
-                              <td style="text-align: center;">
+                              <td style="text-align: left;">
                                 @if($item->namabadanusaha)
                                   {{ $item->namabadanusaha }}
                                 @else
@@ -298,7 +298,7 @@
                                 @endif
                               </td>
 
-                              <td style="text-align: center;">
+                              <td style="text-align: left;">
                                 @if($item->pjbu)
                                   {{ $item->pjbu }}
                                 @else
