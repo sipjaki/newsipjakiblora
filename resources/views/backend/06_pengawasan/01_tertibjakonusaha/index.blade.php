@@ -104,18 +104,18 @@
                  <!-- /.card-header -->
                  <div class="card-header">
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
-
-                    <label for="customLength" style="margin-bottom: 10px; display: block;">
-                        Show Data
-                        <select id="customLength" style="margin: 0 5px;">
-                            <option value="10" {{ $perPage == 10 ? 'selected' : '' }}>10</option>
-                            <option value="25" {{ $perPage == 25 ? 'selected' : '' }}>25</option>
-                            <option value="50" {{ $perPage == 50 ? 'selected' : '' }}>50</option>
-                            <option value="100" {{ $perPage == 100 ? 'selected' : '' }}>100</option>
-                            <option value="200" {{ $perPage == 200 ? 'selected' : '' }}>200</option>
-                            <option value="500" {{ $perPage == 500 ? 'selected' : '' }}>500</option>
+                    <div>
+                        <label for="entries" style="margin-right: 5px; font-weight: bold;">Show:</label>
+                        <select id="entries" onchange="updateEntries()" style="padding: 5px; border: 1px solid black; background-color: white;">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                            <option value="150">150</option>
+                            <option value="200">200</option>
                         </select>
-                    </label>
+                    </div>
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
