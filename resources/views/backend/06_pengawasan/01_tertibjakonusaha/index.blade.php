@@ -105,6 +105,18 @@
                  <div class="card-header">
                     @include('backend.00_administrator.00_baganterpisah.10_judulhalaman')
 
+                    <label for="customLength" style="margin-bottom: 10px; display: block;">
+                        Show Data
+                        <select id="customLength" style="margin: 0 5px;">
+                          <option value="10">10</option>
+                          <option value="25">25</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                          <option value="200">200</option>
+                          <option value="500">500</option>
+                        </select>
+                      </label>
+
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
                         <div style="position: relative; display: inline-block; margin-right:10px;">
                             <input type="search" id="searchInput" placeholder="Cari Badan Usaha ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
