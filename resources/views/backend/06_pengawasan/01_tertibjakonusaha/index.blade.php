@@ -169,15 +169,15 @@
                         <table id="tabelBujkkonsultan" class="zebra-table table-bordered table-striped" style="min-width: 1800px; white-space: nowrap;">
                           <thead>
                             <tr>
-                              <th rowspan="2" style="text-align: center;">No</th>
+                              <th rowspan="2" style="text-align: center; width:400px;">No</th>
                               <th rowspan="2" style="text-align: center; width:400px;">Penyedia</th>
                               <th rowspan="2" style="text-align: center; width:200px;">NIB</th>
                               <th rowspan="2" style="text-align: center; width:500px;">Nama Pekerjaan</th>
                               <th rowspan="2" style="text-align: center; width:400px;">Badan Usaha</th>
 
-                              <th colspan="4" style="text-align: center; width:300px;">PJBU</th>
-                              <th colspan="2" style="text-align: center; width:400px;">Segmentasi Pasar</th>
-                              <th colspan="2" style="text-align: center; width:400px;">Pengembangan Usaha</th>
+                              <th colspan="4" style="text-align: center; width:1300px;">PJBU</th>
+                              <th colspan="2" style="text-align: center; width:1300px;">Segmentasi Pasar</th>
+                              <th colspan="2" style="text-align: center; width:1300px;">Pengembangan Usaha</th>
 
                               <th rowspan="2" style="text-align: center; width:400px;">Pelaksanaan Pengembangan Usaha</th>
                               <th rowspan="2" style="text-align: center;">Aksi</th>
