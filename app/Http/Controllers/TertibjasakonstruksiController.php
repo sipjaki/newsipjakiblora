@@ -477,26 +477,26 @@ class TertibjasakonstruksiController extends Controller
 
 public function betertibjakonusahadelete($id)
 {
-    $entry = tertibjasakonstruksi::where('id', $id)->first();
+// Cari item berdasarkan judul
+$entry = tertibjasakonstruksi::where('id', $id)->first();
 
-    if ($entry) {
-        // Kalau ada file yang mau dihapus, bisa aktifkan bagian ini
-        // if (Storage::disk('public')->exists($entry->header)) {
-        //     Storage::disk('public')->delete($entry->header);
-        // }
+if ($entry) {
+// Jika ada file header yang terdaftar, hapus dari storage
+// if (Storage::disk('public')->exists($entry->header)) {
+    //     Storage::disk('public')->delete($entry->header);
+// }
 
-        // $parentId = $entry->bujkkonsultan_id;
-        $entry->delete();
+// Hapus entri dari database
+$entry->delete();
 
-        // Pakai session()->flash supaya konsisten dengan create
-        session()->flash('delete', 'Data Berhasil Dihapus!');
-        return redirect('/betertibjakonusaha');
-    }
+// Redirect atau memberi respons sesuai kebutuhan
+return redirect('/betertibjakonusaha')->with('delete', 'Data Berhasil Di Hapus !');
 
-    // Kalau tidak ketemu, flash error
-    session()->flash('error', 'Item tidak ditemukan');
-    return redirect('/betertibjakonusaha')->back();
 }
+
+return redirect()->back()->with('error', 'Item not found');
+}
+
 
 
 

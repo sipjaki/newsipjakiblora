@@ -444,7 +444,7 @@
                  function setDeleteUrl(button) {
                      var namalengkap = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = namalengkap;
-                     var deleteUrl = "/bebujkkonsultan/delete/" + encodeURIComponent(namalengkap);
+                     var deleteUrl = "/betertibjakonusaha/delete/" + encodeURIComponent(namalengkap);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
