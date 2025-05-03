@@ -219,6 +219,22 @@
                                         <i class="bi bi-gear-fill"></i> Pelaksanaan Pengembangan Usaha
                                     </th>
 
+                                    <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
+                                        <i class="bi bi-gear-fill"></i> Surat Dukung Kesesuaian Kegiatan Konstruksi
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
+                                        <i class="bi bi-gear-fill"></i> Surat Dukung Kesesuaian Jasa Konstruksi & Segmentasi Pasar Jasa Konstruksi
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
+                                        <i class="bi bi-gear-fill"></i> Surat Dukung Pemenuhan Syarat Usaha
+                                    </th>
+
+                                    <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
+                                        <i class="bi bi-gear-fill"></i> Surat Dukung Pelaksanaan Pengembangan Usaha
+                                    </th>
+
                                     <th rowspan="2" style="text-align: center; width:200px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
