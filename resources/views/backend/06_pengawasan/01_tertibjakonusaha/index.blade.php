@@ -423,7 +423,7 @@
                                     <i class="bi bi-eye"></i> Lihat
                                 </button>
                                 <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;"><i class="bi bi-pencil-square"></i></a>
-
+                                <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">Download</button>
                                 <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem;">
@@ -436,7 +436,6 @@
                                                 </a>
                                                 <span class="mx-2">:</span>
                                                 <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
-                                                <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">Download A4 Landscape</button>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
