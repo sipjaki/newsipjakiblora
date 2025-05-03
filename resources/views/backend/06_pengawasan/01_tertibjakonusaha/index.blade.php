@@ -413,6 +413,23 @@
                                 </button>
                             </td>
 
+
+                            <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
+                                <a href="{{ url('/betertibjakonusahasurat1/update/' . $item->id) }}" style="text-decoration: none;">
+                                    <button
+                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                        onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+                                        style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                                               border-radius: 15px; font-size: 14px; cursor: pointer;
+                                               display: flex; align-items: center; justify-content: center;
+                                               transition: background-color 0.3s, color 0.3s;">
+                                                    <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+                                    </button>
+                                </a>
+                                <a href="/404" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+
+                            </td>
+
                               <td style="text-align: center;">
                                 <!-- Tombol Aksi -->
                                 {{-- <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a> --}}
