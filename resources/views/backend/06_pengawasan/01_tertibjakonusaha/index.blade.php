@@ -247,7 +247,7 @@
                             </thead>
 
                           <tbody>
-                            @foreach ($data as $item)
+                            @foreach ($item as $item)
                             <tr>
                               <td style="text-align: left;">{{ $loop->iteration }}</td>
                               <td>
@@ -312,64 +312,64 @@
 
                               <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->sesuai_jenis == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->sesuai_jenis }}
+                                    background-color: {{ $item->sesuai_jenis == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->sesuai_jenis }}
                                 </button>
                             </td>
 
                             <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->sesuai_sifat }}
+                                    background-color: {{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->sesuai_sifat }}
                                 </button>
                             </td>
 
                             <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->sesuai_klasifikasi }}
+                                    background-color: {{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->sesuai_klasifikasi }}
                                 </button>
                             </td>
 
                             <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->sesuai_layanan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->sesuai_layanan }}
+                                    background-color: {{ $item->sesuai_layanan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->sesuai_layanan }}
                                 </button>
                             </td>
 
                             <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->segmentasipasar_bentuk }}
+                                    background-color: {{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->segmentasipasar_bentuk }}
                                 </button>
                             </td>
 
                             <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->segmentasipasar_kualifikasi }}
+                                    background-color: {{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->segmentasipasar_kualifikasi }}
                                 </button>
                             </td>
 
                             <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->syarat_SBU }}
+                                    background-color: {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->syarat_SBU }}
                                 </button>
                             </td>
 
                             <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->syarat_NIB }}
+                                    background-color: {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->syarat_NIB }}
                                 </button>
                             </td>
 
                             <td>
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                                    background-color: {{ $data->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                                    {{ $data->pelaksanaanpengembangan }}
+                                    background-color: {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
+                                    {{ $item->pelaksanaanpengembangan }}
                                 </button>
                             </td>
 
