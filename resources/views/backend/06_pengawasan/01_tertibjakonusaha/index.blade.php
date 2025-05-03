@@ -501,13 +501,13 @@
                                                             <td style="border: 1px solid #000; text-align: center;">1</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->namapaketpekerjaan}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->jenisusaha}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->kesesuaian}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->sifatusaha}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->kesesuaiansbu}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaian}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->sifatusaha}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaiansbu}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
