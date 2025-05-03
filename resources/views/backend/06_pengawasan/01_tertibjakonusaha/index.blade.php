@@ -518,11 +518,6 @@
                                                     <div class="card">
                                                         <div class="card-body">
                                                             <div class="row">
-                                                                <!-- Content di sebelah kiri (col-9) -->
-                                                                <div class="col-9">
-                                                                    <h6>Isi Konten Lainnya</h6>
-                                                                    <!-- Konten lainnya bisa disini -->
-                                                                </div>
 
                                                                 <!-- Tabel Tim Pemeriksa di kolom kanan (col-3) -->
                                                                 <div class="col-3">
