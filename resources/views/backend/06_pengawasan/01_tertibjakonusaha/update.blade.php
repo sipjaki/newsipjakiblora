@@ -75,7 +75,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('betertibjakonusahaupdate', $data->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonusahaupdatecreate', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('POST') <!-- Changed from POST to PUT for updating -->
 
