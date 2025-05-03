@@ -14,21 +14,21 @@ return new class extends Migration
         Schema::create('surattertibjakonusaha1s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tertibjasakonstruksi_id')->nullable()->index();
-            $table->string('namabadanusaha')->nullable()->index();
-            $table->string('statusperizinan')->nullable()->index();
-            $table->string('nib')->nullable()->index();
-            $table->string('waktupengawasan')->nullable()->index();
-            $table->string('waktupengawasanselesai')->nullable()->index();
+            $table->string('namabadanusaha')->nullable();
+            $table->string('statusperizinan')->nullable();
+            $table->string('nib')->nullable();
+            $table->string('waktupengawasan')->nullable();
+            $table->string('waktupengawasanselesai')->nullable();
 // -----------------------------------------------
-            $table->string('namapaketpekerjaan')->nullable()->index();
-            $table->string('jenisusaha')->nullable()->index();
-            $table->string('kesesuaian')->nullable()->index();
-            $table->string('sifatusaha')->nullable()->index();
-            $table->string('kesesuaiansbu')->nullable()->index();
-            $table->string('subklasifikasi')->nullable()->index();
-            $table->string('kesesuaianklasifikasi')->nullable()->index();
-            $table->string('layananusaha')->nullable()->index();
-            $table->string('kesesuaianlayananusaha')->nullable()->index();
+            $table->string('namapaketpekerjaan')->nullable();
+            $table->string('jenisusaha')->nullable();
+            $table->string('kesesuaian')->nullable();
+            $table->string('sifatusaha')->nullable();
+            $table->string('kesesuaiansbu')->nullable();
+            $table->string('subklasifikasi')->nullable();
+            $table->string('kesesuaianklasifikasi')->nullable();
+            $table->string('layananusaha')->nullable();
+            $table->string('kesesuaianlayananusaha')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

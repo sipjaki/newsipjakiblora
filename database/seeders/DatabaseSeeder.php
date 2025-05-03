@@ -59265,28 +59265,34 @@ for ($i = 1; $i <= 1221; $i++) {
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
   // Definisikan array untuk pilihan acak
   $jenisUsaha = ['Konstruksi', 'Pertanian', 'Teknologi', 'Transportasi', 'Perdagangan'];
-  $kesesuaian = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
-  $sifatUsaha = ['Aktif', 'Non-Aktif'];
-  $layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
+$kesesuaian = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
+$sifatUsaha = ['Aktif', 'Non-Aktif'];
+$layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
+$statusPerizinan = ['Terdaftar', 'Belum Terdaftar', 'Kadaluarsa'];
+$jumlahData = 84;
 
-  // Jumlah data yang ingin dibuat
-  $jumlahData = 100; // Jumlah data = 100
+for ($i = 1; $i <= $jumlahData; $i++) {
+    surattertibjakonusaha1::create([
+        'tertibjasakonstruksi_id' => $i,
 
-  // Membuat 100 data dengan informasi acak
-  for ($i = 1; $i <= $jumlahData; $i++) {
-      surattertibjakonusaha1::create([
-          'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
-          'namapaketpekerjaan' => 'Pekerjaan ' . rand(1, 100), // Nama pekerjaan acak
-          'jenisusaha' => $jenisUsaha[array_rand($jenisUsaha)],  // Pilih acak jenis usaha
-          'kesesuaian' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian
-          'sifatusaha' => $sifatUsaha[array_rand($sifatUsaha)],  // Pilih acak status usaha
-          'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian SBU
-          'subklasifikasi' => 'Subklasifikasi ' . rand(1, 100), // Subklasifikasi acak
-          'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian klasifikasi
-          'layananusaha' => $layananUsaha[array_rand($layananUsaha)],  // Pilih acak layanan usaha
-          'kesesuaianlayananusaha' => $kesesuaian[array_rand($kesesuaian)],  // Pilih acak kesesuaian layanan usaha
-      ]);
-  }
+        'namabadanusaha' => 'PT Contoh Usaha ' . $i,
+        'statusperizinan' => $statusPerizinan[array_rand($statusPerizinan)],
+        'nib' => 'NIB' . str_pad($i, 6, '0', STR_PAD_LEFT),
+        'waktupengawasan' => now()->subDays(rand(1, 365))->format('Y-m-d'),
+        'waktupengawasanselesai' => now()->subDays(rand(0, 365))->format('Y-m-d'),
+
+        'namapaketpekerjaan' => 'Pekerjaan ' . rand(1, 100),
+        'jenisusaha' => $jenisUsaha[array_rand($jenisUsaha)],
+        'kesesuaian' => $kesesuaian[array_rand($kesesuaian)],
+        'sifatusaha' => $sifatUsaha[array_rand($sifatUsaha)],
+        'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)],
+        'subklasifikasi' => 'Subklasifikasi ' . rand(1, 100),
+        'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)],
+        'layananusaha' => $layananUsaha[array_rand($layananUsaha)],
+        'kesesuaianlayananusaha' => $kesesuaian[array_rand($kesesuaian)],
+    ]);
+}
+
 
 
   // DATABASE TERTIB JASA KONSTRUKSI USAHA
