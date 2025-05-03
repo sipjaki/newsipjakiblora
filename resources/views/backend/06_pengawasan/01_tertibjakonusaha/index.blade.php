@@ -431,7 +431,7 @@
                                                 <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                 <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                 <span>:</span>
-                                                <p style="margin-left: 10px; font-size: 0.9rem;">Surat Dukung Kesesuaian Kegiatan Konstruksi</p>
+                                                <p style="margin-left: 10px; font-size: 0.9rem;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
