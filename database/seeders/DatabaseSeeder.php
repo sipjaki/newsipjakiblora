@@ -59268,6 +59268,7 @@ for ($i = 1; $i <= 1221; $i++) {
 $kesesuaian = ['Sesuai'];
 $sifatUsaha = ['Umum', 'Spesialis'];
 $layananUsaha = ['Tidak Sesuai'];
+$statusPerizinan = ['Terdaftar', 'Belum Terdaftar', 'Kadaluarsa'];
 $jumlahData = 84;
 
 for ($i = 1; $i <= $jumlahData; $i++) {
@@ -59287,8 +59288,8 @@ for ($i = 1; $i <= $jumlahData; $i++) {
         'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)],
         'subklasifikasi' => 'Subklasifikasi ' . rand(1, 100),
         'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)],
-        'layananusaha' => $layananUsaha[array_rand($jenisUsaha)],
-        'kesesuaianlayananusaha' => $kesesuaian[array_rand($layananUsaha)],
+        'layananusaha' => $jenisUsaha[array_rand($jenisUsaha)],
+        'kesesuaianlayananusaha' => $layananUsaha[array_rand($layananUsaha)],
     ]);
 }
 
