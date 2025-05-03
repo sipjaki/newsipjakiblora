@@ -440,7 +440,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <h5 style="font-size: 1rem;">Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
-                                                <table class="table table-bordered table-sm">
+                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td><strong>Nama Badan Usaha</strong></td>
                                                         <td>{{ $item->surattertibjakonusaha1->namabadanusaha }}</td>
@@ -463,14 +463,24 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <thead class="table-secondary">
                                                         <tr>
-                                                            <th>No</th>
-                                                            <th>Nama Paket Pekerjaan</th>
+                                                            <th rowspan="2">No</th>
+                                                            <th rowspan="2">Nama Paket Pekerjaan</th>
+
+                                                            <th colspan="2">Jenis Usaha</th>
+                                                            <th colspan="2">Sifat Usaha</th>
+                                                            <th colspan="2">Subklasifikasi</th>
+                                                            <th colspan="2">Layanan Usaha</th>
+                                                        </tr>
+                                                        <tr>
                                                             <th>Jenis Usaha yang Dipersyaratkan</th>
                                                             <th>Kesesuaian dengan SBU</th>
+
                                                             <th>Sifat Usaha yang Dipersyaratkan</th>
                                                             <th>Kesesuaian dengan SBU</th>
+
                                                             <th>Subklasifikasi yang Dipersyaratkan</th>
                                                             <th>Kesesuaian dengan SBU</th>
+
                                                             <th>Layanan Usaha yang Dipersyaratkan</th>
                                                             <th>Kesesuaian dengan SBU</th>
                                                         </tr>
@@ -479,12 +489,16 @@
                                                         <tr>
                                                             <td>1</td>
                                                             <td>Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi</td>
+
                                                             <td>Jasa Pelaksana Konstruksi</td>
                                                             <td>Sesuai</td>
+
                                                             <td>Umum</td>
                                                             <td>Sesuai</td>
+
                                                             <td>Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)</td>
                                                             <td>Sesuai</td>
+
                                                             <td>Pekerjaan Konstruksi</td>
                                                             <td>Sesuai</td>
                                                         </tr>
