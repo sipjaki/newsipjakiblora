@@ -294,7 +294,7 @@
                                 @endif
                               </td>
 
-                              <td style="text-align: left;">
+                              <td style="text-align: center;">
                                 @if($item->tahunpelaksanaan)
                                   {{ $item->tahunpelaksanaan }}
                                 @else
@@ -330,63 +330,63 @@
                                 @endif
                               </td>
 
-                              <td>
+                              <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->sesuai_jenis == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->sesuai_jenis }}
                                 </button>
                             </td>
 
-                            <td>
+                            <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->sesuai_sifat }}
                                 </button>
                             </td>
 
-                            <td>
+                            <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->sesuai_klasifikasi }}
                                 </button>
                             </td>
 
-                            <td>
+                            <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->sesuai_layanan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->sesuai_layanan }}
                                 </button>
                             </td>
 
-                            <td>
+                            <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->segmentasipasar_bentuk }}
                                 </button>
                             </td>
 
-                            <td>
+                            <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->segmentasipasar_kualifikasi }}
                                 </button>
                             </td>
 
-                            <td>
+                            <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->syarat_SBU }}
                                 </button>
                             </td>
 
-                            <td>
+                            <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->syarat_NIB }}
                                 </button>
                             </td>
 
-                            <td>
+                            <td style="text-align: center">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
                                     background-color: {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};">
                                     {{ $item->pelaksanaanpengembangan }}
