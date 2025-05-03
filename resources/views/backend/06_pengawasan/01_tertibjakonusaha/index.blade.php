@@ -519,7 +519,7 @@
                                                         <div class="card-body">
                                                             <div class="row justify-content-end">
                                                                 <!-- Tabel Tim Pemeriksa di kolom kanan (col-3) tanpa garis-garis -->
-                                                                <div class="col-3">
+                                                                <div class="col-6">
                                                                     <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
                                                                     <table class="table table-sm" style="font-size: 12px; color: #000;">
                                                                         <thead class="table-secondary">
