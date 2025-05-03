@@ -16,6 +16,13 @@
      white-space: normal;
      overflow-wrap: break-word;
  }
+
+ .btn-hover-white:hover {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid black;
+}
+
 </style>
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
@@ -243,16 +250,30 @@
                             @foreach ($data as $item)
                             <tr>
                               <td style="text-align: center;">{{ $loop->iteration }}</td>
+                              <td style="text-align: left;">
+                                {{ $item->asosiasimasjaki->namaasosiasi ?? 'Data Belum Di Update' }}
+                              </td>
+
                               <td>
                                 @if($item->penyediastatustertibjakon->penyedia)
                                   {{ $item->penyediastatustertibjakon->penyedia }}
                                 @else
-                                  <button class="btn btn-sm btn-dark">Data Belum Di Update</button>
+                                  <button class="btn btn-sm btn-dark btn-hover-white">Data Belum Di Update</button>
                                 @endif
                               </td>
-                              <td style="text-align: center;">{{ $item->nib }}</td>
-                              <td style="text-align: center;">{{ $item->namapekerjaan }}</td>
-                              <td style="text-align: center;">{{ $item->namabadanusaha }}</td>
+
+                              <td style="text-align: center;">
+                                {{ $item->nib ?? 'Data Belum Di Update' }}
+                              </td>
+                              <td style="text-align: center;">
+                                {{ $item->namapekerjaan ?? 'Data Belum Di Update' }}
+                              </td>
+                              <td style="text-align: center;">
+                                {{ $item->namabadanusaha ?? 'Data Belum Di Update' }}
+                              </td>
+                              <td style="text-align: center;">
+                                {{ $item->pjbu ?? 'Data Belum Di Update' }}
+                              </td>
 
                               <!-- PJBU Columns -->
                               <td style="text-align: center;">{{ $item->pjbu_jenis }}</td>
