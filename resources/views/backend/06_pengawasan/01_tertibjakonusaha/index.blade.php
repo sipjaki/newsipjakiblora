@@ -176,6 +176,7 @@
           <th rowspan="2" style="width: 400px; text-align:center;"><i class="bi bi-geo-alt-fill"></i><br>Nama Pekerjaan</th>
           <th rowspan="2" style="width: 350px; text-align:center;"><i class="bi bi-building-fill"></i><br>Badan Usaha</th>
 
+          <!-- Kolom Induk -->
           <th colspan="4" style="text-align:center;"><i class="bi bi-person-lines-fill"></i><br>PJBU</th>
           <th colspan="2" style="text-align:center;"><i class="bi bi-pie-chart-fill"></i><br>Segmentasi Pasar</th>
           <th colspan="2" style="text-align:center;"><i class="bi bi-graph-up-arrow"></i><br>Pengembangan Usaha</th>
@@ -184,17 +185,17 @@
           <th rowspan="2" style="width: 350px; text-align:center;"><i class="bi bi-tools"></i><br>Aksi</th>
         </tr>
         <tr>
-          <!-- Subcolumns PJBU -->
-          <th style="width: 200px; text-align:center;"><i class="bi bi-check2-square"></i><br>Sesuai Jenis</th>
-          <th style="width: 200px; text-align:center;"><i class="bi bi-check2-square"></i><br>Sesuai Sifat</th>
-          <th style="width: 200px; text-align:center;"><i class="bi bi-check2-square"></i><br>Sesuai Klasifikasi</th>
-          <th style="width: 200px; text-align:center;"><i class="bi bi-check2-square"></i><br>Sesuai Layanan</th>
+          <!-- Subkolom PJBU -->
+          <th style="width: 200px; text-align:center;"><i class="bi bi-check-circle"></i><br>Sesuai Jenis</th>
+          <th style="width: 200px; text-align:center;"><i class="bi bi-check-circle"></i><br>Sesuai Sifat</th>
+          <th style="width: 200px; text-align:center;"><i class="bi bi-check-circle"></i><br>Sesuai Klasifikasi</th>
+          <th style="width: 200px; text-align:center;"><i class="bi bi-check-circle"></i><br>Sesuai Layanan</th>
 
-          <!-- Subcolumns Segmentasi Pasar -->
+          <!-- Subkolom Segmentasi Pasar -->
           <th style="width: 200px; text-align:center;"><i class="bi bi-diagram-3-fill"></i><br>Sesuai Bentuk</th>
           <th style="width: 200px; text-align:center;"><i class="bi bi-bar-chart-line-fill"></i><br>Sesuai Kualifikasi</th>
 
-          <!-- Subcolumns Pengembangan Usaha -->
+          <!-- Subkolom Pengembangan Usaha -->
           <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-check-fill"></i><br>Syarat SBU</th>
           <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-check-fill"></i><br>Syarat NIB</th>
         </tr>
