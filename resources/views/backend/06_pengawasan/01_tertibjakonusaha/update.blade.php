@@ -55,7 +55,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/bebujkkonstruksi">
+                <a href="/betertibjakonusaha">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
@@ -90,7 +90,7 @@
                                             <label class="form-label" for="nib">
                                                 <i class="bi bi-credit-card" style="margin-right: 10px; color: navy;"></i> Nomor Induk Berusaha
                                             </label>
-                                            <input type="text" id="nib" name="nib" class="form-control @error('nib') is-invalid @enderror" value="{{ old('nib', $data->nib ?? '') }}" />
+                                            <input type="number" id="nib" name="nib" class="form-control @error('nib') is-invalid @enderror" value="{{ old('nib', $data->nib ?? '') }}" />
                                             @error('nib')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
