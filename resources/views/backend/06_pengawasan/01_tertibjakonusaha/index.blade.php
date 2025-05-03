@@ -414,21 +414,45 @@
                             </td>
 
 
-                            <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
-                                <a href="{{ url('/betertibjakonusahasurat1/update/' . $item->id) }}" style="text-decoration: none;">
-                                    <button
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                                        style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                                               border-radius: 15px; font-size: 14px; cursor: pointer;
-                                               display: flex; align-items: center; justify-content: center;
-                                               transition: background-color 0.3s, color 0.3s;">
-                                                    <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
-                                    </button>
-                                </a>
-                                <a href="/404" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                            <td style="text-align: center;">
+                                <button class="btn btn-secondary btn-sm"
+                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
+                                <i class="bi bi-eye"></i> Lihat
+                            </button>
+                            <a href="/404" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
 
+                                <!-- Modal KTP -->
+                                <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                                                <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
+                                                <span>:</span>
+                                                <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">
+                                                    Sertifikat : <i class="bi bi-file-earmark-pdf-fill text-danger"></i> {{ $data->namakegiatan }}
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <div style="margin-top: 10px;">
+                                                    @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
+                                                        <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                    @elseif($item->materipelatihan)
+                                                        <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                    @else
+                                                        <p>Data belum diupdate</p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
+
 
                               <td style="text-align: center;">
                                 <!-- Tombol Aksi -->
