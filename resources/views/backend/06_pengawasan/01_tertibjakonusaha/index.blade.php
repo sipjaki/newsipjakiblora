@@ -473,25 +473,25 @@
                                                         <tr>
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
                                                                 <div>Jenis Usaha</div>
-                                                                <div>Yang Dipersyaratkan</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
                                                             </th>
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
 
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
                                                                 <div>Sifat Usaha</div>
-                                                                <div>Yang Dipersyaratkan</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
                                                             </th>
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
 
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
                                                                 <div>Sub Klasifikasi</div>
-                                                                <div>Yang Dipersyaratkan</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
                                                             </th>
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
 
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
                                                                 <div>Layanan Usaha</div>
-                                                                <div>Yang Dipersyaratkan</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
                                                             </th>
                                                             <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian SBU</th>
                                                         </tr>
