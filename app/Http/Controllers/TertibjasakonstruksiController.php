@@ -456,8 +456,7 @@ class TertibjasakonstruksiController extends Controller
                           $q->where('penyedia', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
                       })
                       ;
-
-    $data = $query->paginate($perPage);
+                      $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
     if ($request->ajax()) {
         return response()->json([
