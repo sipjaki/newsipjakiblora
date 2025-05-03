@@ -509,7 +509,7 @@ $user = Auth::user();
 $datapenyedia = penyediastatustertibjakon::all();
 
 return view('backend.06_pengawasan.01_tertibjakonusaha.update', [
-    'title' => 'Update Agenda Pelatihan ',
+    'title' => 'Update Tertib Jakon Usaha ',
     'data' => $datatertibjakonusaha,
     'datapenyedia' => $datapenyedia,
 
