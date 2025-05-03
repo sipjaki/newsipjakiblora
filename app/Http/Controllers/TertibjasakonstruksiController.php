@@ -448,7 +448,7 @@ class TertibjasakonstruksiController extends Controller
 
     if ($request->ajax()) {
         return response()->json([
-            'html' => view('frontend.05_pengawasan.03_tertibjakon.01_tertibusaha.partials.table', compact('data'))->render()
+            'html' => view('backend.05_pengawasan.03_tertibjakon.01_tertibusaha.partials.table', compact('data'))->render()
         ]);
     }
 
