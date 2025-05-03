@@ -424,7 +424,6 @@
                             </button>
                             <a href="/404" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
 
-                                <!-- Modal KTP -->
                                 <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content">
@@ -433,6 +432,14 @@
                                                 <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                 <span>:</span>
                                                 <p>Surat Dukung Kesesuaian Kegiatan Konstruksi</p>
+
+                                                <p>{{$item->surattertibjakonusaha1->namabadanusaha}}</p>
+                                                <p>{{$item->surattertibjakonusaha1->statusperizinan}}</p>
+                                                <p>{{$item->surattertibjakonusaha1->nib}}</p>
+                                                <p>{{$item->surattertibjakonusaha1->waktupengawasan}}</p>
+                                                <p>{{$item->surattertibjakonusaha1->waktupengawasanselesai}}</p>
+
+
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                         </div>
