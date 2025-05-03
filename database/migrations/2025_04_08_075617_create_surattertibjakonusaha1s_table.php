@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('surattertibjakonusaha1s', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tertibjasakonstruksi_id')->nullable()->index();
+            $table->string('namabadanusaha')->nullable()->index();
+            $table->string('statusperizinan')->nullable()->index();
+            $table->string('nib')->nullable()->index();
+            $table->string('waktupengawasan')->nullable()->index();
+            $table->string('waktupengawasanselesai')->nullable()->index();
+// -----------------------------------------------
             $table->string('namapaketpekerjaan')->nullable()->index();
             $table->string('jenisusaha')->nullable()->index();
             $table->string('kesesuaian')->nullable()->index();

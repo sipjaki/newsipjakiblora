@@ -435,7 +435,6 @@
                                                 <p>Surat Dukung Kesesuaian Kegiatan Konstruksi</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
