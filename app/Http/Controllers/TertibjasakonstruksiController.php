@@ -475,5 +475,29 @@ class TertibjasakonstruksiController extends Controller
 }
 
 
+public function betertibjakonusahadelete($id)
+{
+    $entry = tertibjasakonstruksi::where('id', $id)->first();
+
+    if ($entry) {
+        // Kalau ada file yang mau dihapus, bisa aktifkan bagian ini
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        // $parentId = $entry->bujkkonsultan_id;
+        $entry->delete();
+
+        // Pakai session()->flash supaya konsisten dengan create
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect('/betertibjakonusaha');
+    }
+
+    // Kalau tidak ketemu, flash error
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect('/betertibjakonusaha')->back();
+}
+
+
 
 }

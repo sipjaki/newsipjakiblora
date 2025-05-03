@@ -888,6 +888,7 @@ Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikas
 // ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/betertibjakonusaha', [TertibjasakonstruksiController::class, 'betertibjakonusaha'])->middleware('auth')->name('bertertibjakonusaha');
+Route::delete('/betertibjakonusaha/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahadelete'])->middleware('auth');
 
 
 
