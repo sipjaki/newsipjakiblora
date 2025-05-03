@@ -510,3 +510,22 @@
         XLSX.writeFile(workbook, filename + ".xlsx", {bookType: "xlsx", type: "binary"});
     }
 </script>
+<script>
+    $(document).ready(function () {
+        $('#customLength').on('change', function () {
+            let perPage = $(this).val();
+
+            $.ajax({
+                url: "{{ route('nama_route_lo_disini') }}", // ganti ini dengan nama route betertibjakonusaha
+                type: 'GET',
+                data: {
+                    perPage: perPage,
+                    search: $('input[name="search"]').val() // opsional, kalau ada fitur search
+                },
+                success: function (response) {
+                    $('#tabel-container').html(response.html);
+                }
+            });
+        });
+    });
+</script>
