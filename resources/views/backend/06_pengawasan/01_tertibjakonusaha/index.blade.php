@@ -523,9 +523,9 @@
                                                                     <table class="table table-sm" style="font-size: 12px; color: #000;">
                                                                         <thead class="table-secondary">
                                                                             <tr>
-                                                                                <th style="width: 50px;">No</th>
-                                                                                <th>Nama Lengkap</th>
-                                                                                <th style="width: 200px;">Tanda Tangan</th>
+                                                                                <th style="width: 50px;"></th>
+                                                                                <th style="text-align: center">Nama Lengkap</th>
+                                                                                <th style="width: 200px; text-align:center;">Tanda Tangan</th>
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
