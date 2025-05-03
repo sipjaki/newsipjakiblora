@@ -197,17 +197,18 @@
                                         <i class="bi bi-building-fill"></i> PJBU
                                     </th>
 
-                                    <th colspan="4" style="text-align: center; width:1000px;">
+                                    <th colspan="4" style="text-align: center; width:800px;">
                                         <i class="bi bi-person-lines-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
-                                    <th colspan="2" style="text-align: center; width:800px;">
+                                    <th colspan="2" style="text-align: center; width:500px;">
                                         <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
                                     </th>
-                                    <th colspan="2" style="text-align: center; width:800px;">
-                                        <i class="bi bi-graph-up-arrow"></i> Pengembangan Usaha
+
+                                    <th colspan="2" style="text-align: center; width:500px;">
+                                        <i class="bi bi-graph-up-arrow"></i> Pemenuhan Syarat
                                     </th>
 
-                                    <th rowspan="2" style="text-align: center; width:300px;">
+                                    <th rowspan="2" style="text-align: center; width:300px; white-space: normal; word-wrap: break-word;">
                                         <i class="bi bi-gear-fill"></i> Pelaksanaan Pengembangan Usaha
                                     </th>
 
