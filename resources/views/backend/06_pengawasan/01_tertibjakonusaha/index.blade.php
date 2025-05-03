@@ -165,153 +165,82 @@
                  </div>
                  <!-- /.card-header -->
                  <div class="card-body p-0">
-                     <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
+                    <div class="table-responsive" style="width: 100%; overflow-x: auto;">
+                        <table id="tabelBujkkonsultan" class="table table-bordered table-striped" style="min-width: 1800px; white-space: nowrap;">
+                          <thead>
+                            <tr>
+                              <th rowspan="2" style="text-align: center;">No</th>
+                              <th rowspan="2" style="text-align: center;">Penyedia</th>
+                              <th rowspan="2" style="text-align: center;">NIB</th>
+                              <th rowspan="2" style="text-align: center;">Nama Pekerjaan</th>
+                              <th rowspan="2" style="text-align: center;">Badan Usaha</th>
 
-<table id="tabelBujkkonsultan" class="zebra-table table-striped">
-    <thead>
-        <tr>
-          <th rowspan="2" style="width: 60px; text-align: center;"><i class="bi bi-list-ol"></i><br>No</th>
-          <th rowspan="2" style="width: 150px; text-align: center;"><i class="bi bi-people-fill"></i><br>Penyedia</th>
-          <th rowspan="2" style="width: 180px; text-align: center;"><i class="bi bi-building"></i><br>NIB</th>
-          <th rowspan="2" style="width: 250px; text-align: center;"><i class="bi bi-geo-alt-fill"></i><br>Nama Pekerjaan</th>
-          <th rowspan="2" style="width: 200px; text-align: center;"><i class="bi bi-building-fill"></i><br>Badan Usaha</th>
+                              <th colspan="4" style="text-align: center;">PJBU</th>
+                              <th colspan="2" style="text-align: center;">Segmentasi Pasar</th>
+                              <th colspan="2" style="text-align: center;">Pengembangan Usaha</th>
 
-          <!-- Kolom Induk -->
-          <th colspan="4" style="text-align: center;"><i class="bi bi-person-lines-fill"></i><br>PJBU</th>
-          <th colspan="2" style="text-align: center;"><i class="bi bi-pie-chart-fill"></i><br>Segmentasi Pasar</th>
-          <th colspan="2" style="text-align: center;"><i class="bi bi-graph-up-arrow"></i><br>Pengembangan Usaha</th>
+                              <th rowspan="2" style="text-align: center;">Pelaksanaan Pengembangan Usaha</th>
+                              <th rowspan="2" style="text-align: center;">Aksi</th>
+                            </tr>
+                            <tr>
+                              <!-- PJBU Subkolom -->
+                              <th style="text-align: center;">Sesuai Jenis</th>
+                              <th style="text-align: center;">Sesuai Sifat</th>
+                              <th style="text-align: center;">Sesuai Klasifikasi</th>
+                              <th style="text-align: center;">Sesuai Layanan</th>
 
-          <th rowspan="2" style="width: 220px; text-align: center;"><i class="bi bi-gear-fill"></i><br>Pelaksanaan Pengembangan Usaha</th>
-          <th rowspan="2" style="width: 150px; text-align: center;"><i class="bi bi-tools"></i><br>Aksi</th>
-        </tr>
-        <tr>
-          <!-- Subkolom PJBU -->
-          <th style="width: 350px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Jenis</th>
-          <th style="width: 350px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Sifat</th>
-          <th style="width: 350px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Klasifikasi</th>
-          <th style="width: 350px; text-align: center;"><i class="bi bi-check-circle"></i><br>Sesuai Layanan</th>
+                              <!-- Segmentasi Pasar -->
+                              <th style="text-align: center;">Sesuai Bentuk</th>
+                              <th style="text-align: center;">Sesuai Kualifikasi</th>
 
-          <!-- Subkolom Segmentasi Pasar -->
-          <th style="width: 350px; text-align: center;"><i class="bi bi-diagram-3-fill"></i><br>Sesuai Bentuk</th>
-          <th style="width: 350px; text-align: center;"><i class="bi bi-bar-chart-line-fill"></i><br>Sesuai Kualifikasi</th>
+                              <!-- Pengembangan Usaha -->
+                              <th style="text-align: center;">Syarat SBU</th>
+                              <th style="text-align: center;">Syarat NIB</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach ($data as $item)
+                            <tr>
+                              <td style="text-align: center;">{{ $loop->iteration }}</td>
+                              <td>
+                                @if($item->namalengkap)
+                                  {{ $item->namalengkap }}
+                                @else
+                                  <button class="btn btn-sm btn-dark">Data Belum Di Update</button>
+                                @endif
+                              </td>
+                              <td style="text-align: center;">{{ $item->nib }}</td>
+                              <td style="text-align: center;">{{ $item->nama_pekerjaan }}</td>
+                              <td style="text-align: center;">{{ $item->badan_usaha }}</td>
 
-          <!-- Subkolom Pengembangan Usaha -->
-          <th style="width: 350px; text-align: center;"><i class="bi bi-file-earmark-check-fill"></i><br>Syarat SBU</th>
-          <th style="width: 350px; text-align: center;"><i class="bi bi-file-earmark-check-fill"></i><br>Syarat NIB</th>
-        </tr>
-      </thead>
- <tbody id="tableBody">
-     @foreach ($data as $item )
-     <tr class="align-middle">
-         <td style="text-align: center;">{{ $loop->iteration }}</td>
+                              <!-- PJBU Columns -->
+                              <td style="text-align: center;">{{ $item->pjbu_jenis }}</td>
+                              <td style="text-align: center;">{{ $item->pjbu_sifat }}</td>
+                              <td style="text-align: center;">{{ $item->pjbu_klasifikasi }}</td>
+                              <td style="text-align: center;">{{ $item->pjbu_layanan }}</td>
 
-        <td style="text-align: left;">
-            @if($item->namalengkap)
-                {{ $item->namalengkap }}
-            @else
-                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                    Data Belum Di Update
-                </button>
-            @endif
-        </td>
+                              <!-- Segmentasi Pasar -->
+                              <td style="text-align: center;">{{ $item->segmentasi_bentuk }}</td>
+                              <td style="text-align: center;">{{ $item->segmentasi_kualifikasi }}</td>
 
+                              <!-- Pengembangan Usaha -->
+                              <td style="text-align: center;">{{ $item->syarat_sbu }}</td>
+                              <td style="text-align: center;">{{ $item->syarat_nib }}</td>
 
-                    <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
-                        <a href="{{ url('/bebujkkonsultan/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
-                            <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                                style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                                       border-radius: 15px; font-size: 14px; cursor: pointer;
-                                       display: flex; align-items: center; justify-content: center;
-                                       transition: background-color 0.3s, color 0.3s;">
-                                            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
-                            </button>
-                        </a>
-                    </td>
-
-                    <td style="text-align: center;">
-                        <button class="btn btn-secondary btn-sm"
-                            style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                            onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                            onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                            data-bs-toggle="modal" data-bs-target="#modalKtp3">
-                            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
-
-                        </button>
-
-                        <!-- Modal KTP -->
-                        <div class="modal fade" id="modalKtp3" tabindex="-1" aria-labelledby="modalKtpLabel3" aria-hidden="true">
-                            <div class="modal-dialog modal-xl modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                        <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                        <span>:</span>
-                                        <h5 class="modal-title" id="modalKtpLabel3">Berkas Sertifikasi</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body text-center">
-                                        <div style="margin-top: 10px;">
-                                            @if($item->uploadberkas && file_exists(public_path('storage/' . $item->uploadberkas)))
-                                            <!-- Display the default iframe when the file exists in the storage -->
-                                            <iframe src="{{ asset('storage/' . $item->uploadberkas) }}" frameborder="0" width="100%" height="600px"></iframe>
-                                        @elseif($item->uploadberkas)
-                                            <!-- Display the iframe with the updated file -->
-                                            <iframe src="{{ asset($item->uploadberkas) }}" frameborder="0" width="100%" height="600px"></iframe>
-                                        @else
-                                            <!-- Optional: Show a placeholder if there's no file available -->
-                                            <p>Data belum diupdate</p>
-                                        @endif
-
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-
-
-        <td style="text-align: center; vertical-align: middle;">
-            <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
-                <i class="bi bi-eye"></i>
-            </a>
-            <a href="/bebujkkonsultan/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
-                <i class="bi bi-pencil-square"></i>
-            </a>
-            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete"
-               data-bs-toggle="modal" data-bs-target="#deleteModal"
-               data-judul="{{ $item->namalengkap }}"
-               onclick="setDeleteUrl(this)">
-                <i class="bi bi-trash"></i>
-            </a>
-        </td>
-
-        <!-- CSS untuk Hover -->
-        <style>
-            .btn-info:hover, .btn-warning:hover, .btn-danger:hover {
-                background-color: white !important; /* Ganti background menjadi putih */
-                color: white !important; /* Ganti warna teks menjadi putih */
-                border-color: transparent !important; /* Menyembunyikan border saat hover */
-            }
-
-            /* Ganti warna ikon untuk tombol hover agar tetap terlihat */
-            .btn-info:hover i, .btn-warning:hover i, .btn-danger:hover i {
-                color: navy !important; /* Ganti ikon menjadi navy atau warna lain yang diinginkan */
-            }
-        </style>
-
-        </tr>
-
-     @endforeach
- </tbody>
-</table>
-                     </div>
-                 </div>
+                              <td style="text-align: center;">{{ $item->pelaksanaan }}</td>
+                              <td style="text-align: center;">
+                                <!-- Tombol Aksi -->
+                                <a href="/bebujkkonsultan/show/{{$item->namalengkap}}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i></a>
+                                <a href="/bebujkkonsultan/update/{{$item->id}}" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" data-judul="{{ $item->namalengkap }}" onclick="setDeleteUrl(this)">
+                                  <i class="bi bi-trash"></i>
+                                </a>
+                              </td>
+                            </tr>
+                            @endforeach
+                          </tbody>
+                        </table>
+                      </div>
 
                  @include('backend.00_administrator.00_baganterpisah.07_paginations')
 
