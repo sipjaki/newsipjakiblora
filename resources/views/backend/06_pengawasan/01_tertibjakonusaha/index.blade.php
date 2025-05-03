@@ -513,34 +513,52 @@
                                                 </table>
 
                                                 <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
-                                                <div style="text-align: right;">
-                                                    <table class="table table-bordered table-sm" style="margin-left:auto; margin-right:0;">
-                                                        <thead class="table-secondary">
-                                                            <tr>
-                                                                <th style="width: 50px;">No</th>
-                                                                <th>Nama Lengkap</th>
-                                                                <th style="width: 200px;">Tanda Tangan</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>Nama Pemeriksa 1</td>
-                                                                <td style="height: 60px;"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>Nama Pemeriksa 2</td>
-                                                                <td style="height: 60px;"></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Nama Pemeriksa 3</td>
-                                                                <td style="height: 60px;"></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                <div class="container mt-4">
+                                                    <!-- Modal Card -->
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <!-- Content di sebelah kiri (col-9) -->
+                                                                <div class="col-9">
+                                                                    <h6>Isi Konten Lainnya</h6>
+                                                                    <!-- Konten lainnya bisa disini -->
+                                                                </div>
+
+                                                                <!-- Tabel Tim Pemeriksa di kolom kanan (col-3) -->
+                                                                <div class="col-3">
+                                                                    <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                    <table class="table table-bordered table-sm" style="font-size: 12px; color: #000;">
+                                                                        <thead class="table-secondary">
+                                                                            <tr>
+                                                                                <th style="width: 50px;">No</th>
+                                                                                <th>Nama Lengkap</th>
+                                                                                <th style="width: 200px;">Tanda Tangan</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>1</td>
+                                                                                <td>Nama Pemeriksa 1</td>
+                                                                                <td style="height: 60px;"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>2</td>
+                                                                                <td>Nama Pemeriksa 2</td>
+                                                                                <td style="height: 60px;"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>3</td>
+                                                                                <td>Nama Pemeriksa 3</td>
+                                                                                <td style="height: 60px;"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
