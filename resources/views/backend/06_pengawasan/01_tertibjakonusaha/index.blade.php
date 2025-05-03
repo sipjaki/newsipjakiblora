@@ -460,50 +460,52 @@
                                                 </table>
 
                                                 {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
-                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
-                                                    <thead class="table-secondary">
-                                                        <tr>
-                                                            <th rowspan="2">No</th>
-                                                            <th rowspan="2">Nama Paket Pekerjaan</th>
+                                                <div style="overflow-x: auto; font-size: 14px;">
+                                                    <table class="table table-bordered table-sm" style="width: 100%;">
+                                                        <thead>
+                                                            <tr>
+                                                                <th rowspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">No</th>
+                                                                <th rowspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Nama Paket Pekerjaan</th>
 
-                                                            <th colspan="2">Jenis Usaha</th>
-                                                            <th colspan="2">Sifat Usaha</th>
-                                                            <th colspan="2">Subklasifikasi</th>
-                                                            <th colspan="2">Layanan Usaha</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Jenis Usaha yang Dipersyaratkan</th>
-                                                            <th>Kesesuaian dengan SBU</th>
+                                                                <th colspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Jenis Usaha</th>
+                                                                <th colspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Sifat Usaha</th>
+                                                                <th colspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Subklasifikasi</th>
+                                                                <th colspan="2" style="border: none; text-align: center; background-color: #f8f9fa;">Layanan Usaha</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Jenis Usaha yang Dipersyaratkan</th>
+                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
 
-                                                            <th>Sifat Usaha yang Dipersyaratkan</th>
-                                                            <th>Kesesuaian dengan SBU</th>
+                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Sifat Usaha yang Dipersyaratkan</th>
+                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
 
-                                                            <th>Subklasifikasi yang Dipersyaratkan</th>
-                                                            <th>Kesesuaian dengan SBU</th>
+                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Subklasifikasi yang Dipersyaratkan</th>
+                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
 
-                                                            <th>Layanan Usaha yang Dipersyaratkan</th>
-                                                            <th>Kesesuaian dengan SBU</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>1</td>
-                                                            <td>Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi</td>
+                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Layanan Usaha yang Dipersyaratkan</th>
+                                                                <th style="border: none; text-align: center; background-color: #f8f9fa;">Kesesuaian dengan SBU</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>Pemeliharaan Paket SDN 2 Sumberejo dan Revitalisasi</td>
 
-                                                            <td>Jasa Pelaksana Konstruksi</td>
-                                                            <td>Sesuai</td>
+                                                                <td>Jasa Pelaksana Konstruksi</td>
+                                                                <td>Sesuai</td>
 
-                                                            <td>Umum</td>
-                                                            <td>Sesuai</td>
+                                                                <td>Umum</td>
+                                                                <td>Sesuai</td>
 
-                                                            <td>Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)</td>
-                                                            <td>Sesuai</td>
+                                                                <td>Jasa Pelaksana Konstruksi Bangunan Gedung dan Pekerjaan Penyelesaian Bangunan Gedung (BG004)</td>
+                                                                <td>Sesuai</td>
 
-                                                            <td>Pekerjaan Konstruksi</td>
-                                                            <td>Sesuai</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                                                <td>Pekerjaan Konstruksi</td>
+                                                                <td>Sesuai</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
 
                                                 <h6 class="mt-4" style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
                                                 <table class="table table-bordered table-sm">
