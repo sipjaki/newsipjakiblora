@@ -167,7 +167,7 @@
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table id="tabelBujkkonsultan" class="table-striped">
+<table id="tabelBujkkonsultan" class="zebra-table table-striped">
     <thead>
         <tr>
           <th rowspan="2" style="width: 60px; text-align: center;"><i class="bi bi-list-ol"></i><br>No</th>
