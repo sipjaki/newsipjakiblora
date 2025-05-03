@@ -427,11 +427,15 @@
                                 <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem;">
-                                            <div class="modal-header">
-                                                <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                                <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                                <span>:</span>
-                                                <p style="margin-left: 10px; font-size: 0.9rem;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                            <div class="modal-header d-flex align-items-center">
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 10px;">
+                                                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
+                                                </a>
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 10px;">
+                                                    <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
+                                                </a>
+                                                <span class="mx-2">:</span>
+                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
