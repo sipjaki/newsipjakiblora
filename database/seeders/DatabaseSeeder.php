@@ -59266,7 +59266,7 @@ for ($i = 1; $i <= 1221; $i++) {
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
   // Definisikan array untuk pilihan acak
   $jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi',];
-$kesesuaian = ['Tidak Sesuai'];
+$kesesuaian = ['Sesuai', 'Tidak Sesuai'];
 $sifatUsaha = ['Umum', 'Spesialis'];
 $layananUsaha = ['Tidak Sesuai'];
 $statusPerizinan = ['Terdaftar', 'Belum Terdaftar', 'Kadaluarsa'];
@@ -59299,7 +59299,7 @@ for ($i = 1; $i <= $jumlahData; $i++) {
   // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
 $jenisUsaha = ['Badan Usaha', 'Perorangan'];
-$kesesuaian = ['Tidak Sesuai'];
+$kesesuaian = ['Sesuai', 'Tidak Sesuai'];
 $sifatUsaha = ['Kecil', 'Menengah', 'Besar'];
 $layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
 
@@ -59328,7 +59328,7 @@ for ($i = 1; $i <= $jumlahData; $i++) {
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
 $jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi'];
-$kesimpulan = ['Tidak Tertib'];
+$kesimpulan = ['Tertib', 'Tidak Tertib'];
 $pjbuList = ['Muhammad Abdul Rozak', 'Siti Utifah', 'Agus Supriadi', 'Widodo', 'Arradea Murbha Ardhana'];
 $klasifikasiList = ['Segera Hadir'];
 
