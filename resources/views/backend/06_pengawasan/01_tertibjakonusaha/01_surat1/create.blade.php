@@ -212,7 +212,7 @@
                                                     <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Sub Klasifikasi Yang Dipersyaratkan</th>
                                                     <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
                                                     <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Layanan Usaha Yang Dipersyaratkan </th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -229,9 +229,30 @@
                                                         </select>
                                                     </td>
 
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianklasifikasi"></td>
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="layananusaha"></td>
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianlayananusaha"></td>
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control" name="kesesuaianklasifikasi">
+                                                            <option value="">-- Pilih Kesesuaian --</option>
+                                                            <option value="Sesuai">Sesuai</option>
+                                                            <option value="Tidak Sesuai">Tidak Sesuai</option>
+                                                        </select>
+                                                    </td>
+
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control" name="layananusaha">
+                                                            <option value="">-- Pilih Layanan Usaha --</option>
+                                                            <option value="Pekerjaan Konstruksi">Pekerjaan Konstruksi</option>
+                                                            <option value="Pekerjaan Konsultasi Konstruksi">Pekerjaan Konsultasi Konstruksi</option>
+                                                        </select>
+                                                    </td>
+
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control" name="kesesuaianlayananusaha">
+                                                            <option value="">-- Pilih Kesesuaian Layanan Usaha --</option>
+                                                            <option value="Sesuai">Sesuai</option>
+                                                            <option value="Tidak Sesuai">Tidak Sesuai</option>
+                                                        </select>
+                                                    </td>
+
                                                 </tr>
                                             </tbody>
                                         </table>
