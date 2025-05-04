@@ -303,9 +303,9 @@
             </p>
 
             <!-- Checkbox Konfirmasi -->
-            <p style="font-size: 14px; margin-top: 10px; text-align: left;">
-                <input type="checkbox" id="agreeCheckbox" onchange="toggleSubmitButton()" />
-                <label for="agreeCheckbox">
+            <p style="font-size: 14px; margin-top: 10px; text-align: left; display: flex; align-items: center;">
+                <input type="checkbox" id="agreeCheckbox" onchange="toggleSubmitButton()" style="margin-right: 10px;" />
+                <label for="agreeCheckbox" style="margin: 0;">
                     Data yang dibuat tidak bisa dirubah kembali, harap periksa kembali data anda!!
                 </label>
             </p>
