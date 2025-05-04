@@ -718,7 +718,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <h5 style="font-size: 1rem;">Pengawasan Tertib Usaha Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan Segmentasi Pasar Jasa Konstruksi Secara Rutin </h5>
+                                                <h5 style="font-size: 1rem;">Pengawasan Tertib Usaha Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan  <br> Segmentasi Pasar Jasa Konstruksi Secara Rutin </h5>
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
