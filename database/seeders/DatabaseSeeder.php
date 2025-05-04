@@ -59304,7 +59304,7 @@ $sifatUsaha = ['Kecil', 'Menengah', 'Besar'];
 $layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
 
 // Jumlah data yang ingin dibuat
-$jumlahData = 100; // Jumlah data = 100
+$jumlahData = 84; // Jumlah data = 100
 
 // Membuat 100 data dengan informasi acak
 for ($i = 1; $i <= $jumlahData; $i++) {
@@ -59333,7 +59333,7 @@ $pjbuList = ['Muhammad Abdul Rozak', 'Siti Utifah', 'Agus Supriadi', 'Widodo', '
 $klasifikasiList = ['Segera Hadir'];
 
 // Jumlah data yang ingin dibuat
-$jumlahData = 100; // Jumlah data = 100
+$jumlahData = 84; // Jumlah data = 100
 
 // Membuat 100 data dengan informasi acak
 for ($i = 1; $i <= $jumlahData; $i++) {
@@ -59358,24 +59358,25 @@ for ($i = 1; $i <= $jumlahData; $i++) {
 
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
-$merkProduk = ['Merk A', 'Merk B', 'Merk C', 'Merk D', 'Merk E'];
-$subVarian = ['Varian 1', 'Varian 2', 'Varian 3', 'Varian 4', 'Varian 5'];
-$sniList = ['SNI-001', 'SNI-002', 'SNI-003', 'SNI-004', 'SNI-005'];
-$simpkList = ['SIMP-K-001', 'SIMP-K-002', 'SIMP-K-003', 'SIMP-K-004', 'SIMP-K-005'];
+// $merkProduk = ['Merk A', 'Merk B', 'Merk C', 'Merk D', 'Merk E'];
+// $subVarian = ['Varian 1', 'Varian 2', 'Varian 3', 'Varian 4', 'Varian 5'];
+// $sniList = ['SNI-001', 'SNI-002', 'SNI-003', 'SNI-004', 'SNI-005'];
+// $simpkList = ['SIMP-K-001', 'SIMP-K-002', 'SIMP-K-003', 'SIMP-K-004', 'SIMP-K-005'];
 
+$status = ['Tertib', 'Belum Tertib'];
 // Jumlah data yang ingin dibuat
-$jumlahData = 100; // Jumlah data = 100
+$jumlahData = 84; // Jumlah data = 100
 
 // Membuat 100 data dengan informasi acak
 for ($i = 1; $i <= $jumlahData; $i++) {
     surattertibjakonusaha4::create([
         'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
-        'namavarian' => 'Varian ' . rand(1, 100), // Nama varian acak
-        'subvarian' => $subVarian[array_rand($subVarian)],  // Pilih acak subvarian
-        'merkproduk' => $merkProduk[array_rand($merkProduk)],  // Pilih acak merk produk
-        'sertifikat' => 'Sertifikat-' . rand(1000, 9999), // Sertifikat acak
-        'sni' => $sniList[array_rand($sniList)], // Pilih acak SNI
-        'simpk' => $simpkList[array_rand($simpkList)], // Pilih acak SIMPK
+        // 'namavarian' => 'Varian ' . rand(1, 100), // Nama varian acak
+        // 'subvarian' => $subVarian[array_rand($subVarian)],  // Pilih acak subvarian
+        // 'merkproduk' => $merkProduk[array_rand($merkProduk)],  // Pilih acak merk produk
+        // 'sertifikat' => 'Sertifikat-' . rand(1000, 9999), // Sertifikat acak
+        // 'sni' => $sniList[array_rand($sniList)], // Pilih acak SNI
+        'status' => $status[array_rand($status)], // Pilih acak SIMPK
     ]);
 }
 

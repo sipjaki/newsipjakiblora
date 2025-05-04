@@ -472,13 +472,23 @@
 </td>
 
 
+@php
+    $status = $item->surattertibjakonusaha4->status ?? 'Tidak Tertib';
+    $tertibStatus = $status === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
+    $color = $status === 'Tertib' ? 'blue' : 'red';
+    $icon = $status === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
+@endphp
 
-                            <td style="text-align: center;">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
-                                    <i class="bi {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
-                                    {{ $item->pelaksanaanpengembangan }}
-                                </button>
-                            </td>
+<td style="text-align: center;">
+    <button
+        style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+        onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+    >
+        <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+        {{ $tertibStatus }}
+    </button>
+</td>
 
                             {{-- ----------------------- SURAT TERTIB JAKON USAHA 1 ------------------------------------ --}}
 
