@@ -160,8 +160,14 @@
                                                 </td>
                                                 <td class="d-flex gap-2">
                                                     <input type="date" class="form-control" name="waktupengawasan" placeholder="Dimulai Sejak ... ">
+                                                    @error('waktupengawasan')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                     <span class="mx-1">(Sampai Dengan)</span>
                                                     <input type="date" class="form-control" name="waktupengawasanselesai" placeholder="Berakhir Tanggal ... ">
+                                                    @error('waktupengawasanselesai')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </td>
                                             </tr>
                                         </table>
@@ -192,6 +198,10 @@
                                                             <option value="Pekerjaan Konstruksi">Pekerjaan Konstruksi</option>
                                                             <option value="Pekerjaan Konsultasi Konstruksi">Pekerjaan Konsultasi Konstruksi</option>
                                                         </select>
+                                                        @error('jenisusaha')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
+
                                                     </td>
                                                     <td style="border: 1px solid #000;">
                                                         <select class="form-control" name="kesesuaian">
@@ -199,6 +209,10 @@
                                                             <option value="Sesuai">Sesuai</option>
                                                             <option value="Tidak Sesuai">Tidak Sesuai</option>
                                                         </select>
+                                                        @error('kesesuaian')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
+
                                                     </td>
                                                     <td style="border: 1px solid #000;">
                                                         <select class="form-control" name="sifatusaha">
@@ -206,6 +220,9 @@
                                                             <option value="Umum">Umum</option>
                                                             <option value="Spesialis">Spesialis</option>
                                                         </select>
+                                                        @error('sifatusaha')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
                                                     </td>
                                                     <td style="border: 1px solid #000;">
                                                         <select class="form-control" name="kesesuaiansbu">
@@ -213,6 +230,10 @@
                                                             <option value="Sesuai">Sesuai</option>
                                                             <option value="Tidak Sesuai">Tidak Sesuai</option>
                                                         </select>
+                                                        @error('kesesuaiansbu')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
+
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -240,6 +261,10 @@
                                                                     </option>
                                                                 @endforeach
                                                             </select>
+                                                            @error('subklasifikasi_id')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                            @enderror
+
                                                         </div>
                                                     </td>
 
