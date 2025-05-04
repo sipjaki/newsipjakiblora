@@ -576,4 +576,37 @@ return view('backend.06_pengawasan.01_tertibjakonusaha.create', [
 ]);
 }
 
+
+public function betertibjakonusahacreatenew(Request $request)
+    {
+        // Validasi input
+        $validated = $request->validate([
+            'penyediastatustertibjakon_id' => 'required|exists:penyediastatustertibjakon,id',
+            'nib' => 'nullable|numeric|digits_between:1,50',
+            'namapekerjaan' => 'required|string|max:255',
+            'tahunpelaksanaan' => 'required|in:2024,2025,2026',
+            'namabadanusaha' => 'required|string|max:255',
+            'pjbu' => 'required|string|max:100',
+        ], [
+            'penyediastatustertibjakon_id.required' => 'Status penyedia wajib dipilih.',
+            'penyediastatustertibjakon_id.exists' => 'Status penyedia tidak valid.',
+            'nib.numeric' => 'NIB harus berupa angka.',
+            'nib.digits_between' => 'NIB maksimal 50 digit.',
+            'namapekerjaan.required' => 'Nama pekerjaan tidak boleh kosong.',
+            'namapekerjaan.max' => 'Nama pekerjaan maksimal 255 karakter.',
+            'tahunpelaksanaan.required' => 'Tahun pelaksanaan wajib dipilih.',
+            'tahunpelaksanaan.in' => 'Tahun pelaksanaan harus 2024, 2025, atau 2026.',
+            'namabadanusaha.required' => 'Nama badan usaha wajib diisi.',
+            'namabadanusaha.max' => 'Nama badan usaha maksimal 255 karakter.',
+            'pjbu.required' => 'Nama penanggung jawab (PJBU) wajib diisi.',
+            'pjbu.max' => 'Nama PJBU maksimal 100 karakter.',
+        ]);
+
+        // Simpan ke database
+        tertibjasakonstruksi::create($validated);
+
+        session()->flash('create', 'Data Tertib Jakon Usaha Berhasil di Buat  !');
+        return redirect('/betertibjakonusaha');
+    }
+
 }
