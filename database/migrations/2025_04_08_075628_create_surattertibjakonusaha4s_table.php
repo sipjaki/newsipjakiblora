@@ -20,7 +20,7 @@ return new class extends Migration
             // $table->string('sertifikat')->nullable()->index();
             // $table->string('sni')->nullable()->index();
             // $table->string('simpk')->nullable()->index();
-            // $table->softDeletes();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
