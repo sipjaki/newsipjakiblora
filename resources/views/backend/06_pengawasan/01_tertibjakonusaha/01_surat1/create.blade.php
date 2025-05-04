@@ -118,7 +118,7 @@
                                     <br>
                                     <div class="modal-body">
                                         <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
-
+                                            <br>
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                             <tr>
                                                 <td style="width: 200px;">
@@ -171,7 +171,9 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="namapaketpekerjaan" placeholder="Nama Pekerjaan.."></td>
+                                                    <td style="border: 1px solid #000;">
+                                                        <input type="text" class="form-control" name="namapaketpekerjaan" placeholder="Nama Pekerjaan.." style="width: 400px;">
+                                                    </td>
                                                     <td style="border: 1px solid #000;">
                                                         <select class="form-control" name="jenisusaha">
                                                             <option value="">-- Pilih Jenis Usaha --</option>
