@@ -217,7 +217,7 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td style="border: 1px solid #000; max-width: 250px;">
+                                                    <td style="border: 1px solid #000; max-width: 500px;">
                                                         <select class="form-control mb-1" name="subklasifikasi_id"
                                                             style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                                                             <option value="">-- Pilih Subklasifikasi --</option>
