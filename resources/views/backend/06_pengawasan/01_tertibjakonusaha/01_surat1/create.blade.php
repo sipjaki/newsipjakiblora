@@ -217,9 +217,9 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td style="border: 1px solid #000; max-width: 500px; vertical-align: top;">
+                                                    <td style="border: 1px solid #000; max-width: 500px;">
                                                         <select class="form-control mb-1" name="subklasifikasi_id"
-                                                            style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-height: 200px;">
+                                                            style="width: 100%; white-space: nowrap; overflow-y: auto; max-height: 250px;">
                                                             <option value="">-- Pilih Subklasifikasi --</option>
                                                             @foreach ($datasubklasifikasi as $sub)
                                                                 <option value="{{ $sub->id }}">
@@ -227,10 +227,8 @@
                                                                 </option>
                                                             @endforeach
                                                         </select>
-
-                                                        <!-- Input field di bawah dropdown -->
-                                                        <input type="text" class="form-control mt-2" name="subklasifikasi_id_input" placeholder="Masukkan subklasifikasi..." style="width: 100%; height: 40px;">
                                                     </td>
+
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianklasifikasi"></td>
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="layananusaha"></td>
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianlayananusaha"></td>
