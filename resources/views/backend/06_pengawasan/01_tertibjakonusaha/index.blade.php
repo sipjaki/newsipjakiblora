@@ -541,7 +541,7 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">1</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
                                                                                                             @if($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat' && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -555,11 +555,11 @@
                                                                                                                 <p>Data belum diupdate</p>
                                                                                                             @endif
                                                                                                         </div>
-                                                                                                    </td>
+                                                                                                    </td> --}}
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">2</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada TIm Pemeriksa '}}</td>
+                                                                                                    {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada TIm Pemeriksa '}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
                                                                                                             @if($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -573,11 +573,11 @@
                                                                                                                 <p>Data belum diupdate</p>
                                                                                                             @endif
                                                                                                         </div>
-                                                                                                    </td>
+                                                                                                    </td> --}}
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">3</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
                                                                                                             @if($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -591,7 +591,7 @@
                                                                                                                 <p>Data belum diupdate</p>
                                                                                                             @endif
                                                                                                         </div>
-                                                                                                    </td>
+                                                                                                    </td> --}}
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
@@ -727,7 +727,7 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">1</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
                                                                                                             @if($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -742,11 +742,11 @@
                                                                                                             @endif
                                                                                                         </div>
 
-                                                                                                    </td>
+                                                                                                    </td> --}}
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">2</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
                                                                                                             @if($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -760,11 +760,11 @@
                                                                                                                 <p>Data belum diupdate</p>
                                                                                                             @endif
                                                                                                         </div>
-                                                                                                    </td>
+                                                                                                    </td> --}}
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">3</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                    {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
                                                                                                             @if($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -778,7 +778,7 @@
                                                                                                                 <p>Data belum diupdate</p>
                                                                                                             @endif
                                                                                                         </div>
-                                                                                                    </td>
+                                                                                                    </td> --}}
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
@@ -894,7 +894,7 @@
                                                                                                                         <tbody>
                                                                                                                             <tr>
                                                                                                                                 <td style="font-size: 12px;">1</td>
-                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                                                {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                                                 <td style="height: 60px;">
                                                                                                                                     <div style="margin-top: 10px;">
                                                                                                                                         @if($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -909,11 +909,11 @@
                                                                                                                                         @endif
                                                                                                                                     </div>
 
-                                                                                                                                </td>
+                                                                                                                                </td> --}}
                                                                                                                             </tr>
                                                                                                                             <tr>
                                                                                                                                 <td style="font-size: 12px;">2</td>
-                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                                                {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                                                 <td style="height: 60px;">
                                                                                                                                     <div style="margin-top: 10px;">
                                                                                                                                         @if($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -927,11 +927,11 @@
                                                                                                                                             <p>Data belum diupdate</p>
                                                                                                                                         @endif
                                                                                                                                     </div>
-                                                                                                                                </td>
+                                                                                                                                </td> --}}
                                                                                                                             </tr>
                                                                                                                             <tr>
                                                                                                                                 <td style="font-size: 12px;">3</td>
-                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
+                                                                                                                                {{-- <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                                                 <td style="height: 60px;">
                                                                                                                                     <div style="margin-top: 10px;">
                                                                                                                                         @if($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
@@ -945,7 +945,7 @@
                                                                                                                                             <p>Data belum diupdate</p>
                                                                                                                                         @endif
                                                                                                                                     </div>
-                                                                                                                                </td>
+                                                                                                                                </td> --}}
                                                                                                                             </tr>
                                                                                                                         </tbody>
                                                                                                                     </table>
