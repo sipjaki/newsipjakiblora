@@ -505,6 +505,7 @@
                                 <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">
                                     <i class="bi bi-download"></i>
                                 </button>
+
                                 <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem;">
