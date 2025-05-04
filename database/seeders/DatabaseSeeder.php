@@ -59266,7 +59266,7 @@ for ($i = 1; $i <= 1221; $i++) {
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
   // Definisikan array untuk pilihan acak
   $jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi',];
-$kesesuaian = ['Sesuai'];
+$kesesuaian = ['Tidak Sesuai'];
 $sifatUsaha = ['Umum', 'Spesialis'];
 $layananUsaha = ['Tidak Sesuai'];
 $statusPerizinan = ['Terdaftar', 'Belum Terdaftar', 'Kadaluarsa'];
