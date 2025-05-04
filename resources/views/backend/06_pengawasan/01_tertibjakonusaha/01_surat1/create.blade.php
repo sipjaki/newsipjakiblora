@@ -223,7 +223,7 @@
                                                             <option value="">-- Pilih Subklasifikasi --</option>
                                                             @foreach ($datasubklasifikasi as $sub)
                                                                 <option value="{{ $sub->id }}">
-                                                                    {{ \Illuminate\Support\Str::limit($sub->pekerjaan, 200) }}
+                                                                    {{ \Illuminate\Support\Str::limit($sub->pekerjaan, 100) }}
                                                                 </option>
                                                             @endforeach
                                                         </select>
