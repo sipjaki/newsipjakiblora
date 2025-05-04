@@ -639,8 +639,9 @@
                                                                                                                 <img src="{{ asset($item->surattertibjakonusaha1->tandatangan1->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
-                                                                                                                <p>Data belum diupdate</p>
-                                                                                                            @endif
+                                                                                                                <p style="font-size: 11px;">Tidak Ada Tanda Tangan</p>
+
+                                                                                                                @endif
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -657,8 +658,9 @@
                                                                                                                 <img src="{{ asset($item->surattertibjakonusaha1->tandatangan2->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
-                                                                                                                <p>Data belum diupdate</p>
-                                                                                                            @endif
+                                                                                                                <p style="font-size: 11px;">Tidak Ada Tanda Tangan</p>
+
+                                                                                                                @endif
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
@@ -675,8 +677,9 @@
                                                                                                                 <img src="{{ asset($item->surattertibjakonusaha1->tandatangan3->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
-                                                                                                                <p>Data belum diupdate</p>
-                                                                                                            @endif
+                                                                                                                <p style="font-size: 11px;">Tidak Ada Tanda Tangan</p>
+
+                                                                                                                @endif
                                                                                                         </div>
                                                                                                     </td>
                                                                                                 </tr>
