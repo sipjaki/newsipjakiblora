@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\penyediastatustertibjakon;
 use App\Models\subklasifikasi;
+use App\Models\surattertibjakonusaha1;
 use App\Models\tandatangan;
 use App\Models\tertibjakon;
 use App\Models\tertibjakonpemanfaatan;
@@ -634,5 +635,71 @@ public function betertibjakonusahacreatenew(Request $request)
     ]);
 }
 
+
+
+public function betertibjakonusahasurat1create(Request $request)
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'tertibjasakonstruksi_id' => 'required|string',
+        'tandatangan1_id' => 'nullable|string',
+        'tandatangan2_id' => 'nullable|string',
+        'tandatangan3_id' => 'nullable|string',
+        'namabadanusaha' => 'required|string|max:255',
+        'statusperizinan' => 'required|string|max:255',
+        'nib' => 'required|string|max:255',
+        'waktupengawasan' => 'required|string|max:255',
+        'waktupengawasanselesai' => 'required|string|max:255',
+        'namapaketpekerjaan' => 'required|string|max:255',
+        'jenisusaha' => 'required|string|max:255',
+        'kesesuaian' => 'required|string|max:255',
+        'sifatusaha' => 'required|string|max:255',
+        'kesesuaiansbu' => 'required|string|max:255',
+        'subklasifikasi_id' => 'required|exists:string',
+        'kesesuaianklasifikasi' => 'required|string|max:255',
+        'layananusaha' => 'required|string|max:255',
+        'kesesuaianlayananusaha' => 'required|string|max:255',
+    ], [
+        'tertibjasakonstruksi_id.exists' => 'Tertib Jasa Konstruksi yang dipilih tidak valid.',
+        // 'tandatangan1_id.exists' => 'Tanda Tangan 1 yang dipilih tidak valid.',
+        // 'tandatangan2_id.exists' => 'Tanda Tangan 2 yang dipilih tidak valid.',
+        // 'tandatangan3_id.exists' => 'Tanda Tangan 3 yang dipilih tidak valid.',
+        'namabadanusaha.required' => 'Badan Usaha Wajib Diisi !.',
+        'namabadanusaha.max' => 'Nama Badan Usaha maksimal 255 karakter.',
+        'statusperizinan.string' => 'Status Perizinan harus berupa teks.',
+        'statusperizinan.max' => 'Status Perizinan maksimal 255 karakter.',
+        'nib.required' => 'Nib Wajib Di isi ! .',
+        'nib.string' => 'Nib harus berupa teks.',
+        'nib.max' => 'Nib maksimal 255 karakter.',
+        'waktupengawasan.string' => 'Waktu Pengawasan harus berupa teks.',
+        'waktupengawasan.max' => 'Waktu Pengawasan maksimal 255 karakter.',
+        'waktupengawasanselesai.string' => 'Waktu Pengawasan Selesai harus berupa teks.',
+        'waktupengawasanselesai.max' => 'Waktu Pengawasan Selesai maksimal 255 karakter.',
+        'namapaketpekerjaan.string' => 'Nama Paket Pekerjaan harus berupa teks.',
+        'namapaketpekerjaan.max' => 'Nama Paket Pekerjaan maksimal 255 karakter.',
+        'jenisusaha.string' => 'Jenis Usaha harus berupa teks.',
+        'jenisusaha.max' => 'Jenis Usaha maksimal 255 karakter.',
+        'kesesuaian.string' => 'Kesesuaian harus berupa teks.',
+        'kesesuaian.max' => 'Kesesuaian maksimal 255 karakter.',
+        'sifatusaha.string' => 'Sifat Usaha harus berupa teks.',
+        'sifatusaha.max' => 'Sifat Usaha maksimal 255 karakter.',
+        'kesesuaiansbu.string' => 'Kesesuaian SBU harus berupa teks.',
+        'kesesuaiansbu.max' => 'Kesesuaian SBU maksimal 255 karakter.',
+        'subklasifikasi_id.exists' => 'Subklasifikasi yang dipilih tidak valid.',
+        'kesesuaianklasifikasi.string' => 'Kesesuaian Klasifikasi harus berupa teks.',
+        'kesesuaianklasifikasi.max' => 'Kesesuaian Klasifikasi maksimal 255 karakter.',
+        'layananusaha.string' => 'Layanan Usaha harus berupa teks.',
+        'layananusaha.max' => 'Layanan Usaha maksimal 255 karakter.',
+        'kesesuaianlayananusaha.string' => 'Kesesuaian Layanan Usaha harus berupa teks.',
+        'kesesuaianlayananusaha.max' => 'Kesesuaian Layanan Usaha maksimal 255 karakter.',
+    ]);
+
+    // Simpan data ke database
+    surattertibjakonusaha1::create($validatedData);
+
+    session()->flash('create', 'Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha !');
+    return redirect('/betertibjakonusaha');
+
+}
 
 }
