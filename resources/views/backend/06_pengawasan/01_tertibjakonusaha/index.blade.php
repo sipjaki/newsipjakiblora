@@ -368,12 +368,24 @@
                               </button>
                           </td>
 
-                            <td style="text-align: center;">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
-                                    <i class="bi {{ $item->sesuai_sifat == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
-                                    {{ $item->sesuai_sifat }}
-                                </button>
-                            </td>
+
+                        @php
+                          $kesesuaian = $item->surattertibjakonusaha1->kesesuaiansbu ?? 'Data Kosong';
+                          $color = $kesesuaian === 'Sesuai' ? 'blue' : ($kesesuaian === 'Tidak Sesuai' ? 'red' : 'gray');
+                          $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : ($kesesuaian === 'Tidak Sesuai' ? 'bi-x-circle' : 'bi-question-circle');
+                      @endphp
+
+                      <td style="text-align: center;">
+                          <button
+                              style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                              onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+                          >
+                              <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+                              {{ $kesesuaian }}
+                          </button>
+                      </td>
+
 
                             <td style="text-align: center;">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->sesuai_klasifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
