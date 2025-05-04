@@ -642,16 +642,10 @@ public function betertibjakonusahacreatenew(Request $request)
 public function betertibjakonusahasurat1create(Request $request)
 {
     $validated = $request->validate([
-        'tertibjasakonstruksi_id' => 'nullable|string',
-        'tandatangan1' => 'nullable|string',
-        'tandatangan2' => 'nullable|string',
-        'tandatangan3' => 'nullable|string',
         'namabadanusaha' => 'required|string|max:255',
         'statusperizinan' => 'required|string',
-        'nib' => 'nullable|string|max:255',
         'waktupengawasan' => 'required|date',
         'waktupengawasanselesai' => 'required|date|after_or_equal:waktupengawasan',
-
         'namapaketpekerjaan' => 'required|string',
         'jenisusaha' => 'required|string',
         'kesesuaian' => 'required|string',
@@ -661,9 +655,25 @@ public function betertibjakonusahasurat1create(Request $request)
         'kesesuaianklasifikasi' => 'required|string',
         'layananusaha' => 'required|string',
         'kesesuaianlayananusaha' => 'required|string',
+    ], [
+        'namabadanusaha.required' => 'Nama Badan Usaha Wajib Diisi.',
+        'statusperizinan.required' => 'Status Perizinan Wajib Dipilih.',
+        'waktupengawasan.required' => 'Tanggal Mulai Pengawasan Wajib Diisi.',
+        'waktupengawasanselesai.required' => 'Tanggal Selesai Pengawasan Wajib Diisi.',
+        'waktupengawasanselesai.after_or_equal' => 'Tanggal Selesai harus setelah atau sama dengan Tanggal Mulai.',
+
+        'namapaketpekerjaan.required' => 'Nama Paket Pekerjaan Wajib Diisi.',
+        'jenisusaha.required' => 'Jenis Usaha Wajib Dipilih.',
+        'kesesuaian.required' => 'Kesesuaian Wajib Dipilih.',
+        'sifatusaha.required' => 'Sifat Usaha Wajib Dipilih.',
+        'kesesuaiansbu.required' => 'Kesesuaian SBU Wajib Dipilih.',
+        'subklasifikasi_id.required' => 'Subklasifikasi Wajib Dipilih.',
+        'kesesuaianklasifikasi.required' => 'Kesesuaian Klasifikasi Wajib Dipilih.',
+        'layananusaha.required' => 'Layanan Usaha Wajib Dipilih.',
+        'kesesuaianlayananusaha.required' => 'Kesesuaian Layanan Usaha Wajib Dipilih.',
     ]);
 
-    SuratTertibJakonUsaha1::create([
+    surattertibjakonusaha1::create([
         'tertibjasakonstruksi_id' => $validated['tertibjasakonstruksi_id'],
         'tandatangan1_id' => $validated['tandatangan1'],
         'tandatangan2_id' => $validated['tandatangan2'],
