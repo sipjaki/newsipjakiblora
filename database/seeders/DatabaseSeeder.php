@@ -59286,7 +59286,7 @@ for ($i = 1; $i <= $jumlahData; $i++) {
         'kesesuaian' => $kesesuaian[array_rand($kesesuaian)],
         'sifatusaha' => $sifatUsaha[array_rand($sifatUsaha)],
         'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)],
-        'subklasifikasi' =>  $i,
+        'subklasifikasi_id' =>  $i,
         'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)],
         'layananusaha' => $jenisUsaha[array_rand($jenisUsaha)],
         'kesesuaianlayananusaha' => $layananUsaha[array_rand($layananUsaha)],
@@ -59347,7 +59347,7 @@ for ($i = 1; $i <= $jumlahData; $i++) {
         'nib' => 'NIB' . rand(1000000000000, 9999999999999), // NIB acak
         'pjbu' => $pjbuList[array_rand($pjbuList)],  // Pilih acak nama PJBU
         'jenisusaha' => $jenisUsaha[array_rand($jenisUsaha)],  // Pilih acak jenis usaha
-        'subklasifikasi' =>  $i, // Pilih acak klasifikasi
+        'subklasifikasi_id' =>  $i, // Pilih acak klasifikasi
         'nomorsertifikat' => 'Sertifikat-' . rand(1000, 9999), // Nomor sertifikat acak
         'kesimpulan' => $kesimpulan[array_rand($kesimpulan)], // Pilih acak kesimpulan
         'catatanpemeriksaan' => 'Catatan ' . rand(1, 10), // Catatan pemeriksaan acak
