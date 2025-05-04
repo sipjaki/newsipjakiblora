@@ -581,7 +581,7 @@ public function betertibjakonusahacreatenew(Request $request)
     {
         // Validasi input
         $validated = $request->validate([
-            'penyediastatustertibjakon_id' => 'required|exists:penyediastatustertibjakon,id',
+            'penyediastatustertibjakon_id' => 'required|string',
             'nib' => 'nullable|numeric|digits_between:1,50',
             'namapekerjaan' => 'required|string|max:255',
             'tahunpelaksanaan' => 'required|in:2024,2025,2026',
