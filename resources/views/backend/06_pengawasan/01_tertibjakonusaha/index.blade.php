@@ -181,7 +181,6 @@
                         <table id="tabeltertibjakonusaha" class="zebra-table table-bordered table-striped" style="white-space: nowrap;">
                             <thead>
                                 <tr>
-                                    <!-- Kolom tetap -->
                                     <th rowspan="2" style="text-align: center; width:75px;">
                                         <i class="bi bi-list-ol"></i> No
                                     </th>
@@ -200,49 +199,50 @@
                                     <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> Badan Usaha
                                     </th>
+
                                     <th rowspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-building-fill"></i> PJBU
                                     </th>
 
-                                    <!-- Induk 4 kolom -->
                                     <th colspan="4" style="text-align: center; width:800px;">
                                         <i class="bi bi-person-lines-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
-
-                                    <!-- Segmentasi Pasar -->
                                     <th colspan="2" style="text-align: center; width:450px;">
                                         <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
                                     </th>
 
-                                    <!-- Pemenuhan Syarat -->
-                                    <th colspan="1" style="text-align: center; width:400px;">
+                                    <th colspan="2" style="text-align: center; width:400px;">
                                         <i class="bi bi-graph-up-arrow"></i> Pemenuhan Syarat
                                     </th>
 
-                                    <!-- Kesimpulan Pemeriksaan -->
-                                    <th rowspan="1" colspan="1" style="text-align: center; width:250px;">
-                                        <i class="bi bi-file-earmark-check-fill"></i> Kesimpulan Pemeriksaan
-                                    </th>
-
-                                    <!-- Tetap rowspan 2 -->
                                     <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
                                         <i class="bi bi-gear-fill"></i> Pelaksanaan Pengembangan Usaha
                                     </th>
+
                                     <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
                                         <i class="bi bi-file-earmark-text-fill"></i> Surat Dukung Kesesuaian Kegiatan Konstruksi
                                     </th>
+
                                     <th rowspan="2" style="text-align: center; width:325px; white-space: normal; word-wrap: break-word;">
                                         <i class="bi bi-file-earmark-text-fill"></i> Surat Dukung Kesesuaian Jasa Konstruksi & Segmentasi Pasar Jasa Konstruksi
                                     </th>
+
+                                    <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
+                                        <i class="bi bi-file-earmark-text-fill"></i> Surat Dukung Pemenuhan Syarat Usaha
+                                    </th>
+
                                     <th rowspan="2" style="text-align: center; width:250px; white-space: normal; word-wrap: break-word;">
                                         <i class="bi bi-file-earmark-text-fill"></i> Surat Dukung Pelaksanaan Pengembangan Usaha
                                     </th>
+
                                     <th rowspan="2" style="text-align: center; width:200px;">
                                         <i class="bi bi-tools"></i> Aksi
                                     </th>
+
+
                                 </tr>
                                 <tr>
-                                    <!-- Subkolom PJBU -->
+                                    <!-- PJBU Subkolom -->
                                     <th style="text-align: center;">
                                         <i class="bi bi-check-circle"></i> Sesuai Jenis
                                     </th>
@@ -256,17 +256,17 @@
                                         <i class="bi bi-check-circle"></i> Sesuai Layanan
                                     </th>
 
-                                    <!-- Subkolom Segmentasi -->
+                                    <!-- Segmentasi Pasar -->
                                     <th style="text-align: center;">
                                         <i class="bi bi-diagram-3-fill"></i> Sesuai Bentuk
                                     </th>
+
                                     <th style="text-align: center;">
                                         <i class="bi bi-bar-chart-line-fill"></i> Sesuai Kualifikasi
                                     </th>
 
-                                    <!-- Subkolom dari Kesimpulan -->
                                     <th style="text-align: center;">
-                                        <i class="bi bi-file-earmark-text-fill"></i> Surat Dukung Pemenuhan Syarat Usaha
+                                        <i class="bi bi-file-earmark-check-fill"></i> Kesimpulan Pemeriksaan
                                     </th>
                                 </tr>
                             </thead>
