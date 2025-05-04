@@ -424,20 +424,42 @@
                   </button>
               </td>
 
+              @php
+              $kesesuaian = $item->surattertibjakonusaha2->kesesuaiansbu ?? 'Tidak Sesuai';
+              $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+              $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+              $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+          @endphp
 
-                            <td style="text-align: center;">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
-                                    <i class="bi {{ $item->segmentasipasar_bentuk == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
-                                    {{ $item->segmentasipasar_bentuk }}
-                                </button>
-                            </td>
+          <td style="text-align: center;">
+              <button
+                  style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+                  onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                  onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+              >
+                  <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+                  {{ $tertibStatus }}
+              </button>
+          </td>
 
-                            <td style="text-align: center;">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
-                                    <i class="bi {{ $item->segmentasipasar_kualifikasi == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
-                                    {{ $item->segmentasipasar_kualifikasi }}
-                                </button>
-                            </td>
+          @php
+          $kesesuaian = $item->surattertibjakonusaha2->sbu ?? 'Tidak Sesuai';
+          $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+          $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+          $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+      @endphp
+
+      <td style="text-align: center;">
+          <button
+              style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+              onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+          >
+              <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+              {{ $tertibStatus }}
+          </button>
+      </td>
+
 
                             <td style="text-align: center;">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
