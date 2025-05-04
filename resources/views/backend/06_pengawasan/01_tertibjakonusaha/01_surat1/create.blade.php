@@ -289,12 +289,12 @@
                                                                 <!-- Tim Pemeriksa -->
                                                                 <div class="tim-pemeriksa-container">
                                                                     <div class="tim-pemeriksa">
-                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                        <h6 style="font-size: 15px;">Tim Pemeriksa:</h6>
                                                                         <table class="table table-sm">
                                                                             <thead class="table-secondary">
                                                                                 <tr>
-                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
-                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
+                                                                                    <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Lengkap</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
@@ -302,7 +302,7 @@
                                                                                     <td style="font-size: 12px;">1</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan1" class="form-control">
-                                                                                            <option value="">-- Pilih Tanda Tangan --</option>
+                                                                                            <option value="">-- Pilih Tim Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
                                                                                                     @if($item->surattertibjakonusaha1->tandatangan1_id == $tandatangan->id) selected @endif>
@@ -316,7 +316,7 @@
                                                                                     <td style="font-size: 12px;">2</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan2" class="form-control">
-                                                                                            <option value="">-- Pilih Tanda Tangan --</option>
+                                                                                            <option value="">-- Pilih Tim Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
                                                                                                     @if($item->surattertibjakonusaha1->tandatangan2_id == $tandatangan->id) selected @endif>
@@ -330,7 +330,7 @@
                                                                                     <td style="font-size: 12px;">3</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan3" class="form-control">
-                                                                                            <option value="">-- Pilih Tanda Tangan --</option>
+                                                                                            <option value="">-- Pilih Tim Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
                                                                                                     @if($item->surattertibjakonusaha1->tandatangan3_id == $tandatangan->id) selected @endif>
