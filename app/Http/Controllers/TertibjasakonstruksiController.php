@@ -678,7 +678,7 @@ public function betertibjakonusahasurat1create(Request $request)
         'kesesuaianlayananusaha.required' => 'Kesesuaian Layanan Usaha Wajib Dipilih.',
     ]);
 
-    surattertibjakonusaha1::create([
+    surattertibjakonusaha1::update([
         'tertibjasakonstruksi_id' => $validated['tertibjasakonstruksi_id'],
         // 'tandatangan1_id' => $validated['tandatangan1'],
         // 'tandatangan2_id' => $validated['tandatangan2'],
