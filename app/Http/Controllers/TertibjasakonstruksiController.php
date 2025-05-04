@@ -642,18 +642,18 @@ public function betertibjakonusahacreatenew(Request $request)
 public function betertibjakonusahasurat1create(Request $request)
 {
     $validated = $request->validate([
-        'tertibjasakonstruksi_id' => 'required|integer|exists',
+        'tertibjasakonstruksi_id' => 'required|string',
         'namabadanusaha' => 'required|string|max:255',
         'statusperizinan' => 'required|string',
         'nib' => 'required|string',
         'waktupengawasan' => 'required|date',
-        'waktupengawasanselesai' => 'required|date|after_or_equal:waktupengawasan',
+        'waktupengawasanselesai' => 'required|date',
         'namapaketpekerjaan' => 'required|string',
         'jenisusaha' => 'required|string',
         'kesesuaian' => 'required|string',
         'sifatusaha' => 'required|string',
         'kesesuaiansbu' => 'required|string',
-        'subklasifikasi_id' => 'required|string|exists',
+        'subklasifikasi_id' => 'required|string',
         'kesesuaianklasifikasi' => 'required|string',
         'layananusaha' => 'required|string',
         'kesesuaianlayananusaha' => 'required|string',
