@@ -499,7 +499,7 @@
                                     data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
                                     <i class="bi bi-eye"></i>
                                 </button>
-                                <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
+                                <a href="/betertibjakonusahasurat1/create/{{$item->id}}" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
                                     <i class="bi bi-pencil"></i>
                                 </a>
                                 <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">

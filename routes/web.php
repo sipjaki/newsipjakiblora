@@ -899,6 +899,9 @@ Route::post('/betertibjakonusaha/updatecreate/{id}', [TertibjasakonstruksiContro
 // SURAT DUKUNG TERTIB JAKON USAHA
 Route::get('/betertibjakonusahasurat1/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware('auth')->name('betertibjakonusahasurat1');
 
+// PEMBUATAN SURAT 1
+Route::get('/betertibjakonusahasurat1/create/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware('auth')->name('betertibjakonusahasurat1');
+Route::post('/betertibjakonusahasurat1/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware('auth')->name('betertibjakonusahasurat1');
 
 
 
