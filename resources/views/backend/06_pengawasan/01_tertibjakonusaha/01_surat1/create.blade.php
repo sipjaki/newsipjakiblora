@@ -84,9 +84,7 @@
                         <!--begin::Quick Example-->
                         <form action="{{ route('betertibjakonusahasurat1') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
-                            <form action="{{ route('betertibjakonusahasurat1') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
+                            <input type="text"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
 
                                 <div class="modal-content" style="font-size: 0.875rem;">
                                     <div class="modal-header d-flex align-items-center">
