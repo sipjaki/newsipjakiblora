@@ -700,7 +700,7 @@
                                 <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
                                     <i class="bi bi-pencil"></i>
                                 </a>
-                                <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">
+                                <button onclick="printModalContentSurat2({{ $item->id }})" class="btn btn-primary">
                                     <i class="bi bi-download"></i>
                                 </button>
                                 <div class="modal fade" id="modalSurat2{{ $item->id }}" tabindex="-1" aria-labelledby="modalSurat2Label{{ $item->id }}" aria-hidden="true">
@@ -887,7 +887,7 @@
                                                             <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
                                                                 <i class="bi bi-pencil"></i>
                                                             </a>
-                                                            <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">
+                                                            <button onclick="printModalContentSurat3({{ $item->id }})" class="btn btn-primary">
                                                                 <i class="bi bi-download"></i>
                                                             </button>
                                                             <div class="modal fade" id="modalSurat3{{ $item->id }}" tabindex="-1" aria-labelledby="modalSurat3Label{{ $item->id }}" aria-hidden="true">
@@ -1301,7 +1301,7 @@
 </script>
 
 <script>
-    function printModalContent(id) {
+    function printModalContentSurat2(id) {
         const modalContent = document.querySelector(`#modalSurat2${id} .modal-content`);
         if (!modalContent) {
             alert("Konten tidak ditemukan.");
@@ -1405,7 +1405,7 @@
 </script>
 
 <script>
-    function printModalContent(id) {
+    function printModalContentSurat3(id) {
         const modalContent = document.querySelector(`#modalSurat3${id} .modal-content`);
         if (!modalContent) {
             alert("Konten tidak ditemukan.");
