@@ -164,15 +164,48 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="namapaketpekerjaan"></td>
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="jenisusaha"></td>
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaian"></td>
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="sifatusaha"></td>
-                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaiansbu"></td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="namapaketpekerjaan" placeholder="Nama Pekerjaan.."></td>
                                                     <td style="border: 1px solid #000;">
-                                                        <input type="text" class="form-control mb-1" name="subklasifikasi_kode" placeholder="Kode">
-                                                        <input type="text" class="form-control" name="subklasifikasi_pekerjaan" placeholder="Pekerjaan">
+                                                        <select class="form-control" name="jenisusaha">
+                                                            <option value="">-- Pilih Jenis Usaha --</option>
+                                                            <option value="Pekerjaan Konstruksi">Pekerjaan Konstruksi</option>
+                                                            <option value="Pekerjaan Konsultasi Konstruksi">Pekerjaan Konsultasi Konstruksi</option>
+                                                        </select>
                                                     </td>
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control" name="kesesuaian">
+                                                            <option value="">-- Pilih Kesesuaian --</option>
+                                                            <option value="Sesuai">Sesuai</option>
+                                                            <option value="Tidak Sesuai">Tidak Sesuai</option>
+                                                        </select>
+                                                    </td>
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control" name="sifatusaha">
+                                                            <option value="">-- Pilih Sifat Usaha --</option>
+                                                            <option value="Umum">Umum</option>
+                                                            <option value="Spesialis">Spesialis</option>
+                                                        </select>
+                                                    </td>
+
+
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control" name="kesesuaiansbu">
+                                                            <option value="">-- Pilih Kesesuaian SBU --</option>
+                                                            <option value="Sesuai">Sesuai</option>
+                                                            <option value="Tidak Sesuai">Tidak Sesuai</option>
+                                                        </select>
+                                                    </td>
+
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control mb-1" name="subklasifikasi_id">
+                                                            <option value="">-- Pilih Subklasifikasi --</option>
+                                                            @foreach ($datasubklasifikasi as $sub)
+                                                                <option value="{{ $sub->id }}">{{ $sub->pekerjaan }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </td>
+
+
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianklasifikasi"></td>
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="layananusaha"></td>
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianlayananusaha"></td>
