@@ -582,7 +582,7 @@ public function betertibjakonusahacreatenew(Request $request)
         // Validasi input
         $validated = $request->validate([
             'penyediastatustertibjakon_id' => 'required|string',
-            'nib' => 'nullable|numeric|digits_between:1,50',
+            'nib' => 'required|numeric|digits_between:1,50',
             'namapekerjaan' => 'required|string|max:255',
             'tahunpelaksanaan' => 'required|in:2024,2025,2026',
             'namabadanusaha' => 'required|string|max:255',
@@ -590,6 +590,7 @@ public function betertibjakonusahacreatenew(Request $request)
         ], [
             'penyediastatustertibjakon_id.required' => 'Status penyedia wajib dipilih.',
             'penyediastatustertibjakon_id.exists' => 'Status penyedia tidak valid.',
+            'nib.required' => 'NIB belum diisi .',
             'nib.numeric' => 'NIB harus berupa angka.',
             'nib.digits_between' => 'NIB maksimal 50 digit.',
             'namapekerjaan.required' => 'Nama pekerjaan tidak boleh kosong.',
