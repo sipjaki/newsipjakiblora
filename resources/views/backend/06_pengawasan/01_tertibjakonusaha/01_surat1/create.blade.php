@@ -47,7 +47,7 @@
                            <div class="card card-primary card-outline mb-6">
                             <div style="display: flex; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; margin-bottom:20px;">
                                 <!-- Kontainer Kiri -->
-                                <div style="display: flex; gap: 10px;">
+                                <div style="display: flex; gap: 10px; margin-right:25px; margin-left:25px;">
                                     <!-- Tombol Nama Pekerjaan -->
                                     <button
                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
