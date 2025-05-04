@@ -218,8 +218,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="border: 1px solid #000; max-width: 250px;">
-                                                        <select class="form-control mb-1" name="subklasifikasi_id"
-                                                            style="max-width: 100%; overflow-x: auto; white-space: nowrap;">
+                                                        <select class="form-control mb-1" name="subklasifikasi_id" style="width: 100%; white-space: normal; overflow-y: auto; max-height: 200px;">
                                                             <option value="">-- Pilih Subklasifikasi --</option>
                                                             @foreach ($datasubklasifikasi as $sub)
                                                                 <option value="{{ $sub->id }}">{{ $sub->pekerjaan }}</option>
