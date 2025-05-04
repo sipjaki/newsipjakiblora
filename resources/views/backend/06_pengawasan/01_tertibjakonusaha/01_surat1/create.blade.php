@@ -125,6 +125,9 @@
                                                     <strong style="font-size: 15px;">Nama Badan Usaha</strong>
                                                 </td>
                                                 <td><input type="text" class="form-control" name="namabadanusaha" placeholder="Masukan Nama Badan Usaha ... "></td>
+                                                @error('namabadanusaha')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </tr>
                                             <tr>
                                                 <td style="width: 300px;">
@@ -137,6 +140,9 @@
                                                         <option value="Tidak Terdaftar">Tidak Terdaftar</option>
                                                     </select>
                                                 </td>
+                                                @error('statusperizinan')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                                 {{-- <td><input type="text" class="form-control" name="statusperizinan"></td> --}}
                                             </tr>
                                             <tr>
@@ -144,6 +150,9 @@
                                                     <strong style="font-size: 15px;">No NIB</strong>
                                                 </td>
                                                 <td><input type="text" class="form-control" name="nib" placeholder="Masukan NIB ... "></td>
+                                                @error('nib')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                                @enderror
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px;">
@@ -173,6 +182,9 @@
                                                     <td style="border: 1px solid #000; text-align: center;">1</td>
                                                     <td style="border: 1px solid #000; width: 400px;">
                                                         <textarea class="form-control" name="namapaketpekerjaan" placeholder="Masukan Nama Pekerjaan ... " rows="6" style="width: 100%; resize: vertical;"></textarea>
+                                                        @error('namapaketpekerjaan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                        @enderror
                                                     </td>
                                                       <td style="border: 1px solid #000;">
                                                         <select class="form-control" name="jenisusaha">
