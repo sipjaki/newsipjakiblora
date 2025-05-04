@@ -848,6 +848,7 @@
                                                                                         <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
                                                                                         <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama BUJK</th>
                                                                                         <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nomor Induk Berusaha (NIB) </th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">PJBU</th>
                                                                                         <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis Usaha</th>
                                                                                         <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Klasifikasi/Subklasifikasi</th>
                                                                                         <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nomor Sertifikat Standar</th>
