@@ -220,7 +220,7 @@
                                                     <td style="border: 1px solid #000; max-width: 600px;">
                                                         <div id="subklasifikasi-container">
                                                             <select class="form-control mb-1" name="subklasifikasi_id" id="subklasifikasiSelect"
-                                                                onchange="convertToTextarea(this)" style="width: 100%; max-height: 250px;">
+                                                                onchange="convertToTextarea(this)" style="width: 100%; max-height: 600px;">
                                                                 <option value="">-- Pilih Subklasifikasi --</option>
                                                                 @foreach ($datasubklasifikasi as $sub)
                                                                     <option value="{{ $sub->id }}">
