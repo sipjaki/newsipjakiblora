@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\penyediastatustertibjakon;
 use App\Models\subklasifikasi;
+use App\Models\tandatangan;
 use App\Models\tertibjakon;
 use App\Models\tertibjakonpemanfaatan;
 use App\Models\tertibjakonpenyelenggaraan;
@@ -620,6 +621,7 @@ public function betertibjakonusahacreatenew(Request $request)
     $datatertibjasakonstruksi = tertibjasakonstruksi::findOrFail($id); // Cari 1 data sesuai ID
     $user = Auth::user();
     $datasubklasifikasi = subklasifikasi::all();
+    $datatandatangan = tandatangan::all(); // Cari 1 data sesuai ID
 
     return view('backend.06_pengawasan.01_tertibjakonusaha.01_surat1.create', [
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan, // Ini dikirim ke form
@@ -627,6 +629,7 @@ public function betertibjakonusahacreatenew(Request $request)
         'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id, // Ini dikirim ke form
         'user' => $user,
         'datasubklasifikasi' => $datasubklasifikasi,
+        'datatandatangan' => $datatandatangan,
         'title' => 'Create Surat Kesesuaian Kegiatan Konstruksi '
     ]);
 }

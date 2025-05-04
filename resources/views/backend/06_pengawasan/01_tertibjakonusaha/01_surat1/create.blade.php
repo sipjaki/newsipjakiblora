@@ -276,6 +276,81 @@
 
 
                                 </div>
+
+                                <div class="container" style="margin-top: 10px;">
+                                    <!-- Modal Card -->
+
+                                            <div class="container" style="margin-top: 10px;">
+                                                <div class="row">
+                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                        <!-- Modal Card -->
+                                                        <div class="card" style="border: 1px solid white;">
+                                                            <div class="card-body">
+                                                                <!-- Tim Pemeriksa -->
+                                                                <div class="tim-pemeriksa-container">
+                                                                    <div class="tim-pemeriksa">
+                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                        <table class="table table-sm">
+                                                                            <thead class="table-secondary">
+                                                                                <tr>
+                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
+                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px;">1</td>
+                                                                                    <td style="font-size: 12px;">
+                                                                                        <select name="tandatangan1" class="form-control">
+                                                                                            <option value="">-- Pilih Tanda Tangan --</option>
+                                                                                            @foreach ($datatandatangan as $tandatangan)
+                                                                                                <option value="{{ $tandatangan->id }}"
+                                                                                                    @if($item->surattertibjakonusaha1->tandatangan1_id == $tandatangan->id) selected @endif>
+                                                                                                    {{ $tandatangan->namalengkap }}
+                                                                                                </option>
+                                                                                            @endforeach
+                                                                                        </select>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px;">2</td>
+                                                                                    <td style="font-size: 12px;">
+                                                                                        <select name="tandatangan2" class="form-control">
+                                                                                            <option value="">-- Pilih Tanda Tangan --</option>
+                                                                                            @foreach ($datatandatangan as $tandatangan)
+                                                                                                <option value="{{ $tandatangan->id }}"
+                                                                                                    @if($item->surattertibjakonusaha1->tandatangan2_id == $tandatangan->id) selected @endif>
+                                                                                                    {{ $tandatangan->namalengkap }}
+                                                                                                </option>
+                                                                                            @endforeach
+                                                                                        </select>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td style="font-size: 12px;">3</td>
+                                                                                    <td style="font-size: 12px;">
+                                                                                        <select name="tandatangan3" class="form-control">
+                                                                                            <option value="">-- Pilih Tanda Tangan --</option>
+                                                                                            @foreach ($datatandatangan as $tandatangan)
+                                                                                                <option value="{{ $tandatangan->id }}"
+                                                                                                    @if($item->surattertibjakonusaha1->tandatangan3_id == $tandatangan->id) selected @endif>
+                                                                                                    {{ $tandatangan->namalengkap }}
+                                                                                                </option>
+                                                                                            @endforeach
+                                                                                        </select>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                 <br><br>
 <!-- Tombol Submit -->
 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
