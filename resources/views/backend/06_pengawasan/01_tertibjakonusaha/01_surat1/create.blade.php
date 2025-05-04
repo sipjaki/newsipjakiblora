@@ -172,9 +172,9 @@
                                                 <tr>
                                                     <td style="border: 1px solid #000; text-align: center;">1</td>
                                                     <td style="border: 1px solid #000; width: 400px;">
-                                                        <input type="text" class="form-control" name="namapaketpekerjaan" placeholder="Nama Pekerjaan.." style="width: 100%;">
+                                                        <textarea class="form-control" name="namapaketpekerjaan" placeholder="Nama Pekerjaan.." rows="3" style="width: 100%; resize: vertical;"></textarea>
                                                     </td>
-                                                    <td style="border: 1px solid #000;">
+                                                      <td style="border: 1px solid #000;">
                                                         <select class="form-control" name="jenisusaha">
                                                             <option value="">-- Pilih Jenis Usaha --</option>
                                                             <option value="Pekerjaan Konstruksi">Pekerjaan Konstruksi</option>
