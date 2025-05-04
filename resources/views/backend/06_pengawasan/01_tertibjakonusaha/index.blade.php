@@ -368,11 +368,11 @@
                               </button>
                           </td>
 
-
-                        @php
-                          $kesesuaian = $item->surattertibjakonusaha1->kesesuaiansbu ?? 'Data Kosong';
-                          $color = $kesesuaian === 'Sesuai' ? 'blue' : ($kesesuaian === 'Tidak Sesuai' ? 'red' : 'gray');
-                          $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : ($kesesuaian === 'Tidak Sesuai' ? 'bi-x-circle' : 'bi-question-circle');
+                          @php
+                          $kesesuaian = $item->surattertibjakonusaha1->kesesuaiansbu ?? 'Tidak Sesuai';
+                          $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+                          $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+                          $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
                       @endphp
 
                       <td style="text-align: center;">
@@ -382,9 +382,10 @@
                               onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
                           >
                               <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                              {{ $kesesuaian }}
+                              {{ $tertibStatus }}
                           </button>
                       </td>
+
 
 
                             <td style="text-align: center;">
