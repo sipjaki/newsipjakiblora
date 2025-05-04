@@ -97,27 +97,34 @@
                                         </a>
                                         <span class="mx-2">:</span>
                                         <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
 
                                     <div class="modal-body">
-                                        <h5 style="font-size: 1rem;">Form Input: Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
+                                        <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
 
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                             <tr>
-                                                <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
+                                                <td style="width: 200px;">
+                                                    <strong><i class="bi bi-building-fill"></i> Nama Badan Usaha</strong>
+                                                </td>
                                                 <td><input type="text" class="form-control" name="namabadanusaha"></td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
+                                                <td style="width: 300px;">
+                                                    <strong><i class="bi bi-check2-circle"></i> Status Perizinan Berusaha</strong>
+                                                </td>
                                                 <td><input type="text" class="form-control" name="statusperizinan"></td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px;"><strong>No NIB</strong></td>
+                                                <td style="width: 200px;">
+                                                    <strong><i class="bi bi-123"></i> No NIB</strong>
+                                                </td>
                                                 <td><input type="text" class="form-control" name="nib"></td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
+                                                <td style="width: 200px;">
+                                                    <strong><i class="bi bi-calendar-range-fill"></i> Waktu Pengawasan</strong>
+                                                </td>
                                                 <td class="d-flex gap-2">
                                                     <input type="date" class="form-control" name="waktupengawasan">
                                                     <span class="mx-1">–</span>
