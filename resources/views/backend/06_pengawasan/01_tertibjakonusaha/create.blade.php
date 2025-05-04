@@ -96,7 +96,7 @@
     <label for="nib" class="form-label">
         <i class="bi bi-123 text-primary"></i> NIB
     </label>
-    <input type="text" id="nib" name="nib"
+    <input type="number" id="nib" name="nib"
         class="form-control @error('nib') is-invalid @enderror"
         value="{{ old('nib', $data->nib ?? '') }}">
     @error('nib')
