@@ -134,7 +134,7 @@
                                                 </td>
                                                 <td class="d-flex gap-2">
                                                     <input type="date" class="form-control" name="waktupengawasan" placeholder="Dimulai Sejak ... ">
-                                                    <span class="mx-1">–</span>
+                                                    <span class="mx-1">(Sampai Dengan)</span>
                                                     <input type="date" class="form-control" name="waktupengawasanselesai" placeholder="Berakhir Tanggal ... ">
                                                 </td>
                                             </tr>
