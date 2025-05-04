@@ -901,7 +901,7 @@ Route::get('/betertibjakonusahasurat1/update/{id}', [TertibjasakonstruksiControl
 
 // PEMBUATAN SURAT 1
 Route::get('/betertibjakonusahasurat1/create/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware('auth')->name('betertibjakonusahasurat1');
-Route::post('/betertibjakonusahasurat1/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware('auth')->name('betertibjakonusahasurat1');
+Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiController::class, 'betertibjakonusahasurat1'])->middleware('auth')->name('betertibjakonusahasurat1');
 
 
 
