@@ -13,6 +13,7 @@ use App\Models\sskk;
 use App\Models\agendaskk;
 use App\Models\pesertapelatihan;
 use App\Models\permenteri;
+use App\Models\subklasifikasi;
 use App\Models\perpemerintah;
 use App\Models\perpresiden;
 use App\Models\keputusanmenteri;
