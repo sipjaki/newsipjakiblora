@@ -23,4 +23,9 @@ class surattertibjakonusaha1 extends Model
         return $this->belongsTo(tandatangan::class, 'tandatangan_id');
     }
 
+    public function subklasifikasi()
+    {
+        return $this->belongsTo(subklasifikasi::class, 'subklasifikasi_id');
+    }
+
 }

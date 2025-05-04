@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('nib')->nullable()->index();
             $table->string('pjbu')->nullable()->index();
             $table->string('jenisusaha')->nullable()->index();
-            $table->string('klasifikasi')->nullable()->index();
+            $table->foreignId('subklasifikasi_id')->nullable()->index();
             $table->string('nomorsertifikat')->nullable()->index();
             $table->string('kesimpulan')->nullable()->index();
             $table->string('catatanpemeriksaan')->nullable()->index();

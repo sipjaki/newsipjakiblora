@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('kesesuaian')->nullable();
             $table->string('sifatusaha')->nullable();
             $table->string('kesesuaiansbu')->nullable();
-            $table->string('subklasifikasi')->nullable();
+            $table->foreignId('subklasifikasi_id')->nullable()->index();
             $table->string('kesesuaianklasifikasi')->nullable();
             $table->string('layananusaha')->nullable();
             $table->string('kesesuaianlayananusaha')->nullable();

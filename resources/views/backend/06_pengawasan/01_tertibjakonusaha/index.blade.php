@@ -863,7 +863,7 @@
                                                                                         <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nib ?? 'Data Belum Di Buat '}}</td>
                                                                                         <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->pjbu ?? 'Data Belum Di Buat '}}</td>
                                                                                         <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->klasifikasi ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$item->surattertibjakonusaha3->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                                                         <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
                                                                                         <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
                                                                                         <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>

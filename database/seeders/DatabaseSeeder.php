@@ -59286,7 +59286,7 @@ for ($i = 1; $i <= $jumlahData; $i++) {
         'kesesuaian' => $kesesuaian[array_rand($kesesuaian)],
         'sifatusaha' => $sifatUsaha[array_rand($sifatUsaha)],
         'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)],
-        'subklasifikasi' => 'Subklasifikasi ' . rand(1, 100),
+        'subklasifikasi' =>  $i,
         'kesesuaianklasifikasi' => $kesesuaian[array_rand($kesesuaian)],
         'layananusaha' => $jenisUsaha[array_rand($jenisUsaha)],
         'kesesuaianlayananusaha' => $layananUsaha[array_rand($layananUsaha)],
@@ -59347,7 +59347,7 @@ for ($i = 1; $i <= $jumlahData; $i++) {
         'nib' => 'NIB' . rand(1000000000000, 9999999999999), // NIB acak
         'pjbu' => $pjbuList[array_rand($pjbuList)],  // Pilih acak nama PJBU
         'jenisusaha' => $jenisUsaha[array_rand($jenisUsaha)],  // Pilih acak jenis usaha
-        'klasifikasi' => $klasifikasiList[array_rand($klasifikasiList)], // Pilih acak klasifikasi
+        'subklasifikasi' =>  $i, // Pilih acak klasifikasi
         'nomorsertifikat' => 'Sertifikat-' . rand(1000, 9999), // Nomor sertifikat acak
         'kesimpulan' => $kesimpulan[array_rand($kesimpulan)], // Pilih acak kesimpulan
         'catatanpemeriksaan' => 'Catatan ' . rand(1, 10), // Catatan pemeriksaan acak
@@ -82974,6 +82974,318 @@ for ($i = 1; $i <= 909; $i++) {
         'sertifikat' => '/assets/03_datajakon/sertifikasi.pdf',
     ]);
 }
+
+// BATAS BARU
+subklasifikasi::create([
+    'id' => 1,
+    'kode' => 'BG001',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Hunian Tunggal dan Koppel',
+]);
+
+subklasifikasi::create([
+    'id' => 2,
+    'kode' => 'BG002',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Multi atau Banyak Hunian',
+]);
+
+subklasifikasi::create([
+    'id' => 3,
+    'kode' => 'BG003',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Gudang dan Industri',
+]);
+
+subklasifikasi::create([
+    'id' => 4,
+    'kode' => 'BG004',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Komersial',
+]);
+
+subklasifikasi::create([
+    'id' => 5,
+    'kode' => 'BG005',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Hiburan Publik',
+]);
+
+subklasifikasi::create([
+    'id' => 6,
+    'kode' => 'BG006',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Hotel, Restoran, dan Bangunan Serupa Lainnya',
+]);
+
+subklasifikasi::create([
+    'id' => 7,
+    'kode' => 'BG007',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Pendidikan',
+]);
+
+subklasifikasi::create([
+    'id' => 8,
+    'kode' => 'BG008',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Kesehatan',
+]);
+
+subklasifikasi::create([
+    'id' => 9,
+    'kode' => 'BG009',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Bangunan Gedung Lainnya',
+]);
+
+
+subklasifikasi::create([
+    'id' => 10,
+    'kode' => 'EL005',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Jaringan Transmisi Telekomunikasi dan/atau Telepon',
+]);
+
+subklasifikasi::create([
+    'id' => 11,
+    'kode' => 'EL008',
+    'pekerjaan' => 'Jasa pelaksana instalasi jaringan distribusi telekomunikasi dan/atau telepon',
+]);
+
+subklasifikasi::create([
+    'id' => 12,
+    'kode' => 'EL011',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Instalasi Elektrikal Lainnya',
+]);
+
+subklasifikasi::create([
+    'id' => 13,
+    'kode' => 'MK001',
+    'pekerjaan' => 'Jasa pelaksana konstruksi pemasangan pendingin udara (Air Conditioner), pemanas dan ventilasi',
+]);
+
+subklasifikasi::create([
+    'id' => 14,
+    'kode' => 'MK002',
+    'pekerjaan' => 'Jasa Pelaksana konstruksi Pemasangan Pipa Air (Plumbing) dalam Bangunan dan Salurannya',
+]);
+
+subklasifikasi::create([
+    'id' => 15,
+    'kode' => 'MK003',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Pemasangan Pipa Gas dalam Bangunan',
+]);
+
+subklasifikasi::create([
+    'id' => 16,
+    'kode' => 'MK004',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Insulasi dalam Bangunan',
+]);
+
+subklasifikasi::create([
+    'id' => 17,
+    'kode' => 'MK005',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Pemasangan Lift dan Tangga Berjalan',
+]);
+
+subklasifikasi::create([
+    'id' => 18,
+    'kode' => 'MK006',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Pertambangan dan Manufaktur',
+]);
+
+subklasifikasi::create([
+    'id' => 19,
+    'kode' => 'MK007',
+    'pekerjaan' => 'Jasa Pelaksana instalasi thermal, bertekanan, minyak, gas, geothermal (pekerjaan rekayasa)',
+]);
+
+subklasifikasi::create([
+    'id' => 20,
+    'kode' => 'MK008',
+    'pekerjaan' => 'Jasa pelaksana instalasi alat angkut dan alat angkat',
+]);
+
+subklasifikasi::create([
+    'id' => 21,
+    'kode' => 'MK009',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Instalasi Perpipaan, Gas, Energi (Pekerjaan Rekayasa)',
+]);
+
+subklasifikasi::create([
+    'id' => 22,
+    'kode' => 'MK010',
+    'pekerjaan' => 'Jasa pelaksana instalasi fasilitas produksi, penyimpanan minyak dan gas (pekerjaan rekayasa)',
+]);
+
+
+subklasifikasi::create([
+    'id' => 23,
+    'kode' => 'PL001',
+    'pekerjaan' => 'Jasa Penyewaan Alat Konstruksi Dan Pembongkaran Bangunan Atau Pekerjaan Sipil Lainnya Dengan Operator',
+]);
+
+subklasifikasi::create([
+    'id' => 24,
+    'kode' => 'PL003',
+    'pekerjaan' => 'Jasa Pelaksana Perakitan dan Pemasangan Konstruksi Prakabriksi untuk Konstruksi Jalan dan Jembatan Serta Rel Kereta Api',
+]);
+
+subklasifikasi::create([
+    'id' => 25,
+    'kode' => 'PL004',
+    'pekerjaan' => 'Jasa Pelaksana Perakitan dan Pemasangan Konstruksi Prakabriksi untuk Konstruksi Prasarana Sumber Daya Air, Irigasi, Dermaga, Pelabuhan, Persungaian, Pantai serta Bangunan Pengolahan Air Bersih, Limbah, dan sampah Insinerator',
+]);
+
+subklasifikasi::create([
+    'id' => 26,
+    'kode' => 'SI001',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Saluran Air, Pelabuhan, Dam, dan Prasarana Sumber Daya Air Lainnya',
+]);
+
+subklasifikasi::create([
+    'id' => 27,
+    'kode' => 'SI002',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Instalasi Pengolahan Air Minum dan Air Limbah Serta Bangunan Pengolahan Sampah',
+]);
+
+subklasifikasi::create([
+    'id' => 28,
+    'kode' => 'SI003',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Jalan Raya (kecuali jalan layang), jalan, rel kereta api, dan landas pacu bandara',
+]);
+
+subklasifikasi::create([
+    'id' => 29,
+    'kode' => 'SI004',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Pekerjaan Jembatan, Jalan Layang, Terowongan dan Subways',
+]);
+
+subklasifikasi::create([
+    'id' => 30,
+    'kode' => 'SI005',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Air Minum Jarak Jauh',
+]);
+
+subklasifikasi::create([
+    'id' => 31,
+    'kode' => 'SI006',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Air Limbah Jarak Jauh',
+]);
+
+subklasifikasi::create([
+    'id' => 32,
+    'kode' => 'SI007',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Minyak dan Gas Jarak Jauh',
+]);
+
+subklasifikasi::create([
+    'id' => 33,
+    'kode' => 'SI008',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Air Minum Lokal',
+]);
+
+subklasifikasi::create([
+    'id' => 34,
+    'kode' => 'SI009',
+    'pekerjaan' => 'Jasa Pelaksana Untuk Konstruksi Perpipaan Air Limbah Lokal',
+]);
+
+subklasifikasi::create([
+    'id' => 35,
+    'kode' => 'SI010',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Perpipaan Minyak dan Gas Lokal',
+]);
+
+subklasifikasi::create([
+    'id' => 36,
+    'kode' => 'SI011',
+    'pekerjaan' => 'Jasa pelaksana Konstruksi bangunan stadion untuk olahraga outdoor',
+]);
+
+subklasifikasi::create([
+    'id' => 37,
+    'kode' => 'SI012',
+    'pekerjaan' => 'Jasa Pelaksana Konstruksi Bangunan Fasilitas Olah Raga Indoor dan Fasilitas Rekreasi',
+]);
+
+
+subklasifikasi::create([
+    'id' => 38,
+    'kode' => 'SP001',
+    'pekerjaan' => 'Pekerjaan Penyelidikan Lapangan',
+]);
+
+subklasifikasi::create([
+    'id' => 39,
+    'kode' => 'SP002',
+    'pekerjaan' => 'Pekerjaan Pembongkaran',
+]);
+
+subklasifikasi::create([
+    'id' => 40,
+    'kode' => 'SP003',
+    'pekerjaan' => 'Pekerjaan Penyiapan dan Pematangan Tanah / Lokasi',
+]);
+
+subklasifikasi::create([
+    'id' => 41,
+    'kode' => 'SP004',
+    'pekerjaan' => 'Pekerjaan Tanah, Galian dan Timbunan',
+]);
+
+subklasifikasi::create([
+    'id' => 42,
+    'kode' => 'SP005',
+    'pekerjaan' => 'Pekerjaan Persiapan Lapangan untuk Pertambangan',
+]);
+
+subklasifikasi::create([
+    'id' => 43,
+    'kode' => 'SP007',
+    'pekerjaan' => 'Pekerjaan Pondasi, Termasuk Pemancangannya',
+]);
+
+subklasifikasi::create([
+    'id' => 44,
+    'kode' => 'SP008',
+    'pekerjaan' => 'Pekerjaan Pengeboran Sumur Air Tanah Dalam',
+]);
+
+subklasifikasi::create([
+    'id' => 45,
+    'kode' => 'SP009',
+    'pekerjaan' => 'Pekerjaan Atap dan Kedap Air (waterproofing)',
+]);
+
+subklasifikasi::create([
+    'id' => 46,
+    'kode' => 'SP010',
+    'pekerjaan' => 'Pekerjaan Beton',
+]);
+
+subklasifikasi::create([
+    'id' => 47,
+    'kode' => 'SP011',
+    'pekerjaan' => 'Pekerjaan Baja dan Pemasangannya, Termasuk Pengelasan',
+]);
+
+subklasifikasi::create([
+    'id' => 48,
+    'kode' => 'SP012',
+    'pekerjaan' => 'Pekerjaan Pemasangan Batu',
+]);
+
+subklasifikasi::create([
+    'id' => 49,
+    'kode' => 'SP013',
+    'pekerjaan' => 'Pekerjaan Konstruksi Khusus Lainnya',
+]);
+
+subklasifikasi::create([
+    'id' => 50,
+    'kode' => 'SP014',
+    'pekerjaan' => 'Pekerjaan Pengasgalan dengan Rangkaian Peralatan Khusus',
+]);
+
+subklasifikasi::create([
+    'id' => 51,
+    'kode' => 'SP015',
+    'pekerjaan' => 'Pekerjaan Lansekap/Pertamanan',
+]);
+
+
 
 // BATAS AKHIR
 //======================== ===================================================================================
