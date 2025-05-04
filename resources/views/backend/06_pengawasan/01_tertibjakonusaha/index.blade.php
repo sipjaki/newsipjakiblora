@@ -657,7 +657,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai ?? 'Data Belum Di Buat ')->isoFormat('D MMMM YYYY') }}</td>
+                                                        <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
                                                     </tr>
                                                 </table>
 
