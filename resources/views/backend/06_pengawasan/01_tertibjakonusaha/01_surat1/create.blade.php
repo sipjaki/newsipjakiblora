@@ -98,7 +98,7 @@
                                         <span class="mx-2">:</span>
                                         <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                                     </div>
-
+                                    <br>
                                     <div class="modal-body">
                                         <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
 
