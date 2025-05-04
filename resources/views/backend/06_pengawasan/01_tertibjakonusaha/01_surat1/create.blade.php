@@ -140,25 +140,15 @@
                                             </tr>
                                         </table>
 
-                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 20px;">
                                             <thead>
                                                 <tr>
-                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
-                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
-                                                    <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis</th>
-                                                    <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Sifat</th>
-                                                    <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
-                                                    <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th>
-                                                </tr>
-                                                <tr>
-                                                    <th style="border: 1px solid #000; text-align: center;">Jenis Usaha<br><small>Yang Dipersyaratkan</small></th>
-                                                    <th style="border: 1px solid #000; text-align: center;">Kesesuaian SBU</th>
-                                                    <th style="border: 1px solid #000; text-align: center;">Sifat Usaha<br><small>Yang Dipersyaratkan</small></th>
-                                                    <th style="border: 1px solid #000; text-align: center;">Kesesuaian SBU</th>
-                                                    <th style="border: 1px solid #000; text-align: center;">Sub Klasifikasi<br><small>Yang Dipersyaratkan</small></th>
-                                                    <th style="border: 1px solid #000; text-align: center;">Kesesuaian SBU</th>
-                                                    <th style="border: 1px solid #000; text-align: center;">Layanan Usaha<br><small>Yang Dipersyaratkan</small></th>
-                                                    <th style="border: 1px solid #000; text-align: center;">Kesesuaian SBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">No</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Nama Paket Pekerjaan</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Jenis Usaha<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Sifat Usaha<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -186,8 +176,6 @@
                                                             <option value="Spesialis">Spesialis</option>
                                                         </select>
                                                     </td>
-
-
                                                     <td style="border: 1px solid #000;">
                                                         <select class="form-control" name="kesesuaiansbu">
                                                             <option value="">-- Pilih Kesesuaian SBU --</option>
@@ -195,7 +183,21 @@
                                                             <option value="Tidak Sesuai">Tidak Sesuai</option>
                                                         </select>
                                                     </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Sub Klasifikasi<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Layanan Usaha<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
                                                     <td style="border: 1px solid #000;">
                                                         <select class="form-control mb-1" name="subklasifikasi_id">
                                                             <option value="">-- Pilih Subklasifikasi --</option>
@@ -204,14 +206,13 @@
                                                             @endforeach
                                                         </select>
                                                     </td>
-
-
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianklasifikasi"></td>
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="layananusaha"></td>
                                                     <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianlayananusaha"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
+
 
                                 </div>
 
