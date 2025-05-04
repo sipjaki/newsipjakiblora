@@ -207,7 +207,7 @@
                                     <th colspan="4" style="text-align: center; width:800px;">
                                         <i class="bi bi-person-lines-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
-                                    <th colspan="1" style="text-align: center; width:450px;">
+                                    <th colspan="2" style="text-align: center; width:450px;">
                                         <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
                                     </th>
 
@@ -473,6 +473,14 @@
           {{ $tertibStatus }}
       </button>
   </td>
+
+
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->pelaksanaanpengembangan }}
+                                </button>
+                            </td>
 
 
                             <td style="text-align: center;">
