@@ -653,7 +653,7 @@ public function betertibjakonusahasurat1create(Request $request)
         'kesesuaian' => 'required|string',
         'sifatusaha' => 'required|string',
         'kesesuaiansbu' => 'required|string',
-        'subklasifikasi_id' => 'required|exists',
+        'subklasifikasi_id' => 'required|string|exists',
         'kesesuaianklasifikasi' => 'required|string',
         'layananusaha' => 'required|string',
         'kesesuaianlayananusaha' => 'required|string',
