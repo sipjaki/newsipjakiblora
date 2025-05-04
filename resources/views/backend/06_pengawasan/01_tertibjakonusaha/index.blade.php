@@ -1204,6 +1204,18 @@
             return;
         }
 
+        const modalContent = document.querySelector(`#modalSurat2${id} .modal-content`);
+        if (!modalContent) {
+            alert("Konten tidak ditemukan.");
+            return;
+        }
+
+        const modalContent = document.querySelector(`#modalSurat3${id} .modal-content`);
+        if (!modalContent) {
+            alert("Konten tidak ditemukan.");
+            return;
+        }
+
         const printWindow = window.open('', '', 'width=1200,height=800');
         printWindow.document.write(`
             <html>
