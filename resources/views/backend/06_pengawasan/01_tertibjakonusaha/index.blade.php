@@ -207,7 +207,7 @@
                                     <th colspan="4" style="text-align: center; width:800px;">
                                         <i class="bi bi-person-lines-fill"></i> Kesesuaian Kegiatan Konstruksi
                                     </th>
-                                    <th colspan="2" style="text-align: center; width:450px;">
+                                    <th colspan="1" style="text-align: center; width:450px;">
                                         <i class="bi bi-pie-chart-fill"></i> Segmentasi Pasar
                                     </th>
 
