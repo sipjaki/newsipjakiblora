@@ -413,6 +413,7 @@
                                 </button>
                             </td>
 
+                            {{-- ----------------------- SURAT TERTIB JAKON USAHA 1 ------------------------------------ --}}
 
                             <td style="text-align: center;">
                                 <button class="btn btn-secondary btn-sm"
@@ -428,7 +429,6 @@
                                 <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">
                                     <i class="bi bi-download"></i>
                                 </button>
-
                                 <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                         <div class="modal-content" style="font-size: 0.875rem;">
@@ -541,18 +541,57 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">1</td>
-                                                                                                    <td style="font-size: 12px;">Nama Pemeriksa 1</td>
-                                                                                                    <td style="height: 60px;"></td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap}}</td>
+                                                                                                    <td style="height: 60px;">
+                                                                                                        <div style="margin-top: 10px;">
+                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan)))
+                                                                                                                <!-- Menampilkan gambar dari storage -->
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan)
+                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @else
+                                                                                                                <!-- Placeholder jika tidak ada data -->
+                                                                                                                <p>Data belum diupdate</p>
+                                                                                                            @endif
+                                                                                                        </div>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">2</td>
-                                                                                                    <td style="font-size: 12px;">Nama Pemeriksa 2</td>
-                                                                                                    <td style="height: 60px;"></td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap}}</td>
+                                                                                                    <td style="height: 60px;">
+                                                                                                        <div style="margin-top: 10px;">
+                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan)))
+                                                                                                                <!-- Menampilkan gambar dari storage -->
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan)
+                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @else
+                                                                                                                <!-- Placeholder jika tidak ada data -->
+                                                                                                                <p>Data belum diupdate</p>
+                                                                                                            @endif
+                                                                                                        </div>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">3</td>
-                                                                                                    <td style="font-size: 12px;">Nama Pemeriksa 3</td>
-                                                                                                    <td style="height: 60px;"></td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap}}</td>
+                                                                                                    <td style="height: 60px;">
+                                                                                                        <div style="margin-top: 10px;">
+                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan)))
+                                                                                                                <!-- Menampilkan gambar dari storage -->
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan)
+                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @else
+                                                                                                                <!-- Placeholder jika tidak ada data -->
+                                                                                                                <p>Data belum diupdate</p>
+                                                                                                            @endif
+                                                                                                        </div>
+                                                                                                    </td>
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
@@ -570,6 +609,384 @@
                                     </div>
                                 </div>
                             </td>
+
+                            {{-- ----------------------- SURAT TERTIB JAKON USAHA 2 ------------------------------------ --}}
+
+                            <td style="text-align: center;">
+                                <button class="btn btn-secondary btn-sm"
+                                    style="border-radius: 15px; padding: 6px 12px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s; font-size: 0.875rem;"
+                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                    data-bs-toggle="modal" data-bs-target="#modalSurat2{{ $item->id }}">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                                <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">
+                                    <i class="bi bi-download"></i>
+                                </button>
+                                <div class="modal fade" id="modalSurat2{{ $item->id }}" tabindex="-1" aria-labelledby="modalSurat2Label{{ $item->id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                        <div class="modal-content" style="font-size: 0.875rem;">
+                                            <div class="modal-header d-flex align-items-center">
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                    <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
+                                                </a>
+                                                <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                    <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
+                                                </a>
+                                                <span class="mx-2">:</span>
+                                                <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h5 style="font-size: 1rem;">Pengawasan Tertib Usaha Terhadap Kesesuaian Bentuk dan Kualifikasi Usaha dengan Kegiatan Usaha Jasa Konstruksi dan Segmentasi Pasar Jasa Konstruksi Secara Rutin </h5>
+                                                <table class="table table-bordered table-sm" style="font-size: 14px;">
+                                                    <tr>
+                                                        <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
+                                                        <td>{{ $item->surattertibjakonusaha2->namabadanusaha }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
+                                                        <td>{{ $item->surattertibjakonusaha2->statusperizinan }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 200px;"><strong>No NIB</strong></td>
+                                                        <td>{{ $item->surattertibjakonusaha2->nib }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
+                                                        <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
+                                                    </tr>
+                                                </table>
+
+                                                {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
+                                                <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
+                                                            <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Bentuk</th>
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kualifikasi</th>
+                                                            {{-- <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
+                                                            <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th> --}}
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
+                                                                <div>Bentuk</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
+                                                            </th>
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
+
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">
+                                                                <div>Kualifikasi</div>
+                                                                <div style="font-size: 11px">Yang Dipersyaratkan</div>
+                                                            </th>
+                                                            <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesesuaian Dengan SBU</th>
+>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="border: 1px solid #000; text-align: center;">1</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha2->namapaketpekerjaan}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha2->bentuk}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->kesesuaiansbu}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->syaratkualifikasi}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->sbu}}</td>
+                                                            {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha}}</td> --}}
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <div class="container" style="margin-top: 10px;">
+                                                    <!-- Modal Card -->
+
+                                                            <div class="container" style="margin-top: 10px;">
+                                                                <div class="row">
+                                                                    <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                                        <!-- Modal Card -->
+                                                                        <div class="card" style="border: 1px solid white;">
+                                                                            <div class="card-body">
+                                                                                <!-- Tim Pemeriksa -->
+                                                                                <div class="tim-pemeriksa-container">
+                                                                                    <div class="tim-pemeriksa">
+                                                                                        <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                                        <table class="table table-sm">
+                                                                                            <thead class="table-secondary">
+                                                                                                <tr>
+                                                                                                    <th style="width: 60px; font-size: 12px;" >No</th>
+                                                                                                    <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
+                                                                                                    <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td style="font-size: 12px;">1</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap}}</td>
+                                                                                                    <td style="height: 60px;">
+                                                                                                        <div style="margin-top: 10px;">
+                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan)))
+                                                                                                                <!-- Menampilkan gambar dari storage -->
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan)
+                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @else
+                                                                                                                <!-- Placeholder jika tidak ada data -->
+                                                                                                                <p>Data belum diupdate</p>
+                                                                                                            @endif
+                                                                                                        </div>
+
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td style="font-size: 12px;">2</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap}}</td>
+                                                                                                    <td style="height: 60px;">
+                                                                                                        <div style="margin-top: 10px;">
+                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan)))
+                                                                                                                <!-- Menampilkan gambar dari storage -->
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan)
+                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @else
+                                                                                                                <!-- Placeholder jika tidak ada data -->
+                                                                                                                <p>Data belum diupdate</p>
+                                                                                                            @endif
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <td style="font-size: 12px;">3</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap}}</td>
+                                                                                                    <td style="height: 60px;">
+                                                                                                        <div style="margin-top: 10px;">
+                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan)))
+                                                                                                                <!-- Menampilkan gambar dari storage -->
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan)
+                                                                                                                <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @else
+                                                                                                                <!-- Placeholder jika tidak ada data -->
+                                                                                                                <p>Data belum diupdate</p>
+                                                                                                            @endif
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            {{-- ----------------------- SURAT TERTIB JAKON USAHA 3 ------------------------------------ --}}
+
+                                                        <td style="text-align: center;">
+                                                            <button class="btn btn-secondary btn-sm"
+                                                                style="border-radius: 15px; padding: 6px 12px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s; font-size: 0.875rem;"
+                                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                                data-bs-toggle="modal" data-bs-target="#modalSurat3{{ $item->id }}">
+                                                                <i class="bi bi-eye"></i>
+                                                            </button>
+                                                            <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </a>
+                                                            <button onclick="printModalContent({{ $item->id }})" class="btn btn-primary">
+                                                                <i class="bi bi-download"></i>
+                                                            </button>
+                                                            <div class="modal fade" id="modalSurat3{{ $item->id }}" tabindex="-1" aria-labelledby="modalSurat3Label{{ $item->id }}" aria-hidden="true">
+                                                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                                    <div class="modal-content" style="font-size: 0.875rem;">
+                                                                        <div class="modal-header d-flex align-items-center">
+                                                                            <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                                                <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
+                                                                            </a>
+                                                                            <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                                                                <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
+                                                                            </a>
+                                                                            <span class="mx-2">:</span>
+                                                                            <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <h5 style="font-size: 1rem;">Pengawasan Terhadap Pemenuhan Persyaratan Usaha Jasa Konstruksi Secara Rutin </h5>
+                                                                            <table class="table table-bordered table-sm" style="font-size: 14px;">
+                                                                                <tr>
+                                                                                    <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
+                                                                                    <td>{{ $item->surattertibjakonusaha2->namabadanusaha }}</td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
+                                                                                    <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
+                                                                                </tr>
+                                                                            </table>
+
+                                                                            {{-- <h6 class="mt-4" style="font-size: 0.9rem;">Detail Kegiatan:</h6> --}}
+                                                                            <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama BUJK</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nomor Induk Berusaha (NIB) </th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis Usaha</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Klasifikasi/Subklasifikasi</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nomor Sertifikat Standar</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Kesimpulan Pemeriksaaan</th>
+                                                                                        <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Catatan Pemeriksa</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="border: 1px solid #000; text-align: center;">1</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->namabujk}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nib}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->pjbu}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->jenisusaha}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->klasifikasi}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nomorsertifikat}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->kesimpulan}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->catatanpemeriksaan}}</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                            <div class="container" style="margin-top: 10px;">
+                                                                                <!-- Modal Card -->
+
+                                                                                        <div class="container" style="margin-top: 10px;">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6 ms-auto"> <!-- col 6 dan di sebelah kanan -->
+                                                                                                    <!-- Modal Card -->
+                                                                                                    <div class="card" style="border: 1px solid white;">
+                                                                                                        <div class="card-body">
+                                                                                                            <!-- Tim Pemeriksa -->
+                                                                                                            <div class="tim-pemeriksa-container">
+                                                                                                                <div class="tim-pemeriksa">
+                                                                                                                    <h6 style="font-size: 0.9rem;">Tim Pemeriksa:</h6>
+                                                                                                                    <table class="table table-sm">
+                                                                                                                        <thead class="table-secondary">
+                                                                                                                            <tr>
+                                                                                                                                <th style="width: 60px; font-size: 12px;" >No</th>
+                                                                                                                                <th style="text-align: center; font-size: 12px;">Nama Lengkap</th>
+                                                                                                                                <th style="width: 150px; text-align: center; font-size: 12px;">Tanda Tangan</th>
+                                                                                                                            </tr>
+                                                                                                                        </thead>
+                                                                                                                        <tbody>
+                                                                                                                            <tr>
+                                                                                                                                <td style="font-size: 12px;">1</td>
+                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap}}</td>
+                                                                                                                                <td style="height: 60px;">
+                                                                                                                                    <div style="margin-top: 10px;">
+                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan)))
+                                                                                                                                            <!-- Menampilkan gambar dari storage -->
+                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan)
+                                                                                                                                            <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @else
+                                                                                                                                            <!-- Placeholder jika tidak ada data -->
+                                                                                                                                            <p>Data belum diupdate</p>
+                                                                                                                                        @endif
+                                                                                                                                    </div>
+
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                            <tr>
+                                                                                                                                <td style="font-size: 12px;">2</td>
+                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap}}</td>
+                                                                                                                                <td style="height: 60px;">
+                                                                                                                                    <div style="margin-top: 10px;">
+                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan)))
+                                                                                                                                            <!-- Menampilkan gambar dari storage -->
+                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan)
+                                                                                                                                            <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @else
+                                                                                                                                            <!-- Placeholder jika tidak ada data -->
+                                                                                                                                            <p>Data belum diupdate</p>
+                                                                                                                                        @endif
+                                                                                                                                    </div>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                            <tr>
+                                                                                                                                <td style="font-size: 12px;">3</td>
+                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap}}</td>
+                                                                                                                                <td style="height: 60px;">
+                                                                                                                                    <div style="margin-top: 10px;">
+                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan)))
+                                                                                                                                            <!-- Menampilkan gambar dari storage -->
+                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan)
+                                                                                                                                            <!-- Menampilkan gambar dari path luar storage -->
+                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @else
+                                                                                                                                            <!-- Placeholder jika tidak ada data -->
+                                                                                                                                            <p>Data belum diupdate</p>
+                                                                                                                                        @endif
+                                                                                                                                    </div>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                            {{-- ----------------------- SURAT TERTIB JAKON USAHA 4 ------------------------------------ --}}
+
+                                                        <td style="text-align: center;">
+                                                            {{-- <button class="btn btn-secondary btn-sm"
+                                                                style="border-radius: 15px; padding: 6px 12px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s; font-size: 0.875rem;"
+                                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                                data-bs-toggle="modal" data-bs-target="#modalSurat3{{ $item->id }}">
+                                                                <i class="bi bi-eye"></i>
+                                                            </button> --}}
+                                                            <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </a>
+                                                        </td>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
 
                               <td style="text-align: center;">
                                 <!-- Tombol Aksi -->
