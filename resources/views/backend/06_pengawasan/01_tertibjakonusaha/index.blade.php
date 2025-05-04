@@ -1143,58 +1143,82 @@
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
    <script>
-    function exportTableToExcel(tableID, filename = '') {
-        const table = document.getElementById(tableID);
-        const worksheet = XLSX.utils.table_to_sheet(table);
+    function exportSelectedColumnsToExcel(originalTableId, filename = 'data-terpilih') {
+        const originalTable = document.getElementById(originalTableId);
+        const selectedColumns = [
+            0,  // No
+            1,  // Penyedia
+            2,  // NIB
+            3,  // Nama Pekerjaan
+            4,  // Tahun Pelaksanaan
+            5,  // Badan Usaha
+            6,  // PJBU
+            7,  // Sesuai Jenis
+            8,  // Sesuai Sifat
+            9,  // Sesuai Klasifikasi
+            10, // Sesuai Layanan
+            11, // Sesuai Bentuk
+            12, // Sesuai Kualifikasi
+            13, // Pemenuhan Syarat
+            14  // Pelaksanaan Pengembangan Usaha
+        ];
 
-        // Tentukan kolom yang berisi NIB (misalnya kolom ketiga)
-        const nibColumnIndex = 2; // Indeks dimulai dari 0
+        const nibColumnIndexInExport = selectedColumns.indexOf(2); // NIB akan berada di kolom ini dalam tabel hasil export
 
-        // Iterasi melalui setiap baris dan kolom untuk mengatur format teks
-        const range = XLSX.utils.decode_range(worksheet['!ref']);
-        for (let R = range.s.r; R <= range.e.r; ++R) {
-            const cell_address = { c: nibColumnIndex, r: R };
-            const cell_ref = XLSX.utils.encode_cell(cell_address);
-            if (!worksheet[cell_ref]) continue;
-            if (!worksheet[cell_ref].s) worksheet[cell_ref].s = {};
-
-            // Set format teks
-            worksheet[cell_ref].s.numFmt = '@';
+        const tempTable = document.createElement('table');
+        for (const row of originalTable.rows) {
+            const newRow = tempTable.insertRow();
+            selectedColumns.forEach(i => {
+                const cell = row.cells[i];
+                if (cell) {
+                    const newCell = cell.cloneNode(true);
+                    newRow.appendChild(newCell);
+                }
+            });
         }
 
-        // Tambahkan border ke setiap cell
+        const worksheet = XLSX.utils.table_to_sheet(tempTable);
+
+        const range = XLSX.utils.decode_range(worksheet['!ref']);
         for (let R = range.s.r; R <= range.e.r; ++R) {
             for (let C = range.s.c; C <= range.e.c; ++C) {
                 const cell_address = { c: C, r: R };
                 const cell_ref = XLSX.utils.encode_cell(cell_address);
-                if (!worksheet[cell_ref]) continue;
-                if (!worksheet[cell_ref].s) worksheet[cell_ref].s = {};
+                const cell = worksheet[cell_ref];
+                if (!cell) continue;
+                if (!cell.s) cell.s = {};
 
-                // Tambah style border
-                worksheet[cell_ref].s.border = {
+                // Set style border
+                cell.s.border = {
                     top: { style: "thin", color: { auto: 1 } },
                     right: { style: "thin", color: { auto: 1 } },
                     bottom: { style: "thin", color: { auto: 1 } },
                     left: { style: "thin", color: { auto: 1 } }
                 };
 
-                // Tambah alignment
-                worksheet[cell_ref].s.alignment = {
+                // Set alignment
+                cell.s.alignment = {
                     vertical: "center",
                     horizontal: "center",
                     wrapText: true
                 };
+
+                // Pastikan kolom NIB disimpan sebagai teks (hindari notasi eksponensial)
+                if (C === nibColumnIndexInExport && R > 0) {
+                    cell.z = '@'; // Format text
+                    cell.t = 's'; // Tipe string
+                    cell.v = "'" + cell.v; // Tambah apostrof untuk paksa teks
+                }
             }
         }
 
-        // Workbook dan export
         const workbook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(workbook, worksheet, "Data");
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Kolom Terpilih");
 
-        // Gunakan xlsx-style untuk menyimpan dengan style
-        XLSX.writeFile(workbook, filename + ".xlsx", { bookType: "xlsx", type: "binary" });
+        XLSX.writeFile(workbook, filename + ".xlsx");
     }
-</script>
+    </script>
+
 
 <script>
     function printModalContent(id) {
