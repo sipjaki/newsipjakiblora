@@ -891,6 +891,7 @@ Route::get('/betertibjakonusaha', [TertibjasakonstruksiController::class, 'beter
 Route::delete('/betertibjakonusaha/delete/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahadelete'])->middleware('auth');
 
 Route::get('/betertibjakonusaha/create', [TertibjasakonstruksiController::class, 'betertibjakonusahacreate'])->middleware('auth')->name('betertibjakonusahacreate');
+Route::get('/betertibjakonusaha/createnew', [TertibjasakonstruksiController::class, 'betertibjakonusahacreatenew'])->middleware('auth')->name('betertibjakonusahacreatenew');
 
 Route::get('/betertibjakonusaha/update/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahaupdate'])->middleware('auth')->name('betertibjakonusahaupdate');
 Route::post('/betertibjakonusaha/updatecreate/{id}', [TertibjasakonstruksiController::class, 'betertibjakonusahaupdatecreate'])->middleware('auth')->name('betertibjakonusahaupdatecreate');
