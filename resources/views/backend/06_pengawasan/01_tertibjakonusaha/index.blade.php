@@ -509,7 +509,7 @@
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaian ?? 'Data Belum Di Buat'}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->sifatusaha ?? 'Data Belum Di Buat'}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaiansbu ?? 'Data Belum Di Buat'}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi->kode ?? 'Data Belum Di Buat '}} {{$item->surattertibjakonusaha1->subklasifikasi->pekerjaan ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Data Belum Di Buat'}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha ?? 'Data Belum Di Buat'}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha ?? 'Data Belum Di Buat'}}</td>
