@@ -279,8 +279,8 @@
                             <tr>
                               <td style="text-align: center;">{{ $loop->iteration }}</td>
                               <td>
-                                @if($item->penyediastatustertibjakon->penyedia)
-                                  {{ $item->penyediastatustertibjakon->penyedia }}
+                                @if($item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat')
+                                  {{ $item->penyediastatustertibjakon->penyedia ?? 'Data Belum Di Buat' }}
                                 @else
                                   <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer;"
                                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -448,19 +448,19 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $item->surattertibjakonusaha1->namabadanusaha }}</td>
+                                                        <td>{{ $item->surattertibjakonusaha1->namabadanusaha ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>{{ $item->surattertibjakonusaha1->statusperizinan }}</td>
+                                                        <td>{{ $item->surattertibjakonusaha1->statusperizinan ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>No NIB</strong></td>
-                                                        <td>{{ $item->surattertibjakonusaha1->nib }}</td>
+                                                        <td>{{ $item->surattertibjakonusaha1->nib ?? 'Data Belum Di Buat' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
+                                                        <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasan ?? 'Data Belum Di Buat')->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha1->waktupengawasanselesai ?? 'Data Belum Di Buat')->isoFormat('D MMMM YYYY') }}</td>
                                                     </tr>
                                                 </table>
 
@@ -504,15 +504,15 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->namapaketpekerjaan}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->jenisusaha}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaian}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->sifatusaha}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaiansbu}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->namapaketpekerjaan ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->jenisusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaian ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->sifatusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaiansbu ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha ?? 'Data Belum Di Buat'}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianlayananusaha ?? 'Data Belum Di Buat'}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -541,15 +541,15 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">1</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
-                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan)))
+                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat' && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                 <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan)
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                 <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
                                                                                                                 <p>Data belum diupdate</p>
@@ -559,15 +559,15 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">2</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada TIm Pemeriksa '}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
-                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan)))
+                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                 <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan)
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                 <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
                                                                                                                 <p>Data belum diupdate</p>
@@ -577,15 +577,15 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">3</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha1->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
-                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan)))
+                                                                                                            @if($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                 <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan)
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                 <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha1->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
                                                                                                                 <p>Data belum diupdate</p>
@@ -645,19 +645,19 @@
                                                 <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                        <td>{{ $item->surattertibjakonusaha2->namabadanusaha }}</td>
+                                                        <td>{{ $item->surattertibjakonusaha2->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
-                                                        <td>{{ $item->surattertibjakonusaha2->statusperizinan }}</td>
+                                                        <td>{{ $item->surattertibjakonusaha2->statusperizinan ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>No NIB</strong></td>
-                                                        <td>{{ $item->surattertibjakonusaha2->nib }}</td>
+                                                        <td>{{ $item->surattertibjakonusaha2->nib ?? 'Data Belum Di Buat ' }}</td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                        <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
+                                                        <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan ?? 'Data Belum Di Buat ')->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai ?? 'Data Belum Di Buat ')->isoFormat('D MMMM YYYY') }}</td>
                                                     </tr>
                                                 </table>
 
@@ -690,11 +690,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha2->namapaketpekerjaan}}</td>
-                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha2->bentuk}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->kesesuaiansbu}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->syaratkualifikasi}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->sbu}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha2->namapaketpekerjaan ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha2->bentuk ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->sbu ?? 'Data Belum Di Buat '}}</td>
                                                             {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
@@ -727,15 +727,15 @@
                                                                                             <tbody>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">1</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
-                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan)))
+                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                 <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan)
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                 <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
                                                                                                                 <p>Data belum diupdate</p>
@@ -746,15 +746,15 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">2</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
-                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan)))
+                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                 <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan)
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                 <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
                                                                                                                 <p>Data belum diupdate</p>
@@ -764,15 +764,15 @@
                                                                                                 </tr>
                                                                                                 <tr>
                                                                                                     <td style="font-size: 12px;">3</td>
-                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                    <td style="font-size: 12px;">{{$item->surattertibjakonusaha2->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                     <td style="height: 60px;">
                                                                                                         <div style="margin-top: 10px;">
-                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan)))
+                                                                                                            @if($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                 <!-- Menampilkan gambar dari storage -->
-                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan)
+                                                                                                                <img src="{{ asset('storage/' . $item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                            @elseif($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                 <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                <img src="{{ asset($item->surattertibjakonusaha2->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                             @else
                                                                                                                 <!-- Placeholder jika tidak ada data -->
                                                                                                                 <p>Data belum diupdate</p>
@@ -832,12 +832,12 @@
                                                                             <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                                                 <tr>
                                                                                     <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                                                    <td>{{ $item->surattertibjakonusaha2->namabadanusaha }}</td>
+                                                                                    <td>{{ $item->surattertibjakonusaha2->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
                                                                                 </tr>
 
                                                                                 <tr>
                                                                                     <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                                                    <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
+                                                                                    <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan ?? 'Data Belum Di Buat ')->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai ?? 'Data Belum Di Buat ')->isoFormat('D MMMM YYYY') }}</td>
                                                                                 </tr>
                                                                             </table>
 
@@ -858,14 +858,14 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td style="border: 1px solid #000; text-align: center;">1</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->namabujk}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nib}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->pjbu}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->jenisusaha}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->klasifikasi}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nomorsertifikat}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->kesimpulan}}</td>
-                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->catatanpemeriksaan}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->namabujk ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nib ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->pjbu ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->jenisusaha ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->klasifikasi ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->nomorsertifikat ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->kesimpulan ?? 'Data Belum Di Buat '}}</td>
+                                                                                        <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha3->catatanpemeriksaan ?? 'Data Belum Di Buat '}}</td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table>
@@ -894,15 +894,15 @@
                                                                                                                         <tbody>
                                                                                                                             <tr>
                                                                                                                                 <td style="font-size: 12px;">1</td>
-                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                                                 <td style="height: 60px;">
                                                                                                                                     <div style="margin-top: 10px;">
-                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan)))
+                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                                             <!-- Menampilkan gambar dari storage -->
-                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan)
+                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                                             <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                                                         @else
                                                                                                                                             <!-- Placeholder jika tidak ada data -->
                                                                                                                                             <p>Data belum diupdate</p>
@@ -913,15 +913,15 @@
                                                                                                                             </tr>
                                                                                                                             <tr>
                                                                                                                                 <td style="font-size: 12px;">2</td>
-                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                                                 <td style="height: 60px;">
                                                                                                                                     <div style="margin-top: 10px;">
-                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan)))
+                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                                             <!-- Menampilkan gambar dari storage -->
-                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan)
+                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                                             <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                                                         @else
                                                                                                                                             <!-- Placeholder jika tidak ada data -->
                                                                                                                                             <p>Data belum diupdate</p>
@@ -931,15 +931,15 @@
                                                                                                                             </tr>
                                                                                                                             <tr>
                                                                                                                                 <td style="font-size: 12px;">3</td>
-                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Data Belum Di Update'}}</td>
+                                                                                                                                <td style="font-size: 12px;">{{$item->surattertibjakonusaha3->tandatangan->namalengkap ?? 'Tidak Ada Tim Pemeriksa'}}</td>
                                                                                                                                 <td style="height: 60px;">
                                                                                                                                     <div style="margin-top: 10px;">
-                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan)))
+                                                                                                                                        @if($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ' && file_exists(public_path('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')))
                                                                                                                                             <!-- Menampilkan gambar dari storage -->
-                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
-                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan)
+                                                                                                                                            <img src="{{ asset('storage/' . $item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                        @elseif($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ')
                                                                                                                                             <!-- Menampilkan gambar dari path luar storage -->
-                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                                                                                            <img src="{{ asset($item->surattertibjakonusaha3->tandatangan->tandatangan ?? 'Data Belum Di Buat ') }}" alt="Gambar Peraturan" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
                                                                                                                                         @else
                                                                                                                                             <!-- Placeholder jika tidak ada data -->
                                                                                                                                             <p>Data belum diupdate</p>
