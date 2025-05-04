@@ -209,9 +209,9 @@
                                         <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
                                             <thead>
                                                 <tr>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Sub Klasifikasi<br><small>Yang Dipersyaratkan</small></th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
-                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Layanan Usaha<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Sub Klasifikasi Yang Dipersyaratkan</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Kesesuaian SBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; font-size:15px;">Layanan Usaha Yang Dipersyaratkan </th>
                                                     <th style="border: 1px solid #000; text-align: center; background-color: #f8f9fa;">Kesesuaian SBU</th>
                                                 </tr>
                                             </thead>
