@@ -154,13 +154,12 @@
 
 
 
-                         <button onclick="exportTableToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')"
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
-                         style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
-                         >
-                         <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
-                         </button>
+                            <button onclick="exportSelectedColumnsToExcel('tabeltertibjakonusaha', 'Data_TertibJakonUsaha')"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
+                                style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
+                            </button>
 
                          <a href="/bebujkkonsultan/create">
                              <button
