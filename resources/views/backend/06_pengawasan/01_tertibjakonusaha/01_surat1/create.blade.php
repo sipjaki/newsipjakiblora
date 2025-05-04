@@ -96,7 +96,7 @@
                                             <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
                                         </a>
                                         <span class="mx-2">:</span>
-                                        <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                        <p style="margin-left: 10px; margin-bottom: 0; font-size:15px;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
                                     </div>
                                     <br>
                                     <div class="modal-body">
