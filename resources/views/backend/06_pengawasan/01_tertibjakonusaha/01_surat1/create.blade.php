@@ -45,7 +45,7 @@
 
                            {{-- ======================================================= --}}
                            <div class="card card-primary card-outline mb-6">
-                            <div style="display: flex; justify-content: space-between; margin-top: 10px; flex-wrap: wrap;">
+                            <div style="display: flex; justify-content: space-between; margin-top: 10px; flex-wrap: wrap; margin-bottom:20px;">
                                 <!-- Kontainer Kiri -->
                                 <div style="display: flex; gap: 10px;">
                                     <!-- Tombol Nama Pekerjaan -->
