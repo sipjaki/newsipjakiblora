@@ -1156,10 +1156,6 @@
             8,  // Sesuai Sifat
             9,  // Sesuai Klasifikasi
             10, // Sesuai Layanan
-            11, // Sesuai Bentuk
-            12, // Sesuai Kualifikasi
-            13, // Pemenuhan Syarat
-            14  // Pelaksanaan Pengembangan Usaha
         ];
 
         const nibColumnIndexInExport = selectedColumns.indexOf(2); // NIB akan berada di kolom ini dalam tabel hasil export
