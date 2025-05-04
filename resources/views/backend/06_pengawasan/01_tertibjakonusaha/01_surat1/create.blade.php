@@ -302,7 +302,7 @@
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan1" class="form-control">
-                                                                                            <option value="">-- Pilih Tim Pemeriksa --</option>
+                                                                                            <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
                                                                                                     @if($item->surattertibjakonusaha1->tandatangan1_id == $tandatangan->id) selected @endif>
@@ -316,7 +316,7 @@
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan2" class="form-control">
-                                                                                            <option value="">-- Pilih Tim Pemeriksa --</option>
+                                                                                            <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
                                                                                                     @if($item->surattertibjakonusaha1->tandatangan2_id == $tandatangan->id) selected @endif>
@@ -330,7 +330,7 @@
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan3" class="form-control">
-                                                                                            <option value="">-- Pilih Tim Pemeriksa --</option>
+                                                                                            <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
                                                                                                     @if($item->surattertibjakonusaha1->tandatangan3_id == $tandatangan->id) selected @endif>
