@@ -124,13 +124,13 @@
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px;">
-                                                    <strong><i class="bi bi-123"></i> No NIB</strong>
+                                                    <strong style="font-size: 15px;"><i class="bi bi-123"></i> No NIB</strong>
                                                 </td>
                                                 <td><input type="text" class="form-control" name="nib" placeholder="Masukan NIB ... "></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px;">
-                                                    <strong><i class="bi bi-calendar-range-fill"></i> Waktu Pengawasan</strong>
+                                                    <strong style="font-size: 15px;"><i class="bi bi-calendar-range-fill"></i> Waktu Pengawasan</strong>
                                                 </td>
                                                 <td class="d-flex gap-2">
                                                     <input type="date" class="form-control" name="waktupengawasan" placeholder="Dimulai Sejak ... ">
