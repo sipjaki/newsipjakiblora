@@ -289,6 +289,10 @@
                                                             <option value="Sesuai">Sesuai</option>
                                                             <option value="Tidak Sesuai">Tidak Sesuai</option>
                                                         </select>
+                                                        @error('kesesuaianklasifikasi')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                            @enderror
+
                                                     </td>
 
                                                     <td style="border: 1px solid #000;">
@@ -297,6 +301,9 @@
                                                             <option value="Pekerjaan Konstruksi">Pekerjaan Konstruksi</option>
                                                             <option value="Pekerjaan Konsultasi Konstruksi">Pekerjaan Konsultasi Konstruksi</option>
                                                         </select>
+                                                        @error('layananusaha')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                            @enderror
                                                     </td>
 
                                                     <td style="border: 1px solid #000;">
@@ -305,6 +312,9 @@
                                                             <option value="Sesuai">Sesuai</option>
                                                             <option value="Tidak Sesuai">Tidak Sesuai</option>
                                                         </select>
+                                                        @error('kesesuaianlayananusaha')
+                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                            @enderror
                                                     </td>
 
                                                 </tr>

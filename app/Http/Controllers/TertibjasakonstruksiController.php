@@ -669,8 +669,9 @@ public function betertibjakonusahasurat1create(Request $request)
         'jenisusaha.required' => 'Jenis Usaha Wajib Di Pilih !.',
         'kesesuaian.required' => 'Kesesuaian Wajib Di Pilih !.',
         'sifatusaha.required' => 'Sifat Usaha Wajib Di Pilih !.',
-        'subklasifikasi_id.required' => 'Subklasifikasi Wajib Di Pilih !.',
         'kesesuaiansbu.required' => 'Kesesuaian SBU Wajib Di Pilih !.',
+        'subklasifikasi_id.required' => 'Subklasifikasi Wajib Di Pilih !.',
+        'kesesuaianklasifikasi.required' => 'Layanan Usaha Wajib Di Pilih !.',
         'layananusaha.required' => 'Layanan Usaha Wajib Di Pilih !.',
         'kesesuaianlayananusaha.required' => 'Kesesuaian Layanan Usaha Wajib Di Pilih !.',
     ]);
