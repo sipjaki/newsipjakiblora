@@ -553,4 +553,27 @@ public function betertibjakonusahaupdatecreate(Request $request, $id)
     session()->flash('update', 'Data Berhasil di Update !');
     return redirect('/betertibjakonusaha');
 }
+
+
+
+
+// HALAMAN CREATE DATA JAKON TERTIB USAHA JASA KONSTRKSI
+
+public function betertibjakonusahacreate()
+{
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+$datapenyedia = penyediastatustertibjakon::all();
+
+return view('backend.06_pengawasan.01_tertibjakonusaha.create', [
+    'title' => 'Create Tertib Jakon Usaha ',
+    // 'data' => $datatertibjakonusaha,
+    'datapenyedia' => $datapenyedia,
+
+    'user' => $user,
+]);
+}
+
 }
