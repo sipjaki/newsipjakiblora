@@ -694,7 +694,7 @@
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha2->bentuk ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->kesesuaiansbu ?? 'Data Belum Di Buat '}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->syaratkualifikasi ?? 'Data Belum Di Buat '}}</td>
-                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->sbu ?? 'Data Belum Di Buat '}}</td>
+                                                            <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha2->sbu ?? 'Data Belum Di Buat '}}</td>
                                                             {{-- <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->subklasifikasi}}</td>
                                                             <td style="border: 1px solid #000; text-align:center;">{{$item->surattertibjakonusaha1->kesesuaianklasifikasi}}</td>
                                                             <td style="border: 1px solid #000;">{{$item->surattertibjakonusaha1->layananusaha}}</td>
@@ -832,12 +832,12 @@
                                                                             <table class="table table-bordered table-sm" style="font-size: 14px;">
                                                                                 <tr>
                                                                                     <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
-                                                                                    <td>{{ $item->surattertibjakonusaha2->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
+                                                                                    <td>{{ $item->surattertibjakonusaha3->namabadanusaha ?? 'Data Belum Di Buat ' }}</td>
                                                                                 </tr>
 
                                                                                 <tr>
                                                                                     <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
-                                                                                    <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
+                                                                                    <td>{{ \Carbon\Carbon::parse($item->surattertibjakonusaha3->waktupengawasan)->isoFormat('D MMMM YYYY') }} – {{ \Carbon\Carbon::parse($item->surattertibjakonusaha2->waktupengawasanselesai)->isoFormat('D MMMM YYYY') }}</td>
                                                                                 </tr>
                                                                             </table>
 
