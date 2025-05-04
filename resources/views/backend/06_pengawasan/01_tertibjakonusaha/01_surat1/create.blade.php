@@ -113,13 +113,20 @@
                                                 <td style="width: 300px;">
                                                     <strong><i class="bi bi-check2-circle"></i> Status Perizinan Berusaha</strong>
                                                 </td>
-                                                <td><input type="text" class="form-control" name="statusperizinan" placeholder="Masukan NIB ... "></td>
+                                                <td>
+                                                    <select class="form-control" name="statusperizinan">
+                                                        <option value="">-- Pilih Status --</option>
+                                                        <option value="Terverifikasi">Terverifikasi</option>
+                                                        <option value="Tidak Terdaftar">Tidak Terdaftar</option>
+                                                    </select>
+                                                </td>
+                                                {{-- <td><input type="text" class="form-control" name="statusperizinan"></td> --}}
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px;">
                                                     <strong><i class="bi bi-123"></i> No NIB</strong>
                                                 </td>
-                                                <td><input type="text" class="form-control" name="nib"></td>
+                                                <td><input type="text" class="form-control" name="nib" placeholder="Masukan NIB ... "></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px;">
