@@ -59328,7 +59328,7 @@ for ($i = 1; $i <= $jumlahData; $i++) {
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
 $jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi'];
-$kesimpulan = ['Tertib', 'Tidak Tertib'];
+$kesimpulan = ['Tidak Tertib'];
 $pjbuList = ['Muhammad Abdul Rozak', 'Siti Utifah', 'Agus Supriadi', 'Widodo', 'Arradea Murbha Ardhana'];
 $klasifikasiList = ['Segera Hadir'];
 

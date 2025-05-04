@@ -264,12 +264,8 @@
                                         <i class="bi bi-bar-chart-line-fill"></i> Sesuai Kualifikasi
                                     </th>
 
-                                    <!-- Pengembangan Usaha -->
                                     <th style="text-align: center;">
-                                        <i class="bi bi-file-earmark-check-fill"></i> Syarat SBU
-                                    </th>
-                                    <th style="text-align: center;">
-                                        <i class="bi bi-file-earmark-check-fill"></i> Syarat NIB
+                                        <i class="bi bi-file-earmark-check-fill"></i> Kesimpulan Pemeriksaan
                                     </th>
                                 </tr>
                             </thead>
@@ -460,20 +456,24 @@
           </button>
       </td>
 
+      @php
+      $kesesuaian = $item->surattertibjakonusaha3->kesimpulan ?? 'Tidak Tertib';
+      $tertibStatus = $kesesuaian === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
+      $color = $kesesuaian === 'Tertib' ? 'blue' : 'red';
+      $icon = $kesesuaian === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
+  @endphp
 
-                            <td style="text-align: center;">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
-                                    <i class="bi {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
-                                    {{ $item->syarat_SBU }}
-                                </button>
-                            </td>
+  <td style="text-align: center;">
+      <button
+          style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+          onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+      >
+          <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+          {{ $tertibStatus }}
+      </button>
+  </td>
 
-                            <td style="text-align: center;">
-                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
-                                    <i class="bi {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
-                                    {{ $item->syarat_NIB }}
-                                </button>
-                            </td>
 
                             <td style="text-align: center;">
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->pelaksanaanpengembangan == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
