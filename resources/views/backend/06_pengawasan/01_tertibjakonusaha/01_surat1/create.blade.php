@@ -107,13 +107,13 @@
                                                 <td style="width: 200px;">
                                                     <strong><i class="bi bi-building-fill"></i> Nama Badan Usaha</strong>
                                                 </td>
-                                                <td><input type="text" class="form-control" name="namabadanusaha"></td>
+                                                <td><input type="text" class="form-control" name="namabadanusaha" placeholder="Masukan Nama Badan Usaha ... "></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 300px;">
                                                     <strong><i class="bi bi-check2-circle"></i> Status Perizinan Berusaha</strong>
                                                 </td>
-                                                <td><input type="text" class="form-control" name="statusperizinan"></td>
+                                                <td><input type="text" class="form-control" name="statusperizinan" placeholder="Masukan NIB ... "></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px;">
@@ -126,9 +126,9 @@
                                                     <strong><i class="bi bi-calendar-range-fill"></i> Waktu Pengawasan</strong>
                                                 </td>
                                                 <td class="d-flex gap-2">
-                                                    <input type="date" class="form-control" name="waktupengawasan">
+                                                    <input type="date" class="form-control" name="waktupengawasan" placeholder="Dimulai Sejak ... ">
                                                     <span class="mx-1">–</span>
-                                                    <input type="date" class="form-control" name="waktupengawasanselesai">
+                                                    <input type="date" class="form-control" name="waktupengawasanselesai" placeholder="Berakhir Tanggal ... ">
                                                 </td>
                                             </tr>
                                         </table>
