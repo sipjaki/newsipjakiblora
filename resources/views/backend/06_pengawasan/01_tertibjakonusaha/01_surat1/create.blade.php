@@ -122,13 +122,13 @@
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                             <tr>
                                                 <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;"><i class="bi bi-building-fill"></i> Nama Badan Usaha</strong>
+                                                    <strong style="font-size: 15px;">Nama Badan Usaha</strong>
                                                 </td>
                                                 <td><input type="text" class="form-control" name="namabadanusaha" placeholder="Masukan Nama Badan Usaha ... "></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 300px;">
-                                                    <strong style="font-size: 15px;"><i class="bi bi-check2-circle"></i> Status Perizinan Berusaha</strong>
+                                                    <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
                                                 </td>
                                                 <td>
                                                     <select class="form-control" name="statusperizinan">
@@ -141,13 +141,13 @@
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;"><i class="bi bi-123"></i> No NIB</strong>
+                                                    <strong style="font-size: 15px;">No NIB</strong>
                                                 </td>
                                                 <td><input type="text" class="form-control" name="nib" placeholder="Masukan NIB ... "></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 200px;">
-                                                    <strong style="font-size: 15px;"><i class="bi bi-calendar-range-fill"></i> Waktu Pengawasan</strong>
+                                                    <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                                 <td class="d-flex gap-2">
                                                     <input type="date" class="form-control" name="waktupengawasan" placeholder="Dimulai Sejak ... ">
