@@ -659,7 +659,7 @@ public function betertibjakonusahasurat1create(Request $request)
         'kesesuaianlayananusaha' => 'required|string',
         'tandatangan1' => 'nullable|string',
         'tandatangan2' => 'nullable|string',
-        'tandatangan2' => 'nullable|string',
+        'tandatangan3' => 'nullable|string',
     ], [
         'namabadanusaha.required' => 'Nama Badan Usaha Wajib Diisi.',
         'statusperizinan.required' => 'Status Perizinan Wajib Dipilih.',
