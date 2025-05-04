@@ -116,6 +116,10 @@
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+</div>
+
+<div class="col-md-6">
+
 
 <!-- Tahun Pelaksanaan -->
 <div class="mb-3">
@@ -163,7 +167,7 @@
     @enderror
 </div>
 
-
+</div>
                                 <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
                                     <div class="flex justify-end">
                                         <button type="button" onclick="openModal()"
