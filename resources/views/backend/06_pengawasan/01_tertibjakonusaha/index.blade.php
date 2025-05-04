@@ -264,8 +264,12 @@
                                         <i class="bi bi-bar-chart-line-fill"></i> Sesuai Kualifikasi
                                     </th>
 
+                                    <!-- Pengembangan Usaha -->
                                     <th style="text-align: center;">
-                                        <i class="bi bi-file-earmark-check-fill"></i> Kesimpulan Pemeriksaan
+                                        <i class="bi bi-file-earmark-check-fill"></i> Syarat SBU
+                                    </th>
+                                    <th style="text-align: center;">
+                                        <i class="bi bi-file-earmark-check-fill"></i> Syarat NIB
                                     </th>
                                 </tr>
                             </thead>
@@ -461,6 +465,13 @@
                                 <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->syarat_SBU == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
                                     <i class="bi {{ $item->syarat_SBU == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
                                     {{ $item->syarat_SBU }}
+                                </button>
+                            </td>
+
+                            <td style="text-align: center;">
+                                <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }};" onmouseover="this.style.backgroundColor='white'; this.style.color='black';" onmouseout="this.style.backgroundColor='{{ $item->syarat_NIB == 'BELUM TERTIB' ? 'red' : 'blue' }}'; this.style.color='white';">
+                                    <i class="bi {{ $item->syarat_NIB == 'BELUM TERTIB' ? 'bi-x-circle' : 'bi-check-circle' }}" style="margin-right: 8px;"></i>
+                                    {{ $item->syarat_NIB }}
                                 </button>
                             </td>
 
