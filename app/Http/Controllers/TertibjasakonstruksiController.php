@@ -642,7 +642,7 @@ public function betertibjakonusahacreatenew(Request $request)
 public function betertibjakonusahasurat1create(Request $request)
 {
     $validated = $request->validate([
-        'tertibjasakonstruksi_id' => 'required|integer',
+        'tertibjasakonstruksi_id' => 'required|integer|exists:tertibjasakonstruksi,id',
         'namabadanusaha' => 'required|string|max:255',
         'statusperizinan' => 'required|string',
         'nib' => 'required|string',
@@ -653,7 +653,7 @@ public function betertibjakonusahasurat1create(Request $request)
         'kesesuaian' => 'required|string',
         'sifatusaha' => 'required|string',
         'kesesuaiansbu' => 'required|string',
-        'subklasifikasi_id' => 'required|integer',
+        'subklasifikasi_id' => 'required|exists:subklasifikasi,id',
         'kesesuaianklasifikasi' => 'required|string',
         'layananusaha' => 'required|string',
         'kesesuaianlayananusaha' => 'required|string',
