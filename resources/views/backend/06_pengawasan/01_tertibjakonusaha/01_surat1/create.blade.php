@@ -299,7 +299,7 @@
                                                                             </thead>
                                                                             <tbody>
                                                                                 <tr>
-                                                                                    <td style="font-size: 12px;">1</td>
+                                                                                    <td style="font-size: 12px; text-align:center;">1</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan1" class="form-control">
                                                                                             <option value="">-- Pilih Tim Pemeriksa --</option>
@@ -313,7 +313,7 @@
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td style="font-size: 12px;">2</td>
+                                                                                    <td style="font-size: 12px; text-align:center;">2</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan2" class="form-control">
                                                                                             <option value="">-- Pilih Tim Pemeriksa --</option>
@@ -327,7 +327,7 @@
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
-                                                                                    <td style="font-size: 12px;">3</td>
+                                                                                    <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 12px;">
                                                                                         <select name="tandatangan3" class="form-control">
                                                                                             <option value="">-- Pilih Tim Pemeriksa --</option>
