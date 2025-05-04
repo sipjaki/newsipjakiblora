@@ -218,10 +218,13 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="border: 1px solid #000; max-width: 250px;">
-                                                        <select class="form-control mb-1" name="subklasifikasi_id" style="width: 100%; white-space: normal; overflow-y: auto; max-height: 200px;">
+                                                        <select class="form-control mb-1" name="subklasifikasi_id"
+                                                            style="width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                                                             <option value="">-- Pilih Subklasifikasi --</option>
                                                             @foreach ($datasubklasifikasi as $sub)
-                                                                <option value="{{ $sub->id }}">{{ $sub->pekerjaan }}</option>
+                                                                <option value="{{ $sub->id }}">
+                                                                    {{ \Illuminate\Support\Str::limit($sub->pekerjaan, 50) }}
+                                                                </option>
                                                             @endforeach
                                                         </select>
                                                     </td>
