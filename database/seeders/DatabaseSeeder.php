@@ -59326,10 +59326,10 @@ for ($i = 1; $i <= $jumlahData; $i++) {
 
 // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
-$jenisUsaha = ['Konstruksi', 'Pertanian', 'Teknologi', 'Transportasi', 'Perdagangan'];
-$kesimpulan = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
+$jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi'];
+$kesimpulan = ['Tertib', 'Tidak Tertib'];
 $pjbuList = ['Muhammad Abdul Rozak', 'Siti Utifah', 'Agus Supriadi', 'Widodo', 'Arradea Murbha Ardhana'];
-$klasifikasiList = ['Kecil', 'Menengah', 'Besar'];
+$klasifikasiList = ['Segera Hadir'];
 
 // Jumlah data yang ingin dibuat
 $jumlahData = 100; // Jumlah data = 100
@@ -59338,6 +59338,11 @@ $jumlahData = 100; // Jumlah data = 100
 for ($i = 1; $i <= $jumlahData; $i++) {
     surattertibjakonusaha3::create([
         'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
+
+        'namabadanusaha' => 'PT Contoh Usaha ' . $i,
+        'waktupengawasan' => now()->subDays(rand(1, 365))->format('Y-m-d'),
+        'waktupengawasanselesai' => now()->subDays(rand(0, 365))->format('Y-m-d'),
+
         'namabujk' => 'Badan Usaha ' . rand(1, 100), // Nama badan usaha acak
         'nib' => 'NIB' . rand(1000000000000, 9999999999999), // NIB acak
         'pjbu' => $pjbuList[array_rand($pjbuList)],  // Pilih acak nama PJBU
