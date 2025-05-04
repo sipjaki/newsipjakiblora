@@ -59268,7 +59268,7 @@ for ($i = 1; $i <= 1221; $i++) {
   $jenisUsaha = ['Pekerjaan Konstruksi', 'Jasa Konsultasi Konstruksi',];
 $kesesuaian = ['Sesuai', 'Tidak Sesuai'];
 $sifatUsaha = ['Umum', 'Spesialis'];
-$layananUsaha = ['Tidak Sesuai'];
+$layananUsaha = ['Sesuai', 'Tidak Sesuai'];
 $statusPerizinan = ['Terdaftar', 'Belum Terdaftar', 'Kadaluarsa'];
 $jumlahData = 84;
 
