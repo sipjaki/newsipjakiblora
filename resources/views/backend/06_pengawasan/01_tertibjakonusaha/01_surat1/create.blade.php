@@ -218,16 +218,33 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="border: 1px solid #000; max-width: 600px;">
-                                                        <select class="form-control mb-1" name="subklasifikasi_id"
-                                                            style="width: 100%; white-space: nowrap; overflow-y: auto; max-height: 250px;">
-                                                            <option value="">-- Pilih Subklasifikasi --</option>
-                                                            @foreach ($datasubklasifikasi as $sub)
-                                                                <option value="{{ $sub->id }}">
-                                                                    {{ \Illuminate\Support\Str::limit($sub->pekerjaan, 125) }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
+                                                        <div id="subklasifikasi-container">
+                                                            <select class="form-control mb-1" name="subklasifikasi_id" id="subklasifikasiSelect"
+                                                                onchange="convertToTextarea(this)" style="width: 100%; max-height: 250px;">
+                                                                <option value="">-- Pilih Subklasifikasi --</option>
+                                                                @foreach ($datasubklasifikasi as $sub)
+                                                                    <option value="{{ $sub->id }}">
+                                                                        {{ $sub->pekerjaan }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
                                                     </td>
+
+                                                    <script>
+                                                        function convertToTextarea(select) {
+                                                            const selectedText = select.options[select.selectedIndex].text;
+                                                            const container = document.getElementById("subklasifikasi-container");
+
+                                                            // Gantikan select dengan textarea
+                                                            container.innerHTML = `
+                                                                <textarea class="form-control" readonly rows="4"
+                                                                    style="width: 100%; resize: vertical;">${selectedText}</textarea>
+                                                                <input type="hidden" name="subklasifikasi_id" value="${select.value}">
+                                                            `;
+                                                        }
+                                                    </script>
+
 
                                                     <td style="border: 1px solid #000;">
                                                         <select class="form-control" name="kesesuaianklasifikasi">
