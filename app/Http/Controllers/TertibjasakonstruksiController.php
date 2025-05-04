@@ -623,6 +623,7 @@ public function betertibjakonusahacreatenew(Request $request)
 
     return view('backend.06_pengawasan.01_tertibjakonusaha.01_surat1.create', [
         'datatertibjasakonstruksi' => $datatertibjasakonstruksi->namapekerjaan, // Ini dikirim ke form
+        'datatertibjasakonstruksinamabadanusaha' => $datatertibjasakonstruksi->namabadanusaha, // Ini dikirim ke form
         'datatertibjasakonstruksi_id' => $datatertibjasakonstruksi->id, // Ini dikirim ke form
         'user' => $user,
         'datasubklasifikasi' => $datasubklasifikasi,
