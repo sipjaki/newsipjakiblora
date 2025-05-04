@@ -645,6 +645,7 @@ public function betertibjakonusahasurat1create(Request $request)
         'tertibjasakonstruksi_id' => 'required|string',
         'namabadanusaha' => 'required|string|max:255',
         'statusperizinan' => 'required|string',
+        'nib' => 'required|string',
         'waktupengawasan' => 'required|date',
         'waktupengawasanselesai' => 'required|date|after_or_equal:waktupengawasan',
         'namapaketpekerjaan' => 'required|string',

@@ -153,7 +153,7 @@
                                                     <strong style="font-size: 15px;">No NIB</strong>
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control @error('nib') is-invalid @enderror" name="nib" placeholder="Masukan NIB ..." value="{{ old('nib') }}">
+                                                    <input type="number" class="form-control @error('nib') is-invalid @enderror" name="nib" placeholder="Masukan NIB ..." value="{{ old('nib') }}">
                                                     @error('nib')
                                                         <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
