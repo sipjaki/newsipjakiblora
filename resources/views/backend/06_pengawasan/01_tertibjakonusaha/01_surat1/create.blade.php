@@ -100,18 +100,18 @@
                                     </div>
                                     <br>
                                     <div class="modal-body">
-                                        <h5 style="font-size: 1rem;">Surat Dukung Tertib Jakon Usaha : Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
+                                        <h5 style="font-size: 15px;">Surat Dukung Tertib Jakon Usaha : Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
 
                                         <table class="table table-bordered table-sm" style="font-size: 14px;">
                                             <tr>
                                                 <td style="width: 200px;">
-                                                    <strong><i class="bi bi-building-fill"></i> Nama Badan Usaha</strong>
+                                                    <strong style="font-size: 15px;"><i class="bi bi-building-fill"></i> Nama Badan Usaha</strong>
                                                 </td>
                                                 <td><input type="text" class="form-control" name="namabadanusaha" placeholder="Masukan Nama Badan Usaha ... "></td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 300px;">
-                                                    <strong><i class="bi bi-check2-circle"></i> Status Perizinan Berusaha</strong>
+                                                    <strong style="font-size: 15px;"><i class="bi bi-check2-circle"></i> Status Perizinan Berusaha</strong>
                                                 </td>
                                                 <td>
                                                     <select class="form-control" name="statusperizinan">
