@@ -224,7 +224,7 @@
                                                                 <option value="">-- Pilih Subklasifikasi --</option>
                                                                 @foreach ($datasubklasifikasi as $sub)
                                                                     <option value="{{ $sub->id }}">
-                                                                        {{ $sub->pekerjaan }}
+                                                                        {{ Str::limit($sub->pekerjaan, 125) }} <!-- Membatasi teks hanya 125 karakter -->
                                                                     </option>
                                                                 @endforeach
                                                             </select>
