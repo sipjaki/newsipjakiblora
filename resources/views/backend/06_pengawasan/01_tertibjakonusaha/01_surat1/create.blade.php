@@ -294,7 +294,7 @@
                                                                             <thead class="table-secondary">
                                                                                 <tr>
                                                                                     <th style="width: 60px; font-size: 15px; text-align:center;" >No</th>
-                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Lengkap</th>
+                                                                                    <th style="text-align: center; font-size: 15px; text-align:center;">Nama Pemeriksa</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
