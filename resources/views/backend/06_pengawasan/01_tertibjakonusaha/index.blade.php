@@ -343,7 +343,7 @@
                               </td>
 
                               @php
-                              $kesesuaian = $item->surattertibjakonusaha1->kesesuaian;
+                              $kesesuaian = $item->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
                               $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                               $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
                               $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -361,7 +361,7 @@
                           </td>
 
                           @php
-                          $kesesuaian = $item->surattertibjakonusaha1->kesesuaiansbu ?? 'Tidak Sesuai';
+                          $kesesuaian = $item->surattertibjakonusaha1->kesesuaiansbu ?? 'Surat Belum Di Buat';
                           $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                           $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
                           $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -380,7 +380,7 @@
 
 
                       @php
-                      $kesesuaian = $item->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Tidak Sesuai';
+                      $kesesuaian = $item->surattertibjakonusaha1->kesesuaianklasifikasi ?? 'Surat Belum Di Buat';
                       $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                       $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
                       $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -399,7 +399,7 @@
 
 
                   @php
-                  $kesesuaian = $item->surattertibjakonusaha1->kesesuaianlayananusaha ?? 'Tidak Sesuai';
+                  $kesesuaian = $item->surattertibjakonusaha1->kesesuaianlayananusaha ?? 'Surat Belum Di Buat';
                   $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                   $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
                   $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -417,7 +417,7 @@
               </td>
 
               @php
-              $kesesuaian = $item->surattertibjakonusaha2->kesesuaiansbu ?? 'Tidak Sesuai';
+              $kesesuaian = $item->surattertibjakonusaha2->kesesuaiansbu ?? 'Surat Belum Di Buat';
               $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
               $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
               $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -435,7 +435,7 @@
           </td>
 
           @php
-          $kesesuaian = $item->surattertibjakonusaha2->sbu ?? 'Tidak Sesuai';
+          $kesesuaian = $item->surattertibjakonusaha2->sbu ?? 'Surat Belum Di Buat';
           $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
           $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
           $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
@@ -453,7 +453,7 @@
       </td>
 
       @php
-    $kesimpulan = $item->surattertibjakonusaha3->kesimpulan ?? 'Tidak Tertib';
+    $kesimpulan = $item->surattertibjakonusaha3->kesimpulan ?? 'Surat Belum Di Buat';
     $tertibStatus = $kesimpulan === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
     $color = $kesimpulan === 'Tertib' ? 'blue' : 'red';
     $icon = $kesimpulan === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
@@ -472,7 +472,7 @@
 
 
 @php
-    $status = $item->surattertibjakonusaha4->status ?? 'Tidak Tertib';
+    $status = $item->surattertibjakonusaha4->status ?? 'Surat Belum Di Buat';
     $tertibStatus = $status === 'Tertib' ? 'TERTIB' : 'BELUM TERTIB';
     $color = $status === 'Tertib' ? 'blue' : 'red';
     $icon = $status === 'Tertib' ? 'bi-check-circle' : 'bi-x-circle';
