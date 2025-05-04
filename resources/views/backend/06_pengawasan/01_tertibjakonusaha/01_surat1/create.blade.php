@@ -82,57 +82,90 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('beagendapelatihanmatericreatenew') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('betertibjakonusahasurat1') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Left Column -->
-                                    <div class="col-md-6">
+                            <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
+                            <form action="{{ route('betertibjakonusahasurat1') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
 
-                                        <!-- ID BUJK Kontraktor (Hidden atau Select jika mau pilih) -->
-                                        <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
-                                        <!-- Nama Pengurus -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tertibjasakonstruksi_id">
-                                                <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Judul Materi Pelatihan
-                                            </label>
-                                            <input type="text" id="judulmateripelatihan" name="judulmateripelatihan" class="form-control @error('judulmateripelatihan') is-invalid @enderror" value="{{ old('judulmateripelatihan') }}">
-                                            @error('judulmateripelatihan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-
-    <!-- Foto Kegiatan -->
-    <div class="mb-3">
-        <label for="materipelatihan" class="form-label">
-            <i class="bi bi-file-earmark-pdf text-danger"></i> Upload Materi (PDF)
-        </label>
-        <input type="file" id="materipelatihan" name="materipelatihan"
-            class="form-control @error('materipelatihan') is-invalid @enderror" accept="application/pdf">
-        @error('materipelatihan')
-            <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-
-        <!-- Preview PDF -->
-        <div class="mt-2">
-            @php
-                $materiPath = $data->materipelatihan ?? null;
-                $fileInStorage = $materiPath && file_exists(public_path('storage/' . $materiPath));
-            @endphp
-
-            @if ($materiPath)
-                <iframe src="{{ $fileInStorage ? asset('storage/' . $materiPath) : asset($materiPath) }}"
-                    width="100%" height="500px" style="border:1px solid #ccc;">
-                    File PDF tidak bisa ditampilkan. Silakan <a href="{{ $fileInStorage ? asset('storage/' . $materiPath) : asset($materiPath) }}" target="_blank">unduh di sini</a>.
-                </iframe>
-            @else
-                <p class="text-muted">Belum ada file materi pelatihan.</p>
-            @endif
-        </div>
-    </div>
+                                <div class="modal-content" style="font-size: 0.875rem;">
+                                    <div class="modal-header d-flex align-items-center">
+                                        <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                            <img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" class="me-2">
+                                        </a>
+                                        <a href="#" class="d-flex align-items-center" style="margin-right: 2px;">
+                                            <img src="/assets/icon/pupr.png" alt="Logo" width="25" class="me-2">
+                                        </a>
+                                        <span class="mx-2">:</span>
+                                        <p style="margin-left: 10px; font-size: 0.9rem; margin-bottom: 0;">Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <!-- End Left Column -->
+
+                                    <div class="modal-body">
+                                        <h5 style="font-size: 1rem;">Form Input: Pengawasan Tertib Usaha terhadap Kesesuaian Jenis, Sifat, Klasifikasi, dan Layanan Usaha</h5>
+
+                                        <table class="table table-bordered table-sm" style="font-size: 14px;">
+                                            <tr>
+                                                <td style="width: 200px;"><strong>Nama Badan Usaha</strong></td>
+                                                <td><input type="text" class="form-control" name="namabadanusaha"></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 300px;"><strong>Status Perizinan Berusaha</strong></td>
+                                                <td><input type="text" class="form-control" name="statusperizinan"></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px;"><strong>No NIB</strong></td>
+                                                <td><input type="text" class="form-control" name="nib"></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 200px;"><strong>Waktu Pengawasan</strong></td>
+                                                <td class="d-flex gap-2">
+                                                    <input type="date" class="form-control" name="waktupengawasan">
+                                                    <span class="mx-1">–</span>
+                                                    <input type="date" class="form-control" name="waktupengawasanselesai">
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <table style="width: 100%; border-collapse: collapse; font-size: 12px; color: #000;">
+                                            <thead>
+                                                <tr>
+                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000; width: 50px;">No</th>
+                                                    <th rowspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Nama Paket Pekerjaan</th>
+                                                    <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Jenis</th>
+                                                    <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Sifat</th>
+                                                    <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Subklasifikasi</th>
+                                                    <th colspan="2" style="border: 1px solid #000; text-align: center; background-color: #f8f9fa; color: #000;">Layanan Usaha</th>
+                                                </tr>
+                                                <tr>
+                                                    <th style="border: 1px solid #000; text-align: center;">Jenis Usaha<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center;">Kesesuaian SBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center;">Sifat Usaha<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center;">Kesesuaian SBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center;">Sub Klasifikasi<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center;">Kesesuaian SBU</th>
+                                                    <th style="border: 1px solid #000; text-align: center;">Layanan Usaha<br><small>Yang Dipersyaratkan</small></th>
+                                                    <th style="border: 1px solid #000; text-align: center;">Kesesuaian SBU</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="border: 1px solid #000; text-align: center;">1</td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="namapaketpekerjaan"></td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="jenisusaha"></td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaian"></td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="sifatusaha"></td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaiansbu"></td>
+                                                    <td style="border: 1px solid #000;">
+                                                        <input type="text" class="form-control mb-1" name="subklasifikasi_kode" placeholder="Kode">
+                                                        <input type="text" class="form-control" name="subklasifikasi_pekerjaan" placeholder="Pekerjaan">
+                                                    </td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianklasifikasi"></td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="layananusaha"></td>
+                                                    <td style="border: 1px solid #000;"><input type="text" class="form-control" name="kesesuaianlayananusaha"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
 
                                 </div>
 
