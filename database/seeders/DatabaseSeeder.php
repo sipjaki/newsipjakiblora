@@ -59297,9 +59297,9 @@ for ($i = 1; $i <= $jumlahData; $i++) {
 
   // DATABASE TERTIB JASA KONSTRUKSI USAHA
 // Definisikan array untuk pilihan acak
-$jenisUsaha = ['Konstruksi', 'Pertanian', 'Teknologi', 'Transportasi', 'Perdagangan'];
-$kesesuaian = ['Sesuai', 'Tidak Sesuai', 'Sangat Sesuai'];
-$sifatUsaha = ['Aktif', 'Non-Aktif'];
+$jenisUsaha = ['Badan Usaha', 'Perorangan'];
+$kesesuaian = ['Sesuai'];
+$sifatUsaha = ['Kecil', 'Menengah', 'Besar'];
 $layananUsaha = ['Penyedia Konstruksi', 'Penyedia Jasa', 'Distributor'];
 
 // Jumlah data yang ingin dibuat
@@ -59309,11 +59309,18 @@ $jumlahData = 100; // Jumlah data = 100
 for ($i = 1; $i <= $jumlahData; $i++) {
     surattertibjakonusaha2::create([
         'tertibjasakonstruksi_id' => $i,  // ID berurutan dari 1 hingga 100
+
+        'namabadanusaha' => 'PT Contoh Usaha ' . $i,
+        'statusperizinan' => $statusPerizinan[array_rand($statusPerizinan)],
+        'nib' => 'NIB' . str_pad($i, 6, '0', STR_PAD_LEFT),
+        'waktupengawasan' => now()->subDays(rand(1, 365))->format('Y-m-d'),
+        'waktupengawasanselesai' => now()->subDays(rand(0, 365))->format('Y-m-d'),
+
         'namapaketpekerjaan' => 'Pekerjaan ' . rand(1, 100), // Nama pekerjaan acak
         'bentuk' => $jenisUsaha[array_rand($jenisUsaha)],  // Pilih acak bentuk usaha
         'kesesuaiansbu' => $kesesuaian[array_rand($kesesuaian)], // Pilih acak kesesuaian SBU
         'syaratkualifikasi' => $sifatUsaha[array_rand($sifatUsaha)],  // Pilih acak syarat kualifikasi
-        'sbu' => 'SBU ' . rand(1, 100), // SBU acak
+        'sbu' => $kesesuaian[array_rand($kesesuaian)],  // Pilih acak syarat kualifikasi
     ]);
 }
 
