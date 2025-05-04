@@ -555,6 +555,7 @@ public function betertibjakonusahaupdatecreate(Request $request, $id)
     // Redirect dengan pesan sukses
     session()->flash('update', 'Data Berhasil di Update !');
     return redirect('/betertibjakonusaha');
+
 }
 
 
@@ -637,50 +638,56 @@ public function betertibjakonusahacreatenew(Request $request)
 
 
 
+
 public function betertibjakonusahasurat1create(Request $request)
 {
-    // Validasi input
-    $validatedData = $request->validate([
-        'tertibjasakonstruksi_id' => 'required|string',
-        'tandatangan1_id' => 'nullable|string',
-        'tandatangan2_id' => 'nullable|string',
-        'tandatangan3_id' => 'nullable|string',
+    $validated = $request->validate([
+        'tertibjasakonstruksi_id' => 'nullable|string',
+        'tandatangan1' => 'nullable|string',
+        'tandatangan2' => 'nullable|string',
+        'tandatangan3' => 'nullable|string',
         'namabadanusaha' => 'required|string|max:255',
-        'nib' => 'required|string|max:255',
+        'statusperizinan' => 'required|string',
+        'nib' => 'nullable|string|max:255',
         'waktupengawasan' => 'required|date',
-        'waktupengawasanselesai' => 'required|date',
-        'namapaketpekerjaan' => 'required|string|max:255',
-        'jenisusaha' => 'required|string|max:255',
-        'kesesuaian' => 'required|string|max:255',
-        'sifatusaha' => 'required|string|max:255',
-        'kesesuaiansbu' => 'required|string|max:255',
+        'waktupengawasanselesai' => 'required|date|after_or_equal:waktupengawasan',
+
+        'namapaketpekerjaan' => 'required|string',
+        'jenisusaha' => 'required|string',
+        'kesesuaian' => 'required|string',
+        'sifatusaha' => 'required|string',
+        'kesesuaiansbu' => 'required|string',
         'subklasifikasi_id' => 'required|string',
-        'kesesuaianklasifikasi' => 'required|string|max:255',
-        'layananusaha' => 'required|string|max:255',
-        'kesesuaianlayananusaha' => 'required|string|max:255',
-    ], [
-        'tertibjasakonstruksi_id.required' => 'Tertib Jasa Konstruksi Harus di pilih.',
-        'namabadanusaha.required' => 'Badan Usaha Wajib Diisi !.',
-        'statusperizinan.required' => 'Status Perizinan wajib Di Pilih !.',
-        'nib.required' => 'Nib Wajib Di isi ! .',
-        'waktupengawasan.required' => 'Tanggal Mulai Wajib Di Pilih !.',
-        'waktupengawasanselesai.required' => 'Tanggal Selesai Wajib Di Pilih !',
-        'namapaketpekerjaan.required' => 'Paket Pekerjaan Wajib Di Isi !.',
-        'jenisusaha.required' => 'Jenis Usaha Wajib Di Pilih !.',
-        'kesesuaian.required' => 'Kesesuaian Wajib Di Pilih !.',
-        'sifatusaha.required' => 'Sifat Usaha Wajib Di Pilih !.',
-        'kesesuaiansbu.required' => 'Kesesuaian SBU Wajib Di Pilih !.',
-        'subklasifikasi_id.required' => 'Subklasifikasi Wajib Di Pilih !.',
-        'kesesuaianklasifikasi.required' => 'Layanan Usaha Wajib Di Pilih !.',
-        'layananusaha.required' => 'Layanan Usaha Wajib Di Pilih !.',
-        'kesesuaianlayananusaha.required' => 'Kesesuaian Layanan Usaha Wajib Di Pilih !.',
+        'kesesuaianklasifikasi' => 'required|string',
+        'layananusaha' => 'required|string',
+        'kesesuaianlayananusaha' => 'required|string',
     ]);
 
-    // Simpan data ke database
-    surattertibjakonusaha1::create($validatedData);
+    SuratTertibJakonUsaha1::create([
+        'tertibjasakonstruksi_id' => $validated['tertibjasakonstruksi_id'],
+        'tandatangan1_id' => $validated['tandatangan1'],
+        'tandatangan2_id' => $validated['tandatangan2'],
+        'tandatangan3_id' => $validated['tandatangan3'],
+        'namabadanusaha' => $validated['namabadanusaha'],
+        'statusperizinan' => $validated['statusperizinan'],
+        'nib' => $validated['nib'],
+        'waktupengawasan' => $validated['waktupengawasan'],
+        'waktupengawasanselesai' => $validated['waktupengawasanselesai'],
 
-    session()->flash('create', 'Surat Berhasil Di Buat !');
+        'namapaketpekerjaan' => $validated['namapaketpekerjaan'],
+        'jenisusaha' => $validated['jenisusaha'],
+        'kesesuaian' => $validated['kesesuaian'],
+        'sifatusaha' => $validated['sifatusaha'],
+        'kesesuaiansbu' => $validated['kesesuaiansbu'],
+        'subklasifikasi_id' => $validated['subklasifikasi_id'],
+        'kesesuaianklasifikasi' => $validated['kesesuaianklasifikasi'],
+        'layananusaha' => $validated['layananusaha'],
+        'kesesuaianlayananusaha' => $validated['kesesuaianlayananusaha'],
+    ]);
+
+    session()->flash('create', 'Data Berhasil di Buat !');
     return redirect('/betertibjakonusaha');
+
 
 }
 

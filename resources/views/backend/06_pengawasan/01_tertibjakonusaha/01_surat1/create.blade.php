@@ -102,7 +102,7 @@
                         <form action="{{ route('betertibjakonusahasurat1create') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
-                            {{-- <input type="text"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}"> --}}
+                            <input type="hidden"  name="tertibjasakonstruksi_id" value="{{ $datatertibjasakonstruksi_id }}">
 
                                 <div class="modal-content" style="font-size: 0.875rem;">
                                     <div class="modal-header d-flex align-items-center">
@@ -124,49 +124,57 @@
                                                 <td style="width: 200px;">
                                                     <strong style="font-size: 15px;">Nama Badan Usaha</strong>
                                                 </td>
-                                                <td><input type="text" class="form-control" name="namabadanusaha" placeholder="Masukan Nama Badan Usaha ... "></td>
-                                                @error('namabadanusaha')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
+                                                <td>
+                                                    <input type="text" class="form-control @error('namabadanusaha') is-invalid @enderror" name="namabadanusaha" placeholder="Masukan Nama Badan Usaha ..." value="{{ old('namabadanusaha') }}">
+                                                    @error('namabadanusaha')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </td>
                                             </tr>
+
                                             <tr>
                                                 <td style="width: 300px;">
                                                     <strong style="font-size: 15px;">Status Perizinan Berusaha</strong>
                                                 </td>
                                                 <td>
-                                                    <select class="form-control" name="statusperizinan">
+                                                    <select class="form-control @error('statusperizinan') is-invalid @enderror" name="statusperizinan">
                                                         <option value="">-- Pilih Status --</option>
-                                                        <option value="Terverifikasi">Terverifikasi</option>
-                                                        <option value="Tidak Terdaftar">Tidak Terdaftar</option>
+                                                        <option value="Terverifikasi" {{ old('statusperizinan') == 'Terverifikasi' ? 'selected' : '' }}>Terverifikasi</option>
+                                                        <option value="Tidak Terdaftar" {{ old('statusperizinan') == 'Tidak Terdaftar' ? 'selected' : '' }}>Tidak Terdaftar</option>
                                                     </select>
+                                                    @error('statusperizinan')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </td>
-                                                @error('statusperizinan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
-                                                {{-- <td><input type="text" class="form-control" name="statusperizinan"></td> --}}
                                             </tr>
+
                                             <tr>
                                                 <td style="width: 200px;">
                                                     <strong style="font-size: 15px;">No NIB</strong>
                                                 </td>
-                                                <td><input type="text" class="form-control" name="nib" placeholder="Masukan NIB ... "></td>
-                                                @error('nib')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                                @enderror
+                                                <td>
+                                                    <input type="text" class="form-control @error('nib') is-invalid @enderror" name="nib" placeholder="Masukan NIB ..." value="{{ old('nib') }}">
+                                                    @error('nib')
+                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
+                                                </td>
                                             </tr>
+
                                             <tr>
                                                 <td style="width: 200px;">
                                                     <strong style="font-size: 15px;">Waktu Pengawasan</strong>
                                                 </td>
                                                 <td class="d-flex gap-2">
-                                                    <input type="date" class="form-control" name="waktupengawasan" placeholder="Dimulai Sejak ... ">
+                                                    <input type="date" class="form-control @error('waktupengawasan') is-invalid @enderror" name="waktupengawasan" value="{{ old('waktupengawasan') }}" placeholder="Dimulai Sejak ... ">
                                                     @error('waktupengawasan')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                        <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
+
                                                     <span class="mx-1">(Sampai Dengan)</span>
-                                                    <input type="date" class="form-control" name="waktupengawasanselesai" placeholder="Berakhir Tanggal ... ">
+
+                                                    <input type="date" class="form-control @error('waktupengawasanselesai') is-invalid @enderror" name="waktupengawasanselesai" value="{{ old('waktupengawasanselesai') }}" placeholder="Berakhir Tanggal ... ">
                                                     @error('waktupengawasanselesai')
-                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                        <div class="invalid-feedback">{{ $message }}</div>
                                                     @enderror
                                                 </td>
                                             </tr>
@@ -186,54 +194,60 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="border: 1px solid #000; text-align: center;">1</td>
+
                                                     <td style="border: 1px solid #000; width: 400px;">
-                                                        <textarea class="form-control" name="namapaketpekerjaan" placeholder="Masukan Nama Pekerjaan ... " rows="6" style="width: 100%; resize: vertical;"></textarea>
+                                                        <textarea class="form-control @error('namapaketpekerjaan') is-invalid @enderror"
+                                                                  name="namapaketpekerjaan"
+                                                                  placeholder="Masukan Nama Pekerjaan ..."
+                                                                  rows="6"
+                                                                  style="width: 100%; resize: vertical;">{{ old('namapaketpekerjaan') }}</textarea>
                                                         @error('namapaketpekerjaan')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                            <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
                                                     </td>
-                                                      <td style="border: 1px solid #000;">
-                                                        <select class="form-control" name="jenisusaha">
+
+                                                    <td style="border: 1px solid #000;">
+                                                        <select class="form-control @error('jenisusaha') is-invalid @enderror" name="jenisusaha">
                                                             <option value="">-- Pilih Jenis Usaha --</option>
-                                                            <option value="Pekerjaan Konstruksi">Pekerjaan Konstruksi</option>
-                                                            <option value="Pekerjaan Konsultasi Konstruksi">Pekerjaan Konsultasi Konstruksi</option>
+                                                            <option value="Pekerjaan Konstruksi" {{ old('jenisusaha') == 'Pekerjaan Konstruksi' ? 'selected' : '' }}>Pekerjaan Konstruksi</option>
+                                                            <option value="Pekerjaan Konsultasi Konstruksi" {{ old('jenisusaha') == 'Pekerjaan Konsultasi Konstruksi' ? 'selected' : '' }}>Pekerjaan Konsultasi Konstruksi</option>
                                                         </select>
                                                         @error('jenisusaha')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                            <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
-
                                                     </td>
+
                                                     <td style="border: 1px solid #000;">
-                                                        <select class="form-control" name="kesesuaian">
+                                                        <select class="form-control @error('kesesuaian') is-invalid @enderror" name="kesesuaian">
                                                             <option value="">-- Pilih Kesesuaian --</option>
-                                                            <option value="Sesuai">Sesuai</option>
-                                                            <option value="Tidak Sesuai">Tidak Sesuai</option>
+                                                            <option value="Sesuai" {{ old('kesesuaian') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                                            <option value="Tidak Sesuai" {{ old('kesesuaian') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
                                                         </select>
                                                         @error('kesesuaian')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                            <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
-
                                                     </td>
+
                                                     <td style="border: 1px solid #000;">
-                                                        <select class="form-control" name="sifatusaha">
+                                                        <select class="form-control @error('sifatusaha') is-invalid @enderror" name="sifatusaha">
                                                             <option value="">-- Pilih Sifat Usaha --</option>
-                                                            <option value="Umum">Umum</option>
-                                                            <option value="Spesialis">Spesialis</option>
+                                                            <option value="Umum" {{ old('sifatusaha') == 'Umum' ? 'selected' : '' }}>Umum</option>
+                                                            <option value="Spesialis" {{ old('sifatusaha') == 'Spesialis' ? 'selected' : '' }}>Spesialis</option>
                                                         </select>
                                                         @error('sifatusaha')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                            <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
                                                     </td>
+
                                                     <td style="border: 1px solid #000;">
-                                                        <select class="form-control" name="kesesuaiansbu">
+                                                        <select class="form-control @error('kesesuaiansbu') is-invalid @enderror" name="kesesuaiansbu">
                                                             <option value="">-- Pilih Kesesuaian SBU --</option>
-                                                            <option value="Sesuai">Sesuai</option>
-                                                            <option value="Tidak Sesuai">Tidak Sesuai</option>
+                                                            <option value="Sesuai" {{ old('kesesuaiansbu') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+                                                            <option value="Tidak Sesuai" {{ old('kesesuaiansbu') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
                                                         </select>
                                                         @error('kesesuaiansbu')
-                                                        <div class="invalid-feedback">{{ $message }}</div>
+                                                            <div class="invalid-feedback">{{ $message }}</div>
                                                         @enderror
-
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -252,19 +266,23 @@
                                                 <tr>
                                                     <td style="border: 1px solid #000; max-width: 600px;">
                                                         <div id="subklasifikasi-container">
-                                                            <select class="form-control mb-1" name="subklasifikasi_id" id="subklasifikasiSelect"
-                                                                onchange="convertToTextarea(this)" style="width: 100%; max-height: 600px;">
+                                                            <select
+                                                                class="form-control mb-1 @error('subklasifikasi_id') is-invalid @enderror"
+                                                                name="subklasifikasi_id"
+                                                                id="subklasifikasiSelect"
+                                                                onchange="convertToTextarea(this)"
+                                                                style="width: 100%; max-height: 600px;"
+                                                            >
                                                                 <option value="">-- Pilih Subklasifikasi --</option>
                                                                 @foreach ($datasubklasifikasi as $sub)
-                                                                    <option value="{{ $sub->id }}">
-                                                                        {{ Str::limit($sub->pekerjaan, 125) }} <!-- Membatasi teks hanya 125 karakter -->
+                                                                    <option value="{{ $sub->id }}" {{ old('subklasifikasi_id') == $sub->id ? 'selected' : '' }}>
+                                                                        {{ Str::limit($sub->pekerjaan, 125) }}
                                                                     </option>
                                                                 @endforeach
                                                             </select>
                                                             @error('subklasifikasi_id')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                                <div class="invalid-feedback">{{ $message }}</div>
                                                             @enderror
-
                                                         </div>
                                                     </td>
 
@@ -283,39 +301,38 @@
                                                     </script>
 
 
-                                                    <td style="border: 1px solid #000;">
-                                                        <select class="form-control" name="kesesuaianklasifikasi">
-                                                            <option value="">-- Pilih Kesesuaian --</option>
-                                                            <option value="Sesuai">Sesuai</option>
-                                                            <option value="Tidak Sesuai">Tidak Sesuai</option>
-                                                        </select>
-                                                        @error('kesesuaianklasifikasi')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
+<td style="border: 1px solid #000;">
+    <select class="form-control @error('kesesuaianklasifikasi') is-invalid @enderror" name="kesesuaianklasifikasi">
+        <option value="">-- Pilih Kesesuaian --</option>
+        <option value="Sesuai" {{ old('kesesuaianklasifikasi') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+        <option value="Tidak Sesuai" {{ old('kesesuaianklasifikasi') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+    </select>
+    @error('kesesuaianklasifikasi')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</td>
 
-                                                    </td>
+<td style="border: 1px solid #000;">
+    <select class="form-control @error('layananusaha') is-invalid @enderror" name="layananusaha">
+        <option value="">-- Pilih Layanan Usaha --</option>
+        <option value="Pekerjaan Konstruksi" {{ old('layananusaha') == 'Pekerjaan Konstruksi' ? 'selected' : '' }}>Pekerjaan Konstruksi</option>
+        <option value="Pekerjaan Konsultasi Konstruksi" {{ old('layananusaha') == 'Pekerjaan Konsultasi Konstruksi' ? 'selected' : '' }}>Pekerjaan Konsultasi Konstruksi</option>
+    </select>
+    @error('layananusaha')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</td>
 
-                                                    <td style="border: 1px solid #000;">
-                                                        <select class="form-control" name="layananusaha">
-                                                            <option value="">-- Pilih Layanan Usaha --</option>
-                                                            <option value="Pekerjaan Konstruksi">Pekerjaan Konstruksi</option>
-                                                            <option value="Pekerjaan Konsultasi Konstruksi">Pekerjaan Konsultasi Konstruksi</option>
-                                                        </select>
-                                                        @error('layananusaha')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
-                                                    </td>
-
-                                                    <td style="border: 1px solid #000;">
-                                                        <select class="form-control" name="kesesuaianlayananusaha">
-                                                            <option value="">-- Pilih Kesesuaian Layanan Usaha --</option>
-                                                            <option value="Sesuai">Sesuai</option>
-                                                            <option value="Tidak Sesuai">Tidak Sesuai</option>
-                                                        </select>
-                                                        @error('kesesuaianlayananusaha')
-                                                            <div class="invalid-feedback">{{ $message }}</div>
-                                                            @enderror
-                                                    </td>
+<td style="border: 1px solid #000;">
+    <select class="form-control @error('kesesuaianlayananusaha') is-invalid @enderror" name="kesesuaianlayananusaha">
+        <option value="">-- Pilih Kesesuaian Layanan Usaha --</option>
+        <option value="Sesuai" {{ old('kesesuaianlayananusaha') == 'Sesuai' ? 'selected' : '' }}>Sesuai</option>
+        <option value="Tidak Sesuai" {{ old('kesesuaianlayananusaha') == 'Tidak Sesuai' ? 'selected' : '' }}>Tidak Sesuai</option>
+    </select>
+    @error('kesesuaianlayananusaha')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</td>
 
                                                 </tr>
                                             </tbody>
@@ -348,43 +365,52 @@
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">1</td>
                                                                                     <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan1" class="form-control">
+                                                                                        <select name="tandatangan1" class="form-control @error('tandatangan1') is-invalid @enderror">
                                                                                             <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
-                                                                                                    @if($item->surattertibjakonusaha1->tandatangan1_id == $tandatangan->id) selected @endif>
+                                                                                                    {{ old('tandatangan1', optional(optional($item->surattertibjakonusaha1)->tandatangan1_id) ) == $tandatangan->id ? 'selected' : '' }}>
                                                                                                     {{ $tandatangan->namalengkap }}
                                                                                                 </option>
                                                                                             @endforeach
                                                                                         </select>
+                                                                                        @error('tandatangan1')
+                                                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                                                        @enderror
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">2</td>
                                                                                     <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan2" class="form-control">
+                                                                                        <select name="tandatangan2" class="form-control @error('tandatangan2') is-invalid @enderror">
                                                                                             <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
-                                                                                                    @if($item->surattertibjakonusaha1->tandatangan2_id == $tandatangan->id) selected @endif>
+                                                                                                    {{ old('tandatangan2', optional(optional($item->surattertibjakonusaha1)->tandatangan2_id) ) == $tandatangan->id ? 'selected' : '' }}>
                                                                                                     {{ $tandatangan->namalengkap }}
                                                                                                 </option>
                                                                                             @endforeach
                                                                                         </select>
+                                                                                        @error('tandatangan2')
+                                                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                                                        @enderror
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td style="font-size: 12px; text-align:center;">3</td>
                                                                                     <td style="font-size: 12px;">
-                                                                                        <select name="tandatangan3" class="form-control">
+                                                                                        <select name="tandatangan3" class="form-control @error('tandatangan3') is-invalid @enderror">
                                                                                             <option value="">-- Pilih Pemeriksa --</option>
                                                                                             @foreach ($datatandatangan as $tandatangan)
                                                                                                 <option value="{{ $tandatangan->id }}"
-                                                                                                    @if($item->surattertibjakonusaha1->tandatangan3_id == $tandatangan->id) selected @endif>
+                                                                                                    {{ old('tandatangan3', optional(optional($item->surattertibjakonusaha1)->tandatangan3_id) ) == $tandatangan->id ? 'selected' : '' }}>
                                                                                                     {{ $tandatangan->namalengkap }}
                                                                                                 </option>
                                                                                             @endforeach
                                                                                         </select>
+                                                                                        @error('tandatangan3')
+                                                                                            <div class="invalid-feedback">{{ $message }}</div>
+                                                                                        @enderror
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
