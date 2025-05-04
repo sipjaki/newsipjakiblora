@@ -67561,6 +67561,16 @@ for ($i = 1; $i <= 17; $i++) {
 }
 
 
+rantaipasokblora::create([
+    'distributor' => 'PT. VARIA USAHA UNIT BLORA',
+    'nib' => '-',
+    'alamat' => '-',
+    'notelepon' => '-',
+    'materialproduk' => 'SEMEN',
+    'submaterialproduk' => 'PCC',
+    'foto' => 'tokobangunan/tokobangunanblora.jpg',
+    'merkproduk' => 'Semen Indonesia',       // Menghilangkan 'Rp' dan menyimpan sebagai angka decimal
+]);
 
 
 
