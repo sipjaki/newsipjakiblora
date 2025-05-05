@@ -350,18 +350,19 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
     $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
     $datatahunbimtek = tahunpilihan::orderBy('tahunpilihan', 'asc')->get();
     $user = Auth::user();
-    $namalengkap = $allskktenagakerjablora->user->name ?? '';
+    // $namalengkap = $allskktenagakerjablora->user->name ?? '';
 
 
     return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
         'agendapelatihannamakegiatan' => $dataagendaskk->namakegiatan, // Ini dikirim ke form
         'agendapelatihan_id' => $dataagendaskk->id, // Ini dikirim ke form
+        'namalengkap' => $dataagendaskk->allskktenagakerjablora->user->name, // Ini dikirim ke form
         'user' => $user,
         'jenjangpendidikan' => $datajenjangpendidikan,
         'jabatankerja' => $datajabatankerja,
         'sekolah' => $datasekolah,
         'tahunbimtek' => $datatahunbimtek,
-        'namalengkap' => $namalengkap,
+        // 'namalengkap' => $namalengkap,
         'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
     ]);
 }
