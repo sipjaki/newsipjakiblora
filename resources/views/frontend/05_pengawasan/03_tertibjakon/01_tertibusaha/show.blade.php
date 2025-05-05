@@ -487,12 +487,23 @@ color: #45a049;
 <tbody>
     <tr>
 
-        <td>
-            <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
-                background-color: {{ $data->sesuai_jenis == 'BELUM TERTIB' ? 'red' : 'blue' }};">
-                {{ $data->sesuai_jenis }}
-            </button>
-        </td>
+        @php
+        $kesesuaian = $data->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
+        $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
+        $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
+        $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
+    @endphp
+
+    <td style="text-align: center;">
+        <button
+            style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+        >
+            <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
+            {{ $tertibStatus }}
+        </button>
+    </td>
 
         <td>
             <button style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer;
