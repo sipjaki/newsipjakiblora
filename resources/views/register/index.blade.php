@@ -263,7 +263,7 @@
 
     <div class="login-container">
             <p style="text-align: center; color:black;">Register to Mas Jaki Blora</p>
-        <form action="/register" method="POST">
+        <form action="/daftarnew" method="POST">
             @csrf
 
             <div class="input-group">
