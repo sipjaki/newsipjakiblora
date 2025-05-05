@@ -356,7 +356,7 @@
                                   onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
                               >
                                   <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                                  {{ $item->surattertibjakonusaha1->kesesuaian }}
+                                  {{ $tertibStatus }}
                               </button>
                           </td>
 
