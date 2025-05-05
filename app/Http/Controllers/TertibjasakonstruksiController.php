@@ -667,6 +667,7 @@ public function betertibjakonusahasurat1create(Request $request)
         'waktupengawasanselesai.required' => 'Tanggal Selesai Pengawasan Wajib Diisi.',
         'waktupengawasanselesai.after_or_equal' => 'Tanggal Selesai harus setelah atau sama dengan Tanggal Mulai.',
 
+        'nib.required' => 'NIB Wajib Diisi.',
         'namapaketpekerjaan.required' => 'Nama Paket Pekerjaan Wajib Diisi.',
         'jenisusaha.required' => 'Jenis Usaha Wajib Dipilih.',
         'kesesuaian.required' => 'Kesesuaian Wajib Dipilih.',
