@@ -895,6 +895,7 @@ Route::post('/beagendaskk/createnew', [PembinaanController::class, 'beagendaskkc
 
 
 // ROUTE PENGAMBILAN DATA ID
+// PEKERJAANINI
 
 Route::get('/beagendaskkmateri/createmateri/{id}', [PembinaanController::class, 'beagendaskkmatericreate'])->middleware('auth')->name('beagendaskkmatericreate');
 Route::post('/beagendaskkmateri/createmateri/new', [PembinaanController::class, 'beagendaskkmatericreatenew'])->middleware('auth')->name('beagendaskkmatericreatenew');
