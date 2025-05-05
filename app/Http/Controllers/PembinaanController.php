@@ -1013,8 +1013,36 @@ public function beagendaskkmatericreatenew(Request $request)
 
     // Redirect ke route dengan parameter 'id' (menggunakan agendapelatihan_id yang baru saja disimpan)
     return redirect()->route('beagendaskkmateri', ['id' => $materi->agendaskk_id]);
+
+
 }
 
+
+
+public function beagendaskkmaterideleteskk($id)
+{
+    $entry = materipelatihanskk::where('id', $id)->first();
+
+    if ($entry) {
+        // Simpan agendaskk_id terlebih dahulu sebelum delete
+        $agendaskkId = $entry->agendaskk_id;
+
+        // Kalau ada file yang mau dihapus, bisa aktifkan bagian ini
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        $entry->delete();
+
+        // Flash pesan sukses
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('beagendaskkmateri', ['id' => $agendaskkId]);
+    }
+
+    // Jika tidak ditemukan
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
 
 
 }

@@ -893,6 +893,8 @@ Route::post('/beagendaskk/updatecreate/{id}', [PembinaanController::class, 'beag
 Route::get('/beagendaskk/create', [PembinaanController::class, 'beagendaskkcreate'])->middleware('auth')->name('beagendaskkcreate');
 Route::post('/beagendaskk/createnew', [PembinaanController::class, 'beagendaskkcreatenew'])->middleware('auth')->name('beagendaskkcreatenew');
 
+Route::delete('/beagendaskkmateri/delete/{id}', [PembinaanController::class, 'beagendaskkmaterideleteskk'])->middleware('auth')->name('beagendaskkmateridelete');
+
 
 // ROUTE PENGAMBILAN DATA ID
 // PEKERJAANINI
