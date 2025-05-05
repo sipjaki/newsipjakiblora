@@ -702,7 +702,7 @@ public function beagendaskk(Request $request)
     }
 
     return view('backend.05_agenda.03_agendaskk.index', [
-        'title' => 'Agenda Sertifikasi',
+        'title' => 'Agenda Sertifikasi Tenaga Kerja Konstruksi Kabupaten Blora',
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search
