@@ -162,7 +162,7 @@ table.zebra-table {
                         <!-- Judul dan Data Lebar -->
                         <div style="display: flex; flex-direction: column; flex-grow: 1; padding-left: 10px;">
                             <strong style="font-size: 15px;">{{ $title }}</strong>
-                            <span style="font-size: 15px;">{{ $agendapelatihannamakegiatan }}</span>
+                            <span style="font-size: 15px;">{{ $agendaskknamakegiatan }}</span>
                         </div>
                     </button>
                 </div>
@@ -174,7 +174,7 @@ table.zebra-table {
 
                 <form action="{{ route('daftarpesertapelatihancreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                     @csrf
-                    <input type="hidden" name="agendapelatihan_id" value="{{ $agendapelatihan_id }}">
+                    <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
                     <div class="card-body">
                         <div class="row">
@@ -199,7 +199,7 @@ table.zebra-table {
                                 <!-- Tampilan Nama Lengkap (readonly) -->
                                 <div style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap
+                                        <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
                                     </label>
                                     <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
                                 </div>

@@ -352,8 +352,8 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
     $user = Auth::user();
 
     return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
-        'agendapelatihannamakegiatan' => $dataagendaskk->namakegiatan,
-        'agendapelatihan_id' => $dataagendaskk->id,
+        'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
+        'agendaskk_id' => $dataagendaskk->id,
         'namalengkap' => $user->name,
         'user_id' => $user->id,
         'user' => $user,
