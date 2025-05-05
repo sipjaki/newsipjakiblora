@@ -890,6 +890,9 @@ Route::get('/beagendaskk/update/{namakegiatan}', [PembinaanController::class, 'b
 
 Route::post('/beagendaskk/updatecreate/{id}', [PembinaanController::class, 'beagendaskkupdatecreate'])->middleware('auth')->name('update.beagendaskkcreate');
 
+Route::get('/beagendaskk/create', [PembinaanController::class, 'beagendaskkcreate'])->middleware('auth')->name('beagendaskkcreate');
+Route::post('/beagendapelatihan/createnew', [PembinaanController::class, 'beagendapelatihancreatenew'])->middleware('auth')->name('beagendapelatihancreatenew');
+
 // Route::get('/beagendapelatihan/update/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanupdate'])->middleware('auth')->name('beagendapelatihanupdate');
 // Route::post('/beagendapelatihan/updatecreate/{id}', [PembinaanController::class, 'beagendapelatihanupdatecreate'])->middleware('auth')->name('update.beagendapelatihancreate');
 

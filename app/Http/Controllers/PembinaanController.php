@@ -538,7 +538,7 @@ public function beagendapelatihancreate()
     $dataasosiasi = asosiasimasjaki::all();
 
     return view('backend.05_agenda.01_agendapelatihan.create', [
-        'title' => 'Update Agenda Pelatihan ',
+        'title' => 'create Agenda Pelatihan ',
         'data' => null, // <<--- penting!
         'kategoriList' => $datakategoripelatihan,
         'lspList' => $datalsp,
@@ -880,6 +880,25 @@ public function beagendaskkupdatecreate(Request $request, $id)
 
     // Redirect ke halaman agenda pelatihan
     return redirect('/beagendaskk');
+}
+
+
+public function beagendaskkcreate()
+{
+    $user = Auth::user();
+
+    $datalsp = User::whereHas('statusadmin', function ($query) {
+        $query->where('id', 7);
+    })->get();
+    $dataasosiasi = asosiasimasjaki::all();
+
+    return view('backend.05_agenda.03_agendaskk.create', [
+        'title' => 'Create Agenda Sertifikasi TKK Kabupaten Blora ',
+        'data' => null, // <<--- penting!
+        'lspList' => $datalsp,
+        'dataasosiasi' => $dataasosiasi,
+        'user' => $user,
+    ]);
 }
 
 
