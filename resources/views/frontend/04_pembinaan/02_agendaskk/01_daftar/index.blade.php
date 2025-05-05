@@ -250,7 +250,7 @@ table.zebra-table {
                                             <i class="bi bi-building" style="{{ $iconStyle }}"></i> Nama Sekolah
                                         </label>
                                         <select name="namasekolah_id" style="{{ $inputStyle }}" class="form-select @error('namasekolah_id') is-invalid @enderror">
-                                            <option value="">-- Pilih Nama Sekolah --</option>
+                                            <option value="">-- Pilih Universitas/Sekolah/Instansi --</option>
                                             @foreach($sekolah as $item)
                                                 <option value="{{ $item->id }}" {{ old('namasekolah_id') == $item->id ? 'selected' : '' }}>
                                                     {{ $item->namasekolah }}
