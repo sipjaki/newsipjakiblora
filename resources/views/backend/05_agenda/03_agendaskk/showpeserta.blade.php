@@ -78,7 +78,7 @@
                                             <i class="bi bi-bookmark-fill" style="margin-right: 5px;"></i>Jenjang Pendidikan
                                         </th> --}}
                                         <th style="width: 100px; text-align:center;">
-                                            <i class="bi bi-person" style="margin-right: 5px;"></i>Nik
+                                            <i class="bi bi-person" style="margin-right: 5px;"></i>NIk
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Gender
@@ -92,8 +92,8 @@
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-mortarboard" style="margin-right: 5px;"></i> Jenjang Pendidikan
                                         </th>
-                                        <th style="width: 100px; text-align:center;">
-                                            <i class="bi bi-building" style="margin-right: 5px;"></i>Instansi
+                                        <th style="width: 400px; text-align:center;">
+                                            <i class="bi bi-building" style="margin-right: 5px;"></i>Universitas/Sekolah/Intansi
                                         </th>
                                         <th style="width: 300px; text-align:center;">
                                             <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
@@ -119,7 +119,7 @@
                                         </td>
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
                                         <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan }}</td>
-                                        <td style="text-align: left;">{{ $item->instansi }}</td>
+                                        <td style="text-align: left;">{{ $item->namasekolah->namasekolah }}</td>
 
                                         <td style="text-align: center; gap:10px;" id="status-sertifikat-{{ $item->id }}">
                                             @if($item->sertifikat)

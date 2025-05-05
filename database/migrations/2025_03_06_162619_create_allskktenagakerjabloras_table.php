@@ -14,18 +14,18 @@ return new class extends Migration
         Schema::create('allskktenagakerjabloras', function (Blueprint $table) {
             $table->id();
             $table->foreignId('agendaskk_id')->nullable();
-            $table->foreignId('user_id')->nullable();
-            $table->foreignId('jenjangpendidikan_id')->nullable();
+            $table->foreignId('user_id')->nullable(); // ada
+            $table->foreignId('jenjangpendidikan_id')->nullable(); // ada
             $table->foreignId('jabatankerja_id')->nullable();
             $table->foreignId('namasekolah_id')->nullable();
             $table->foreignId('tahunpilihan_id')->nullable();
-            $table->string('nik')->nullable();
+            $table->string('nik')->nullable(); // ada
                     // $table->string('namalengkap')->nullable();
                     $table->string('tempatlahir')->nullable();
-                    $table->date('ttl')->nullable();
-                    $table->string('jeniskelamin')->nullable();
+                    $table->date('ttl')->nullable(); // ada
+                    $table->string('jeniskelamin')->nullable(); // ada
                     $table->string('alamat')->nullable();
-                    $table->string('notelepon')->nullable();
+                    $table->string('notelepon')->nullable(); // ada
                     $table->string('email')->nullable();
                     $table->integer('tahunlulus')->nullable();
 
@@ -40,6 +40,7 @@ return new class extends Migration
                     $table->string('punyaskk')->nullable();
                     $table->string('punyasiki')->nullable();
                     $table->string('siappatuh')->nullable();
+                    $table->string('sertifikat')->default(null);
                     $table->boolean('verifikasipu')->default(false);
                     $table->boolean('verifikasilps')->default(false);
                     $table->softDeletes();
