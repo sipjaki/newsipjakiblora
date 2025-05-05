@@ -360,43 +360,45 @@ table.zebra-table {
                                     @error('namaasosiasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <!-- Punya SKK -->
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-card-checklist" style="color: navy;"></i> Punya SKK?
-                                    </label>
-                                    <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
+                                <div class="row">
+                                    <!-- Punya SKK -->
+                                    <div class="col-md-4" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-card-checklist" style="color: navy;"></i> Punya SKK?
+                                        </label>
+                                        <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
+                                            <option value="">-- Pilih --</option>
+                                            <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                            <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                        </select>
+                                        @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
 
-                                <!-- Punya SIKI -->
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-patch-check" style="color: navy;"></i> Punya SIKI?
-                                    </label>
-                                    <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
+                                    <!-- Punya SIKI -->
+                                    <div class="col-md-4" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-patch-check" style="color: navy;"></i> Punya SIKI?
+                                        </label>
+                                        <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
+                                            <option value="">-- Pilih --</option>
+                                            <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                            <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                        </select>
+                                        @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
 
-                                <!-- Siap Patuhi Kode Etik -->
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
-                                    </label>
-                                    <select name="siappatuh" style="{{ $inputStyle }}" class="@error('siappatuh') is-invalid @enderror">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    <!-- Siap Patuhi Kode Etik -->
+                                    <div class="col-md-4" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
+                                        </label>
+                                        <select name="siappatuh" style="{{ $inputStyle }}" class="@error('siappatuh') is-invalid @enderror">
+                                            <option value="">-- Pilih --</option>
+                                            <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                            <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                        </select>
+                                        @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
                                 </div>
                             </div>
 
