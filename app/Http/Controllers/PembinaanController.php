@@ -1031,7 +1031,7 @@ public function beagendaskkmaterideleteskk($id)
         $entry->delete();
 
         session()->flash('delete', 'Data Berhasil Dihapus!');
-        return redirect('/beagendaskk');
+        return redirect()->route('beagendaskkmateri', ['id' => $agendaskkId]);
     }
 
     session()->flash('error', 'Item tidak ditemukan');

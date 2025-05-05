@@ -217,14 +217,12 @@
 
                                          <!-- Script untuk set action form -->
                                          <script>
-                                         function setDeleteUrl(button) {
-                                             var id = button.getAttribute('data-id');
-                                             var deleteUrl = "{{ route('beagendaskkmaterideleteskk', ':id') }}";
-                                             deleteUrl = deleteUrl.replace(':id', encodeURIComponent(id));
-
-                                             document.getElementById('deleteForm').action = deleteUrl;
-                                         }
-                                         </script>
+                                            function setDeleteUrl(button) {
+                                                var id = button.getAttribute('data-id');
+                                                var baseUrl = "{{ url('/beagendaskkmateriskk/delete') }}";
+                                                document.getElementById('deleteForm').action = baseUrl + '/' + encodeURIComponent(id);
+                                            }
+                                        </script>
 
                                             <style>
                                                 /* Hover effect */
