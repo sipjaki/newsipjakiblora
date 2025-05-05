@@ -215,15 +215,17 @@ table.zebra-table {
                                     $iconStyle = "color: navy;";
                                 @endphp
 
+                          <!-- Input tersembunyi untuk dikirim ke backend -->
+                                <input type="hidden" name="user_id" value="{{ old('user_id', $user_id) }}">
+
+                                <!-- Tampilan Nama Lengkap (readonly) -->
                                 <div style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }}">
                                         <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap
                                     </label>
-                                    <input type="text" name="user_id" style="{{ $inputStyle }}"
-                                        class="@error('user_id') is-invalid @enderror"
-                                        value="{{ old('user_id', $namalengkap) }}" readonly>
-                                    @error('user_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
                                 </div>
+
 
                                 <div style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }}">

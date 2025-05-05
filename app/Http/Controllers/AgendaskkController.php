@@ -344,25 +344,23 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
 
     public function daftarpesertasertifikasiskknew($id)
 {
-    $dataagendaskk = agendaskk::findOrFail($id); // Cari 1 data sesuai ID
+    $dataagendaskk = agendaskk::findOrFail($id);
     $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
     $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
     $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
     $datatahunbimtek = tahunpilihan::orderBy('tahunpilihan', 'asc')->get();
     $user = Auth::user();
-    // $namalengkap = $allskktenagakerjablora->user->name ?? '';
-
 
     return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
-        'agendapelatihannamakegiatan' => $dataagendaskk->namakegiatan, // Ini dikirim ke form
-        'agendapelatihan_id' => $dataagendaskk->id, // Ini dikirim ke form
-        'namalengkap' => $dataagendaskk->allskktenagakerjablora->user->name, // Ini dikirim ke form
+        'agendapelatihannamakegiatan' => $dataagendaskk->namakegiatan,
+        'agendapelatihan_id' => $dataagendaskk->id,
+        'namalengkap' => $user->allskktenagakerjablora->user->name ?? $user->name,
+        'user_id' => $user->id,
         'user' => $user,
         'jenjangpendidikan' => $datajenjangpendidikan,
         'jabatankerja' => $datajabatankerja,
         'sekolah' => $datasekolah,
         'tahunbimtek' => $datatahunbimtek,
-        // 'namalengkap' => $namalengkap,
         'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
     ]);
 }
