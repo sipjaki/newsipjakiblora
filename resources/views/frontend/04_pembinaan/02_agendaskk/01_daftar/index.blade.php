@@ -169,7 +169,7 @@ table.zebra-table {
 
             </div>
 
-
+<hr>
             <div class="table-wrapper">
 
                 <form action="{{ route('daftarpesertapelatihancreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
