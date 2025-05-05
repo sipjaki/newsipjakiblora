@@ -359,7 +359,7 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
         'jabatankerja' => $datajabatankerja,
         'sekolah' => $datasekolah,
         'tahunbimtek' => $datatahunbimtek,
-        'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi Kab Blora'
+        'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
     ]);
 }
 
