@@ -155,35 +155,36 @@ table.zebra-table {
             <div style="display: flex; justify-content: center; margin-bottom: -20px;">
                 <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
                     <button type="button" style="
-                    display: inline-flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 10px;
-                    padding: 14px 24px;
-                    font-size: 16px;
-                    font-family: 'Poppins', sans-serif;
-                    border: 1px solid #28a745;
-                    background-color: #28a745;
-                    color: white;
-                    border-radius: 6px;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    white-space: normal;
-                    width: 100%;
-                    max-width: 800px;
-                    text-align: left;
-                "
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
-                >
-                    <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #28a745;
+    background-color: #28a745;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: normal;
+    max-width: 100%;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+"
+onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+>
+    <img src="/assets/icon/pupr.png" alt="icon" style="width: 30px; height: 30px; object-fit: contain; margin-bottom: 10px;">
 
-                    <div style="display: flex; flex-direction: column;">
-                        <strong style="font-size: 14px;">{{ $title }}</strong>
-                        <span style="font-size: 16px;">{{ $agendapelatihannamakegiatan }}</span>
-                    </div>
-                </button>
-
+    <div style="display: flex; flex-direction: column;">
+        <strong style="font-size: 16px; text-align: center;">{{ $title }}</strong>
+        <span style="font-size: 18px; text-align: center;">{{ $agendapelatihannamakegiatan }}</span>
+    </div>
+</button>
 
                 </div>
             </div>
