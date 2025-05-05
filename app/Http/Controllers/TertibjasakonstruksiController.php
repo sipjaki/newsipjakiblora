@@ -435,32 +435,36 @@ class TertibjasakonstruksiController extends Controller
     // MENU BACKEND TERTIB JAKON USAHA JASA KONSTRUKSI
 
     public function betertibjakonusaha(Request $request)
-    {
-        $perPage = $request->input('perPage', 10);
-        $search = $request->input('search');
+{
+    $perPage = $request->input('perPage', 10);
+    $search = $request->input('search');
 
-        $query = tertibjasakonstruksi::query();
+    $query = tertibjasakonstruksi::query();
 
-        $query->where('nib', 'LIKE', "%{$search}%")
-                      ->orWhere('nib', 'LIKE', "%{$search}%")
-                      ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
-                      ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
-                      ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
-                      ->orWhere('pjbu', 'LIKE', "%{$search}%")
-                      ->orWhere('sesuai_jenis', 'LIKE', "%{$search}%")
-                      ->orWhere('sesuai_sifat', 'LIKE', "%{$search}%")
-                      ->orWhere('sesuai_klasifikasi', 'LIKE', "%{$search}%")
-                      ->orWhere('sesuai_layanan', 'LIKE', "%{$search}%")
-                      ->orWhere('segmentasipasar_bentuk', 'LIKE', "%{$search}%")
-                      ->orWhere('segmentasipasar_kualifikasi', 'LIKE', "%{$search}%")
-                      ->orWhere('syarat_SBU', 'LIKE', "%{$search}%")
-                      ->orWhere('syarat_NIB', 'LIKE', "%{$search}%")
-                      ->orWhere('pelaksanaanpengembangan', 'LIKE', "%{$search}%")
-                      ->orWhereHas('penyediastatustertibjakon', function ($q) use ($search) {
-                          $q->where('penyedia', 'LIKE', "%{$search}%"); // 'jabatankerja' = nama kolom di tabel jabatankerja
-                      })
-                      ;
-                      $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('nib', 'LIKE', "%{$search}%")
+              ->orWhere('namapekerjaan', 'LIKE', "%{$search}%")
+              ->orWhere('tahunpelaksanaan', 'LIKE', "%{$search}%")
+              ->orWhere('namabadanusaha', 'LIKE', "%{$search}%")
+              ->orWhere('pjbu', 'LIKE', "%{$search}%")
+              ->orWhere('sesuai_jenis', 'LIKE', "%{$search}%")
+              ->orWhere('sesuai_sifat', 'LIKE', "%{$search}%")
+              ->orWhere('sesuai_klasifikasi', 'LIKE', "%{$search}%")
+              ->orWhere('sesuai_layanan', 'LIKE', "%{$search}%")
+              ->orWhere('segmentasipasar_bentuk', 'LIKE', "%{$search}%")
+              ->orWhere('segmentasipasar_kualifikasi', 'LIKE', "%{$search}%")
+              ->orWhere('syarat_SBU', 'LIKE', "%{$search}%")
+              ->orWhere('syarat_NIB', 'LIKE', "%{$search}%")
+              ->orWhere('pelaksanaanpengembangan', 'LIKE', "%{$search}%")
+              ->orWhereHas('penyediastatustertibjakon', function ($r) use ($search) {
+                  $r->where('penyedia', 'LIKE', "%{$search}%");
+              });
+        });
+    }
+
+    // Urutkan berdasarkan update terbaru
+    $data = $query->orderBy('updated_at', 'desc')->paginate($perPage);
 
     if ($request->ajax()) {
         return response()->json([
@@ -477,6 +481,7 @@ class TertibjasakonstruksiController extends Controller
         'search' => $search
     ]);
 }
+
 
 
 public function betertibjakonusahadelete($id)
