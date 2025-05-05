@@ -283,7 +283,7 @@
     <button type="submit" class="btn-login">Login</button>
 
     <div class="footer-links">
-        <a href="/register">
+        <a href="/daftar">
             Belum punya akun? <strong>Daftar</strong>
         </a>
     </div>
