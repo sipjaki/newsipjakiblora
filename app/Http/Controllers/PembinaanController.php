@@ -792,7 +792,7 @@ $datalsp = User::whereHas('statusadmin', function ($query) {
 return view('backend.05_agenda.03_agendaskk.update', [
     'title' => 'Update Agenda Sertifikasi Tenaga Kerja Konstruksi ',
     'data' => $dataagendaskk,
-    'kategoriList' => $dataasosiasimasjaki,
+    'dataasosiasi' => $dataasosiasimasjaki,
     'lspList' => $datalsp,
     'user' => $user,
 ]);
