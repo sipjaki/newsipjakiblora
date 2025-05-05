@@ -56,7 +56,7 @@
                                         viewBox="0 0 16 16" style="margin-right: 8px;">
                                         <path d="M4 0h5.5L14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM9.5 1v3a1 1 0 0 0 1 1h3l-4-4z"/>
                                     </svg>
-                                    Nama Kegiatan : {{ $agendapelatihan }}
+                                    Nama Kegiatan : {{ $agendaskk }}
                                 </button>
 
                                 <!-- Tombol Kanan -->
@@ -90,14 +90,14 @@
                                     <div class="col-md-6">
 
                                         <!-- ID BUJK Kontraktor (Hidden atau Select jika mau pilih) -->
-                                        <input type="hidden"  name="agendapelatihan_id" value="{{ $agendapelatihan_id }}">
+                                        <input type="hidden"  name="agendaskk_id" value="{{ $agendaskk_id }}">
                                         <!-- Nama Pengurus -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="judulmateripelatihan">
-                                                <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Judul Materi Pelatihan
+                                            <label class="form-label" for="judulskk">
+                                                <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Judul Materi Sertifikasi
                                             </label>
-                                            <input type="text" id="judulmateripelatihan" name="judulmateripelatihan" class="form-control @error('judulmateripelatihan') is-invalid @enderror" value="{{ old('judulmateripelatihan') }}">
-                                            @error('judulmateripelatihan')
+                                            <input type="text" id="judulskk" name="judulskk" class="form-control @error('judulskk') is-invalid @enderror" value="{{ old('judulskk') }}">
+                                            @error('judulskk')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
@@ -105,19 +105,19 @@
 
     <!-- Foto Kegiatan -->
     <div class="mb-3">
-        <label for="materipelatihan" class="form-label">
+        <label for="materipelatihanskk" class="form-label">
             <i class="bi bi-file-earmark-pdf text-danger"></i> Upload Materi (PDF)
         </label>
-        <input type="file" id="materipelatihan" name="materipelatihan"
-            class="form-control @error('materipelatihan') is-invalid @enderror" accept="application/pdf">
-        @error('materipelatihan')
+        <input type="file" id="materipelatihanskk" name="materipelatihanskk"
+            class="form-control @error('materipelatihanskk') is-invalid @enderror" accept="application/pdf">
+        @error('materipelatihanskk')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
 
         <!-- Preview PDF -->
         <div class="mt-2">
             @php
-                $materiPath = $data->materipelatihan ?? null;
+                $materiPath = $data->materipelatihanskk ?? null;
                 $fileInStorage = $materiPath && file_exists(public_path('storage/' . $materiPath));
             @endphp
 
