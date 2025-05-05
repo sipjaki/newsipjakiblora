@@ -881,11 +881,7 @@ Route::post('/daftarpesertapelatihan/createmateri/new', [PesertapelatihanControl
 
 
 Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middleware('auth');
-Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagendapelatihanshowpeserta'])->middleware('auth');
-
-Route::get('/beagendaskk/show/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanshow'])->middleware('auth');
-Route::delete('/beagendaskkpeserta/delete/{id}', [PembinaanController::class, 'beagendapelatihanpesertadelete'])->middleware('auth');
-Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class, 'beagendapelatihandelete'])->middleware('auth');
+Route::get('/beagendaskkmateri/{id}', [PembinaanController::class, 'beagendaskkmateri'])->middleware('auth')->name('beagendaskkmateri');
 
 // Route::get('/beagendapelatihan/update/{namakegiatan}', [PembinaanController::class, 'beagendapelatihanupdate'])->middleware('auth')->name('beagendapelatihanupdate');
 // Route::post('/beagendapelatihan/updatecreate/{id}', [PembinaanController::class, 'beagendapelatihanupdatecreate'])->middleware('auth')->name('update.beagendapelatihancreate');

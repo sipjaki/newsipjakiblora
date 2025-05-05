@@ -12,6 +12,7 @@ use App\Models\kategoripelatihan;
 use App\Models\pembinaan;
 use App\Models\pesertapelatihan;
 use App\Models\materipelatihan;
+use App\Models\materipelatihanskk;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -706,6 +707,31 @@ public function beagendaskk(Request $request)
         'data' => $data,
         'perPage' => $perPage,
         'search' => $search
+    ]);
+}
+
+
+public function beagendaskkmateri($id)
+{
+        $dataagendaskk = agendaskk::where('id', $id)->first();
+        // Ambil data user saat ini
+        $user = Auth::user();
+
+        if (!$dataagendaskk) {
+            // Tangani jika kegiatan tidak ditemukan
+            return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+        }
+
+        // Menggunakan paginate() untuk pagination
+        $subdata = materipelatihanskk::where('agendaskk_id', $dataagendaskk->id)->paginate(50);
+
+    // Ambil data user saat ini
+    $user = Auth::user();
+    return view('backend.05_agenda.03_agendaskk.01_daftarmateri.index', [
+        'title' => 'Daftar Materi Agenda Sertifikasi Tenaga Kerja Konstruksi Kabupaten Blora',
+        'data' => $dataagendaskk,
+        'subdata' => $subdata,
+        'user' => $user,
     ]);
 }
 
