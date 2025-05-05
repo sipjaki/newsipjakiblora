@@ -366,4 +366,116 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
 }
 
 
+
+public function daftarpesertasertifikasiskkcreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'jenjangpendidikan_id' => 'required|string',
+        'jabatankerja_id' => 'required|string',
+        'namasekolah_id' => 'required|string',
+        'tahunpilihan_id' => 'required|string',
+        'nik' => 'required|regex:/^\d{16}$/|size:16',
+        'tempatlahir' => 'required|string|max:255',
+        'ttl' => 'required|date',
+        'jeniskelamin' => 'required|string',
+        'alamat' => 'required|string|max:255',
+        'notelepon' => 'required|string|max:15',
+        'email' => 'required|email|max:255',
+        'tahunlulus' => 'required|integer|min:1900|max:' . date('Y'),
+
+        // Upload dokumen
+        'uploadktp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
+        'uploadfoto' => 'nullable|mimes:jpg,jpeg,png|max:2048',
+        'uploadijazah' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
+        'uploadpengalaman' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
+        'uploadnpwp' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
+        'uploaddaftarriwayathidup' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
+
+        'namaasosiasi' => 'nullable|string|max:255',
+        'punyaskk' => 'required|in:Ya,Tidak',
+        'punyasiki' => 'required|in:Ya,Tidak',
+        'siappatuh' => 'required|in:Ya,Tidak',
+    ], [
+        'jenjangpendidikan_id.required' => 'Jenjang Pendidikan wajib dipilih!',
+        'jabatankerja_id.required' => 'Jabatan Kerja wajib dipilih!',
+        'namasekolah_id.required' => 'Universitas/Sekolah/Instansi wajib dipilih!',
+        'tahunpilihan_id.required' => 'Tahun Pilihan wajib dipilih!',
+        'nik.required' => 'NIK harus diisi.',
+        'nik.regex' => 'NIK harus terdiri dari 16 digit angka.',
+        'nik.size' => 'NIK harus tepat 16 digit.',
+        'ttl.required' => 'Tanggal lahir harus diisi.',
+        'tempatlahir.required' => 'Tempat lahir harus diisi.',
+        'notelepon.required' => 'Nomor telepon harus diisi.',
+        'email.required' => 'Email harus diisi.',
+        'email.email' => 'Email tidak valid.',
+        'tahunlulus.required' => 'Tahun lulus harus diisi.',
+        'punyaskk.required' => 'Pilih apakah memiliki SKK.',
+        'punyasiki.required' => 'Pilih apakah memiliki SIKI.',
+        'siappatuh.required' => 'Pilih kesiapan mematuhi kode etik.',
+        'uploadktp.mimes' => 'File KTP harus PDF atau gambar.',
+        'uploadktp.max' => 'Ukuran file KTP maksimal 2 MB.',
+    ]);
+
+    // Path upload untuk masing-masing file
+    $uploadPaths = [
+        'uploadktp' => '04_pembinaan/03_sertifikasi/01_uploadktp',
+        'uploadfoto' => '04_pembinaan/03_sertifikasi/02_uploadfoto',
+        'uploadijazah' => '04_pembinaan/03_sertifikasi/03_uploadijazah',
+        'uploadpengalaman' => '04_pembinaan/03_sertifikasi/04_uploadpengalaman',
+        'uploadnpwp' => '04_pembinaan/03_sertifikasi/05_uploadnpwp',
+        'uploaddaftarriwayathidup' => '04_pembinaan/03_sertifikasi/06_uploadriwayathidup',
+    ];
+
+    $uploadedFiles = [];
+
+    foreach ($uploadPaths as $field => $path) {
+        if ($request->hasFile($field)) {
+            $file = $request->file($field);
+            $namaFile = time() . '_' . $file->getClientOriginalName();
+            $tujuanPath = public_path($path);
+
+            if (!file_exists($tujuanPath)) {
+                mkdir($tujuanPath, 0777, true);
+            }
+
+            $file->move($tujuanPath, $namaFile);
+            $uploadedFiles[$field] = $path . '/' . $namaFile;
+        }
+    }
+
+    // Simpan ke database
+    allskktenagakerjablora::create([
+        'agendaskk_id' => $request->agendaskk_id,
+        'user_id' => auth()->id(),
+        'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
+        'jabatankerja_id' => $validated['jabatankerja_id'],
+        'namasekolah_id' => $validated['namasekolah_id'],
+        'tahunpilihan_id' => $validated['tahunpilihan_id'],
+        'nik' => $validated['nik'],
+        'tempatlahir' => $validated['tempatlahir'],
+        'ttl' => $validated['ttl'],
+        'jeniskelamin' => $validated['jeniskelamin'],
+        'alamat' => $validated['alamat'],
+        'notelepon' => $validated['notelepon'],
+        'email' => $validated['email'],
+        'tahunlulus' => $validated['tahunlulus'],
+
+        'uploadktp' => $uploadedFiles['uploadktp'] ?? null,
+        'uploadfoto' => $uploadedFiles['uploadfoto'] ?? null,
+        'uploadijazah' => $uploadedFiles['uploadijazah'] ?? null,
+        'uploadpengalaman' => $uploadedFiles['uploadpengalaman'] ?? null,
+        'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
+        'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
+
+        'namaasosiasi' => $validated['namaasosiasi'] ?? null,
+        'punyaskk' => $validated['punyaskk'],
+        'punyasiki' => $validated['punyasiki'],
+        'siappatuh' => $validated['siappatuh'],
+    ]);
+
+    session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
+    return redirect('/dashboard');
+}
+
 }
