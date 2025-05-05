@@ -125,11 +125,26 @@
 
                                         <!-- Left Column (6/12) -->
                                         <div class="col-md-6">
+
                                             <div class="mb-3">
                                                 <label class="form-label">
                                                     <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Nama Kegiatan
                                                 </label>
                                                 <input class="form-control" value="{{$data->namakegiatan}}" readonly/>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label">
+                                                    <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> Asosiasi
+                                                </label>
+                                                <input class="form-control" value="{{$data->asosiasimasjaki->namaasosiasi}}" readonly/>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label">
+                                                    <i class="bi bi-calendar-event" style="margin-right: 8px; color: navy;"></i> LSP Penerbit
+                                                </label>
+                                                <input class="form-control" value="{{$data->user->name}}" readonly/>
                                             </div>
 
 
