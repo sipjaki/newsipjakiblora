@@ -284,7 +284,7 @@
 
     <div class="footer-links">
         <a href="/daftar">
-            Belum punya akun? <strong>Daftar</strong>
+            Belum punya akun? <strong>Register</strong>
         </a>
     </div>
 </form>
