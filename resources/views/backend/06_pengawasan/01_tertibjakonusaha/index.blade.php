@@ -342,7 +342,7 @@
                                 @endif
                               </td>
 
-                              {{-- @php
+                              @php
                               $kesesuaian = $item->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
                               $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                               $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
@@ -358,7 +358,7 @@
                                   <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
                                   {{ $tertibStatus }}
                               </button>
-                          </td> --}}
+                          </td>
 
                           @php
                           $kesesuaian = $item->surattertibjakonusaha1->kesesuaiansbu ?? 'Surat Belum Di Buat';
