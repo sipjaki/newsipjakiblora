@@ -350,8 +350,7 @@ table.zebra-table {
                             </div>
 
                             <hr>
-
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="row">
                                     <!-- Nama Asosiasi -->
                                     <div class="col-md-6" style="{{ $divStyle }}">
@@ -363,7 +362,7 @@ table.zebra-table {
                                     </div>
 
                                     <!-- Punya SKK -->
-                                    <div class="col-md-8" style="{{ $divStyle }}">
+                                    <div class="col-md-6" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-card-checklist" style="color: navy;"></i> Punya SKK?
                                         </label>
@@ -376,7 +375,7 @@ table.zebra-table {
                                     </div>
 
                                     <!-- Punya SIKI -->
-                                    <div class="col-md-8" style="{{ $divStyle }}">
+                                    <div class="col-md-6" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-patch-check" style="color: navy;"></i> Punya SIKI?
                                         </label>
@@ -389,7 +388,7 @@ table.zebra-table {
                                     </div>
 
                                     <!-- Siap Patuhi Kode Etik -->
-                                    <div class="col-md-8" style="{{ $divStyle }}">
+                                    <div class="col-md-6" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
                                         </label>
@@ -402,6 +401,7 @@ table.zebra-table {
                                     </div>
                                 </div>
                             </div>
+
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
 
