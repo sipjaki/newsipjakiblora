@@ -27,10 +27,7 @@ return new class extends Migration
                     $table->string('alamat')->nullable();
                     $table->string('notelepon')->nullable();
                     $table->string('email')->nullable();
-
-
                     $table->integer('tahunlulus')->nullable();
-
 
                     $table->string('uploadktp')->nullable();
                     $table->string('uploadfoto')->nullable();

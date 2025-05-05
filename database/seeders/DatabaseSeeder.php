@@ -13091,8 +13091,8 @@ allskktenagakerjablora::create([
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
     'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'LULUS',
-    'verifikasilps' => 'LULUS',
+    'verifikasipu' => false,
+    'verifikasilps' => false,
 ]);
 
 allskktenagakerjablora::create([
@@ -13120,8 +13120,8 @@ allskktenagakerjablora::create([
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
     'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'LULUS',
-    'verifikasilps' => 'TIDAK LULUS',
+    'verifikasipu' => false,
+    'verifikasilps' => false,
 ]);
 
 allskktenagakerjablora::create([
@@ -13149,8 +13149,8 @@ allskktenagakerjablora::create([
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
     'siappatuh' => 'BERSEDIA',
-    'verifikasipu' => 'TIDAK LULUS',
-    'verifikasilps' => 'TIDAK LULUS',
+    'verifikasipu' => false,
+    'verifikasilps' => false,
 ]);
 
 // fort
