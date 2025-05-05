@@ -13,10 +13,10 @@ class surattertibjakonusaha1 extends Model
 
     protected $guarded = ['id'];
 
-    public function tertibjasakonstruksi()
-    {
-        return $this->hasMany(tertibjasakonstruksi::class, 'foreign_key');
-    }
+            public function tertibjasakonstruksi()
+            {
+                return $this->hasMany(tertibjasakonstruksi::class, 'surattertibjakonusaha1_id');
+            }
 
     public function tandatangan1()
     {
