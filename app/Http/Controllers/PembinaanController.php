@@ -760,5 +760,16 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
+public function beagendaskkshow($namakegiatan)
+{
+        $dataagendaskk = agendaskk::where('namakegiatan', $namakegiatan)->first();
+    // Ambil data user saat ini
+        $user = Auth::user();
+
+    return view('backend.05_agenda.03_agendaskk.show', [
+        'title' => 'Data Details Agenda Sertifikasi Tenaga Kerja Konstruksi',
+        'data' => $dataagendaskk,
+    ]);
+}
 }
 
