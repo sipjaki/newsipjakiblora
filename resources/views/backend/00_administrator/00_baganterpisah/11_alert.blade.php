@@ -304,7 +304,7 @@
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
-        <button class="button-verifikasi1">{{ session('verifikasipesertapelatihan') }}</button>
+        <button class="button-verifikasi">{{ session('verifikasipesertapelatihan') }}</button>
     </div>
 </div>
 @endif
