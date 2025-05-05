@@ -25,15 +25,6 @@ return new class extends Migration
             $table->string('tahunpelaksanaan', 255)->nullable();
             $table->string('namabadanusaha', 255)->nullable();
             $table->string('pjbu', 100)->nullable();
-            $table->string('sesuai_jenis', 100)->nullable();
-            $table->string('sesuai_sifat', 100)->nullable();
-            $table->string('sesuai_klasifikasi', 100)->nullable();
-            $table->string('sesuai_layanan', 100)->nullable();
-            $table->string('segmentasipasar_bentuk', 100)->nullable();
-            $table->string('segmentasipasar_kualifikasi', 100)->nullable();
-            $table->string('syarat_SBU', 100)->nullable();
-            $table->string('syarat_NIB', 100)->nullable();
-            $table->string('pelaksanaanpengembangan', 255)->nullable();
 
             $table->softDeletes();
             $table->timestamps();
