@@ -153,45 +153,42 @@ table.zebra-table {
     <div class="full-width-container mx-auto px-4 pb-10">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
             <div style="display: flex; justify-content: center; margin-bottom: -20px;">
-                <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
+                <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
                     <button type="button" style="
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 20px 40px;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    border: 1px solid #28a745;
-    background-color: #28a745;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: normal;
-    max-width: 100%;
-    width: 80%;
-    text-align: left;
-    margin: 0 auto;
-"
-onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
->
-    <!-- Icon di tengah -->
-    <div style="display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
-        <img src="/assets/icon/pupr.png" alt="icon" style="width: 30px; height: 30px; object-fit: contain;">
-    </div>
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        padding: 24px 48px;
+                        font-size: 16px;
+                        font-family: 'Poppins', sans-serif;
+                        border: 1px solid #28a745;
+                        background-color: #28a745;
+                        color: white;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        white-space: normal;
+                        width: 100%;
+                        text-align: left;
+                    "
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+                    >
+                        <!-- Icon di tengah -->
+                        <div style="display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+                            <img src="/assets/icon/pupr.png" alt="icon" style="width: 30px; height: 30px; object-fit: contain;">
+                        </div>
 
-    <!-- Judul dan Data Lebar -->
-    <div style="display: flex; flex-direction: column; flex-grow: 1; padding-left: 10px;">
-        <strong style="font-size: 16px; text-align: left; width: 100%;">{{ $title }}</strong>
-        <span style="font-size: 18px; text-align: left; width: 100%;">{{ $agendapelatihannamakegiatan }}</span>
-    </div>
-</button>
-
-
+                        <!-- Judul dan Data Lebar -->
+                        <div style="display: flex; flex-direction: column; flex-grow: 1; padding-left: 10px;">
+                            <strong style="font-size: 16px;">{{ $title }}</strong>
+                            <span style="font-size: 18px;">{{ $agendapelatihannamakegiatan }}</span>
+                        </div>
+                    </button>
                 </div>
+
             </div>
 
 
