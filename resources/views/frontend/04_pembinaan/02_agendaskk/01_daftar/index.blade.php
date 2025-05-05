@@ -263,7 +263,7 @@ table.zebra-table {
                                     <!-- Tahun Bimtek -->
                                     <div class="col-md-6" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
-                                            <i class="bi bi-calendar-event" style="{{ $iconStyle }}"></i> Tahun Bimtek
+                                            <i class="bi bi-calendar-event" style="{{ $iconStyle }}"></i> Tahun Bimtek | Isi dengan (2025)
                                         </label>
                                         <select name="tahunpilihan_id" style="{{ $inputStyle }}" class="form-select @error('tahunpilihan_id') is-invalid @enderror">
                                             <option value="">-- Pilih Tahun Bimtek --</option>
