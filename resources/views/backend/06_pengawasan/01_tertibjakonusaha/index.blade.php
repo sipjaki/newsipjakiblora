@@ -350,7 +350,7 @@
                           @endphp --}}
 
                           <td style="text-align: center;">
-                              {{ $item->surattertibjakonusaha1->kesesuaian }}
+                              {{ $item->surattertibjakonusaha1->kesesuaian ?? 'Data Belum Di Update' }}
                               {{-- <button
                                   style="padding: 8px 12px; border: none; border-radius: 5px; color: white; font-weight: bold; cursor: pointer; background-color: {{ $color }};"
                                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
