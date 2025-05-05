@@ -15,7 +15,7 @@ class surattertibjakonusaha1 extends Model
 
     public function tertibjasakonstruksi()
     {
-        return $this->hasOne(tertibjasakonstruksi::class, 'tertibjasakonstruksi_id');
+        return $this->hasMany(tertibjasakonstruksi::class, 'foreign_key');
     }
 
     public function tandatangan1()
