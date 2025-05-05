@@ -145,29 +145,14 @@
                                             // updateStatusSertifikat({{ $item->id }}, 'terbit');
                                         </script>
 
-
 <td style="text-align: center;">
-    @if($item->verifikasi == false)
-        <button type="button" onclick="openModal({{ $item->id }})"
-            class="btn btn-danger">
+    @if($item->verifikasipu == false)
+        <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-danger">
             <i class="bi bi-x-circle"></i> BELUM LOLOS
         </button>
     @else
-        <button type="button" disabled
-            class="btn"
-            style="
-                background-color: rgba(16, 185, 129, 0.85); /* Warna hijau dengan transparansi */
-                color: white;
-                border: none;
-                padding: 8px 16px;
-                border-radius: 8px;
-                font-weight: 600;
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-                cursor: not-allowed;
-            ">
+        <button type="button" disabled class="btn"
+            style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: not-allowed;">
             <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
         </button>
     @endif
@@ -177,15 +162,14 @@
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
         <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-            Apakah Peserta Sudah Lolos Seleksi?
+            Apakah Peserta Sudah Lolos Administrasi ?
         </p>
 
         <!-- Form Verifikasi -->
         <form id="verifikasiForm" method="POST" class="d-inline">
             @csrf
             @method('PUT')
-            <button type="submit"
-                style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s;"
+            <button type="submit" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s;"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
                 onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
                 <i class="bi bi-send" style="margin-right: 6px; color: white;"></i> Ya
@@ -193,9 +177,7 @@
         </form>
 
         <!-- Tombol Batal -->
-        <button type="button"
-            onclick="closeModal()"
-            style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;"
+        <button type="button" onclick="closeModal()" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
             onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
             <i class="bi bi-x-circle" style="margin-right: 6px; color: white;"></i> Batal
@@ -204,16 +186,21 @@
 </div>
 
 
-<script>
-    function openModal(itemId) {
-        const form = document.getElementById("verifikasiForm");
-        form.action = `{{ url('verifikasipesertapelatihan') }}/${itemId}`;
-        document.getElementById("confirmModal").style.display = "flex";
-    }
 
-    function closeModal() {
-        document.getElementById("confirmModal").style.display = "none";
-    }
+<script>
+  function openModal(itemId) {
+    // Menyesuaikan action form dengan ID item yang diteruskan
+    const form = document.getElementById("verifikasiForm");
+    form.action = `{{ url('verifikasipesertasertifikasi') }}/${itemId}`;
+
+    // Menampilkan modal
+    document.getElementById("confirmModal").style.display = "flex";
+}
+
+function closeModal() {
+    // Menyembunyikan modal
+    document.getElementById("confirmModal").style.display = "none";
+}
 </script>
 
 
