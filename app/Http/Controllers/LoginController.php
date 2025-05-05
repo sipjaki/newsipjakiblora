@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\statusadmin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+
+use Illuminate\Support\Facades\Hash;
 
 
 class LoginController extends Controller
@@ -28,6 +31,33 @@ class LoginController extends Controller
             'statusadmin' => $datastatusadmin,
             'title' => 'Register Mas Jaki !',
         ]);
+    }
+
+    public function registernew(Request $request)
+    {
+        // Validasi input dari form
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:users,username',
+            'statusadmin_id' => 'required|string',
+            'phone_number' => 'required|string|max:15',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        // Menyimpan data user baru
+        $user = new User();
+        $user->name = $validated['name'];
+        $user->username = $validated['username'];
+        $user->statusadmin_id = $validated['statusadmin_id'];
+        $user->phone_number = $validated['phone_number'];
+        $user->email = $validated['email'];
+        $user->avatar = 'default.jpg'; // Default avatar, bisa diubah sesuai kebutuhan
+        $user->password = Hash::make($validated['password']);
+        $user->save();
+
+        // Redirect atau beri notifikasi
+        return redirect('/login')->with('success', 'Akun berhasil dibuat, silakan login!');
     }
 
     // public function authenticate(Request $request)
