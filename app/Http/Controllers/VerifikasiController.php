@@ -61,7 +61,7 @@ public function verifikasipesertasertifikasinew($id)
     $agendaId = $item->agendaskk_id;
 
     // Flash message untuk notifikasi
-    session()->flash('verifikasipesertasertifikasi', 'Status peserta berhasil diperbarui!');
+    session()->flash('verifikasipesertapelatihan', 'Peserta Lolos Seleksi Administrasi!');
 
     // Redirect ke halaman peserta sesuai agenda
     return redirect("/beagendaskkpeserta/show/{$agendaId}");

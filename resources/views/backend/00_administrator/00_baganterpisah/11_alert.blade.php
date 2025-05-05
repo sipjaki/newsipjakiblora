@@ -294,7 +294,7 @@
 </div>
 @endif
 
-@if (session('verifikasipesertasertifikasi'))
+@if (session('verifikasipesertapelatihan'))
 <div class="modal-verify-alert">
     <div class="modal-box">
         <div class="modal-crane"></div>
@@ -308,6 +308,7 @@
     </div>
 </div>
 @endif
+
 
 @if (session('pengesahankrk'))
 <div class="modal-verify-alert">
