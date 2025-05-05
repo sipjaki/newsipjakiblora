@@ -254,7 +254,7 @@
             <h1>Sign in to Mas Jaki Blora</h1>
         </div>
 
-        @include('backend.00_administrator.00_baganterpisah.01_header')
+        {{-- @include('backend.00_administrator.00_baganterpisah.01_header') --}}
         @include('backend.00_administrator.00_baganterpisah.11_alert')
 
 <form action="/login" method="POST">
