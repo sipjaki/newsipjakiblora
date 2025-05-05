@@ -521,9 +521,8 @@ table.zebra-table {
     }
 </script>
 
+<br><br>
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
-
-
                                 <div class="flex justify-end">
                                     <button type="button" onclick="openModal()"
                                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
