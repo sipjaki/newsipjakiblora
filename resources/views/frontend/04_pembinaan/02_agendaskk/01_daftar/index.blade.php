@@ -401,8 +401,6 @@ table.zebra-table {
                                 </div>
                             </div>
 
-<hr>
-
 <div class="row">
     <!-- Upload KTP -->
     <div class="col-md-4" style="{{ $divStyle }}">
