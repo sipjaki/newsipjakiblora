@@ -279,6 +279,34 @@
             </div>
 
             <div class="input-group">
+                <i class="fas fa-users input-icon"></i>
+                <select name="statusadmin_id" class="input-field" required>
+                    <option value="">-- Pilih Akun --</option>
+                    @foreach($statusadmin as $status)
+                    <option value="{{ $status->id }}">
+                        @switch($status->id)
+                            @case(3)
+                                Pekerja
+                                @break
+                            @case(4)
+                                Supplier Bahan Bangunan
+                                @break
+                            @case(5)
+                                Supplier Peralatan
+                                @break
+                            @case(6)
+                                Toko Bangunan
+                                @break
+                            @default
+                                {{ $status->nama_status }}
+                        @endswitch
+                    </option>
+                @endforeach
+                </select>
+                @error('statusadmin_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
+
+            <div class="input-group">
                 <i class="fas fa-phone input-icon"></i>
                 <input type="text" name="phone_number" class="input-field" placeholder="Nomor HP" required>
                 @error('phone_number') <div class="invalid-feedback">{{ $message }}</div> @enderror

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\statusadmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -21,8 +22,10 @@ class LoginController extends Controller
 
     public function register()
     {
+        $datastatusadmin = statusadmin::whereIn('id', [3, 4, 5, 6])->get();
 
-        return view('register.index',[
+        return view('register.index', [
+            'statusadmin' => $datastatusadmin,
             'title' => 'Register Mas Jaki !',
         ]);
     }
