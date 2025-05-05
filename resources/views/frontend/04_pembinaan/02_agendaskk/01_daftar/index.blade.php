@@ -401,11 +401,12 @@ table.zebra-table {
                                 </div>
                             </div>
 
-                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-                                <hr style="width: 100%; max-width: 600px;">
-                                <p>Silahkan Upload Dokumen Saudara !!</p>
-                                <hr style="width: 100%; max-width: 600px;">
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
+                                <hr style="width: 100%; max-width: 1200px; margin: 0;">
+                                <p style="margin: 5px 0;">Silahkan Upload Dokumen Saudara !!</p>
+                                <hr style="width: 100%; max-width: 1200px; margin: 0;">
                             </div>
+
 
 <div class="row">
     <!-- Upload KTP -->
