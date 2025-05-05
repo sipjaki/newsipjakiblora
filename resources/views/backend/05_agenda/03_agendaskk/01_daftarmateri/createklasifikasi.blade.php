@@ -60,7 +60,7 @@
                                 </button>
 
                                 <!-- Tombol Kanan -->
-                                <a href="/beagendaskkmateri//{{$data->id}}">
+                                <a href="/beagendaskkmateri/{{$data->id}}">
                                     <button
                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                         onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
