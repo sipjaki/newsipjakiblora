@@ -19,11 +19,11 @@ return new class extends Migration
             $table->foreignId('jabatankerja_id')->nullable();
             $table->foreignId('namasekolah_id')->nullable();
             $table->foreignId('tahunpilihan_id')->nullable();
+            $table->string('nik')->nullable();
                     // $table->string('namalengkap')->nullable();
                     $table->string('tempatlahir')->nullable();
                     $table->date('ttl')->nullable();
                     $table->string('jeniskelamin')->nullable();
-                    $table->string('nik')->nullable();
                     $table->string('alamat')->nullable();
                     $table->string('notelepon')->nullable();
                     $table->string('email')->nullable();
