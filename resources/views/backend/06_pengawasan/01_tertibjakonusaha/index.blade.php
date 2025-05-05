@@ -500,7 +500,7 @@
                                     <i class="bi bi-eye"></i>
                                 </button>
 
-                                <a href="404"
+                                <a href="/404"
                                 class="btn btn-secondary btn-sm"
                                 style="border-radius: 15px; padding: 6px 12px; background-color: #0003c9; color: white; border: none; transition: background-color 0.3s, color 0.3s, border 0.3s; font-size: 0.875rem;"
                                 onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
@@ -719,6 +719,15 @@
                                     data-bs-toggle="modal" data-bs-target="#modalSurat2{{ $item->id }}">
                                     <i class="bi bi-eye"></i>
                                 </button>
+
+                                <a href="/404"
+                                class="btn btn-secondary btn-sm"
+                                style="border-radius: 15px; padding: 6px 12px; background-color: #0003c9; color: white; border: none; transition: background-color 0.3s, color 0.3s, border 0.3s; font-size: 0.875rem;"
+                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                onmouseout="this.style.backgroundColor='#0003c9'; this.style.color='white'; this.style.border='none';">
+                                <i class="bi bi-eye"></i> Lihat
+                                </a>
+
                                 <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
                                     <i class="bi bi-pencil"></i>
                                 </a>
@@ -916,6 +925,15 @@
                                                                 data-bs-toggle="modal" data-bs-target="#modalSurat3{{ $item->id }}">
                                                                 <i class="bi bi-eye"></i>
                                                             </button>
+
+                                                            <a href="/404"
+                                                            class="btn btn-secondary btn-sm"
+                                                            style="border-radius: 15px; padding: 6px 12px; background-color: #0003c9; color: white; border: none; transition: background-color 0.3s, color 0.3s, border 0.3s; font-size: 0.875rem;"
+                                                            onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                            onmouseout="this.style.backgroundColor='#0003c9'; this.style.color='white'; this.style.border='none';">
+                                                            <i class="bi bi-eye"></i> Lihat
+                                                            </a>
+
                                                             <a href="/404" class="btn btn-sm btn-warning" style="font-size: 0.875rem;" title="Edit">
                                                                 <i class="bi bi-pencil"></i>
                                                             </a>
