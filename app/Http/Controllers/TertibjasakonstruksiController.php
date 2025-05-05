@@ -463,8 +463,10 @@ class TertibjasakonstruksiController extends Controller
             });
         }
 
-        // Urutkan berdasarkan update terbaru
-        $data = $query->orderBy('updated_at', 'desc')->paginate($perPage);
+        // Muat relasi dengan `surattertibjakonusaha1`
+        $data = $query->with('surattertibjakonusaha1') // Muat relasi di sini
+                      ->orderBy('updated_at', 'desc')
+                      ->paginate($perPage);
 
         if ($request->ajax()) {
             return response()->json([
@@ -472,11 +474,9 @@ class TertibjasakonstruksiController extends Controller
             ]);
         }
 
-        $datasub = penyediastatustertibjakon::paginate(15);
         return view('backend.06_pengawasan.01_tertibjakonusaha.index', [
             'title' => 'Data Tertib Jakon Usaha',
             'data' => $data,
-            'datasub' => $datasub,
             'perPage' => $perPage,
             'search' => $search
         ]);
