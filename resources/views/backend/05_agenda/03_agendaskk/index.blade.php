@@ -289,10 +289,10 @@
                            border-radius: 15px; font-size: 14px; cursor: pointer;
                            transition: background-color 0.3s, color 0.3s;
                            display: inline-flex; align-items: center;">
-                    <span style="display: inline-flex; align-items: center;">
-                        <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
-                        {{ $item->allskktenagakerjablora_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota
-                    </span>
+                 <span style="display: inline-flex; align-items: center;">
+                    <i class="bi bi-people-fill" style="margin-right: 6px;"></i>
+                    {{ $item->allskktenagakerjablora_count }} Peserta Dari / {{$item->jumlahpeserta}} Kuota
+                </span>
                 </button>
             </a>
         </td>
