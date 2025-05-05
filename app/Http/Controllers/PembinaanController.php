@@ -982,8 +982,8 @@ public function beagendaskkmatericreatenew(Request $request)
         'judulskk'              => 'required|string|max:255',
         'materipelatihanskk'         => 'required|file|mimes:pdf|max:20480',
     ], [
-        'judulskk.required' => 'Judul Materi Pelatihan harus diisi.',
-        'materipelatihanskk.required'         => 'Materi belum di upload !.',
+        'judulskk.required' => 'Judul Materi Sertifikasi harus diisi.',
+        'materipelatihanskk.required'         => 'Materi Sertifikasi belum di upload !.',
         'materipelatihanskk.mimes'         => 'File harus berupa PDF.',
         'materipelatihanskk.max'           => 'Ukuran file maksimal 20MB.',
     ]);
