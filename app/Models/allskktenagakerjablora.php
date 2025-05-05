@@ -30,7 +30,7 @@ class allskktenagakerjablora extends Model
 
     public function agendaskk()
     {
-        return $this->hasMany(agendaskk::class);
+        return $this->hasMany(agendaskk::class, 'agendaskk_id');
     }
 
     public function user()

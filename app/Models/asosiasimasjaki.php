@@ -33,4 +33,9 @@ class asosiasimasjaki extends Model
         return $this->hasMany(agendapelatihan::class);
     }
 
+    public function agendaskk()
+    {
+        return $this->hasMany(agendaskk::class);
+    }
+
 }
