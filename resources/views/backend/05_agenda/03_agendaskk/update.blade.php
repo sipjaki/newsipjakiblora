@@ -73,7 +73,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('update.beagendapelatihancreate', $data->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('update.beagendaskkcreate', $data->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('POST') <!-- Ganti dengan PUT untuk update -->
 

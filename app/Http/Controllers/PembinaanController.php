@@ -799,6 +799,90 @@ return view('backend.05_agenda.03_agendaskk.update', [
 }
 
 
+
+
+
+public function beagendaskkupdatecreate(Request $request, $id)
+{
+    // Validasi data input
+    $validatedData = $request->validate([
+        'user_id'              => 'required|string',
+        'namakegiatan'         => 'required|string|max:255',
+        'asosiasimasjaki_id'   => 'required|string',
+        'waktupelaksanaan'     => 'required|date',
+        'penutupan'            => 'required|date|after_or_equal:waktupelaksanaan',
+        'jumlahpeserta'        => 'required|string',
+        'lokasi'               => 'required|string|max:255',
+        'keterangan'           => 'required|string|max:255',
+        'isiagenda'            => 'required|string',
+        'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
+    ], [
+        'user_id.required' => 'ID pengguna wajib diisi.',
+        'user_id.exists' => 'ID pengguna yang dipilih tidak valid.',
+        'namakegiatan.required' => 'Nama kegiatan wajib diisi.',
+        'namakegiatan.string' => 'Nama kegiatan harus berupa teks.',
+        'namakegiatan.max' => 'Nama kegiatan maksimal 255 karakter.',
+        'asosiasimasjaki_id.required' => 'ID pengguna wajib diisi.',
+        'asosiasimasjaki_id.exists' => 'ID pengguna yang dipilih tidak valid.',
+        'waktupelaksanaan.required' => 'Tanggal pelaksanaan wajib diisi.',
+        'waktupelaksanaan.date' => 'Tanggal pelaksanaan tidak valid.',
+        'penutupan.required' => 'Tanggal penutupan wajib diisi.',
+        'penutupan.date' => 'Tanggal penutupan tidak valid.',
+        'penutupan.after_or_equal' => 'Tanggal penutupan harus lebih besar atau sama dengan tanggal pelaksanaan.',
+        'jumlahpeserta.required' => 'Jumlah peserta harus berupa angka.',
+        'jumlahpeserta.min' => 'Jumlah peserta minimal 1 orang.',
+        'lokasi.required' => 'Lokasi harus berupa teks.',
+        'lokasi.max' => 'Lokasi maksimal 255 karakter.',
+        'keterangan.required' => 'Keterangan harus berupa teks.',
+        'keterangan.max' => 'Keterangan maksimal 255 karakter.',
+        'isiagenda.required' => 'Isi agenda harus berupa teks.',
+        'foto.required' => 'File Gambar terbaru belum di upload.',
+        'foto.mimes' => 'Foto harus berformat jpg, jpeg, atau png.',
+        'foto.max' => 'Ukuran foto maksimal 5MB.',
+    ]);
+    // Ambil data agenda berdasarkan ID
+    $agenda = agendaskk::findOrFail($id);
+
+    // Proses file foto jika ada
+    if ($request->hasFile('foto')) {
+        $file = $request->file('foto');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('04_pembinaan/01_kegiatansertifikasi');
+
+        // Pastikan foldernya ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        // Pindahkan file ke folder yang ditentukan
+        $file->move($tujuanPath, $namaFile);
+
+        // Simpan nama file ke dalam validated data
+        $validatedData['foto'] = '04_pembinaan/01_kegiatansertifikasi/' . $namaFile;
+    }
+
+    // Update data agenda
+    $agenda->update([
+        'asosiasimasjaki_id'              => $validatedData['asosiasimasjaki_id'] ?? $agenda->asosiasimasjaki_id,
+        'user_id'              => $validatedData['user_id'] ?? $agenda->user_id,
+        'namakegiatan'         => $validatedData['namakegiatan'] ?? $agenda->namakegiatan,
+        'waktupelaksanaan'     => $validatedData['waktupelaksanaan'] ?? $agenda->waktupelaksanaan,
+        'penutupan'            => $validatedData['penutupan'] ?? $agenda->penutupan,
+        'jumlahpeserta'        => $validatedData['jumlahpeserta'] ?? $agenda->jumlahpeserta,
+        'lokasi'               => $validatedData['lokasi'] ?? $agenda->lokasi,
+        'keterangan'           => $validatedData['keterangan'] ?? $agenda->keterangan,
+        'isiagenda'            => $validatedData['isiagenda'] ?? $agenda->isiagenda,
+        'foto'                 => $validatedData['foto'] ?? $agenda->foto,
+    ]);
+
+    // Flash session dengan pesan sukses
+    session()->flash('update', 'Agenda Sertifikasi Berhasil Di Update!');
+
+    // Redirect ke halaman agenda pelatihan
+    return redirect('/beagendaskk');
+}
+
+
 }
 
 
