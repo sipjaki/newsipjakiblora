@@ -13125,7 +13125,7 @@ allskktenagakerjablora::create([
 ]);
 
 allskktenagakerjablora::create([
-    'agendaskk_id'            => 1,
+    'agendaskk_id'            => 2,
     'user_id'                       => 3,
     'jabatankerja_id' => 1,
     'tempatlahir' => 'Bojonegoro',
