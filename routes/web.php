@@ -1121,7 +1121,7 @@ Route::post('/settingstatusadmin/{id}', [SettingmenuController::class, 'deletest
 ->name('delete.statusadmin');
 
 Route::get('/daftar', [LoginController::class, 'register'])->name('login')->middleware('guest');
-Route::get('/daftarnew', [LoginController::class, 'registernew'])->name('login');
+Route::post('/daftarnew', [LoginController::class, 'registernew'])->name('login');
 
 Route::get('/login', [LoginController::class, 'loginmasuk'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
