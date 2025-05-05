@@ -170,7 +170,7 @@ table.zebra-table {
                     transition: all 0.3s ease;
                     white-space: normal;
                     width: 100%;
-                    max-width: 600px;
+                    max-width: 800px;
                     text-align: left;
                 "
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
