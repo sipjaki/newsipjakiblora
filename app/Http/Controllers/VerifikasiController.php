@@ -48,7 +48,7 @@ class VerifikasiController extends Controller
 
 //pelatihan skk sertifikasi
 
-public function verifikasipesertasertifikasi($id)
+public function verifikasipesertasertifikasinew($id)
 {
     // Temukan data peserta pelatihan berdasarkan ID
     $item = allskktenagakerjablora::findOrFail($id);

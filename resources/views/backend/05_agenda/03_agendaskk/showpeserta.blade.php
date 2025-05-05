@@ -191,7 +191,7 @@
   function openModal(itemId) {
     // Menyesuaikan action form dengan ID item yang diteruskan
     const form = document.getElementById("verifikasiForm");
-    form.action = `{{ url('update.verifikasipesertasertifikasi') }}/${itemId}`;
+    form.action = `{{ url('verifikasipesertasertifikasi') }}/${itemId}`;
 
     // Menampilkan modal
     document.getElementById("confirmModal").style.display = "flex";
