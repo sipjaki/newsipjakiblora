@@ -123,12 +123,6 @@ table.zebra-table {
 
       <!-- KANAN: Search Bar -->
    <!-- Search Bar Wrapper -->
-<div class="w-full sm:w-auto">
-    <div class="flex items-center gap-2 px-3 py-2 bg-white rounded-xl border border-gray-300 w-full sm:w-[260px] focus-within:ring-2 focus-within:ring-[#6635F1] transition-all duration-300">
-
-    </div>
-  </div>
-
 
     </div>
   </div>
