@@ -219,8 +219,10 @@ table.zebra-table {
                                     <label class="form-label" style="{{ $labelStyle }}">
                                         <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap
                                     </label>
-                                    <input type="text" name="namalengkap" style="{{ $inputStyle }}" class="@error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}">
-                                    @error('namalengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    <input type="text" name="user_id" style="{{ $inputStyle }}"
+                                        class="@error('user_id') is-invalid @enderror"
+                                        value="{{ old('user_id', $namalengkap) }}" readonly>
+                                    @error('user_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
                                 <div style="{{ $divStyle }}">
