@@ -406,7 +406,7 @@ table.zebra-table {
                                 <p style="margin: 5px 0;">Silahkan Upload Dokumen Saudara !!</p>
                                 <hr style="width: 100%; max-width: 1200px; margin: 0;">
                             </div>
-
+br\
 
 <div class="row">
     <!-- Upload KTP -->
