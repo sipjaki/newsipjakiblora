@@ -221,7 +221,7 @@
 
                                                 </button>
                                             </a>
-                                            <a href="/404">
+                                            <a href="/daftarpesertasertifikasiskk/create/{{$data->id}}">
                                                 <button style="padding: 12px 24px; font-size: 16px; border-radius: 8px; background-color: navy; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                                         onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">

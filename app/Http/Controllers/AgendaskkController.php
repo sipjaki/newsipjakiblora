@@ -7,6 +7,11 @@ use App\Models\pesertapelatihan;
 use App\Models\materipelatihanskk;
 use App\Models\agendapelatihan;
 use App\Models\allskktenagakerjablora;
+use App\Models\jabatankerja;
+use App\Models\jenjangpendidikan;
+use App\Models\namasekolah;
+use App\Models\tahunlulus;
+use App\Models\tahunpilihan;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -335,6 +340,28 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
     return redirect()->back()->with('error', 'Item not found');
     }
 
+
+
+    public function daftarpesertasertifikasiskknew($id)
+{
+    $dataagendaskk = agendaskk::findOrFail($id); // Cari 1 data sesuai ID
+    $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
+    $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
+    $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
+    $datatahunbimtek = tahunpilihan::orderBy('tahunpilihan', 'asc')->get();
+    $user = Auth::user();
+
+    return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
+        'agendapelatihannamakegiatan' => $dataagendaskk->namakegiatan, // Ini dikirim ke form
+        'agendapelatihan_id' => $dataagendaskk->id, // Ini dikirim ke form
+        'user' => $user,
+        'jenjangpendidikan' => $datajenjangpendidikan,
+        'jabatankerja' => $datajabatankerja,
+        'sekolah' => $datasekolah,
+        'tahunbimtek' => $datatahunbimtek,
+        'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi Kab Blora'
+    ]);
+}
 
 
 }
