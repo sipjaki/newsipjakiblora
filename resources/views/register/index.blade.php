@@ -249,10 +249,6 @@
     </div>
 
     <div class="login-container">
-        <div class="header-section">
-            {{-- <img src="/assets/00_masjaki/images/maskotjakon.png" class="logo" alt="ABG Blora"> --}}
-            <h1>Register to Mas Jaki Blora</h1>
-        </div>
         <form action="/register" method="POST">
             @csrf
 
