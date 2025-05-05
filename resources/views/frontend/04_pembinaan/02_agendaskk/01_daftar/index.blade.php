@@ -280,46 +280,80 @@ table.zebra-table {
                             </div>
 
                             <div class="col-md-6">
-                                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                    <div style="{{ $divStyle }}; flex: 1 1 25%;">
+                                <div class="row">
+                                    <!-- Tempat Lahir -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
-                                            <i class="bi bi-card-list" style="color: navy;"></i> Jenjang Pendidikan
+                                            <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                         </label>
-                                        <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="@error('jenjangpendidikan_id') is-invalid @enderror">
-                                            <option value="" disabled selected>Pilih Jenjang</option>
-                                            @foreach($jenjangpendidikan as $jenjang)
-                                                <option value="{{ $jenjang->id }}" {{ old('jenjangpendidikan_id') == $jenjang->id ? 'selected' : '' }}>
-                                                    {{ $jenjang->jenjangpendidikan }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
+                                        @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                     </div>
 
-                                    <div style="{{ $divStyle }}; flex: 1 1 25%;">
+                                    <!-- Tanggal Lahir -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-calendar" style="color: navy;"></i> Tanggal Lahir
+                                        </label>
+                                        <input type="date" name="ttl" style="{{ $inputStyle }}" class="@error('ttl') is-invalid @enderror" value="{{ old('ttl') }}">
+                                        @error('ttl') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
+
+                                    <!-- Jenis Kelamin -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-gender-ambiguous" style="color: navy;"></i> Jenis Kelamin
                                         </label>
                                         <select name="jeniskelamin" style="{{ $inputStyle }}" class="@error('jeniskelamin') is-invalid @enderror">
-                                            <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                            <option value="">-- Pilih Jenis Kelamin --</option>
                                             <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                                             <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                                         </select>
                                         @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                     </div>
+
+                                    <!-- Alamat -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-house" style="color: navy;"></i> Alamat
+                                        </label>
+                                        <input type="text" name="alamat" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror" value="{{ old('alamat') }}">
+                                        @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
+
+                                    <!-- Nomor Telepon -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-telephone" style="color: navy;"></i> Nomor Telepon
+                                        </label>
+                                        <input type="text" name="notelepon" style="{{ $inputStyle }}" class="@error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
+                                        @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-envelope" style="color: navy;"></i> Email
+                                        </label>
+                                        <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                        @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
+
+                                    <!-- Tahun Lulus -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-hourglass-split" style="color: navy;"></i> Tahun Lulus
+                                        </label>
+                                        <input type="number" name="tahunlulus" style="{{ $inputStyle }}" class="@error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus') }}">
+                                        @error('tahunlulus') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
                                 </div>
 
-                                <div style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-building" style="color: navy;"></i> Instansi/Universitas/Lembaga/Perseorangan
-                                    </label>
-                                    <input type="text" name="instansi" style="{{ $inputStyle }}" class="@error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
-                                    @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
 
                             </div>
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
+
 
                                 <div class="flex justify-end">
                                     <button type="button" onclick="openModal()"
