@@ -52,7 +52,7 @@
 
         <div class="card card-primary card-outline mb-6">
             <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <a href="/beagendapelatihan">
+                <a href="/beagendaskk">
                     <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
