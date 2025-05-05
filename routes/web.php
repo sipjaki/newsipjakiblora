@@ -879,7 +879,6 @@ Route::post('/daftarpesertapelatihan/createmateri/new', [PesertapelatihanControl
 // Route::delete('/beagendaskk/delete/{namakegiatan}', [PembinaanController::class, 'beagendaskkdelete'])->middleware('auth');
 // ___________________________________________________________________________________________________________________________________
 
-// PEKERJAANINI
 Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middleware('auth');
 Route::get('/beagendaskkmateri/{id}', [PembinaanController::class, 'beagendaskkmateri'])->middleware('auth')->name('beagendaskkmateri');
 
@@ -898,6 +897,9 @@ Route::delete('/beagendaskkmateriskk/delete/{id}', [PembinaanController::class, 
 Route::get('/daftarpesertasertifikasiskk/create/{id}', [AgendaskkController::class, 'daftarpesertasertifikasiskknew'])->middleware('auth')->name('daftarpesertasertifikasiskk');
 Route::post('/daftarpesertasertifikasiskk/createmateri/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreatenew'])->middleware('auth')->name('daftarpesertasertifikasiskkcreatenew');
 
+// PEKERJAANINI
+
+Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagendaskkpesertashow'])->middleware('auth');
 
 // ROUTE PENGAMBILAN DATA ID
 // PEKERJAANINI

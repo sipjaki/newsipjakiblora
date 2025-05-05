@@ -6,6 +6,7 @@ use Carbon\Carbon;
 
 use App\Models\agendapelatihan;
 use App\Models\agendaskk;
+use App\Models\allskktenagakerjablora;
 use App\Models\asosiasimasjaki;
 use App\Models\jenjang;
 use App\Models\kategoripelatihan;
@@ -1036,6 +1037,63 @@ public function beagendaskkmaterideleteskk($id)
 
     session()->flash('error', 'Item tidak ditemukan');
     return redirect()->back();
+}
+
+
+public function beagendaskkpesertashow(Request $request, $id)
+{
+    // Menentukan jumlah per halaman, default 50 jika tidak ada input dari request
+    $perPage = $request->input('perPage', 50);
+    $search = $request->input('search');
+
+    // Pastikan agenda pelatihan dengan ID ini ada
+    $dataagendaskk = agendaskk::findOrFail($id);
+
+    // Ambil user login saat ini
+    $user = Auth::user();
+
+    // Query untuk mengambil data peserta berdasarkan agendaskk_id
+    $query = allskktenagakerjablora::where('agendaskk_id', $id)
+        ->select([
+            'id', 'user_id', 'agendaskk_id', 'jenjangpendidikan_id', 'jabatankerja_id',
+            'namasekolah_id', 'tahunpilihan_id', 'nik', 'tempatlahir', 'ttl', 'jeniskelamin',
+            'alamat', 'notelepon', 'email', 'tahunlulus', 'uploadktp', 'uploadfoto', 'uploadijazah',
+            'uploadpengalaman', 'uploadnpwp', 'uploaddaftarriwayathidup', 'namaasosiasi', 'punyaskk',
+            'punyasiki', 'siappatuh'
+        ]);
+
+    // Menambahkan filter pencarian jika ada input search
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('jeniskelamin', 'LIKE', "%{$search}%")
+              ->orWhere('namalengkap', 'LIKE', "%{$search}%")
+              ->orWhere('nik', 'LIKE', "%{$search}%")  // Pencarian untuk NIK
+              ->orWhere('alamat', 'LIKE', "%{$search}%");  // Pencarian untuk alamat
+        });
+    }
+
+    // Menambahkan pengurutan berdasarkan tanggal dibuat (created_at)
+    $query->orderBy('created_at', 'desc');
+
+    // Menambahkan paginasi (bisa disesuaikan jumlah item per halaman)
+    $datapesertaskk = $query->paginate($perPage);
+
+    // Untuk request Ajax (misal filter dinamis via JS)
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.05_agenda.03_agendaskk.partials.table', compact('datapesertaskk'))->render()
+        ]);
+    }
+
+    // Mengembalikan view dengan data yang diperlukan
+    return view('backend.05_agenda.03_agendaskk.showpeserta', [
+        'title' => 'Daftar Peserta Sertifikasi',
+        'data' => $dataagendaskk,
+        'datapeserta' => $datapesertaskk,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user
+    ]);
 }
 
 }
