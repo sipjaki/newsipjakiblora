@@ -132,19 +132,6 @@
                                                 <input class="form-control" value="{{$data->namakegiatan}}" readonly/>
                                             </div>
 
-                                            <div class="mb-3">
-                                                <label class="form-label">
-                                                    <i class="bi bi-tags-fill" style="margin-right: 8px; color: navy;"></i> Kategori Pelatihan
-                                                </label>
-                                                <input class="form-control" value="{{$data->kategoripelatihan->kategoripelatihan}}" readonly />
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label class="form-label">
-                                                    <i class="bi bi-building" style="margin-right: 8px; color: navy;"></i> Penyelenggara
-                                                </label>
-                                                <input class="form-control" value="{{$data->penyelenggara}}" readonly/>
-                                            </div>
 
                                             <div class="mb-3">
                                                 <label class="form-label">
