@@ -155,28 +155,33 @@ table.zebra-table {
             <div style="display: flex; justify-content: center; margin-bottom: -20px;">
                 <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
                     <button type="button" style="
-                                display: inline-flex;
-                                align-items: center;
-                                justify-content: center;
-                                gap: 10px;
-                                padding: 12px 20px;
-                                font-size: 16px;
-                                font-family: 'Poppins', sans-serif;
-                                border: 1px solid #28a745;
-                                background-color: #28a745;
-                                color: white;
-                                border-radius: 6px;
-                                cursor: pointer;
-                                transition: all 0.3s ease;
-                                white-space: nowrap;
-                            "
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
-                            >
-                                <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
-                                {{ $title }} : {{ $agendapelatihannamakegiatan }}
-                            </button>
+                    display: inline-flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 12px 20px;
+                    font-size: 16px;
+                    font-family: 'Poppins', sans-serif;
+                    border: 1px solid #28a745;
+                    background-color: #28a745;
+                    color: white;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    white-space: normal;
+                    max-width: 100%;
+                    text-align: left;
+                "
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
+                >
+                    <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
 
+                    <div style="display: flex; flex-direction: column;">
+                        <strong style="font-size: 14px;">{{ $title }}</strong>
+                        <span style="font-size: 16px;">{{ $agendapelatihannamakegiatan }}</span>
+                    </div>
+                </button>
                 </div>
             </div>
 
