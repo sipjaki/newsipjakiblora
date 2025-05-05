@@ -401,6 +401,12 @@ table.zebra-table {
                                 </div>
                             </div>
 
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                <hr style="width: 100%; max-width: 600px;">
+                                <p>Silahkan Upload Dokumen Saudara !!</p>
+                                <hr style="width: 100%; max-width: 600px;">
+                            </div>
+
 <div class="row">
     <!-- Upload KTP -->
     <div class="col-md-4" style="{{ $divStyle }}">
