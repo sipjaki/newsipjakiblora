@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 
 use App\Models\agendapelatihan;
+use App\Models\agendaskk;
 use App\Models\asosiasimasjaki;
 use App\Models\jenjang;
 use App\Models\kategoripelatihan;
@@ -658,6 +659,56 @@ public function beagendapelatihanmatericreatenew(Request $request)
     // Redirect ke route dengan parameter 'id' (menggunakan agendapelatihan_id yang baru saja disimpan)
     return redirect()->route('beagendapelatihanmateri', ['id' => $materi->agendapelatihan_id]);
 }
+
+
+
+
+// MENU AGENDA SKK
+
+public function beagendaskk(Request $request)
+{
+    $perPage = $request->input('perPage', 5);
+    $search = $request->input('search');
+
+    // Query awal dengan relasi jumlah peserta
+    $query = agendaskk::withCount('pesertapelatihan')
+                ->orderBy('created_at', 'desc'); // Data terbaru
+
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('namakegiatan', 'LIKE', "%{$search}%")
+              ->orWhere('penutupan', 'LIKE', "%{$search}%")
+              ->orWhere('waktupelaksanaan', 'LIKE', "%{$search}%")
+              ->orWhere('jumlahpeserta', 'LIKE', "%{$search}%")
+              ->orWhere('lokasi', 'LIKE', "%{$search}%")
+              ->orWhere('keterangan', 'LIKE', "%{$search}%")
+              ->orWhere('isiagenda', 'LIKE', "%{$search}%")
+              ->orWhere('foto', 'LIKE', "%{$search}%");
+        })
+        ->orWhereHas('user', function ($q) use ($search) {
+            $q->where('name', 'LIKE', "%{$search}%");
+        })
+        ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+            $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+        });
+    }
+
+    $data = $query->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.05_agenda.03_agendaskk.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.05_agenda.03_agendaskk.index', [
+        'title' => 'Agenda Sertifikasi',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
 
 }
 

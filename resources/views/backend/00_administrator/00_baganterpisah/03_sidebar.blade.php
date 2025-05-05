@@ -447,7 +447,7 @@
 
                   <!-- Agenda SKK -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/beagendaskk" class="nav-link">
                       <i class="nav-icon bi bi-calendar-check text-warning"></i> <!-- Ikon untuk Agenda SKK -->
                       <p style="color: white">Agenda SKK</p>
                     </a>

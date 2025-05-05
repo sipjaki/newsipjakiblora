@@ -20,7 +20,6 @@ return new class extends Migration
 
             // $table->foreignId('jenjang_id')->nullable();
             $table->string('namakegiatan')->nullable();
-            $table->string('penyelenggara')->nullable();
             $table->string('penutupan')->nullable();
             $table->string('waktupelaksanaan')->nullable();
             $table->integer('jumlahpeserta')->nullable();
