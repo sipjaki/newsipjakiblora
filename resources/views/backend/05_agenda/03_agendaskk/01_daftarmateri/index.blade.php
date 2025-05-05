@@ -136,7 +136,7 @@
                                 @foreach ($subdata as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->judulmateripelatihan }}</td>
+                                        <td style="text-align: left;">{{ $item->judulskk }}</td>
                                         <td style="text-align: center;">
                                             <button class="btn btn-secondary btn-sm"
                                                 style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -161,10 +161,10 @@
                                                         </div>
                                                         <div class="modal-body text-center">
                                                             <div style="margin-top: 10px;">
-                                                                @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
-                                                                    <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                @elseif($item->materipelatihan)
-                                                                    <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                @if($item->materipelatihanskk && file_exists(public_path('storage/' . $item->materipelatihanskk)))
+                                                                    <iframe src="{{ asset('storage/' . $item->materipelatihanskk) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                @elseif($item->materipelatihanskk)
+                                                                    <iframe src="{{ asset($item->materipelatihanskk) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @else
                                                                     <p>Data belum diupdate</p>
                                                                 @endif
