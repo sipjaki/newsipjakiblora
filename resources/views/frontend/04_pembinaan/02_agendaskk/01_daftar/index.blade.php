@@ -403,10 +403,26 @@ table.zebra-table {
 
                             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
                                 <hr style="width: 100%; max-width: 1200px; margin: 0;">
-                                <p style="margin: 5px 0;">Silahkan Upload Dokumen Saudara !!</p>
+                                <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden;">
+                                    <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
+                                        Silahkan Upload Dokumen Saudara !!
+                                    </span>
+                                </p>
                                 <hr style="width: 100%; max-width: 1200px; margin: 0;">
                             </div>
-br\
+
+                            <style>
+                                @keyframes scroll-text {
+                                    0% {
+                                        transform: translateX(100%);
+                                    }
+                                    100% {
+                                        transform: translateX(-100%);
+                                    }
+                                }
+                            </style>
+
+<br><br>
 
 <div class="row">
     <!-- Upload KTP -->
