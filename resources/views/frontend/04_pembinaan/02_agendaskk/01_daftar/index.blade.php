@@ -183,8 +183,8 @@ table.zebra-table {
 
                         <!-- Judul dan Data Lebar -->
                         <div style="display: flex; flex-direction: column; flex-grow: 1; padding-left: 10px;">
-                            <strong style="font-size: 16px;">{{ $title }}</strong>
-                            <span style="font-size: 18px;">{{ $agendapelatihannamakegiatan }}</span>
+                            <strong style="font-size: 15px;">{{ $title }}</strong>
+                            <span style="font-size: 15px;">{{ $agendapelatihannamakegiatan }}</span>
                         </div>
                     </button>
                 </div>
