@@ -83,22 +83,6 @@
                                     <!-- Left Column (6/12) -->
                                     <div class="col-md-6">
                                         <!-- Nama Kegiatan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kategoripelatihan_id">
-                                                <i class="bi bi-card-text" style="margin-right: 8px; color: navy;"></i> Kategori Pelatihan
-                                            </label>
-                                            <select id="kategoripelatihan_id" name="kategoripelatihan_id" class="form-control @error('kategoripelatihan_id') is-invalid @enderror">
-                                                <option value="">-- Pilih Kategori --</option>
-                                                @foreach ($kategoriList as $kategori)
-                                                    <option value="{{ $kategori->id }}" {{ old('kategoripelatihan_id', $data->kategoripelatihan_id) == $kategori->id ? 'selected' : '' }}>
-                                                        {{ $kategori->kategoripelatihan }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                            @error('kategoripelatihan_id')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
                                         <div class="mb-3">
                                             <label class="form-label" for="user_id">
