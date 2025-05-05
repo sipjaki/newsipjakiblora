@@ -401,6 +401,104 @@ table.zebra-table {
                                 </div>
                             </div>
 
+<hr>
+
+<div class="row">
+    <!-- Upload KTP -->
+    <div class="col-md-4" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP
+        </label>
+        <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
+        <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div>
+        <div id="ktpPreview" class="preview-container"></div>
+    </div>
+
+    <!-- Upload Foto -->
+    <div class="col-md-4" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-image" style="color: navy;"></i> Upload Foto
+        </label>
+        <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
+        <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
+        <div id="fotoPreview" class="preview-container"></div>
+    </div>
+
+    <!-- Upload Ijazah -->
+    <div class="col-md-4" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah
+        </label>
+        <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
+        <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div>
+        <div id="ijazahPreview" class="preview-container"></div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Upload Pengalaman -->
+    <div class="col-md-4" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman
+        </label>
+        <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
+        <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
+        <div id="pengalamanPreview" class="preview-container"></div>
+    </div>
+
+    <!-- Upload NPWP -->
+    <div class="col-md-4" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP
+        </label>
+        <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
+        <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
+        <div id="npwpPreview" class="preview-container"></div>
+    </div>
+
+    <!-- Upload Daftar Riwayat Hidup -->
+    <div class="col-md-4" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup
+        </label>
+        <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
+        <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div>
+        <div id="riwayatPreview" class="preview-container"></div>
+    </div>
+</div>
+
+<script>
+    function previewFile(previewId, input) {
+        const file = input.files[0];
+        const previewContainer = document.getElementById(previewId);
+        previewContainer.innerHTML = '';  // Clear previous preview
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const fileType = file.type.split('/')[0];
+
+                if (fileType === 'image') {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = e.target.result;
+                    imgElement.style.width = '100%';
+                    imgElement.style.maxWidth = '210mm';  // A4 width
+                    imgElement.style.height = 'auto';
+                    previewContainer.appendChild(imgElement);
+                } else if (fileType === 'application') {
+                    if (file.type === 'application/pdf') {
+                        const iframe = document.createElement('iframe');
+                        iframe.src = e.target.result;
+                        iframe.style.width = '100%';
+                        iframe.style.height = '400px';  // Adjust as needed
+                        previewContainer.appendChild(iframe);
+                    }
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
 
