@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    z-index: 2;
+}
+
         :root {
             --primary: #064420;
             --accent: #8EBE6B;
@@ -276,16 +289,17 @@
                 <input type="email" name="email" class="input-field" placeholder="Email" required>
                 @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
-
-            <div class="input-group">
+            <div class="input-group position-relative">
                 <i class="fas fa-lock input-icon"></i>
-                <input type="password" name="password" class="input-field" placeholder="Password" required>
+                <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>
+                <i class="fas fa-eye toggle-password" toggle="#password"></i>
                 @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
             </div>
 
-            <div class="input-group">
+            <div class="input-group position-relative">
                 <i class="fas fa-lock input-icon"></i>
-                <input type="password" name="password_confirmation" class="input-field" placeholder="Konfirmasi Password" required>
+                <input type="password" id="password_confirmation" name="password_confirmation" class="input-field" placeholder="Konfirmasi Password" required>
+                <i class="fas fa-eye toggle-password" toggle="#password_confirmation"></i>
             </div>
 
             <button type="submit" class="btn-login">Daftar</button>
@@ -311,3 +325,31 @@
     <div class="safety-barrier"></div>
 </body>
 </html>
+
+
+@push('scripts')
+<script>
+    $(document).on('click', '.toggle-password', function () {
+        const input = $($(this).attr('toggle'));
+        const type = input.attr('type') === 'password' ? 'text' : 'password';
+        input.attr('type', type);
+        $(this).toggleClass('fa-eye fa-eye-slash');
+    });
+</script>
+@endpush
+<script>
+    document.querySelectorAll('.toggle-password').forEach(function (icon) {
+        icon.addEventListener('click', function () {
+            const input = document.querySelector(this.getAttribute('toggle'));
+            if (input.type === 'password') {
+                input.type = 'text';
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            }
+        });
+    });
+</script>
