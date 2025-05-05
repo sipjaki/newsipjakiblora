@@ -436,6 +436,8 @@ return view('backend.05_agenda.01_agendapelatihan.update', [
 
 
 
+
+
 public function beagendapelatihanupdatecreate(Request $request, $id)
 {
     // Validasi data input
@@ -771,5 +773,32 @@ public function beagendaskkshow($namakegiatan)
         'data' => $dataagendaskk,
     ]);
 }
+
+
+
+
+public function beagendaskkupdate($namakegiatan)
+{
+    $dataagendaskk = agendaskk::where('namakegiatan', $namakegiatan)->first();
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+$dataasosiasimasjaki = asosiasimasjaki::all();
+$datalsp = User::whereHas('statusadmin', function ($query) {
+    $query->where('id', 7);
+})->get();
+
+return view('backend.05_agenda.03_agendaskk.update', [
+    'title' => 'Update Agenda Sertifikasi Tenaga Kerja Konstruksi ',
+    'data' => $dataagendaskk,
+    'kategoriList' => $dataasosiasimasjaki,
+    'lspList' => $datalsp,
+    'user' => $user,
+]);
 }
+
+
+}
+
 
