@@ -896,7 +896,7 @@ Route::post('/beagendaskk/createnew', [PembinaanController::class, 'beagendaskkc
 Route::delete('/beagendaskkmateriskk/delete/{id}', [PembinaanController::class, 'beagendaskkmaterideleteskk'])->middleware('auth')->name('beagendaskkmaterideleteskk');
 
 Route::get('/daftarpesertasertifikasiskk/create/{id}', [AgendaskkController::class, 'daftarpesertasertifikasiskknew'])->middleware('auth')->name('daftarpesertasertifikasiskk');
-// Route::post('/daftarpesertapelatihan/createmateri/new', [PesertapelatihanController::class, 'daftarpesertapelatihancreatenew'])->middleware('auth')->name('daftarpesertapelatihancreatenew');
+Route::post('/daftarpesertasertifikasiskk/createmateri/new', [PesertapelatihanController::class, 'daftarpesertasertifikasiskkcreatenew'])->middleware('auth')->name('daftarpesertasertifikasiskkcreatenew');
 
 
 // ROUTE PENGAMBILAN DATA ID

@@ -172,7 +172,7 @@ table.zebra-table {
 <hr>
             <div class="table-wrapper">
 
-                <form action="{{ route('daftarpesertapelatihancreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
+                <form action="{{ route('daftarpesertasertifikasiskkcreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                     @csrf
                     <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
