@@ -972,6 +972,51 @@ public function beagendaskkmatericreate($id)
 
 
 
+
+
+public function beagendaskkmatericreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'agendaskk_id'      => 'required|string',
+        'judulskk'              => 'required|string|max:255',
+        'materipelatihanskk'         => 'required|file|mimes:pdf|max:20480',
+    ], [
+        'judulskk.required' => 'Judul Materi Pelatihan harus diisi.',
+        'materipelatihanskk.required'         => 'Materi belum di upload !.',
+        'materipelatihanskk.mimes'         => 'File harus berupa PDF.',
+        'materipelatihanskk.max'           => 'Ukuran file maksimal 20MB.',
+    ]);
+
+    // Proses upload file PDF jika ada
+    if ($request->hasFile('materipelatihanskk')) {
+        $file = $request->file('materipelatihanskk');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $destinationPath = public_path('04_pembinaan/02_materisertifikasi');
+
+        if (!file_exists($destinationPath)) {
+            mkdir($destinationPath, 0777, true);
+        }
+
+        $file->move($destinationPath, $fileName);
+
+        $validated['materipelatihanskk'] = '04_pembinaan/02_materisertifikasi/' . $fileName;
+    } else {
+        $validated['materipelatihanskk'] = null;
+    }
+
+    // Simpan ke database
+    $materi = materipelatihanskk::create($validated);
+
+    // Flash message
+    session()->flash('create', 'Materi Sertifikasi TKK berhasil ditambahkan!');
+
+    // Redirect ke route dengan parameter 'id' (menggunakan agendapelatihan_id yang baru saja disimpan)
+    return redirect()->route('beagendaskkmateri', ['id' => $materi->agendaskk_id]);
+}
+
+
+
 }
 
 

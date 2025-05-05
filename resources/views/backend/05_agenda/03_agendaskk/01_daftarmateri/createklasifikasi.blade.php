@@ -83,7 +83,7 @@
         {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
-                        <form action="{{ route('beagendapelatihanmatericreatenew') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('beagendaskkmatericreatenew') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="card-body">
                                 <div class="row">
