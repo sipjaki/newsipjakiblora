@@ -349,7 +349,6 @@ table.zebra-table {
                                 </div>
                             </div>
 
-                            <hr>
                             <div class="col-12">
                                 <!-- Nama Asosiasi -->
                                 <div style="{{ $divStyle }}">
