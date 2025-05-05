@@ -60,8 +60,8 @@ public function verifikasipesertasertifikasi($id)
     // Ambil ID agenda pelatihan (pastikan nama kolom benar)
     $agendaId = $item->agendaskk_id;
 
-    // Flash message
-    session()->flash('verifikasipesertapelatihan', 'Selamat Peserta Lolos Seleksi !');
+    // Flash message untuk notifikasi
+    session()->flash('verifikasipesertapelatihan', 'Status peserta berhasil diperbarui!');
 
     // Redirect ke halaman peserta sesuai agenda
     return redirect("/beagendaskkpeserta/show/{$agendaId}");
