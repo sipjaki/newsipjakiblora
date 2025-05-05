@@ -354,7 +354,7 @@ table.zebra-table {
                             <div class="col-md-12">
                                 <div class="row">
                                     <!-- Nama Asosiasi -->
-                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                    <div class="col-md-12" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-diagram-3" style="color: navy;"></i> Nama Asosiasi
                                         </label>
@@ -363,7 +363,7 @@ table.zebra-table {
                                     </div>
 
                                     <!-- Punya SKK -->
-                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                    <div class="col-md-12" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-card-checklist" style="color: navy;"></i> Punya SKK?
                                         </label>
@@ -376,7 +376,7 @@ table.zebra-table {
                                     </div>
 
                                     <!-- Punya SIKI -->
-                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                    <div class="col-md-12" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-patch-check" style="color: navy;"></i> Punya SIKI?
                                         </label>
@@ -389,7 +389,7 @@ table.zebra-table {
                                     </div>
 
                                     <!-- Siap Patuhi Kode Etik -->
-                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                    <div class="col-md-12" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
                                         </label>
