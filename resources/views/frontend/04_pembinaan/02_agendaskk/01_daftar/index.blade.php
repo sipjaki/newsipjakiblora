@@ -408,7 +408,7 @@ table.zebra-table {
                                         Silahkan Upload Dokumen Saudara !!
                                     </span>
                                 </p>
-                                <hr style="width: 100%; max-width: 1200px; margin: 0;">
+                                <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
                             </div>
 
                             <style>
