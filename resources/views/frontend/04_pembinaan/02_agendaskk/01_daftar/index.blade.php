@@ -156,7 +156,7 @@ table.zebra-table {
                 <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
                     <button type="button" style="
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -172,19 +172,24 @@ table.zebra-table {
     white-space: normal;
     max-width: 100%;
     width: 80%;
-    text-align: center;
+    text-align: left;
     margin: 0 auto;
 "
 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
 onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';"
 >
-    <img src="/assets/icon/pupr.png" alt="icon" style="width: 30px; height: 30px; object-fit: contain; margin-bottom: 10px;">
+    <!-- Icon di tengah -->
+    <div style="display: flex; justify-content: center; align-items: center; width: 40px; height: 40px;">
+        <img src="/assets/icon/pupr.png" alt="icon" style="width: 30px; height: 30px; object-fit: contain;">
+    </div>
 
-    <div style="display: flex; flex-direction: column;">
-        <strong style="font-size: 16px; text-align: center;">{{ $title }}</strong>
-        <span style="font-size: 18px; text-align: center;">{{ $agendapelatihannamakegiatan }}</span>
+    <!-- Judul dan Data Lebar -->
+    <div style="display: flex; flex-direction: column; flex-grow: 1; padding-left: 10px;">
+        <strong style="font-size: 16px; text-align: left; width: 100%;">{{ $title }}</strong>
+        <span style="font-size: 18px; text-align: left; width: 100%;">{{ $agendapelatihannamakegiatan }}</span>
     </div>
 </button>
+
 
                 </div>
             </div>
