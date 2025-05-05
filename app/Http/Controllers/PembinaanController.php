@@ -671,7 +671,7 @@ public function beagendaskk(Request $request)
     $search = $request->input('search');
 
     // Query awal dengan relasi jumlah peserta
-    $query = agendaskk::withCount('pesertapelatihan')
+    $query = agendaskk::withCount('allskktenagakerjablora')
                 ->orderBy('created_at', 'desc'); // Data terbaru
 
     if ($search) {
