@@ -59794,7 +59794,7 @@ agendaskk::create([
 ]);
 
 agendaskk::create([
-    'id' => 1,
+    'id' => 2,
     'user_id' => 7,
     'asosiasimasjaki_id' => 7,
     'namakegiatan' => 'Sertifikasi Keterampilan Tukang Bangunan Sipil - Jenjang 6',
