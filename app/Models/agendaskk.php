@@ -29,4 +29,9 @@ class agendaskk extends Model
         return $this->belongsTo(materipelatihanskk::class, 'materipelatihanskk_id');
     }
 
+    public function asosiasimasjaki()
+    {
+        return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
+    }
+
 }

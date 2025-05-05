@@ -59782,6 +59782,7 @@ agendapelatihan::create([
 agendaskk::create([
     'id' => 1,
     'user_id' => 7,
+    'asosiasimasjaki_id' => 7,
     'namakegiatan' => 'Sertifikasi Keahlian Tenaga Kerja Konstruksi Bangunan Gedung - Jenjang 4',
     'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
     'penutupan' => '2025-12-16',
@@ -59794,16 +59795,17 @@ agendaskk::create([
 ]);
 
 agendaskk::create([
-    'id' => 2,
+    'id' => 1,
     'user_id' => 7,
+    'asosiasimasjaki_id' => 7,
     'namakegiatan' => 'Sertifikasi Keterampilan Tukang Bangunan Sipil - Jenjang 6',
-    'penyelenggara' => 'Balai Jasa Konstruksi Wilayah IV Surabaya',
-    'penutupan' => '2025-01-06',
-    'waktupelaksanaan' => '2025-05-12',
-    'jumlahpeserta' => 50,
-    'lokasi' => 'Jln Raya Semarang No. 22',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja di bidang tukang bangunan sipil.',
-    'isiagenda' => 'Materi meliputi teknik pemasangan struktur beton dan perawatan bangunan...',
+    'penyelenggara' => 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora',
+    'penutupan' => '2025-12-16',
+    'waktupelaksanaan' => '2025-05-15',
+    'jumlahpeserta' => 40,
+    'lokasi' => 'Jln Blora No. 10',
+    'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja konstruksi bangunan gedung.',
+    'isiagenda' => 'Peserta akan diberikan pemahaman mendalam tentang konstruksi bangunan gedung...',
     'foto' => '01_agendapelatihan/sertifikasi2.jpg',
 ]);
 
