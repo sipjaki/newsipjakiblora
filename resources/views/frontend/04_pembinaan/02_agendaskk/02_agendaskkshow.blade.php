@@ -235,69 +235,38 @@
 
 
                                 <div class="sidebar-widget sidebar-widget-recent-post" style="font-family: Poppins;">
-                                    <h4 style="font-family: Poppins;">Penyelenggara</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->penyelenggara }}</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div style="font-family: Poppins; font-size: 16px; line-height: 1.5;">
 
-                                    <h4 style="font-family: Poppins;">Waktu Pelaksanaan</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div style="margin-bottom: 12px;">
+                                            <h5 style="margin-bottom: 4px;">Asosiasi</h5>
+                                            <p style="font-size: 18px; margin: 0;">{{ $data->asosiasimasjaki->namaasosiasi }}</p>
                                         </div>
-                                    </div>
 
-                                    <h4 style="font-family: Poppins;">Lokasi</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->lokasi }}</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div style="margin-bottom: 12px;">
+                                            <h5 style="margin-bottom: 4px;">LSP Penerbit</h5>
+                                            <p style="font-size: 18px; margin: 0;">{{ $data->user->name }}</p>
                                         </div>
-                                    </div>
 
-                                    <h4 style="font-family: Poppins;">Jumlah Peserta</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->jumlahpeserta }} Peserta </span> </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div style="margin-bottom: 12px;">
+                                            <h5 style="margin-bottom: 4px;">Waktu Pelaksanaan</h5>
+                                            <p style="font-size: 18px; margin: 0;">{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</p>
                                         </div>
-                                    </div>
 
-                                    <h4 style="font-family: Poppins;">Keterangan</h4>
-                                    <div class="sidebar-recent-post">
-                                        <div class="sidebar-recent-post-content">
-                                            <div class="sidebar-meta">
-                                                <div class="sidebar-meta-item">
-                                                    <div class="sidebar-meta-icon">
-                                                        <p style="font-size:18px;" style="font-family: Poppins;"><span style="font-family: Poppins;">{{ $data->keterangan }}</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div style="margin-bottom: 12px;">
+                                            <h5 style="margin-bottom: 4px;">Lokasi</h5>
+                                            <p style="font-size: 18px; margin: 0;">{{ $data->lokasi }}</p>
                                         </div>
+
+                                        <div style="margin-bottom: 12px;">
+                                            <h5 style="margin-bottom: 4px;">Jumlah Peserta</h5>
+                                            <p style="font-size: 18px; margin: 0;">{{ $data->jumlahpeserta }} Peserta</p>
+                                        </div>
+
+                                        <div style="margin-bottom: 12px;">
+                                            <h5 style="margin-bottom: 4px;">Keterangan</h5>
+                                            <p style="font-size: 18px; margin: 0;">{{ $data->keterangan }}</p>
+                                        </div>
+
                                     </div>
                                 </div>
 
