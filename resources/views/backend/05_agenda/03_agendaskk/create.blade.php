@@ -74,22 +74,6 @@
                                     <div class="col-md-6">
                                         <!-- Kategori Pelatihan -->
                                      <!-- Kategori Pelatihan -->
-<div class="mb-3">
-    <label for="kategoripelatihan_id" class="form-label">
-        <i class="bi bi-card-text text-primary"></i> Kategori Pelatihan
-    </label>
-    <select id="kategoripelatihan_id" name="kategoripelatihan_id" class="form-control @error('kategoripelatihan_id') is-invalid @enderror">
-        <option value="">-- Pilih Kategori --</option>
-        @foreach ($kategoriList as $kategori)
-            <option value="{{ $kategori->id }}" {{ (old('kategoripelatihan_id', $data->kategoripelatihan_id ?? '') == $kategori->id) ? 'selected' : '' }}>
-                {{ $kategori->kategoripelatihan }}
-            </option>
-        @endforeach
-    </select>
-    @error('kategoripelatihan_id')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
-</div>
 
 <!-- LSP Penerbit -->
 <div class="mb-3">

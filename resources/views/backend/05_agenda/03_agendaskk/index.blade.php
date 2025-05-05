@@ -143,7 +143,7 @@
 
                                 </script>
 
-                         <a href="/beagendapelatihan/create">
+                         <a href="/beagendaskk/create">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
