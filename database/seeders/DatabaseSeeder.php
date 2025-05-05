@@ -59913,15 +59913,6 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV MANDRA KANTA UNGGUL',
     'pjbu' => 'Muhammad Abdul Rozak',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 tertibjasakonstruksi::create([
@@ -59935,15 +59926,6 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADHI BAYU MUSTIKA',
     'pjbu' => 'Ny Musikawati Ningsih',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 tertibjasakonstruksi::create([
@@ -59957,15 +59939,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADHI KARYA MANDIRI',
     'pjbu' => 'Santoso',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -59979,15 +59953,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADITYA JAYA PERKASA',
     'pjbu' => 'Agus Supriadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60001,15 +59967,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ALFA',
     'pjbu' => 'Siti Utifah',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60023,15 +59981,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANANDA',
     'pjbu' => 'Suryati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60045,15 +59995,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANAS PUTRA PERKASA',
     'pjbu' => 'Ahmad Filter Annas',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60067,15 +60009,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANUGERAH ABADI',
     'pjbu' => 'Widodo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60089,15 +60023,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ARDHANA BANGUN JAYA',
     'pjbu' => 'Arradea Murbha Ardhana',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60111,15 +60037,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BAKOH SETIYANA JAYA',
     'pjbu' => 'Tegar Setieyana',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60133,15 +60051,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BARATAMA KONSTRUKSI',
     'pjbu' => 'Basuki Rahmat',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60155,15 +60065,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BLORA MITRA UTAMA',
     'pjbu' => 'Catur Oke Abriyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60177,15 +60079,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BUMI ABADI PRATAMA',
     'pjbu' => 'Setya Budi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60199,15 +60093,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. CAKRA BERLIAN',
     'pjbu' => 'Nunung Farozi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60221,15 +60107,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. CENGKIR GADING',
     'pjbu' => 'Siti Nurohmah',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60243,15 +60121,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GADA PERKASA',
     'pjbu' => 'Gagat Septyan Tyaskoro',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60265,15 +60135,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GAMA CITRA MANDIRI',
     'pjbu' => 'Agus Supriyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60287,15 +60149,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GREMA JAYA USAHA',
     'pjbu' => 'Kresti Ageng Hermawan',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60309,15 +60163,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GRIYA LARAS',
     'pjbu' => 'Sartono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60331,15 +60177,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. INDO JAYA MUSTIKA',
     'pjbu' => 'Ofvi Sigit Hermansyah',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60353,15 +60191,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. JANUR KUNING',
     'pjbu' => 'Sulistia',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60375,15 +60205,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KARINA',
     'pjbu' => 'Sri Setyorini',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60397,15 +60219,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KARSA KARYA UTAMA',
     'pjbu' => 'Anik Tri Muryani',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60419,15 +60233,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KARYA DWI PUTRI',
     'pjbu' => 'Sri Wahyuni',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60441,15 +60247,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KINAN KARYA GEMILANG',
     'pjbu' => 'Kodrat Suprayoga',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 
@@ -60464,15 +60262,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KRISNA',
     'pjbu' => 'Hendro Puji Jatmiko',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60486,15 +60276,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LIMA KARSA',
     'pjbu' => 'Ratno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60508,15 +60290,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LUGAS SEMBADA',
     'pjbu' => 'Muhammad Fuad Andrianto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60530,15 +60304,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. NOGO',
     'pjbu' => 'Sumarlan',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60552,15 +60318,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PILAR UTAMA',
     'pjbu' => 'Arif Budi Santoso',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 
@@ -60575,15 +60333,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PURNAMA JAYA',
     'pjbu' => 'Sri Wahyuni, HJ',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60597,15 +60347,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PUTRA GRAHA PERMAI',
     'pjbu' => 'Rachmat Isbandriyo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60619,15 +60361,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PUTRA JAYA MANDIRI',
     'pjbu' => 'Diyah Wahyuningsih',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60641,15 +60375,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. QURATA JAYA',
     'pjbu' => 'Puji Jayanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60663,15 +60389,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. RAFI JAYA BERKARYA',
     'pjbu' => 'Sobirin',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 
@@ -60686,15 +60404,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. RAFI PUTRA',
     'pjbu' => 'Eko Budi Cahyono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60708,15 +60418,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. RESTU BUMI MUSTIKA',
     'pjbu' => 'Sujarwo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60730,15 +60432,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SUKET IJO PERDANA',
     'pjbu' => 'Andika Rusyadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60752,15 +60446,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SURYA INDAH',
     'pjbu' => 'Sri Mukarti',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60774,15 +60460,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. TRIBHAKTI',
     'pjbu' => 'Suparmin',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60796,15 +60474,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. WAHYU PUTRA',
     'pjbu' => 'Harsono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60818,15 +60488,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADITIYA JAYA PERKASA',
     'pjbu' => 'Agus Supriadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 tertibjasakonstruksi::create([
     'id' => 43,
@@ -60839,15 +60501,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. AGENG NUGROHO',
     'pjbu' => 'Sayana',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60861,15 +60515,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. A\'LA PUTRA',
     'pjbu' => 'Suhartini',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60883,15 +60529,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANAS PUTRA PERKASA',
     'pjbu' => 'Ahmad Filter Annas',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60905,15 +60543,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANUGERAH ABADI',
     'pjbu' => 'Widodo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60927,15 +60557,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BISMA PERKASA',
     'pjbu' => 'Suwarno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60949,15 +60571,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BLORA MITRA UTAMA',
     'pjbu' => 'Catur Oke Abriyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60971,15 +60585,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. DAMAI SEJAHTERA',
     'pjbu' => 'Herlin Retno Novitasari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -60993,15 +60599,6 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. DUTARIZADA KONSTRUKSI',
     'pjbu' => 'Dwi Asyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 tertibjasakonstruksi::create([
@@ -61015,15 +60612,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. DWI PUTRA',
     'pjbu' => 'Meti Ika Kumalasari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61037,15 +60626,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. INDO JAVA MUSTIKA',
     'pjbu' => 'Ofvi Sigit Hermansyah',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61059,15 +60640,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. JAGAD TEKNIKA',
     'pjbu' => 'Farid Darwanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61081,15 +60654,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. JENGGALA ARUNIKA',
     'pjbu' => 'Diah Ayu Novitasari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61103,15 +60668,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KARYA LESTARI',
     'pjbu' => 'Lestari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61125,15 +60682,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KEMBAR DUA',
     'pjbu' => 'Lulut Tri Laksono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61147,15 +60696,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KINAN KARYA GEMILANG',
     'pjbu' => 'Kodrat Suprayoga',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61169,15 +60710,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LAVANYA PERDANA',
     'pjbu' => 'Sri Purwati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61191,15 +60724,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LAMAYU JATI PERKASA',
     'pjbu' => 'Supriyanto',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61213,15 +60738,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. MEURAH INTAN',
     'pjbu' => 'Erna Safiati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61235,15 +60752,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SUMBER JAYA PERKASA RAYA',
     'pjbu' => 'Eko Richo Andriyato',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61257,15 +60766,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. WAHYU PUTRA MANDIRI',
     'pjbu' => 'Djuhadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61279,15 +60780,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. WARU BENGKONG',
     'pjbu' => 'Teguh Sutrisno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61301,15 +60794,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ADHI KARYA MANDIRI',
     'pjbu' => 'Santoso',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61323,15 +60808,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANAS PUTRA PERKASA',
     'pjbu' => 'Ahmad Filter Annas',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61345,15 +60822,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. ANUGERAH ABADI',
     'pjbu' => 'Widodo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61367,15 +60836,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. AYUK MANDIRI',
     'pjbu' => 'Pipit Aniska Kristinawati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61389,15 +60850,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BANGUN KELUARGA',
     'pjbu' => 'Agus Cahyono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61411,15 +60864,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BASKORO BERKAH JAYA',
     'pjbu' => 'Wahyu Pratama',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61433,15 +60878,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. BUMI ASRI PROPERTY',
     'pjbu' => 'Paijan',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61455,15 +60892,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. CATUR PUTRA',
     'pjbu' => 'Wiwik Andriati',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61477,15 +60906,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. CIPTA MULYA JAYA',
     'pjbu' => 'Ahmad Mufaizin',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61499,15 +60920,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. DWI PUTRA',
     'pjbu' => 'Meti Ika Kumalasari',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61521,15 +60934,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. GRIYA PUTRA LAKSANA',
     'pjbu' => 'Dwi Agung Dewantoro Putro',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61543,15 +60948,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. KENDIL MANDIRI SANTOSA',
     'pjbu' => 'Susilo Utomo',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61565,15 +60962,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LIMA KARSA',
     'pjbu' => 'Ratno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61587,15 +60976,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. LUMINTU JAYA',
     'pjbu' => 'Hj. Sri Kusnaningsih',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61609,15 +60990,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. MAJU JAYA',
     'pjbu' => 'Teguh Guritno',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61631,15 +61004,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. PUTRO SEMBODO',
     'pjbu' => 'Dwi Cahyono',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61653,15 +61018,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SETIADI',
     'pjbu' => 'Haji Sudjoko',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61675,15 +61032,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SUKAJADI',
     'pjbu' => 'Markum',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61697,15 +61046,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. SUKET IJO PERDANA',
     'pjbu' => 'Andika Rusyadi',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61719,15 +61060,7 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. TRIBAKTI BINTANG SEJAHTERA',
     'pjbu' => 'Askia Azamzami',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
+
 ]);
 
 tertibjasakonstruksi::create([
@@ -61741,15 +61074,6 @@ tertibjasakonstruksi::create([
     'namapekerjaan' => null,
     'namabadanusaha' => 'CV. TUNAS KARYA',
     'pjbu' => 'Sri Supriyani',
-    'sesuai_jenis' => 'TERTIB',
-    'sesuai_sifat' => 'TERTIB',
-    'sesuai_klasifikasi' => 'TERTIB',
-    'sesuai_layanan' => 'TERTIB',
-    'segmentasipasar_bentuk' => 'TERTIB',
-    'segmentasipasar_kualifikasi' => 'TERTIB',
-    'syarat_SBU' => 'TERTIB',
-    'syarat_NIB' => 'TERTIB',
-    'pelaksanaanpengembangan' => 'BELUM TERTIB',
 ]);
 
 
