@@ -211,71 +211,71 @@ table.zebra-table {
                                     <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
                                     @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
+                                <div class="row">
+                                    <!-- Jenjang Pendidikan -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-mortarboard" style="{{ $iconStyle }}"></i> Jenjang Pendidikan
+                                        </label>
+                                        <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="form-select @error('jenjangpendidikan_id') is-invalid @enderror">
+                                            <option value="">-- Pilih Jenjang Pendidikan --</option>
+                                            @foreach($jenjangpendidikan as $item)
+                                                <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
+                                                    {{ $item->jenjangpendidikan }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
 
-<!-- Jenjang Pendidikan -->
-<div style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-mortarboard" style="{{ $iconStyle }}"></i> Jenjang Pendidikan
-    </label>
-    <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="@error('jenjangpendidikan_id') is-invalid @enderror">
-        <option value="">-- Pilih Jenjang Pendidikan --</option>
-        @foreach($jenjangpendidikan as $item)
-            <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
-                {{ $item->jenjangpendidikan }}
-            </option>
-        @endforeach
-    </select>
-    @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-</div>
+                                    <!-- Jabatan Kerja -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
+                                        </label>
+                                        <select name="jabatankerja_id" style="{{ $inputStyle }}" class="form-select @error('jabatankerja_id') is-invalid @enderror">
+                                            <option value="">-- Pilih Jabatan Kerja --</option>
+                                            @foreach($jabatankerja as $item)
+                                                <option value="{{ $item->id }}" {{ old('jabatankerja_id') == $item->id ? 'selected' : '' }}>
+                                                    {{ $item->jabatankerja }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('jabatankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
 
-<!-- Jabatan Kerja -->
-<div style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
-    </label>
-    <select name="jabatankerja_id" style="{{ $inputStyle }}" class="@error('jabatankerja_id') is-invalid @enderror">
-        <option value="">-- Pilih Jabatan Kerja --</option>
-        @foreach($jabatankerja as $item)
-            <option value="{{ $item->id }}" {{ old('jabatankerja_id') == $item->id ? 'selected' : '' }}>
-                {{ $item->jabatankerja }}
-            </option>
-        @endforeach
-    </select>
-    @error('jabatankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-</div>
+                                    <!-- Nama Sekolah -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-building" style="{{ $iconStyle }}"></i> Nama Sekolah
+                                        </label>
+                                        <select name="namasekolah_id" style="{{ $inputStyle }}" class="form-select @error('namasekolah_id') is-invalid @enderror">
+                                            <option value="">-- Pilih Nama Sekolah --</option>
+                                            @foreach($sekolah as $item)
+                                                <option value="{{ $item->id }}" {{ old('namasekolah_id') == $item->id ? 'selected' : '' }}>
+                                                    {{ $item->namasekolah }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
 
-<!-- Nama Sekolah -->
-<div style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-building" style="{{ $iconStyle }}"></i> Nama Sekolah
-    </label>
-    <select name="namasekolah_id" style="{{ $inputStyle }}" class="@error('namasekolah_id') is-invalid @enderror">
-        <option value="">-- Pilih Nama Sekolah --</option>
-        @foreach($sekolah as $item)
-            <option value="{{ $item->id }}" {{ old('namasekolah_id') == $item->id ? 'selected' : '' }}>
-                {{ $item->namasekolah }}
-            </option>
-        @endforeach
-    </select>
-    @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-</div>
-
-<!-- Tahun Bimtek -->
-<div style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-calendar-event" style="{{ $iconStyle }}"></i> Tahun Bimtek
-    </label>
-    <select name="tahunpilihan_id" style="{{ $inputStyle }}" class="@error('tahunpilihan_id') is-invalid @enderror">
-        <option value="">-- Pilih Tahun Bimtek --</option>
-        @foreach($tahunbimtek as $item)
-            <option value="{{ $item->id }}" {{ old('tahunpilihan_id') == $item->id ? 'selected' : '' }}>
-                {{ $item->tahunpilihan }}
-            </option>
-        @endforeach
-    </select>
-    @error('tahunpilihan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-</div>
-
+                                    <!-- Tahun Bimtek -->
+                                    <div class="col-md-6" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-calendar-event" style="{{ $iconStyle }}"></i> Tahun Bimtek
+                                        </label>
+                                        <select name="tahunpilihan_id" style="{{ $inputStyle }}" class="form-select @error('tahunpilihan_id') is-invalid @enderror">
+                                            <option value="">-- Pilih Tahun Bimtek --</option>
+                                            @foreach($tahunbimtek as $item)
+                                                <option value="{{ $item->id }}" {{ old('tahunpilihan_id') == $item->id ? 'selected' : '' }}>
+                                                    {{ $item->tahunpilihan }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @error('tahunpilihan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
+                                </div>
 
                             </div>
 
