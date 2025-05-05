@@ -153,13 +153,13 @@ table.zebra-table {
     <div class="full-width-container mx-auto px-4 pb-10">
         <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
             <div style="display: flex; justify-content: center; margin-bottom: -20px;">
-                <div style="width: 100%; max-width: 900px;"> <!-- Optional max-width buat tampilan elegan -->
+                <div style="width: 100%; max-width: 500px;"> <!-- Optional max-width buat tampilan elegan -->
                     <button type="button" style="
                     display: inline-flex;
                     flex-direction: row;
                     align-items: center;
                     gap: 10px;
-                    padding: 12px 20px;
+                    padding: 14px 24px;
                     font-size: 16px;
                     font-family: 'Poppins', sans-serif;
                     border: 1px solid #28a745;
@@ -169,7 +169,8 @@ table.zebra-table {
                     cursor: pointer;
                     transition: all 0.3s ease;
                     white-space: normal;
-                    max-width: 100%;
+                    width: 100%;
+                    max-width: 600px;
                     text-align: left;
                 "
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -182,6 +183,8 @@ table.zebra-table {
                         <span style="font-size: 16px;">{{ $agendapelatihannamakegiatan }}</span>
                     </div>
                 </button>
+
+
                 </div>
             </div>
 
