@@ -902,6 +902,61 @@ public function beagendaskkcreate()
 }
 
 
+public function beagendaskkcreatenew(Request $request)
+{
+    // Validasi data input
+    $validatedData = $request->validate([
+        'asosiasimasjaki_id'   => 'required|string',
+        'namakegiatan'         => 'required|string|max:255',
+        'user_id'              => 'required|string',
+        'waktupelaksanaan'     => 'required|date',
+        'penutupan'            => 'required|date|after_or_equal:waktupelaksanaan',
+        'jumlahpeserta'        => 'required|string',
+        'lokasi'               => 'required|string|max:255',
+        'keterangan'           => 'required|string|max:255',
+        'isiagenda'            => 'required|string',
+        'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
+    ], [
+        'user_id.required'              => 'LSP Penerbit wajib dipilih.',
+        'namakegiatan.required'         => 'Nama kegiatan wajib diisi.',
+        'asosiasimasjaki_id.required'   => 'Penyelenggara wajib dipilih.',
+        'waktupelaksanaan.required'     => 'Tanggal pelaksanaan wajib diisi.',
+        'penutupan.required'            => 'Tanggal penutupan wajib diisi.',
+        'penutupan.after_or_equal'      => 'Tanggal penutupan harus setelah atau sama dengan tanggal pelaksanaan.',
+        'jumlahpeserta.required'        => 'Jumlah peserta wajib diisi.',
+        'lokasi.required'               => 'Lokasi wajib diisi.',
+        'keterangan.required'           => 'Keterangan wajib diisi.',
+        'isiagenda.required'            => 'Isi agenda wajib diisi.',
+        'foto.required'                 => 'Foto kegiatan wajib diunggah.',
+        'foto.image'                    => 'File harus berupa gambar atau foto.',
+        'foto.mimes'                    => 'Foto harus berformat jpg, jpeg, atau png.',
+        'foto.max'                      => 'Ukuran foto maksimal 5MB.',
+    ]);
+
+    // Proses file foto
+    $file = $request->file('foto');
+    $namaFile = time() . '_' . $file->getClientOriginalName();
+    $tujuanPath = public_path('04_pembinaan/01_kegiatansertifikasi');
+
+    if (!file_exists($tujuanPath)) {
+        mkdir($tujuanPath, 0777, true);
+    }
+
+    $file->move($tujuanPath, $namaFile);
+    $validatedData['foto'] = '04_pembinaan/01_kegiatansertifikasi/' . $namaFile;
+
+    // Simpan data baru ke dalam database
+    agendaskk::create($validatedData);
+
+    // Flash pesan sukses
+    session()->flash('create', 'Agenda Sertifikasi Berhasil Dibuat!');
+
+    // Redirect ke halaman agenda pelatihan
+    return redirect('/beagendaskk');
+}
+
+
+
 }
 
 
