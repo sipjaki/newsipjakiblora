@@ -19,6 +19,14 @@ class LoginController extends Controller
         ]);
     }
 
+    public function register()
+    {
+
+        return view('register.index',[
+            'title' => 'Register Mas Jaki !',
+        ]);
+    }
+
     // public function authenticate(Request $request)
     // {
         // $credentials = $request->validate([

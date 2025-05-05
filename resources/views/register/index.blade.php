@@ -251,43 +251,53 @@
     <div class="login-container">
         <div class="header-section">
             <img src="/assets/00_masjaki/images/maskotjakon.png" class="logo" alt="ABG Blora">
-            <h1>Sign in to Mas Jaki Blora</h1>
+            <h1>Sign up to Mas Jaki Blora</h1>
         </div>
+        <form action="/register" method="POST">
+            @csrf
 
-<form action="/login" method="POST">
-    @csrf
-    <div class="input-group">
-        <i class="fas fa-envelope input-icon"></i>
-        <input type="email" class="input-field" name="email" placeholder="Email" required>
+            <div class="input-group">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" name="name" class="input-field" placeholder="Nama Lengkap" required>
+                @error('name') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
 
-        @error('email')
-        <div class="invalid-feedback">
-            {{ $message }}
-        </div>
-    @enderror
+            <div class="input-group">
+                <i class="fas fa-user-tag input-icon"></i>
+                <input type="text" name="username" class="input-field" placeholder="Username" required>
+                @error('username') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
 
-    </div>
+            <div class="input-group">
+                <i class="fas fa-phone input-icon"></i>
+                <input type="text" name="phone_number" class="input-field" placeholder="Nomor HP" required>
+                @error('phone_number') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
 
-    <div class="input-group">
-        <i class="fas fa-lock input-icon"></i>
-        <input type="password" class="input-field" name="password" placeholder="Password" required>
+            <div class="input-group">
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" name="email" class="input-field" placeholder="Email" required>
+                @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
 
-        @error('password')
-        <div class="invalid-feedback">
-            {{ $message }}
-        </div>
-    @enderror
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" name="password" class="input-field" placeholder="Password" required>
+                @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
+            </div>
 
-    </div>
+            <div class="input-group">
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" name="password_confirmation" class="input-field" placeholder="Konfirmasi Password" required>
+            </div>
 
-    <button type="submit" class="btn-login">Login</button>
+            <button type="submit" class="btn-login">Daftar</button>
 
-    <div class="footer-links">
-        <a href="/register">
-            Belum punya akun? <strong>Daftar</strong>
-        </a>
-    </div>
-</form>
+            <div class="footer-links">
+                <a href="/login">Sudah punya akun? <strong>Login</strong></a>
+            </div>
+        </form>
+
 
         <div class="institutional-footer">
             <div class="footer-logos">
