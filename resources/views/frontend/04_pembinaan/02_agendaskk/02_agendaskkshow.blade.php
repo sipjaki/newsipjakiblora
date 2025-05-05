@@ -278,68 +278,57 @@
                                 </div>
 
                                 <div style="margin: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9;">
-                        <table class="zebra-table custom-fl-table" id="sortableTable">
-                            <thead>
-                                <tr>
-                                    <th onclick="sortTable(0)" style="cursor:pointer; width:100px;"> No </th>
-                                    <th onclick="sortTable(1)" style="cursor:pointer; width:500px;"> Judul </th>
-                                    <th onclick="sortTable(2)" style="cursor:pointer; width:800px;"> Materi </th>
-                                </tr>
-                            </thead>
-                            <tbody id="tableBody">
-                                @php
-                                    $start = ($datamateripelatihanskk->currentPage() - 1) * $datamateripelatihanskk->perPage() + 1;
-                                    $materiFound = false; // Variabel untuk mengecek apakah ada materi
-                                    $dataAvailable = false; // Variabel untuk mengecek apakah ada data
-                                @endphp
+                                    <table class="zebra-table custom-fl-table" id="sortableTable">
+                                        <thead>
+                                            <tr>
+                                                <th onclick="sortTable(0)" style="cursor:pointer; width:100px;"> No </th>
+                                                <th onclick="sortTable(1)" style="cursor:pointer; width:500px;"> Judul </th>
+                                                <th onclick="sortTable(2)" style="cursor:pointer; width:800px;"> Materi </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                            @php
+                                                $start = ($datamateripelatihanskk->currentPage() - 1) * $datamateripelatihanskk->perPage() + 1;
+                                                $materiFound = false; // Variabel untuk mengecek apakah ada materi
+                                                $dataAvailable = false; // Variabel untuk mengecek apakah ada data
+                                            @endphp
 
-                                @foreach ($datamateripelatihanskk as $item)
-                                <tr>
-                                    <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                    <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
-                                    <td>
-                                        <!-- Menambahkan pengecekan apakah data materi pelatihan kosong -->
-                                        <script>
-                                            // Cek apakah file materi pelatihan ada
-                                            const fileUrl = "{{ asset('storage/' . $item->materipelatihan) }}";
-                                            const isFileAvailable = fileUrl && fileUrl !== '{{ asset('storage/') }}'; // Cek jika URL file valid atau kosong
-
-                                            if (!isFileAvailable) {
-                                                // Jika file tidak ada, tampilkan tombol merah dengan tulisan "Materi Belum Di Upload"
-                                                document.write(`
-                                                    <button class="badge"
+                                            @foreach ($datamateripelatihanskk as $item)
+                                            <tr>
+                                                <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+                                                <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulskk)) }}</td>
+                                                <td>
+                                                    @if($item->materipelatihanskk && file_exists(public_path('storage/' . $item->materipelatihanskk)))
+                                                        <!-- File ditemukan di penyimpanan -->
+                                                        <iframe src="{{ asset('storage/' . $item->materipelatihanskk) }}" frameborder="0" width="100%" height="200px"></iframe>
+                                                        <a href="{{ asset('storage/' . $item->materipelatihanskk) }}" download
+                                                            class="badge"
+                                                            style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
+                                                            <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                                        </a>
+                                                    @elseif($item->materipelatihanskk)
+                                                        <!-- File ada tapi bukan di storage, tampilkan dari URL langsung -->
+                                                        <iframe src="{{ asset($item->materipelatihanskk) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                        <a href="{{ asset($item->materipelatihanskk) }}" download
+                                                            class="badge"
+                                                            style="background-color: navy; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px; display: inline-block; margin-top: 10px;">
+                                                            <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
+                                                        </a>
+                                                    @else
+                                                        <!-- Tidak ada file -->
+                                                        <button class="badge"
                                                             style="background-color: red; color: white; border: none; padding:10px 20px; font-size: 13px; border-radius:5px;">
-                                                        Materi Belum Di Upload
-                                                    </button>
-                                                `);
-                                            } else {
-                                                // Jika file ada, tampilkan tombol download
-                                                document.write(`
-                                                    <button id="sertifikat-btn" class="badge"
-                                                            style="background-color: navy; color: white; border: none; transition: 0.3s; padding:10px 20px; font-size: 13px; border-radius:5px;"
-                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid black';"
-                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.style.border='none';">
-                                                        <i class="fas fa-download" style="margin-right:5px;"></i> Download .pdf
-                                                    </button>
-                                                `);
-                                                document.getElementById('sertifikat-btn').addEventListener('click', function() {
-                                                    const a = document.createElement('a');
-                                                    a.href = fileUrl;
-                                                    a.download = ''; // Nama file tidak perlu diisi, karena browser akan menggunakan nama dari URL
-                                                    document.body.appendChild(a);
-                                                    a.click();
-                                                    document.body.removeChild(a);
-                                                });
-                                            }
-                                        </script>
-                                    </td>
+                                                            Materi Belum Di Upload
+                                                        </button>
+                                                    @endif
+                                                </td>
 
-                                </tr>
-                                @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
-                                @endforeach
+                                            </tr>
+                                            @php $dataAvailable = true; @endphp <!-- Set variabel jadi true jika ada data -->
+                                            @endforeach
 
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
 
                         <!-- Jika tidak ada data sama sekali, tampilkan pesan di luar tabel -->
                         @if(!$dataAvailable)
