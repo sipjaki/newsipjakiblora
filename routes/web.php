@@ -914,7 +914,7 @@ Route::post('/beagendaskkmateri/createmateri/new', [PembinaanController::class, 
 Route::put('/verifikasipesertapelatihan/{id}', [VerifikasiController::class, 'verifikasipesertapelatihan'])->name('verifikasi.updatepesertapelatihan');
 Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikasikehadiran'])->name('verifikasikehadiran');
 
-Route::put('/verifikasipesertasertifikasi/{id}', [VerifikasiController::class, 'verifikasipesertasertifikasi'])->name('verifikasipesertasertifikasi');
+Route::put('/verifikasipesertasertifikasi/{id}', [VerifikasiController::class, 'verifikasipesertasertifikasinew'])->name('verifikasipesertasertifikasi');
 
 // ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
