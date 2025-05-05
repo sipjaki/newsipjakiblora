@@ -17,7 +17,7 @@ class agendaskk extends Model
     public function allskktenagakerjablora()
     {
         // return $this->belongsTo(allskktenagakerjablora::class, 'allskktenagakerjablora_id');
-        return $this->hasMany(AllSkkTenagaKerjaBlora::class);
+        return $this->hasMany(allskktenagakerjablora::class);
     }
 
 
