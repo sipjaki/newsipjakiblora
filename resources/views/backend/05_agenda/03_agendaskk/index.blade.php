@@ -169,13 +169,10 @@
             <i class="bi bi-building"></i> LSP Penerbit
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-award"></i> Kategori Pelatihan
+            <i class="bi bi-award"></i> Asosiasi
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-journal-bookmark"></i> Nama Kegiatan
-          </th>
-          <th style="width: 300px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-people"></i> Penyelenggara
           </th>
           <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-calendar-event"></i> Waktu Pelaksanaan
@@ -218,20 +215,11 @@
      <tr class="align-middle">
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          <td style="text-align: left;">{{$item->user->name}}</td>
-         <td style="text-align: left;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
+         <td style="text-align: left;">{{$item->asosiasimasjaki->namaasosiasi ?? 'Data Tidak Di Temukan !'}}</td>
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: left;">{{$item->asosiasimasjaki->namaasosiasi ?? ' data Belum di update'}}</td>
-         {{-- <td style="text-align: center;">
-            @if($item->asosiasimasjaki)
-                {{ $item->asosiasimasjaki->namaasosiasi }}
-            @else
-                <button class="btn btn-danger btn-sm">Data Asosiasi Belum  Di Update</button>
-            @endif
-        </td> --}}
-        {{-- <td style="text-align: left;">{{$item->penutupan}}</td> --}}
-        <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('l, d F Y') }}</td>
-        <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('l, d F Y') }}</td>
-        {{-- <td style="text-align: center;">{{$item->waktupelaksanaan}}</td> --}}
+            <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('l, d F Y') }}</td>
+            <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('l, d F Y') }}</td>
+            {{-- <td style="text-align: center;">{{$item->waktupelaksanaan}}</td> --}}
 
         <td style="text-align: center;">
             <button id="status-{{ $item->id }}" class="btn btn-sm"></button>
