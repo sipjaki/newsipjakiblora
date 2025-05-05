@@ -955,6 +955,21 @@ public function beagendaskkcreatenew(Request $request)
     return redirect('/beagendaskk');
 }
 
+public function beagendaskkmatericreate($id)
+{
+    $dataagendaskk = agendaskk::findOrFail($id); // Cari 1 data sesuai ID
+    $user = Auth::user();
+    // $asosiasimasjaki = asosiasimasjaki::all();
+
+    return view('backend.05_agenda.03_agendaskk.01_daftarmateri.createklasifikasi', [
+        'agendaskk' => $dataagendaskk->namakegiatan, // Ini dikirim ke form
+        'agendaskk_id' => $dataagendaskk->id, // Ini dikirim ke form
+        'user' => $user,
+        // 'asosiasimasjaki' => $asosiasimasjaki,
+        'title' => 'Tambahkan Materi Sertifikasi TKK'
+    ]);
+}
+
 
 
 }

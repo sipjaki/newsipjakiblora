@@ -896,8 +896,8 @@ Route::post('/beagendaskk/createnew', [PembinaanController::class, 'beagendaskkc
 
 // ROUTE PENGAMBILAN DATA ID
 
-Route::get('/beagendapelatihanmateri/createmateri/{id}', [PembinaanController::class, 'beagendapelatihanmatericreate'])->middleware('auth')->name('beagendapelatihanmatericreate');
-Route::post('/beagendapelatihanmateri/createmateri/new', [PembinaanController::class, 'beagendapelatihanmatericreatenew'])->middleware('auth')->name('beagendapelatihanmatericreatenew');
+Route::get('/beagendaskkmateri/createmateri/{id}', [PembinaanController::class, 'beagendaskkmatericreate'])->middleware('auth')->name('beagendaskkmatericreate');
+// Route::post('/beagendapelatihanmateri/createmateri/new', [PembinaanController::class, 'beagendapelatihanmatericreatenew'])->middleware('auth')->name('beagendapelatihanmatericreatenew');
 
 
 
