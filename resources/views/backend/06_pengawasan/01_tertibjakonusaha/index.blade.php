@@ -341,13 +341,13 @@
                                   </button>
                                 @endif
                               </td>
-
+{{--
                               @php
                               $kesesuaian = $item->surattertibjakonusaha1->kesesuaian ?? 'Surat Belum Di Buat';
                               $tertibStatus = $kesesuaian === 'Sesuai' ? 'TERTIB' : 'BELUM TERTIB';
                               $color = $kesesuaian === 'Sesuai' ? 'blue' : 'red';
                               $icon = $kesesuaian === 'Sesuai' ? 'bi-check-circle' : 'bi-x-circle';
-                          @endphp
+                          @endphp --}}
 
                           <td style="text-align: center;">
                               <button
@@ -356,7 +356,7 @@
                                   onmouseout="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
                               >
                                   <i class="bi {{ $icon }}" style="margin-right: 8px;"></i>
-                                  {{ $tertibStatus }}
+                                  {{ $item->surattertibjakonusaha1->kesesuaian }}
                               </button>
                           </td>
 
