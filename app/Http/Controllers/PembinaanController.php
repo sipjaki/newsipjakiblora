@@ -736,5 +736,29 @@ public function beagendaskkmateri($id)
 }
 
 
+
+public function beagendaskkmateridelete($namakegiatan)
+{
+// Cari item berdasarkan judul
+    $entry = agendaskk::where('namakegiatan', $namakegiatan)->first();
+
+    if ($entry) {
+    // Jika ada file header yang terdaftar, hapus dari storage
+    // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+    // }
+
+    // Hapus entri dari database
+    $entry->delete();
+
+    // Redirect atau memberi respons sesuai kebutuhan
+    return redirect('/beagendaskk')->with('delete', 'Data Berhasil Di Hapus !');
+
+    }
+
+return redirect()->back()->with('error', 'Item not found');
+}
+
+
 }
 

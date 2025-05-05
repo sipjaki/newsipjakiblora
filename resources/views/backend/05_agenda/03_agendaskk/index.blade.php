@@ -354,7 +354,7 @@
                  function setDeleteUrl(button) {
                      var namakegiatan = button.getAttribute('data-judul');
                      document.getElementById('itemName').innerText = namakegiatan;
-                     var deleteUrl = "/beagendapelatihan/delete/" + encodeURIComponent(namakegiatan);
+                     var deleteUrl = "/beagendaskkmateri/delete/" + encodeURIComponent(namakegiatan);
                      document.getElementById('deleteForm').action = deleteUrl;
                  }
                  </script>
