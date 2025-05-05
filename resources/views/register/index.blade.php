@@ -249,9 +249,7 @@
     </div>
 
     <div class="login-container">
-        <div class="header-section">
-            <p>Register to Mas Jaki Blora</p>
-        </div>
+            <p style="text-align: center; color:black;">Register to Mas Jaki Blora</p>
         <form action="/register" method="POST">
             @csrf
 
