@@ -316,6 +316,7 @@
     <select class="form-control @error('layananusaha') is-invalid @enderror" name="layananusaha">
         <option value="">-- Pilih Layanan Usaha --</option>
         <option value="Pekerjaan Konstruksi" {{ old('layananusaha') == 'Pekerjaan Konstruksi' ? 'selected' : '' }}>Pekerjaan Konstruksi</option>
+        {{-- <option value="Pekerjaan Konsultasi Konstruksi" {{ old('layananusaha') == 'Pekerjaan Konsultasi Konstruksi' ? 'selected' : '' }}>Pekerjaan Konsultasi Konstruksi</option> --}}
         <option value="Pekerjaan Konsultasi Konstruksi" {{ old('layananusaha') == 'Pekerjaan Konsultasi Konstruksi' ? 'selected' : '' }}>Pekerjaan Konsultasi Konstruksi</option>
     </select>
     @error('layananusaha')
