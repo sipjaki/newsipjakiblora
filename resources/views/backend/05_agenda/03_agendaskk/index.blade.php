@@ -299,7 +299,7 @@
 
 
          <td style="text-align: center; vertical-align: middle;">
-             <a href="/beagendapelatihan/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
+             <a href="/beagendaskk/show/{{$item->namakegiatan}}" class="btn btn-sm btn-info me-2" title="Show">
                  <i class="bi bi-eye"></i>
              </a>
              <a href="/beagendapelatihan/update/{{$item->namakegiatan}}" class="btn btn-sm btn-warning me-2" title="Update">
