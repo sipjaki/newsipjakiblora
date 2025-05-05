@@ -346,12 +346,10 @@ table.zebra-table {
                                         <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
                                         @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                     </div>
-
-
                                 </div>
-
-
                             </div>
+
+                            <hr>
 
                             <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
 
