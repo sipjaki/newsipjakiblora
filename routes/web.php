@@ -862,7 +862,7 @@ Route::get('/beakseslsppenerbit', [PesertapelatihanController::class, 'beaksesls
 // HAK AKSES PESERTA UNTK DAFTAR
 
 Route::get('/daftarpesertapelatihan/create/{id}', [PesertapelatihanController::class, 'daftarpesertapelatihan'])->name('daftarpesertapelatihan');
-Route::post('/daftarpesertapelatihan/createmateri/new', [PesertapelatihanController::class, 'daftarpesertapelatihancreatenew'])->middleware('auth')->name('daftarpesertapelatihancreatenew');
+Route::post('/daftarpesertapelatihan/createmateri/new', [PesertapelatihanController::class, 'daftarpesertapelatihancreatenew'])->name('daftarpesertapelatihancreatenew');
 
 
 
