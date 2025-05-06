@@ -286,7 +286,7 @@
                         <option value="{{ $status->id }}">
                             @switch($status->id)
                                 @case(3)
-                                    Tenaga Pekerja
+                                    Peserta SKK
                                     @break
                                 @case(4)
                                     Supplier Bahan Bangunan
