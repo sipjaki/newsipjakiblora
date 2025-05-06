@@ -377,7 +377,7 @@ table.zebra-table {
                                     <!-- Punya SIKI -->
                                     <div class="col-md-4" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
-                                            <i class="bi bi-patch-check" style="color: navy;"></i> Punya SIKI?
+                                            <i class="bi bi-patch-check" style="color: navy;"></i> Apakah sudah memiliki akun SIKI/ akun SIMPAN PUPR ?
                                         </label>
                                         <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
                                             <option value="">-- Pilih --</option>
