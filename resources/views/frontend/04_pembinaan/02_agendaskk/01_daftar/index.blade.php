@@ -404,9 +404,9 @@ table.zebra-table {
 
                             <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
                                 <hr style="width: 100%; max-width: 1200px; margin: 0;">
-                                <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden;">
+                                <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
                                     <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
-                                        Silahkan Upload Dokumen Saudara !!
+                                        Silahkan Upload Dokumen Saudara !! <p style="color: red"> Hati Hati dalam Upload Tahun Pengalaman Kerja !! </p>
                                     </span>
                                 </p>
                                 <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
