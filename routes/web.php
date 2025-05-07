@@ -945,6 +945,7 @@ Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiContr
 // ROUTE UNTUK DAFTAR AKUN
 
 Route::get('/allakun', [LoginController::class, 'allakun'])->middleware('auth');
+Route::delete('/allsemuaakun/delete/{name}', [LoginController::class, 'allsemuaakun'])->middleware('auth');
 
 
 
