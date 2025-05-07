@@ -477,7 +477,7 @@ table.zebra-table {
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman
         @if ($fileDownload)
-            <a href="{{ $fileDownload }}" download>
+            <a href="{{ $fileDownload }}" download style="color:red;">
                 Contoh Pengalaman Kerja <i class="bi bi-download"></i>
             </a>
             {{-- <div style="font-size: 0.9em; color: gray;">
