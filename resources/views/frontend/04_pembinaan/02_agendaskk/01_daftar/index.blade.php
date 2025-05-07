@@ -460,9 +460,23 @@ table.zebra-table {
 <div class="row">
     <!-- Upload Pengalaman -->
     <div class="col-md-4" style="{{ $divStyle }}">
-        <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman <a href="">Contoh Pengalaman Kerja <i class="bi bi-download"></i></a>
-        </label>
+        @php
+        $contohSurat = $datacontohsurat->first();
+    @endphp
+
+    @if($contohSurat && $contohSurat->berkas)
+        @php
+            $filePath = file_exists(public_path('storage/' . $contohSurat->berkas))
+                ? asset('storage/' . $contohSurat->berkas)
+                : asset($contohSurat->berkas);
+        @endphp
+
+        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman
+        <a href="{{ $filePath }}" download>
+            Contoh Pengalaman Kerja <i class="bi bi-download"></i>
+        </a>
+    @endif
+
         <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
         <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
         <div id="pengalamanPreview" class="preview-container"></div>

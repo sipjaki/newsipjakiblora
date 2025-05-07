@@ -7,6 +7,7 @@ use App\Models\pesertapelatihan;
 use App\Models\materipelatihanskk;
 use App\Models\agendapelatihan;
 use App\Models\allskktenagakerjablora;
+use App\Models\contohsurat;
 use App\Models\jabatankerja;
 use App\Models\jenjangpendidikan;
 use App\Models\namasekolah;
@@ -349,6 +350,7 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
     $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
     $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
     $datatahunbimtek = tahunpilihan::orderBy('tahunpilihan', 'asc')->get();
+    $datacontohsurat = contohsurat::orderBy('tahunpilihan', 'asc')->get();
     $user = Auth::user();
 
     return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
@@ -361,6 +363,7 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
         'jabatankerja' => $datajabatankerja,
         'sekolah' => $datasekolah,
         'tahunbimtek' => $datatahunbimtek,
+        'datacontohsurat' => $datacontohsurat,
         'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
     ]);
 }
