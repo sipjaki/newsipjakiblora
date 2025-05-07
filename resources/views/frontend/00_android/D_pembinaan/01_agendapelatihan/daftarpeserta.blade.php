@@ -205,9 +205,6 @@ h5 {
                             <p>------------------------------------------------------------</p>
                             <p>FORMULIR PENDAFTARAN</p>
 
-                            <br>
-
-
                             <div class="full-width-container mx-auto px-4 pb-10">
                                 <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
                                     <div style="display: flex; justify-content: center; margin-bottom: -20px;">
