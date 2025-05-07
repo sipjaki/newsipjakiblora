@@ -658,7 +658,7 @@ headerberanda::create([
             'username' => 'bkn',
             'statusadmin_id' => '1',
             'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
-            'email' => 'bkn@gmail.com',
+            'email' => 'mkn@gmail.com',
             'password' => bcrypt('mknadmin123$$$$')
         ]);
 
