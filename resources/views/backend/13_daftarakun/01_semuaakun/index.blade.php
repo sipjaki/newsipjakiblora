@@ -272,19 +272,6 @@
                     </div>
                 </td>
 
-                    <td style="text-align: center;">
-                        @if($item->user?->name)
-                            {{ $item->user?->name }}
-                        @else
-                            <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                    onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                                Admin Tidak Ada
-                            </button>
-                        @endif
-                    </td>
-
-
         <td style="text-align: center; vertical-align: middle;">
             <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                 <i class="bi bi-eye"></i>
