@@ -406,7 +406,7 @@ table.zebra-table {
                                 <hr style="width: 100%; max-width: 1200px; margin: 0;">
                                 <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
                                     <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
-                                        Silahkan Upload Dokumen Saudara !! <p style="color: red"> Hati Hati dalam Upload Tahun Pengalaman Kerja !! </p>
+                                        Silahkan Upload Dokumen Saudara!! <span style="color: red;">Hati-hati dalam Upload Tahun Pengalaman Kerja!!</span>
                                     </span>
                                 </p>
                                 <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
@@ -414,13 +414,9 @@ table.zebra-table {
 
                             <style>
                                 @keyframes scroll-text {
-                                    0% {
-                                        transform: translateX(100%);
-                                    }
-                                    100% {
-                                        transform: translateX(-100%);
-                                    }
-                                }
+                                            0% { transform: translateX(100%); }
+                                            100% { transform: translateX(-100%); }
+                                        }
                             </style>
 
 
