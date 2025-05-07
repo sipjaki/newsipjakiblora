@@ -244,7 +244,7 @@
             Daftar Peserta, silakan klik tautan berikut:
         </p>
         <p style="margin-top: 0;">
-            <a href="/daftarpesertapelatihan" style="text-decoration: none; color: #007bff;">
+            <a href="/respesertapelatihan" style="text-decoration: none; color: #007bff;">
                 Lihat Daftar Peserta
             </a>
         </p>
