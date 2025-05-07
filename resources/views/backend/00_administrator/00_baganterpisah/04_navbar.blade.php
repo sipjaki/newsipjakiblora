@@ -156,8 +156,8 @@
                     @elseif(Auth::user()->avatar)
                         <img src="{{ asset(Auth::user()->avatar) }}" alt="Gambar avatar">
                     @endif
+                </a> --}}
                 <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
-              </a> --}}
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
                 <li class="user-header text-bg-success">
