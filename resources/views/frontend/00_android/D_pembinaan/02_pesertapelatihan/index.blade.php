@@ -217,7 +217,7 @@ h5 {
                                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kategori </th>
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Nama Kegiatan </th>
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th>
-                                            <th style="text-align:center; width:100px;"> View Peserta </th>
+                                            <th style="text-align:center; width:200px;"> View Peserta </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
