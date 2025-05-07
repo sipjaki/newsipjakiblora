@@ -756,11 +756,10 @@ public function reasasosiasimasjakikontraktor($namaasosiasi)
         }
 
         $user = Auth::user();
-
-            $datapesertapelatihan = pesertapelatihan::where('agendapelatihan_id', $agendapelatihan->id)
-                        ->select(['id', 'namalengkap', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id', 'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi' ])
-                        ->paginate(25);
-
+        $datapesertapelatihan = pesertapelatihan::where('agendapelatihan_id', $agendapelatihan->id)
+        ->select(['id', 'namalengkap', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id', 'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi'])
+        ->orderByDesc('created_at')
+        ->paginate(25);
         $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
         // $datauser = user::all();
 
