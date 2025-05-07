@@ -582,7 +582,7 @@ h5 {
                                                     </div>
 
 
-<div class="row" style="margin-top: -20px;">
+<div class="row">
     <div class="col-md-4" style="{{ $divStyle }}">
         @php
             $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
