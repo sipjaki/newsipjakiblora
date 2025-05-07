@@ -394,6 +394,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         // 'uploadnpwp' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
+        'uuploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
 
         'namaasosiasi' => 'nullable|string|max:255',
         'punyaskk' => 'required|in:Ya,Tidak',
@@ -432,6 +433,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadpengalaman.required' => 'Wajib Upload Pengalaman.',
         'uploadpengalaman.mimes' => 'File KTP harus PDF atau gambar.',
         'uploadpengalaman.max' => 'Ukuran file KTP maksimal 2 MB.',
+        'uploadpengalaman.required' => 'Wajib Upload Bukti Kebenaran.',
         // 'uploadnpwp.required' => 'Wajib Upload NPWP.',
         // 'uploadnpwp.mimes' => 'File KTP harus PDF atau gambar.',
         // 'uploadnpwp.max' => 'Ukuran file KTP maksimal 2 MB.',
