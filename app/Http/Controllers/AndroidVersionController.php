@@ -1229,6 +1229,27 @@ public function menureskecelakaankerja(Request $request)
         ]);
         }
 
+// MENU DAFTAR PELATIHAN VERSI ANDROID
+
+public function resdaftarpelatihanpeserta($namakegiatan)
+{
+    $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
+
+ $subdata = materipelatihan::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
+
+
+// Ambil data user saat ini
+$user = Auth::user();
+
+return view('frontend.04_pembinaan.01_agendapembinaan.show', [
+    'title' => 'Agenda Pelatihan',
+    'data' => $dataagendapelatihan,
+    'datamateripelatihan' => $subdata,
+    // 'subData' => $subdata,  // Jika Anda ingin mengirimkan data sub kontraktor juga
+    'user' => $user,
+    // 'start' => $start,
+]);
+}
 
 
 

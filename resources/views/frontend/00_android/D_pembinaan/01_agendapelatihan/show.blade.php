@@ -200,15 +200,17 @@ h5 {
 
                 <div class="container-surat">
                     <div>
-                        <button
+                        <a href="/resdaftarpelatihanpeserta/{{$data->namakegiatan}}">
+                            <button
                             class="btn-navy"
                             onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
                             onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
                             onclick="window.location.href='your-link-here.html'"
-                        >
+                            >
                             <i class="bi bi-person-fill" style="color: white;"></i>
                             Daftar Pelatihan
                         </button>
+                    </a>
                     </div>
                     <div class="header-surat">
                         <div class="header-text">

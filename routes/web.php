@@ -147,6 +147,9 @@ Route::get('/resagendapelatihan/{namakegiatan}', [AndroidVersionController::clas
 Route::get('/respesertapelatihan', [AndroidVersionController::class, 'respesertapelatihan']);
 Route::get('/respelatihanpeserta/{namakegiatan}', [AndroidVersionController::class, 'menurespelatihanpeserta']);
 
+// DAFTAR PESERTA PELATIHAN MENU ANDROID
+Route::get('/resdaftarpelatihanpeserta/{namakegiatan}', [AndroidVersionController::class, 'resdaftarpelatihanpeserta']);
+
 // MENU 3 AGENDA TKK KONSTRUKSI KAB BLORA ------------------------------------------------
 Route::get('/resagendatkk', [AndroidVersionController::class, 'menuresagendatkk']);
 Route::get('/resagendatkk/{namakegiatan}', [AndroidVersionController::class, 'menuresagendatkkdetails']);
