@@ -237,7 +237,7 @@ public function akuncreatenew(Request $request)
         'username'       => 'required|string|max:255',
         'phone_number'   => 'required|string|max:255',
         'email'          => 'required|email|unique:users,email',
-        'avatar'         => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        'avatar'         => 'required|image|mimes:jpeg,png,jpg|max:2048',
     ], [
         'statusadmin_id.required' => 'Status Admin wajib dipilih!',
         'name.required'           => 'Nama wajib diisi!',
@@ -245,6 +245,7 @@ public function akuncreatenew(Request $request)
         'phone_number.required'   => 'Nomor HP wajib diisi!',
         'email.required'          => 'Email wajib diisi!',
         'email.unique'            => 'Email sudah terdaftar!',
+        'avatar.required'            => 'Avatar harus berupa gambar!',
         'avatar.image'            => 'Avatar harus berupa gambar!',
         'avatar.mimes'            => 'Avatar harus berupa file JPEG, JPG, atau PNG!',
     ]);
