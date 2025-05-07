@@ -12,6 +12,7 @@ use App\Models\peraturan;
 use App\Models\sskk;
 use App\Models\agendaskk;
 use App\Models\pesertapelatihan;
+use App\Models\contohsurat;
 use App\Models\permenteri;
 use App\Models\subklasifikasi;
 use App\Models\perpemerintah;
@@ -67365,6 +67366,7 @@ rantaipasokblora::create([
 
 
 
+
 // makanyu
 // ================================================================================================
 
@@ -83062,8 +83064,23 @@ subklasifikasi::create([
 ]);
 
 
+// makanyu
 
-// BATAS AKHIR
+
+contohsurat::create([
+    'judul' => 'Contoh Pengalaman Kerja',
+    'berkas' => '/assets/00_contohsurat/01_CONTOH_PENGALAMAN_KERJA.docx',
+]);
+
+contohsurat::create([
+    'judul' => 'Contoh Pengalaman Kerja',
+    'berkas' => '/assets/00_contohsurat/02_BUKTI_KEBENARAN_DATA.docx',
+]);
+
+
+
+
+// BATAS AKHIR contoh
 //======================== ===================================================================================
 //======================== ===================================================================================
 //======================== ===================================================================================
