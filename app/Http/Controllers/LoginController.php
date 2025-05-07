@@ -223,7 +223,7 @@ public function akuncreate()
     $data = statusadmin::all();
 
     return view('backend.13_daftarakun.01_semuaakun.create',[
-        'title' => 'Buat AKun !',
+        'title' => 'Buat Akun !',
         'data' => $data,
 
     ]);
