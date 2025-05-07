@@ -376,20 +376,73 @@
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
    <script>
-    function exportTableToExcel(tableID, filename = '') {
-        var table = document.getElementById(tableID);
-        var clonedTable = table.cloneNode(true);
+    async function generatePDF() {
+        const { jsPDF } = window.jspdf;
 
-        // Loop setiap baris dan hapus kolom ke-7 dan seterusnya
-        for (var i = 0; i < clonedTable.rows.length; i++) {
-            var row = clonedTable.rows[i];
-            while (row.cells.length > 6) {
-                row.deleteCell(6); // index dimulai dari 0, jadi kolom ke-7 = index 6
-            }
-        }
+        const doc = new jsPDF({
+            orientation: "landscape",
+            unit: "mm",
+            format: "a4"
+        });
 
-        var wb = XLSX.utils.table_to_book(clonedTable, {sheet: "Sheet 1"});
-        XLSX.writeFile(wb, filename + '.xlsx');
+        // Tambah logo kiri & kanan
+        const logo1 = await loadImage("/assets/icon/logokabupatenblora.png");
+        const logo2 = await loadImage("/assets/icon/pupr.png");
+
+        doc.addImage(logo1, "PNG", 10, 5, 20, 20);
+        doc.addImage(logo2, "PNG", 270, 5, 20, 20);
+
+        // Judul di tengah
+        doc.setFontSize(12);
+        doc.setFont("helvetica", "bold");
+        doc.text("Daftar Peserta Pelatihan : " + namaKegiatan, 148.5, 22, { align: "center" });
+
+        // Ambil tabel
+        const table = document.querySelector(".zebra-table");
+
+        const headers = [...table.querySelectorAll("thead th")]
+            .slice(0, 6)
+            .map(th => th.textContent.trim());
+
+        const rows = [...table.querySelectorAll("tbody tr")].map(tr =>
+            [...tr.querySelectorAll("td")]
+                .slice(0, 6)
+                .map(td => td.textContent.trim())
+        );
+
+        doc.autoTable({
+            head: [headers],
+            body: rows,
+            startY: 30,
+            styles: {
+                fontSize: 8,
+                cellPadding: 1
+            },
+            headStyles: {
+                fillColor: [55, 65, 81],
+                textColor: [255, 255, 255],
+                halign: 'center'
+            },
+            theme: 'grid'
+        });
+
+        doc.save("Daftar_semuaakun.pdf");
+    }
+
+    // Fungsi bantu untuk load gambar sebagai base64
+    function loadImage(url) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.crossOrigin = "Anonymous";
+            img.onload = () => {
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                canvas.getContext("2d").drawImage(img, 0, 0);
+                resolve(canvas.toDataURL("image/png"));
+            };
+            img.onerror = reject;
+            img.src = url;
+        });
     }
     </script>
-
