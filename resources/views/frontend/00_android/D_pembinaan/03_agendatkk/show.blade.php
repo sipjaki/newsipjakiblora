@@ -184,6 +184,19 @@ h5 {
 
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
+                <div>
+                    <a href="/daftarpesertasertifikasiskk/create/{{$data->id}}">
+                        <button
+                        class="btn-navy"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
+                        onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
+                        onclick="window.location.href='your-link-here.html'"
+                        >
+                        <i class="bi bi-person-fill" style="color: white;"></i>
+                        Daftar SKK
+                    </button>
+                </a>
+
                 <div class="container-surat">
                     <div class="header-surat">
                         <div class="header-text">
