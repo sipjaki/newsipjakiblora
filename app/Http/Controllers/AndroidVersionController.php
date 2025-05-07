@@ -713,7 +713,7 @@ public function reasasosiasimasjakikontraktor($namaasosiasi)
 
 
         return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.index', [
-            'title' => 'Agenda Pelatihan Jasa Konstruksi Kab Blora',
+            'title' => 'Daftar Peserta Pelatihan Jasa Konstruksi Kab Blora',
             'data' => $data,
             'perPage' => $perPage,
             'search' => $search,
