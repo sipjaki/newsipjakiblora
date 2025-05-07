@@ -234,8 +234,7 @@ h5 {
                                         <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td style="text-transform: capitalize;">
-                                                {{ ucwords(strtolower(optional($item->namalengkap) ?? 'Tidak ada nama')) }}
-
+                                                {{$item->namalengkap}}
                                             </td>
                                             <td style="text-align: center;">{{$item->jeniskelamin}}</td>
                                             <td>{{$item->instansi}}</td>
