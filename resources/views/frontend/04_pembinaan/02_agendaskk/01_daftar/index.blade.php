@@ -491,7 +491,7 @@ table.zebra-table {
 
 <label class="form-label" style="{{ $labelStyle }}">
     <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
-    @if ($fileDownload)
+    @if ($fileDownload) <br>
     <a href="{{ $fileDownload }}" download style="color:red;">
         Contoh Pengalaman Kerja <i class="bi bi-download"></i>
     </a>
@@ -530,7 +530,7 @@ table.zebra-table {
     </div>
 </div>
 
-<div class="row">
+<div class="row" style="margin-top: -20px;">
     <div class="col-md-4" style="{{ $divStyle }}">
         @php
             $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
