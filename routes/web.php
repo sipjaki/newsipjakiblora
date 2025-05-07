@@ -158,8 +158,11 @@ Route::get('/respelatihanskk/{namakegiatan}', [AndroidVersionController::class, 
 Route::get('/respesertaskk', [AndroidVersionController::class, 'menurespesertaskk']);
 Route::get('/resskkpeserta/{namakegiatan}', [AndroidVersionController::class, 'menuresskkpeserta']);
 
-// Route::get('/resbujkkontraktor', [AndroidVersionController::class, 'menubujkkontraktor']);
-// Route::get('/resbujkkontraktor/{namalengkap}', [AndroidVersionController::class, 'menubujkkontraktordetails']);
+
+// NURFI
+Route::get('/resdaftarpelatihanpesertaskk/create/{id}', [AndroidVersionController::class, 'resdaftarpelatihanpesertaskk'])->name('resdaftarpelatihanpesertaskk');
+// Route::post('/resdaftarpelatihanpesertaskk/createpeserta/new', [AndroidVersionController::class, 'resdaftarpelatihanpesertanew'])->name('resdaftarpelatihanpesertanew');
+
 
 // makanyu
 

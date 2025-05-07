@@ -199,7 +199,7 @@ h5 {
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
                 <div>
-                    <a href="/daftarpesertasertifikasiskk/create/{{$data->id}}">
+                    <a href="/resdaftarpelatihanpesertaskk/create/{{$data->id}}">
                         <button
                         class="btn-navy"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"

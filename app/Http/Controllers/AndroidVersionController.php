@@ -36,9 +36,12 @@ use App\Models\bujkkontraktor;
 use App\Models\bujkkontraktorsub;
 use App\Models\bujkkonsultan;
 use App\Models\bujkkonsultansub;
+use App\Models\contohsurat;
 use App\Models\informasisurattertibpenyelenggaraan;
+use App\Models\jabatankerja;
 use App\Models\jenjangpendidikan;
 use App\Models\materipelatihan;
+use App\Models\namasekolah;
 use App\Models\skktenagakerjablora;
 use App\Models\paketpekerjaanmasjaki;
 use App\Models\surattertibjakonpemanfaatan1;
@@ -52,6 +55,7 @@ use App\Models\surattertibjakonpenyelenggaraan3;
 use App\Models\surattertibjakonpenyelenggaraan4;
 use App\Models\surattertibjakonpenyelenggaraan5;
 use App\Models\surattertibjakonpenyelenggaraan6;
+use App\Models\tahunpilihan;
 use App\Models\tertibjakonpemanfaatan;
 use App\Models\tertibjakonpenyelenggaraan;
 use App\Models\User;
@@ -1309,5 +1313,32 @@ public function resdaftarpelatihanpesertanew(Request $request)
     // Redirect ke route yang sesuai setelah menyimpan data
     return redirect('/respesertapelatihan');
 }
+
+
+public function resdaftarpelatihanpesertaskk($id)
+{
+    $dataagendaskk = agendaskk::findOrFail($id);
+    $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
+    $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
+    $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
+    $datatahunbimtek = tahunpilihan::orderBy('tahunpilihan', 'asc')->get();
+    $datacontohsurat = contohsurat::orderBy('berkas', 'asc')->get();
+    $user = Auth::user();
+
+    return view('frontend.00_android.D_pembinaan.03_agendatkk.daftarpeserta', [
+        'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
+        'agendaskk_id' => $dataagendaskk->id,
+        'namalengkap' => $user->name,
+        'user_id' => $user->id,
+        'user' => $user,
+        'jenjangpendidikan' => $datajenjangpendidikan,
+        'jabatankerja' => $datajabatankerja,
+        'sekolah' => $datasekolah,
+        'tahunbimtek' => $datatahunbimtek,
+        'datacontohsurat' => $datacontohsurat,
+        'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
+    ]);
+}
+
 
 }
