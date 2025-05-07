@@ -154,11 +154,11 @@
                 @if(Auth::user()->avatar && file_exists(public_path('storage/' . Auth::user()->avatar)))
                 <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar"
                      class="rounded-circle shadow"
-                     style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                     style="width: 100%; max-height: 25px; object-fit: contain;" loading="lazy">
             @elseif(Auth::user()->avatar)
                 <img src="{{ asset(Auth::user()->avatar) }}" alt="Avatar"
                      class="rounded-circle shadow"
-                     style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                     style="width: 100%; max-height: 25px; object-fit: contain;" loading="lazy">
             @else
                 <p>Avatar belum diupdate</p>
             @endif
