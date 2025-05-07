@@ -1,4 +1,104 @@
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    .app-sidebar,
+    .app-sidebar *:not(.bi):not(.nav-arrow) {
+        font-family: 'Poppins', sans-serif !important;
+    }
+
+    .app-sidebar {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #0f3d0f, #145214, #1e9128);
+        background-size: 400% 400%;
+        animation: sidebarGradientMove 15s ease infinite;
+        min-height: 100vh;
+        z-index: 1;
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    @keyframes sidebarGradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .sidebar-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+        background-size: 30px 30px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .sidebar-crane {
+        position: absolute;
+        bottom: 20px;
+        right: -100px;
+        width: 150px;
+        height: 120px;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M21 6h-4v2h4V6zm-5 0h-4v2h4V6zm-5 0H7v2h4V6zM6 6H2v2h4V6zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2zm16 4h-4v2h4v-2zm-5 0h-4v2h4v-2zm-5 0H7v2h4v-2zm-5 0H2v2h4v-2z"/></svg>');
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: sidebarCraneMove 20s linear infinite;
+        opacity: 0.1;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    @keyframes sidebarCraneMove {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-100%); }
+        100% { transform: translateX(0); }
+    }
+
+    .nav-item > .nav-link {
+        color: white !important;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav-item > .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+        color: black !important;
+    }
+
+    .nav-item > .nav-link.active {
+        background-color: #cfff8d !important;
+        color: black !important;
+    }
+
+    .nav-item > .nav-link i,
+    .nav-item > .nav-link p {
+        transition: color 0.3s ease;
+    }
+
+    .nav-item > .nav-link:hover i,
+    .nav-item > .nav-link:hover p,
+    .nav-item > .nav-link.active i,
+    .nav-item > .nav-link.active p {
+        color: black !important;
+    }
+
+    .brand-text,
+    .nav-header,
+    .nav-link p {
+        color: white !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar-brand,
+    .sidebar-wrapper,
+    .nav-link,
+    .nav-item {
+        position: relative;
+        z-index: 2;
+    }
+</style>
+
+{{-- <style>
     /* Import Font Poppins */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -95,7 +195,7 @@
     .nav-link {
         transition: all 0.2s ease;
     }
-</style>
+</style> --}}
 
       <!--begin::Sidebar-->
       <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
