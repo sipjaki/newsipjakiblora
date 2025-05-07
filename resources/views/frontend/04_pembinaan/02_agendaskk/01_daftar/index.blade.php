@@ -188,7 +188,7 @@ table.zebra-table {
                                         transition: 0.3s;
                                         font-size: 14px;
                                     ";
-                                    $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block;";
+                                    $labelStyle = "margin-bottom: 6px; font-weight: 200; display: block; font-size:13px;";
                                     $divStyle = "margin-bottom: 20px;";
                                     $iconStyle = "color: navy;";
                                 @endphp
@@ -475,7 +475,7 @@ table.zebra-table {
     @endphp
 
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman
+        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
         @if ($fileDownload)
             <a href="{{ $fileDownload }}" download style="color:red;">
                 Contoh Pengalaman Kerja <i class="bi bi-download"></i>
