@@ -82,7 +82,7 @@
                                 <select id="status_admin_select" name="statusadmin_id" class="form-control">
                                     @foreach ($data as $item)
                                         <option value="{{ $item->id }}">
-                                            {{ $item->nama_statusadmin }}
+                                            {{ $item->statusadmin }}
                                         </option>
                                     @endforeach
                                 </select>
