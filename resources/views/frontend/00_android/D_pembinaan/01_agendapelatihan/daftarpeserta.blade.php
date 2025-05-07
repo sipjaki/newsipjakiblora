@@ -267,6 +267,7 @@ h5 {
 
                                                         $divStyle = "margin-bottom: 20px;";
                                                         $iconStyle = "color: navy;";
+                                                        $errorTextStyle = "color: red; font-size: 12px; margin-top: 4px;";
                                                     @endphp
 
                                                         <div style="{{ $divStyle }}">
