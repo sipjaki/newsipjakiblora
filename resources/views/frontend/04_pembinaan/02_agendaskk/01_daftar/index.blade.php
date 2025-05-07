@@ -361,7 +361,7 @@ table.zebra-table {
 
                                 <div class="row">
                                     <!-- Punya SKK -->
-                                    <div class="col-md-4" style="{{ $divStyle }}">
+                                    <div class="col-md-3" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah memiliki SKK dengan jabatan kerja yang lain ?
 
@@ -375,7 +375,7 @@ table.zebra-table {
                                     </div>
 
                                     <!-- Punya SIKI -->
-                                    <div class="col-md-4" style="{{ $divStyle }}">
+                                    <div class="col-md-3" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-patch-check" style="color: navy;"></i> Apakah sudah memiliki akun SIKI/ akun SIMPAN PUPR ?
                                         </label>
@@ -388,7 +388,7 @@ table.zebra-table {
                                     </div>
 
                                     <!-- Siap Patuhi Kode Etik -->
-                                    <div class="col-md-4" style="{{ $divStyle }}">
+                                    <div class="col-md-3" style="{{ $divStyle }}">
                                         <label class="form-label" style="{{ $labelStyle }}">
                                             <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
                                         </label>
@@ -398,6 +398,18 @@ table.zebra-table {
                                             <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                         </select>
                                         @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    </div>
+
+                                    <div class="col-md-3" style="{{ $divStyle }}">
+                                        <label class="form-label" style="{{ $labelStyle }}">
+                                            <i class="bi bi-shield-check" style="color: navy;"></i> Apakah sudah memiliki Akun Portal Perizinan PUPR ?
+                                        </label>
+                                        <select name="portalpupr" style="{{ $inputStyle }}" class="@error('portalpupr') is-invalid @enderror">
+                                            <option value="">-- Pilih --</option>
+                                            <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                            <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                        </select>
+                                        @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                     </div>
                                 </div>
                             </div>

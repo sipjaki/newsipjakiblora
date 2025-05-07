@@ -39,6 +39,7 @@ return new class extends Migration
                     $table->string('namaasosiasi')->nullable();
                     $table->string('punyaskk')->nullable();
                     $table->string('punyasiki')->nullable();
+                    $table->string('portalpupr')->nullable();
                     $table->string('siappatuh')->nullable();
                     $table->string('sertifikat')->nullable();
                     $table->boolean('verifikasipu')->default(false);
