@@ -1304,7 +1304,7 @@ public function resdaftarpelatihanpesertanew(Request $request)
     ]);
 
     // Flash message untuk memberi tahu pengguna bahwa data berhasil disimpan
-    session()->flash('daftarpelatihan', 'Formulir Berhasil di Kirim ! Silahkan untuk menunggu verifikasi DPUPR.');
+    session()->flash('daftarpelatihanandroid', 'Formulir Berhasil di Kirim ! Silahkan untuk menunggu verifikasi DPUPR.');
 
     // Redirect ke route yang sesuai setelah menyimpan data
     return redirect('/respesertapelatihan');
