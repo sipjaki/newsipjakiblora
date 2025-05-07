@@ -136,7 +136,7 @@
         <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-award"></i> LSP Penerbit
         </th>
-        <th style="width: 200px; text-align:center; vertical-align: middle;">
+        <th style="width: 300px; text-align:center; vertical-align: middle;">
             <i class="bi bi-people"></i> View Peserta
         </th>
      </tr>
