@@ -240,7 +240,7 @@ h5 {
 
                                     <div class="table-wrapper">
 
-                                        <form action="{{ route('daftarpesertapelatihancreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
+                                        <form action="{{ route('resdaftarpelatihanpesertanew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                                             @csrf
                                             <input type="hidden" name="agendapelatihan_id" value="{{ $agendapelatihan_id }}">
                                                 <br>
