@@ -275,7 +275,9 @@ h5 {
                                                                 <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap
                                                             </label>
                                                             <input type="text" name="namalengkap" style="{{ $inputStyle }}" class="@error('namalengkap') is-invalid @enderror" value="{{ old('namalengkap') }}">
-                                                            @error('namalengkap') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            @error('namalengkap')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
+                                                        @enderror
                                                         </div>
 
                                                         <div style="{{ $divStyle }}">
@@ -283,7 +285,9 @@ h5 {
                                                                 <i class="bi bi-person-badge" style="{{ $iconStyle }}"></i> NIK
                                                             </label>
                                                             <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
-                                                            @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            @error('nik')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
+                                                        @enderror
                                                         </div>
 
                                                         <div style="{{ $divStyle }}">
@@ -291,7 +295,9 @@ h5 {
                                                                 <i class="bi bi-calendar" style="{{ $iconStyle }}"></i> Tanggal Lahir
                                                             </label>
                                                             <input type="date" name="tanggallahir" style="{{ $inputStyle }}" class="@error('tanggallahir') is-invalid @enderror" value="{{ old('tanggallahir') }}">
-                                                            @error('tanggallahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            @error('tanggallahir')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
+                                                        @enderror
                                                         </div>
 
                                                         <div style="{{ $divStyle }}">
@@ -299,7 +305,9 @@ h5 {
                                                                 <i class="bi bi-telephone" style="{{ $iconStyle }}"></i> Nomor Telepon
                                                             </label>
                                                             <input type="text" name="notelepon" style="{{ $inputStyle }}" class="@error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
-                                                            @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            @error('notelepon')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
+                                                        @enderror
                                                         </div>
 
                                                         <div style="display: none;">
@@ -307,7 +315,9 @@ h5 {
                                                                 <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Sertifikat (PDF)
                                                             </label>
                                                             <input type="file" name="sertifikat" style="{{ $inputStyle }}" class="@error('sertifikat') is-invalid @enderror" accept=".pdf">
-                                                            @error('sertifikat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            {{-- @error('sertifikat')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
+                                                        @enderror --}}
                                                         </div>
                                                     </div>
 
