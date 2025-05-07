@@ -257,7 +257,7 @@ h5 {
                                                             transition: 0.3s;
                                                             font-size: 13px;
                                                         ";
-                                                        $labelStyle = "margin-bottom: 4px; font-weight: 500; display: block; font-size:15px;";
+                                                        $labelStyle = "margin-bottom: 4px; font-weight: 500; display: block; font-size:15px; text-align:left;";
                                                         $divStyle = "margin-bottom: 16px;";
                                                         $iconStyle = "color: navy;";
                                                     @endphp
