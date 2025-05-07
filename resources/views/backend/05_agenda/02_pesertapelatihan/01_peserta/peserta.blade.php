@@ -142,8 +142,8 @@
                 4: { cellWidth: 28 },   // Tgl Lahir
                 5: { cellWidth: 28 },   // No Telp
                 6: { cellWidth: 30 },   // Instansi
-                // 7: { cellWidth: 30 },   // Sertifikat
-                // 8: { cellWidth: 25 },   // Verifikasi
+                7: { cellWidth: 30 },   // Sertifikat
+                8: { cellWidth: 25 },   // Verifikasi
                 // 9: { cellWidth: 30 }    // Upload
             },
             theme: 'grid'
