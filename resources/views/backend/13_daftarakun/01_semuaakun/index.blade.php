@@ -157,7 +157,7 @@
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
-        <th style="width: 200px; text-align:center;"><i class="bi bi-person-fill"></i> Nama Lengkap</th>
+        <th style="width: 300px; text-align:center;"><i class="bi bi-person-fill"></i> Nama Lengkap</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-person-fill-gear"></i> Status Admin</th>
         <th style="width: 250px; text-align:center;"><i class="bi bi-person-badge-fill"></i> Username</th>
         <th style="width: 400px; text-align:center;"><i class="bi bi-phone-fill"></i> No Telepon</th>
