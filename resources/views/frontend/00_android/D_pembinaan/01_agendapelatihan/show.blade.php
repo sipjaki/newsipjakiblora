@@ -361,7 +361,7 @@ h5 {
 
         <br><br><br><br><br>
 
-                {{-- @include('frontend.00_android.00_fiturmenu.android') --}}
+                @include('frontend.00_android.00_fiturmenu.android')
 
     </section>
 
