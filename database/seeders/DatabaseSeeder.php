@@ -59527,7 +59527,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Siti Nurhaliza',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 3,
     'nik' => '3301021609840002',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1984-09-16',
@@ -59555,7 +59555,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Rina Marlina',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 5,
     'nik' => '3301041809860004',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1986-09-18',
@@ -59569,7 +59569,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Budi Hartono',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 2,
     'nik' => '3301051907870005',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1987-07-19',
@@ -59597,7 +59597,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Andi Setiawan',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 3,
     'nik' => '3301072109890007',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1989-09-21',
@@ -59611,7 +59611,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Linda Wulandari',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 2,
     'nik' => '3301082209900008',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1990-09-22',
@@ -59639,7 +59639,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Maya Sari Dewi',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 1,
     'nik' => '3301102409920010',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1992-09-24',
@@ -59653,7 +59653,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Riko Andrian',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 2,
     'nik' => '3302012509830011',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1983-09-25',
@@ -59667,7 +59667,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Nina Pratiwi',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 3,
     'nik' => '3302022609840012',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1984-09-26',
@@ -59695,7 +59695,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Lilis Kurniawati',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 5,
     'nik' => '3302042809860014',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1986-09-28',
@@ -59709,7 +59709,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Arief Rahman',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 6,
     'nik' => '3302052909870015',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1987-09-29',
@@ -59723,7 +59723,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Dewi Sartika',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 7,
     'nik' => '3302063009880016',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1988-09-30',
@@ -59737,7 +59737,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Bayu Saputra',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 1,
     'nik' => '3302070110890017',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1989-10-01',
@@ -59751,7 +59751,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Yuni Safitri',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 2,
     'nik' => '3302080210900018',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1990-10-02',
@@ -59765,7 +59765,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Deni Firmansyah',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 3,
     'nik' => '3302090310910019',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1991-10-03',
@@ -59794,7 +59794,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Agus Setiawan',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 5,
     'nik' => '3302110510930021',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1993-10-05',
@@ -59808,7 +59808,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Diah Ayuningtyas',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 6,
     'nik' => '3302120610940022',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1994-10-06',
@@ -59822,7 +59822,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Yoga Prasetyo',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 7,
     'nik' => '3302130710950023',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1995-10-07',
@@ -59836,7 +59836,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Sari Widyaningsih',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 1,
     'nik' => '3302140810960024',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1996-10-08',
@@ -59850,7 +59850,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Rendi Maulana',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 2,
     'nik' => '3302150910970025',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '1997-10-09',
@@ -59864,7 +59864,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Tina Ramadhani',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 3,
     'nik' => '3302161010980026',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '1998-10-10',
@@ -59892,7 +59892,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Siti Hidayah',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 5,
     'nik' => '3302181210000028',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '2000-10-12',
@@ -59906,7 +59906,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Gilang Ramadhan',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 6,
     'nik' => '3302191310010029',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '2001-10-13',
@@ -59920,7 +59920,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Mega Oktaviani',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 7,
     'nik' => '3302201410020030',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '2002-10-14',
@@ -59934,7 +59934,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Yusuf Fadillah',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 1,
     'nik' => '3302211510030031',
     'jeniskelamin' => 'Laki-laki',
     'tanggallahir' => '2003-10-15',
@@ -59948,7 +59948,7 @@ pesertapelatihan::create([
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Rina Marlina',
-    'jenjangpendidikan_id' => 4,
+    'jenjangpendidikan_id' => 2,
     'nik' => '3302221610040032',
     'jeniskelamin' => 'Perempuan',
     'tanggallahir' => '2004-10-16',
