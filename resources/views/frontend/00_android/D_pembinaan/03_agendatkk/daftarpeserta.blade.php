@@ -231,7 +231,7 @@ h5 {
                                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                             onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';">
                                                 <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
-                                                <span style="flex: 1;">{{ $title }} : {{ $agendapelatihannamakegiatan }}</span>
+                                                <span style="flex: 1;">{{ $title }} : {{ $agendaskknamakegiatan }}</span>
                                             </button>
                                         </div>
 
@@ -242,7 +242,7 @@ h5 {
 
                                         <form action="{{ route('resdaftarpelatihanpesertanew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                                             @csrf
-                                            <input type="hidden" name="agendapelatihan_id" value="{{ $agendapelatihan_id }}">
+                                            <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
                                                 <br>
 
                                             <div class="card-body">
