@@ -904,72 +904,63 @@
                 </a>
                 <ul class="nav nav-treeview">
 
-                    <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
-                          <!-- Ikon untuk Halaman Web (Rumah) -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white;">Super Admin</p>
-                        </a>
-                      </li>
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-gear text-warning"></i>
+                      <p style="color: white;">Super Admin</p>
+                    </a>
+                  </li>
 
-                    <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
-                          <!-- Ikon untuk Halaman Web (Rumah) -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white;">Admin</p>
-                        </a>
-                      </li>
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-fill text-warning"></i>
+                      <p style="color: white;">Admin</p>
+                    </a>
+                  </li>
 
-                    <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
-                          <!-- Ikon untuk Halaman Web (Rumah) -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white;">Pekerja</p>
-                        </a>
-                      </li>
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-workspace text-warning"></i>
+                      <p style="color: white;">Pekerja</p>
+                    </a>
+                  </li>
 
-                      <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
-                          <!-- Ikon untuk Halaman Web (Rumah) -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white;">Supplier Pabrik</p>
-                        </a>
-                      </li>
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-truck-front-fill text-warning"></i>
+                      <p style="color: white;">Supplier Pabrik</p>
+                    </a>
+                  </li>
 
-                      <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
-                          <!-- Ikon untuk Halaman Web (Rumah) -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white;">Supplier Peralatan</p>
-                        </a>
-                      </li>
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-tools text-warning"></i>
+                      <p style="color: white;">Supplier Peralatan</p>
+                    </a>
+                  </li>
 
-                      <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
-                          <!-- Ikon untuk Halaman Web (Rumah) -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white;">Supplier Toko Bangunan</p>
-                        </a>
-                      </li>
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-shop text-warning"></i>
+                      <p style="color: white;">Supplier Toko Bangunan</p>
+                    </a>
+                  </li>
 
-                      <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
-                          <!-- Ikon untuk Halaman Web (Rumah) -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white;">LSP Penerbit</p>
-                        </a>
-                      </li>
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-journal-text text-warning"></i>
+                      <p style="color: white;">LSP Penerbit</p>
+                    </a>
+                  </li>
 
-                      <li class="nav-item">
-                        <a href="/" target="_blank" class="nav-link">
-                          <!-- Ikon untuk Halaman Web (Rumah) -->
-                          <i class="nav-icon bi bi-house-door text-warning"></i>
-                          <p style="color: white;">Dinas</p>
-                        </a>
-                      </li>
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-building text-warning"></i>
+                      <p style="color: white;">Dinas</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
-
 
               @endcan
 {{--
