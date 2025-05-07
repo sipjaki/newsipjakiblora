@@ -151,20 +151,13 @@
             <!--begin::User Menu Dropdown-->
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                @if(Auth::user()->avatar && file_exists(public_path('storage/' . Auth::user()->avatar)))
-                <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar"
-                     class="rounded-circle shadow"
-                     style="width: 100%; max-height: 25px; object-fit: contain;" loading="lazy">
-            @elseif(Auth::user()->avatar)
-                <img src="{{ asset(Auth::user()->avatar) }}" alt="Avatar"
-                     class="rounded-circle shadow"
-                     style="width: 100%; max-height: 25px; object-fit: contain;" loading="lazy">
-            @else
-                <p>Avatar belum diupdate</p>
-            @endif
-            <span>{{Auth::user()->name}}</span>
+                @if($data->peraturan && file_exists(public_path('storage/' . $data->peraturan)))
+                        <img src="{{ asset('storage/' . $data->peraturan) }}" alt="Gambar Peraturan">
+                    @elseif($data->peraturan)
+                        <img src="{{ asset($data->peraturan) }}" alt="Gambar Peraturan">
+                    @endif
+                <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
               </a>
-
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
                 <li class="user-header text-bg-success">
