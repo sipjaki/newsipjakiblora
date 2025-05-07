@@ -642,6 +642,26 @@ headerberanda::create([
             'password' => bcrypt('indahadnmin123$$')
         ]);
 
+        User::create([
+            'id'  => 38,
+            'name'  => 'Bina Konstruksi Nusantara',
+            'username' => 'bkn',
+            'statusadmin_id' => '1',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'bkn@gmail.com',
+            'password' => bcrypt('bknadmin123$$')
+        ]);
+
+        User::create([
+            'id'  => 39,
+            'name'  => 'Manajemen Konstruksi Nusantara',
+            'username' => 'bkn',
+            'statusadmin_id' => '1',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'bkn@gmail.com',
+            'password' => bcrypt('mknadmin123$$$$')
+        ]);
+
 
         // =================================================================
         bulanrekap::create([
@@ -60235,32 +60255,99 @@ agendapelatihan::create([
 // AGENDA SKK TENAGA KERJA KONSTRUKSI
 agendaskk::create([
     'id' => 1,
-    'user_id' => 7,
+    'user_id' => 38,
     'asosiasimasjaki_id' => 99,
-    'namakegiatan' => 'Sertifikasi Keahlian Tenaga Kerja Konstruksi Bangunan Gedung - Jenjang 4',
-    'penutupan' => '2025-12-16',
-    'waktupelaksanaan' => '2025-05-15',
-    'jumlahpeserta' => 40,
-    'lokasi' => 'Jln Blora No. 10',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja konstruksi bangunan gedung.',
-    'isiagenda' => 'Peserta akan diberikan pemahaman mendalam tentang konstruksi bangunan gedung...',
+    'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Jalan - Jenjang 4',
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 15,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Pelatihan ini ditujukan bagi peserta yang ingin memperoleh sertifikasi jenjang 4 dalam bidang pelaksanaan pekerjaan jalan.',
+    'isiagenda' => 'Kegiatan ini akan mencakup pembekalan materi teknis, studi kasus lapangan, dan uji kompetensi untuk memastikan kesiapan peserta dalam pelaksanaan pekerjaan jalan. Sertifikasi diberikan oleh asosiasi resmi setelah peserta dinyatakan lulus.',
     'foto' => '01_agendapelatihan/sertifikasi2.jpg',
 ]);
 
 agendaskk::create([
     'id' => 2,
-    'user_id' => 7,
+    'user_id' => 38,
     'asosiasimasjaki_id' => 99,
-    'namakegiatan' => 'Sertifikasi Keterampilan Tukang Bangunan Sipil - Jenjang 6',
-    'penutupan' => '2025-12-16',
-    'waktupelaksanaan' => '2025-05-15',
-    'jumlahpeserta' => 40,
-    'lokasi' => 'Jln Blora No. 10',
-    'Keterangan' => 'Pelatihan dan sertifikasi tenaga kerja konstruksi bangunan gedung.',
-    'isiagenda' => 'Peserta akan diberikan pemahaman mendalam tentang konstruksi bangunan gedung...',
+    'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Irigasi - Jenjang 4',
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Kegiatan ini merupakan bagian dari program peningkatan kapasitas tenaga kerja di sektor irigasi.',
+    'isiagenda' => 'Pelatihan akan membahas teknik pelaksanaan konstruksi irigasi, manajemen proyek, serta dilengkapi dengan uji kompetensi teknis untuk mendapatkan sertifikasi jenjang 4.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+agendaskk::create([
+    'id' => 3,
+    'user_id' => 38,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Pelaksana Konstruksi Bangunan Unit Distribusi SPAM - Jenjang 4',
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Pelatihan ini ditujukan bagi tenaga kerja yang terlibat dalam pelaksanaan konstruksi unit distribusi Sistem Penyediaan Air Minum (SPAM) dan ingin mendapatkan sertifikasi jenjang 4.',
+    'isiagenda' => 'Materi pelatihan meliputi perencanaan teknis, metode pelaksanaan, pengendalian mutu, dan keselamatan kerja pada pembangunan unit distribusi SPAM. Di akhir pelatihan, peserta akan mengikuti uji kompetensi untuk mendapatkan sertifikat resmi.',
     'foto' => '01_agendapelatihan/sertifikasi2.jpg',
 ]);
 
+agendaskk::create([
+    'id' => 4,
+    'user_id' => 39,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Personil Keselamatan dan Kesehatan Kerja - Jenjang 4',
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Program pelatihan ini dirancang untuk meningkatkan kompetensi personil K3 dalam pelaksanaan proyek konstruksi.',
+    'isiagenda' => 'Peserta akan mendapatkan pembekalan mengenai prinsip-prinsip K3, identifikasi potensi bahaya, mitigasi risiko, dan penerapan standar keselamatan kerja di lapangan. Sertifikasi jenjang 4 diberikan setelah peserta dinyatakan kompeten melalui uji akhir.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+agendaskk::create([
+    'id' => 5,
+    'user_id' => 38,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Gedung - Jenjang 4',
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Pelatihan ini diperuntukkan bagi tenaga pelaksana lapangan yang menangani pembangunan gedung berskala kecil hingga menengah untuk memperoleh sertifikasi jenjang 4.',
+    'isiagenda' => 'Materi meliputi teknik pelaksanaan pekerjaan gedung, pengendalian mutu konstruksi, dan keselamatan kerja. Pelatihan diakhiri dengan uji kompetensi untuk memperoleh sertifikat sesuai jenjang yang diakui oleh asosiasi profesi.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+
+agendaskk::create([
+    'id' => 6,
+    'user_id' => 38,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Gedung Madya - Jenjang 5',
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Program ini ditujukan bagi tenaga kerja pelaksana yang telah memiliki pengalaman dan ingin meningkatkan kompetensinya ke jenjang 5 dalam bidang pekerjaan gedung skala menengah hingga besar.',
+    'isiagenda' => 'Pelatihan mencakup perencanaan teknis, pengelolaan proyek, pengawasan pelaksanaan konstruksi gedung, serta manajemen keselamatan kerja. Peserta akan mengikuti uji kompetensi sebagai syarat memperoleh sertifikasi jenjang madya.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
+
+agendaskk::create([
+    'id' => 7,
+    'user_id' => 39,
+    'asosiasimasjaki_id' => 99,
+    'namakegiatan' => 'Supervisor K3 Konstruksi Utama - Jenjang 6',
+    'penutupan' => '2025-06-17',
+    'waktupelaksanaan' => '2025-06-18',
+    'jumlahpeserta' => 10,
+    'lokasi' => 'Kabupaten Blora',
+    'Keterangan' => 'Pelatihan ini diperuntukkan bagi tenaga kerja konstruksi yang bertanggung jawab sebagai pengawas keselamatan dan kesehatan kerja pada proyek konstruksi berskala besar.',
+    'isiagenda' => 'Peserta akan mendapatkan pelatihan mendalam tentang sistem manajemen K3, identifikasi risiko tinggi di lingkungan konstruksi, penerapan regulasi K3, serta pelaporan dan audit K3. Sertifikasi jenjang 6 diberikan bagi peserta yang lulus uji kompetensi sebagai Supervisor K3 Konstruksi Utama.',
+    'foto' => '01_agendapelatihan/sertifikasi2.jpg',
+]);
 
 subhargadiv2::create([
     'hspkonstruksiumum2_id' => 1,
