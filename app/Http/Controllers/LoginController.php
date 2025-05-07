@@ -214,4 +214,76 @@ return redirect()->back()->with('error', 'Item not found');
 }
 
 
+
+
+
+public function akuncreate()
+{
+
+    $data = User::all();
+
+    return view('backend.13_daftarakun.01_semuaakun.index',[
+        'title' => 'Buat AKun !',
+        'data' => $data,
+
+    ]);
+}
+
+public function akuncreatenew(Request $request)
+{
+    $validatedData = $request->validate([
+        'statusadmin_id' => 'required|string',
+        'name'           => 'required|string|max:255',
+        'username'       => 'required|string|max:255',
+        'phone_number'   => 'required|string|max:255',
+        'email'          => 'required|email|unique:users,email',
+        'avatar'         => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+    ], [
+        'statusadmin_id.required' => 'Status Admin wajib dipilih!',
+        'name.required'           => 'Nama wajib diisi!',
+        'username.required'       => 'Username wajib diisi!',
+        'phone_number.required'   => 'Nomor HP wajib diisi!',
+        'email.required'          => 'Email wajib diisi!',
+        'email.unique'            => 'Email sudah terdaftar!',
+        'avatar.image'            => 'Avatar harus berupa gambar!',
+        'avatar.mimes'            => 'Avatar harus berupa file JPEG, JPG, atau PNG!',
+    ]);
+
+    // Default avatar jika tidak diunggah
+    $avatarPath = 'assets/abgblora/logo/iconabgblora.png';
+
+    // Simpan avatar jika diupload
+    if ($request->hasFile('avatar')) {
+        $file = $request->file('avatar');
+        $namaFile = time() . '_' . $file->getClientOriginalName();
+        $tujuanPath = public_path('00_user/akun');
+
+        // Buat folder jika belum ada
+        if (!file_exists($tujuanPath)) {
+            mkdir($tujuanPath, 0777, true);
+        }
+
+        // Pindahkan file ke direktori tujuan
+        $file->move($tujuanPath, $namaFile);
+
+        $avatarPath = '00_user/akun/' . $namaFile;
+    }
+
+    // Simpan user ke database
+    User::create([
+        'statusadmin_id' => $validatedData['statusadmin_id'],
+        'name'           => $validatedData['name'],
+        'username'       => $validatedData['username'],
+        'phone_number'   => $validatedData['phone_number'],
+        'email'          => $validatedData['email'],
+        'avatar'         => $avatarPath,
+        'password'       => bcrypt('password123'), // ganti dengan sistem password sesungguhnya
+    ]);
+
+    session()->flash('create', 'Data pengguna berhasil dibuat!');
+    return redirect('/allakun'); // sesuaikan route tujuan
+}
+
+
+
 }

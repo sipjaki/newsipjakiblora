@@ -946,6 +946,10 @@ Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiContr
 
 Route::get('/allakun', [LoginController::class, 'allakun'])->middleware('auth');
 Route::delete('/allsemuaakun/delete/{name}', [LoginController::class, 'allsemuaakun'])->middleware('auth');
+Route::get('/akuncreate', [LoginController::class, 'akuncreate'])->middleware('auth');
+
+Route::post('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'])->middleware('auth')->name('akuncreatenew');
+
 
 
 
