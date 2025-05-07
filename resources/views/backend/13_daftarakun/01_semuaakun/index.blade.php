@@ -129,7 +129,7 @@
 
 
 
-                         <button onclick="exportTableToExcel('tabelBujkkonstruksi', 'data_bujkkonstruksi')"
+                         <button onclick="exportTableToExcel('tabelSemuaakun', 'data_semuaakun')"
                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                          onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
                          style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
@@ -153,7 +153,7 @@
                  <div class="card-body p-0">
                      <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
 
-<table id="tabelBujkkonstruksi" class="zebra-table table-striped" >
+<table id="tabelSemuaakun" class="zebra-table table-striped" >
  <thead>
      <tr>
         <th style="width: 75px; text-align:center;"><i class="bi bi-list-ol"></i> No</th>
