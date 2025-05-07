@@ -740,9 +740,7 @@ public function reasasosiasimasjakikontraktor($namaasosiasi)
                   });
 
         }
-
-        $datapesertapelatihan = $query->paginate($perPage);
-
+        $datapesertapelatihan = $query->orderByDesc('created_at')->paginate($perPage);
         if ($request->ajax()) {
             return response()->json([
                 'html' => view('frontend.00_android.D_pembinaan.02_pesertapelatihan.partials.table', compact('data'))->render()
