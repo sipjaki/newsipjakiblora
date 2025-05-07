@@ -137,7 +137,7 @@
                             <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
                         </button>
 
-                         <a href="/akuncreatenew/createnew">
+                         <a href="/akuncreate">
                              <button
                              onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                              onmouseout="this.style.backgroundColor='#007bff'; this.style.color='white';"
