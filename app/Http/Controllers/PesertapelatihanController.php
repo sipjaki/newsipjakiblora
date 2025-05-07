@@ -166,7 +166,8 @@ public function bepesertapelatihanindex(Request $request)
                             'tanggallahir',
                             'notelepon',
                             'sertifikat',
-                            'verifikasi'
+                            'verifikasi',
+                            'verifikasikehadiran'
                         ]);
 
             // Filter pencarian (jika ada)
