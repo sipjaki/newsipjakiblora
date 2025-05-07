@@ -237,7 +237,7 @@ h5 {
                                                 {{$item->namalengkap}}
                                             </td>
                                             <td style="text-align: center;">{{$item->jeniskelamin}}</td>
-                                            <td>{{$item->instansi}}</td>
+                                            <td style="text-align: left">{{$item->instansi}}</td>
 
                                         </tr>
                                         @endforeach
