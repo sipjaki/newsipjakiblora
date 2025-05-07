@@ -13091,7 +13091,8 @@ allskktenagakerjablora::create([
     'namaasosiasi' => 'Perorangan',
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
+    'siappatuh' => 'YA',
+    'portalpupr' => 'YA',
     'verifikasipu' => false,
     'verifikasilps' => false,
 ]);
@@ -13120,7 +13121,8 @@ allskktenagakerjablora::create([
     'namaasosiasi' => 'Perorangan',
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
+   'siappatuh' => 'YA',
+    'portalpupr' => 'YA',
     'verifikasipu' => false,
     'verifikasilps' => false,
 ]);
@@ -13149,7 +13151,8 @@ allskktenagakerjablora::create([
     'namaasosiasi' => 'Perorangan',
     'punyaskk' => 'TIDAK',
     'punyasiki' => 'TIDAK',
-    'siappatuh' => 'BERSEDIA',
+   'siappatuh' => 'YA',
+    'portalpupr' => 'YA',
     'verifikasipu' => false,
     'verifikasilps' => false,
 ]);
