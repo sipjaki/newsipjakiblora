@@ -200,7 +200,7 @@ h5 {
 
                 <div class="container-surat">
                     <div>
-                        <a href="/resdaftarpelatihanpeserta/{{$data->namakegiatan}}">
+                        <a href="/resdaftarpelatihanpeserta/create/{{$data->id}}">
                             <button
                             class="btn-navy"
                             onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
