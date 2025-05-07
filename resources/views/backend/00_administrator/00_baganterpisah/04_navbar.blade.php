@@ -151,10 +151,10 @@
             <!--begin::User Menu Dropdown-->
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                @if($data->avatar && file_exists(public_path('storage/' . $data->avatar)))
-                        <img src="{{ asset('storage/' . $data->avatar) }}" alt="Gambar avatar">
-                    @elseif($data->avatar)
-                        <img src="{{ asset($data->avatar) }}" alt="Gambar avatar">
+                @if(Auth::user()->avatar && file_exists(public_path('storage/' . Auth::user()->avatar)))
+                        <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Gambar avatar">
+                    @elseif(Auth::user()->avatar)
+                        <img src="{{ asset(Auth::user()->avatar) }}" alt="Gambar avatar">
                     @endif
                 <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
               </a>
