@@ -168,7 +168,7 @@
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
                 cursor: not-allowed;
             ">
-            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> DI TERIMA
         </button>
     @endif
 </td>
