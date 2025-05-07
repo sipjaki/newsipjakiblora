@@ -155,6 +155,7 @@ h5 {
 </style>
 @include('frontend.00_android.00_fiturmenu.header')
 
+@include('backend.00_administrator.00_baganterpisah.11_alert')
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
     <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-white overflow-x-hidden">
         <div class="header flex flex-col bg-[#56BBC5] overflow-hidden h-[350px] relative -mb-[92px]">
