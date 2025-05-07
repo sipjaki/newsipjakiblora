@@ -185,8 +185,18 @@ h5 {
             <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
 
                 <div class="container-surat">
+                    <div>
+                        <button
+                            class="btn-navy"
+                            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black'; this.style.border='1px solid navy';"
+                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white'; this.querySelector('i').style.color='white'; this.style.border='none';"
+                            onclick="window.location.href='your-link-here.html'"
+                        >
+                            <i class="bi bi-person-fill" style="color: white;"></i>
+                            Daftar
+                        </button>
+                    </div>
                     <div class="header-surat">
-                        <button>Daftar</button>
                         <div class="header-text">
                             <h3>AGENDA PELATIHAN TKK KABUPATEN BLORA </h3>
                             <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
