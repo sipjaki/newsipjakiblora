@@ -149,80 +149,21 @@
 
                                     <!-- Right Column (6/12) -->
                                     <div class="col-md-6">
-
                                         <div class="mb-3">
-                                            <label class="form-label" for="pju">
-                                                <i class="bi bi-lightbulb" style="margin-right: 8px; color: navy;"></i> PJU
+                                            <label class="form-label" for="avatar">
+                                                <i class="bi bi-person-circle" style="margin-right: 8px; color: navy;"></i> Upload Foto Profil
                                             </label>
-                                            <input type="text" id="pju" name="pju" class="form-control @error('pju') is-invalid @enderror" value="{{ old('pju') }}" />
-                                            @error('pju')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-                                        <!-- No Akte -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_akte">
-                                                <i class="bi bi-file-earmark" style="margin-right: 8px; color: navy;"></i> No Akte
-                                            </label>
-                                            <input type="text" id="no_akte" name="no_akte" class="form-control @error('no_akte') is-invalid @enderror" value="{{ old('no_akte') }}" />
-                                            @error('no_akte')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                            <input type="file" id="avatar" name="avatar"
+                                                class="form-control @error('avatar') is-invalid @enderror"
+                                                accept="image/*" onchange="previewImage('avatar', 'previewFoto')" />
 
-                                        <!-- Tanggal -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal">
-                                                <i class="bi bi-calendar" style="margin-right: 8px; color: navy;"></i> Tanggal
-                                            </label>
-                                            <input type="date" id="tanggal" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror" value="{{ old('tanggal') }}" />
-                                            @error('tanggal')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Nama Notaris -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_notaris">
-                                                <i class="bi bi-person-check" style="margin-right: 8px; color: navy;"></i> Nama Notaris
-                                            </label>
-                                            <input type="text" id="nama_notaris" name="nama_notaris" class="form-control @error('nama_notaris') is-invalid @enderror" value="{{ old('nama_notaris') }}" />
-                                            @error('nama_notaris')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- No Pengesahan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="no_pengesahan">
-                                                <i class="bi bi-file-earmark-check" style="margin-right: 8px; color: navy;"></i> No Pengesahan
-                                            </label>
-                                            <input type="text" id="no_pengesahan" name="no_pengesahan" class="form-control @error('no_pengesahan') is-invalid @enderror" value="{{ old('no_pengesahan') }}" />
-                                            @error('no_pengesahan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="uploadberkas">
-                                                <i class="bi bi-file-earmark-pdf" style="margin-right: 8px; color: navy;"></i> Upload Berkas
-                                            </label>
-                                            <input type="file" id="uploadberkas" name="uploadberkas"
-                                                class="form-control @error('uploadberkas') is-invalid @enderror"
-                                                onchange="previewFile('uploadberkas', 'previewFoto')" />
-
-                                            <div class="mt-2">
-                                                <!-- Preview Image or PDF -->
-                                                <div id="previewContainer">
-                                                    <img id="previewFoto"
-                                                        src="{{ old('uploadberkas') ? asset('03_datajakon/01_sertifikasi/' . old('uploadberkas')) : '' }}"
-                                                        style="max-width: 100%; max-height: 200px; margin-top: 10px;" />
-
-                                                    <canvas id="pdfPreview" style="display: none; max-width: 100%; max-height: 200px; margin-top: 10px;"></canvas>
-                                                </div>
+                                            <div class="mt-2" id="previewContainer">
+                                                <img id="previewFoto"
+                                                    src="{{ old('avatar') ? asset('storage/' . old('avatar')) : '' }}"
+                                                    style="max-width: 100%; max-height: 200px; margin-top: 10px; display: {{ old('avatar') ? 'block' : 'none' }};" />
                                             </div>
 
-                                            @error('uploadberkas')
+                                            @error('avatar')
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
