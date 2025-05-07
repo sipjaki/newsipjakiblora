@@ -301,7 +301,13 @@ h5 {
                                                                     </option>
                                                                 @endforeach
                                                             </select>
-                                                            @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            {{-- @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('jenjangpendidikan_id')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+
                                                         </div>
 
                                                         <!-- Jabatan Kerja -->
@@ -317,7 +323,13 @@ h5 {
                                                                     </option>
                                                                 @endforeach
                                                             </select>
-                                                            @error('jabatankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            {{-- @error('jabatankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('jabatankerja_id')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+
                                                         </div>
 
                                                         <!-- Nama Sekolah -->
@@ -334,7 +346,13 @@ h5 {
                                                                 @endforeach
                                                             </select>
                                                             Ket: Silahkan hubungi <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                                                            @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            {{-- @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('namasekolah_id')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+
                                                         </div>
 
                                                         <!-- Tahun Bimtek -->
@@ -350,7 +368,13 @@ h5 {
                                                                     </option>
                                                                 @endforeach
                                                             </select>
-                                                            @error('tahunpilihan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            {{-- @error('tahunpilihan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('tahunpilihan_id')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
+
                                                         </div>
 
                                                     </div>
@@ -364,8 +388,14 @@ h5 {
                                                                     <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                                                 </label>
                                                                 <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
-                                                                @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                                            </div>
+                                                                {{-- @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+
+                                                                @error('tempatlahir')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+                                                                </div>
 
                                                             <!-- Tanggal Lahir -->
                                                             <div class="col-md-6" style="{{ $divStyle }}">
@@ -373,7 +403,12 @@ h5 {
                                                                     <i class="bi bi-calendar" style="color: navy;"></i> Tanggal Lahir
                                                                 </label>
                                                                 <input type="date" name="ttl" style="{{ $inputStyle }}" class="@error('ttl') is-invalid @enderror" value="{{ old('ttl') }}">
-                                                                @error('ttl') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('ttl') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('ttl')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
 
                                                             <!-- Jenis Kelamin -->
@@ -386,7 +421,12 @@ h5 {
                                                                     <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                                                                     <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                                                                 </select>
-                                                                @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('jeniskelamin')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
 
                                                             <!-- Nomor Telepon -->
@@ -395,7 +435,12 @@ h5 {
                                                                     <i class="bi bi-telephone" style="color: navy;"></i> Nomor Telepon
                                                                 </label>
                                                                 <input type="text" name="notelepon" style="{{ $inputStyle }}" class="@error('notelepon') is-invalid @enderror" value="{{ old('notelepon') }}">
-                                                                @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('notelepon') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('notelepon')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
 
                                                             <!-- Email -->
@@ -404,7 +449,12 @@ h5 {
                                                                     <i class="bi bi-envelope" style="color: navy;"></i> Email
                                                                 </label>
                                                                 <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
-                                                                @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('email')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
 
                                                             <!-- Tahun Lulus -->
@@ -413,7 +463,12 @@ h5 {
                                                                     <i class="bi bi-hourglass-split" style="color: navy;"></i> Tahun Lulus
                                                                 </label>
                                                                 <input type="number" name="tahunlulus" style="{{ $inputStyle }}" class="@error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus') }}">
-                                                                @error('tahunlulus') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('tahunlulus') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('tahunlulus')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
                         <!-- Alamat -->
                                                             <div class="col-md-12" style="{{ $divStyle }}">
@@ -421,7 +476,13 @@ h5 {
                                                                     <i class="bi bi-house" style="color: navy;"></i> Alamat
                                                                 </label>
                                                                 <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
-                                                                @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('alamat')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -434,7 +495,12 @@ h5 {
                                                                 <i class="bi bi-diagram-3" style="color: navy;"></i> Utusan
                                                             </label>
                                                             <input type="text" name="namaasosiasi" style="{{ $inputStyle }}" class="@error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}">
-                                                            @error('namaasosiasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            {{-- @error('namaasosiasi') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('namaasosiasi')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                             <p>Keterangan : Badan Usaha/ Perorangan/ Instansi/ Badan Usaha</p>
                                                         </div>
 
@@ -450,7 +516,12 @@ h5 {
                                                                     <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                                                     <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                                                 </select>
-                                                                @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('punyaskk')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
 
                                                             <!-- Punya SIKI -->
@@ -463,7 +534,12 @@ h5 {
                                                                     <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                                                     <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                                                 </select>
-                                                                @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('punyasiki')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
 
                                                             <!-- Siap Patuhi Kode Etik -->
@@ -476,7 +552,12 @@ h5 {
                                                                     <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                                                     <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                                                 </select>
-                                                                @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('siappatuh')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
 
                                                             <div class="col-md-3" style="{{ $divStyle }}">
@@ -488,7 +569,12 @@ h5 {
                                                                     <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
                                                                     <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
                                                                 </select>
-                                                                @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('portalpupr')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             </div>
                                                         </div>
                                                     </div>
@@ -502,7 +588,12 @@ h5 {
                                                                 <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP
                                                             </label>
                                                             <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
-                                                            <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div>
+                                                            {{-- <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadktp')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                    {{ $message }}
+                                                                </div>
+                                                            @enderror
                                                             <div id="ktpPreview" class="preview-container"></div>
                                                         </div>
 
@@ -512,7 +603,12 @@ h5 {
                                                                 <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah
                                                             </label>
                                                             <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
-                                                            <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
+                                                            {{-- <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadfoto')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                             <div id="fotoPreview" class="preview-container"></div>
                                                         </div>
 
@@ -522,7 +618,12 @@ h5 {
                                                                 <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah
                                                             </label>
                                                             <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
-                                                            <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div>
+                                                            {{-- <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadijazah')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                             <div id="ijazahPreview" class="preview-container"></div>
                                                         </div>
                                                     </div>
@@ -559,7 +660,12 @@ h5 {
                                                         </label>
 
                                                             <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
-                                                            <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
+                                                            {{-- <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadpengalaman')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                             <div id="pengalamanPreview" class="preview-container"></div>
                                                         </div>
 
@@ -569,7 +675,12 @@ h5 {
                                                                 <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP
                                                             </label>
                                                             <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
-                                                            <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
+                                                            {{-- <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div> --}}
+                                                            @error('uploadnpwp')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                             <p>Ket : Wajib NPWP K3 dan Jenjang 5, 6 </p>
                                                             <div id="npwpPreview" class="preview-container"></div>
                                                         </div>
@@ -580,7 +691,12 @@ h5 {
                                                                 <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup
                                                             </label>
                                                             <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
-                                                            <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div>
+                                                            {{-- <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div> --}}
+                                                            @error('uploaddaftarriwayathidup')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                             <div id="riwayatPreview" class="preview-container"></div>
                                                         </div>
                                                     </div>
@@ -614,7 +730,12 @@ h5 {
         </label>
 
         <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
-        <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
+        {{-- <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div> --}}
+        @error('uploadkebenarandata')
+        <div class="invalid-feedback" style="color: red; font-size: 13px;">
+            {{ $message }}
+        </div>
+    @enderror
         <div id="kebenaranDataPreview" class="preview-container"></div>
     </div>
 
