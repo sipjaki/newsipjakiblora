@@ -162,7 +162,9 @@
             @else
                 <p>Avatar belum diupdate</p>
             @endif
+            <span>{{Auth::user()->name}}</span>
               </a>
+
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
                 <li class="user-header text-bg-success">
