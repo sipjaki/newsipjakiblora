@@ -487,21 +487,21 @@ table.zebra-table {
                 $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
             }
         }
-    @endphp
+        @endphp
 
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
-        @if ($fileDownload)
-            <a href="{{ $fileDownload }}" download style="color:red;">
-                Contoh Pengalaman Kerja <i class="bi bi-download"></i>
-            </a>
-            {{-- <div style="font-size: 0.9em; color: gray;">
-                File: {{ $firstItem->berkas }}
-            </div> --}}
+<label class="form-label" style="{{ $labelStyle }}">
+    <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
+    @if ($fileDownload)
+    <a href="{{ $fileDownload }}" download style="color:red;">
+        Contoh Pengalaman Kerja <i class="bi bi-download"></i>
+    </a>
+    {{-- <div style="font-size: 0.9em; color: gray;">
+        File: {{ $firstItem->berkas }}
+    </div> --}}
         @else
             <span style="color: gray;">Contoh belum tersedia</span>
-        @endif
-    </label>
+            @endif
+        </label>
 
         <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
         <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
@@ -529,6 +529,40 @@ table.zebra-table {
         <div id="riwayatPreview" class="preview-container"></div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-4" style="{{ $divStyle }}">
+        @php
+            $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
+            $fileDownload = null;
+
+            if ($secondItem && $secondItem->berkas) {
+                $path = public_path('storage/' . $secondItem->berkas);
+                if (file_exists($path)) {
+                    $fileDownload = asset('storage/' . $secondItem->berkas);
+                } else {
+                    $fileDownload = asset($secondItem->berkas); // fallback jika path bukan di storage
+                }
+            }
+        @endphp
+
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data |
+            @if ($fileDownload)
+                <a href="{{ $fileDownload }}" download style="color:red;">
+                    Contoh Surat Pernyataan <i class="bi bi-download"></i>
+                </a>
+            @else
+                <span style="color: gray;">Contoh belum tersedia</span>
+            @endif
+        </label>
+
+        <input type="file" name="uploadkebenarandata" style="{{ $inputStyle }}" class="form-control @error('uploadkebenarandata') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('kebenaranDataPreview', this)">
+        <div class="invalid-feedback">@error('uploadkebenarandata') {{ $message }} @enderror</div>
+        <div id="kebenaranDataPreview" class="preview-container"></div>
+    </div>
+
+    </div>
 
 <script>
     function previewFile(previewId, input) {
