@@ -222,7 +222,7 @@ public function akuncreate()
 
     $data = User::all();
 
-    return view('backend.13_daftarakun.01_semuaakun.index',[
+    return view('backend.13_daftarakun.01_semuaakun.create',[
         'title' => 'Buat AKun !',
         'data' => $data,
 
