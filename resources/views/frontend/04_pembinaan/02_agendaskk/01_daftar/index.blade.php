@@ -188,7 +188,7 @@ table.zebra-table {
                                         transition: 0.3s;
                                         font-size: 14px;
                                     ";
-                                    $labelStyle = "margin-bottom: 6px; font-weight: 200; display: block; font-size:13px;";
+                                    $labelStyle = "margin-bottom: 6px; font-weight: 200; display: block; font-size:15px;";
                                     $divStyle = "margin-bottom: 20px;";
                                     $iconStyle = "color: navy;";
                                 @endphp
