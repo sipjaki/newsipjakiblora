@@ -1,4 +1,18 @@
 <style>
+        .btn-navy {
+        background-color: navy;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
 
     /* Styling untuk tabel */
     .custom-fl-table {
