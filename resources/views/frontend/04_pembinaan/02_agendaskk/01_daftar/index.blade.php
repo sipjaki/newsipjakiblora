@@ -461,21 +461,30 @@ table.zebra-table {
     <!-- Upload Pengalaman -->
     <div class="col-md-4" style="{{ $divStyle }}">
         @php
-        $contohSurat = $datacontohsurat->first();
-    @endphp
+    $fileDownload = null;
 
-    @if($contohSurat && $contohSurat->berkas)
-        @php
-            $filePath = file_exists(public_path('storage/' . $contohSurat->berkas))
-                ? asset('storage/' . $contohSurat->berkas)
-                : asset($contohSurat->berkas);
-        @endphp
+    foreach ($datacontohsurat as $item) {
+        if ($item->berkas) {
+            $path = public_path('storage/' . $item->berkas);
+            if (file_exists($path)) {
+                $fileDownload = asset('storage/' . $item->berkas);
+                break;
+            } else {
+                $fileDownload = asset($item->berkas); // fallback dari path luar storage
+                break;
+            }
+        }
+    }
+@endphp
 
-        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman
-        <a href="{{ $filePath }}" download>
-            Contoh Pengalaman Kerja <i class="bi bi-download"></i>
-        </a>
+<label class="form-label" style="{{ $labelStyle }}">
+    <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman
+    @if ($fileDownload)
+        <a href="{{ $fileDownload }}" download>Contoh Pengalaman Kerja <i class="bi bi-download"></i></a>
+    @else
+        <span style="color: gray;">Contoh belum tersedia</span>
     @endif
+</label>
 
         <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
         <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
