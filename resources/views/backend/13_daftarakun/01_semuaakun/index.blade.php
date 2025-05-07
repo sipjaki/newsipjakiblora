@@ -178,7 +178,7 @@
                 <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                         onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                    Data Belum Di Update
+                    Data Belum Di Update !
                 </button>
             @endif
         </td>
@@ -190,7 +190,7 @@
                 <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                         onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                    Data Belum Di Update
+                    Data Belum Di Update !
                 </button>
             @endif
         </td>
@@ -202,7 +202,7 @@
                 <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                         onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                    Data Belum Di Update
+                    Data Belum Di Update !
                 </button>
             @endif
         </td>
@@ -214,7 +214,7 @@
                 <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                         onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                    Data Belum Di Update
+                    Data Belum Di Update !
                 </button>
             @endif
         </td>
@@ -226,7 +226,7 @@
                 <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                         onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
-                    Data Belum Di Update
+                    Data Belum Di Update !
                 </button>
             @endif
         </td>
@@ -273,9 +273,9 @@
                 </td>
 
         <td style="text-align: center; vertical-align: middle;">
-            <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
+            {{-- <a href="/bebujkkonstruksi/show/{{$item->namalengkap}}" class="btn btn-sm btn-info me-2" title="Show">
                 <i class="bi bi-eye"></i>
-            </a>
+            </a> --}}
             <a href="/bebujkkonstruksi/update/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Update">
                 <i class="bi bi-pencil-square"></i>
             </a>
