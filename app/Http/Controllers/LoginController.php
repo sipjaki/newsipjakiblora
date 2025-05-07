@@ -154,5 +154,40 @@ public function authenticate(Request $request)
     }
 
 
+// DAFTAR AKUN MASUK MAS JAKI BLORA
+
+public function allakun(Request $request)
+{
+    $perPage = $request->input('perPage', 15);
+    $search = $request->input('search');
+
+    $query = User::query();
+
+    if ($search) {
+        $query->where('name', 'LIKE', "%{$search}%")
+              ->orWhere('username', 'LIKE', "%{$search}%")
+              ->orWhere('phone_number', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('avatar', 'LIKE', "%{$search}%")
+              ->orWhereHas('statusadmin', function ($q) use ($search) {
+                  $q->where('statusadmin', 'LIKE', "%{$search}%");
+              });
+    }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.13_daftarakun.01_semuaakun.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.13_daftarakun.01_semuaakun.index', [
+        'title' => 'Daftar Semua Akun',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
 
 }

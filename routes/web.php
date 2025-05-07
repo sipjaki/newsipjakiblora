@@ -901,7 +901,6 @@ Route::delete('/beagendaskkmateriskk/delete/{id}', [PembinaanController::class, 
 Route::get('/daftarpesertasertifikasiskk/create/{id}', [AgendaskkController::class, 'daftarpesertasertifikasiskknew'])->middleware('auth')->name('daftarpesertasertifikasiskk');
 Route::post('/daftarpesertasertifikasiskk/createmateri/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreatenew'])->middleware('auth')->name('daftarpesertasertifikasiskkcreatenew');
 
-// PEKERJAANINI
 
 Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagendaskkpesertashow'])->middleware('auth');
 
@@ -942,6 +941,11 @@ Route::post('/betertibjakonusahasurat1/updatecreate', [TertibjasakonstruksiContr
 
 
 // MENU PENGAWASAN TERTIB JAKON PEMANFAATAN
+// PEKERJAANINI
+// ROUTE UNTUK DAFTAR AKUN
+
+Route::get('/allakun', [LoginController::class, 'allakun'])->middleware('auth');
+
 
 
 // ------------------- BACKEND BAGIAN HIMBAUAN DINAS ---------------------------
