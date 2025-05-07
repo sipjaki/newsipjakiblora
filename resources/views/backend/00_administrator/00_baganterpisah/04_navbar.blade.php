@@ -150,24 +150,24 @@
             <!--end::Fullscreen Toggle-->
             <!--begin::User Menu Dropdown-->
             <li class="nav-item dropdown user-menu">
-                <div style="margin-top: 10px;">
-                    @if(Auth::user()->avatar && file_exists(public_path('storage/' . Auth::user()->avatar)))
-                        <!-- Menampilkan avatar dari storage -->
-                        <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar"
-                             class="user-image rounded-circle shadow"
-                             style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                        <p class="mt-2 text-center">{{ Auth::user()->name }}</p>
-                    @elseif(Auth::user()->avatar)
-                        <!-- Menampilkan avatar dari path luar storage -->
-                        <img src="{{ asset(Auth::user()->avatar) }}" alt="Avatar"
-                             class="user-image rounded-circle shadow"
-                             style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                        <p class="mt-2 text-center">{{ Auth::user()->name }}</p>
-                    @else
-                        <!-- Placeholder jika tidak ada avatar -->
-                        <p>Avatar belum diupdate</p>
-                    @endif
-                </div>
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                @if(Auth::user()->avatar && file_exists(public_path('storage/' . Auth::user()->avatar)))
+                <!-- Menampilkan avatar dari storage -->
+                <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar"
+                     class="user-image rounded-circle shadow"
+                     style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                <p class="mt-2 text-center">{{ Auth::user()->name }}</p>
+            @elseif(Auth::user()->avatar)
+                <!-- Menampilkan avatar dari path luar storage -->
+                <img src="{{ asset(Auth::user()->avatar) }}" alt="Avatar"
+                     class="user-image rounded-circle shadow"
+                     style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                <p class="mt-2 text-center">{{ Auth::user()->name }}</p>
+            @else
+                <!-- Placeholder jika tidak ada avatar -->
+                <p>Avatar belum diupdate</p>
+            @endif
+              </a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
                 <li class="user-header text-bg-success">
