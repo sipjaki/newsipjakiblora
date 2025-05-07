@@ -243,6 +243,7 @@ h5 {
                                         <form action="{{ route('daftarpesertasertifikasiskkcreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                                             @csrf
                                             <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
+                                                <br>
 
                                             <div class="card-body">
                                                 <div class="row">
@@ -250,24 +251,28 @@ h5 {
                                                         @php
                                                         $inputStyle = "
                                                             width: 100%;
-                                                            max-width: 500px; /* agar tidak terlalu panjang di layar besar */
-                                                            padding: 6px 10px;
-                                                            border-radius: 6px;
+                                                            padding: 10px 14px;
+                                                            border-radius: 8px;
                                                             border: 1px solid #ccc;
                                                             transition: 0.3s;
-                                                            font-size: 13px;
+                                                            font-size: 14px;
                                                         ";
-                                                        $labelStyle = "margin-bottom: 4px; font-weight: 500; display: block; font-size:15px;";
-                                                        $divStyle = "margin-bottom: 16px;";
-                                                        $iconStyle = "color: navy;";
-                                                    @endphp
-                                                  <!-- Input tersembunyi untuk dikirim ke backend -->
-                                                        <input type="hidden" name="user_id" value="{{ old('user_id', $user_id) }}">
 
-                                                        <!-- Tampilan Nama Lengkap (readonly) -->
-                                                        <div style="{{ $divStyle }} display: flex; align-items: center; gap: 12px;">
-                                                            <label class="form-label" style="width: 150px; {{ $labelStyle }}">
-                                                                <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap
+                                                        $labelStyle = "
+                                                            margin-bottom: 6px;
+                                                            font-weight: 500;
+                                                            display: block;
+                                                            text-align: left;
+                                                        ";
+
+                                                        $divStyle = "margin-bottom: 20px;";
+                                                        $iconStyle = "color: navy;";
+                                                        $errorTextStyle = "color: red; font-size: 12px; margin-top: 4px;";
+                                                    @endphp
+
+                                                        <div style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
                                                             </label>
                                                             <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
                                                         </div>
@@ -279,74 +284,73 @@ h5 {
                                                             <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
                                                             @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                                         </div>
-                                                        <div class="row">
-                                                            <!-- Jenjang Pendidikan -->
-                                                            <div class="col-md-6" style="{{ $divStyle }}">
-                                                                <label class="form-label" style="{{ $labelStyle }}">
-                                                                    <i class="bi bi-mortarboard" style="{{ $iconStyle }}"></i> Jenjang Pendidikan
-                                                                </label>
-                                                                <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="form-select @error('jenjangpendidikan_id') is-invalid @enderror">
-                                                                    <option value="">-- Pilih Jenjang Pendidikan --</option>
-                                                                    @foreach($jenjangpendidikan as $item)
-                                                                        <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
-                                                                            {{ $item->jenjangpendidikan }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                                @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                                            </div>
 
-                                                            <!-- Jabatan Kerja -->
-                                                            <div class="col-md-6" style="{{ $divStyle }}">
-                                                                <label class="form-label" style="{{ $labelStyle }}">
-                                                                    <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
-                                                                </label>
-                                                                <select name="jabatankerja_id" style="{{ $inputStyle }}" class="form-select @error('jabatankerja_id') is-invalid @enderror">
-                                                                    <option value="">-- Pilih Jabatan Kerja --</option>
-                                                                    @foreach($jabatankerja as $item)
-                                                                        <option value="{{ $item->id }}" {{ old('jabatankerja_id') == $item->id ? 'selected' : '' }}>
-                                                                            {{ $item->jabatankerja }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                                @error('jabatankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                                            </div>
+                                                        <div class="col-md-6" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-mortarboard" style="{{ $iconStyle }}"></i> Jenjang Pendidikan
+                                                            </label>
+                                                            <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="form-select @error('jenjangpendidikan_id') is-invalid @enderror">
+                                                                <option value="">-- Pilih Jenjang Pendidikan --</option>
+                                                                @foreach($jenjangpendidikan as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('jenjangpendidikan_id') == $item->id ? 'selected' : '' }}>
+                                                                        {{ $item->jenjangpendidikan }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                        </div>
 
-                                                            <!-- Nama Sekolah -->
-                                                            <div class="col-md-6" style="{{ $divStyle }}">
-                                                                <label class="form-label" style="{{ $labelStyle }}">
-                                                                    <i class="bi bi-building" style="{{ $iconStyle }}"></i> Nama Sekolah
-                                                                </label>
-                                                                <select name="namasekolah_id" style="{{ $inputStyle }}" class="form-select @error('namasekolah_id') is-invalid @enderror">
-                                                                    <option value="">-- Pilih Universitas/Sekolah/Instansi --</option>
-                                                                    @foreach($sekolah as $item)
-                                                                        <option value="{{ $item->id }}" {{ old('namasekolah_id') == $item->id ? 'selected' : '' }}>
-                                                                            {{ $item->namasekolah }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                                Ket: Silahkan hubungi <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a>
-                                                                @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                                            </div>
+                                                        <!-- Jabatan Kerja -->
+                                                        <div class="col-md-6" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
+                                                            </label>
+                                                            <select name="jabatankerja_id" style="{{ $inputStyle }}" class="form-select @error('jabatankerja_id') is-invalid @enderror">
+                                                                <option value="">-- Pilih Jabatan Kerja --</option>
+                                                                @foreach($jabatankerja as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('jabatankerja_id') == $item->id ? 'selected' : '' }}>
+                                                                        {{ $item->jabatankerja }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            @error('jabatankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                        </div>
 
-                                                            <!-- Tahun Bimtek -->
-                                                            <div class="col-md-6" style="{{ $divStyle }}">
-                                                                <label class="form-label" style="{{ $labelStyle }}">
-                                                                    <i class="bi bi-calendar-event" style="{{ $iconStyle }}"></i> Tahun Bimtek | Isi dengan (2025)
-                                                                </label>
-                                                                <select name="tahunpilihan_id" style="{{ $inputStyle }}" class="form-select @error('tahunpilihan_id') is-invalid @enderror">
-                                                                    <option value="">-- Pilih Tahun Bimtek --</option>
-                                                                    @foreach($tahunbimtek as $item)
-                                                                        <option value="{{ $item->id }}" {{ old('tahunpilihan_id') == $item->id ? 'selected' : '' }}>
-                                                                            {{ $item->tahunpilihan }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
-                                                                @error('tahunpilihan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                                            </div>
+                                                        <!-- Nama Sekolah -->
+                                                        <div class="col-md-6" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-building" style="{{ $iconStyle }}"></i> Nama Sekolah
+                                                            </label>
+                                                            <select name="namasekolah_id" style="{{ $inputStyle }}" class="form-select @error('namasekolah_id') is-invalid @enderror">
+                                                                <option value="">-- Pilih Universitas/Sekolah/Instansi --</option>
+                                                                @foreach($sekolah as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('namasekolah_id') == $item->id ? 'selected' : '' }}>
+                                                                        {{ $item->namasekolah }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            Ket: Silahkan hubungi <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                                                            @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                        </div>
+
+                                                        <!-- Tahun Bimtek -->
+                                                        <div class="col-md-6" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-calendar-event" style="{{ $iconStyle }}"></i> Tahun Bimtek | Isi dengan (2025)
+                                                            </label>
+                                                            <select name="tahunpilihan_id" style="{{ $inputStyle }}" class="form-select @error('tahunpilihan_id') is-invalid @enderror">
+                                                                <option value="">-- Pilih Tahun Bimtek --</option>
+                                                                @foreach($tahunbimtek as $item)
+                                                                    <option value="{{ $item->id }}" {{ old('tahunpilihan_id') == $item->id ? 'selected' : '' }}>
+                                                                        {{ $item->tahunpilihan }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            @error('tahunpilihan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                                         </div>
 
                                                     </div>
+
 
                                                     <div class="col-md-6">
                                                         <div class="row">
@@ -418,6 +422,7 @@ h5 {
                                                         </div>
                                                     </div>
 
+
                                                     <div class="col-12">
                                                         <!-- Nama Asosiasi -->
                                                         <div style="{{ $divStyle }}">
@@ -484,153 +489,133 @@ h5 {
                                                         </div>
                                                     </div>
 
-                                                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
-                                                        <hr style="width: 100%; max-width: 1200px; margin: 0;">
-                                                        <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
-                                                            <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
-                                                                Silahkan Upload Dokumen Saudara!! <span style="color: red;">Hati-hati dalam Upload Tahun Pengalaman Kerja!!</span>
-                                                            </span>
-                                                        </p>
-                                                        <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
+
+                                                    <div class="row">
+                                                        <br><br>
+                                                        <!-- Upload KTP -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP
+                                                            </label>
+                                                            <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
+                                                            <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div>
+                                                            <div id="ktpPreview" class="preview-container"></div>
+                                                        </div>
+
+                                                        <!-- Upload Foto -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah
+                                                            </label>
+                                                            <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
+                                                            <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
+                                                            <div id="fotoPreview" class="preview-container"></div>
+                                                        </div>
+
+                                                        <!-- Upload Ijazah -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah
+                                                            </label>
+                                                            <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
+                                                            <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div>
+                                                            <div id="ijazahPreview" class="preview-container"></div>
+                                                        </div>
                                                     </div>
 
-                                                    <style>
-                                                        @keyframes scroll-text {
-                                                            0% {
-                                                                transform: translateX(100%);
+                                                    <div class="row">
+                                                        <!-- Upload Pengalaman -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            @php
+                                                            $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
+                                                            $fileDownload = null;
+
+                                                            if ($firstItem && $firstItem->berkas) {
+                                                                $path = public_path('storage/' . $firstItem->berkas);
+                                                                if (file_exists($path)) {
+                                                                    $fileDownload = asset('storage/' . $firstItem->berkas);
+                                                                } else {
+                                                                    $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
+                                                                }
                                                             }
-                                                            100% {
-                                                                transform: translateX(-100%);
+                                                        @endphp
+
+                                                        <label class="form-label" style="{{ $labelStyle }}">
+                                                            <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
+                                                            @if ($fileDownload)
+                                                                <a href="{{ $fileDownload }}" download style="color:red;">
+                                                                    Contoh Pengalaman Kerja <i class="bi bi-download"></i>
+                                                                </a>
+                                                                {{-- <div style="font-size: 0.9em; color: gray;">
+                                                                    File: {{ $firstItem->berkas }}
+                                                                </div> --}}
+                                                            @else
+                                                                <span style="color: gray;">Contoh belum tersedia</span>
+                                                            @endif
+                                                        </label>
+
+                                                            <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
+                                                            <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
+                                                            <div id="pengalamanPreview" class="preview-container"></div>
+                                                        </div>
+
+                                                        <!-- Upload NPWP -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP
+                                                            </label>
+                                                            <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
+                                                            <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
+                                                            <p>Ket : Wajib NPWP K3 dan Jenjang 5, 6 </p>
+                                                            <div id="npwpPreview" class="preview-container"></div>
+                                                        </div>
+
+                                                        <!-- Upload Daftar Riwayat Hidup -->
+                                                        <div class="col-md-4" style="{{ $divStyle }}">
+                                                            <label class="form-label" style="{{ $labelStyle }}">
+                                                                <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup
+                                                            </label>
+                                                            <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
+                                                            <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div>
+                                                            <div id="riwayatPreview" class="preview-container"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <script>
+                                                        function previewFile(previewId, input) {
+                                                            const file = input.files[0];
+                                                            const previewContainer = document.getElementById(previewId);
+                                                            previewContainer.innerHTML = '';  // Clear previous preview
+
+                                                            if (file) {
+                                                                const reader = new FileReader();
+                                                                reader.onload = function(e) {
+                                                                    const fileType = file.type.split('/')[0];
+
+                                                                    if (fileType === 'image') {
+                                                                        const imgElement = document.createElement('img');
+                                                                        imgElement.src = e.target.result;
+                                                                        imgElement.style.width = '100%';
+                                                                        imgElement.style.maxWidth = '210mm';  // A4 width
+                                                                        imgElement.style.height = 'auto';
+                                                                        previewContainer.appendChild(imgElement);
+                                                                    } else if (fileType === 'application') {
+                                                                        if (file.type === 'application/pdf') {
+                                                                            const iframe = document.createElement('iframe');
+                                                                            iframe.src = e.target.result;
+                                                                            iframe.style.width = '100%';
+                                                                            iframe.style.height = '400px';  // Adjust as needed
+                                                                            previewContainer.appendChild(iframe);
+                                                                        }
+                                                                    }
+                                                                };
+                                                                reader.readAsDataURL(file);
                                                             }
                                                         }
-                                                    </style>
+                                                    </script>
 
+                                                    <div style="display: flex; justify-content: flex-end; margin-bottom:20px;">
 
-                        <div class="row">
-                            <br><br>
-                            <!-- Upload KTP -->
-                            <div class="col-md-4" style="{{ $divStyle }}">
-                                <label class="form-label" style="{{ $labelStyle }}">
-                                    <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP
-                                </label>
-                                <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
-                                <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div>
-                                <div id="ktpPreview" class="preview-container"></div>
-                            </div>
-
-                            <!-- Upload Foto -->
-                            <div class="col-md-4" style="{{ $divStyle }}">
-                                <label class="form-label" style="{{ $labelStyle }}">
-                                    <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah
-                                </label>
-                                <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
-                                <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
-                                <div id="fotoPreview" class="preview-container"></div>
-                            </div>
-
-                            <!-- Upload Ijazah -->
-                            <div class="col-md-4" style="{{ $divStyle }}">
-                                <label class="form-label" style="{{ $labelStyle }}">
-                                    <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah
-                                </label>
-                                <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
-                                <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div>
-                                <div id="ijazahPreview" class="preview-container"></div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Upload Pengalaman -->
-                            <div class="col-md-4" style="{{ $divStyle }}">
-                                @php
-                                $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
-                                $fileDownload = null;
-
-                                if ($firstItem && $firstItem->berkas) {
-                                    $path = public_path('storage/' . $firstItem->berkas);
-                                    if (file_exists($path)) {
-                                        $fileDownload = asset('storage/' . $firstItem->berkas);
-                                    } else {
-                                        $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
-                                    }
-                                }
-                            @endphp
-
-                            <label class="form-label" style="{{ $labelStyle }}">
-                                <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
-                                @if ($fileDownload)
-                                    <a href="{{ $fileDownload }}" download style="color:red;">
-                                        Contoh Pengalaman Kerja <i class="bi bi-download"></i>
-                                    </a>
-                                    {{-- <div style="font-size: 0.9em; color: gray;">
-                                        File: {{ $firstItem->berkas }}
-                                    </div> --}}
-                                @else
-                                    <span style="color: gray;">Contoh belum tersedia</span>
-                                @endif
-                            </label>
-
-                                <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
-                                <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
-                                <div id="pengalamanPreview" class="preview-container"></div>
-                            </div>
-
-                            <!-- Upload NPWP -->
-                            <div class="col-md-4" style="{{ $divStyle }}">
-                                <label class="form-label" style="{{ $labelStyle }}">
-                                    <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP
-                                </label>
-                                <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
-                                <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
-                                <p>Ket : Wajib NPWP K3 dan Jenjang 5, 6 </p>
-                                <div id="npwpPreview" class="preview-container"></div>
-                            </div>
-
-                            <!-- Upload Daftar Riwayat Hidup -->
-                            <div class="col-md-4" style="{{ $divStyle }}">
-                                <label class="form-label" style="{{ $labelStyle }}">
-                                    <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup
-                                </label>
-                                <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
-                                <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div>
-                                <div id="riwayatPreview" class="preview-container"></div>
-                            </div>
-                        </div>
-
-                        <script>
-                            function previewFile(previewId, input) {
-                                const file = input.files[0];
-                                const previewContainer = document.getElementById(previewId);
-                                previewContainer.innerHTML = '';  // Clear previous preview
-
-                                if (file) {
-                                    const reader = new FileReader();
-                                    reader.onload = function(e) {
-                                        const fileType = file.type.split('/')[0];
-
-                                        if (fileType === 'image') {
-                                            const imgElement = document.createElement('img');
-                                            imgElement.src = e.target.result;
-                                            imgElement.style.width = '100%';
-                                            imgElement.style.maxWidth = '210mm';  // A4 width
-                                            imgElement.style.height = 'auto';
-                                            previewContainer.appendChild(imgElement);
-                                        } else if (fileType === 'application') {
-                                            if (file.type === 'application/pdf') {
-                                                const iframe = document.createElement('iframe');
-                                                iframe.src = e.target.result;
-                                                iframe.style.width = '100%';
-                                                iframe.style.height = '400px';  // Adjust as needed
-                                                previewContainer.appendChild(iframe);
-                                            }
-                                        }
-                                    };
-                                    reader.readAsDataURL(file);
-                                }
-                            }
-                        </script>
-
-                                                  <div style="display: flex; justify-content: flex-end; margin-bottom:20px; margin-top:20px;">
                                                         <div class="flex justify-end">
                                                             <button type="button" onclick="openModal()"
                                                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
