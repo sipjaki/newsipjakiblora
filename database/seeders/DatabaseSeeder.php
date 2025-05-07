@@ -60236,7 +60236,7 @@ agendapelatihan::create([
 agendaskk::create([
     'id' => 1,
     'user_id' => 7,
-    'asosiasimasjaki_id' => 7,
+    'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Sertifikasi Keahlian Tenaga Kerja Konstruksi Bangunan Gedung - Jenjang 4',
     'penutupan' => '2025-12-16',
     'waktupelaksanaan' => '2025-05-15',
@@ -60250,7 +60250,7 @@ agendaskk::create([
 agendaskk::create([
     'id' => 2,
     'user_id' => 7,
-    'asosiasimasjaki_id' => 7,
+    'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Sertifikasi Keterampilan Tukang Bangunan Sipil - Jenjang 6',
     'penutupan' => '2025-12-16',
     'waktupelaksanaan' => '2025-05-15',
