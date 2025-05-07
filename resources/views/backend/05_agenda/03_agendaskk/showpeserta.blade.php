@@ -148,12 +148,12 @@
 <td style="text-align: center;">
     @if($item->verifikasipu == false)
         <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-danger">
-            <i class="bi bi-x-circle"></i> BELUM LOLOS
+            <i class="bi bi-x-circle"></i> DI VERIFIKASI
         </button>
     @else
         <button type="button" disabled class="btn"
             style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: not-allowed;">
-            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> DITERIMA
         </button>
     @endif
 </td>
