@@ -335,7 +335,10 @@ h5 {
                                                                         </option>
                                                                     @endforeach
                                                                 </select>
-                                                                @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('jenjangpendidikan_id')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
+                                                            @enderror
                                                             </div>
 
                                                             <div style="{{ $divStyle }}; flex: 1 1 25%;">
@@ -347,7 +350,10 @@ h5 {
                                                                     <option value="Laki-laki" {{ old('jeniskelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
                                                                     <option value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                                                                 </select>
-                                                                @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                                {{-- @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                                @error('jeniskelamin')
+                                                                <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
+                                                            @enderror
                                                             </div>
                                                         </div>
 
@@ -356,7 +362,10 @@ h5 {
                                                                 <i class="bi bi-building" style="color: navy;"></i> Instansi/Universitas/Lembaga/Perseorangan
                                                             </label>
                                                             <input type="text" name="instansi" style="{{ $inputStyle }}" class="@error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
-                                                            @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            {{-- @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror --}}
+                                                            @error('instansi')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
+                                                        @enderror
                                                         </div>
                                                     </div>
 
