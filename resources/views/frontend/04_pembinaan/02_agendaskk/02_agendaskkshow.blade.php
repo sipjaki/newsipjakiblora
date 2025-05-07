@@ -238,12 +238,12 @@
                                     <div style="font-family: Poppins; font-size: 16px; line-height: 1.5;">
 
                                         <div style="margin-bottom: 12px;">
-                                            <h5 style="margin-bottom: 4px;">Asosiasi</h5>
+                                            <h5 style="margin-bottom: 4px;">Penyelenggara </h5>
                                             <p style="font-size: 18px; margin: 0;">{{ $data->asosiasimasjaki->namaasosiasi }}</p>
                                         </div>
 
                                         <div style="margin-bottom: 12px;">
-                                            <h5 style="margin-bottom: 4px;">LSP Penerbit</h5>
+                                            <h5 style="margin-bottom: 4px;">LSP</h5>
                                             <p style="font-size: 18px; margin: 0;">{{ $data->user->name }}</p>
                                         </div>
 

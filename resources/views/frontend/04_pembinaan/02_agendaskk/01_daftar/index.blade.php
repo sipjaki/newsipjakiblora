@@ -354,7 +354,7 @@ table.zebra-table {
                                 <!-- Nama Asosiasi -->
                                 <div style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-diagram-3" style="color: navy;"></i> Nama Asosiasi
+                                        <i class="bi bi-diagram-3" style="color: navy;"></i> Utusan
                                     </label>
                                     <input type="text" name="namaasosiasi" style="{{ $inputStyle }}" class="@error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}">
                                     @error('namaasosiasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
