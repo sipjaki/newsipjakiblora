@@ -211,6 +211,7 @@ table.zebra-table {
                                     <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
                                     @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
+
                                 <div class="row">
                                     <!-- Jenjang Pendidikan -->
                                     <div class="col-md-6" style="{{ $divStyle }}">
