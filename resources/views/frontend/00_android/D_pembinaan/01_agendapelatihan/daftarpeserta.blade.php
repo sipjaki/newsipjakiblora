@@ -243,23 +243,31 @@ h5 {
                                         <form action="{{ route('daftarpesertapelatihancreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                                             @csrf
                                             <input type="hidden" name="agendapelatihan_id" value="{{ $agendapelatihan_id }}">
+                                                <br>
 
                                             <div class="card-body">
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         @php
-                                                            $inputStyle = "
-                                                                width: 100%;
-                                                                padding: 10px 14px;
-                                                                border-radius: 8px;
-                                                                border: 1px solid #ccc;
-                                                                transition: 0.3s;
-                                                                font-size: 14px;
-                                                            ";
-                                                            $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block;";
-                                                            $divStyle = "margin-bottom: 20px;";
-                                                            $iconStyle = "color: navy;";
-                                                        @endphp
+                                                        $inputStyle = "
+                                                            width: 100%;
+                                                            padding: 10px 14px;
+                                                            border-radius: 8px;
+                                                            border: 1px solid #ccc;
+                                                            transition: 0.3s;
+                                                            font-size: 14px;
+                                                        ";
+
+                                                        $labelStyle = "
+                                                            margin-bottom: 6px;
+                                                            font-weight: 500;
+                                                            display: block;
+                                                            text-align: left;
+                                                        ";
+
+                                                        $divStyle = "margin-bottom: 20px;";
+                                                        $iconStyle = "color: navy;";
+                                                    @endphp
 
                                                         <div style="{{ $divStyle }}">
                                                             <label class="form-label" style="{{ $labelStyle }}">
