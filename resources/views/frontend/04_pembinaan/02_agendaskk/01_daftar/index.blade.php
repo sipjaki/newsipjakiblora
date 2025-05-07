@@ -480,9 +480,9 @@ table.zebra-table {
             <a href="{{ $fileDownload }}" download>
                 Contoh Pengalaman Kerja <i class="bi bi-download"></i>
             </a>
-            <div style="font-size: 0.9em; color: gray;">
+            {{-- <div style="font-size: 0.9em; color: gray;">
                 File: {{ $firstItem->berkas }}
-            </div>
+            </div> --}}
         @else
             <span style="color: gray;">Contoh belum tersedia</span>
         @endif
