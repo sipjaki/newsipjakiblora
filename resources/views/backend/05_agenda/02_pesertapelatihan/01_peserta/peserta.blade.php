@@ -316,42 +316,71 @@
         </td>
 
         <td style="text-align: center;">
-            @if(!$item->verifikasikehadiran == false)
-                <button type="button" onclick="openKehadiranModal_{{ $item->id }}()" class="btn btn-outline-danger btn-sm">
-                    <i class="bi bi-x-circle me-1"></i> Tidak Hadir
+            @if($item->verifikasikehadiran == false)
+                <button type="button" onclick="openKehadiranModal({{ $item->id }})"
+                    class="btn btn-danger">
+                    <i class="bi bi-x-circle"></i> TIDAK HADIR
                 </button>
             @else
-                <button type="button" class="btn btn-success btn-sm" disabled>
-                    <i class="bi bi-patch-check-fill me-1"></i> Hadir
+                <button type="button" disabled
+                    class="btn"
+                    style="
+                        background-color: rgba(16, 185, 129, 0.85);
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                        cursor: not-allowed;
+                    ">
+                    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> HADIR
                 </button>
             @endif
         </td>
 
-        <!-- Modal Kehadiran (UNIK PER ITEM) -->
-        <div id="modal-kehadiran-{{ $item->id }}" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
-            <div style="background: white; padding: 24px; border-radius: 10px; width: 90%; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); text-align: center;">
-                <h5 style="margin-bottom: 16px;">Konfirmasi Kehadiran</h5>
-                <p>Apakah peserta ini hadir dalam pelatihan?</p>
-                <form method="POST" action="{{ route('verifikasikehadiran', $item->id) }}" style="margin-top: 20px;">
+        <!-- Modal Kehadiran -->
+        <div id="kehadiranModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+            <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+                <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+                    Apakah Peserta Hadir dalam Pelatihan?
+                </p>
+
+                <!-- Form Verifikasi Kehadiran -->
+                <form id="kehadiranForm" method="POST" class="d-inline">
                     @csrf
                     @method('PUT')
-                    <button type="submit" class="btn btn-success me-2">
-                        <i class="bi bi-check-circle me-1"></i> Ya, Hadir
-                    </button>
-                    <button type="button" onclick="closeKehadiranModal_{{ $item->id }}()" class="btn btn-secondary">
-                        Batal
+                    <button type="submit"
+                        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s;"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+                        onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
+                        <i class="bi bi-check-circle" style="margin-right: 6px; color: white;"></i> Ya, Hadir
                     </button>
                 </form>
+
+                <!-- Tombol Batal -->
+                <button type="button"
+                    onclick="closeKehadiranModal()"
+                    style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;"
+                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+                    onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
+                    <i class="bi bi-x-circle" style="margin-right: 6px; color: white;"></i> Batal
+                </button>
             </div>
         </div>
 
         <script>
-            function openKehadiranModal_{{ $item->id }}() {
-                document.getElementById("modal-kehadiran-{{ $item->id }}").style.display = "flex";
+            function openKehadiranModal(itemId) {
+                const form = document.getElementById("kehadiranForm");
+                form.action = `{{ url('verifikasikehadiran') }}/${itemId}`;
+                document.getElementById("kehadiranModal").style.display = "flex";
             }
 
-            function closeKehadiranModal_{{ $item->id }}() {
-                document.getElementById("modal-kehadiran-{{ $item->id }}").style.display = "none";
+            function closeKehadiranModal() {
+                document.getElementById("kehadiranModal").style.display = "none";
             }
         </script>
 
