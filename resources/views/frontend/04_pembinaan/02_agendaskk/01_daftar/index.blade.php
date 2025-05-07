@@ -357,6 +357,7 @@ table.zebra-table {
                                     </label>
                                     <input type="text" name="namaasosiasi" style="{{ $inputStyle }}" class="@error('namaasosiasi') is-invalid @enderror" value="{{ old('namaasosiasi') }}">
                                     @error('namaasosiasi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    <p>Keterangan : Badan Usaha/ Perorangan/ Instansi/ Badan Usaha</p>
                                 </div>
 
                                 <div class="row">
