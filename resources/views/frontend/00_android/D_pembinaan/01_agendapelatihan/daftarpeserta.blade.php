@@ -180,9 +180,8 @@ h5 {
                         <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
                     </a>
                 </div>
-                <div class="flex flex-col items-center text-center">
-                    <p class="text-xs leading-[18px] text-white">{{$title}}</p>
-                    {{-- <p class="font-semibold text-sm text-white">#WeNeedHelp</p> --}}
+                <div class="flex flex-col items-center text-center max-w-full px-2">
+                    <p class="text-xs leading-[18px] text-white break-words whitespace-normal">{{$title}}</p>
                 </div>
                 <a href="" class="w-10 h-10 flex shrink-0">
                     {{-- <img src="assets/images/icons/like.svg" alt="icon"> --}}
