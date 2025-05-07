@@ -257,7 +257,7 @@ h5 {
                                                             transition: 0.3s;
                                                             font-size: 13px;
                                                         ";
-                                                        $labelStyle = "margin-bottom: 4px; font-weight: 500; display: block; font-size:15px; text-align:left;";
+                                                        $labelStyle = "margin-bottom: 4px; font-weight: 500; display: block; font-size:15px;";
                                                         $divStyle = "margin-bottom: 16px;";
                                                         $iconStyle = "color: navy;";
                                                     @endphp
@@ -265,9 +265,9 @@ h5 {
                                                         <input type="hidden" name="user_id" value="{{ old('user_id', $user_id) }}">
 
                                                         <!-- Tampilan Nama Lengkap (readonly) -->
-                                                        <div style="{{ $divStyle }}">
-                                                            <label class="form-label" style="{{ $labelStyle }}">
-                                                                <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
+                                                        <div style="{{ $divStyle }} display: flex; align-items: center; gap: 12px;">
+                                                            <label class="form-label" style="width: 150px; {{ $labelStyle }}">
+                                                                <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap
                                                             </label>
                                                             <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
                                                         </div>
