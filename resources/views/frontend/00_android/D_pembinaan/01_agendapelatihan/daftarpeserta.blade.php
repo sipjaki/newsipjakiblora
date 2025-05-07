@@ -325,7 +325,7 @@ h5 {
                                                         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                                                             <div style="{{ $divStyle }}; flex: 1 1 25%;">
                                                                 <label class="form-label" style="{{ $labelStyle }}">
-                                                                    <i class="bi bi-card-list" style="color: navy;"></i>Pendidikan
+                                                                    <i class="bi bi-card-list" style="color: navy;"></i> Pendidikan
                                                                 </label>
                                                                 <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="@error('jenjangpendidikan_id') is-invalid @enderror">
                                                                     <option value="" disabled selected>Pilih Jenjang</option>
@@ -485,7 +485,7 @@ h5 {
 
         @include('frontend.00_android.00_fiturmenu.keterangan')
 
-        <br><br><br><br><br>
+        <br><br>
 
                 @include('frontend.00_android.00_fiturmenu.android')
 
