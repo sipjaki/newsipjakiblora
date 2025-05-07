@@ -162,7 +162,7 @@
         <th style="width: 250px; text-align:center;"><i class="bi bi-person-badge-fill"></i> Username</th>
         <th style="width: 400px; text-align:center;"><i class="bi bi-phone-fill"></i> No Telepon</th>
         <th style="width: 350px; text-align:center;"><i class="bi bi-envelope-fill"></i> Email</th>
-        <th style="width: 350px; text-align:center;"><i class="bi bi-image-fill"></i> Foto Profil</th>
+        <th style="width: 150px; text-align:center;"><i class="bi bi-image-fill"></i> Foto Profil</th>
         <th style="width: 200px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
      </tr>
  </thead>
