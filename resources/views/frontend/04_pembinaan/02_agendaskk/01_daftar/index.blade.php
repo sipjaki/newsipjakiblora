@@ -514,6 +514,7 @@ table.zebra-table {
         </label>
         <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
         <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
+        <p>Ket : Wajib NPWP K3 dan Jenjang 5, 6 </p>
         <div id="npwpPreview" class="preview-container"></div>
     </div>
 
