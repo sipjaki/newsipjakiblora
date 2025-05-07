@@ -282,7 +282,11 @@ h5 {
                                                                 <i class="bi bi-building" style="color: navy;"></i> Nomor Induk Kependudukan (NIK)
                                                             </label>
                                                             <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
-                                                            @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                                            @error('nik')
+                                                            <div class="invalid-feedback" style="color: red; font-size: 13px;">
+                                                                {{ $message }}
+                                                            </div>
+                                                        @enderror
                                                         </div>
 
                                                         <div class="col-md-6" style="{{ $divStyle }}">
