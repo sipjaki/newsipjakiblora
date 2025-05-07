@@ -907,6 +907,13 @@
                   <li class="nav-item">
                     <a href="/" target="_blank" class="nav-link">
                       <i class="nav-icon bi bi-person-gear text-warning"></i>
+                      <p style="color: white;">Semua Akun</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/" target="_blank" class="nav-link">
+                      <i class="nav-icon bi bi-person-gear text-warning"></i>
                       <p style="color: white;">Super Admin</p>
                     </a>
                   </li>
