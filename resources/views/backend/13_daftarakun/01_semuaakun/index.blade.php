@@ -88,7 +88,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24" style="margin-right: 8px;">
                                 <path d="M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4zm0 2c5.05 0 8 .97 8 2s-2.95 2-8 2-8-.97-8-2 2.95-2 8-2zm0 16c-5.05 0-8-.97-8-2v-1.09c1.87 1.01 5.03 1.59 8 1.59s6.13-.58 8-1.59V18c0 1.03-2.95 2-8 2zm0-4c-5.05 0-8-.97-8-2v-1.09c1.87 1.01 5.03 1.59 8 1.59s6.13-.58 8-1.59V14c0 1.03-2.95 2-8 2zm0-4c-5.05 0-8-.97-8-2V8.91c1.87 1.01 5.03 1.59 8 1.59s6.13-.58 8-1.59V10c0 1.03-2.95 2-8 2z"/>
                             </svg>
-                            Asosiasi
+                            Status Adminstrator
                         </button>
                     </a>
                 </div>
@@ -183,6 +183,54 @@
             @endif
         </td>
 
+        <td style="text-align: left;">
+            @if($item->statusadmin->statusadmin)
+                {{ $item->statusadmin->statusadmin }}
+            @else
+                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if($item->username)
+                {{ $item->username }}
+            @else
+                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if($item->phone_number)
+                {{ $item->phone_number }}
+            @else
+                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
+        <td style="text-align: left;">
+            @if($item->email)
+                {{ $item->email }}
+            @else
+                <button style="background-color: #000080; color: white; font-size: 14px; padding: 6px 10px; border-radius: 4px; border: 1px solid #000080; cursor: pointer; transition: none;"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#000080'; this.style.color='white';">
+                    Data Belum Di Update
+                </button>
+            @endif
+        </td>
+
             <td style="text-align: center;">
                     <button class="btn btn-secondary btn-sm"
                         style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -205,17 +253,16 @@
                                 </div>
                                 <div class="modal-body text-center">
                                     <div style="margin-top: 10px;">
-                                        @if($item->uploadberkas && file_exists(public_path('storage/' . $item->uploadberkas)))
-                                        <!-- Display the default iframe when the file exists in the storage -->
-                                        <iframe src="{{ asset('storage/' . $item->uploadberkas) }}" frameborder="0" width="100%" height="600px"></iframe>
-                                    @elseif($item->uploadberkas)
-                                        <!-- Display the iframe with the updated file -->
-                                        <iframe src="{{ asset($item->uploadberkas) }}" frameborder="0" width="100%" height="600px"></iframe>
-                                    @else
-                                        <!-- Optional: Show a placeholder if there's no file available -->
-                                        <p>Data belum diupdate</p>
-                                    @endif
-
+                                        @if($item->avatar && file_exists(public_path('storage/' . $item->avatar)))
+                                            <!-- Menampilkan gambar dari storage -->
+                                            <img src="{{ asset('storage/' . $item->avatar) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($item->avatar)
+                                            <!-- Menampilkan gambar dari path luar storage -->
+                                            <img src="{{ asset($item->avatar) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <!-- Placeholder jika tidak ada data -->
+                                            <p>Data belum diupdate</p>
+                                        @endif
                                     </div>
 
 
