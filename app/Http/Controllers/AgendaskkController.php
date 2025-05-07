@@ -399,6 +399,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'punyaskk' => 'required|in:Ya,Tidak',
         'punyasiki' => 'required|in:Ya,Tidak',
         'siappatuh' => 'required|in:Ya,Tidak',
+        'portalpupr' => 'required|in:Ya,Tidak',
     ], [
         'jenjangpendidikan_id.required' => 'Jenjang Pendidikan wajib dipilih!',
         'jabatankerja_id.required' => 'Jabatan Kerja wajib dipilih!',
@@ -418,6 +419,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'punyaskk.required' => 'Pilih apakah memiliki SKK.',
         'punyasiki.required' => 'Pilih apakah memiliki SIKI.',
         'siappatuh.required' => 'Pilih kesiapan mematuhi kode etik.',
+        'portalpupr.required' => 'Pilih apakah sudah memiliki !.',
         'uploadktp.required' => 'Wajib Upload KTP.',
         'uploadktp.mimes' => 'File KTP harus PDF atau gambar.',
         'uploadktp.max' => 'Ukuran file KTP maksimal 2 MB.',
