@@ -350,7 +350,7 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
     $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
     $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
     $datatahunbimtek = tahunpilihan::orderBy('tahunpilihan', 'asc')->get();
-    $datacontohsurat = contohsurat::orderBy('tahunpilihan', 'asc')->get();
+    $datacontohsurat = contohsurat::orderBy('berkas', 'asc')->get();
     $user = Auth::user();
 
     return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
