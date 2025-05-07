@@ -150,14 +150,14 @@
             <!--end::Fullscreen Toggle-->
             <!--begin::User Menu Dropdown-->
             <li class="nav-item dropdown user-menu">
-              {{-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                @if(Auth::user()->avatar && file_exists(public_path('storage/' . Auth::user()->avatar)))
-                        <img src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Gambar avatar">
-                    @elseif(Auth::user()->avatar)
-                        <img src="{{ asset(Auth::user()->avatar) }}" alt="Gambar avatar">
-                    @endif
-                </a> --}}
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                {{-- <img
+                src="{{ asset('storage/' . Auth::user()->avatar) }}" alt="Avatar"
+                  class="user-image rounded-circle shadow"
+                  alt="User Image"
+                /> --}}
                 <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
+              </a>
               <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                 <!--begin::User Image-->
                 <li class="user-header text-bg-success">
