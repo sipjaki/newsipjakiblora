@@ -394,7 +394,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         // 'uploadnpwp' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
-        'uuploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
+        'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
 
         'namaasosiasi' => 'nullable|string|max:255',
         'punyaskk' => 'required|in:Ya,Tidak',
