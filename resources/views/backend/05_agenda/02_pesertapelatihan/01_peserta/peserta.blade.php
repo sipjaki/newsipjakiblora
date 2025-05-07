@@ -170,7 +170,7 @@
     }
 </script>
 
-
+                    <a href="/bepesertapelatihan">
                                     <button
                         onclick="history.back()"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -184,7 +184,7 @@
                         </svg>
                         Kembali
                     </button>
-
+                </a>
 
                  </div>
 
