@@ -948,7 +948,7 @@ Route::get('/allakun', [LoginController::class, 'allakun'])->middleware('auth');
 Route::delete('/allsemuaakun/delete/{name}', [LoginController::class, 'allsemuaakun'])->middleware('auth');
 Route::get('/akuncreate', [LoginController::class, 'akuncreate'])->middleware('auth');
 
-Route::get('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'])->middleware('auth')->name('akuncreatenew');
+Route::post('/akuncreatenew/createnew', [LoginController::class, 'akuncreatenew'])->middleware('auth')->name('akuncreatenew');
 
 
 
