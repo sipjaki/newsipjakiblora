@@ -1,14 +1,11 @@
 <style>
-    /* Import Font Poppins */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-    /* Terapkan Poppins ke seluruh sidebar */
     .app-sidebar,
     .app-sidebar *:not(.bi):not(.nav-arrow) {
         font-family: 'Poppins', sans-serif !important;
     }
 
-    /* Struktur utama sidebar */
     .app-sidebar {
         position: relative;
         overflow: hidden;
@@ -17,7 +14,7 @@
         animation: sidebarGradientMove 15s ease infinite;
         min-height: 100vh;
         z-index: 1;
-        box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.08);
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
     }
 
     @keyframes sidebarGradientMove {
@@ -26,41 +23,16 @@
         100% { background-position: 0% 50%; }
     }
 
-    /* Overlay putih bercahaya */
     .sidebar-overlay {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background:
-            radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
-            radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 60%),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-            linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-        background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
-        filter: blur(0.4px);
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
+        background-size: 30px 30px;
+        pointer-events: none;
         z-index: 0;
-        pointer-events: none;
     }
 
-    /* Efek pantulan cahaya halus */
-    .sidebar-overlay::after {
-        content: "";
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        width: 300%;
-        height: 300%;
-        background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
-        animation: shineMove 18s linear infinite;
-        pointer-events: none;
-    }
-
-    @keyframes shineMove {
-        0% { transform: translate(0, 0); }
-        50% { transform: translate(-30%, -20%); }
-        100% { transform: translate(0, 0); }
-    }
-
-    /* Animasi Crane */
     .sidebar-crane {
         position: absolute;
         bottom: 20px;
@@ -83,14 +55,13 @@
         100% { transform: translateX(0); }
     }
 
-    /* Navigasi dan Teks */
     .nav-item > .nav-link {
         color: white !important;
         transition: all 0.3s ease-in-out;
     }
 
     .nav-item > .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.85) !important;
+        background-color: rgba(255, 255, 255, 0.8) !important;
         color: black !important;
     }
 
