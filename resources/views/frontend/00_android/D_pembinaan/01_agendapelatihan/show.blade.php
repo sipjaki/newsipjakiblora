@@ -207,7 +207,7 @@ h5 {
                             onclick="window.location.href='your-link-here.html'"
                         >
                             <i class="bi bi-person-fill" style="color: white;"></i>
-                            Daftar
+                            Daftar Pelatihan
                         </button>
                     </div>
                     <div class="header-surat">

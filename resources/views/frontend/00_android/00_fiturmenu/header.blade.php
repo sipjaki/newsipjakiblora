@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/00_android/js/flickity.min.css" media="screen">
     <link rel="icon" href="/assets/icon/logokabupatenblora.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <title>{{$title}}</title>
 
