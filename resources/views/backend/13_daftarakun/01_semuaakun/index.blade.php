@@ -248,7 +248,7 @@
                                     <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                     <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                     <span>:</span>
-                                    <h5 class="modal-title" id="modalKtpLabel3">Berkas Sertifikasi</h5>
+                                    <h5 class="modal-title" id="modalKtpLabel3">Foto Profil</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body text-center">

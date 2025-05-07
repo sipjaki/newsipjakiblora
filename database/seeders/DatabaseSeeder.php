@@ -245,7 +245,7 @@ headerberanda::create([
             'name'  => 'Sigit Septiadi',
             'username' => 'Sigit',
             'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitseptiadi99@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -265,7 +265,7 @@ headerberanda::create([
             'name'  => 'Admin DPUPR Kab Blora',
             'username' => 'Admin DPUPR Kab Blora',
             'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sipjakiblora1@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -546,7 +546,7 @@ headerberanda::create([
             'name'  => 'Rahmat Irianto',
             'username' => 'Sup Pabrik',
             'statusadmin_id' => '3',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitpekerja@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -556,7 +556,7 @@ headerberanda::create([
             'name'  => 'Sigit Supplier Peralatan',
             'username' => 'Sup Peralatan ',
             'statusadmin_id' => '4',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitsupp_pabrik@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -566,7 +566,7 @@ headerberanda::create([
             'name'  => 'Sigit Supp Bangunan',
             'username' => 'Sup Bangunan',
             'statusadmin_id' => '5',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitsupp_peralatan@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -576,7 +576,7 @@ headerberanda::create([
             'name'  => 'LSP Penerbit Blora',
             'username' => 'LSP Penerbit',
             'statusadmin_id' => '7',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitsupp_tokobangunan@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -586,7 +586,7 @@ headerberanda::create([
             'name'  => 'Operator LSP 2',
             'username' => 'Operator LSP',
             'statusadmin_id' => '7',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitlpspenerbit@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -596,7 +596,7 @@ headerberanda::create([
             'name'  => 'Operator LSP 3',
             'username' => 'Operator LSP 3',
             'statusadmin_id' => '7',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitlpspenerbit500@gmail.com',
             'password' => bcrypt('adminadmin123$$1')
         ]);
@@ -606,7 +606,7 @@ headerberanda::create([
             'name'  => 'Operator LSP 4',
             'username' => 'Operator LSP 4',
             'statusadmin_id' => '7',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitlpspenerbit2@gmail.com',
             'password' => bcrypt('adminadmin123$$2')
         ]);
@@ -616,7 +616,7 @@ headerberanda::create([
             'name'  => 'Sigit Septiadi',
             'username' => 'Dinas DPUPR Blora',
             'statusadmin_id' => '8',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'sigitoperator@gmail.com',
             'password' => bcrypt('adminadmin123$$')
         ]);
@@ -626,7 +626,7 @@ headerberanda::create([
             'name'  => 'Chaerul Umam',
             'username' => 'Chaerul Umam',
             'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'chaerulumam@gmail.com',
             'password' => bcrypt('umamadnmin123$$')
         ]);
@@ -636,7 +636,7 @@ headerberanda::create([
             'name'  => 'Maryana Indah',
             'username' => 'maryanaindah',
             'statusadmin_id' => '1',
-            'avatar' => 'user/avatar/sigit.jpg',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'maryananindah@gmail.com',
             'password' => bcrypt('indahadnmin123$$')
         ]);
