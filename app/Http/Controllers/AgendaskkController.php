@@ -504,30 +504,6 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
 
 // daftar skk
 
-public function resdaftarpelatihanpesertaskk($id)
-{
-    $dataagendaskk = agendaskk::findOrFail($id);
-    $datajenjangpendidikan = jenjangpendidikan::orderBy('jenjangpendidikan', 'asc')->get();
-    $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
-    $datasekolah = namasekolah::orderBy('namasekolah', 'asc')->get();
-    $datatahunbimtek = tahunpilihan::orderBy('tahunpilihan', 'asc')->get();
-    $datacontohsurat = contohsurat::orderBy('berkas', 'asc')->get();
-    $user = Auth::user();
-
-    return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
-        'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
-        'agendaskk_id' => $dataagendaskk->id,
-        'namalengkap' => $user->name,
-        'user_id' => $user->id,
-        'user' => $user,
-        'jenjangpendidikan' => $datajenjangpendidikan,
-        'jabatankerja' => $datajabatankerja,
-        'sekolah' => $datasekolah,
-        'tahunbimtek' => $datatahunbimtek,
-        'datacontohsurat' => $datacontohsurat,
-        'title' => 'Form Daftar Peserta Sertifikasi Tenaga Kerja Konstruksi'
-    ]);
-}
 
 
 }
