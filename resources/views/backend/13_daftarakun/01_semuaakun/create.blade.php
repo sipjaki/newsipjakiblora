@@ -75,21 +75,18 @@
                                         <!-- Asosiasi Masjaki -->
                                      <!-- User ID (Hidden) -->
                              <!-- Tampilkan Status Admin -->
-<div class="mb-3">
-    <label class="form-label" for="status_admin_select">
-        <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Status Admin
-    </label>
-    <select id="status_admin_select" name="statusadmin_id" class="form-control">
-        @foreach ($data as $item)
-            @if ($item->statusadmin)
-                <option value="{{ $item->statusadmin->id }}">
-                    {{ $item->statusadmin }}
-                </option>
-            @endif
-        @endforeach
-    </select>
-</div>
-
+                             <div class="mb-3">
+                                <label class="form-label" for="status_admin_select">
+                                    <i class="bi bi-person-badge" style="margin-right: 8px; color: navy;"></i> Status Admin
+                                </label>
+                                <select id="status_admin_select" name="statusadmin_id" class="form-control">
+                                    @foreach ($data as $item)
+                                        <option value="{{ $item->id }}">
+                                            {{ $item->nama_statusadmin }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
 
 
 <!-- Nama Lengkap -->
