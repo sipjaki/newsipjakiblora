@@ -59510,6 +59510,456 @@ pesertapelatihan::create([
     'verifikasikehadiran' => false,
 ]);
 
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Dani Supriyatna',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301011508830001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1983-08-15',
+    'notelepon' => '081355512345',
+    'instansi' => 'DPUPR Kota Semarang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Siti Nurhaliza',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301021609840002',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1984-09-16',
+    'notelepon' => '081355512346',
+    'instansi' => 'DPUPR Kabupaten Banyumas',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Ahmad Fauzi',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301031707850003',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1985-07-17',
+    'notelepon' => '081355512347',
+    'instansi' => 'DPUPR Kota Surakarta',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Rina Marlina',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301041809860004',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1986-09-18',
+    'notelepon' => '081355512348',
+    'instansi' => 'DPUPR Kabupaten Magelang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Budi Hartono',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301051907870005',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1987-07-19',
+    'notelepon' => '081355512349',
+    'instansi' => 'DPUPR Kabupaten Kudus',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Desi Ratnasari',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301062008880006',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1988-08-20',
+    'notelepon' => '081355512350',
+    'instansi' => 'DPUPR Kabupaten Temanggung',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Andi Setiawan',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301072109890007',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1989-09-21',
+    'notelepon' => '081355512351',
+    'instansi' => 'DPUPR Kota Pekalongan',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Linda Wulandari',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301082209900008',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1990-09-22',
+    'notelepon' => '081355512352',
+    'instansi' => 'DPUPR Kabupaten Purbalingga',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Hendra Saputra',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301092309910009',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1991-09-23',
+    'notelepon' => '081355512353',
+    'instansi' => 'DPUPR Kabupaten Cilacap',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Maya Sari Dewi',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3301102409920010',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1992-09-24',
+    'notelepon' => '081355512354',
+    'instansi' => 'DPUPR Kabupaten Klaten',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Riko Andrian',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302012509830011',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1983-09-25',
+    'notelepon' => '081355512355',
+    'instansi' => 'DPUPR Kabupaten Batang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Nina Pratiwi',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302022609840012',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1984-09-26',
+    'notelepon' => '081355512356',
+    'instansi' => 'DPUPR Kabupaten Wonosobo',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Fajar Nugroho',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302032709850013',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1985-09-27',
+    'notelepon' => '081355512357',
+    'instansi' => 'DPUPR Kabupaten Kendal',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Lilis Kurniawati',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302042809860014',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1986-09-28',
+    'notelepon' => '081355512358',
+    'instansi' => 'DPUPR Kabupaten Grobogan',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Arief Rahman',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302052909870015',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1987-09-29',
+    'notelepon' => '081355512359',
+    'instansi' => 'DPUPR Kabupaten Demak',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Dewi Sartika',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302063009880016',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1988-09-30',
+    'notelepon' => '081355512360',
+    'instansi' => 'DPUPR Kabupaten Jepara',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Bayu Saputra',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302070110890017',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1989-10-01',
+    'notelepon' => '081355512361',
+    'instansi' => 'DPUPR Kabupaten Blora',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Yuni Safitri',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302080210900018',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1990-10-02',
+    'notelepon' => '081355512362',
+    'instansi' => 'DPUPR Kabupaten Rembang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Deni Firmansyah',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302090310910019',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1991-10-03',
+    'notelepon' => '081355512363',
+    'instansi' => 'DPUPR Kabupaten Sragen',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Rizka Amalia',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302100410920020',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1992-10-04',
+    'notelepon' => '081355512364',
+    'instansi' => 'DPUPR Kabupaten Boyolali',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Agus Setiawan',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302110510930021',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1993-10-05',
+    'notelepon' => '081355512365',
+    'instansi' => 'DPUPR Kota Semarang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Diah Ayuningtyas',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302120610940022',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1994-10-06',
+    'notelepon' => '081355512366',
+    'instansi' => 'DPUPR Kabupaten Klaten',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Yoga Prasetyo',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302130710950023',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1995-10-07',
+    'notelepon' => '081355512367',
+    'instansi' => 'DPUPR Kabupaten Pati',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Sari Widyaningsih',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302140810960024',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1996-10-08',
+    'notelepon' => '081355512368',
+    'instansi' => 'DPUPR Kabupaten Pekalongan',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Rendi Maulana',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302150910970025',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1997-10-09',
+    'notelepon' => '081355512369',
+    'instansi' => 'DPUPR Kabupaten Temanggung',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Tina Ramadhani',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302161010980026',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '1998-10-10',
+    'notelepon' => '081355512370',
+    'instansi' => 'DPUPR Kota Surakarta',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Bambang Sutrisno',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302171110990027',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1999-10-11',
+    'notelepon' => '081355512371',
+    'instansi' => 'DPUPR Kabupaten Magelang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Siti Hidayah',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302181210000028',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '2000-10-12',
+    'notelepon' => '081355512372',
+    'instansi' => 'DPUPR Kabupaten Kudus',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Gilang Ramadhan',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302191310010029',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '2001-10-13',
+    'notelepon' => '081355512373',
+    'instansi' => 'DPUPR Kabupaten Pemalang',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Mega Oktaviani',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302201410020030',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '2002-10-14',
+    'notelepon' => '081355512374',
+    'instansi' => 'DPUPR Kabupaten Karanganyar',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Yusuf Fadillah',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302211510030031',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '2003-10-15',
+    'notelepon' => '081355512375',
+    'instansi' => 'DPUPR Kabupaten Banjarnegara',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Rina Marlina',
+    'jenjangpendidikan_id' => 4,
+    'nik' => '3302221610040032',
+    'jeniskelamin' => 'Perempuan',
+    'tanggallahir' => '2004-10-16',
+    'notelepon' => '081355512376',
+    'instansi' => 'DPUPR Kabupaten Kebumen',
+    'sertifikat' => null,
+    'verifikasi' => false,
+    'verifikasikehadiran' => false,
+]);
+
+
 //==========================================================================================================
 // DATA BERITA
 
