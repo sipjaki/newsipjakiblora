@@ -220,7 +220,7 @@ return redirect()->back()->with('error', 'Item not found');
 public function akuncreate()
 {
 
-    $data = User::all();
+    $data = statusadmin::all();
 
     return view('backend.13_daftarakun.01_semuaakun.create',[
         'title' => 'Buat AKun !',

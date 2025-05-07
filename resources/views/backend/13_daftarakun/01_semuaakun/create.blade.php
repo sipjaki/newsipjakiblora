@@ -83,7 +83,7 @@
         @foreach ($data as $item)
             @if ($item->statusadmin)
                 <option value="{{ $item->statusadmin->id }}">
-                    {{ $item->statusadmin->statusadmin }}
+                    {{ $item->statusadmin }}
                 </option>
             @endif
         @endforeach
