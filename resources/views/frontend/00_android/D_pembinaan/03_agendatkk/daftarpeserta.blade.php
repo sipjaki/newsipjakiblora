@@ -648,7 +648,7 @@ h5 {
                                                         <label class="form-label" style="{{ $labelStyle }}">
                                                             <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
                                                             @if ($fileDownload)
-                                                                <a href="{{ $fileDownload }}" download style="color:red;">
+                                                                <a href="{{ $fileDownload }}" download style="color:rgba(0, 26, 255);">
                                                                     Contoh Pengalaman Kerja <i class="bi bi-download"></i>
                                                                 </a>
                                                                 {{-- <div style="font-size: 0.9em; color: gray;">
@@ -721,7 +721,7 @@ h5 {
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data |
             @if ($fileDownload)
-                <a href="{{ $fileDownload }}" download style="color:red;">
+                <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
                     Contoh Surat Pernyataan <i class="bi bi-download"></i>
                 </a>
             @else
