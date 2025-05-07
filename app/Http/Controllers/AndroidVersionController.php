@@ -730,7 +730,8 @@ public function reasasosiasimasjakikontraktor($namaasosiasi)
         $perPage = $request->input('perPage', 50);
         $search = $request->input('search');
 
-        $query = pesertapelatihan::query();
+        $query = pesertapelatihan::query()->orderByDesc('created_at');
+        $datapesertapelatihan = $query->paginate($perPage);
 
         if ($search) {
             $query->where('jeniskelamin', 'LIKE', "%{$search}%")
