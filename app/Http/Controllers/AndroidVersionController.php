@@ -1312,6 +1312,4 @@ public function resdaftarpelatihanpesertanew(Request $request)
     return redirect('/respesertapelatihan');
 }
 
-
-
 }
