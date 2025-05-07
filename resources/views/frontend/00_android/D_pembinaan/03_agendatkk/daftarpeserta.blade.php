@@ -248,19 +248,19 @@ h5 {
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         @php
-                                                            $inputStyle = "
-                                                                width: 100%;
-                                                                padding: 10px 14px;
-                                                                border-radius: 8px;
-                                                                border: 1px solid #ccc;
-                                                                transition: 0.3s;
-                                                                font-size: 14px;
-                                                            ";
-                                                            $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block; font-size:16px;";
-                                                            $divStyle = "margin-bottom: 20px;";
-                                                            $iconStyle = "color: navy;";
-                                                        @endphp
-
+                                                        $inputStyle = "
+                                                            width: 100%;
+                                                            max-width: 300px; /* agar tidak terlalu panjang di layar besar */
+                                                            padding: 6px 10px;
+                                                            border-radius: 6px;
+                                                            border: 1px solid #ccc;
+                                                            transition: 0.3s;
+                                                            font-size: 13px;
+                                                        ";
+                                                        $labelStyle = "margin-bottom: 4px; font-weight: 500; display: block; font-size:15px;";
+                                                        $divStyle = "margin-bottom: 16px;";
+                                                        $iconStyle = "color: navy;";
+                                                    @endphp
                                                   <!-- Input tersembunyi untuk dikirim ke backend -->
                                                         <input type="hidden" name="user_id" value="{{ old('user_id', $user_id) }}">
 
