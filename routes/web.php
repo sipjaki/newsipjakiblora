@@ -149,7 +149,7 @@ Route::get('/respelatihanpeserta/{namakegiatan}', [AndroidVersionController::cla
 
 // DAFTAR PESERTA PELATIHAN MENU ANDROID
 Route::get('/resdaftarpelatihanpeserta/create/{id}', [AndroidVersionController::class, 'resdaftarpelatihanpeserta'])->name('resdaftarpelatihanpeserta');
-Route::post('/resdaftarpelatihanpeserta/createpeserta/new', [PesertapelatihanController::class, 'resdaftarpelatihanpesertanew'])->name('resdaftarpelatihanpesertanew');
+Route::post('/resdaftarpelatihanpeserta/createpeserta/new', [AndroidVersionController::class, 'resdaftarpelatihanpesertanew'])->name('resdaftarpelatihanpesertanew');
 
 // MENU 3 AGENDA TKK KONSTRUKSI KAB BLORA ------------------------------------------------
 Route::get('/resagendatkk', [AndroidVersionController::class, 'menuresagendatkk']);
