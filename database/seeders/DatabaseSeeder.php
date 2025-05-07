@@ -59407,33 +59407,33 @@ for ($i = 1; $i <= $jumlahData; $i++) {
 
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
-materipelatihan::create([
-    'id'    => 1,
-    'agendapelatihan_id'            => 1,
-    'judulmateripelatihan'          => 'Agenda Pelatihan 1',
-    'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
-]);
+// materipelatihan::create([
+//     'id'    => 1,
+//     'agendapelatihan_id'            => 1,
+//     'judulmateripelatihan'          => 'Agenda Pelatihan 1',
+//     'materipelatihan'          => '01_kelembagaan/01_dinas/Struktur_Organisasi_PUPR_Blora.pdf',
+// ]);
 
-materipelatihan::create([
-    'id'    => 2,
-    'agendapelatihan_id'            => 1,
-    'judulmateripelatihan'          => 'Agenda Pelatihan 2',
-    'materipelatihan'          => null,
-]);
+// materipelatihan::create([
+//     'id'    => 2,
+//     'agendapelatihan_id'            => 1,
+//     'judulmateripelatihan'          => 'Agenda Pelatihan 2',
+//     'materipelatihan'          => null,
+// ]);
 
-materipelatihanskk::create([
-    'id'    => 1,
-    'agendaskk_id'            => 1,
-    'judulskk'          => 'Agenda Sertifikasi 1',
-    'materipelatihanskk'          => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-]);
+// materipelatihanskk::create([
+//     'id'    => 1,
+//     'agendaskk_id'            => 1,
+//     'judulskk'          => 'Agenda Sertifikasi 1',
+//     'materipelatihanskk'          => '00_beranda/02_artikeljakon/artikeljakon.pdf',
+// ]);
 
-materipelatihanskk::create([
-    'id'    => 2,
-    'agendaskk_id'            => 2,
-    'judulskk'          => 'Agenda Sertifikasi 2',
-    'materipelatihanskk'          => '00_beranda/02_artikeljakon/artikeljakon.pdf',
-]);
+// materipelatihanskk::create([
+//     'id'    => 2,
+//     'agendaskk_id'            => 2,
+//     'judulskk'          => 'Agenda Sertifikasi 2',
+//     'materipelatihanskk'          => '00_beranda/02_artikeljakon/artikeljakon.pdf',
+// ]);
 //==========================================================================================================
 // DATA PESERTA PELATIHAN KAB BLORA JASA KONSTRUSI
 pesertapelatihan::create([
