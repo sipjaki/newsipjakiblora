@@ -207,7 +207,7 @@
             @endif
         </td>
 
-        <td style="text-align: left;">
+        <td style="text-align: center;">
             @if($item->phone_number)
                 {{ $item->phone_number }}
             @else
