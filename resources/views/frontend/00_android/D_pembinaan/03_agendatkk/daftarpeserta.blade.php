@@ -250,7 +250,7 @@ h5 {
                                                         @php
                                                         $inputStyle = "
                                                             width: 100%;
-                                                            max-width: 300px; /* agar tidak terlalu panjang di layar besar */
+                                                            max-width: 500px; /* agar tidak terlalu panjang di layar besar */
                                                             padding: 6px 10px;
                                                             border-radius: 6px;
                                                             border: 1px solid #ccc;
