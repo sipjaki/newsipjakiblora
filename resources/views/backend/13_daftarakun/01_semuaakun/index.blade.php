@@ -378,7 +378,18 @@
    <script>
     function exportTableToExcel(tableID, filename = '') {
         var table = document.getElementById(tableID);
-        var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
-        return XLSX.writeFile(wb, filename + '.xlsx');
+        var clonedTable = table.cloneNode(true);
+
+        // Loop setiap baris dan hapus kolom ke-7 dan seterusnya
+        for (var i = 0; i < clonedTable.rows.length; i++) {
+            var row = clonedTable.rows[i];
+            while (row.cells.length > 6) {
+                row.deleteCell(6); // index dimulai dari 0, jadi kolom ke-7 = index 6
+            }
+        }
+
+        var wb = XLSX.utils.table_to_book(clonedTable, {sheet: "Sheet 1"});
+        XLSX.writeFile(wb, filename + '.xlsx');
     }
     </script>
+
