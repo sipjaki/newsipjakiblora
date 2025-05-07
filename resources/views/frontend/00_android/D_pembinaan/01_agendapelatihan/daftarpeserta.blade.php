@@ -325,7 +325,7 @@ h5 {
                                                         <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                                                             <div style="{{ $divStyle }}; flex: 1 1 25%;">
                                                                 <label class="form-label" style="{{ $labelStyle }}">
-                                                                    <i class="bi bi-card-list" style="color: navy;"></i> Jenjang Pendidikan
+                                                                    <i class="bi bi-card-list" style="color: navy;"></i>Pendidikan
                                                                 </label>
                                                                 <select name="jenjangpendidikan_id" style="{{ $inputStyle }}" class="@error('jenjangpendidikan_id') is-invalid @enderror">
                                                                     <option value="" disabled selected>Pilih Jenjang</option>
