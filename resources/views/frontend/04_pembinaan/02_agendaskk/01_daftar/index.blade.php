@@ -461,30 +461,32 @@ table.zebra-table {
     <!-- Upload Pengalaman -->
     <div class="col-md-4" style="{{ $divStyle }}">
         @php
-    $fileDownload = null;
+        $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
+        $fileDownload = null;
 
-    foreach ($datacontohsurat as $item) {
-        if ($item->berkas) {
-            $path = public_path('storage/' . $item->berkas);
+        if ($firstItem && $firstItem->berkas) {
+            $path = public_path('storage/' . $firstItem->berkas);
             if (file_exists($path)) {
-                $fileDownload = asset('storage/' . $item->berkas);
-                break;
+                $fileDownload = asset('storage/' . $firstItem->berkas);
             } else {
-                $fileDownload = asset($item->berkas); // fallback dari path luar storage
-                break;
+                $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
             }
         }
-    }
-@endphp
+    @endphp
 
-<label class="form-label" style="{{ $labelStyle }}">
-    <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman
-    @if ($fileDownload)
-        <a href="{{ $fileDownload }}" download>Contoh Pengalaman Kerja <i class="bi bi-download"></i></a>
-    @else
-        <span style="color: gray;">Contoh belum tersedia</span>
-    @endif
-</label>
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman
+        @if ($fileDownload)
+            <a href="{{ $fileDownload }}" download>
+                Contoh Pengalaman Kerja <i class="bi bi-download"></i>
+            </a>
+            <div style="font-size: 0.9em; color: gray;">
+                File: {{ $firstItem->berkas }}
+            </div>
+        @else
+            <span style="color: gray;">Contoh belum tersedia</span>
+        @endif
+    </label>
 
         <input type="file" name="uploadpengalaman" style="{{ $inputStyle }}" class="form-control @error('uploadpengalaman') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('pengalamanPreview', this)">
         <div class="invalid-feedback">@error('uploadpengalaman') {{ $message }} @enderror</div>
