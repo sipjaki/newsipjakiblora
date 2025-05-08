@@ -93,7 +93,7 @@ public function verifikasikehadiranlsp($id)
     session()->flash('update', 'Peserta berhasil diverifikasi LSP!');
 
     // Redirect ke halaman peserta per agenda
-    return redirect("/beagendaskkpeserta/show/{$agendaId}");
+    return redirect("/beskkdatapesertajumlah/show/{$agendaId}");
 }
 
 }
