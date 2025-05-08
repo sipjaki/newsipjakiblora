@@ -352,14 +352,6 @@
                                             </td>
 
 
-                                            <td class="text-center">
-                                                <button class="btn btn-secondary btn-sm"
-                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                    data-bs-toggle="modal" data-bs-target="#modalNPWP{{ $datapeserta->id }}">
-                                                    <i class="bi bi-eye"></i> Lihat
-                                                </button>
 
                                                 <!-- Modal NPWP -->
                                                 <td class="text-center">
