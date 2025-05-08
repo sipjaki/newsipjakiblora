@@ -395,14 +395,14 @@
             @endif
         </td>
 
-        <!-- Modal Kehadiran -->
+        <!-- Modal -->
         <div id="kehadiranModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
             <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                 <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
                     Apakah Peserta Sudah Bisa Dinyatakan Lolos oleh LSP?
                 </p>
 
-                <!-- Form Verifikasi Kehadiran -->
+                <!-- Form Verifikasi -->
                 <form id="kehadiranForm" method="POST" class="d-inline">
                     @csrf
                     @method('PUT')
@@ -428,7 +428,7 @@
         <script>
             function openKehadiranModal(itemId) {
                 const form = document.getElementById("kehadiranForm");
-                form.action = `{{ url('verifikasilsp.update') }}/${itemId}`;
+                form.action = `/verifikasikehadiranlsp/${itemId}`;
                 document.getElementById("kehadiranModal").style.display = "flex";
             }
 
@@ -436,8 +436,7 @@
                 document.getElementById("kehadiranModal").style.display = "none";
             }
         </script>
-
-                                <td style="text-align: center;">
+                                        <td style="text-align: center;">
                                             <!-- Show Icon -->
                                          {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                                                 <i class="bi bi-eye"></i>

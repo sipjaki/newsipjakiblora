@@ -78,23 +78,22 @@ public function verifikasiktp(Request $request, $id)
     return back()->with('success', 'Validasi KTP berhasil disimpan.');
 }
 
-public function beakseslsppenerbitskk($id)
+public function verifikasikehadiranlsp($id)
 {
     $peserta = allskktenagakerjablora::findOrFail($id);
 
-    // Ambil agenda ID dari field relasinya
+    // Ambil agenda ID dari relasi
     $agendaId = $peserta->agendaskk_id;
 
-    // Update status kehadiran/verifikasi LSP
+    // Update status verifikasi LSP
     $peserta->verifikasilps = true;
     $peserta->save();
 
     // Flash message ke session
     session()->flash('update', 'Peserta berhasil diverifikasi LSP!');
 
-    // Redirect ke halaman peserta sesuai agenda
+    // Redirect ke halaman peserta per agenda
     return redirect("/beagendaskkpeserta/show/{$agendaId}");
 }
-
 
 }
