@@ -1107,7 +1107,7 @@ public function bepesertaskkshowberkas(Request $request, $id)
 
 public function beagendaskkdatapeserta(Request $request)
 {
-    $perPage = $request->input('perPage', 5);
+    $perPage = $request->input('perPage', 15);
     $search = $request->input('search');
 
     // Tambahkan withCount agar setiap agenda membawa jumlah peserta
