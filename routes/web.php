@@ -924,6 +924,10 @@ Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikas
 
 Route::put('/verifikasipesertasertifikasi/{id}', [VerifikasiController::class, 'verifikasipesertasertifikasinew'])->name('verifikasipesertasertifikasi');
 
+
+Route::put('/verifikasiktp/{id}', [VerifikasiController::class, 'verifikasiktp'])->name('validasi.ktp');
+
+
 // ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
 // ___________________________________________________________________________________________________________________________________
 Route::get('/betertibjakonusaha', [TertibjasakonstruksiController::class, 'betertibjakonusaha'])->middleware('auth')->name('bertertibjakonusaha');
