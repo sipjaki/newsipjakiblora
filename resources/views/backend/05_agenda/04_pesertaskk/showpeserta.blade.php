@@ -223,7 +223,7 @@
                                             <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi DPUPR
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Kehadiran
