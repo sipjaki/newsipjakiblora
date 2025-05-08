@@ -138,7 +138,7 @@
                                 <tbody>
                                 {{-- @foreach ($subdata as $item ) --}}
                                     <tr class="align-middle">
-                                        <td style="text-align: center;">{{ $loop->iteration }}</td>
+                                        {{-- <td style="text-align: center;">{{ $loop->iteration }}</td> --}}
 
                                         <td class="text-center">
                                                 <button class="btn btn-secondary btn-sm"
