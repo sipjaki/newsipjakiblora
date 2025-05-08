@@ -144,7 +144,7 @@
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th>
+                                        {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
                                         <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
