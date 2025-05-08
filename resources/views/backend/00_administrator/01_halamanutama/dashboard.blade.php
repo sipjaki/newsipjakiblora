@@ -244,7 +244,7 @@ button:hover {
 
 
 <div class="container">
-    <h1>Status Verifikasi Sertifikasi</h1>
+    <h4>Status Verifikasi Berkas Anda !</h4>
     <div id="checkpoint-container" class="timeline-container"></div>
 
     <div class="control-panel">
