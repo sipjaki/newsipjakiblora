@@ -919,13 +919,13 @@ Route::post('/beagendaskkmateri/createmateri/new', [PembinaanController::class, 
 
 
 // ROUTE UNTUK VERIFIKASI BOOLEADN
-Route::put('/verifikasipesertapelatihan/{id}', [VerifikasiController::class, 'verifikasipesertapelatihan'])->name('verifikasi.updatepesertapelatihan');
-Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikasikehadiran'])->name('verifikasikehadiran');
+Route::put('/verifikasipesertapelatihan/{id}', [VerifikasiController::class, 'verifikasipesertapelatihan'])->middleware('auth')->name('verifikasi.updatepesertapelatihan');
+Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikasikehadiran'])->middleware('auth')->name('verifikasikehadiran');
 
-Route::put('/verifikasipesertasertifikasi/{id}', [VerifikasiController::class, 'verifikasipesertasertifikasinew'])->name('verifikasipesertasertifikasi');
+Route::put('/verifikasipesertasertifikasi/{id}', [VerifikasiController::class, 'verifikasipesertasertifikasinew'])->middleware('auth')->name('verifikasipesertasertifikasi');
 
 
-Route::put('/verifikasiktp/{id}', [VerifikasiController::class, 'verifikasiktp'])->name('validasi.ktp');
+Route::put('/verifikasiktp/{id}', [VerifikasiController::class, 'verifikasiktp'])->middleware('auth')->name('validasi.ktp');
 
 
 // ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
