@@ -124,21 +124,35 @@
         <th style="width: 75px; text-align:center; vertical-align: middle;">
             <i class="bi bi-list-ol"></i> No
         </th>
+
         <th style="width: 250px; text-align:center; vertical-align: middle;">
             <i class="bi bi-journal-text"></i> Nama Kegiatan
         </th>
-        <th style="width: 200px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-tags"></i> Kategori
-        </th>
+
         <th style="width: 250px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-building"></i> Penyelenggara
+            <i class="bi bi-buildings"></i> Penyelenggara
         </th>
+
         <th style="width: 200px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-award"></i> LSP Penerbit
+            <i class="bi bi-award-fill"></i> LSP Penerbit
         </th>
+
+        <th style="width: 200px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-calendar-check"></i> Pelaksanaan
+        </th>
+
+        <th style="width: 200px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-calendar-x"></i> Penutupan
+        </th>
+
+        <th style="width: 200px; text-align:center; vertical-align: middle;">
+            <i class="bi bi-person-badge"></i> Jumlah Peserta
+        </th>
+
         <th style="width: 300px; text-align:center; vertical-align: middle;">
-            <i class="bi bi-people"></i> View Peserta
+            <i class="bi bi-eye"></i> View Peserta
         </th>
+
      </tr>
  </thead>
  <tbody id="tableBody">
@@ -147,9 +161,11 @@
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          {{-- <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td> --}}
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: center;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
          <td style="text-align: center;">{{$item->asosiasimasjaki->namaasosiasi ?? 'Data belum di update'}}</td>
          <td style="text-align: center;">{{$item->user->name}}</td>
+         <td style="text-align: left;">{{$item->waktupelaksanaan}}</td>
+         <td style="text-align: left;">{{$item->penutupan}}</td>
+         <td style="text-align: left;">{{$item->jumlahpeserta}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/bepesertapelatihansertifikat/show/' . $item->id) }}" style="text-decoration: none;">
