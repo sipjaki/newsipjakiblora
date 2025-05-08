@@ -78,7 +78,7 @@ public function verifikasiktp(Request $request, $id)
     return back()->with('success', 'Validasi KTP berhasil disimpan.');
 }
 
-public function verifikasikehadiranlsp($id)
+public function beakseslsppenerbitskk($id)
 {
     $peserta = allskktenagakerjablora::findOrFail($id);
 
