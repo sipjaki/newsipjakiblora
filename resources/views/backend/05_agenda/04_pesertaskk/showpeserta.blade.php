@@ -270,13 +270,16 @@
 
 
                                         <td style="text-align: center;">
-                                            <button class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
-                                                <i class="bi bi-eye"></i> Lihat
-                                            </button>
+                                            <button
+                                            style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                                                   border-radius: 15px; font-size: 14px; cursor: pointer;
+                                                   display: flex; align-items: center; justify-content: center;
+                                                   transition: background-color 0.3s, color 0.3s;"
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+                                            data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
+                                            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+                                        </button>
 
                                             <!-- Modal KTP -->
                                             <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
