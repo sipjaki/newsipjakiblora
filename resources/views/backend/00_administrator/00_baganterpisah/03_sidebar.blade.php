@@ -308,7 +308,7 @@
   </li>
 
   <li class="nav-item">
-    <a href="/beakseslsppenerbit" class="nav-link">
+    <a href="/beakseslsppenerbitskk" class="nav-link">
       <!-- Ikon untuk Paket Pekerjaan -->
       <i class="nav-icon bi bi-briefcase" style="color: white;"></i>
       <p style="color: white">

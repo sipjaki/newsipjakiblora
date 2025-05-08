@@ -911,6 +911,9 @@ Route::get('/beagendaskkdatapeserta', [PembinaanController::class, 'beagendaskkd
 
 Route::get('/beskkdatapesertajumlah/show/{id}', [AgendaskkController::class, 'beskkdatapesertajumlah'])->middleware('auth')->name('beskkdatapesertasertifikatupload');
 
+
+Route::get('/beakseslsppenerbitskk', [PembinaanController::class, 'beakseslsppenerbitskk'])->middleware('auth');
+
 // nurfi
 // ROUTE PENGAMBILAN DATA ID
 // PEKERJAANINI
