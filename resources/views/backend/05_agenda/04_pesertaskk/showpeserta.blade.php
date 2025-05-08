@@ -202,49 +202,52 @@
                                             <i class="bi bi-person-fill" style="margin-right: 5px;"></i>Nama Lengkap
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-person" style="margin-right: 5px;"></i>Pendidikan
+                                            <i class="bi bi-journal-bookmark-fill" style="margin-right: 5px;"></i>Pendidikan
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Jabatan Kerja
+                                            <i class="bi bi-briefcase-fill" style="margin-right: 5px;"></i>Jabatan Kerja
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i>Universitas/Sekolah/Instansi
+                                            <i class="bi bi-building" style="margin-right: 5px;"></i>Universitas/Sekolah/Instansi
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Tahun Bimtek
+                                            <i class="bi bi-calendar3" style="margin-right: 5px;"></i>Tahun Bimtek
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-house-door" style="margin-right: 5px;"></i>NIK
+                                            <i class="bi bi-credit-card-2-front" style="margin-right: 5px;"></i>NIK
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>Tempat Lahir
+                                            <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i>Tempat Lahir
                                         </th>
                                         <th style="width: 250px; text-align:center;">
-                                            <i class="bi bi-envelope-fill" style="margin-right: 5px;"></i>Tanggal Lahir
+                                            <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Tanggal Lahir
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-mortarboard-fill" style="margin-right: 5px;"></i>Jenis Kelamin
+                                            <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Jenis Kelamin
                                         </th>
                                         <th style="width: 250px; text-align:center;">
-                                            <i class="bi bi-briefcase-fill" style="margin-right: 5px;"></i>Alamat
+                                            <i class="bi bi-house-door-fill" style="margin-right: 5px;"></i>Alamat
                                         </th>
                                         <th style="width: 250px; text-align:center;">
-                                            <i class="bi bi-building-fill" style="margin-right: 5px;"></i>No Telepon
+                                            <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>No Telepon
                                         </th>
                                         <th style="width: 150px; text-align:center;">
-                                            <i class="bi bi-calendar3" style="margin-right: 5px;"></i>Tahun Lulus
+                                            <i class="bi bi-envelope-at-fill" style="margin-right: 5px;"></i>Email
+                                        </th>
+                                        <th style="width: 150px; text-align:center;">
+                                            <i class="bi bi-calendar-check-fill" style="margin-right: 5px;"></i>Tahun Lulus
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-people-fill" style="margin-right: 5px;"></i>Utusan
                                         </th>
                                         <th style="width: 150px; text-align:center;">
-                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Punya SKK
+                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i>Punya SKK
                                         </th>
                                         <th style="width: 150px; text-align:center;">
-                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Punya SIKI
+                                            <i class="bi bi-patch-check" style="margin-right: 5px;"></i>Punya SIKI
                                         </th>
                                         <th style="width: 150px; text-align:center;">
-                                            <i class="bi bi-globe" style="margin-right: 5px;"></i>Portal PUPR
+                                            <i class="bi bi-globe2" style="margin-right: 5px;"></i>Portal PUPR
                                         </th>
                                         <th style="width: 150px; text-align:center;">
                                             <i class="bi bi-shield-lock-fill" style="margin-right: 5px;"></i>Siap Patuh
@@ -252,6 +255,7 @@
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-award-fill" style="margin-right: 5px;"></i>Sertifikat
                                         </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
