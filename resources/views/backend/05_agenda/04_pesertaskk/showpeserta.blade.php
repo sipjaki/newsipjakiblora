@@ -268,6 +268,10 @@
                                             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Verifikasi LSP
                                         </th>
 
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Terbitkan Sertifikat
+                                        </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
