@@ -289,7 +289,7 @@
 
          <!-- Tombol Verifikasi -->
          <td style="text-align: center;">
-            @if($item->verifikasi == false)
+            @if($item->verifikasipu == false)
                 <button type="button" onclick="openModal({{ $item->id }})"
                     class="btn btn-danger">
                     <i class="bi bi-x-circle"></i> BELUM LOLOS
@@ -316,7 +316,7 @@
         </td>
 
         <td style="text-align: center;">
-            @if($item->verifikasikehadiran == false)
+            @if($item->verifikasilps == false)
                 <button type="button" onclick="openKehadiranModal({{ $item->id }})"
                     class="btn btn-danger">
                     <i class="bi bi-x-circle"></i> TIDAK HADIR
