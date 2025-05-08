@@ -226,7 +226,7 @@
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi DPUPR
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Kehadiran
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi LSP
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-gear" style="margin-right: 5px;"></i>Upload Sertifikat
