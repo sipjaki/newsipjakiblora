@@ -646,7 +646,7 @@ headerberanda::create([
             'id'  => 38,
             'name'  => 'Bina Konstruksi Nusantara',
             'username' => 'bkn',
-            'statusadmin_id' => '1',
+            'statusadmin_id' => '7',
             'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'bkn@gmail.com',
             'password' => bcrypt('bknadmin123$$')
@@ -656,12 +656,13 @@ headerberanda::create([
             'id'  => 39,
             'name'  => 'Manajemen Konstruksi Nusantara',
             'username' => 'bkn',
-            'statusadmin_id' => '1',
+            'statusadmin_id' => '7',
             'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
             'email' => 'mkn@gmail.com',
             'password' => bcrypt('mknadmin123$$$$')
         ]);
 
+        // nurfi
 
         // =================================================================
         bulanrekap::create([
