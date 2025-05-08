@@ -925,7 +925,7 @@ Route::put('/verifikasikehadiran/{id}', [VerifikasiController::class, 'verifikas
 Route::put('/verifikasipesertasertifikasi/{id}', [VerifikasiController::class, 'verifikasipesertasertifikasinew'])->middleware('auth')->name('verifikasipesertasertifikasi');
 
 
-Route::put('/verifikasiktp/{id}', [VerifikasiController::class, 'verifikasiktp'])->middleware('auth')->name('validasi.ktp');
+Route::post('/verifikasiktp/{id}', [VerifikasiController::class, 'verifikasiktp'])->middleware('auth')->name('validasi.ktp');
 
 
 // ---------------------- MENU PENGAWASAN TERTIB JAKON USAHA BACKEND    -----------------------------------------------------
