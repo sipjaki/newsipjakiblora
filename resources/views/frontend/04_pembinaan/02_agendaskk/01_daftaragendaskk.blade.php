@@ -206,7 +206,7 @@ table.zebra-table {
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
 
                             <td>{{ $item->namakegiatan ?? 'Data Belum Diupdate' }}</td>
-                            <td>{{ $item->penyelenggara ?? 'Data Belum Diupdate' }}</td>
+                            <td>{{ $item->user->name ?? 'Data Belum Diupdate' }}</td>
 
                             <td>
                                 {{ $item->penutupan ? \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') : 'Data Belum Diupdate' }}
