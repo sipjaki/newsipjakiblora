@@ -266,16 +266,16 @@
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil !</div>
         <p style="margin-bottom: 4px;">
-            Daftar Peserta, silakan klik tautan berikut:
+            Status Pendaftaran, silakan klik tautan berikut:
         </p>
         <p style="margin-top: 0;">
-            <a href="/respesertapelatihan" style="text-decoration: none; color: #007bff;">
-                Lihat Daftar Peserta
+            <a href="/dashboard" style="text-decoration: none; color: #007bff;">
+                Lihat Status Pendaftaran
             </a>
         </p>
         {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
         <br>
-        <button class="button-text">{{ session('daftarpelatihan') }}</button>
+        <button class="button-text">{{ session('daftarskk') }}</button>
     </div>
 </div>
 @endif
