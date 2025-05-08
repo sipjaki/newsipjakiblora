@@ -186,6 +186,7 @@ table.zebra-table {
                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:500px;"> Nama Kegiatan </th>
                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:500px;"> Keterangan </th>
                             <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> Penyelenggara </th>
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:500px;"> LSP </th>
                             <th style="text-align:center; width:100px;"> View Peserta </th>
                         </tr>
 
@@ -198,6 +199,7 @@ table.zebra-table {
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                             <td>{{$item->namakegiatan}}</td>
                             <td>{{$item->keterangan}}</td>
+                            <td>{{$item->asosiasimasjaki->namaasosiasi}}</td>
                             <td>{{$item->user->name}}</td>
                             {{-- <td>{{$item->keterangan}}</td> --}}
                             <td style="text-align: center">
