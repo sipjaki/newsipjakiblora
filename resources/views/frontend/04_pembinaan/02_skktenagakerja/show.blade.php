@@ -138,7 +138,19 @@
             <td style="width:50px; text-align:center;">:</td>
             <td style="width:200px; text-align:center;">{{ ucwords(strtolower($data->user->name)) }}</td>
             <td style="width:400px; text-align:center;">
-                <img src="/assets/00_dokmasjaki/03_datajakon/jabatan.png" alt="" width="200px;">
+
+                <div style="margin-top: 10px;">
+                    @if($data->uploadfoto && file_exists(public_path('storage/' . $data->uploadfoto)))
+                        <!-- Menampilkan gambar dari storage -->
+                        <img src="{{ asset('storage/' . $data->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                    @elseif($data->uploadfoto)
+                        <!-- Menampilkan gambar dari path luar storage -->
+                        <img src="{{ asset($data->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                    @else
+                        <!-- Placeholder jika tidak ada data -->
+                        <p>Data belum diupdate</p>
+                    @endif
+                </div>
             </td>
         </tr>
 
