@@ -222,6 +222,107 @@
                                             </td>
 
 
+                                            <td class="text-center">
+                                                <button class="btn btn-secondary btn-sm"
+                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                    data-bs-toggle="modal" data-bs-target="#modalIjazah{{ $datapeserta->id }}">
+                                                    <i class="bi bi-eye"></i> Lihat Ijazah
+                                                </button>
+
+                                                <!-- Modal Ijazah -->
+                                                <div class="modal fade" id="modalIjazah{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalIjazahLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
+                                                                <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                                <h5 class="modal-title" id="modalIjazahLbl{{ $datapeserta->id }}">Dokumen Ijazah</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                @if($datapeserta->uploadijazah)
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadijazah) }}" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
+                                                                    <a href="{{ asset('storage/' . $datapeserta->uploadijazah) }}" class="btn btn-primary mt-2" download>Download Ijazah</a>
+                                                                @else
+                                                                    <p class="text-muted">Dokumen Ijazah belum tersedia.</p>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+
+                                            <td class="text-center">
+                                                <button class="btn btn-secondary btn-sm"
+                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                    data-bs-toggle="modal" data-bs-target="#modalPengalaman{{ $datapeserta->id }}">
+                                                    <i class="bi bi-eye"></i> Lihat Pengalaman
+                                                </button>
+
+                                                <!-- Modal Pengalaman Kerja -->
+                                                <div class="modal fade" id="modalPengalaman{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalPengalamanLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
+                                                                <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                                <h5 class="modal-title" id="modalPengalamanLbl{{ $datapeserta->id }}">Dokumen Pengalaman Kerja</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                @if($datapeserta->uploadpengalaman)
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
+                                                                    <a href="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" class="btn btn-primary mt-2" download>Download Pengalaman</a>
+                                                                @else
+                                                                    <p class="text-muted">Dokumen Pengalaman Kerja belum tersedia.</p>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+
+                                            <td class="text-center">
+                                                <button class="btn btn-secondary btn-sm"
+                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                    data-bs-toggle="modal" data-bs-target="#modalKebenaranData{{ $datapeserta->id }}">
+                                                    <i class="bi bi-eye"></i> Lihat Pernyataan Kebenaran Data
+                                                </button>
+
+                                                <!-- Modal Pernyataan Kebenaran Data -->
+                                                <div class="modal fade" id="modalKebenaranData{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalKebenaranDataLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
+                                                                <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                                <h5 class="modal-title" id="modalKebenaranDataLbl{{ $datapeserta->id }}">Dokumen Pernyataan Kebenaran Data</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                @if($datapeserta->uploadkebenarandata)
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
+                                                                    <a href="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" class="btn btn-primary mt-2" download>Download Pernyataan</a>
+                                                                @else
+                                                                    <p class="text-muted">Dokumen Pernyataan Kebenaran Data belum tersedia.</p>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+
+
+
 
 
 
