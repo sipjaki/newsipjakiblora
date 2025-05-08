@@ -183,19 +183,34 @@ table.zebra-table {
                 <table class="zebra-table fl-table" id="sortableTable" style="margin-top: 15px; width: 100%; border-collapse: collapse;">
                     <thead>
                             <tr>
-                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                {{-- <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;"> Kategori Pelatihan <span class="sort-icon">⇅</span></th> --}}
-                                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;"> Nama Kegiatan </th>
-                                <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:250px;"> Penyelenggara </th>
-                                {{-- <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;"> Jenjang <span class="sort-icon">⇅</span></th> --}}
-                                <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Penutupan </th>
-                                <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Waktu Pelaksanaan </th>
-                                <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;"> Jumlah Peserta </th>
-                                <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Lokasi </th>
-                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th>
-                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendaftaran </th>
-                                {{-- <th style="text-align:center; width:100px;"> Daftar </th> --}}
-                            </tr>
+                                <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                    <i class="bi bi-list-ol"></i> No
+                                </th>
+                                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;">
+                                    <i class="bi bi-journal-text"></i> Nama Kegiatan
+                                </th>
+                                <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:250px;">
+                                    <i class="bi bi-building"></i> Penyelenggara
+                                </th>
+                                <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
+                                    <i class="bi bi-calendar-x"></i> Penutupan
+                                </th>
+                                <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
+                                    <i class="bi bi-clock"></i> Waktu Pelaksanaan
+                                </th>
+                                <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
+                                    <i class="bi bi-people-fill"></i> Jumlah Peserta
+                                </th>
+                                <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;">
+                                    <i class="bi bi-geo-alt"></i> Lokasi
+                                </th>
+                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
+                                    <i class="bi bi-info-circle"></i> Keterangan
+                                </th>
+                                <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
+                                    <i class="bi bi-pencil-square"></i> Pendaftaran
+                                </th>
+                                                                </tr>
 
                     </thead>
 
