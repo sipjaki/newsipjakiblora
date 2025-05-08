@@ -451,6 +451,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadpengalaman' => '04_pembinaan/03_sertifikasi/04_uploadpengalaman',
         'uploadnpwp' => '04_pembinaan/03_sertifikasi/05_uploadnpwp',
         'uploaddaftarriwayathidup' => '04_pembinaan/03_sertifikasi/06_uploadriwayathidup',
+        'uploadkebenarandata' => '04_pembinaan/03_sertifikasi/07_uploadkebenarandata',
     ];
 
     $uploadedFiles = [];
@@ -493,6 +494,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadpengalaman' => $uploadedFiles['uploadpengalaman'] ?? null,
         'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
         'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
+        'uploadkebenarandata' => $uploadedFiles['uploadkebenarandata'] ?? null,
 
         'namaasosiasi' => $validated['namaasosiasi'] ?? null,
         'punyaskk' => $validated['punyaskk'],

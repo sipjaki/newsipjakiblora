@@ -255,6 +255,31 @@
 </div>
 @endif
 
+@if (session('daftarskk'))
+<div class="modal-verify-alert">
+    <div class="modal-box">
+        <div class="modal-crane"></div>
+        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
+        style="width: 150px !important; height: auto;"
+        class="logo-animate-bounce">
+           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+        <div class="success-text">Berhasil !</div>
+        <p style="margin-bottom: 4px;">
+            Daftar Peserta, silakan klik tautan berikut:
+        </p>
+        <p style="margin-top: 0;">
+            <a href="/respesertapelatihan" style="text-decoration: none; color: #007bff;">
+                Lihat Daftar Peserta
+            </a>
+        </p>
+        {{-- <a href="/dashboard"><span>Silahkan Klik Untuk Mengetahui Informasi Berkas Anda</span></a> --}}
+        <br>
+        <button class="button-text">{{ session('daftarpelatihan') }}</button>
+    </div>
+</div>
+@endif
+
 @if (session('verifikasikehadiran'))
 <div class="modal-verify-alert">
     <div class="modal-box">
