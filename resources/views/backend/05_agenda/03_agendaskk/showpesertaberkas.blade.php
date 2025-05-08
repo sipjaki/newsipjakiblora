@@ -147,7 +147,7 @@
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
                                         {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
-                                        <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
+                                        {{-- <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -428,7 +428,7 @@
                                                 </div>
                                             </td>
 
-                                                       <td style="text-align: center;">
+                                                       {{-- <td style="text-align: center;"> --}}
                                             <!-- Show Icon -->
                                          {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
                                                 <i class="bi bi-eye"></i>
@@ -439,13 +439,13 @@
                                             </a> --}}
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
-                                            <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
                                             data-id="{{ $datapeserta->id }}" onclick="setDeleteUrl(this)">
                                              <i class="bi bi-trash"></i>
-                                         </a>
+                                         </a> --}}
 
                                          <!-- Modal -->
-                                         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                                         {{-- <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                                              <div class="modal-dialog">
                                                  <div class="modal-content">
                                                      <div class="modal-header">
@@ -466,10 +466,10 @@
                                                      </div>
                                                  </div>
                                              </div>
-                                         </div>
+                                         </div> --}}
 
                                          <!-- Script untuk set action form -->
-                                         <script>
+                                         {{-- <script>
                                          function setDeleteUrl(button) {
                                              var id = button.getAttribute('data-id');
                                              var deleteUrl = "{{ route('beagendapelatihanmateridelete', ':id') }}";
@@ -490,7 +490,7 @@
                                                     color: black !important; /* Ensure the icon color changes to black */
                                                 }
                                             </style>
-                                        </td>
+                                        </td> --}}
 
                                     </tr>
                                         {{-- @endforeach --}}
