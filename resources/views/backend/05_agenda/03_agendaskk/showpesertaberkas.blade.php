@@ -373,13 +373,15 @@
                                                             </div>
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
-                                                                    <!-- Menampilkan gambar NPWP -->
                                                                     @if($datapeserta->uploadnpwp && file_exists(public_path('storage/' . $datapeserta->uploadnpwp)))
-                                                                        <img src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" alt="NPWP" style="max-width:100%; max-height:500px;">
+                                                                        <!-- Menampilkan gambar dari storage -->
+                                                                        <img src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                                     @elseif($datapeserta->uploadnpwp)
-                                                                        <img src="{{ asset($datapeserta->uploadnpwp) }}" alt="NPWP" style="max-width:100%; max-height:500px;">
+                                                                        <!-- Menampilkan gambar dari path luar storage -->
+                                                                        <img src="{{ asset($datapeserta->uploadnpwp) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                                     @else
-                                                                        <p>Data NPWP belum diupdate</p>
+                                                                        <!-- Placeholder jika tidak ada data -->
+                                                                        <p>Data belum diupdate</p>
                                                                     @endif
                                                                 </div>
                                                             </div>
