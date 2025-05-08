@@ -136,7 +136,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {{-- @foreach ($subdata as $item ) --}}
+                                {{-- @foreach ($subdata as $data ) --}}
                                     <tr class="align-middle">
                                         {{-- <td style="text-align: center;">{{ $loop->iteration }}</td> --}}
 
@@ -145,25 +145,25 @@
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                                                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                    data-bs-toggle="modal" data-bs-target="#modalKTP{{ $item->id }}">
+                                                    data-bs-toggle="modal" data-bs-target="#modalKTP{{ $data->id }}">
                                                     <i class="bi bi-eye"></i> Lihat
                                                 </button>
 
                                                 <!-- Modal KTP -->
-                                                <div class="modal fade" id="modalKTP{{ $item->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $item->id }}" aria-hidden="true">
+                                                <div class="modal fade" id="modalKTP{{ $data->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $data->id }}" aria-hidden="true">
                                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalKTPLbl{{ $item->id }}">Dokumen KTP</h5>
+                                                                <h5 class="modal-title" id="modalKTPLbl{{ $data->id }}">Dokumen KTP</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
-                                                                @if($item->uploadktp && file_exists(public_path('storage/' . $item->uploadktp)))
-                                                                    <img src="{{ asset('storage/' . $item->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                                                                @elseif($item->uploadktp)
-                                                                    <img src="{{ asset($item->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                @if($data->uploadktp && file_exists(public_path('storage/' . $data->uploadktp)))
+                                                                    <img src="{{ asset('storage/' . $data->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                @elseif($data->uploadktp)
+                                                                    <img src="{{ asset($data->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
                                                                 @else
                                                                     <p>Data belum diupdate</p>
                                                                 @endif
@@ -188,7 +188,7 @@
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                            data-id="{{ $item->id }}" onclick="setDeleteUrl(this)">
+                                            data-id="{{ $data->id }}" onclick="setDeleteUrl(this)">
                                              <i class="bi bi-trash"></i>
                                          </a>
 
