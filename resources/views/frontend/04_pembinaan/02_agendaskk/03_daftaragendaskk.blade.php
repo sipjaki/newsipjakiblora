@@ -198,7 +198,7 @@ table.zebra-table {
                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                             <td>{{$item->namakegiatan}}</td>
                             <td>{{$item->keterangan}}</td>
-                            <td>{{$item->penyelenggara}}</td>
+                            <td>{{$item->user->name}}</td>
                             {{-- <td>{{$item->keterangan}}</td> --}}
                             <td style="text-align: center">
                                 <div style="
