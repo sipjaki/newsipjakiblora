@@ -164,6 +164,8 @@
                                                 <i class="bi bi-eye"></i> Lihat
                                             </button>
 
+
+                                            {{-- berkas 1 --}}
                                             <!-- Modal KTP -->
                                             <div class="modal fade" id="modalKTP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $datapeserta->id }}" aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -190,6 +192,7 @@
                                             </div>
                                         </td>
 
+                                        {{-- berkas 2  --}}
                                         <td class="text-center">
                                             <button class="btn btn-secondary btn-sm"
                                                 style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -226,6 +229,7 @@
                                         </td>
 
 
+                                        {{-- berkas 3 ijazzah --}}
                                             <td class="text-center">
                                                 <button class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -266,6 +270,7 @@
                                             </td>
 
 
+                                            {{-- berkas 4 pengalaman --}}
                                             <td class="text-center">
                                                 <button class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -305,7 +310,7 @@
                                                 </div>
                                             </td>
 
-
+{{-- berkas 5 kebenaran daa  --}}
                                             <td class="text-center">
                                                 <button class="btn btn-secondary btn-sm"
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
@@ -344,6 +349,8 @@
                                                     </div>
                                                 </div>
                                             </td>
+
+
 
                                             <div class="modal fade" id="modalUploadNPWP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalUploadNPWPLbl{{ $datapeserta->id }}" aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -395,13 +402,20 @@
                                                             <div class="modal-body text-center">
                                                                 <div style="margin-top: 10px;">
                                                                     <!-- Menampilkan uploaddaftarriwayathidup dengan iframe -->
-                                                                    @if($datapeserta->uploaddaftarriwayathidup && file_exists(public_path('storage/' . $datapeserta->uploaddaftarriwayathidup)))
-                                                                        <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="500px"></iframe>
+                                                                    <div style="margin-top: 10px;">
+                                                                        @if($datapeserta->uploaddaftarriwayathidup && file_exists(public_path('storage/' . $datapeserta->peraturan)))
+                                                                        <!-- Display the default iframe when the file exists in the storage -->
+                                                                        <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                     @elseif($datapeserta->uploaddaftarriwayathidup)
-                                                                        <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="500px"></iframe>
+                                                                        <!-- Display the iframe with the updated file -->
+                                                                        <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                     @else
-                                                                        <p>Data Riwayat Hidup belum diupdate</p>
+                                                                        <!-- Optional: Show a placeholder if there's no file available -->
+                                                                        <p>Data belum diupdate</p>
                                                                     @endif
+
+                                                                    </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>
