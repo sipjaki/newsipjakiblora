@@ -105,7 +105,7 @@
                 </button>
 
 
-                     {{-- <a href="/beagendapelatihanmateri/createmateri/{{$data->id}}">
+                     {{-- <a href="/beagendapelatihanmateri/createmateri/{{$datapeserta->id}}">
                         <button
                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                          onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
@@ -124,7 +124,7 @@
                             <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th>
+                                        {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
@@ -136,7 +136,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {{-- @foreach ($subdata as $data ) --}}
+                                {{-- @foreach ($subdata as $datapeserta ) --}}
                                     <tr class="align-middle">
                                         {{-- <td style="text-align: center;">{{ $loop->iteration }}</td> --}}
 
@@ -145,25 +145,25 @@
                                                     style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                                                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                    data-bs-toggle="modal" data-bs-target="#modalKTP{{ $data->id }}">
+                                                    data-bs-toggle="modal" data-bs-target="#modalKTP{{ $datapeserta->id }}">
                                                     <i class="bi bi-eye"></i> Lihat
                                                 </button>
 
                                                 <!-- Modal KTP -->
-                                                <div class="modal fade" id="modalKTP{{ $data->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $data->id }}" aria-hidden="true">
+                                                <div class="modal fade" id="modalKTP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $datapeserta->id }}" aria-hidden="true">
                                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
                                                                 <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalKTPLbl{{ $data->id }}">Dokumen KTP</h5>
+                                                                <h5 class="modal-title" id="modalKTPLbl{{ $datapeserta->id }}">Dokumen KTP</h5>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
-                                                                @if($data->uploadktp && file_exists(public_path('storage/' . $data->uploadktp)))
-                                                                    <img src="{{ asset('storage/' . $data->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                                                                @elseif($data->uploadktp)
-                                                                    <img src="{{ asset($data->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                @if($datapeserta->uploadktp && file_exists(public_path('storage/' . $datapeserta->uploadktp)))
+                                                                    <img src="{{ asset('storage/' . $datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                @elseif($datapeserta->uploadktp)
+                                                                    <img src="{{ asset($datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
                                                                 @else
                                                                     <p>Data belum diupdate</p>
                                                                 @endif
@@ -188,7 +188,7 @@
                                             <!-- Delete Icon -->
                                             <!-- Tombol Delete -->
                                             <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                            data-id="{{ $data->id }}" onclick="setDeleteUrl(this)">
+                                            data-id="{{ $datapeserta->id }}" onclick="setDeleteUrl(this)">
                                              <i class="bi bi-trash"></i>
                                          </a>
 
