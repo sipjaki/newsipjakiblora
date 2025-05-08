@@ -164,8 +164,6 @@
                                                 <i class="bi bi-eye"></i> Lihat
                                             </button>
 
-
-                                            {{-- berkas 1 --}}
                                             <!-- Modal KTP -->
                                             <div class="modal fade" id="modalKTP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $datapeserta->id }}" aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -186,6 +184,24 @@
                                                             @else
                                                                 <p>Data belum diupdate</p>
                                                             @endif
+
+                                                            <!-- Validasi KTP -->
+                                                            <div class="mt-4">
+                                                                <form action="{{ route('validasi.ktp', $datapeserta->id) }}" method="POST">
+                                                                    @csrf
+                                                                    <label class="me-3">Validasi Dokumen:</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="validasi_ktp" id="ktpSesuai{{ $datapeserta->id }}" value="sesuai" required>
+                                                                        <label class="form-check-label" for="ktpSesuai{{ $datapeserta->id }}">✅ Sesuai</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" type="radio" name="validasi_ktp" id="ktpTidakSesuai{{ $datapeserta->id }}" value="tidak_sesuai" required>
+                                                                        <label class="form-check-label" for="ktpTidakSesuai{{ $datapeserta->id }}">❌ Tidak Sesuai</label>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-success btn-sm mt-3">Simpan Validasi</button>
+                                                                </form>
+                                                            </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
