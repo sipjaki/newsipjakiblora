@@ -150,7 +150,7 @@
             <td style="text-align: center;">2</td>
             <td>Jabatan Kerja </td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->jabatankerja}}</td>
+            <td>{{$data->jabatankerja->jabatankerja}}</td>
         </tr>
 
         <tr>
