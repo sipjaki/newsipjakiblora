@@ -143,10 +143,10 @@
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
+                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
                                         {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
                                         <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
                                     </tr>
                                 </thead>
@@ -246,12 +246,19 @@
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
-                                                                @if($datapeserta->uploadijazah)
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadijazah) }}" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
-                                                                    <a href="{{ asset('storage/' . $datapeserta->uploadijazah) }}" class="btn btn-primary mt-2" download>Download Ijazah</a>
+                                                                <div style="margin-top: 10px;">
+                                                                    @if($datapeserta->uploadijazah && file_exists(public_path('storage/' . $datapeserta->uploadijazah)))
+                                                                    <!-- Display the default iframe when the file exists in the storage -->
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                @elseif($datapeserta->uploadijazah)
+                                                                    <!-- Display the iframe with the updated file -->
+                                                                    <iframe src="{{ asset($datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @else
-                                                                    <p class="text-muted">Dokumen Ijazah belum tersedia.</p>
+                                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                                    <p>Data belum diupdate</p>
                                                                 @endif
+
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -279,12 +286,19 @@
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
-                                                                @if($datapeserta->uploadpengalaman)
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
-                                                                    <a href="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" class="btn btn-primary mt-2" download>Download Pengalaman</a>
+                                                                <div style="margin-top: 10px;">
+                                                                    @if($datapeserta->uploadpengalaman && file_exists(public_path('storage/' . $datapeserta->uploadpengalaman)))
+                                                                    <!-- Display the default iframe when the file exists in the storage -->
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                @elseif($datapeserta->uploadpengalaman)
+                                                                    <!-- Display the iframe with the updated file -->
+                                                                    <iframe src="{{ asset($datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @else
-                                                                    <p class="text-muted">Dokumen Pengalaman Kerja belum tersedia.</p>
+                                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                                    <p>Data belum diupdate</p>
                                                                 @endif
+
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -312,22 +326,88 @@
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                             </div>
                                                             <div class="modal-body text-center">
-                                                                @if($datapeserta->uploadkebenarandata)
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" width="100%" height="500px" style="border: 1px solid #ccc;"></iframe>
-                                                                    <a href="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" class="btn btn-primary mt-2" download>Download Pernyataan</a>
+                                                                <div style="margin-top: 10px;">
+                                                                    @if($datapeserta->uploadkebenarandata && file_exists(public_path('storage/' . $datapeserta->uploadkebenarandata)))
+                                                                    <!-- Display the default iframe when the file exists in the storage -->
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                                                @elseif($datapeserta->uploadkebenarandata)
+                                                                    <!-- Display the iframe with the updated file -->
+                                                                    <iframe src="{{ asset($datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @else
-                                                                    <p class="text-muted">Dokumen Pernyataan Kebenaran Data belum tersedia.</p>
+                                                                    <!-- Optional: Show a placeholder if there's no file available -->
+                                                                    <p>Data belum diupdate</p>
                                                                 @endif
+
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
 
+                                            <div class="modal fade" id="modalUploadNPWP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalUploadNPWPLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
+                                                            <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                            <h5 class="modal-title" id="modalUploadNPWPLbl{{ $datapeserta->id }}">Dokumen NPWP</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                        </div>
+                                                        <div class="modal-body text-center">
+                                                            <div style="margin-top: 10px;">
+                                                                @if($datapeserta->uploadnpwp && file_exists(public_path('storage/' . $datapeserta->uploadnpwp)))
+                                                                    <!-- Tampilkan gambar jika file NPWP ada -->
+                                                                    <img src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" alt="NPWP" style="max-width: 100%; max-height: 500px;">
+                                                                @elseif($datapeserta->uploadnpwp)
+                                                                    <!-- Tampilkan gambar jika file NPWP ada -->
+                                                                    <img src="{{ asset($datapeserta->uploadnpwp) }}" alt="NPWP" style="max-width: 100%; max-height: 500px;">
+                                                                @else
+                                                                    <!-- Jika tidak ada file NPWP -->
+                                                                    <p>Data NPWP belum diupdate</p>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
+                                            <td class="text-center">
+                                                <button class="btn btn-secondary btn-sm"
+                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                    data-bs-toggle="modal" data-bs-target="#modalDaftarRiwayatHidup{{ $datapeserta->id }}">
+                                                    <i class="bi bi-eye"></i> Lihat
+                                                </button>
 
-
+                                                <!-- Modal Riwayat Hidup -->
+                                                <div class="modal fade" id="modalDaftarRiwayatHidup{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalDaftarRiwayatHidupLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
+                                                                <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                                <h5 class="modal-title" id="modalDaftarRiwayatHidupLbl{{ $datapeserta->id }}">Dokumen Riwayat Hidup</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                            </div>
+                                                            <div class="modal-body text-center">
+                                                                <div style="margin-top: 10px;">
+                                                                    <!-- Menampilkan uploaddaftarriwayathidup dengan iframe -->
+                                                                    @if($datapeserta->uploaddaftarriwayathidup && file_exists(public_path('storage/' . $datapeserta->uploaddaftarriwayathidup)))
+                                                                        <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="500px"></iframe>
+                                                                    @elseif($datapeserta->uploaddaftarriwayathidup)
+                                                                        <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="500px"></iframe>
+                                                                    @else
+                                                                        <p>Data Riwayat Hidup belum diupdate</p>
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
 
 
                                                        <td style="text-align: center;">
