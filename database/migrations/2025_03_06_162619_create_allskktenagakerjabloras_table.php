@@ -46,6 +46,7 @@ return new class extends Migration
                     // $table->boolean('verifikasiktp')->default(false);
                     $table->boolean('verifikasipu')->default(false);
                     $table->boolean('verifikasilps')->default(false);
+                    $table->boolean('verifikasihadirsertifikasi')->default(false);
                     $table->softDeletes();
                     $table->timestamps();
 

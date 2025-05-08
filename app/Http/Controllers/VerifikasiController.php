@@ -96,4 +96,23 @@ public function verifikasikehadiranlsp($id)
     return redirect("/beskkdatapesertajumlah/show/{$agendaId}");
 }
 
+public function verifikasikehadiranlsphadir($id)
+{
+    // Mencari peserta berdasarkan ID
+    $peserta = allskktenagakerjablora::findOrFail($id);
+
+    // Ambil agenda ID dari relasi
+    $agendaId = $peserta->agendaskk_id;
+
+    // Memperbarui status verifikasi hadir sertifikasi
+    $peserta->verifikasihadirsertifikasi = true;
+    $peserta->save();
+
+    // Flash message ke session
+    session()->flash('update', 'Peserta berhasil diverifikasi hadir pelaksanaan !');
+
+    // Redirect ke halaman peserta per agenda
+    return redirect("/beskkdatapesertajumlah/show/{$agendaId}");
+}
+
 }
