@@ -116,7 +116,7 @@
                 <path fill-rule="evenodd"
                     d="M14 14s-1-1.5-6-1.5S2 14 2 14s1-4 6-4 6 4 6 4z"/>
             </svg>
-                {{ $datapeserta->user->name }}
+                Nama Peserta : {{ $datapeserta->user->name }}
             </button>
 
                      {{-- <a href="/beagendapelatihanmateri/createmateri/{{$datapeserta->id}}">

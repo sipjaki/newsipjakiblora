@@ -102,7 +102,7 @@
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Lihat Berkas
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi PU
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-gear" style="margin-right: 5px;"></i>Aksi
