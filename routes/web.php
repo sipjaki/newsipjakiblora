@@ -906,9 +906,10 @@ Route::post('/daftarpesertasertifikasiskk/createmateri/new', [AgendaskkControlle
 Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagendaskkpesertashow'])->middleware('auth');
 Route::get('/bepesertaskkshowberkas/show/{id}', [PembinaanController::class, 'bepesertaskkshowberkas'])->middleware('auth');
 
+
+Route::get('/beagendaskkdatapeserta', [PembinaanController::class, 'beagendaskkdatapeserta'])->middleware('auth');
+
 // nurfi
-
-
 // ROUTE PENGAMBILAN DATA ID
 // PEKERJAANINI
 

@@ -555,7 +555,7 @@
 
                   <!-- Peserta SKK -->
                   <li class="nav-item">
-                    <a href="/404" class="nav-link">
+                    <a href="/beagendaskkpesertashow" class="nav-link">
                       <i class="nav-icon bi bi-person-badge text-warning"></i> <!-- Ikon untuk Peserta SKK -->
                       <p style="color: white">Peserta SKK</p>
                     </a>

@@ -1105,6 +1105,46 @@ public function bepesertaskkshowberkas(Request $request, $id)
 }
 
 
+public function beagendaskkdatapeserta(Request $request)
+{
+    $perPage = $request->input('perPage', 5);
+    $search = $request->input('search');
+
+    // Tambahkan withCount agar setiap agenda membawa jumlah peserta
+    $query = agendaskk::withCount('allskktenagakerjablora');
+
+    if ($search) {
+        $query->where('namakegiatan', 'LIKE', "%{$search}%")
+                ->where('waktupelaksanaan', 'LIKE', "%{$search}%")
+                ->where('penutupan', 'LIKE', "%{$search}%")
+                ->where('jumlahpeserta', 'LIKE', "%{$search}%")
+
+            ->orWhereHas('asosiasimasjaki', function ($q) use ($search) {
+                $q->where('namaasosiasi', 'LIKE', "%{$search}%");
+            })
+            ->orWhereHas('user', function ($q) use ($search) {
+                $q->where('name', 'LIKE', "%{$search}%");
+            });
+    }
+
+    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.05_agenda.04_pesertaskk.partials.table', compact('data'))->render()
+        ]);
+    }
+
+    return view('backend.05_agenda.04_pesertaskk.index', [
+        'title' => 'Daftar Peserta SKK Sertifikasi',
+        'data' => $data,
+        'perPage' => $perPage,
+        'search' => $search
+    ]);
+}
+
+
+
 }
 
 
