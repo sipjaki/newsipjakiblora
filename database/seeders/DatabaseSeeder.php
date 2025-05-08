@@ -13177,7 +13177,38 @@ allskktenagakerjablora::create([
     'verifikasilps' => false,
 ]);
 
-// fort
+
+
+allskktenagakerjablora::create([
+    'agendaskk_id' => 1,
+    'user_id' => 18,
+    'jabatankerja_id' => '1',
+    'tempatlahir' => 'Semarang',
+    'ttl' => '1993-02-12',
+    'jeniskelamin' => 'Laki-laki',
+    'nik' => '8772460430468255',
+    'alamat' => 'RT 4 RW 8 dukuh surabaya',
+    'notelepon' => '083506273516',
+    'email' => 'user20@example.com',
+    'jenjangpendidikan_id' => 5,
+    'namasekolah_id' => 17,
+    'tahunlulus' => 2023,
+    'tahunpilihan_id' => 1,
+    'uploadktp' => 'https://drive.google.com/open?id=dummy_ktp',
+    'uploadfoto' => 'https://drive.google.com/open?id=dummy_foto',
+    'uploadijazah' => 'https://drive.google.com/open?id=dummy_ijazah',
+    'uploadpengalaman' => 'https://drive.google.com/open?id=dummy_pengalaman',
+    'uploadnpwp' => 'https://drive.google.com/open?id=dummy_npwp',
+    'uploaddaftarriwayathidup' => 'https://drive.google.com/open?id=dummy_cv',
+    'namaasosiasi' => 'Perorangan',
+    'punyaskk' => 'TIDAK',
+    'punyasiki' => 'TIDAK',
+    'siappatuh' => 'TIDAK',
+    'portalpupr' => 'YA',
+    'verifikasipu' => false,
+    'verifikasilps' => false,
+]);
+
 //======================== ===================================================================================
 // DATA NAMA SEKOLAH MAS JAKI BLORA
 namasekolah::create([
