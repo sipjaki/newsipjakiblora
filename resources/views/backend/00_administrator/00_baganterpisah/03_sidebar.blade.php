@@ -257,6 +257,39 @@
               </li>
 
 
+              @can('pekerja')
+
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon bi bi-speedometer" style="color: white"></i>
+                      <p style="color: white">
+                          Status
+                          <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon bi bi-speedometer" style="color: white"></i>
+                      <p style="color: white">
+                          Berkas Anda
+                          <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon bi bi-speedometer" style="color: white"></i>
+                      <p style="color: white">
+                          Profil Anda
+                          <i class="nav-arrow bi bi-chevron-right"></i>
+                        </p>
+                    </a>
+                </li>
+
+                @endcan
+
+
 
 
               @can('lsppenerbit')
