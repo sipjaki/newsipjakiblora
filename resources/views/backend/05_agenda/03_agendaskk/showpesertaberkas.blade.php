@@ -352,7 +352,7 @@
 
 
 
-                                            <div class="modal fade" id="modalUploadNPWP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalUploadNPWPLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                            {{-- <div class="modal fade" id="modalUploadNPWP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalUploadNPWPLbl{{ $datapeserta->id }}" aria-hidden="true">
                                                 <div class="modal-dialog modal-xl modal-dialog-centered">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -378,51 +378,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-                                            <td class="text-center">
-                                                <button class="btn btn-secondary btn-sm"
-                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                    data-bs-toggle="modal" data-bs-target="#modalDaftarRiwayatHidup{{ $datapeserta->id }}">
-                                                    <i class="bi bi-eye"></i> Lihat
-                                                </button>
-
-                                                <!-- Modal Riwayat Hidup -->
-                                                <div class="modal fade" id="modalDaftarRiwayatHidup{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalDaftarRiwayatHidupLbl{{ $datapeserta->id }}" aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
-                                                                <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalDaftarRiwayatHidupLbl{{ $datapeserta->id }}">Dokumen Riwayat Hidup</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                            </div>
-                                                            <div class="modal-body text-center">
-                                                                <div style="margin-top: 10px;">
-                                                                    <!-- Menampilkan uploaddaftarriwayathidup dengan iframe -->
-                                                                    <div style="margin-top: 10px;">
-                                                                        @if($datapeserta->uploaddaftarriwayathidup && file_exists(public_path('storage/' . $datapeserta->peraturan)))
-                                                                        <!-- Display the default iframe when the file exists in the storage -->
-                                                                        <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                    @elseif($datapeserta->uploaddaftarriwayathidup)
-                                                                        <!-- Display the iframe with the updated file -->
-                                                                        <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                    @else
-                                                                        <!-- Optional: Show a placeholder if there's no file available -->
-                                                                        <p>Data belum diupdate</p>
-                                                                    @endif
-
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-
+ --}}
 
                                                        <td style="text-align: center;">
                                             <!-- Show Icon -->
