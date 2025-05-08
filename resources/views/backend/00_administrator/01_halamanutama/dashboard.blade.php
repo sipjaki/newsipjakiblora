@@ -242,6 +242,8 @@ button:hover {
 
 {{-- atas  --}}
 
+@can('pekerja')
+
 
 <div class="container">
     <h4>Status Verifikasi Berkas Anda !</h4>
@@ -253,6 +255,7 @@ button:hover {
     </div>
 </div>
 
+@endcan
 
 @can('super_admin')
 
