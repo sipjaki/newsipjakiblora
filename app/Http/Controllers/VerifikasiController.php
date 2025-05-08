@@ -72,7 +72,7 @@ public function verifikasipesertasertifikasinew($id)
 public function verifikasiktp(Request $request, $id)
 {
     $peserta = allskktenagakerjablora::findOrFail($id);
-    $peserta->uploadktp = $request->input('uploadktp');
+    $peserta->verifikasiktp = $request->input('verifikasiktp');
     $peserta->save();
 
     return back()->with('success', 'Validasi KTP berhasil disimpan.');
