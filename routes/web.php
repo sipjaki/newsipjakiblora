@@ -158,13 +158,11 @@ Route::get('/respelatihanskk/{namakegiatan}', [AndroidVersionController::class, 
 Route::get('/respesertaskk', [AndroidVersionController::class, 'menurespesertaskk']);
 Route::get('/resskkpeserta/{namakegiatan}', [AndroidVersionController::class, 'menuresskkpeserta']);
 
-
-// NURFI
 Route::get('/resdaftarpelatihanpesertaskk/create/{id}', [AndroidVersionController::class, 'resdaftarpelatihanpesertaskk'])->name('resdaftarpelatihanpesertaskk');
+
+
 // Route::post('/resdaftarpelatihanpesertaskk/createpeserta/new', [AndroidVersionController::class, 'resdaftarpelatihanpesertanew'])->name('resdaftarpelatihanpesertanew');
 
-
-// makanyu
 
 // ================================================ MENU E. PENGAWASAN
 // MENU PEMBINAAN JASA KONSTRUKSI  ------------------------------------------------
@@ -906,6 +904,10 @@ Route::post('/daftarpesertasertifikasiskk/createmateri/new', [AgendaskkControlle
 
 
 Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagendaskkpesertashow'])->middleware('auth');
+Route::get('/bepesertaskkshowberkas/show/{id}', [PembinaanController::class, 'bepesertaskkshowberkas'])->middleware('auth');
+
+// nurfi
+
 
 // ROUTE PENGAMBILAN DATA ID
 // PEKERJAANINI

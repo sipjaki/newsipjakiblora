@@ -205,6 +205,7 @@
           <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-people-fill"></i> Peserta
           </th>
+
           <th style="width: 200px; text-align:center; vertical-align: middle;">
             <i class="bi bi-tools"></i> Aksi
           </th>
