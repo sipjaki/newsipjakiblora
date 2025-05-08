@@ -175,7 +175,7 @@
                     style="background-color:#002e8b; color: white; border: none; padding: 10px 25px;
                            border-radius: 15px; font-size: 14px; cursor: pointer;
                            transition: background-color 0.3s, color 0.3s;">
-                   <i class="bi bi-people-fill"></i> {{ $item->pesertapelatihan_count }} Peserta
+                   <i class="bi bi-people-fill"></i> {{ $item->allskktenagakerjablora_count }} Peserta
                 </button>
             </a>
         </td>
