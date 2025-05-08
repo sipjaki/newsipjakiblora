@@ -1,3 +1,197 @@
+<style>
+    /* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+/* Timeline Container */
+.timeline-container {
+    padding: 20px 0;
+    position: relative;
+    overflow-x: auto;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    min-width: 800px;
+    position: relative;
+}
+
+/* Checkpoint Styles */
+.checkpoint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Dot Indicator */
+.dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.checkpoint.completed .dot {
+    background-color: #00AA5B; /* Hijau Tokopedia */
+    box-shadow: 0 0 0 4px rgba(0, 170, 91, 0.2);
+}
+
+.checkpoint.current .dot {
+    background-color: #00AA5B;
+    box-shadow: 0 0 0 4px rgba(0, 170, 91, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+.checkpoint.pending .dot {
+    background-color: #E0E0E0;
+    color: #999;
+}
+
+/* Connector Line */
+.connector {
+    position: absolute;
+    height: 3px;
+    top: 11px;
+    left: 60%;
+    right: -40%;
+    background-color: #E0E0E0;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.connector.active {
+    background-color: #00AA5B;
+}
+
+/* Checkpoint Content */
+.checkpoint-content {
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+.time {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    min-height: 18px;
+}
+
+.message {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.checkpoint.completed .message,
+.checkpoint.current .message {
+    color: #00AA5B;
+    font-weight: 600;
+}
+
+/* Control Panel */
+.control-panel {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+button {
+    background-color: #00AA5B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #008a4a;
+}
+
+.status-info {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 170, 91, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 170, 91, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 170, 91, 0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        min-width: auto;
+    }
+
+    .checkpoint {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .dot {
+        margin-bottom: 0;
+        margin-right: 15px;
+    }
+
+    .connector {
+        display: none;
+    }
+
+    .checkpoint-content {
+        text-align: left;
+        margin-top: 0;
+    }
+}
+</style>
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -805,3 +999,150 @@
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+
+      <script>
+        // Data checkpoint
+const checkpointData = [
+    {
+        id: 1,
+        name: 'Verifikasi Dokumen',
+        status: 'current',
+        time: new Date().toLocaleString(),
+        message: 'Dokumen sedang diverifikasi'
+    },
+    {
+        id: 2,
+        name: 'Verifikasi DPUPR',
+        status: 'pending',
+        time: null,
+        message: 'Menunggu verifikasi DPUPR'
+    },
+    {
+        id: 3,
+        name: 'Verifikasi LSP',
+        status: 'pending',
+        time: null,
+        message: 'Menunggu verifikasi LSP'
+    },
+    {
+        id: 4,
+        name: 'Verifikasi Kehadiran',
+        status: 'pending',
+        time: null,
+        message: 'Menunggu verifikasi kehadiran'
+    },
+    {
+        id: 5,
+        name: 'Sertifikat Terbit',
+        status: 'pending',
+        time: null,
+        message: 'Sertifikat akan diterbitkan'
+    }
+];
+
+// Render checkpoint
+function renderCheckpoints() {
+    const container = document.getElementById('checkpoint-container');
+    container.innerHTML = '';
+
+    const timeline = document.createElement('div');
+    timeline.className = 'timeline';
+
+    checkpointData.forEach((checkpoint, index) => {
+        const checkpointElement = document.createElement('div');
+        checkpointElement.className = `checkpoint ${checkpoint.status}`;
+
+        // Dot indicator
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        dot.textContent = checkpoint.id;
+
+        // Connector line
+        if (index < checkpointData.length - 1) {
+            const connector = document.createElement('div');
+            connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
+            checkpointElement.appendChild(connector);
+        }
+
+        // Content
+        const content = document.createElement('div');
+        content.className = 'checkpoint-content';
+
+        const name = document.createElement('div');
+        name.className = 'message';
+        name.textContent = checkpoint.name;
+        content.appendChild(name);
+
+        if (checkpoint.time) {
+            const time = document.createElement('div');
+            time.className = 'time';
+            time.textContent = formatTime(checkpoint.time);
+            content.appendChild(time);
+        }
+
+        checkpointElement.appendChild(dot);
+        checkpointElement.appendChild(content);
+        timeline.appendChild(checkpointElement);
+    });
+
+    container.appendChild(timeline);
+    updateCurrentStatus();
+}
+
+// Format waktu
+function formatTime(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
+}
+
+// Update status teks
+function updateCurrentStatus() {
+    const current = checkpointData.find(c => c.status === 'current') ||
+                   checkpointData.find(c => c.status === 'completed');
+    const statusInfo = document.getElementById('current-status');
+
+    if (current) {
+        statusInfo.textContent = `Status saat ini: ${current.name}`;
+
+        if (current.status === 'completed') {
+            statusInfo.textContent += ' (Selesai)';
+        }
+    }
+}
+
+// Simulasi perubahan status
+function simulateProgress() {
+    const currentIndex = checkpointData.findIndex(c => c.status === 'current');
+
+    if (currentIndex >= 0) {
+        // Ubah status current menjadi completed
+        checkpointData[currentIndex].status = 'completed';
+        checkpointData[currentIndex].time = new Date().toLocaleString();
+
+        // Jika ada checkpoint berikutnya, ubah menjadi current
+        if (currentIndex + 1 < checkpointData.length) {
+            checkpointData[currentIndex + 1].status = 'current';
+            checkpointData[currentIndex + 1].time = new Date().toLocaleString();
+        }
+    } else {
+        // Jika semua completed, reset ke awal
+        if (checkpointData.every(c => c.status === 'completed')) {
+            checkpointData.forEach((c, i) => {
+                c.status = i === 0 ? 'current' : 'pending';
+                c.time = i === 0 ? new Date().toLocaleString() : null;
+            });
+        }
+    }
+
+    renderCheckpoints();
+}
+
+// Event listener untuk tombol simulasi
+document.getElementById('simulate-btn').addEventListener('click', simulateProgress);
+
+// Inisialisasi awal
+document.addEventListener('DOMContentLoaded', () => {
+    renderCheckpoints();
+});
+      </script>
