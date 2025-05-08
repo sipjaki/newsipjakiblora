@@ -202,40 +202,40 @@
                                             <i class="bi bi-person-fill" style="margin-right: 5px;"></i>Nama Lengkap
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-person" style="margin-right: 5px;"></i>NIK
+                                            <i class="bi bi-person" style="margin-right: 5px;"></i>Pendidikan
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Jenis Kelamin
+                                            <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Jabatan Kerja
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i>Tempat Lahir
+                                            <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i>Universitas/Sekolah/Instansi
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Tanggal Lahir
+                                            <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Tahun Bimtek
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-house-door" style="margin-right: 5px;"></i>Alamat
+                                            <i class="bi bi-house-door" style="margin-right: 5px;"></i>NIK
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>No Telepon
+                                            <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>Tempat Lahir
                                         </th>
                                         <th style="width: 250px; text-align:center;">
-                                            <i class="bi bi-envelope-fill" style="margin-right: 5px;"></i>Email
+                                            <i class="bi bi-envelope-fill" style="margin-right: 5px;"></i>Tanggal Lahir
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-mortarboard-fill" style="margin-right: 5px;"></i>Jenjang Pendidikan
+                                            <i class="bi bi-mortarboard-fill" style="margin-right: 5px;"></i>Jenis Kelamin
                                         </th>
                                         <th style="width: 250px; text-align:center;">
-                                            <i class="bi bi-briefcase-fill" style="margin-right: 5px;"></i>Jabatan Kerja
+                                            <i class="bi bi-briefcase-fill" style="margin-right: 5px;"></i>Alamat
                                         </th>
                                         <th style="width: 250px; text-align:center;">
-                                            <i class="bi bi-building-fill" style="margin-right: 5px;"></i>Nama Sekolah
+                                            <i class="bi bi-building-fill" style="margin-right: 5px;"></i>No Telepon
                                         </th>
                                         <th style="width: 150px; text-align:center;">
                                             <i class="bi bi-calendar3" style="margin-right: 5px;"></i>Tahun Lulus
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-people-fill" style="margin-right: 5px;"></i>Asosiasi
+                                            <i class="bi bi-people-fill" style="margin-right: 5px;"></i>Utusan
                                         </th>
                                         <th style="width: 150px; text-align:center;">
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Punya SKK
