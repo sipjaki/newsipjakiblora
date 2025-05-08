@@ -260,6 +260,14 @@
                                             <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sertifikat
                                         </th>
 
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Verifikasi DPUPR
+                                        </th>
+
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Verifikasi LSP
+                                        </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
