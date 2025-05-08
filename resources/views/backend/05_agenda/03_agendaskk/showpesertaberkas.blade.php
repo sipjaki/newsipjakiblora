@@ -156,71 +156,74 @@
                                         {{-- <td style="text-align: center;">{{ $loop->iteration }}</td> --}}
 
                                         <td class="text-center">
-                                                <button class="btn btn-secondary btn-sm"
-                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                    data-bs-toggle="modal" data-bs-target="#modalKTP{{ $datapeserta->id }}">
-                                                    <i class="bi bi-eye"></i> Lihat
-                                                </button>
+                                            <button class="btn btn-secondary btn-sm"
+                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                data-bs-toggle="modal" data-bs-target="#modalKTP{{ $datapeserta->id }}">
+                                                <i class="bi bi-eye"></i> Lihat
+                                            </button>
 
-                                                <!-- Modal KTP -->
-                                                <div class="modal fade" id="modalKTP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $datapeserta->id }}" aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
-                                                                <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalKTPLbl{{ $datapeserta->id }}">Dokumen KTP</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                            </div>
-                                                            <div class="modal-body text-center">
-                                                                @if($datapeserta->uploadktp && file_exists(public_path('storage/' . $datapeserta->uploadktp)))
-                                                                    <img src="{{ asset('storage/' . $datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                                                                @elseif($datapeserta->uploadktp)
-                                                                    <img src="{{ asset($datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
-                                                                @else
-                                                                    <p>Data belum diupdate</p>
-                                                                @endif
-                                                            </div>
+                                            <!-- Modal KTP -->
+                                            <div class="modal fade" id="modalKTP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalKTPLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
+                                                            <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                            <h5 class="modal-title" id="modalKTPLbl{{ $datapeserta->id }}">Dokumen KTP</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                        </div>
+                                                        <div class="modal-body text-center">
+                                                            @if($datapeserta->uploadktp && file_exists(public_path('storage/' . $datapeserta->uploadktp)))
+                                                                <img src="{{ asset('storage/' . $datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                <a href="{{ asset('storage/' . $datapeserta->uploadktp) }}" class="btn btn-primary mt-2" download>Download KTP</a>
+                                                            @elseif($datapeserta->uploadktp)
+                                                                <img src="{{ asset($datapeserta->uploadktp) }}" alt="KTP" style="max-width:100%; max-height:500px;">
+                                                                <a href="{{ asset($datapeserta->uploadktp) }}" class="btn btn-primary mt-2" download>Download KTP</a>
+                                                            @else
+                                                                <p>Data belum diupdate</p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
+                                            </div>
+                                        </td>
 
+                                        <td class="text-center">
+                                            <button class="btn btn-secondary btn-sm"
+                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                data-bs-toggle="modal" data-bs-target="#modalFoto{{ $datapeserta->id }}">
+                                                <i class="bi bi-eye"></i> Lihat
+                                            </button>
 
-                                            <td class="text-center">
-                                                <button class="btn btn-secondary btn-sm"
-                                                    style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                    onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                    onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                    data-bs-toggle="modal" data-bs-target="#modalFoto{{ $datapeserta->id }}">
-                                                    <i class="bi bi-eye"></i> Lihat
-                                                </button>
-
-                                                <!-- Modal Foto -->
-                                                <div class="modal fade" id="modalFoto{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalFotoLbl{{ $datapeserta->id }}" aria-hidden="true">
-                                                    <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
-                                                                <img src="/assets/icon/pupr.png" width="25" class="me-2">
-                                                                <h5 class="modal-title" id="modalFotoLbl{{ $datapeserta->id }}">Dokumen Foto</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                            </div>
-                                                            <div class="modal-body text-center">
-                                                                @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
-                                                                    <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:500px;">
-                                                                @elseif($datapeserta->uploadfoto)
-                                                                    <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:500px;">
-                                                                @else
-                                                                    <p>Data belum diupdate</p>
-                                                                @endif
-                                                            </div>
+                                            <!-- Modal Foto -->
+                                            <div class="modal fade" id="modalFoto{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalFotoLbl{{ $datapeserta->id }}" aria-hidden="true">
+                                                <div class="modal-dialog modal-xl modal-dialog-centered">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <img src="/assets/icon/logokabupatenblora.png" width="25" class="me-2">
+                                                            <img src="/assets/icon/pupr.png" width="25" class="me-2">
+                                                            <h5 class="modal-title" id="modalFotoLbl{{ $datapeserta->id }}">Dokumen Foto</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                        </div>
+                                                        <div class="modal-body text-center">
+                                                            @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
+                                                                <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:500px;">
+                                                                <a href="{{ asset('storage/' . $datapeserta->uploadfoto) }}" class="btn btn-primary mt-2" download>Download Foto</a>
+                                                            @elseif($datapeserta->uploadfoto)
+                                                                <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Foto" style="max-width:100%; max-height:500px;">
+                                                                <a href="{{ asset($datapeserta->uploadfoto) }}" class="btn btn-primary mt-2" download>Download Foto</a>
+                                                            @else
+                                                                <p>Data belum diupdate</p>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
+                                            </div>
+                                        </td>
 
 
                                             <td class="text-center">
@@ -229,7 +232,7 @@
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                                                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
                                                     data-bs-toggle="modal" data-bs-target="#modalIjazah{{ $datapeserta->id }}">
-                                                    <i class="bi bi-eye"></i> Lihat Ijazah
+                                                    <i class="bi bi-eye"></i> Lihat
                                                 </button>
 
                                                 <!-- Modal Ijazah -->
@@ -262,7 +265,7 @@
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                                                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
                                                     data-bs-toggle="modal" data-bs-target="#modalPengalaman{{ $datapeserta->id }}">
-                                                    <i class="bi bi-eye"></i> Lihat Pengalaman
+                                                    <i class="bi bi-eye"></i> Lihat
                                                 </button>
 
                                                 <!-- Modal Pengalaman Kerja -->
@@ -295,7 +298,7 @@
                                                     onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
                                                     onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
                                                     data-bs-toggle="modal" data-bs-target="#modalKebenaranData{{ $datapeserta->id }}">
-                                                    <i class="bi bi-eye"></i> Lihat Pernyataan Kebenaran Data
+                                                    <i class="bi bi-eye"></i> Lihat
                                                 </button>
 
                                                 <!-- Modal Pernyataan Kebenaran Data -->
