@@ -168,7 +168,7 @@
            <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
-            <a href="{{ url('/bepesertapelatihansertifikat/show/' . $item->id) }}" style="text-decoration: none;">
+            <a href="{{ url('/beskkdatapesertajumlah/show/' . $item->id) }}" style="text-decoration: none;">
                 <button
                     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                     onmouseout="this.style.backgroundColor='#002e8b'; this.style.color='white';"

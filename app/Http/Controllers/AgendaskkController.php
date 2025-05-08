@@ -510,5 +510,95 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
 // daftar skk
 
 
+public function beskkdatapesertajumlah(Request $request, $id)
+{
+    $perPage = $request->input('perPage', 50);
+    $search = $request->input('search');
+
+    // Pastikan agenda SKK dengan ID ini ada
+    $agendaskk = agendaskk::findOrFail($id);
+
+    // Ambil user login saat ini
+    $user = Auth::user();
+
+    // Ambil peserta yang hanya terkait dengan agenda SKK ini dan yang sudah diverifikasi PU
+    $query = allskktenagakerjablora::where('agendaskk_id', $id)
+        ->where('verifikasipu', true)
+        ->select([
+            'id',
+            'user_id',
+            'agendaskk_id',
+            'jenjangpendidikan_id',
+            'jabatankerja_id',
+            'namasekolah_id',
+            'tahunpilihan_id',
+            'nik',
+            'tempatlahir',
+            'ttl',
+            'jeniskelamin',
+            'alamat',
+            'notelepon',
+            'email',
+            'tahunlulus',
+            'uploadktp',
+            'uploadfoto',
+            'uploadijazah',
+            'uploadpengalaman',
+            'uploadkebenarandata',
+            'uploadnpwp',
+            'uploaddaftarriwayathidup',
+            'namaasosiasi',
+            'punyaskk',
+            'punyasiki',
+            'portalpupr',
+            'siappatuh',
+            'sertifikat',
+            'verifikasipu',
+            'verifikasilps',
+            'created_at'
+        ]);
+
+    // Filter pencarian (jika ada)
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('jeniskelamin', 'LIKE', "%{$search}%")
+              ->orWhere('alamat', 'LIKE', "%{$search}%")
+              ->orWhere('notelepon', 'LIKE', "%{$search}%")
+              ->orWhere('email', 'LIKE', "%{$search}%")
+              ->orWhere('nik', 'LIKE', "%{$search}%")
+              ->orWhere('namaasosiasi', 'LIKE', "%{$search}%")
+              ->orWhere('punyaskk', 'LIKE', "%{$search}%")
+              ->orWhere('punyasiki', 'LIKE', "%{$search}%")
+              ->orWhere('portalpupr', 'LIKE', "%{$search}%")
+              ->orWhere('siappatuh', 'LIKE', "%{$search}%");
+        });
+    }
+
+    $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
+
+    // Ajax response
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.05_agenda.04_pesertaskk.partials.table', compact('datapesertapelatihan'))->render()
+        ]);
+    }
+
+    // Jumlah peserta terverifikasi di agenda SKK ini
+    $jumlahPeserta = allskktenagakerjablora::where('agendaskk_id', $id)
+                        ->where('verifikasipu', true)
+                        ->count();
+
+    return view('backend.05_agenda.04_pesertaskk.showpeserta', [
+        'title' => 'Daftar Peserta Agenda SKK',
+        'data' => $agendaskk,
+        'datapeserta' => $datapesertapelatihan,
+        'jumlahpeserta' => $jumlahPeserta,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user
+    ]);
+}
+
+
 
 }
