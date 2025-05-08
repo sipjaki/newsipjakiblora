@@ -384,26 +384,12 @@
 
         <td style="text-align: center;">
             @if($item->verifikasilps == false)
-                <button type="button" onclick="openKehadiranModal({{ $item->id }})"
-                    class="btn btn-danger">
+                <button type="button" onclick="openKehadiranModal({{ $item->id }})" class="btn btn-danger">
                     <i class="bi bi-x-circle"></i> TIDAK HADIR
                 </button>
             @else
-                <button type="button" disabled
-                    class="btn"
-                    style="
-                        background-color: rgba(16, 185, 129, 0.85);
-                        color: white;
-                        border: none;
-                        padding: 8px 16px;
-                        border-radius: 8px;
-                        font-weight: 600;
-                        display: inline-flex;
-                        align-items: center;
-                        gap: 6px;
-                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-                        cursor: not-allowed;
-                    ">
+                <button type="button" disabled class="btn"
+                    style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); cursor: not-allowed;">
                     <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> HADIR
                 </button>
             @endif
@@ -413,7 +399,7 @@
         <div id="kehadiranModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
             <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
                 <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-                    Apakah Peserta Hadir dalam Pelatihan?
+                    Apakah Peserta Sudah Bisa Dinyatakan Lolos oleh LSP?
                 </p>
 
                 <!-- Form Verifikasi Kehadiran -->
@@ -442,7 +428,7 @@
         <script>
             function openKehadiranModal(itemId) {
                 const form = document.getElementById("kehadiranForm");
-                form.action = `{{ url('verifikasikehadiran') }}/${itemId}`;
+                form.action = `{{ url('verifikasilsp.update') }}/${itemId}`;
                 document.getElementById("kehadiranModal").style.display = "flex";
             }
 
