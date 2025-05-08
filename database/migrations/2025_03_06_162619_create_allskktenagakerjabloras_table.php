@@ -43,7 +43,7 @@ return new class extends Migration
                     $table->string('portalpupr')->nullable();
                     $table->string('siappatuh')->nullable();
                     $table->string('sertifikat')->nullable();
-                    $table->boolean('verifikasiktp')->default(false);
+                    // $table->boolean('verifikasiktp')->default(false);
                     $table->boolean('verifikasipu')->default(false);
                     $table->boolean('verifikasilps')->default(false);
                     $table->softDeletes();
