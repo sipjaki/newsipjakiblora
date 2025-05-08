@@ -253,7 +253,11 @@
                                             <i class="bi bi-shield-lock-fill" style="margin-right: 5px;"></i>Siap Patuh
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-award-fill" style="margin-right: 5px;"></i>Sertifikat
+                                            <i class="bi bi-folder-check" style="margin-right: 5px;"></i> Berkas Pekerja
+                                        </th>
+
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-patch-check-fill" style="margin-right: 5px;"></i> Sertifikat
                                         </th>
 
                                     </tr>
@@ -280,7 +284,6 @@
 <td style="text-align: center;">{{ $item->punyasiki ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->portalpupr ?? '-' }}</td>
 <td style="text-align: center;">{{ $item->siappatuh ?? '-' }}</td>
-<td style="text-align: center;">{{ $item->sertifikat ?? '-' }}</td>
 
 
 <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
