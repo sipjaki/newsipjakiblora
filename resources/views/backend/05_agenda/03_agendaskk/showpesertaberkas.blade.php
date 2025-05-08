@@ -362,6 +362,17 @@
                                                 </button>
 
                                                 <!-- Modal NPWP -->
+                                                <td class="text-center">
+                                                    <button class="btn btn-secondary btn-sm"
+                                                        style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
+                                                        onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
+                                                        onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+                                                        data-bs-toggle="modal" data-bs-target="#modalNPWP{{ $datapeserta->id }}">
+                                                        <i class="bi bi-eye"></i> Lihat
+                                                    </button>
+                                                </td>
+
+                                                <!-- Modal NPWP -->
                                                 <div class="modal fade" id="modalNPWP{{ $datapeserta->id }}" tabindex="-1" aria-labelledby="modalNPWPLbl{{ $datapeserta->id }}" aria-hidden="true">
                                                     <div class="modal-dialog modal-xl modal-dialog-centered">
                                                         <div class="modal-content">
@@ -375,10 +386,10 @@
                                                                 <div style="margin-top: 10px;">
                                                                     @if($datapeserta->uploadnpwp && file_exists(public_path('storage/' . $datapeserta->uploadnpwp)))
                                                                         <!-- Menampilkan gambar dari storage -->
-                                                                        <img src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                        <img src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                                     @elseif($datapeserta->uploadnpwp)
                                                                         <!-- Menampilkan gambar dari path luar storage -->
-                                                                        <img src="{{ asset($datapeserta->uploadnpwp) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                                                        <img src="{{ asset($datapeserta->uploadnpwp) }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                                     @else
                                                                         <!-- Placeholder jika tidak ada data -->
                                                                         <p>Data belum diupdate</p>
@@ -388,8 +399,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </td>
-
 
                                             <td class="text-center">
                                                 <button class="btn btn-secondary btn-sm"
