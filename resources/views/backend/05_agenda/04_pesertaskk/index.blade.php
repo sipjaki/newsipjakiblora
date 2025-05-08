@@ -163,9 +163,9 @@
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
          <td style="text-align: center;">{{$item->asosiasimasjaki->namaasosiasi ?? 'Data belum di update'}}</td>
          <td style="text-align: center;">{{$item->user->name}}</td>
-         <td style="text-align: left;">{{$item->waktupelaksanaan}}</td>
-         <td style="text-align: left;">{{$item->penutupan}}</td>
-         <td style="text-align: left;">{{$item->jumlahpeserta}}</td>
+         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->waktupelaksanaan)->translatedFormat('d F Y') }}</td>
+         <td style="text-align: center;">{{ \Carbon\Carbon::parse($item->penutupan)->translatedFormat('d F Y') }}</td>
+           <td style="text-align: center;">{{$item->jumlahpeserta}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/bepesertapelatihansertifikat/show/' . $item->id) }}" style="text-decoration: none;">
