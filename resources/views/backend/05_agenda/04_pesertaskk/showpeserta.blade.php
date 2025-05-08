@@ -219,6 +219,11 @@
                                         <th style="width: 100px; text-align:center;">
                                             <i class="bi bi-building" style="margin-right: 5px;"></i>Instansi
                                         </th>
+
+                                        <th style="width: 100px; text-align:center;">
+                                            <i class="bi bi-building" style="margin-right: 5px;"></i>Berkas Pekerja
+                                        </th>
+
                                         <th style="width: 300px; text-align:center;">
                                             <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
                                         </th>
@@ -247,6 +252,21 @@
                                         </td>
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
                                         <td style="text-align: left;">{{ $item->instansi }}</td>
+
+
+<td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
+    <a href="{{ url('/bepesertaskkshowberkas/show/' . $item->id) }}" style="text-decoration: none;">
+        <button
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+            style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                   border-radius: 15px; font-size: 14px; cursor: pointer;
+                   display: flex; align-items: center; justify-content: center;
+                   transition: background-color 0.3s, color 0.3s;">
+            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Lihat
+        </button>
+    </a>
+</td>
 
 
                                         <td style="text-align: center;">
