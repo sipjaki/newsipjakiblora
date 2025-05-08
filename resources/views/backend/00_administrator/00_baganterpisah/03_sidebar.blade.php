@@ -260,7 +260,7 @@
               @can('pekerja')
 
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="/dashboard" class="nav-link">
                   <i class="nav-icon bi bi-graph-up" style="color: white"></i> <!-- Status -->
                   <p style="color: white">
                     Status
