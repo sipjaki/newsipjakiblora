@@ -198,43 +198,59 @@
                                         <th style="width: 10px; text-align:center;">
                                             <i class="bi bi-hash" style="margin-right: 5px;"></i>No
                                         </th>
-                                        <th style="width: 300px; text-align:center;">
+                                        <th style="width: 250px; text-align:center;">
                                             <i class="bi bi-person-fill" style="margin-right: 5px;"></i>Nama Lengkap
                                         </th>
-                                        {{-- <th style="width: 300px; text-align:center;">
-                                            <i class="bi bi-bookmark-fill" style="margin-right: 5px;"></i>Jenjang Pendidikan
-                                        </th> --}}
-                                        <th style="width: 100px; text-align:center;">
-                                            <i class="bi bi-person" style="margin-right: 5px;"></i>Nik
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-person" style="margin-right: 5px;"></i>NIK
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Gender
+                                            <i class="bi bi-gender-ambiguous" style="margin-right: 5px;"></i>Jenis Kelamin
                                         </th>
-                                          <th style="width: 200px; text-align:center;">
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-geo-alt-fill" style="margin-right: 5px;"></i>Tempat Lahir
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-calendar-date" style="margin-right: 5px;"></i>Tanggal Lahir
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-house-door" style="margin-right: 5px;"></i>Alamat
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-telephone-fill" style="margin-right: 5px;"></i>No Telepon
                                         </th>
-                                        <th style="width: 100px; text-align:center;">
-                                            <i class="bi bi-building" style="margin-right: 5px;"></i>Instansi
-                                        </th>
-
-                                        <th style="width: 100px; text-align:center;">
-                                            <i class="bi bi-building" style="margin-right: 5px;"></i>Berkas Pekerja
-                                        </th>
-
-                                        <th style="width: 300px; text-align:center;">
-                                            <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
+                                        <th style="width: 250px; text-align:center;">
+                                            <i class="bi bi-envelope-fill" style="margin-right: 5px;"></i>Email
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi DPUPR
+                                            <i class="bi bi-mortarboard-fill" style="margin-right: 5px;"></i>Jenjang Pendidikan
+                                        </th>
+                                        <th style="width: 250px; text-align:center;">
+                                            <i class="bi bi-briefcase-fill" style="margin-right: 5px;"></i>Jabatan Kerja
+                                        </th>
+                                        <th style="width: 250px; text-align:center;">
+                                            <i class="bi bi-building-fill" style="margin-right: 5px;"></i>Nama Sekolah
+                                        </th>
+                                        <th style="width: 150px; text-align:center;">
+                                            <i class="bi bi-calendar3" style="margin-right: 5px;"></i>Tahun Lulus
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi LSP
+                                            <i class="bi bi-people-fill" style="margin-right: 5px;"></i>Asosiasi
+                                        </th>
+                                        <th style="width: 150px; text-align:center;">
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Punya SKK
+                                        </th>
+                                        <th style="width: 150px; text-align:center;">
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Punya SIKI
+                                        </th>
+                                        <th style="width: 150px; text-align:center;">
+                                            <i class="bi bi-globe" style="margin-right: 5px;"></i>Portal PUPR
+                                        </th>
+                                        <th style="width: 150px; text-align:center;">
+                                            <i class="bi bi-shield-lock-fill" style="margin-right: 5px;"></i>Siap Patuh
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-gear" style="margin-right: 5px;"></i>Upload Sertifikat
+                                            <i class="bi bi-award-fill" style="margin-right: 5px;"></i>Sertifikat
                                         </th>
                                     </tr>
                                 </thead>
@@ -242,16 +258,25 @@
                                 @foreach ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        {{-- <td style="text-align: left;">{{ $data->namakegiatan }}</td> --}}
-                                        <td style="text-align: left;">{{ $item->namalengkap }}</td>
-                                        {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
-                                        <td style="text-align: center;">{{ $item->nik }}</td>
-                                        <td style="text-align: center;">{{ $item->jeniskelamin }}</td>
-                                        <td style="text-align: center;">
-                                            {{ \Carbon\Carbon::parse($item->tanggallahir)->translatedFormat('d F Y') }}
-                                        </td>
-                                        <td style="text-align: left;">{{ $item->notelepon }}</td>
-                                        <td style="text-align: left;">{{ $item->instansi }}</td>
+                                        <td style="text-align: left;">{{ $item->user->name ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->jenjangpendidikan->jenjangpendidikan ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->jabatankerja->jabatankerja ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->namasekolah->namasekolah ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->tahunpilihan->tahunpilihan ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->nik ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->tempatlahir ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->ttl ? \Carbon\Carbon::parse($item->ttl)->format('d-m-Y') : '-' }}</td>
+<td style="text-align: center;">{{ $item->jeniskelamin ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->alamat ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->notelepon ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->email ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->tahunlulus ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->namaasosiasi ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->punyaskk ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->punyasiki ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->portalpupr ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->siappatuh ?? '-' }}</td>
+<td style="text-align: center;">{{ $item->sertifikat ?? '-' }}</td>
 
 
 <td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
