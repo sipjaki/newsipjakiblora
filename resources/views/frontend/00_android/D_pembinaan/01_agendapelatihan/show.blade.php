@@ -220,6 +220,8 @@ h5 {
                         </div>
                     </div>
 
+                    <img src="/assets/00_dokmasjaki/image.png" alt="">
+
                     <br>
                     <h4 style="font-weight:bold;">I. INFORMASI AGENDA PELATIHAN </h4>
                     <table class="table-identitas">
