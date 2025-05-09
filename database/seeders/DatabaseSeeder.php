@@ -59688,7 +59688,7 @@ pesertapelatihan::create([
     'tanggallahir' => '1998-01-13',
     'notelepon' => '081234567890',
     'instansi' => 'Dinas Pendidikan Bandung',
-    'sertifikat' => 'sertifikat_ahmadfauzi.pdf',
+
 ]);
 
 pesertapelatihan::create([
@@ -59700,7 +59700,7 @@ pesertapelatihan::create([
     'tanggallahir' => '1998-01-13',
     'notelepon' => '081234567890',
     'instansi' => 'Dinas Pendidikan Kabupaten Blora',
-    'sertifikat' => 'sertifikat_ahmadfauzi.pdf',
+
 ]);
 
 
