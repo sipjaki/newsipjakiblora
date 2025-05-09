@@ -252,17 +252,14 @@ h5 {
                             </div>
 <br>
 <div style="margin-bottom: 20px;">
-    <div style="margin-top: 10px;">
+    <div style="margin-top: 10px; overflow: hidden; border-radius: 15px; border: 1px solid #e5e7eb;">
         @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
-            <!-- Gambar dari storage -->
             <img src="{{ asset('storage/' . $data->foto) }}" alt="Sosialisasi"
-                style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 15px;" loading="lazy">
+                style="width: 100%; height: auto; display: block;" loading="lazy">
         @elseif($data->foto)
-            <!-- Gambar dari path luar -->
             <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan"
-                style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 15px;" loading="lazy">
+                style="width: 100%; height: auto; display: block;" loading="lazy">
         @else
-            <!-- Placeholder -->
             <p>Data belum diupdate</p>
         @endif
     </div>
