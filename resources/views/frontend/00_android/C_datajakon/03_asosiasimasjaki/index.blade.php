@@ -220,23 +220,26 @@
                                                 </td>
 
                                                 {{-- Jumlah Penggunaan 2 --}}
-                                                <td class="text-center d-flex justify-content-center align-items-center">
-                                                    @if (!empty($item['jumlah_penggunaan2']) && $item['jumlah_penggunaan2'] != 0)
-                                                        <a href="/reasasosiasimasjaki/asosiasikonsultan/{{ urlencode($item['nama_asosiasi']) }}"
-                                                           style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
-                                                           onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                                           onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
-                                                           {{ $item['jumlah_penggunaan2'] }}
-                                                        </a>
-                                                    @else
-                                                        <button
-                                                            style="background-color: red; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none; cursor: not-allowed;"
-                                                            disabled
-                                                            title="Data Belum Tersedia">
-                                                            0
-                                                        </button>
-                                                    @endif
+                                                <td style="height: 100%; vertical-align: middle; text-align: center;">
+                                                    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                                                        @if (!empty($item['jumlah_penggunaan2']) && $item['jumlah_penggunaan2'] != 0)
+                                                            <a href="/reasasosiasimasjaki/asosiasikonsultan/{{ urlencode($item['nama_asosiasi']) }}"
+                                                               style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
+                                                               onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                                               onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
+                                                               {{ $item['jumlah_penggunaan2'] }}
+                                                            </a>
+                                                        @else
+                                                            <button
+                                                                style="background-color: red; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none; cursor: not-allowed;"
+                                                                disabled
+                                                                title="Data Belum Tersedia">
+                                                                0
+                                                            </button>
+                                                        @endif
+                                                    </div>
                                                 </td>
+
                                                                                             </tr>
                                         @endforeach
 
