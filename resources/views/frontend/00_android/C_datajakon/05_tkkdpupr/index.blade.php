@@ -212,7 +212,7 @@
                                             <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->nama)) }}</td>
                                             <td style="text-align: left;">{{$item->jabatankerja->jabatankerja}}</td>
                                             <td style="text-align: center;">{{$item->asosiasimasjaki?->namaasosiasi}}</td>
-                                            <td class="text-center">
+                                            <td class="text-center" style="display: flex; justify-content: center; align-items: center;">
                                                 @php
                                                     $status = strtoupper(trim($item->statusterbit));
                                                     $style = '';

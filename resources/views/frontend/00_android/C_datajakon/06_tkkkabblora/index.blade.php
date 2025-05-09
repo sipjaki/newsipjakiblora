@@ -219,7 +219,7 @@
                                                 @endif
                                             </td>
 
-                                                       <td class="text-center">
+                                            <td class="text-center" style="display: flex; justify-content: center; align-items: center;">
                                                 @php
                                                     $status = strtoupper(trim($item->statusterbit));
                                                     $style = '';
