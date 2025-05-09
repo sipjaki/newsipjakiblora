@@ -174,7 +174,7 @@
                                     <thead>
                                         <tr>
                             <!-- Kolom No -->
-<th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:50px;">
+<th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:25px;">
     <i class="bi bi-list-ol me-1"></i> No
 </th>
 
