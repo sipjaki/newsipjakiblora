@@ -191,7 +191,7 @@
                         <!-- Kolom Konten Utama -->
                         <div class="col-lg-8">
                             <div class="news-details-box-image">
-{{-- <img src="/assets/01_agendapelatihan/pelatihan1.jpg" alt=""> --}}
+<img src="/assets/00_dokmasjaki/image.png" alt="">
                                 <div style="margin-top: 10px;">
                                         @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
                                             <!-- Menampilkan gambar dari storage -->
