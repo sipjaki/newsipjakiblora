@@ -41,12 +41,12 @@
 
     /* Zebra striping untuk baris */
     .custom-fl-table tbody tr:nth-child(even) {
-        background-color: #9e9999;
+        background-color: #d1bdbd;
     }
 
     /* Hover effect */
     .custom-fl-table tbody tr:hover {
-        background-color: #9e9999;
+        background-color: #d1bdbd;
     }
 
     /* Scrollbar styling */
