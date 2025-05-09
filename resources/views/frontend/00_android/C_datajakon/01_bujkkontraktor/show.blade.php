@@ -116,9 +116,9 @@
                                         {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp --}}
                                         {{-- @foreach ($subData as $item) --}}
                                         <tr>
-                                            <td>1</td>
-                                            <td>Nama Badan Usaha</td>
-                                            <td>{{$data->namalengkap}}</td>
+                                            <td style="width: 50px;">1</td>
+                                            <td style="width: 200px;">Nama Badan Usaha</td>
+                                            <td style="width: 200px;">{{$data->namalengkap}}</td>
                                         </tr>
 
                                         {{-- <tr>
