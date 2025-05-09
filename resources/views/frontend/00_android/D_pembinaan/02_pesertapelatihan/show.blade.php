@@ -282,62 +282,69 @@ h5 {
                                     </thead>
                                     <tbody id="tableBody">
                                         @php $start = ($datapeserta->currentPage() - 1) * $datapeserta->perPage() + 1; @endphp
-                                        @foreach ($datapeserta as $item )
-                                        <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
-                                            <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize; text-align: left">
-                                                {{$item->namalengkap}}
-                                            </td>
-                                            <td style="text-align: center;">{{$item->jeniskelamin}}</td>
-                                            <td style="text-align: left">{{$item->instansi}}</td>
+                                        @forelse ($datapeserta as $item)
+    <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
+        <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
+        <td style="text-transform: capitalize; text-align: left">
+            {{$item->namalengkap}}
+        </td>
+        <td style="text-align: center;">{{$item->jeniskelamin}}</td>
+        <td style="text-align: left">{{$item->instansi}}</td>
 
-                                            <td style="text-align: center;">
-                                                <div>
-                                                    <style>
-                                                        .btn-belum-verifikasi-custom {
-                                                            background-color: #e3342f;
-                                                            color: white;
-                                                            border: none;
-                                                            padding: 8px 16px;
-                                                            border-radius: 8px;
-                                                            font-weight: 600;
-                                                            display: inline-flex;
-                                                            align-items: center;
-                                                            gap: 6px;
-                                                            cursor: pointer;
-                                                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-                                                        }
+        <td style="text-align: center;">
+            <div>
+                <style>
+                    .btn-belum-verifikasi-custom {
+                        background-color: #e3342f;
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        cursor: pointer;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                    }
 
-                                                        .btn-lolos-verifikasi-custom {
-                                                            background-color: rgba(16, 185, 129, 0.85);
-                                                            color: white;
-                                                            border: none;
-                                                            padding: 8px 16px;
-                                                            border-radius: 8px;
-                                                            font-weight: 600;
-                                                            display: inline-flex;
-                                                            align-items: center;
-                                                            gap: 6px;
-                                                            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-                                                            cursor: not-allowed;
-                                                        }
-                                                    </style>
+                    .btn-lolos-verifikasi-custom {
+                        background-color: rgba(16, 185, 129, 0.85);
+                        color: white;
+                        border: none;
+                        padding: 8px 16px;
+                        border-radius: 8px;
+                        font-weight: 600;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+                        cursor: not-allowed;
+                    }
+                </style>
 
-                                                    @if($item->verifikasi == false)
-                                                        <button type="button" onclick="openModal({{ $item->id }})"
-                                                            class="btn-belum-verifikasi-custom">
-                                                            <i class="bi bi-x-circle"></i> BELUM DI VERIFIKASI
-                                                        </button>
-                                                    @else
-                                                        <button type="button" disabled
-                                                            class="btn-lolos-verifikasi-custom">
-                                                            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
-                                                        </button>
-                                                    @endif
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
+                @if($item->verifikasi == false)
+                    <button type="button" onclick="openModal({{ $item->id }})"
+                        class="btn-belum-verifikasi-custom">
+                        <i class="bi bi-x-circle"></i> BELUM DI VERIFIKASI
+                    </button>
+                @else
+                    <button type="button" disabled
+                        class="btn-lolos-verifikasi-custom">
+                        <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+                    </button>
+                @endif
+            </div>
+        </td>
+    </tr>
+@empty
+    <tr>
+        <td colspan="5" style="text-align: center; font-weight: bold; padding: 20px;">
+            Peserta Tidak Ditemukan !!
+        </td>
+    </tr>
+@endforelse
+
                                     </tbody>
                                 </table>
                             </div>
