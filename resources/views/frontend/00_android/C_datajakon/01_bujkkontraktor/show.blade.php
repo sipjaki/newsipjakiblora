@@ -121,7 +121,7 @@
                                                 <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2em;"></i>
                                             </td>
                                             <td style="width: 200px;">Nama Badan Usaha</td>
-                                            <td style="width: 200px;">{{$data->namalengkap}}</td>
+                                            <td style="width: 400px;">{{$data->namalengkap}}</td>
                                         </tr>
 
                                         <tr>
