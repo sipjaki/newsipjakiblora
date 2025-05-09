@@ -220,7 +220,9 @@ h5 {
                         </div>
                     </div>
 
-                    <img src="/assets/00_dokmasjaki/image.png" alt="">
+                    <div class="rounded-lg shadow-lg overflow-hidden w-fit">
+                        <img src="/assets/00_dokmasjaki/image.png" alt="" class="rounded-lg">
+                      </div>
 
                     <br>
                     <h4 style="font-weight:bold;">I. INFORMASI AGENDA PELATIHAN </h4>
