@@ -207,7 +207,7 @@
 
                                                 <td class="text-center" style="text-align: center;">
                                                     @if (!empty($item['jumlah_penggunaan1']) && $item['jumlah_penggunaan1'] != 0)
-                                                        <a href="/reasasosiasimasjaki/asosiasikonstruksi/{{ urlencode($item['nama_asosiasi']) }}"
+                                                        <a href="/reasasosiasimasjaki/asosiasikonstruksi/{{ urlencode($item['namaasosiasi']) }}"
                                                            style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
                                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                                            onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
@@ -227,7 +227,7 @@
                                                 <td style="height: 100%; vertical-align: middle; text-align: center;">
                                                     <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
                                                         @if (!empty($item['jumlah_penggunaan2']) && $item['jumlah_penggunaan2'] != 0)
-                                                            <a href="/reasasosiasimasjaki/asosiasikonsultan/{{ urlencode($item['nama_asosiasi']) }}"
+                                                            <a href="/reasasosiasimasjaki/asosiasikonsultan/{{ urlencode($item['namaasosiasi']) }}"
                                                                style="background-color: navy; color: white; padding: 5px 10px; border-radius: 5px; display: inline-block; text-decoration: none;"
                                                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                                                                onmouseout="this.style.backgroundColor='navy'; this.style.color='white';">
