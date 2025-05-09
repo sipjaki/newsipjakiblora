@@ -59679,6 +59679,19 @@ kategoripelatihan::create([
     'kategoripelatihan' => 'Sosialisasi',
 ]);
 
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Ahmad Fauzi',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3276021301980001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1998-01-13',
+    'notelepon' => '081234567890',
+    'instansi' => 'Dinas Pendidikan Bandung',
+    'sertifikat' => 'sertifikat_ahmadfauzi.pdf',
+]);
+
+
 // ===============================
 // DATA AGENDA PELATIHAN
 // ===============================
