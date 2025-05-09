@@ -216,12 +216,12 @@
                                         @foreach ($data as $item )
                                         <tr>
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-                                            <td style="text-transform: capitalize;" style="width:1500px;">{{$item->user->name}}</td>
-                                            <td style="text-align: left;" style="width:1000px;">{{$item->profiljenispekerjaan->jenispekerjaan}}</td>
-                                            <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan}}</td>
-                                            <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan}}</td>
+                                            <td style="text-transform: capitalize;" style="width:1500px;">{{$item->user->name ?? 'Data Belum Di Update'}}</td>
+                                            <td style="text-align: left;" style="width:1000px;">{{$item->profiljenispekerjaan->jenispekerjaan ?? 'Data Belum Di Update'}}</td>
+                                            <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan ?? 'Data Belum Di Update'}}</td>
+                                            <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan ?? 'Data Belum Di Update' }}</td>
                                             {{-- <td style="text-align: left;">Selesai</td> --}}
-                                            <td style="text-align: left;">{{$item->bulan?->bulanrekap}}</td>
+                                            <td style="text-align: left;">{{$item->bulanrekap->bulanrekap ?? 'Data Belum Di Update' }}</td>
                                             <td style="text-align: left;">
                                                 @php
                                                     // Mendapatkan progress dalam bentuk persentase
@@ -278,7 +278,8 @@
                                                         $style = 'background-color: #dc2626; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px; border: 2px solid #000000; transition: background-color 0.3s;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}" onmouseover="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#505050' : '#b91c1c' }}';" onmouseout="this.style.backgroundColor='{{ $buttonText == 'LIHAT' ? '#808080' : '#dc2626' }}';">
                                                         {{ $buttonText }}
                                                     </button>
@@ -296,7 +297,8 @@
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
@@ -315,7 +317,8 @@
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
@@ -335,7 +338,8 @@
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
@@ -355,7 +359,8 @@
                                                         $style = 'background-color: #FF0000; color: white; padding: 4px 8px; font-size: 0.875rem; border-radius: 4px;';
                                                     }
                                                 @endphp
-                                                <a href="{{ $route }}">
+                                                <a href="/404">
+                                                {{-- <a href="{{ $route }}"> --}}
                                                     <button style="{{ $style }}">
                                                         {{ $buttonText }}
                                                     </button>
