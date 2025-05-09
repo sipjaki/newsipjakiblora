@@ -179,7 +179,7 @@
 </th>
 
 <!-- Kolom Nama Badan Usaha -->
-<th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;">
+<th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:150px;">
     <i class="bi bi-building me-1"></i> Nama Badan Usaha
 </th>
 
