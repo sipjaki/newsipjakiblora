@@ -191,6 +191,7 @@ table.zebra-table {
                             <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> Waktu Pelaksanaan </th>
                             <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;"> Jumlah Peserta </th>
                             <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Lokasi </th>
+                            <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Poster </th>
                             {{-- <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th> --}}
                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendaftaran </th>
                             {{-- <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Barcode </th> --}}
@@ -218,6 +219,22 @@ table.zebra-table {
 
                             <td style="text-align: center;">{{ $item->jumlahpeserta ?? '0' }}</td>
                             <td>{{ ucwords(strtolower($item->lokasi ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>
+                                <div style="margin-top: 10px;">
+                                    @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                        <!-- Menampilkan gambar dari storage -->
+                                        <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @elseif($item->foto)
+                                        <!-- Menampilkan gambar dari path luar storage -->
+                                        <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @else
+                                        <!-- Placeholder jika tidak ada data -->
+                                        <p>Data belum diupdate</p>
+                                    @endif
+                                </div>
+
+                            </td>
+
                             {{-- <td>{{ $item->keterangan ?? 'Data Tidak Ditemukan' }}</td> --}}
 
                             <td style="display: flex; justify-content: center; align-items: center; text-align: center; padding: 10px;">
