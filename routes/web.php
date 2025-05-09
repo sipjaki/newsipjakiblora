@@ -158,7 +158,9 @@ Route::get('/respelatihanskk/{namakegiatan}', [AndroidVersionController::class, 
 Route::get('/respesertaskk', [AndroidVersionController::class, 'menurespesertaskk']);
 Route::get('/resskkpeserta/{namakegiatan}', [AndroidVersionController::class, 'menuresskkpeserta']);
 
-Route::get('/resdaftarpelatihanpesertaskk/create/{id}', [AndroidVersionController::class, 'resdaftarpelatihanpesertaskk'])->name('resdaftarpelatihanpesertaskk');
+
+// nurfie
+Route::get('/resdaftarpelatihanpesertaskk/create/{id}', [AndroidVersionController::class, 'resdaftarpelatihanpesertaskk'])->middleware('auth')->name('resdaftarpelatihanpesertaskk');
 
 
 // Route::post('/resdaftarpelatihanpesertaskk/createpeserta/new', [AndroidVersionController::class, 'resdaftarpelatihanpesertanew'])->name('resdaftarpelatihanpesertanew');
