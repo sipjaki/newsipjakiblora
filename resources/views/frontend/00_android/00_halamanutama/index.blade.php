@@ -190,12 +190,12 @@
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
 
                                 <div style="margin-top: 10px;">
-                                    @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                    @if($item->fotopelatihan && file_exists(public_path('storage/' . $item->fotopelatihan)))
                                         <!-- Menampilkan gambar dari storage -->
-                                        <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                                    @elseif($item->foto)
+                                        <img src="{{ asset('storage/' . $item->fotopelatihan) }}" alt="Pelatihan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @elseif($item->fotopelatihan)
                                         <!-- Menampilkan gambar dari path luar storage -->
-                                        <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        <img src="{{ asset($item->fotopelatihan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                     @else
                                         <!-- Placeholder jika tidak ada data -->
                                         <p>Data belum diupdate</p>
