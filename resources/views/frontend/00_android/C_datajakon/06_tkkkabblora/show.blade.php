@@ -225,10 +225,10 @@ h5 {
                              <table class="custom-fl-table">
                         {{-- @foreach ($dataidentitasopd as $item) --}}
                         <tr>
-                            <td class="label" style="width: 10%;">1</td>
-                            <td class="label" style="width: 25%;">Nama Lengkap</td>
+                            <td class="label" style="width: 5%;">1</td>
+                            <td class="label" style="width: 20%;">Nama Lengkap</td>
                             <td class="colon" style="width: 5%;">:</td>
-                            <td style="width: 60%;">{{$data->nama}}</td>
+                            <td style="width: 70%;">{{$data->nama}}</td>
                         </tr>
 
                         <tr>
