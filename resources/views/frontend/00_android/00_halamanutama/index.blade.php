@@ -195,7 +195,7 @@
                                         <img src="{{ asset('storage/' . $item->fotopelatihan) }}" alt="Pelatihan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                     @elseif($item->fotopelatihan)
                                         <!-- Menampilkan gambar dari path luar storage -->
-                                        <img src="{{ asset($item->fotopelatihan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        <img src="{{ asset($item->fotopelatihan) }}" alt="Pelatihan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                     @else
                                         <!-- Placeholder jika tidak ada data -->
                                         <p>Data belum diupdate</p>
