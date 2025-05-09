@@ -340,7 +340,7 @@ h5 {
 @empty
     <tr>
         <td colspan="5" style="text-align: center; font-weight: bold; padding: 20px;">
-            Peserta Tidak Ditemukan !!
+            Peserta Belum Mendaftar !!
         </td>
     </tr>
 @endforelse
