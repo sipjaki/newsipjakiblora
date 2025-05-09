@@ -28125,7 +28125,7 @@ paketpekerjaanmasjaki::create([
     'jeniskontrak' => 'Harga Satuan',
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
-    'bulanselesai' => 12,
+    'bulanselesai' => 13,
     'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
@@ -28151,7 +28151,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => 12,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28176,7 +28176,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 7,
     'bulanselesai' => 12,
-    'bulanrekap_id' => 11,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 11,
 ]);
@@ -28201,7 +28201,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 10,
     'bulanselesai' => 12,
-    'bulanrekap_id' => 10,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28226,7 +28226,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => 9,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28252,7 +28252,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => 8,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28277,7 +28277,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 9,
     'bulanselesai' => 11,
-    'bulanrekap_id' => 7,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
@@ -28302,7 +28302,7 @@ paketpekerjaanmasjaki::create([
     'karakteristikkontrak' => 'Tahun Tunggal',
     'bulanmulai' => 8,
     'bulanselesai' => 10,
-    'bulanrekap_id' => 6,
+    'bulanrekap_id' => 13,
     'progress' => 100,
     'user_id' => 12,
 ]);
