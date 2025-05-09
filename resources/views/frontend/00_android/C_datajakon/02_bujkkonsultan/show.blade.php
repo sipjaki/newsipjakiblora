@@ -97,25 +97,25 @@
                                         {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp --}}
                                         {{-- @foreach ($subData as $item) --}}
                                         <tr>
-                                            <td>1</td>
-                                            <td>Nama Badan Usaha</td>
-                                            <td>{{$data->namalengkap}}</td>
+                                            <td style="width: 50px; text-align: center;">
+                                                <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2em;"></i>
+                                            </td>
+                                            <td style="width: 200px;">Nama Badan Usaha</td>
+                                            <td style="width: 400px;">{{$data->namalengkap}}</td>
                                         </tr>
 
-                                        {{-- <tr>
-                                            <td>2</td>
-                                            <td>No Telepon</td>
-                                            <td>{{$data->no_telepon}}</td>
-                                        </tr> --}}
-
                                         <tr>
-                                            <td>2</td>
+                                            <td style="text-align: center;">
+                                                <i class="fas fa-map-marker-alt" style="color: #3B82F6; font-size: 1.2em;"></i>
+                                            </td>
                                             <td>Alamat</td>
                                             <td>{{$data->alamat}}</td>
                                         </tr>
 
                                         <tr>
-                                            <td>3</td>
+                                            <td style="text-align: center;">
+                                                <i class="fas fa-envelope" style="color: #EC4899; font-size: 1.2em;"></i>
+                                            </td>
                                             <td>Email</td>
                                             <td>{{$data->email}}</td>
                                         </tr>
