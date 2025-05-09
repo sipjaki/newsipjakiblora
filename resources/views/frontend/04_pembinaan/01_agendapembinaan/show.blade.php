@@ -204,9 +204,10 @@
                                             <p>Data belum diupdate</p>
                                         @endif
                                     </div>
-                                    <a href="news-details.html" class="news-details-box-date">
+                                    <a href="news-details.html" class="news-details-box-date" style="background-color: red; color: white; padding: 4px 8px; border-radius: 4px;">
                                         {{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('l, d F Y') }}
                                     </a>
+
                                 </div>
                             </div>
 
