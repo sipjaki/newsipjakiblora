@@ -1,220 +1,46 @@
 <style>
-
-.custom-table-container {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        background: #fff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        border-radius: 20px;
-    }
-
-    .custom-fl-table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed; /* Membuat kolom lebih konsisten */
-        min-width: 700px;
-    }
-
-    .custom-fl-table th,
-    .custom-fl-table td {
-        padding: 12px 15px;
-        border-bottom: 1px solid #998282;
-        text-align: left;
-        vertical-align: middle;
-        height: 48px; /* Tinggi baris tetap */
-        box-sizing: border-box;
-    }
-
-    .custom-fl-table th {
-        background-color:#4ADE80;
-        font-weight: 600;
-        color: #2d3436;
-        font-size: 14px;
-        border-bottom: 2px solid #e0e0e0;
-    }
-
-    .custom-fl-table td {
-        font-size: 14px;
-        color: #000000;
-        line-height: 1.5;
-    }
-
-    /* Zebra striping untuk baris */
-    .custom-fl-table tbody tr:nth-child(even) {
-        background-color: #f7f7f7;
-    }
-
-    /* Hover effect */
-    .custom-fl-table tbody tr:hover {
-        background-color: #f7f7f7;
-    }
-
-    /* Scrollbar styling */
-    .custom-table-container::-webkit-scrollbar {
-        height: 6px;
-    }
-
-    .custom-table-container::-webkit-scrollbar-thumb {
-        background-color: #c0c0c0;
-        border-radius: 4px;
-    }
-
-    .custom-table-container::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-    /* Styling untuk tabel */
-    .custom-fl-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-    }
-
-    .custom-fl-table th, .custom-fl-table td {
-        padding: 12px;
-        text-align: center;
-        border: 1px solid #ddd;
-    }
-
-    .custom-fl-table th {
-        background-color: #4CAF50;
-        color: white;
-        font-weight: bold;
-    }
-
-    .custom-fl-table td {
-        background-color: #f9f9f9;
-    }
-
-    /* Styling untuk baris yang tidak memiliki materi */
-    .no-materi-message {
-        color: red;
-        font-weight: bold;
-        text-align: center;
-        background-color: #ffcccc;
-        display: block;
-        margin: 10px 0;
-        padding: 5px;
-    }
-
-    /* Styling untuk pesan 'MATERI BELUM DI UPLOAD' di luar tabel */
-    .no-data-message {
-        color: red;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-
-    .header-surat {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-
+    .custom-table-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    border-radius: 15px; /* Round the corners of the container */
+    border: 1px solid #ddd; /* Optional: Adds a border around the container */
 }
 
-.header-text {
-    margin: 0 auto;
-}
-
-.header-text h3, .header-text h4, .header-text p {
-    margin: 5px 0; /* Memberikan jarak antar elemen */
-}
-
-.table-identitas {
+.custom-fl-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    min-width: 700px; /* Prevents the table from shrinking too much */
 }
 
-.table-identitas td {
-    padding: 8px 12px;
+.custom-fl-table th, .custom-fl-table td {
+    padding: 10px;
     border: 1px solid #ddd;
+    text-align: left;
 }
 
-.table-identitas .label {
+.custom-fl-table th {
+    background-color: #f4f4f4;
     font-weight: bold;
 }
 
-.table-identitas .colon {
-    text-align: center;
-    font-weight: bold;
+.custom-fl-table td {
+    text-transform: capitalize;
 }
 
-.table-identitas tr:nth-child(even) {
-    background-color: #f9f9f9; /* Memberikan latar belakang berbeda pada baris genap */
+/* Optional: Add some styles to make the scrollbar appear nicer */
+.custom-table-container::-webkit-scrollbar {
+    height: 8px;
 }
 
-.table-identitas tr:hover {
-    background-color: #f1f1f1; /* Efek hover untuk baris */
+.custom-table-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
 }
 
-.table-identitas td {
-    vertical-align: middle; /* Memastikan konten ter-align dengan baik di tengah */
+.custom-table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
 }
-
-h4 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-    text-transform: uppercase;
-}
-
-.table-profil {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.table-profil td {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-}
-
-.table-profil .label {
-    font-weight: bold;
-    width: 25%; /* Menjaga label agar tidak terlalu melebar */
-}
-
-.table-profil .colon {
-    text-align: center;
-    font-weight: bold;
-    width: 10%;
-}
-
-.table-profil tr:nth-child(even) {
-    background-color: #f9f9f9; /* Memberikan latar belakang berbeda pada baris genap */
-}
-
-.table-profil tr:hover {
-    background-color: #f1f1f1; /* Efek hover untuk baris */
-}
-
-.table-profil td {
-    vertical-align: middle; /* Memastikan konten ter-align dengan baik di tengah */
-}
-
-h4 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-    text-transform: uppercase;
-}
-
-h5 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-    text-transform: uppercase;
-}
-
-
 
 </style>
 @include('frontend.00_android.00_fiturmenu.header')
@@ -279,22 +105,22 @@ h5 {
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; color: #746464 !important;">
-                                                <i class="bi bi-hash me-1"></i> No
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                                <i class="bi bi-hash"></i> No
                                             </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px; color: #746464 !important;">
-                                                <i class="bi bi-tags me-1"></i> Kategori
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
+                                                <i class="bi bi-tags"></i> Kategori
                                             </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px; color: #746464 !important;">
-                                                <i class="bi bi-calendar-event me-1"></i> Nama Kegiatan
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-calendar-event"></i> Nama Kegiatan
                                             </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px; color: #746464 !important;">
-                                                <i class="bi bi-chat-left-text me-1"></i> Keterangan
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-chat-left-text"></i> Keterangan
                                             </th>
-                                            <th style="text-align:center; width:200px; color: #000 !important;">
-                                                <i class="bi bi-eye me-1"></i> View Peserta
+                                            <th style="text-align:center; width:200px;">
+                                                <i class="bi bi-eye"></i> View Peserta
                                             </th>
-                                                            </tr>
+                                                      </tr>
                                     </thead>
                                     <tbody id="tableBody">
                                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
