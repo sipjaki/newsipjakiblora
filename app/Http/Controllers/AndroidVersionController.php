@@ -175,7 +175,7 @@ public function menuasosiasimasjaki(Request $request)
     $dataAsosiasi = $queryAsosiasi->get()
         ->map(function ($item) {
             return [
-                'nama_asosiasi' => $item->namaasosiasi,
+                'namaasosiasi' => $item->namaasosiasi,
                 'jumlah_penggunaan1' => $item->bujkkontraktor_count,
                 'jumlah_penggunaan2' => $item->bujkkonsultan_count,
             ];
