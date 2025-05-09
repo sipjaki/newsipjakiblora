@@ -198,8 +198,8 @@
 
                                                 {{-- Nama Asosiasi --}}
                                                 <td class="text-center">
-                                                    @if (!empty($item['nama_asosiasi']))
-                                                        {{ strtoupper($item['nama_asosiasi']) }}
+                                                    @if (!empty($item['namaasosiasi']))
+                                                        {{ strtoupper($item['namaasosiasi']) }}
                                                     @else
                                                         <button style="background-color: red; color: white; border: none; padding: 5px 10px; border-radius: 5px;">0</button>
                                                     @endif
