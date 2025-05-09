@@ -276,7 +276,7 @@ h5 {
                             </div>
 
                             <div style="overflow-x: auto; margin-top: 15px;">
-                                <table class="custom-fl-table" id="sortableTable" style="border-radius: 20px;">
+                                <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
