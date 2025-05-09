@@ -188,7 +188,19 @@
                     <div class="flex flex-col gap-[14px] rounded-2xl border border-[#E8E9EE] p-[14px] w-[208px]">
                         <a href="details.html">
                             <div class="rounded-2xl w-full h-[120px] flex shrink-0 overflow-hidden">
-                                <img src="{{asset('storage/' . $item->foto)}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+
+                                <div style="margin-top: 10px;">
+                                    @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                                        <!-- Menampilkan gambar dari storage -->
+                                        <img src="{{ asset('storage/' . $item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @elseif($item->foto)
+                                        <!-- Menampilkan gambar dari path luar storage -->
+                                        <img src="{{ asset($item->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                    @else
+                                        <!-- Placeholder jika tidak ada data -->
+                                        <p>Data belum diupdate</p>
+                                    @endif
+                                </div>
                             </div>
                         </a>
                         <div class="flex flex-col gap-[6px]">
