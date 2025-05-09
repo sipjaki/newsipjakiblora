@@ -323,17 +323,26 @@ h5 {
                     }
                 </style>
 
-                @if($item->verifikasi == false)
-                    <button type="button" onclick="openModal({{ $item->id }})"
-                        class="btn-belum-verifikasi-custom">
-                        <i class="bi bi-x-circle"></i> BELUM DI VERIFIKASI
-                    </button>
-                @else
-                    <button type="button" disabled
-                        class="btn-lolos-verifikasi-custom">
-                        <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
-                    </button>
-                @endif
+@if($item->verifikasi === null)
+<!-- BELUM DI VERIFIKASI -->
+<button type="button" onclick="openModal({{ $item->id }})"
+    class="btn-belum-verifikasi-custom">
+    <i class="bi bi-x-circle"></i> BELUM DI VERIFIKASI
+</button>
+@elseif($item->verifikasi === 'lolos')
+<!-- LOLOS -->
+<button type="button" disabled
+    class="btn-lolos-verifikasi-custom">
+    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+</button>
+@elseif($item->verifikasi === 'gugur')
+<!-- GUGUR -->
+<button type="button" disabled
+    class="btn btn-danger">
+    <i class="bi bi-x-circle" style="font-size: 1.2rem;"></i> GUGUR
+</button>
+@endif
+
             </div>
         </td>
     </tr>
