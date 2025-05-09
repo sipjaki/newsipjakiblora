@@ -287,7 +287,7 @@ h5 {
                                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:400px;">
                                                 <i class="bi bi-building me-1"></i> Instansi/Universitas/Lembaga/Perseorangan
                                             </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:150px;">
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:200px;">
                                                 <i class="bi bi-check2-circle me-1"></i> Status
                                             </th>
                                                          {{-- <th style="text-align:center; width:100px;"> View Peserta </th> --}}
