@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-
-use QRcode;  // Pastikan ini ada di bagian atas controller Anda
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Writer\PngWriter;
+// use QRcode;
 
 use Illuminate\Support\Str;
 use App\Models\agendapelatihan;
