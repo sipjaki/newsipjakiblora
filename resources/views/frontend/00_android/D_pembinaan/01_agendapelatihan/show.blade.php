@@ -244,13 +244,13 @@ h5 {
                             <td class="label">3</td>
                             <td class="label">Waktu Pelaksanaan</td>
                             <td class="colon">:</td>
-                            <td>{{$data->waktupelaksanaan}}</td>
+                            <td>{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('l, d F Y') }}</td>
                         </tr>
                         <tr>
                             <td class="label">4</td>
                             <td class="label">Penyelenggara</td>
                             <td class="colon">:</td>
-                            <td>{{$data->penyelenggara}}</td>
+                            <td>{{$data->asosiasimasjaki->namaasosiasi ?? '-'}}</td>
                         </tr>
                         <tr>
                             <td class="label">5</td>
