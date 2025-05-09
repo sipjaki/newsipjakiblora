@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('lokasi')->nullable();
             $table->string('keterangan')->nullable();
             $table->text('isiagenda')->nullable();
-            $table->string('foto')->nullable();
+            $table->string('fotopelatihan')->nullable();
             $table->string('barcodepelatihan')->nullable();
             $table->softDeletes();
             $table->timestamps();
