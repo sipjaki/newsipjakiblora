@@ -43,6 +43,7 @@
 }
 
 </style>
+
 @include('frontend.00_android.00_fiturmenu.header')
 
 @include('backend.00_administrator.00_baganterpisah.11_alert')
@@ -101,7 +102,7 @@
 
                             </div>
 
-                            <div style="overflow-x: auto; margin-top: 15px;">
+                            <div class="custom-table-container">
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
