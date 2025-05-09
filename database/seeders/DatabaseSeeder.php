@@ -59697,7 +59697,7 @@ agendapelatihan::create([
     'lokasi' => 'Azana Garden Hill Resort Blora',
     'Keterangan' => '-',
     'isiagenda' => 'Penerapan Keselamatan dan Kontrak Konstruksi',
-    'foto' => '01_agendapelatihan/pelatihan1.jpg',
+    'foto' => '01_agendapelatihan/pelatihan.jpg',
 ]);
 
 
