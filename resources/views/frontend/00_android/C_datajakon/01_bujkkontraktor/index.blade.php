@@ -6,6 +6,7 @@
         -webkit-overflow-scrolling: touch;
         background: #fff;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
     }
 
     .custom-fl-table {
@@ -26,7 +27,7 @@
     }
 
     .custom-fl-table th {
-        background-color: #00ff00;
+        background-color:#4ADE80;
         font-weight: 600;
         color: #2d3436;
         font-size: 14px;
