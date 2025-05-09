@@ -439,7 +439,9 @@ Route::get('/datajakon/profilpaketpekerjaan/{id}', [PaketpekerjaanmasjakiControl
 // ==========================================================================================================================================
 // ---------------------- MENU 1 AGENDA PELATIHAN  -----------------------------------------------------
 Route::get('/agendapembinaan', [PembinaanController::class, 'index']);
-Route::get('/agendapembinaan/{namakegiatan}', [PembinaanController::class, 'namakegiatandaftar']);
+// Route::get('/agendapembinaan/{namakegiatan}', [PembinaanController::class, 'namakegiatandaftar'])->name('agendapembinaa');
+Route::get('/agendapembinaan/{namakegiatan}', [PembinaanController::class, 'namakegiatandaftar'])->name('agendapembinaan');
+
 // ___________________________________________________________________________________________________________________________________
 
 // ---------------------- MENU 2 DAFTAR PESERTA PELATIHAN  -----------------------------------------------------
