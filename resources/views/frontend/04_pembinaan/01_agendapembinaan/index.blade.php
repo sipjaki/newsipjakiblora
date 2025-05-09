@@ -193,7 +193,7 @@ table.zebra-table {
                             <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Lokasi </th>
                             {{-- <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th> --}}
                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendaftaran </th>
-                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Barcode </th>
+                            {{-- <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Barcode </th> --}}
                             {{-- <th style="text-align:center; width:100px;"> Daftar </th> --}}
                         </tr>
 
