@@ -1,83 +1,68 @@
-
 <style>
-        /* ========== TABLE STYLE ========== */
-        .custom-table-container {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin: 20px 0;
-        }
+    /* Gaya untuk tabel */
+    .custom-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
 
-        .custom-fl-table {
-            width: 100%;
-            border-collapse: collapse;
-            table-layout: fixed;
-            min-width: 800px;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-        }
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
+    }
 
-        /* Header Style */
-        .custom-fl-table thead th {
-            background-color: #00df34; /* Warna hijau */
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 14px;
-            padding: 16px 20px;
-            border-bottom: 2px solid #009926;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
+    }
 
-        /* Body Style */
-        .custom-fl-table tbody td {
-            padding: 14px 20px;
-            color: #475569;
-            font-size: 14px;
-            border-bottom: 1px solid #e2e8f0;
-            vertical-align: middle;
-            height: 52px;
-            box-sizing: border-box;
-        }
+    .custom-fl-table th {
+        background-color: #00ff00;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
+    }
 
-        /* Zebra Striping */
-        .custom-fl-table tbody tr:nth-child(even) {
-            background-color: #f8fafc; /* Slate 50 */
-        }
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #4d4d4d;
+        line-height: 1.5;
+    }
 
-        /* Hover Effect */
-        .custom-fl-table tbody tr:hover {
-            background-color: #f1f5f9; /* Slate 100 */
-            transition: background-color 0.2s ease;
-        }
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #fcfcfc;
+    }
 
-        /* Scrollbar Styling */
-        .custom-table-container::-webkit-scrollbar {
-            height: 8px;
-            background: #f1f5f9;
-        }
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f5f5f5;
+    }
 
-        .custom-table-container::-webkit-scrollbar-thumb {
-            background-color: #cbd5e1;
-            border-radius: 6px;
-            border: 2px solid #f1f5f9;
-        }
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
 
-        /* Responsive Breakpoint */
-        @media (max-width: 768px) {
-            .custom-fl-table {
-                min-width: 600px;
-            }
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
 
-            .custom-fl-table thead th,
-            .custom-fl-table tbody td {
-                padding: 12px 15px;
-                font-size: 13px;
-            }
-        }
-    </style>
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+</style>
 
 @include('frontend.00_android.00_fiturmenu.header')
 
