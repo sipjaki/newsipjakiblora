@@ -269,7 +269,6 @@ table.zebra-table {
                                 @endif
                             </td>
                             <td>
-                            <div style="margin-top: 10px;">
                                 @if($item->barcodepelatihan && file_exists(public_path('storage/' . $item->barcodepelatihan)))
                                     <!-- Menampilkan gambar dari storage -->
                                     <img src="{{ asset('storage/' . $item->barcodepelatihan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
@@ -280,9 +279,6 @@ table.zebra-table {
                                     <!-- Placeholder jika tidak ada data -->
                                     <p>Data belum diupdate</p>
                                 @endif
-                            </div>
-                            <td>
-
                             </td>
                         </tr>
                         @endforeach
