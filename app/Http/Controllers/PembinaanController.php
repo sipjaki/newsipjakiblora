@@ -595,7 +595,6 @@ public function beagendapelatihancreate()
 // }
 
 
-
 public function beagendapelatihancreatenew(Request $request)
 {
     // Validasi data input
@@ -641,24 +640,27 @@ public function beagendapelatihancreatenew(Request $request)
     $file->move($tujuanPath, $namaFile);
     $validatedData['foto'] = '04_datajakon/01_agendapelatihan/' . $namaFile;
 
-    // Generate QR Code dari route agendapembinaan
-    $namakegiatanSlug = Str::slug($validatedData['namakegiatan']);
-    $targetUrl = route('agendapembinaan', ['namakegiatan' => $namakegiatanSlug]);
+    // Simpan data awal ke database untuk mendapatkan ID
+    $agenda = agendapelatihan::create($validatedData);
+
+    // Generate QR Code berdasarkan route agendapembinaan (dengan ID)
+    $targetUrl = route('agendapembinaan', ['id' => $agenda->id]);
     $qrCodeUrl = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' . urlencode($targetUrl);
 
+    // Simpan QR Code sebagai file
     $qrImageName = 'qr_' . time() . '.png';
     $qrImagePath = public_path('04_datajakon/01_agendapelatihan/' . $qrImageName);
     file_put_contents($qrImagePath, file_get_contents($qrCodeUrl));
 
-    $validatedData['barcodepelatihan'] = '04_datajakon/01_agendapelatihan/' . $qrImageName;
+    // Update data barcode ke database
+    $agenda->update([
+        'barcodepelatihan' => '04_datajakon/01_agendapelatihan/' . $qrImageName,
+    ]);
 
-    // Simpan data ke database
-    agendapelatihan::create($validatedData);
-
+    // Flash pesan sukses
     session()->flash('create', 'Agenda Pelatihan Berhasil Dibuat!');
     return redirect('/beagendapelatihan');
 }
-
 // CREATE MATERI BARU AGENDA PELATIHAN
 //
 
