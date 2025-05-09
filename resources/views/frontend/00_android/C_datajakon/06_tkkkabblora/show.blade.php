@@ -219,14 +219,16 @@ h5 {
                     </div>
 
                     <br>
-                    <h4 style="font-weight:bold;">IDENTITAS TENAGA KERJA KONSTRUKSI </h4>
-                    <table class="custom-fl-table">
+                    <h4 style="font-weight:bold;">
+                        <i class="bi bi-person-fill me-2"></i> IDENTITAS TENAGA KERJA KONSTRUKSI
+                    </h4>
+                             <table class="custom-fl-table">
                         {{-- @foreach ($dataidentitasopd as $item) --}}
                         <tr>
                             <td class="label" style="width: 50px;">1</td>
                             <td class="label">Nama Lengkap</td>
-                            <td class="colon">:</td>
-                            <td>{{$data->nama}}</td>
+                            <td class="colon" style="width: 15px;">:</td>
+                            <td style="width: 100px;">{{$data->nama}}</td>
                         </tr>
                         <tr>
                             <td class="label">2</td>
