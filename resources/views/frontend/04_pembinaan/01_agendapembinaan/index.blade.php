@@ -268,6 +268,7 @@ table.zebra-table {
                                     </a>
                                 @endif
                             </td>
+                            <td>
                             <div style="margin-top: 10px;">
                                 @if($item->barcodepelatihan && file_exists(public_path('storage/' . $item->barcodepelatihan)))
                                     <!-- Menampilkan gambar dari storage -->
