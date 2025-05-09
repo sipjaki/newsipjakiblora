@@ -1,43 +1,56 @@
-<div id="Menu-bar" class="fixed bottom-[24px] inset-x-0 z-30" style="margin-bottom: -25px;">
-    <div class="bg-white mx-auto p-[14px_0] flex items-center justify-between shadow-[0_8px_30px_0_#0A093212] max-w-[640px]">
-        <a href="/404" class="flex-1 text-center">
-            <div class="flex flex-col items-center justify-center gap-1">
-                <img src="/assets/00_android/menuhape/1.png" width="24" height="24" alt="dashboard" loading="lazy" class="aspect-square">
-                <p class="text-[8px] leading-[10px] font-medium text-[#757C98]">Dashboard</p>
+<div id="Menu-bar" class="fixed bottom-[24px] px-[18px] max-w-[640px] w-full z-30" style="margin-bottom: -25px;">
+
+    <div class="bg-white p-[14px_12px] rounded-full flex items-center justify-between gap-4 shadow-[0_8px_30px_0_#0A093212] w-full">
+        <a href="/404">
+            <div class="flex flex-col gap-1 items-center">
+                <div class="w-6 h-6 flex shrink-0">
+                    <img src="/assets/00_android/menuhape/1.png" alt="icon" loading="lazy">
+                </div>
+                <p class="leading-[10px] font-medium text-[#757C98] text-center" style="font-size:8px;">Dashboard</p>
             </div>
         </a>
 
-        <a href="/404" class="flex-1 text-center">
-            <div class="flex flex-col items-center justify-center gap-1">
-                <img src="/assets/00_android/menuhape/3.png" width="24" height="24" alt="informasi" loading="lazy" class="aspect-square">
-                <p class="text-[8px] leading-[10px] font-medium text-[#757C98]">Informasi</p>
+        <a href="/404">
+            <div class="flex flex-col gap-1 items-center">
+                <div class="w-6 h-6 flex shrink-0">
+                    <img src="/assets/00_android/menuhape/3.png" alt="icon" loading="lazy">
+                </div>
+                <p class="leading-[10px] font-medium text-[#757C98] text-center" style="font-size:8px;">Informasi</p>
             </div>
         </a>
 
-        <a href="/" class="flex-1 text-center">
-            <img src="/assets/00_android/menuhape/home.png" width="48" height="48" alt="home" loading="eager" class="mx-auto aspect-square">
-        </a>
-
-        <a href="/404" class="flex-1 text-center">
-            <div class="flex flex-col items-center justify-center gap-1">
-                <img src="/assets/00_android/menuhape/2.png" width="24" height="24" alt="sertifikat" loading="lazy" class="aspect-square">
-                <p class="text-[8px] leading-[10px] font-medium text-[#757C98]">Sertifikat</p>
+        <a href="/">
+            <div class="w-[48px] h-[48px] flex shrink-0">
+                <img src="/assets/00_android/menuhape/home.png" alt="icon" loading="lazy">
             </div>
         </a>
 
-        <!-- Login Icon -->
-        <a href="/login" id="login-icon" class="flex-1 text-center" style="display:none;">
-            <div class="flex flex-col items-center justify-center gap-1">
-                <img src="/assets/00_android/menuhape/6.png" width="24" height="24" alt="login" loading="lazy" class="aspect-square">
-                <p class="text-[8px] leading-[10px] font-medium text-[#757C98] px-1">Login</p>
+        <a href="/404">
+            <div class="flex flex-col gap-1 items-center">
+                <div class="w-6 h-6 flex shrink-0">
+                    <img src="/assets/00_android/menuhape/2.png" alt="icon" loading="lazy">
+                </div>
+                <p class="leading-[10px] font-medium text-[#757C98] text-center" style="font-size:8px;">Sertifikat</p>
             </div>
         </a>
 
-        <!-- Settings Icon -->
-        <a href="/404" id="settings-icon" class="flex-1 text-center" style="display:none;">
-            <div class="flex flex-col items-center justify-center gap-1">
-                <img src="/assets/00_android/menuhape/5.png" width="24" height="24" alt="pengaturan" loading="lazy" class="aspect-square">
-                <p class="text-[8px] leading-[10px] font-medium text-[#757C98]">Pengaturan</p>
+        <!-- Ikon Login (tampil jika belum login) -->
+        <a href="/login" id="login-icon" style="display:none;">
+            <div class="flex flex-col gap-1 items-center">
+                <div class="w-6 h-6 flex shrink-0">
+                    <img src="/assets/00_android/menuhape/6.png" alt="icon" loading="lazy">
+                </div>
+                <p class="leading-[10px] font-medium text-[#757C98] text-center" style="margin-right: 5px; margin-left:5px; font-size:8px;" >Login</p>
+            </div>
+        </a>
+
+        <!-- Ikon Pengaturan (tampil jika sudah login) -->
+        <a href="/404" id="settings-icon" style="display:none;">
+            <div class="flex flex-col gap-1 items-center">
+                <div class="w-6 h-6 flex shrink-0">
+                    <img src="/assets/00_android/menuhape/5.png" alt="icon" loading="lazy">
+                </div>
+                <p class="text-xs leading-[10px] font-medium text-[#757C98] text-center">Pengaturan</p>
             </div>
         </a>
     </div>
