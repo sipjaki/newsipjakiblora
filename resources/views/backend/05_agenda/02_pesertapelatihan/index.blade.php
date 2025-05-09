@@ -147,9 +147,9 @@
          <td style="text-align: center;">{{ $loop->iteration }}</td>
          {{-- <td style="text-align: left;">{{$item->agendapelatihan->namakegiatan}}</td> --}}
          <td style="text-align: left;">{{$item->namakegiatan}}</td>
-         <td style="text-align: center;">{{$item->kategoripelatihan->kategoripelatihan}}</td>
+         <td style="text-align: center;">{{$item->kategoripelatihan->kategoripelatihan ?? 'Data Tidak DI temukan'}}</td>
          <td style="text-align: center;">{{$item->asosiasimasjaki->namaasosiasi ?? 'Data belum di update'}}</td>
-         <td style="text-align: center;">{{$item->user->name}}</td>
+         <td style="text-align: center;">{{$item->user->name ?? 'Data Tidak Ditemukan '}}</td>
 
          <td style="text-align: center; vertical-align: middle;">
             <a href="{{ url('/bepesertapelatihansertifikat/show/' . $item->id) }}" style="text-decoration: none;">
