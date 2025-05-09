@@ -254,15 +254,15 @@ h5 {
 <div style="margin-bottom: 20px;">
     <div style="margin-top: 10px;">
         @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
-            <!-- Menampilkan gambar dari storage -->
+            <!-- Gambar dari storage -->
             <img src="{{ asset('storage/' . $data->foto) }}" alt="Sosialisasi"
-                style="width: 100%; max-height: 300px; object-fit: contain; border-radius: 15px;" loading="lazy">
+                style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 15px;" loading="lazy">
         @elseif($data->foto)
-            <!-- Menampilkan gambar dari path luar storage -->
+            <!-- Gambar dari path luar -->
             <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan"
-                style="width: 100%; max-height: 300px; object-fit: contain; border-radius: 15px;" loading="lazy">
+                style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 15px;" loading="lazy">
         @else
-            <!-- Placeholder jika tidak ada data -->
+            <!-- Placeholder -->
             <p>Data belum diupdate</p>
         @endif
     </div>
