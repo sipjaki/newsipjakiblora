@@ -85,9 +85,9 @@ class PembinaanController extends Controller
     }
 
 
-    public function namakegiatandaftar($namakegiatan)
+    public function namakegiatandaftar($id)
     {
-        $dataagendapelatihan = agendapelatihan::where('namakegiatan', $namakegiatan)->first();
+        $dataagendapelatihan = agendapelatihan::where('id', $id)->first();
 
      $subdata = materipelatihan::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
 
