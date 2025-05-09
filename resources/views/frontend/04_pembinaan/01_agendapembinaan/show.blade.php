@@ -192,7 +192,18 @@
                         <div class="col-lg-8">
                             <div class="news-details-box-image">
                                 <div class="news-details-box-image-inner">
-                                    <img src="/assets/00_dokmasjaki/image.png" alt="">
+                                    <div style="margin-top: 10px;">
+                                        @if($item->peraturan && file_exists(public_path('storage/' . $item->peraturan)))
+                                            <!-- Menampilkan gambar dari storage -->
+                                            <img src="{{ asset('storage/' . $item->peraturan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @elseif($data->peraturan)
+                                            <!-- Menampilkan gambar dari path luar storage -->
+                                            <img src="{{ asset($data->peraturan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                        @else
+                                            <!-- Placeholder jika tidak ada data -->
+                                            <p>Data belum diupdate</p>
+                                        @endif
+                                    </div>
                                     <a href="news-details.html" class="news-details-box-date">
                                         {{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('l, d F Y') }}
                                     </a>
