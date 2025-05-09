@@ -202,8 +202,10 @@
                             <br><br>
 
                             <div class="news-details-content-box" style="margin-left: 25px;">
-                                <h4 style="font-family: Poppins;">{{ $data->namakegiatan }}</h4>
-                                <p style="font-family: Poppins;">{{ $data->isiagenda }}</p>
+                                <div style="font-family: Poppins; font-size: 18px;">
+                                    <h4>{{ $data->namakegiatan }}</h4>
+                                    <p>{{ $data->isiagenda }}</p>
+                                </div>
                             </div>
                         </div>
 
