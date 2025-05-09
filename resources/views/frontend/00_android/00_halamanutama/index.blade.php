@@ -292,7 +292,7 @@
                                     <i class="fas fa-times-circle"></i> Ditutup
                                 </button>
                             @else
-                                <a href="/agendaskk/{{$menu->namakegiatan}}" style="text-decoration: none;">
+                                <a href="/resagendatkk/{{$menu->namakegiatan}}" style="text-decoration: none;">
                                     <button style="
                                     background-color: #00098d;
                                     color: white;
