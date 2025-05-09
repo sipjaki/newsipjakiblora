@@ -82308,6 +82308,7 @@ skktenagakerjablora::create([
 for ($i = 1; $i <= 909; $i++) {
     skktenagakerjablora::where('id', $i)->update([
         'sertifikat' => '/assets/03_datajakon/sertifikasi.pdf',
+        'tahunbimtek' => '2024',
     ]);
 }
 
