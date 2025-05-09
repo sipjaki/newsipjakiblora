@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 
+use Illuminate\Support\Str;
 use App\Models\agendapelatihan;
 use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
@@ -538,6 +539,63 @@ public function beagendapelatihancreate()
 }
 
 
+// public function beagendapelatihancreatenew(Request $request)
+// {
+//     // Validasi data input
+//     $validatedData = $request->validate([
+//         'kategoripelatihan_id' => 'required|string',
+//         'user_id'              => 'required|string',
+//         'namakegiatan'         => 'required|string|max:255',
+//         'asosiasimasjaki_id'   => 'required|string',
+//         'waktupelaksanaan'     => 'required|date',
+//         'penutupan'            => 'required|date|after_or_equal:waktupelaksanaan',
+//         'jumlahpeserta'        => 'required|string',
+//         'lokasi'               => 'required|string|max:255',
+//         'keterangan'           => 'required|string|max:255',
+//         'isiagenda'            => 'required|string',
+//         'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
+//     ], [
+//         'kategoripelatihan_id.required' => 'Kategori pelatihan wajib dipilih.',
+//         'user_id.required'              => 'LSP Penerbit wajib dipilih.',
+//         'namakegiatan.required'         => 'Nama kegiatan wajib diisi.',
+//         'asosiasimasjaki_id.required'   => 'Penyelenggara wajib dipilih.',
+//         'waktupelaksanaan.required'     => 'Tanggal pelaksanaan wajib diisi.',
+//         'penutupan.required'            => 'Tanggal penutupan wajib diisi.',
+//         'penutupan.after_or_equal'      => 'Tanggal penutupan harus setelah atau sama dengan tanggal pelaksanaan.',
+//         'jumlahpeserta.required'        => 'Jumlah peserta wajib diisi.',
+//         'lokasi.required'               => 'Lokasi wajib diisi.',
+//         'keterangan.required'           => 'Keterangan wajib diisi.',
+//         'isiagenda.required'            => 'Isi agenda wajib diisi.',
+//         'foto.required'                 => 'Foto kegiatan wajib diunggah.',
+//         'foto.image'                    => 'File harus berupa gambar atau foto.',
+//         'foto.mimes'                    => 'Foto harus berformat jpg, jpeg, atau png.',
+//         'foto.max'                      => 'Ukuran foto maksimal 5MB.',
+//     ]);
+
+//     // Proses file foto
+//     $file = $request->file('foto');
+//     $namaFile = time() . '_' . $file->getClientOriginalName();
+//     $tujuanPath = public_path('04_datajakon/01_agendapelatihan');
+
+//     if (!file_exists($tujuanPath)) {
+//         mkdir($tujuanPath, 0777, true);
+//     }
+
+//     $file->move($tujuanPath, $namaFile);
+//     $validatedData['foto'] = '04_datajakon/01_agendapelatihan/' . $namaFile;
+
+//     // Simpan data baru ke dalam database
+//     agendapelatihan::create($validatedData);
+
+//     // Flash pesan sukses
+//     session()->flash('create', 'Agenda Pelatihan Berhasil Dibuat!');
+
+//     // Redirect ke halaman agenda pelatihan
+//     return redirect('/beagendapelatihan');
+// }
+
+
+
 public function beagendapelatihancreatenew(Request $request)
 {
     // Validasi data input
@@ -571,7 +629,7 @@ public function beagendapelatihancreatenew(Request $request)
         'foto.max'                      => 'Ukuran foto maksimal 5MB.',
     ]);
 
-    // Proses file foto
+    // Proses simpan foto kegiatan
     $file = $request->file('foto');
     $namaFile = time() . '_' . $file->getClientOriginalName();
     $tujuanPath = public_path('04_datajakon/01_agendapelatihan');
@@ -583,16 +641,23 @@ public function beagendapelatihancreatenew(Request $request)
     $file->move($tujuanPath, $namaFile);
     $validatedData['foto'] = '04_datajakon/01_agendapelatihan/' . $namaFile;
 
-    // Simpan data baru ke dalam database
+    // Generate QR Code dari route agendapembinaan
+    $namakegiatanSlug = Str::slug($validatedData['namakegiatan']);
+    $targetUrl = route('agendapembinaan', ['namakegiatan' => $namakegiatanSlug]);
+    $qrCodeUrl = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' . urlencode($targetUrl);
+
+    $qrImageName = 'qr_' . time() . '.png';
+    $qrImagePath = public_path('04_datajakon/01_agendapelatihan/' . $qrImageName);
+    file_put_contents($qrImagePath, file_get_contents($qrCodeUrl));
+
+    $validatedData['barcodepelatihan'] = '04_datajakon/01_agendapelatihan/' . $qrImageName;
+
+    // Simpan data ke database
     agendapelatihan::create($validatedData);
 
-    // Flash pesan sukses
     session()->flash('create', 'Agenda Pelatihan Berhasil Dibuat!');
-
-    // Redirect ke halaman agenda pelatihan
     return redirect('/beagendapelatihan');
 }
-
 
 // CREATE MATERI BARU AGENDA PELATIHAN
 //

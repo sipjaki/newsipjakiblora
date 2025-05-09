@@ -193,6 +193,7 @@ table.zebra-table {
                             <th onclick="sortTable(7)" style="cursor:pointer; text-align:center; width:250px;"> Lokasi </th>
                             {{-- <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Keterangan </th> --}}
                             <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Pendaftaran </th>
+                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;"> Barcode </th>
                             {{-- <th style="text-align:center; width:100px;"> Daftar </th> --}}
                         </tr>
 
@@ -266,6 +267,21 @@ table.zebra-table {
                                         </button>
                                     </a>
                                 @endif
+                            </td>
+                            <div style="margin-top: 10px;">
+                                @if($item->barcodepelatihan && file_exists(public_path('storage/' . $item->barcodepelatihan)))
+                                    <!-- Menampilkan gambar dari storage -->
+                                    <img src="{{ asset('storage/' . $item->barcodepelatihan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                @elseif($item->barcodepelatihan)
+                                    <!-- Menampilkan gambar dari path luar storage -->
+                                    <img src="{{ asset($item->barcodepelatihan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                                @else
+                                    <!-- Placeholder jika tidak ada data -->
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
+                            <td>
+
                             </td>
                         </tr>
                         @endforeach
