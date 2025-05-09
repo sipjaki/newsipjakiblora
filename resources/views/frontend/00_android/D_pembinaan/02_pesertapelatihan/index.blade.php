@@ -279,22 +279,22 @@ h5 {
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; color: black;">
                                                 <i class="bi bi-hash"></i> No
                                             </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px; color: black;">
                                                 <i class="bi bi-tags"></i> Kategori
                                             </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;">
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px; color: black;">
                                                 <i class="bi bi-calendar-event"></i> Nama Kegiatan
                                             </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px; color: black;">
                                                 <i class="bi bi-chat-left-text"></i> Keterangan
                                             </th>
-                                            <th style="text-align:center; width:200px;">
+                                            <th style="text-align:center; width:200px; color: black;">
                                                 <i class="bi bi-eye"></i> View Peserta
                                             </th>
-                                                      </tr>
+                                                            </tr>
                                     </thead>
                                     <tbody id="tableBody">
                                         @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
