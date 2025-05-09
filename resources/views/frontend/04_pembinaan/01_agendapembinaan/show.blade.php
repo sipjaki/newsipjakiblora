@@ -191,7 +191,8 @@
                         <!-- Kolom Konten Utama -->
                         <div class="col-lg-8">
                             <div class="news-details-box-image">
-                                    <div style="margin-top: 10px;">
+<img src="/assets/01_agendapelatihan/pelatihan1.jpg" alt="">
+                                {{-- <div style="margin-top: 10px;">
                                         @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
                                             <!-- Menampilkan gambar dari storage -->
                                             <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="max-width: 150px; max-height: 150px; object-fit: contain;" loading="lazy">
@@ -202,7 +203,7 @@
                                             <!-- Placeholder jika tidak ada data -->
                                             <p>Data belum diupdate</p>
                                         @endif
-                                    </div>
+                                    </div> --}}
 
 
                                     <a href="news-details.html" class="news-details-box-date">
