@@ -221,8 +221,20 @@ h5 {
                     </div>
 
                     <div class="rounded-lg shadow-lg overflow-hidden w-fit">
-                        <img src="/assets/00_dokmasjaki/image.png" alt="" class="rounded-lg">
-                      </div>
+                        <div style="margin-top: 10px;">
+                            @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                <!-- Menampilkan gambar dari storage -->
+                                <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                            @elseif($data->foto)
+                                <!-- Menampilkan gambar dari path luar storage -->
+                                <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                            @else
+                                <!-- Placeholder jika tidak ada data -->
+                                <p>Data belum diupdate</p>
+                            @endif
+                        </div>
+
+                    </div>
 
                     <br>
                     <h4 style="font-weight:bold;">I. INFORMASI AGENDA PELATIHAN </h4>
