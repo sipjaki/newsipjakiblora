@@ -170,11 +170,18 @@
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Nama Badan Usaha </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;"> Alamat </th>
-                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> No Telepon </th> --}}
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;"> View </th>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                                <i class="bi bi-sort-alpha-down"></i> No
+                                            </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-building"></i> Nama Badan Usaha
+                                            </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;">
+                                                <i class="bi bi-geo-alt"></i> Alamat
+                                            </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
+                                                <i class="bi bi-eye"></i> View
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
