@@ -322,24 +322,35 @@ h5 {
                         cursor: not-allowed;
                     }
                 </style>
-
 @if($item->verifikasi === null)
 <!-- BELUM DI VERIFIKASI -->
 <button type="button" onclick="openModal({{ $item->id }})"
-    class="btn-belum-verifikasi-custom">
-    <i class="bi bi-x-circle"></i> BELUM DI VERIFIKASI
+    style="background-color: #9CA3AF; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+    onmouseout="this.style.backgroundColor='#9CA3AF'; this.style.color='white'; this.querySelector('i').style.color='white';">
+    <i class="bi bi-patch-check" style="color: white;"></i> DI VERIFIKASI
 </button>
 @elseif($item->verifikasi === 'lolos')
 <!-- LOLOS -->
 <button type="button" disabled
-    class="btn-lolos-verifikasi-custom">
-    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+    style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s; cursor: not-allowed;"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
+    <i class="bi bi-patch-check-fill" style="font-size: 1.2rem; color: white;"></i> LOLOS
 </button>
 @elseif($item->verifikasi === 'gugur')
 <!-- GUGUR -->
 <button type="button" disabled
-    class="btn btn-danger">
-    <i class="bi bi-x-circle" style="font-size: 1.2rem;"></i> GUGUR
+    style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s; cursor: not-allowed;"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+    onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
+    <i class="bi bi-x-circle" style="font-size: 1.2rem; color: white;"></i> GUGUR
 </button>
 @endif
 
