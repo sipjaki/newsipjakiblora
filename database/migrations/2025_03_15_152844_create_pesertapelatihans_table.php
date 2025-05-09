@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('notelepon')->nullable();
             $table->string('instansi')->nullable();
             $table->string('sertifikat')->nullable();
-            $table->string('verifikasi')->default(false);
+            $table->string('verifikasi')->nullable();
             $table->boolean('verifikasikehadiran')->default(false);
             $table->softDeletes();
             $table->timestamps();
