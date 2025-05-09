@@ -155,14 +155,31 @@
                                 <table class="custom-fl-table" id="sortableTable" style="border-radius: 20px;">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;"> Sub Klasifikasi Layanan  </th>
-                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;"> Kode </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> Kualifikasi </th>
-                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;"> Penerbit </th>
-                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:150px;"> Tanggal Terbit </th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;"> Masa Berlaku </th>
-                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;"> Status </th>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                                <i class="bi bi-hash"></i> No
+                                            </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-list-task"></i> Sub Klasifikasi Layanan
+                                            </th>
+                                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-code-square"></i> Kode
+                                            </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-award"></i> Kualifikasi
+                                            </th>
+                                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-person-badge"></i> Penerbit
+                                            </th>
+                                            <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-calendar-check"></i> Tanggal Terbit
+                                            </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-calendar-range"></i> Masa Berlaku
+                                            </th>
+                                            <th onclick="sortTable(6)" style="cursor:pointer; text-align:center; width:150px;">
+                                                <i class="bi bi-check-circle"></i> Status
+                                            </th>
+
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
