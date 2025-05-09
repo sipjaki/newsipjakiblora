@@ -202,7 +202,7 @@ h5 {
                         <div class="header-text">
                             <h3>AGENDA PELATIHAN TKK KABUPATEN BLORA </h3>
                             <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
-                            <p>------------------------------------------------------------</p>
+                            <p>----------------------------------------------</p>
                             <p>FORMULIR PENDAFTARAN</p>
 
                             <div class="full-width-container mx-auto px-4 pb-10">
