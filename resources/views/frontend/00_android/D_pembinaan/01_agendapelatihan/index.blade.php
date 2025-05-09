@@ -141,7 +141,19 @@
                     <class="card" id="tableBody">
                         <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                             <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
-                                <img src="{{asset('storage/' . $item->foto )}}" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
+
+               <div style="margin-top: 10px;">
+                @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                    <!-- Menampilkan gambar dari storage -->
+                    <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                @elseif($data->foto)
+                    <!-- Menampilkan gambar dari path luar storage -->
+                    <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                @else
+                    <!-- Placeholder jika tidak ada data -->
+                    <p>Data belum diupdate</p>
+                @endif
+            </div>
                             </div>
                             <div class="flex flex-col gap-1">
                                 <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: #28A745;">{{$item->namakegiatan}}</p>
