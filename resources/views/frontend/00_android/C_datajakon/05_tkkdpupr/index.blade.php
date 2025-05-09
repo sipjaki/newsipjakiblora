@@ -190,7 +190,7 @@
 
 <!-- Kolom Penyelenggara/Asosiasi -->
 <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:300px;">
-    <i class="bi bi-diagram-3-fill me-1"></i> Penyelenggara/Asosiasi
+    <i class="bi bi-diagram-3-fill me-1"></i> Penyelenggara
 </th>
 
 <!-- Kolom Status -->
