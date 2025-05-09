@@ -220,6 +220,23 @@ h5 {
                         </div>
                     </div>
 
+
+                    <div class="flex justify-center">
+                        <div class="rounded-lg shadow-lg overflow-hidden w-fit">
+                            <div style="margin-top: 10px;">
+                                @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+                                    <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan"
+                                         style="width: 100%; max-height: 500px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                                @elseif($data->foto)
+                                    <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan"
+                                         style="width: 100%; max-height: 500px; object-fit: contain; border-radius: 20px;" loading="lazy">
+                                @else
+                                    <p>Data belum diupdate</p>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
                     <br>
                     <h4 style="font-weight:bold;">I. INFORMASI AGENDA SERTIFIKASI </h4>
                     <table class="table-identitas">
