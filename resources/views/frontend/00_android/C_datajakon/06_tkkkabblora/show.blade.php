@@ -222,7 +222,8 @@ h5 {
                     <h4 style="font-weight:bold;">
                         <i class="bi bi-person-fill me-2"></i> IDENTITAS TENAGA KERJA KONSTRUKSI
                     </h4>
-                             <table class="custom-fl-table">
+                    <div style="overflow-x: auto;">
+                        <table class="custom-fl-table">
                         {{-- @foreach ($dataidentitasopd as $item) --}}
                         <tr>
                             <td class="label" style="width: 5%;">1</td>
@@ -331,6 +332,7 @@ h5 {
 
                     </table>
 
+                </div>
                 </div>
 
             </div>
