@@ -191,7 +191,6 @@
                         <!-- Kolom Konten Utama -->
                         <div class="col-lg-8">
                             <div class="news-details-box-image">
-                                <div class="news-details-box-image-inner">
                                     <div style="margin-top: 10px;">
                                         @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
                                             <!-- Menampilkan gambar dari storage -->
@@ -209,7 +208,6 @@
                                     <a href="news-details.html" class="news-details-box-date">
                                         {{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('l, d F Y') }}
                                     </a>
-                                </div>
                             </div>
 
                             <br><br>
