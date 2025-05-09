@@ -26,14 +26,8 @@
         </nav>
 
         <div class="z-10" style="margin-top:25px;">
-            <div class="bg-white rounded-[15px] p-4">
-              <h1 class="font-bold leading-[36px] text-center text-black text-[20px]">
-                Mas Jaki Blora <br>
-                Sistem Informasi Pembina Jasa Konstruksi
-              </h1>
-            </div>
-          </div>
-
+            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;" >Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi</h1>
+        </div>
         <br><br><br><br><br>
         <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
             {{-- <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy"> --}}
