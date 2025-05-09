@@ -279,16 +279,16 @@ h5 {
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; color: #000 !important;">
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px; color: #746464 !important;">
                                                 <i class="bi bi-hash me-1"></i> No
                                             </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px; color: #000 !important;">
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px; color: #746464 !important;">
                                                 <i class="bi bi-tags me-1"></i> Kategori
                                             </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px; color: #000 !important;">
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px; color: #746464 !important;">
                                                 <i class="bi bi-calendar-event me-1"></i> Nama Kegiatan
                                             </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px; color: #000 !important;">
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px; color: #746464 !important;">
                                                 <i class="bi bi-chat-left-text me-1"></i> Keterangan
                                             </th>
                                             <th style="text-align:center; width:200px; color: #000 !important;">
