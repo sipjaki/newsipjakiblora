@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 
+use QRcode;  // Pastikan ini ada di bagian atas controller Anda
+
 use Illuminate\Support\Str;
 use App\Models\agendapelatihan;
 use App\Models\agendaskk;
@@ -640,27 +642,33 @@ public function beagendapelatihancreatenew(Request $request)
     $file->move($tujuanPath, $namaFile);
     $validatedData['foto'] = '04_datajakon/01_agendapelatihan/' . $namaFile;
 
-    // Simpan data awal ke database untuk mendapatkan ID
-    $agenda = agendapelatihan::create($validatedData);
+    // QR Code lokal tanpa Google
+    require_once public_path('vendor/phpqrcode/qrcode.class.php');
 
-    // Generate QR Code berdasarkan route agendapembinaan (dengan ID)
-    $targetUrl = route('agendapembinaan', ['id' => $agenda->id]);
-    $qrCodeUrl = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' . urlencode($targetUrl);
+    // Simpan data agenda pelatihan ke database
+    $agenda = Agendapelatihan::create($validatedData);
 
-    // Simpan QR Code sebagai file
+    // Ambil ID agenda yang baru saja disimpan
+    $agendaId = $agenda->id;
+
+    // Generate URL QR code menggunakan ID yang baru dibuat
+    $url = route('agendapembinaan', ['id' => $agendaId]);
+
     $qrImageName = 'qr_' . time() . '.png';
-    $qrImagePath = public_path('04_datajakon/01_agendapelatihan/' . $qrImageName);
-    file_put_contents($qrImagePath, file_get_contents($qrCodeUrl));
+    $qrImagePath = $tujuanPath . '/' . $qrImageName;
 
-    // Update data barcode ke database
-    $agenda->update([
-        'barcodepelatihan' => '04_datajakon/01_agendapelatihan/' . $qrImageName,
-    ]);
+    // Buat QR code
+    \QRcode::png($url, $qrImagePath, 'L', 6, 2);
+    $validatedData['barcodepelatihan'] = '04_datajakon/01_agendapelatihan/' . $qrImageName;
 
-    // Flash pesan sukses
+    // Simpan ke DB (QR code juga sudah disimpan sebelumnya)
+    $agenda->update(['barcodepelatihan' => $validatedData['barcodepelatihan']]);
+
     session()->flash('create', 'Agenda Pelatihan Berhasil Dibuat!');
     return redirect('/beagendapelatihan');
 }
+
+
 // CREATE MATERI BARU AGENDA PELATIHAN
 //
 
