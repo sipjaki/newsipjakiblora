@@ -226,7 +226,7 @@ h5 {
                         {{-- @foreach ($dataidentitasopd as $item) --}}
                         <tr>
                             <td class="label" style="width: 50px;">1</td>
-                            <td class="label">Nama Lengkap</td>
+                            <td class="label" style="width: 100px;">Nama Lengkap</td>
                             <td class="colon" style="width: 15px;">:</td>
                             <td style="width: 100px;">{{$data->nama}}</td>
                         </tr>
