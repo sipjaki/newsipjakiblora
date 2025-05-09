@@ -52,7 +52,7 @@
                                 </div>
 
                             <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">BUJK Konstultan</p>
+                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">BUJK Konsultasi Konstruksi</p>
                         </p>
 
                             </div>
