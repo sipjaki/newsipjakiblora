@@ -26,7 +26,7 @@
     }
 
     .custom-fl-table th {
-        background-color: #00ad28;
+        background-color: #00df34;
         font-weight: 600;
         color: #2d3436;
         font-size: 14px;
