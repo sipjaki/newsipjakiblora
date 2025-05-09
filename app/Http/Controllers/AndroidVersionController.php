@@ -160,21 +160,18 @@ class AndroidVersionController extends Controller
 // DATA ASOSIASI JASA KONSTRUKSI
 public function menuasosiasimasjaki(Request $request)
 {
-    $user = auth()->user(); // atau sesuaikan dapetin $user dari mana
-
-    // Mendapatkan kata kunci pencarian dari input pengguna
+    $user = auth()->user();
     $search = $request->input('search');
-    $perPage = 10; // Menentukan jumlah data per halaman, sesuaikan dengan kebutuhan
+    $perPage = 10;
 
-    // Query untuk asosiasimasjaki dengan jumlah penggunaan bujkkontraktor dan bujkkonsultan
-    $queryAsosiasi = asosiasimasjaki::withCount(['bujkkontraktor', 'bujkkonsultan']);
+    // Query asosiasi, tambahkan pengecualian untuk id = 99
+    $queryAsosiasi = asosiasimasjaki::withCount(['bujkkontraktor', 'bujkkonsultan'])
+                        ->where('id', '!=', 99); // <--- tambahkan ini
 
-    // Jika ada input pencarian, filter berdasarkan namaasosiasi
     if ($search) {
         $queryAsosiasi->where('namaasosiasi', 'like', '%' . $search . '%');
     }
 
-    // Ambil data asosiasimasjaki dengan pencarian yang diterapkan
     $dataAsosiasi = $queryAsosiasi->get()
         ->map(function ($item) {
             return [
@@ -184,23 +181,19 @@ public function menuasosiasimasjaki(Request $request)
             ];
         });
 
-
-    // Jika permintaan adalah Ajax, kembalikan hanya bagian tabel dalam format JSON
     if ($request->ajax()) {
         return response()->json([
-            'html' => view('frontend.00_android.C_datajakon.03_asosiasimasjaki.partials.table', compact('dataKontraktor'))->render()
+            'html' => view('frontend.00_android.C_datajakon.03_asosiasimasjaki.partials.table', compact('dataAsosiasi'))->render()
         ]);
     }
 
-    // Kembalikan view dengan data asosiasi dan kontraktor yang telah difilter
     return view('frontend.00_android.C_datajakon.03_asosiasimasjaki.index', [
         'title' => 'Asosiasi Konstruksi dan Konsultasi Konstruksi',
         'user' => $user,
         'data' => $dataAsosiasi,
-        'search' => $search, // Menyertakan nilai pencarian untuk digunakan di view
+        'search' => $search,
     ]);
 }
-
 
 
 public function reasasosiasimasjakikontraktor($namaasosiasi)
