@@ -174,12 +174,12 @@
                                     <thead>
                                         <tr>
               <!-- Kolom No -->
-<th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:75px;">
+<th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:50px;">
     <i class="bi bi-list-ol me-1"></i> No
 </th>
 
 <!-- Kolom Nama Badan Usaha -->
-<th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:150px;">
+<th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
     <i class="bi bi-building me-1"></i> Nama Badan Usaha
 </th>
                               {{-- <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:150px;"> No Telepon</th>
