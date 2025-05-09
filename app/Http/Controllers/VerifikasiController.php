@@ -9,25 +9,33 @@ use Illuminate\Http\Request;
 class VerifikasiController extends Controller
 {
     //
-
-    public function verifikasipesertapelatihan($id)
+    public function verifikasipesertapelatihan(Request $request, $id)
     {
-        // Temukan data peserta pelatihan berdasarkan ID
+        // Validasi input verifikasi
+        $request->validate([
+            'verifikasi' => 'required|in:lolos,gugur',
+        ]);
+
+        // Temukan peserta berdasarkan ID
         $item = pesertapelatihan::findOrFail($id);
 
-        // Toggle status verifikasi
-        $item->verifikasi = !$item->verifikasi;
+        // Simpan nilai verifikasi
+        $item->verifikasi = $request->input('verifikasi');
         $item->save();
 
-        // Ambil ID agenda pelatihan (pastikan nama kolom benar)
+        // Ambil ID agenda
         $agendaId = $item->agendapelatihan_id;
 
         // Flash message
-        session()->flash('verifikasipesertapelatihan', 'Selamat Peserta Lolos Seleksi!');
+        $pesan = $item->verifikasi === 'lolos'
+            ? 'Selamat Peserta Lolos Seleksi!'
+            : 'Peserta dinyatakan Gugur.';
+        session()->flash('verifikasipesertapelatihan', $pesan);
 
-        // Redirect ke halaman peserta sesuai agenda
+        // Redirect
         return redirect("/beagendapelatihanpeserta/show/{$agendaId}");
     }
+
 
     public function verifikasikehadiran($id)
 {
