@@ -170,7 +170,7 @@
                             <div class="custom-table-container">
 
 
-                                <table class="costum-fl-table" id="sortableTable">
+                                <table class="custom-fl-table" id="sortableTable" style="border-radius: 20px;">
                                     <thead>
                                         <tr>
               <!-- Kolom No -->
