@@ -284,7 +284,7 @@ h5 {
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;">
                                                 <i class="bi bi-gender-ambiguous me-1"></i> Gender
                                             </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:350px;">
                                                 <i class="bi bi-building me-1"></i> Instansi/Universitas/Lembaga/Perseorangan
                                             </th>
                                             <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;">
