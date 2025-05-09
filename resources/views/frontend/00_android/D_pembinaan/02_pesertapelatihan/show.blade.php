@@ -264,6 +264,7 @@ h5 {
             <p>Data belum diupdate</p>
         @endif
     </div>
+    <br>
     <p style="font-size: 18px; font-weight: bold; color: #2c3e50; margin: 0;">
         Kegiatan Pelatihan :
         <span style="font-size: 18px; color: #2980b9; font-weight: normal;">{{$data->namakegiatan}}</span>
