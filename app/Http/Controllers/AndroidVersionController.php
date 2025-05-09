@@ -196,10 +196,10 @@ public function menuasosiasimasjaki(Request $request)
 }
 
 
-public function reasasosiasimasjakikontraktor($namaasosiasi)
+public function reasasosiasimasjakikontraktor($id)
 {
     // Cari asosiasi berdasarkan namaasosiasi
-    $asosiasi = asosiasimasjaki::where('namaasosiasi', $namaasosiasi)->first();
+    $asosiasi = asosiasimasjaki::where('id', $id)->first();
 
     // Jika asosiasi tidak ditemukan, tampilkan 404
     if (!$asosiasi) {
