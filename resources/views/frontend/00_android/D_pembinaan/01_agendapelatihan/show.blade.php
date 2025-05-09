@@ -215,7 +215,7 @@ h5 {
                     <div class="header-surat">
                         <div class="header-text">
                             <h3>AGENDA PELATIHAN TKK</h3>
-                            <h4>DINAS PEKERJAAN UMUM DAN PENATAAN RUANG <br> KABUPATEN BLORA PROVINSI JAWA TENGAH</h4>
+                            <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
                             <p>--------------------------------------------</p>
                         </div>
                     </div>
