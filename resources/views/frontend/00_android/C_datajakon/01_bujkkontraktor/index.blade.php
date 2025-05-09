@@ -35,18 +35,18 @@
 
     .custom-fl-table td {
         font-size: 14px;
-        color: #493232;
+        color: #000000;
         line-height: 1.5;
     }
 
     /* Zebra striping untuk baris */
     .custom-fl-table tbody tr:nth-child(even) {
-        background-color: #493232;
+        background-color: #9e9999;
     }
 
     /* Hover effect */
     .custom-fl-table tbody tr:hover {
-        background-color: #493232;
+        background-color: #9e9999;
     }
 
     /* Scrollbar styling */
