@@ -22,11 +22,12 @@
             </a> --}}
         </nav>
 
-        <div class="z-10" style="margin-top:25px; background-color: white; border-radius: 10px; padding: 20px;">
+        <div class="z-10" style="margin-top:25px; background-color: white; border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
             <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
                 Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi
             </h1>
         </div>
+
 
 
         <br><br><br><br><br>
