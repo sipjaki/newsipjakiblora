@@ -15,12 +15,10 @@
                 <div class="w-10 h-10 flex shrink-0">
                     <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy">
                 </div>
-                <div class="flex flex-col">
-                    <div class="bg-white rounded-[15px] p-2">
-                      <p class="text-xs leading-[18px] text-black">Dinas Pekerjaan Umum dan Penataan Ruang</p>
-                      <p class="font-semibold text-sm text-black">Kabupaten Blora, Provinsi Jawa Tengah</p>
-                    </div>
-                  </div>
+                <div class="flex flex-col text-white">
+                    <p class="text-xs leading-[18px]" style="color:black">Dinas Pekerjaan Umum dan Penataan Ruang </p>
+                    <p class="font-semibold text-sm" style="color:black">Kabupaten Blora, Provinsi Jawa Tengah</p>
+                </div>
             </div>
             {{-- <a href="" class="w-10 h-10 flex shrink-0">
                 <img src="/assets/00_android//images/icons/menu.svg" alt="icon" loading="lazy">
@@ -28,8 +26,14 @@
         </nav>
 
         <div class="z-10" style="margin-top:25px;">
-            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;" >Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi</h1>
-        </div>
+            <div class="bg-white rounded-[15px] p-4">
+              <h1 class="font-bold leading-[36px] text-center text-black text-[20px]">
+                Mas Jaki Blora <br>
+                Sistem Informasi Pembina Jasa Konstruksi
+              </h1>
+            </div>
+          </div>
+
         <br><br><br><br><br>
         <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
             {{-- <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy"> --}}
