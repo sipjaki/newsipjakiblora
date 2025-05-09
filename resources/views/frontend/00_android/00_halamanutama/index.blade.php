@@ -229,7 +229,7 @@
                                     <i class="fas fa-times-circle"></i> Ditutup
                                 </button>
                             @else
-                                <a href="/resagendapelatihan//{{$item->namakegiatan}}" style="text-decoration: none;">
+                                <a href="/resagendapelatihan/{{$item->namakegiatan}}" style="text-decoration: none;">
                                     <button style="
                                     background-color: #006b1b;
                                     color: white;
