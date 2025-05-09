@@ -167,7 +167,7 @@
                             <!-- Table Section -->
 
                             <div class="custom-table-container">
-                                <table class="costum-fl-table" id="sortableTable">
+                                <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;"> No </th>
