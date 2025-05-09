@@ -221,7 +221,7 @@
                                             <td style="text-align: left;">{{$item->paketstatuspekerjaan->paketstatuspekerjaan ?? 'Data Belum Di Update'}}</td>
                                             <td style="text-align: left;" style="width:1500px;">{{$item->namapekerjaan ?? 'Data Belum Di Update' }}</td>
                                             {{-- <td style="text-align: left;">Selesai</td> --}}
-                                            <td style="text-align: left;">{{$item->bulanrekap->bulanrekap ?? 'Data Belum Di Update' }}</td>
+                                            <td style="text-align: center;">{{$item->bulanrekap->bulanrekap ?? 'Data Belum Di Update' }}</td>
                                             <td style="text-align: left;">
                                                 @php
                                                     // Mendapatkan progress dalam bentuk persentase
@@ -389,7 +389,8 @@
 
 
                                             <td style="text-align: center" style="text-align: center;">
-                                                <a href="/resprofilpaketpekerjaan/{{$item->id}}">
+                                                <a href="/404">
+                                                {{-- <a href="/resprofilpaketpekerjaan/{{$item->id}}"> --}}
                                                     <i class="fas fa-eye view-icon" onclick="alert('View clicked!')"></i>
                                                 </a>
                                             </td>
