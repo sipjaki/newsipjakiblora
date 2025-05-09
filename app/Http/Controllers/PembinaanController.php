@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use Endroid\QrCode\QrCode;
-use Endroid\QrCode\Writer\PngWriter;
-// use QRcode;
 
-use Illuminate\Support\Str;
 use App\Models\agendapelatihan;
 use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
@@ -542,62 +538,6 @@ public function beagendapelatihancreate()
 }
 
 
-// public function beagendapelatihancreatenew(Request $request)
-// {
-//     // Validasi data input
-//     $validatedData = $request->validate([
-//         'kategoripelatihan_id' => 'required|string',
-//         'user_id'              => 'required|string',
-//         'namakegiatan'         => 'required|string|max:255',
-//         'asosiasimasjaki_id'   => 'required|string',
-//         'waktupelaksanaan'     => 'required|date',
-//         'penutupan'            => 'required|date|after_or_equal:waktupelaksanaan',
-//         'jumlahpeserta'        => 'required|string',
-//         'lokasi'               => 'required|string|max:255',
-//         'keterangan'           => 'required|string|max:255',
-//         'isiagenda'            => 'required|string',
-//         'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
-//     ], [
-//         'kategoripelatihan_id.required' => 'Kategori pelatihan wajib dipilih.',
-//         'user_id.required'              => 'LSP Penerbit wajib dipilih.',
-//         'namakegiatan.required'         => 'Nama kegiatan wajib diisi.',
-//         'asosiasimasjaki_id.required'   => 'Penyelenggara wajib dipilih.',
-//         'waktupelaksanaan.required'     => 'Tanggal pelaksanaan wajib diisi.',
-//         'penutupan.required'            => 'Tanggal penutupan wajib diisi.',
-//         'penutupan.after_or_equal'      => 'Tanggal penutupan harus setelah atau sama dengan tanggal pelaksanaan.',
-//         'jumlahpeserta.required'        => 'Jumlah peserta wajib diisi.',
-//         'lokasi.required'               => 'Lokasi wajib diisi.',
-//         'keterangan.required'           => 'Keterangan wajib diisi.',
-//         'isiagenda.required'            => 'Isi agenda wajib diisi.',
-//         'foto.required'                 => 'Foto kegiatan wajib diunggah.',
-//         'foto.image'                    => 'File harus berupa gambar atau foto.',
-//         'foto.mimes'                    => 'Foto harus berformat jpg, jpeg, atau png.',
-//         'foto.max'                      => 'Ukuran foto maksimal 5MB.',
-//     ]);
-
-//     // Proses file foto
-//     $file = $request->file('foto');
-//     $namaFile = time() . '_' . $file->getClientOriginalName();
-//     $tujuanPath = public_path('04_datajakon/01_agendapelatihan');
-
-//     if (!file_exists($tujuanPath)) {
-//         mkdir($tujuanPath, 0777, true);
-//     }
-
-//     $file->move($tujuanPath, $namaFile);
-//     $validatedData['foto'] = '04_datajakon/01_agendapelatihan/' . $namaFile;
-
-//     // Simpan data baru ke dalam database
-//     agendapelatihan::create($validatedData);
-
-//     // Flash pesan sukses
-//     session()->flash('create', 'Agenda Pelatihan Berhasil Dibuat!');
-
-//     // Redirect ke halaman agenda pelatihan
-//     return redirect('/beagendapelatihan');
-// }
-
-
 public function beagendapelatihancreatenew(Request $request)
 {
     // Validasi data input
@@ -631,7 +571,7 @@ public function beagendapelatihancreatenew(Request $request)
         'foto.max'                      => 'Ukuran foto maksimal 5MB.',
     ]);
 
-    // Proses simpan foto kegiatan
+    // Proses file foto
     $file = $request->file('foto');
     $namaFile = time() . '_' . $file->getClientOriginalName();
     $tujuanPath = public_path('04_datajakon/01_agendapelatihan');
@@ -643,29 +583,13 @@ public function beagendapelatihancreatenew(Request $request)
     $file->move($tujuanPath, $namaFile);
     $validatedData['foto'] = '04_datajakon/01_agendapelatihan/' . $namaFile;
 
-    // QR Code lokal tanpa Google
-    require_once public_path('vendor/phpqrcode/qrcode.class.php');
+    // Simpan data baru ke dalam database
+    agendapelatihan::create($validatedData);
 
-    // Simpan data agenda pelatihan ke database
-    $agenda = Agendapelatihan::create($validatedData);
-
-    // Ambil ID agenda yang baru saja disimpan
-    $agendaId = $agenda->id;
-
-    // Generate URL QR code menggunakan ID yang baru dibuat
-    $url = route('agendapembinaan', ['id' => $agendaId]);
-
-    $qrImageName = 'qr_' . time() . '.png';
-    $qrImagePath = $tujuanPath . '/' . $qrImageName;
-
-    // Buat QR code
-    \QRcode::png($url, $qrImagePath, 'L', 6, 2);
-    $validatedData['barcodepelatihan'] = '04_datajakon/01_agendapelatihan/' . $qrImageName;
-
-    // Simpan ke DB (QR code juga sudah disimpan sebelumnya)
-    $agenda->update(['barcodepelatihan' => $validatedData['barcodepelatihan']]);
-
+    // Flash pesan sukses
     session()->flash('create', 'Agenda Pelatihan Berhasil Dibuat!');
+
+    // Redirect ke halaman agenda pelatihan
     return redirect('/beagendapelatihan');
 }
 
