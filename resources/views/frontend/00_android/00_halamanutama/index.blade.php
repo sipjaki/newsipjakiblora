@@ -22,9 +22,13 @@
             </a> --}}
         </nav>
 
-        <div class="z-10" style="margin-top:25px;">
-            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;" >Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi</h1>
+        <div class="z-10" style="margin-top:25px; background-color: white; border-radius: 10px; padding: 20px;">
+            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
+                Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi
+            </h1>
         </div>
+
+
         <br><br><br><br><br>
         <div class="w-full h-fit overflow-hidden -mt-[33px] flex justify-center items-center" style="margin-top: 15px; margin-bottom:100px;">
             {{-- <img src="/assets/icon/bangunangedung.png" class="object-contain" alt="background" width="350px" loading="lazy"> --}}
