@@ -18,7 +18,7 @@
     .custom-fl-table th,
     .custom-fl-table td {
         padding: 12px 15px;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid #998282;
         text-align: left;
         vertical-align: middle;
         height: 48px; /* Tinggi baris tetap */
@@ -26,7 +26,7 @@
     }
 
     .custom-fl-table th {
-        background-color: #f8f9fa;
+        background-color: #17d174;
         font-weight: 600;
         color: #2d3436;
         font-size: 14px;
