@@ -252,6 +252,18 @@ h5 {
                             </div>
 <br>
 <div style="margin-bottom: 20px;">
+    <div style="margin-top: 10px;">
+        @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+            <!-- Menampilkan gambar dari storage -->
+            <img src="{{ asset('storage/' . $data->foto) }}" alt="Sosialisasi" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+        @elseif($data->foto)
+            <!-- Menampilkan gambar dari path luar storage -->
+            <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+        @else
+            <!-- Placeholder jika tidak ada data -->
+            <p>Data belum diupdate</p>
+        @endif
+    </div>
     <p style="font-size: 18px; font-weight: bold; color: #2c3e50; margin: 0;">
         Kegiatan Pelatihan :
         <span style="font-size: 18px; color: #2980b9; font-weight: normal;">{{$data->namakegiatan}}</span>
