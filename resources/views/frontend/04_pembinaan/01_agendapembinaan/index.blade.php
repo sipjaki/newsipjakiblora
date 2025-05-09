@@ -208,7 +208,7 @@ table.zebra-table {
 
                             <td>{{ ucwords(strtolower($item->kategoripelatihan->kategoripelatihan ?? 'Data Tidak Ditemukan')) }}</td>
                             <td>{{ ucwords(strtolower($item->namakegiatan ?? 'Data Tidak Ditemukan')) }}</td>
-                            <td>{{ ucwords(strtolower($item->user->name ?? 'Data Tidak Ditemukan')) }}</td>
+                            <td>{{ ucwords(strtolower($item->user->name ?? 'Dinas Pekerjaan Umum dan Penataan Ruang Kab Blora ')) }}</td>
 
                             {{-- <td style="text-align: center;">{{$item->jenjang->jenjang}}</td> --}}
                             {{-- <td style="text-align: center;">{{$item->penutupan}}</td> --}}
@@ -268,7 +268,7 @@ table.zebra-table {
                                     </a>
                                 @endif
                             </td>
-                            <td>
+                            {{-- <td>
                                 @if($item->barcodepelatihan && file_exists(public_path('storage/' . $item->barcodepelatihan)))
                                     <!-- Menampilkan gambar dari storage -->
                                     <img src="{{ asset('storage/' . $item->barcodepelatihan) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
@@ -279,7 +279,7 @@ table.zebra-table {
                                     <!-- Placeholder jika tidak ada data -->
                                     <p>Data belum diupdate</p>
                                 @endif
-                            </td>
+                            </td> --}}
                         </tr>
                         @endforeach
 
