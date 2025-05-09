@@ -22,7 +22,7 @@
             </a> --}}
         </nav>
 
-        <div class="z-10" style="margin-top:25px; background-color: rgba(255, 255, 255, 0.6git ); border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <div class="z-10" style="margin-top:25px; background-color: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
             <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
                 Mas Jaki Blora <br> Sistem Informasi Pembina Jasa Konstruksi
             </h1>
