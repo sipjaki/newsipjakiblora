@@ -15,9 +15,11 @@
                 <div class="w-10 h-10 flex shrink-0">
                     <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy">
                 </div>
-                <div class="flex flex-col text-white bg-white rounded-[15px] p-2">
-                    <p class="text-xs leading-[18px] text-black">Dinas Pekerjaan Umum dan Penataan Ruang</p>
-                    <p class="font-semibold text-sm text-black">Kabupaten Blora, Provinsi Jawa Tengah</p>
+                <div class="flex flex-col">
+                    <div class="bg-white rounded-[15px] p-2">
+                      <p class="text-xs leading-[18px] text-black">Dinas Pekerjaan Umum dan Penataan Ruang</p>
+                      <p class="font-semibold text-sm text-black">Kabupaten Blora, Provinsi Jawa Tengah</p>
+                    </div>
                   </div>
             </div>
             {{-- <a href="" class="w-10 h-10 flex shrink-0">
