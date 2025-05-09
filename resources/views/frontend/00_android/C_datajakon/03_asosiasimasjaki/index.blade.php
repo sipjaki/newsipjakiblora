@@ -190,7 +190,11 @@
                                             @foreach ($data as $item)
                                             <tr>
                                                 {{-- Nomor Urut --}}
-                                                <td class="text-center">{{ $loop->iteration }}</td>
+                                                <td class="text-center" style="vertical-align: middle;">
+                                                    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                                                        {{ $loop->iteration }}
+                                                    </div>
+                                                </td>
 
                                                 {{-- Nama Asosiasi --}}
                                                 <td class="text-center">
