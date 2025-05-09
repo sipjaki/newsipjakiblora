@@ -143,7 +143,7 @@
                             <div class="w-20 h-[90px] flex shrink-0 rounded-2xl overflow-hidden">
 
                <div style="margin-top: 10px;">
-                {{-- @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
+                @if($item->foto && file_exists(public_path('storage/' . $item->foto)))
                     <!-- Menampilkan gambar dari storage -->
                     <img src="{{ asset('storage/' . $item->foto) }}" alt="Sosialisasi" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                 @elseif($item->foto)
@@ -152,7 +152,7 @@
                 @else
                     <!-- Placeholder jika tidak ada data -->
                     <p>Data belum diupdate</p>
-                @endif --}}
+                @endif
             </div>
                             </div>
                             <div class="flex flex-col gap-1">
