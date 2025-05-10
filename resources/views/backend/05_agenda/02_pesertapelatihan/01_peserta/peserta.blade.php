@@ -173,13 +173,46 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+
 <script>
- function exportTableToExcel(tableID, filename = '') {
-     var table = document.getElementById(tableID);
-     var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
-     return XLSX.writeFile(wb, filename + '.xlsx');
- }
- </script>
+    function exportTableToExcel(tableID, filename = '') {
+        var table = document.getElementById(tableID);
+
+        // Mengambil semua baris data
+        var rows = table.querySelectorAll('tr');
+
+        // Mengubah tabel menjadi array dan menangani angka panjang
+        var data = [];
+        rows.forEach(function(row) {
+            var cells = row.querySelectorAll('td, th');
+            var rowData = [];
+
+            cells.forEach(function(cell) {
+                let cellValue = cell.innerText;
+
+                // Cek apakah nilai cell berupa angka panjang (NIK, nomor telepon)
+                // dan formatnya agar Excel tidak merubah menjadi format ilmiah
+                if (/^\d{12,}$/.test(cellValue)) {
+                    // Tambahkan tanda petik satu agar Excel mengenali sebagai string
+                    cellValue = "'" + cellValue;
+                }
+
+                rowData.push(cellValue);
+            });
+
+            // Push data baris ke array data
+            data.push(rowData);
+        });
+
+        // Buat worksheet dari data
+        var ws = XLSX.utils.aoa_to_sheet(data);
+        var wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Sheet 1");
+
+        // Ekspor file Excel
+        return XLSX.writeFile(wb, filename + '.xlsx');
+    }
+</script>
                      <a href="/bepesertapelatihanindex">
                                     <button
                         onclick="history.back()"
