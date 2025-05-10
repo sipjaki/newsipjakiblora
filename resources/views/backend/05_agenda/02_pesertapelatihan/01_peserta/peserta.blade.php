@@ -272,6 +272,9 @@
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Kehadiran
                                         </th>
                                         <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Keterangan Isi Sertifikat
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-gear" style="margin-right: 5px;"></i>Upload Sertifikat
                                         </th>
                                     </tr>
@@ -433,6 +436,21 @@
                 document.getElementById("kehadiranModal").style.display = "none";
             }
         </script>
+
+
+<td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
+    <a href="{{ url('/bebujkkonstruksi/showsubklasifikasi/' . $item->namalengkap) }}" style="text-decoration: none;">
+        <button
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+            style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
+                   border-radius: 15px; font-size: 14px; cursor: pointer;
+                   display: flex; align-items: center; justify-content: center;
+                   transition: background-color 0.3s, color 0.3s;">
+            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Keterangan Sertifikat
+        </button>
+    </a>
+</td>
 
                                 <td style="text-align: center;">
                                             <!-- Show Icon -->
