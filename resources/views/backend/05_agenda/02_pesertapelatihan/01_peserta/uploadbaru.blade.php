@@ -1,14 +1,4 @@
 <style>
-    body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #e0f2f1; /* opsional, supaya terlihat tengah */
-}
-
 .cert-container {
     width: 297mm; /* Lebar A4 landscape */
     height: 210mm; /* Tinggi A4 landscape */
