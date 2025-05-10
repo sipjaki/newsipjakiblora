@@ -56,40 +56,42 @@
                     </svg>
                     {{ $jumlahpeserta }} Jumlah Peserta
                 </button> --}}
-                <a href="{{ url('/bepelatihanjampelajaran/' . $agendaId) }}" style="text-decoration: none;">
+
+                    <a href="{{ url('/bepelatihanjampelajaran/' . $agendaId) }}" style="text-decoration: none;">
+                        <button
+                            onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+                            onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
+                            style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
+                                   border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                                   transition: background 0.3s, color 0.3s, border 0.3s; text-decoration: none;">
+                            <i class="bi bi-printer-fill" style="margin-right: 8px; font-size: 16px;"></i> Jam Pelajaran
+                        </button>
+                    </a>
+
                     <button
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                        style="background-color: #6B7280; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                        onclick="generatePDF()"
+                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+                        onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
+                        style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
                                border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                               transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                        <i class="bi bi-printer-fill" style="margin-right: 8px;"></i> Jam Pelajaran
+                               transition: background 0.3s, color 0.3s, border 0.3s; text-decoration: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-download" viewBox="0 0 16 16" style="margin-right: 8px;">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v3.6a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V10.4a.5.5 0 0 1 1 0v3.6a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14V10.4a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 1.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V10.5a.5.5 0 0 1-1 0V2.707L5.354 5.354a.5.5 0 1 1-.708-.708l3-3z"/>
+                        </svg>
+                        Download PDF
                     </button>
-                </a>
 
+                    <button
+                        onclick="exportTableToExcel('daftarPeserta', 'Data Peserta {{$data->namakegiatan}}')"
+                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+                        onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
+                        style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
+                               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                               transition: background 0.3s, color 0.3s, border 0.3s; text-decoration: none;">
+                        <i class="bi bi-file-earmark-excel-fill" style="margin-right: 8px; font-size: 16px;"></i> Download Excel
+                    </button>
 
-                <button
-                onclick="generatePDF()"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#FF0000'; this.style.color='white';"
-                style="background-color: #FF0000; color: white; border: none; margin-right: 10px; padding: 10px 20px;
-                    border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                    transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="margin-right: 8px;">
-                <path fill="#FF0000" d="M2 2h12v12H2z"/>
-                <path fill="#FFFFFF" d="M8.5 11.5 5 4h2l1 3.5L9 4h2l-3.5 7.5h1L11 13H9l-1-2-1 2H5l1.5-1.5z"/>
-            </svg>
-                Download PDF
-            </button>
-
-
-            <button onclick="exportTableToExcel('daftarPeserta', 'Data Peserta {{$data->namakegiatan}}')"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
-            style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
-            >
-               <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
-           </button>
 
 
 
