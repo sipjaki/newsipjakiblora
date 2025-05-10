@@ -318,30 +318,71 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                             </div>
 
                             <div class="cert-content">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Materi</th>
-                                            <th>Narasumber</th>
-                                            <th>Jam Pelajaran</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @forelse ($datapelajaran as $key => $pelajaran)
-                                        <tr>
-                                            <td>{{ $key + 1 }}</td>
-                                            <td>{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
-                                            <td>{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                            <td>{{ $pelajaran->jam_pelajaran ?? 'Data Tidak Tersedia' }}</td>
-                                        </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="4">Data tidak tersedia.</td>
-                                        </tr>
-                                        @endforelse
-                                    </tbody>
-                                </table>
+                                <div class="table-container">
+                                    <table class="custom-table">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Materi</th>
+                                                <th>Narasumber</th>
+                                                <th>Jam Pelajaran</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse ($datapelajaran as $key => $pelajaran)
+                                            <tr class="table-row-hover">
+                                                <td>{{ $key + 1 }}</td>
+                                                <td>{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                                                <td>{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                                                <td>{{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }}</td>
+                                            </tr>
+                                            @empty
+                                            <tr>
+                                                <td colspan="4">Data tidak tersedia.</td>
+                                            </tr>
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+
+                                    <style>
+                                        /* Styling untuk tabel */
+                                        .custom-table {
+                                            width: 100%;
+                                            border-collapse: collapse;
+                                            margin-top: 20px;
+                                        }
+
+                                        .custom-table th,
+                                        .custom-table td {
+                                            padding: 10px 20px;
+                                            text-align: left;
+                                            border: 1px solid #ddd;
+                                        }
+
+                                        .custom-table th {
+                                            background: linear-gradient(90deg, #38a169, #ed8936);
+                                            color: white;
+                                        }
+
+                                        .table-row-hover:hover {
+                                            background-color: #f7fafc;
+                                            transition: background-color 0.3s ease;
+                                        }
+
+                                        .custom-table tr:nth-child(even) {
+                                            background-color: #f9fafb;
+                                        }
+
+                                        .custom-table tr:nth-child(odd) {
+                                            background-color: #ffffff;
+                                        }
+
+                                        .custom-table td {
+                                            color: #333;
+                                        }
+                                    </style>
+                                </div>
+
                             </div>
 
 
