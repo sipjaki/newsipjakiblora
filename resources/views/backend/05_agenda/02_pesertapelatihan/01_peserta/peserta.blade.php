@@ -438,19 +438,22 @@
         </script>
 
 
-<td style="text-align: center; vertical-align: middle; width: 100%; display: flex; justify-content: center; align-items: center;">
-    <a href="{{ url('/bepelatihanjampelajaran/' . $item->agendapelatihan->namakegiatan) }}" style="text-decoration: none;">
-        <button
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-            style="background-color:#6B7280; color: white; border: none; padding: 10px 25px;
-                   border-radius: 15px; font-size: 14px; cursor: pointer;
-                   display: flex; align-items: center; justify-content: center;
-                   transition: background-color 0.3s, color 0.3s;">
-    <i class="bi bi-printer-fill" style="margin-right: 5px;"></i> Jam Pelajaran
-</button>
-    </a>
+<td style="text-align: center; vertical-align: middle;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <a href="{{ url('/bepelatihanjampelajaran/' . $item->namakegiatan) }}" style="text-decoration: none;">
+            <button
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+                style="background-color: #6B7280; color: white; border: none; padding: 10px 25px;
+                       border-radius: 15px; font-size: 14px; cursor: pointer;
+                       display: flex; align-items: center; justify-content: center;
+                       transition: background-color 0.3s, color 0.3s;">
+                <i class="bi bi-printer-fill" style="margin-right: 5px;"></i> Jam Pelajaran
+            </button>
+        </a>
+    </div>
 </td>
+
 
                                 <td style="text-align: center;">
                                             <!-- Show Icon -->
