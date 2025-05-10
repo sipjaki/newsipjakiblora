@@ -35,12 +35,22 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
  z-index: 2;
 }
 
+.ribbon-left {
+    position: relative;
+    background-color: #ffcc00; /* Warna pita */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: flex-end; /* Memindahkan teks ke bawah */
+    justify-content: flex-start; /* Menempatkan pita di kiri */
+}
+
 .ribbon-text {
     margin-left: 20px; /* Memberikan jarak antara pita dan teks */
     text-align: left;
     font-size: 16px;
+    font-weight: 800; /* Menambahkan font-weight 800 */
 }
-
 
 /* Pita kanan bawah */
 .cert-container .ribbon-right {
