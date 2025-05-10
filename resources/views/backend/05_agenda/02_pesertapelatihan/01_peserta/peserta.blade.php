@@ -427,19 +427,15 @@
             }
         </script>
 <td>
-@if($item->terbitkansertifikat == false)
-    <form method="POST" action="{{ route('terbitkan.sertifikat', $item->id) }}" onsubmit="return confirm('Terbitkan sertifikat untuk peserta ini?');">
-        @csrf
-        @method('PUT')
-        <button type="submit"
-            style="background-color: #3B82F6; color: white; padding: 8px 16px; border-radius: 8px;
-                   font-weight: 600; display: inline-flex; align-items: center; gap: 6px; border: none;
-                   box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
-            onmouseout="this.style.backgroundColor='#3B82F6'; this.style.color='white'; this.querySelector('i').style.color='white';">
-            <i class="bi bi-file-earmark-check" style="font-size: 1.2rem; color: white;"></i> Terbitkan
-        </button>
-    </form>
+    @if($item->terbitkansertifikat == false)
+    <button type="button" onclick="openTerbitkanModal({{ $item->id }})"
+        style="background-color: #3B82F6; color: white; padding: 8px 16px; border-radius: 8px;
+               font-weight: 600; display: inline-flex; align-items: center; gap: 6px; border: none;
+               box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer;"
+        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+        onmouseout="this.style.backgroundColor='#3B82F6'; this.style.color='white'; this.querySelector('i').style.color='white';">
+        <i class="bi bi-file-earmark-check" style="font-size: 1.2rem; color: white;"></i> Terbitkan
+    </button>
 @else
     <button type="button" disabled
         style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
@@ -448,6 +444,50 @@
         <i class="bi bi-check-circle" style="font-size: 1.2rem; color: white;"></i> Diterbitkan
     </button>
 @endif
+
+
+<!-- Modal Terbitkan Sertifikat -->
+<div id="terbitkanModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
+            Apakah Anda yakin ingin menerbitkan sertifikat untuk peserta ini?
+        </p>
+
+        <!-- Form Terbitkan Sertifikat -->
+        <form id="terbitkanForm" method="POST" class="d-inline">
+            @csrf
+            @method('PUT')
+            <button type="submit"
+                style="background-color: #3B82F6; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s;"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+                onmouseout="this.style.backgroundColor='#3B82F6'; this.style.color='white'; this.querySelector('i').style.color='white';">
+                <i class="bi bi-file-earmark-check" style="margin-right: 6px; color: white;"></i> Ya, Terbitkan
+            </button>
+        </form>
+
+        <!-- Tombol Batal -->
+        <button type="button"
+            onclick="closeTerbitkanModal()"
+            style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+            onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('i').style.color='white';">
+            <i class="bi bi-x-circle" style="margin-right: 6px; color: white;"></i> Batal
+        </button>
+    </div>
+</div>
+
+<script>
+    function openTerbitkanModal(itemId) {
+        const form = document.getElementById("terbitkanForm");
+        form.action = `{{ url('terbitkansertifikat') }}/${itemId}`;
+        document.getElementById("terbitkanModal").style.display = "flex";
+    }
+
+    function closeTerbitkanModal() {
+        document.getElementById("terbitkanModal").style.display = "none";
+    }
+</script>
+
 
 </td>
 
