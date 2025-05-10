@@ -91,8 +91,8 @@
 
                     <div style="display: flex; flex-wrap: wrap; margin-bottom:10px;">
 
-                    <a href="/404" style="text-decoration: none;">
-                        <button
+                        <a href="/bepelatihanjampelajaran/createjam/{{ $agendapelatihan_id }}" style="text-decoration: none;">
+                            <button
                             onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
                             onmouseout="this.style.background='linear-gradient(135deg, #166534, #FFD700)'; this.style.color='white'; this.style.border='none';"
                             style="background: linear-gradient(135deg, #166534, #FFD700); color: white; border: none; margin-right: 10px; padding: 10px 20px;

@@ -440,6 +440,7 @@ public function bepelatihanjampelajaran($id)
         'data' => $dataagendapelatihan,
         'subdata' => $subdata,
         'user' => $user,
+        'agendapelatihan_id' => $dataagendapelatihan->id,
     ]);
 }
 
