@@ -426,7 +426,7 @@
                 document.getElementById("kehadiranModal").style.display = "none";
             }
         </script>
-
+<td>
 @if($item->terbitkansertifikat == false)
     <form method="POST" action="{{ route('terbitkan.sertifikat', $item->id) }}" onsubmit="return confirm('Terbitkan sertifikat untuk peserta ini?');">
         @csrf
@@ -449,7 +449,7 @@
     </button>
 @endif
 
-
+</td>
 
 
 
