@@ -318,7 +318,7 @@
            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
            onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.querySelector('i').style.color='white';"
            title="Upload Sertifikat">
-            <i class="bi bi-file-earmark-arrow-up" style="font-size: 1.2rem; color: white;"></i> Sertifikat
+            <i class="bi bi-file-earmark-arrow-up" style="font-size: 1.2rem; color: white;"></i> SERTIFIKAT
         </a>
     </div>
 </td>
@@ -434,14 +434,14 @@
                box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer;"
         onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
         onmouseout="this.style.backgroundColor='#3B82F6'; this.style.color='white'; this.querySelector('i').style.color='white';">
-        <i class="bi bi-file-earmark-check" style="font-size: 1.2rem; color: white;"></i> Terbitkan
+        <i class="bi bi-file-earmark-check" style="font-size: 1.2rem; color: white;"></i> TERBITKAN
     </button>
 @else
     <button type="button" disabled
         style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
                display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
                cursor: not-allowed;">
-        <i class="bi bi-check-circle" style="font-size: 1.2rem; color: white;"></i> Diterbitkan
+        <i class="bi bi-check-circle" style="font-size: 1.2rem; color: white;"></i> DITERBITKAN
     </button>
 @endif
 
