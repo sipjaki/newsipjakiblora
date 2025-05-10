@@ -168,7 +168,8 @@ public function bepesertapelatihanindex(Request $request)
             'notelepon',
             'sertifikat',
             'verifikasi',
-            'verifikasikehadiran'
+            'verifikasikehadiran',
+            'terbitkansertifikat'
         ]);
 
     // Filter pencarian (jika ada)
