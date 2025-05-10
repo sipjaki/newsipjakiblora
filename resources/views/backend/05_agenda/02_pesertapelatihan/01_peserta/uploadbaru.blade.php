@@ -334,7 +334,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                                 <td style="font-size: 15px;">{{ $key + 1 }}</td>
                                                 <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
                                                 <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                                <td style="font-size: 15px;">{{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px; text-align:center;">{{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam</td>
                                             </tr>
                                             @empty
                                             <tr>
