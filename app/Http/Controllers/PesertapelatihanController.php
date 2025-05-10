@@ -214,7 +214,7 @@ public function bepesertapelatihanindex(Request $request)
     $user = Auth::user();
 
     // Tampilkan form update dengan data yang ditemukan
-    return view('backend.05_agenda.02_pesertapelatihan.01_peserta.upload', [
+    return view('backend.05_agenda.02_pesertapelatihan.01_peserta.uploadbaru', [
         'data' => $datapesertapelatihan,
         'user' => $user,
         'jenjangpendidikan' => $jenjangpendidikan,
