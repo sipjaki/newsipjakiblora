@@ -212,7 +212,7 @@
                             </div>
 
                             <div class="cert-signature">
-                                <p style="margin: 0;">Kabupaten Blora, {{$data->agendapelatihan->asosiasimasjaki->namaasosiasi}} </p>
+                                <p style="margin: 0;">Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }} </p>
                                 <p style="margin: 0;">KEPALA DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</p>
                                 <p style="margin: 0;">PROVINSI JAWA TENGAH</p>
 
