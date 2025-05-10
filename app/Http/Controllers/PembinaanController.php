@@ -525,6 +525,7 @@ public function beagendapelatihancreate()
     $datalsp = User::whereHas('statusadmin', function ($query) {
         $query->where('id', 7);
     })->get();
+
     $dataasosiasi = asosiasimasjaki::where('id', 99)->first();
 
     return view('backend.05_agenda.01_agendapelatihan.create', [

@@ -130,18 +130,18 @@
         <i class="bi bi-people-fill text-primary"></i> Penyelenggara
     </label>
     <select id="asosiasimasjaki_id" name="asosiasimasjaki_id"
-        class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
-        <option value="">-- Pilih Asosiasi --</option>
-        @foreach ($dataasosiasi as $asosiasi)
-            <option value="{{ $asosiasi->id }}"
-                {{ old('asosiasimasjaki_id', $data->asosiasimasjaki_id ?? '') == $asosiasi->id ? 'selected' : '' }}>
-                {{ $asosiasi->namaasosiasi }}
-            </option>
-        @endforeach
-    </select>
-    @error('asosiasimasjaki_id')
-        <div class="invalid-feedback">{{ $message }}</div>
-    @enderror
+    class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
+    <option value="">-- Pilih Penyelengara --</option>
+    @if ($dataasosiasi)
+        <option value="{{ $dataasosiasi->id }}"
+            {{ old('asosiasimasjaki_id', $data->asosiasimasjaki_id ?? '') == $dataasosiasi->id ? 'selected' : '' }}>
+            {{ $dataasosiasi->namaasosiasi }}
+        </option>
+    @endif
+</select>
+@error('asosiasimasjaki_id')
+    <div class="invalid-feedback">{{ $message }}</div>
+@enderror
 </div>
 
 <!-- Waktu Pelaksanaan -->
