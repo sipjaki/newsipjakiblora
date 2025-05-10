@@ -440,7 +440,7 @@
 
 <td style="text-align: center; vertical-align: middle;">
     <div style="display: flex; justify-content: center; align-items: center;">
-        <a href="{{ url('/bepelatihanjampelajaran/' . $item->agendapelatihan->id) }}" style="text-decoration: none;">
+        <a href="{{ url('/bepelatihanjampelajaran/' . $agendaId->id) }}" style="text-decoration: none;">
             <button
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                 onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
