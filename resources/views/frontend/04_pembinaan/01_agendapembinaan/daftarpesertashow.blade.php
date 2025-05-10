@@ -217,7 +217,6 @@ table.zebra-table {
                             <td style="text-align: center;">{{$item->instansi}}</td>
 
                             <td style="text-align: center;">
-                                <div>
 
                                     @if($item->verifikasi === null)
                                     <!-- BELUM DI VERIFIKASI -->
