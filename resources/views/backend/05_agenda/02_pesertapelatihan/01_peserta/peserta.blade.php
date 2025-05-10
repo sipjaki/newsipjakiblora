@@ -56,18 +56,17 @@
                     </svg>
                     {{ $jumlahpeserta }} Jumlah Peserta
                 </button> --}}
+                <a href="{{ url('/bepelatihanjampelajaran/' . $agendaId) }}" style="text-decoration: none;">
+                    <button
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                        onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
+                        style="background-color: #6B7280; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                               transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                        <i class="bi bi-printer-fill" style="margin-right: 8px;"></i> Jam Pelajaran
+                    </button>
+                </a>
 
-                    <a href="{{ url('/bepelatihanjampelajaran/' . $agendaId) }}" style="text-decoration: none;">
-                        <button
-                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                            onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                            style="background-color: #6B7280; color: white; border: none; padding:  10px 20px;
-                                   border-radius: 15px; font-size: 14px; cursor: pointer;
-                                   display: flex; align-items: center; justify-content: center;
-                                   transition: background-color 0.3s, color 0.3s;">
-                            <i class="bi bi-printer-fill" style="margin-right: 5px;"></i> Jam Pelajaran
-                        </button>
-                    </a>
 
                 <button
                 onclick="generatePDF()"
