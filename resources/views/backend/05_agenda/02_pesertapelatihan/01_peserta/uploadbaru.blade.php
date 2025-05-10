@@ -149,16 +149,17 @@
                         <!--begin::Quick Example-->
 
                         <div class="cert-container">
-                            <div class="cert-header">
-                                <div class="cert-logos">
-                                    <img src="/assets/icon/logokabupatenblora.png" width="80" height="80" alt="Blora">
-                                    <img src="/assets/icon/pupr.png" width="80" height="80" alt="PUPR">
+                            <div class="cert-header" style="text-align: center;">
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="40" height="40" alt="Blora" style="margin-right: 5px;">
+                                    <img src="/assets/icon/pupr.png" width="40" height="40" alt="PUPR">
                                 </div>
-                                <div style="text-align: center;">
+                                <div>
                                     <h3 class="cert-h3">DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</h3>
                                     <h3 class="cert-h3">PROVINSI JAWA TENGAH</h3>
                                 </div>
                             </div>
+
 
                             <hr class="cert-hr">
 
