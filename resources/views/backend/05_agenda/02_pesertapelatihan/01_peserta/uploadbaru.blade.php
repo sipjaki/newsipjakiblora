@@ -213,7 +213,7 @@
 
                             <div class="cert-signature">
                                 <p style="margin: 0;">Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }} </p>
-                                <p style="margin: 0;">KEPALA DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</p>
+                                <p style="margin: 0;">KEPALA DINAS PEKERJAAN UMUM <br> DAN PENATAAN RUANG</p>
                                 <p style="margin: 0;">KABUPATEN BLORA</p>
 
                                 <div class="cert-signature-line"></div>
