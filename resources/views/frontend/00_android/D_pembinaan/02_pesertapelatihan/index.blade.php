@@ -288,7 +288,7 @@ h5 {
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:300px;">
                                                 <i class="bi bi-calendar-event"></i> Nama Kegiatan
                                             </th>
-                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:300px;">
+                                            <th onclick="sortTable(8)" style="cursor:pointer; text-align:center; width:500px;">
                                                 <i class="bi bi-chat-left-text"></i> Keterangan
                                             </th>
                                             <th style="text-align:center; width:200px;">
