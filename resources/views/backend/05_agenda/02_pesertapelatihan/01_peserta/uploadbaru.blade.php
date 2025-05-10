@@ -30,9 +30,9 @@
     left: 0;
     width: 100px;
     height: 40px;
-    background: linear-gradient(135deg, #b71c1c, #e53935);
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
-    z-index: 2;
+    background: linear-gradient(135deg, #d4af37, #2e7d32);
+clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+ z-index: 2;
 }
 
 /* Pita kanan bawah */
@@ -301,7 +301,7 @@
                                 <p>NIP. __________</p>
                             </div>
                             <div class="ribbon-left"></div>
-                            <div class="ribbon-right"></div>
+                            {{-- <div class="ribbon-right"></div> --}}
                         </div>
                     </div>
                         <!--end::Quick Example-->
