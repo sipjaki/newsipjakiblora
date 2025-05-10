@@ -308,7 +308,8 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                                 <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
                                     Kegiatan <span class="cert-highlight"> {{$data->agendapelatihan->namakegiatan}}</span> yang diselenggarakan oleh {{$data->agendapelatihan->asosiasimasjaki->namaasosiasi}} pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                    di {{$data->agendapelatihan->lokasi}} meliputi {{$data->jampelajaran}} jam pelajaran.
+                                    di {{$data->agendapelatihan->lokasi}} meliputi meliputi {{ $totalJam }} jam pelajaran.
+                                    jam pelajaran.
                                 </p>
                             </div>
 
