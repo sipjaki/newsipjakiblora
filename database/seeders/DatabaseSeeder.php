@@ -8,6 +8,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\spk;
+use App\Models\jampelajaran;
 use App\Models\peraturan;
 use App\Models\sskk;
 use App\Models\agendaskk;
@@ -59840,6 +59841,22 @@ agendaskk::create([
     'isiagenda' => 'Peserta akan mendapatkan pelatihan mendalam tentang sistem manajemen K3, identifikasi risiko tinggi di lingkungan konstruksi, penerapan regulasi K3, serta pelaporan dan audit K3. Sertifikasi jenjang 6 diberikan bagi peserta yang lulus uji kompetensi sebagai Supervisor K3 Konstruksi Utama.',
     'foto' => '01_agendapelatihan/sertifikasi2.jpg',
 ]);
+
+
+jampelajaran::create([
+    'agendapelatihan_id' => 1, // ID agenda pelatihan
+    'materi' => 'Manajemen Proyek', // Materi pertama
+    'narasumber' => 'Ir. Budi Santoso', // Narasumber pertama
+    'jampelajaran' => 2, // Jam pelajaran pertama (misalnya 2 jam)
+]);
+
+jampelajaran::create([
+    'agendapelatihan_id' => 1, // ID agenda pelatihan
+    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
+    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
+    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
+]);
+
 
 subhargadiv2::create([
     'hspkonstruksiumum2_id' => 1,

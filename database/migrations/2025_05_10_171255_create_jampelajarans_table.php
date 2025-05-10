@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('jampelajarans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('agendapelatihan_id')->nullable();
             $table->string('materi')->nullable();
             $table->string('narasumber')->nullable();
             $table->string('jampelajaran')->nullable();
