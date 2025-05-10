@@ -236,7 +236,6 @@ h5 {
                                         </div>
                                     </div>
 
-
                                     <div class="table-wrapper">
 
                                         <form action="{{ route('daftarpesertasertifikasiskkcreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
