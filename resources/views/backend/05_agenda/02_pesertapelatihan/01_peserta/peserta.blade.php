@@ -61,7 +61,7 @@
                         <button
                             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                             onmouseout="this.style.backgroundColor='#6B7280'; this.style.color='white';"
-                            style="background-color: #6B7280; color: white; border: none; padding: 10px 25px;
+                            style="background-color: #6B7280; color: white; border: none; padding:  10px 20px;
                                    border-radius: 15px; font-size: 14px; cursor: pointer;
                                    display: flex; align-items: center; justify-content: center;
                                    transition: background-color 0.3s, color 0.3s;">
