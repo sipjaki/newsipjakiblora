@@ -468,5 +468,20 @@ public function bepelatihanjampelajarandelete($id)
 }
 
 
+
+public function bepelatihanjampelajarancreate($id)
+{
+    $dataagendapelatihan = agendapelatihan::findOrFail($id); // Cari 1 data sesuai ID
+    $user = Auth::user();
+
+    return view('backend.05_agenda.02_pesertapelatihan.04_jampelajaran.jampelajaran', [
+        'agendapelatihan' => $dataagendapelatihan->namakegiatan, // Ini dikirim ke form
+        'agendapelatihan_id' => $dataagendapelatihan->id, // Ini dikirim ke form
+        'user' => $user,
+        'title' => 'Create Materi Pelajaran Agenda Pelatihan'
+    ]);
+}
+
+
 }
 

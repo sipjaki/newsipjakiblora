@@ -872,6 +872,9 @@ Route::get('/bepelatihanjampelajaran/{id}', [PesertapelatihanController::class, 
 
 Route::delete('/bepelatihanjampelajaran/delete/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajarandelete'])->middleware('auth')->name('bepelatihanjampelajarandelete');
 
+Route::get('/bepelatihanjampelajaran/createjam/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajarancreate'])->middleware('auth')->name('bepelatihanjampelajarantenagakerja');
+Route::post('/bepelatihanjampelajaran/createjam/create', [PesertapelatihanController::class, 'bepelatihanjampelajarancreatenew'])->middleware('auth')->name('bepelatihanjampelajarantenagakerjacreate');
+
 // saat ini
 
 // HAK AKSES AKUN LSP PENERBIT UNTUK PELATIHAN DAN SKK
