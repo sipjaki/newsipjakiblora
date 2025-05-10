@@ -302,8 +302,8 @@ h5 {
                                         <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
                                             <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                             <td>{{$item->kategoripelatihan->kategoripelatihan}}</td>
-                                            <td>{{$item->namakegiatan}}</td>
-                                            <td>{{$item->keterangan}}</td>
+                                            <td style="text-align: left;">{{$item->namakegiatan}}</td>
+                                            <td style="text-align: left;">{{$item->keterangan}}</td>
                                             <td style="text-align: center">
                                                 <div style="
                                                     display: inline-block;
