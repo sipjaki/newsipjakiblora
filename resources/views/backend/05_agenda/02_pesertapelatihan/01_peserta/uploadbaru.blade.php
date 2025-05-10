@@ -1,25 +1,18 @@
 <style>
 /* Menambahkan font kaligrafi atau aksara sambung */
 /* Menambahkan font kaligrafi */
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap'); /* Alex Brush font */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-.carved-text {
-    font-family: 'Alex Brush', cursive; /* Gaya font kaligrafi */
-    font-size: 50px; /* Ukuran font lebih besar agar menonjol */
-    font-weight: bold; /* Membuat font lebih tebal dan kuat */
-    color: #F1C40F; /* Warna emas elegan */
-    text-align: center; /* Memusatkan teks */
-    text-transform: uppercase; /* Membuat teks kapital untuk formalitas */
-    letter-spacing: 2px; /* Jarak antar huruf sedikit untuk kejelasan */
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Bayangan untuk efek 3D dan kesan ukiran */
-    background: linear-gradient(145deg, #d4af37, #f39c12); /* Gradasi emas dengan sedikit ke arah kuning */
-    -webkit-background-clip: text; /* Gradasi di clip hanya untuk teks */
-    background-clip: text;
-    padding: 20px; /* Memberikan ruang di sekitar teks */
-    display: inline-block; /* Agar teks tidak meluber */
-    border-radius: 10px; /* Memberikan sedikit rounded corners */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lembut di bawah teks untuk efek ukiran */
+.nama-sertifikat {
+    font-family: 'Great Vibes', cursive;
+    font-size: 16px;
+    text-align: center;
+    color: #bfa144; /* Warna emas klasik */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin: 30px 0;
+    letter-spacing: 1px;
 }
+
 
 .cert-container {
     width: 297mm;
