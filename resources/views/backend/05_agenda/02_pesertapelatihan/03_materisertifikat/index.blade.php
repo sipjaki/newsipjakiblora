@@ -147,7 +147,7 @@
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         <td style="text-align: left;">{{ $item->materi }}</td>
                                         <td style="text-align: left;">{{ $item->narasumber }}</td>
-                                        <td style="text-align: left;">{{ $item->jampelajaran }} Jam</td>
+                                        <td style="text-align: center;">{{ $item->jampelajaran }} Jam</td>
 
                                                    <td style="text-align: center;">
                                             <!-- Show Icon -->
