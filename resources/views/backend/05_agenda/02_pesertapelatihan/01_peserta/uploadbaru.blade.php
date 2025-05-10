@@ -265,53 +265,6 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                 <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
                             </div>
 
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Materi</th>
-                                        <th>Narasumber</th>
-                                        <th>Jam Pelajaran</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($datapelajaran as $key => $pelajaran)
-                                    <tr>
-                                        <td>{{ $key + 1 }}</td>
-                                        <td>{{ $pelajaran->materi }}</td>
-                                        <td>{{ $pelajaran->narasumber }}</td>
-                                        <td>{{ $pelajaran->jampelajaran }}</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-
-
-                            <div class="ribbon-left"></div>
-                            {{-- <div class="ribbon-right"></div> --}}
-                        </div>
-                    </div>
-                        <!--end::Quick Example-->
-<br><br>
-
-                                {{-- ======================================================= --}}
-                    <div class="col-md-12">
-                        <div class="cert-container">
-                            <div class="cert-header" style="text-align: center;">
-                                <!-- Logo di atas -->
-                                <div class="cert-logos" style="margin-bottom: 10px;">
-                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
-                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                                </div>
-                            </div>
-
-                            <hr class="cert-hr" style="margin-top: -5px;">
-
-                            <div class="cert-title" style="margin-top: -10px;">
-                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>
-                                    {{$data->agendapelatihan->namakegiatan}}</h2>
-                            </div>
-
                             <div class="cert-content">
                                 <p style="text-align: center;">diberikan kepada</p>
 
@@ -340,6 +293,55 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
                                 <p>NIP. __________</p>
                             </div>
+                            <div class="ribbon-left"></div>
+                            {{-- <div class="ribbon-right"></div> --}}
+                        </div>
+                    </div>
+                        <!--end::Quick Example-->
+<br><br>
+
+                                {{-- ======================================================= --}}
+                    <div class="col-md-12">
+                        <div class="cert-container">
+                            <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                </div>
+                            </div>
+
+                            <hr class="cert-hr" style="margin-top: -5px;">
+
+                            <div class="cert-title" style="margin-top: -10px;">
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
+                            </div>
+
+                            <div class="cert-content">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Materi</th>
+                                            <th>Narasumber</th>
+                                            <th>Jam Pelajaran</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($datapelajaran as $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>{{ $item->materi }}</td>
+                                            <td>{{ $item->narasumber }}</td>
+                                            <td>{{ $item->jampelajaran }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+
                             <div class="ribbon-left"></div>
                             {{-- <div class="ribbon-right"></div> --}}
                         </div>
