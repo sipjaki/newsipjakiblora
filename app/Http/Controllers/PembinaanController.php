@@ -529,7 +529,7 @@ public function beagendapelatihancreate()
     $dataasosiasi = asosiasimasjaki::where('id', 99)->first();
 
     return view('backend.05_agenda.01_agendapelatihan.create', [
-        'title' => 'create Agenda Pelatihan ',
+        'title' => 'Create Agenda Pelatihan ',
         'data' => null, // <<--- penting!
         'kategoriList' => $datakategoripelatihan,
         'lspList' => $datalsp,
