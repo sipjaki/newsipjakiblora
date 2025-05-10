@@ -155,20 +155,21 @@ public function bepesertapelatihanindex(Request $request)
 
             // Ambil peserta yang hanya terkait dengan agenda pelatihan ini dan yang sudah diverifikasi
             $query = pesertapelatihan::where('agendapelatihan_id', $id)
-                        ->where('verifikasi', true) // Filter verifikasi = true
-                        ->select([
-                            'id',
-                            'namalengkap',
-                            'jeniskelamin',
-                            'instansi',
-                            'jenjangpendidikan_id',
-                            'nik',
-                            'tanggallahir',
-                            'notelepon',
-                            'sertifikat',
-                            'verifikasi',
-                            'verifikasikehadiran'
-                        ]);
+            ->where('verifikasi', 'lolos') // Menampilkan hanya yang LOLOS
+            ->select([
+                'id',
+                'namalengkap',
+                'jeniskelamin',
+                'instansi',
+                'jenjangpendidikan_id',
+                'nik',
+                'tanggallahir',
+                'notelepon',
+                'sertifikat',
+                'verifikasi',
+                'verifikasikehadiran'
+            ]);
+
 
             // Filter pencarian (jika ada)
             if ($search) {
