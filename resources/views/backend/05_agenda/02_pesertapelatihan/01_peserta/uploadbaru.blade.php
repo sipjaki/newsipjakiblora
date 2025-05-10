@@ -218,7 +218,7 @@
 
                                 <div class="cert-signature-line"></div>
 
-                                <p style="margin: 0;"><strong>Nidzamudin Al Hudaa, ST</strong></p>
+                                <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
                                 <p>NIP.-</p>
                             </div>
