@@ -1,14 +1,25 @@
 <style>
-    .cert-container {
-        width: 297mm; /* Lebar A4 landscape */
-        height: 210mm; /* Tinggi A4 landscape */
-        background-color: #f1f8e9;
-        border: 15px solid #2e7d32;
-        padding: 30px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        position: relative;
-        box-sizing: border-box;
-    }
+    body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e0f2f1; /* opsional, supaya terlihat tengah */
+}
+
+.cert-container {
+    width: 297mm; /* Lebar A4 landscape */
+    height: 210mm; /* Tinggi A4 landscape */
+    background-color: #f1f8e9;
+    border: 15px solid #2e7d32;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    position: relative;
+    box-sizing: border-box;
+}
+
     .cert-header {
     display: flex;
     flex-direction: column; /* GANTI DARI default ROW ke COLUMN */
