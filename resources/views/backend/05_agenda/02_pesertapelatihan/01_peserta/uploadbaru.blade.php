@@ -261,7 +261,7 @@
                             </div>
                             <hr class="cert-hr">
 
-                            <div class="cert-title">
+                            <div class="cert-title" style="margin-top: -20px;">
                                 <h1 class="cert-h1">SURAT KETERANGAN</h1>
                                 <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
                             </div>
