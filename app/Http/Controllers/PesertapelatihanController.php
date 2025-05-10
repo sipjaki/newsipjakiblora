@@ -143,66 +143,65 @@ public function bepesertapelatihanindex(Request $request)
 
 
         public function bepesertapelatihansertifikat(Request $request, $id)
-        {
-            $perPage = $request->input('perPage', 50);
-            $search = $request->input('search');
+{
+    $perPage = $request->input('perPage', 50);
+    $search = $request->input('search');
 
-            // Pastikan agenda pelatihan dengan ID ini ada
-            $agendapelatihan = agendapelatihan::findOrFail($id);
+    // Pastikan agenda pelatihan dengan ID ini ada
+    $agendapelatihan = agendapelatihan::findOrFail($id);
 
-            // Ambil user login saat ini
-            $user = Auth::user();
+    // Ambil user login saat ini
+    $user = Auth::user();
 
-            // Ambil peserta yang hanya terkait dengan agenda pelatihan ini dan yang sudah diverifikasi
-            $query = pesertapelatihan::where('agendapelatihan_id', $id)
-            ->where('verifikasi', 'lolos') // Menampilkan hanya yang LOLOS
-            ->select([
-                'id',
-                'namalengkap',
-                'jeniskelamin',
-                'instansi',
-                'jenjangpendidikan_id',
-                'nik',
-                'tanggallahir',
-                'notelepon',
-                'sertifikat',
-                'verifikasi',
-                'verifikasikehadiran'
-            ]);
+    // Ambil peserta yang hanya terkait dengan agenda pelatihan ini dan yang sudah diverifikasi
+    $query = pesertapelatihan::where('agendapelatihan_id', $id)
+        ->where('verifikasi', 'lolos') // Menampilkan hanya yang LOLOS
+        ->select([
+            'id',
+            'namalengkap',
+            'jeniskelamin',
+            'instansi',
+            'jenjangpendidikan_id',
+            'nik',
+            'tanggallahir',
+            'notelepon',
+            'sertifikat',
+            'verifikasi',
+            'verifikasikehadiran'
+        ]);
 
+    // Filter pencarian (jika ada)
+    if ($search) {
+        $query->where(function ($q) use ($search) {
+            $q->where('jeniskelamin', 'LIKE', "%{$search}%")
+              ->orWhere('instansi', 'LIKE', "%{$search}%")
+              ->orWhere('namalengkap', 'LIKE', "%{$search}%");
+        });
+    }
 
-            // Filter pencarian (jika ada)
-            if ($search) {
-                $query->where(function ($q) use ($search) {
-                    $q->where('jeniskelamin', 'LIKE', "%{$search}%")
-                      ->orWhere('instansi', 'LIKE', "%{$search}%")
-                      ->orWhere('namalengkap', 'LIKE', "%{$search}%");
-                });
-            }
+    $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
-            $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
+    // Untuk request Ajax (misal filter dinamis via JS)
+    if ($request->ajax()) {
+        return response()->json([
+            'html' => view('backend.05_agenda.01_agendapelatihan.partials.table', compact('datapesertapelatihan'))->render()
+        ]);
+    }
 
-            // Hitung jumlah peserta pada agenda pelatihan ini
+    $jumlahPeserta = pesertapelatihan::where('agendapelatihan_id', $id)->count();
 
-            // Untuk request Ajax (misal filter dinamis via JS)
-            if ($request->ajax()) {
-                return response()->json([
-                    'html' => view('backend.05_agenda.01_agendapelatihan.partials.table', compact('datapesertapelatihan'))->render()
-                ]);
-            }
-
-            $jumlahPeserta = pesertapelatihan::where('agendapelatihan_id', $id)->count();
-
-            return view('backend.05_agenda.02_pesertapelatihan.01_peserta.peserta', [
-                'title' => 'Daftar Peserta Agenda Pelatihan',
-                'data' => $agendapelatihan,
-                'datapeserta' => $datapesertapelatihan,
-                'jumlahpeserta' => $jumlahPeserta,
-                'perPage' => $perPage,
-                'search' => $search,
-                'user' => $user
-            ]);
-        }
+    return view('backend.05_agenda.02_pesertapelatihan.01_peserta.peserta', [
+        'title' => 'Daftar Peserta Agenda Pelatihan',
+        'data' => $agendapelatihan,
+        'agendaId' => $agendapelatihan->id,
+        'namakegiatan' => $agendapelatihan->namakegiatan,
+        'datapeserta' => $datapesertapelatihan,
+        'jumlahpeserta' => $jumlahPeserta,
+        'perPage' => $perPage,
+        'search' => $search,
+        'user' => $user
+    ]);
+}
 
 
         public function bepesertauploadsertifikat($id)
