@@ -212,19 +212,15 @@
                             </div>
 
                             <div class="cert-signature">
-                                <p style="margin: 0;">Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }} </p>
-                                <p style="margin: 0;">KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</p>
-                                <p style="margin: 0;">KABUPATEN BLORA</p>
+                                <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
+                                <p style="margin: 0;"><strong>KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                                <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
                                 <div class="cert-signature-line"></div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
-                                <p>NIP.-</p>
-                            </div>
-
-                            <div class="cert-footer">
-                                <p>Dokumen ini diterbitkan secara resmi oleh Dinas PU Bina Marga dan Cipta Karya Provinsi Jawa Tengah</p>
+                                <p>NIP. __________________________________________</p>
                             </div>
                         </div>
 
