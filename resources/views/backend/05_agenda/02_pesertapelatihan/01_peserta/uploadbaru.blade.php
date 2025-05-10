@@ -353,8 +353,12 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                         <!-- Baris penjumlahan total jam pelajaran -->
                                         <tfoot>
                                             <tr>
-                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">Total Jam Pelajaran:</td>
-                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">{{ $totalJam }} Jam</td>
+                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
+                                                    <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
+                                                </td>
+                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">
+                                                    {{ $totalJam }} Jam
+                                                </td>
                                             </tr>
                                         </tfoot>
                                     </table>

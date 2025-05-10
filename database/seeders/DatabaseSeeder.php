@@ -59856,6 +59856,24 @@ jampelajaran::create([
     'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
     'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
 ]);
+jampelajaran::create([
+    'agendapelatihan_id' => 1, // ID agenda pelatihan
+    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
+    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
+    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
+]);
+jampelajaran::create([
+    'agendapelatihan_id' => 1, // ID agenda pelatihan
+    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
+    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
+    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
+]);
+jampelajaran::create([
+    'agendapelatihan_id' => 2, // ID agenda pelatihan
+    'materi' => 'Konstruksi Jalan Raya', // Materi kedua
+    'narasumber' => 'Dr. Siti Lestari', // Narasumber kedua
+    'jampelajaran' => 3, // Jam pelajaran kedua (misalnya 3 jam)
+]);
 
 
 subhargadiv2::create([
