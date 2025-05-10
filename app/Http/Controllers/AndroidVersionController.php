@@ -766,7 +766,7 @@ public function reasasosiasimasjakikontraktor($id)
 
 
         return view('frontend.00_android.D_pembinaan.02_pesertapelatihan.show', [
-            'title' => 'Daftar Peserta Agenda ',
+            'title' => 'Daftar Peserta Agenda {{$data->namakegiatan}}',
             'data' => $dataagendapelatihan,
             'datapeserta' => $datapesertapelatihan,
             'perPage' => $perPage,
