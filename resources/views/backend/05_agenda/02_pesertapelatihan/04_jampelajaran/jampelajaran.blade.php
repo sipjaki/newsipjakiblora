@@ -56,7 +56,7 @@
                                         viewBox="0 0 16 16" style="margin-right: 8px;">
                                         <path d="M4 0h5.5L14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM9.5 1v3a1 1 0 0 0 1 1h3l-4-4z"/>
                                     </svg>
-                                    Badan Usaha : {{ $bujkkontraktornamalengkap }}
+                                    Nama Kegiatan : {{ $agendapelatihan }}
                                 </button>
 
                                 <!-- Tombol Kanan -->
@@ -90,7 +90,7 @@
                                     <div class="col-md-6">
 
                                         <!-- ID BUJK Kontraktor (Hidden atau Select jika mau pilih) -->
-                                        <input type="hidden"  name="bujkkontraktor_id" value="{{ $bujkkontraktor_id }}">
+                                        <input type="hidden"  name="agendapelatihan_id" value="{{ $agendapelatihan_id }}">
                                         <!-- Nama Pengurus -->
                                         <div class="mb-3">
                                             <label class="form-label" for="nama_pengurus">
