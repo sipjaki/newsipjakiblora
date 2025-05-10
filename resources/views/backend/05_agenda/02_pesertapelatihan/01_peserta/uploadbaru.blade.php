@@ -20,7 +20,6 @@
             position: relative;
             box-sizing: border-box;
             overflow: hidden;
-            margin-left: 200px;
         }
 
         .cert-container::before {
