@@ -266,7 +266,7 @@
             <form action="/forgot-password" method="POST">
                 @csrf
 
-                <h2 class="form-title">Lupa Kata Sandi</h2>
+                <h2 class="form-title">Lupa Kata Sandi ?</h2>
                 <p class="form-subtitle">Masukkan email akun Anda, kami akan mengirimkan tautan reset password.</p>
 
                 <div class="input-group">
