@@ -259,9 +259,9 @@
                                     <h3 class="cert-h3" style="margin: 0;">PROVINSI JAWA TENGAH</h3>
                                 </div> --}}
                             </div>
-                            <hr class="cert-hr">
+                            <hr class="cert-hr" style="margin-top: -5px;">
 
-                            <div class="cert-title" style="margin-top: -20px;">
+                            <div class="cert-title" style="margin-top: -10px;">
                                 <h1 class="cert-h1">SURAT KETERANGAN</h1>
                                 <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
                             </div>
