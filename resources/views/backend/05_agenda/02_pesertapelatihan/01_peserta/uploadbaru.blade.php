@@ -314,7 +314,8 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                             <hr class="cert-hr" style="margin-top: -5px;">
 
                             <div class="cert-title" style="margin-top: -10px;">
-                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">{{$data->agendapelatihan->namakegiatan}}</h2>
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>
+                                    {{$data->agendapelatihan->namakegiatan}}</h2>
                             </div>
 
                             <div class="cert-content">
