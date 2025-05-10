@@ -92,117 +92,44 @@
                                         <!-- ID BUJK Kontraktor (Hidden atau Select jika mau pilih) -->
                                         <input type="hidden"  name="agendapelatihan_id" value="{{ $agendapelatihan_id }}">
                                         <!-- Nama Pengurus -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_pengurus">
-                                                <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Nama Pengurus
-                                            </label>
-                                            <input type="text" id="nama_pengurus" name="nama_pengurus" class="form-control @error('nama_pengurus') is-invalid @enderror" value="{{ old('nama_pengurus') }}">
-                                            @error('nama_pengurus')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
-                                        <!-- Sub Klasifikasi Layanan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="nama_pengurus">
-                                                <i class="bi bi-person" style="margin-right:8px; color:navy;"></i> Nama PSJK
-                                            </label>
-                                            <input type="text" id="nama_psjk" name="nama_psjk" class="form-control @error('nama_psjk') is-invalid @enderror" value="{{ old('nama_psjk') }}">
-                                            @error('nama_psjk')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
 
-                                        <!-- Sub Klasifikasi Layanan -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="sub_klasifikasi_layanan">
-                                                <i class="bi bi-clipboard-data" style="margin-right:8px; color:navy;"></i> Sub Klasifikasi Layanan
-                                            </label>
-                                            <input type="text" id="sub_klasifikasi_layanan" name="sub_klasifikasi_layanan" class="form-control @error('sub_klasifikasi_layanan') is-invalid @enderror" value="{{ old('sub_klasifikasi_layanan') }}">
-                                            @error('sub_klasifikasi_layanan')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                        <!-- Materi -->
+<div class="mb-3">
+    <label class="form-label" for="materi">
+        <i class="bi bi-journal-text" style="margin-right:8px; color:navy;"></i> Materi
+    </label>
+    <input type="text" id="materi" name="materi" class="form-control @error('materi') is-invalid @enderror" value="{{ old('materi') }}">
+    @error('materi')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-                                        <!-- Kode Sub Klasifikasi -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kode">
-                                                <i class="bi bi-code" style="margin-right:8px; color:navy;"></i> Kode Sub Klasifikasi
-                                            </label>
-                                            <input type="text" id="kode" name="kode" class="form-control @error('kode') is-invalid @enderror" value="{{ old('kode') }}">
-                                            @error('kode')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+<!-- Narasumber -->
+<div class="mb-3">
+    <label class="form-label" for="narasumber">
+        <i class="bi bi-person-lines-fill" style="margin-right:8px; color:navy;"></i> Narasumber
+    </label>
+    <input type="text" id="narasumber" name="narasumber" class="form-control @error('narasumber') is-invalid @enderror" value="{{ old('narasumber') }}">
+    @error('narasumber')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
-                                        <!-- Kualifikasi -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="kualifikasi">
-                                                <i class="bi bi-award" style="margin-right:8px; color:navy;"></i> Kualifikasi
-                                            </label>
-                                            <select id="kualifikasi" name="kualifikasi" class="form-control @error('kualifikasi') is-invalid @enderror">
-                                                <option value="" disabled selected>Pilih Kualifikasi</option>
-                                                <option value="Kecil" {{ old('kualifikasi') == 'Kecil' ? 'selected' : '' }}>Kecil</option>
-                                                <option value="Menengah" {{ old('kualifikasi') == 'Menengah' ? 'selected' : '' }}>Menengah</option>
-                                                <option value="Besar" {{ old('kualifikasi') == 'Besar' ? 'selected' : '' }}>Besar</option>
-                                            </select>
-                                            @error('kualifikasi')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
+<!-- Jam Pelajaran -->
+<div class="mb-3">
+    <label class="form-label" for="jampelajaran">
+        <i class="bi bi-clock-history" style="margin-right:8px; color:navy;"></i> Jam Pelajaran
+    </label>
+    <input type="text" id="jampelajaran" name="jampelajaran" class="form-control @error('jampelajaran') is-invalid @enderror" value="{{ old('jampelajaran') }}">
+    @error('jampelajaran')
+        <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+</div>
 
                                     </div>
                                     <!-- End Left Column -->
 
-                                    <!-- Right Column -->
-                                    <div class="col-md-6">
-
-                                        <!-- Sub Bidang -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="sub_kualifikasi_bu">
-                                                <i class="bi bi-diagram-3" style="margin-right:8px; color:navy;"></i> Sub Kualifikasi Badan Usaha
-                                            </label>
-                                            <input type="text" id="sub_kualifikasi_bu" name="sub_kualifikasi_bu" class="form-control @error('sub_kualifikasi_bu') is-invalid @enderror" value="{{ old('sub_kualifikasi_bu') }}">
-                                            @error('sub_kualifikasi_bu')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Penerbit -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="penerbit">
-                                                <i class="bi bi-file-earmark-text" style="margin-right:8px; color:navy;"></i> Penerbit
-                                            </label>
-                                            <input type="text" id="penerbit" name="penerbit" class="form-control @error('penerbit') is-invalid @enderror" value="{{ old('penerbit') }}">
-                                            @error('penerbit')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Tanggal Terbit -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal_terbit">
-                                                <i class="bi bi-calendar-check" style="margin-right:8px; color:navy;"></i> Tanggal Terbit
-                                            </label>
-                                            <input type="date" id="tanggal_terbit" name="tanggal_terbit" class="form-control @error('tanggal_terbit') is-invalid @enderror" value="{{ old('tanggal_terbit') }}">
-                                            @error('tanggal_terbit')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                        <!-- Tanggal Berlaku -->
-                                        <div class="mb-3">
-                                            <label class="form-label" for="tanggal_berlaku">
-                                                <i class="bi bi-calendar-event" style="margin-right:8px; color:navy;"></i> Tanggal Berlaku
-                                            </label>
-                                            <input type="date" id="tanggal_berlaku" name="tanggal_berlaku" class="form-control @error('tanggal_berlaku') is-invalid @enderror" value="{{ old('tanggal_berlaku') }}">
-                                            @error('tanggal_berlaku')
-                                                <div class="invalid-feedback">{{ $message }}</div>
-                                            @enderror
-                                        </div>
-
-                                    </div>
                                     <!-- End Right Column -->
                                 </div>
 
