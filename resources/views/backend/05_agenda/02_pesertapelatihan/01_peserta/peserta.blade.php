@@ -310,7 +310,7 @@
                                                             <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
                                                             <span>:</span>
                                                             <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">
-                                                                Sertifikat : <i class="bi bi-file-earmark-pdf-fill text-danger"></i> {{ $data->namakegiatan }}
+                                                                Sertifikat Pelatihan : <i class="bi bi-file-earmark-pdf-fill text-danger"></i>
                                                             </h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
