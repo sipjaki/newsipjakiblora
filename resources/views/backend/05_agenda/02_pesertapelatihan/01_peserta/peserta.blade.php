@@ -233,7 +233,7 @@
         onmouseout="this.style.background='linear-gradient(135deg, #4B5563, #E5E7EB)'; this.style.color='white'; this.style.border='none';"
         style="background: linear-gradient(135deg, #4B5563, #E5E7EB); color: white; border: none; padding: 10px 20px;
                border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-               transition: background 0.3s, color 0.3s, border 0.3s;">
+               transition: background 0.3s, color 0.3s, border 0.3s; margin-left:10px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
              viewBox="0 0 16 16" style="margin-right: 8px;">
             <path fill-rule="evenodd"
