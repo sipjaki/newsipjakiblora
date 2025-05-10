@@ -1,5 +1,16 @@
 <style>
 
+.cert-container {
+            width: 210mm;
+            height: 297mm;
+            background-color: #f1f8e9;
+            border: 15px solid #2e7d32;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            position: relative;
+            box-sizing: border-box;
+        }
+
     .cert-logos {
         display: flex;
         gap: 20px;
