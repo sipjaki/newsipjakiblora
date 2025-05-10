@@ -184,10 +184,10 @@
                                 </div>
 
                                 <!-- Teks di bawah logo -->
-                                <div>
+                                {{-- <div>
                                     <h3 class="cert-h3" style="margin: 5px 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA </h3>
                                     <h3 class="cert-h3" style="margin: 0;">PROVINSI JAWA TENGAH</h3>
-                                </div>
+                                </div> --}}
                             </div>
                             <hr class="cert-hr">
 
@@ -213,8 +213,8 @@
 
                             <div class="cert-signature">
                                 <p style="margin: 0;">Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }} </p>
-                                <p style="margin: 0;">KEPALA DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</p>
-                                <p style="margin: 0;">PROVINSI JAWA TENGAH</p>
+                                <p style="margin: 0;">KEPALA DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</p>
+                                <p style="margin: 0;">KABUPATEN BLORA</p>
 
                                 <div class="cert-signature-line"></div>
 
