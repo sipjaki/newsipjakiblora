@@ -150,17 +150,18 @@
 
                         <div class="cert-container">
                             <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
                                 <div class="cert-logos" style="margin-bottom: 10px;">
-                                    <img src="/assets/icon/logokabupatenblora.png" width="40" height="40" alt="Blora" style="margin-right: 5px;">
-                                    <img src="/assets/icon/pupr.png" width="40" height="40" alt="PUPR">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="40" height="40" alt="Blora" style="margin: 0 10px;">
+                                    <img src="/assets/icon/pupr.png" width="40" height="40" alt="PUPR" style="margin: 0 10px;">
                                 </div>
+
+                                <!-- Teks di bawah logo -->
                                 <div>
-                                    <h3 class="cert-h3">DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</h3>
-                                    <h3 class="cert-h3">PROVINSI JAWA TENGAH</h3>
+                                    <h3 class="cert-h3" style="margin: 5px 0;">DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</h3>
+                                    <h3 class="cert-h3" style="margin: 0;">PROVINSI JAWA TENGAH</h3>
                                 </div>
                             </div>
-
-
                             <hr class="cert-hr">
 
                             <div class="cert-title">
