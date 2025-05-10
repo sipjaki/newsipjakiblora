@@ -326,19 +326,34 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                                 <th style="font-size: 15px;" width="40%">Materi</th>
                                                 <th style="font-size: 15px;" width="30%">Narasumber</th>
                                                 <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
+                                                <!-- Tambahkan kolom baru untuk total jam -->
+                                                <th style="font-size: 15px;" width="20%">Jumlah Jam Pelajaran</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php
+                                                $totalJam = 0; // Menyimpan total jam pelajaran
+                                            @endphp
                                             @forelse ($datapelajaran as $key => $pelajaran)
                                             <tr class="table-row-hover">
                                                 <td style="font-size: 15px;">{{ $key + 1 }}</td>
                                                 <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
                                                 <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                                <td style="font-size: 15px; text-align:center;">{{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam</td>
+                                                <td style="font-size: 15px; text-align:center;">
+                                                    {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
+                                                </td>
+                                                <!-- Menampilkan jumlah jam pelajaran per baris -->
+                                                @php
+                                                    $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
+                                                @endphp
+                                                <!-- Kolom Jumlah Jam Pelajaran, menampilkan total jam di setiap baris -->
+                                                <td style="font-size: 15px; text-align:center;">
+                                                    {{ $totalJam }} Jam
+                                                </td>
                                             </tr>
                                             @empty
                                             <tr>
-                                                <td colspan="4">Data tidak tersedia.</td>
+                                                <td colspan="5">Data tidak tersedia.</td>
                                             </tr>
                                             @endforelse
                                         </tbody>
