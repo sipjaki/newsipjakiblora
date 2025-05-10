@@ -280,7 +280,7 @@
                                 <p style="margin: 0;"><strong>KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
-                                <div style="margin-right:100px;">
+                                <div style="margin-right:80px;">
                                     <img src="/assets/icon/capblora.png" alt="" width="100px;">
                                 </div>
 
