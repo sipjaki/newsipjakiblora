@@ -280,8 +280,8 @@
                                 <p style="margin: 0;"><strong>KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
-                                <div>
-                                    <img src="/assets/icon/logokabupatenblora.png" alt="" width="40px;">
+                                <div style="margin-right:100px;">
+                                    <img src="/assets/icon/capblora.png" alt="" width="100px;">
                                 </div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
