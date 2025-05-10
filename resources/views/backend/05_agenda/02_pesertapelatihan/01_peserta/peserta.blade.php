@@ -64,16 +64,10 @@
                 style="background-color: #FF0000; color: white; border: none; margin-right: 10px; padding: 10px 20px;
                     border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
                     transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" style="margin-right: 8px;">
-                    <path d="M.5 9.9a.5.5 0 0 1 .5.5V14a1 1 0 0 0 1 1h12a1
-                             1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V14a2 2 0 0 1-2
-                             2H2a2 2 0 0 1-2-2v-3.6a.5.5 0 0 1 .5-.5z"/>
-                    <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0
-                             0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1
-                             0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3
-                             3z"/>
-                </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="margin-right: 8px;">
+                <path fill="#FF0000" d="M2 2h12v12H2z"/>
+                <path fill="#FFFFFF" d="M8.5 11.5 5 4h2l1 3.5L9 4h2l-3.5 7.5h1L11 13H9l-1-2-1 2H5l1.5-1.5z"/>
+            </svg>
                 Download PDF
             </button>
             <button
@@ -83,15 +77,13 @@
     style="background-color: #217346; color: white; border: none; margin-right: 10px; padding: 10px 20px;
         border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
         transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        viewBox="0 0 16 16" style="margin-right: 8px;">
-        <path d="M.5 9.9a.5.5 0 0 1 .5.5V14a1 1 0 0 0 1 1h12a1
-                    1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V14a2 2 0 0 1-2
-                    2H2a2 2 0 0 1-2-2v-3.6a.5.5 0 0 1 .5-.5z"/>
-        <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0
-                    0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1
-                    0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3
-                    3z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="margin-right: 8px;">
+        <rect width="16" height="16" fill="#217346"/>
+        <path fill="#ffffff" d="M8.5 11.5 5 4h2l1 3.5L9 4h2l-3.5 7.5h1L11 13H9l-1-2-1 2H5l1.5-1.5z"/>
+        <path fill="#8cc14b" d="M8 8h1v1H8z"/>
+        <path fill="#f6b844" d="M8 6h1v1H8z"/>
+        <path fill="#4479a4" d="M6 8h1v1H6z"/>
+        <path fill="#e5554f" d="M6 6h1v1H6z"/>
     </svg>
     Download Excel
 </button>
