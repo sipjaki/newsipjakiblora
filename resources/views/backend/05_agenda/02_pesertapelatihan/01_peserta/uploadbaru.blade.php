@@ -45,8 +45,11 @@
 
         .cert-logos {
             display: flex;
+            justify-content: center; /* Center horizontally */
             gap: 20px;
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+            width: 100%; /* Take full width */
+            margin-bottom: 20px; /* Add some space below */
         }
 
         .cert-title {
