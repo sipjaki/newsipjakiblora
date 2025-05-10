@@ -153,8 +153,8 @@
                             <div class="cert-header" style="text-align: center;">
                                 <!-- Logo di atas -->
                                 <div class="cert-logos" style="margin-bottom: 10px;">
-                                    <img src="/assets/icon/logokabupatenblora.png" width="60" height="60" alt="Blora" style="margin: 0 10px;">
-                                    <img src="/assets/icon/pupr.png" width="60" height="60" alt="PUPR" style="margin: 0 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 5px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
                                 </div>
 
                                 <!-- Teks di bawah logo -->
