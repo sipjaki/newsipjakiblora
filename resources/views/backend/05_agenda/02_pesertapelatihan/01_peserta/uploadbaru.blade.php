@@ -220,7 +220,7 @@
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
-                                <p>NIP. __________________________________________</p>
+                                <p>NIP. __________</p>
                             </div>
                         </div>
 
