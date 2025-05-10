@@ -350,39 +350,31 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                             width: 100%;
                                             border-collapse: collapse;
                                             margin-top: 20px;
-                                            font-size: 16px; /* Set font-size untuk seluruh tabel */
+                                            font-size: 16px;
                                             border: 1px solid #ddd;
+                                            border-radius: 10px; /* Border radius pada luar tabel */
+                                            overflow: hidden; /* Supaya border-radius terlihat di sudut luar */
                                         }
 
                                         .custom-table th,
                                         .custom-table td {
                                             padding: 10px 20px;
                                             text-align: left;
-                                            font-size: 16px; /* Font size untuk th dan td */
+                                            font-size: 16px;
                                         }
 
-                                        /* Border-radius hanya pada ujung kiri dan kanan atas serta bawah */
-                                        .custom-table thead tr th:first-child {
-                                            border-top-left-radius: 10px; /* Ujung kiri atas */
+                                        .custom-table thead tr th {
+                                            background-color: #4CAF50;
+                                            color: white;
                                         }
 
-                                        .custom-table thead tr th:last-child {
-                                            border-top-right-radius: 10px; /* Ujung kanan atas */
-                                        }
-
-                                        .custom-table tbody tr:last-child td:first-child {
-                                            border-bottom-left-radius: 10px; /* Ujung kiri bawah */
-                                        }
-
-                                        .custom-table tbody tr:last-child td:last-child {
-                                            border-bottom-right-radius: 10px; /* Ujung kanan bawah */
-                                        }
-
+                                        /* Hover effect pada row */
                                         .table-row-hover:hover {
                                             background-color: #f7fafc;
                                             transition: background-color 0.3s ease;
                                         }
 
+                                        /* Styling row ganjil dan genap */
                                         .custom-table tr:nth-child(even) {
                                             background-color: #f9fafb;
                                         }
