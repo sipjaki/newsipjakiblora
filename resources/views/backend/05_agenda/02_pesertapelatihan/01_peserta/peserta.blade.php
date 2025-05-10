@@ -76,6 +76,26 @@
                 </svg>
                 Download PDF
             </button>
+            <button
+    onclick="downloadExcel()"
+    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
+    style="background-color: #004fce; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+        border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+        transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        viewBox="0 0 16 16" style="margin-right: 8px;">
+        <path d="M.5 9.9a.5.5 0 0 1 .5.5V14a1 1 0 0 0 1 1h12a1
+                    1 0 0 0 1-1V10.4a.5.5 0 0 1 1 0V14a2 2 0 0 1-2
+                    2H2a2 2 0 0 1-2-2v-3.6a.5.5 0 0 1 .5-.5z"/>
+        <path d="M7.646 10.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0
+                    0-.708-.708L8.5 9.293V1.5a.5.5 0 0 0-1
+                    0v7.793L5.354 7.146a.5.5 0 1 0-.708.708l3
+                    3z"/>
+    </svg>
+    Download Excel
+</button>
+
 
 
             {{-- Inject variabel Blade ke JavaScript --}}
@@ -169,6 +189,34 @@
         });
     }
 </script>
+
+<script>
+    function downloadExcel() {
+        const data = @json($peserta); // Ambil data dari Laravel ke JS
+
+        // Buat array hanya dengan 10 kolom yang diinginkan
+        const rows = data.map((item, index) => ({
+            No: index + 1,
+            Nama: item.nama,
+            NIK: `'${item.nik}`,  // Tanda petik satu agar tidak diformat Excel
+            JenisKelamin: item.jenis_kelamin,
+            TempatLahir: item.tempat_lahir,
+            NoHP: `'${item.telepon}`, // Format string agar tidak jadi +62E12
+            Pendidikan: item.pendidikan,
+            Alamat: item.alamat,
+            Status: item.status,
+            Verifikasi: item.verifikasi
+        }));
+
+        const worksheet = XLSX.utils.json_to_sheet(rows);
+        const workbook = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Data Peserta");
+
+        const filename = `{{ Str::slug($data->namakegiatan, '_') }}.xlsx`; // nama file dari kegiatan
+        XLSX.writeFile(workbook, filename);
+    }
+</script>
+
 
                     <a href="/bepesertapelatihanindex">
                                     <button
@@ -443,3 +491,4 @@
       <!-- jsPDF & autoTable CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
