@@ -281,7 +281,7 @@
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
                                 <div style="margin-right:80px;">
-                                    <img src="/assets/icon/capblora.png" alt="" width="100px;">
+                                    <img src="/assets/icon/capblora.png" alt="" width="80px;">
                                 </div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
