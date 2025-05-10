@@ -312,11 +312,13 @@
 <td>
     <div style="display: inline-block;">
         <a href="/bepesertapuploadsertifikat/show/{{ $item->id }}"
-           style="background-color: #6c757d; color: white; padding: 6px 12px; border-radius: 4px; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; transition: 0.3s;"
-           onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid #6c757d';"
-           onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+           style="background-color: #6c757d; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+                  display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                  transition: 0.3s; font-size: 14px; text-decoration: none;"
+           onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+           onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.querySelector('i').style.color='white';"
            title="Upload Sertifikat">
-            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 6px;"></i> Upload Sertifikat
+            <i class="bi bi-file-earmark-arrow-up" style="font-size: 1.2rem; color: white;"></i> Sertifikat
         </a>
     </div>
 </td>
