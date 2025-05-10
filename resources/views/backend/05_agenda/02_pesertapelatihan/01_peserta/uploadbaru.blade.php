@@ -68,7 +68,7 @@
 }
 
 .cert-h2 {
-    font-size: 18pt;
+    font-size: 18px;
     margin: 10px 0;
     color: #2e7d32;
 }
