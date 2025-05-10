@@ -65,7 +65,7 @@
                             style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
                                    border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
                                    transition: background 0.3s, color 0.3s, border 0.3s;">
-                            <i class="bi bi-printer-fill" style="margin-right: 8px; font-size: 16px;"></i> Jam Pelajaran
+                            <i class="bi bi-printer-fill" style="margin-right: 8px; font-size: 16px;"></i>Isi Jam Pelajaran
                         </button>
                     </a>
 
