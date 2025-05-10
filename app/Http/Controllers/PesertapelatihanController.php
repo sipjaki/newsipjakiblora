@@ -142,37 +142,23 @@ public function bepesertapelatihanindex(Request $request)
         return redirect()->back()->with('error', 'Item not found');
         }
 
-
-        public function bepesertapelatihansertifikat(Request $request, $id)
+// PesertapelatihanController.php
+public function bepesertapelatihansertifikat(Request $request, $id)
 {
     $perPage = $request->input('perPage', 50);
     $search = $request->input('search');
 
-    // Pastikan agenda pelatihan dengan ID ini ada
     $agendapelatihan = agendapelatihan::findOrFail($id);
-
-    // Ambil user login saat ini
     $user = Auth::user();
 
-    // Ambil peserta yang hanya terkait dengan agenda pelatihan ini dan yang sudah diverifikasi
     $query = pesertapelatihan::where('agendapelatihan_id', $id)
-        ->where('verifikasi', 'lolos') // Menampilkan hanya yang LOLOS
+        ->where('verifikasi', 'lolos')
         ->select([
-            'id',
-            'namalengkap',
-            'jeniskelamin',
-            'instansi',
-            'jenjangpendidikan_id',
-            'nik',
-            'tanggallahir',
-            'notelepon',
-            'sertifikat',
-            'verifikasi',
-            'verifikasikehadiran',
-            'terbitkansertifikat'
+            'id', 'namalengkap', 'jeniskelamin', 'instansi', 'jenjangpendidikan_id',
+            'nik', 'tanggallahir', 'notelepon', 'sertifikat', 'verifikasi',
+            'verifikasikehadiran', 'terbitkansertifikat'
         ]);
 
-    // Filter pencarian (jika ada)
     if ($search) {
         $query->where(function ($q) use ($search) {
             $q->where('jeniskelamin', 'LIKE', "%{$search}%")
@@ -183,7 +169,6 @@ public function bepesertapelatihanindex(Request $request)
 
     $datapesertapelatihan = $query->orderBy('created_at', 'desc')->paginate($perPage);
 
-    // Untuk request Ajax (misal filter dinamis via JS)
     if ($request->ajax()) {
         return response()->json([
             'html' => view('backend.05_agenda.01_agendapelatihan.partials.table', compact('datapesertapelatihan'))->render()

@@ -85,17 +85,14 @@
             }
         </script>
 
-
 <div style="position: relative; display: inline-block; margin-right:10px;">
-    <input type="search" id="searchInput" placeholder="Cari Paket Pekerjaan ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
+    <input type="search" id="searchInput" placeholder="Cari Nama Peserta ...." onkeyup="searchTable()" style="border: 1px solid #ccc; padding: 10px 20px; font-size: 14px; border-radius: 10px; width: 300px;">
     <i class="bi bi-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 16px; color: #888;"></i>
 </div>
 
 <script>
     const agendaId = {{ $agendaId }};
-</script>
 
-<script>
     function searchTable() {
         let input = document.getElementById("searchInput").value;
 
@@ -104,14 +101,16 @@
                 'X-Requested-With': 'XMLHttpRequest'
             }
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) throw new Error("Fetch failed with status " + response.status);
+            return response.json();
+        })
         .then(data => {
             document.querySelector("#tableBody").innerHTML = data.html;
         })
         .catch(error => console.error("Error fetching search results:", error));
     }
-    </script>
-
+</script>
 
                     <a href="{{ url('/bepelatihanjampelajaran/' . $agendaId) }}" style="text-decoration: none;">
                         <button
@@ -305,7 +304,7 @@
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                            <table id="daftarPeserta" class="zebra-table table-striped">
+                            <table  id="daftarPeserta" class="zebra-table table-striped">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px; text-align:center;">
@@ -349,7 +348,7 @@
                                         </th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tableBody">
                                 @foreach ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
