@@ -286,5 +286,12 @@ public function akuncreatenew(Request $request)
 }
 
 
+public function forgotpassword()
+    {
+
+        return view('register.forgotpassword',[
+            'title' => 'Forgot Password !',
+        ]);
+    }
 
 }

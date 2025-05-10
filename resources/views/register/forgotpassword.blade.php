@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    z-index: 2;
+}
+
         :root {
             --primary: #064420;
             --accent: #8EBE6B;
@@ -249,52 +262,25 @@
     </div>
 
     <div class="login-container">
-        <div class="header-section">
-            <img src="/assets/00_masjaki/images/maskotjakon.png" class="logo" alt="ABG Blora">
-            <h1>Sign in to Mas Jaki Blora</h1>
-        </div>
+            <p style="text-align: center; color:black;">Forgot Password</p>
+            <form action="/forgot-password" method="POST">
+                @csrf
 
-        {{-- @include('backend.00_administrator.00_baganterpisah.01_header') --}}
-        @include('backend.00_administrator.00_baganterpisah.11_alert')
+                <h2 class="form-title">Lupa Kata Sandi</h2>
+                <p class="form-subtitle">Masukkan email akun Anda, kami akan mengirimkan tautan reset password.</p>
 
-<form action="/login" method="POST">
-    @csrf
-    <div class="input-group">
-        <i class="fas fa-envelope input-icon"></i>
-        <input type="email" class="input-field" name="email" placeholder="Email" required>
+                <div class="input-group">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" name="email" class="input-field" placeholder="Email" required>
+                    @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                </div>
 
-        @error('email')
-        <div class="invalid-feedback">
-            {{ $message }}
-        </div>
-    @enderror
+                <button type="submit" class="btn-login">Kirim Tautan Reset</button>
 
-    </div>
-
-    <div class="input-group">
-        <i class="fas fa-lock input-icon"></i>
-        <input type="password" class="input-field" name="password" placeholder="Password" required>
-
-        @error('password')
-        <div class="invalid-feedback">
-            {{ $message }}
-        </div>
-    @enderror
-
-    </div>
-
-    <button type="submit" class="btn-login">Login</button>
-
-    <div class="footer-links">
-        <a href="/daftar">
-            Belum punya akun? <strong>Register</strong>
-        </a>
-    </div>
-</form>
-
-<a href="/forgotpassword">
-    <p>Lupa Password ? </p>
-</a>
+                <div class="footer-links">
+                    <a href="/login">Kembali ke <strong>Login</strong></a>
+                </div>
+            </form>
 
         <div class="institutional-footer">
             <div class="footer-logos">
@@ -311,3 +297,31 @@
     <div class="safety-barrier"></div>
 </body>
 </html>
+
+
+@push('scripts')
+<script>
+    $(document).on('click', '.toggle-password', function () {
+        const input = $($(this).attr('toggle'));
+        const type = input.attr('type') === 'password' ? 'text' : 'password';
+        input.attr('type', type);
+        $(this).toggleClass('fa-eye fa-eye-slash');
+    });
+</script>
+@endpush
+<script>
+    document.querySelectorAll('.toggle-password').forEach(function (icon) {
+        icon.addEventListener('click', function () {
+            const input = document.querySelector(this.getAttribute('toggle'));
+            if (input.type === 'password') {
+                input.type = 'text';
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            }
+        });
+    });
+</script>
