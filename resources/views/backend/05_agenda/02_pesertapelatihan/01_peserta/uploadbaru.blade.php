@@ -1,84 +1,97 @@
 <style>
 .cert-wrapper {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .cert-container {
-    width: 297mm; /* Lebar A4 landscape */
-    height: 210mm; /* Tinggi A4 landscape */
+    width: 297mm; /* A4 landscape width */
+    height: 210mm; /* A4 landscape height */
     background-color: #f1f8e9;
     border: 15px solid #2e7d32;
     padding: 30px;
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
     position: relative;
     box-sizing: border-box;
-    margin-left: 200px;
 }
 
-    .cert-header {
+.cert-header {
     display: flex;
-    flex-direction: column; /* GANTI DARI default ROW ke COLUMN */
+    flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
 }
 
-    .cert-logos {
-        display: flex;
-        gap: 20px;
-    }
-    .cert-title {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    .cert-content {
-        margin: 30px 0;
-        line-height: 1.6;
-    }
-    .cert-signature {
-        text-align: right;
-        margin-top: 40px; /* Dikurangi untuk landscape */
-    }
-    .cert-signature-line {
-        border-top: 1px solid #000;
-        width: 200px;
-        margin-left: auto;
-        margin-top: 60px; /* Dikurangi untuk landscape */
-    }
-    .cert-footer {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 0.9em;
-    }
-    .cert-h1 {
-        font-size: 24pt;
-        margin: 0;
-        color: #1b5e20;
-    }
-    .cert-h2 {
-        font-size: 18pt;
-        margin: 10px 0;
-        color: #2e7d32;
-    }
-    .cert-h3 {
-        font-size: 14pt;
-        margin: 5px 0;
-    }
-    .cert-hr {
-        border: 1px solid #2e7d32;
-        margin: 20px 0;
-    }
-    .cert-highlight {
-        font-weight: bold;
-        color: #1b5e20;
-    }
-    @page {
-        size: A4 landscape;
-        margin: 0;
-    }
+.cert-logos {
+    display: flex;
+    gap: 10px; /* jarak sedikit antar logo */
+}
+
+.cert-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cert-content {
+    margin: 30px 0;
+    line-height: 1.6;
+}
+
+.cert-signature {
+    text-align: right;
+    margin-top: 40px;
+}
+
+.cert-signature-line {
+    border-top: 1px solid #000;
+    width: 200px;
+    margin-left: auto;
+    margin-top: 60px;
+}
+
+.cert-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+/* Heading styles */
+.cert-h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #1b5e20;
+}
+
+.cert-h2 {
+    font-size: 18pt;
+    margin: 10px 0;
+    color: #2e7d32;
+}
+
+.cert-h3 {
+    font-size: 14pt;
+    margin: 5px 0;
+}
+
+.cert-hr {
+    border: 1px solid #2e7d32;
+    margin: 20px 0;
+}
+
+.cert-highlight {
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+@page {
+    size: A4 landscape;
+    margin: 0;
+}
+
 </style>
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -176,8 +189,8 @@
                             <hr class="cert-hr">
 
                             <div class="cert-title">
-                                <h6 class="cert-h1">SURAT KETERANGAN</h6>
-                                <h4 class="cert-h2">Nomor : 700.1/7002.35</h4>
+                                <h1 class="cert-h1">SURAT KETERANGAN</h1>
+                                <h2 class="cert-h2">Nomor : 700.1/7002.35</h2>
                             </div>
 
                             <div class="cert-content">
