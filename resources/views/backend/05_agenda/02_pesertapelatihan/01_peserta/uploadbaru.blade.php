@@ -1,14 +1,4 @@
 <style>
-    body {
-        font-family: 'Times New Roman', serif;
-        background-color: #e8f5e9;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
     .cert-container {
         width: 297mm; /* Lebar A4 landscape */
         height: 210mm; /* Tinggi A4 landscape */
