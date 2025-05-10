@@ -1,24 +1,4 @@
 <style>
-    body {
-        font-family: 'Times New Roman', serif;
-        background-color: #e8f5e9;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
-    .cert-container {
-        width: 210mm;
-        height: 297mm;
-        background-color: #f1f8e9;
-        border: 15px solid #2e7d32;
-        padding: 30px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.2);
-        position: relative;
-        box-sizing: border-box;
-    }
     .cert-header {
         display: flex;
         justify-content: space-between;
