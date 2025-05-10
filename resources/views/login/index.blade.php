@@ -281,6 +281,14 @@
         </div>
     @enderror
 
+<br>
+<div class="footer-links">
+    <a href="/forgotpassword">
+        Lupa Password ?
+     </a>
+</div>
+
+
     </div>
 
     <button type="submit" class="btn-login">Login</button>
@@ -291,12 +299,6 @@
         </a>
     </div>
 </form>
-
-<div class="footer-links">
-    <a href="/forgotpassword">
-        Lupa Password ?
-     </a>
-</div>
 
         <div class="institutional-footer">
             <div class="footer-logos">
