@@ -89,33 +89,34 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                        <button
-                        onclick="window.history.back();"
-                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                        onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                        style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
 
-                        <!-- Ikon Kembali -->
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        viewBox="0 0 16 16" style="margin-right: 8px;">
+                    <a href="/404" style="text-decoration: none;">
+                        <button
+                            onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+                            onmouseout="this.style.background='linear-gradient(135deg, #166534, #FFD700)'; this.style.color='white'; this.style.border='none';"
+                            style="background: linear-gradient(135deg, #166534, #FFD700); color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                                   border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                                   transition: background 0.3s, color 0.3s, border 0.3s;">
+                            <i class="fa fa-plus" style="margin-right: 8px;"></i>
+                            Create
+                        </button>
+                    </a>
+
+                    <button
+                    onclick="window.history.back();"
+                    onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+                    onmouseout="this.style.background='linear-gradient(135deg, #4B5563, #E5E7EB)'; this.style.color='white'; this.style.border='none';"
+                    style="background: linear-gradient(135deg, #4B5563, #E5E7EB); color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                           border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                           transition: background 0.3s, color 0.3s, border 0.3s;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         viewBox="0 0 16 16" style="margin-right: 8px;">
                         <path fill-rule="evenodd"
-                        d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z"/>
+                              d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
                     </svg>
                     Kembali
                 </button>
-
-
-                     {{-- <a href="/beagendapelatihanmateri/createmateri/{{$data->id}}"> --}}
-                        <button
-                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                         onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
-                         style="background-color: #166534; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-                         <!-- Ikon Kembali -->
-                         <i class="fa fa-plus" style="margin-right: 8px;"></i>
-                         Create
-                     </button>
-                     </a>
-                 {{-- </div> --}}
+                                 {{-- </div> --}}
 
                     </div>
                     <!-- /.card-header -->
