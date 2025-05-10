@@ -56,6 +56,7 @@
                     </svg>
                     {{ $jumlahpeserta }} Jumlah Peserta
                 </button> --}}
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
 
                     <a href="{{ url('/bepelatihanjampelajaran/' . $agendaId) }}" style="text-decoration: none;">
                         <button
@@ -63,7 +64,7 @@
                             onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
                             style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
                                    border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                                   transition: background 0.3s, color 0.3s, border 0.3s; text-decoration: none; gap:10px;">
+                                   transition: background 0.3s, color 0.3s, border 0.3s;">
                             <i class="bi bi-printer-fill" style="margin-right: 8px; font-size: 16px;"></i> Jam Pelajaran
                         </button>
                     </a>
@@ -74,7 +75,7 @@
                         onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
                         style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
                                border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                               transition: background 0.3s, color 0.3s, border 0.3s; text-decoration: none; gap:10px;">
+                               transition: background 0.3s, color 0.3s, border 0.3s;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-download" viewBox="0 0 16 16" style="margin-right: 8px;">
                             <path d="M.5 9.9a.5.5 0 0 1 .5.5v3.6a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5V10.4a.5.5 0 0 1 1 0v3.6a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14V10.4a.5.5 0 0 1 .5-.5z"/>
                             <path d="M7.646 1.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V10.5a.5.5 0 0 1-1 0V2.707L5.354 5.354a.5.5 0 1 1-.708-.708l3-3z"/>
@@ -88,11 +89,11 @@
                         onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
                         style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
                                border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                               transition: background 0.3s, color 0.3s, border 0.3s; text-decoration: none; gap:10px;">
+                               transition: background 0.3s, color 0.3s, border 0.3s;">
                         <i class="bi bi-file-earmark-excel-fill" style="margin-right: 8px; font-size: 16px;"></i> Download Excel
                     </button>
 
-
+                </div>
 
 
             {{-- Inject variabel Blade ke JavaScript --}}
