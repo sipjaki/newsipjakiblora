@@ -350,6 +350,9 @@
                                 </thead>
                                 <tbody id="tableBody">
 
+                                    @if ($datapeserta->isEmpty())
+                                        <p>Peserta Belum Tersedia</p>
+                                    @else
                                 @foreach ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
@@ -568,6 +571,7 @@
 
                                     </tr>
                                         @endforeach
+                                        @endif
 
                                 </tbody>
                             </table>
