@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 
 use App\Models\agendapelatihan;
+use App\Models\jampelajaran;
 use App\Models\jenjang;
 use App\Models\jenjangpendidikan;
 use App\Models\kategoripelatihan;
@@ -412,19 +413,42 @@ public function daftarpesertapelatihancreatenew(Request $request)
 }
 
 
+// public function bepelatihanjampelajaran($id)
+// {
+//     $dataagendapelatihan = agendapelatihan::findOrFail($id); // Cari 1 data sesuai ID
+//     $user = Auth::user();
+
+//     return view('backend.05_agenda.02_pesertapelatihan.03_materisertifikat.index', [
+//         'agendapelatihan' => $dataagendapelatihan->namakegiatan, // Ini dikirim ke form
+//         'agendapelatihan_id' => $dataagendapelatihan->id, // Ini dikirim ke form
+//         'user' => $user,
+//         'title' => 'Keterangan Materi Pelatihan'
+//     ]);
+// }
+
 public function bepelatihanjampelajaran($id)
 {
-    $dataagendapelatihan = agendapelatihan::findOrFail($id); // Cari 1 data sesuai ID
-    $user = Auth::user();
+        $dataagendapelatihan = agendapelatihan::where('id', $id)->first();
+        // Ambil data user saat ini
+        $user = Auth::user();
 
+        if (!$dataagendapelatihan) {
+            // Tangani jika kegiatan tidak ditemukan
+            return redirect()->back()->with('error', 'Kegiatan tidak ditemukan.');
+        }
+
+        // Menggunakan paginate() untuk pagination
+        $subdata = jampelajaran::where('agendapelatihan_id', $dataagendapelatihan->id)->paginate(50);
+
+    // Ambil data user saat ini
+    $user = Auth::user();
     return view('backend.05_agenda.02_pesertapelatihan.03_materisertifikat.index', [
-        'agendapelatihan' => $dataagendapelatihan->namakegiatan, // Ini dikirim ke form
-        'agendapelatihan_id' => $dataagendapelatihan->id, // Ini dikirim ke form
+        'title' => 'Keterangan Materi Untuk Sertifikat',
+        'data' => $dataagendapelatihan,
+        'subdata' => $subdata,
         'user' => $user,
-        'title' => 'Keterangan Materi Pelatihan'
     ]);
 }
-
 
 
 
