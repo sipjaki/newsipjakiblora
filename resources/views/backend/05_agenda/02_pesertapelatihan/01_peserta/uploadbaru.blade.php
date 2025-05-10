@@ -305,12 +305,20 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                                 <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
                                 <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
+                                @php
+                                    $totalJam = 0;
+                                    foreach ($datapelajaran as $pelajaran) {
+                                        $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
+                                    }
+                                @endphp
 
                                 <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
-                                    Kegiatan <span class="cert-highlight"> {{$data->agendapelatihan->namakegiatan}}</span> yang diselenggarakan oleh {{$data->agendapelatihan->asosiasimasjaki->namaasosiasi}} pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                    di {{$data->agendapelatihan->lokasi}} meliputi meliputi {{ $totalJam }} jam pelajaran.
-                                    jam pelajaran.
+                                    Kegiatan <span class="cert-highlight">{{ $data->agendapelatihan->namakegiatan }}</span>
+                                    yang diselenggarakan oleh {{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}
+                                    pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                    di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
                                 </p>
+
                             </div>
 
                             <div class="cert-signature">
