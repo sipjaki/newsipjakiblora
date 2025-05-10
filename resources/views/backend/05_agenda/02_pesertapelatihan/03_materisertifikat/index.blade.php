@@ -124,11 +124,22 @@
                             <table class="zebra-table table-striped">
                                 <thead>
                                     <tr>
-                                        <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Judul Materi Pelatihan</th>
-                                        <th style="width: 200px; text-align:center;"><i class="bi bi-file-earmark-pdf-fill"></i> Berkas/Brosur/Materi</th>
-                                        <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th>
-                                    </tr>
+                                        <th style="width: 25px; text-align:center;">
+                                            <i class="bi bi-list-ol"></i> No
+                                        </th>
+                                        <th style="width: 400px; text-align:center;">
+                                            <i class="bi bi-journal-text"></i> Materi
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-person-badge-fill"></i> Narasumber
+                                        </th>
+                                        <th style="width: 200px; text-align:center;">
+                                            <i class="bi bi-clock-fill"></i> Jam Pelajaran
+                                        </th>
+                                        <th style="width: 100px; text-align:center;">
+                                            <i class="bi bi-tools"></i> Aksi
+                                        </th>
+                                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach ($subdata as $item )
