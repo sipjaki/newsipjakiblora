@@ -249,8 +249,6 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
         {{-- ======================================================= --}}
                     <div class="col-md-12">
-
-
                         <div class="cert-container">
                             <div class="cert-header" style="text-align: center;">
                                 <!-- Logo di atas -->
@@ -258,13 +256,8 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                     <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
                                     <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
                                 </div>
-
-                                <!-- Teks di bawah logo -->
-                                {{-- <div>
-                                    <h3 class="cert-h3" style="margin: 5px 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA </h3>
-                                    <h3 class="cert-h3" style="margin: 0;">PROVINSI JAWA TENGAH</h3>
-                                </div> --}}
                             </div>
+
                             <hr class="cert-hr" style="margin-top: -5px;">
 
                             <div class="cert-title" style="margin-top: -10px;">
@@ -305,6 +298,60 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                         </div>
                     </div>
                         <!--end::Quick Example-->
+
+
+                                {{-- ======================================================= --}}
+                    <div class="col-md-12">
+                        <div class="cert-container">
+                            <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                </div>
+                            </div>
+
+                            <hr class="cert-hr" style="margin-top: -5px;">
+
+                            <div class="cert-title" style="margin-top: -10px;">
+                                <h1 class="cert-h1">SURAT KETERANGAN</h1>
+                                <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
+                            </div>
+
+                            <div class="cert-content">
+                                <p style="text-align: center;">diberikan kepada</p>
+
+                                {{-- <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{$data->namalengkap}}</h2> --}}
+                                <h2 style="text-align: center; margin: 20px 0; font-size:28px;" >Miftahul Anam, S.E</h2>
+
+                                <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
+
+                                <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
+                                    Kegiatan <span class="cert-highlight"> {{$data->agendapelatihan->namakegiatan}}</span> yang diselenggarakan oleh {{$data->agendapelatihan->asosiasimasjaki->namaasosiasi}} pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                    di {{$data->agendapelatihan->lokasi}} meliputi {{$data->jampelajaran}} jam pelajaran.
+                                </p>
+                            </div>
+
+                            <div class="cert-signature">
+                                <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
+                                <p style="margin: 0;"><strong>KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                                <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
+
+                                <div style="margin-right:80px;">
+                                    <img src="/assets/icon/capblora.png" alt="" width="80px;">
+                                </div>
+
+                                <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
+                                {{-- <p>PEKBINA UTAMA MADYA</p> --}}
+                                <p>NIP. __________</p>
+                            </div>
+                            <div class="ribbon-left"></div>
+                            {{-- <div class="ribbon-right"></div> --}}
+                        </div>
+                    </div>
+                        <!--end::Quick Example-->
+
 
                     </div>
 
