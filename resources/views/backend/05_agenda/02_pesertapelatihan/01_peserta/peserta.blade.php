@@ -287,9 +287,7 @@
                                             </div>
                                         </td>
 
-         <!-- Tombol Verifikasi -->
-         <td style="text-align: center;">
-           <!-- Tombol Verifikasi -->
+
 <td style="text-align: center;">
     @if($item->verifikasi === null)
     <!-- BELUM DI VERIFIKASI -->
@@ -323,8 +321,6 @@
     </button>
     @endif
 </td>
-
-        </td>
 
         <td style="text-align: center;">
             @if($item->verifikasikehadiran == false)
