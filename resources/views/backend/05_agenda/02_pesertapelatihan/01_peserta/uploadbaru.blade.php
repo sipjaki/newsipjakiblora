@@ -199,13 +199,15 @@
                             <div class="cert-content">
                                 <p style="text-align: center;">diberikan kepada</p>
 
-                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{$data->namalengkap}}</h2>
+                                {{-- <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{$data->namalengkap}}</h2> --}}
+                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">Miftahul Anam</h2>
 
                                 <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
                                 <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
 
                                 <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
-                                    Kegiatan <span class="cert-highlight"> {{$data->agendapelatihan->namakegiatan}}</span> yang diselenggarakan oleh Balai Jasa Konstruksi Dinas PU Bina Marga dan Cipta Karya Provinsi Jawa Tengah pada tanggal 25 September 2024 di Kota Surakarta meliputi 6 jam pelajaran.
+                                    Kegiatan <span class="cert-highlight"> {{$data->agendapelatihan->namakegiatan}}</span> yang diselenggarakan oleh {{$data->agendapelatihan->asosiasimasjaki->namaasosiasi}} pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                    di {{$data->agendapelatihan->lokasi}} meliputi {{$data->jampelajaran}} jam pelajaran.
                                 </p>
                             </div>
 
