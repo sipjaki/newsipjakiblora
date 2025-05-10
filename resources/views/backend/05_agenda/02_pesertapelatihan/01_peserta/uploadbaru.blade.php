@@ -351,6 +351,8 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                             border-collapse: collapse;
                                             margin-top: 20px;
                                             font-size: 16px; /* Set font-size untuk seluruh tabel */
+                                            border-radius: 10px; /* Border radius untuk tabel */
+                                            overflow: hidden; /* Pastikan border-radius diterapkan pada seluruh tabel */
                                         }
 
                                         .custom-table th,
@@ -364,6 +366,13 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                         .custom-table th {
                                             background: linear-gradient(90deg, #38a169, #ed8936);
                                             color: white;
+                                            border-top-left-radius: 10px;
+                                            border-top-right-radius: 10px; /* Membuat sudut atas header melengkung */
+                                        }
+
+                                        .custom-table tr:last-child td {
+                                            border-bottom-left-radius: 10px;
+                                            border-bottom-right-radius: 10px; /* Membuat sudut bawah tabel melengkung */
                                         }
 
                                         .table-row-hover:hover {
