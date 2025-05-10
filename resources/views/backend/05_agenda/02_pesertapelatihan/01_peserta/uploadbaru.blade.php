@@ -1,4 +1,17 @@
 <style>
+
+.certificate-title {
+    text-align: left;
+    margin: 15px 0;
+    font-weight: 800;
+    font-size: 24px; /* Ukuran font lebih besar untuk tampilan sertifikat */
+    font-family: 'Georgia', serif; /* Menggunakan font serif untuk kesan elegan */
+    color: #333; /* Warna teks lebih gelap untuk kontras yang baik */
+    letter-spacing: 1px; /* Memberikan jarak antar huruf untuk kesan lebih rapi */
+    text-transform: uppercase; /* Membuat teks menjadi kapital untuk formalitas */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan ringan */
+}
+
 .cert-container {
     width: 297mm;
     height: 210mm;
@@ -433,7 +446,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                             </div>
                             <div class="ribbon-text">
-                                <h4 style="text-align: left; margin: 15px 0; font-weight:800;">{{$data->namalengkap}}</h4>
+                                <h4 class="certificate-title">{{$data->namalengkap}}</h4>
 
                                 <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
                                 <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
