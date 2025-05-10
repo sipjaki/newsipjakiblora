@@ -60,8 +60,8 @@
                 <button
                 onclick="generatePDF()"
                 onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-                style="background-color: #004fce; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                onmouseout="this.style.backgroundColor='#FF0000'; this.style.color='white';"
+                style="background-color: #FF0000; color: white; border: none; margin-right: 10px; padding: 10px 20px;
                     border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
                     transition: background-color 0.3s, color 0.3s; text-decoration: none;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -79,8 +79,8 @@
             <button
     onclick="downloadExcel()"
     onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-    style="background-color: #004fce; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+    onmouseout="this.style.backgroundColor='#217346'; this.style.color='white';"
+    style="background-color: #217346; color: white; border: none; margin-right: 10px; padding: 10px 20px;
         border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
         transition: background-color 0.3s, color 0.3s; text-decoration: none;">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
