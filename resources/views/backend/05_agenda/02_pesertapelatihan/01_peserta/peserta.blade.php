@@ -70,24 +70,24 @@
             </svg>
                 Download PDF
             </button>
-            <button
-    onclick="downloadExcel()"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#217346'; this.style.color='white';"
-    style="background-color: #217346; color: white; border: none; margin-right: 10px; padding: 10px 20px;
-        border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-        transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="margin-right: 8px;">
-        <rect width="16" height="16" fill="#217346"/>
-        <path fill="#ffffff" d="M8.5 11.5 5 4h2l1 3.5L9 4h2l-3.5 7.5h1L11 13H9l-1-2-1 2H5l1.5-1.5z"/>
-        <path fill="#8cc14b" d="M8 8h1v1H8z"/>
-        <path fill="#f6b844" d="M8 6h1v1H8z"/>
-        <path fill="#4479a4" d="M6 8h1v1H6z"/>
-        <path fill="#e5554f" d="M6 6h1v1H6z"/>
-    </svg>
-    Download Excel
-</button>
 
+            <button
+            onclick="downloadExcel()"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='#217346'; this.style.color='white';"
+            style="background-color: #217346; color: white; border: none; margin-right: 10px; padding: 10px 20px;
+                border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="margin-right: 8px;">
+                <rect width="16" height="16" fill="#217346"/>
+                <path fill="#ffffff" d="M8.5 11.5 5 4h2l1 3.5L9 4h2l-3.5 7.5h1L11 13H9l-1-2-1 2H5l1.5-1.5z"/>
+                <path fill="#8cc14b" d="M8 8h1v1H8z"/>
+                <path fill="#f6b844" d="M8 6h1v1H8z"/>
+                <path fill="#4479a4" d="M6 8h1v1H6z"/>
+                <path fill="#e5554f" d="M6 6h1v1H6z"/>
+            </svg>
+            Download Excel
+        </button>
 
 
             {{-- Inject variabel Blade ke JavaScript --}}
@@ -189,26 +189,26 @@
         // Buat array hanya dengan 10 kolom yang diinginkan
         const rows = data.map((item, index) => ({
             No: index + 1,
-            Nama: item.nama,
+            Nama: item.namalengkap,
             NIK: `'${item.nik}`,  // Tanda petik satu agar tidak diformat Excel
-            JenisKelamin: item.jenis_kelamin,
+            JenisKelamin: item.jeniskelamin,
             TempatLahir: item.tempat_lahir,
-            NoHP: `'${item.telepon}`, // Format string agar tidak jadi +62E12
-            Pendidikan: item.pendidikan,
-            Alamat: item.alamat,
-            Status: item.status,
-            Verifikasi: item.verifikasi
+            TanggalLahir: item.tanggallahir ? new Date(item.tanggallahir).toLocaleDateString() : '',
+            NoHP: `'${item.notelepon}`, // Format string agar tidak jadi +62E12
+            Instansi: item.instansi,
+            Sertifikat: item.serifikat || 'N/A',
+            Verifikasi: item.verifikasi ? 'Terverifikasi' : 'Belum Terverifikasi'
         }));
 
         const worksheet = XLSX.utils.json_to_sheet(rows);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, "Data Peserta");
 
-        const filename = `{{ Str::slug($data->namakegiatan, '_') }}.xlsx`; // nama file dari kegiatan
+        // Nama file berdasarkan nama kegiatan
+        const filename = `${namaKegiatan}.xlsx`; // nama file dari kegiatan
         XLSX.writeFile(workbook, filename);
     }
 </script>
-
 
                     <a href="/bepesertapelatihanindex">
                                     <button
@@ -481,6 +481,7 @@
 
 
       <!-- jsPDF & autoTable CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
-<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+      <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
