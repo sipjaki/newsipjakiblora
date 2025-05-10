@@ -210,31 +210,30 @@ h5 {
                                     <div style="display: flex; justify-content: center; margin-bottom: -20px;">
                                         <div style="width: 100%; max-width: 500px; overflow-x: auto;">
                                             <button type="button" style="
-                                            display: inline-flex;
-                                            align-items: center;
-                                            justify-content: flex-start;
-                                            gap: 10px;
-                                            padding: 12px 20px;
-                                            font-size: 16px;
-                                            font-family: 'Poppins', sans-serif;
-                                            border: 1px solid #28a745;
-                                            background-color: #28a745;
-                                            color: white;
-                                            border-radius: 6px;
-                                            cursor: pointer;
-                                            transition: all 0.3s ease;
-                                            white-space: normal;
-                                            word-break: break-word;
-                                            width: 100%;
-                                            text-align: left;
-                                        "
-                                        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                        onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';">
+                                                display: inline-flex;
+                                                align-items: center;
+                                                justify-content: flex-start;
+                                                gap: 10px;
+                                                padding: 12px 20px;
+                                                font-size: 16px;
+                                                font-family: 'Poppins', sans-serif;
+                                                border: 1px solid #28a745;
+                                                background-color: #28a745;
+                                                color: white;
+                                                border-radius: 6px;
+                                                cursor: pointer;
+                                                transition: all 0.3s ease;
+                                                white-space: normal;
+                                                word-break: break-word;
+                                                width: 100%;
+                                                text-align: left;
+                                            "
+                                            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                                            onmouseout="this.style.backgroundColor='#28a745'; this.style.color='white';">
                                                 <img src="/assets/icon/pupr.png" alt="icon" style="width: 20px; height: 20px; object-fit: contain;">
                                                 <span style="flex: 1;">{{ $title }} : {{ $agendaskknamakegiatan }}</span>
                                             </button>
                                         </div>
-
                                     </div>
 
 
