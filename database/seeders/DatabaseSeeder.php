@@ -59720,11 +59720,10 @@ agendapelatihan::create([
     'waktupelaksanaan' => '2025-04-15',
     'jumlahpeserta' => 50,
     'lokasi' => 'Azana Garden Hill Resort Blora',
-    'Keterangan' => '-',
+    'Keterangan' => 'Kegiatan ini bertujuan untuk meningkatkan pemahaman pelaku konstruksi mengenai standar keselamatan kerja dan penerapan kontrak yang sesuai regulasi dalam proyek pembangunan.',
     'isiagenda' => 'Penerapan Keselamatan dan Kontrak Konstruksi',
     'foto' => '01_berita/image.png',
 ]);
-
 
 // 'foto' => '00_dokmasjaki/03_datajakon/agendapelatihan.jpg',
 // iqlima
