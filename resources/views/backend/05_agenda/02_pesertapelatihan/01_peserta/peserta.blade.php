@@ -349,10 +349,11 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tableBody">
-
                                     @if ($datapeserta->isEmpty())
-                                        <p>Peserta Belum Tersedia</p>
-                                    @else
+                                    <div style="background-color: #f8d7da; color: #721c24; padding: 15px; text-align: center; font-weight: bold; width: 100%; margin: 0;">
+                                        Peserta Belum Tersedia
+                                    </div>
+                                @else
                                 @foreach ($datapeserta as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
