@@ -1,24 +1,25 @@
 <style>
+/* Menambahkan font kaligrafi atau aksara sambung */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); /* Menggunakan Dancing Script, bisa diganti dengan font lain */
 
 .carved-text {
-    font-family: 'Roboto', sans-serif; /* Pilih font modern dan bersih */
-    font-size: 36px; /* Ukuran font lebih besar untuk tampilan premium */
-    font-weight: 700; /* Membuat teks tebal */
-    color: #4b4b4b; /* Warna teks yang elegan */
-    text-align: center; /* Menyusun teks agar berada di tengah */
-    text-transform: uppercase; /* Membuat huruf menjadi kapital */
-    letter-spacing: 2px; /* Memberikan jarak antar huruf untuk kesan lebih rapi */
+    font-family: 'Dancing Script', cursive; /* Gaya font kaligrafi sambung */
+    font-size: 48px; /* Ukuran font besar untuk sertifikat */
+    font-weight: 700; /* Menguatkan font agar lebih tebal dan terukir */
+    color: #4a4a4a; /* Warna font yang elegan, bisa disesuaikan */
+    text-align: center; /* Memusatkan teks */
+    text-transform: uppercase; /* Membuat teks menjadi kapital untuk kesan formal */
+    letter-spacing: 2px; /* Memberikan jarak antar huruf agar lebih rapi */
     text-shadow:
-        1px 1px 3px rgba(0, 0, 0, 0.1),  /* Efek bayangan lembut untuk menambah kesan kedalaman */
-        0px 0px 10px rgba(0, 0, 0, 0.2), /* Bayangan lebih tegas agar terlihat seperti ukiran */
-        0px 0px 20px rgba(0, 0, 0, 0.4); /* Efek glow agar teks terlihat elegan */
-    background: linear-gradient(145deg, #f8e16c, #d4b327); /* Gradasi emas untuk efek berkilau */
-    -webkit-background-clip: text; /* Membuat latar belakang hanya muncul pada teks */
-    background-clip: text; /* Membuat latar belakang hanya muncul pada teks */
+        1px 1px 3px rgba(0, 0, 0, 0.2),  /* Efek bayangan untuk kesan ukiran */
+        0px 0px 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih tegas agar terlihat seperti terukir */
+    background: linear-gradient(145deg, #f8e16c, #d4b327); /* Gradasi emas untuk efek mewah */
+    -webkit-background-clip: text; /* Membuat gradasi hanya muncul pada teks */
+    background-clip: text;
+    padding: 20px; /* Memberikan ruang di sekitar teks */
     display: inline-block;
-    padding: 10px 20px; /* Memberikan jarak sekitar teks */
-    border-radius: 8px; /* Membuat sudut lebih halus */
 }
+
 
 .cert-container {
     width: 297mm;
