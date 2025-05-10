@@ -194,7 +194,7 @@ table.zebra-table {
                                 <i class="bi bi-gender-ambiguous me-1"></i> Gender
                             </th>
                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;">
-                                <i class="bi bi-building me-1"></i> Instansi
+                                <i class="bi bi-building me-1"></i> Instansi/Universitas/Lembaga/Perseorangan/BUJK
                             </th>
                             <th onclick="sortTable(4)" style="cursor:pointer; text-align:center;">
                                 <i class="bi bi-check2-circle me-1"></i> Verifikasi
