@@ -247,7 +247,7 @@ h5 {
                                                     <div class="col-md-6">
                                                         @php
                                                         $inputStyle = "
-                                                            width: 400px;
+                                                            width: 350px;
                                                             padding: 10px 14px;
                                                             border-radius: 8px;
                                                             border: 1px solid #ccc;
