@@ -145,44 +145,9 @@
                                 @foreach ($subdata as $item )
                                     <tr class="align-middle">
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
-                                        <td style="text-align: left;">{{ $item->judulmateripelatihan }}</td>
-                                        <td style="text-align: center;">
-                                            <button class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
-                                                <i class="bi bi-eye"></i> Lihat
-                                            </button>
-
-                                            <!-- Modal KTP -->
-                                            <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
-                                                <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                                            <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                                            <span>:</span>
-                                                            <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">
-                                                                Sertifikat : <i class="bi bi-file-earmark-pdf-fill text-danger"></i> {{ $data->namakegiatan }}
-                                                            </h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body text-center">
-                                                            <div style="margin-top: 10px;">
-                                                                @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
-                                                                    <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                @elseif($item->materipelatihan)
-                                                                    <iframe src="{{ asset($item->materipelatihan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                @else
-                                                                    <p>Data belum diupdate</p>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
+                                        <td style="text-align: left;">{{ $item->materi }}</td>
+                                        <td style="text-align: left;">{{ $item->narasumber }}</td>
+                                        <td style="text-align: left;">{{ $item->jampelajaran }} Jam</td>
 
                                                    <td style="text-align: center;">
                                             <!-- Show Icon -->
