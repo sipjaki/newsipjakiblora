@@ -10,11 +10,12 @@
         box-sizing: border-box;
     }
     .cert-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
+    display: flex;
+    flex-direction: column; /* GANTI DARI default ROW ke COLUMN */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
     .cert-logos {
         display: flex;
         gap: 20px;
