@@ -218,9 +218,9 @@
 
                                 <div class="cert-signature-line"></div>
 
-                                <p><strong>DR. IR. AR HANUNG TRIVONO, M.SI</strong></p>
-                                <p>PEKBINA UTAMA MADYA</p>
-                                <p>NIP. 19661129 199203 1005</p>
+                                <p style="margin: 0;"><strong>Nidzamudin Al Hudaa, ST</strong></p>
+                                {{-- <p>PEKBINA UTAMA MADYA</p> --}}
+                                <p>NIP.-</p>
                             </div>
 
                             <div class="cert-footer">
