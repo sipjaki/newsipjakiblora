@@ -447,8 +447,8 @@
                    border-radius: 15px; font-size: 14px; cursor: pointer;
                    display: flex; align-items: center; justify-content: center;
                    transition: background-color 0.3s, color 0.3s;">
-            <i class="bi bi-eye-fill" style="margin-right: 5px;"></i> Keterangan Sertifikat
-        </button>
+    <i class="bi bi-printer-fill" style="margin-right: 5px;"></i> Jam Pelajaran
+</button>
     </a>
 </td>
 
