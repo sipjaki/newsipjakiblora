@@ -322,19 +322,19 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                     <table class="custom-table">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>Materi</th>
-                                                <th>Narasumber</th>
-                                                <th>Jam Pelajaran</th>
+                                                <th style="font-size: 15px;" width="10%">No</th>
+                                                <th style="font-size: 15px;" width="40%">Materi</th>
+                                                <th style="font-size: 15px;" width="30%">Narasumber</th>
+                                                <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @forelse ($datapelajaran as $key => $pelajaran)
                                             <tr class="table-row-hover">
-                                                <td>{{ $key + 1 }}</td>
-                                                <td>{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
-                                                <td>{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                                <td>{{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px;">{{ $key + 1 }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }}</td>
                                             </tr>
                                             @empty
                                             <tr>
