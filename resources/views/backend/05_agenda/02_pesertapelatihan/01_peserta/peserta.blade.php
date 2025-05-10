@@ -78,14 +78,6 @@
             style="background-color: #217346; color: white; border: none; margin-right: 10px; padding: 10px 20px;
                 border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
                 transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" style="margin-right: 8px;">
-                <rect width="16" height="16" fill="#217346"/>
-                <path fill="#ffffff" d="M8.5 11.5 5 4h2l1 3.5L9 4h2l-3.5 7.5h1L11 13H9l-1-2-1 2H5l1.5-1.5z"/>
-                <path fill="#8cc14b" d="M8 8h1v1H8z"/>
-                <path fill="#f6b844" d="M8 6h1v1H8z"/>
-                <path fill="#4479a4" d="M6 8h1v1H6z"/>
-                <path fill="#e5554f" d="M6 6h1v1H6z"/>
-            </svg>
             Download Excel
         </button>
 
@@ -184,6 +176,7 @@
 
 <script>
     function downloadExcel() {
+        // Data peserta yang diambil dari Laravel
         const data = @json($datapeserta); // Ambil data dari Laravel ke JS
 
         // Buat array hanya dengan 10 kolom yang diinginkan
@@ -200,6 +193,7 @@
             Verifikasi: item.verifikasi ? 'Terverifikasi' : 'Belum Terverifikasi'
         }));
 
+        // Konversi array ke sheet Excel
         const worksheet = XLSX.utils.json_to_sheet(rows);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, "Data Peserta");
@@ -209,7 +203,6 @@
         XLSX.writeFile(workbook, filename);
     }
 </script>
-
                     <a href="/bepesertapelatihanindex">
                                     <button
                         onclick="history.back()"
