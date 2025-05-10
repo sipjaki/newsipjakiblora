@@ -71,21 +71,18 @@
                 Download PDF
             </button>
 
-            <button
-            onclick="downloadExcel()"
+
+            <button onclick="exportTableToExcel('daftarPeserta', 'Data Peserta {{$data->namakegiatan}}')"
             onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-            onmouseout="this.style.backgroundColor='#217346'; this.style.color='white';"
-            style="background-color: #217346; color: white; border: none; margin-right: 10px; padding: 10px 20px;
-                border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
-                transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-            Download Excel
-        </button>
+            onmouseout="this.style.backgroundColor='#bb5215'; this.style.color='white';"
+            style="background-color: #bb5215; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;"
+            >
+               <i class="bi bi-download" style="margin-right: 5px"></i> Download Excel
+           </button>
+
 
 
             {{-- Inject variabel Blade ke JavaScript --}}
-<script>
-    const namaKegiatan = @json($data->namakegiatan);
-</script>
 
 <script>
     async function generatePDF() {
@@ -174,36 +171,16 @@
     }
 </script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
 <script>
-    function downloadExcel() {
-        // Data peserta yang diambil dari Laravel
-        const data = @json($datapeserta); // Ambil data dari Laravel ke JS
-
-        // Buat array hanya dengan 10 kolom yang diinginkan
-        const rows = data.map((item, index) => ({
-            No: index + 1,
-            Nama: item.namalengkap,
-            NIK: `'${item.nik}`,  // Tanda petik satu agar tidak diformat Excel
-            JenisKelamin: item.jeniskelamin,
-            TempatLahir: item.tempat_lahir,
-            TanggalLahir: item.tanggallahir ? new Date(item.tanggallahir).toLocaleDateString() : '',
-            NoHP: `'${item.notelepon}`, // Format string agar tidak jadi +62E12
-            Instansi: item.instansi,
-            Sertifikat: item.serifikat || 'N/A',
-            Verifikasi: item.verifikasi ? 'Terverifikasi' : 'Belum Terverifikasi'
-        }));
-
-        // Konversi array ke sheet Excel
-        const worksheet = XLSX.utils.json_to_sheet(rows);
-        const workbook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(workbook, worksheet, "Data Peserta");
-
-        // Nama file berdasarkan nama kegiatan
-        const filename = `${namaKegiatan}.xlsx`; // nama file dari kegiatan
-        XLSX.writeFile(workbook, filename);
-    }
-</script>
-                    <a href="/bepesertapelatihanindex">
+ function exportTableToExcel(tableID, filename = '') {
+     var table = document.getElementById(tableID);
+     var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet 1"});
+     return XLSX.writeFile(wb, filename + '.xlsx');
+ }
+ </script>
+                     <a href="/bepesertapelatihanindex">
                                     <button
                         onclick="history.back()"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -225,7 +202,7 @@
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
-                            <table class="zebra-table table-striped">
+                            <table id="daftarPeserta" class="zebra-table table-striped">
                                 <thead>
                                     <tr>
                                         <th style="width: 10px; text-align:center;">
