@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('jampelajarans', function (Blueprint $table) {
             $table->id();
+            $table->string('materi')->nullable();
+            $table->string('narasumber')->nullable();
+            $table->string('jampelajaran')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
