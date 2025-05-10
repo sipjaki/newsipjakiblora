@@ -351,18 +351,17 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                             border-collapse: collapse;
                                             margin-top: 20px;
                                             font-size: 16px; /* Set font-size untuk seluruh tabel */
-                                            border-radius: 10px; /* Border radius untuk tabel */
-                                            overflow: hidden; /* Pastikan border-radius diterapkan pada seluruh tabel */
+                                            border: 1px solid #ddd;
                                         }
 
                                         .custom-table th,
                                         .custom-table td {
                                             padding: 10px 20px;
                                             text-align: left;
-                                            border: 1px solid #ddd;
                                             font-size: 16px; /* Font size untuk th dan td */
                                         }
 
+                                        /* Border-radius hanya pada ujung kiri dan kanan atas serta bawah */
                                         .custom-table th {
                                             background: linear-gradient(90deg, #38a169, #ed8936);
                                             color: white;
