@@ -411,5 +411,22 @@ public function daftarpesertapelatihancreatenew(Request $request)
     return redirect('/daftarpesertapelatihan');
 }
 
+
+public function bepelatihanjampelajaran($id)
+{
+    $dataagendapelatihan = agendapelatihan::findOrFail($id); // Cari 1 data sesuai ID
+    $user = Auth::user();
+
+    return view('backend.05_agenda.02_pesertapelatihan.03_materisertifikat.index', [
+        'agendapelatihan' => $dataagendapelatihan->namakegiatan, // Ini dikirim ke form
+        'agendapelatihan_id' => $dataagendapelatihan->id, // Ini dikirim ke form
+        'user' => $user,
+        'title' => 'Keterangan Materi Pelatihan'
+    ]);
+}
+
+
+
+
 }
 

@@ -864,7 +864,7 @@ Route::get('/bepesertapuploadsertifikat/show/{id}', [PesertapelatihanController:
 
 Route::post('/bepesertapuploadsertifikat/create/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatupload'])->middleware('auth')->name('bepesertauploadsertifikatupload');
 
-Route::get('/bepelatihanjampelajaran/{namakegiatan}', [PesertapelatihanController::class, 'bepelatihanjampelajaran'])->middleware('auth')->name('bepelatihanjampelajaran');
+Route::get('/bepelatihanjampelajaran/{id}', [PesertapelatihanController::class, 'bepelatihanjampelajaran'])->middleware('auth')->name('bepelatihanjampelajaran');
 // saat ini
 
 // HAK AKSES AKUN LSP PENERBIT UNTUK PELATIHAN DAN SKK

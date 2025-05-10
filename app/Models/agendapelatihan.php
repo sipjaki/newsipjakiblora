@@ -39,5 +39,10 @@ class agendapelatihan extends Model
         return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
     }
 
+    public function jampelajaran()
+    {
+        return $this->belongsTo(jampelajaran::class, 'jampelajaran_id');
+    }
+
 
 }
