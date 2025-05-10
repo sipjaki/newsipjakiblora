@@ -105,6 +105,7 @@
             </option>
         @endforeach
     </select>
+    Ket : Kosongkan Jika Tidak Ada LSP Penerbit
     @error('user_id')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -126,7 +127,7 @@
 <!-- Penyelenggara / Asosiasi -->
 <div class="mb-3">
     <label for="asosiasimasjaki_id" class="form-label">
-        <i class="bi bi-people-fill text-primary"></i> Penyelenggara / Asosiasi
+        <i class="bi bi-people-fill text-primary"></i> Penyelenggara
     </label>
     <select id="asosiasimasjaki_id" name="asosiasimasjaki_id"
         class="form-control @error('asosiasimasjaki_id') is-invalid @enderror">
