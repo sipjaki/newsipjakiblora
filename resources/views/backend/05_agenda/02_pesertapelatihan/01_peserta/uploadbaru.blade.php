@@ -1,25 +1,25 @@
 <style>
 /* Menambahkan font kaligrafi atau aksara sambung */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap'); /* Menggunakan Dancing Script, bisa diganti dengan font lain */
+/* Menambahkan font kaligrafi */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap'); /* Alex Brush font */
 
 .carved-text {
-    font-family: 'Dancing Script', cursive; /* Gaya font kaligrafi sambung */
-    font-size: 48px; /* Ukuran font besar untuk sertifikat */
-    font-weight: 700; /* Menguatkan font agar lebih tebal dan terukir */
-    color: #4a4a4a; /* Warna font yang elegan, bisa disesuaikan */
+    font-family: 'Alex Brush', cursive; /* Gaya font kaligrafi */
+    font-size: 50px; /* Ukuran font lebih besar agar menonjol */
+    font-weight: bold; /* Membuat font lebih tebal dan kuat */
+    color: #F1C40F; /* Warna emas elegan */
     text-align: center; /* Memusatkan teks */
-    text-transform: uppercase; /* Membuat teks menjadi kapital untuk kesan formal */
-    letter-spacing: 2px; /* Memberikan jarak antar huruf agar lebih rapi */
-    text-shadow:
-        1px 1px 3px rgba(0, 0, 0, 0.2),  /* Efek bayangan untuk kesan ukiran */
-        0px 0px 15px rgba(0, 0, 0, 0.3); /* Bayangan lebih tegas agar terlihat seperti terukir */
-    background: linear-gradient(145deg, #f8e16c, #d4b327); /* Gradasi emas untuk efek mewah */
-    -webkit-background-clip: text; /* Membuat gradasi hanya muncul pada teks */
+    text-transform: uppercase; /* Membuat teks kapital untuk formalitas */
+    letter-spacing: 2px; /* Jarak antar huruf sedikit untuk kejelasan */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Bayangan untuk efek 3D dan kesan ukiran */
+    background: linear-gradient(145deg, #d4af37, #f39c12); /* Gradasi emas dengan sedikit ke arah kuning */
+    -webkit-background-clip: text; /* Gradasi di clip hanya untuk teks */
     background-clip: text;
     padding: 20px; /* Memberikan ruang di sekitar teks */
-    display: inline-block;
+    display: inline-block; /* Agar teks tidak meluber */
+    border-radius: 10px; /* Memberikan sedikit rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lembut di bawah teks untuk efek ukiran */
 }
-
 
 .cert-container {
     width: 297mm;
