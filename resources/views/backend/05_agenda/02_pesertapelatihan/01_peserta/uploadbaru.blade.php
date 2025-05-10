@@ -363,8 +363,9 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                             font-size: 16px;
                                         }
 
+                                        /* Gradasi hijau dan emas untuk header */
                                         .custom-table thead tr th {
-                                            background-color: #4CAF50;
+                                            background: linear-gradient(135deg, #4caf50, #ffb300); /* Gradasi hijau ke emas */
                                             color: white;
                                         }
 
