@@ -17,6 +17,7 @@
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
     position: relative;
     box-sizing: border-box;
+    margin-left: 200px;
 }
 
 .cert-header {
