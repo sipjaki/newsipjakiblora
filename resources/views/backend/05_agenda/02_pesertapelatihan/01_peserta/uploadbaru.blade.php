@@ -35,6 +35,13 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
  z-index: 2;
 }
 
+.ribbon-text {
+    margin-left: 20px; /* Memberikan jarak antara pita dan teks */
+    text-align: left;
+    font-size: 16px;
+}
+
+
 /* Pita kanan bawah */
 .cert-container .ribbon-right {
     position: absolute;
@@ -413,10 +420,13 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
 
                             <div class="ribbon-left">
-                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                            </p>
+                                <div class="ribbon-text">
+                                    <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                                    <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                    </p>
+                                </div>
                             </div>
+
                             {{-- <div class="ribbon-right"></div> --}}
                         </div>
                     </div>
