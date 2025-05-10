@@ -89,7 +89,6 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                    <a href="/beagendapelatihan">
                         <button
                         onclick="window.history.back();"
                         onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
@@ -104,7 +103,6 @@
                     </svg>
                     Kembali
                 </button>
-            </a>
 
 
                      <a href="/beagendapelatihanmateri/createmateri/{{$data->id}}">
