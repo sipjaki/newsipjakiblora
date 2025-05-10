@@ -428,14 +428,23 @@
         </script>
 <td>
     @if($item->terbitkansertifikat == false)
-    <button type="button" onclick="openTerbitkanModal({{ $item->id }})"
-        style="background-color: #3B82F6; color: white; padding: 8px 16px; border-radius: 8px;
-               font-weight: 600; display: inline-flex; align-items: center; gap: 6px; border: none;
-               box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer;"
-        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
-        onmouseout="this.style.backgroundColor='#3B82F6'; this.style.color='white'; this.querySelector('i').style.color='white';">
-        <i class="bi bi-file-earmark-check" style="font-size: 1.2rem; color: white;"></i> TERBITKAN
-    </button>
+    @if($item->verifikasikehadiran)
+        <button type="button" onclick="openTerbitkanModal({{ $item->id }})"
+            style="background-color: #FFD700; color: black; padding: 8px 16px; border-radius: 8px;
+                   font-weight: 600; display: inline-flex; align-items: center; gap: 6px; border: none;
+                   box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+            onmouseout="this.style.backgroundColor='#FFD700'; this.style.color='black'; this.querySelector('i').style.color='black';">
+            <i class="bi bi-file-earmark-check" style="font-size: 1.2rem; color: black;"></i> TERBITKAN
+        </button>
+    @else
+        <button type="button" disabled
+            style="background-color: #d1d5db; color: #6b7280; padding: 8px 16px; border-radius: 8px;
+                   font-weight: 600; display: inline-flex; align-items: center; gap: 6px; border: none;
+                   box-shadow: 0 2px 6px rgba(0,0,0,0.1); cursor: not-allowed;">
+            <i class="bi bi-x-circle" style="font-size: 1.2rem; color: #6b7280;"></i> BELUM HADIR
+        </button>
+    @endif
 @else
     <button type="button" disabled
         style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
@@ -444,7 +453,6 @@
         <i class="bi bi-check-circle" style="font-size: 1.2rem; color: white;"></i> DITERBITKAN
     </button>
 @endif
-
 
 <!-- Modal Terbitkan Sertifikat -->
 <div id="terbitkanModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
