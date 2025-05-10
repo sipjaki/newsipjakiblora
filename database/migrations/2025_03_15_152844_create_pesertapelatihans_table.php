@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('sertifikat')->nullable();
             $table->string('verifikasi')->nullable();
             $table->boolean('verifikasikehadiran')->default(false);
+            $table->boolean('terbitkansertifikat')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

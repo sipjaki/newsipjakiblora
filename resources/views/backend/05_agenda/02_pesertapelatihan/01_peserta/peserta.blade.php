@@ -278,7 +278,7 @@
                                             <i class="bi bi-building" style="margin-right: 5px;"></i>Instansi
                                         </th>
                                         <th style="width: 300px; text-align:center;">
-                                            <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
+                                            <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Lihat Sertifikat
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi
@@ -309,44 +309,17 @@
                                         <td style="text-align: left;">{{ $item->notelepon }}</td>
                                         <td style="text-align: left;">{{ $item->instansi }}</td>
 
-
-                                        <td style="text-align: center;">
-                                            <button class="btn btn-secondary btn-sm"
-                                                style="border-radius: 15px; padding: 8px 16px; background-color: #6c757d; color: white; border: none; transition: background-color 0.3s, color 0.3s;"
-                                                onmouseover="this.style.backgroundColor='#ffffff'; this.style.color='#6c757d'; this.style.border='1px solid #6c757d';"
-                                                onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
-                                                data-bs-toggle="modal" data-bs-target="#modalKtp{{ $item->id }}">
-                                                <i class="bi bi-eye"></i> Lihat
-                                            </button>
-
-                                            <!-- Modal KTP -->
-                                            <div class="modal fade" id="modalKtp{{ $item->id }}" tabindex="-1" aria-labelledby="modalKtpLabel{{ $item->id }}" aria-hidden="true">
-                                                <div class="modal-dialog modal-xl modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <a href="#"><img src="/assets/icon/logokabupatenblora.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                                            <a href="#"><img src="/assets/icon/pupr.png" alt="Logo" width="25" style="margin-right: 5px;"></a>
-                                                            <span>:</span>
-                                                            <h5 class="modal-title" id="modalKtpLabel{{ $item->id }}">
-                                                                Sertifikat Pelatihan : <i class="bi bi-file-earmark-pdf-fill text-danger"></i>
-                                                            </h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body text-center">
-                                                            <div style="margin-top: 10px;">
-                                                                @if($item->sertifikat && file_exists(public_path('storage/' . $item->sertifikat)))
-                                                                    <iframe src="{{ asset('storage/' . $item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                @elseif($item->sertifikat)
-                                                                    <iframe src="{{ asset($item->sertifikat) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                                                @else
-                                                                    <p>Sertifikat Belum Di Upload !!</p>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
+<td>
+    <div style="display: inline-block;">
+        <a href="/bepesertapuploadsertifikat/show/{{ $item->id }}"
+           style="background-color: #6c757d; color: white; padding: 6px 12px; border-radius: 4px; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; transition: 0.3s;"
+           onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.style.border='1px solid #6c757d';"
+           onmouseout="this.style.backgroundColor='#6c757d'; this.style.color='white'; this.style.border='none';"
+           title="Upload Sertifikat">
+            <i class="bi bi-file-earmark-arrow-up" style="margin-right: 6px;"></i> Upload Sertifikat
+        </a>
+    </div>
+</td>
 
 
 <td style="text-align: center;">
