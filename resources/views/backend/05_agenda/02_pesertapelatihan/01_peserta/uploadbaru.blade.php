@@ -300,9 +300,9 @@
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
                                 <p>NIP. __________</p>
                             </div>
+                            <div class="ribbon-left"></div>
+                            <div class="ribbon-right"></div>
                         </div>
-                        <div class="ribbon-left"></div>
-                        <div class="ribbon-right"></div>
                     </div>
                         <!--end::Quick Example-->
 
