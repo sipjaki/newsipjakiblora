@@ -206,6 +206,9 @@
                         </div>
 
 
+                                                     </div>
+                        <!--end::Quick Example-->
+
                     </div>
 
                     <br><br>
