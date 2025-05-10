@@ -1,94 +1,63 @@
 <style>
- .cert-wrapper {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: "Times New Roman", Times, serif;
-            background: linear-gradient(135deg, #e8f5e9 0%, #d7e8d7 100%);
-            overflow: hidden;
-        }
+.cert-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #d7e8d7 100%);
+}
 
-        .cert-container {
-            width: 297mm;
-            height: 210mm;
-            background: linear-gradient(to right, #f1f8e9 0%, #f9f5e8 100%);
-            border: 15px double #2e7d32;
-            border-image: linear-gradient(45deg, #2e7d32, #d4af37, #2e7d32) 1;
-            padding: 30px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.3);
-            position: relative;
-            box-sizing: border-box;
-            overflow: hidden;
-            margin-left: 200px;
-        }
+.cert-container {
+    width: 297mm;
+    height: 210mm;
+    background: linear-gradient(to right, #f1f8e9 0%, #f9f5e8 100%);
+    border: 15px double #2e7d32;
+    border-image: linear-gradient(45deg, #2e7d32, #d4af37, #2e7d32) 1;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-left: 200px;
+}
 
-        /* Construction-themed decorative elements */
-        .construction-decoration {
-            position: absolute;
-            opacity: 0.08;
-            z-index: 0;
-        }
+/* Ornamen bayangan bunga di latar belakang */
+.cert-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23d4af3780" d="M30,10 Q50,5 70,10 Q95,15 90,40 Q85,65 70,80 Q50,95 30,80 Q15,65 10,40 Q5,15 30,10 Z"/></svg>');
+    opacity: 0.1;
+    z-index: 0;
+}
 
-        .blueprint-grid {
-            background-image:
-                linear-gradient(to right, #2e7d32 1px, transparent 1px),
-                linear-gradient(to bottom, #2e7d32 1px, transparent 1px);
-            background-size: 20px 20px;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+/* Pita kiri bawah */
+.cert-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(135deg, #b71c1c, #e53935);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    z-index: 1;
+}
 
-        .construction-icon {
-            position: absolute;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        /* Crane animation */
-        @keyframes craneMove {
-            0% { transform: translateX(0) rotate(0deg); }
-            50% { transform: translateX(10px) rotate(2deg); }
-            100% { transform: translateX(0) rotate(0deg); }
-        }
-
-        .crane-animation {
-            position: absolute;
-            right: 50px;
-            bottom: 50px;
-            animation: craneMove 4s infinite ease-in-out;
-        }
-
-        /* Worker animation */
-        @keyframes workerHammer {
-            0% { transform: rotate(0deg); }
-            50% { transform: rotate(-15deg); }
-            100% { transform: rotate(0deg); }
-        }
-
-        .worker-animation {
-            position: absolute;
-            left: 50px;
-            bottom: 50px;
-        }
-        .worker-animation svg {
-            animation: workerHammer 1s infinite;
-            transform-origin: top center;
-        }
-
-        /* Content styling (your existing styles) */
-        .cert-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
+/* Pita kanan bawah */
+.cert-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(135deg, #b71c1c, #e53935);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+}
 
         .cert-header {
             display: flex;
@@ -296,23 +265,6 @@
 
                         <div class="cert-container">
                             <div class="cert-header" style="text-align: center;">
-                                <div class="blueprint-grid"></div>
-
-                                <!-- Crane animation -->
-                                <div class="crane-animation">
-                                    <svg width="80" height="80" viewBox="0 0 24 24" fill="#2e7d32">
-                                        <path d="M21 6l-5 5h-3l-2-2H9V8h2l2 2h3l5-5h-2V4h5v5h-2V6zM9 16h2v-2H9v2zm-5 0h2v-2H4v2zm3-5h2V9H7v2zm-3 0h2V9H4v2zm3-5h2V4H7v2z"/>
-                                    </svg>
-                                </div>
-
-                                <!-- Worker animation -->
-                                <div class="worker-animation">
-                                    <svg width="80" height="80" viewBox="0 0 24 24" fill="#2e7d32">
-                                        <path d="M19 11h-2V9h2v2zm-4 0h-2V9h2v2zm-4 0h-2V9h2v2zm-4 0H7V9h2v2zm-4 0H3V9h2v2zm16-6h-4V3h4v2zm-4 0H7V3h10v2zm4 8h-4v-2h4v2zm-4 0H7v-2h10v2z"/>
-                                        <path d="M19 15h-2v-2h2v2zm-4 0h-2v-2h2v2zm-4 0h-2v-2h2v2zm-4 0H7v-2h2v2zm-4 0H3v-2h2v2z"/>
-                                    </svg>
-                                </div>
-
                                 <!-- Logo di atas -->
                                 <div class="cert-logos" style="margin-bottom: 10px;">
                                     <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
