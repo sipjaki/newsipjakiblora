@@ -286,7 +286,9 @@
                                 <p style="margin: 0;"><strong>KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
-                                <div class="cert-signature-line"></div>
+                                <div class="cert-signature-line">
+                                    <img src="/assets/icon/capblota.png" alt="">
+                                </div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
