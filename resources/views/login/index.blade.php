@@ -292,9 +292,11 @@
     </div>
 </form>
 
-<a href="/forgotpassword">
-    <p>Lupa Password ? </p>
-</a>
+<div class="footer-links">
+    <a href="/forgotpassword">
+        Lupa Password ?
+     </a>
+</div>
 
         <div class="institutional-footer">
             <div class="footer-logos">
