@@ -200,7 +200,7 @@
                                 <p style="text-align: center;">diberikan kepada</p>
 
                                 {{-- <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{$data->namalengkap}}</h2> --}}
-                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">Miftahul Anam</h2>
+                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">Miftahul Anam, S.E</h2>
 
                                 <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
                                 <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
@@ -212,9 +212,9 @@
                             </div>
 
                             <div class="cert-signature">
-                                <p>Surakarta, 25 September 2024</p>
-                                <p>KEPALA DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</p>
-                                <p>PROVINSI JAWA TENGAH</p>
+                                <p style="margin: 0;">Kabupaten Blora, {{$data->agendapelatihan->asosiasimasjaki->namaasosiasi}} </p>
+                                <p style="margin: 0;">KEPALA DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</p>
+                                <p style="margin: 0;">PROVINSI JAWA TENGAH</p>
 
                                 <div class="cert-signature-line"></div>
 
