@@ -335,6 +335,7 @@ h5 {
                         cursor: not-allowed;
                     }
                 </style>
+
 @if($item->verifikasi === null)
 <!-- BELUM DI VERIFIKASI -->
 <button type="button" onclick="openModal({{ $item->id }})"
