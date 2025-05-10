@@ -75,13 +75,7 @@
             z-index: 1;
         }
 
-        .cert-signature-line {
-            border-top: 2px solid #d4af37;
-            width: 40px;
-            margin-left: auto;
-            margin-top: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+
 
         .cert-footer {
             text-align: center;
@@ -286,8 +280,8 @@
                                 <p style="margin: 0;"><strong>KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
-                                <div class="cert-signature-line">
-                                    <img src="/assets/icon/logokabupatenblora.png" alt="">
+                                <div>
+                                    <img src="/assets/icon/logokabupatenblora.png" alt="" width="40px;">
                                 </div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
