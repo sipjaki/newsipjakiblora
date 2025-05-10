@@ -59682,7 +59682,7 @@ kategoripelatihan::create([
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'Ahmad Fauzi',
+    'namalengkap' => 'Miftahunnuril Anam, S.E',
     'jenjangpendidikan_id' => 2,
     'nik' => '3276021301980001',
     'jeniskelamin' => 'Laki-laki',
@@ -59694,7 +59694,7 @@ pesertapelatihan::create([
 
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
-    'namalengkap' => 'Sigit Septiadi',
+    'namalengkap' => 'Budi Gunawan, S.M',
     'jenjangpendidikan_id' => 2,
     'nik' => '3276021301980001',
     'jeniskelamin' => 'Laki-laki',
