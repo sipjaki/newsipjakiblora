@@ -433,7 +433,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                             </div>
                             <div class="ribbon-text">
-                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">{{$data->namalengkap}}</h2>
+                                <h4 style="text-align: left; margin: 15px 0; font-weight:800;">{{$data->namalengkap}}</h4>
 
                                 <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
                                 <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
