@@ -92,7 +92,7 @@
         }
 
         .cert-h1 {
-            font-size: 28pt;
+            font-size: 32px;
             margin: 0;
             color: #1b5e20;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -100,7 +100,7 @@
         }
 
         .cert-h2 {
-            font-size: 20pt;
+            font-size: 24px;
             margin: 10px 0;
             color: #2e7d32;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
