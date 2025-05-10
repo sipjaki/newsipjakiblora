@@ -193,7 +193,7 @@
 
                             <div class="cert-title">
                                 <h1 class="cert-h1">SURAT KETERANGAN</h1>
-                                <h2 class="cert-h2">Nomor : 700.1/7002.35</h2>
+                                <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/01</h2>
                             </div>
 
                             <div class="cert-content">
