@@ -350,8 +350,8 @@
                                 </thead>
                                 <tbody id="tableBody">
                                     @if ($datapeserta->isEmpty())
-                                    <div style="background-color: #6c757d; color: white; padding: 15px; width: 100%; margin: 0;">
-                                        <marquee behavior="scroll" direction="left" scrollamount="6" style="font-weight: bold; color:red;">
+                                    <div style="background-color: #f6f8fa; color: white; padding: 15px; width: 100%; margin: 0;">
+                                        <marquee behavior="scroll" direction="left" scrollamount="6" style="font-weight: 400; color:red;">
                                             Peserta Belum Tersedia || Peserta Belum Tersedia || Peserta Belum Tersedia || Peserta Belum Tersedia ||
                                         </marquee>
                                     </div>
