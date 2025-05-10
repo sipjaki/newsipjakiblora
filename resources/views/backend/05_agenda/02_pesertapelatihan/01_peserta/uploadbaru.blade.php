@@ -420,11 +420,12 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
 
                             <div class="ribbon-left">
-                                <div class="ribbon-text">
-                                    <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                                    <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                    </p>
-                                </div>
+
+                            </div>
+                            <div class="ribbon-text">
+                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                </p>
                             </div>
 
                             {{-- <div class="ribbon-right"></div> --}}
