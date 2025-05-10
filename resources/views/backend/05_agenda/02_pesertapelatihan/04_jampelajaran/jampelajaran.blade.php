@@ -115,17 +115,22 @@
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
-
 <!-- Jam Pelajaran -->
 <div class="mb-3">
     <label class="form-label" for="jampelajaran">
         <i class="bi bi-clock-history" style="margin-right:8px; color:navy;"></i> Jam Pelajaran
     </label>
-    <input type="text" id="jampelajaran" name="jampelajaran" class="form-control @error('jampelajaran') is-invalid @enderror" value="{{ old('jampelajaran') }}">
+    <select id="jampelajaran" name="jampelajaran" class="form-control @error('jampelajaran') is-invalid @enderror">
+        <option value="">-- Pilih Jam Pelajaran --</option>
+        @for ($i = 1; $i <= 12; $i++)
+            <option value="{{ $i }}" {{ old('jampelajaran') == $i ? 'selected' : '' }}>{{ $i }}</option>
+        @endfor
+    </select>
     @error('jampelajaran')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
 </div>
+
 
                                     </div>
                                     <!-- End Left Column -->
