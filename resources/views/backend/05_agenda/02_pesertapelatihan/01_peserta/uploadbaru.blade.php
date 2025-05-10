@@ -350,6 +350,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                             width: 100%;
                                             border-collapse: collapse;
                                             margin-top: 20px;
+                                            font-size: 16px; /* Set font-size untuk seluruh tabel */
                                         }
 
                                         .custom-table th,
@@ -357,6 +358,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                             padding: 10px 20px;
                                             text-align: left;
                                             border: 1px solid #ddd;
+                                            font-size: 16px; /* Font size untuk th dan td */
                                         }
 
                                         .custom-table th {
