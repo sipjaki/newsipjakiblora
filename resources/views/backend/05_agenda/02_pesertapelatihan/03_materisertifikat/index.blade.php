@@ -89,7 +89,7 @@
                         @include('backend.00_administrator.00_baganterpisah.14_judulshow')
                 <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <div style="display: flex; flex-wrap: wrap; margin-bottom:10px;">
 
                     <a href="/404" style="text-decoration: none;">
                         <button
