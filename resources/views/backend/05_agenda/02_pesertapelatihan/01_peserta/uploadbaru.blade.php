@@ -1,9 +1,81 @@
 <style>
-    .readonly {
-    background-color: #f0f0f0 !important;
-    color: #6c757d;
-}
+    body {
+        font-family: 'Times New Roman', serif;
+        background-color: #e8f5e9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .cert-container {
+        width: 210mm;
+        height: 297mm;
+        background-color: #f1f8e9;
+        border: 15px solid #2e7d32;
+        padding: 30px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        position: relative;
+        box-sizing: border-box;
+    }
+    .cert-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .cert-logos {
+        display: flex;
+        gap: 20px;
+    }
+    .cert-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .cert-content {
+        margin: 30px 0;
+        line-height: 1.6;
+    }
+    .cert-signature {
+        text-align: right;
+        margin-top: 60px;
+    }
+    .cert-signature-line {
+        border-top: 1px solid #000;
+        width: 200px;
+        margin-left: auto;
+        margin-top: 80px;
+    }
+    .cert-footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9em;
+    }
+    .cert-h1 {
+        font-size: 24pt;
+        margin: 0;
+        color: #1b5e20;
+    }
+    .cert-h2 {
+        font-size: 18pt;
+        margin: 10px 0;
+        color: #2e7d32;
+    }
+    .cert-h3 {
+        font-size: 14pt;
+        margin: 5px 0;
+    }
+    .cert-hr {
+        border: 1px solid #2e7d32;
+        margin: 20px 0;
+    }
+    .cert-highlight {
+        font-weight: bold;
+        color: #1b5e20;
+    }
 </style>
+
 
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
@@ -84,11 +156,55 @@
                     <div class="col-md-12">
                         <!--begin::Quick Example-->
 
+                        <div class="cert-container">
+                            <div class="cert-header">
+                                <div class="cert-logos">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="80" height="80" alt="Blora">
+                                    <img src="/assets/icon/pupr.png" width="80" height="80" alt="PUPR">
+                                </div>
+                                <div style="text-align: center;">
+                                    <h3 class="cert-h3">DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</h3>
+                                    <h3 class="cert-h3">PROVINSI JAWA TENGAH</h3>
+                                </div>
+                            </div>
 
+                            <hr class="cert-hr">
 
+                            <div class="cert-title">
+                                <h1 class="cert-h1">SURAT KETERANGAN</h1>
+                                <h2 class="cert-h2">Nomor : 700.1/7002.35</h2>
+                            </div>
 
-                                                     </div>
-                        <!--end::Quick Example-->
+                            <div class="cert-content">
+                                <p style="text-align: center;">diberikan kepada</p>
+
+                                <h2 class="cert-h2" style="text-align: center; margin: 30px 0;">Muhammad Yusuf Zaqi Efendi, S.E</h2>
+
+                                <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
+                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">PESERTA</h2>
+
+                                <p style="text-align: justify; text-indent: 50px;">
+                                    Kegiatan <span class="cert-highlight">Workshop Pengelolaan Sistem Informasi Pembina Jasa Konstruksi (SIPJAKI)</span> yang diselenggarakan oleh Balai Jasa Konstruksi Dinas PU Bina Marga dan Cipta Karya Provinsi Jawa Tengah pada tanggal 25 September 2024 di Kota Surakarta meliputi 6 jam pelajaran.
+                                </p>
+                            </div>
+
+                            <div class="cert-signature">
+                                <p>Surakarta, 25 September 2024</p>
+                                <p>KEPALA DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</p>
+                                <p>PROVINSI JAWA TENGAH</p>
+
+                                <div class="cert-signature-line"></div>
+
+                                <p><strong>DR. IR. AR HANUNG TRIVONO, M.SI</strong></p>
+                                <p>PEKBINA UTAMA MADYA</p>
+                                <p>NIP. 19661129 199203 1005</p>
+                            </div>
+
+                            <div class="cert-footer">
+                                <p>Dokumen ini diterbitkan secara resmi oleh Dinas PU Bina Marga dan Cipta Karya Provinsi Jawa Tengah</p>
+                            </div>
+                        </div>
+
 
                     </div>
 
