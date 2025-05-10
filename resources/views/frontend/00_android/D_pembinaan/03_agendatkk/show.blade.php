@@ -275,14 +275,18 @@ h5 {
                             <br>
                     <div class="portfolio-details-content">
                         <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold" style="font-size: 16px;">Isi Agenda: </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
+                            <h2 class="font-semibold" style="font-size: 16px; display: flex; align-items: center; gap: 6px;">
+                                <i class="bi bi-journal-text" style="font-size: 18px;"></i> Isi Agenda:
+                            </h2>
+                        <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->isiagenda!!}</p>
                         </div>
                         <br>
 
                         <div class="flex flex-col gap-[2px]">
-                            <h2 class="font-semibold text-sm" style="font-size: 16px;">Keterangan : </h2>
-                            <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
+                            <h2 class="font-semibold text-sm" style="font-size: 16px; display: flex; align-items: center; gap: 6px;">
+                                <i class="bi bi-info-circle" style="font-size: 18px;"></i> Keterangan:
+                            </h2>
+                                         <p class="desc-less text-sm leading-[26px]" style="text-align: justify; font-size:16px;">{!!$data->keterangan!!}</p>
                         </div>
 
                     </div><!-- portfolio-details-content -->
