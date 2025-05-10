@@ -123,4 +123,18 @@ public function verifikasikehadiranlsphadir($id)
     return redirect("/beskkdatapesertajumlah/show/{$agendaId}");
 }
 
+public function terbitkanSertifikat($id)
+{
+    $item = pesertapelatihan::findOrFail($id);
+
+    $item->terbitkansertifikat = true;
+    $item->save();
+
+    $agendaId = $item->agendapelatihan_id;
+    session()->flash('create', 'Sertifikat berhasil diterbitkan.');
+
+    return redirect("/bepesertapelatihansertifikat/show/{$agendaId}");
+}
+
+
 }

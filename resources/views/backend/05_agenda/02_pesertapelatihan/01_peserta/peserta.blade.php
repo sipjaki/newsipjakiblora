@@ -427,26 +427,32 @@
             }
         </script>
 
+@if($item->terbitkansertifikat == false)
+    <form method="POST" action="{{ route('terbitkan.sertifikat', $item->id) }}" onsubmit="return confirm('Terbitkan sertifikat untuk peserta ini?');">
+        @csrf
+        @method('PUT')
+        <button type="submit"
+            style="background-color: #3B82F6; color: white; padding: 8px 16px; border-radius: 8px;
+                   font-weight: 600; display: inline-flex; align-items: center; gap: 6px; border: none;
+                   box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
+            onmouseout="this.style.backgroundColor='#3B82F6'; this.style.color='white'; this.querySelector('i').style.color='white';">
+            <i class="bi bi-file-earmark-check" style="font-size: 1.2rem; color: white;"></i> Terbitkan
+        </button>
+    </form>
+@else
+    <button type="button" disabled
+        style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+               display: inline-flex; align-items: center; gap: 6px; border: none; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+               cursor: not-allowed;">
+        <i class="bi bi-check-circle" style="font-size: 1.2rem; color: white;"></i> Diterbitkan
+    </button>
+@endif
 
 
-                                <td style="text-align: center;">
-                                            <!-- Show Icon -->
-                                         {{-- <a href="/404" class="btn btn-sm btn-info me-2" title="Show">
-                                                <i class="bi bi-eye"></i>
-                                            </a>
-                                            <!-- Update Icon --> --}}
-                                            <a href="/bepesertapuploadsertifikat/show/{{$item->id}}" class="btn btn-sm btn-warning me-2" title="Upload Sertifikat">
-                                                <i class="bi bi-file-earmark-arrow-up"></i>
-                                            </a>
 
-                                            <!-- Delete Icon -->
-                                            <!-- Tombol Delete -->
-                                            {{-- <a href="javascript:void(0)" class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                            data-judul="{{ $item->id }}" onclick="setDeleteUrl(this)">
-                                            <i class="bi bi-trash"></i>
-                                        </a> --}}
 
-                                        </td>
+
 
                                     </tr>
                                         @endforeach
