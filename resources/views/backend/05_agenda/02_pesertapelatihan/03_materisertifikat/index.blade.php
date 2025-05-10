@@ -105,7 +105,7 @@
                 </button>
 
 
-                     <a href="/beagendapelatihanmateri/createmateri/{{$data->id}}">
+                     {{-- <a href="/beagendapelatihanmateri/createmateri/{{$data->id}}"> --}}
                         <button
                          onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
                          onmouseout="this.style.backgroundColor='#166534'; this.style.color='white';"
@@ -115,7 +115,7 @@
                          Create
                      </button>
                      </a>
-                 </div>
+                 {{-- </div> --}}
 
                     </div>
                     <!-- /.card-header -->
