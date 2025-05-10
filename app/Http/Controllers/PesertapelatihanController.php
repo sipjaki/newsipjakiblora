@@ -452,5 +452,28 @@ public function bepelatihanjampelajaran($id)
 
 
 
+public function bepelatihanjampelajarandelete($id)
+{
+    $entry = jampelajaran::find($id); // Lebih singkat pakai find()
+
+    if ($entry) {
+        $agendapelatihanId = $entry->agendapelatihan_id;
+
+        // Hapus file jika ada (opsional)
+        // if (Storage::disk('public')->exists($entry->header)) {
+        //     Storage::disk('public')->delete($entry->header);
+        // }
+
+        $entry->delete();
+
+        session()->flash('delete', 'Data Berhasil Dihapus!');
+        return redirect()->route('bepelatihanjampelajaran', ['id' => $agendapelatihanId]);
+    }
+
+    session()->flash('error', 'Item tidak ditemukan');
+    return redirect()->back();
+}
+
+
 }
 

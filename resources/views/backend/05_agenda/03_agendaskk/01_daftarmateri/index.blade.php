@@ -219,7 +219,7 @@
                                          <script>
                                             function setDeleteUrl(button) {
                                                 var id = button.getAttribute('data-id');
-                                                var baseUrl = "{{ url('/beagendaskkmateriskk/delete') }}";
+                                                var baseUrl = "{{ url('/bepelatihanjampelajaran/delete') }}";
                                                 document.getElementById('deleteForm').action = baseUrl + '/' + encodeURIComponent(id);
                                             }
                                         </script>
