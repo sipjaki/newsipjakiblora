@@ -326,8 +326,6 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                                 <th style="font-size: 15px;" width="40%">Materi</th>
                                                 <th style="font-size: 15px;" width="30%">Narasumber</th>
                                                 <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
-                                                <!-- Tambahkan kolom baru untuk total jam -->
-                                                <th style="font-size: 15px;" width="20%">Jumlah Jam Pelajaran</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -342,21 +340,23 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                                 <td style="font-size: 15px; text-align:center;">
                                                     {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
                                                 </td>
-                                                <!-- Menampilkan jumlah jam pelajaran per baris -->
-                                                @php
-                                                    $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
-                                                @endphp
-                                                <!-- Kolom Jumlah Jam Pelajaran, menampilkan total jam di setiap baris -->
-                                                <td style="font-size: 15px; text-align:center;">
-                                                    {{ $totalJam }} Jam
-                                                </td>
                                             </tr>
+                                            @php
+                                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
+                                            @endphp
                                             @empty
                                             <tr>
-                                                <td colspan="5">Data tidak tersedia.</td>
+                                                <td colspan="4">Data tidak tersedia.</td>
                                             </tr>
                                             @endforelse
                                         </tbody>
+                                        <!-- Baris penjumlahan total jam pelajaran -->
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">Total Jam Pelajaran:</td>
+                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">{{ $totalJam }} Jam</td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
 
                                     <style>
