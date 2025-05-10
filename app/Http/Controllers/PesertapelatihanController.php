@@ -205,29 +205,30 @@ public function bepesertapelatihanindex(Request $request)
 }
 
 
-
 public function bepesertauploadsertifikat($id)
 {
+    // Ambil data pesertapelatihan beserta relasi agendapelatihan dan jampelajaran
     $datapesertapelatihan = pesertapelatihan::with('agendapelatihan.jampelajaran')->findOrFail($id);
+
+    // Ambil semua jenjang pendidikan
     $jenjangpendidikan = jenjangpendidikan::all();
     $user = Auth::user();
 
-    // Ambil ID jam pelajaran
-    $jampelajaranId = optional($datapesertapelatihan->agendapelatihan)->jampelajaran_id;
+    // Ambil ID agendapelatihan terkait dengan pesertapelatihan
+    $agendapelatihanId = optional($datapesertapelatihan->agendapelatihan)->id;
 
-    // Jika butuh detail jam pelajaran
-    $datapelajaran = optional($datapesertapelatihan->agendapelatihan->jampelajaran);
+    // Ambil semua jampelajaran yang terkait dengan agendapelatihan_id
+    $datapelajaran = jampelajaran::where('agendapelatihan_id', $agendapelatihanId)->get();
 
+    // Kirim data ke view
     return view('backend.05_agenda.02_pesertapelatihan.01_peserta.uploadbaru', [
         'data' => $datapesertapelatihan,
         'user' => $user,
-        'datapelajaran' => $datapelajaran,
+        'datapelajaran' => $datapelajaran, // Kirim data jampelajaran ke view
         'jenjangpendidikan' => $jenjangpendidikan,
         'title' => 'Upload Sertifikat Pelatihan'
     ]);
 }
-
-
 
 public function bepesertauploadsertifikatupload(Request $request, $id)
 {

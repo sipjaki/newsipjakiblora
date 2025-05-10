@@ -328,17 +328,20 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($datapelajaran as $item)
+                                        @forelse ($datapelajaran as $key => $pelajaran)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td>{{ $item->materi }}</td>
-                                            <td>{{ $item->narasumber }}</td>
-                                            <td>{{ $item->jampelajaran }}</td>
+                                            <td>{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                                            <td>{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                                            <td>{{ $pelajaran->jam_pelajaran ?? 'Data Tidak Tersedia' }}</td>
                                         </tr>
-                                        @endforeach
+                                        @empty
+                                        <tr>
+                                            <td colspan="4">Data tidak tersedia.</td>
+                                        </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
-
                             </div>
 
 
