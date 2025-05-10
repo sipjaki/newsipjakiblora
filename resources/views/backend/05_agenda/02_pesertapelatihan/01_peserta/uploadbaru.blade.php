@@ -20,6 +20,7 @@
             position: relative;
             box-sizing: border-box;
             overflow: hidden;
+            margin-left: 200px;
         }
 
         .cert-container::before {
@@ -100,7 +101,7 @@
         }
 
         .cert-h2 {
-            font-size: 24px;
+            font-size: 20px;
             margin: 10px 0;
             color: #2e7d32;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
