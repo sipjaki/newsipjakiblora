@@ -62,10 +62,12 @@
 
 /* Heading styles */
 .cert-h1 {
-    font-size: 20px;
+    font-size: 24px;
     margin: 0;
     color: #1b5e20;
+    font-weight: 800;
 }
+
 
 .cert-h2 {
     font-size: 18px;
