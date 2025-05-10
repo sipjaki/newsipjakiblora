@@ -362,16 +362,20 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                         }
 
                                         /* Border-radius hanya pada ujung kiri dan kanan atas serta bawah */
-                                        .custom-table th {
-                                            background: linear-gradient(90deg, #38a169, #ed8936);
-                                            color: white;
-                                            border-top-left-radius: 10px;
-                                            border-top-right-radius: 10px; /* Membuat sudut atas header melengkung */
+                                        .custom-table thead tr th:first-child {
+                                            border-top-left-radius: 10px; /* Ujung kiri atas */
                                         }
 
-                                        .custom-table tr:last-child td {
-                                            border-bottom-left-radius: 10px;
-                                            border-bottom-right-radius: 10px; /* Membuat sudut bawah tabel melengkung */
+                                        .custom-table thead tr th:last-child {
+                                            border-top-right-radius: 10px; /* Ujung kanan atas */
+                                        }
+
+                                        .custom-table tbody tr:last-child td:first-child {
+                                            border-bottom-left-radius: 10px; /* Ujung kiri bawah */
+                                        }
+
+                                        .custom-table tbody tr:last-child td:last-child {
+                                            border-bottom-right-radius: 10px; /* Ujung kanan bawah */
                                         }
 
                                         .table-row-hover:hover {
