@@ -77,9 +77,9 @@
 
         .cert-signature-line {
             border-top: 2px solid #d4af37;
-            width: 250px;
+            width: 40px;
             margin-left: auto;
-            margin-top: 80px;
+            margin-top: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
@@ -286,9 +286,9 @@
                                 <p style="margin: 0;"><strong>KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
-                                {{-- <div class="cert-signature-line"> --}}
+                                <div class="cert-signature-line">
                                     <img src="/assets/icon/logokabupatenblora.png" alt="">
-                                {{-- </div> --}}
+                                </div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
