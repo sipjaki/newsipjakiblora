@@ -192,7 +192,7 @@
 
 <script>
     function downloadExcel() {
-        const data = @json($peserta); // Ambil data dari Laravel ke JS
+        const data = @json($datapeserta); // Ambil data dari Laravel ke JS
 
         // Buat array hanya dengan 10 kolom yang diinginkan
         const rows = data.map((item, index) => ({
