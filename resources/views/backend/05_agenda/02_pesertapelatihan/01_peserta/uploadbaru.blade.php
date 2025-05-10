@@ -287,7 +287,7 @@
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
                                 <div class="cert-signature-line">
-                                    <img src="/assets/icon/capblora.png" alt="">
+                                    <img src="/assets/icon/logokabupatenblora.png" alt="">
                                 </div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
