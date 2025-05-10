@@ -159,7 +159,7 @@
 
                                 <!-- Teks di bawah logo -->
                                 <div>
-                                    <h3 class="cert-h3" style="margin: 5px 0;">DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</h3>
+                                    <h3 class="cert-h3" style="margin: 5px 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA </h3>
                                     <h3 class="cert-h3" style="margin: 0;">PROVINSI JAWA TENGAH</h3>
                                 </div>
                             </div>
