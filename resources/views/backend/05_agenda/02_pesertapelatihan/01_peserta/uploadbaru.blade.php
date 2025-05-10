@@ -176,8 +176,8 @@
                             <hr class="cert-hr">
 
                             <div class="cert-title">
-                                <h1 class="cert-h1">SURAT KETERANGAN</h1>
-                                <h2 class="cert-h2">Nomor : 700.1/7002.35</h2>
+                                <h6 class="cert-h1">SURAT KETERANGAN</h6>
+                                <h4 class="cert-h2">Nomor : 700.1/7002.35</h4>
                             </div>
 
                             <div class="cert-content">
