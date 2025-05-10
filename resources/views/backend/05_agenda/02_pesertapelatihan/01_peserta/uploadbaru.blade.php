@@ -1,4 +1,12 @@
 <style>
+.cert-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .cert-container {
     width: 297mm; /* Lebar A4 landscape */
     height: 210mm; /* Tinggi A4 landscape */
