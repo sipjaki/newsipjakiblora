@@ -1,101 +1,168 @@
 <style>
-.cert-wrapper {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Times New Roman", Times, serif;
-}
+  .cert-wrapper {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Times New Roman", Times, serif;
+            background: linear-gradient(135deg, #e8f5e9 0%, #d7e8d7 100%);
+        }
 
-.cert-container {
-    width: 297mm; /* A4 landscape width */
-    height: 210mm; /* A4 landscape height */
-    background-color: #f1f8e9;
-    border: 15px solid #2e7d32;
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    position: relative;
-    box-sizing: border-box;
-    margin-left: 200px;
-}
+        .cert-container {
+            width: 297mm;
+            height: 210mm;
+            background: linear-gradient(to right, #f1f8e9 0%, #f9f5e8 100%);
+            border: 15px double #2e7d32;
+            border-image: linear-gradient(45deg, #2e7d32, #d4af37, #2e7d32) 1;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            margin-left: 200px;
+        }
 
-.cert-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
+        .cert-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23d4af3780" d="M30,10 Q50,5 70,10 Q95,15 90,40 Q85,65 70,80 Q50,95 30,80 Q15,65 10,40 Q5,15 30,10 Z"/></svg>');
+            opacity: 0.1;
+            z-index: 0;
+        }
 
-.cert-logos {
-    display: flex;
-    gap: 10px; /* jarak sedikit antar logo */
-}
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
 
-.cert-title {
-    text-align: center;
-    margin-bottom: 30px;
-}
+        .cert-logos {
+            display: flex;
+            gap: 20px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+        }
 
-.cert-content {
-    margin: 30px 0;
-    line-height: 1.6;
-}
+        .cert-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
 
-.cert-signature {
-    text-align: right;
-    margin-top: 40px;
-}
+        .cert-content {
+            margin: 30px 0;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            padding: 0 50px;
+        }
 
-.cert-signature-line {
-    border-top: 1px solid #000;
-    width: 200px;
-    margin-left: auto;
-    margin-top: 60px;
-}
+        .cert-signature {
+            text-align: right;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
 
-.cert-footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
-}
+        .cert-signature-line {
+            border-top: 2px solid #d4af37;
+            width: 250px;
+            margin-left: auto;
+            margin-top: 80px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-/* Heading styles */
-.cert-h1 {
-    font-size: 32px;
-    margin: 0;
-    color: #1b5e20;
-    font-weight: 800;
-}
+        .cert-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #2e7d32;
+            position: relative;
+            z-index: 1;
+        }
 
+        .cert-h1 {
+            font-size: 28pt;
+            margin: 0;
+            color: #1b5e20;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
 
-.cert-h2 {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #2e7d32;
-}
+        .cert-h2 {
+            font-size: 20pt;
+            margin: 10px 0;
+            color: #2e7d32;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
 
-.cert-h3 {
-    font-size: 14pt;
-    margin: 5px 0;
-}
+        .cert-h3 {
+            font-size: 16pt;
+            margin: 5px 0;
+            color: #1b5e20;
+        }
 
-.cert-hr {
-    border: 1px solid #2e7d32;
-    margin: 20px 0;
-}
+        .cert-hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #d4af37, #2e7d32, #d4af37, transparent);
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-.cert-highlight {
-    font-weight: bold;
-    color: #1b5e20;
-}
+        .cert-highlight {
+            font-weight: bold;
+            color: #1b5e20;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+        }
 
-@page {
-    size: A4 landscape;
-    margin: 0;
-}
+        .cert-border-decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #d4af37;
+            opacity: 0.2;
+            z-index: 0;
+        }
 
-</style>
+        .cert-border-decoration:nth-child(1) {
+            top: 20px;
+            left: 20px;
+            border-radius: 50% 50% 0 50%;
+        }
+
+        .cert-border-decoration:nth-child(2) {
+            top: 20px;
+            right: 20px;
+            border-radius: 50% 50% 50% 0;
+        }
+
+        .cert-border-decoration:nth-child(3) {
+            bottom: 20px;
+            left: 20px;
+            border-radius: 50% 0 50% 50%;
+        }
+
+        .cert-border-decoration:nth-child(4) {
+            bottom: 20px;
+            right: 20px;
+            border-radius: 0 50% 50% 50%;
+        }
+
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+    </style>
+
 @include('backend.00_administrator.00_baganterpisah.01_header')
 
 <!--begin::Body-->
@@ -173,6 +240,63 @@
 
         {{-- ======================================================= --}}
                     <div class="col-md-12">
+
+                        <div class="cert-wrapper">
+                            <div class="cert-container">
+                                <!-- Decorative corner elements -->
+                                <div class="cert-border-decoration"></div>
+                                <div class="cert-border-decoration"></div>
+                                <div class="cert-border-decoration"></div>
+                                <div class="cert-border-decoration"></div>
+
+                                <div class="cert-header">
+                                    <div class="cert-logos">
+                                        <img src="/assets/icon/logokabupatenblora.png" width="80" height="80" alt="Blora">
+                                        <img src="/assets/icon/pupr.png" width="80" height="80" alt="PUPR">
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <h3 class="cert-h3">DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</h3>
+                                        <h3 class="cert-h3">PROVINSI JAWA TENGAH</h3>
+                                    </div>
+                                </div>
+
+                                <hr class="cert-hr">
+
+                                <div class="cert-title">
+                                    <h1 class="cert-h1">SURAT KETERANGAN</h1>
+                                    <h2 class="cert-h2">Nomor : 700.1/7002.35</h2>
+                                </div>
+
+                                <div class="cert-content">
+                                    <p style="text-align: center;">diberikan kepada</p>
+
+                                    <h2 class="cert-h2" style="text-align: center; margin: 20px 0; color: #d4af37; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">Muhammad Yusuf Zaqi Efendi, S.E</h2>
+
+                                    <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
+                                    <h2 class="cert-h2" style="text-align: center; margin: 15px 0;">PESERTA</h2>
+
+                                    <p style="text-align: justify; text-indent: 50px; margin: 0 50px; position: relative;">
+                                        Kegiatan <span class="cert-highlight" style="color: #d4af37;">Workshop Pengelolaan Sistem Informasi Pembina Jasa Konstruksi (SIPJAKI)</span> yang diselenggarakan oleh Balai Jasa Konstruksi Dinas PU Bina Marga dan Cipta Karya Provinsi Jawa Tengah pada tanggal 25 September 2024 di Kota Surakarta meliputi 6 jam pelajaran.
+                                    </p>
+                                </div>
+
+                                <div class="cert-signature">
+                                    <p style="color: #2e7d32;">Surakarta, 25 September 2024</p>
+                                    <p>KEPALA DINAS PEKERJAAN UMUM BINA MARGA DAN CIPTA KARYA</p>
+                                    <p>PROVINSI JAWA TENGAH</p>
+
+                                    <div class="cert-signature-line"></div>
+
+                                    <p style="color: #d4af37;"><strong>DR. IR. AR HANUNG TRIVONO, M.SI</strong></p>
+                                    <p>PEKBINA UTAMA MADYA</p>
+                                    <p>NIP. 19661129 199203 1005</p>
+                                </div>
+
+                                <div class="cert-footer">
+                                    <p>Dokumen ini diterbitkan secara resmi oleh Dinas PU Bina Marga dan Cipta Karya Provinsi Jawa Tengah</p>
+                                </div>
+                            </div>
+                        </div>
                         <!--begin::Quick Example-->
 
                         <div class="cert-container">
