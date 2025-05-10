@@ -484,5 +484,37 @@ public function bepelatihanjampelajarancreate($id)
 }
 
 
+public function bepelatihanjampelajarancreatenew(Request $request)
+{
+    // Validasi input
+    $validated = $request->validate([
+        'agendapelatihan_id' => 'required|string',
+        'materi' => 'required|string|max:255',
+        'narasumber' => 'required|string|max:255',
+        'jampelajaran' => 'required|integer|min:1|max:12',
+    ], [
+        'agendapelatihan_id.required' => 'ID Agenda Pelatihan wajib diisi.',
+        'agendapelatihan_id.exists' => 'ID Agenda tidak ditemukan.',
+        'materi.required' => 'Materi harus diisi.',
+        'narasumber.required' => 'Narasumber harus diisi.',
+        'jampelajaran.required' => 'Jam Pelajaran harus dipilih.',
+    ]);
+
+    // Simpan data ke model yang sesuai (misalnya: jampelajaran)
+    $jampelajaran = jampelajaran::create([
+        'agendapelatihan_id' => $validated['agendapelatihan_id'],
+        'materi' => $validated['materi'],
+        'narasumber' => $validated['narasumber'],
+        'jampelajaran' => $validated['jampelajaran'],
+    ]);
+
+    // Flash message
+    session()->flash('create', 'Data Materi berhasil disimpan.');
+
+    // Redirect ke halaman sesuai dengan ID agenda pelatihan
+    return redirect('/bepelatihanjampelajaran/' . $validated['agendapelatihan_id']);
+}
+
+
 }
 
