@@ -1,14 +1,4 @@
 <style>
-.cert-wrapper {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Times New Roman", Times, serif;
-    background: linear-gradient(135deg, #e8f5e9 0%, #d7e8d7 100%);
-}
-
 .cert-container {
     width: 297mm;
     height: 210mm;
@@ -23,7 +13,7 @@
     margin-left: 200px;
 }
 
-/* Ornamen bayangan bunga di latar belakang */
+/* Ornamen latar belakang */
 .cert-container::before {
     content: "";
     position: absolute;
@@ -34,29 +24,27 @@
 }
 
 /* Pita kiri bawah */
-.cert-container::after {
-    content: "";
+.cert-container .ribbon-left {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 120px;
+    width: 100px;
     height: 40px;
     background: linear-gradient(135deg, #b71c1c, #e53935);
-    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
-    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    z-index: 2;
 }
 
 /* Pita kanan bawah */
-.cert-container::before {
-    content: "";
+.cert-container .ribbon-right {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 120px;
+    width: 100px;
     height: 40px;
     background: linear-gradient(135deg, #b71c1c, #e53935);
-    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-    z-index: 1;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 2;
 }
 
         .cert-header {
@@ -313,7 +301,8 @@
                                 <p>NIP. __________</p>
                             </div>
                         </div>
-
+                        <div class="ribbon-left"></div>
+                        <div class="ribbon-right"></div>
                     </div>
                         <!--end::Quick Example-->
 
