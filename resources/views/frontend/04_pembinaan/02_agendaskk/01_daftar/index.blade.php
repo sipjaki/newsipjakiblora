@@ -341,7 +341,7 @@ table.zebra-table {
         @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
         {{-- Preview --}}
-        <div id="preview_pdf" style="display: none; margin-top: 10px; margin-botton:-500px;">
+        <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom:-500px;">
             <label style="font-weight: bold;">Preview SKK:</label>
             <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
         </div>
