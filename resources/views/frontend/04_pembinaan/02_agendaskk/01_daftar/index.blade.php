@@ -203,11 +203,10 @@ table.zebra-table {
 
         <!-- Pertanyaan SKK -->
         <div id="skkQuestion" style="display: none; margin-top: 20px;">
-
-        <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
-            <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKK?
-        </label>
-
+            <label style="font-weight: 500; font-size: 15px; color: #333;">
+                <i class="bi bi-patch-question" style="color: goldenrod; margin-right: 8px;"></i>
+                Apakah Anda memiliki SKK?
+            </label>
             <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
                 <label style="display: flex; align-items: center; cursor: pointer;">
                     <input type="checkbox" id="skkYa" onclick="handleSKKCheckbox(this)">
@@ -221,7 +220,7 @@ table.zebra-table {
             </div>
         </div>
 
-        <!-- Form SKK -->
+        <!-- Form SKK (Tampil jika jawaban Ya) -->
         <div id="skkFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
             <form action="{{ route('daftarpesertasertifikasiskkawalan') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
@@ -261,6 +260,31 @@ table.zebra-table {
             </form>
         </div>
 
+        <!-- Form NIK Saja (Tampil jika jawaban Tidak) -->
+        <div id="nikFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <form action="{{ route('daftarpesertasertifikasiskkawalan') }}" method="POST" style="font-family: 'Poppins', sans-serif;">
+                @csrf
+
+                <div style="margin-bottom: 15px;">
+                    <label class="form-label" style="font-weight: 500; color: #495057;">
+                        <i class="bi bi-person-badge" style="color: navy; margin-right: 8px;"></i> Nomor Induk Kependudukan (NIK)
+                    </label>
+                    <input type="number" name="nik" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}"
+                        style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                    @error('nik') <div class="invalid-feedback" style="color: #dc3545; font-size: 12px;">{{ $message }}</div> @enderror
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" onclick="document.getElementById('nikFormContainer').style.display='none'" style="padding: 8px 16px; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                        Batal
+                    </button>
+                    <button type="submit" style="padding: 8px 16px; background: #0d6efd; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                        Konfirmasi
+                    </button>
+                </div>
+            </form>
+        </div>
+
     </div>
 </div>
 
@@ -272,11 +296,13 @@ function handleSKTCheckbox(clickedBox) {
     const yaMsg = document.getElementById('yaMessage');
     const skkQ = document.getElementById('skkQuestion');
     const skkForm = document.getElementById('skkFormContainer');
+    const nikForm = document.getElementById('nikFormContainer');
 
-    // Reset SKK form visibility & SKK checkbox
+    // Reset semua form dan checkbox
     document.getElementById('skkYa').checked = false;
     document.getElementById('skkTidak').checked = false;
     skkForm.style.display = 'none';
+    nikForm.style.display = 'none';
 
     if (clickedBox === ya) {
         tidak.checked = false;
@@ -297,13 +323,16 @@ function handleSKKCheckbox(clickedBox) {
     const ya = document.getElementById('skkYa');
     const tidak = document.getElementById('skkTidak');
     const skkForm = document.getElementById('skkFormContainer');
+    const nikForm = document.getElementById('nikFormContainer');
 
     if (clickedBox === ya) {
         tidak.checked = false;
         skkForm.style.display = 'block';
+        nikForm.style.display = 'none';
     } else {
         ya.checked = false;
         skkForm.style.display = 'none';
+        nikForm.style.display = 'block';
     }
 }
 </script>
