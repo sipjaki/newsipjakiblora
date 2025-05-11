@@ -231,21 +231,28 @@ table.zebra-table {
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
                 <p>Sertakan Bukti SKK Saudara !!</p>
+<!-- Nama Jabatan Kerja SKK -->
+<div class="col-md-6" style="{{ $divStyle }}">
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
+    </label>
+    <input type="text" name="jabatan_skk" value="{{ old('jabatan_skk') }}"
+           style="{{ $inputStyle }}"
+           class="form-control @error('jabatan_skk') is-invalid @enderror">
+    @error('jabatan_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+</div>
 
-                <div style="margin-bottom: 15px;">
-                    <label class="form-label" style="font-weight: 500; color: #495057;">
-                        <i class="bi bi-person-lines-fill" style="color: navy; margin-right: 8px;"></i> Nama Jabatan Kerja SKK Anda
-                    </label>
-                    <input type="text" name="jabatan_skk" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
-                </div>
-
-                <div style="margin-bottom: 20px;">
-                    <label class="form-label" style="font-weight: 500; color: #495057;">
-                        <i class="bi bi-upload" style="color: navy; margin-right: 8px;"></i> Upload SKK Anda
-                    </label>
-                    <input type="file" name="file_skk" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
-                    <small style="display: block; margin-top: 5px; color: #6c757d; font-size: 12px;">Format: PDF, maksimal 2MB</small>
-                </div>
+<!-- Upload SKK -->
+<div class="col-md-6" style="{{ $divStyle }}">
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
+    </label>
+    <input type="file" name="file_skk"
+           style="{{ $inputStyle }}"
+           class="form-control @error('file_skk') is-invalid @enderror">
+    <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
+    @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+</div>
 
 
                 <p>Silahkan Melanjutkan Pendaftaran !! </p>
