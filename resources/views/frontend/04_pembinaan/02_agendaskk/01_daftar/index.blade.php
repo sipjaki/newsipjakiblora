@@ -231,6 +231,20 @@ table.zebra-table {
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
                 <p>Sertakan Bukti SKK Saudara !!</p>
+
+                @php
+                $inputStyle = "
+                    width: 100%;
+                    padding: 10px 14px;
+                    border-radius: 8px;
+                    border: 1px solid #ccc;
+                    transition: 0.3s;
+                    font-size: 14px;
+                ";
+                $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block; font-size:16px;";
+                $divStyle = "margin-bottom: 20px;";
+                $iconStyle = "color: navy;";
+            @endphp
 <!-- Nama Jabatan Kerja SKK -->
 <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
