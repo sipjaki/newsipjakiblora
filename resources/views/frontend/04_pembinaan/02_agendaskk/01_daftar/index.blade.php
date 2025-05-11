@@ -1300,16 +1300,13 @@ function previewFile(previewId, input) {
     }
 }
 </script>
-
-<div style="display: flex; justify-content: flex-end; margin-bottom:20px; margin-top:20px;">
+<div style="display: flex; justify-content: flex-end; margin-bottom: 20px; margin-top: 20px;">
     <div class="flex justify-end">
         <button type="button" id="submitButtonNIK"
         style="background-color: #002a5a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
-
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
                 <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
             </svg>
-
             <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran</span>
         </button>
     </div>
@@ -1388,52 +1385,8 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'none';
     });
 
-    // Hover effects
-    submitButton.addEventListener('mouseover', function() {
-        this.style.backgroundColor = 'white';
-        this.style.color = 'black';
-        this.querySelector('svg').style.fill = 'black';
-    });
-
-    submitButton.addEventListener('mouseout', function() {
-        this.style.backgroundColor = '#002a5a';
-        this.style.color = 'white';
-        this.querySelector('svg').style.fill = 'currentColor';
-    });
-
-    // [KEEP YOUR EXISTING previewFile FUNCTION AND OTHER LOGIC]
-    function previewFile(previewId, input) {
-        const file = input.files[0];
-        const previewContainer = document.getElementById(previewId);
-        previewContainer.innerHTML = '';
-
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const fileType = file.type.split('/')[0];
-
-                if (fileType === 'image') {
-                    const imgElement = document.createElement('img');
-                    imgElement.src = e.target.result;
-                    imgElement.style.width = '100%';
-                    imgElement.style.maxWidth = '210mm';
-                    imgElement.style.height = 'auto';
-                    previewContainer.appendChild(imgElement);
-                } else if (fileType === 'application' && file.type === 'application/pdf') {
-                    const iframe = document.createElement('iframe');
-                    iframe.src = e.target.result;
-                    iframe.style.width = '100%';
-                    iframe.style.height = '400px';
-                    previewContainer.appendChild(iframe);
-                }
-            };
-            reader.readAsDataURL(file);
-        }
-    }
 });
 </script>
-
-</div>
 
 
 
