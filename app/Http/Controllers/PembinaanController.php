@@ -780,6 +780,7 @@ public function beagendaskkupdate($namakegiatan)
 // Ambil data user saat ini
 $user = Auth::user();
 
+$datajabatankerja = jabatankerja::all();
 $dataasosiasimasjaki = asosiasimasjaki::all();
 $datalsp = User::whereHas('statusadmin', function ($query) {
     $query->where('id', 7);
@@ -789,6 +790,7 @@ return view('backend.05_agenda.03_agendaskk.update', [
     'title' => 'Update Agenda Sertifikasi Tenaga Kerja Konstruksi ',
     'data' => $dataagendaskk,
     'dataasosiasi' => $dataasosiasimasjaki,
+    'datajabatankerja' => $datajabatankerja,
     'lspList' => $datalsp,
     'user' => $user,
 ]);

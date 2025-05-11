@@ -202,6 +202,35 @@
                                     <div class="col-md-6">
                                         <!-- Isi Agenda -->
                                         <div class="mb-3">
+                                            <label class="form-label" for="jabatankerja_id">
+                                                <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Pilih Jabatan Kerja
+                                            </label>
+
+                                            {{-- Tampilkan Jabatan Kerja Saat Ini --}}
+                                            @php
+                                                $jabatanTerpilih = $datajabatankerja->firstWhere('id', $data->jabatankerja_id);
+                                            @endphp
+                                            @if($jabatanTerpilih)
+                                                <div class="mb-2 text-success" style="font-weight: bold;">
+                                                    Jabatan Sebelumnya: {{ $jabatanTerpilih->jabatankerja }}
+                                                </div>
+                                            @endif
+
+                                            {{-- Select Dropdown --}}
+                                            <select name="jabatankerja_id" id="jabatankerja_id" class="form-select @error('jabatankerja_id') is-invalid @enderror">
+                                                <option value="">-- Pilih Jabatan --</option>
+                                                @foreach($datajabatankerja as $jabatan)
+                                                    <option value="{{ $jabatan->id }}" {{ old('jabatankerja_id', $data->jabatankerja_id) == $jabatan->id ? 'selected' : '' }}>
+                                                        {{ $jabatan->jabatankerja }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @error('jabatankerja_id')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-3">
                                             <label class="form-label" for="isiagenda">
                                                 <i class="bi bi-journal-text" style="margin-right: 8px; color: navy;"></i> Isi Agenda
                                             </label>
