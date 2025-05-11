@@ -248,9 +248,8 @@ table.zebra-table {
                 $divStyle = "margin-bottom: 20px;";
                 $iconStyle = "color: navy;";
             @endphp
-
 <div class="row">
-    <!-- Kolom Kiri (Input Form) -->
+    <!-- Kolom Kiri (Input Form Jabatan) -->
     <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
@@ -268,7 +267,9 @@ table.zebra-table {
 
     <!-- Kolom Kanan (Gambar) -->
     <div class="col-md-6" style="{{ $divStyle }}">
-        <p>Contoh SKK Tenaga Kerja Konstruksi </p>
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Contoh SKK Tenaga Kerja Konstruksi
+        </label>
         <div class="d-flex justify-content-between align-items-center" style="height: 100%; padding-right: 20px;">
             <!-- Gambar pertama -->
             <img src="/assets/icon/contoh1.png" width="200px" height="200px" alt="Blora" loading="lazy" style="margin-bottom: 5px;">
@@ -277,28 +278,30 @@ table.zebra-table {
             <img src="/assets/icon/contoh2.png" width="200px" height="200px" alt="PUPR" loading="lazy" style="margin-bottom: 5px;">
         </div>
     </div>
-
 </div>
 
 <!-- Upload SKK -->
-<div class="col-md-6" style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
-    </label>
-    <input type="file" name="file_skk" id="file_skk"
-           accept="application/pdf"
-           style="{{ $inputStyle }}"
-           class="form-control @error('file_skk') is-invalid @enderror">
-    <br>
-    <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
-    @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+<div class="row">
+    <div class="col-md-6" style="{{ $divStyle }}">
+        <label class="form-label" style="{{ $labelStyle }}">
+            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
+        </label>
+        <input type="file" name="file_skk" id="file_skk"
+               accept="application/pdf"
+               style="{{ $inputStyle }}"
+               class="form-control @error('file_skk') is-invalid @enderror">
+        <br>
+        <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
+        @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
-    {{-- Preview --}}
-    <div id="preview_pdf" style="display: none; margin-top: 10px;">
-        <label style="font-weight: bold;">Preview SKK:</label>
-        <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        {{-- Preview --}}
+        <div id="preview_pdf" style="display: none; margin-top: 10px;">
+            <label style="font-weight: bold;">Preview SKK:</label>
+            <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+        </div>
     </div>
 </div>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
