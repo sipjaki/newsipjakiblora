@@ -253,6 +253,16 @@ headerberanda::create([
         ]);
 
         User::create([
+            'id'  => 50,
+            'name'  => 'Fitrah Fauzi Nusantara',
+            'username' => 'Fitrah',
+            'statusadmin_id' => '3',
+            'avatar' => 'assets/00_masjaki/images/maskotjakon.png',
+            'email' => 'sigitseptiadi5@gmail.com',
+            'password' => bcrypt('adminadmin123$$')
+        ]);
+
+        User::create([
             'id'  => 2,
             'name'  => 'Anex Fachrian, ST. MT',
             'username' => 'Anex',
@@ -13091,6 +13101,36 @@ sumberdana::create([
 allskktenagakerjablora::create([
     'agendaskk_id'            => 1,
     'user_id'                => 1,
+    'jabatankerja_id' => '1',
+    'tempatlahir' => 'Bojonegoro',
+    'ttl' => '1989-04-14',
+    'jeniskelamin' => 'Laki-laki',
+    'nik' => '3522251404890001',
+    'alamat' => 'RT 5 RW 7 dukuh cepu kidul,kelurahan cepu,kec.cepu,kab.blora,jateng',
+    'notelepon' => '087730573343',
+    'email' => 'arifwahyudicc548@gmail.com',
+    'jenjangpendidikan_id' => 3,
+    'namasekolah_id' => 23,
+    'tahunlulus' => '2007',
+    'tahunpilihan_id' => 5,
+    'uploadktp' => 'https://drive.google.com/open?id=1N_6cVJ44YPAzK8Kr5qCQuiCfSXTkB9n6',
+    'uploadfoto' => 'https://drive.google.com/open?id=1FNHTKVU6oowro4CJlzLpj3FG-YdRi6ki',
+    'uploadijazah' => 'https://drive.google.com/open?id=14IoOuj_gp6LDGGnsrha11DARikUWnDHe',
+    'uploadpengalaman' => 'https://drive.google.com/open?id=1rWXn8FTSBirY94dqrT-T8au7R5bWaFrL',
+    'uploadnpwp' => 'https://drive.google.com/open?id=1-3gPp9RYiRCWu1fjqskNzdIFtnzFcBH4',
+    'uploaddaftarriwayathidup' => 'https://drive.google.com/open?id=1plhsgum_GVs_HLtVu--Ke7bku8eKfDEU',
+    'namaasosiasi' => 'Perorangan',
+    'punyaskk' => 'TIDAK',
+    'punyasiki' => 'TIDAK',
+    'siappatuh' => 'YA',
+    'portalpupr' => 'YA',
+    'verifikasipu' => false,
+    'verifikasilps' => false,
+]);
+
+allskktenagakerjablora::create([
+    'agendaskk_id'            => 1,
+    'user_id'                => 50,
     'jabatankerja_id' => '1',
     'tempatlahir' => 'Bojonegoro',
     'ttl' => '1989-04-14',
