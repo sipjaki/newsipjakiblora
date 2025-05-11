@@ -843,7 +843,7 @@ function previewFile(previewId, input) {
                 // Lakukan proses pengiriman form atau aksi lainnya
                 closeModal();  // Menutup modal setelah berhasil
             } else {
-                alert("Pendaftaran Anda gagal, silakan ulang kembali.");
+                alert("Pendaftaran Anda gagal, silakan ulang kembali harap periksa dokumen dan berkas saudara !!.");
             }
         }
 
