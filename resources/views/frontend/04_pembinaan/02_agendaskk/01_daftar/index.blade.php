@@ -170,8 +170,9 @@ table.zebra-table {
             </div>
 
 <hr>
+
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
-    <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: all 0.3s ease; background: #ffffff; border: 1px solid #e0e0e0;">
+    <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease;">
 
         <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
             <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
@@ -204,7 +205,7 @@ table.zebra-table {
         <!-- Pertanyaan SKK -->
         <div id="skkQuestion" style="display: none; margin-top: 20px;">
             <label style="font-weight: 500; font-size: 15px; color: #333;">
-                <i class="bi bi-patch-question" style="color: #666; margin-right: 8px;"></i>
+                <i class="bi bi-patch-question" style="color: goldenrod; margin-right: 8px;"></i>
                 Apakah Anda memiliki SKK?
             </label>
             <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
@@ -220,14 +221,44 @@ table.zebra-table {
             </div>
         </div>
 
-        <!-- Form SKK (Original) -->
-        <div id="skkFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-            <!-- [Form content remains exactly the same as your original] -->
-        </div>
+        <!-- Form SKK -->
+        <div id="skkFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            <form action="{{ route('daftarpesertasertifikasiskkawalan') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
+                @csrf
 
-        <!-- New Form for No SKT and No SKK -->
-        <div id="newFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-            <!-- [Form content remains exactly the same as your original] -->
+                <div style="margin-bottom: 15px;">
+                    <label class="form-label" style="font-weight: 500; color: #495057;">
+                        <i class="bi bi-person-badge" style="color: navy; margin-right: 8px;"></i> NIK
+                    </label>
+                    <input type="number" name="nik" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}"
+                        style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                    @error('nik') <div class="invalid-feedback" style="color: #dc3545; font-size: 12px;">{{ $message }}</div> @enderror
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label class="form-label" style="font-weight: 500; color: #495057;">
+                        <i class="bi bi-person-lines-fill" style="color: navy; margin-right: 8px;"></i> Nama Jabatan Kerja SKK Anda
+                    </label>
+                    <input type="text" name="jabatan_skk" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label class="form-label" style="font-weight: 500; color: #495057;">
+                        <i class="bi bi-upload" style="color: navy; margin-right: 8px;"></i> Upload SKK Anda
+                    </label>
+                    <input type="file" name="file_skk" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+                    <small style="display: block; margin-top: 5px; color: #6c757d; font-size: 12px;">Format: PDF, maksimal 2MB</small>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" onclick="document.getElementById('skkFormContainer').style.display='none'" style="padding: 8px 16px; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                        Batal
+                    </button>
+                    <button type="submit" style="padding: 8px 16px; background: #0d6efd; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                        Konfirmasi
+                    </button>
+                </div>
+            </form>
         </div>
 
     </div>
@@ -237,23 +268,26 @@ table.zebra-table {
 function handleSKTCheckbox(clickedBox) {
     const ya = document.getElementById('sktYa');
     const tidak = document.getElementById('sktTidak');
+    const box = document.getElementById('sktBox');
     const yaMsg = document.getElementById('yaMessage');
     const skkQ = document.getElementById('skkQuestion');
     const skkForm = document.getElementById('skkFormContainer');
-    const newForm = document.getElementById('newFormContainer');
 
-    // Reset all forms and checkboxes
+    // Reset SKK form visibility & SKK checkbox
     document.getElementById('skkYa').checked = false;
     document.getElementById('skkTidak').checked = false;
     skkForm.style.display = 'none';
-    newForm.style.display = 'none';
 
     if (clickedBox === ya) {
         tidak.checked = false;
+        box.style.background = 'none';
+        box.style.color = '#000';
         yaMsg.style.display = 'block';
         skkQ.style.display = 'none';
     } else {
         ya.checked = false;
+        box.style.background = 'linear-gradient(135deg, #FFD700, #228B22)';
+        box.style.color = '#fff';
         yaMsg.style.display = 'none';
         skkQ.style.display = 'block';
     }
@@ -263,16 +297,13 @@ function handleSKKCheckbox(clickedBox) {
     const ya = document.getElementById('skkYa');
     const tidak = document.getElementById('skkTidak');
     const skkForm = document.getElementById('skkFormContainer');
-    const newForm = document.getElementById('newFormContainer');
 
     if (clickedBox === ya) {
         tidak.checked = false;
         skkForm.style.display = 'block';
-        newForm.style.display = 'none';
     } else {
         ya.checked = false;
         skkForm.style.display = 'none';
-        newForm.style.display = 'block';
     }
 }
 </script>
