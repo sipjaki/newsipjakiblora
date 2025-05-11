@@ -170,9 +170,8 @@ table.zebra-table {
             </div>
 
 <hr>
-
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
-    <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease;">
+    <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd;">
 
         <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
             <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
@@ -286,8 +285,8 @@ function handleSKTCheckbox(clickedBox) {
         skkQ.style.display = 'none';
     } else {
         ya.checked = false;
-        box.style.background = 'linear-gradient(135deg, #FFD700, #228B22)';
-        box.style.color = '#fff';
+        box.style.background = 'none';
+        box.style.color = '#000';
         yaMsg.style.display = 'none';
         skkQ.style.display = 'block';
     }
@@ -307,8 +306,6 @@ function handleSKKCheckbox(clickedBox) {
     }
 }
 </script>
-
-
             <div class="table-wrapper">
 
                 <form action="{{ route('daftarpesertasertifikasiskkcreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
