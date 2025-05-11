@@ -269,8 +269,8 @@ table.zebra-table {
     <!-- Kolom Kanan (Gambar) -->
     <div class="col-md-6" style="{{ $divStyle }}">
         <div class="d-flex justify-content-end align-items-center" style="height: 100%; padding-right: 20px;">
-            <img src="/assets/icon/logokabupatenblora.png" width="25" height="25" alt="Blora" loading="lazy" style="margin-bottom: 5px;">
-            <img src="/assets/icon/pupr.png" width="25" height="25" alt="PUPR" loading="lazy" style="margin-bottom: 5px;">
+            <img src="/assets/icon/contoh1.png" width="25" height="25" alt="Blora" loading="lazy" style="margin-bottom: 5px;">
+            <img src="/assets/icon/contoh2.png" width="25" height="25" alt="PUPR" loading="lazy" style="margin-bottom: 5px;">
         </div>
     </div>
 </div>
