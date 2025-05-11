@@ -507,12 +507,12 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         ]);
 
         session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
-        return redirect('/dashboard');
-    } catch (\Exception $e) {
-        // Jika ada error, tampilkan alert dengan pesan error
-        session()->flash('gagaldaftar', 'Pendaftaran Gagal! Silakan periksa kembali data yang dimasukkan.');
-        return redirect()->back()->withInput();
-    }
+    return redirect('/dashboard');
+} catch (\Exception $e) {
+    // Jika ada error, tampilkan alert dengan pesan error
+    session()->flash('gagaldaftar', 'Pendaftaran Gagal! Silakan periksa kembali data yang dimasukkan.');
+    return redirect()->back()->withInput();
+}
 }
 
 
