@@ -203,10 +203,11 @@ table.zebra-table {
 
         <!-- Pertanyaan SKK -->
         <div id="skkQuestion" style="display: none; margin-top: 20px;">
-            <label style="font-weight: 500; font-size: 15px; color: #333;">
-                <i class="bi bi-patch-question" style="color: goldenrod; margin-right: 8px;"></i>
-                Apakah Anda memiliki SKK?
-            </label>
+
+        <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
+            <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKK?
+        </label>
+
             <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
                 <label style="display: flex; align-items: center; cursor: pointer;">
                     <input type="checkbox" id="skkYa" onclick="handleSKKCheckbox(this)">
