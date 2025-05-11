@@ -781,7 +781,7 @@ function previewFile(previewId, input) {
             {{-- pendaftaran kedua  --}}
         <!-- Form NIK Saja (Tampil jika jawaban Tidak) -->
         <div id="nikFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <form action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
+            <form id="nikRegistrationForm" action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
@@ -1206,38 +1206,38 @@ function previewFile(previewId, input) {
 }
 </script>
 
-        <div style="display: flex; justify-content: flex-end; margin-bottom:20px; margin-top:20px;">
-            <div class="flex justify-end">
-                <button type="button" onclick="validateAndSubmitNIK()"
-                class="submit-button-nik"
-                style="background-color: #002a5a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+<div style="display: flex; justify-content: flex-end; margin-bottom:20px; margin-top:20px;">
+    <div class="flex justify-end">
+        <button type="button" id="submitButtonNIK"
+        style="background-color: #002a5a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
-                        <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
-                    </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
+            </svg>
 
-                    <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran</span>
-                </button>
-            </div>
-        </div>
+            <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran</span>
+        </button>
+    </div>
+</div>
 
 <!-- Modal Konfirmasi untuk Form NIK -->
-<div id="confirmModalNIK" class="custom-modal" style="display: none;">
-    <div class="modal-content-nik">
+<div id="confirmModalNIK" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
         <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
             Apakah Anda yakin data sudah benar dan ingin mengirim formulir ini?
         </p>
 
         <div style="display: flex; justify-content: center; gap: 12px;">
-            <button onclick="document.getElementById('nikRegistrationForm').submit()"
-                    class="modal-confirm-button">
+            <button id="confirmSubmitNIK"
+                    style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
                     <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
                 </svg>
                 Ya
             </button>
 
-            <button type="button" onclick="closeModalNIK()" class="modal-cancel-button">
+            <button type="button" id="cancelSubmitNIK"
+                    style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
                     <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
                 </svg>
@@ -1247,86 +1247,9 @@ function previewFile(previewId, input) {
     </div>
 </div>
 
-<style>
-/* Style untuk modal NIK */
-.custom-modal {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    display: none;
-}
-
-.modal-content-nik {
-    background: white;
-    padding: 24px 30px;
-    border-radius: 12px;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* Style untuk tombol */
-.submit-button-nik:hover {
-    background-color: white !important;
-    color: black !important;
-}
-
-.submit-button-nik:hover svg {
-    fill: black;
-}
-
-.modal-confirm-button {
-    background-color: #10B981;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: none;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.modal-confirm-button:hover {
-    background-color: white;
-    color: black;
-}
-
-.modal-confirm-button:hover svg {
-    fill: black;
-}
-
-.modal-cancel-button {
-    background-color: #EF4444;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.modal-cancel-button:hover {
-    background-color: white;
-    color: black;
-}
-
-.modal-cancel-button:hover svg {
-    fill: black;
-}
-</style>
-
 <script>
-// Fungsi untuk form NIK
-function validateAndSubmitNIK() {
-    // Validasi sederhana
+// Function to validate form
+function validateNIKForm() {
     const form = document.getElementById('nikRegistrationForm');
     const requiredFields = form.querySelectorAll('[required]');
     let isValid = true;
@@ -1340,52 +1263,79 @@ function validateAndSubmitNIK() {
         }
     });
 
-    if (isValid) {
-        openModalNIK();
-    } else {
-        alert('Harap lengkapi semua field yang wajib diisi!');
+    return isValid;
+}
+
+// Event listeners for the NIK form
+document.addEventListener('DOMContentLoaded', function() {
+    const submitButton = document.getElementById('submitButtonNIK');
+    const confirmButton = document.getElementById('confirmSubmitNIK');
+    const cancelButton = document.getElementById('cancelSubmitNIK');
+    const modal = document.getElementById('confirmModalNIK');
+    const form = document.getElementById('nikRegistrationForm');
+
+    // Submit button click handler
+    submitButton.addEventListener('click', function() {
+        if (validateNIKForm()) {
+            modal.style.display = 'flex';
+        } else {
+            alert('Harap lengkapi semua field yang wajib diisi!');
+        }
+    });
+
+    // Confirm submission
+    confirmButton.addEventListener('click', function() {
+        form.submit();
+    });
+
+    // Cancel submission
+    cancelButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Hover effects
+    submitButton.addEventListener('mouseover', function() {
+        this.style.backgroundColor = 'white';
+        this.style.color = 'black';
+        this.querySelector('svg').style.fill = 'black';
+    });
+
+    submitButton.addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#002a5a';
+        this.style.color = 'white';
+        this.querySelector('svg').style.fill = 'currentColor';
+    });
+
+    // [KEEP YOUR EXISTING previewFile FUNCTION AND OTHER LOGIC]
+    function previewFile(previewId, input) {
+        const file = input.files[0];
+        const previewContainer = document.getElementById(previewId);
+        previewContainer.innerHTML = '';
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const fileType = file.type.split('/')[0];
+
+                if (fileType === 'image') {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = e.target.result;
+                    imgElement.style.width = '100%';
+                    imgElement.style.maxWidth = '210mm';
+                    imgElement.style.height = 'auto';
+                    previewContainer.appendChild(imgElement);
+                } else if (fileType === 'application' && file.type === 'application/pdf') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = e.target.result;
+                    iframe.style.width = '100%';
+                    iframe.style.height = '400px';
+                    previewContainer.appendChild(iframe);
+                }
+            };
+            reader.readAsDataURL(file);
+        }
     }
-}
-
-function openModalNIK() {
-    const modal = document.getElementById("confirmModalNIK");
-    if (modal) modal.style.display = "flex";
-}
-
-function closeModalNIK() {
-    const modal = document.getElementById("confirmModalNIK");
-    if (modal) modal.style.display = "none";
-}
-
-// Fungsi preview file tetap sama
-function previewFile(previewId, input) {
-    const file = input.files[0];
-    const previewContainer = document.getElementById(previewId);
-    previewContainer.innerHTML = '';
-
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const fileType = file.type.split('/')[0];
-
-            if (fileType === 'image') {
-                const imgElement = document.createElement('img');
-                imgElement.src = e.target.result;
-                imgElement.style.width = '100%';
-                imgElement.style.maxWidth = '210mm';
-                imgElement.style.height = 'auto';
-                previewContainer.appendChild(imgElement);
-            } else if (fileType === 'application' && file.type === 'application/pdf') {
-                const iframe = document.createElement('iframe');
-                iframe.src = e.target.result;
-                iframe.style.width = '100%';
-                iframe.style.height = '400px';
-                previewContainer.appendChild(iframe);
-            }
-        };
-        reader.readAsDataURL(file);
-    }
-}
+});
 </script>
 
 </div>
