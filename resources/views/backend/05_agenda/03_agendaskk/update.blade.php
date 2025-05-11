@@ -206,13 +206,10 @@
                                                 <i class="bi bi-briefcase" style="margin-right: 8px; color: navy;"></i> Pilih Jabatan Kerja
                                             </label>
 
-                                            {{-- Tampilkan Jabatan Kerja Saat Ini --}}
-                                            @php
-                                                $jabatanTerpilih = $datajabatankerja->firstWhere('id', $data->jabatankerja_id);
-                                            @endphp
-                                            @if($jabatanTerpilih)
+                                            {{-- Tampilkan Jabatan Kerja Sebelumnya dari Relasi --}}
+                                            @if(isset($data->jabatankerja))
                                                 <div class="mb-2 text-success" style="font-weight: bold;">
-                                                    Jabatan Sebelumnya: {{ $jabatanTerpilih->jabatankerja }}
+                                                    Jabatan Sebelumnya: {{ $data->jabatankerja->jabatankerja }}
                                                 </div>
                                             @endif
 
@@ -220,7 +217,7 @@
                                             <select name="jabatankerja_id" id="jabatankerja_id" class="form-select @error('jabatankerja_id') is-invalid @enderror">
                                                 <option value="">-- Pilih Jabatan --</option>
                                                 @foreach($datajabatankerja as $jabatan)
-                                                    <option value="{{ $jabatan->id }}" {{ old('jabatankerja_id', $data->jabatankerja_id) == $jabatan->id ? 'selected' : '' }}>
+                                                    <option value="{{ $jabatan->id }}" {{ old('jabatankerja_id', $item->jabatankerja_id) == $jabatan->id ? 'selected' : '' }}>
                                                         {{ $jabatan->jabatankerja }}
                                                     </option>
                                                 @endforeach
