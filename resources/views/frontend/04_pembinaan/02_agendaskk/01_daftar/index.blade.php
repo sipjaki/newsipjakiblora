@@ -267,6 +267,7 @@ table.zebra-table {
     <input type="file" name="file_skk"
            style="{{ $inputStyle }}"
            class="form-control @error('file_skk') is-invalid @enderror">
+           <br>
     <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
     @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
 </div>
