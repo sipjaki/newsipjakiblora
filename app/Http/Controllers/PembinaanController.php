@@ -8,6 +8,7 @@ use App\Models\agendapelatihan;
 use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
 use App\Models\asosiasimasjaki;
+use App\Models\jabatankerja;
 use App\Models\jenjang;
 use App\Models\kategoripelatihan;
 use App\Models\pembinaan;
@@ -526,6 +527,7 @@ public function beagendapelatihancreate()
         $query->where('id', 7);
     })->get();
 
+    $datajabatankerja = jabatankerja::orderBy('jabatankerja', 'asc')->get();
     $dataasosiasi = asosiasimasjaki::where('id', 99)->first();
 
     return view('backend.05_agenda.01_agendapelatihan.create', [
@@ -534,6 +536,7 @@ public function beagendapelatihancreate()
         'kategoriList' => $datakategoripelatihan,
         'lspList' => $datalsp,
         'dataasosiasi' => $dataasosiasi,
+        'datajabatankerja' => $datajabatankerja,
         'user' => $user,
     ]);
 }
@@ -544,6 +547,7 @@ public function beagendapelatihancreatenew(Request $request)
     // Validasi data input
     $validatedData = $request->validate([
         'kategoripelatihan_id' => 'required|string',
+        'jabatankerja_id' => 'required|string',
         // 'user_id'              => 'required|string',
         'namakegiatan'         => 'required|string|max:255',
         // 'asosiasimasjaki_id'   => 'required|string',
@@ -556,6 +560,7 @@ public function beagendapelatihancreatenew(Request $request)
         'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
     ], [
         'kategoripelatihan_id.required' => 'Kategori pelatihan wajib dipilih.',
+        'jabatankerja_id.required' => 'Jabatan Kerja wajib dipilih.',
         // 'user_id.required'              => 'LSP Penerbit wajib dipilih.',
         'namakegiatan.required'         => 'Nama kegiatan wajib diisi.',
         // 'asosiasimasjaki_id.required'   => 'Penyelenggara wajib dipilih.',

@@ -663,7 +663,6 @@ headerberanda::create([
             'password' => bcrypt('mknadmin123$$$$')
         ]);
 
-        // nurfi
 
         // =================================================================
         bulanrekap::create([
@@ -15751,6 +15750,31 @@ jabatankerja::create([
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
 ]);
 
+jabatankerja::create([
+    'id' => '81',
+    'jabatankerja' => 'Pelaksana Lapangan Pekerjaan Jalan Irigasi',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jabatankerja::create([
+    'id' => '82',
+    'jabatankerja' => 'Pelaksana Konstruksi Bangunan Unit Distribusi SPAM',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jabatankerja::create([
+    'id' => '83',
+    'jabatankerja' => 'Supervisor K3 Konstruksi Utama',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+// nurfi
 //======================== ===================================================================================
 // DATA ASOSIAS KABUPATEN BLORA JAWA TENGAH
 asosiasimasjaki::create([
@@ -59751,6 +59775,7 @@ agendaskk::create([
     'user_id' => 38,
     'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Jalan - Jenjang 4',
+    'jabatankerja_id' => 5,
     'penutupan' => '2025-06-17',
     'waktupelaksanaan' => '2025-06-18',
     'jumlahpeserta' => 15,
@@ -59765,6 +59790,7 @@ agendaskk::create([
     'user_id' => 38,
     'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Irigasi - Jenjang 4',
+    'jabatankerja_id' => 81,
     'penutupan' => '2025-06-17',
     'waktupelaksanaan' => '2025-06-18',
     'jumlahpeserta' => 10,
@@ -59778,6 +59804,7 @@ agendaskk::create([
     'user_id' => 38,
     'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Pelaksana Konstruksi Bangunan Unit Distribusi SPAM - Jenjang 4',
+    'jabatankerja_id' => 82,
     'penutupan' => '2025-06-17',
     'waktupelaksanaan' => '2025-06-18',
     'jumlahpeserta' => 10,
@@ -59792,6 +59819,7 @@ agendaskk::create([
     'user_id' => 39,
     'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Personil Keselamatan dan Kesehatan Kerja - Jenjang 4',
+    'jabatankerja_id' => 9,
     'penutupan' => '2025-06-17',
     'waktupelaksanaan' => '2025-06-18',
     'jumlahpeserta' => 10,
@@ -59805,6 +59833,7 @@ agendaskk::create([
     'user_id' => 38,
     'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Gedung - Jenjang 4',
+    'jabatankerja_id' => 4,
     'penutupan' => '2025-06-17',
     'waktupelaksanaan' => '2025-06-18',
     'jumlahpeserta' => 10,
@@ -59819,6 +59848,7 @@ agendaskk::create([
     'user_id' => 38,
     'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Pelaksana Lapangan Pekerjaan Gedung Madya - Jenjang 5',
+    'jabatankerja_id' => 56,
     'penutupan' => '2025-06-17',
     'waktupelaksanaan' => '2025-06-18',
     'jumlahpeserta' => 20,
@@ -59833,6 +59863,7 @@ agendaskk::create([
     'user_id' => 39,
     'asosiasimasjaki_id' => 99,
     'namakegiatan' => 'Supervisor K3 Konstruksi Utama - Jenjang 6',
+    'jabatankerja_id' => 83,
     'penutupan' => '2025-06-17',
     'waktupelaksanaan' => '2025-06-18',
     'jumlahpeserta' => 20,

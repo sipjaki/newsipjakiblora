@@ -214,6 +214,25 @@
 <div class="col-md-6">
     <!-- Isi Agenda -->
     <div class="mb-3">
+        <label for="jabatankerja_id" class="form-label">
+            <i class="bi bi-journal-text text-primary"></i> Jabatan Kerja
+        </label>
+        <select id="jabatankerja_id" name="jabatankerja_id"
+            class="form-control @error('jabatankerja_id') is-invalid @enderror">
+            <option value="">Pilih Agenda</option>
+            @foreach ($datajabatankerja as $jabatan)
+                <option value="{{ $jabatan->id }}"
+                    {{ old('jabatankerja_id', $data->jabatankerja_id ?? '') == $jabatan->id ? 'selected' : '' }}>
+                    {{ $jabatan->jabatankerja }}
+                </option>
+            @endforeach
+        </select>
+        @error('jabatankerja_id')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="mb-3">
         <label for="isiagenda" class="form-label">
             <i class="bi bi-journal-text text-primary"></i> Isi Agenda
         </label>

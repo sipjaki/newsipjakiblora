@@ -36,4 +36,9 @@ class agendaskk extends Model
         return $this->belongsTo(asosiasimasjaki::class, 'asosiasimasjaki_id');
     }
 
+    public function jabatankerja()
+    {
+        return $this->belongsTo(jabatankerja::class, 'jabatankerja_id');
+    }
+
 }
