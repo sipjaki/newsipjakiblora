@@ -170,27 +170,23 @@ table.zebra-table {
             </div>
 
 <hr>
-
+<!-- SKT Section -->
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease;">
-
         <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
             <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
         </label>
-
         <div style="display: flex; justify-content: center; gap: 20px;">
             <label style="display: flex; align-items: center; cursor: pointer;">
-                <input type="checkbox" value="ya" id="sktYa" onclick="handleSKTCheckbox(this)">
+                <input type="checkbox" value="ya" id="sktYa" onclick="handleCheckboxClick(this)">
                 <span style="font-size: 15px; color: #333; margin-left: 8px;">Ya</span>
             </label>
-
             <label style="display: flex; align-items: center; cursor: pointer;">
-                <input type="checkbox" value="tidak" id="sktTidak" onclick="handleSKTCheckbox(this)">
+                <input type="checkbox" value="tidak" id="sktTidak" onclick="handleCheckboxClick(this)">
                 <span style="font-size: 15px; color: #333; margin-left: 8px;">Tidak</span>
             </label>
         </div>
 
-        <!-- Pesan Jika Ya -->
         <div id="yaMessage" style="display: none; margin-top: 20px; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6;">
             <p style="margin: 0; color: #1864ab; font-size: 14px;">
                 <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
@@ -201,112 +197,104 @@ table.zebra-table {
                 </a>
             </p>
         </div>
-
-        <!-- Pertanyaan SKK -->
-        <div id="skkQuestion" style="display: none; margin-top: 20px;">
-            <label style="font-weight: 500; font-size: 15px; color: #333;">
-                <i class="bi bi-patch-question" style="color: goldenrod; margin-right: 8px;"></i>
-                Apakah Anda memiliki SKK?
-            </label>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-                <label style="display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" id="skkYa" onclick="handleSKKCheckbox(this)">
-                    <span style="margin-left: 8px;">Ya</span>
-                </label>
-
-                <label style="display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" id="skkTidak" onclick="handleSKKCheckbox(this)">
-                    <span style="margin-left: 8px;">Tidak</span>
-                </label>
-            </div>
-        </div>
-
-        <!-- Form SKK -->
-        <div id="skkFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <form action="{{ route('daftarpesertasertifikasiskkawalan') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
-                @csrf
-
-                <div style="margin-bottom: 15px;">
-                    <label class="form-label" style="font-weight: 500; color: #495057;">
-                        <i class="bi bi-person-badge" style="color: navy; margin-right: 8px;"></i> NIK
-                    </label>
-                    <input type="number" name="nik" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}"
-                        style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
-                    @error('nik') <div class="invalid-feedback" style="color: #dc3545; font-size: 12px;">{{ $message }}</div> @enderror
-                </div>
-
-                <div style="margin-bottom: 15px;">
-                    <label class="form-label" style="font-weight: 500; color: #495057;">
-                        <i class="bi bi-person-lines-fill" style="color: navy; margin-right: 8px;"></i> Nama Jabatan Kerja SKK Anda
-                    </label>
-                    <input type="text" name="jabatan_skk" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
-                </div>
-
-                <div style="margin-bottom: 20px;">
-                    <label class="form-label" style="font-weight: 500; color: #495057;">
-                        <i class="bi bi-upload" style="color: navy; margin-right: 8px;"></i> Upload SKK Anda
-                    </label>
-                    <input type="file" name="file_skk" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
-                    <small style="display: block; margin-top: 5px; color: #6c757d; font-size: 12px;">Format: PDF, maksimal 2MB</small>
-                </div>
-
-                <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                    <button type="button" onclick="document.getElementById('skkFormContainer').style.display='none'" style="padding: 8px 16px; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                        Batal
-                    </button>
-                    <button type="submit" style="padding: 8px 16px; background: #0d6efd; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
-                        Konfirmasi
-                    </button>
-                </div>
-            </form>
-        </div>
-
     </div>
 </div>
 
+<!-- SKK Section -->
+<div id="skkContainer" style="font-family: 'Poppins', sans-serif;">
+    <div style="text-align: center; margin-top: 20px;">
+        <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
+            <i class="bi bi-card-checklist" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKK?
+        </label>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="checkbox" value="ya" id="skkYa" onclick="handleSKKCheckboxClick(this)">
+                <span style="font-size: 15px; color: #333; margin-left: 8px;">Ya</span>
+            </label>
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="checkbox" value="tidak" id="skkTidak" onclick="handleSKKCheckboxClick(this)">
+                <span style="font-size: 15px; color: #333; margin-left: 8px;">Tidak</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- SKK Form -->
+    <div id="skkFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <form action="{{ route('daftarpesertasertifikasiskkcreatenew') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
+
+            <div style="margin-bottom: 15px;">
+                <label class="form-label" style="font-weight: 500; margin-bottom: 5px; display: block; color: #495057;">
+                    <i class="bi bi-person-badge" style="color: navy; margin-right: 8px;"></i> Nomor Induk Kependudukan (NIK)
+                </label>
+                <input type="number" name="nik" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
+                @error('nik') <div class="invalid-feedback" style="color: #dc3545; font-size: 12px;">{{ $message }}</div> @enderror
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label class="form-label" style="font-weight: 500; margin-bottom: 5px; display: block; color: #495057;">
+                    <i class="bi bi-person-lines-fill" style="color: navy; margin-right: 8px;"></i> Nama Jabatan Kerja SKK Anda
+                </label>
+                <input type="text" name="jabatan_skk" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;">
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label class="form-label" style="font-weight: 500; margin-bottom: 5px; display: block; color: #495057;">
+                    <i class="bi bi-upload" style="color: navy; margin-right: 8px;"></i> Upload SKK Anda
+                </label>
+                <input type="file" name="file_skk" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px;">
+                <small style="display: block; margin-top: 5px; color: #6c757d; font-size: 12px;">Format: PDF, maksimal 2MB</small>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                <button type="button" onclick="document.getElementById('skkFormContainer').style.display='none'" style="padding: 8px 16px; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                    Batal
+                </button>
+                <button type="submit" style="padding: 8px 16px; background: #0d6efd; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                    Konfirmasi
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Script -->
 <script>
-function handleSKTCheckbox(clickedBox) {
+function handleCheckboxClick(clickedBox) {
     const ya = document.getElementById('sktYa');
     const tidak = document.getElementById('sktTidak');
     const box = document.getElementById('sktBox');
-    const yaMsg = document.getElementById('yaMessage');
-    const skkQ = document.getElementById('skkQuestion');
-    const skkForm = document.getElementById('skkFormContainer');
-
-    // Reset SKK form visibility & SKK checkbox
-    document.getElementById('skkYa').checked = false;
-    document.getElementById('skkTidak').checked = false;
-    skkForm.style.display = 'none';
+    const message = document.getElementById('yaMessage');
 
     if (clickedBox === ya) {
         tidak.checked = false;
+        message.style.display = 'block';
         box.style.background = 'none';
         box.style.color = '#000';
-        yaMsg.style.display = 'block';
-        skkQ.style.display = 'none';
-    } else {
+    } else if (clickedBox === tidak) {
         ya.checked = false;
+        message.style.display = 'none';
         box.style.background = 'linear-gradient(135deg, #FFD700, #228B22)';
         box.style.color = '#fff';
-        yaMsg.style.display = 'none';
-        skkQ.style.display = 'block';
     }
 }
 
-function handleSKKCheckbox(clickedBox) {
+function handleSKKCheckboxClick(clickedBox) {
     const ya = document.getElementById('skkYa');
     const tidak = document.getElementById('skkTidak');
-    const skkForm = document.getElementById('skkFormContainer');
+    const form = document.getElementById('skkFormContainer');
 
     if (clickedBox === ya) {
         tidak.checked = false;
-        skkForm.style.display = 'block';
-    } else {
+        form.style.display = 'none';
+    } else if (clickedBox === tidak) {
         ya.checked = false;
-        skkForm.style.display = 'none';
+        form.style.display = 'block';
     }
 }
 </script>
+
 
 
             <div class="table-wrapper">
