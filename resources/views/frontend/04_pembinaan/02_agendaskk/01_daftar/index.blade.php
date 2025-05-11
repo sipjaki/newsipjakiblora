@@ -756,41 +756,6 @@ function previewFile(previewId, input) {
     </div>
 </div>
 
-<!-- Modal Konfirmasi -->
-<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
-            Apakah Anda yakin data sudah benar dan ingin mengirim formulir ini?
-        </p>
-
-        <!-- Tombol -->
-        <div style="display: flex; justify-content: center; gap: 12px;">
-            <button id="confirmSubmitBtn"
-            onclick="document.getElementById('registrationForm').submit()"
-            style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-            onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-            onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                <!-- Telegram SVG -->
-                <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
-                    <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
-                </svg>
-                Ya
-            </button>
-
-            <!-- Tombol Batal dengan ikon X (SVG) -->
-            <button type="button"
-                    onclick="closeModal()"
-                    style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                    onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                    <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                </svg>
-                Batal
-            </button>
-        </div>
-    </div>
-</div>
 
 <script>
 // Fungsi untuk menangani checkbox SKT
@@ -937,53 +902,53 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <script>
-function handleSKTCheckbox(clickedBox) {
-    const ya = document.getElementById('sktYa');
-    const tidak = document.getElementById('sktTidak');
-    const box = document.getElementById('sktBox');
-    const yaMsg = document.getElementById('yaMessage');
-    const skkQ = document.getElementById('skkQuestion');
-    const skkForm = document.getElementById('skkFormContainer');
-    const nikForm = document.getElementById('nikFormContainer');
+    function handleSKTCheckbox(clickedBox) {
+        const sktYa = document.getElementById('sktYa');
+        const sktTidak = document.getElementById('sktTidak');
+        const sktBox = document.getElementById('sktBox');
+        const yaMsg = document.getElementById('yaMessage');
+        const skkQuestion = document.getElementById('skkQuestion');
+        const skkForm = document.getElementById('skkFormContainer');
+        const nikForm = document.getElementById('nikFormContainer');
 
-    // Reset semua form dan checkbox
-    document.getElementById('skkYa').checked = false;
-    document.getElementById('skkTidak').checked = false;
-    skkForm.style.display = 'none';
-    nikForm.style.display = 'none';
-
-    if (clickedBox === ya) {
-        tidak.checked = false;
-        box.style.background = 'none';
-        box.style.color = '#000';
-        yaMsg.style.display = 'block';
-        skkQ.style.display = 'none';
-    } else {
-        ya.checked = false;
-        box.style.background = 'none';
-        box.style.color = '#000';
-        yaMsg.style.display = 'none';
-        skkQ.style.display = 'block';
-    }
-}
-
-function handleSKKCheckbox(clickedBox) {
-    const ya = document.getElementById('skkYa');
-    const tidak = document.getElementById('skkTidak');
-    const skkForm = document.getElementById('skkFormContainer');
-    const nikForm = document.getElementById('nikFormContainer');
-
-    if (clickedBox === ya) {
-        tidak.checked = false;
-        skkForm.style.display = 'block';
-        nikForm.style.display = 'none';
-    } else {
-        ya.checked = false;
+        // Reset pilihan SKK dan form terkait
+        document.getElementById('skkYa').checked = false;
+        document.getElementById('skkTidak').checked = false;
         skkForm.style.display = 'none';
-        nikForm.style.display = 'block';
+        nikForm.style.display = 'none';
+
+        if (clickedBox === sktYa) {
+            sktTidak.checked = false;
+            sktBox.style.background = 'none';
+            sktBox.style.color = '#000';
+            yaMsg.style.display = 'block';
+            skkQuestion.style.display = 'none';
+        } else if (clickedBox === sktTidak) {
+            sktYa.checked = false;
+            sktBox.style.background = 'none';
+            sktBox.style.color = '#000';
+            yaMsg.style.display = 'none';
+            skkQuestion.style.display = 'block';
+        }
     }
-}
-</script>
+
+    function handleSKKCheckbox(clickedBox) {
+        const skkYa = document.getElementById('skkYa');
+        const skkTidak = document.getElementById('skkTidak');
+        const skkForm = document.getElementById('skkFormContainer');
+        const nikForm = document.getElementById('nikFormContainer');
+
+        if (clickedBox === skkYa) {
+            skkTidak.checked = false;
+            skkForm.style.display = 'block';
+            nikForm.style.display = 'none';
+        } else if (clickedBox === skkTidak) {
+            skkYa.checked = false;
+            skkForm.style.display = 'none';
+            nikForm.style.display = 'block';
+        }
+    }
+    </script>
 
     </div>
 
