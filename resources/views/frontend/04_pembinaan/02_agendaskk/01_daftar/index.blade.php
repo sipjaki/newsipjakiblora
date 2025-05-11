@@ -195,7 +195,7 @@ table.zebra-table {
                 <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
                 Silahkan reset akun e-Simpan Anda melalui tautan berikut:
                 <a target="_blank" href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/login_simpan"
-                   style="color: #228be6; text-decoration: underline; font-weight: 500;">
+                   style="color: blue; text-decoration: underline; font-weight: 500;">
                     <span style="color: blue">Link Reset !!</span>
                 </a>
                 <span>
