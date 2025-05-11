@@ -266,9 +266,18 @@ table.zebra-table {
         @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 
+    <!-- Kolom Kanan (Gambar) -->
     <div class="col-md-6" style="{{ $divStyle }}">
+        <div class="d-flex justify-content-end align-items-center" style="height: 100%; padding-right: 20px;">
+            <img src="/assets/icon/logokabupatenblora.png" width="25" height="25" alt="Blora" loading="lazy" style="margin-bottom: 5px;">
+            <img src="/assets/icon/pupr.png" width="25" height="25" alt="PUPR" loading="lazy" style="margin-bottom: 5px;">
+        </div>
+    </div>
+</div>
 
-     <label class="form-label" style="{{ $labelStyle }}">
+<!-- Upload SKK -->
+<div class="col-md-6" style="{{ $divStyle }}">
+    <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
     </label>
     <input type="file" name="file_skk" id="file_skk"
@@ -283,20 +292,6 @@ table.zebra-table {
     <div id="preview_pdf" style="display: none; margin-top: 10px;">
         <label style="font-weight: bold;">Preview SKK:</label>
         <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
-    </div>
-    </div>
-
-</div>
-
-<!-- Upload SKK -->
-<div class="col-md-6" style="{{ $divStyle }}">
-
-    <!-- Kolom Kanan (Gambar) -->
-    <div class="col-md-6" style="{{ $divStyle }}">
-        <div class="d-flex justify-content-end align-items-center" style="height: 100%; padding-right: 20px;">
-            <img src="/asset/icon/logokabupatenblora.png" alt="" style="max-width: 200px; margin-left: 10px;">
-            <img src="/asset/icon/purp.png" alt="" style="max-width: 200px; margin-left: 10px;">
-        </div>
     </div>
 </div>
 
