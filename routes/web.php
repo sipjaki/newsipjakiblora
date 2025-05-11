@@ -918,7 +918,7 @@ Route::delete('/beagendaskkmateriskk/delete/{id}', [PembinaanController::class, 
 Route::get('/daftarpesertasertifikasiskk/create/{id}', [AgendaskkController::class, 'daftarpesertasertifikasiskknew'])->middleware('auth')->name('daftarpesertasertifikasiskk');
 Route::post('/daftarpesertasertifikasiskk/createmateri/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreatenew'])->middleware('auth')->name('daftarpesertasertifikasiskkcreatenew');
 
-Route::post('/daftarpesertasertifikasiskkt/createmateri/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreateskkt'])->middleware('auth')->name('daftarpesertasertifikasiskkt');
+Route::post('/daftarpesertasertifikasiskkt/createmateri/new', [AgendaskkController::class, 'daftarpesertasertifikasiskkcreateskkt'])->middleware('auth')->name('daftarpesertasertifikasiskkawalan');
 
 
 Route::get('/beagendaskkpeserta/show/{id}', [PembinaanController::class, 'beagendaskkpesertashow'])->middleware('auth');
