@@ -205,7 +205,7 @@ table.zebra-table {
         <div id="skkQuestion" style="display: none; margin-top: 20px;">
             <label style="font-weight: 500; font-size: 15px; color: #333;">
                 <i class="bi bi-patch-question" style="color: goldenrod; margin-right: 8px;"></i>
-                Apakah Anda memiliki SKK?
+                <span style="color: navy;">Apakah Anda memiliki SKK?</span>
             </label>
             <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
                 <label style="display: flex; align-items: center; cursor: pointer;">
