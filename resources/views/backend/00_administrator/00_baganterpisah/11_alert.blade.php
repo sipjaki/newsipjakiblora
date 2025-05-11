@@ -414,7 +414,7 @@
         style="width: 150px !important; height: auto;"
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
-        <div style="font-size: 36px; color: red; font-weight: bold; margin: 20px 0;">Anda Salah memasukan berkas dan data diri, Silahkan ulangi Kembali !</div>
+        <div style="font-size: 36px; color: red; font-weight: bold; margin: 20px 0;">Anda Salah memasukan berkas dan data diri!</div>
         <button class="button-delete">{{ session('gagaldaftar') }}</button>
     </div>
 </div>
