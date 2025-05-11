@@ -170,6 +170,37 @@ table.zebra-table {
             </div>
 
 <hr>
+
+<div style="margin-bottom: 20px;">
+    <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
+        <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
+    </label>
+
+    <div style="display: flex; gap: 20px;">
+        <label style="display: flex; align-items: center; cursor: pointer;">
+            <input type="checkbox" name="skt[]" value="ya" style="width: 18px; height: 18px; margin-right: 8px;">
+            <span style="font-size: 15px; color: #333;">Ya</span>
+        </label>
+
+        <label style="display: flex; align-items: center; cursor: pointer;">
+            <input type="checkbox" name="skt[]" value="tidak" style="width: 18px; height: 18px; margin-right: 8px;">
+            <span style="font-size: 15px; color: #333;">Tidak</span>
+        </label>
+    </div>
+</div>
+
+
+<div style="{{ $divStyle }}">
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-building" style="color: navy;"></i> Nomor Induk Kependudukan (NIK)
+    </label>
+    <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
+    @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
+</div>
+
+
+
+
             <div class="table-wrapper">
 
                 <form action="{{ route('daftarpesertasertifikasiskkcreatenew') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
