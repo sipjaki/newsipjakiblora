@@ -170,6 +170,13 @@ table.zebra-table {
             </div>
 
 <hr>
+
+@if (session('gagaldaftar'))
+    <script>
+        alert("{{ session('gagaldaftar') }}");
+    </script>
+@endif
+
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd;">
 
