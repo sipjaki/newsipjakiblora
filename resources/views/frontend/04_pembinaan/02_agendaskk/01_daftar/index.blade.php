@@ -170,21 +170,25 @@ table.zebra-table {
             </div>
 
 <hr>
-<div style="margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
-    <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
-        <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
-    </label>
+<div style="display: flex; justify-content: center; margin-top: 30px;">
+    <div style="margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
 
-    <div style="display: flex; gap: 20px;">
-        <label style="display: flex; align-items: center; cursor: pointer;">
-            <input type="radio" name="skt" value="ya" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
-            <span style="font-size: 15px; color: #333;">Ya</span>
+        <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy; text-align: center;">
+            <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
         </label>
 
-        <label style="display: flex; align-items: center; cursor: pointer;">
-            <input type="radio" name="skt" value="tidak" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
-            <span style="font-size: 15px; color: #333;">Tidak</span>
-        </label>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="skt" value="ya" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
+                <span style="font-size: 15px; color: #333;">Ya</span>
+            </label>
+
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="skt" value="tidak" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
+                <span style="font-size: 15px; color: #333;">Tidak</span>
+            </label>
+        </div>
+
     </div>
 </div>
 
