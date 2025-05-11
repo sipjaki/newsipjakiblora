@@ -200,7 +200,7 @@ table.zebra-table {
                 </a>
                 <span>
                     Atau hubungi no kontak ini
-                    <a href="https://wa.me/6281326277717" target="_blank" rel="noopener">DPUPR Kab Blora</a>
+                    <a href="https://wa.me/6281326277717" target="_blank" rel="noopener"><span style="color: blue;"></span>DPUPR Kab Blora</a>
                 </span>
             </p>
         </div>
