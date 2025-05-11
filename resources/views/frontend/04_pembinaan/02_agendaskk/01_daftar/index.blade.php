@@ -270,14 +270,15 @@ table.zebra-table {
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-image" style="{{ $iconStyle }}"></i> Contoh SKK Tenaga Kerja Konstruksi
         </label>
-        <div class="d-flex justify-content-between align-items-center" style="height: 100%; padding-right: 20px;">
+        <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
             <!-- Gambar pertama -->
-            <img src="/assets/icon/contoh1.png" width="200px" height="200px" alt="Blora" loading="lazy" style="margin-bottom: 5px;">
+            <img src="/assets/icon/contoh1.png" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
 
             <!-- Gambar kedua -->
-            <img src="/assets/icon/contoh2.png" width="200px" height="200px" alt="PUPR" loading="lazy" style="margin-bottom: 5px;">
+            <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy">
         </div>
     </div>
+
 </div>
 
 <!-- Upload SKK -->
