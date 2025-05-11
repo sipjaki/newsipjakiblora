@@ -364,6 +364,27 @@ ul.list-unstyled {
                             </ul>
                         </li>
 
+
+                        <li class="has-dropdown" style="position: relative; margin: 0; padding: 0;">
+    <a href="#" class="dropdown-toggle" style="color: white; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 10px 20px; display: inline-block; transition: background-color 0.3s ease;">
+        DATA STATISTIK
+    </a>
+                            <ul class="list-unstyled" style="position: absolute; left: 0; top: 100%; background-color: #333; padding: 10px 0; border-radius: 5px; display: none; width: 250px;">
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">BU Jasa Konstrksi</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tenaga Kerja Konstruksi</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Profil Paket Pekerjaan</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tertib Usaha Jakon</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tertib Usaha Pemanfaatan</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Tertib Usaha Penyelenggaraan</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">Kecelakaan Kerja</a></li>
+                                <li><a href="/404" style="color: black; padding: 10px 20px; display: block; font-size: 16px; font-family: 'Poppins', sans-serif;">AHSP Konstruksi Umum</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+
 					</ul><!-- main-menu-list -->
 				</div><!--navigation-->
 			</div><!--main-menu-left-->
