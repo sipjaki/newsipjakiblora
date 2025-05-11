@@ -222,8 +222,6 @@ table.zebra-table {
         </div>
 
 
-        <div class="table-wrapper">
-
 
         {{-- PEDAFTARAN TIPE 1  --}}
         <!-- Form SKK (Tampil jika jawaban Ya) -->
@@ -729,11 +727,10 @@ function previewFile(previewId, input) {
                 </div>
             </form>
         </div>
-        </div>
 
         <!-- Form NIK Saja (Tampil jika jawaban Tidak) -->
         <div id="nikFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-            <form id="basicRegistrationForm" action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" style="font-family: 'Poppins', sans-serif;">
+            <form id="basicRegistrationForm" action="{{ route('daftarpesertasertifikasiskkawalan') }}" method="POST" style="font-family: 'Poppins', sans-serif;">
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
