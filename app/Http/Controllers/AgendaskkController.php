@@ -356,6 +356,7 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
     return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
         'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
         'agendaskk_id' => $dataagendaskk->id,
+        'agendaskkjabatankerja' => $dataagendaskk->jabatankerja->jabatankerja,
         'namalengkap' => $user->name,
         'user_id' => $user->id,
         'user' => $user,

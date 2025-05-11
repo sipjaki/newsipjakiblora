@@ -432,21 +432,14 @@ table.zebra-table {
                                     @error('jenjangpendidikan_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-                                <!-- Jabatan Kerja -->
-                                <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
-                                    </label>
-                                    <select name="jabatankerja_id" style="{{ $inputStyle }}" class="form-select @error('jabatankerja_id') is-invalid @enderror">
-                                        <option value="">-- Pilih Jabatan Kerja --</option>
-                                        @foreach($jabatankerja as $item)
-                                            <option value="{{ $item->id }}" {{ old('jabatankerja_id') == $item->id ? 'selected' : '' }}>
-                                                {{ $item->jabatankerja }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    @error('jabatankerja_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
+                              <!-- Jabatan Kerja -->
+<div class="col-md-6" style="{{ $divStyle }}">
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
+    </label>
+    <p class="form-control-plaintext" style="{{ $inputStyle }}">{{ $agendaskkjabatankerja }}</p>
+    <input type="hidden" name="jabatankerja_id" value="{{ $dataagendaskk->jabatankerja_id }}">
+</div>
 
                                 <!-- Nama Sekolah -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
