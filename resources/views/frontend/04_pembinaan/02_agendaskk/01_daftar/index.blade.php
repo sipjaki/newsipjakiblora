@@ -233,7 +233,15 @@ table.zebra-table {
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
-                <p>Sertakan Bukti SKK Saudara !!</p>
+                <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
+                    <hr style="width: 100%; max-width: 1200px; margin: 0;">
+                    <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
+                        <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
+                            Sertakan Bukti SKK Saudara !! <span style="color: red;">Hati-hati dalam Upload SKK Saudara !!</span>
+                        </span>
+                    </p>
+                    <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
+                </div>
 
                 @php
                 $inputStyle = "
