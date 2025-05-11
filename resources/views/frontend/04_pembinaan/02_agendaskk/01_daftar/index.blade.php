@@ -206,22 +206,23 @@ table.zebra-table {
         </div>
 
         <!-- Pertanyaan SKK -->
-        <div id="skkQuestion" style="display: none; margin-top: 20px;">
-            <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
-                <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda memiliki SKK?
-            </label>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
-                <label style="display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" id="skkYa" onclick="handleSKKCheckbox(this)">
-                    <span style="margin-left: 8px;">Ya</span>
-                </label>
 
-                <label style="display: flex; align-items: center; cursor: pointer;">
-                    <input type="checkbox" id="skkTidak" onclick="handleSKKCheckbox(this)">
-                    <span style="margin-left: 8px;">Tidak</span>
-                </label>
-            </div>
-        </div>
+<div id="skkQuestion" style="display: none; margin-top: 20px;">
+    <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
+        <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda memiliki SKK?
+    </label>
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 10px;">
+        <label style="display: flex; align-items: center; cursor: pointer;">
+            <input type="checkbox" id="skkYa" onclick="handleSKKCheckbox(this)">
+            <span style="margin-left: 8px;">Ya</span>
+        </label>
+
+        <label style="display: flex; align-items: center; cursor: pointer;">
+            <input type="checkbox" id="skkTidak" onclick="handleSKKCheckbox(this)">
+            <span style="margin-left: 8px;">Tidak</span>
+        </label>
+    </div>
+</div>
 
 
         {{-- form pendafataran pertama  --}}
@@ -1438,14 +1439,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const nikForm = document.getElementById('nikFormContainer');
     const yaMsg = document.getElementById('yaMessage');
 
-    // Reset semua form dan checkbox SKK
+    // Reset semua form dan checkbox SKK ketika SKT berubah
     document.getElementById('skkYa').checked = false;
     document.getElementById('skkTidak').checked = false;
     skkForm.style.display = 'none';
     nikForm.style.display = 'none';
 
-    if (clickedBox === ya) {
-        tidak.checked = false;
+    // Tampilkan atau sembunyikan pesan berdasarkan pilihan SKT
+    if (clickedBox === ya && ya.checked) {
+        tidak.checked = false; // Pastikan tidak ada checkbox yang terpilih pada "Tidak"
         yaMsg.style.display = 'block';
         skkQ.style.display = 'none';
     } else {
@@ -1461,12 +1463,12 @@ function handleSKKCheckbox(clickedBox) {
     const skkForm = document.getElementById('skkFormContainer');
     const nikForm = document.getElementById('nikFormContainer');
 
-    if (clickedBox === ya) {
-        tidak.checked = false;
+    if (clickedBox === ya && ya.checked) {
+        tidak.checked = false; // Pastikan "Tidak" tidak terpilih
         skkForm.style.display = 'block';
         nikForm.style.display = 'none';
-    } else {
-        ya.checked = false;
+    } else if (clickedBox === tidak && tidak.checked) {
+        ya.checked = false; // Pastikan "Ya" tidak terpilih
         skkForm.style.display = 'none';
         nikForm.style.display = 'block';
     }
