@@ -854,6 +854,17 @@ function previewFile(previewId, input) {
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
                 <div class="card-body">
+
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
+                        <hr style="width: 100%; max-width: 1200px; margin: 0;">
+                        <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
+                            <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
+                                Silahkan Melanjutkan Pendaftaran Saudara !!
+                            </span>
+                        </p>
+                        <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
+                    </div>
+
                     <div class="row">
                         <div class="col-md-6">
                             @php
