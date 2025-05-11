@@ -332,13 +332,13 @@ table.zebra-table {
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
         </label>
-        <input type="file" name="file_skk" id="file_skk"
+        <input type="file" name="skkanda" id="skkanda"
                accept="application/pdf"
                style="{{ $inputStyle }}"
-               class="form-control @error('file_skk') is-invalid @enderror">
+               class="form-control @error('skkanda') is-invalid @enderror">
         <br>
         <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small>
-        @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+        @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
         {{-- Preview --}}
         <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom:-200px;">
@@ -351,7 +351,7 @@ table.zebra-table {
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const fileInput = document.getElementById('file_skk');
+        const fileInput = document.getElementById('skkanda');
         const previewContainer = document.getElementById('preview_pdf');
         const previewFrame = document.getElementById('pdf_preview_frame');
 
@@ -433,13 +433,13 @@ table.zebra-table {
                                 </div>
 
                               <!-- Jabatan Kerja -->
-<div class="col-md-6" style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
-    </label>
-    <p class="form-control-plaintext" style="{{ $inputStyle }}">{{ $agendaskkjabatankerja }}</p>
-    <input type="hidden" name="jabatankerja_id" value="{{ $agendaskkjabatankerja }}">
-</div>
+                              <div class="col-md-6" style="{{ $divStyle }}">
+                                <label class="form-label" style="{{ $labelStyle }}">
+                                    <i class="bi bi-person-workspace" style="{{ $iconStyle }}"></i> Jabatan Kerja
+                                </label>
+                                <p class="form-control-plaintext" style="{{ $inputStyle }}">{{ $jabatankerja->jabatankerja }}</p>
+                                <input type="hidden" name="jabatankerja_id" value="{{ $jabatankerja->id }}">
+                            </div>
 
                                 <!-- Nama Sekolah -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
@@ -806,7 +806,7 @@ function previewFile(previewId, input) {
                             <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
                             </svg>
 
-                                <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran </span>
+                                <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran 1 </span>
                             </button>
                             </div>
                             <!-- Modal Konfirmasi -->
@@ -1323,7 +1323,7 @@ function previewFile(previewId, input) {
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
                 <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
             </svg>
-            <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran</span>
+            <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran 2</span>
         </button>
     </div>
 </div>

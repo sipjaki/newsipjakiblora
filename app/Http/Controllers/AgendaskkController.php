@@ -356,7 +356,7 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
     return view('frontend.04_pembinaan.02_agendaskk.01_daftar.index', [
         'agendaskknamakegiatan' => $dataagendaskk->namakegiatan,
         'agendaskk_id' => $dataagendaskk->id,
-        'agendaskkjabatankerja' => $dataagendaskk->jabatankerja->jabatankerja,
+        'agendaskkjabatankerja' => $dataagendaskk,
         'namalengkap' => $user->name,
         'user_id' => $user->id,
         'user' => $user,
@@ -375,7 +375,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
     // Validasi input
     $validated = $request->validate([
         'jabatanskkanda_id' => 'nullable|string',
-        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
+        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
         'jenjangpendidikan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
         'namasekolah_id' => 'required|string',
