@@ -1434,56 +1434,95 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function() {
-    const sktYa = document.getElementById('sktYa');
-    const sktTidak = document.getElementById('sktTidak');
+function handleSKTCheckbox(clickedBox) {
+    const ya = document.getElementById('sktYa');
+    const tidak = document.getElementById('sktTidak');
+    const box = document.getElementById('sktBox');
+    const yaMsg = document.getElementById('yaMessage');
     const skkQ = document.getElementById('skkQuestion');
-    const skkYa = document.getElementById('skkYa');
-    const skkTidak = document.getElementById('skkTidak');
     const skkForm = document.getElementById('skkFormContainer');
     const nikForm = document.getElementById('nikFormContainer');
+    const skkYa = document.getElementById('skkYa');
+    const skkTidak = document.getElementById('skkTidak');
 
-    // Cek nilai old() pada halaman untuk menentukan kondisi awal
-    if ('{{ old('punyaskk') }}' === 'ya') {
-        sktYa.checked = true;
-        skkQ.style.display = 'none';  // Jika Ya, jangan tampilkan SKK
-    } else if ('{{ old('punyaskk') }}' === 'tidak') {
-        sktTidak.checked = true;
-        skkQ.style.display = 'block'; // Tampilkan pertanyaan SKK jika Tidak
+    // Reset semua form dan checkbox untuk SKK
+    document.getElementById('skkYa').checked = false;
+    document.getElementById('skkTidak').checked = false;
+    skkForm.style.display = 'none';
+    nikForm.style.display = 'none';
+
+    if (clickedBox === ya) {
+        tidak.checked = false;
+        box.style.background = 'none';
+        box.style.color = '#000';
+        yaMsg.style.display = 'block';
+        skkQ.style.display = 'none';
+    } else {
+        ya.checked = false;
+        box.style.background = 'none';
+        box.style.color = '#000';
+        yaMsg.style.display = 'none';
+        skkQ.style.display = 'block';
     }
 
-    // Fungsi untuk menangani checkbox SKT
-    function handleSKTCheckbox(clickedBox) {
-        if (clickedBox === sktYa) {
-            sktTidak.checked = false;
-            skkQ.style.display = 'none'; // Menyembunyikan pertanyaan SKK jika SKT Ya
-        } else {
-            sktYa.checked = false;
-            skkQ.style.display = 'block'; // Menampilkan pertanyaan SKK jika SKT Tidak
-        }
+    // Menangani checkbox SKK
+    if (clickedBox === skkYa) {
+        skkTidak.checked = false;
+        skkForm.style.display = 'block';
+        nikForm.style.display = 'none';
+    } else if (clickedBox === skkTidak) {
+        skkYa.checked = false;
+        skkForm.style.display = 'none';
+        nikForm.style.display = 'block';
     }
+}
 
-    // Fungsi untuk menangani checkbox SKK
-    function handleSKKCheckbox(clickedBox) {
-        if (clickedBox === skkYa) {
-            skkTidak.checked = false;
-            skkForm.style.display = 'block';
-            nikForm.style.display = 'none';
-        } else {
-            skkYa.checked = false;
-            skkForm.style.display = 'none';
-            nikForm.style.display = 'block';
-        }
-    }
+// function handleSKTCheckbox(clickedBox) {
+//     const ya = document.getElementById('sktYa');
+//     const tidak = document.getElementById('sktTidak');
+//     const box = document.getElementById('sktBox');
+//     const yaMsg = document.getElementById('yaMessage');
+//     const skkQ = document.getElementById('skkQuestion');
+//     const skkForm = document.getElementById('skkFormContainer');
+//     const nikForm = document.getElementById('nikFormContainer');
 
-    // Assign the handleSKTCheckbox function to both SKT checkboxes
-    sktYa.onclick = function() { handleSKTCheckbox(this); };
-    sktTidak.onclick = function() { handleSKTCheckbox(this); };
+//     // Reset semua form dan checkbox
+//     document.getElementById('skkYa').checked = false;
+//     document.getElementById('skkTidak').checked = false;
+//     skkForm.style.display = 'none';
+//     nikForm.style.display = 'none';
 
-    // Assign the handleSKKCheckbox function to both SKK checkboxes
-    skkYa.onclick = function() { handleSKKCheckbox(this); };
-    skkTidak.onclick = function() { handleSKKCheckbox(this); };
-});
+//     if (clickedBox === ya) {
+//         tidak.checked = false;
+//         box.style.background = 'none';
+//         box.style.color = '#000';
+//         yaMsg.style.display = 'block';
+//         skkQ.style.display = 'none';
+//     } else {
+//         ya.checked = false;
+//         box.style.background = 'none';
+//         box.style.color = '#000';
+//         yaMsg.style.display = 'none';
+//         skkQ.style.display = 'block';
+//     }
+// }
+
+// function handleSKKCheckbox(clickedBox) {
+//     const ya = document.getElementById('skkYa');
+//     const tidak = document.getElementById('skkTidak');
+//     const skkForm = document.getElementById('skkFormContainer');
+//     const nikForm = document.getElementById('nikFormContainer');
+
+//     if (clickedBox === ya) {
+//         tidak.checked = false;
+//         skkForm.style.display = 'block';
+//         nikForm.style.display = 'none';
+//     } else {
+//         ya.checked = false;
+//         skkForm.style.display = 'none';
+//         nikForm.style.display = 'block';
+//     }
+// }
 
 </script>
 
