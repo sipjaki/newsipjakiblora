@@ -173,7 +173,9 @@ table.zebra-table {
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd;">
 
-        <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
+        <input type="hidden" id="oldSktValue" value="{{ old('skt') }}">
+
+<label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
             <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
         </label>
 
@@ -208,6 +210,8 @@ table.zebra-table {
         <!-- Pertanyaan SKK -->
 
 <div id="skkQuestion" style="display: none; margin-top: 20px;">
+    <input type="hidden" id="oldSkkValue" value="{{ old('skk') }}">
+
     <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
         <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda memiliki SKK?
     </label>
@@ -1431,13 +1435,14 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <script>
-    function handleSKTCheckbox(clickedBox) {
+    // Fungsi untuk menangani checkbox SKT
+function handleSKTCheckbox(clickedBox) {
     const ya = document.getElementById('sktYa');
     const tidak = document.getElementById('sktTidak');
+    const yaMsg = document.getElementById('yaMessage');
     const skkQ = document.getElementById('skkQuestion');
     const skkForm = document.getElementById('skkFormContainer');
     const nikForm = document.getElementById('nikFormContainer');
-    const yaMsg = document.getElementById('yaMessage');
 
     // Reset semua form dan checkbox SKK ketika SKT berubah
     document.getElementById('skkYa').checked = false;
@@ -1457,6 +1462,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 }
 
+// Fungsi untuk menangani checkbox SKK
 function handleSKKCheckbox(clickedBox) {
     const ya = document.getElementById('skkYa');
     const tidak = document.getElementById('skkTidak');
@@ -1473,6 +1479,35 @@ function handleSKKCheckbox(clickedBox) {
         nikForm.style.display = 'block';
     }
 }
+
+// Fungsi untuk memuat nilai lama dan mengatur tampilan form
+function loadOldValues() {
+    // Misalnya nilai old untuk checkbox SKT (menggunakan PHP Blade atau server-side rendering)
+    const oldSktValue = document.getElementById('oldSktValue').value;
+    const oldSkkValue = document.getElementById('oldSkkValue').value;
+
+    // Set nilai checkbox berdasarkan old values
+    if (oldSktValue === 'ya') {
+        document.getElementById('sktYa').checked = true;
+        handleSKTCheckbox(document.getElementById('sktYa')); // Panggil fungsi untuk mengatur form SKT
+    } else if (oldSktValue === 'tidak') {
+        document.getElementById('sktTidak').checked = true;
+        handleSKTCheckbox(document.getElementById('sktTidak')); // Panggil fungsi untuk mengatur form SKT
+    }
+
+    // Set nilai checkbox untuk SKK berdasarkan old values
+    if (oldSkkValue === 'ya') {
+        document.getElementById('skkYa').checked = true;
+        handleSKKCheckbox(document.getElementById('skkYa')); // Panggil fungsi untuk mengatur form SKK
+    } else if (oldSkkValue === 'tidak') {
+        document.getElementById('skkTidak').checked = true;
+        handleSKKCheckbox(document.getElementById('skkTidak')); // Panggil fungsi untuk mengatur form SKK
+    }
+}
+
+// Panggil fungsi loadOldValues ketika halaman dimuat
+window.onload = loadOldValues;
+
 
 </script>
 
