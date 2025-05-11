@@ -264,13 +264,39 @@ table.zebra-table {
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
     </label>
-    <input type="file" name="file_skk"
+    <input type="file" name="file_skk" id="file_skk"
            style="{{ $inputStyle }}"
+           accept="application/pdf"
            class="form-control @error('file_skk') is-invalid @enderror">
-           <br>
+    <br>
     <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
     @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+    {{-- Preview PDF --}}
+    <div id="preview_pdf" class="mt-3" style="display: none;">
+        <label style="font-weight: bold;">Preview SKK:</label>
+        <iframe id="pdf_frame" src="" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 5px;"></iframe>
+    </div>
 </div>
+
+@push('scripts')
+<script>
+    document.getElementById('file_skk').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        const previewContainer = document.getElementById('preview_pdf');
+        const pdfFrame = document.getElementById('pdf_frame');
+
+        if (file && file.type === 'application/pdf') {
+            const fileURL = URL.createObjectURL(file);
+            pdfFrame.src = fileURL;
+            previewContainer.style.display = 'block';
+        } else {
+            pdfFrame.src = '';
+            previewContainer.style.display = 'none';
+        }
+    });
+</script>
+@endpush
 
 
                 <p>Silahkan Melanjutkan Pendaftaran !! </p>
