@@ -190,15 +190,6 @@ table.zebra-table {
 </div>
 
 
-<div style="{{ $divStyle }}">
-    <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-building" style="color: navy;"></i> Nomor Induk Kependudukan (NIK)
-    </label>
-    <input type="number" name="nik" style="{{ $inputStyle }}" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
-    @error('nik') <div class="invalid-feedback">{{ $message }}</div> @enderror
-</div>
-
-
 
 
             <div class="table-wrapper">
