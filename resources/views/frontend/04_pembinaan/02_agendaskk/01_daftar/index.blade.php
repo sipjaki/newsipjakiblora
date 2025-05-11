@@ -319,6 +319,7 @@ table.zebra-table {
 
 
 <script>
+
     document.addEventListener('DOMContentLoaded', function () {
         const fileInput = document.getElementById('file_skk');
         const previewContainer = document.getElementById('preview_pdf');
@@ -1437,8 +1438,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <script>
-
-    // Fungsi untuk menangani checkbox SKT
+// Fungsi untuk menangani checkbox SKT
 function handleSKTCheckbox(clickedBox) {
     const ya = document.getElementById('sktYa');
     const tidak = document.getElementById('sktTidak');
@@ -1508,7 +1508,6 @@ function loadOldValues() {
 
 // Panggil fungsi loadOldValues ketika halaman dimuat
 window.onload = loadOldValues;
-
 
 </script>
 
