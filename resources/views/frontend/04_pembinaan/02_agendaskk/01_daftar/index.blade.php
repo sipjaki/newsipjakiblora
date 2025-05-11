@@ -170,25 +170,75 @@ table.zebra-table {
             </div>
 
 <hr>
-
-<div style="margin-bottom: 20px;">
+<div style="margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
     <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
         <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
     </label>
 
     <div style="display: flex; gap: 20px;">
         <label style="display: flex; align-items: center; cursor: pointer;">
-            <input type="checkbox" name="skt[]" value="ya" style="width: 18px; height: 18px; margin-right: 8px;">
+            <input type="radio" name="skt" value="ya" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
             <span style="font-size: 15px; color: #333;">Ya</span>
         </label>
 
         <label style="display: flex; align-items: center; cursor: pointer;">
-            <input type="checkbox" name="skt[]" value="tidak" style="width: 18px; height: 18px; margin-right: 8px;">
+            <input type="radio" name="skt" value="tidak" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
             <span style="font-size: 15px; color: #333;">Tidak</span>
         </label>
     </div>
 </div>
 
+<!-- Form yang akan muncul jika memilih "Tidak" -->
+<div id="skkFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <form action="{{ route('daftarpesertasertifikasiskkawalan') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
+        @csrf
+
+        <div style="margin-bottom: 15px;">
+            <label class="form-label" style="font-weight: 500; margin-bottom: 5px; display: block; color: #495057;">
+                <i class="bi bi-person-badge" style="color: navy; margin-right: 8px;"></i> Nomor Induk Kependudukan (NIK)
+            </label>
+            <input type="number" name="nik" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;" class="@error('nik') is-invalid @enderror" value="{{ old('nik') }}">
+            @error('nik') <div class="invalid-feedback" style="color: #dc3545; font-size: 12px;">{{ $message }}</div> @enderror
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label class="form-label" style="font-weight: 500; margin-bottom: 5px; display: block; color: #495057;">
+                <i class="bi bi-person-lines-fill" style="color: navy; margin-right: 8px;"></i> Nama Jabatan Kerja SKK Anda
+            </label>
+            <input type="text" name="jabatan_skk" style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label class="form-label" style="font-weight: 500; margin-bottom: 5px; display: block; color: #495057;">
+                <i class="bi bi-upload" style="color: navy; margin-right: 8px;"></i> Upload SKK Anda
+            </label>
+            <input type="file" name="file_skk" style="width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; font-size: 14px;">
+            <small style="display: block; margin-top: 5px; color: #6c757d; font-size: 12px;">Format: PDF, maksimal 2MB</small>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+            <button type="button" onclick="document.getElementById('skkFormContainer').style.display='none'" style="padding: 8px 16px; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                Batal
+            </button>
+            <button type="submit" style="padding: 8px 16px; background: #0d6efd; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
+                Konfirmasi
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+function toggleSKKForm() {
+    const sktValue = document.querySelector('input[name="skt"]:checked').value;
+    const formContainer = document.getElementById('skkFormContainer');
+
+    if (sktValue === 'tidak') {
+        formContainer.style.display = 'block';
+    } else {
+        formContainer.style.display = 'none';
+    }
+}
+</script>
 
 
 
