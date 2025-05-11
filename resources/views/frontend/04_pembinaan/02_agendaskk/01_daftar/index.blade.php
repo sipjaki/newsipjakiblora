@@ -266,6 +266,8 @@ table.zebra-table {
         @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 
+    <div class="col-md-6" style="{{ $divStyle }}">
+
      <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
     </label>
@@ -281,6 +283,7 @@ table.zebra-table {
     <div id="preview_pdf" style="display: none; margin-top: 10px;">
         <label style="font-weight: bold;">Preview SKK:</label>
         <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
+    </div>
     </div>
 
 </div>
