@@ -179,8 +179,8 @@ table.zebra-table {
 
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd;">
-
-        <!-- Hidden input untuk nilai lama SKT -->
+        <p>Perhatian: Jika Anda kembali ke halaman ini setelah mendaftar, maka pendaftaran Anda gagal. Silakan periksa data dan dokumen Anda, lalu ulangi tahapannya !.</p>
+<!-- Hidden input untuk nilai lama SKT -->
         <input type="hidden" id="oldSktValue" value="{{ old('skt') }}">
 
         <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
