@@ -170,7 +170,7 @@ table.zebra-table {
             </div>
 
 <hr>
-<div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-20px;">
+<div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease;">
 
         <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
