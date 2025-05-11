@@ -173,9 +173,10 @@ table.zebra-table {
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-60px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease; border: 1px solid #ddd;">
 
+        <!-- Hidden input untuk nilai lama SKT -->
         <input type="hidden" id="oldSktValue" value="{{ old('skt') }}">
 
-<label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
+        <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
             <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
         </label>
 
@@ -206,10 +207,14 @@ table.zebra-table {
                 </span>
             </p>
         </div>
+    </div>
+</div>
 
         <!-- Pertanyaan SKK -->
 
+<!-- Pertanyaan SKK -->
 <div id="skkQuestion" style="display: none; margin-top: 20px;">
+    <!-- Hidden input untuk nilai lama SKK -->
     <input type="hidden" id="oldSkkValue" value="{{ old('skk') }}">
 
     <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
@@ -227,8 +232,6 @@ table.zebra-table {
         </label>
     </div>
 </div>
-
-
         {{-- form pendafataran pertama  --}}
         <!-- Form SKK (Tampil jika jawaban Ya) -->
         <div class="table-wrapper">
@@ -1259,6 +1262,7 @@ function previewFile(previewId, input) {
 </div>
 
 <script>
+
 function previewFile(previewId, input) {
     const file = input.files[0];
     const previewContainer = document.getElementById(previewId);
@@ -1435,6 +1439,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <script>
+
     // Fungsi untuk menangani checkbox SKT
 function handleSKTCheckbox(clickedBox) {
     const ya = document.getElementById('sktYa');
@@ -1482,11 +1487,10 @@ function handleSKKCheckbox(clickedBox) {
 
 // Fungsi untuk memuat nilai lama dan mengatur tampilan form
 function loadOldValues() {
-    // Misalnya nilai old untuk checkbox SKT (menggunakan PHP Blade atau server-side rendering)
     const oldSktValue = document.getElementById('oldSktValue').value;
     const oldSkkValue = document.getElementById('oldSkkValue').value;
 
-    // Set nilai checkbox berdasarkan old values
+    // Menyesuaikan status checkbox berdasarkan nilai lama
     if (oldSktValue === 'ya') {
         document.getElementById('sktYa').checked = true;
         handleSKTCheckbox(document.getElementById('sktYa')); // Panggil fungsi untuk mengatur form SKT
@@ -1495,7 +1499,6 @@ function loadOldValues() {
         handleSKTCheckbox(document.getElementById('sktTidak')); // Panggil fungsi untuk mengatur form SKT
     }
 
-    // Set nilai checkbox untuk SKK berdasarkan old values
     if (oldSkkValue === 'ya') {
         document.getElementById('skkYa').checked = true;
         handleSKKCheckbox(document.getElementById('skkYa')); // Panggil fungsi untuk mengatur form SKK
