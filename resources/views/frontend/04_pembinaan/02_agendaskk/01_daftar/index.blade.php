@@ -171,7 +171,7 @@ table.zebra-table {
 
 <hr>
 
-<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+<div style="display: flex; justify-content: center; align-items: center; margin-top:-20px;">
     <div style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center;">
 
         <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
