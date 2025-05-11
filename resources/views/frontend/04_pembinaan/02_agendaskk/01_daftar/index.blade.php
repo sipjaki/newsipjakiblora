@@ -249,7 +249,7 @@ table.zebra-table {
                 $iconStyle = "color: navy;";
             @endphp
 
-<div class="col-md-9" style="{{ $divStyle }}">
+<div class="col-md-12" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
     </label>
