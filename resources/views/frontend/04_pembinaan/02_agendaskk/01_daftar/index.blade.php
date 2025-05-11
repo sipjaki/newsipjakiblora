@@ -224,7 +224,7 @@ table.zebra-table {
         <div id="skkFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
             <form action="{{ route('daftarpesertasertifikasiskkawalan') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
-
+<p>Sertakan Bukti SKK Saudara !!</p>
                 <div style="margin-bottom: 15px;">
                     <label class="form-label" style="font-weight: 500; color: #495057;">
                         <i class="bi bi-person-badge" style="color: navy; margin-right: 8px;"></i> NIK
