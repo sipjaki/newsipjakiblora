@@ -282,7 +282,7 @@ table.zebra-table {
 </div>
 
 <!-- Upload SKK -->
-<div class="row">
+<div class="row" style="margin-top: -500px;">
     <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
