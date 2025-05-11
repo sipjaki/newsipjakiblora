@@ -774,6 +774,8 @@ function previewFile(previewId, input) {
         <div class="table-wrapper">
 
 
+
+            {{-- ==================================================================================== BATAS NURFI ======================================================================= --}}
         {{-- pendaftaran kedua  --}}
         <!-- Form NIK Saja (Tampil jika jawaban Tidak) -->
         <div id="nikFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
