@@ -375,7 +375,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
     // Validasi input
     $validated = $request->validate([
         'jabatanskkanda_id' => 'nullable|string',
-        'skkanda' => 'nullable|string',
+        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
         'jenjangpendidikan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
         'namasekolah_id' => 'required|string',
@@ -477,7 +477,6 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
     // Simpan ke database
     allskktenagakerjablora::create([
         'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
-        'skkanda' => $validated['skkanda'],
         'agendaskk_id' => $request->agendaskk_id,
         'user_id' => auth()->id(),
         'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
@@ -500,6 +499,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
         'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
         'uploadkebenarandata' => $uploadedFiles['uploadkebenarandata'] ?? null,
+        'skkanda' => $uploadedFiles['skkanda'] ?? null,
 
         'namaasosiasi' => $validated['namaasosiasi'] ?? null,
         'punyaskk' => $validated['punyaskk'],
@@ -515,6 +515,8 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
 {
     // Validasi input
     $validated = $request->validate([
+        'jabatanskkanda_id' => 'nullable|string',
+        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
         'jenjangpendidikan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
         'namasekolah_id' => 'required|string',
@@ -593,6 +595,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'uploadnpwp' => '04_pembinaan/03_sertifikasi/05_uploadnpwp',
         'uploaddaftarriwayathidup' => '04_pembinaan/03_sertifikasi/06_uploadriwayathidup',
         'uploadkebenarandata' => '04_pembinaan/03_sertifikasi/07_uploadkebenarandata',
+        'skkanda' => '04_pembinaan/03_sertifikasi/07_skkanda',
     ];
 
     $uploadedFiles = [];
@@ -614,6 +617,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
 
     // Simpan ke database
     allskktenagakerjablora::create([
+        'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
         'agendaskk_id' => $request->agendaskk_id,
         'user_id' => auth()->id(),
         'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
@@ -636,6 +640,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
         'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
         'uploadkebenarandata' => $uploadedFiles['uploadkebenarandata'] ?? null,
+        'skkanda' => $uploadedFiles['skkanda'] ?? null,
 
         'namaasosiasi' => $validated['namaasosiasi'] ?? null,
         'punyaskk' => $validated['punyaskk'],
@@ -646,6 +651,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
     session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
     return redirect('/dashboard');
 }
+
 
 
 // daftar skk
