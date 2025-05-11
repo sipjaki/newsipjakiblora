@@ -217,7 +217,7 @@
                                             <select name="jabatankerja_id" id="jabatankerja_id" class="form-select @error('jabatankerja_id') is-invalid @enderror">
                                                 <option value="">-- Pilih Jabatan --</option>
                                                 @foreach($datajabatankerja as $jabatan)
-                                                    <option value="{{ $jabatan->id }}" {{ old('jabatankerja_id', $item->jabatankerja_id) == $jabatan->id ? 'selected' : '' }}>
+                                                    <option value="{{ $jabatan->id }}" {{ old('jabatankerja_id', $data->jabatankerja_id) == $jabatan->id ? 'selected' : '' }}>
                                                         {{ $jabatan->jabatankerja }}
                                                     </option>
                                                 @endforeach
