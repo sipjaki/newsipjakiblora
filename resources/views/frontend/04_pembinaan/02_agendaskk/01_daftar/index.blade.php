@@ -170,7 +170,6 @@ table.zebra-table {
             </div>
 
 <hr>
-
 <div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-20px;">
     <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease;">
 
@@ -190,6 +189,17 @@ table.zebra-table {
             </label>
         </div>
 
+        <div id="yaMessage" style="display: none; margin-top: 20px; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6;">
+            <p style="margin: 0; color: #1864ab; font-size: 14px;">
+                <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
+                Silahkan reset akun e-Simpan Anda melalui tautan berikut:
+                <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/login_simpan"
+                   style="color: #228be6; text-decoration: underline; font-weight: 500;">
+                    <span style="color: blue">Link Reset !!</span>
+                </a>
+            </p>
+        </div>
+
     </div>
 </div>
 
@@ -198,30 +208,22 @@ function handleCheckboxClick(clickedBox) {
     const ya = document.getElementById('sktYa');
     const tidak = document.getElementById('sktTidak');
     const box = document.getElementById('sktBox');
+    const message = document.getElementById('yaMessage');
 
-    // Agar hanya satu checkbox yang bisa aktif
     if (clickedBox === ya) {
         tidak.checked = false;
+        message.style.display = 'block';
         box.style.background = 'none';
         box.style.color = '#000';
     } else if (clickedBox === tidak) {
         ya.checked = false;
+        message.style.display = 'none';
         box.style.background = 'linear-gradient(135deg, #FFD700, #228B22)';
         box.style.color = '#fff';
     }
 }
 </script>
 
-<!-- Pesan untuk opsi Ya -->
-<div id="yaMessage" style="display: none; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6;">
-    <p style="margin: 0; color: #1864ab; font-size: 14px;">
-        <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
-        Silahkan reset akun e-Simpan Anda melalui tautan berikut:
-        <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/login_simpan" style="color: #228be6; text-decoration: underline; font-weight: 500;">
-            <span style="color: blue">Link Reset !!</span>
-        </a>
-    </p>
-</div>
 
 <!-- Form yang akan muncul jika memilih "Tidak" -->
 <div id="skkFormContainer" style="display: none; margin-top: 20px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
