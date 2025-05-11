@@ -258,19 +258,45 @@ table.zebra-table {
            class="form-control @error('jabatan_skk') is-invalid @enderror">
     @error('jabatan_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
 </div>
-
 <!-- Upload SKK -->
 <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
     </label>
-    <input type="file" name="file_skk"
+    <input type="file" name="file_skk" id="file_skk"
            style="{{ $inputStyle }}"
-           class="form-control @error('file_skk') is-invalid @enderror">
-           <br>
+           class="form-control @error('file_skk') is-invalid @enderror"
+           accept="application/pdf">
+    <br>
     <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
     @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
+    <!-- Preview PDF -->
+    <div id="preview_skk" style="display: none; margin-top: 10px;">
+        <strong>Preview SKK:</strong><br>
+        <iframe id="preview_skk_frame" src="" width="100%" height="400px" style="border: 1px solid #ccc;"></iframe>
+    </div>
 </div>
+
+<!-- Script untuk preview -->
+@push('scripts')
+<script>
+    document.getElementById('file_skk').addEventListener('change', function (e) {
+        const file = e.target.files[0];
+        const previewFrame = document.getElementById('preview_skk_frame');
+        const previewContainer = document.getElementById('preview_skk');
+
+        if (file && file.type === 'application/pdf') {
+            const fileURL = URL.createObjectURL(file);
+            previewFrame.src = fileURL;
+            previewContainer.style.display = 'block';
+        } else {
+            previewFrame.src = '';
+            previewContainer.style.display = 'none';
+        }
+    });
+</script>
+@endpush
 
 
                 <p>Silahkan Melanjutkan Pendaftaran !! </p>
