@@ -375,7 +375,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
     // Validasi input
     $validated = $request->validate([
         'jabatanskkanda_id' => 'nullable|string',
-        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
+        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
         'jenjangpendidikan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
         'namasekolah_id' => 'required|string',
@@ -390,12 +390,12 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'tahunlulus' => 'required|integer|min:1900|max:' . date('Y'),
 
         // Upload dokumen
-        'uploadktp' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
-        'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:2048',
-        'uploadijazah' => 'required|mimes:pdf|max:2048',
-        'uploadpengalaman' => 'required|mimes:pdf|max:2048',
-        'uploaddaftarriwayathidup' => 'required|mimes:pdf|max:2048',
-        'uploadkebenarandata' => 'required|mimes:pdf|max:2048',
+        'uploadktp' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:5048',
+        'uploadijazah' => 'required|mimes:pdf|max:5048',
+        'uploadpengalaman' => 'required|mimes:pdf|max:5048',
+        'uploaddaftarriwayathidup' => 'required|mimes:pdf|max:5048',
+        'uploadkebenarandata' => 'required|mimes:pdf|max:5048',
 
         'namaasosiasi' => 'nullable|string|max:255',
         'punyaskk' => 'required|in:Ya,Tidak',
