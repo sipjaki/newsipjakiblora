@@ -835,6 +835,10 @@ function previewFile(previewId, input) {
                                 if (modal) modal.style.display = "none";
                             }
 
+                            function showValidationAlert() {
+                                alert("Pendaftaran anda gagal, silahkan ulang kembali.");
+                            }
+
                             </script>
 
                         </div>
