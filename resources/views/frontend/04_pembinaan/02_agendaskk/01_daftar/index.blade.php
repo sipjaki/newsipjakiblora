@@ -860,6 +860,7 @@ function previewFile(previewId, input) {
                         <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
                             <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
                                 Silahkan Melanjutkan Pendaftaran Saudara !!
+
                             </span>
                         </p>
                         <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
