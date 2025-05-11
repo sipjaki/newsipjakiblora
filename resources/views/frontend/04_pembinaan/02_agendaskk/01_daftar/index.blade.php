@@ -258,45 +258,45 @@ table.zebra-table {
            class="form-control @error('jabatan_skk') is-invalid @enderror">
     @error('jabatan_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
 </div>
-
-<!-- Upload SKK -->
 <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
     </label>
     <input type="file" name="file_skk" id="file_skk"
-           style="{{ $inputStyle }}"
            accept="application/pdf"
+           style="{{ $inputStyle }}"
            class="form-control @error('file_skk') is-invalid @enderror">
     <br>
     <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
     @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
-    {{-- Preview PDF --}}
-    <div id="preview_pdf" class="mt-3" style="display: none;">
+    {{-- Preview --}}
+    <div id="preview_pdf" style="display: none; margin-top: 10px;">
         <label style="font-weight: bold;">Preview SKK:</label>
-        <iframe id="pdf_frame" src="" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 5px;"></iframe>
+        <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
     </div>
 </div>
 
-@push('scripts')
 <script>
-    document.getElementById('file_skk').addEventListener('change', function(e) {
-        const file = e.target.files[0];
+    document.addEventListener('DOMContentLoaded', function () {
+        const fileInput = document.getElementById('file_skk');
         const previewContainer = document.getElementById('preview_pdf');
-        const pdfFrame = document.getElementById('pdf_frame');
+        const previewFrame = document.getElementById('pdf_preview_frame');
 
-        if (file && file.type === 'application/pdf') {
-            const fileURL = URL.createObjectURL(file);
-            pdfFrame.src = fileURL;
-            previewContainer.style.display = 'block';
-        } else {
-            pdfFrame.src = '';
-            previewContainer.style.display = 'none';
-        }
+        fileInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file && file.type === 'application/pdf') {
+                const fileURL = URL.createObjectURL(file);
+                previewFrame.src = fileURL;
+                previewContainer.style.display = 'block';
+            } else {
+                previewFrame.src = '';
+                previewContainer.style.display = 'none';
+            }
+        });
     });
 </script>
-@endpush
+
 
 
                 <p>Silahkan Melanjutkan Pendaftaran !! </p>
