@@ -198,6 +198,10 @@ table.zebra-table {
                    style="color: #228be6; text-decoration: underline; font-weight: 500;">
                     <span style="color: blue">Link Reset !!</span>
                 </a>
+                <span>
+                    Atau hubungi no kontak ini
+                    <a href="https://wa.me/6281326277717" target="_blank" rel="noopener">DPUPR Kab Blora</a>
+                </span>
             </p>
         </div>
 
