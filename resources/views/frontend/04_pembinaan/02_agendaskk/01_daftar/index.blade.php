@@ -171,26 +171,30 @@ table.zebra-table {
 
 <hr>
 
-<div style="margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
-    <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
-        <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
-    </label>
+<div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+    <div style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center;">
 
-    <div style="display: flex; gap: 20px;">
-        <label style="display: flex; align-items: center; cursor: pointer;">
-            <input type="radio" name="skt" value="ya" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
-            <span style="font-size: 15px; color: #333;">Ya</span>
+        <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
+            <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
         </label>
 
-        <label style="display: flex; align-items: center; cursor: pointer;">
-            <input type="radio" name="skt" value="tidak" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
-            <span style="font-size: 15px; color: #333;">Tidak</span>
-        </label>
+        <div style="display: flex; justify-content: center; gap: 20px;">
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="skt" value="ya" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
+                <span style="font-size: 15px; color: #333;">Ya</span>
+            </label>
+
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="radio" name="skt" value="tidak" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKKForm()">
+                <span style="font-size: 15px; color: #333;">Tidak</span>
+            </label>
+        </div>
+
     </div>
 </div>
 
 <!-- Pesan untuk opsi Ya -->
-<div id="yaMessage" style="display: none; margin-top: 15px; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6;">
+<div id="yaMessage" style="display: none; padding: 15px; background: #e7f5ff; border-radius: 6px; border-left: 4px solid #228be6;">
     <p style="margin: 0; color: #1864ab; font-size: 14px;">
         <i class="bi bi-info-circle-fill" style="margin-right: 8px;"></i>
         Silahkan reset akun e-Simpan Anda melalui tautan berikut:
