@@ -46,7 +46,12 @@ class allskktenagakerjablora extends Model
 
         public function jabatankerja()
         {
-            return $this->belongsTo(jabatankerja::class);
+            return $this->belongsTo(jabatankerja::class, 'jabatankerja_id');
+        }
+
+        public function jabatanskkanda()
+        {
+            return $this->belongsTo(jabatankerja::class, 'jabatanskkanda_id');
         }
 
 

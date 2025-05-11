@@ -248,16 +248,22 @@ table.zebra-table {
                 $divStyle = "margin-bottom: 20px;";
                 $iconStyle = "color: navy;";
             @endphp
-<!-- Nama Jabatan Kerja SKK -->
+
 <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
     </label>
-    <input type="text" name="jabatan_skk" value="{{ old('jabatan_skk') }}"
-           style="{{ $inputStyle }}"
-           class="form-control @error('jabatan_skk') is-invalid @enderror">
-    @error('jabatan_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+    <select name="jabatanskkanda_id" class="form-select @error('jabatanskkanda_id') is-invalid @enderror" style="{{ $inputStyle }}">
+        <option value="">-- Pilih Jabatan --</option>
+        @foreach($jabatankerja as $jabatan)
+            <option value="{{ $jabatan->id }}" {{ old('jabatanskkanda_id', $data->jabatanskkanda_id ?? '') == $jabatan->id ? 'selected' : '' }}>
+                {{ $jabatan->jabatankerja }}
+            </option>
+        @endforeach
+    </select>
+    @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
 </div>
+
 <div class="col-md-6" style="{{ $divStyle }}">
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
