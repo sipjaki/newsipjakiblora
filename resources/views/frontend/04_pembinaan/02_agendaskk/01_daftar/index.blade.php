@@ -250,7 +250,7 @@ table.zebra-table {
             @endphp
 
 <div class="row">
-    <!-- Kolom Kiri (Nama Jabatan Kerja SKK Anda) -->
+    <!-- Kolom Kiri (Input Form) -->
     <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
@@ -266,31 +266,35 @@ table.zebra-table {
         @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 
-    <!-- Kolom Kanan (Upload SKK Anda) -->
-    <div class="col-md-6" style="{{ $divStyle }}">
-        <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
-        </label>
-        <input type="file" name="file_skk" id="file_skk"
-               accept="application/pdf"
-               style="{{ $inputStyle }}"
-               class="form-control @error('file_skk') is-invalid @enderror">
-        <br>
-        <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
-        @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+     <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
+    </label>
+    <input type="file" name="file_skk" id="file_skk"
+           accept="application/pdf"
+           style="{{ $inputStyle }}"
+           class="form-control @error('file_skk') is-invalid @enderror">
+    <br>
+    <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 2MB</small>
+    @error('file_skk') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
-        {{-- Preview --}}
-        <div id="preview_pdf" style="display: none; margin-top: 10px;">
-            <label style="font-weight: bold;">Preview SKK:</label>
-            <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
-        </div>
+    {{-- Preview --}}
+    <div id="preview_pdf" style="display: none; margin-top: 10px;">
+        <label style="font-weight: bold;">Preview SKK:</label>
+        <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
     </div>
+
 </div>
 
-<!-- Kolom Gambar (Logo di Kanan) -->
-<div class="col-md-12 d-flex justify-content-end" style="{{ $divStyle }}">
-    <img src="/asset/icon/logokabupatenblora.png" alt="" style="max-width: 200px; margin-left: 10px;">
-    <img src="/asset/icon/purp.png" alt="" style="max-width: 200px; margin-left: 10px;">
+<!-- Upload SKK -->
+<div class="col-md-6" style="{{ $divStyle }}">
+
+    <!-- Kolom Kanan (Gambar) -->
+    <div class="col-md-6" style="{{ $divStyle }}">
+        <div class="d-flex justify-content-end align-items-center" style="height: 100%; padding-right: 20px;">
+            <img src="/asset/icon/logokabupatenblora.png" alt="" style="max-width: 200px; margin-left: 10px;">
+            <img src="/asset/icon/purp.png" alt="" style="max-width: 200px; margin-left: 10px;">
+        </div>
+    </div>
 </div>
 
 <script>
