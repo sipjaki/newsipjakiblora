@@ -770,76 +770,101 @@ function previewFile(previewId, input) {
 }
 </script>
 
-                      <div style="display: flex; justify-content: flex-end; margin-bottom:20px; margin-top:20px;">
-                            <div class="flex justify-end">
-                                <button type="button" onclick="openModal()"
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-                                onmouseout="this.style.backgroundColor='#002a5a'; this.style.color='white';"
-                                style="background-color: #002a5a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+<div style="display: flex; justify-content: flex-end; margin-bottom:20px; margin-top:20px;">
+    <div class="flex justify-end">
+        <button type="button" onclick="openModal()"
+        onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+        onmouseout="this.style.backgroundColor='#002a5a'; this.style.color='white';"
+        style="background-color: #002a5a; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
 
-                                <!-- Ikon SVG Pensil -->
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
-                            <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
-                            </svg>
+        <!-- Ikon SVG Pensil -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+        <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
+        </svg>
 
-                                <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran </span>
-                            </button>
-                            </div>
-                            <!-- Modal Konfirmasi -->
-                            <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-                                <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-                                  <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
-                                    Apakah Anda yakin data sudah benar dan ingin mengirim formulir ini?
-                                </p>
+        <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran </span>
+        </button>
+    </div>
+    <!-- Modal Konfirmasi -->
+    <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+            <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px; font-family: 'Poppins', sans-serif;">
+                Apakah Anda yakin data sudah benar dan ingin mengirim formulir ini?
+            </p>
 
-                                  <!-- Tombol -->
-                                  <div style="display: flex; justify-content: center; gap: 12px;">
-                                    <button id="confirmSubmitBtn"
-                                    onclick="submitForm()"
-                                    style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                    onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                <!-- Telegram SVG -->
-                                <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
-                                    <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
-                                </svg>
-                                Ya
-                            </button>
+            <!-- Tombol -->
+            <div style="display: flex; justify-content: center; gap: 12px;">
+                <button id="confirmSubmitBtn"
+                onclick="submitForm()"
+                style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                <!-- Telegram SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 448 512" fill="white">
+                    <path d="M446.7 68.8c-5.7-4.8-13.8-5.7-20.3-2.2L26.1 263.5c-7.2 3.7-11.4 11.5-10.4 19.5s6.7 14.5 14.4 16.5l85.1 23.3 40.6 98.8c2.9 7.1 9.6 11.7 17.1 11.7h.4c7.7-.2 14.4-5.1 16.8-12.3l33.2-96.5 109.7 88.1c3.5 2.8 7.9 4.3 12.3 4.3 2.5 0 5-.5 7.4-1.4 6.4-2.5 11.2-8.2 12.7-15.1L448 89.4c1.3-7.6-1.6-15.3-7.3-20.6z"/>
+                </svg>
+                Ya
+                </button>
 
-                            <!-- Tombol Batal dengan ikon X (SVG) -->
-                            <button type="button"
-                                    onclick="closeModal()"
-                                    style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
-                                    onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                    onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
-                                    <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
-                                </svg>
-                                Batal
-                            </button>
+                <!-- Tombol Batal dengan ikon X (SVG) -->
+                <button type="button"
+                        onclick="closeModal()"
+                        style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 6px;"
+                        onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                        onmouseout="this.style.backgroundColor='#EF4444'; this.style.color='white'; this.querySelector('svg').style.fill='white';">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 384 512" fill="white">
+                        <path d="M231.6 256l142.7-142.7c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L186.3 210.7 43.6 68c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L141 256 0 397.7c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L186.3 301.3l142.7 142.7c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L231.6 256z"/>
+                    </svg>
+                    Batal
+                </button>
+            </div>
+        </div>
+    </div>
 
-                                  </div>
-                                </div>
-                            </div>
+    <!-- Script -->
+    <script>
+        function openModal() {
+            const modal = document.getElementById("confirmModal");
+            if (modal) modal.style.display = "flex";
+        }
 
-                            <!-- Script -->
-                            <script>
-                            function openModal() {
-                                const modal = document.getElementById("confirmModal");
-                                if (modal) modal.style.display = "flex";
-                            }
+        function closeModal() {
+            const modal = document.getElementById("confirmModal");
+            if (modal) modal.style.display = "none";
+        }
 
-                            function closeModal() {
-                                const modal = document.getElementById("confirmModal");
-                                if (modal) modal.style.display = "none";
-                            }
+        function submitForm() {
+            // Validasi atau proses pengiriman data
+            const isValid = validateForm();  // Fungsi validasi form
 
-                            function showValidationAlert() {
-                                alert("Pendaftaran anda gagal, silahkan ulang kembali.");
-                            }
+            if (isValid) {
+                alert("Pendaftaran Anda berhasil!");
+                // Lakukan proses pengiriman form atau aksi lainnya
+                closeModal();  // Menutup modal setelah berhasil
+            } else {
+                alert("Pendaftaran Anda gagal, silakan ulang kembali.");
+            }
+        }
 
-                            </script>
+        function validateForm() {
+            // Di sini bisa melakukan validasi form Anda
+            // Misalnya, memeriksa apakah semua field diisi dengan benar
+            // Return true jika validasi berhasil, false jika gagal
+
+            // Contoh validasi sederhana
+            let isValid = true;
+
+            // Cek field yang diperlukan atau kondisi lain
+            // Misalnya:
+            // if (!document.getElementById("yourField").value) {
+            //     isValid = false;
+            // }
+
+            return isValid;
+        }
+    </script>
+</div>
 
                         </div>
 
