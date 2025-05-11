@@ -207,8 +207,6 @@ table.zebra-table {
                 </span>
             </p>
         </div>
-    </div>
-</div>
 
         <!-- Pertanyaan SKK -->
 
