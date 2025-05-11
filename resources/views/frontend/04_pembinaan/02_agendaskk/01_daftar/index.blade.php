@@ -1319,6 +1319,51 @@ function previewFile(previewId, input) {
     </div>
 </div>
 
+
+    </div>
+
+    <br><br><br>
+
+</section>
+
+
+<div class="progress-wrap">
+          <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+              <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+          </svg>
+      </div>
+      <!-- back to top end -->
+
+    </div>
+
+    <script>
+        function updateEntries() {
+          let selectedValue = document.getElementById("entries").value;
+          let url = new URL(window.location.href);
+          url.searchParams.set("perPage", selectedValue);
+          window.location.href = url.toString();
+        }
+
+        function searchTable() {
+          let input = document.getElementById("searchInput").value;
+
+          fetch(`/daftarpesertapelatihans/{id}?search=${input}`)
+            .then(response => response.text())
+            .then(html => {
+              let parser = new DOMParser();
+              let doc = parser.parseFromString(html, "text/html");
+              let newTableBody = doc.querySelector("#tableBody").innerHTML;
+              document.querySelector("#tableBody").innerHTML = newTableBody;
+            })
+            .catch(error => console.error("Error fetching search results:", error));
+        }
+      </script>
+
+
+@include('frontend.00_approve.01_cssterpisah.footer1')
+@include('frontend.00_approve.01_cssterpisah.footer')
+
+
 <script>
 function handleSKTCheckbox(clickedBox) {
     const ya = document.getElementById('sktYa');
@@ -1367,46 +1412,3 @@ function handleSKKCheckbox(clickedBox) {
     }
 }
 </script>
-
-    </div>
-
-    <br><br><br>
-
-</section>
-
-
-<div class="progress-wrap">
-          <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-              <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-          </svg>
-      </div>
-      <!-- back to top end -->
-
-    </div>
-
-    <script>
-        function updateEntries() {
-          let selectedValue = document.getElementById("entries").value;
-          let url = new URL(window.location.href);
-          url.searchParams.set("perPage", selectedValue);
-          window.location.href = url.toString();
-        }
-
-        function searchTable() {
-          let input = document.getElementById("searchInput").value;
-
-          fetch(`/daftarpesertapelatihans/{id}?search=${input}`)
-            .then(response => response.text())
-            .then(html => {
-              let parser = new DOMParser();
-              let doc = parser.parseFromString(html, "text/html");
-              let newTableBody = doc.querySelector("#tableBody").innerHTML;
-              document.querySelector("#tableBody").innerHTML = newTableBody;
-            })
-            .catch(error => console.error("Error fetching search results:", error));
-        }
-      </script>
-
-
-@include('frontend.00_approve.01_cssterpisah.footer1')
-@include('frontend.00_approve.01_cssterpisah.footer')
