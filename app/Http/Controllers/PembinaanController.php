@@ -805,6 +805,7 @@ public function beagendaskkupdatecreate(Request $request, $id)
     // Validasi data input
     $validatedData = $request->validate([
         'user_id'              => 'required|string',
+        'jabatankerja_id'              => 'required|string',
         'namakegiatan'         => 'required|string|max:255',
         'asosiasimasjaki_id'   => 'required|string',
         'waktupelaksanaan'     => 'required|date',
@@ -815,6 +816,7 @@ public function beagendaskkupdatecreate(Request $request, $id)
         'isiagenda'            => 'required|string',
         'foto'                 => 'required|image|mimes:jpg,jpeg,png|max:5048',
     ], [
+        'jabatankerja_id.required' => 'ID Jabatan kerja wajib diisi.',
         'user_id.required' => 'ID pengguna wajib diisi.',
         'user_id.exists' => 'ID pengguna yang dipilih tidak valid.',
         'namakegiatan.required' => 'Nama kegiatan wajib diisi.',
@@ -861,7 +863,8 @@ public function beagendaskkupdatecreate(Request $request, $id)
 
     // Update data agenda
     $agenda->update([
-        'asosiasimasjaki_id'              => $validatedData['asosiasimasjaki_id'] ?? $agenda->asosiasimasjaki_id,
+        'jabatankerja_id'  => $validatedData['jabatankerja_id'] ?? $agenda->jabatankerja_id,
+        'asosiasimasjaki_id'  => $validatedData['asosiasimasjaki_id'] ?? $agenda->asosiasimasjaki_id,
         'user_id'              => $validatedData['user_id'] ?? $agenda->user_id,
         'namakegiatan'         => $validatedData['namakegiatan'] ?? $agenda->namakegiatan,
         'waktupelaksanaan'     => $validatedData['waktupelaksanaan'] ?? $agenda->waktupelaksanaan,
