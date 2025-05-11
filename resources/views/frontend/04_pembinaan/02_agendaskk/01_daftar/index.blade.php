@@ -454,7 +454,7 @@ table.zebra-table {
                                             </option>
                                         @endforeach
                                     </select>
-                                    Ket: Jika Data Tidak Ada, Silahkan Klik Icon Ini <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                               <p style="font-size: 13px;">Ket: Jika Data Tidak Ada, Silahkan Klik Icon Ini <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a></p>
                                     @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
