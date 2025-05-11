@@ -265,7 +265,7 @@ table.zebra-table {
 </div>
 
 <!-- Upload SKK -->
-<div class="col-md-6" style="{{ $divStyle }}">
+<div class="col-md-12" style="{{ $divStyle }}"> <!-- Use col-md-12 to match the width of the select -->
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
     </label>
@@ -283,7 +283,6 @@ table.zebra-table {
         <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
     </div>
 </div>
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
