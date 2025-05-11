@@ -182,7 +182,7 @@ table.zebra-table {
         <div style="width: 100%; background-color: #f0f0f0; padding: 10px; overflow: hidden;">
             <p class="scrolling-text"><span style="color: red">Perhatian : </span> Jika Anda kembali ke halaman ini setelah mendaftar, maka pendaftaran Anda gagal. Silakan periksa data dan dokumen Anda, lalu ulangi kembali !.</p>
         </div>
-
+<br>
         <style>
         .scrolling-text {
     color: black;
