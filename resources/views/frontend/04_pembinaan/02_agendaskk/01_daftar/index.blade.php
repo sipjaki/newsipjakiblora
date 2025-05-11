@@ -171,17 +171,22 @@ table.zebra-table {
 
 <hr>
 
-<div style="display: flex; justify-content: center; align-items: center; margin-top: -20px;">
-    <div style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease;" id="sktBox">
+<div id="sktContainer" style="display: flex; justify-content: center; align-items: center; margin-top:-20px;">
+    <div id="sktBox" style="margin-bottom: 20px; font-family: 'Poppins', sans-serif; text-align: center; padding: 20px; border-radius: 15px; transition: background 0.3s ease;">
 
         <label style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 8px; color: navy;">
             <i class="bi bi-patch-question-fill" style="margin-right:8px; color:navy;"></i> Apakah Anda mempunyai SKT?
         </label>
 
-        <div style="display: flex; justify-content: center; gap: 30px;">
+        <div style="display: flex; justify-content: center; gap: 20px;">
             <label style="display: flex; align-items: center; cursor: pointer;">
-                <input type="checkbox" id="sktTidak" style="width: 18px; height: 18px; margin-right: 8px;" onchange="toggleSKTBackground()">
-                <span style="font-size: 15px; color: #333;">Tidak</span>
+                <input type="checkbox" value="ya" id="sktYa" onclick="handleCheckboxClick(this)">
+                <span style="font-size: 15px; color: #333; margin-left: 8px;">Ya</span>
+            </label>
+
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                <input type="checkbox" value="tidak" id="sktTidak" onclick="handleCheckboxClick(this)">
+                <span style="font-size: 15px; color: #333; margin-left: 8px;">Tidak</span>
             </label>
         </div>
 
@@ -189,16 +194,20 @@ table.zebra-table {
 </div>
 
 <script>
-function toggleSKTBackground() {
-    const checkbox = document.getElementById('sktTidak');
+function handleCheckboxClick(clickedBox) {
+    const ya = document.getElementById('sktYa');
+    const tidak = document.getElementById('sktTidak');
     const box = document.getElementById('sktBox');
 
-    if (checkbox.checked) {
-        box.style.background = 'linear-gradient(135deg, #FFD700, #008000)'; // keemasan dan hijau
-        box.style.color = '#fff';
-    } else {
+    // Agar hanya satu checkbox yang bisa aktif
+    if (clickedBox === ya) {
+        tidak.checked = false;
         box.style.background = 'none';
         box.style.color = '#000';
+    } else if (clickedBox === tidak) {
+        ya.checked = false;
+        box.style.background = 'linear-gradient(135deg, #FFD700, #228B22)';
+        box.style.color = '#fff';
     }
 }
 </script>
