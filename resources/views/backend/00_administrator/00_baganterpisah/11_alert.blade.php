@@ -405,6 +405,21 @@
 </div>
 @endif
 
+@if (session('gagaldaftar'))
+<div class="modal-verify-alert">
+    <div class="modal-box">
+        <div class="modal-crane"></div>
+        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
+        style="width: 150px !important; height: auto;"
+        class="logo-animate-bounce">
+           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+        <div style="font-size: 36px; color: red; font-weight: bold; margin: 20px 0;">Anda Salah memasukan berkas dan data diri, Silahkan ulangi Kembali !</div>
+        <button class="button-delete">{{ session('gagaldaftar') }}</button>
+    </div>
+</div>
+@endif
+
 @if (session('pertanyaan'))
 <div class="modal-question-alert">
     <div class="modal-box-question">

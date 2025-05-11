@@ -369,7 +369,6 @@ public function beagendaskkpeserta(Request $request, $namakegiatan)
 }
 
 
-
 public function daftarpesertasertifikasiskkcreatenew(Request $request)
 {
     // Validasi input
@@ -394,7 +393,6 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:2048',
         'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
-        // 'uploadnpwp' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
 
@@ -443,6 +441,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploaddaftarriwayathidup.required' => 'Wajib Upload Daftar Riwayat Hidup.',
         'uploaddaftarriwayathidup.mimes' => 'File KTP harus PDF atau gambar.',
         'uploaddaftarriwayathidup.max' => 'Ukuran file KTP maksimal 2 MB.',
+        // Custom error messages...
     ]);
 
     // Path upload untuk masing-masing file
@@ -459,6 +458,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
 
     $uploadedFiles = [];
 
+    // Upload file
     foreach ($uploadPaths as $field => $path) {
         if ($request->hasFile($field)) {
             $file = $request->file($field);
@@ -474,42 +474,48 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         }
     }
 
-    // Simpan ke database
-    allskktenagakerjablora::create([
-        'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
-        'agendaskk_id' => $request->agendaskk_id,
-        'user_id' => auth()->id(),
-        'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
-        'jabatankerja_id' => $validated['jabatankerja_id'],
-        'namasekolah_id' => $validated['namasekolah_id'],
-        'tahunpilihan_id' => $validated['tahunpilihan_id'],
-        'nik' => $validated['nik'],
-        'tempatlahir' => $validated['tempatlahir'],
-        'ttl' => $validated['ttl'],
-        'jeniskelamin' => $validated['jeniskelamin'],
-        'alamat' => $validated['alamat'],
-        'notelepon' => $validated['notelepon'],
-        'email' => $validated['email'],
-        'tahunlulus' => $validated['tahunlulus'],
+    try {
+        // Simpan ke database
+        allskktenagakerjablora::create([
+            'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
+            'agendaskk_id' => $request->agendaskk_id,
+            'user_id' => auth()->id(),
+            'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
+            'jabatankerja_id' => $validated['jabatankerja_id'],
+            'namasekolah_id' => $validated['namasekolah_id'],
+            'tahunpilihan_id' => $validated['tahunpilihan_id'],
+            'nik' => $validated['nik'],
+            'tempatlahir' => $validated['tempatlahir'],
+            'ttl' => $validated['ttl'],
+            'jeniskelamin' => $validated['jeniskelamin'],
+            'alamat' => $validated['alamat'],
+            'notelepon' => $validated['notelepon'],
+            'email' => $validated['email'],
+            'tahunlulus' => $validated['tahunlulus'],
+            'uploadktp' => $uploadedFiles['uploadktp'] ?? null,
+            'uploadfoto' => $uploadedFiles['uploadfoto'] ?? null,
+            'uploadijazah' => $uploadedFiles['uploadijazah'] ?? null,
+            'uploadpengalaman' => $uploadedFiles['uploadpengalaman'] ?? null,
+            'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
+            'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
+            'uploadkebenarandata' => $uploadedFiles['uploadkebenarandata'] ?? null,
+            'skkanda' => $uploadedFiles['skkanda'] ?? null,
+            'namaasosiasi' => $validated['namaasosiasi'] ?? null,
+            'punyaskk' => $validated['punyaskk'],
+            'punyasiki' => $validated['punyasiki'],
+            'siappatuh' => $validated['siappatuh'],
+        ]);
 
-        'uploadktp' => $uploadedFiles['uploadktp'] ?? null,
-        'uploadfoto' => $uploadedFiles['uploadfoto'] ?? null,
-        'uploadijazah' => $uploadedFiles['uploadijazah'] ?? null,
-        'uploadpengalaman' => $uploadedFiles['uploadpengalaman'] ?? null,
-        'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
-        'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
-        'uploadkebenarandata' => $uploadedFiles['uploadkebenarandata'] ?? null,
-        'skkanda' => $uploadedFiles['skkanda'] ?? null,
-
-        'namaasosiasi' => $validated['namaasosiasi'] ?? null,
-        'punyaskk' => $validated['punyaskk'],
-        'punyasiki' => $validated['punyasiki'],
-        'siappatuh' => $validated['siappatuh'],
-    ]);
-
-    session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
-    return redirect('/dashboard');
+        session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
+        return redirect('/dashboard');
+    } catch (\Exception $e) {
+        // Jika ada error, tampilkan alert dengan pesan error
+        session()->flash('gagaldaftar', 'Pendaftaran Gagal! Silakan periksa kembali data yang dimasukkan.');
+        return redirect()->back()->withInput();
+    }
 }
+
+
 
 public function daftarpesertasertifikasiskkcreatenew2(Request $request)
 {
@@ -535,7 +541,6 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:2048',
         'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
-        // 'uploadnpwp' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
         'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
 
@@ -584,6 +589,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'uploaddaftarriwayathidup.required' => 'Wajib Upload Daftar Riwayat Hidup.',
         'uploaddaftarriwayathidup.mimes' => 'File KTP harus PDF atau gambar.',
         'uploaddaftarriwayathidup.max' => 'Ukuran file KTP maksimal 2 MB.',
+        // Custom error messages...
     ]);
 
     // Path upload untuk masing-masing file
@@ -600,6 +606,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
 
     $uploadedFiles = [];
 
+    // Upload file
     foreach ($uploadPaths as $field => $path) {
         if ($request->hasFile($field)) {
             $file = $request->file($field);
@@ -615,41 +622,45 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         }
     }
 
-    // Simpan ke database
-    allskktenagakerjablora::create([
-        'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
-        'agendaskk_id' => $request->agendaskk_id,
-        'user_id' => auth()->id(),
-        'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
-        'jabatankerja_id' => $validated['jabatankerja_id'],
-        'namasekolah_id' => $validated['namasekolah_id'],
-        'tahunpilihan_id' => $validated['tahunpilihan_id'],
-        'nik' => $validated['nik'],
-        'tempatlahir' => $validated['tempatlahir'],
-        'ttl' => $validated['ttl'],
-        'jeniskelamin' => $validated['jeniskelamin'],
-        'alamat' => $validated['alamat'],
-        'notelepon' => $validated['notelepon'],
-        'email' => $validated['email'],
-        'tahunlulus' => $validated['tahunlulus'],
+    try {
+        // Simpan ke database
+        allskktenagakerjablora::create([
+            'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
+            'agendaskk_id' => $request->agendaskk_id,
+            'user_id' => auth()->id(),
+            'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
+            'jabatankerja_id' => $validated['jabatankerja_id'],
+            'namasekolah_id' => $validated['namasekolah_id'],
+            'tahunpilihan_id' => $validated['tahunpilihan_id'],
+            'nik' => $validated['nik'],
+            'tempatlahir' => $validated['tempatlahir'],
+            'ttl' => $validated['ttl'],
+            'jeniskelamin' => $validated['jeniskelamin'],
+            'alamat' => $validated['alamat'],
+            'notelepon' => $validated['notelepon'],
+            'email' => $validated['email'],
+            'tahunlulus' => $validated['tahunlulus'],
+            'uploadktp' => $uploadedFiles['uploadktp'] ?? null,
+            'uploadfoto' => $uploadedFiles['uploadfoto'] ?? null,
+            'uploadijazah' => $uploadedFiles['uploadijazah'] ?? null,
+            'uploadpengalaman' => $uploadedFiles['uploadpengalaman'] ?? null,
+            'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
+            'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
+            'uploadkebenarandata' => $uploadedFiles['uploadkebenarandata'] ?? null,
+            'skkanda' => $uploadedFiles['skkanda'] ?? null,
+            'namaasosiasi' => $validated['namaasosiasi'] ?? null,
+            'punyaskk' => $validated['punyaskk'],
+            'punyasiki' => $validated['punyasiki'],
+            'siappatuh' => $validated['siappatuh'],
+        ]);
 
-        'uploadktp' => $uploadedFiles['uploadktp'] ?? null,
-        'uploadfoto' => $uploadedFiles['uploadfoto'] ?? null,
-        'uploadijazah' => $uploadedFiles['uploadijazah'] ?? null,
-        'uploadpengalaman' => $uploadedFiles['uploadpengalaman'] ?? null,
-        'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
-        'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
-        'uploadkebenarandata' => $uploadedFiles['uploadkebenarandata'] ?? null,
-        'skkanda' => $uploadedFiles['skkanda'] ?? null,
-
-        'namaasosiasi' => $validated['namaasosiasi'] ?? null,
-        'punyaskk' => $validated['punyaskk'],
-        'punyasiki' => $validated['punyasiki'],
-        'siappatuh' => $validated['siappatuh'],
-    ]);
-
-    session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
-    return redirect('/dashboard');
+        session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
+        return redirect('/dashboard');
+    } catch (\Exception $e) {
+        // Jika ada error, tampilkan alert dengan pesan error
+        session()->flash('gagaldaftar', 'Pendaftaran Gagal! Silakan periksa kembali data yang dimasukkan.');
+        return redirect()->back()->withInput();
+    }
 }
 
 
