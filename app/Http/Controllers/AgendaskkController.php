@@ -375,7 +375,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
     // Validasi input
     $validated = $request->validate([
         'jabatanskkanda_id' => 'nullable|string',
-        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
+        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
         'jenjangpendidikan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
         'namasekolah_id' => 'required|string',
@@ -392,12 +392,12 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         // Upload dokumen
         'uploadktp' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
         'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:5048',
-        'uploadijazah' => 'required|mimes:pdf|max:5048',
-        'uploadpengalaman' => 'required|mimes:pdf|max:5048',
-        'uploaddaftarriwayathidup' => 'required|mimes:pdf|max:5048',
-        'uploadkebenarandata' => 'required|mimes:pdf|max:5048',
+        'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
 
-        'namaasosiasi' => 'nullable|string|max:255',
+        'namaasosiasi' => 'required|string|max:255',
         'punyaskk' => 'required|in:Ya,Tidak',
         'punyasiki' => 'required|in:Ya,Tidak',
         'siappatuh' => 'required|in:Ya,Tidak',
@@ -418,6 +418,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'email.email' => 'Email tidak valid.',
         'tahunlulus.required' => 'Tahun lulus harus diisi.',
         // 'namaasosiasi.required' => 'Nama Asosiasi Wajib diisi.',
+        'namaasosiasi.required' => 'Utusan Wajib Diisi.',
         'punyaskk.required' => 'Pilih apakah memiliki SKK.',
         'punyasiki.required' => 'Pilih apakah memiliki SIKI.',
         'siappatuh.required' => 'Pilih kesiapan mematuhi kode etik.',
