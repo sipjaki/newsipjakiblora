@@ -188,7 +188,7 @@ table.zebra-table {
     color: black;
     white-space: nowrap;
     display: inline-block;
-    animation: scrolling 30s linear infinite; /* Durasi diperpanjang menjadi 15 detik */
+    animation: scrolling 20s linear infinite; /* Durasi diperpanjang menjadi 15 detik */
     font-family: Arial, sans-serif;
     font-size: 16px;
 }
