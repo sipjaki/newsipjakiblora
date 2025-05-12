@@ -1059,7 +1059,7 @@ public function beagendaskkpesertashow(Request $request, $id)
             'namasekolah_id', 'tahunpilihan_id', 'nik', 'tempatlahir', 'ttl', 'jeniskelamin',
             'alamat', 'notelepon', 'email', 'tahunlulus', 'uploadktp', 'uploadfoto', 'uploadijazah',
             'uploadpengalaman', 'uploadnpwp', 'uploaddaftarriwayathidup', 'namaasosiasi', 'punyaskk',
-            'punyasiki', 'siappatuh', 'verifikasipu'
+            'punyasiki', 'siappatuh', 'verifikasipu', 'verifikasilps'
         ]);
 
     // Menambahkan filter pencarian jika ada input search

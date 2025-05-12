@@ -155,13 +155,13 @@ public function terbitkanSertifikat($id)
         $agendaId = $item->agendaskk_id;
 
         // Flash message
-        $pesan = $item->verifikasi === 'lolos'
+        $pesan = $item->verifikasipu === 'lolos'
             ? 'Selamat Peserta Lolos Seleksi!'
             : 'Peserta Peserta Belum Lengkap.';
         session()->flash('verifikasipesertapelatihan', $pesan);
 
         // Redirect
-        return redirect("/beagendaskkpeserta//show/{$agendaId}");
+        return redirect("/beagendaskkpeserta/show/{$agendaId}");
     }
 
 }
