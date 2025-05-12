@@ -1166,8 +1166,8 @@ function previewFile(previewId, input) {
 <br><br>
 <!-- Upload KTP -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-file-earmark-person" style="color: navy;"></i> Upload KTP | .pdf,jpg,jpeg,png
     </label>
     <input type="file" name="uploadktp" style="{{ $inputStyle }}" class="form-control @error('uploadktp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ktpPreview', this)">
     <div class="invalid-feedback">@error('uploadktp') {{ $message }} @enderror</div>
@@ -1176,8 +1176,8 @@ function previewFile(previewId, input) {
 
 <!-- Upload Foto -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-image" style="color: navy;"></i> Upload Pas Foto 3X4 Background Warna Merah <br> jpg,jpeg,png
     </label>
     <input type="file" name="uploadfoto" style="{{ $inputStyle }}" class="form-control @error('uploadfoto') is-invalid @enderror" accept="image/*" onchange="previewFile('fotoPreview', this)">
     <div class="invalid-feedback">@error('uploadfoto') {{ $message }} @enderror</div>
@@ -1186,8 +1186,8 @@ function previewFile(previewId, input) {
 
 <!-- Upload Ijazah -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload Ijazah | .pdf
     </label>
     <input type="file" name="uploadijazah" style="{{ $inputStyle }}" class="form-control @error('uploadijazah') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('ijazahPreview', this)">
     <div class="invalid-feedback">@error('uploadijazah') {{ $message }} @enderror</div>
@@ -1212,8 +1212,8 @@ function previewFile(previewId, input) {
     }
     @endphp
 
-<label class="form-label text-start" style="{{ $labelStyle }}">
-<i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman |
+<label class="form-label" style="{{ $labelStyle }}">
+<i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf
 @if ($fileDownload) <br>
 <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
     Contoh Pengalaman Kerja <i class="bi bi-download"></i>
@@ -1233,8 +1233,8 @@ function previewFile(previewId, input) {
 
 <!-- Upload NPWP -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-file-earmark" style="color: navy;"></i> Upload NPWP | .pdf
     </label>
     <input type="file" name="uploadnpwp" style="{{ $inputStyle }}" class="form-control @error('uploadnpwp') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('npwpPreview', this)">
     <div class="invalid-feedback">@error('uploadnpwp') {{ $message }} @enderror</div>
@@ -1244,8 +1244,8 @@ function previewFile(previewId, input) {
 
 <!-- Upload Daftar Riwayat Hidup -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    <label class="form-label text-start" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Daftar Riwayat Hidup | .pdf
     </label>
     <input type="file" name="uploaddaftarriwayathidup" style="{{ $inputStyle }}" class="form-control @error('uploaddaftarriwayathidup') is-invalid @enderror" accept="application/pdf,image/*" onchange="previewFile('riwayatPreview', this)">
     <div class="invalid-feedback">@error('uploaddaftarriwayathidup') {{ $message }} @enderror</div>
@@ -1270,7 +1270,7 @@ function previewFile(previewId, input) {
     @endphp
 
     <label class="form-label" style="{{ $labelStyle }}">
-        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data |
+        <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf
         @if ($fileDownload)
             <a href="{{ $fileDownload }}" download style="color:rgb(0, 26, 255);">
                 Contoh Surat Pernyataan <i class="bi bi-download"></i>
@@ -1288,7 +1288,6 @@ function previewFile(previewId, input) {
 </div>
 
 <script>
-
 function previewFile(previewId, input) {
     const file = input.files[0];
     const previewContainer = document.getElementById(previewId);
@@ -1320,6 +1319,8 @@ function previewFile(previewId, input) {
     }
 }
 </script>
+
+
 <div style="display: flex; justify-content: flex-end; margin-bottom: 20px; margin-top: 20px;">
     <div class="flex justify-end">
         <button type="button" id="submitButtonNIK"
