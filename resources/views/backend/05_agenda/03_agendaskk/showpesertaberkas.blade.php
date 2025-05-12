@@ -253,7 +253,7 @@
 
     </table>
 
-    <table>
+    <table class="zebra-table table-striped">
 
         <tr>
             <td style="text-align: center;">2</td>
