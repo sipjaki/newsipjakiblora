@@ -253,12 +253,12 @@ button:hover {
                  onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
                  onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
                 <span class="info-box-icon">
-                    <img src="/assets/icon/pupr.png" alt="" width="40">
-                </span>
-                <div class="info-box-content">
     <h4 style="font-size: 2rem; font-weight: bold; color: #28a745; text-align: center; margin-bottom: 10px;">
         120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
     </h4>
+            </span>
+                <div class="info-box-content">
+
     <span class="info-box-text">Kegiatan Konstruksi</span>
     <div class="progress">
         <div class="progress-bar" style="width: 70%"></div>
