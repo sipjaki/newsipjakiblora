@@ -920,7 +920,7 @@ function previewFile(previewId, input) {
 
                             <!-- Tampilan Nama Lengkap (readonly) -->
                             <div style="{{ $divStyle }}">
-                                <label class="form-label" style="{{ $labelStyle }}">
+                                <label class="form-label">
                                     <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
                                 </label>
                                 <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
