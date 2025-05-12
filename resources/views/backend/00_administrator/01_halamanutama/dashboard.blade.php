@@ -244,16 +244,73 @@ button:hover {
 
 @can('pekerja')
 
+<div class="row">
 
-<div class="container">
-    <h4>Status Verifikasi Berkas Anda !</h4>
-    <div id="checkpoint-container" class="timeline-container"></div>
-
-    <div class="control-panel">
-        <button id="simulate-btn">Simulasi Perubahan Status</button>
-        <div class="status-info" id="current-status">Status saat ini: Verifikasi Dokumen</div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="/bebujkkonstruksi">
+            <div class="info-box"
+                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #f1c40f, #e67e22); color: white;"
+                 onmouseover="this.style.background='linear-gradient(45deg, #f39c12, #e67e22)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
+                 onmouseout="this.style.background='linear-gradient(45deg, #f1c40f, #e67e22)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
+                <span class="info-box-icon">
+                    <img src="/assets/icon/pupr.png" alt="" width="40">
+                </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">BUJK Konstruksi</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-description"> Pengaturan </span>
+                </div>
+            </div>
+        </a>
     </div>
+    <!-- /.col -->
+
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="/bebujkkonsultan">
+            <div class="info-box"
+                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #f1c40f, #e67e22); color: white;"
+                 onmouseover="this.style.background='linear-gradient(45deg, #f39c12, #e67e22)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
+                 onmouseout="this.style.background='linear-gradient(45deg, #f1c40f, #e67e22)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
+                <span class="info-box-icon">
+                    <img src="/assets/icon/pupr.png" alt="" width="40">
+                </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">BUJK Konsultasi Konstruksi</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-description"> Pengaturan </span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- /.col -->
+
+    <div class="col-md-3 col-sm-6 col-12">
+        <a href="/beasosiasi">
+            <div class="info-box"
+                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #f1c40f, #e67e22); color: white;"
+                 onmouseover="this.style.background='linear-gradient(45deg, #f39c12, #e67e22)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
+                 onmouseout="this.style.background='linear-gradient(45deg, #f1c40f, #e67e22)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
+                <span class="info-box-icon">
+                    <img src="/assets/icon/pupr.png" alt="" width="40">
+                </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Asosiasi Jasa Konstruksi</span>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <span class="progress-description"> Pengaturan </span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- /.col -->
+
 </div>
+
 
 @endcan
 
@@ -1002,150 +1059,3 @@ button:hover {
 
 
       @include('backend.00_administrator.00_baganterpisah.02_footer')
-
-
-      <script>
-        // Data checkpoint
-const checkpointData = [
-    {
-        id: 1,
-        name: 'Verifikasi Dokumen',
-        status: 'current',
-        time: new Date().toLocaleString(),
-        message: 'Dokumen sedang diverifikasi'
-    },
-    {
-        id: 2,
-        name: 'Verifikasi DPUPR',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi DPUPR'
-    },
-    {
-        id: 3,
-        name: 'Verifikasi LSP',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi LSP'
-    },
-    {
-        id: 4,
-        name: 'Verifikasi Kehadiran',
-        status: 'pending',
-        time: null,
-        message: 'Menunggu verifikasi kehadiran'
-    },
-    {
-        id: 5,
-        name: 'Sertifikat Terbit',
-        status: 'pending',
-        time: null,
-        message: 'Sertifikat akan diterbitkan'
-    }
-];
-
-// Render checkpoint
-function renderCheckpoints() {
-    const container = document.getElementById('checkpoint-container');
-    container.innerHTML = '';
-
-    const timeline = document.createElement('div');
-    timeline.className = 'timeline';
-
-    checkpointData.forEach((checkpoint, index) => {
-        const checkpointElement = document.createElement('div');
-        checkpointElement.className = `checkpoint ${checkpoint.status}`;
-
-        // Dot indicator
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        dot.textContent = checkpoint.id;
-
-        // Connector line
-        if (index < checkpointData.length - 1) {
-            const connector = document.createElement('div');
-            connector.className = `connector ${checkpoint.status === 'completed' ? 'active' : ''}`;
-            checkpointElement.appendChild(connector);
-        }
-
-        // Content
-        const content = document.createElement('div');
-        content.className = 'checkpoint-content';
-
-        const name = document.createElement('div');
-        name.className = 'message';
-        name.textContent = checkpoint.name;
-        content.appendChild(name);
-
-        if (checkpoint.time) {
-            const time = document.createElement('div');
-            time.className = 'time';
-            time.textContent = formatTime(checkpoint.time);
-            content.appendChild(time);
-        }
-
-        checkpointElement.appendChild(dot);
-        checkpointElement.appendChild(content);
-        timeline.appendChild(checkpointElement);
-    });
-
-    container.appendChild(timeline);
-    updateCurrentStatus();
-}
-
-// Format waktu
-function formatTime(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID');
-}
-
-// Update status teks
-function updateCurrentStatus() {
-    const current = checkpointData.find(c => c.status === 'current') ||
-                   checkpointData.find(c => c.status === 'completed');
-    const statusInfo = document.getElementById('current-status');
-
-    if (current) {
-        statusInfo.textContent = `Status saat ini: ${current.name}`;
-
-        if (current.status === 'completed') {
-            statusInfo.textContent += ' (Selesai)';
-        }
-    }
-}
-
-// Simulasi perubahan status
-function simulateProgress() {
-    const currentIndex = checkpointData.findIndex(c => c.status === 'current');
-
-    if (currentIndex >= 0) {
-        // Ubah status current menjadi completed
-        checkpointData[currentIndex].status = 'completed';
-        checkpointData[currentIndex].time = new Date().toLocaleString();
-
-        // Jika ada checkpoint berikutnya, ubah menjadi current
-        if (currentIndex + 1 < checkpointData.length) {
-            checkpointData[currentIndex + 1].status = 'current';
-            checkpointData[currentIndex + 1].time = new Date().toLocaleString();
-        }
-    } else {
-        // Jika semua completed, reset ke awal
-        if (checkpointData.every(c => c.status === 'completed')) {
-            checkpointData.forEach((c, i) => {
-                c.status = i === 0 ? 'current' : 'pending';
-                c.time = i === 0 ? new Date().toLocaleString() : null;
-            });
-        }
-    }
-
-    renderCheckpoints();
-}
-
-// Event listener untuk tombol simulasi
-document.getElementById('simulate-btn').addEventListener('click', simulateProgress);
-
-// Inisialisasi awal
-document.addEventListener('DOMContentLoaded', () => {
-    renderCheckpoints();
-});
-      </script>

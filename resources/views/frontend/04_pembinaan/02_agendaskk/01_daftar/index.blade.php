@@ -886,7 +886,7 @@ function previewFile(previewId, input) {
             <form id="nikRegistrationForm" action="{{ route('daftarpesertasertifikasiskkcreatenew2') }}" method="POST" enctype="multipart/form-data" style="font-family: 'Poppins', sans-serif;">
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
-{{--
+
 
                 <select name="jabatanskkanda_id" class="form-select @error('jabatanskkanda_id') is-invalid @enderror" style="{{ $inputStyle }}">
     <option value="" selected hidden style="display: none;">-- Pilih Jabatan --</option>
@@ -913,7 +913,7 @@ function previewFile(previewId, input) {
         <label style="font-weight: bold;">Preview SKK:</label>
         <iframe id="pdf_preview_frame" width="100%" height="400px" style="border: 1px solid #ccc; border-radius: 6px;"></iframe>
     </div>
-</div> --}}
+</div>
 
                 <div class="card-body">
 
