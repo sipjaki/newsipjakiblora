@@ -32,6 +32,7 @@ $jumlahKegiatan = Allskktenagakerjablora::where('user_id', $userId)
                                        ->whereNotNull('agendaskk_id')  // Hanya yang memiliki agendaskk_id
                                        ->count();
 
+                                       $jumlahKegiatan = $jumlahKegiatan ?: 0;
         $dataallskktenagakerjablora = allskktenagakerjablora::all();
         // return view('backend.00_adminmasjaki.01_fiturterpisah.01_dashboard', [
         return view('backend.00_administrator.01_halamanutama.dashboard', [
