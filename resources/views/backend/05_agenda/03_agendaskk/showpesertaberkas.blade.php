@@ -134,6 +134,384 @@
                     </div>
 <hr>
 
+<div class="halaman-pertama">
+    <div class="header-surat" style="display: flex; align-items: center; justify-content: center;">
+        <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora" style="width: 110px; height: auto; margin-right: 100px; margin-top:50px;">
+
+        <div class="header-text" style="text-align: center;" style="margin-right: 400px;">
+            <h3 style="margin: 2px 0;">PEMERINTAH KABUPATEN BLORA</h3>
+            <h3 style="margin: 2px 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+            <p style="margin: 2px 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+            <h3 style="margin: 2px 0;">KABUPATEN BLORA 58214 PROVINSI JAWA TENGAH</h3>
+        </div>
+        <p></p>
+    </div>
+
+    <div style="margin-top:-80px;">
+        <hr style="border: 4px solid black; width: 100%;">
+        <h5 style="text-align: center;">DATA PESERTA SKK TENAGA KONSTRUKSI</h5>
+        <h5 style="text-align: center;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h5>
+    </div>
+
+    <br>
+
+    <h5>I. IDENTITAS PESERTA</h4>
+    <table>
+
+        <tr>
+            <td style="width:50px; text-align:center;">1</td>
+            <td style="width:200px; text-align:center;">Nama Lengkap</td>
+            <td style="width:50px; text-align:center;">:</td>
+            <td style="width:200px; text-align:center;">{{ ucwords(strtolower($data->user->name)) }}</td>
+            <td style="width:400px; text-align:center;">
+
+                <div style="margin-top: 10px;">
+                    @if($data->uploadfoto && file_exists(public_path('storage/' . $data->uploadfoto)))
+                        <!-- Menampilkan gambar dari storage -->
+                        <img src="{{ asset('storage/' . $data->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                    @elseif($data->uploadfoto)
+                        <!-- Menampilkan gambar dari path luar storage -->
+                        <img src="{{ asset($data->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                    @else
+                        <!-- Placeholder jika tidak ada data -->
+                        <p>Data belum diupdate</p>
+                    @endif
+                </div>
+            </td>
+        </tr>
+
+    </table>
+
+    <table>
+
+        <tr>
+            <td style="text-align: center;">2</td>
+            <td>Jabatan Kerja </td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->jabatankerja->jabatankerja}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">3</td>
+            <td>Tempat Lahir </td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->tempatlahir}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">4</td>
+            <td>Jenis Kelamin </td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->jeniskelamin}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">5</td>
+            <td>KTP/KITAS</td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->nik}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">6</td>
+            <td>Alamat</td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->alamat}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">7</td>
+            <td>Telepon</td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->notelepon}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">8</td>
+            <td>Email</td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->email}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">9</td>
+            <td>Jenjang Pendidikan</td>
+            <td>:</td>
+            <td>{{$data->jenjangpendidikan->jenjangpendidikan}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">10</td>
+            <td>Sekolah/Universitas</td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->namasekolah->namasekolah}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">11</td>
+            <td>Tahun Lulus</td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->tahunlulus}}</td>
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">12</td>
+            <td>Tahun Bimtek</td>
+            <td style="text-align: center;">:</td>
+            <td>{{$data->tahunpilihan->tahunpilihan}}</td>
+        </tr>
+
+    </table>
+
+    <br>
+
+    <h5>II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
+    {{-- <h5>KEPALA DINAS</h5> --}}
+    <table>
+        <tr>
+            <td style="text-align: center;">KTP/KITAS*</td>
+            <td style="text-align: center;">Foto</td>
+            <td style="text-align: center;">Ijazah</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                @if($data->uploadktp)
+                    <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
+                @endif
+            </td>
+            <td style="text-align: center;">
+                @if($data->uploadfoto)
+                    <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
+                @endif
+            </td>
+            <td style="text-align: center;">
+                @if($data->uploadijazah)
+                    <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
+                @endif
+            </td>
+
+        </tr>
+
+        <tr>
+            <td style="text-align: center;">Pengalaman Kerja</td>
+            <td style="text-align: center;">NPWP</td>
+            <td style="text-align: center;">Daftar Riwayat Hidup</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                @if($data->uploadpengalaman)
+                    <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
+                @endif
+            </td>
+            <td style="text-align: center;">
+                @if($data->uploadnpwp)
+                    <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
+                @endif
+            </td>
+            <td style="text-align: center;">
+                @if($data->uploaddaftarriwayathidup)
+                    <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
+                @endif
+            </td>
+
+        </tr>
+
+    </table>
+<br>
+
+</div>
+
+
+<div class="halaman-kedua">
+
+    <h5>III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
+    {{-- <h5>KEPALA DINAS</h5> --}}
+    <table>
+        <tr>
+            <td style="text-align: center;">Nama Asosiasi</td>
+            <td style="text-align: center;">{{$data->namaasosiasi}}</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td style="text-align: center;">MEMPUNYAI SKK ?</td>
+            <td style="text-align: center;">MEMPUNYAI AKUN SIKI/ E-SIMPAN ?</td>
+            <td style="text-align: center;">BERSEDIA MEMATUHI PERATURAN</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                @if($data->punyaskk)
+                    <button class="badge-kembali" style="text-align: center;">PUNYA</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK PUNYA</button>
+                @endif
+            </td>
+            <td style="text-align: center;">
+                @if($data->punyasiki)
+                    <button class="badge-kembali" style="text-align: center;">YA</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
+                @endif
+            </td>
+            <td style="text-align: center;">
+                @if($data->siappatuh)
+                    <button class="badge-kembali" style="text-align: center;">BERSEDIA</button>
+                @else
+                    <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK BERSEDIA</button>
+                @endif
+            </td>
+
+        </tr>
+
+    </table>
+
+    <br>
+
+    <style>
+
+        .borderbaru, .borderbaru tr, .borderbaru td {
+    border: none !important;
+}
+
+    </style>
+
+<table class="borderbaru" style="border-collapse: collapse; border: none;">
+
+        <tr>
+            <td style="width: 45%;"></td>
+            <td style="width: 55%;">DI TETAPKAN DI KABUPATEN BLORA</td>
+        </tr>
+
+        <tr>
+            <td style="width: 45%;"></td>
+            <td style="width: 55%;">PADA TANGGAL _____________</td>
+        </tr>
+        <br>
+        <tr>
+            <td style="width: 45%;"></td>
+            <td style="width: 55%;">DINAS PEKERJAAN UMUM DAN PENAATAAN RUANG <br> SUB KOORDINATOR BIDANG BANGUNAN GEDUNG </td>
+        </tr>
+
+        <br><br>
+        <tr>
+            <td style="width: 45%;"></td>
+            <td style="width: 55%;"></td>
+        </tr>
+        <tr>
+            <td style="width: 45%;"></td>
+            <td style="width: 55%;"></td>
+        </tr>
+        <tr>
+            <td style="width: 45%;"></td>
+            <td style="width: 55%;"></td>
+        </tr>
+            <tr>
+                <td style="width: 45%;"></td>
+                <td style="width: 55%; border-bottom: 2px solid black; text-align: center;">
+                    ANEX FACHRIAN, S.T., M.T
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 45%;"></td>
+                <td style="width: 55%;"></td>
+            </tr>
+            <tr>
+                <td style="width: 45%;"></td>
+                <td style="width: 55%;"></td>
+            </tr>   <tr>
+                <td style="width: 45%;"></td>
+                <td style="width: 55%;"></td>
+            </tr>
+
+    </table>
+
+    </div>
+
+    <div style="display: flex; justify-content: flex-end; padding: 10px;">
+        <a href="javascript:history.back()">
+            <button class="download-btn" style="margin-right: 10px;">
+                <i class="fas fa-arrow-left" style="margin-right:10px;"></i> Kembali
+            </button>
+        </a>
+
+        <!-- Tombol Download PDF -->
+        <button id="downloadPDF" class="download-btn">
+            <i class="fas fa-download" style="margin-right:10px;"></i> Download PDF
+        </button>
+    </div>
+
+    <style>
+        .download-btn {
+            background-color: #001f3f;
+            color: white;
+            border: 2px solid #001f3f;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Efek Hover */
+        .download-btn:hover {
+            background-color: white !important;
+            color: #001f3f !important;
+            border: 2px solid #001f3f !important;
+        }
+    </style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+    document.getElementById("downloadPDF").addEventListener("click", function () {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF("p", "mm", "a4");
+
+        const margin = 20; // 2 cm margin di semua sisi
+        const pdfWidth = 210 - 2 * margin; // Lebar A4 dikurangi margin kiri & kanan
+        const pdfHeight = 297 - 1 * margin; // Tinggi A4 dikurangi margin atas & bawah
+
+        const page1 = document.querySelector(".halaman-pertama");
+        const page2 = document.querySelector(".halaman-kedua");
+
+        function addPageContent(element, yOffset, addNewPage = false) {
+            return new Promise((resolve) => {
+                html2canvas(element, { scale: 2, scrollY: -window.scrollY }).then((canvas) => {
+                    if (addNewPage) pdf.addPage();
+                    const imgData = canvas.toDataURL("image/png");
+                    const imgWidth = pdfWidth;
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                    pdf.addImage(imgData, "PNG", margin, yOffset, imgWidth, imgHeight);
+                    resolve();
+                });
+            });
+        }
+
+        addPageContent(page1, margin).then(() => {
+            addPageContent(page2, margin, true).then(() => {
+                pdf.save("{{$data->user->name}}");
+            });
+        });
+    });
+</script>
+
+
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
