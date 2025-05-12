@@ -13124,7 +13124,7 @@ allskktenagakerjablora::create([
     'punyasiki' => 'TIDAK',
     'siappatuh' => 'YA',
     'portalpupr' => 'YA',
-    'verifikasipu' => false,
+    'verifikasipu' => null,
     'verifikasilps' => false,
 ]);
 
@@ -13154,7 +13154,7 @@ allskktenagakerjablora::create([
     'punyasiki' => 'TIDAK',
     'siappatuh' => 'YA',
     'portalpupr' => 'YA',
-    'verifikasipu' => false,
+    'verifikasipu' => null,
     'verifikasilps' => false,
 ]);
 
@@ -13184,7 +13184,7 @@ allskktenagakerjablora::create([
     'punyasiki' => 'TIDAK',
    'siappatuh' => 'YA',
     'portalpupr' => 'YA',
-    'verifikasipu' => false,
+    'verifikasipu' => null,
     'verifikasilps' => false,
 ]);
 
@@ -13214,7 +13214,7 @@ allskktenagakerjablora::create([
     'punyasiki' => 'TIDAK',
    'siappatuh' => 'YA',
     'portalpupr' => 'YA',
-    'verifikasipu' => false,
+    'verifikasipu' => null,
     'verifikasilps' => false,
 ]);
 
@@ -13246,7 +13246,7 @@ allskktenagakerjablora::create([
     'punyasiki' => 'TIDAK',
     'siappatuh' => 'TIDAK',
     'portalpupr' => 'YA',
-    'verifikasipu' => false,
+    'verifikasipu' => null,
     'verifikasilps' => false,
 ]);
 
