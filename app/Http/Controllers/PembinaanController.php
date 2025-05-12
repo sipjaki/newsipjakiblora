@@ -303,27 +303,26 @@ class PembinaanController extends Controller
     }
 
 
-        public function beagendapelatihanpesertadelete($id)
-        {
-        // Cari item berdasarkan judul
-            $entry = pesertapelatihan::where('id', $id)->first();
+     public function beagendaskkpesertadelete($id)
+{
+    // Cari peserta berdasarkan ID
+    $entry = allskktenagakerjablora::find($id);
 
-            if ($entry) {
-            // Jika ada file header yang terdaftar, hapus dari storage
-            // if (Storage::disk('public')->exists($entry->header)) {
-                //     Storage::disk('public')->delete($entry->header);
-            // }
+    if ($entry) {
+        // Simpan ID agenda sebelum data dihapus
+        $agendaId = $entry->agendaskk_id;
 
-            // Hapus entri dari database
-            $entry->delete();
+        // Hapus entri
+        $entry->delete();
 
-            // Redirect atau memberi respons sesuai kebutuhan
-            return redirect('/beagendapelatihan')->with('delete', 'Data Berhasil Di Hapus !');
+        // Redirect ke halaman show agenda peserta
+        return redirect("/beagendaskkpeserta/show/{$agendaId}")
+            ->with('delete', 'Data Peserta Berhasil Dihapus!');
+    }
 
-            }
+    return redirect()->back()->with('error', 'Data Peserta Tidak Ditemukan.');
+}
 
-        return redirect()->back()->with('error', 'Item not found');
-        }
 
         public function beagendapelatihandelete($namakegiatan)
         {

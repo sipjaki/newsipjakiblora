@@ -904,6 +904,7 @@ Route::get('/beagendaskk', [PembinaanController::class, 'beagendaskk'])->middlew
 Route::get('/beagendaskkmateri/{id}', [PembinaanController::class, 'beagendaskkmateri'])->middleware('auth')->name('beagendaskkmateri');
 
 Route::delete('/beagendaskkmateri/delete/{namakegiatan}', [PembinaanController::class, 'beagendaskkmateridelete'])->middleware('auth');
+Route::delete('/beagendaskkpeserta/delete/{id}', [PembinaanController::class, 'beagendaskkpesertadelete'])->middleware('auth');
 
 Route::get('/beagendaskk/show/{namakegiatan}', [PembinaanController::class, 'beagendaskkshow'])->middleware('auth');
 Route::get('/beagendaskk/update/{namakegiatan}', [PembinaanController::class, 'beagendaskkupdate'])->middleware('auth')->name('beagendaskkupdate');
