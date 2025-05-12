@@ -126,6 +126,10 @@
     .button-verifikasi { background: orangered; }
     .button-text:hover { background: white; color: black; }
 
+
+    .button-verifikasi1 { background: rgb(0, 26, 255); }
+    .button-text:hover { background: white; color: black; }
+
     .button-verifikasi1 { background: rgb(0, 94, 97); }
     .button-text:hover { background: white; color: black; }
 
@@ -354,7 +358,7 @@
         class="logo-animate-bounce">
            <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
         <div class="success-text">Berhasil</div>
-        <button class="button-verifikasi">{{ session('verifikasipesertaskk') }}</button>
+        <button class="button-verifikasi1">{{ session('verifikasipesertaskk') }}</button>
     </div>
 </div>
 @endif
