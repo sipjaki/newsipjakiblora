@@ -258,9 +258,9 @@ button:hover {
             <!-- Konten -->
             <div class="info-box-content" style="padding: 10px 20px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-hammer" style="font-size: 24px;"></i> <!-- Gantilah 'hammer' dengan ikon lain jika diperlukan -->
+                    <i class="bi bi-tools" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold;">Kegiatan Konstruksi</span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Kegiatan Konstruksi</span>
             </div>
         </div>
     </div>
@@ -277,9 +277,9 @@ button:hover {
             <!-- Konten -->
             <div class="info-box-content" style="padding: 10px 20px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-hammer" style="font-size: 24px;"></i> <!-- Gantilah 'hammer' dengan ikon lain jika diperlukan -->
+                    <i class="bi bi-arrow-repeat" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold;">Permohonan Di Kembalikan</span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Permohonan Di Kembalikan</span>
             </div>
         </div>
     </div>
@@ -296,9 +296,9 @@ button:hover {
             <!-- Konten -->
             <div class="info-box-content" style="padding: 10px 20px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-hammer" style="font-size: 24px;"></i> <!-- Gantilah 'hammer' dengan ikon lain jika diperlukan -->
+                    <i class="bi bi-check-circle" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold;">Verifikasi DPUPR</span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Verifikasi DPUPR</span>
             </div>
         </div>
     </div>
@@ -318,9 +318,9 @@ button:hover {
             <!-- Konten -->
             <div class="info-box-content" style="padding: 10px 20px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-hammer" style="font-size: 24px;"></i> <!-- Gantilah 'hammer' dengan ikon lain jika diperlukan -->
+                    <i class="bi bi-check2-circle" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold;">LOLOS LSP</span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">LOLOS LSP</span>
             </div>
         </div>
     </div>
@@ -337,9 +337,9 @@ button:hover {
             <!-- Konten -->
             <div class="info-box-content" style="padding: 10px 20px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-hammer" style="font-size: 24px;"></i> <!-- Gantilah 'hammer' dengan ikon lain jika diperlukan -->
+                    <i class="bi bi-file-earmark-check" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
                 </span>
-                <span class="info-box-text" style="font-size: 20px; font-weight: bold;">Sertifikat Terbit</span>
+                <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Sertifikat Terbit</span>
             </div>
         </div>
     </div>
