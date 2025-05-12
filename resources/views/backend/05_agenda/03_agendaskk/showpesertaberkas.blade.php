@@ -227,7 +227,7 @@
 
     <h5 style="color: navy; font-weight:800;">I. IDENTITAS PESERTA</h4>
 
-        <table>
+        <table class="zebra-table table-striped">
 
         <tr>
             <td style="width:50px; text-align:center;">1</td>
