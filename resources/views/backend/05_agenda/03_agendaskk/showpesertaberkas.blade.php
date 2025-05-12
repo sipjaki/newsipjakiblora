@@ -162,16 +162,16 @@
             <td style="width:50px; text-align:center;">1</td>
             <td style="width:200px; text-align:center;">Nama Lengkap</td>
             <td style="width:50px; text-align:center;">:</td>
-            <td style="width:200px; text-align:center;">{{ ucwords(strtolower($data->user->name)) }}</td>
+            <td style="width:200px; text-align:center;">{{ ucwords(strtolower($datapeserta->user->name)) }}</td>
             <td style="width:400px; text-align:center;">
 
                 <div style="margin-top: 10px;">
-                    @if($data->uploadfoto && file_exists(public_path('storage/' . $data->uploadfoto)))
+                    @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
                         <!-- Menampilkan gambar dari storage -->
-                        <img src="{{ asset('storage/' . $data->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
-                    @elseif($data->uploadfoto)
+                        <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                    @elseif($datapeserta->uploadfoto)
                         <!-- Menampilkan gambar dari path luar storage -->
-                        <img src="{{ asset($data->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                        <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                     @else
                         <!-- Placeholder jika tidak ada data -->
                         <p>Data belum diupdate</p>
@@ -188,77 +188,77 @@
             <td style="text-align: center;">2</td>
             <td>Jabatan Kerja </td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->jabatankerja->jabatankerja}}</td>
+            <td>{{$datapeserta->jabatankerja->jabatankerja}}</td>
         </tr>
 
         <tr>
             <td style="text-align: center;">3</td>
             <td>Tempat Lahir </td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->tempatlahir}}</td>
+            <td>{{$datapeserta->tempatlahir}}</td>
         </tr>
 
         <tr>
             <td style="text-align: center;">4</td>
             <td>Jenis Kelamin </td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->jeniskelamin}}</td>
+            <td>{{$datapeserta->jeniskelamin}}</td>
         </tr>
 
         <tr>
             <td style="text-align: center;">5</td>
             <td>KTP/KITAS</td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->nik}}</td>
+            <td>{{$datapeserta->nik}}</td>
         </tr>
 
         <tr>
             <td style="text-align: center;">6</td>
             <td>Alamat</td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->alamat}}</td>
+            <td>{{$datapeserta->alamat}}</td>
         </tr>
 
         <tr>
             <td style="text-align: center;">7</td>
             <td>Telepon</td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->notelepon}}</td>
+            <td>{{$datapeserta->notelepon}}</td>
         </tr>
 
         <tr>
             <td style="text-align: center;">8</td>
             <td>Email</td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->email}}</td>
+            <td>{{$datapeserta->email}}</td>
         </tr>
 
-        {{-- <tr>
+        <tr>
             <td style="text-align: center;">9</td>
             <td>Jenjang Pendidikan</td>
             <td>:</td>
-            <td>{{$data->jenjangpendidikan->jenjangpendidikan}}</td>
-        </tr> --}}
+            <td>{{$datapeserta->jenjangpendidikan->jenjangpendidikan}}</td>
+        </tr>
 
         <tr>
             <td style="text-align: center;">10</td>
             <td>Sekolah/Universitas</td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->namasekolah->namasekolah}}</td>
+            <td>{{$datapeserta->namasekolah->namasekolah}}</td>
         </tr>
 
         <tr>
             <td style="text-align: center;">11</td>
             <td>Tahun Lulus</td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->tahunlulus}}</td>
+            <td>{{$datapeserta->tahunlulus}}</td>
         </tr>
 
         <tr>
             <td style="text-align: center;">12</td>
             <td>Tahun Bimtek</td>
             <td style="text-align: center;">:</td>
-            <td>{{$data->tahunpilihan->tahunpilihan}}</td>
+            <td>{{$datapeserta->tahunpilihan->tahunpilihan}}</td>
         </tr>
 
     </table>
@@ -275,21 +275,21 @@
         </tr>
         <tr>
             <td style="text-align: center;">
-                @if($data->uploadktp)
+                @if($datapeserta->uploadktp)
                     <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
                 @endif
             </td>
             <td style="text-align: center;">
-                @if($data->uploadfoto)
+                @if($datapeserta->uploadfoto)
                     <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
                 @endif
             </td>
             <td style="text-align: center;">
-                @if($data->uploadijazah)
+                @if($datapeserta->uploadijazah)
                     <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
@@ -305,21 +305,21 @@
         </tr>
         <tr>
             <td style="text-align: center;">
-                @if($data->uploadpengalaman)
+                @if($datapeserta->uploadpengalaman)
                     <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
                 @endif
             </td>
             <td style="text-align: center;">
-                @if($data->uploadnpwp)
+                @if($datapeserta->uploadnpwp)
                     <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
                 @endif
             </td>
             <td style="text-align: center;">
-                @if($data->uploaddaftarriwayathidup)
+                @if($datapeserta->uploaddaftarriwayathidup)
                     <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
@@ -340,8 +340,8 @@
     {{-- <h5>KEPALA DINAS</h5> --}}
     <table>
         <tr>
-            <td style="text-align: center;">Nama Asosiasi</td>
-            <td style="text-align: center;">{{$data->namaasosiasi}}</td>
+            <td style="text-align: center;">Nama Penyelenggara</td>
+            <td style="text-align: center;">{{$datapeserta->namaasosiasi}}</td>
         </tr>
     </table>
 
@@ -353,21 +353,21 @@
         </tr>
         <tr>
             <td style="text-align: center;">
-                @if($data->punyaskk)
+                @if($datapeserta->punyaskk)
                     <button class="badge-kembali" style="text-align: center;">PUNYA</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK PUNYA</button>
                 @endif
             </td>
             <td style="text-align: center;">
-                @if($data->punyasiki)
+                @if($datapeserta->punyasiki)
                     <button class="badge-kembali" style="text-align: center;">YA</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK</button>
                 @endif
             </td>
             <td style="text-align: center;">
-                @if($data->siappatuh)
+                @if($datapeserta->siappatuh)
                     <button class="badge-kembali" style="text-align: center;">BERSEDIA</button>
                 @else
                     <button class="btn btn-secondary" disabled style="text-align: center;">TIDAK BERSEDIA</button>
