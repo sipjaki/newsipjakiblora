@@ -809,7 +809,7 @@ function previewFile(previewId, input) {
                             <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
                             </svg>
 
-                                <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran 1 </span>
+                                <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran</span>
                             </button>
                             </div>
                             <!-- Modal Konfirmasi -->
@@ -910,7 +910,7 @@ function previewFile(previewId, input) {
                                     transition: 0.3s;
                                     font-size: 14px;
                                 ";
-                                $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block; font-size:16px;";
+                                $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block; font-size:16px; text-align:left:";
                                 $divStyle = "margin-bottom: 20px;";
                                 $iconStyle = "color: navy;";
                             @endphp
@@ -1326,7 +1326,7 @@ function previewFile(previewId, input) {
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
                 <path d="M9.99 15.21L9.9 19.48c.42 0 .6-.18.81-.39l1.94-1.89 4.02 2.93c.74.41 1.27.2 1.46-.68l2.64-12.36c.27-1.24-.47-1.73-1.24-1.45L2.58 9.75c-1.2.47-1.18 1.13-.2 1.42l4.87 1.52 11.3-7.1c.53-.35 1.01-.16.61.22"/>
             </svg>
-            <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran 2</span>
+            <span style="font-family: 'Poppins', sans-serif;">Kirim Formulir Pendaftaran</span>
         </button>
     </div>
 </div>
