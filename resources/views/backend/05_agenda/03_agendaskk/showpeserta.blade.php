@@ -275,7 +275,7 @@
                                             document.getElementById('itemName').innerText = id;
 
                                             // Atur URL penghapusan
-                                            var deleteUrl = "/beagendapelatihanpeserta/delete/" + encodeURIComponent(id);
+                                            var deleteUrl = "/beagendaskkpeserta/delete/" + encodeURIComponent(id);
                                             document.getElementById('deleteForm').action = deleteUrl;
                                         }
 
