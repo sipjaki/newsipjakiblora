@@ -252,6 +252,14 @@
                         </a>
                       </li>
 
+                      <li class="nav-item">
+                        <a href="/dashboard" target="_blank" class="nav-link">
+                          <!-- Ikon untuk Halaman Web (Rumah) -->
+                          <i class="nav-icon bi bi-house-door text-warning"></i>
+                          <p style="color: white;">Halaman Dashboard</p>
+                        </a>
+                      </li>
+
 
                 </ul>
               </li>
