@@ -409,7 +409,7 @@
 
     <h5 style="color: navy; font-weight:800;">III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
-    <table class="zebra-table table-striped">
+    <table>
         <tr>
             <td style="text-align: center;">Nama Penyelenggara</td>
             <td style="text-align: center;">{{$datapeserta->namaasosiasi}}</td>
