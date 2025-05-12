@@ -527,7 +527,7 @@
     {{-- <h5>KEPALA DINAS</h5> --}}
     <table>
         <tr>
-            <td style="text-align: center;">Nama Penyelenggara</td>
+            <td style="text-align: center;">Nama Utusan</td>
             <td style="text-align: center;">{{$datapeserta->namaasosiasi}}</td>
         </tr>
     </table>
