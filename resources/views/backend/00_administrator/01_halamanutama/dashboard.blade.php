@@ -338,8 +338,8 @@ button:hover {
 
     .info-box-icon h4 {
         margin-bottom: 0; /* Menghapus margin bawah dari h4 */
-        margin-right: 25; /* Menghapus margin bawah dari h4 */
-        margin-left: 25; /* Menghapus margin bawah dari h4 */
+        margin-right: 25px; /* Menghapus margin bawah dari h4 */
+        margin-left: 25px; /* Menghapus margin bawah dari h4 */
     }
 
     /* Styling tambahan untuk konten info-box */
