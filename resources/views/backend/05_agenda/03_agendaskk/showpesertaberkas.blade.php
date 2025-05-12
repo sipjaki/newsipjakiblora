@@ -132,6 +132,8 @@
                  </div>
 
                     </div>
+<hr>
+
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
