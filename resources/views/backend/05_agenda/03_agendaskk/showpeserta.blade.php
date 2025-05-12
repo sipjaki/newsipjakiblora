@@ -175,7 +175,7 @@
             <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
         </button>
     @elseif($item->verifikasipu == 'dikembalikan')
-        <button type="button" disabled class="btn" style="background-color: #EF4444; color: white;">
+        <button type="button" disabled class="btn" style="background-color: #0400ff; color: white;">
             <i class="bi bi-x-circle"></i> DIKEMBALIKAN
         </button>
     @elseif($item->verifikasipu == 'lolos')
@@ -200,7 +200,7 @@
             </button>
 
             <!-- Tombol Dikembalikan -->
-            <button type="submit" name="verifikasipu" value="dikembalikan" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
+            <button type="submit" name="verifikasipu" value="dikembalikan" style="background-color: #0400ff; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
                 <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Dikembalikan
             </button>
         </form>
