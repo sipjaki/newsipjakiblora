@@ -428,14 +428,14 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'uploadktp.mimes' => 'File KTP harus PDF atau gambar.',
         'uploadktp.max' => 'Ukuran file KTP maksimal 5 MB.',
         'uploadfoto.required' => 'Wajib Upload Pas Foto.',
-        'uploadfoto.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadfoto.max' => 'Ukuran file KTP maksimal 5 MB.',
+        'uploadfoto.mimes' => 'File Foto harus PDF atau gambar.',
+        'uploadfoto.max' => 'Ukuran file Foto maksimal 5 MB.',
         'uploadijazah.required' => 'Wajib Upload Ijazah.',
-        'uploadijazah.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadijazah.max' => 'Ukuran file KTP maksimal 5 MB.',
+        'uploadijazah.mimes' => 'File Ijazah harus PDF atau gambar.',
+        'uploadijazah.max' => 'Ukuran file Ijazah maksimal 5 MB.',
         'uploadpengalaman.required' => 'Wajib Upload Pengalaman.',
         'uploadpengalaman.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadpengalaman.max' => 'Ukuran file KTP maksimal 5 MB.',
+        'uploadpengalaman.max' => 'Ukuran file Pengalaman maksimal 5 MB.',
         // 'uploadpengalaman.required' => 'Wajib Upload Bukti Kebenaran.',
         'uploadkebenarandata.required' => 'Wajib Upload Bukti Kebenaran.',
         // 'uploadnpwp.required' => 'Wajib Upload NPWP.',
@@ -443,7 +443,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         // 'uploadnpwp.max' => 'Ukuran file KTP maksimal 2 MB.',
         'uploaddaftarriwayathidup.required' => 'Wajib Upload Daftar Riwayat Hidup.',
         'uploaddaftarriwayathidup.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploaddaftarriwayathidup.max' => 'Ukuran file KTP maksimal 5 MB.',
+        'uploaddaftarriwayathidup.max' => 'Ukuran file Riwayat Hidup maksimal 5 MB.',
         // Custom error messages...
     ]);
 
