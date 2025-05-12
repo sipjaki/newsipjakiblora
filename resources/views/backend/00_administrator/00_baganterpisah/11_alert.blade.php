@@ -139,7 +139,7 @@
     .button-text:hover { background: white; color: black; }
 
 
-    .button-verifikasi1 { background: rgb(0, 26, 255); }
+    .button-verifikasi1 { background: rgb(0, 17, 168); }
     .button-text:hover { background: white; color: black; }
 
     .button-verifikasi1 { background: rgb(0, 94, 97); }
