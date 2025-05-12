@@ -254,9 +254,13 @@ button:hover {
                     120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
             </span>
-            <div class="info-box-content">
-                <span class="info-box-text">Kegiatan Konstruksi</span>
-            </div>
+           <div class="info-box-content">
+    <span class="info-box-icon">
+        <i class="bi bi-hammer"></i> <!-- Replace 'hammer' with your desired icon -->
+    </span>
+    <span class="info-box-text" style="font-size: 20px;">Kegiatan Konstruksi</span>
+</div>
+
         </div>
     </div>
 
