@@ -249,9 +249,9 @@ button:hover {
     <div class="col-md-3 col-sm-6 col-12">
         <a href="/bebujkkonstruksi">
             <div class="info-box"
-                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #f1c40f, #e67e22); color: white;"
-                 onmouseover="this.style.background='linear-gradient(45deg, #f39c12, #e67e22)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                 onmouseout="this.style.background='linear-gradient(45deg, #f1c40f, #e67e22)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
+                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;"
+                 onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
+                 onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
                 <span class="info-box-icon">
                     <img src="/assets/icon/pupr.png" alt="" width="40">
                 </span>
@@ -270,9 +270,9 @@ button:hover {
     <div class="col-md-3 col-sm-6 col-12">
         <a href="/bebujkkonsultan">
             <div class="info-box"
-                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #f1c40f, #e67e22); color: white;"
-                 onmouseover="this.style.background='linear-gradient(45deg, #f39c12, #e67e22)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                 onmouseout="this.style.background='linear-gradient(45deg, #f1c40f, #e67e22)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
+                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;"
+                 onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
+                 onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
                 <span class="info-box-icon">
                     <img src="/assets/icon/pupr.png" alt="" width="40">
                 </span>
@@ -291,9 +291,9 @@ button:hover {
     <div class="col-md-3 col-sm-6 col-12">
         <a href="/beasosiasi">
             <div class="info-box"
-                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #f1c40f, #e67e22); color: white;"
-                 onmouseover="this.style.background='linear-gradient(45deg, #f39c12, #e67e22)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                 onmouseout="this.style.background='linear-gradient(45deg, #f1c40f, #e67e22)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
+                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;"
+                 onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
+                 onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
                 <span class="info-box-icon">
                     <img src="/assets/icon/pupr.png" alt="" width="40">
                 </span>
