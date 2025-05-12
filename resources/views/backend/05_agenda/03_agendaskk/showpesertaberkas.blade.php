@@ -635,11 +635,12 @@
     </div>
 
     <div style="display: flex; justify-content: flex-end; padding: 10px;">
-        <a href="javascript:history.back()">
-            <button class="download-btn" style="margin-right: 10px;">
-                <i class="fas fa-arrow-left" style="margin-right:10px;"></i> Kembali
-            </button>
-        </a>
+      <a href="javascript:history.back()">
+    <button class="download-btn" style="margin-right: 10px;">
+        <i class="bi bi-arrow-left" style="margin-right: 10px;"></i> Kembali
+    </button>
+</a>
+
 
         <!-- Tombol Download PDF -->
 <button id="downloadPDF" class="download-btn">
