@@ -238,10 +238,10 @@
                 <div style="margin-top: 10px;">
                     @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
                         <!-- Menampilkan gambar dari storage -->
-                        <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                        <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                     @elseif($datapeserta->uploadfoto)
                         <!-- Menampilkan gambar dari path luar storage -->
-                        <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+                        <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                     @else
                         <!-- Placeholder jika tidak ada data -->
                         <p>Data belum diupdate</p>
