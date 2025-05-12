@@ -222,7 +222,6 @@
         <h5 style="text-align: center;">DATA PESERTA SKK TENAGA KONSTRUKSI</h5>
         <h5 style="text-align: center;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h5>
     </div>
-    </div>
 
     <br>
 
@@ -528,7 +527,7 @@
     {{-- <h5>KEPALA DINAS</h5> --}}
     <table>
         <tr>
-            <td style="text-align: center;">Nama Utusan</td>
+            <td style="text-align: center;">Nama Asosiasi</td>
             <td style="text-align: center;">{{$datapeserta->namaasosiasi}}</td>
         </tr>
     </table>
@@ -626,7 +625,6 @@
 
     </table>
 
-    </div>
     </div>
 
     <div style="display: flex; justify-content: flex-end; padding: 10px;">
