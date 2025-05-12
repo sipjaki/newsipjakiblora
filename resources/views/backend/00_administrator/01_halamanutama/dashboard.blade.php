@@ -256,11 +256,11 @@ button:hover {
                     <img src="/assets/icon/pupr.png" alt="" width="40">
                 </span>
                 <div class="info-box-content">
-                    <span class="info-box-text">BUJK Konstruksi</span>
+                    <span class="info-box-text">Kegiatan Konstruksi</span>
                     <div class="progress">
                         <div class="progress-bar" style="width: 70%"></div>
                     </div>
-                    <span class="progress-description"> Pengaturan </span>
+                    {{-- <span class="progress-description"> Pengaturan </span> --}}
                 </div>
             </div>
         </a>
