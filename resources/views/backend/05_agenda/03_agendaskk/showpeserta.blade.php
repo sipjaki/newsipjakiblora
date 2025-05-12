@@ -184,7 +184,7 @@
 <!-- Modal Konfirmasi -->
 <div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
     <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
-        <p style="font-size: 16px; font-weight: 600;">Apakah peserta sudah memenuhi persyaratan pendaftaran?</p>
+        <p style="font-size: 16px; font-weight: 600;">Apakah peserta sudah memenuhi <br> persyaratan pendaftaran?</p>
 
         <form id="verifikasiForm" method="POST">
             @csrf
