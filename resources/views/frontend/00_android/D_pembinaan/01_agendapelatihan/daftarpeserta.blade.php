@@ -200,7 +200,7 @@ h5 {
                 <div class="container-surat">
                     <div class="header-surat">
                         <div class="header-text">
-                            <h3>AGENDA PELATIHAN TKK KABUPATEN BLORA </h3>
+                            <h3>AGENDA PEMBINAAN JASA KONSTRUKSI </h3>
                             <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
                             {{-- <p>----------------------------------------------</p> --}}
                             <p
