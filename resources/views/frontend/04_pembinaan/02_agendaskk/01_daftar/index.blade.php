@@ -983,7 +983,7 @@ function previewFile(previewId, input) {
         </p>
         @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
-</div>
+
 
                                 <!-- Tahun Bimtek -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
