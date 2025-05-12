@@ -256,12 +256,16 @@ button:hover {
                     <img src="/assets/icon/pupr.png" alt="" width="40">
                 </span>
                 <div class="info-box-content">
-                    <span class="info-box-text">Kegiatan Konstruksi</span>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 70%"></div>
-                    </div>
-                    {{-- <span class="progress-description"> Pengaturan </span> --}}
-                </div>
+    <h4 style="font-size: 2rem; font-weight: bold; color: #28a745; text-align: center; margin-bottom: 10px;">
+        120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+    </h4>
+    <span class="info-box-text">Kegiatan Konstruksi</span>
+    <div class="progress">
+        <div class="progress-bar" style="width: 70%"></div>
+    </div>
+    {{-- <span class="progress-description"> Pengaturan </span> --}}
+</div>
+
             </div>
         </a>
     </div>
