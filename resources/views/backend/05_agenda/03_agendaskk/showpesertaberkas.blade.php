@@ -589,10 +589,10 @@
             <td style="width: 55%;">DI TETAPKAN DI KABUPATEN BLORA</td>
         </tr>
 
-        <tr>
+        {{-- <tr>
             <td style="width: 45%;"></td>
             <td style="width: 55%;">PADA TANGGAL {{$datapeserta->agendaskk->waktupelaksanaan}}</td>
-        </tr>
+        </tr> --}}
         <br>
         <tr>
             <td style="width: 45%;"></td>
