@@ -24,10 +24,10 @@
     }
 
     .header-surat img {
-        width: 100px; /* Perbesar sedikit agar lebih proporsional */
-        height: 100px;
+        width: 300px; /* Perbesar sedikit agar lebih proporsional */
+        height: 300px;
         margin-right: 50px; /* Jarak antara logo dan teks */
-        margin-bottom: 100px; /* Jarak antara logo dan teks */
+        margin-bottom: 300px; /* Jarak antara logo dan teks */
     }
 
     .header-surat-text {
@@ -206,7 +206,7 @@
 
 <div class="halaman-pertama">
     <div class="header-surat" style="display: flex; align-items: center; justify-content: center;">
-        <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora" style="width: 110px; height: auto; margin-right: 100px; margin-top:50px;">
+        <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora" style="width: 110px; height: auto; margin-right: 300px; margin-top:50px;">
 
         <div class="header-text" style="text-align: center;" style="margin-right: 400px;">
             <h3 style="margin: 2px 0;">PEMERINTAH KABUPATEN BLORA</h3>
@@ -239,10 +239,10 @@
                 <div style="margin-top: 10px;">
                     @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
                         <!-- Menampilkan gambar dari storage -->
-                        <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                        <img src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                     @elseif($datapeserta->uploadfoto)
                         <!-- Menampilkan gambar dari path luar storage -->
-                        <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                        <img src="{{ asset($datapeserta->uploadfoto) }}" alt="Pas Foto 4 x 6 " style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                     @else
                         <!-- Placeholder jika tidak ada data -->
                         <p>Data belum diupdate</p>
@@ -347,45 +347,83 @@
         <tr>
             <td style="text-align: center;">
                  <div style="margin-top: 10px;">
-                                                @if($datapeserta->uploadktp && file_exists(public_path('storage/' . $datapeserta->uploadktp)))
-                                                <!-- Display the default iframe when the file exists in the storage -->
-                                                <iframe src="{{ asset('storage/' . $datapeserta->uploadktp) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @elseif($datapeserta->uploadktp)
-                                                <!-- Display the iframe with the updated file -->
-                                                <iframe src="{{ asset($datapeserta->uploadktp) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @else
-                                                <!-- Optional: Show a placeholder if there's no file available -->
-                                                <p>Data belum diupdate</p>
-                                            @endif
-                                            </div>
+    @if($datapeserta->uploadktp && file_exists(public_path('storage/' . $datapeserta->uploadktp)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $datapeserta->uploadktp) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @elseif($datapeserta->uploadktp)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($datapeserta->uploadktp) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
+
+            </td>
+
+            <td style="text-align: center;">
+                    <div style="margin-top: 10px;">
+    @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $datapeserta->uploadfoto) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @elseif($datapeserta->uploadfoto)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($datapeserta->uploadfoto) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
             </td>
             <td style="text-align: center;">
-              <div style="margin-top: 10px;">
-                                                @if($datapeserta->uploadfoto && file_exists(public_path('storage/' . $datapeserta->uploadfoto)))
-                                                <!-- Display the default iframe when the file exists in the storage -->
-                                                <iframe src="{{ asset('storage/' . $datapeserta->uploadfoto) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @elseif($datapeserta->uploadfoto)
-                                                <!-- Display the iframe with the updated file -->
-                                                <iframe src="{{ asset($datapeserta->uploadfoto) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @else
-                                                <!-- Optional: Show a placeholder if there's no file available -->
-                                                <p>Data belum diupdate</p>
-                                            @endif
-                                            </div>
-            </td>
-            <td style="text-align: center;">
-              <div style="margin-top: 10px;">
-                                                @if($datapeserta->uploadijazah && file_exists(public_path('storage/' . $datapeserta->uploadijazah)))
-                                                <!-- Display the default iframe when the file exists in the storage -->
-                                                <iframe src="{{ asset('storage/' . $datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @elseif($datapeserta->uploadijazah)
-                                                <!-- Display the iframe with the updated file -->
-                                                <iframe src="{{ asset($datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @else
-                                                <!-- Optional: Show a placeholder if there's no file available -->
-                                                <p>Data belum diupdate</p>
-                                            @endif
-                                            </div>
+                        <div style="margin-top: 10px;">
+    @if($datapeserta->uploadijazah && file_exists(public_path('storage/' . $datapeserta->uploadijazah)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $datapeserta->uploadijazah) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @elseif($datapeserta->uploadijazah)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($datapeserta->uploadijazah) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
             </td>
 
         </tr>
@@ -397,47 +435,82 @@
         </tr>
         <tr>
             <td style="text-align: center;">
-                 <div style="margin-top: 10px;">
-                                                @if($datapeserta->uploadpengalaman && file_exists(public_path('storage/' . $datapeserta->uploadpengalaman)))
-                                                <!-- Display the default iframe when the file exists in the storage -->
-                                                <iframe src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @elseif($datapeserta->uploadpengalaman)
-                                                <!-- Display the iframe with the updated file -->
-                                                <iframe src="{{ asset($datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @else
-                                                <!-- Optional: Show a placeholder if there's no file available -->
-                                                <p>Data belum diupdate</p>
-                                            @endif
-                                            </div>
+                <div style="margin-top: 10px;">
+    @if($datapeserta->uploadpengalaman && file_exists(public_path('storage/' . $datapeserta->uploadpengalaman)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @elseif($datapeserta->uploadpengalaman)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($datapeserta->uploadpengalaman) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
             </td>
             <td style="text-align: center;">
-               <div style="margin-top: 10px;">
-                                                @if($datapeserta->uploadnpwp && file_exists(public_path('storage/' . $datapeserta->uploadnpwp)))
-                                                <!-- Display the default iframe when the file exists in the storage -->
-                                                <iframe src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @elseif($datapeserta->uploadnpwp)
-                                                <!-- Display the iframe with the updated file -->
-                                                <iframe src="{{ asset($datapeserta->uploadnpwp) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @else
-                                                <!-- Optional: Show a placeholder if there's no file available -->
-                                                <p>Data belum diupdate</p>
-                                            @endif
-                                            </div>
+                 <div style="margin-top: 10px;">
+    @if($datapeserta->uploadnpwp && file_exists(public_path('storage/' . $datapeserta->uploadnpwp)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @elseif($datapeserta->uploadnpwp)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($datapeserta->uploadnpwp) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
             </td>
             <td style="text-align: center;">
                 <div style="margin-top: 10px;">
-                                                @if($datapeserta->uploaddaftarriwayathidup && file_exists(public_path('storage/' . $datapeserta->uploaddaftarriwayathidup)))
-                                                <!-- Display the default iframe when the file exists in the storage -->
-                                                <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @elseif($datapeserta->uploaddaftarriwayathidup)
-                                                <!-- Display the iframe with the updated file -->
-                                                <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="100px"></iframe>
-                                            @else
-                                                <!-- Optional: Show a placeholder if there's no file available -->
-                                                <p>Data belum diupdate</p>
-                                            @endif
-                                            </div>
-
+    @if($datapeserta->uploaddaftarriwayathidup && file_exists(public_path('storage/' . $datapeserta->uploaddaftarriwayathidup)))
+        <!-- Display the default iframe when the file exists in the storage -->
+        <iframe
+            src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @elseif($datapeserta->uploaddaftarriwayathidup)
+        <!-- Display the iframe with the updated file -->
+        <iframe
+            src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}"
+            frameborder="0"
+            width="100%"
+            height="200px"
+            style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
+        </iframe>
+    @else
+        <!-- Optional: Show a placeholder if there's no file available -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
             </td>
 
         </tr>
@@ -641,7 +714,7 @@
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
                                         {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
-                                        {{-- <th style="width: 100px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th> --}}
+                                        {{-- <th style="width: 300px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -763,10 +836,10 @@
                                                                 <div style="margin-top: 10px;">
                                                                     @if($datapeserta->uploadijazah && file_exists(public_path('storage/' . $datapeserta->uploadijazah)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @elseif($datapeserta->uploadijazah)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                                    <iframe src="{{ asset($datapeserta->uploadijazah) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data belum diupdate</p>
@@ -804,10 +877,10 @@
                                                                 <div style="margin-top: 10px;">
                                                                     @if($datapeserta->uploadpengalaman && file_exists(public_path('storage/' . $datapeserta->uploadpengalaman)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @elseif($datapeserta->uploadpengalaman)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                                    <iframe src="{{ asset($datapeserta->uploadpengalaman) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data belum diupdate</p>
@@ -845,10 +918,10 @@
                                                                 <div style="margin-top: 10px;">
                                                                     @if($datapeserta->uploadkebenarandata && file_exists(public_path('storage/' . $datapeserta->uploadkebenarandata)))
                                                                     <!-- Display the default iframe when the file exists in the storage -->
-                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                                    <iframe src="{{ asset('storage/' . $datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @elseif($datapeserta->uploadkebenarandata)
                                                                     <!-- Display the iframe with the updated file -->
-                                                                    <iframe src="{{ asset($datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                                    <iframe src="{{ asset($datapeserta->uploadkebenarandata) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                 @else
                                                                     <!-- Optional: Show a placeholder if there's no file available -->
                                                                     <p>Data belum diupdate</p>
@@ -888,10 +961,10 @@
                                                                 <div style="margin-top: 10px;">
                                                                     @if($datapeserta->uploadnpwp && file_exists(public_path('storage/' . $datapeserta->uploadnpwp)))
                                                                         <!-- Menampilkan gambar dari storage -->
-                                                                        <img src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" alt="Dokumen NPWP" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                        <img src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                                     @elseif($datapeserta->uploadnpwp)
                                                                         <!-- Menampilkan gambar dari path luar storage -->
-                                                                        <img src="{{ asset($datapeserta->uploadnpwp) }}" alt="Dokumen NPWP" style="width: 100%; max-height: 100px; object-fit: contain;" loading="lazy">
+                                                                        <img src="{{ asset($datapeserta->uploadnpwp) }}" alt="Dokumen NPWP" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
                                                                     @else
                                                                         <!-- Placeholder jika tidak ada data -->
                                                                         <p>Data belum diupdate</p>
@@ -925,9 +998,9 @@
                                                                 <div style="margin-top: 10px;">
                                                                     <!-- Menampilkan iframe Daftar Riwayat Hidup -->
                                                                     @if($datapeserta->uploaddaftarriwayathidup && file_exists(public_path('storage/' . $datapeserta->uploaddaftarriwayathidup)))
-                                                                        <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                                        <iframe src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                     @elseif($datapeserta->uploaddaftarriwayathidup)
-                                                                        <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="100px"></iframe>
+                                                                        <iframe src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}" frameborder="0" width="100%" height="300px"></iframe>
                                                                     @else
                                                                         <p>Data belum diupdate</p>
                                                                     @endif
