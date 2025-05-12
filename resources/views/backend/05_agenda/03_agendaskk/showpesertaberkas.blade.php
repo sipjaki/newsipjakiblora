@@ -1216,7 +1216,7 @@
                         </div>
 
                         <div class="d-flex justify-content-between mt-4">
-                            <a href="{{ route('admin.peserta.index') }}" class="btn btn-secondary">
+                            {{-- <a href="{{ route('admin.peserta.index') }}" class="btn btn-secondary"> --}}
                                 <i class="bi bi-arrow-left"></i> Kembali
                             </a>
                             <button type="submit" class="btn btn-success">
