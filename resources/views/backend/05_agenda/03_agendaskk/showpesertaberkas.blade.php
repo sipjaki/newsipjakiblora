@@ -591,10 +591,7 @@
 
         <tr>
             <td style="width: 45%;"></td>
-            <td style="width: 55%;">PADA TANGGAL {{
-    \Carbon\Carbon::parse($datapeserta->agendaskk->waktupelaksanaan)
-        ->translatedFormat('d F Y')
-}}</td>
+            <td style="width: 55%;">PADA TANGGAL {{$datapeserta->agendaskk->waktupelaksanaan}}</td>
         </tr>
         <br>
         <tr>
