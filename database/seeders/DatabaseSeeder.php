@@ -59782,12 +59782,13 @@ agendapelatihan::create([
     'asosiasimasjaki_id' => 99,
     // 'jenjang_id' => '4',
     'penutupan' => '2025-05-14',
-    'waktupelaksanaan' => '2025-04-15',
+    'waktupelaksanaan' => '2025-05-15',
     'jumlahpeserta' => 50,
     'lokasi' => 'Azana Garden Hill Resort Blora',
     'Keterangan' => 'Kegiatan ini bertujuan untuk meningkatkan pemahaman pelaku konstruksi mengenai standar keselamatan kerja dan penerapan kontrak yang sesuai regulasi dalam proyek pembangunan.',
     'isiagenda' => 'Penerapan Keselamatan dan Kontrak Konstruksi',
     'foto' => '01_berita/image.png',
+    'suratundangan' => '01_berita/Undangan_Sosialisasi_15_Mei_2025.pdf',
 ]);
 
 // 'foto' => '00_dokmasjaki/03_datajakon/agendapelatihan.jpg',

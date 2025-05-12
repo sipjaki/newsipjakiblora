@@ -30,6 +30,7 @@ return new class extends Migration
             $table->text('isiagenda')->nullable();
             $table->string('foto')->nullable();
             $table->string('barcodepelatihan')->nullable();
+            $table->string('suratundangan')->nullable(); // ini belm di masukan ke dalam create dan update dan show
             $table->softDeletes();
             $table->timestamps();
         });
