@@ -642,9 +642,10 @@
         </a>
 
         <!-- Tombol Download PDF -->
-        <button id="downloadPDF" class="download-btn">
-            <i class="fas fa-download" style="margin-right:10px;"></i> Download PDF
-        </button>
+<button id="downloadPDF" class="download-btn">
+    <i class="bi bi-download" style="margin-right: 10px;"></i> Download PDF
+</button>
+
     </div>
 
     <style>
