@@ -715,14 +715,14 @@
                                 <thead style="font-size: 16px;">
                                     <tr>
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
                                         {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
-                                        <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
+                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
                                         {{-- <th style="width: 300px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th> --}}
                                     </tr>
                                 </thead>
