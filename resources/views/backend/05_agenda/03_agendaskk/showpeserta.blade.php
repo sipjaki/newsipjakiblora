@@ -177,7 +177,7 @@
     @elseif($item->verifikasipu == 'dikembalikan')
         <!-- Tombol GUGUR -->
         <button type="button" disabled class="btn" style="background-color: #EF4444; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: not-allowed;">
-            <i class="bi bi-x-circle"></i> GUGUR
+            <i class="bi bi-x-circle"></i> DIKEMBALIKAN
         </button>
     @elseif($item->verifikasipu == 'lolos')
         <!-- Tombol LOLOS -->
