@@ -532,14 +532,14 @@
 
     <h5 style="color: navy; font-weight:800;">III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
-    <table>
+    <table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center;">Nama Asosiasi</td>
             <td style="text-align: center;">{{$datapeserta->namaasosiasi}}</td>
         </tr>
     </table>
 
-    <table>
+    <table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center;">MEMPUNYAI SKK ?</td>
             <td style="text-align: center;">MEMPUNYAI AKUN SIKI/ E-SIMPAN ?</td>
@@ -591,7 +591,10 @@
 
         <tr>
             <td style="width: 45%;"></td>
-            <td style="width: 55%;">PADA TANGGAL _____________</td>
+            <td style="width: 55%;">PADA TANGGAL {{
+    \Carbon\Carbon::parse($datapeserta->agendaskk->waktupelaksanaan)
+        ->translatedFormat('d F Y')
+}}</td>
         </tr>
         <br>
         <tr>
