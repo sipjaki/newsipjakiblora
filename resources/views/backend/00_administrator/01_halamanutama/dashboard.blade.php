@@ -249,7 +249,7 @@ button:hover {
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box"
              style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
-            <span class="info-box-icon">
+            <span class="info-box-icon" style="margin-left: 20px; margin-right: 20px; ">
                 <h4 class="animated-number">
                     120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
                 </h4>
