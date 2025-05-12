@@ -383,21 +383,6 @@ table.zebra-table {
                     <div class="row">
                         <div class="col-md-6">
 
-                               @php
-                                $inputStyle = "
-                                    width: 100%;
-                                    padding: 10px 14px;
-                                    border-radius: 8px;
-                                    border: 1px solid #ccc;
-                                    transition: 0.3s;
-                                    font-size: 14px;
-                                ";
-                                $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block; font-size:16px; text-align:left";
-                                $divStyle = "margin-bottom: 20px;";
-                                $iconStyle = "color: navy;";
-                            @endphp
-
-
                       <!-- Input tersembunyi untuk dikirim ke backend -->
                             <input type="hidden" name="user_id" value="{{ old('user_id', $user_id) }}">
 
