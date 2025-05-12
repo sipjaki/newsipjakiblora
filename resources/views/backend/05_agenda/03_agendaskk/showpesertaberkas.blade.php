@@ -233,12 +233,12 @@
             <td>{{$data->email}}</td>
         </tr>
 
-        <tr>
+        {{-- <tr>
             <td style="text-align: center;">9</td>
             <td>Jenjang Pendidikan</td>
             <td>:</td>
             <td>{{$data->jenjangpendidikan->jenjangpendidikan}}</td>
-        </tr>
+        </tr> --}}
 
         <tr>
             <td style="text-align: center;">10</td>
