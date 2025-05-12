@@ -214,7 +214,7 @@
              style="width: 100px; height: auto; margin-right: 20px; margin-top: 10px;">
 
         <!-- Teks Kop -->
-        <div style="text-align: center; margin-left:200px;">
+        <div style="text-align: center; margin-left:50px;">
             <h3 style="margin: 0;">PEMERINTAH KABUPATEN BLORA</h3>
             <h3 style="margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
             <p style="margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
