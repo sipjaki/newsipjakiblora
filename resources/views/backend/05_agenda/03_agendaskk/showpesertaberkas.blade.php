@@ -353,7 +353,7 @@
             src="{{ asset('storage/' . $datapeserta->uploadktp) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @elseif($datapeserta->uploadktp)
@@ -362,7 +362,7 @@
             src="{{ asset($datapeserta->uploadktp) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @else
@@ -381,7 +381,7 @@
             src="{{ asset('storage/' . $datapeserta->uploadfoto) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @elseif($datapeserta->uploadfoto)
@@ -390,7 +390,7 @@
             src="{{ asset($datapeserta->uploadfoto) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @else
@@ -407,7 +407,7 @@
             src="{{ asset('storage/' . $datapeserta->uploadijazah) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @elseif($datapeserta->uploadijazah)
@@ -416,7 +416,7 @@
             src="{{ asset($datapeserta->uploadijazah) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @else
@@ -442,7 +442,7 @@
             src="{{ asset('storage/' . $datapeserta->uploadpengalaman) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @elseif($datapeserta->uploadpengalaman)
@@ -451,7 +451,7 @@
             src="{{ asset($datapeserta->uploadpengalaman) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @else
@@ -468,7 +468,7 @@
             src="{{ asset('storage/' . $datapeserta->uploadnpwp) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @elseif($datapeserta->uploadnpwp)
@@ -477,7 +477,7 @@
             src="{{ asset($datapeserta->uploadnpwp) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @else
@@ -494,7 +494,7 @@
             src="{{ asset('storage/' . $datapeserta->uploaddaftarriwayathidup) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @elseif($datapeserta->uploaddaftarriwayathidup)
@@ -503,7 +503,7 @@
             src="{{ asset($datapeserta->uploaddaftarriwayathidup) }}"
             frameborder="0"
             width="100%"
-            height="200px"
+            height="600px"
             style="transform: scale(0.8); transform-origin: top left; width: 125%; height: 250px;">
         </iframe>
     @else
