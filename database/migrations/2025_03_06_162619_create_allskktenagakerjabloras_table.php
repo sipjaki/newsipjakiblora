@@ -46,7 +46,7 @@ return new class extends Migration
                     $table->string('siappatuh')->nullable();
                     $table->string('sertifikat')->nullable();
                     // $table->boolean('verifikasiktp')->default(false);
-                    $table->boolean('verifikasipu')->default(false);
+                    $table->string('verifikasipu')->nullable();
                     $table->boolean('verifikasilps')->default(false);
                     $table->boolean('verifikasihadirsertifikasi')->default(false);
                     $table->softDeletes();
