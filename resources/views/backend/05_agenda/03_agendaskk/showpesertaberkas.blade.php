@@ -589,10 +589,10 @@
             <td style="width: 55%;">DI TETAPKAN DI KABUPATEN BLORA</td>
         </tr>
 
-        {{-- <tr>
+        <tr>
             <td style="width: 45%;"></td>
-            <td style="width: 55%;">PADA TANGGAL {{$datapeserta->agendaskk->waktupelaksanaan}}</td>
-        </tr> --}}
+            <td style="width: 55%;">PADA TANGGAL {{$data->waktupelaksanaan}}</td>
+        </tr>
         <br>
         <tr>
             <td style="width: 45%;"></td>
@@ -699,7 +699,7 @@
 
         addPageContent(page1, margin).then(() => {
             addPageContent(page2, margin, true).then(() => {
-                pdf.save("{{$data->user->name}}");
+                pdf.save("{{$datapeserta->user->name}}");
             });
         });
     });
