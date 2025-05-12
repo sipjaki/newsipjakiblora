@@ -100,7 +100,7 @@
                                             <i class="bi bi-file-earmark-pdf-fill" style="margin-right: 5px;"></i>Sertifikat
                                         </th>
                                         <th style="width: 200px; text-align:center;">
-                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Lihat Berkas
+                                            <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Lihat Peserta
                                         </th>
                                         <th style="width: 200px; text-align:center;">
                                             <i class="bi bi-check-circle" style="margin-right: 5px;"></i>Verifikasi PU
