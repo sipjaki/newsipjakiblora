@@ -245,66 +245,77 @@ button:hover {
 @can('pekerja')
 
 <div class="row">
+<div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box"
+         style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
 
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
-            <span class="info-box-icon" style="margin-left: 20px; margin-right: 20px; ">
-                <h4 class="animated-number">
-                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
+        <!-- Icon dan Angka -->
+        <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+                120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+            </h4>
+        </span>
+
+        <!-- Konten -->
+        <div class="info-box-content" style="padding: 10px 20px;">
+            <span class="info-box-icon" style="margin-right: 10px;">
+                <i class="bi bi-hammer" style="font-size: 24px;"></i> <!-- Gantilah 'hammer' dengan ikon lain jika diperlukan -->
             </span>
-           <div class="info-box-content">
-    <span class="info-box-icon">
-        <i class="bi bi-hammer"></i> <!-- Replace 'hammer' with your desired icon -->
-    </span>
-    <span class="info-box-text" style="font-size: 20px;">Kegiatan Konstruksi</span>
+            <span class="info-box-text" style="font-size: 20px; font-weight: bold;">Kegiatan Konstruksi</span>
+        </div>
+    </div>
 </div>
 
-        </div>
-    </div>
-
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
-            <span class="info-box-icon">
-                <h4 class="animated-number">
-                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
+<div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box"
+         style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+        <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+                120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+            </h4>
+        </span>
+        <div class="info-box-content" style="padding: 10px 20px;">
+            <span class="info-box-icon" style="margin-right: 10px;">
+                <i class="bi bi-check-circle" style="font-size: 24px;"></i> <!-- Icon sesuai kebutuhan -->
             </span>
-            <div class="info-box-content">
-                <span class="info-box-text">Berkas Di Verifikasi</span>
-            </div>
+            <span class="info-box-text" style="font-size: 20px; font-weight: bold;">Berkas Di Verifikasi</span>
         </div>
     </div>
+</div>
 
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
-            <span class="info-box-icon">
-                <h4 class="animated-number">
-                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
+<div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box"
+         style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+        <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+                120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+            </h4>
+        </span>
+        <div class="info-box-content" style="padding: 10px 20px;">
+            <span class="info-box-icon" style="margin-right: 10px;">
+                <i class="bi bi-arrow-repeat" style="font-size: 24px;"></i> <!-- Icon sesuai kebutuhan -->
             </span>
-            <div class="info-box-content">
-                <span class="info-box-text">Permohonan Di Kembalikan</span>
-            </div>
+            <span class="info-box-text" style="font-size: 20px; font-weight: bold;">Permohonan Di Kembalikan</span>
         </div>
     </div>
+</div>
 
-    <div class="col-md-3 col-sm-6 col-12">
-        <div class="info-box"
-             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
-            <span class="info-box-icon">
-                <h4 class="animated-number">
-                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-                </h4>
+<div class="col-md-3 col-sm-6 col-12">
+    <div class="info-box"
+         style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
+        <span class="info-box-icon" style="display: flex; justify-content: center; align-items: center; margin-left: 20px; margin-right: 20px;">
+            <h4 class="animated-number" style="font-size: 2rem; font-weight: bold; text-align: center; color: white;">
+                120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+            </h4>
+        </span>
+        <div class="info-box-content" style="padding: 10px 20px;">
+            <span class="info-box-icon" style="margin-right: 10px;">
+                <i class="bi bi-file-earmark-check" style="font-size: 24px;"></i> <!-- Icon sesuai kebutuhan -->
             </span>
-            <div class="info-box-content">
-                <span class="info-box-text">Sertifikat Terbit</span>
-            </div>
+            <span class="info-box-text" style="font-size: 20px; font-weight: bold;">Sertifikat Terbit</span>
         </div>
     </div>
+</div>
 
 </div>
 
