@@ -253,9 +253,10 @@ button:hover {
                  onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
                  onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
                 <span class="info-box-icon">
-    <h4 style="font-size: 2rem; font-weight: bold; color: #28a745; text-align: center; margin-bottom: 10px;">
-        120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-    </h4>
+   <h4 style="font-size: 2rem; font-weight: bold; color: white; text-align: center; margin-bottom: 10px; text-decoration: none;">
+    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+</h4>
+
             </span>
                 <div class="info-box-content">
 
