@@ -202,8 +202,24 @@ h5 {
                         <div class="header-text">
                             <h3>AGENDA PELATIHAN TKK KABUPATEN BLORA </h3>
                             <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
-                            <p>----------------------------------------------</p>
-                            <p>FORMULIR PENDAFTARAN</p>
+                            {{-- <p>----------------------------------------------</p> --}}
+                            <p
+                            style="
+                                display: inline-block;
+                                padding: 10px 25px;
+                                background: linear-gradient(45deg, #FFD700, #28a745);
+                                color: white;
+                                font-weight: bold;
+                                border-radius: 8px;
+                                text-align: center;
+                                transition: all 0.3s ease;
+                                cursor: pointer;
+                            "
+                            onmouseover="this.style.background='white'; this.style.color='black';"
+                            onmouseout="this.style.background='linear-gradient(45deg, #FFD700, #28a745)'; this.style.color='white';"
+                        >
+                            FORMULIR PENDAFTARAN
+                        </p>
 
                             <div class="full-width-container mx-auto px-4 pb-10">
                                 <div class="bg-white flex flex-col gap-5 p-5 rounded-[20px] shadow-md w-full">
