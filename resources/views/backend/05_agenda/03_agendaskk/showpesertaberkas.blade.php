@@ -229,10 +229,10 @@
     <table>
 
         <tr>
-            <td style="width:50px; text-align:center;">1</td>
-            <td style="width:200px; text-align:center;">Nama Lengkap</td>
-            <td style="width:50px; text-align:center;">:</td>
-            <td style="width:200px; text-align:center;">{{ ucwords(strtolower($datapeserta->user->name)) }}</td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">Nama Lengkap</td>
+            <td style="text-align:center;">:</td>
+            <td style="text-align:center;">{{ ucwords(strtolower($datapeserta->user->name)) }}</td>
             <td style="width:400px; text-align:center;">
 
                 <div style="margin-top: 10px;">
