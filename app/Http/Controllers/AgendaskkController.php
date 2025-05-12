@@ -524,8 +524,8 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
 {
     // Validasi input
     $validated = $request->validate([
-        'jabatanskkanda_id' => 'nullable|string',
-        'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:2048',
+        // 'jabatanskkanda_id' => 'nullable|string',
+        // 'skkanda' => 'nullable|mimes:pdf,jpg,jpeg,png|max:5048',
         'jenjangpendidikan_id' => 'required|string',
         'jabatankerja_id' => 'required|string',
         'namasekolah_id' => 'required|string',
@@ -540,14 +540,14 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'tahunlulus' => 'required|integer|min:1900|max:' . date('Y'),
 
         // Upload dokumen
-        'uploadktp' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
-        'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:2048',
-        'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
-        'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
-        'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
-        'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:2048',
+        'uploadktp' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadfoto' => 'required|mimes:jpg,jpeg,png|max:5048',
+        'uploadijazah' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadpengalaman' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploaddaftarriwayathidup' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
+        'uploadkebenarandata' => 'required|mimes:pdf,jpg,jpeg,png|max:5048',
 
-        'namaasosiasi' => 'nullable|string|max:255',
+        'namaasosiasi' => 'required|string|max:255',
         'punyaskk' => 'required|in:Ya,Tidak',
         'punyasiki' => 'required|in:Ya,Tidak',
         'siappatuh' => 'required|in:Ya,Tidak',
@@ -564,26 +564,28 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'tempatlahir.required' => 'Tempat lahir harus diisi.',
         'alamat.required' => 'Alamat harus diisi.',
         'notelepon.required' => 'Nomor telepon harus diisi.',
+        'jeniskelamin.required' => 'Jenis Kelamin wajib diisi.',
         'email.required' => 'Email harus diisi.',
         'email.email' => 'Email tidak valid.',
         'tahunlulus.required' => 'Tahun lulus harus diisi.',
         // 'namaasosiasi.required' => 'Nama Asosiasi Wajib diisi.',
+        'namaasosiasi.required' => 'Utusan Wajib Diisi.',
         'punyaskk.required' => 'Pilih apakah memiliki SKK.',
         'punyasiki.required' => 'Pilih apakah memiliki SIKI.',
         'siappatuh.required' => 'Pilih kesiapan mematuhi kode etik.',
         'portalpupr.required' => 'Pilih apakah sudah memiliki !.',
         'uploadktp.required' => 'Wajib Upload KTP.',
         'uploadktp.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadktp.max' => 'Ukuran file KTP maksimal 2 MB.',
+        'uploadktp.max' => 'Ukuran file KTP maksimal 5 MB.',
         'uploadfoto.required' => 'Wajib Upload Pas Foto.',
-        'uploadfoto.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadfoto.max' => 'Ukuran file KTP maksimal 2 MB.',
+        'uploadfoto.mimes' => 'File Foto harus PDF atau gambar.',
+        'uploadfoto.max' => 'Ukuran file Foto maksimal 5 MB.',
         'uploadijazah.required' => 'Wajib Upload Ijazah.',
-        'uploadijazah.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadijazah.max' => 'Ukuran file KTP maksimal 2 MB.',
+        'uploadijazah.mimes' => 'File Ijazah harus PDF atau gambar.',
+        'uploadijazah.max' => 'Ukuran file Ijazah maksimal 5 MB.',
         'uploadpengalaman.required' => 'Wajib Upload Pengalaman.',
         'uploadpengalaman.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploadpengalaman.max' => 'Ukuran file KTP maksimal 2 MB.',
+        'uploadpengalaman.max' => 'Ukuran file Pengalaman maksimal 5 MB.',
         // 'uploadpengalaman.required' => 'Wajib Upload Bukti Kebenaran.',
         'uploadkebenarandata.required' => 'Wajib Upload Bukti Kebenaran.',
         // 'uploadnpwp.required' => 'Wajib Upload NPWP.',
@@ -591,7 +593,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         // 'uploadnpwp.max' => 'Ukuran file KTP maksimal 2 MB.',
         'uploaddaftarriwayathidup.required' => 'Wajib Upload Daftar Riwayat Hidup.',
         'uploaddaftarriwayathidup.mimes' => 'File KTP harus PDF atau gambar.',
-        'uploaddaftarriwayathidup.max' => 'Ukuran file KTP maksimal 2 MB.',
+        'uploaddaftarriwayathidup.max' => 'Ukuran file Riwayat Hidup maksimal 5 MB.',
         // Custom error messages...
     ]);
 
@@ -604,7 +606,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         'uploadnpwp' => '04_pembinaan/03_sertifikasi/05_uploadnpwp',
         'uploaddaftarriwayathidup' => '04_pembinaan/03_sertifikasi/06_uploadriwayathidup',
         'uploadkebenarandata' => '04_pembinaan/03_sertifikasi/07_uploadkebenarandata',
-        'skkanda' => '04_pembinaan/03_sertifikasi/07_skkanda',
+        // 'skkanda' => '04_pembinaan/03_sertifikasi/07_skkanda',
     ];
 
     $uploadedFiles = [];
@@ -650,7 +652,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
             'uploadnpwp' => $uploadedFiles['uploadnpwp'] ?? null,
             'uploaddaftarriwayathidup' => $uploadedFiles['uploaddaftarriwayathidup'] ?? null,
             'uploadkebenarandata' => $uploadedFiles['uploadkebenarandata'] ?? null,
-            'skkanda' => $uploadedFiles['skkanda'] ?? null,
+            // 'skkanda' => $uploadedFiles['skkanda'] ?? null,
             'namaasosiasi' => $validated['namaasosiasi'] ?? null,
             'punyaskk' => $validated['punyaskk'],
             'punyasiki' => $validated['punyasiki'],
@@ -658,14 +660,13 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
         ]);
 
         session()->flash('daftarskk', 'Formulir Berhasil dikirim! Silakan cek Dashboard Anda.');
-        return redirect('/dashboard');
-    } catch (\Exception $e) {
-        // Jika ada error, tampilkan alert dengan pesan error
-        session()->flash('gagaldaftar', 'Pendaftaran Gagal! Silakan periksa kembali data yang dimasukkan.');
-        return redirect()->back()->withInput();
-    }
+    return redirect('/dashboard');
+} catch (\Exception $e) {
+    // Jika ada error, tampilkan alert dengan pesan error
+    session()->flash('gagaldaftar', 'Pendaftaran Gagal! Silakan periksa kembali data yang dimasukkan.');
+    return redirect()->back()->withInput();
 }
-
+}
 
 
 // daftar skk
