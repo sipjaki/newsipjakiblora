@@ -712,20 +712,17 @@
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                             <table class="zebra-table table-striped">
-<thead style="font-size: 16px; background-color: green; color: white;">
-                                    <tr>
-                                        {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
-                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
-                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4 </th>
-                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah </th>
-                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman  </th>
-                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data  </th>
-                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> NPWP </th>
-                                        {{-- <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th> --}}
-                                        <th style="width: 400px; text-align:center; font-size: 16px;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup </th>
-                                        {{-- <th style="width: 300px; text-align:center;"><i class="bi bi-gear-fill"></i> Aksi</th> --}}
-                                    </tr>
-                                </thead>
+<thead style="font-size: 16px; background-color: #166534; color: white;">
+    <tr>
+        <th style="width: 400px; text-align: center;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP</th>
+        <th style="width: 400px; text-align: center;"><i class="bi bi-file-earmark-text-fill"></i> Pas Foto 3 x 4</th>
+        <th style="width: 400px; text-align: center;"><i class="bi bi-file-earmark-text-fill"></i> Ijazah</th>
+        <th style="width: 400px; text-align: center;"><i class="bi bi-file-earmark-text-fill"></i> Pengalaman</th>
+        <th style="width: 400px; text-align: center;"><i class="bi bi-file-earmark-text-fill"></i> Surat Kebenaran Data</th>
+        <th style="width: 400px; text-align: center;"><i class="bi bi-file-earmark-text-fill"></i> NPWP</th>
+        <th style="width: 400px; text-align: center;"><i class="bi bi-file-earmark-text-fill"></i> Riwayat Hidup</th>
+    </tr>
+</thead>
                                 <tbody>
                                 {{-- @foreach ($subdata as $datapeserta ) --}}
                                     <tr class="align-middle">
