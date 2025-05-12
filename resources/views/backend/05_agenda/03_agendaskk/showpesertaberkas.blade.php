@@ -1092,6 +1092,172 @@
                             <br><br><br>
                         </div>
                     </div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h4><i class="bi bi-file-earmark-check"></i> Validasi Dokumen Peserta</h4>
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('admin.validasi-dokumen.update', $peserta->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th style="width: 30%">Dokumen</th>
+                                        <th style="width: 20%">Berkas</th>
+                                        <th style="width: 25%">Sesuai</th>
+                                        <th style="width: 25%">Tidak Sesuai</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- KTP -->
+                                    <tr>
+                                        <td>KTP</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalKTP">
+                                                <i class="bi bi-eye"></i> Lihat
+                                            </button>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_ktp" value="1"
+                                                {{ $peserta->validasi_ktp == 1 ? 'checked' : '' }} required>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_ktp" value="0"
+                                                {{ $peserta->validasi_ktp == 0 ? 'checked' : '' }}>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Pas Foto -->
+                                    <tr>
+                                        <td>Pas Foto 3x4</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalFoto">
+                                                <i class="bi bi-eye"></i> Lihat
+                                            </button>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_foto" value="1"
+                                                {{ $peserta->validasi_foto == 1 ? 'checked' : '' }} required>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_foto" value="0"
+                                                {{ $peserta->validasi_foto == 0 ? 'checked' : '' }}>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Ijazah -->
+                                    <tr>
+                                        <td>Ijazah</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalIjazah">
+                                                <i class="bi bi-eye"></i> Lihat
+                                            </button>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_ijazah" value="1"
+                                                {{ $peserta->validasi_ijazah == 1 ? 'checked' : '' }} required>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_ijazah" value="0"
+                                                {{ $peserta->validasi_ijazah == 0 ? 'checked' : '' }}>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Pengalaman Kerja -->
+                                    <tr>
+                                        <td>Pengalaman Kerja</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalPengalaman">
+                                                <i class="bi bi-eye"></i> Lihat
+                                            </button>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_pengalaman" value="1"
+                                                {{ $peserta->validasi_pengalaman == 1 ? 'checked' : '' }} required>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_pengalaman" value="0"
+                                                {{ $peserta->validasi_pengalaman == 0 ? 'checked' : '' }}>
+                                        </td>
+                                    </tr>
+
+                                    <!-- NPWP -->
+                                    <tr>
+                                        <td>NPWP</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modalNPWP">
+                                                <i class="bi bi-eye"></i> Lihat
+                                            </button>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_npwp" value="1"
+                                                {{ $peserta->validasi_npwp == 1 ? 'checked' : '' }} required>
+                                        </td>
+                                        <td class="text-center">
+                                            <input type="radio" name="validasi_npwp" value="0"
+                                                {{ $peserta->validasi_npwp == 0 ? 'checked' : '' }}>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <label for="catatan">Catatan Validasi:</label>
+                            <textarea name="catatan" id="catatan" class="form-control" rows="3">{{ $peserta->catatan_validasi }}</textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a href="{{ route('admin.peserta.index') }}" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Kembali
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-check-circle"></i> Simpan Validasi
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal untuk preview dokumen -->
+
+<script>
+    // Script untuk menangani preview dokumen
+    $(document).ready(function() {
+        // Inisialisasi tooltip
+        $('[data-toggle="tooltip"]').tooltip();
+
+        // Validasi form sebelum submit
+        $('form').submit(function(e) {
+            let isValid = true;
+
+            // Cek setiap radio group
+            $('input[type="radio"]').each(function() {
+                const name = $(this).attr('name');
+                if (!$('input[name="'+name+'"]:checked').length) {
+                    isValid = false;
+                    return false;
+                }
+            });
+
+            if (!isValid) {
+                e.preventDefault();
+                alert('Harap memilih status validasi untuk semua dokumen!');
+            }
+        });
+    });
+</script>
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
