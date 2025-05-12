@@ -247,91 +247,104 @@ button:hover {
 <div class="row">
 
     <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box"
-                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;"
-                 onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                 onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                <span class="info-box-icon">
-   <h4 style="font-size: 2rem; font-weight: bold; color: white; text-align: center; margin-bottom: 10px; text-decoration: none;">
-    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-</h4>
-
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
+            <span class="info-box-icon">
+                <h4 class="animated-number">
+                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
             </span>
-                <div class="info-box-content">
-
-    <span class="info-box-text">Kegiatan Konstruksi</span>
-
-    {{-- <span class="progress-description"> Pengaturan </span> --}}
-</div>
-
+            <div class="info-box-content">
+                <span class="info-box-text">Kegiatan Konstruksi</span>
             </div>
-    </div>
-
-    <!-- /.col -->
-    <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box"
-                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;"
-                 onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                 onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                <span class="info-box-icon">
-   <h4 style="font-size: 2rem; font-weight: bold; color: white; text-align: center; margin-bottom: 10px; text-decoration: none;">
-    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-</h4>
-
-            </span>
-                <div class="info-box-content">
-
-    <span class="info-box-text">Berkas Di Verifikasi</span>
-    {{-- <span class="progress-description"> Pengaturan </span> --}}
-</div>
-
-            </div>
-    </div>
-    <!-- /.col -->
-
-    <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box"
-                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;"
-                 onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                 onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                <span class="info-box-icon">
-   <h4 style="font-size: 2rem; font-weight: bold; color: white; text-align: center; margin-bottom: 10px; text-decoration: none;">
-    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-</h4>
-
-            </span>
-                <div class="info-box-content">
-
-    <span class="info-box-text">Permohonan Di Kembalikan</span>
-    {{-- <span class="progress-description"> Pengaturan </span> --}}
-</div>
-
-            </div>
+        </div>
     </div>
 
     <div class="col-md-3 col-sm-6 col-12">
-            <div class="info-box"
-                 style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;"
-                 onmouseover="this.style.background='linear-gradient(45deg, #27ae60, #f39c12)'; this.style.color='black'; this.querySelector('.info-box-text').style.color='black'; this.querySelector('.progress-description').style.color='black';"
-                 onmouseout="this.style.background='linear-gradient(45deg, #28a745, #f1c40f)'; this.style.color='white'; this.querySelector('.info-box-text').style.color='white'; this.querySelector('.progress-description').style.color='white';">
-                <span class="info-box-icon">
-   <h4 style="font-size: 2rem; font-weight: bold; color: white; text-align: center; margin-bottom: 10px; text-decoration: none;">
-    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
-</h4>
-
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
+            <span class="info-box-icon">
+                <h4 class="animated-number">
+                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
             </span>
-                <div class="info-box-content">
-
-    <span class="info-box-text">Sertifikat Terbit</span>
-    {{-- <span class="progress-description"> Pengaturan </span> --}}
-</div>
-
+            <div class="info-box-content">
+                <span class="info-box-text">Berkas Di Verifikasi</span>
             </div>
+        </div>
     </div>
-    <!-- /.col -->
+
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
+            <span class="info-box-icon">
+                <h4 class="animated-number">
+                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
+            </span>
+            <div class="info-box-content">
+                <span class="info-box-text">Permohonan Di Kembalikan</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box"
+             style="transition: background-color 0.3s, color 0.3s; background: linear-gradient(45deg, #28a745, #f1c40f); color: white;">
+            <span class="info-box-icon">
+                <h4 class="animated-number">
+                    120 <!-- Gantilah ini dengan jumlah dinamis jika diperlukan -->
+                </h4>
+            </span>
+            <div class="info-box-content">
+                <span class="info-box-text">Sertifikat Terbit</span>
+            </div>
+        </div>
+    </div>
 
 </div>
 
+<style>
+    /* Animasi Zoom Out */
+    .animated-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin-bottom: 10px;
+        text-decoration: none;
+        background-color: #bdc3c7; /* Background abu-abu */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Efek Zoom Out saat hover */
+    .info-box:hover .animated-number {
+        transform: scale(1.1); /* Zoom out effect */
+    }
+
+    /* Memberikan efek transisi latar belakang */
+    .info-box:hover {
+        background: linear-gradient(45deg, #27ae60, #f39c12);
+        color: black;
+    }
+
+    .info-box:hover .info-box-text,
+    .info-box:hover .animated-number {
+        color: black;
+    }
+
+    .info-box-icon h4 {
+        margin-bottom: 0; /* Menghapus margin bawah dari h4 */
+    }
+
+    /* Styling tambahan untuk konten info-box */
+    .info-box-content {
+        padding: 10px;
+    }
+</style>
 
 @endcan
 
