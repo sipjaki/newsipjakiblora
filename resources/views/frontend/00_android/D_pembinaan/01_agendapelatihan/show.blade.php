@@ -282,16 +282,24 @@ h5 {
                             <td class="label">Undangan dan Daftar Peserta yg diundang </td>
                             <td class="colon">:</td>
                             <td>
-                                <div style="margin-top: 10px;">
+                                <div style="margin-top: 10px; text-align: center;">
                                     @if($data->suratundangan && file_exists(public_path('storage/' . $data->suratundangan)))
                                         <!-- Display the default iframe when the file exists in the storage -->
                                         <iframe src="{{ asset('storage/' . $data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                        <a href="{{ asset('storage/' . $data->suratundangan) }}" download class="btn btn-primary mt-2">Download</a>
+                                        <br>
+                                        <a href="{{ asset('storage/' . $data->suratundangan) }}" download
+                                           style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #3490dc; color: white; text-decoration: none; border-radius: 5px;">
+                                           ⬇️ Download File
+                                        </a>
 
                                     @elseif($data->suratundangan)
                                         <!-- Display the iframe with the updated file -->
                                         <iframe src="{{ asset($data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                        <a href="{{ asset($data->suratundangan) }}" download class="btn btn-primary mt-2">Download</a>
+                                        <br>
+                                        <a href="{{ asset($data->suratundangan) }}" download
+                                           style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #3490dc; color: white; text-decoration: none; border-radius: 5px;">
+                                           ⬇️ Download File
+                                        </a>
 
                                     @else
                                         <!-- Optional: Show a placeholder if there's no file available -->
