@@ -919,12 +919,12 @@ function previewFile(previewId, input) {
                             <input type="hidden" name="user_id" value="{{ old('user_id', $user_id) }}">
 
                             <!-- Tampilan Nama Lengkap (readonly) -->
-                            <div style="{{ $divStyle }}">
+                            {{-- <div style="{{ $divStyle }}">
                                 <label class="form-label" style="text-align: left;">
                                     <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
                                 </label>
                                 <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
-                            </div>
+                            </div> --}}
 
                             <div style="{{ $divStyle }}">
                                 <label class="form-label" style="{{ $labelStyle }}">
