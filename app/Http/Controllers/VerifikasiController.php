@@ -151,7 +151,7 @@ public function terbitkanSertifikat($id)
     $agendaId = $item->agendaskk_id;
 
     $pesan = $item->verifikasipu === 'lolos'
-        ? 'Selamat, peserta lolos seleksi!'
+        ? 'Selamat, peserta SKK lolos seleksi administrasi!'
         : 'Berkas dikembalikan. Data belum lengkap.';
 
     session()->flash('verifikasipesertaskk', $pesan);
