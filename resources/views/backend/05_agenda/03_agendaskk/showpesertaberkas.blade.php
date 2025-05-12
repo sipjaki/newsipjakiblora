@@ -225,8 +225,9 @@
 
     <br>
 
-    <h5>I. IDENTITAS PESERTA</h4>
-    <table>
+    <h5 style="color: navy;">I. IDENTITAS PESERTA</h4>
+
+        <table>
 
         <tr>
             <td style="width:50px; text-align:center;">1</td>
@@ -335,7 +336,7 @@
 
     <br>
 
-    <h5>II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
+    <h5 style="color: navy;">II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <table>
         <tr>
@@ -406,7 +407,7 @@
 
 <div class="halaman-kedua">
 
-    <h5>III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
+    <h5 style="color: navy;">III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
     <table>
         <tr>
