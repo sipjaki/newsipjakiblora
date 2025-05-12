@@ -137,4 +137,31 @@ public function terbitkanSertifikat($id)
 }
 
 
+    public function verifikasipupesertaskk(Request $request, $id)
+    {
+        // Validasi input verifikasi
+        $request->validate([
+            'verifikasipu' => 'required|in:lolos,dikembalikan',
+        ]);
+
+        // Temukan peserta berdasarkan ID
+        $item = allskktenagakerjablora::findOrFail($id);
+
+        // Simpan nilai verifikasi
+        $item->verifikasipu = $request->input('verifikasipu');
+        $item->save();
+
+        // Ambil ID agenda
+        $agendaId = $item->agendaskk_id;
+
+        // Flash message
+        $pesan = $item->verifikasi === 'lolos'
+            ? 'Selamat Peserta Lolos Seleksi!'
+            : 'Peserta Peserta Belum Lengkap.';
+        session()->flash('verifikasipesertapelatihan', $pesan);
+
+        // Redirect
+        return redirect("/beagendaskkpeserta//show/{$agendaId}");
+    }
+
 }
