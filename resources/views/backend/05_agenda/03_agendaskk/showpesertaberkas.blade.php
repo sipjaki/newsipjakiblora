@@ -346,11 +346,18 @@
         </tr>
         <tr>
             <td style="text-align: center;">
-                @if($datapeserta->uploadktp)
-                    <button class="badge-kembali" style="text-align: center;">LENGKAP</button>
-                @else
-                    <button class="btn btn-secondary" disabled style="text-align: center;">BELUM</button>
-                @endif
+                 <div style="margin-top: 10px;">
+                                                @if($datapeserta->uploadktp && file_exists(public_path('storage/' . $datapeserta->uploadktp)))
+                                                <!-- Display the default iframe when the file exists in the storage -->
+                                                <iframe src="{{ asset('storage/' . $datapeserta->uploadktp) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @elseif($datapeserta->uploadktp)
+                                                <!-- Display the iframe with the updated file -->
+                                                <iframe src="{{ asset($datapeserta->uploadktp) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                            @else
+                                                <!-- Optional: Show a placeholder if there's no file available -->
+                                                <p>Data belum diupdate</p>
+                                            @endif
+                                            </div>
             </td>
             <td style="text-align: center;">
                 @if($datapeserta->uploadfoto)
