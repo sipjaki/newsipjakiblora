@@ -1102,7 +1102,7 @@
                     <h4><i class="bi bi-file-earmark-check"></i> Validasi Dokumen Peserta</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.validasi-dokumen.update', $peserta->id) }}" method="POST">
+                    {{-- <form action="{{ route('/404', $peserta->id) }}" method="POST"> --}}
                         @csrf
                         @method('PUT')
 
