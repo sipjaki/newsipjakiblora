@@ -1120,3 +1120,16 @@ if ($request->hasFile('sertifikat')) {
 
 
 
+
+
+
+
+                    <button
+                        onclick="exportTableToExcel('daftarPeserta', 'Data Peserta {{$data->namakegiatan}}')"
+                        onmouseover="this.style.background='white'; this.style.color='black'; this.style.border='1px solid #ccc';"
+                        onmouseout="this.style.background='linear-gradient(135deg, #2e7d32, #d4af37)'; this.style.color='white'; this.style.border='none';"
+                        style="background: linear-gradient(135deg, #2e7d32, #d4af37); color: white; border: none; padding: 10px 20px;
+                               border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center;
+                               transition: background 0.3s, color 0.3s, border 0.3s;">
+                        <i class="bi bi-file-earmark-excel-fill" style="margin-right: 8px; font-size: 16px;"></i> Download Excel
+                    </button>
