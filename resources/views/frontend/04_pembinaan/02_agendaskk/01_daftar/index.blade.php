@@ -382,8 +382,7 @@ table.zebra-table {
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-
-                               @php
+                            @php
                                 $inputStyle = "
                                     width: 100%;
                                     padding: 10px 14px;
@@ -396,7 +395,6 @@ table.zebra-table {
                                 $divStyle = "margin-bottom: 20px;";
                                 $iconStyle = "color: navy;";
                             @endphp
-
 
                       <!-- Input tersembunyi untuk dikirim ke backend -->
                             <input type="hidden" name="user_id" value="{{ old('user_id', $user_id) }}">
@@ -913,7 +911,7 @@ function previewFile(previewId, input) {
                                     font-size: 14px;
                                 ";
                                 $labelStyle = "margin-bottom: 6px; font-weight: 500; display: block; font-size:16px; text-align:left:";
-                                $divStyle = "margin-bottom: 20px; text-align:left:";
+                                $divStyle = "margin-bottom: 20px;";
                                 $iconStyle = "color: navy;";
                             @endphp
 
@@ -922,7 +920,7 @@ function previewFile(previewId, input) {
 
                             <!-- Tampilan Nama Lengkap (readonly) -->
                             <div style="{{ $divStyle }}">
-                                <label class="form-label" style="text-align: left;">
+                                <label class="form-label" style="{{ $labelStyle }}">
                                     <i class="bi bi-person" style="{{ $iconStyle }}"></i> Nama Lengkap (Terisi Otomatis)
                                 </label>
                                 <input type="text" style="{{ $inputStyle }}" class="form-control" value="{{ $namalengkap }}" readonly>
