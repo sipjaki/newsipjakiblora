@@ -1102,7 +1102,7 @@
                     <h4><i class="bi bi-file-earmark-check"></i> Validasi Dokumen Peserta</h4>
                 </div>
                 <div class="card-body">
-                    {{-- <form action="{{ route('/404', $peserta->id) }}" method="POST"> --}}
+                    {{-- <form action="{{ route('/404', $datapeserta->id) }}" method="POST"> --}}
                         @csrf
                         @method('PUT')
 
@@ -1127,11 +1127,11 @@
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_ktp" value="1"
-                                                {{ $peserta->validasi_ktp == 1 ? 'checked' : '' }} required>
+                                                {{ $datapeserta->validasi_ktp == 1 ? 'checked' : '' }} required>
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_ktp" value="0"
-                                                {{ $peserta->validasi_ktp == 0 ? 'checked' : '' }}>
+                                                {{ $datapeserta->validasi_ktp == 0 ? 'checked' : '' }}>
                                         </td>
                                     </tr>
 
@@ -1145,11 +1145,11 @@
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_foto" value="1"
-                                                {{ $peserta->validasi_foto == 1 ? 'checked' : '' }} required>
+                                                {{ $datapeserta->validasi_foto == 1 ? 'checked' : '' }} required>
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_foto" value="0"
-                                                {{ $peserta->validasi_foto == 0 ? 'checked' : '' }}>
+                                                {{ $datapeserta->validasi_foto == 0 ? 'checked' : '' }}>
                                         </td>
                                     </tr>
 
@@ -1163,11 +1163,11 @@
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_ijazah" value="1"
-                                                {{ $peserta->validasi_ijazah == 1 ? 'checked' : '' }} required>
+                                                {{ $datapeserta->validasi_ijazah == 1 ? 'checked' : '' }} required>
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_ijazah" value="0"
-                                                {{ $peserta->validasi_ijazah == 0 ? 'checked' : '' }}>
+                                                {{ $datapeserta->validasi_ijazah == 0 ? 'checked' : '' }}>
                                         </td>
                                     </tr>
 
@@ -1181,11 +1181,11 @@
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_pengalaman" value="1"
-                                                {{ $peserta->validasi_pengalaman == 1 ? 'checked' : '' }} required>
+                                                {{ $datapeserta->validasi_pengalaman == 1 ? 'checked' : '' }} required>
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_pengalaman" value="0"
-                                                {{ $peserta->validasi_pengalaman == 0 ? 'checked' : '' }}>
+                                                {{ $datapeserta->validasi_pengalaman == 0 ? 'checked' : '' }}>
                                         </td>
                                     </tr>
 
@@ -1199,11 +1199,11 @@
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_npwp" value="1"
-                                                {{ $peserta->validasi_npwp == 1 ? 'checked' : '' }} required>
+                                                {{ $datapeserta->validasi_npwp == 1 ? 'checked' : '' }} required>
                                         </td>
                                         <td class="text-center">
                                             <input type="radio" name="validasi_npwp" value="0"
-                                                {{ $peserta->validasi_npwp == 0 ? 'checked' : '' }}>
+                                                {{ $datapeserta->validasi_npwp == 0 ? 'checked' : '' }}>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1212,7 +1212,7 @@
 
                         <div class="form-group mt-4">
                             <label for="catatan">Catatan Validasi:</label>
-                            <textarea name="catatan" id="catatan" class="form-control" rows="3">{{ $peserta->catatan_validasi }}</textarea>
+                            <textarea name="catatan" id="catatan" class="form-control" rows="3">{{ $datapeserta->catatan_validasi }}</textarea>
                         </div>
 
                         <div class="d-flex justify-content-between mt-4">
