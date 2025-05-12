@@ -414,6 +414,7 @@ public function daftarpesertasertifikasiskkcreatenew(Request $request)
         'tempatlahir.required' => 'Tempat lahir harus diisi.',
         'alamat.required' => 'Alamat harus diisi.',
         'notelepon.required' => 'Nomor telepon harus diisi.',
+        'jeniskelamin.required' => 'Jenis Kelamin wajib diisi.',
         'email.required' => 'Email harus diisi.',
         'email.email' => 'Email tidak valid.',
         'tahunlulus.required' => 'Tahun lulus harus diisi.',
