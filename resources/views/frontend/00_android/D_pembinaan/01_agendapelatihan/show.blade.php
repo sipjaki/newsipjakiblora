@@ -214,7 +214,7 @@ h5 {
                     </div>
                     <div class="header-surat">
                         <div class="header-text">
-                            <h3>AGENDA PELATIHAN TKK</h3>
+                            <h3>AGENDA PEMBINAAN JASA KONSTRUKSI</h3>
                             <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
                             <p>----------------------------</p>
                         </div>
@@ -257,7 +257,7 @@ h5 {
                             <td class="label">3</td>
                             <td class="label">Waktu Pelaksanaan</td>
                             <td class="colon">:</td>
-                            <td>{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('l, d F Y') }}</td>
+                            <td>{{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('d F Y') }}</td>
                         </tr>
                         <tr>
                             <td class="label">4</td>
