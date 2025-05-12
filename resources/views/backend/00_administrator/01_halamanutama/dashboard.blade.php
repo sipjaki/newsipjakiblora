@@ -258,7 +258,7 @@ button:hover {
             <!-- Konten -->
             <div class="info-box-content" style="padding: 10px 20px;">
                 <span class="info-box-icon" style="margin-right: 10px;">
-                    <i class="bi bi-tools" style="font-size: 24px; color: navy;"></i> <!-- Ikon yang disesuaikan -->
+                    <i class="bi bi-tools" style="font-size: 24px; color: navy;">{{$jumlahKegiatan}}</i> <!-- Ikon yang disesuaikan -->
                 </span>
                 <span class="info-box-text" style="font-size: 20px; font-weight: bold; color: navy;">Kegiatan Konstruksi</span>
             </div>

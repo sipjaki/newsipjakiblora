@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\allskktenagakerjablora;
 use App\Models\headerberanda;
 use App\Models\pagevisit;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,15 @@ class AdminDashboardController extends Controller
         $salesRate = 0.8; // Angka contoh, sesuaikan dengan logika Anda
         $registrationRate = -1; // Angka contoh, sesuaikan dengan logika
 
+        // Mendapatkan user_id yang sedang login
+$userId = Auth::id();
+
+// Menghitung jumlah kegiatan yang diikuti oleh user tersebut berdasarkan user_id dan agendaskk_id
+$jumlahKegiatan = Allskktenagakerjablora::where('user_id', $userId)
+                                       ->whereNotNull('agendaskk_id')  // Hanya yang memiliki agendaskk_id
+                                       ->count();
+
+        $dataallskktenagakerjablora = allskktenagakerjablora::all();
         // return view('backend.00_adminmasjaki.01_fiturterpisah.01_dashboard', [
         return view('backend.00_administrator.01_halamanutama.dashboard', [
             'title' => 'Dashboard Mas Jaki DPUPR Blora',
@@ -31,6 +41,7 @@ class AdminDashboardController extends Controller
             'conversionRate' => $conversionRate,
             'salesRate' => $salesRate,
             'registrationRate' => $registrationRate,
+            'jumlahKegiatan' => $jumlahKegiatan,
             // 'jumlahQa' => $jumlahQa,  // Menambahkan jumlah data ke view
             // 'jumlahBerita' => $jumlahBerita,  // Menambahkan jumlah data ke view
             // 'jumlahAgendasertifikasi' => $jumlahAgendasertifikasi,  // Menambahkan jumlah data ke view
