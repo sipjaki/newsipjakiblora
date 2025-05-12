@@ -344,6 +344,21 @@
 </div>
 @endif
 
+@if (session('verifikasipesertaskk'))
+<div class="modal-verify-alert">
+    <div class="modal-box">
+        <div class="modal-crane"></div>
+        <button type="button" class="btnalert-view" onclick="this.closest('.modal-verify-alert').style.display='none';">&times;</button>
+        <img src="/assets/00_masjaki/images/maskotjakon.png" alt="Logo"
+        style="width: 150px !important; height: auto;"
+        class="logo-animate-bounce">
+           <p style="color:black;">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+        <div class="success-text">Berhasil</div>
+        <button class="button-verifikasi">{{ session('verifikasipesertaskk') }}</button>
+    </div>
+</div>
+@endif
+
 @if (session('verifikasipesertapelatihan'))
 <div class="modal-verify-alert">
     <div class="modal-box">
