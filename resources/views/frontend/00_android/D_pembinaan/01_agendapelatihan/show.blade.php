@@ -216,7 +216,7 @@ h5 {
                         <div class="header-text">
                             <h3>AGENDA PEMBINAAN JASA KONSTRUKSI</h3>
                             <h4>DPUPR KABUPATEN BLORA <br> PROVINSI JAWA TENGAH</h4>
-                            <p>----------------------------</p>
+                            {{-- <p>----------------------------</p> --}}
                         </div>
                     </div>
 
