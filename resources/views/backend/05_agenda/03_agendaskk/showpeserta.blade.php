@@ -164,65 +164,57 @@
         </button>
     </a>
 </td>
-
-
+<!-- Tombol Verifikasi -->
 <td style="text-align: center;">
     @if($item->verifikasipu == null)
-        <!-- Tombol DI VERIFIKASI -->
         <button type="button" onclick="openModal({{ $item->id }})" class="btn btn-secondary">
             <i class="bi bi-patch-check-fill"></i> DI VERIFIKASI
         </button>
     @elseif($item->verifikasipu == 'dikembalikan')
-        <!-- Tombol GUGUR -->
-        <button type="button" disabled class="btn" style="background-color: #EF4444; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: not-allowed;">
+        <button type="button" disabled class="btn" style="background-color: #EF4444; color: white;">
             <i class="bi bi-x-circle"></i> DIKEMBALIKAN
         </button>
     @elseif($item->verifikasipu == 'lolos')
-        <!-- Tombol LOLOS -->
-        <button type="button" disabled class="btn" style="background-color: rgba(16, 185, 129, 0.85); color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: not-allowed;">
-            <i class="bi bi-patch-check-fill" style="font-size: 1.2rem;"></i> LOLOS
+        <button type="button" disabled class="btn" style="background-color: #10B981; color: white;">
+            <i class="bi bi-patch-check-fill"></i> LOLOS
         </button>
     @endif
 </td>
 
 <!-- Modal Konfirmasi -->
-<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 24px 30px; border-radius: 12px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
-        <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">
-            Apakah peserta sudah memenuhi <br> persyaratan pendaftaran ?
-        </p>
+<div id="confirmModal" style="display: none; position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 24px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center;">
+        <p style="font-size: 16px; font-weight: 600;">Apakah peserta sudah memenuhi persyaratan pendaftaran?</p>
 
-        <!-- Form Verifikasi -->
-        <form id="verifikasiForm" method="POST" class="d-inline">
+        <form id="verifikasiForm" method="POST">
             @csrf
             @method('PUT')
 
             <!-- Tombol Lolos -->
-            <button type="submit" name="verifikasi" value="lolos" style="background-color: #10B981; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-right: 10px;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
-                onmouseout="this.style.backgroundColor='#10B981'; this.style.color='white'; this.querySelector('i').style.color='white';">
+            <button type="submit" name="verifikasipu" value="lolos" style="background-color: #10B981; color: white; padding: 8px 16px; margin-right: 10px; border-radius: 8px; border: none;">
                 <i class="bi bi-check2-circle" style="margin-right: 6px;"></i> Lolos
             </button>
 
-            <!-- Tombol Gugur -->
-            <button type="submit" name="verifikasi" value="gugur" style="background-color: #0091d4; color: white; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s;"
-                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('i').style.color='black';"
-                onmouseout="this.style.backgroundColor='#0091d4'; this.style.color='white'; this.querySelector('i').style.color='white';">
+            <!-- Tombol Dikembalikan -->
+            <button type="submit" name="verifikasipu" value="dikembalikan" style="background-color: #EF4444; color: white; padding: 8px 16px; border-radius: 8px; border: none;">
                 <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Dikembalikan
             </button>
         </form>
-<br><br>
+
+        <br><br>
+
         <!-- Tombol Batal -->
-        <button type="button" onclick="closeModal()" style="background-color: #D1D5DB; color: black; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;">
+        <button type="button" onclick="closeModal()" style="background-color: #D1D5DB; padding: 8px 16px; border-radius: 8px; border: none;">
             <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
         </button>
     </div>
 </div>
 
+
 <script>
     function openModal(itemId) {
         const form = document.getElementById("verifikasiForm");
-        form.action = `{{ url('verifikasipupesertaskk') }}/${itemId}`;
+        form.action = `/verifikasipupesertaskk/${itemId}`;
         document.getElementById("confirmModal").style.display = "flex";
     }
 
@@ -230,6 +222,7 @@
         document.getElementById("confirmModal").style.display = "none";
     }
 </script>
+
 
 
 
