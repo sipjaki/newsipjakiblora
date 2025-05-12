@@ -205,23 +205,28 @@
 <hr>
 
 <div class="halaman-pertama">
-    <div class="header-surat" style="display: flex; align-items: center; justify-content: center;">
-        <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora" style="width: 110px; height: auto; margin-right: 300px; margin-top:50px;">
+    <div style="text-align: center; margin-bottom: 10px;">
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <!-- Logo -->
+        <img src="/assets/icon/logokabupatenblora.png" alt="Logo Kabupaten Blora"
+             style="width: 100px; height: auto; margin-right: 20px; margin-top: 10px;">
 
-        <div class="header-text" style="text-align: center;" style="margin-right: 400px;">
-            <h3 style="margin: 2px 0;">PEMERINTAH KABUPATEN BLORA</h3>
-            <h3 style="margin: 2px 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
-            <p style="margin: 2px 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
-            <h3 style="margin: 2px 0;">KABUPATEN BLORA 58214 PROVINSI JAWA TENGAH</h3>
+        <!-- Teks Kop -->
+        <div style="text-align: center;">
+            <h3 style="margin: 0;">PEMERINTAH KABUPATEN BLORA</h3>
+            <h3 style="margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG</h3>
+            <p style="margin: 0;">Jl. Nusantara No. 62 Telp. (0296) 531004</p>
+            <h3 style="margin: 0;">KABUPATEN BLORA 58214 PROVINSI JAWA TENGAH</h3>
         </div>
-        <p></p>
     </div>
 
-    <div style="margin-top:-80px;">
-        <hr style="border: 4px solid black; width: 100%;">
-        <h5 style="text-align: center;">DATA PESERTA SKK TENAGA KONSTRUKSI</h5>
-        <h5 style="text-align: center;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h5>
+    <!-- Garis dan Judul -->
+    <div style="margin-top: 10px;">
+        <hr style="border: 3px solid black; width: 100%; margin: 10px 0;">
+        <h5 style="margin: 0;">DATA PESERTA SKK TENAGA KONSTRUKSI</h5>
+        <h5 style="margin: 0;">DINAS PEKERJAAN UMUM DAN PENATAAN RUANG KABUPATEN BLORA</h5>
     </div>
+</div>
 
     <br>
 
