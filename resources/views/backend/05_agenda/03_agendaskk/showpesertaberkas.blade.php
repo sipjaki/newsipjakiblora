@@ -712,7 +712,7 @@
                     <div class="card-body p-0">
                         <div class="table-responsive" style="overflow-x: auto; white-space: nowrap;">
                             <table class="zebra-table table-striped">
-                                <thead>
+                                <thead style="font-size: 16px;">
                                     <tr>
                                         {{-- <th style="width: 25px; text-align:center;"><i class="bi bi-hash"></i> No</th> --}}
                                         <th style="width: 400px; text-align:center;"><i class="bi bi-file-earmark-text-fill"></i> Foto KTP </th>
