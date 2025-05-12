@@ -630,7 +630,7 @@ public function daftarpesertasertifikasiskkcreatenew2(Request $request)
     try {
         // Simpan ke database
         allskktenagakerjablora::create([
-            'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
+            // 'jabatanskkanda_id' => $validated['jabatanskkanda_id'],
             'agendaskk_id' => $request->agendaskk_id,
             'user_id' => auth()->id(),
             'jenjangpendidikan_id' => $validated['jenjangpendidikan_id'],
