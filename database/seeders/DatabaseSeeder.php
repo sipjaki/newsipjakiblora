@@ -14656,7 +14656,7 @@ jenjangpendidikan::create([
 ]);
 
 jenjangpendidikan::create([
-    'id' => '13',
+    'id' => '14',
     'jenjangpendidikan' => 'Strata 3 (S3)',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
