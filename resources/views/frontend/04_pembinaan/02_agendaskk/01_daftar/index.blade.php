@@ -382,7 +382,8 @@ table.zebra-table {
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            @php
+
+                               @php
                                 $inputStyle = "
                                     width: 100%;
                                     padding: 10px 14px;
@@ -395,6 +396,7 @@ table.zebra-table {
                                 $divStyle = "margin-bottom: 20px;";
                                 $iconStyle = "color: navy;";
                             @endphp
+
 
                       <!-- Input tersembunyi untuk dikirim ke backend -->
                             <input type="hidden" name="user_id" value="{{ old('user_id', $user_id) }}">
