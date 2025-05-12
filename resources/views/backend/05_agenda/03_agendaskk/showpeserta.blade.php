@@ -216,7 +216,7 @@
 
         <!-- Tombol Batal -->
         <button type="button" onclick="closeModal()" style="background-color: #D1D5DB; color: black; padding: 8px 16px; border-radius: 8px; border: none; cursor: pointer; font-weight: 500; display: inline-flex; align-items: center; transition: 0.3s; margin-left: 10px;">
-            <i class="bi bi-x-circle" style="margin-right: 6px;"></i> Batal
+            <i class="bi bi-x-circle" style="margin-right: 6px;"></i>
         </button>
     </div>
 </div>
