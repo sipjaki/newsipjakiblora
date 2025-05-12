@@ -319,7 +319,7 @@
         </tr>
 
         <tr>
-            <td s   tyle="text-align: center;">11</td>
+            <td style="text-align: center;">11</td>
             <td>Tahun Lulus</td>
             <td style="text-align: center;">:</td>
             <td>{{$datapeserta->tahunlulus}}</td>
@@ -338,7 +338,7 @@
 
     <h5 style="color: navy; font-weight:800;">II. KELENGKAPAN BERKAS PERSYARATAN PESERTA</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
-    <table>
+    <table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center;">KTP/KITAS*</td>
             <td style="text-align: center;">Foto</td>
@@ -409,7 +409,7 @@
 
     <h5 style="color: navy; font-weight:800;">III. NAMA ASOSIASI DAN KESEDIAAN MENGIKUTI BIMBINGAN TEKNIS</h4>
     {{-- <h5>KEPALA DINAS</h5> --}}
-    <table>
+    <table class="zebra-table table-striped">
         <tr>
             <td style="text-align: center;">Nama Penyelenggara</td>
             <td style="text-align: center;">{{$datapeserta->namaasosiasi}}</td>
