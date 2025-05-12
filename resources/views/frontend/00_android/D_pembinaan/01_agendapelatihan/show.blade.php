@@ -284,18 +284,22 @@ h5 {
                             <td>
                                 <div style="margin-top: 10px;">
                                     @if($data->suratundangan && file_exists(public_path('storage/' . $data->suratundangan)))
-                                    <!-- Display the default iframe when the file exists in the storage -->
-                                    <iframe src="{{ asset('storage/' . $data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                @elseif($data->suratundangan)
-                                    <!-- Display the iframe with the updated file -->
-                                    <iframe src="{{ asset($data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
-                                @else
-                                    <!-- Optional: Show a placeholder if there's no file available -->
-                                    <p>Data belum diupdate</p>
-                                @endif
+                                        <!-- Display the default iframe when the file exists in the storage -->
+                                        <iframe src="{{ asset('storage/' . $data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                        <a href="{{ asset('storage/' . $data->suratundangan) }}" download class="btn btn-primary mt-2">Download</a>
 
+                                    @elseif($data->suratundangan)
+                                        <!-- Display the iframe with the updated file -->
+                                        <iframe src="{{ asset($data->suratundangan) }}" frameborder="0" width="100%" height="300px"></iframe>
+                                        <a href="{{ asset($data->suratundangan) }}" download class="btn btn-primary mt-2">Download</a>
+
+                                    @else
+                                        <!-- Optional: Show a placeholder if there's no file available -->
+                                        <p>Data belum diupdate</p>
+                                    @endif
                                 </div>
                             </td>
+
                         </tr>
                     </table>
                             <br>
