@@ -14561,7 +14561,7 @@ jenjangpendidikan::create([
 
 jenjangpendidikan::create([
     'id' => '2',
-    'jenjangpendidikan' => 'Strata 1',
+    'jenjangpendidikan' => 'Strata 1 (S1)',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -14617,7 +14617,7 @@ jenjangpendidikan::create([
 
 jenjangpendidikan::create([
     'id' => '9',
-    'jenjangpendidikan' => 'Strata 2 ',
+    'jenjangpendidikan' => 'Strata 2 (S2)',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
@@ -14650,6 +14650,14 @@ jenjangpendidikan::create([
 jenjangpendidikan::create([
     'id' => '13',
     'jenjangpendidikan' => 'SMP/Mts/Sederajat',
+    'created_at' => Carbon::now(),
+    'updated_at' => Carbon::now(),
+    'deleted_at' => null, // Jika Anda menggunakan soft deletes
+]);
+
+jenjangpendidikan::create([
+    'id' => '13',
+    'jenjangpendidikan' => 'Strata 3 (S3)',
     'created_at' => Carbon::now(),
     'updated_at' => Carbon::now(),
     'deleted_at' => null, // Jika Anda menggunakan soft deletes
