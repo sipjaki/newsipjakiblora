@@ -123,6 +123,18 @@
         z-index: 1;
     }
 
+    .button-verifikasi1, .button-verifikasi {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
     .button-verifikasi { background: orangered; }
     .button-text:hover { background: white; color: black; }
 
