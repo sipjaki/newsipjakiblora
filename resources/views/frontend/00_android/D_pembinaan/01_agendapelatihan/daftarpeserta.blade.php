@@ -382,6 +382,8 @@ h5 {
                                                             @error('instansi')
                                                             <div class="invalid-feedback" style="color: red; font-size: 12px; margin-top: 4px;">{{ $message }}</div>
                                                         @enderror
+                                                                 <p style="font-size: 14px;">Ket Contoh : DPUPR Kab Blora, atau CV/PT. Konstruksi Usaha Blora</p>
+
                                                         </div>
                                                     </div>
 
