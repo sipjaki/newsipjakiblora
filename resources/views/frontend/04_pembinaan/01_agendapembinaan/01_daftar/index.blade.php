@@ -260,6 +260,7 @@ table.zebra-table {
                                     </label>
                                     <input type="text" name="instansi" style="{{ $inputStyle }}" class="@error('instansi') is-invalid @enderror" value="{{ old('instansi') }}">
                                     @error('instansi') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                    Ket Contoh : DPUPR Kab Blora, atau CV/PT. Konstruksi Usaha Blora
                                 </div>
                             </div>
 
