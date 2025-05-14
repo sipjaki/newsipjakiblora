@@ -500,26 +500,61 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                    style="padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; width: 100%;">
             <button id="cekButton" class="check-button"
                     style="padding: 12px; background-color: #4ADE80; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
-                Cek
+                Cek Sertifikat
             </button>
         </div>
     </div>
 
-    <!-- Hasil Download -->
+    <!-- Hasil Pencarian -->
     <div id="resultSection" style="margin-top: 20px;"></div>
+</div>
 
+<!-- Template untuk hasil pencarian (akan diisi via JavaScript) -->
+<div id="certificateTemplate" style="display: none;">
+    <div class="result-container">
+        <table class="result-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+            <thead>
+                <tr style="background-color: #f3f4f6;">
+                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">No</th>
+                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">Nama Peserta</th>
+                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">Nama Pelatihan</th>
+                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">Tanggal Pelatihan</th>
+                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="certificateRows">
+                <!-- Data akan diisi disini -->
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <script>
-document.getElementById("cekButton").addEventListener("click", function () {
+document.getElementById("cekButton").addEventListener("click", function() {
     const nik = document.getElementById("nikInput").value.trim();
     const resultSection = document.getElementById("resultSection");
 
+    // Validasi NIK
     if (!nik) {
-        alert("Mohon masukkan NIK terlebih dahulu.");
+        resultSection.innerHTML = `
+            <div class="alert alert-danger" style="padding: 12px; background-color: #fee2e2; color: #b91c1c; border-radius: 8px;">
+                Mohon masukkan NIK terlebih dahulu!
+            </div>
+        `;
         return;
     }
 
+    // Tampilkan loading
+    resultSection.innerHTML = `
+        <div style="text-align: center; padding: 20px;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Sedang mencari sertifikat...</p>
+        </div>
+    `;
+
+    // Lakukan request AJAX
     fetch("{{ route('cari.sertifikat') }}", {
         method: "POST",
         headers: {
@@ -528,36 +563,72 @@ document.getElementById("cekButton").addEventListener("click", function () {
         },
         body: JSON.stringify({ nik: nik })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
         if (data.success) {
-            resultSection.innerHTML = data.html;
+            // Jika data ditemukan
+            const template = document.getElementById("certificateTemplate").cloneNode(true);
+            template.style.display = "block";
+            const tbody = template.querySelector("#certificateRows");
 
-            // Pasang event untuk tombol download yang akan menampilkan sertifikat
-            document.querySelectorAll('.download-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const targetId = this.getAttribute('data-target');
-                    const cert = document.getElementById(targetId);
-                    if (cert.style.display === "none") {
-                        cert.style.display = "block";
-                    } else {
-                        cert.style.display = "none";
-                    }
-                });
+            // Kosongkan dulu
+            tbody.innerHTML = "";
+
+            // Isi data
+            data.data.forEach((item, index) => {
+                const row = document.createElement("tr");
+
+                // Format tanggal pelatihan
+                const startDate = new Date(item.agendapelatihan.tanggal_pelatihan_start);
+                const endDate = new Date(item.agendapelatihan.tanggal_pelatihan_end);
+                const formattedDate = `
+                    ${startDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    s/d
+                    ${endDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
+                `;
+
+                row.innerHTML = `
+                    <td style="padding: 12px; border: 1px solid #d1d5db;">${index + 1}</td>
+                    <td style="padding: 12px; border: 1px solid #d1d5db;">${item.nama}</td>
+                    <td style="padding: 12px; border: 1px solid #d1d5db;">${item.agendapelatihan.nama_pelatihan}</td>
+                    <td style="padding: 12px; border: 1px solid #d1d5db;">${formattedDate}</td>
+                    <td style="padding: 12px; border: 1px solid #d1d5db;">
+                        <a href="/bepesertapuploadsertifikat/show/${item.id}"
+                           class="btn-download"
+                           style="padding: 8px 12px; background-color: #4ADE80; color: white; text-decoration: none; border-radius: 4px; display: inline-block;">
+                            Download Sertifikat
+                        </a>
+                    </td>
+                `;
+                tbody.appendChild(row);
             });
+
+            resultSection.innerHTML = "";
+            resultSection.appendChild(template);
         } else {
-            resultSection.innerHTML = `<p style="color: red; text-align: center;">Sertifikat belum diterbitkan!</p>`;
+            // Jika data tidak ditemukan
+            resultSection.innerHTML = `
+                <div class="alert alert-info" style="padding: 12px; background-color: #dbeafe; color: #1e40af; border-radius: 8px; text-align: center;">
+                    Tidak ditemukan sertifikat untuk NIK: ${nik}
+                </div>
+            `;
         }
     })
     .catch(error => {
-        console.error("Terjadi kesalahan:", error);
-        resultSection.innerHTML = `<p style="color: red;">Terjadi kesalahan saat mengambil data.</p>`;
+        console.error("Error:", error);
+        resultSection.innerHTML = `
+            <div class="alert alert-danger" style="padding: 12px; background-color: #fee2e2; color: #b91c1c; border-radius: 8px; text-align: center;">
+                Terjadi kesalahan saat memproses permintaan. Silakan coba lagi.
+            </div>
+        `;
     });
 });
 </script>
-
-
-
 
 
                             </div>

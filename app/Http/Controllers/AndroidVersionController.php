@@ -1362,24 +1362,29 @@ public function resdaftarpelatihanpesertaskk($id)
 
 
     public function carisertifikat(Request $request)
-{
-    $nik = $request->nik;
+    {
+        $nik = $request->nik;
 
-    $data = pesertapelatihan::with(['agendapelatihan.jampelajaran'])
+        // Ambil data dengan relasi agendapelatihan
+        $data = pesertapelatihan::with(['agendapelatihan' => function($query) {
+            $query->select('id', 'nama_pelatihan', 'tanggal_pelatihan_start', 'tanggal_pelatihan_end');
+        }])
         ->where('nik', $nik)
-        ->get();
+        ->get(['id', 'nama', 'nik', 'agendapelatihan_id']);
 
-    if ($data->isEmpty()) {
-        return response()->json(['success' => false]);
+        if ($data->isEmpty()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Data tidak ditemukan'
+            ]);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $data,
+            'message' => 'Data ditemukan'
+        ]);
     }
-
-    $html = view('frontend.00_android.Z_menudepan.03_sertifikat.partial_sertifikat', compact('data'))->render();
-
-    return response()->json([
-        'success' => true,
-        'html' => $html
-    ]);
-}
 }
 
 
