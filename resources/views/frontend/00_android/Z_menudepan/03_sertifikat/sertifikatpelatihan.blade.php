@@ -527,7 +527,8 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                 <!-- Diisi oleh JavaScript -->
             </tbody>
         </table>
-        <P>Silahkan Geser Ke Kanan !</P>
+        <br>
+        <P style="margin-left:10px;">Silahkan Geser Ke Kanan !</P>
     </div>
 </div>
 
