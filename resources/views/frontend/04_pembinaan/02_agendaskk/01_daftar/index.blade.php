@@ -338,7 +338,7 @@ table.zebra-table {
                style="{{ $inputStyle }}"
                class="form-control @error('skkanda') is-invalid @enderror">
         <br>
-        <p style="text-align: left; font-size:13px; margin:0;">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !! </p>
+        <p style="text-align: left; font-size:13px; margin:0; color:navy;"><span style="color: navy; font-size:13px;">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !!</span> </p>
         <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small>
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
@@ -553,7 +553,7 @@ table.zebra-table {
                                         <i class="bi bi-house" style="color: navy;"></i> Alamat
                                     </label>
                                     <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
-                                                              <p style="text-align: left: font-size:13px;"><span style="color: navy">Ket : Mohon diisi sesuai dengan alamat KTP Saudara !</span></p>
+                                    <p style="text-align: left: font-size:13px;"><span style="color: navy; font-size:13px; text-align:left;">Ket : Mohon diisi sesuai dengan alamat KTP Saudara !</span></p>
                                       @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
                                 </div>
