@@ -358,13 +358,13 @@
                                 <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
                             </div>
 
-                            <div class="cert-content" style="margin-top: -10px;">
-                                <p style="text-align: center; margin-top:-10px;">diberikan kepada</p>
+                            <div class="cert-content" style="margin-top: -20p`x;">
+                                <p style="text-align: center; margin-top:-20px;">diberikan kepada</p>
 
                                 <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{ strtoupper($data->namalengkap) }}</h2>
                                 {{-- <h2 style="text-align: center; margin: 20px 0; font-size:28px;" >Miftahunnuril Anam, S.E</h2> --}}
 
-                                <h3 class="cert-h3" style="text-align: center; margin-top:-10px;">Sebagai</h3>
+                                <h3 class="cert-h3" style="text-align: center; margin-top:-20px;">Sebagai</h3>
                                 <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
                                 @php
                                     $totalJam = 0;
