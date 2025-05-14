@@ -32,7 +32,11 @@
                 </nav>
             </div>
 
-                  <div class="flex justify-center px-4 mt-[-100px]">
+                    <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
+
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+
+                                <div class="flex justify-center px-4 mt-[-100px]">
   <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6">
     <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Pencarian NIK</h2>
     <label for="nik" class="block text-sm font-medium text-gray-600 mb-1">Masukkan Nomor Induk Kependudukan (NIK)</label>
@@ -53,6 +57,24 @@
     </div>
   </div>
 </div>
+
+
+
+
+                            <div class="flex flex-col gap-1">
+
+                            </div>
+                            </div>
+                            </a>
+
+
+
+                            </div>
+                            </div>
+                            </a>
+
+
+                        </div>
 
                         @include('frontend.00_android.00_fiturmenu.keterangan')
 
