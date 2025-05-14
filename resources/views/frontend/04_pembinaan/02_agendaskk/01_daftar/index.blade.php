@@ -296,20 +296,20 @@ table.zebra-table {
 
 <div class="row">
     <!-- Kolom Kiri (Input Form Jabatan) -->
-    {{-- <div class="col-md-6" style="{{ $divStyle }}">
-        <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
-        </label>
-        <select name="jabatanskkanda_id" class="form-select @error('jabatanskkanda_id') is-invalid @enderror" style="{{ $inputStyle }}">
-            <option value="">-- Pilih Jabatan --</option>
-            @foreach($jabatankerja as $jabatan)
-                <option value="{{ $jabatan->id }}" {{ old('jabatanskkanda_id', $data->jabatanskkanda_id ?? '') == $jabatan->id ? 'selected' : '' }}>
-                    {{ $jabatan->jabatankerja }}
-                </option>
-            @endforeach
-        </select>
-        @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div> --}}
+    <div class="col-md-6" style="display: none; {{ $divStyle }}">
+    <label class="form-label" style="{{ $labelStyle }}">
+        <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
+    </label>
+    <select name="jabatanskkanda_id" class="form-select @error('jabatanskkanda_id') is-invalid @enderror" style="{{ $inputStyle }}">
+        <option value="">-- Pilih Jabatan --</option>
+        @foreach($jabatankerja as $jabatan)
+            <option value="{{ $jabatan->id }}" {{ old('jabatanskkanda_id', $data->jabatanskkanda_id ?? null) == $jabatan->id ? 'selected' : '' }}>
+                {{ $jabatan->jabatankerja }}
+            </option>
+        @endforeach
+    </select>
+    @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
+</div>
 
     <!-- Kolom Kanan (Gambar) -->
     <div class="col-md-6" style="{{ $divStyle }}">
@@ -338,7 +338,7 @@ table.zebra-table {
                style="{{ $inputStyle }}"
                class="form-control @error('skkanda') is-invalid @enderror">
         <br>
-        <p style="text-align: left;">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !! </p>
+        <p style="text-align: left;git sta">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !! </p>
         <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small>
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
@@ -888,15 +888,18 @@ function previewFile(previewId, input) {
                 @csrf
                 <input type="hidden" name="agendaskk_id" value="{{ $agendaskk_id }}">
 
-
-                <select name="jabatanskkanda_id" class="form-select @error('jabatanskkanda_id') is-invalid @enderror" style="{{ $inputStyle }}">
+<select name="jabatanskkanda_id"
+    class="form-select @error('jabatanskkanda_id') is-invalid @enderror"
+    style="display: none; {{ $inputStyle }}">
     <option value="" selected hidden style="display: none;">-- Pilih Jabatan --</option>
     @foreach($jabatankerja as $jabatan)
-        <option value="{{ $jabatan->id }}" {{ old('jabatanskkanda_id', $data->jabatanskkanda_id ?? '') == $jabatan->id ? 'selected' : '' }}>
+        <option value="{{ $jabatan->id }}"
+            {{ old('jabatanskkanda_id', $data->jabatanskkanda_id ?? '') == $jabatan->id ? 'selected' : '' }}>
             {{ $jabatan->jabatankerja }}
         </option>
     @endforeach
 </select>
+
 
 <div class="col-md-6" style="{{ $divStyle }} display: none;" id="upload_skk_section">
     <label class="form-label" style="{{ $labelStyle }}">
