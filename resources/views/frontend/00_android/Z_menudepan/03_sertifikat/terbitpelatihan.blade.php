@@ -414,94 +414,95 @@
 
                             {{-- -------- --}}
 
-                            <div class="page">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
+                                <div class="page">
                             <div class="col-md-12" style="height:250px;">
                                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                                     <div style="transform: scale(0.3); transform-origin: top left;">
                                         <div class="cert-container">
-                                        <div class="cert-header" style="text-align: center;">
-                                            <!-- Logo di atas -->
-                                            <div class="cert-logos" style="margin-bottom: 10px;">
-                                                <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
-                                                <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                                            </div>
-                                        </div>
-
-                                        <hr class="cert-hr" style="margin-top: -5px;">
-
-                                        <div class="cert-title" style="margin-top: -10px;">
-                                            <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
-                                        </div>
-
-                                        <div class="cert-content">
-                                            <div class="table-container">
-                                                <table class="custom-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th style="font-size: 15px;" width="10%">No</th>
-                                                            <th style="font-size: 15px;" width="40%">Materi</th>
-                                                            <th style="font-size: 15px;" width="30%">Narasumber</th>
-                                                            <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @php
-                                                            $totalJam = 0; // Menyimpan total jam pelajaran
-                                                        @endphp
-                                                        @forelse ($datapelajaran as $key => $pelajaran)
-                                                        <tr class="table-row-hover">
-                                                            <td style="font-size: 15px;">{{ $key + 1 }}</td>
-                                                            <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
-                                                            <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                                            <td style="font-size: 15px; text-align:center;">
-                                                                {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
-                                                            </td>
-                                                        </tr>
-                                                        @php
-                                                            $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
-                                                        @endphp
-                                                        @empty
-                                                        <tr>
-                                                            <td colspan="4">Data tidak tersedia.</td>
-                                                        </tr>
-                                                        @endforelse
-                                                    </tbody>
-                                                    <!-- Baris penjumlahan total jam pelajaran -->
-                                                    <tfoot>
-                                                        <tr>
-                                                            <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
-                                                                <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
-                                                            </td>
-                                                            <td style="font-size: 15px; text-align:center; font-weight: bold;">
-                                                                {{ $totalJam }} Jam
-                                                            </td>
-                                                        </tr>
-                                                    </tfoot>
-                                                </table>
-
-                                            </div>
-
-                                        </div>
-
-
-                                            <div class="ribbon-left">
-
-                                                        </div>
-                                                                        <div class="ribbon-text">
-                                                                            <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
-                                                                                                            {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
-
-                                                                            <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                                                                            <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                                                            </p>
-                                                                        </div>
-
-                                                        </div>
-                                                </div>
-                                            </div>
+                            <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                </div>
                             </div>
+
+                            <hr class="cert-hr" style="margin-top: -5px;">
+
+                            <div class="cert-title" style="margin-top: -10px;">
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
+                            </div>
+
+                            <div class="cert-content">
+                                <div class="table-container">
+                                    <table class="custom-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="font-size: 15px;" width="10%">No</th>
+                                                <th style="font-size: 15px;" width="40%">Materi</th>
+                                                <th style="font-size: 15px;" width="30%">Narasumber</th>
+                                                <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php
+                                                $totalJam = 0; // Menyimpan total jam pelajaran
+                                            @endphp
+                                            @forelse ($datapelajaran as $key => $pelajaran)
+                                            <tr class="table-row-hover">
+                                                <td style="font-size: 15px;">{{ $key + 1 }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px; text-align:center;">
+                                                    {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
+                                                </td>
+                                            </tr>
+                                            @php
+                                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
+                                            @endphp
+                                            @empty
+                                            <tr>
+                                                <td colspan="4">Data tidak tersedia.</td>
+                                            </tr>
+                                            @endforelse
+                                        </tbody>
+                                        <!-- Baris penjumlahan total jam pelajaran -->
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
+                                                    <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
+                                                </td>
+                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">
+                                                    {{ $totalJam }} Jam
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="ribbon-left">
+
+                            </div>
+                            <div class="ribbon-text">
+                                <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
+                                                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
+
+                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                </p>
+                            </div>
+
+                            {{-- <div class="ribbon-right"></div> --}}
+                        </div>
+                    </div>
+                    </div>
+                    </div>
                     </div>
                     </div>
                     </div>
@@ -534,20 +535,6 @@
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
-<style>
-.page {
-    page-break-after: always;
-    background: white;
-    padding: 40px;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-@media print {
-    .page {
-        page-break-after: always;
-    }
-}
-</style>
 
 <script>
 function downloadPDF() {
