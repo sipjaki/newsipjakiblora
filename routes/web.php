@@ -53,6 +53,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/sertifikat', [AndroidVersionController::class, 'sertifikatindex']);
 Route::get('/sertifikatpelatihan', [AndroidVersionController::class, 'sertifikatpelatihan']);
 Route::get('/sertifikattkk', [AndroidVersionController::class, 'sertifikattkk']);
+Route::post('/carisertifikat', [AndroidVersionController::class, 'carisertifikat'])->name('cari.sertifikat');
 
 
 // ------------------------- FRONTEND HALAMAN UTAMA MAS JAKI BLORA  --------------------------

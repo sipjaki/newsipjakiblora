@@ -1351,12 +1351,35 @@ public function resdaftarpelatihanpesertaskk($id)
    public function sertifikatpelatihan()
     {
         $user = Auth::user();
+        $datapesertapelatihan = pesertapelatihan::all();
 
         return view('frontend.00_android.Z_menudepan.03_sertifikat.sertifikatpelatihan', [
         'title' => 'Download Sertifikat Pelatihan',
+        'data' => $datapesertapelatihan,
         'user' => $user,
     ]);
     }
 
 
+    public function carisertifikat(Request $request)
+{
+    $nik = $request->nik;
+
+    $data = pesertapelatihan::with(['agendapelatihan.asosiasimasjaki', 'datapelajaran'])
+        ->where('nik', $nik)
+        ->get();
+
+    if ($data->isEmpty()) {
+        return response()->json(['success' => false]);
+    }
+
+    $html = view('frontend.00_android.Z_menudepan.03_sertifikat.partial_sertifikat', compact('data'))->render();
+
+    return response()->json([
+        'success' => true,
+        'html' => $html
+    ]);
 }
+}
+
+

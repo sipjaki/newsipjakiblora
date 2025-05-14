@@ -1,4 +1,211 @@
 <style>
+/* Menambahkan font kaligrafi atau aksara sambung */
+/* Menambahkan font kaligrafi */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.nama-sertifikat {
+    font-family: 'Great Vibes', cursive;
+    font-size: 16px;
+    text-align: center;
+    color: #bfa144; /* Warna emas klasik */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin: 30px 0;
+    letter-spacing: 1px;
+}
+
+
+.cert-container {
+    width: 297mm;
+    height: 210mm;
+    background: linear-gradient(to right, #f1f8e9 0%, #f9f5e8 100%);
+    border: 15px double #2e7d32;
+    border-image: linear-gradient(45deg, #2e7d32, #d4af37, #2e7d32) 1;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-left: 200px;
+}
+
+/* Ornamen latar belakang */
+.cert-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23d4af3780" d="M30,10 Q50,5 70,10 Q95,15 90,40 Q85,65 70,80 Q50,95 30,80 Q15,65 10,40 Q5,15 30,10 Z"/></svg>');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Pita kiri bawah */
+.cert-container .ribbon-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 40px;
+    background: linear-gradient(135deg, #d4af37, #2e7d32);
+clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+ z-index: 2;
+}
+
+.ribbon-left {
+    position: relative;
+    background-color: #ffcc00; /* Warna pita */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: flex-end; /* Memindahkan teks ke bawah */
+    justify-content: flex-start; /* Menempatkan pita di kiri */
+}
+
+.ribbon-text {
+    margin-left: 20px; /* Memberikan jarak antara pita dan teks */
+    text-align: left;
+    font-size: 16px;
+    font-weight: 800; /* Menambahkan font-weight 800 */
+}
+
+/* Pita kanan bawah */
+.cert-container .ribbon-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 40px;
+    background: linear-gradient(135deg, #b71c1c, #e53935);
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 2;
+}
+
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-logos {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            gap: 20px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+            width: 100%; /* Take full width */
+            margin-bottom: 20px; /* Add some space below */
+        }
+
+        .cert-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-content {
+            margin: 30px 0;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            padding: 0 50px;
+        }
+
+        .cert-signature {
+            text-align: right;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+
+
+        .cert-footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #2e7d32;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-h1 {
+            font-size: 32px;
+            margin: 0;
+            color: #1b5e20;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
+
+        .cert-h2 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #2e7d32;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .cert-h3 {
+            font-size: 16pt;
+            margin: 5px 0;
+            color: #1b5e20;
+        }
+
+        .cert-hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #d4af37, #2e7d32, #d4af37, transparent);
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .cert-highlight {
+            font-weight: bold;
+            color: #1b5e20;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+        }
+
+        .cert-border-decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #d4af37;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .cert-border-decoration:nth-child(1) {
+            top: 20px;
+            left: 20px;
+            border-radius: 50% 50% 0 50%;
+        }
+
+        .cert-border-decoration:nth-child(2) {
+            top: 20px;
+            right: 20px;
+            border-radius: 50% 50% 50% 0;
+        }
+
+        .cert-border-decoration:nth-child(3) {
+            bottom: 20px;
+            left: 20px;
+            border-radius: 50% 0 50% 50%;
+        }
+
+        .cert-border-decoration:nth-child(4) {
+            bottom: 20px;
+            right: 20px;
+            border-radius: 0 50% 50% 50%;
+        }
+
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+    </style>
+
+
+<style>
 
     .nik-input {
     padding: 12px;
@@ -284,84 +491,130 @@
     </div>
     <div class="card-body">
         <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
-
         <div class="example-box">
             <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
         </div>
 
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; height: 100px;">
-            <input
-                type="text"
-                id="nikInput"
-                class="nik-input"
-                placeholder="Masukkan NIK Anda"
-                style="padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; width: 100%; box-sizing: border-box;"
-            >
-            <button
-                id="cekButton"
-                class="check-button"
-                style="padding: 12px; background-color: #4ADE80; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px;"
-            >
+        <div class="form-group" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px;">
+            <input type="text" id="nikInput" class="nik-input" placeholder="Masukkan NIK Anda"
+                   style="padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; width: 100%;">
+            <button id="cekButton" class="check-button"
+                    style="padding: 12px; background-color: #4ADE80; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">
                 Cek
             </button>
         </div>
     </div>
 
-    <!-- Hasil Pencarian Sertifikat -->
-    <div id="resultSection" style="display: none;">
-        <div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
-            <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
-                <thead>
-                    <tr>
-                        <th style="text-align:center;">
-                            <i class="bi bi-geo-alt"></i> Download Sertifikat
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody">
-                    <!-- Baris hasil akan dimasukkan dengan JS -->
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <!-- Hasil Download -->
+    <div id="resultSection" style="margin-top: 20px;"></div>
+
 </div>
 
 <script>
-    // Dummy data sertifikat
-    const sertifikatData = {
-        '3201123456789012': true // NIK valid
-    };
+document.getElementById("cekButton").addEventListener("click", function () {
+    const nik = document.getElementById("nikInput").value.trim();
+    const resultSection = document.getElementById("resultSection");
 
-    document.getElementById("cekButton").addEventListener("click", function () {
-        const nik = document.getElementById("nikInput").value.trim();
-        const tableBody = document.getElementById("tableBody");
-        const resultSection = document.getElementById("resultSection");
+    if (!nik) {
+        alert("Mohon masukkan NIK terlebih dahulu.");
+        return;
+    }
 
-        // Kosongkan isi tabel sebelumnya
-        tableBody.innerHTML = "";
+    fetch("{{ route('cari.sertifikat') }}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": "{{ csrf_token() }}"
+        },
+        body: JSON.stringify({ nik: nik })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            resultSection.innerHTML = data.html;
 
-        if (nik && sertifikatData[nik]) {
-            tableBody.innerHTML = `
-                <tr>
-                    <td style="text-align:center;"><a href="#">Download Sertifikat</a></td>
-                </tr>
-            `;
+            // Pasang event untuk tombol download yang akan menampilkan sertifikat
+            document.querySelectorAll('.download-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const cert = document.getElementById(targetId);
+                    if (cert.style.display === "none") {
+                        cert.style.display = "block";
+                    } else {
+                        cert.style.display = "none";
+                    }
+                });
+            });
         } else {
-            tableBody.innerHTML = `
-                <tr>
-                    <td style="text-align:center; color:red;">Sertifikat Belum Di Terbitkan!</td>
-                </tr>
-            `;
+            resultSection.innerHTML = `<p style="color: red; text-align: center;">Sertifikat belum diterbitkan!</p>`;
         }
-
-        // Tampilkan section hasil pencarian
-        resultSection.style.display = "block";
+    })
+    .catch(error => {
+        console.error("Terjadi kesalahan:", error);
+        resultSection.innerHTML = `<p style="color: red;">Terjadi kesalahan saat mengambil data.</p>`;
     });
+});
 </script>
 
 
-                            <div class="flex flex-col gap-1">
 
+                            <div class="flex flex-col gap-1">
+                                @foreach ($data as $index => $data)
+    <div style="text-align: center; margin-bottom: 20px;">
+        <button class="download-btn"
+                data-target="sertifikat-{{ $data->id }}"
+                style="background: linear-gradient(45deg, gold, #fcd34d); color: #111827; padding: 10px 20px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer;">
+            Download Sertifikat - {{ strtoupper($data->namalengkap) }}
+        </button>
+    </div>
+
+    <div id="sertifikat-{{ $data->id }}" style="display: none; border: 2px solid #ccc; padding: 20px; border-radius: 12px; margin-bottom: 40px; background: #fff;">
+        {{-- Tempelkan isi sertifikat Anda di sini seperti di contoh panjang Anda sebelumnya --}}
+        {{-- Gunakan data Blade dari $data, $data->agendapelatihan, dan relasi lainnya --}}
+        <div class="cert-container">
+            <div class="cert-header" style="text-align: center;">
+                <div class="cert-logos" style="margin-bottom: 10px;">
+                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                </div>
+            </div>
+            <hr style="margin-top: -5px;">
+
+            <div class="cert-title">
+                <h1 class="cert-h1">SERTIFIKAT</h1>
+                <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{ $data->id }}</h2>
+            </div>
+
+            <div class="cert-content" style="text-align: center;">
+                <p>diberikan kepada</p>
+                <h2>{{ strtoupper($data->namalengkap) }}</h2>
+                <h3>Sebagai</h3>
+                <h2 style="font-weight: 800;">PESERTA</h2>
+                @php
+                    $totalJam = $data->datapelajaran->sum('jampelajaran');
+                @endphp
+                <p style="margin: 10px 50px; text-align: justify; text-indent: 50px;">
+                    Kegiatan <strong>{{ $data->agendapelatihan->namakegiatan }}</strong> yang diselenggarakan oleh
+                    <strong>{{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}</strong>
+                    pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }},
+                    di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
+                </p>
+            </div>
+
+            <div class="cert-signature" style="text-align: right; padding: 20px;">
+                <p><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong></p>
+                <p><strong>Plt. KEPALA DINAS</strong></p>
+                <p><strong>PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                <p><strong>KABUPATEN BLORA</strong></p>
+                <br>
+                <img src="/assets/icon/ttdpahuda.png" width="200" style="margin-bottom: -20px;">
+                <img src="/assets/icon/ttdkabblora.png" width="100">
+                <p><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
+                <p>NIP. 19720326 200604 1 005</p>
+            </div>
+        </div>
+    </div>
+@endforeach
 
 
                             </div>
