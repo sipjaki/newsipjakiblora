@@ -546,3 +546,20 @@
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
+
+<script>
+    function downloadPDF() {
+        const element = document.getElementById('sertifikatPdf');
+
+        const opt = {
+            margin:       0,
+            filename:     'sertifikat_pelatihan_blora.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' },
+            pagebreak:    { mode: ['css', 'legacy'] }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    }
+</script>
