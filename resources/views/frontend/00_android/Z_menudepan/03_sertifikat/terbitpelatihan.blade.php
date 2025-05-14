@@ -535,23 +535,25 @@
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
-
 <script>
 function downloadPDF() {
     const element = document.getElementById('sertifikatPdf');
 
     const opt = {
-        margin:       0,
+        margin:       [10, 10, 10, 10], // top, left, bottom, right dalam pt
         filename:     'sertifikat_pelatihan_blora.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  {
-            scale: 3,
+            scale: 2.2, // lebih kecil dari sebelumnya (3)
             useCORS: true,
-            dpi: 300,
-            letterRendering: true
+            dpi: 200,
+            letterRendering: true,
+            scrollX: 0,
+            scrollY: 0,
+            windowWidth: 1600 // untuk bantu hitung ulang ukuran viewport
         },
         jsPDF:        { unit: 'pt', format: 'a4', orientation: 'landscape' },
-        pagebreak:    { mode: ['css', 'legacy'] }
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
     html2pdf().set(opt).from(element).save();
