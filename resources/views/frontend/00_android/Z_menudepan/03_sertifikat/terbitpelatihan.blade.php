@@ -335,6 +335,7 @@
 
                     <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
 
+
                         <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
     <button
         style="
@@ -554,6 +555,30 @@ function generateTableRows() {
                     </div>
                         <!--end::Quick Example-->
 
+                          <div class="col-md-12">
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+        <button
+            style="
+                background-color: #28a745;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            "
+            onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
+            onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';"
+        >
+            <i class="bi bi-download"></i> Download Sertifikat
+        </button>
+    </div>
+</div>
 
 
                         </div>
