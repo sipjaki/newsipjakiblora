@@ -535,20 +535,60 @@
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
-
 <script>
-    function downloadPDF() {
-        const element = document.getElementById('sertifikatPdf');
+function downloadPDF() {
+    // Clone element sertifikat untuk dimodifikasi
+    const originalElement = document.getElementById('sertifikatPdf');
+    const element = originalElement.cloneNode(true);
 
-        const opt = {
-            margin:       0,
-            filename:     'sertifikat_pelatihan_blora.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2, useCORS: true },
-            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' },
-            pagebreak:    { mode: ['css', 'legacy'] }
-        };
+    // Reset transform scale yang mungkin ada
+    element.querySelectorAll('*').forEach(el => {
+        el.style.transform = 'none';
+        el.style.transformOrigin = 'unset';
+    });
 
-        html2pdf().set(opt).from(element).save();
-    }
+    // Atur ukuran untuk A4 landscape (297mm x 210mm)
+    element.style.width = '297mm';
+    element.style.height = '210mm';
+    element.style.padding = '15mm';
+    element.style.boxSizing = 'border-box';
+
+    // Perbesar semua konten
+    element.style.fontSize = '16px';
+    element.querySelector('h1').style.fontSize = '32px';
+    element.querySelector('h2').style.fontSize = '24px';
+
+    // Atur margin dan padding
+    element.style.margin = '0';
+    element.querySelector('.cert-content').style.padding = '20px';
+
+    // Buat container baru untuk PDF
+    const container = document.createElement('div');
+    container.style.width = '297mm';
+    container.style.height = '210mm';
+    container.appendChild(element);
+
+    // Opsi html2pdf
+    const opt = {
+        margin: 0,
+        filename: 'sertifikat_pelatihan_blora.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: {
+            scale: 3, // Scale lebih besar untuk kualitas tinggi
+            useCORS: true,
+            letterRendering: true,
+            allowTaint: true
+        },
+        jsPDF: {
+            unit: 'mm', // Gunakan millimeter untuk presisi
+            format: 'a4',
+            orientation: 'landscape',
+            compress: true
+        },
+        pagebreak: { mode: ['avoid-all', 'css'] }
+    };
+
+    // Generate PDF
+    html2pdf().set(opt).from(container).save();
+}
 </script>
