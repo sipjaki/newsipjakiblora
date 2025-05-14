@@ -424,8 +424,18 @@
                     </div>
                         <!--end::Quick Example-->
 <br><br>
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque ex ipsam assumenda eius voluptas libero consequuntur! Obcaecati illo soluta molestias nostrum recusandae eum impedit, sit, saepe, porro ratione vero asperiores?</p>
-                                {{-- ======================================================= --}}
+
+                    </div>
+
+                    <br><br>
+                    <!-- /.card -->
+                    <!-- Button Section -->
+
+
+
+                            <div class="flex flex-col gap-1">
+                        {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p> --}}
+
 <div class="col-md-12">
     <div class="cert-container" style="position: relative; padding-bottom: 80px;">
         <div class="cert-header" style="text-align: center;">
@@ -501,19 +511,6 @@
         </div>
     </div>
 </div>
-
-
-                    </div>
-
-                    <br><br>
-                    <!-- /.card -->
-                    <!-- Button Section -->
-
-
-
-                            <div class="flex flex-col gap-1">
-                        {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p> --}}
-                        </p>
 
                             </div>
                             </div>
