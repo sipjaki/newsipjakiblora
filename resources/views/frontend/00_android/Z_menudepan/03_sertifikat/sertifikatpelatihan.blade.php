@@ -510,8 +510,11 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
 <!-- Template untuk hasil pencarian -->
 <div id="certificateTemplate" style="display: none;">
-    <div class="result-container">
-        <table class="result-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <div class="result-container" style="overflow-x: auto; margin-top: 20px;">
+    <table class="result-table" style="min-width: 700px; border-collapse: collapse;">
+
+    {{-- <div class="result-container">
+        <table class="result-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;"> --}}
             <thead>
                 <tr style="background-color: #f3f4f6;">
                     <th style="padding: 12px; border: 1px solid #d1d5db;">No</th>
