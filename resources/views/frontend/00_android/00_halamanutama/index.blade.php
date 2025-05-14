@@ -410,6 +410,7 @@
                 <img src="/assets/icon/pupr.png" alt="" width="8%" loading="lazy">
                 {{-- <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a> --}}
             </div>
+
             <div class="flex flex-col gap-4 mt-[14px] px-4">
                 @foreach ($dataartikel->take(2) as $item)
                 <a href="/resartikeljakon" class="card">
