@@ -1279,7 +1279,7 @@ function previewFile(previewId, input) {
 <div class="row">
 <!-- Upload Pengalaman -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    @php
+    {{-- @php
     $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
     $fileDownload = null;
 
@@ -1291,7 +1291,12 @@ function previewFile(previewId, input) {
             $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
         }
     }
-    @endphp
+    @endphp --}}
+
+
+    @php
+    $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
+@endphp
 
 <label class="form-label text-start" style="{{ $labelStyle }}">
 <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB
