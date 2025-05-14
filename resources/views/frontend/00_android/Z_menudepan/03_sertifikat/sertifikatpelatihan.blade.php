@@ -172,9 +172,9 @@
         }
     </style>
 
-<div class="certificate-card">
+<div class="certificate-card" style="margin-left: 100px;">
         <div class="card-header">
-            <h4>Masukkan NIK & Cek Sertifikat</h4>
+            <h4>Masukkan NIK & Download Sertifikat</h4>
         </div>
         <div class="card-body">
             <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
