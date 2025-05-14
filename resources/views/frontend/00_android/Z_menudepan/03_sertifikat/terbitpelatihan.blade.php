@@ -540,49 +540,60 @@ function downloadPDF() {
     const originalElement = document.getElementById('sertifikatPdf');
     const element = originalElement.cloneNode(true);
 
-    // Reset transformasi sebelumnya
-    element.style.transform = 'none';
-    element.style.transformOrigin = 'unset';
+    // Reset transformasi
     element.querySelectorAll('*').forEach(el => {
         el.style.transform = 'none';
         el.style.transformOrigin = 'unset';
     });
 
-    // Atur ukuran dan margin dalam cm
+    // Container utama dengan margin simetris
     const container = document.createElement('div');
-    container.style.width = '29.7cm';  // Lebar A4 landscape
-    container.style.height = '21cm';   // Tinggi A4 landscape
-    container.style.padding = '1.5cm'; // Margin 1.5cm di semua sisi
+    container.style.width = '297mm';
+    container.style.height = '210mm';
+    container.style.display = 'flex';
+    container.style.justifyContent = 'center';
+    container.style.alignItems = 'center';
+    container.style.padding = '20mm'; // Margin 20mm di semua sisi
 
-    // Style untuk konten utama
-    const content = document.createElement('div');
-    content.style.width = '26.7cm';    // 29.7cm - (2*1.5cm margin)
-    content.style.height = '18cm';     // 21cm - (2*1.5cm margin)
-    content.style.border = '2px solid #000';
-    content.style.padding = '1cm';
-    content.style.position = 'relative';
-    content.style.boxSizing = 'border-box';
+    // Konten sertifikat
+    const certContent = document.createElement('div');
+    certContent.style.width = '257mm'; // 297mm - 40mm (20mm kiri + 20mm kanan)
+    certContent.style.height = '170mm'; // 210mm - 40mm (20mm atas + 20mm bawah)
+    certContent.style.border = '2px solid #000';
+    certContent.style.padding = '15mm';
+    certContent.style.boxSizing = 'border-box';
+    certContent.style.position = 'relative';
 
-    // Pindahkan isi sertifikat ke container baru
+    // Pindahkan isi sertifikat
     while(element.firstChild) {
-        content.appendChild(element.firstChild);
+        certContent.appendChild(element.firstChild);
     }
-    container.appendChild(content);
+    container.appendChild(certContent);
 
-    // Perbesar ukuran font dan elemen penting
-    content.querySelector('h1').style.fontSize = '1.8cm';
-    content.querySelector('h2').style.fontSize = '0.8cm';
-    content.style.fontSize = '0.5cm';
+    // Perbesar ukuran font
+    certContent.style.fontSize = '16px';
+    certContent.querySelector('h1').style.fontSize = '32px';
+    certContent.querySelector('h2').style.fontSize = '24px';
+    certContent.querySelector('h3').style.fontSize = '20px';
 
-    // Atur ukuran gambar/logo
-    content.querySelectorAll('img').forEach(img => {
+    // Atur posisi tanda tangan
+    const signature = certContent.querySelector('.cert-signature') || certContent.querySelector('[style*="position:absolute"]');
+    if(signature) {
+        signature.style.position = 'absolute';
+        signature.style.right = '15mm';
+        signature.style.bottom = '15mm';
+        signature.style.textAlign = 'right';
+    }
+
+    // Perbesar logo
+    certContent.querySelectorAll('img').forEach(img => {
         img.style.width = 'auto';
-        img.style.height = '2.5cm';
+        img.style.height = '80px';
     });
 
-    // Opsi html2pdf dengan pengaturan cm
+    // Opsi html2pdf
     const opt = {
-        margin: 0,  // Margin di-handle oleh padding container
+        margin: 0,
         filename: 'sertifikat_pelatihan_blora.pdf',
         image: {
             type: 'jpeg',
@@ -591,10 +602,11 @@ function downloadPDF() {
         html2canvas: {
             scale: 3,
             useCORS: true,
-            letterRendering: true
+            letterRendering: true,
+            allowTaint: true
         },
         jsPDF: {
-            unit: 'cm',  // Gunakan centimeter
+            unit: 'mm',
             format: 'a4',
             orientation: 'landscape',
             compress: true
