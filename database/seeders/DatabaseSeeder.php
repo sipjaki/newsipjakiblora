@@ -59752,6 +59752,8 @@ kategoripelatihan::create([
     'kategoripelatihan' => 'Sosialisasi',
 ]);
 
+
+// CONTOH PESERTA PELATIHAN
 pesertapelatihan::create([
     'agendapelatihan_id' => 1,
     'namalengkap' => 'Miftahunnuril Anam, S.E',
@@ -59761,19 +59763,10 @@ pesertapelatihan::create([
     'tanggallahir' => '1998-01-13',
     'notelepon' => '081234567890',
     'instansi' => 'Dinas Pendidikan Bandung',
-
-]);
-
-pesertapelatihan::create([
-    'agendapelatihan_id' => 1,
-    'namalengkap' => 'Budi Gunawan, S.M',
-    'jenjangpendidikan_id' => 2,
-    'nik' => '3276021301980001',
-    'jeniskelamin' => 'Laki-laki',
-    'tanggallahir' => '1998-01-13',
-    'notelepon' => '081234567890',
-    'instansi' => 'Dinas Pendidikan Kabupaten Blora',
-
+    'sertifikat' => '',
+    'verifikasi' => '',
+    'verifikasikehadiran' => '',
+    'terbitkansertifikat' => '',
 ]);
 
 

@@ -314,9 +314,9 @@
                                         <th style="width: 300px; text-align:center;">
                                             <i class="bi bi-person-fill" style="margin-right: 5px;"></i>Nama Lengkap
                                         </th>
-                                        {{-- <th style="width: 300px; text-align:center;">
+                                        <th style="width: 300px; text-align:center;">
                                             <i class="bi bi-bookmark-fill" style="margin-right: 5px;"></i>Jenjang Pendidikan
-                                        </th> --}}
+                                        </th>
                                         <th style="width: 100px; text-align:center;">
                                             <i class="bi bi-person" style="margin-right: 5px;"></i>Nik
                                         </th>
@@ -362,7 +362,7 @@
                                         <td style="text-align: center;">{{ $loop->iteration }}</td>
                                         {{-- <td style="text-align: left;">{{ $data->namakegiatan }}</td> --}}
                                         <td style="text-align: left;">{{ $item->namalengkap }}</td>
-                                        {{-- <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan}}</td> --}}
+                                        <td style="text-align: left;">{{ $item->jenjangpendidikan->jenjangpendidikan ?? 'Data Tidak Di Temukan !!'}}</td>
                                         <td style="text-align: center;">{{ $item->nik }}</td>
                                         <td style="text-align: center;">{{ $item->jeniskelamin }}</td>
                                         <td style="text-align: center;">

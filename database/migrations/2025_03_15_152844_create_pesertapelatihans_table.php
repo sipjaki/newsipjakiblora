@@ -22,7 +22,6 @@ return new class extends Migration
             $table->date('tanggallahir')->nullable();
             $table->string('notelepon')->nullable();
             $table->string('instansi')->nullable();
-            $table->string('jampelajaran')->nullable();
             $table->string('sertifikat')->nullable();
             $table->string('verifikasi')->nullable();
             $table->boolean('verifikasikehadiran')->default(false);
