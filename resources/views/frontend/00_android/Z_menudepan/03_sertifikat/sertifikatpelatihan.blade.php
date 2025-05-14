@@ -487,7 +487,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 {{-- ----------------------------------------------------------------------------------------------------- --}}
 <div class="certificate-card">
     <div class="card-header">
-        <h4>Masukkan NIK & Download Sertifikat</h4>
+        <h4>Masukkan NIK & Download</h4>
     </div>
     <div class="card-body">
         <div class="example-box">
