@@ -60,7 +60,7 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-<div style="
+{{-- <div style="
     font-weight: 900;
     font-size: 16px;
     text-align: center;
@@ -76,7 +76,7 @@
 onmouseover="this.style.background='white'; this.style.color='black';"
 onmouseout="this.style.background='linear-gradient(135deg, #00378a, #FFD700)'; this.style.color='white';">
     ⚙️ Setting Database
-</div>
+</div> --}}
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
 <!-- Tombol Data Penyelenggara/Asosiasi -->
