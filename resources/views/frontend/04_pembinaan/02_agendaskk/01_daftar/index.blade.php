@@ -962,6 +962,60 @@ function previewFile(previewId, input) {
                         <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
                     </div>
 
+                       <div class="row">
+                                <!-- Punya SKK -->
+                                <div class="col-md-3" style="{{ $divStyle }}">
+                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                        <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah memiliki SKK dengan jabatan kerja yang lain ?
+
+                                    </label>
+                                    <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                    </select>
+                                    @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                </div>
+
+                                <!-- Punya SIKI -->
+                                <div class="col-md-3" style="{{ $divStyle }}">
+                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                        <i class="bi bi-patch-check" style="color: navy;"></i> Apakah sudah memiliki akun SIKI/ akun SIMPAN PUPR ?
+                                    </label>
+                                    <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                    </select>
+                                    @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                </div>
+
+                                <!-- Siap Patuhi Kode Etik -->
+                                <div class="col-md-3" style="{{ $divStyle }}">
+                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                        <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
+                                    </label>
+                                    <select name="siappatuh" style="{{ $inputStyle }}" class="@error('siappatuh') is-invalid @enderror">
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                    </select>
+                                    @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                </div>
+
+                                <div class="col-md-3" style="{{ $divStyle }}">
+                                    <label class="form-label text-start" style="{{ $labelStyle }}">
+                                        <i class="bi bi-shield-check" style="color: navy;"></i> Apakah sudah memiliki Akun Portal Perizinan PUPR ?
+                                    </label>
+                                    <select name="portalpupr" style="{{ $inputStyle }}" class="@error('portalpupr') is-invalid @enderror">
+                                        <option value="">-- Pilih --</option>
+                                        <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
+                                        <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
+                                    </select>
+                                    @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                </div>
+                            </div>
+
                     <div class="row">
                         <div class="col-md-6">
                             @php
@@ -1165,59 +1219,7 @@ function previewFile(previewId, input) {
                       <p style="font-size: 13px; color:navy;">Keterangan : Badan Usaha/ Perorangan/ Instansi, Contoh : DPUPR Kabupaten Blora</p>
                            </div>
 
-                            <div class="row">
-                                <!-- Punya SKK -->
-                                <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
-                                        <i class="bi bi-card-checklist" style="color: navy;"></i> Apakah sebelumnya sudah pernah memiliki SKK dengan jabatan kerja yang lain ?
 
-                                    </label>
-                                    <select name="punyaskk" style="{{ $inputStyle }}" class="@error('punyaskk') is-invalid @enderror">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyaskk') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyaskk') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('punyaskk') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
-
-                                <!-- Punya SIKI -->
-                                <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
-                                        <i class="bi bi-patch-check" style="color: navy;"></i> Apakah sudah memiliki akun SIKI/ akun SIMPAN PUPR ?
-                                    </label>
-                                    <select name="punyasiki" style="{{ $inputStyle }}" class="@error('punyasiki') is-invalid @enderror">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('punyasiki') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('punyasiki') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('punyasiki') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
-
-                                <!-- Siap Patuhi Kode Etik -->
-                                <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
-                                        <i class="bi bi-shield-check" style="color: navy;"></i> Siap Patuhi Kode Etik?
-                                    </label>
-                                    <select name="siappatuh" style="{{ $inputStyle }}" class="@error('siappatuh') is-invalid @enderror">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('siappatuh') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('siappatuh') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('siappatuh') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
-
-                                <div class="col-md-3" style="{{ $divStyle }}">
-                                    <label class="form-label text-start" style="{{ $labelStyle }}">
-                                        <i class="bi bi-shield-check" style="color: navy;"></i> Apakah sudah memiliki Akun Portal Perizinan PUPR ?
-                                    </label>
-                                    <select name="portalpupr" style="{{ $inputStyle }}" class="@error('portalpupr') is-invalid @enderror">
-                                        <option value="">-- Pilih --</option>
-                                        <option value="Ya" {{ old('portalpupr') == 'Ya' ? 'selected' : '' }}>Ya</option>
-                                        <option value="Tidak" {{ old('portalpupr') == 'Tidak' ? 'selected' : '' }}>Tidak</option>
-                                    </select>
-                                    @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
-                                </div>
-                            </div>
                         </div>
 
                         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5px;">
