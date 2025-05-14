@@ -290,8 +290,9 @@
 
                     <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
 
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                        <div id="sertifikat-content">
 
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
                                                     <div class="col-md-12" style="height:400px;">
                         <div class="cert-container">
@@ -498,10 +499,14 @@
 
 
                     </div>
+                    </div>
 
-                                                <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem incidunt dolore asperiores vitae nihil adipisci quis dolorem molestias temporibus repellendus voluptatum, inventore ducimus soluta sit, praesentium hic. Excepturi, cum quaerat! Eum, rerum itaque repellat necessitatibus iste possimus et id eligendi tenetur error quae laboriosam mollitia alias quo magni molestias, delectus, architecto sequi quibusdam. Aspernatur exercitationem eum unde quisquam incidunt facilis quae et similique cumque reiciendis. Impedit quidem non magnam quaerat assumenda molestiae suscipit quia atque. Molestiae assumenda quas totam. Quaerat saepe cupiditate voluptas iusto, doloremque quam repellat nisi hic aliquid ducimus commodi nam quisquam corporis facere. Tempore laudantium sint explicabo.</p>
+                                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                                                    <button onclick="downloadSertifikat()">
+                                                        Download Sertifikat
+                                                    </button>
                                                 </div>
+
 
                     <br><br>
 
@@ -520,3 +525,21 @@
 
 
     @include('frontend.00_android.00_fiturmenu.footer')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+    function downloadSertifikat() {
+        const element = document.getElementById('sertifikat-content');
+
+        const opt = {
+            margin:       [0.5, 0.5, 0.5, 0.5], // margin top, left, bottom, right (inch)
+            filename:     'sertifikat.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' },
+            pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    }
+</script>
