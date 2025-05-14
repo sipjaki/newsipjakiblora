@@ -509,8 +509,9 @@
                         </div>
                     </div>
 
-
-                        @include('frontend.00_android.00_fiturmenu.keterangan')
+<div style="margin-bottom: -400px;">
+    @include('frontend.00_android.00_fiturmenu.keterangan')
+</div>
 
         @include('frontend.00_android.00_fiturmenu.android')
     </section>
