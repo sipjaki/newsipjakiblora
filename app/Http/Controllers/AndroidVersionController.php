@@ -39,7 +39,6 @@ use App\Models\bujkkonsultansub;
 use App\Models\contohsurat;
 use App\Models\informasisurattertibpenyelenggaraan;
 use App\Models\jabatankerja;
-use App\Models\jampelajaran;
 use App\Models\jenjangpendidikan;
 use App\Models\materipelatihan;
 use App\Models\namasekolah;
@@ -1361,50 +1360,26 @@ public function resdaftarpelatihanpesertaskk($id)
     ]);
     }
 
-public function carisertifikat(Request $request)
+
+    public function carisertifikat(Request $request)
 {
     $nik = $request->nik;
 
-    // Ambil semua data peserta pelatihan dengan relasi agendapelatihan dan jampelajaran
     $data = pesertapelatihan::with(['agendapelatihan.jampelajaran'])
         ->where('nik', $nik)
         ->get();
 
-    // Jika tidak ada data ditemukan berdasarkan NIK
     if ($data->isEmpty()) {
         return response()->json(['success' => false]);
     }
 
-    // Ambil data peserta pertama (anggap NIK unik)
-    $peserta = $data->first();
-
-    // Ambil ID agendapelatihan
-    $agendapelatihanId = optional($peserta->agendapelatihan)->id;
-
-    // Ambil jam pelajaran berdasarkan agendapelatihan_id
-    $datapelajaran = jampelajaran::where('agendapelatihan_id', $agendapelatihanId)->get();
-
-    // Ambil semua jenjang pendidikan
-    $jenjangpendidikan = jenjangpendidikan::all();
-
-    // Ambil user login
-    $user = Auth::user();
-
-    // Render view partial
-    $html = view('frontend.00_android.Z_menudepan.03_sertifikat.partial_sertifikat', [
-        'data' => $data,
-        'datapelajaran' => $datapelajaran,
-        'jenjangpendidikan' => $jenjangpendidikan,
-        'user' => $user,
-        'title' => 'Upload Sertifikat Pelatihan'
-    ])->render();
+    $html = view('frontend.00_android.Z_menudepan.03_sertifikat.partial_sertifikat', compact('data'))->render();
 
     return response()->json([
         'success' => true,
         'html' => $html
     ]);
 }
-
 }
 
 
