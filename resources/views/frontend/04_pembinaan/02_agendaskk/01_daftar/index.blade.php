@@ -338,7 +338,7 @@ table.zebra-table {
                style="{{ $inputStyle }}"
                class="form-control @error('skkanda') is-invalid @enderror">
         <br>
-        <p style="text-align: left;git sta">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !! </p>
+        <p style="text-align: left; font-size:13px; margin:0;">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !! </p>
         <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small>
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
@@ -530,9 +530,11 @@ table.zebra-table {
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
-                                 <p>Ket : Email yang akan di gunakan untuk akun <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
+                                 <p style="font-size:13px; text-align:left; margin:0; ">Ket : Email yang akan di gunakan untuk akun <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
                                         e-Simpan
-                                    </a> Atau email yang sudah terdaftar di e-Simpan
+                                    </a> Atau email yang sudah terdaftar di <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
+                                        e-Simpan
+                                    </a>
                                     </p>
                                  @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
@@ -1089,6 +1091,12 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
+                                 <p style="font-size:13px; text-align:left; margin:0; ">Ket : Email yang akan di gunakan untuk akun <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
+                                        e-Simpan
+                                    </a> Atau email yang sudah terdaftar di <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
+                                        e-Simpan
+                                    </a>
+                                    </p>
                                     @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
