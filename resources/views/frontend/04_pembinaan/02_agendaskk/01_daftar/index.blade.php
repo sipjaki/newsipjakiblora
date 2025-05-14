@@ -755,21 +755,14 @@ table.zebra-table {
 </div>
 </div>
 
+/assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx
+
 <div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
-    @php
-        $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
-        $fileDownload = null;
+ @php
+    $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
+@endphp
 
-        if ($secondItem && $secondItem->berkas) {
-            $path = public_path('storage/' . $secondItem->berkas);
-            if (file_exists($path)) {
-                $fileDownload = asset('storage/' . $secondItem->berkas);
-            } else {
-                $fileDownload = asset($secondItem->berkas); // fallback jika path bukan di storage
-            }
-        }
-    @endphp
 
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
