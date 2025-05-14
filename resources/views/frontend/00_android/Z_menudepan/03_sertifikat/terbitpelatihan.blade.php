@@ -531,7 +531,7 @@
                         </div>
                     </div>
 
-<div style="margin-bottom: -400px;">
+<div style="margin-bottom: -1400px;">
     @include('frontend.00_android.00_fiturmenu.keterangan')
 </div>
 
