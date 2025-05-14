@@ -67,7 +67,7 @@
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
-    /* margin-left: 200px; */
+    margin-left: 200px;
 }
 
 /* Ornamen latar belakang */
