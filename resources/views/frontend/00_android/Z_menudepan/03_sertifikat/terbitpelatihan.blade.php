@@ -195,13 +195,13 @@
 }
 
 /* Untuk cetak */
-@page {
+/* @page {
     size: A4 landscape;
     margin: 0;
-}
+} */
 
 /* Responsiveness untuk HP */
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .cert-container {
         transform: scale(0.5);
         transform-origin: top left;
@@ -250,7 +250,7 @@
         font-size: 10px;
         margin-left: 10px;
     }
-}
+} */
 </style>
 
 
