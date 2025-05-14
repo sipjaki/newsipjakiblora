@@ -1196,6 +1196,25 @@ public function beakseslsppenerbitskk(Request $request)
 }
 
 
+ public function beagendapelatihanpesertadelete($id)
+{
+    // Cari peserta berdasarkan ID
+    $entry = pesertapelatihan::find($id);
+
+    if ($entry) {
+        // Simpan ID agenda sebelum data dihapus
+        $agendaId = $entry->agendapelatihan_id;
+
+        // Hapus entri
+        $entry->delete();
+
+        // Redirect ke halaman show agenda peserta
+        return redirect("/beagendapelatihanpeserta/show/{$agendaId}")
+            ->with('delete', 'Data Peserta Berhasil Dihapus!');
+    }
+
+    return redirect()->back()->with('error', 'Data Peserta Tidak Ditemukan.');
+}
 
 }
 
