@@ -327,12 +327,16 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
                                 <div style="margin-right:80px;">
-                                    <img src="/assets/icon/capblora.png" alt="" width="80px;">
+                                    <img src="/assets/icon/ttdkabblora.png" alt="" width="80px;">
+                                </div>
+
+                                <div style="margin-right:80px;">
+                                    <img src="/assets/icon/ttdpahuda.png" alt="" width="80px;">
                                 </div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
-                                <p>NIP. __________</p>
+                                <p>NIP. 19720326 200604 1 005</p>
                             </div>
                             <div class="ribbon-left"></div>
                             {{-- <div class="ribbon-right"></div> --}}
