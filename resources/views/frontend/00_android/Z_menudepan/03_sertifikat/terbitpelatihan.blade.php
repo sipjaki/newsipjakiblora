@@ -366,7 +366,7 @@
 
 
 
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white" style="margin-top: 300px;">
 
                                                     <div class="col-md-12" style="height:400px;">
                         <div class="cert-container">
