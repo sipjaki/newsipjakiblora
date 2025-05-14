@@ -274,7 +274,7 @@ table.zebra-table {
                     <hr style="width: 100%; max-width: 1200px; margin: 0;">
                     <p style="margin: 5px 0; color: black; white-space: nowrap; overflow: hidden; max-width: 800px;">
                         <span style="display: inline-block; animation: scroll-text 10s linear infinite;">
-                            Sertakan Bukti SKK Saudara !! <span style="color: red;">Hati-hati dalam Upload SKK Saudara !!</span>
+                            Sertakan Bukti SKK Saudara !! <span style="color: red;">Silahkan Upload SKK Saudara Hanya screenshot Saja !!</span>
                         </span>
                     </p>
                     <hr style="width: 100%; max-width: 1200px; margin-bottom:20px;">
@@ -314,14 +314,14 @@ table.zebra-table {
     <!-- Kolom Kanan (Gambar) -->
     <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Contoh SKK Tenaga Kerja Konstruksi
+            <i class="bi bi-image" style="{{ $iconStyle }}"></i> Contoh Screenshot SKK Saudara !
         </label>
         <div class="d-flex justify-content-start align-items-center" style="height: 100%; padding-right: 20px;">
             <!-- Gambar pertama -->
-            <img src="/assets/icon/contoh1.png" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
+            <img src="/assets/icon/contoh3.jpg" width="300px" height="300px" alt="Blora" loading="lazy" style="margin-right: 5px;">
 
             <!-- Gambar kedua -->
-            <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy">
+            {{-- <img src="/assets/icon/contoh2.png" width="300px" height="300px" alt="PUPR" loading="lazy"> --}}
         </div>
     </div>
 
