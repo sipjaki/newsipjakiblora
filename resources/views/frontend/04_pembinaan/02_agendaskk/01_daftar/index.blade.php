@@ -331,7 +331,7 @@ table.zebra-table {
 <div class="row" style="margin-top:25px;">
     <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara
+            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara | .pdf maksimal 5MB
         </label>
         <input type="file" name="skkanda" id="skkanda"
                accept="application/pdf"
@@ -490,6 +490,7 @@ table.zebra-table {
                                         <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                     </label>
                                     <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
+                                    <span style="color: navy; font-size:13px;">Contoh : Blora </span>
                                     @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
@@ -530,12 +531,12 @@ table.zebra-table {
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
-                                 <p style="font-size:13px; text-align:left; margin:0; ">Ket : Email yang akan di gunakan untuk akun <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
+                                 <span style="font-size:13px; text-align:left; margin:0; color:navy;">Ket : Email yang akan di gunakan untuk akun <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
                                         e-Simpan
                                     </a> Atau email yang sudah terdaftar di <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
                                         e-Simpan
                                     </a>
-                                    </p>
+                                </span>
                                  @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
