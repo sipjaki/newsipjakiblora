@@ -533,72 +533,69 @@
 
 
     @include('frontend.00_android.00_fiturmenu.footer')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
-
-    container.style.padding = '15mm'; // Margin 15mm
-certContent.style.width = '267mm'; // 297mm - 30mm
-certContent.style.height = '180mm'; // 210mm - 30mm
-
 function downloadPDF() {
     // Clone element sertifikat
     const originalElement = document.getElementById('sertifikatPdf');
     const element = originalElement.cloneNode(true);
 
-    // Reset transformasi
+    // Reset semua transform dan style yang tidak perlu
+    element.style.transform = 'none';
+    element.style.transformOrigin = 'unset';
+    element.style.margin = '0';
+    element.style.padding = '0';
+    element.style.position = 'absolute';
+    element.style.top = '0';
+    element.style.left = '0';
+
+    // Hapus semua transform pada child elements
     element.querySelectorAll('*').forEach(el => {
         el.style.transform = 'none';
         el.style.transformOrigin = 'unset';
+        el.style.margin = '0';
+        el.style.padding = '0';
     });
 
-    // Container utama dengan margin simetris
+    // Buat container dengan ukuran tepat A4 landscape
     const container = document.createElement('div');
     container.style.width = '297mm';
     container.style.height = '210mm';
-    container.style.display = 'flex';
-    container.style.justifyContent = 'center';
-    container.style.alignItems = 'center';
-    container.style.padding = '20mm'; // Margin 20mm di semua sisi
+    container.style.position = 'relative';
+    container.style.overflow = 'hidden';
 
-    // Konten sertifikat
-    const certContent = document.createElement('div');
-    certContent.style.width = '257mm'; // 297mm - 40mm (20mm kiri + 20mm kanan)
-    certContent.style.height = '170mm'; // 210mm - 40mm (20mm atas + 20mm bawah)
-    certContent.style.border = '2px solid #000';
-    certContent.style.padding = '15mm';
-    certContent.style.boxSizing = 'border-box';
-    certContent.style.position = 'relative';
+    // Atur ukuran konten sertifikat
+    element.style.width = '297mm';
+    element.style.height = '210mm';
 
-    // Pindahkan isi sertifikat
-    while(element.firstChild) {
-        certContent.appendChild(element.firstChild);
-    }
-    container.appendChild(certContent);
+    // Perbesar semua konten
+    element.style.fontSize = '18px';
+    const h1 = element.querySelector('h1');
+    if(h1) h1.style.fontSize = '42px';
+    const h2 = element.querySelector('h2');
+    if(h2) h2.style.fontSize = '28px';
 
-    // Perbesar ukuran font
-    certContent.style.fontSize = '16px';
-    certContent.querySelector('h1').style.fontSize = '32px';
-    certContent.querySelector('h2').style.fontSize = '24px';
-    certContent.querySelector('h3').style.fontSize = '20px';
-
-    // Atur posisi tanda tangan
-    const signature = certContent.querySelector('.cert-signature') || certContent.querySelector('[style*="position:absolute"]');
+    // Posisikan tanda tangan di pojok kanan bawah
+    const signature = element.querySelector('.cert-signature') || element.querySelector('[style*="position:absolute"]');
     if(signature) {
         signature.style.position = 'absolute';
-        signature.style.right = '15mm';
-        signature.style.bottom = '15mm';
+        signature.style.right = '10mm';
+        signature.style.bottom = '10mm';
         signature.style.textAlign = 'right';
+        signature.style.margin = '0';
     }
 
     // Perbesar logo
-    certContent.querySelectorAll('img').forEach(img => {
+    element.querySelectorAll('img').forEach(img => {
         img.style.width = 'auto';
-        img.style.height = '80px';
+        img.style.height = '90px';
+        img.style.margin = '0';
     });
 
-    // Opsi html2pdf
+    container.appendChild(element);
+
+    // Opsi html2pdf dengan margin 0
     const opt = {
-        margin: 0,
+        margin: [0, 0, 0, 0], // [top, right, bottom, left]
         filename: 'sertifikat_pelatihan_blora.pdf',
         image: {
             type: 'jpeg',
@@ -608,7 +605,9 @@ function downloadPDF() {
             scale: 3,
             useCORS: true,
             letterRendering: true,
-            allowTaint: true
+            allowTaint: true,
+            scrollX: 0,
+            scrollY: 0
         },
         jsPDF: {
             unit: 'mm',
@@ -621,5 +620,4 @@ function downloadPDF() {
     // Generate PDF
     html2pdf().set(opt).from(container).save();
 }
-
 </script>
