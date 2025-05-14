@@ -194,6 +194,7 @@
         .input-group {
             display: flex;
             width: 100%;
+            max-width: 250;
             height: 52px;
         }
 
