@@ -335,174 +335,191 @@
 
                     <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
 
-                        <div id="sertifikat-content">
+                <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+    <button
+        style="
+            background-color: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        "
+        onclick="downloadCertificate()"
+        onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
+        onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';"
+    >
+        <i class="bi bi-download"></i> Download Sertifikat
+    </button>
+</div>
 
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function downloadCertificate() {
+    // Buat elemen div untuk menampung konten yang akan di-download
+    const element = document.createElement('div');
 
-                            <div class="col-md-12" style="height:250px;">
-                                <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
-                                    <div style="transform: scale(0.3); transform-origin: top left;">
-                                        <div class="cert-container">
-                                            <div class="cert-header" style="text-align: center;">
-                                                <!-- Logo di atas -->
-                                                <div class="cert-logos" style="margin-bottom: 10px;">
-                                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
-                                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                                                </div>
-                                            </div>
+    // Tambahkan konten sertifikat (halaman 1)
+    element.innerHTML += `
+        <div style="width: 297mm; height: 210mm; padding: 20mm; page-break-after: always;">
+            <div class="cert-container" style="border: 2px solid #000; padding: 20px; height: 100%; position: relative;">
+                <div class="cert-header" style="text-align: center;">
+                    <div class="cert-logos" style="margin-bottom: 10px;">
+                        <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                        <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                    </div>
+                </div>
 
-                                            <hr class="cert-hr" style="margin-top: -5px;">
+                <hr style="margin-top: -5px; border: 1px solid #000;">
 
-                                            <div class="cert-title" style="margin-top: -10px;">
-                                                <h1 class="cert-h1">SERTIFIKAT</h1>
-                                                <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
-                                            </div>
+                <div class="cert-title" style="margin-top: -10px; text-align: center;">
+                    <h1 style="font-size: 28px; margin-bottom: 5px;">SERTIFIKAT</h1>
+                    <h2 style="font-size: 16px; margin-top: 0;">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
+                </div>
 
-                                            <div class="cert-content" style="margin-top: -20p`x;">
-                                                <p style="text-align: center; margin-top:-20px;">diberikan kepada</p>
+                <div class="cert-content" style="margin-top: -20px;">
+                    <p style="text-align: center; margin-top:-20px;">diberikan kepada</p>
 
-                                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{ strtoupper($data->namalengkap) }}</h2>
-                                                {{-- <h2 style="text-align: center; margin: 20px 0; font-size:28px;" >Miftahunnuril Anam, S.E</h2> --}}
+                    <h2 style="text-align: center; margin: 20px 0; font-size: 28px;">{{ strtoupper($data->namalengkap) }}</h2>
 
-                                                <h3 class="cert-h3" style="text-align: center; margin-top:-20px;">Sebagai</h3>
-                                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
-                                                @php
-                                                    $totalJam = 0;
-                                                    foreach ($datapelajaran as $pelajaran) {
-                                                        $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
-                                                    }
-                                                @endphp
+                    <h3 style="text-align: center; margin-top:-20px; font-size: 18px;">Sebagai</h3>
+                    <h2 style="text-align: center; margin: 15px 0; font-weight:800; font-size: 24px;">PESERTA</h2>
+                    @php
+                        $totalJam = 0;
+                        foreach ($datapelajaran as $pelajaran) {
+                            $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
+                        }
+                    @endphp
 
-                                                <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
-                                                    Kegiatan <span class="cert-highlight">{{ $data->agendapelatihan->namakegiatan }}</span>
-                                                    yang diselenggarakan oleh {{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}
-                                                    pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                                    di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
-                                                </p>
+                    <p style="text-align: justify; text-indent: 50px; margin: 0 50px; font-size: 16px;">
+                        Kegiatan <span style="font-weight: bold;">{{ $data->agendapelatihan->namakegiatan }}</span>
+                        yang diselenggarakan oleh {{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}
+                        pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                        di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
+                    </p>
+                </div>
 
-                                            </div>
+                <div class="cert-signature" style="position: absolute; bottom: 50px; right: 50px; text-align: right;">
+                    <p style="margin: 0; font-size: 14px;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
+                    <p style="margin: 0; font-size: 14px;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                    <p style="margin: 0; font-size: 14px;"><strong>KABUPATEN BLORA</strong></p>
 
-                                            <div class="cert-signature" style="margin-top: -10px;">
-                                                <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
-                                                <p style="margin: 0;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
-                                                <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
-
-                                                <div style="display: flex; justify-content: flex-end; margin-right: -125px;"> <!-- Tambah ini -->
-                                                    <div style="position: relative; width: 400px; height: 100px;">
-                                                        <img src="/assets/icon/ttdpahuda.png" alt="" width="250px;" style="position: absolute; top: 0; left: 0; z-index: 1;">
-                                                        <img src="/assets/icon/ttdkabblora.png" alt="" width="115px;" style="position: absolute; top: 0; left: 50px; z-index: 2;">
-                                                    </div>
-                                                </div>
-
-                                                <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
-                                                {{-- <p>PEKBINA UTAMA MADYA</p> --}}
-                                                <p style="margin: 0;">NIP. 19720326 200604 1 005</p>
-                                            </div>
-                                            <div class="ribbon-left"></div>
-                                            {{-- <div class="ribbon-right"></div> --}}
-                                        </div>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-
-                            </div>
-
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-
-                            <div class="col-md-12" style="height:250px;">
-                                <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
-                                    <div style="transform: scale(0.3); transform-origin: top left;">
-                                        <div class="cert-container">
-                            <div class="cert-header" style="text-align: center;">
-                                <!-- Logo di atas -->
-                                <div class="cert-logos" style="margin-bottom: 10px;">
-                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
-                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                                </div>
-                            </div>
-
-                            <hr class="cert-hr" style="margin-top: -5px;">
-
-                            <div class="cert-title" style="margin-top: -10px;">
-                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
-                            </div>
-
-                            <div class="cert-content">
-                                <div class="table-container">
-                                    <table class="custom-table">
-                                        <thead>
-                                            <tr>
-                                                <th style="font-size: 15px;" width="10%">No</th>
-                                                <th style="font-size: 15px;" width="40%">Materi</th>
-                                                <th style="font-size: 15px;" width="30%">Narasumber</th>
-                                                <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php
-                                                $totalJam = 0; // Menyimpan total jam pelajaran
-                                            @endphp
-                                            @forelse ($datapelajaran as $key => $pelajaran)
-                                            <tr class="table-row-hover">
-                                                <td style="font-size: 15px;">{{ $key + 1 }}</td>
-                                                <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
-                                                <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                                <td style="font-size: 15px; text-align:center;">
-                                                    {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
-                                                </td>
-                                            </tr>
-                                            @php
-                                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
-                                            @endphp
-                                            @empty
-                                            <tr>
-                                                <td colspan="4">Data tidak tersedia.</td>
-                                            </tr>
-                                            @endforelse
-                                        </tbody>
-                                        <!-- Baris penjumlahan total jam pelajaran -->
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
-                                                    <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
-                                                </td>
-                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">
-                                                    {{ $totalJam }} Jam
-                                                </td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="ribbon-left">
-
-                            </div>
-                            <div class="ribbon-text">
-                                <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
-                                                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
-
-                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                </p>
-                            </div>
-
-                            {{-- <div class="ribbon-right"></div> --}}
+                    <div style="margin-top: 20px; margin-bottom: 10px;">
+                        <div style="position: relative; width: 200px; height: 80px; margin-left: auto;">
+                            <img src="/assets/icon/ttdpahuda.png" alt="" width="150px" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                            <img src="/assets/icon/ttdkabblora.png" alt="" width="70px" style="position: absolute; top: 0; left: 30px; z-index: 2;">
                         </div>
+                    </div>
+
+                    <p style="margin: 0; font-size: 14px;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
+                    <p style="margin: 0; font-size: 14px;">NIP. 19720326 200604 1 005</p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Tambahkan konten agenda pelatihan (halaman 2)
+    element.innerHTML += `
+        <div style="width: 297mm; height: 210mm; padding: 20mm;">
+            <div class="cert-container" style="border: 2px solid #000; padding: 20px; height: 100%; position: relative;">
+                <div class="cert-header" style="text-align: center;">
+                    <div class="cert-logos" style="margin-bottom: 10px;">
+                        <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                        <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                    </div>
+                </div>
+
+                <hr style="margin-top: -5px; border: 1px solid #000;">
+
+                <div class="cert-title" style="margin-top: -10px; text-align: center;">
+                    <h2 style="text-align: center; margin: 15px 0; font-weight:800; font-size: 20px;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
+                </div>
+
+                <div class="cert-content">
+                    <div style="overflow: auto;">
+                        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid #000; padding: 8px; font-size: 14px;" width="10%">No</th>
+                                    <th style="border: 1px solid #000; padding: 8px; font-size: 14px;" width="40%">Materi</th>
+                                    <th style="border: 1px solid #000; padding: 8px; font-size: 14px;" width="30%">Narasumber</th>
+                                    <th style="border: 1px solid #000; padding: 8px; font-size: 14px;" width="20%">Jam Pelajaran</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                    $totalJam = 0;
+                                @endphp
+                                @forelse ($datapelajaran as $key => $pelajaran)
+                                <tr>
+                                    <td style="border: 1px solid #000; padding: 8px; font-size: 14px; text-align: center;">{{ $key + 1 }}</td>
+                                    <td style="border: 1px solid #000; padding: 8px; font-size: 14px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                                    <td style="border: 1px solid #000; padding: 8px; font-size: 14px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                                    <td style="border: 1px solid #000; padding: 8px; font-size: 14px; text-align: center;">
+                                        {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
+                                    </td>
+                                </tr>
+                                @php
+                                    $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
+                                @endphp
+                                @empty
+                                <tr>
+                                    <td colspan="4" style="border: 1px solid #000; padding: 8px; text-align: center;">Data tidak tersedia.</td>
+                                </tr>
+                                @endforelse
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" style="border: 1px solid #000; padding: 8px; text-align: right; font-weight: bold; font-size: 14px;">
+                                        <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
+                                    </td>
+                                    <td style="border: 1px solid #000; padding: 8px; text-align: center; font-weight: bold; font-size: 14px;">
+                                        {{ $totalJam }} Jam
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="position: absolute; bottom: 30px; left: 0; right: 0; text-align: center;">
+                    <h4 style="text-transform: uppercase; margin-bottom: 5px;">{{ strtoupper($data->namalengkap) }}</h4>
+                    <p style="margin: 0; font-size: 14px;">
+                        Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                        <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Opsi untuk html2pdf
+    const opt = {
+        margin: 10,
+        filename: 'Sertifikat_{{ str_replace(" ", "_", $data->namalengkap) }}.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' }
+    };
+
+    // Generate PDF
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+
                     </div>
                     </div>
                     </div>
                     </div>
                         <!--end::Quick Example-->
 
-                          <div class="col-md-12">
+                          {{-- <div class="col-md-12">
     <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
         <button
             style="
@@ -522,10 +539,10 @@
             onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
             onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';"
         >
-            <i class="bi bi-download"></i> Download File
+            <i class="bi bi-download"></i> Download Sertifikat
         </button>
     </div>
-</div>
+</div> --}}
 
 
                         </div>
