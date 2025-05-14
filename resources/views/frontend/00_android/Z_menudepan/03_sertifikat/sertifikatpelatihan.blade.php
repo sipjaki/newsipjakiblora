@@ -269,9 +269,6 @@
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;">
                                                 <i class="bi bi-geo-alt"></i> Download Sertifikat
                                             </th>
-                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
-                                                <i class="bi bi-eye"></i> View
-                                            </th> --}}
                                         </tr>
                                     </thead>
                                     <tbody id="tableBody">
