@@ -759,7 +759,21 @@ table.zebra-table {
 
 <div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
- @php
+    {{-- @php
+        $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
+        $fileDownload = null;
+
+        if ($secondItem && $secondItem->berkas) {
+            $path = public_path('storage/' . $secondItem->berkas);
+            if (file_exists($path)) {
+                $fileDownload = asset('storage/' . $secondItem->berkas);
+            } else {
+                $fileDownload = asset($secondItem->berkas); // fallback jika path bukan di storage
+            }
+        }
+    @endphp --}}
+
+    @php
     $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
 @endphp
 
