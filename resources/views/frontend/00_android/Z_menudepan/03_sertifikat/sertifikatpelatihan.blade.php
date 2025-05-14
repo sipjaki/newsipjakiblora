@@ -490,7 +490,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
         <h4>Masukkan NIK & Download Sertifikat</h4>
     </div>
     <div class="card-body">
-        <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
+        {{-- <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p> --}}
         <div class="example-box">
             <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
         </div>

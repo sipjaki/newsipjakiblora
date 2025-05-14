@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\agendapelatihan;
 use App\Models\agendaskk;
 use App\Models\allskktenagakerjablora;
@@ -1361,30 +1362,33 @@ public function resdaftarpelatihanpesertaskk($id)
     }
 
 
-    public function carisertifikat(Request $request)
-    {
-        $nik = $request->nik;
+//     public function carisertifikat(Request $request)
+// {
+//     $nik = $request->input('nik');
 
-        // Ambil data dengan relasi agendapelatihan
-        $data = pesertapelatihan::with(['agendapelatihan' => function($query) {
-            $query->select('id', 'nama_pelatihan', 'tanggal_pelatihan_start', 'tanggal_pelatihan_end');
-        }])
-        ->where('nik', $nik)
-        ->get(['id', 'nama', 'nik', 'agendapelatihan_id']);
+//     // Debug: Cek apakah NIK diterima
+//     \Log::info('NIK yang diterima: ' . $nik);
 
-        if ($data->isEmpty()) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Data tidak ditemukan'
-            ]);
-        }
+//     $data = pesertapelatihan::with('agendapelatihan')
+//             ->where('nik', $nik)
+//             ->get();
 
-        return response()->json([
-            'success' => true,
-            'data' => $data,
-            'message' => 'Data ditemukan'
-        ]);
-    }
+//     // Debug: Cek hasil query
+//     \Log::info('Jumlah data ditemukan: ' . $data->count());
+
+//     if ($data->isEmpty()) {
+//         return response()->json([
+//             'success' => false,
+//             'message' => 'Data tidak ditemukan untuk NIK ini'
+//         ]);
+//     }
+
+//     return response()->json([
+//         'success' => true,
+//         'data' => $data,
+//         'message' => 'Data ditemukan'
+//     ]);
+// }
 }
 
 
