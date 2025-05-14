@@ -13,7 +13,7 @@
         width: 100%;
         border-collapse: collapse;
         table-layout: fixed; /* Membuat kolom lebih konsisten */
-        min-width: 700px;
+        /* min-width: 700px; */
     }
 
     .custom-fl-table th,
@@ -259,7 +259,7 @@
 
         <div class="w-full px-4 mt-6">
   <div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
-    <table class="w-full table-fixed border-collapse text-sm text-gray-700" id="sortableTable">
+    <table class="custom-table w-full table-fixed border-collapse text-sm text-gray-700" id="sortableTable">
       <thead class="bg-gray-100">
         <tr>
           <th onclick="sortTable(0)" class="w-1/12 text-center py-3 px-2 cursor-pointer">
