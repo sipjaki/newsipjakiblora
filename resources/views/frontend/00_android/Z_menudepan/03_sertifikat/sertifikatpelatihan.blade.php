@@ -529,6 +529,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
         </table>
         <br>
         <P style="margin-left:10px;">Silahkan Geser Ke Kanan !</P>
+        <br>
     </div>
 </div>
 
