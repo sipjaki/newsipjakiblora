@@ -499,6 +499,10 @@
 
                     </div>
 
+                                                <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem incidunt dolore asperiores vitae nihil adipisci quis dolorem molestias temporibus repellendus voluptatum, inventore ducimus soluta sit, praesentium hic. Excepturi, cum quaerat! Eum, rerum itaque repellat necessitatibus iste possimus et id eligendi tenetur error quae laboriosam mollitia alias quo magni molestias, delectus, architecto sequi quibusdam. Aspernatur exercitationem eum unde quisquam incidunt facilis quae et similique cumque reiciendis. Impedit quidem non magnam quaerat assumenda molestiae suscipit quia atque. Molestiae assumenda quas totam. Quaerat saepe cupiditate voluptas iusto, doloremque quam repellat nisi hic aliquid ducimus commodi nam quisquam corporis facere. Tempore laudantium sint explicabo.</p>
+                                                </div>
+
                     <br><br>
 
 
