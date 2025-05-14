@@ -337,7 +337,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
-                                <p>NIP. 19720326 200604 1 005</p>
+                                <p style="margin: 0;">NIP. 19720326 200604 1 005</p>
                             </div>
                             <div class="ribbon-left"></div>
                             {{-- <div class="ribbon-right"></div> --}}
