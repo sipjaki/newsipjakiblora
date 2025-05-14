@@ -280,7 +280,6 @@
                                         <tr>
                                             <td style="text-align: center;">1</td>
                                             <td style="text-transform: capitalize;">Percobaan</td>
-                                            <td style="text-transform: capitalize;">Percobaan</td>
                                             <td>Download</td>
                                         </tr>
                                         {{-- @endforeach --}}
