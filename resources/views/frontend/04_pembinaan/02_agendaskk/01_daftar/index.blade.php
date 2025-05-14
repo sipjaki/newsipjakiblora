@@ -490,7 +490,7 @@ table.zebra-table {
                                         <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                     </label>
                                     <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
-                                    <span style="color: navy; font-size:13px; text-align:left;">Contoh : Blora </span>
+                                    <span style="color: navy; font-size:13px; text-start;">Contoh : Blora </span>
                                     @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
@@ -531,7 +531,7 @@ table.zebra-table {
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
-                                 <span style="font-size:13px; text-align:left; margin:0; color:navy;">Ket : Email yang akan di gunakan untuk akun <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
+                                 <span style="font-size:13px; text-start; margin:0; color:navy;">Ket : Email yang akan di gunakan untuk akun <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
                                         e-Simpan
                                     </a> Atau email yang sudah terdaftar di <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer">
                                         e-Simpan
@@ -554,7 +554,7 @@ table.zebra-table {
                                         <i class="bi bi-house" style="color: navy;"></i> Alamat
                                     </label>
                                     <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
-                                    <p style="text-align: left: font-size:13px;"><span style="color: navy; font-size:13px; text-align:left;">Ket : Mohon diisi sesuai dengan alamat KTP Saudara !</span></p>
+                                    <p style="text-align: left: font-size:13px;"><span style="color: navy; font-size:13px; text-start;">Ket : Mohon diisi sesuai dengan alamat KTP Saudara !</span></p>
                                       @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
                                 </div>
