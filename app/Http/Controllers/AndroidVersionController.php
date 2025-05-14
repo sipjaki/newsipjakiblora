@@ -1335,4 +1335,18 @@ public function resdaftarpelatihanpesertaskk($id)
 }
 
 
+
+// DOWNLOADN SERTIFIKAT
+
+   public function sertifikatindex()
+    {
+        $user = Auth::user();
+
+        return view('frontend.00_android.Z_menudepan.index', [
+        'title' => 'Download Sertifikat',
+        'user' => $user,
+    ]);
+    }
+
+
 }
