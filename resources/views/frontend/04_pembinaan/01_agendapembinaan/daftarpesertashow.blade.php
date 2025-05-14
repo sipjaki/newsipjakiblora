@@ -207,10 +207,10 @@ table.zebra-table {
                         <tr>
                             <td style="text-align: center;">{{ $loop->index + 1 }}</td>
 
-                            <td style="text-transform: capitalize;">
-                                {{-- {{ ucwords(strtolower(optional($item->user)->name ?? 'Tidak ada nama')) }} --}}
-                                {{$item->namalengkap}}
-                            </td>
+                        <td>
+    {{ strtoupper($item->namalengkap ?? 'TIDAK ADA NAMA') }}
+</td>
+
                             {{-- <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user->name)) }}</td> --}}
                             {{-- <td>{{$item->user->name}}</td> --}}
                             <td>{{$item->jeniskelamin}}</td>
