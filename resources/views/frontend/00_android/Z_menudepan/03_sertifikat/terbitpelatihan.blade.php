@@ -339,7 +339,7 @@
 
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-                            <div class="page" style="page-break-after: always;">
+                        <div class="page" style="page-break-after: always;">
                             <div class="col-md-12" style="height:250px;">
                                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                                     <div style="transform: scale(0.3); transform-origin: top left;">
@@ -406,7 +406,7 @@
                                     </div>
 
                                 </div>
-                                </div>
+                            </div>
                             </div>
 
                             </div>
@@ -416,7 +416,7 @@
 
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-                                 <div class="page">
+                                <div class="page">
                             <div class="col-md-12" style="height:250px;">
                                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                                     <div style="transform: scale(0.3); transform-origin: top left;">
@@ -500,7 +500,8 @@
 
                             {{-- <div class="ribbon-right"></div> --}}
                         </div>
-                        </div>
+                    </div>
+                    </div>
                     </div>
                     </div>
                     </div>
@@ -509,15 +510,26 @@
 
                           <div class="col-md-12">
     <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
-    <button
-    style="background-color: #28a745; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: all 0.3s ease;"
-    onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
-    onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';"
-    onclick="downloadPDF()"
->
-    <i class="bi bi-download"></i> Download Sertifikat
-</button>
-
+        <button
+            style="
+                background-color: #28a745;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            "
+            onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
+            onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';"
+        >
+            <i class="bi bi-download"></i> Download Sertifikat
+        </button>
     </div>
 </div>
 
@@ -534,20 +546,3 @@
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
-
-<script>
-    function downloadPDF() {
-        const element = document.getElementById('sertifikatPdf');
-
-        const opt = {
-            margin:       0,
-            filename:     'sertifikat_pelatihan_blora.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2, useCORS: true },
-            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' },
-            pagebreak:    { mode: ['css', 'legacy'] }
-        };
-
-        html2pdf().set(opt).from(element).save();
-    }
-</script>
