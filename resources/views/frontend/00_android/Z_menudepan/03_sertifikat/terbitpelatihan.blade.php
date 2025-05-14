@@ -204,79 +204,45 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
         }
     </style>
 
-@include('backend.00_administrator.00_baganterpisah.01_header')
 
-<!--begin::Body-->
-  <body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
-{{-- ---------------------------------------------------------------------- --}}
+@include('frontend.00_android.00_fiturmenu.header')
 
-@include('backend.00_administrator.00_baganterpisah.04_navbar')
-{{-- ---------------------------------------------------------------------- --}}
+<body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
+    <section class="max-w-[640px] w-full min-h-screen mx-auto flex flex-col bg-[#FCF7F1] overflow-x-hidden pb-4">
+        {{-- <div class="header flex flex-col" style="background: linear-gradient(to bottom, #28A745, #FFD100); border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden;"> --}}
+            <div class="header flex flex-col" style="background-image: url('/assets/00_android/iconmenu/menuutama1.jpg'); background-size: cover; background-position: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; overflow: hidden; height: 350px;">
+                <nav class="pt-5 px-3 flex justify-between items-center">
+                    <!-- Logo bagian kiri -->
+                    <div class="flex items-center gap-[10px]">
+                        <a href="index.html" class="w-10 h-10 flex shrink-0">
+                            <img src="/assets/icon/logokabupatenblora.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
+                        </a>
+                    </div>
 
-      @include('backend.00_administrator.00_baganterpisah.03_sidebar')
+                    <!-- Judul bagian tengah -->
+                    <div class="flex flex-col items-center justify-center text-center">
+                        <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
+                        <br>
+                        {{-- <p class="font-semibold text-xl text-white">{{$title}}</p> --}}
+                      <div class="z-10" style="margin-top:25px; background-color: rgba(255, 255, 255, 0.7); border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
+                {{$title}}
+            </h1>
+        </div>
+                    </div>
 
-      <!--begin::App Main-->
-      <main class="app-main">
+                    <!-- Ikon bagian kanan -->
+                    <a href="" class="w-10 h-10 flex shrink-0">
+                        <img src="/assets/icon/pupr.png" alt="icon" loading="lazy" class="w-full h-full object-contain">
 
-        <section style="background-image: url('/assets/00_android/iconmenu/menuutama.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 100vh;" loading="lazy">
-
-        <!--begin::App Content Header-->
-        <div class="app-content-header">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
-
-                @include('backend.00_administrator.00_baganterpisah.09_selamatdatang')
-                @include('backend.00_administrator.00_baganterpisah.11_alert')
-
+                    </a>
+                </nav>
             </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
-        </div>
 
-        <br>
-        <!-- Menampilkan pesan sukses -->
+                    <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
 
-        {{-- ======================================================= --}}
-        {{-- ALERT --}}
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-        @include('backend.00_administrator.00_baganterpisah.06_alert')
-
-        {{-- ======================================================= --}}
-
-            <!-- Menyertakan FontAwesome untuk ikon -->
-
-        <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row" style="margin-right: 10px; margin-left:10px;">
-                <!-- /.card -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        @include('backend.00_administrator.00_baganterpisah.12_judulupdate')
-
-
-        <div class="card card-primary card-outline mb-6">
-            <div style="display: flex; justify-content: flex-end; margin-top:10px;">
-                <button
-    onclick="history.back()"
-    onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
-    onmouseout="this.style.backgroundColor='#374151'; this.style.color='white';"
-    style="background-color: #374151; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
-    <!-- Ikon Kembali -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-        viewBox="0 0 16 16" style="margin-right: 8px;">
-        <path fill-rule="evenodd"
-            d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5A.5.5 0 0 1 15 8z" />
-    </svg>
-    Kembali
-</button>
-
-        </div>
-        <hr>
 
 
         {{-- ======================================================= --}}
@@ -479,25 +445,25 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                     </div>
 
                     <br><br>
-                    <!-- /.card -->
-                    <!-- Button Section -->
+                            <div class="flex flex-col gap-1">
+                        {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p> --}}
+                        </p>
 
-                    </div>
-                    <!--end::Row-->
-                    </div>
-
-        </div>
-        <!--end::Row-->
-        </div>
-                  <!--end::Container-->
-        <!--end::App Content Header-->
-        <!--begin::App Content-->
-          <!--end::App Content-->
-        </section>
-        </main>
-      <!--end::App Main-->
-    </div>
-    </div>
+                            </div>
+                            </div>
 
 
-      @include('backend.00_administrator.00_baganterpisah.02_footer')
+
+                        </div>
+
+                        @include('frontend.00_android.00_fiturmenu.keterangan')
+
+<br><br><br><br>
+
+        @include('frontend.00_android.00_fiturmenu.android')
+    </section>
+
+
+    @include('frontend.00_android.00_fiturmenu.footer')
+
+

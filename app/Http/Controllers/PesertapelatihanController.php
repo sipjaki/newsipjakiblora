@@ -540,7 +540,7 @@ public function bepesertauploadsertifikatandroid($id)
         'user' => $user,
         'datapelajaran' => $datapelajaran, // Kirim data jampelajaran ke view
         'jenjangpendidikan' => $jenjangpendidikan,
-        'title' => 'Silahkan Download'
+        'title' => 'Silahkan Download Sertifikat !'
     ]);
 }
 
