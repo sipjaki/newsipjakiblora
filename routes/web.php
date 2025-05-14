@@ -51,6 +51,8 @@ use Illuminate\Support\Facades\Auth;
 
 // ------------------------- FRONTEND HALAMAN SERTIFIKAT ANDROID  --------------------------
 Route::get('/sertifikat', [AndroidVersionController::class, 'sertifikatindex']);
+Route::get('/sertifikatpelatihan', [AndroidVersionController::class, 'sertifikatpelatihan']);
+Route::get('/sertifikattkk', [AndroidVersionController::class, 'sertifikattkk']);
 
 
 // ------------------------- FRONTEND HALAMAN UTAMA MAS JAKI BLORA  --------------------------

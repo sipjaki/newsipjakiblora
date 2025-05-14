@@ -1348,5 +1348,15 @@ public function resdaftarpelatihanpesertaskk($id)
     ]);
     }
 
+   public function sertifikatpelatihan()
+    {
+        $user = Auth::user();
+
+        return view('frontend.00_android.Z_menudepan.03_sertifikat.sertifikatpelatihan', [
+        'title' => 'Download Sertifikat Pelatihan',
+        'user' => $user,
+    ]);
+    }
+
 
 }
