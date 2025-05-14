@@ -1,3 +1,71 @@
+<style>
+    /* Gaya untuk tabel */
+    .custom-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-radius: 20px;
+    }
+
+    .custom-fl-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; /* Membuat kolom lebih konsisten */
+        min-width: 700px;
+    }
+
+    .custom-fl-table th,
+    .custom-fl-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #998282;
+        text-align: left;
+        vertical-align: middle;
+        height: 48px; /* Tinggi baris tetap */
+        box-sizing: border-box;
+    }
+
+    .custom-fl-table th {
+        background-color:#4ADE80;
+        font-weight: 600;
+        color: #2d3436;
+        font-size: 14px;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .custom-fl-table td {
+        font-size: 14px;
+        color: #000000;
+        line-height: 1.5;
+    }
+
+    /* Zebra striping untuk baris */
+    .custom-fl-table tbody tr:nth-child(even) {
+        background-color: #f7f7f7;
+    }
+
+    /* Hover effect */
+    .custom-fl-table tbody tr:hover {
+        background-color: #f7f7f7;
+    }
+
+    /* Scrollbar styling */
+    .custom-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-thumb {
+        background-color: #c0c0c0;
+        border-radius: 4px;
+    }
+
+    .custom-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+</style>
+
+
 @include('frontend.00_android.00_fiturmenu.header')
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
@@ -188,9 +256,7 @@
                 <button class="check-button">Cek</button>
             </div>
         </div>
-    </div>
-
-    <div class="custom-table-container">
+            <div class="custom-table-container">
                                 <table class="custom-fl-table" id="sortableTable">
                                     <thead>
                                         <tr>
@@ -221,6 +287,9 @@
                                     </tbody>
                                 </table>
                             </div>
+
+    </div>
+
 
 
 
