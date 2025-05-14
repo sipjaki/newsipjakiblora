@@ -195,62 +195,7 @@
 }
 
 /* Untuk cetak */
-@page {
-    size: A4 landscape;
-    margin: 0;
-}
 
-/* Responsiveness untuk HP */
-@media screen and (max-width: 768px) {
-    .cert-container {
-        transform: scale(0.5);
-        transform-origin: top left;
-        width: 170vw;
-        height: 190vw;
-        margin-left: 0;
-        padding: 10px;
-        box-shadow: none;
-        border-width: 8px;
-    }
-
-    .cert-content {
-        padding: 0 20px;
-    }
-
-    .nama-sertifikat {
-        font-size: 12px;
-    }
-
-    .cert-h1 {
-        font-size: 20px;
-    }
-
-    .cert-h2 {
-        font-size: 16px;
-    }
-
-    .cert-h3 {
-        font-size: 14px;
-    }
-
-    .cert-signature {
-        font-size: 12px;
-    }
-
-    .cert-footer {
-        font-size: 10px;
-    }
-
-    .ribbon-left, .ribbon-right {
-        width: 60px;
-        height: 25px;
-    }
-
-    .ribbon-text {
-        font-size: 10px;
-        margin-left: 10px;
-    }
-}
 </style>
 
 
