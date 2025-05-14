@@ -544,18 +544,19 @@ function downloadPDF() {
         filename:     'sertifikat_pelatihan_blora.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  {
-            scale: 5, // Meningkatkan skala lebih besar
+            scale: 5, // Meningkatkan skala hanya untuk konten sertifikat
             useCORS: true,
-            dpi: 300, // Resolusi lebih tinggi
+            dpi: 300, // Resolusi lebih tinggi untuk kualitas gambar
             letterRendering: true,
             scrollX: 0,
             scrollY: 0,
-            windowWidth: 2000 // Memastikan viewport lebih besar untuk rendering
+            windowWidth: 2000 // Memastikan area rendering lebih besar
         },
         jsPDF:        { unit: 'pt', format: 'a4', orientation: 'landscape' },
         pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
+    // Pastikan hanya konten sertifikat yang terdownload
     html2pdf().set(opt).from(element).save();
 }
 </script>
