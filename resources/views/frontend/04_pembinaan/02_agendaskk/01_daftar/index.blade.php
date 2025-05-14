@@ -1015,6 +1015,7 @@ function previewFile(previewId, input) {
                                     @error('portalpupr') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
                             </div>
+                            <hr>
 
                     <div class="row">
                         <div class="col-md-6">
