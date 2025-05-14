@@ -190,28 +190,43 @@
         </div>
     </div>
 
+    <div class="custom-table-container">
+                                <table class="custom-fl-table" id="sortableTable">
+                                    <thead>
+                                        <tr>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                                <i class="bi bi-sort-alpha-down"></i> No
+                                            </th>
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;">
+                                                <i class="bi bi-building"></i> Pelatihan
+                                            </th>
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;">
+                                                <i class="bi bi-geo-alt"></i> Download Sertifikat
+                                            </th>
+                                            {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
+                                                <i class="bi bi-eye"></i> View
+                                            </th> --}}
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                                        @foreach ($data as $item ) --}}
+                                        <tr>
+                                            <td style="text-align: center;">1</td>
+                                            <td style="text-transform: capitalize;">Percobaan</td>
+                                            <td style="text-transform: capitalize;">Percobaan</td>
+                                            <td>Download</td>
+                                        </tr>
+                                        {{-- @endforeach --}}
+                                    </tbody>
+                                </table>
+                            </div>
+
+
 
                             <div class="flex flex-col gap-1">
-<table class="zebra-table data-table">
-    <thead>
-        <tr>
-            <th>No.</th>
-            <th>Nama Lengkap</th>
-            <th>NIK</th>
-            <th>Tanggal Daftar</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Budi Santoso</td>
-            <td>3201234567890123</td>
-            <td>15/03/2023</td>
-            <td><span class="status-active">Aktif</span></td>
-        </tr>
-    </tbody>
-</table>
+
+
 
                             </div>
                             </div>
