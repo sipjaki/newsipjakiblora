@@ -539,18 +539,6 @@ table.zebra-table {
 
                         </div>
 
-                        <div class="col-md-6" style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-house" style="color: navy;"></i> Alamat
-                                    </label>
-                                    <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
-                           <p style="text-align: left; font-size:13px; color: navy; margin: 0;">
-                                Ket: Mohon diisi sesuai dengan alamat KTP Saudara!
-                            </p>
-                                @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-
-                        </div>
-
                         <div class="col-md-6">
                             <div class="row">
                                 <!-- Tempat Lahir -->
@@ -625,7 +613,17 @@ table.zebra-table {
                                     @error('tahunlulus') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 <!-- Alamat -->
+                                <div class="col-md-12" style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}">
+                                        <i class="bi bi-house" style="color: navy;"></i> Alamat
+                                    </label>
+                                    <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
+                           <p style="text-align: left; font-size:13px; color: navy; margin: 0;">
+                                Ket: Mohon diisi sesuai dengan alamat KTP Saudara!
+                            </p>
+                                @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
+                                </div>
                             </div>
                         </div>
 
