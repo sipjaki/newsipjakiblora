@@ -296,7 +296,7 @@
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
                 <div class="col-md-12" style="height:400px;">
-                    <div style="transform: scale(0.8); transform-origin: top center; width: 100%; overflow: auto;">
+                    <div style="transform: scale(0.2); transform-origin: top center; width: 100%; overflow: auto;">
                         <div class="cert-container">
                             <div class="cert-header" style="text-align: center;">
                                 <!-- Logo di atas -->
