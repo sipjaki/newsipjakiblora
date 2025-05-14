@@ -335,27 +335,8 @@
 
                     <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
 
-
                         <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
-    <button
-        style="
-            background-color: #28a745;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        "
-        onclick="downloadCertificate()"
-        onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
-        onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';"
-    >
+    <button onclick="downloadCertificate()" style="background-color: #28a745; color: white; padding: 12px 24px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';" onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';">
         <i class="bi bi-download"></i> Download Sertifikat
     </button>
 </div>
@@ -363,10 +344,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
 function downloadCertificate() {
-    // Buat elemen div untuk menampung konten yang akan di-download
+    // Hitung total jam pelajaran terlebih dahulu
+    let totalJam = 0;
+    const materiPelatihan = [
+        @foreach($datapelajaran as $pelajaran)
+        {
+            materi: `{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}`,
+            narasumber: `{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}`,
+            jam: {{ (int)($pelajaran->jampelajaran ?? 0) }}
+        },
+        @php
+            $totalJam += (int)($pelajaran->jampelajaran ?? 0);
+        @endphp
+        @endforeach
+    ];
+    totalJam = {{ $totalJam }};
+
     const element = document.createElement('div');
     element.style.width = '100%';
-    element.style.fontFamily = 'Arial, sans-serif';
+    element.style.fontFamily = "'Times New Roman', serif";
 
     // Halaman 1 - Sertifikat
     const page1 = document.createElement('div');
@@ -377,61 +373,57 @@ function downloadCertificate() {
     page1.style.pageBreakAfter = 'always';
     page1.style.position = 'relative';
     page1.style.overflow = 'hidden';
-    page1.style.border = '1px solid #eee'; // Hanya untuk debugging
 
     page1.innerHTML = `
         <div style="width:100%; height:100%; border:2px solid #000; padding:20px; position:relative;">
-            <!-- Header dengan logo -->
-            <div style="text-align:center; margin-bottom:15px;">
-                <div style="display:inline-block; margin:0 10px;">
-                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora">
-                </div>
-                <div style="display:inline-block; margin:0 10px;">
-                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                </div>
+            <!-- Header -->
+            <div style="text-align:center; margin-bottom:10px;">
+                <img src="/assets/icon/logokabupatenblora.png" style="height:70px; display:inline-block; margin:0 15px;">
+                <img src="/assets/icon/pupr.png" style="height:70px; display:inline-block; margin:0 15px;">
             </div>
 
-            <hr style="border:1px solid #000; margin-top:-5px;">
+            <hr style="border:1px solid #000; margin:5px 0 15px 0;">
 
-            <!-- Judul Sertifikat -->
-            <div style="text-align:center; margin-top:10px;">
-                <h1 style="font-size:28px; margin-bottom:5px;">SERTIFIKAT</h1>
-                <h2 style="font-size:16px; margin-top:0;">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
+            <!-- Judul -->
+            <div style="text-align:center;">
+                <h1 style="font-size:28px; margin:0 0 5px 0; font-weight:bold;">SERTIFIKAT</h1>
+                <h2 style="font-size:16px; margin:0;">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
             </div>
 
-            <!-- Konten Utama -->
-            <div style="text-align:center; margin-top:30px;">
-                <p style="margin-bottom:5px;">diberikan kepada</p>
-                <h2 style="font-size:28px; margin:15px 0;">{{ strtoupper($data->namalengkap) }}</h2>
-                <h3 style="font-size:18px; margin-bottom:5px;">Sebagai</h3>
-                <h2 style="font-size:24px; font-weight:800; margin:15px 0;">PESERTA</h2>
+            <!-- Konten -->
+            <div style="text-align:center; margin-top:20px;">
+                <p style="margin:5px 0;">diberikan kepada</p>
+                <h2 style="font-size:28px; margin:10px 0; text-transform:uppercase;">{{ $data->namalengkap }}</h2>
+                <h3 style="font-size:18px; margin:5px 0;">Sebagai</h3>
+                <h2 style="font-size:24px; font-weight:bold; margin:10px 0;">PESERTA</h2>
 
-                <div style="margin:0 50px; text-align:justify; text-indent:50px; font-size:16px;">
-                    Kegiatan <span style="font-weight:bold;">{{ $data->agendapelatihan->namakegiatan }}</span>
+                <div style="margin:20px 40px; text-align:justify; text-indent:50px; font-size:16px; line-height:1.5;">
+                    Kegiatan <strong>{{ $data->agendapelatihan->namakegiatan }}</strong>
                     yang diselenggarakan oleh {{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}
                     pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                    di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
+                    di {{ $data->agendapelatihan->lokasi }} meliputi ${totalJam} jam pelajaran.
                 </div>
             </div>
 
             <!-- Tanda Tangan -->
-            <div style="position:absolute; bottom:50px; right:50px; text-align:right;">
-                <p style="margin:5px 0; font-size:14px;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong></p>
-                <p style="margin:5px 0; font-size:14px;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
-                <p style="margin:5px 0; font-size:14px;"><strong>KABUPATEN BLORA</strong></p>
+            <div style="position:absolute; bottom:40px; right:40px; text-align:right;">
+                <p style="margin:3px 0; font-size:14px;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong></p>
+                <p style="margin:3px 0; font-size:14px;"><strong>Plt. KEPALA DINAS</strong></p>
+                <p style="margin:3px 0; font-size:14px;"><strong>PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                <p style="margin:3px 0; font-size:14px;"><strong>KABUPATEN BLORA</strong></p>
 
-                <div style="margin:15px 0; width:200px; height:80px; position:relative; margin-left:auto;">
-                    <img src="/assets/icon/ttdpahuda.png" width="150" style="position:absolute; top:0; left:0; z-index:1;">
-                    <img src="/assets/icon/ttdkabblora.png" width="70" style="position:absolute; top:0; left:30px; z-index:2;">
+                <div style="margin:10px 0; width:200px; height:80px; position:relative; margin-left:auto;">
+                    <img src="/assets/icon/ttdpahuda.png" style="width:150px; position:absolute; top:0; left:0;">
+                    <img src="/assets/icon/ttdkabblora.png" style="width:70px; position:absolute; top:0; left:30px;">
                 </div>
 
-                <p style="margin:5px 0; font-size:14px;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
-                <p style="margin:5px 0; font-size:14px;">NIP. 19720326 200604 1 005</p>
+                <p style="margin:3px 0; font-size:14px;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
+                <p style="margin:3px 0; font-size:14px;">NIP. 19720326 200604 1 005</p>
             </div>
         </div>
     `;
 
-    // Halaman 2 - Agenda Pelatihan
+    // Halaman 2 - Agenda
     const page2 = document.createElement('div');
     page2.style.width = '297mm';
     page2.style.height = '210mm';
@@ -439,50 +431,48 @@ function downloadCertificate() {
     page2.style.boxSizing = 'border-box';
     page2.style.position = 'relative';
     page2.style.overflow = 'hidden';
-    page2.style.border = '1px solid #eee'; // Hanya untuk debugging
 
     page2.innerHTML = `
         <div style="width:100%; height:100%; border:2px solid #000; padding:20px; position:relative;">
-            <!-- Header dengan logo -->
-            <div style="text-align:center; margin-bottom:15px;">
-                <div style="display:inline-block; margin:0 10px;">
-                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora">
-                </div>
-                <div style="display:inline-block; margin:0 10px;">
-                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                </div>
+            <!-- Header -->
+            <div style="text-align:center; margin-bottom:10px;">
+                <img src="/assets/icon/logokabupatenblora.png" style="height:70px; display:inline-block; margin:0 15px;">
+                <img src="/assets/icon/pupr.png" style="height:70px; display:inline-block; margin:0 15px;">
             </div>
 
-            <hr style="border:1px solid #000; margin-top:-5px;">
+            <hr style="border:1px solid #000; margin:5px 0 15px 0;">
 
-            <!-- Judul Agenda -->
+            <!-- Judul -->
             <div style="text-align:center; margin-bottom:20px;">
-                <h2 style="font-size:20px; font-weight:800;">Agenda Pelatihan :</h2>
-                <h2 style="font-size:18px; margin-top:5px;">{{$data->agendapelatihan->namakegiatan}}</h2>
+                <h2 style="font-size:20px; margin:5px 0; font-weight:bold;">Agenda Pelatihan :</h2>
+                <h3 style="font-size:18px; margin:5px 0;">{{ $data->agendapelatihan->namakegiatan }}</h3>
             </div>
 
-            <!-- Tabel Materi -->
-            <div style="margin-top:20px;">
+            <!-- Tabel -->
+            <div style="margin-top:10px;">
                 <table style="width:100%; border-collapse:collapse; font-size:14px;">
                     <thead>
                         <tr>
-                            <th style="border:1px solid #000; padding:8px; text-align:center;" width="10%">No</th>
-                            <th style="border:1px solid #000; padding:8px; text-align:left;" width="40%">Materi</th>
-                            <th style="border:1px solid #000; padding:8px; text-align:left;" width="30%">Narasumber</th>
-                            <th style="border:1px solid #000; padding:8px; text-align:center;" width="20%">Jam</th>
+                            <th style="border:1px solid #000; padding:8px; text-align:center; width:10%;">No</th>
+                            <th style="border:1px solid #000; padding:8px; text-align:left; width:45%;">Materi</th>
+                            <th style="border:1px solid #000; padding:8px; text-align:left; width:30%;">Narasumber</th>
+                            <th style="border:1px solid #000; padding:8px; text-align:center; width:15%;">Jam</th>
                         </tr>
                     </thead>
                     <tbody>
-                        ${generateTableRows()}
+                        ${materiPelatihan.map((item, index) => `
+                            <tr>
+                                <td style="border:1px solid #000; padding:8px; text-align:center;">${index + 1}</td>
+                                <td style="border:1px solid #000; padding:8px;">${item.materi}</td>
+                                <td style="border:1px solid #000; padding:8px;">${item.narasumber}</td>
+                                <td style="border:1px solid #000; padding:8px; text-align:center;">${item.jam} Jam</td>
+                            </tr>
+                        `).join('')}
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="3" style="border:1px solid #000; padding:8px; text-align:right; font-weight:bold;">
-                                Total Jam Pelajaran :
-                            </td>
-                            <td style="border:1px solid #000; padding:8px; text-align:center; font-weight:bold;">
-                                {{ $totalJam }} Jam
-                            </td>
+                            <td colspan="3" style="border:1px solid #000; padding:8px; text-align:right; font-weight:bold;">Total Jam Pelajaran :</td>
+                            <td style="border:1px solid #000; padding:8px; text-align:center; font-weight:bold;">${totalJam} Jam</td>
                         </tr>
                     </tfoot>
                 </table>
@@ -490,10 +480,10 @@ function downloadCertificate() {
 
             <!-- Footer -->
             <div style="position:absolute; bottom:30px; left:0; right:0; text-align:center;">
-                <h4 style="text-transform:uppercase; margin-bottom:5px;">{{ strtoupper($data->namalengkap) }}</h4>
-                <p style="margin:0; font-size:14px;">
-                    Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                    <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                <h4 style="text-transform:uppercase; margin:5px 0; font-size:16px;">{{ $data->namalengkap }}</h4>
+                <p style="margin:3px 0; font-size:14px;">
+                    Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora<br>
+                    Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
                 </p>
             </div>
         </div>
@@ -502,7 +492,7 @@ function downloadCertificate() {
     element.appendChild(page1);
     element.appendChild(page2);
 
-    // Opsi untuk html2pdf
+    // Konfigurasi PDF
     const opt = {
         margin: 0,
         filename: 'Sertifikat_{{ str_replace(" ", "_", $data->namalengkap) }}.pdf',
@@ -510,8 +500,8 @@ function downloadCertificate() {
         html2canvas: {
             scale: 2,
             useCORS: true,
-            allowTaint: true,
-            letterRendering: true
+            letterRendering: true,
+            allowTaint: true
         },
         jsPDF: {
             unit: 'mm',
@@ -525,29 +515,9 @@ function downloadCertificate() {
     // Generate PDF
     html2pdf().set(opt).from(element).save();
 }
-
-// Fungsi untuk generate baris tabel (jika diperlukan)
-function generateTableRows() {
-    let rows = '';
-    @php
-        $totalJam = 0;
-    @endphp
-    @foreach($datapelajaran as $key => $pelajaran)
-    @php
-        $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
-    @endphp
-    rows += `
-        <tr>
-            <td style="border:1px solid #000; padding:8px; text-align:center;">{{ $key + 1 }}</td>
-            <td style="border:1px solid #000; padding:8px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
-            <td style="border:1px solid #000; padding:8px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-            <td style="border:1px solid #000; padding:8px; text-align:center;">{{ $pelajaran->jampelajaran ?? '0' }} Jam</td>
-        </tr>
-    `;
-    @endforeach
-    return rows;
-}
 </script>
+
+
 
                     </div>
                     </div>
@@ -555,30 +525,6 @@ function generateTableRows() {
                     </div>
                         <!--end::Quick Example-->
 
-                          <div class="col-md-12">
-    <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
-        <button
-            style="
-                background-color: #28a745;
-                color: white;
-                padding: 12px 24px;
-                border: none;
-                border-radius: 8px;
-                font-size: 16px;
-                font-weight: 600;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-            "
-            onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
-            onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';"
-        >
-            <i class="bi bi-download"></i> Download Sertifikat
-        </button>
-    </div>
-</div>
 
 
                         </div>
