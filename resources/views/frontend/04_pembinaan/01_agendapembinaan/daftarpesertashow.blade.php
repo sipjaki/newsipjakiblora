@@ -187,16 +187,16 @@ table.zebra-table {
                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
                                 <i class="bi bi-list-ol me-1"></i> No
                             </th>
-                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center;">
+                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:450px;">
                                 <i class="bi bi-person-fill me-1"></i> Nama Lengkap
                             </th>
-                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center;">
+                            <th onclick="sortTable(2)" style="cursor:pointer; text-align:center; width:150px;">
                                 <i class="bi bi-gender-ambiguous me-1"></i> Gender
                             </th>
-                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;">
+                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:250px;" >
                                 <i class="bi bi-building me-1"></i> Instansi/Universitas/Lembaga/Perseorangan/BUJK
                             </th>
-                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center;" style="width: 300px;">
+                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center; width:300px;">
                                 <i class="bi bi-check2-circle me-1"></i> Verifikasi
                             </th>
                         </tr>
