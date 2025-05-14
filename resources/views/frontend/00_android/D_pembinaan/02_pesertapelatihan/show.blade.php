@@ -298,9 +298,10 @@ h5 {
                                         @forelse ($datapeserta as $item)
     <tr style="background-color: {{ $loop->iteration % 2 == 0 ? '#f2f2f2' : 'white' }};">
         <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
-        <td style="text-transform: capitalize; text-align: left">
-            {{$item->namalengkap}}
+      <td>
+            {{ strtoupper($item->namalengkap ?? 'TIDAK ADA NAMA') }}
         </td>
+
         <td style="text-align: center;">{{$item->jeniskelamin}}</td>
         <td style="text-align: left">{{$item->instansi}}</td>
 
