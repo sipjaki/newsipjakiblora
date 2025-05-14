@@ -60103,7 +60103,53 @@ pesertapelatihan::create([
     'terbitkansertifikat' => null,
 ]);
 
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Yuris Ihsa Mahendra',
+    'jenjangpendidikan_id' => 2,
+    'nik' => '3316092907960004',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1996-07-29',
+    'notelepon' => '082221628225',
+    'instansi' => 'CV BARATAMA KONSTRUKSI',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
 
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'ARIF BUDI SANTOSO',
+    'jenjangpendidikan_id' => 1,
+    'nik' => '3316092307810001',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1981-07-23',
+    'notelepon' => '081325121364',
+    'instansi' => 'CV. LIMA KARSA',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+pesertapelatihan::create([
+    'agendapelatihan_id' => 1,
+    'namalengkap' => 'Teguh Priyanto',
+    'jenjangpendidikan_id' => 9,
+    'nik' => '3316102503780003',
+    'jeniskelamin' => 'Laki-laki',
+    'tanggallahir' => '1978-03-25',
+    'notelepon' => '081327421757',
+    'instansi' => 'CV. Grahacipta Perkasa',
+    'sertifikat' => null,
+    'verifikasi' => 'lolos',
+    'verifikasikehadiran' => null,
+    'terbitkansertifikat' => null,
+]);
+
+
+// sigit ini
 
 // ===============================
 // DATA AGENDA PELATIHAN
