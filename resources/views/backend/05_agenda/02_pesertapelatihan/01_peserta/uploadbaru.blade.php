@@ -462,8 +462,8 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                             </div>
                             <div class="ribbon-text">
-                                <h4 class="carved-text">{{$data->namalengkap}}</h4>
-                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
+                                <h4 style="text-transform: uppercase;">{{ strtoupper($item->namalengkap) }}</h4>
+                                                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
 
                                 <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
                                 <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
