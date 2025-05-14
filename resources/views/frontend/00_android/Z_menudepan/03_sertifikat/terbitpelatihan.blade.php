@@ -536,33 +536,35 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
 <style>
+#a4wrapper {
+    width: 842pt;   /* A4 landscape width in pt */
+    height: 595pt;  /* A4 landscape height in pt */
+    overflow: hidden;
+    position: relative;
+}
+
 #sertifikatPdf.scaled {
-    transform: scale(5);
+    transform: scale(3);
     transform-origin: top left;
+    transform-box: fill-box;
 }
 </style>
 
 <script>
 function downloadPDF() {
-    const element = document.getElementById('sertifikatPdf');
-
-    // Tambahkan kelas scale sebelum render
-    element.classList.add('scaled');
+    const element = document.getElementById('a4wrapper');
 
     const opt = {
         margin: 0,
         filename: 'sertifikat_pelatihan_blora.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: {
-            scale: 1, // jangan ubah scale di sini karena kita sudah pakai transform
+            scale: 1, // biarkan karena kita pakai transform: scale
             useCORS: true
         },
         jsPDF: { unit: 'pt', format: 'a4', orientation: 'landscape' }
     };
 
-    html2pdf().set(opt).from(element).save().then(() => {
-        // Setelah selesai, hilangkan scaling agar tampilan kembali normal
-        element.classList.remove('scaled');
-    });
+    html2pdf().set(opt).from(element).save();
 }
 </script>
