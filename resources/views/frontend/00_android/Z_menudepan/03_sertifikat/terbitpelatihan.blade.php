@@ -341,7 +341,7 @@
                         <br>
                         {{-- <p class="font-semibold text-xl text-white">{{$title}}</p> --}}
                       <div class="z-10" style="margin-top:25px; background-color: rgba(255, 255, 255, 0.7); border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
+            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:16px;">
                 {{$title}}
             </h1>
         </div>
@@ -422,14 +422,18 @@
 
 <br>
 
-                  <div class="flex flex-col gap-1">
 
+<div class="flex flex-col gap-1">
+                            </div>
+                            {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p> --}}
 
-<div class="col-md-12">
-    <div class="cert-container" style="position: relative; padding-bottom: 80px;">
-        <div class="cert-header" style="text-align: center;">
-            <!-- Logo di atas -->
-            <div class="cert-logos" style="margin-bottom: 10px;">
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+
+                                <div class="col-md-12">
+                                    <div class="cert-container" style="position: relative; padding-bottom: 80px;">
+                                        <div class="cert-header" style="text-align: center;">
+                                            <!-- Logo di atas -->
+                                            <div class="cert-logos" style="margin-bottom: 10px;">
                 <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
                 <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
             </div>
@@ -501,18 +505,13 @@
     </div>
 </div>
 
-
-</div>
-
-
-                        {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p> --}}
-
                             </div>
-                            </div>
-
-
-
                         </div>
+
+                    </div>
+
+
+                    </div>
 
                         @include('frontend.00_android.00_fiturmenu.keterangan')
 
