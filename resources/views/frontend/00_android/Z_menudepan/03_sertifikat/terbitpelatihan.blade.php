@@ -205,8 +205,8 @@
     .cert-container {
         transform: scale(0.5);
         transform-origin: top left;
-        width: 175vw;
-        height: 200vw;
+        width: 170vw;
+        height: 150vw;
         margin-left: 0;
         padding: 10px;
         box-shadow: none;
