@@ -13,7 +13,7 @@
         width: 100%;
         border-collapse: collapse;
         table-layout: fixed; /* Membuat kolom lebih konsisten */
-        min-width: 700px;
+        /* min-width: 700px; */
     }
 
     .custom-fl-table th,
