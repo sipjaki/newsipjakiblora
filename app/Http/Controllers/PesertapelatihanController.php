@@ -516,5 +516,35 @@ public function bepelatihanjampelajarancreatenew(Request $request)
 }
 
 
+
+
+
+public function bepesertauploadsertifikatandroid($id)
+{
+    // Ambil data pesertapelatihan beserta relasi agendapelatihan dan jampelajaran
+    $datapesertapelatihan = pesertapelatihan::with('agendapelatihan.jampelajaran')->findOrFail($id);
+
+    // Ambil semua jenjang pendidikan
+    $jenjangpendidikan = jenjangpendidikan::all();
+    $user = Auth::user();
+
+    // Ambil ID agendapelatihan terkait dengan pesertapelatihan
+    $agendapelatihanId = optional($datapesertapelatihan->agendapelatihan)->id;
+
+    // Ambil semua jampelajaran yang terkait dengan agendapelatihan_id
+    $datapelajaran = jampelajaran::where('agendapelatihan_id', $agendapelatihanId)->get();
+
+    // Kirim data ke view
+    return view('frontend.00_android.Z_menudepan.03_sertifikat.terbitpelatihan', [
+        'data' => $datapesertapelatihan,
+        'user' => $user,
+        'datapelajaran' => $datapelajaran, // Kirim data jampelajaran ke view
+        'jenjangpendidikan' => $jenjangpendidikan,
+        'title' => 'Silahkan Download'
+    ]);
 }
+
+
+}
+
 
