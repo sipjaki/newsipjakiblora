@@ -413,127 +413,7 @@
                         <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                             <div style="transform: scale(0.3); transform-origin: top left;">
                                 <div class="cert-container">
-
-                                                                <div class="cert-header" style="text-align: center;">
-                                <!-- Logo di atas -->
-                                <div class="cert-logos" style="margin-bottom: 10px;">
-                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
-                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                                </div>
-                            </div>
-
-                            <hr class="cert-hr" style="margin-top: -5px;">
-
-                            <div class="cert-title" style="margin-top: -10px;">
-                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
-                            </div>
-
-                            <div class="cert-content">
-                                <div class="table-container">
-                                    <table class="custom-table">
-                                        <thead>
-                                            <tr>
-                                                <th style="font-size: 15px;" width="10%">No</th>
-                                                <th style="font-size: 15px;" width="40%">Materi</th>
-                                                <th style="font-size: 15px;" width="30%">Narasumber</th>
-                                                <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php
-                                                $totalJam = 0; // Menyimpan total jam pelajaran
-                                            @endphp
-                                            @forelse ($datapelajaran as $key => $pelajaran)
-                                            <tr class="table-row-hover">
-                                                <td style="font-size: 15px;">{{ $key + 1 }}</td>
-                                                <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
-                                                <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                                <td style="font-size: 15px; text-align:center;">
-                                                    {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
-                                                </td>
-                                            </tr>
-                                            @php
-                                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
-                                            @endphp
-                                            @empty
-                                            <tr>
-                                                <td colspan="4">Data tidak tersedia.</td>
-                                            </tr>
-                                            @endforelse
-                                        </tbody>
-                                        <!-- Baris penjumlahan total jam pelajaran -->
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
-                                                    <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
-                                                </td>
-                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">
-                                                    {{ $totalJam }} Jam
-                                                </td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-
-                                    <style>
-                                        /* Styling untuk tabel */
-                                        .custom-table {
-                                            width: 100%;
-                                            border-collapse: collapse;
-                                            margin-top: 20px;
-                                            font-size: 16px;
-                                            border: 1px solid #ddd;
-                                            border-radius: 10px; /* Border radius pada luar tabel */
-                                            overflow: hidden; /* Supaya border-radius terlihat di sudut luar */
-                                        }
-
-                                        .custom-table th,
-                                        .custom-table td {
-                                            padding: 10px 20px;
-                                            text-align: left;
-                                            font-size: 16px;
-                                        }
-
-                                        /* Gradasi hijau dan emas untuk header */
-                                        .custom-table thead tr th {
-                                            background: linear-gradient(135deg, #4caf50, #ffb300); /* Gradasi hijau ke emas */
-                                            color: white;
-                                        }
-
-                                        /* Hover effect pada row */
-                                        .table-row-hover:hover {
-                                            background-color: #f7fafc;
-                                            transition: background-color 0.3s ease;
-                                        }
-
-                                        /* Styling row ganjil dan genap */
-                                        .custom-table tr:nth-child(even) {
-                                            background-color: #f9fafb;
-                                        }
-
-                                        .custom-table tr:nth-child(odd) {
-                                            background-color: #ffffff;
-                                        }
-
-                                        .custom-table td {
-                                            color: #333;
-                                        }
-                                    </style>
-                                </div>
-
-                            </div>
-
-
-                            <div class="ribbon-left">
-
-                            </div>
-                            <div class="ribbon-text">
-                                <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
-                                                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
-
-                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                </p>
-                            </div>
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt quo voluptates quod labore quisquam perferendis earum. Quaerat facere aliquam dolores quisquam, inventore minima deserunt et necessitatibus laboriosam ab nobis eos exercitationem provident itaque, enim obcaecati recusandae eaque. Sit esse odio minima modi similique illum, ad ducimus, dicta perspiciatis quos autem quas dolor. Ratione reprehenderit, ea expedita a reiciendis, modi dolorum sequi voluptate quod natus saepe nulla dolores! Quam sapiente dolorum, officia laboriosam deserunt commodi, iste magnam non itaque placeat ab architecto reprehenderit, ipsa molestias corrupti voluptatem inventore maxime voluptate? Sit incidunt laudantium exercitationem quaerat distinctio magni molestias impedit reprehenderit, culpa nobis delectus, dolore aperiam eveniet, dolores quos asperiores assumenda ut! Voluptates dignissimos excepturi ipsum numquam adipisci sequi doloremque assumenda non similique deserunt pariatur dolore recusandae molestias, reiciendis, optio in quia, quasi nesciunt? Provident, error. Exercitationem quisquam reprehenderit, earum consectetur ipsum itaque, id voluptatem possimus aliquam esse nam. Et, quasi exercitationem! Molestiae, at. Asperiores velit eveniet reiciendis dolores tempora, consectetur animi. Numquam eveniet atque quo similique totam doloremque quaerat quis architecto at aliquam laudantium tempore saepe error, magnam debitis veritatis minima dolores nihil. Eveniet accusantium numquam, at blanditiis molestiae id ex, modi laudantium ad cupiditate architecto veritatis repellat. Voluptatibus dignissimos iure illum odio autem possimus quo tenetur perferendis necessitatibus, exercitationem cupiditate earum nulla laboriosam repudiandae obcaecati dicta quam quia nemo, aperiam amet quos! Doloribus ipsam perspiciatis quo, illo at voluptas animi sed alias recusandae veritatis quae deserunt aperiam cupiditate amet totam exercitationem atque deleniti sunt expedita sint? Aspernatur voluptatum modi error voluptates quasi excepturi magni dignissimos reiciendis quidem nostrum accusamus, maiores quo ratione minus quia alias, fugit quod. Est recusandae vero aliquid dicta ipsa maxime porro. Tempore perspiciatis at quae cumque provident neque minus praesentium, porro delectus excepturi explicabo ex, quam dolore itaque molestias magnam facilis architecto minima. Aspernatur neque odio provident optio in iure illum ducimus atque eaque adipisci ab vel, corrupti eos reiciendis a quae quaerat quis autem odit doloribus? Corrupti omnis asperiores dolore molestiae suscipit. Temporibus reiciendis veniam placeat magni, distinctio ad saepe aperiam nisi illum illo quasi dolor! Doloribus, quae? Accusantium natus deleniti repellat dolorum enim distinctio quas saepe dolorem nemo aspernatur alias perspiciatis cum, nostrum recusandae at cupiditate! Exercitationem ipsam culpa atque illum saepe illo amet aliquid assumenda reiciendis ab minima nam, recusandae magnam harum distinctio repudiandae ipsum est voluptatum nisi rerum. Maiores quidem inventore animi quod ab veniam tempora at repellendus laudantium! Eius reprehenderit voluptas omnis fuga porro aut nemo nobis id, ex dignissimos dolorum laboriosam aspernatur quae minima explicabo provident magnam? Tempora ipsam dolorum velit! Ea vitae laboriosam temporibus. Assumenda, nemo reiciendis possimus quibusdam provident est necessitatibus iusto sunt, error autem incidunt voluptates vero laborum reprehenderit nihil libero tempore magnam non, voluptatum voluptatibus id inventore cupiditate iure. A ut ipsum quaerat quod hic iste, vero soluta? Dolorem, ea ab accusamus ex vero eveniet repellat doloremque, vel unde illum esse corporis maiores quisquam quidem molestiae neque dolorum nostrum officia ratione. Omnis, labore nisi voluptate aspernatur quis harum iure, assumenda facilis quasi eum iste voluptatem aliquam ad distinctio, necessitatibus consequatur maiores voluptatibus aliquid sit itaque eaque cum dolorem velit! Deleniti sint, corrupti quaerat quia neque, dolorum consectetur quam laudantium soluta officiis repellat qui animi fugit iusto impedit nobis ratione molestiae labore consequatur eius nemo ut sed officia vitae. Praesentium nostrum quidem amet, voluptates officiis velit dolorum voluptate dolore nobis iusto cum itaque! Distinctio eveniet officiis minima, iusto tenetur architecto neque quo corrupti amet quod optio eum, reiciendis nostrum exercitationem dicta labore id? Necessitatibus, consectetur libero. Dolorem optio omnis aliquam, consequatur deserunt quos fugit, alias provident aperiam unde minus architecto eum esse dolores veniam quisquam doloremque non, culpa quae neque explicabo porro laudantium dolore. Voluptatem necessitatibus, asperiores voluptas quibusdam labore assumenda voluptates aut distinctio perspiciatis repellat soluta, incidunt nam corporis deleniti eligendi est. Explicabo eum et nulla nobis distinctio sapiente qui suscipit? Nihil possimus necessitatibus dolor vitae nemo corporis, illo exercitationem laborum nulla repudiandae neque eligendi earum temporibus qui laboriosam pariatur quisquam. Ad rem quisquam vitae? Laboriosam atque iusto optio ex nihil excepturi, accusamus rem quia eveniet exercitationem cum tempora omnis quisquam? Doloribus inventore excepturi iste, possimus quis nostrum suscipit placeat enim quae ducimus provident quo a assumenda nesciunt quidem amet cum accusantium. Eius repudiandae sit culpa velit corrupti optio tenetur porro, architecto eveniet molestias perspiciatis ipsam similique provident fuga itaque voluptate tempore asperiores nobis dolores atque delectus magnam, eaque soluta? Libero quisquam eum facilis eveniet, minus fugit, odio harum dolore cum deleniti autem inventore a delectus quasi. Eius perspiciatis unde facilis distinctio atque ipsa similique fugit dolores accusantium eos! Numquam qui odit repellendus dolor? Esse quam consequuntur maiores veniam nemo officiis, maxime accusantium qui soluta dicta placeat ut molestias laborum est et nesciunt saepe cumque pariatur ipsa deserunt dolor corrupti ab? Quis, officiis, beatae impedit ipsam omnis quas ullam quos, eligendi architecto ex vero exercitationem rerum distinctio nisi. Doloremque, corporis eius facere repudiandae sequi necessitatibus dicta facilis, provident repellendus accusamus vel commodi. Omnis reiciendis accusamus quibusdam, tempore id culpa doloremque expedita dolorem, repellendus aspernatur magnam optio facilis ipsa hic esse, quaerat ipsam fuga nostrum porro tenetur exercitationem! Amet explicabo voluptas odio, itaque labore illo aut minus necessitatibus? Maiores quidem magni temporibus tempore rem optio distinctio corporis nemo voluptatum vitae tenetur sequi iste minima adipisci facere debitis, in quas sunt? Veniam dolorem, officia facilis et blanditiis culpa quae natus ea. Illo fugiat ipsum natus perferendis minus, repellat obcaecati doloremque repudiandae! Id consequatur debitis laborum nesciunt, adipisci numquam fugiat laboriosam tempora animi, veritatis voluptatum pariatur veniam eius cumque voluptas. Ratione expedita incidunt tenetur, iure officiis quaerat adipisci amet voluptatum quibusdam earum tempore, consequuntur laboriosam! Nesciunt quidem expedita quo dolore ratione quaerat iusto, laborum ullam enim cupiditate optio corrupti repellat tempora rem sint possimus reiciendis! Et similique cumque sed commodi eligendi quidem a? Repellat cumque vitae modi voluptatibus eveniet laborum eligendi soluta! Delectus pariatur quisquam eaque officia dicta nesciunt dolores similique vel sed inventore deleniti, sequi vitae vero cum, earum ratione, esse odio possimus doloremque? Aspernatur corrupti ratione atque vel in, maiores inventore alias similique, nemo blanditiis qui vitae.</p>
 
 
                                 </div>
@@ -542,7 +422,6 @@
                     </div>
 
                 </div>
-        </div>
 
                         @include('frontend.00_android.00_fiturmenu.keterangan')
 
