@@ -287,10 +287,21 @@
         <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
     </div>
 
-    <div class="form-group" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; height:100px;">
-        <input type="text" class="nik-input" placeholder="Masukkan NIK Anda">
-        <button class="check-button">Cek</button>
-    </div>
+    <div class="form-group" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; height: 100px;">
+    <input
+        type="text"
+        class="nik-input"
+        placeholder="Masukkan NIK Anda"
+        style="padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; width: 100%; box-sizing: border-box;"
+    >
+    <button
+        class="check-button"
+        style="padding: 12px; background-color: #4ADE80; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px;"
+    >
+        Cek
+    </button>
+</div>
+
 </div>
 
 
