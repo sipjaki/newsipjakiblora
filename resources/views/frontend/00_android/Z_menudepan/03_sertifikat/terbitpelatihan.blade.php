@@ -535,6 +535,11 @@
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script>
+
+    container.style.padding = '15mm'; // Margin 15mm
+certContent.style.width = '267mm'; // 297mm - 30mm
+certContent.style.height = '180mm'; // 210mm - 30mm
+
 function downloadPDF() {
     // Clone element sertifikat
     const originalElement = document.getElementById('sertifikatPdf');
@@ -616,4 +621,5 @@ function downloadPDF() {
     // Generate PDF
     html2pdf().set(opt).from(container).save();
 }
+
 </script>
