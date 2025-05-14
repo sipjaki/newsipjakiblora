@@ -597,7 +597,8 @@ document.getElementById("cekButton").addEventListener("click", function () {
                     Kegiatan <strong>{{ $data->agendapelatihan->namakegiatan }}</strong> yang diselenggarakan oleh
                     <strong>{{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}</strong>
                     pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }},
-                    di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
+                    di {{ $data->agendapelatihan->lokasi }} meliputi
+                     {{-- {{ $totalJam }} jam pelajaran. --}}
                 </p>
             </div>
 
