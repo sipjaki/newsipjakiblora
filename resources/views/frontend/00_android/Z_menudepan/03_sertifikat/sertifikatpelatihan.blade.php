@@ -255,17 +255,17 @@
             <h4>Masukkan NIK & Download Sertifikat</h4>
         </div>
         <div class="card-body">
-            <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
+    <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
 
-            <div class="example-box">
-                <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
-            </div>
+    <div class="example-box">
+        <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
+    </div>
 
-            <div class="input-group">
-                <input type="text" class="nik-input" placeholder="Masukkan NIK Anda">
-                <button class="check-button">Cek</button>
-            </div>
-        </div>
+    <div class="form-group" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px;">
+        <input type="text" class="nik-input" placeholder="Masukkan NIK Anda">
+        <button class="check-button">Cek</button>
+    </div>
+</div>
 
 
                         <div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
