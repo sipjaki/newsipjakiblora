@@ -1,4 +1,48 @@
 <style>
+                                        /* Styling untuk tabel */
+                                        .custom-table {
+                                            width: 100%;
+                                            border-collapse: collapse;
+                                            margin-top: 20px;
+                                            font-size: 16px;
+                                            border: 1px solid #ddd;
+                                            border-radius: 10px; /* Border radius pada luar tabel */
+                                            overflow: hidden; /* Supaya border-radius terlihat di sudut luar */
+                                        }
+
+                                        .custom-table th,
+                                        .custom-table td {
+                                            padding: 10px 20px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                        }
+
+                                        /* Gradasi hijau dan emas untuk header */
+                                        .custom-table thead tr th {
+                                            background: linear-gradient(135deg, #4caf50, #ffb300); /* Gradasi hijau ke emas */
+                                            color: white;
+                                        }
+
+                                        /* Hover effect pada row */
+                                        .table-row-hover:hover {
+                                            background-color: #f7fafc;
+                                            transition: background-color 0.3s ease;
+                                        }
+
+                                        /* Styling row ganjil dan genap */
+                                        .custom-table tr:nth-child(even) {
+                                            background-color: #f9fafb;
+                                        }
+
+                                        .custom-table tr:nth-child(odd) {
+                                            background-color: #ffffff;
+                                        }
+
+                                        .custom-table td {
+                                            color: #333;
+                                        }
+                                    </style>
+<style>
 /* Font kaligrafi */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
@@ -435,50 +479,7 @@
                                         </tfoot>
                                     </table>
 
-                                    <style>
-                                        /* Styling untuk tabel */
-                                        .custom-table {
-                                            width: 100%;
-                                            border-collapse: collapse;
-                                            margin-top: 20px;
-                                            font-size: 16px;
-                                            border: 1px solid #ddd;
-                                            border-radius: 10px; /* Border radius pada luar tabel */
-                                            overflow: hidden; /* Supaya border-radius terlihat di sudut luar */
-                                        }
 
-                                        .custom-table th,
-                                        .custom-table td {
-                                            padding: 10px 20px;
-                                            text-align: left;
-                                            font-size: 16px;
-                                        }
-
-                                        /* Gradasi hijau dan emas untuk header */
-                                        .custom-table thead tr th {
-                                            background: linear-gradient(135deg, #4caf50, #ffb300); /* Gradasi hijau ke emas */
-                                            color: white;
-                                        }
-
-                                        /* Hover effect pada row */
-                                        .table-row-hover:hover {
-                                            background-color: #f7fafc;
-                                            transition: background-color 0.3s ease;
-                                        }
-
-                                        /* Styling row ganjil dan genap */
-                                        .custom-table tr:nth-child(even) {
-                                            background-color: #f9fafb;
-                                        }
-
-                                        .custom-table tr:nth-child(odd) {
-                                            background-color: #ffffff;
-                                        }
-
-                                        .custom-table td {
-                                            color: #333;
-                                        }
-                                    </style>
                                 </div>
 
                             </div>
