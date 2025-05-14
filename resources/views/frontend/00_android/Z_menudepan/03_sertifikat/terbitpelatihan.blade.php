@@ -296,7 +296,7 @@
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
                 <div class="col-md-12" style="height:400px;">
-                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-40px;">
+                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                     <div style="transform: scale(0.3); transform-origin: top left;">
                         <div class="cert-container">
                             <div class="cert-header" style="text-align: center;">
@@ -372,9 +372,10 @@
 
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white" style="margin-top: 400px;">
 
-                                                    <div class="col-md-12" style="height:400px;">
+               <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
+                    <div style="transform: scale(0.3); transform-origin: top left;">
                         <div class="cert-container">
-                            <div class="cert-header" style="text-align: center;">
+                              <div class="cert-header" style="text-align: center;">
                                 <!-- Logo di atas -->
                                 <div class="cert-logos" style="margin-bottom: 10px;">
                                     <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
@@ -498,6 +499,8 @@
 
                             {{-- <div class="ribbon-right"></div> --}}
                         </div>
+                    </div>
+                    </div>
                     </div>
                         <!--end::Quick Example-->
 
