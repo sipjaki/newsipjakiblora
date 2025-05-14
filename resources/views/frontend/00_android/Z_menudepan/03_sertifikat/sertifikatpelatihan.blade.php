@@ -38,20 +38,16 @@
 
                                 <div class="flex justify-center px-4 mt-[-150px]">
                                     <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cek Sertifikat dengan NIK</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.certificate-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-
+        /* Card Styles */
         .certificate-card {
             width: 100%;
             max-width: 480px;
@@ -60,106 +56,130 @@
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
             border: 2px solid #28a745;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .certificate-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
         }
 
+        /* Header */
         .card-header {
             background-color: #28a745;
             color: white;
-            padding: 20px;
+            padding: 22px;
             text-align: center;
         }
 
         .card-header h1 {
             font-size: 1.5rem;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
+        /* Body Content */
         .card-body {
-            padding: 25px;
+            padding: 28px;
         }
 
         .instruction-text {
             color: #6c757d;
             text-align: center;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            margin-bottom: 22px;
         }
 
+        /* Example Box */
         .example-box {
             background-color: #e8f5e9;
             border-left: 4px solid #4caf50;
-            padding: 12px 15px;
-            margin-bottom: 25px;
+            padding: 14px 16px;
+            margin-bottom: 26px;
             border-radius: 4px;
             display: flex;
             align-items: center;
         }
 
         .example-box svg {
-            margin-right: 10px;
+            margin-right: 12px;
             color: #2e7d32;
             min-width: 18px;
+            flex-shrink: 0;
         }
 
         .example-text {
             color: #2e7d32;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
         }
 
+        /* Input Group */
         .input-group {
             display: flex;
             width: 100%;
+            height: 52px;
         }
 
         .nik-input {
             flex: 1;
-            padding: 14px 16px;
+            padding: 0 16px;
             border: 1px solid #ced4da;
             border-radius: 8px 0 0 8px;
             font-size: 1rem;
             outline: none;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .nik-input:focus {
             border-color: #28a745;
-            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
         }
 
+        /* Button */
         .check-button {
             background-color: #28a745;
             color: white;
             border: none;
-            padding: 0 24px;
+            padding: 0 28px;
             border-radius: 0 8px 8px 0;
             font-weight: 500;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .check-button:hover {
             background-color: #218838;
         }
+
+        /* Responsive Adjustments */
+        @media (max-width: 480px) {
+            .card-header {
+                padding: 18px;
+            }
+
+            .card-header h1 {
+                font-size: 1.3rem;
+            }
+
+            .card-body {
+                padding: 22px;
+            }
+
+            .input-group {
+                height: 48px;
+            }
+        }
     </style>
 
 <div class="certificate-card">
         <div class="card-header">
-            <h1>Masukkan NIK dan Cek Sertifikat</h1>
+            <h4>Masukkan NIK & Cek Sertifikat</h4>
         </div>
         <div class="card-body">
             <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
 
             <div class="example-box">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
-                </svg>
                 <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
             </div>
 
