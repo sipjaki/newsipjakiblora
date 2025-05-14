@@ -408,6 +408,7 @@
                                 </div>
                             </div>
                             </div>
+                            </div>
 
                             </div>
 
@@ -416,7 +417,7 @@
 
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-                                <div class="page">
+                                {{-- <div class="page"> --}}
                             <div class="col-md-12" style="height:250px;">
                                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                                     <div style="transform: scale(0.3); transform-origin: top left;">
@@ -500,7 +501,7 @@
 
                             {{-- <div class="ribbon-right"></div> --}}
                         </div>
-                    </div>
+                    {{-- </div> --}}
                     </div>
                     </div>
                     </div>
@@ -544,19 +545,20 @@ function downloadPDF() {
         filename:     'sertifikat_pelatihan_blora.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
         html2canvas:  {
-            scale: 5, // Meningkatkan skala menjadi 5 kali lipat
+            scale: 10, // Perbesar konten 10 kali lipat
             useCORS: true,
             dpi: 300, // Resolusi lebih tinggi
             letterRendering: true,
             scrollX: 0,
             scrollY: 0,
             windowWidth: 2000, // Memastikan viewport lebih besar untuk rendering
+            x: 0, // Pastikan konten tetap di kiri
+            y: 0  // Pastikan konten tetap di atas
         },
         jsPDF:        { unit: 'pt', format: 'a4', orientation: 'landscape' },
         pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
-    // Pastikan hanya konten sertifikat yang ter-download
     html2pdf().set(opt).from(element).save();
 }
 </script>
