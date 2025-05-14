@@ -300,7 +300,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                             <div class="cert-content">
                                 <p style="text-align: center;">diberikan kepada</p>
 
-                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{$data->namalengkap}}</h2>
+                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{ strtoupper($data->namalengkap) }}</h2>
                                 {{-- <h2 style="text-align: center; margin: 20px 0; font-size:28px;" >Miftahunnuril Anam, S.E</h2> --}}
 
                                 <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
@@ -462,7 +462,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                             </div>
                             <div class="ribbon-text">
-                                <h4 style="text-transform: uppercase;">{{ strtoupper($item->namalengkap) }}</h4>
+                                <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
                                                                 {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
 
                                 <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
