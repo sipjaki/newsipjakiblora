@@ -1,4 +1,30 @@
 <style>
+
+    .nik-input {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 0 8px 0 8px; /* Kanan atas & kiri bawah */
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.check-button {
+    padding: 12px;
+    background-color: #4ADE80;
+    color: white;
+    border: none;
+    border-radius: 0 8px 0 8px; /* Kanan atas & kiri bawah */
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.check-button:hover {
+    background-color: #22c55e;
+}
+
     /* Gaya untuk tabel */
     .custom-table-container {
     width: 100%;
