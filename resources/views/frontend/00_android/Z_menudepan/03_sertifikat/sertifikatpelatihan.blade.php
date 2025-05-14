@@ -32,15 +32,16 @@
                 </nav>
             </div>
 
-                  <div class="flex flex-col items-center px-4 mt-[-100px]">
-  <div class="w-full max-w-md">
-    <label for="nik" class="block text-gray-700 text-lg font-semibold mb-2">Cari NIK</label>
+                  <div class="flex justify-center px-4 mt-[-100px]">
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-lg p-6">
+    <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Pencarian NIK</h2>
+    <label for="nik" class="block text-sm font-medium text-gray-600 mb-1">Masukkan Nomor Induk Kependudukan (NIK)</label>
     <div class="relative">
       <input
         type="text"
         id="nik"
         name="nik"
-        placeholder="Masukkan NIK..."
+        placeholder="Contoh: 3201xxxxxxxxxxxx"
         class="w-full px-5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-700 shadow-sm"
       />
       <button
