@@ -1362,6 +1362,27 @@ public function resdaftarpelatihanpesertaskk($id)
     }
 
 
+    public function carisertifikat(Request $request)
+    {
+        $nik = $request->nik;
+
+        $data = pesertapelatihan::with('agendapelatihan')
+            ->where('nik', $nik)
+            ->get();
+
+        if ($data->count() > 0) {
+            return response()->json([
+                'success' => true,
+                'data' => $data
+            ]);
+        } else {
+            return response()->json([
+                'success' => false
+            ]);
+        }
+    }
+
+
 //     public function carisertifikat(Request $request)
 // {
 //     $nik = $request->input('nik');

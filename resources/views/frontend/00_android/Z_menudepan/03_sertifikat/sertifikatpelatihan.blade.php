@@ -490,7 +490,6 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
         <h4>Masukkan NIK & Download Sertifikat</h4>
     </div>
     <div class="card-body">
-        {{-- <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p> --}}
         <div class="example-box">
             <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
         </div>
@@ -509,32 +508,30 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
     <div id="resultSection" style="margin-top: 20px;"></div>
 </div>
 
-<!-- Template untuk hasil pencarian (akan diisi via JavaScript) -->
+<!-- Template untuk hasil pencarian -->
 <div id="certificateTemplate" style="display: none;">
     <div class="result-container">
         <table class="result-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
             <thead>
                 <tr style="background-color: #f3f4f6;">
-                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">No</th>
-                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">Nama Peserta</th>
-                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">Nama Pelatihan</th>
-                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">Tanggal Pelatihan</th>
-                    <th style="padding: 12px; border: 1px solid #d1d5db; text-align: left;">Aksi</th>
+                    <th style="padding: 12px; border: 1px solid #d1d5db;">No</th>
+                    <th style="padding: 12px; border: 1px solid #d1d5db;">Nama Peserta</th>
+                    <th style="padding: 12px; border: 1px solid #d1d5db;">NIK</th>
+                    <th style="padding: 12px; border: 1px solid #d1d5db;">Download</th>
                 </tr>
             </thead>
             <tbody id="certificateRows">
-                <!-- Data akan diisi disini -->
+                <!-- Diisi oleh JavaScript -->
             </tbody>
         </table>
     </div>
 </div>
 
 <script>
-document.getElementById("cekButton").addEventListener("click", function() {
+document.getElementById("cekButton").addEventListener("click", function () {
     const nik = document.getElementById("nikInput").value.trim();
     const resultSection = document.getElementById("resultSection");
 
-    // Validasi NIK
     if (!nik) {
         resultSection.innerHTML = `
             <div class="alert alert-danger" style="padding: 12px; background-color: #fee2e2; color: #b91c1c; border-radius: 8px;">
@@ -544,7 +541,6 @@ document.getElementById("cekButton").addEventListener("click", function() {
         return;
     }
 
-    // Tampilkan loading
     resultSection.innerHTML = `
         <div style="text-align: center; padding: 20px;">
             <div class="spinner-border text-primary" role="status">
@@ -554,7 +550,6 @@ document.getElementById("cekButton").addEventListener("click", function() {
         </div>
     `;
 
-    // Lakukan request AJAX
     fetch("{{ route('cari.sertifikat') }}", {
         method: "POST",
         headers: {
@@ -563,44 +558,33 @@ document.getElementById("cekButton").addEventListener("click", function() {
         },
         body: JSON.stringify({ nik: nik })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
         if (data.success) {
-            // Jika data ditemukan
             const template = document.getElementById("certificateTemplate").cloneNode(true);
             template.style.display = "block";
             const tbody = template.querySelector("#certificateRows");
-
-            // Kosongkan dulu
             tbody.innerHTML = "";
 
-            // Isi data
             data.data.forEach((item, index) => {
                 const row = document.createElement("tr");
 
-                // Format tanggal pelatihan
                 const startDate = new Date(item.agendapelatihan.tanggal_pelatihan_start);
                 const endDate = new Date(item.agendapelatihan.tanggal_pelatihan_end);
                 const formattedDate = `
-                    ${startDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
-                    s/d
+                    ${startDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })} s/d
                     ${endDate.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}
                 `;
 
+                const maskedNik = item.nik.substring(0, 4) + "XXXXXXXXXXXX";
+
                 row.innerHTML = `
                     <td style="padding: 12px; border: 1px solid #d1d5db;">${index + 1}</td>
-                    <td style="padding: 12px; border: 1px solid #d1d5db;">${item.nama}</td>
-                    <td style="padding: 12px; border: 1px solid #d1d5db;">${item.agendapelatihan.nama_pelatihan}</td>
-                    <td style="padding: 12px; border: 1px solid #d1d5db;">${formattedDate}</td>
+                    <td style="padding: 12px; border: 1px solid #d1d5db;">${item.namalengkap}</td>
+                    <td style="padding: 12px; border: 1px solid #d1d5db;">${item.nik}</td>
                     <td style="padding: 12px; border: 1px solid #d1d5db;">
-                        <a href="/bepesertapuploadsertifikat/show/${item.id}"
-                           class="btn-download"
-                           style="padding: 8px 12px; background-color: #4ADE80; color: white; text-decoration: none; border-radius: 4px; display: inline-block;">
+                        <a href="/bepesertapuploadsertifikat/show/${item.id}" class="btn-download"
+                           style="padding: 8px 12px; background-color: #4ADE80; color: white; text-decoration: none; border-radius: 4px;">
                             Download Sertifikat
                         </a>
                     </td>
@@ -611,7 +595,6 @@ document.getElementById("cekButton").addEventListener("click", function() {
             resultSection.innerHTML = "";
             resultSection.appendChild(template);
         } else {
-            // Jika data tidak ditemukan
             resultSection.innerHTML = `
                 <div class="alert alert-info" style="padding: 12px; background-color: #dbeafe; color: #1e40af; border-radius: 8px; text-align: center;">
                     Tidak ditemukan sertifikat untuk NIK: ${nik}
