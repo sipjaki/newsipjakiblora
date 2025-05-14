@@ -700,7 +700,7 @@ table.zebra-table {
 <div class="row">
 <!-- Upload Pengalaman -->
 <div class="col-md-4" style="{{ $divStyle }}">
-    @php
+    {{-- @php
     $firstItem = $datacontohsurat->sortBy('id')->first(); // ambil berdasarkan ID terkecil
     $fileDownload = null;
 
@@ -712,7 +712,12 @@ table.zebra-table {
             $fileDownload = asset($firstItem->berkas); // fallback dari path luar storage
         }
     }
-    @endphp
+    @endphp --}}
+
+    @php
+    $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
+@endphp
+
 
 <label class="form-label" style="{{ $labelStyle }}">
 <i class="bi bi-file-earmark-text" style="color: navy;"></i> Upload Pengalaman | .pdf | Max 5MB
@@ -755,11 +760,10 @@ table.zebra-table {
 </div>
 </div>
 
-/assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx
 
 <div class="row" style="margin-top: -20px;">
 <div class="col-md-4" style="{{ $divStyle }}">
-    {{-- @php
+    @php
         $secondItem = $datacontohsurat->sortBy('id')->skip(1)->first(); // ambil data ke-2 berdasarkan ID terkecil
         $fileDownload = null;
 
@@ -771,12 +775,7 @@ table.zebra-table {
                 $fileDownload = asset($secondItem->berkas); // fallback jika path bukan di storage
             }
         }
-    @endphp --}}
-
-    @php
-    $fileDownload = asset('assets/00_contohsurat/01_CONTOH_SURAT_PENGALAMAN.docx');
-@endphp
-
+    @endphp
 
     <label class="form-label" style="{{ $labelStyle }}">
         <i class="bi bi-file-earmark-check" style="color: navy;"></i> Upload Kebenaran Data | .pdf | Max 5MB
