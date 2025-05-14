@@ -328,16 +328,17 @@ table.zebra-table {
 </div>
 
 <!-- Upload SKK -->
-<div class="row" style="margin-bottom:250px;">
+<div class="row" style="margin-top:25px;">
     <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
-            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
+            <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload Screenshot SKK Saudara
         </label>
         <input type="file" name="skkanda" id="skkanda"
                accept="application/pdf"
                style="{{ $inputStyle }}"
                class="form-control @error('skkanda') is-invalid @enderror">
         <br>
+        <p>Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu di Upload di halaman ini !! </p>
         <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small>
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
