@@ -289,227 +289,284 @@
                 </nav>
             </div>
 
+                    <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
 
-            <section class="certificate-container">
-            <!-- Certificate Content 1 -->
-            <div id="sertifikat-content-1" class="cert-card">
-                <div class="cert-container">
-                    <div class="cert-header" style="text-align: center;">
-                        <div class="cert-logos">
-                            <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora">
-                            <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                        </div>
-                    </div>
+                        <div id="sertifikat-content">
 
-                    <hr class="cert-hr">
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-                    <div class="cert-title" style="margin-top: -10px;">
-                        <h1 class="cert-h1">SERTIFIKAT</h1>
-                        <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
-                    </div>
-
-                    <div class="cert-content">
-                        <p style="text-align: center;">diberikan kepada</p>
-                        <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{ strtoupper($data->namalengkap) }}</h2>
-                        <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
-                        <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
-
-                        @php
-                            $totalJam = 0;
-                            foreach ($datapelajaran as $pelajaran) {
-                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
-                            }
-                        @endphp
-
-                        <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
-                            Kegiatan <span class="cert-highlight">{{ $data->agendapelatihan->namakegiatan }}</span>
-                            yang diselenggarakan oleh {{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}
-                            pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                            di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
-                        </p>
-                    </div>
-
-                    <div class="cert-signature">
-                        <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong></p>
-                        <p style="margin: 0;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
-                        <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
-
-                        <div style="display: flex; justify-content: flex-end; margin-right: -125px;">
-                            <div style="position: relative; width: 400px; height: 100px;">
-                                <img src="/assets/icon/ttdpahuda.png" alt="" width="250px;" style="position: absolute; top: 0; left: 0; z-index: 1;">
-                                <img src="/assets/icon/ttdkabblora.png" alt="" width="115px;" style="position: absolute; top: 0; left: 50px; z-index: 2;">
+                                                    <div class="col-md-12" style="height:400px;">
+                        <div class="cert-container">
+                            <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                </div>
                             </div>
-                        </div>
 
-                        <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
-                        <p style="margin: 0;">NIP. 19720326 200604 1 005</p>
-                    </div>
-                    <div class="ribbon-left"></div>
-                    <div class="ribbon-text">
-                        <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
-                        <p>Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                        <br>Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</p>
-                    </div>
-                </div>
-            </div>
+                            <hr class="cert-hr" style="margin-top: -5px;">
 
-            <!-- Certificate Content 2 -->
-            <div id="sertifikat-content-2" class="cert-card">
-                <div class="cert-container">
-                    <div class="cert-header" style="text-align: center;">
-                        <div class="cert-logos">
-                            <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora">
-                            <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                        </div>
-                    </div>
+                            <div class="cert-title" style="margin-top: -10px;">
+                                <h1 class="cert-h1">SERTIFIKAT</h1>
+                                <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
+                            </div>
 
-                    <hr class="cert-hr">
+                            <div class="cert-content">
+                                <p style="text-align: center;">diberikan kepada</p>
 
-                    <div class="cert-title" style="margin-top: -10px;">
-                        <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">
-                            Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}
-                        </h2>
-                    </div>
+                                <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{ strtoupper($data->namalengkap) }}</h2>
+                                {{-- <h2 style="text-align: center; margin: 20px 0; font-size:28px;" >Miftahunnuril Anam, S.E</h2> --}}
 
-                    <div class="cert-content">
-                        <div class="table-container">
-                            <table class="custom-table">
-                                <thead>
-                                    <tr>
-                                        <th width="10%">No</th>
-                                        <th width="40%">Materi</th>
-                                        <th width="30%">Narasumber</th>
-                                        <th width="20%">Jam Pelajaran</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @php
-                                        $totalJam = 0;
-                                    @endphp
-                                    @forelse ($datapelajaran as $key => $pelajaran)
-                                    <tr class="table-row-hover">
-                                        <td>{{ $key + 1 }}</td>
-                                        <td>{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
-                                        <td>{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                        <td style="text-align:center;">
-                                            {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
-                                        </td>
-                                    </tr>
-                                    @php
+                                <h3 class="cert-h3" style="text-align: center;">Sebagai</h3>
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">PESERTA</h2>
+                                @php
+                                    $totalJam = 0;
+                                    foreach ($datapelajaran as $pelajaran) {
                                         $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
-                                    @endphp
-                                    @empty
-                                    <tr>
-                                        <td colspan="4">Data tidak tersedia.</td>
-                                    </tr>
-                                    @endforelse
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="3" style="text-align: right; font-weight: bold;">
-                                            <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
-                                        </td>
-                                        <td style="text-align:center; font-weight: bold;">
-                                            {{ $totalJam }} Jam
-                                        </td>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                                    }
+                                @endphp
+
+                                <p style="text-align: justify; text-indent: 50px; margin: 0 50px;">
+                                    Kegiatan <span class="cert-highlight">{{ $data->agendapelatihan->namakegiatan }}</span>
+                                    yang diselenggarakan oleh {{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}
+                                    pada tanggal {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                    di {{ $data->agendapelatihan->lokasi }} meliputi {{ $totalJam }} jam pelajaran.
+                                </p>
+
+                            </div>
+
+                            <div class="cert-signature" style="margin-top: -10px;">
+                                <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
+                                <p style="margin: 0;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                                <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
+
+                                <div style="display: flex; justify-content: flex-end; margin-right: -125px;"> <!-- Tambah ini -->
+                                    <div style="position: relative; width: 400px; height: 100px;">
+                                        <img src="/assets/icon/ttdpahuda.png" alt="" width="250px;" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                                        <img src="/assets/icon/ttdkabblora.png" alt="" width="115px;" style="position: absolute; top: 0; left: 50px; z-index: 2;">
+                                    </div>
+                                </div>
+
+
+
+                                <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
+                                {{-- <p>PEKBINA UTAMA MADYA</p> --}}
+                                <p style="margin: 0;">NIP. 19720326 200604 1 005</p>
+                            </div>
+                            <div class="ribbon-left"></div>
+                            {{-- <div class="ribbon-right"></div> --}}
                         </div>
                     </div>
+                        <!--end::Quick Example-->
+<br><br>
 
-                    <div class="ribbon-left"></div>
-                    <div class="ribbon-text">
-                        <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
-                        <p>Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                        <br>Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</p>
+                                {{-- ======================================================= --}}
+
+
+                            </div>
+
+
+
+                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
+
+                                                    <div class="col-md-12" style="height:400px;">
+                        <div class="cert-container">
+                            <div class="cert-header" style="text-align: center;">
+                                <!-- Logo di atas -->
+                                <div class="cert-logos" style="margin-bottom: 10px;">
+                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+                                </div>
+                            </div>
+
+                            <hr class="cert-hr" style="margin-top: -5px;">
+
+                            <div class="cert-title" style="margin-top: -10px;">
+                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
+                            </div>
+
+                            <div class="cert-content">
+                                <div class="table-container">
+                                    <table class="custom-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="font-size: 15px;" width="10%">No</th>
+                                                <th style="font-size: 15px;" width="40%">Materi</th>
+                                                <th style="font-size: 15px;" width="30%">Narasumber</th>
+                                                <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @php
+                                                $totalJam = 0; // Menyimpan total jam pelajaran
+                                            @endphp
+                                            @forelse ($datapelajaran as $key => $pelajaran)
+                                            <tr class="table-row-hover">
+                                                <td style="font-size: 15px;">{{ $key + 1 }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                                                <td style="font-size: 15px; text-align:center;">
+                                                    {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
+                                                </td>
+                                            </tr>
+                                            @php
+                                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
+                                            @endphp
+                                            @empty
+                                            <tr>
+                                                <td colspan="4">Data tidak tersedia.</td>
+                                            </tr>
+                                            @endforelse
+                                        </tbody>
+                                        <!-- Baris penjumlahan total jam pelajaran -->
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
+                                                    <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
+                                                </td>
+                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">
+                                                    {{ $totalJam }} Jam
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                    <style>
+                                        /* Styling untuk tabel */
+                                        .custom-table {
+                                            width: 100%;
+                                            border-collapse: collapse;
+                                            margin-top: 20px;
+                                            font-size: 16px;
+                                            border: 1px solid #ddd;
+                                            border-radius: 10px; /* Border radius pada luar tabel */
+                                            overflow: hidden; /* Supaya border-radius terlihat di sudut luar */
+                                        }
+
+                                        .custom-table th,
+                                        .custom-table td {
+                                            padding: 10px 20px;
+                                            text-align: left;
+                                            font-size: 16px;
+                                        }
+
+                                        /* Gradasi hijau dan emas untuk header */
+                                        .custom-table thead tr th {
+                                            background: linear-gradient(135deg, #4caf50, #ffb300); /* Gradasi hijau ke emas */
+                                            color: white;
+                                        }
+
+                                        /* Hover effect pada row */
+                                        .table-row-hover:hover {
+                                            background-color: #f7fafc;
+                                            transition: background-color 0.3s ease;
+                                        }
+
+                                        /* Styling row ganjil dan genap */
+                                        .custom-table tr:nth-child(even) {
+                                            background-color: #f9fafb;
+                                        }
+
+                                        .custom-table tr:nth-child(odd) {
+                                            background-color: #ffffff;
+                                        }
+
+                                        .custom-table td {
+                                            color: #333;
+                                        }
+                                    </style>
+                                </div>
+
+                            </div>
+
+
+                            <div class="ribbon-left">
+
+                            </div>
+                            <div class="ribbon-text">
+                                <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
+                                                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
+
+                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                </p>
+                            </div>
+
+                            {{-- <div class="ribbon-right"></div> --}}
+                        </div>
                     </div>
-                </div>
-            </div>
+                        <!--end::Quick Example-->
 
-            <!-- Download Button -->
-            <div class="download-btn" onclick="downloadAllCertificates()">
-                <i class="bi bi-download" style="margin-right: 8px;"></i>
-                Download Semua Sertifikat (PDF)
-            </div>
-        </div>
 
-        <!-- Hidden container for PDF generation -->
-        <div id="pdf-generation-container" class="pdf-container"></div>
-    </section>
+                    </div>
+                    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script>
-        function downloadAllCertificates() {
-            // Show loading state
-            const btn = document.querySelector('.download-btn');
-            const originalHtml = btn.innerHTML;
-            btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Membuat PDF...';
-            btn.style.pointerEvents = 'none';
+                                            <!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-            // Create container for PDF generation
-            const pdfContainer = document.getElementById('pdf-generation-container');
-            pdfContainer.innerHTML = '';
+<div
+    onclick="downloadSertifikat()"
+    onmouseover="hoverEffect(this)"
+    onmouseout="resetEffect(this)"
+    style="
+        width: 100%;
+        border: 1px solid #E8E9EE;
+        display: flex;
+        align-items: center;
+        padding: 14px;
+        gap: 12px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #FFD700, #000);
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    "
+>
+    <i class="bi bi-download" style="margin-right: 8px;"></i>
+    Download Sertifikat
+</div>
 
-            // Clone both certificate contents
-            const cert1 = document.getElementById('sertifikat-content-1').cloneNode(true);
-            const cert2 = document.getElementById('sertifikat-content-2').cloneNode(true);
+<script>
+    function hoverEffect(el) {
+        el.style.background = 'white';
+        el.style.color = 'black';
+        el.style.border = '2px solid #000';
+    }
 
-            // Create pages for PDF
-            const page1 = document.createElement('div');
-            page1.className = 'pdf-page';
-            page1.appendChild(cert1);
+    function resetEffect(el) {
+        el.style.background = 'linear-gradient(135deg, #FFD700, #000)';
+        el.style.color = 'white';
+        el.style.border = '1px solid #E8E9EE';
+    }
 
-            const page2 = document.createElement('div');
-            page2.className = 'pdf-page';
-            page2.appendChild(cert2);
+    function downloadSertifikat() {
+        const original = document.getElementById('sertifikat-content');
+        const cloned = original.cloneNode(true);
 
-            // Add pages to container
-            pdfContainer.appendChild(page1);
-            pdfContainer.appendChild(page2);
+        cloned.style.width = '1122px';  // 11.7 inch @ 96dpi
+        cloned.style.height = '794px';  // 8.3 inch @ 96dpi
+        cloned.style.position = 'absolute';
+        cloned.style.top = '-9999px';
 
-            // PDF options
-            const opt = {
-                margin: [10, 10, 10, 10],
-                filename: 'sertifikat_pelatihan.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: {
-                    scale: 2,
-                    logging: true,
-                    useCORS: true,
-                    allowTaint: true
-                },
-                jsPDF: {
-                    unit: 'mm',
-                    format: 'a4',
-                    orientation: 'portrait'
-                },
-                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-            };
+        document.body.appendChild(cloned);
 
-            // Generate PDF
-            html2pdf()
-                .set(opt)
-                .from(pdfContainer)
-                .save()
-                .then(() => {
-                    // Reset button state
-                    btn.innerHTML = originalHtml;
-                    btn.style.pointerEvents = 'auto';
+        const opt = {
+            margin: [0.5, 0.5, 0.5, 0.5],
+            filename: 'sertifikat.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' },
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        };
 
-                    // Clean up
-                    pdfContainer.innerHTML = '';
-                })
-                .catch(err => {
-                    console.error('Error generating PDF:', err);
-                    btn.innerHTML = '<i class="bi bi-exclamation-triangle"></i> Error! Coba Lagi';
-                    setTimeout(() => {
-                        btn.innerHTML = originalHtml;
-                        btn.style.pointerEvents = 'auto';
-                    }, 2000);
-                });
-        }
-    </script>
+        html2pdf().set(opt).from(cloned).save().then(() => {
+            document.body.removeChild(cloned);
+        });
+    }
+</script>
 
 
 
