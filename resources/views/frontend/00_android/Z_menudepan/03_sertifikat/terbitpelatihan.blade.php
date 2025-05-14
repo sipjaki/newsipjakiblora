@@ -484,6 +484,7 @@
                             <div class="ribbon-left">
 
                             </div>
+
                             <div class="ribbon-text">
                                 <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
                                                                 {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
@@ -528,45 +529,30 @@
     <i class="bi bi-download" style="margin-right: 8px;"></i>
     Download Sertifikat
 </div>
-
 <script>
+    function downloadSertifikat() {
+        const element = document.getElementById('sertifikat-content');
+
+        const opt = {
+            margin:       0,
+            filename:     'sertifikat.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'landscape' }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    }
+
     function hoverEffect(el) {
-        el.style.background = 'white';
-        el.style.color = 'black';
-        el.style.border = '2px solid #000';
+        el.style.opacity = 0.8;
     }
 
     function resetEffect(el) {
-        el.style.background = 'linear-gradient(135deg, #FFD700, #000)';
-        el.style.color = 'white';
-        el.style.border = '1px solid #E8E9EE';
-    }
-
-    function downloadSertifikat() {
-        const original = document.getElementById('sertifikat-content');
-        const cloned = original.cloneNode(true);
-
-        cloned.style.width = '1122px';  // 11.7 inch @ 96dpi
-        cloned.style.height = '794px';  // 8.3 inch @ 96dpi
-        cloned.style.position = 'absolute';
-        cloned.style.top = '-9999px';
-
-        document.body.appendChild(cloned);
-
-        const opt = {
-            margin: [0.5, 0.5, 0.5, 0.5],
-            filename: 'sertifikat.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' },
-            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
-        };
-
-        html2pdf().set(opt).from(cloned).save().then(() => {
-            document.body.removeChild(cloned);
-        });
+        el.style.opacity = 1;
     }
 </script>
+
 
 
 
