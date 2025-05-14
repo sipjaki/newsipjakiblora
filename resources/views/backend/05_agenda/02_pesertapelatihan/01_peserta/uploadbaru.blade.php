@@ -293,7 +293,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                             <hr class="cert-hr" style="margin-top: -5px;">
 
                             <div class="cert-title" style="margin-top: -10px;">
-                                <h1 class="cert-h1">SURAT KETERANGAN</h1>
+                                <h1 class="cert-h1">SERTIFIKAT</h1>
                                 <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
                             </div>
 
