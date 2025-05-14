@@ -25,7 +25,7 @@
             </div>
         </a>
 
-        <a href="/404">
+        <a href="/sertifikat">
             <div class="flex flex-col gap-1 items-center">
                 <div class="w-6 h-6 flex shrink-0">
                     <img src="/assets/00_android/menuhape/2.png" alt="icon" loading="lazy">

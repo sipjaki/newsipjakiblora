@@ -323,15 +323,13 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                             <div class="cert-signature">
                                 <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
-                                <p style="margin: 0;"><strong>KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
+                                <p style="margin: 0;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
-                                <div style="margin-right:80px;">
-                                    <img src="/assets/icon/ttdkabblora.png" alt="" width="80px;">
-                                </div>
 
-                                <div style="margin-right:80px;">
-                                    <img src="/assets/icon/ttdpahuda.png" alt="" width="80px;">
+                                <div style="position: relative; width: 100px; height: 100px;">
+                                    <img src="/assets/icon/ttdpahuda.png" alt="" width="80px;" style="position: absolute; top: 0; left: 0; z-index: 1;">
+                                    <img src="/assets/icon/ttdkabblora.png" alt="" width="80px;" style="position: absolute; top: 0; left: 0; z-index: 2;">
                                 </div>
 
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
