@@ -1033,10 +1033,7 @@ function previewFile(previewId, input) {
                 </option>
             @endforeach
         </select>
-        <p style="font-size: 13px;">
-            Ket: Jika Data Tidak Ada, Silahkan Klik Icon Ini
-            <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a>
-        </p>
+                                       <p style="font-size: 13px; color:navy; text-align:left;">Ket: Jika Data Tidak Ada, Silahkan Klik Icon Ini <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a></p>
         @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
     </div>
 
@@ -1068,7 +1065,11 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                     </label>
                                     <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
+                                <span style="color: navy; font-size:13px; display: block; text-align: left;">
+                            Contoh : Blora
+                                </span>
                                     @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
+
                                 </div>
 
                                 <!-- Tanggal Lahir -->
@@ -1108,7 +1109,7 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-envelope" style="color: navy;"></i> Email
                                     </label>
                                     <input type="email" name="email" style="{{ $inputStyle }}" class="@error('email') is-invalid @enderror" value="{{ old('email') }}">
-                      <p style="font-size:13px; text-align: left; margin:0; color: navy;">
+                       <p style="font-size:13px; text-align: left; margin:0; color: navy;">
     Ket: Email yang akan digunakan untuk akun
     <a href="https://simpan.pu.go.id/client-e-pengalaman/epengalaman/auth/register_nik" target="_blank" rel="noopener noreferrer" style="color: navy;">
         e-Simpan
@@ -1137,7 +1138,9 @@ function previewFile(previewId, input) {
                                         <i class="bi bi-house" style="color: navy;"></i> Alamat
                                     </label>
                                     <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
-                                    <p style="text-align: left: font-size:13px;"><span style="color: navy">Ket : Mohon diisi sesuai dengan alamat KTP Saudara !</span></p>
+                                   <p style="text-align: left; font-size:13px; color: navy; margin: 0;">
+                                Ket: Mohon diisi sesuai dengan alamat KTP Saudara!
+                            </p>
                                     @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
                                 </div>
