@@ -60,7 +60,7 @@
              <!-- /.card -->
              <div class="card mb-4">
                  <div class="card-header">
-                    <div style="
+                    {{-- <div style="
                     font-weight: 900;
                     font-size: 16px;
                     text-align: center;
@@ -76,14 +76,14 @@
                 onmouseover="this.style.background='white'; this.style.color='black';"
                 onmouseout="this.style.background='linear-gradient(135deg, #00378a, #00378a)'; this.style.color='white';">
                     ⚙️ Setting Database
-                </div>
+                </div> --}}
 
                      <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
-                        <a href="/404">
+                      <a href="/404">
                             <button
-                                onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
-                                onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
-                                style="background-color: #0010a3; color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s; text-decoration: none;">
+                                onmouseover="this.style.background='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
+                                onmouseout="this.style.background='linear-gradient(to right, #006400, #000000)'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
+                                style="background: linear-gradient(to right, #006400, #000000); color: white; border: none; margin-right: 10px; padding: 10px 20px; border-radius: 15px; font-size: 16px; cursor: pointer; display: flex; align-items: center; transition: all 0.3s ease; text-decoration: none;">
 
                                 <!-- SVG kategori -->
                                 <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px; fill: white; transition: fill 0.3s;" width="20" height="20" viewBox="0 0 24 24">
@@ -93,7 +93,8 @@
                             </button>
                         </a>
 
-                        <a href="/404">
+
+                        {{-- <a href="/404">
                             <button
                                 onmouseover="this.style.backgroundColor='white'; this.style.color='black'; this.querySelector('svg').style.fill='black';"
                                 onmouseout="this.style.backgroundColor='#0010a3'; this.style.color='white'; this.querySelector('svg').style.fill='white';"
@@ -105,7 +106,7 @@
                                 </svg>
                                 Data LSP Pelaksana
                             </button>
-                        </a>
+                        </a> --}}
 
                      </div>
                  </div>
