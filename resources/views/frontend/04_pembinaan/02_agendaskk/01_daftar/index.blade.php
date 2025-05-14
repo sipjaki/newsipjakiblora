@@ -554,6 +554,8 @@ table.zebra-table {
                                     </label>
                                     <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
                                     @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
+                                        <p style="text-align: left: font=size:13px;" style="color: red;">Ket : Mohon diisi sesuai dengan alamat KTP Saudara !</p>
+
                                 </div>
                             </div>
                         </div>
