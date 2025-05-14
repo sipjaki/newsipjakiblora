@@ -263,9 +263,9 @@
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:50px;">
                                                 <i class="bi bi-sort-alpha-down"></i> No
                                             </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
+                                            {{-- <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
                                                 <i class="bi bi-building"></i> Pelatihan
-                                            </th>
+                                            </th> --}}
                                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;">
                                                 <i class="bi bi-geo-alt"></i> Download Sertifikat
                                             </th>
@@ -276,7 +276,7 @@
                                         @foreach ($data as $item ) --}}
                                         <tr>
                                             <td style="text-align: center;">1</td>
-                                            <td style="text-transform: capitalize;">Percobaan</td>
+                                            {{-- <td style="text-transform: capitalize;">Percobaan</td> --}}
                                             <td>Download</td>
                                         </tr>
                                         {{-- @endforeach --}}
