@@ -240,7 +240,7 @@
         }
     </style>
 
-<div class="certificate-card" style="margin-left: 35px;">
+<div class="certificate-card">
         <div class="card-header">
             <h4>Masukkan NIK & Download Sertifikat</h4>
         </div>
