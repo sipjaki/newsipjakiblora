@@ -1,3 +1,259 @@
+<style>
+/* Font kaligrafi */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.nama-sertifikat {
+    font-family: 'Great Vibes', cursive;
+    font-size: 16px;
+    text-align: center;
+    color: #bfa144;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin: 30px 0;
+    letter-spacing: 1px;
+}
+
+.cert-container {
+    width: 297mm;
+    height: 210mm;
+    background: linear-gradient(to right, #f1f8e9 0%, #f9f5e8 100%);
+    border: 15px double #2e7d32;
+    border-image: linear-gradient(45deg, #2e7d32, #d4af37, #2e7d32) 1;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-left: 200px;
+}
+
+/* Ornamen latar belakang */
+.cert-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23d4af3780" d="M30,10 Q50,5 70,10 Q95,15 90,40 Q85,65 70,80 Q50,95 30,80 Q15,65 10,40 Q5,15 30,10 Z"/></svg>');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Pita kiri bawah */
+.cert-container .ribbon-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 40px;
+    background: linear-gradient(135deg, #d4af37, #2e7d32);
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+    z-index: 2;
+}
+
+.ribbon-left {
+    position: relative;
+    background-color: #ffcc00;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.ribbon-text {
+    margin-left: 20px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* Pita kanan bawah */
+.cert-container .ribbon-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 40px;
+    background: linear-gradient(135deg, #b71c1c, #e53935);
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 2;
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.cert-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cert-title {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.cert-content {
+    margin: 30px 0;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    padding: 0 50px;
+}
+
+.cert-signature {
+    text-align: right;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.cert-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #2e7d32;
+    position: relative;
+    z-index: 1;
+}
+
+.cert-h1 {
+    font-size: 32px;
+    margin: 0;
+    color: #1b5e20;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+}
+
+.cert-h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #2e7d32;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.cert-h3 {
+    font-size: 16pt;
+    margin: 5px 0;
+    color: #1b5e20;
+}
+
+.cert-hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #d4af37, #2e7d32, #d4af37, transparent);
+    margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cert-highlight {
+    font-weight: bold;
+    color: #1b5e20;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+}
+
+.cert-border-decoration {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #d4af37;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.cert-border-decoration:nth-child(1) {
+    top: 20px;
+    left: 20px;
+    border-radius: 50% 50% 0 50%;
+}
+
+.cert-border-decoration:nth-child(2) {
+    top: 20px;
+    right: 20px;
+    border-radius: 50% 50% 50% 0;
+}
+
+.cert-border-decoration:nth-child(3) {
+    bottom: 20px;
+    left: 20px;
+    border-radius: 50% 0 50% 50%;
+}
+
+.cert-border-decoration:nth-child(4) {
+    bottom: 20px;
+    right: 20px;
+    border-radius: 0 50% 50% 50%;
+}
+
+/* Untuk cetak */
+@page {
+    size: A4 landscape;
+    margin: 0;
+}
+
+/* Responsiveness untuk HP */
+@media screen and (max-width: 768px) {
+    .cert-container {
+        transform: scale(0.5);
+        transform-origin: top left;
+        width: 100vw;
+        height: auto;
+        margin-left: 0;
+        padding: 10px;
+        box-shadow: none;
+        border-width: 8px;
+    }
+
+    .cert-content {
+        padding: 0 20px;
+    }
+
+    .nama-sertifikat {
+        font-size: 12px;
+    }
+
+    .cert-h1 {
+        font-size: 20px;
+    }
+
+    .cert-h2 {
+        font-size: 16px;
+    }
+
+    .cert-h3 {
+        font-size: 14px;
+    }
+
+    .cert-signature {
+        font-size: 12px;
+    }
+
+    .cert-footer {
+        font-size: 10px;
+    }
+
+    .ribbon-left, .ribbon-right {
+        width: 60px;
+        height: 25px;
+    }
+
+    .ribbon-text {
+        font-size: 10px;
+        margin-left: 10px;
+    }
+}
+</style>
+
+
 @include('frontend.00_android.00_fiturmenu.header')
 
 <body class="font-poppins text-[#292E4B] bg-[#F6F9FC]">
