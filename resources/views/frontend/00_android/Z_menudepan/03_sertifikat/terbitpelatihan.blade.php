@@ -502,11 +502,72 @@
                     </div>
                     </div>
 
-                                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                                                    <button onclick="downloadSertifikat()">
-                                                        Download Sertifikat
-                                                    </button>
-                                                </div>
+                                            <!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<div
+    onclick="downloadSertifikat()"
+    onmouseover="hoverEffect(this)"
+    onmouseout="resetEffect(this)"
+    style="
+        width: 100%;
+        border: 1px solid #E8E9EE;
+        display: flex;
+        align-items: center;
+        padding: 14px;
+        gap: 12px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #FFD700, #000);
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    "
+>
+    <i class="bi bi-download" style="margin-right: 8px;"></i>
+    Download Sertifikat
+</div>
+
+<script>
+    function hoverEffect(el) {
+        el.style.background = 'white';
+        el.style.color = 'black';
+        el.style.border = '2px solid #000';
+    }
+
+    function resetEffect(el) {
+        el.style.background = 'linear-gradient(135deg, #FFD700, #000)';
+        el.style.color = 'white';
+        el.style.border = '1px solid #E8E9EE';
+    }
+
+    function downloadSertifikat() {
+        const original = document.getElementById('sertifikat-content');
+        const cloned = original.cloneNode(true);
+
+        cloned.style.width = '1122px';  // 11.7 inch @ 96dpi
+        cloned.style.height = '794px';  // 8.3 inch @ 96dpi
+        cloned.style.position = 'absolute';
+        cloned.style.top = '-9999px';
+
+        document.body.appendChild(cloned);
+
+        const opt = {
+            margin: [0.5, 0.5, 0.5, 0.5],
+            filename: 'sertifikat.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' },
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        };
+
+        html2pdf().set(opt).from(cloned).save().then(() => {
+            document.body.removeChild(cloned);
+        });
+    }
+</script>
+
 
 
                     <br><br>
@@ -527,20 +588,3 @@
 
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-<script>
-    function downloadSertifikat() {
-        const element = document.getElementById('sertifikat-content');
-
-        const opt = {
-            margin:       [0.5, 0.5, 0.5, 0.5], // margin top, left, bottom, right (inch)
-            filename:     'sertifikat.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },
-            jsPDF:        { unit: 'in', format: 'a4', orientation: 'landscape' },
-            pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
-        };
-
-        html2pdf().set(opt).from(element).save();
-    }
-</script>
