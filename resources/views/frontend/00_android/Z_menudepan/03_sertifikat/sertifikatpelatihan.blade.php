@@ -590,9 +590,9 @@ document.getElementById("cekButton").addEventListener("click", function () {
                 <h2>{{ strtoupper($data->namalengkap) }}</h2>
                 <h3>Sebagai</h3>
                 <h2 style="font-weight: 800;">PESERTA</h2>
-                @php
+                {{-- @php
                     $totalJam = $data->agendapelatihan->jampelajaran->sum('jampelajaran');
-                @endphp
+                @endphp --}}
                 <p style="margin: 10px 50px; text-align: justify; text-indent: 50px;">
                     Kegiatan <strong>{{ $data->agendapelatihan->namakegiatan }}</strong> yang diselenggarakan oleh
                     <strong>{{ $data->agendapelatihan->asosiasimasjaki->namaasosiasi }}</strong>
