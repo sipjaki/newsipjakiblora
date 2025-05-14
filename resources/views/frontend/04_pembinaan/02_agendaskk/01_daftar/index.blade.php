@@ -296,7 +296,7 @@ table.zebra-table {
 
 <div class="row">
     <!-- Kolom Kiri (Input Form Jabatan) -->
-    <div class="col-md-6" style="{{ $divStyle }}">
+    {{-- <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-person-lines-fill" style="{{ $iconStyle }}"></i> Nama Jabatan Kerja SKK Anda
         </label>
@@ -309,7 +309,7 @@ table.zebra-table {
             @endforeach
         </select>
         @error('jabatanskkanda_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
-    </div>
+    </div> --}}
 
     <!-- Kolom Kanan (Gambar) -->
     <div class="col-md-6" style="{{ $divStyle }}">
@@ -328,7 +328,7 @@ table.zebra-table {
 </div>
 
 <!-- Upload SKK -->
-<div class="row" style="margin-top: -350px; margin-bottom:250px;">
+<div class="row" style="margin-bottom:250px;">
     <div class="col-md-6" style="{{ $divStyle }}">
         <label class="form-label" style="{{ $labelStyle }}">
             <i class="bi bi-upload" style="{{ $iconStyle }}"></i> Upload SKK Anda
