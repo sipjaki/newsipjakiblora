@@ -126,7 +126,7 @@
         /* Card Styles */
         .certificate-card {
             width: 100%;
-            max-width: 200px;
+            max-width: 300px;
             background-color: white;
             border-radius: 12px;
             overflow: hidden;
