@@ -243,9 +243,6 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-
-
-        {{-- ======================================================= --}}
                     <div class="col-md-12">
                         <div class="cert-container">
                             <div class="cert-header" style="text-align: center;">
@@ -445,6 +442,11 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                     </div>
 
                     <br><br>
+                    <!-- /.card -->
+                    <!-- Button Section -->
+
+
+
                             <div class="flex flex-col gap-1">
                         {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p> --}}
                         </p>
