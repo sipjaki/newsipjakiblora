@@ -508,8 +508,6 @@
 
                         </div>
                     </div>
-                        <!--end::Quick Example-->
-<br><br>
 
 
                         @include('frontend.00_android.00_fiturmenu.keterangan')
