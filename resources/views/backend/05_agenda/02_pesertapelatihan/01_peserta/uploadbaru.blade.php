@@ -327,10 +327,10 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
 
 
-                            <div style="display: flex; justify-content: flex-end;">
+                            <div style="display: flex; justify-content: flex-end; margin-left:200px;">
                                 <div style="position: relative; width: 400px; height: 100px;">
                                     <img src="/assets/icon/ttdpahuda.png" alt="" width="250px;" style="position: absolute; top: 0; left: 0; z-index: 1;">
-                                    <img src="/assets/icon/ttdkabblora.png" alt="" width="125px;" style="position: absolute; top: 0; left: 0; z-index: 2;">
+                                    <img src="/assets/icon/ttdkabblora.png" alt="" width="115px;" style="position: absolute; top: 0; left: 0; z-index: 2;">
                                 </div>
                             </div>
 
