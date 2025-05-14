@@ -339,7 +339,7 @@
 
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-                        <div class="page" style="page-break-after: always;">
+                        <div class="page"  style="page-break-after: always;">
                             <div class="col-md-12" style="height:250px;">
                                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                                     <div style="transform: scale(0.3); transform-origin: top left;">
@@ -540,20 +540,16 @@ function downloadPDF() {
     const element = document.getElementById('sertifikatPdf');
 
     const opt = {
-        margin:       [10, 10, 10, 10], // top, left, bottom, right dalam pt
-        filename:     'sertifikat_pelatihan_blora.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  {
-            scale: 2.2, // lebih kecil dari sebelumnya (3)
+        margin: 0,
+        filename: 'sertifikat_pelatihan.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: {
+            scale: 2,
             useCORS: true,
-            dpi: 200,
-            letterRendering: true,
             scrollX: 0,
-            scrollY: 0,
-            windowWidth: 1600 // untuk bantu hitung ulang ukuran viewport
+            scrollY: 0
         },
-        jsPDF:        { unit: 'pt', format: 'a4', orientation: 'landscape' },
-        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+        jsPDF: { unit: 'pt', format: 'a4', orientation: 'landscape' }
     };
 
     html2pdf().set(opt).from(element).save();
