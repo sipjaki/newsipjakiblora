@@ -540,30 +540,33 @@ function downloadPDF() {
     const originalElement = document.getElementById('sertifikatPdf');
     const element = originalElement.cloneNode(true);
 
-    // Reset transformasi
+    // Reset transformasi dan hapus margin/padding
+    element.style.transform = 'none';
+    element.style.transformOrigin = 'unset';
+    element.style.margin = '0';
+    element.style.padding = '0';
     element.querySelectorAll('*').forEach(el => {
         el.style.transform = 'none';
         el.style.transformOrigin = 'unset';
+        el.style.margin = '0';
+        el.style.padding = '0';
     });
 
-    // Container utama dengan margin negatif
+    // Container utama dengan ukuran diperbesar
     const container = document.createElement('div');
-    container.style.width = '297mm';
-    container.style.height = '210mm';
+    container.style.width = 'calc(297mm + 150px)'; // Tambah 150px untuk kompensasi geser kiri
+    container.style.height = 'calc(210mm + 120px)'; // Tambah 120px untuk kompensasi geser atas
     container.style.position = 'relative';
     container.style.overflow = 'hidden';
 
-    // Tambahkan margin negatif di sini
-    container.style.marginLeft = '-200px';
-    container.style.marginTop = '-100px';
-
-    // Konten sertifikat (pertahankan ukuran asli)
+    // Konten sertifikat dengan posisi digeser
     const certContent = document.createElement('div');
     certContent.style.width = '297mm';
     certContent.style.height = '210mm';
     certContent.style.position = 'absolute';
-    certContent.style.left = '200px'; // Kompensasi margin negatif
-    certContent.style.top = '100px';  // Kompensasi margin negatif
+    certContent.style.left = '150px'; // Geser 150px ke kanan dari container
+    certContent.style.top = '120px';  // Geser 120px ke bawah dari container
+    certContent.style.boxSizing = 'border-box';
 
     // Pindahkan isi sertifikat
     while(element.firstChild) {
@@ -571,7 +574,7 @@ function downloadPDF() {
     }
     container.appendChild(certContent);
 
-    // Opsi html2pdf
+    // Opsi html2pdf dengan pengaturan khusus
     const opt = {
         margin: 0,
         filename: 'sertifikat_pelatihan_blora.pdf',
@@ -584,8 +587,10 @@ function downloadPDF() {
             useCORS: true,
             letterRendering: true,
             allowTaint: true,
-            scrollX: -200, // Kompensasi margin kiri negatif
-            scrollY: -100  // Kompensasi margin atas negatif
+            scrollX: 0,
+            scrollY: 0,
+            windowWidth: 1123, // 297mm + 150px dalam pixel
+            windowHeight: 894  // 210mm + 120px dalam pixel
         },
         jsPDF: {
             unit: 'mm',
