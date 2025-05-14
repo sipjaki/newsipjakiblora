@@ -591,6 +591,9 @@ document.getElementById("cekButton").addEventListener("click", function () {
                             Download Sertifikat
                         </a>
                     </td>
+                    <br>
+                    <p>Silahkan Geser Ke Kanan !</p>
+
                 `;
                 tbody.appendChild(row);
             });

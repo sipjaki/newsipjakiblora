@@ -348,8 +348,6 @@
                                     </div>
                                 </div>
 
-
-
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
                                 <p style="margin: 0;">NIP. 19720326 200604 1 005</p>
