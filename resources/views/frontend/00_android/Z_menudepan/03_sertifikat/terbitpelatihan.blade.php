@@ -413,7 +413,7 @@
 
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-        <div class="col-md-12" style="height:250px;">
+                            <div class="col-md-12" style="height:250px;">
                                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                                     <div style="transform: scale(0.3); transform-origin: top left;">
                                         <div class="cert-container">
@@ -502,7 +502,18 @@
                     </div>
                         <!--end::Quick Example-->
 
+                            <div class="col-md-12" style="height:250px;">
+                                <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
+                                    <div style="transform: scale(0.3); transform-origin: top left;">
+                                        <div class="cert-container">
 
+                                            <button>
+                                                download file
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
 
