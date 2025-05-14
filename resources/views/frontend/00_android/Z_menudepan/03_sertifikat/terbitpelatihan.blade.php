@@ -503,19 +503,19 @@
                         <!--end::Quick Example-->
 
                           <div class="col-md-12" style="height:250px;">
-    <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto;">
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
         <button
             style="
                 background-color: #28a745;
                 color: white;
-                padding: 10px 20px;
+                padding: 12px 24px;
                 border: none;
                 border-radius: 8px;
                 font-size: 16px;
                 font-weight: 600;
                 display: flex;
                 align-items: center;
-                gap: 8px;
+                gap: 10px;
                 cursor: pointer;
                 transition: all 0.3s ease;
             "
