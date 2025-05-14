@@ -307,7 +307,7 @@
             </button>
         </div>
     </div>
-</div>
+
 
 <!-- TABEL -->
 <div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
@@ -356,6 +356,9 @@
         tableBody.style.display = "table-row-group";
     });
 </script>
+
+</div>
+
 
 
                             <div class="flex flex-col gap-1">
