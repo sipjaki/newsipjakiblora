@@ -1,68 +1,76 @@
 <style>
     /* Gaya untuk tabel */
     .custom-table-container {
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        background: #fff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        border-radius: 20px;
-    }
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden; /* NONAKTIFKAN scroll horizontal */
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
 
-    .custom-fl-table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed; /* Membuat kolom lebih konsisten */
-        /* min-width: 700px; */
+.custom-fl-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Membuat kolom konsisten */
+}
+
+.custom-fl-table th,
+.custom-fl-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #998282;
+    text-align: center;
+    vertical-align: middle;
+    height: 48px; /* Tinggi baris tetap */
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.custom-fl-table th {
+    background-color: #4ADE80;
+    font-weight: 600;
+    color: #2d3436;
+    font-size: 14px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.custom-fl-table td {
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.5;
+}
+
+/* Zebra striping */
+.custom-fl-table tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+/* Hover effect */
+.custom-fl-table tbody tr:hover {
+    background-color: #e6ffe6;
+}
+
+/* NONAKTIFKAN scrollbar */
+.custom-table-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Responsif untuk layar kecil - opsional */
+@media (max-width: 768px) {
+    .custom-table-container {
+        padding: 10px;
     }
 
     .custom-fl-table th,
     .custom-fl-table td {
-        padding: 12px 15px;
-        border-bottom: 1px solid #998282;
-        text-align: left;
-        vertical-align: middle;
-        height: 48px; /* Tinggi baris tetap */
-        box-sizing: border-box;
+        font-size: 12px;
+        padding: 10px;
     }
+}
 
-    .custom-fl-table th {
-        background-color:#4ADE80;
-        font-weight: 600;
-        color: #2d3436;
-        font-size: 14px;
-        border-bottom: 2px solid #e0e0e0;
-    }
-
-    .custom-fl-table td {
-        font-size: 14px;
-        color: #000000;
-        line-height: 1.5;
-    }
-
-    /* Zebra striping untuk baris */
-    .custom-fl-table tbody tr:nth-child(even) {
-        background-color: #f7f7f7;
-    }
-
-    /* Hover effect */
-    .custom-fl-table tbody tr:hover {
-        background-color: #f7f7f7;
-    }
-
-    /* Scrollbar styling */
-    .custom-table-container::-webkit-scrollbar {
-        height: 6px;
-    }
-
-    .custom-table-container::-webkit-scrollbar-thumb {
-        background-color: #c0c0c0;
-        border-radius: 4px;
-    }
-
-    .custom-table-container::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
 </style>
 
 
@@ -118,7 +126,7 @@
         /* Card Styles */
         .certificate-card {
             width: 100%;
-            max-width: 550px;
+            max-width: 400px;
             background-color: white;
             border-radius: 12px;
             overflow: hidden;
@@ -258,38 +266,35 @@
         </div>
 
 
-        <!-- Wrapper agar konten selalu penuh halaman dan tidak menyebabkan scroll -->
-<div class="w-full h-screen flex items-center justify-center bg-gray-50 px-4">
-  <!-- Card container -->
-  <div class="w-full max-w-5xl bg-white shadow-md rounded-xl overflow-hidden">
-    <table class="w-full table-fixed border-collapse text-sm text-gray-700" id="sortableTable">
-      <thead class="bg-gray-100">
-        <tr>
-          <th onclick="sortTable(0)" class="w-[10%] text-center py-3 px-2 cursor-pointer">
-            <i class="bi bi-sort-alpha-down"></i> No
-          </th>
-          {{--
-          <th onclick="sortTable(1)" class="w-[40%] text-center py-3 px-2 cursor-pointer">
-            <i class="bi bi-building"></i> Pelatihan
-          </th>
-          --}}
-          <th onclick="sortTable(3)" class="w-[90%] text-center py-3 px-2 cursor-pointer">
-            <i class="bi bi-geo-alt"></i> Download Sertifikat
-          </th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <tr class="hover:bg-gray-50 border-t">
-          <td class="text-center py-2">1</td>
-          {{-- <td class="text-left py-2 capitalize">Percobaan</td> --}}
-          <td class="text-center py-2">
-            <a href="#" class="text-blue-600 hover:underline">Download</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+                        <div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
+                                <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
+                                    <thead>
+                                        <tr>
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center;">
+                                                <i class="bi bi-sort-alpha-down"></i> No
+                                            </th>
+                                            {{-- <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
+                                                <i class="bi bi-building"></i> Pelatihan
+                                            </th> --}}
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;">
+                                                <i class="bi bi-geo-alt"></i> Download Sertifikat
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tableBody">
+                                        {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
+                                        @foreach ($data as $item ) --}}
+                                        <tr>
+                                            <td style="text-align: center;">1</td>
+                                            {{-- <td style="text-transform: capitalize;">Percobaan</td> --}}
+                                            <td>Download</td>
+                                        </tr>
+                                        {{-- @endforeach --}}
+                                    </tbody>
+                                </table>
+                            </div>
+
+    </div>
 
 
 
