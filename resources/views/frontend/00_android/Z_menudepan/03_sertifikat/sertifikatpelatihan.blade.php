@@ -258,36 +258,38 @@
         </div>
 
 
-        <div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
-
-                                <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
-                                    <thead>
-                                        <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center;">
-                                                <i class="bi bi-sort-alpha-down"></i> No
-                                            </th>
-                                            {{-- <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
-                                                <i class="bi bi-building"></i> Pelatihan
-                                            </th> --}}
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;">
-                                                <i class="bi bi-geo-alt"></i> Download Sertifikat
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableBody">
-                                        {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
-                                        @foreach ($data as $item ) --}}
-                                        <tr>
-                                            <td style="text-align: center;">1</td>
-                                            {{-- <td style="text-transform: capitalize;">Percobaan</td> --}}
-                                            <td>Download</td>
-                                        </tr>
-                                        {{-- @endforeach --}}
-                                    </tbody>
-                                </table>
-                            </div>
-
-    </div>
+        <!-- Wrapper agar konten selalu penuh halaman dan tidak menyebabkan scroll -->
+<div class="w-full h-screen flex items-center justify-center bg-gray-50 px-4">
+  <!-- Card container -->
+  <div class="w-full max-w-5xl bg-white shadow-md rounded-xl overflow-hidden">
+    <table class="w-full table-fixed border-collapse text-sm text-gray-700" id="sortableTable">
+      <thead class="bg-gray-100">
+        <tr>
+          <th onclick="sortTable(0)" class="w-[10%] text-center py-3 px-2 cursor-pointer">
+            <i class="bi bi-sort-alpha-down"></i> No
+          </th>
+          {{--
+          <th onclick="sortTable(1)" class="w-[40%] text-center py-3 px-2 cursor-pointer">
+            <i class="bi bi-building"></i> Pelatihan
+          </th>
+          --}}
+          <th onclick="sortTable(3)" class="w-[90%] text-center py-3 px-2 cursor-pointer">
+            <i class="bi bi-geo-alt"></i> Download Sertifikat
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr class="hover:bg-gray-50 border-t">
+          <td class="text-center py-2">1</td>
+          {{-- <td class="text-left py-2 capitalize">Percobaan</td> --}}
+          <td class="text-center py-2">
+            <a href="#" class="text-blue-600 hover:underline">Download</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
 
