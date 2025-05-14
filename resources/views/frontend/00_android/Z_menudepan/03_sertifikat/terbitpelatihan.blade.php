@@ -535,34 +535,25 @@
     @include('frontend.00_android.00_fiturmenu.footer')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> --}}
-<style>
-#a4wrapper {
-    width: 842pt;   /* A4 landscape width in pt */
-    height: 595pt;  /* A4 landscape height in pt */
-    overflow: hidden;
-    position: relative;
-}
-
-#sertifikatPdf.scaled {
-    transform: scale(3);
-    transform-origin: top left;
-    transform-box: fill-box;
-}
-</style>
-
 <script>
 function downloadPDF() {
-    const element = document.getElementById('a4wrapper');
+    const element = document.getElementById('sertifikatPdf');
 
     const opt = {
-        margin: 0,
-        filename: 'sertifikat_pelatihan_blora.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-            scale: 1, // biarkan karena kita pakai transform: scale
-            useCORS: true
+        margin:       [10, 10, 10, 10], // top, left, bottom, right dalam pt
+        filename:     'sertifikat_pelatihan_blora.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  {
+            scale: 3, // lebih besar dari sebelumnya (2.2)
+            useCORS: true,
+            dpi: 200,
+            letterRendering: true,
+            scrollX: 0,
+            scrollY: 0,
+            windowWidth: 1600 // untuk bantu hitung ulang ukuran viewport
         },
-        jsPDF: { unit: 'pt', format: 'a4', orientation: 'landscape' }
+        jsPDF:        { unit: 'pt', format: 'a4', orientation: 'landscape' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
     html2pdf().set(opt).from(element).save();
