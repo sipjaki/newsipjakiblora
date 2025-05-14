@@ -276,66 +276,84 @@
         }
     </style>
 
+
+{{-- ----------------------------------------------------------------------------------------------------- --}}
 <div class="certificate-card">
-        <div class="card-header">
-            <h4>Masukkan NIK & Download Sertifikat</h4>
+    <div class="card-header">
+        <h4>Masukkan NIK & Download Sertifikat</h4>
+    </div>
+    <div class="card-body">
+        <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
+
+        <div class="example-box">
+            <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
         </div>
-        <div class="card-body">
-    <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
 
-    <div class="example-box">
-        <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
+        <div class="form-group" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; height: 100px;">
+            <input
+                type="text"
+                id="nikInput"
+                class="nik-input"
+                placeholder="Masukkan NIK Anda"
+                style="padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; width: 100%; box-sizing: border-box;"
+            >
+            <button
+                id="cekButton"
+                class="check-button"
+                style="padding: 12px; background-color: #4ADE80; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px;"
+            >
+                Cek
+            </button>
+        </div>
     </div>
-
-    <div class="form-group" style="display: flex; flex-direction: column; gap: 12px; max-width: 400px; height: 100px;">
-    <input
-        type="text"
-        class="nik-input"
-        placeholder="Masukkan NIK Anda"
-        style="padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; width: 100%; box-sizing: border-box;"
-    >
-    <button
-        class="check-button"
-        style="padding: 12px; background-color: #4ADE80; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px;"
-    >
-        Cek
-    </button>
 </div>
 
+<!-- Table -->
+<div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
+    <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
+        <thead>
+            <tr>
+                <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;">
+                    <i class="bi bi-geo-alt"></i> Download Sertifikat
+                </th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Data Sertifikat akan ditampilkan di sini -->
+        </tbody>
+    </table>
 </div>
 
+<script>
+    // Dummy data sertifikat
+    const sertifikatData = {
+        '3201XXXXXXXXXXXX': true, // NIK yang valid untuk sertifikat
+        // NIK lainnya bisa ditambahkan sesuai data yang ada
+    };
 
-                        <div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
-                                <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
-                                    <thead>
-                                        <tr>
-                                            {{-- <th onclick="sortTable(0)" style="cursor:pointer; text-align:center;">
-                                                <i class="bi bi-sort-alpha-down"></i> No
-                                            </th> --}}
-                                            {{-- <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
-                                                <i class="bi bi-building"></i> Pelatihan
-                                            </th> --}}
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;">
-                                                <i class="bi bi-geo-alt"></i> Download Sertifikat
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableBody">
-                                        {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
-                                        @foreach ($data as $item ) --}}
-                                        <tr>
-                                            {{-- <td style="text-align: center;">1</td> --}}
-                                            {{-- <td style="text-transform: capitalize;">Percobaan</td> --}}
-                                            <td>Download</td>
-                                        </tr>
-                                        {{-- @endforeach --}}
-                                    </tbody>
-                                </table>
-                            </div>
+    // Ketika tombol Cek ditekan
+    document.getElementById("cekButton").addEventListener("click", function() {
+        const nik = document.getElementById("nikInput").value.trim();
+        const tableBody = document.getElementById("tableBody");
 
-    </div>
-
-
+        // Cek apakah NIK ada dan sudah terbit sertifikatnya
+        if (nik && sertifikatData[nik]) {
+            // Jika ada sertifikat, tampilkan tombol Download
+            tableBody.innerHTML = `
+                <tr>
+                    <td style="text-align:center;">Download</td>
+                </tr>
+            `;
+        } else {
+            // Jika tidak ada sertifikat, tampilkan pesan
+            tableBody.innerHTML = `
+                <tr>
+                    <td style="text-align:center; color: red;">Sertifikat Belum Di Terbitkan !</td>
+                </tr>
+            `;
+        }
+    });
+</script>
 
 
                             <div class="flex flex-col gap-1">
