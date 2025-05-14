@@ -37,42 +37,146 @@
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
                                 <div class="flex justify-center px-4 mt-[-150px]">
+                                    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Sertifikat dengan NIK</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<div class="flex items-center justify-center min-h-screen bg-gray-50 p-4">
-  <div class="w-full max-w-md bg-white rounded-lg shadow-md overflow-hidden border-2 border-green-500"> <!-- Border hijau ditambahkan -->
-    <div class="bg-green-600 py-4 px-6"> <!-- Warna diubah jadi hijau -->
-      <h1 class="text-xl font-bold text-white text-center">Masukkan NIK dan Cek Sertifikat</h1> <!-- Redaksi diubah -->
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .certificate-card {
+            width: 100%;
+            max-width: 480px;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 2px solid #28a745;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .instruction-text {
+            color: #6c757d;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 12px 15px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .example-box svg {
+            margin-right: 10px;
+            color: #2e7d32;
+            min-width: 18px;
+        }
+
+        .example-text {
+            color: #2e7d32;
+            font-size: 0.85rem;
+        }
+
+        .input-group {
+            display: flex;
+            width: 100%;
+        }
+
+        .nik-input {
+            flex: 1;
+            padding: 14px 16px;
+            border: 1px solid #ced4da;
+            border-radius: 8px 0 0 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .nik-input:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+        }
+
+        .check-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 0 24px;
+            border-radius: 0 8px 8px 0;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .check-button:hover {
+            background-color: #218838;
+        }
+    </style>
+
+<div class="certificate-card">
+        <div class="card-header">
+            <h1>Masukkan NIK dan Cek Sertifikat</h1>
+        </div>
+        <div class="card-body">
+            <p class="instruction-text">Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda</p>
+
+            <div class="example-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd" />
+                </svg>
+                <span class="example-text">Contoh: 3201XXXXXXXXXXXX</span>
+            </div>
+
+            <div class="input-group">
+                <input type="text" class="nik-input" placeholder="Masukkan NIK Anda">
+                <button class="check-button">Cek</button>
+            </div>
+        </div>
     </div>
-
-    <div class="p-6 space-y-4">
-      <p class="text-gray-600 text-center text-sm">
-        Gunakan Nomor Induk Kependudukan untuk mengecek sertifikat Anda
-      </p>
-
-      <div class="bg-green-50 border-l-4 border-green-400 p-3 mb-4"> <!-- Warna diubah jadi hijau -->
-        <p class="text-green-700 text-sm flex items-center">
-          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clip-rule="evenodd"></path>
-          </svg>
-          Contoh: 3201234567890123
-        </p>
-      </div>
-
-      <div class="flex">
-        <input
-          type="text"
-          placeholder="Masukkan NIK Anda"
-          class="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
-        />
-        <button
-          class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-r-lg font-medium transition duration-200"
-        >
-          Cek
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
                             <div class="flex flex-col gap-1">
