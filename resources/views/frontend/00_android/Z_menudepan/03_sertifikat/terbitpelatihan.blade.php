@@ -418,7 +418,6 @@
                                 <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
                                     <div style="transform: scale(0.3); transform-origin: top left;">
                                         <div class="cert-container">
-                            <div class="cert-header" style="text-align: center;">
                                 <!-- Logo di atas -->
                                 <div class="cert-logos" style="margin-bottom: 10px;">
                                     <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
