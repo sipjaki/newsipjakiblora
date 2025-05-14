@@ -339,7 +339,7 @@ table.zebra-table {
                class="form-control @error('skkanda') is-invalid @enderror">
         <br>
         <p style="text-align: left; font-size:13px; margin:0; color:navy;"><span style="color: navy; font-size:13px;">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !!</span> </p>
-        <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small>
+        {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
         {{-- Preview --}}
@@ -459,7 +459,7 @@ table.zebra-table {
                                             </option>
                                         @endforeach
                                     </select>
-                               <p style="font-size: 13px;">Ket: Jika Data Tidak Ada, Silahkan Klik Icon Ini <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a></p>
+                               <p style="font-size: 13px; color:navy; text-align:left;">Ket: Jika Data Tidak Ada, Silahkan Klik Icon Ini <a href="https://wa.me/6281326277717" target="_blank"><i class="bi bi-whatsapp"></i></a></p>
                                     @error('namasekolah_id') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
@@ -490,7 +490,7 @@ table.zebra-table {
                                         <i class="bi bi-geo-alt" style="color: navy;"></i> Tempat Lahir
                                     </label>
                                     <input type="text" name="tempatlahir" style="{{ $inputStyle }}" class="@error('tempatlahir') is-invalid @enderror" value="{{ old('tempatlahir') }}">
-                                    <span style="color: navy; font-size:13px;">Contoh : Blora </span>
+                                    <span style="color: navy; font-size:13px; text-align:left;">Contoh : Blora </span>
                                     @error('tempatlahir') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
@@ -919,7 +919,7 @@ function previewFile(previewId, input) {
            style="{{ $inputStyle }}"
            class="form-control @error('skkanda') is-invalid @enderror">
     <br>
-    <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small>
+    {{-- <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small> --}}
     @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
     <div id="preview_pdf" style="display: none; margin-top: 10px; margin-bottom:-200px;">
