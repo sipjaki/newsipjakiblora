@@ -404,16 +404,12 @@
                                 <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
                                 <p style="margin: 0;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
-
                                 <div style="display: flex; justify-content: flex-end; margin-right: -125px;"> <!-- Tambah ini -->
                                     <div style="position: relative; width: 400px; height: 100px;">
                                         <img src="/assets/icon/ttdpahuda.png" alt="" width="250px;" style="position: absolute; top: 0; left: 0; z-index: 1;">
                                         <img src="/assets/icon/ttdkabblora.png" alt="" width="115px;" style="position: absolute; top: 0; left: 50px; z-index: 2;">
                                     </div>
                                 </div>
-
-
-
                                 <p style="margin: 0;"><strong>NIDZAMUDIN AL HUDAA, ST</strong></p>
                                 {{-- <p>PEKBINA UTAMA MADYA</p> --}}
                                 <p style="margin: 0;">NIP. 19720326 200604 1 005</p>
@@ -423,18 +419,8 @@
                         </div>
                     </div>
                         <!--end::Quick Example-->
-<br><br>
 
-                    </div>
-
-                    <br><br>
-                    <!-- /.card -->
-                    <!-- Button Section -->
-
-
-
-                            <div class="flex flex-col gap-1">
-                        {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p> --}}
+<br>
 
 <div class="col-md-12">
     <div class="cert-container" style="position: relative; padding-bottom: 80px;">
@@ -511,6 +497,13 @@
         </div>
     </div>
 </div>
+
+
+</div>
+
+
+                            <div class="flex flex-col gap-1">
+                        {{-- <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p> --}}
 
                             </div>
                             </div>
