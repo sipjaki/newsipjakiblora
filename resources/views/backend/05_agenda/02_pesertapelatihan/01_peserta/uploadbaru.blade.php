@@ -321,7 +321,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
 
                             </div>
 
-                            <div class="cert-signature">
+                            <div class="cert-signature" style="margin-top: -10px;">
                                 <p style="margin: 0;"><strong>Kabupaten Blora, {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}</strong> </p>
                                 <p style="margin: 0;"><strong>Plt. KEPALA DINAS <br> PEKERJAAN UMUM DAN PENATAAN RUANG</strong></p>
                                 <p style="margin: 0;"><strong>KABUPATEN BLORA</strong></p>
