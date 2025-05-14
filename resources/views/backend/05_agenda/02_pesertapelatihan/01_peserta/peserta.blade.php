@@ -385,7 +385,7 @@
                 <i class="bi bi-file-earmark-arrow-up" style="font-size: 1.2rem; color: white;"></i> SERTIFIKAT
             </a>
         @else
-            <span style="background-color: #e20000; color: #e20000; padding: 8px 16px; border-radius: 8px; font-weight: 600;
+            <span style="background-color: #e20000; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 600;
                          display: inline-flex; align-items: center; gap: 6px; font-size: 14px;">
                 <i class="bi bi-file-earmark-arrow-up" style="font-size: 1.2rem; color: #999;"></i> TIDAK ADA SERTIFIKAT
             </span>
