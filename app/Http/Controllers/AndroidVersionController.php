@@ -1342,7 +1342,7 @@ public function resdaftarpelatihanpesertaskk($id)
     {
         $user = Auth::user();
 
-        return view('frontend.00_android.Z_menudepan.index', [
+        return view('frontend.00_android.Z_menudepan.03_sertifikat.index', [
         'title' => 'Download Sertifikat',
         'user' => $user,
     ]);
