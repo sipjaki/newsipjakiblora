@@ -257,7 +257,7 @@
             </div>
         </div>
             <div class="custom-table-container">
-                                <table class="custom-fl-table" id="sortableTable">
+                                <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
                                     <thead>
                                         <tr>
                                             <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
