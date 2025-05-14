@@ -519,7 +519,9 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                 <tr style="background-color: #f3f4f6;">
                     <th style="padding: 12px; border: 1px solid #d1d5db;">No</th>
                     <th style="padding: 12px; border: 1px solid #d1d5db;">Nama Peserta</th>
-                    <th style="padding: 12px; border: 1px solid #d1d5db;">NIK</th>
+                    <td style="padding: 12px; border: 1px solid #d1d5db;">
+                        {{ substr($peserta->nik, 0, 4) . 'XXX...' }}
+                    </td>
                     <th style="padding: 12px; border: 1px solid #d1d5db;">Download</th>
                 </tr>
             </thead>
