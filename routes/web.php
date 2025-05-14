@@ -871,7 +871,7 @@ Route::get('/bepesertapelatihansertifikat/show/{id}', [PesertapelatihanControlle
     ->middleware('auth')
     ->name('bepesertauploadsertifikat.show');
 
-Route::get('/bepesertapuploadsertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikat'])->middleware('auth')->name('bepesertauploadsertifikat.show1');
+Route::get('/bepesertapuploadsertifikat/show/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikat'])->name('bepesertauploadsertifikat.show1');
 
 Route::post('/bepesertapuploadsertifikat/create/{id}', [PesertapelatihanController::class, 'bepesertauploadsertifikatupload'])->middleware('auth')->name('bepesertauploadsertifikatupload');
 
