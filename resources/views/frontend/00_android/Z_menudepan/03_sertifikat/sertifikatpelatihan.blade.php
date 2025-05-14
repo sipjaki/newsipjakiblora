@@ -270,9 +270,9 @@
                                 <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center;">
+                                            {{-- <th onclick="sortTable(0)" style="cursor:pointer; text-align:center;">
                                                 <i class="bi bi-sort-alpha-down"></i> No
-                                            </th>
+                                            </th> --}}
                                             {{-- <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
                                                 <i class="bi bi-building"></i> Pelatihan
                                             </th> --}}
@@ -285,7 +285,7 @@
                                         {{-- @php $start = ($data->currentPage() - 1) * $data->perPage() + 1; @endphp
                                         @foreach ($data as $item ) --}}
                                         <tr>
-                                            <td style="text-align: center;">1</td>
+                                            {{-- <td style="text-align: center;">1</td> --}}
                                             {{-- <td style="text-transform: capitalize;">Percobaan</td> --}}
                                             <td>Download</td>
                                         </tr>
