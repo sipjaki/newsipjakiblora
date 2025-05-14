@@ -14,7 +14,7 @@
 
 .custom-fl-table {
     width: 100%;
-    max-width: 200px;
+    max-width: 250px;
     border-collapse: collapse;
     table-layout: fixed; /* Membuat kolom konsisten */
 }
