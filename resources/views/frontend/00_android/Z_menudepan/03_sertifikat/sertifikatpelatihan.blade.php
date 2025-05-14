@@ -527,6 +527,7 @@ clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
                 <!-- Diisi oleh JavaScript -->
             </tbody>
         </table>
+        <P>Silahkan Geser Ke Kanan !</P>
     </div>
 </div>
 
@@ -591,9 +592,6 @@ document.getElementById("cekButton").addEventListener("click", function () {
                             Download Sertifikat
                         </a>
                     </td>
-                    <br>
-                    <p>Silahkan Geser Ke Kanan !</p>
-
                 `;
                 tbody.appendChild(row);
             });
