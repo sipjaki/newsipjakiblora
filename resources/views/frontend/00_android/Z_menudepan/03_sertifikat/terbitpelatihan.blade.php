@@ -322,7 +322,6 @@
 
                         <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-                        <div id="sertifikat-content">
                             <div class="col-md-12" style="height:400px;">
                                     <div class="cert-container">
                                         <div class="cert-header" style="text-align: center;">
@@ -387,7 +386,6 @@
                                                     </div>
                                         </div>
                                     </div>
-                                        </div>
 
 
 
@@ -395,7 +393,6 @@
 
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
-                                <div id="sertifikat-content">
                                 <div class="col-md-12" style="height:400px;">
                                         <div class="cert-container">
                                                 <div class="cert-header" style="text-align: center;">
@@ -510,19 +507,23 @@
                                         <div class="ribbon-left">
 
                                         </div>
-                                        <div class="ribbon-text">
-                                            <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
-                                                                            {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
+                                    <div class="ribbon-text">
+                                        <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
+                                                                        {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
 
-                                            <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                                            <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                            </p>
-                                        </div>
+                                        <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
+                                        <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                                        </p>
+                                    </div>
+
+                            {{-- <div class="ribbon-right"></div> --}}
+                        </div>
+                    </div>
+                        <!--end::Quick Example-->
 
 
-                                      </div>
-                                </div>
-                            </div>
+                    </div>
+                    </div>
 
                                              <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
                                                     <button onclick="downloadSertifikat()">
@@ -535,6 +536,8 @@
 
 
                             </div>
+
+
                     </div>
 
                         @include('frontend.00_android.00_fiturmenu.keterangan')
