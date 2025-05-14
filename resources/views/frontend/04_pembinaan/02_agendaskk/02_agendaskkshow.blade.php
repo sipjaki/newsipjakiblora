@@ -192,7 +192,19 @@
                         <div class="col-lg-8">
                             <div class="news-details-box-image">
                                 <div class="news-details-box-image-inner">
-                                    <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid" alt="img-193">
+                                    {{-- <img src="{{ asset('storage/' . $data->foto) }}" class="img-fluid" alt="img-193"> --}}
+                                     <div style="margin-top: 10px;">
+    @if($data->foto && file_exists(public_path('storage/' . $data->foto)))
+        <!-- Menampilkan gambar dari storage -->
+        <img src="{{ asset('storage/' . $data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+    @elseif($data->foto)
+        <!-- Menampilkan gambar dari path luar storage -->
+        <img src="{{ asset($data->foto) }}" alt="Gambar Peraturan" style="width: 100%; max-height: 300px; object-fit: contain;" loading="lazy">
+    @else
+        <!-- Placeholder jika tidak ada data -->
+        <p>Data belum diupdate</p>
+    @endif
+</div>
                                     <a href="news-details.html" class="news-details-box-date">
                                         {{ \Carbon\Carbon::parse($data->waktupelaksanaan)->translatedFormat('l, d F Y') }}
                                     </a>
