@@ -575,22 +575,7 @@ table.zebra-table {
                                     @error('jeniskelamin') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
 
-
-<!-- Alamat -->
-                                <div class="col-md-12" style="{{ $divStyle }}">
-                                    <label class="form-label" style="{{ $labelStyle }}">
-                                        <i class="bi bi-house" style="color: navy;"></i> Alamat
-                                    </label>
-                                    <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
-                           <p style="text-align: left; font-size:13px; color: navy; margin: 0;">
-                                Ket: Mohon diisi sesuai dengan alamat KTP Saudara!
-                            </p>
-                                @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
-
-                                </div>
-                            </div>
-
-                                    <!-- Nomor Telepon -->
+                                <!-- Nomor Telepon -->
                                 <div class="col-md-6" style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }}">
                                         <i class="bi bi-telephone" style="color: navy;"></i> Nomor Telepon
@@ -627,7 +612,19 @@ table.zebra-table {
                                     <input type="number" name="tahunlulus" style="{{ $inputStyle }}" class="@error('tahunlulus') is-invalid @enderror" value="{{ old('tahunlulus') }}">
                                     @error('tahunlulus') <div class="invalid-feedback">{{ $message }}</div> @enderror
                                 </div>
+<!-- Alamat -->
+                                <div class="col-md-12" style="{{ $divStyle }}">
+                                    <label class="form-label" style="{{ $labelStyle }}">
+                                        <i class="bi bi-house" style="color: navy;"></i> Alamat
+                                    </label>
+                                    <textarea name="alamat" rows="4" style="{{ $inputStyle }}" class="@error('alamat') is-invalid @enderror">{{ old('alamat') }}</textarea>
+                           <p style="text-align: left; font-size:13px; color: navy; margin: 0;">
+                                Ket: Mohon diisi sesuai dengan alamat KTP Saudara!
+                            </p>
+                                @error('alamat') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
+                                </div>
+                            </div>
                         </div>
 
                         <div class="col-12">
