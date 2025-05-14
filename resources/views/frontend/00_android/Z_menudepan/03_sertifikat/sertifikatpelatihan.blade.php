@@ -260,13 +260,13 @@
                                 <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
                                     <thead>
                                         <tr>
-                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:100px;">
+                                            <th onclick="sortTable(0)" style="cursor:pointer; text-align:center; width:50px;">
                                                 <i class="bi bi-sort-alpha-down"></i> No
                                             </th>
-                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:300px;">
+                                            <th onclick="sortTable(1)" style="cursor:pointer; text-align:center; width:200px;">
                                                 <i class="bi bi-building"></i> Pelatihan
                                             </th>
-                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:800px;">
+                                            <th onclick="sortTable(3)" style="cursor:pointer; text-align:center; width:200px;">
                                                 <i class="bi bi-geo-alt"></i> Download Sertifikat
                                             </th>
                                             {{-- <th onclick="sortTable(5)" style="cursor:pointer; text-align:center; width:200px;">
