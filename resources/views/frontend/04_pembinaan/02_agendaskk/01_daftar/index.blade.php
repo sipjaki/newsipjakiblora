@@ -539,7 +539,7 @@ table.zebra-table {
 
                         </div>
 
-                        <div class="col-md-12" style="{{ $divStyle }}">
+                        <div class="col-md-6" style="{{ $divStyle }}">
                                     <label class="form-label" style="{{ $labelStyle }}">
                                         <i class="bi bi-house" style="color: navy;"></i> Alamat
                                     </label>
