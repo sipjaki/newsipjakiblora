@@ -502,15 +502,30 @@
                     </div>
                         <!--end::Quick Example-->
 
-                            <div class="col-md-12" style="height:250px;">
-                                <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto;">
-
-                                            <button>
-                                                download file
-                                            </button>
-
-                                </div>
-                            </div>
+                          <div class="col-md-12" style="height:250px;">
+    <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto;">
+        <button
+            style="
+                background-color: #28a745;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            "
+            onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000';"
+            onmouseout="this.style.backgroundColor='#28a745'; this.style.color='#fff';"
+        >
+            <i class="bi bi-download"></i> Download File
+        </button>
+    </div>
+</div>
 
 
                         </div>
