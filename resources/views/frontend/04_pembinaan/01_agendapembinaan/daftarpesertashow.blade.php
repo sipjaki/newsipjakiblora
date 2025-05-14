@@ -196,7 +196,7 @@ table.zebra-table {
                             <th onclick="sortTable(3)" style="cursor:pointer; text-align:center;">
                                 <i class="bi bi-building me-1"></i> Instansi/Universitas/Lembaga/Perseorangan/BUJK
                             </th>
-                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center;">
+                            <th onclick="sortTable(4)" style="cursor:pointer; text-align:center;" style="width: 300px;">
                                 <i class="bi bi-check2-circle me-1"></i> Verifikasi
                             </th>
                         </tr>
