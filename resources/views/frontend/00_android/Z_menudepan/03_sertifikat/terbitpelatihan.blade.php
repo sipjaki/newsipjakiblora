@@ -206,7 +206,7 @@
         transform: scale(0.5);
         transform-origin: top left;
         width: 170vw;
-        height: auto;
+        /* height: auto; */
         margin-left: 0;
         padding: 10px;
         box-shadow: none;
