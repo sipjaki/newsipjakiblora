@@ -358,7 +358,7 @@
                                 <h2 class="cert-h2">Nomor : DPUPR/BG/TKK/V/{{$data->id}}</h2>
                             </div>
 
-                            <div class="cert-content">
+                            <div class="cert-content" style="margin-top: -10px;">
                                 <p style="text-align: center;">diberikan kepada</p>
 
                                 <h2 class="cert-h2" style="text-align: center; margin: 20px 0;">{{ strtoupper($data->namalengkap) }}</h2>
