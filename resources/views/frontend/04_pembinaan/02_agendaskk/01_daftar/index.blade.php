@@ -338,7 +338,7 @@ table.zebra-table {
                style="{{ $inputStyle }}"
                class="form-control @error('skkanda') is-invalid @enderror">
         <br>
-        <p>Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu di Upload di halaman ini !! </p>
+        <p style="text-align: left;">Ket : Jika Saudara memiliki lebih dari 1 Sertifikat SKK, mohon untuk menggabungkan hasil screenshot SKK Saudara lalu Upload di halaman ini !! </p>
         <small class="form-text text-muted" style="font-size: 12px;">Format: PDF, maksimal 5MB</small>
         @error('skkanda') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
