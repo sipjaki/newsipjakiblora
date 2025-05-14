@@ -253,6 +253,73 @@
 }
 </style>
 
+<style>
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.custom-table thead tr th {
+    background: linear-gradient(135deg, #4caf50, #ffb300);
+    color: white;
+}
+
+.table-row-hover:hover {
+    background-color: #f7fafc;
+    transition: background-color 0.3s ease;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.custom-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.custom-table td {
+    color: #333;
+}
+
+.ribbon-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #2e7d32, #d4af37);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+    padding: 15px 20px;
+    color: #fff;
+    z-index: 2;
+}
+
+.ribbon-left .ribbon-text h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ribbon-left .ribbon-text p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+</style>
+
+
 
 @include('frontend.00_android.00_fiturmenu.header')
 
@@ -288,8 +355,8 @@
                 </nav>
             </div>
 
-                    <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
 
+                    <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
                             <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
 
                     <div class="col-md-12">
@@ -359,133 +426,81 @@
 <br><br>
 
                                 {{-- ======================================================= --}}
-                    <div class="col-md-12">
-                        <div class="cert-container">
-                            <div class="cert-header" style="text-align: center;">
-                                <!-- Logo di atas -->
-                                <div class="cert-logos" style="margin-bottom: 10px;">
-                                    <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
-                                    <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
-                                </div>
-                            </div>
+<div class="col-md-12">
+    <div class="cert-container" style="position: relative; padding-bottom: 80px;">
+        <div class="cert-header" style="text-align: center;">
+            <!-- Logo di atas -->
+            <div class="cert-logos" style="margin-bottom: 10px;">
+                <img src="/assets/icon/logokabupatenblora.png" width="70" height="70" alt="Blora" style="margin-right: 2px;">
+                <img src="/assets/icon/pupr.png" width="70" height="70" alt="PUPR">
+            </div>
+        </div>
 
-                            <hr class="cert-hr" style="margin-top: -5px;">
+        <hr class="cert-hr" style="margin-top: -5px;">
 
-                            <div class="cert-title" style="margin-top: -10px;">
-                                <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">Agenda Pelatihan : <br>{{$data->agendapelatihan->namakegiatan}}</h2>
-                            </div>
+        <div class="cert-title" style="margin-top: -10px;">
+            <h2 class="cert-h2" style="text-align: center; margin: 15px 0; font-weight:800;">
+                Agenda Pelatihan : <br>{{ $data->agendapelatihan->namakegiatan }}
+            </h2>
+        </div>
 
-                            <div class="cert-content">
-                                <div class="table-container">
-                                    <table class="custom-table">
-                                        <thead>
-                                            <tr>
-                                                <th style="font-size: 15px;" width="10%">No</th>
-                                                <th style="font-size: 15px;" width="40%">Materi</th>
-                                                <th style="font-size: 15px;" width="30%">Narasumber</th>
-                                                <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @php
-                                                $totalJam = 0; // Menyimpan total jam pelajaran
-                                            @endphp
-                                            @forelse ($datapelajaran as $key => $pelajaran)
-                                            <tr class="table-row-hover">
-                                                <td style="font-size: 15px;">{{ $key + 1 }}</td>
-                                                <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
-                                                <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
-                                                <td style="font-size: 15px; text-align:center;">
-                                                    {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
-                                                </td>
-                                            </tr>
-                                            @php
-                                                $totalJam += (int) ($pelajaran->jampelajaran ?? 0); // Menambahkan jam pelajaran ke total
-                                            @endphp
-                                            @empty
-                                            <tr>
-                                                <td colspan="4">Data tidak tersedia.</td>
-                                            </tr>
-                                            @endforelse
-                                        </tbody>
-                                        <!-- Baris penjumlahan total jam pelajaran -->
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
-                                                    <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
-                                                </td>
-                                                <td style="font-size: 15px; text-align:center; font-weight: bold;">
-                                                    {{ $totalJam }} Jam
-                                                </td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
+        <div class="cert-content">
+            <div class="table-container">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th style="font-size: 15px;" width="10%">No</th>
+                            <th style="font-size: 15px;" width="40%">Materi</th>
+                            <th style="font-size: 15px;" width="30%">Narasumber</th>
+                            <th style="font-size: 15px;" width="20%">Jam Pelajaran</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php $totalJam = 0; @endphp
+                        @forelse ($datapelajaran as $key => $pelajaran)
+                        <tr class="table-row-hover">
+                            <td style="font-size: 15px;">{{ $key + 1 }}</td>
+                            <td style="font-size: 15px;">{{ $pelajaran->materi ?? 'Data Tidak Tersedia' }}</td>
+                            <td style="font-size: 15px;">{{ $pelajaran->narasumber ?? 'Data Tidak Tersedia' }}</td>
+                            <td style="font-size: 15px; text-align:center;">
+                                {{ $pelajaran->jampelajaran ?? 'Data Tidak Tersedia' }} Jam
+                            </td>
+                        </tr>
+                        @php
+                            $totalJam += (int) ($pelajaran->jampelajaran ?? 0);
+                        @endphp
+                        @empty
+                        <tr>
+                            <td colspan="4">Data tidak tersedia.</td>
+                        </tr>
+                        @endforelse
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="font-size: 15px; text-align: right; font-weight: bold;">
+                                <i class="bi bi-calendar" style="margin-right: 8px;"></i>Total Jam Pelajaran :
+                            </td>
+                            <td style="font-size: 15px; text-align:center; font-weight: bold;">
+                                {{ $totalJam }} Jam
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
 
-                                    <style>
-                                        /* Styling untuk tabel */
-                                        .custom-table {
-                                            width: 100%;
-                                            border-collapse: collapse;
-                                            margin-top: 20px;
-                                            font-size: 16px;
-                                            border: 1px solid #ddd;
-                                            border-radius: 10px; /* Border radius pada luar tabel */
-                                            overflow: hidden; /* Supaya border-radius terlihat di sudut luar */
-                                        }
-
-                                        .custom-table th,
-                                        .custom-table td {
-                                            padding: 10px 20px;
-                                            text-align: left;
-                                            font-size: 16px;
-                                        }
-
-                                        /* Gradasi hijau dan emas untuk header */
-                                        .custom-table thead tr th {
-                                            background: linear-gradient(135deg, #4caf50, #ffb300); /* Gradasi hijau ke emas */
-                                            color: white;
-                                        }
-
-                                        /* Hover effect pada row */
-                                        .table-row-hover:hover {
-                                            background-color: #f7fafc;
-                                            transition: background-color 0.3s ease;
-                                        }
-
-                                        /* Styling row ganjil dan genap */
-                                        .custom-table tr:nth-child(even) {
-                                            background-color: #f9fafb;
-                                        }
-
-                                        .custom-table tr:nth-child(odd) {
-                                            background-color: #ffffff;
-                                        }
-
-                                        .custom-table td {
-                                            color: #333;
-                                        }
-                                    </style>
-                                </div>
-
-                            </div>
-
-
-                            <div class="ribbon-left">
-
-                            </div>
-                            <div class="ribbon-text">
-                                <h4 style="text-transform: uppercase;">{{ strtoupper($data->namalengkap) }}</h4>
-                                                                {{-- <h4 class="carved-text">Miftahunnuril Anam, S.E</h4> --}}
-
-                                <p> Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora
-                                <br> Diterbitkan Pada : {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
-                                </p>
-                            </div>
-
-                            {{-- <div class="ribbon-right"></div> --}}
-                        </div>
-                    </div>
-                        <!--end::Quick Example-->
+        <!-- Ribbon -->
+        <div class="ribbon-left">
+            <div class="ribbon-text">
+                <h4>{{ strtoupper($data->namalengkap) }}</h4>
+                <p>
+                    Dinas Pekerjaan Umum Dan Penataan Ruang Kabupaten Blora<br>
+                    Diterbitkan Pada: {{ \Carbon\Carbon::parse($data->agendapelatihan->waktupelaksanaan)->locale('id')->isoFormat('D MMMM YYYY') }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 
                     </div>
