@@ -278,6 +278,7 @@
 
 
 {{-- ----------------------------------------------------------------------------------------------------- --}}
+
 <div class="certificate-card">
     <div class="card-header">
         <h4>Masukkan NIK & Download Sertifikat</h4>
@@ -308,7 +309,7 @@
     </div>
 </div>
 
-<!-- Table -->
+<!-- TABEL -->
 <div class="w-full bg-white shadow-md rounded-xl overflow-hidden">
     <table class="custom-fl-table" id="sortableTable" style="margin: 20px 20px;">
         <thead>
@@ -318,8 +319,8 @@
                 </th>
             </tr>
         </thead>
-        <tbody id="tableBody">
-            <!-- Data Sertifikat akan ditampilkan di sini -->
+        <tbody id="tableBody" style="display: none;">
+            <!-- Baris akan dimunculkan di sini -->
         </tbody>
     </table>
 </div>
@@ -327,31 +328,32 @@
 <script>
     // Dummy data sertifikat
     const sertifikatData = {
-        '3201XXXXXXXXXXXX': true, // NIK yang valid untuk sertifikat
-        // NIK lainnya bisa ditambahkan sesuai data yang ada
+        '3201123456789012': true // NIK valid
     };
 
-    // Ketika tombol Cek ditekan
-    document.getElementById("cekButton").addEventListener("click", function() {
+    document.getElementById("cekButton").addEventListener("click", function () {
         const nik = document.getElementById("nikInput").value.trim();
         const tableBody = document.getElementById("tableBody");
 
-        // Cek apakah NIK ada dan sudah terbit sertifikatnya
+        // Kosongkan isi sebelumnya
+        tableBody.innerHTML = "";
+
         if (nik && sertifikatData[nik]) {
-            // Jika ada sertifikat, tampilkan tombol Download
             tableBody.innerHTML = `
                 <tr>
                     <td style="text-align:center;">Download</td>
                 </tr>
             `;
         } else {
-            // Jika tidak ada sertifikat, tampilkan pesan
             tableBody.innerHTML = `
                 <tr>
-                    <td style="text-align:center; color: red;">Sertifikat Belum Di Terbitkan !</td>
+                    <td style="text-align:center; color:red;">Sertifikat Belum Di Terbitkan!</td>
                 </tr>
             `;
         }
+
+        // Tampilkan tbody setelah tombol cek ditekan
+        tableBody.style.display = "table-row-group";
     });
 </script>
 
