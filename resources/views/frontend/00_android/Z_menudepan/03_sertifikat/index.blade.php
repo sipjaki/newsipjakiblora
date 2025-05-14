@@ -16,7 +16,12 @@
                     <div class="flex flex-col items-center justify-center text-center">
                         <p class="font-semibold text-xl text-white">Dinas Pekerjaan Umum Dan Penataan Ruang <br> Kabupaten Blora</p>
                         <br>
-                        <p class="font-semibold text-xl text-white">{{$title}}</p>
+                        {{-- <p class="font-semibold text-xl text-white">{{$title}}</p> --}}
+                      <div class="z-10" style="margin-top:25px; background-color: rgba(255, 255, 255, 0.6); border-radius: 10px; padding: 20px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <h1 class="font-bold leading-[36px] text-center" style="color: black; font-size:20px;">
+                {{$title}}
+            </h1>
+        </div>
                     </div>
 
                     <!-- Ikon bagian kanan -->
