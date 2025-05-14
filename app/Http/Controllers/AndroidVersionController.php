@@ -1365,7 +1365,7 @@ public function resdaftarpelatihanpesertaskk($id)
 {
     $nik = $request->nik;
 
-    $data = pesertapelatihan::with(['agendapelatihan.asosiasimasjaki', 'datapelajaran'])
+    $data = pesertapelatihan::with(['agendapelatihan.jampelajaran'])
         ->where('nik', $nik)
         ->get();
 

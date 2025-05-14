@@ -591,7 +591,7 @@ document.getElementById("cekButton").addEventListener("click", function () {
                 <h3>Sebagai</h3>
                 <h2 style="font-weight: 800;">PESERTA</h2>
                 @php
-                    $totalJam = $data->datapelajaran->sum('jampelajaran');
+                    $totalJam = $data->jampelajaran->sum('jampelajaran');
                 @endphp
                 <p style="margin: 10px 50px; text-align: justify; text-indent: 50px;">
                     Kegiatan <strong>{{ $data->agendapelatihan->namakegiatan }}</strong> yang diselenggarakan oleh
