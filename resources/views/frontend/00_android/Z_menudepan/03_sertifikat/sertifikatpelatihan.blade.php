@@ -192,6 +192,26 @@
 
 
                             <div class="flex flex-col gap-1">
+<table class="zebra-table data-table">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Nama Lengkap</th>
+            <th>NIK</th>
+            <th>Tanggal Daftar</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Budi Santoso</td>
+            <td>3201234567890123</td>
+            <td>15/03/2023</td>
+            <td><span class="status-active">Aktif</span></td>
+        </tr>
+    </tbody>
+</table>
 
                             </div>
                             </div>
