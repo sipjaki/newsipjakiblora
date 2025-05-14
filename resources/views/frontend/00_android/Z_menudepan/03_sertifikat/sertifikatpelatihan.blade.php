@@ -39,36 +39,61 @@
                                 <div class="flex justify-center px-4 mt-[-150px]">
 
 <div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-  <div class="w-full max-w-lg bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl">
-    <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-5">
-      <h2 class="text-2xl font-bold text-white text-center">🔍 Pencarian NIK</h2>
-    </div>
-    <div class="p-8">
-      <label for="nik" class="block text-lg font-medium text-gray-600 mb-3">Masukkan Nomor Induk Kependudukan (NIK)</label>
-      <div class="relative mb-6">
-        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-          <svg class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+  <div class="w-full max-w-xl"> <!-- Lebarkan container -->
+    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl">
+      <!-- Header lebih tebal -->
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 py-5 px-6">
+        <h2 class="text-3xl font-bold text-white text-center flex items-center justify-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z" />
           </svg>
-        </div>
-        <input
-          type="text"
-          id="nik"
-          name="nik"
-          placeholder="Contoh: 3201xxxxxxxxxxxx"
-          class="w-full pl-12 pr-28 py-4 text-lg rounded-xl border-2 border-gray-300 focus:ring-4 focus:ring-blue-200 focus:border-blue-500 focus:outline-none text-gray-700 shadow-sm transition duration-200"
-        />
-        <button
-          type="submit"
-          class="absolute right-2 top-2 bottom-2 px-6 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200 flex items-center justify-center text-lg"
-        >
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-          Cari
-        </button>
+          PENCARIAN NIK
+        </h2>
       </div>
-      <p class="text-sm text-gray-500 text-center mt-4">Pastikan NIK yang dimasukkan sesuai dengan KTP</p>
+
+      <!-- Body form -->
+      <div class="p-8 space-y-6">
+        <div>
+          <label for="nik" class="block text-xl font-semibold text-gray-700 mb-3">MASUKKAN NOMOR INDUK KEPENDUDUKAN</label>
+
+          <!-- Input container dengan height lebih besar -->
+          <div class="relative h-16">
+            <!-- Icon -->
+            <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
+              <svg class="h-7 w-7 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+
+            <!-- Input field lebih tinggi -->
+            <input
+              type="text"
+              id="nik"
+              name="nik"
+              placeholder="Contoh: 3201xxxxxxxxxxxx"
+              class="w-full h-full pl-14 pr-32 text-xl rounded-xl border-2 border-gray-300 focus:ring-4 focus:ring-blue-200 focus:border-blue-600 focus:outline-none transition duration-200"
+            />
+
+            <!-- Tombol lebih besar -->
+            <button
+              type="submit"
+              class="absolute right-2 top-1/2 transform -translate-y-1/2 h-12 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center transition-all duration-200 shadow-md"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+              <span class="text-lg font-medium">CARI</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Footer note -->
+        <p class="text-center text-gray-500 text-sm mt-6">
+          <span class="inline-block bg-gray-100 rounded-full px-3 py-1">
+            Pastikan NIK yang dimasukkan sesuai dengan KTP asli
+          </span>
+        </p>
+      </div>
     </div>
   </div>
 </div>
