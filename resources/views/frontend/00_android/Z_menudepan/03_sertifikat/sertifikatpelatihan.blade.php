@@ -32,39 +32,26 @@
                 </nav>
             </div>
 
-                    <div class="flex flex-col gap-4 px-4" style="margin-top:-100px;">
-
-                        <a href="/sertifikatpelatihan" class="card">
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
-                                    <img src="/assets/00_android/00_iconmenuutama/01_menuutam/sertifikatpelatihan.avif" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                                </div>
-
-                            <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat Pelatihan</p>
-                        </p>
-
-                            </div>
-                            </div>
-                            </a>
-
-
-                        <a href="/404" class="card">
-                            <div class="w-full border border-[#E8E9EE] flex items-center p-[14px] gap-3 rounded-2xl bg-white">
-                                <div class="w-16 h-[60px] flex shrink-0 rounded-2xl overflow-hidden">
-                                    <img src="/assets/00_android/00_iconmenuutama/01_menuutam/sertifikatpelatihan.avif" class="w-full h-full object-cover" alt="thumbnail" loading="lazy">
-                                </div>
-
-                            <div class="flex flex-col gap-1">
-                        <p class="font-bold line-clamp-1 hover:line-clamp-none" style="color: black;">Sertifikat TKK</p>
-                        </p>
-
-                            </div>
-                            </div>
-                            </a>
-
-
-                        </div>
+                  <div class="flex flex-col items-center px-4 mt-[-100px]">
+  <div class="w-full max-w-md">
+    <label for="nik" class="block text-gray-700 text-lg font-semibold mb-2">Cari NIK</label>
+    <div class="relative">
+      <input
+        type="text"
+        id="nik"
+        name="nik"
+        placeholder="Masukkan NIK..."
+        class="w-full px-5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-700 shadow-sm"
+      />
+      <button
+        type="submit"
+        class="absolute right-2 top-2 bottom-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-200"
+      >
+        Cari
+      </button>
+    </div>
+  </div>
+</div>
 
                         @include('frontend.00_android.00_fiturmenu.keterangan')
 
