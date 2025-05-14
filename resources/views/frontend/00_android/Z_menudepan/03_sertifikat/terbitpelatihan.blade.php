@@ -503,16 +503,12 @@
                         <!--end::Quick Example-->
 
                             <div class="col-md-12" style="height:250px;">
-                                <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto; margin-left:-50px;">
-                                    <div style="transform: scale(0.3); transform-origin: top left;">
-                                        <div class="cert-container">
+                                <div style="display: flex; justify-content: flex-start; width: 100%; overflow: auto;">
 
                                             <button>
                                                 download file
                                             </button>
 
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
