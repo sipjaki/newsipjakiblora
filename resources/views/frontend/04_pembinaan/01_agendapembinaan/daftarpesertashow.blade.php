@@ -208,8 +208,8 @@ table.zebra-table {
                             <td style="text-align: center;">{{ $loop->index + 1 }}</td>
 
                         <td>
-    {{ strtoupper($item->namalengkap ?? 'TIDAK ADA NAMA') }}
-</td>
+                            {{ strtoupper($item->namalengkap ?? 'TIDAK ADA NAMA') }}
+                        </td>
 
                             {{-- <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->user->name)) }}</td> --}}
                             {{-- <td>{{$item->user->name}}</td> --}}
