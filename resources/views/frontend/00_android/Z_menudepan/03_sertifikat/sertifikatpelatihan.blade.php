@@ -624,7 +624,7 @@ document.getElementById("cekButton").addEventListener("click", function () {
         <!-- Tombol untuk menampilkan sertifikat -->
         <div style="text-align: center; margin-bottom: 20px;">
             <button class="download-btn"
-                    data-target="sertifikat-{{ $data->id }}"
+                    {{-- data-target="sertifikat-{{ $data->id }}" --}}
                     style="background: linear-gradient(45deg, gold, #fcd34d); color: #111827; padding: 10px 20px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer;">
                 Download Sertifikat - {{ strtoupper($data->namalengkap) }}
             </button>
