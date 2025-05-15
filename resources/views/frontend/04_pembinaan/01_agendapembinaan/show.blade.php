@@ -313,7 +313,7 @@
                                 <tr>
                                     <td style="text-align: center;">{{ $loop->iteration + $start - 1 }}</td>
                                     <td style="text-transform: capitalize;">{{ ucwords(strtolower($item->judulmateripelatihan)) }}</td>
-                                    <td>
+                                        <td>
                                         @if($item->materipelatihan && file_exists(public_path('storage/' . $item->materipelatihan)))
                                             <!-- File ditemukan di penyimpanan -->
                                             <iframe src="{{ asset('storage/' . $item->materipelatihan) }}" frameborder="0" width="100%" height="200px"></iframe>
