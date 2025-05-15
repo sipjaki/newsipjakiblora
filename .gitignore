@@ -19,4 +19,4 @@ yarn-error.log
 /.vscode
 !storage/app/public/
 !storage/app/public/*
-/.composer.lock
+/vendor
