@@ -6,11 +6,14 @@ use App\Models\artikeljakon;
 use App\Models\artikeljakonmasjaki;
 use App\Models\beritajakon;
 use App\Models\User;
+use App\Services\CloudinaryService;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Session; // Tambahkan baris ini
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 
 class BeritajakonController extends Controller
@@ -232,126 +235,39 @@ public function beberitajakoncreate()
         'title' => 'Create Berita Jasa Konstruksi'
     ]);
 }
-
-// -------------------- CREATE MENU JABATAN FUNGSIONAL   ----------------------
 public function beberitajakoncreatenew(Request $request)
 {
-    // Pastikan user yang sedang login adalah super_admin (id = 1)
     $user_id = Auth::user()->statusadmin->id == 1 ? Auth::user()->id : null;
 
-    // Validasi input dengan pesan kustom
     $validatedData = $request->validate([
-        'judulberita' => 'required|string|max:255', // judulberita wajib diisi, harus string, dan panjangnya maksimal 255 karakter
-        'tanggal' => 'required|date', // tanggal wajib diisi dan harus dalam format tanggal
-        'keterangan' => 'required|string', // keterangan wajib diisi dan harus berupa string
-        'foto' => 'required|image|max:7168', // foto wajib diisi, harus image dan maksimal 7MB (7168KB)
-        'foto1' => 'required|image|max:7168', // foto1 wajib diisi, harus image dan maksimal 7MB (7168KB)
-        'foto2' => 'required|image|max:7168', // foto2 wajib diisi, harus image dan maksimal 7MB (7168KB)
-    ], [
-        'judulberita.required' => 'Judul berita wajib diisi!',
-        'judulberita.string' => 'Judul berita harus berupa teks!',
-        'judulberita.max' => 'Judul berita tidak boleh lebih dari 255 karakter!',
-        'tanggal.required' => 'Tanggal wajib diisi!',
-        'tanggal.date' => 'Tanggal harus berupa format tanggal yang valid!',
-        'keterangan.required' => 'Keterangan wajib diisi!',
-        'keterangan.string' => 'Keterangan harus berupa teks!',
-        'foto.required' => 'Foto wajib diisi!',
-        'foto.image' => 'Foto harus berupa gambar!',
-        'foto.max' => 'Foto maksimal 7MB!',
-        'foto1.required' => 'Foto 1 wajib diisi!',
-        'foto1.image' => 'Foto 1 harus berupa gambar!',
-        'foto1.max' => 'Foto 1 maksimal 7MB!',
-        'foto2.required' => 'Foto 2 wajib diisi!',
-        'foto2.image' => 'Foto 2 harus berupa gambar!',
-        'foto2.max' => 'Foto 2 maksimal 7MB!',
+        'judulberita' => 'required|string|max:255',
+        'tanggal' => 'required|date',
+        'keterangan' => 'required|string',
+        'foto' => 'required|image|max:7168',
+        'foto1' => 'required|image|max:7168',
+        'foto2' => 'required|image|max:7168',
     ]);
 
-    // Menyimpan file gambar jika ada
-    $foto = $request->file('foto')->store('public/02_beritajakon/berita');
-    $foto1 = $request->file('foto1')->store('public/02_beritajakon/berita');
-    $foto2 = $request->file('foto2')->store('public/02_beritajakon/berita');
+    // Unggah dengan nama acak
+    $fotoUrl = CloudinaryService::uploadFile($request->file('foto'));
+    $foto1Url = CloudinaryService::uploadFile($request->file('foto1'));
+    $foto2Url = CloudinaryService::uploadFile($request->file('foto2'));
 
-    // Membuat data baru di tabel beritajakon
     beritajakon::create([
-        'user_id' => $user_id,  // Menyimpan user_id yang sudah diatur otomatis
+        'user_id' => $user_id,
         'judulberita' => $validatedData['judulberita'],
         'tanggal' => $validatedData['tanggal'],
         'keterangan' => $validatedData['keterangan'],
-        'foto' => $foto,
-        'foto1' => $foto1,
-        'foto2' => $foto2,
+        'foto' => $fotoUrl['url'],
+        'foto1' => $foto1Url['url'],
+        'foto2' => $foto2Url['url'],
     ]);
 
-    // Flash session untuk menampilkan pesan sukses
     session()->flash('create', 'Data Berhasil Dibuat!');
-
-    // Redirect ke halaman yang sesuai
     return redirect('/beberitajakon');
 }
 
-
-        public function beberitajakondelete($judulberita)
-{
-    // Cari item berdasarkan judul
-    $entry = beritajakon::where('judulberita', $judulberita)->first();
-
-    if ($entry) {
-        // Jika ada file header yang terdaftar, hapus dari storage
-        // if (Storage::disk('public')->exists($entry->header)) {
-            //     Storage::disk('public')->delete($entry->header);
-        // }
-
-        // Hapus entri dari database
-        $entry->delete();
-
-        // Redirect atau memberi respons sesuai kebutuhan
-        return redirect('/beberitajakon')->with('delete', 'Data Berhasil Di Hapus !');
-
-    }
-
-    return redirect()->back()->with('error', 'Item not found');
-    }
-
-
-
-
-    // ======================================================================================
-    // ARTIKEL JAKON MAS JAKI
-
-        public function beartikeljakon(Request $request)
-                {
-                    $perPage = $request->input('perPage', 15);
-                    $search = $request->input('search');
-
-                    $query = artikeljakonmasjaki::query();
-
-                    if ($search) {
-                        $query->where('judul', 'LIKE', "%{$search}%")
-                            ->orWhere('tanggal', 'LIKE', "%{$search}%")
-                            ->orWhere('keterangan', 'LIKE', "%{$search}%")
-                            ->orWhereHas('user', function ($q) use ($search) {
-                                $q->where('name', 'LIKE', "%{$search}%");
-                            });
-                    }
-
-                    $data = $query->orderBy('created_at', 'desc')->paginate($perPage);
-
-                    if ($request->ajax()) {
-                        return response()->json([
-                            'html' => view('backend.03_beritajakon.02_artikeljakon.partials.table', compact('data'))->render()
-                        ]);
-                    }
-
-                    return view('backend.03_beritajakon.02_artikeljakon.index', [
-                        'title' => 'Artikel Jasa Konstruksi',
-                        'data' => $data,
-                        'perPage' => $perPage,
-                        'search' => $search
-                    ]);
-                }
-
-
-                    // MENU SHOW ARTIKEL JASA KONSTRUKSI ------------------------------------------------------------------------------------
+ // MENU SHOW ARTIKEL JASA KONSTRUKSI ------------------------------------------------------------------------------------
 
 public function beartikeljakonshow($id)
 {

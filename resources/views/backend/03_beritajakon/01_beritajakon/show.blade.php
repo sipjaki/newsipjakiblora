@@ -149,7 +149,7 @@
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto)
                                                     <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->foto) }}" alt="Foto" width="300" />  <!-- Mengatur lebar gambar menjadi 300px -->
+                                                    <img src="{{ $data->foto }}" alt="Foto" width="300" />  <!-- Mengatur lebar gambar menjadi 300px -->
                                                 @else
                                                     <p>No Photo</p>
                                                 @endif
@@ -164,7 +164,7 @@
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto1)
                                                     <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto 1" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
+                                                    <img src="{{ $data->foto1 }}" alt="Foto 1" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
                                                 @else
                                                     <p>No Photo</p>
                                                 @endif
@@ -179,7 +179,7 @@
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto2)
                                                     <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->foto2) }}" alt="Foto 2" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
+                                                    <img src="{{ $data->foto2 }}" alt="Foto 2" width="300" /> <!-- Mengatur lebar gambar menjadi 300px -->
                                                 @else
                                                     <p>No Photo</p>
                                                 @endif

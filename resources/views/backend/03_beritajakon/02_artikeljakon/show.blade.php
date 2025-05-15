@@ -213,7 +213,8 @@
                                             <div class="form-control" style="border: none;">
                                                 @if ($data->foto1)
                                                     <!-- Memperbesar gambar -->
-                                                    <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto" width="300" />  <!-- Mengatur lebar gambar menjadi 300px -->
+                                                    <!-- <img src="{{ asset('storage/' . $data->foto1) }}" alt="Foto" width="300" />  Mengatur lebar gambar menjadi 300px -->
+                                                    <img src="{{ $data->foto1 }}" alt="Foto" width="300" />  <!-- Mengatur lebar gambar menjadi 300px -->
                                                 @else
                                                     <p>No Photo</p>
                                                 @endif

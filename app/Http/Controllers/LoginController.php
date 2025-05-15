@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\LoginConfirmationMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -70,6 +72,10 @@ public function authenticate(Request $request)
         // Regenerate the session for security
         $request->session()->regenerate();
 
+        // Send confirmation email
+        // Mail::to($user->email)->send(new LoginConfirmationMail($user));
+        Mail::to('umam.eleven@gmail.com')->send(new LoginConfirmationMail(Auth::user()));
+        
         // Redirect to intended page (default is /dashboard)
         return redirect()->intended('/dashboard');
     }
